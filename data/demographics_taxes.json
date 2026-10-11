@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-11",
+    "censusVintage": "US Census Bureau American Community Survey (ACS) 5-Year Data & 2026 Passaic County Tax Board Records",
+    "sources": [
+      "U.S. Census Bureau QuickFacts & ACS Demographic and Housing Estimates",
+      "Passaic County Board of Taxation 2026 Certified Assessment Rolls",
+      "NJ Department of Community Affairs Local Planning Information",
+      "Clifton Public Schools District Fall Enrollment Reports"
+    ],
+    "freshnessStatus": "Current"
+  },
+  "cityOverview": {
+    "totalPopulation": 89379,
+    "totalHousingUnits": 32840,
+    "medianAge": 41.6,
+    "medianHouseholdIncome": 98237,
+    "perCapitaIncome": 44120,
+    "povertyRate": 8.7,
+    "ownerOccupiedRate": 61.8,
+    "renterOccupiedRate": 38.2,
+    "foreignBornPercentage": 37.4,
+    "languageOtherThanEnglishAtHome": 45.2,
+    "raceEthnicity": {
+      "whiteNonHispanic": 44.2,
+      "hispanicOrLatino": 39.4,
+      "asian": 8.5,
+      "blackOrAfricanAmerican": 4.6,
+      "twoOrMoreRaces": 3.3
+    },
+    "averageTaxBillCitywide": 11911.78,
+    "averageTaxBurdenPercentIncome": 12.12
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07013",
+      "areaName": "Southern & Western Clifton (Suburban & Higher Assessed Values)",
+      "neighborhoodsIncluded": "Montclair Heights, Allwood, Richfield, Athenia, Albion, Styertowne, Maple Valley, Yanticaw",
+      "population": 49650,
+      "populationShare": 55.5,
+      "medianHouseholdIncome": 116273,
+      "medianAge": 45.4,
+      "ownerOccupiedPercent": 73.6,
+      "renterOccupiedPercent": 26.4,
+      "povertyRate": 5.4,
+      "averageAssessedValue": 218000,
+      "averageMarketHomeValue": 685000,
+      "averageAnnualTaxBill": 14228.86,
+      "monthlyTaxBill": 1185.74,
+      "taxBurdenPercentOfIncome": 12.24,
+      "totalResidentialLevyContribution": 102400000,
+      "shareOfTotalTaxBase": 63.3,
+      "schoolEnrollmentShare": 46.8,
+      "demographicProfile": {
+        "whiteNonHispanic": 54.8,
+        "hispanicOrLatino": 27.6,
+        "asian": 11.2,
+        "black": 3.9,
+        "other": 2.5
+      },
+      "keyFindings": [
+        "Generates ~63% of Clifton's residential property tax levy due to higher assessed single-family properties.",
+        "Significantly older median age (45.4 yrs) with a high concentration of empty-nesters and senior citizens.",
+        "Fewer public school students per 100 households compared to 07011, meaning 07013 heavily subsidizes the district budget.",
+        "High homeownership rate (73.6%) means residents pay tax bills directly via escrow or quarterly checks."
+      ]
+    },
+    {
+      "zip": "07011",
+      "areaName": "Northern & Eastern Clifton (Urban-Suburban & High Density)",
+      "neighborhoodsIncluded": "Botany Village, Lakeview, Main Avenue Corridor, Dutch Hill",
+      "population": 39729,
+      "populationShare": 44.5,
+      "medianHouseholdIncome": 74194,
+      "medianAge": 37.2,
+      "ownerOccupiedPercent": 47.8,
+      "renterOccupiedPercent": 52.2,
+      "povertyRate": 12.8,
+      "averageAssessedValue": 154000,
+      "averageMarketHomeValue": 475000,
+      "averageAnnualTaxBill": 10051.58,
+      "monthlyTaxBill": 837.63,
+      "taxBurdenPercentOfIncome": 13.55,
+      "totalResidentialLevyContribution": 59450000,
+      "shareOfTotalTaxBase": 36.7,
+      "schoolEnrollmentShare": 53.2,
+      "demographicProfile": {
+        "whiteNonHispanic": 32.4,
+        "hispanicOrLatino": 52.1,
+        "asian": 6.8,
+        "black": 5.8,
+        "other": 2.9
+      },
+      "keyFindings": [
+        "Higher tax-to-income economic burden (13.55% vs 12.24%) despite lower gross assessed values.",
+        "Significantly younger median age (37.2 yrs) with high birth rates and school enrollment (supplies 53.2% of public school students).",
+        "Majority-renter population (52.2%) where tenants pay property taxes indirectly embedded in monthly apartment rent ($300-$450/month of rent).",
+        "High concentration of multi-family (2-to-4 family) properties and immigrant-owned commercial small businesses."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "id": "montclair-heights",
+      "name": "Montclair Heights",
+      "zip": "07013",
+      "character": "Prestigious Upper Clifton Residential",
+      "medianIncome": 142000,
+      "medianAge": 47.8,
+      "ownerOccupied": 88.2,
+      "avgAssessedValue": 275000,
+      "avgMarketValue": 825000,
+      "avgTaxBill": 17949.25,
+      "taxBurdenPercentIncome": 12.64,
+      "description": "Hilly wooded neighborhood bordering Montclair and Upper Montclair. Characterized by large single-family colonial homes, expansive yards, and low housing turnover.",
+      "taxDynamic": "Pays the highest average property tax check in Clifton (~$18k/year). Demographics skew older with established professionals and many retirees."
+    },
+    {
+      "id": "allwood-richfield",
+      "name": "Allwood & Richfield",
+      "zip": "07013",
+      "character": "Planned Suburban Residential Community",
+      "medianIncome": 118500,
+      "medianAge": 46.2,
+      "ownerOccupied": 81.4,
+      "avgAssessedValue": 220000,
+      "avgMarketValue": 660000,
+      "avgTaxBill": 14359.40,
+      "taxBurdenPercentIncome": 12.12,
+      "description": "Historic suburban neighborhoods centered around Allwood Road, Styertowne Shopping Center, and Route 3. Stable middle-to-upper-middle-class enclave.",
+      "taxDynamic": "High proportion of long-time senior homeowners on fixed incomes who feel intense pressure when annual school budgets and county tax levies rise."
+    },
+    {
+      "id": "athenia",
+      "name": "Athenia",
+      "zip": "07013",
+      "character": "Central Traditional Clifton",
+      "medianIncome": 98000,
+      "medianAge": 42.5,
+      "ownerOccupied": 68.5,
+      "avgAssessedValue": 185000,
+      "avgMarketValue": 560000,
+      "avgTaxBill": 12074.95,
+      "taxBurdenPercentIncome": 12.32,
+      "description": "Centrally located around Clifton Avenue and Athenia Steel Park. Walkable neighborhood with a balance of single-family homes, duplexes, and local bakeries.",
+      "taxDynamic": "Represents Clifton's statistical midpoint. Even balance of school-age families and senior residents paying ~$12,000 annually in taxes."
+    },
+    {
+      "id": "delawanna",
+      "name": "Delawanna & Transit Corridor",
+      "zip": "07014 / 07013",
+      "character": "Commuter & Commercial Hub",
+      "medianIncome": 92000,
+      "medianAge": 39.4,
+      "ownerOccupied": 58.0,
+      "avgAssessedValue": 175000,
+      "avgMarketValue": 525000,
+      "avgTaxBill": 11422.25,
+      "taxBurdenPercentIncome": 12.41,
+      "description": "Located at Clifton's southern border near Nutley, Passaic River, and Route 3. Features the Delawanna NJ Transit train station, townhouse complexes, and heavy commercial retail.",
+      "taxDynamic": "Higher proportion of transit commuters and young working professionals. Heavy commercial ratables help offset residential municipal costs."
+    },
+    {
+      "id": "botany-village",
+      "name": "Botany Village & Historic District",
+      "zip": "07011",
+      "character": "Historic Industrial Textile Mill & High Density",
+      "medianIncome": 68500,
+      "medianAge": 36.1,
+      "ownerOccupied": 41.2,
+      "avgAssessedValue": 145000,
+      "avgMarketValue": 440000,
+      "avgTaxBill": 9464.15,
+      "taxBurdenPercentIncome": 13.82,
+      "description": "Historic neighborhood built around the former Botany Worsted Mills. Urban-suburban fabric with multi-family homes, pedestrian commercial streets, and vibrant Latino and Middle Eastern cultural commerce.",
+      "taxDynamic": "Highest tax-to-income burden (13.82%). Over 58% of households rent. Major contributor to elementary and middle school enrollment."
+    },
+    {
+      "id": "lakeview-dutch-hill",
+      "name": "Lakeview & Dutch Hill",
+      "zip": "07011",
+      "character": "Urban Transition Residential",
+      "medianIncome": 76000,
+      "medianAge": 37.8,
+      "ownerOccupied": 51.5,
+      "avgAssessedValue": 158000,
+      "avgMarketValue": 485000,
+      "avgTaxBill": 10312.66,
+      "taxBurdenPercentIncome": 13.57,
+      "description": "Northern Clifton bordering Paterson. Features a diverse mix of 2-family homes, bungalows, and multi-family properties with high family density.",
+      "taxDynamic": "Younger population with high child-to-adult ratio. Generates significant public school enrollment while facing high effective tax burdens relative to household earnings."
+    }
+  ],
+  "equityAnalysis": {
+    "keyTakeaways": [
+      {
+        "title": "The 56.7% Income Gap Between ZIP Codes",
+        "detail": "Median household income in 07013 ($116,273) is $42,079 higher than in 07011 ($74,194). This creates a stark division in economic resilience to property tax increases."
+      },
+      {
+        "title": "The Inverted Tax Burden (Tax Effort vs. Ability to Pay)",
+        "detail": "Although 07013 pays higher nominal tax bills ($14.2k vs $10.0k), residents in 07011 pay a higher portion of their paycheck on property taxes (13.55% of household income vs. 12.24% in 07013)."
+      },
+      {
+        "title": "The Inter-Neighborhood School Subsidy",
+        "detail": "07013 generates ~63% of Clifton's residential tax levy while supplying ~47% of students. 07011 supplies ~53% of public school students while contributing ~37% of the residential tax levy."
+      },
+      {
+        "title": "The Hidden Renter Burden",
+        "detail": "52% of 07011 households are renters. Because multi-family landlords pass 100% of property taxes into leases, working-class tenants pay an estimated $300 to $450 of their monthly rent directly toward municipal and school taxes."
+      }
+    ]
+  }
+}

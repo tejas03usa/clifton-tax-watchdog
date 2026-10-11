@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-10",
+    "billListCycles": "FY 2025-2026 Accounts Payable & Warrant Lists",
+    "sourceAgency": "City of Clifton Council Claims Resolutions & Clifton BOE Bills & Claims Minutes",
+    "freshnessStatus": "Current"
+  },
+  "vendors": [
+    {
+      "vendorName": "Passaic County Technical Institute (PCTI / PCTVS)",
+      "entityServed": "Clifton Board of Education",
+      "category": "Mandated Vocational Tuition",
+      "annualEstimatedSpend": 14500000,
+      "description": "Tuition payments for Clifton resident students attending Passaic County's vocational-technical high school campus in Wayne, NJ. State law requires home district to pay tuition."
+    },
+    {
+      "vendorName": "State Health Benefits Program (SHBP / SEHBP)",
+      "entityServed": "Both City of Clifton & Clifton BOE",
+      "category": "Employee Healthcare & Prescription",
+      "annualEstimatedSpend": 42000000,
+      "description": "Health, medical, and prescription insurance coverage for active municipal and school employees and eligible retired public servants."
+    },
+    {
+      "vendorName": "Police & Firemen's Retirement System (PFRS) / PERS",
+      "entityServed": "City of Clifton",
+      "category": "Statutory Pension Mandates",
+      "annualEstimatedSpend": 12800000,
+      "description": "Mandatory employer pension contributions billed annually by the NJ Division of Pensions and Benefits for police, firefighters, and civilian municipal workers."
+    },
+    {
+      "vendorName": "Passaic Valley Water Commission (PVWC)",
+      "entityServed": "City of Clifton & Residents",
+      "category": "Water Utility Infrastructure",
+      "annualEstimatedSpend": 5800000,
+      "description": "Bulk water treatment, fire hydrant supply, and municipal water main maintenance across the city."
+    },
+    {
+      "vendorName": "Contracted School Bus Transportation Companies (e.g. Trans-Ed, 4-M, First Student)",
+      "entityServed": "Clifton Board of Education",
+      "category": "Student Transportation",
+      "annualEstimatedSpend": 12200000,
+      "description": "Contracted daily bus routes for regular education, specialized out-of-district transit routes, and athletics."
+    },
+    {
+      "vendorName": "Private Out-of-District Special Education Schools (e.g. Windsor School, Sage Day, ECLC, Chancellor)",
+      "entityServed": "Clifton Board of Education",
+      "category": "Specialized Education Placements",
+      "annualEstimatedSpend": 10400000,
+      "description": "Tuition and individual therapy for students with specialized IEP requirements that cannot be accommodated within district facilities."
+    },
+    {
+      "vendorName": "Municipal Legal Counsel & Labor Attorneys",
+      "entityServed": "City of Clifton & Clifton BOE",
+      "category": "Professional Legal Services",
+      "annualEstimatedSpend": 1850000,
+      "description": "Municipal City Attorney, Board of Education General Counsel, labor contract negotiators, tax appeal defense attorneys, and litigation defense."
+    },
+    {
+      "vendorName": "Municipal Engineering & Architectural Firms",
+      "entityServed": "City of Clifton & Clifton BOE",
+      "category": "Engineering & Capital Projects",
+      "annualEstimatedSpend": 2600000,
+      "description": "Road paving inspection, traffic engineering, drainage surveys, school HVAC modernization, roof replacements, and capital bond projects."
+    },
+    {
+      "vendorName": "Public Works Asphalt, Salt & Fleet Fuel (BP, Atlantic Salt, Tilcon)",
+      "entityServed": "City of Clifton",
+      "category": "DPW Supplies & Fuel",
+      "annualEstimatedSpend": 2400000,
+      "description": "Rock salt for winter storm response, road asphalt for pothole repair, and diesel/gasoline for police cruisers, fire apparatus, and DPW trucks."
+    },
+    {
+      "vendorName": "Educational Technology & Software (Google, PowerSchool, Canvas, Microsoft)",
+      "entityServed": "Clifton Board of Education",
+      "category": "Instructional Technology & SaaS",
+      "annualEstimatedSpend": 1950000,
+      "description": "Student Chromebooks, student information systems (SIS), cybersecurity, firewall maintenance, and classroom software licenses."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-10",
+    "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
+    "sourceAgency": "NJ Department of Community Affairs (DLGS) & City of Clifton Finance Office",
+    "dataVintage": "Certified CY 2026 Municipal Budget",
+    "freshnessStatus": "Current"
+  },
+  "entity": "City of Clifton (Municipal Government)",
+  "county": "Passaic County",
+  "fiscalYear": "2025 / 2026",
+  "totalBudget": 105400000,
+  "population": 89800,
+  "governmentType": "1923 Municipal Manager Law (Council-Manager)",
+  "fullTimeEmployees": 465,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax for Municipal Purposes",
+      "amount": 76800000,
+      "percentage": 72.8,
+      "description": "Portion paid on quarterly municipal tax bills by property owners"
+    },
+    {
+      "source": "State Aid (Energy Tax Receipts, Consolidated Municipal Property Tax Relief)",
+      "amount": 10900000,
+      "percentage": 10.3,
+      "description": "Direct state aid distributed by NJ Department of Community Affairs"
+    },
+    {
+      "source": "Local Municipal Revenues (Court fees, building permits, licenses, parking)",
+      "amount": 9200000,
+      "percentage": 8.7,
+      "description": "Municipal court fines, construction code permits, health licenses, parking meters"
+    },
+    {
+      "source": "Delinquent Tax Collections & Interest",
+      "amount": 2100000,
+      "percentage": 2.0,
+      "description": "Interest on late payments and tax sale lien redemptions"
+    },
+    {
+      "source": "Surplus Anticipated (Fund Balance reserves)",
+      "amount": 6400000,
+      "percentage": 6.1,
+      "description": "Audited prior-year unreserved municipal fund balance"
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Police Department & Dispatch",
+      "amount": 27800000,
+      "percentage": 26.4,
+      "details": "Salaries for ~150+ sworn police officers (patrol, detective bureau, traffic division, juvenile bureau, community policing), 911 dispatchers, cruisers, fuel, body cameras, body armor, and ammunition."
+    },
+    {
+      "category": "Statutory Pensions (PFRS & PERS)",
+      "amount": 12800000,
+      "percentage": 12.1,
+      "details": "Mandatory employer contributions to Police & Firemen's Retirement System (PFRS) and Public Employees' Retirement System (PERS) as billed by the State of New Jersey."
+    },
+    {
+      "category": "Fire Department & Emergency Medical Services",
+      "amount": 19400000,
+      "percentage": 18.4,
+      "details": "Salaries for professional firefighters, fire captains, lieutenants, and EMTs across 5 fire stations, apparatus maintenance, protective gear, ladder trucks, and ambulances."
+    },
+    {
+      "category": "Employee Group Health Insurance & Worker's Comp",
+      "amount": 11600000,
+      "percentage": 11.0,
+      "details": "Medical, dental, and prescription coverage for active municipal employees and eligible retirees, plus municipal risk insurance."
+    },
+    {
+      "category": "Department of Public Works (DPW)",
+      "amount": 13900000,
+      "percentage": 13.2,
+      "details": "Salaries for DPW laborers, mechanics, drivers; street paving, road salting/snow plowing, weekly curbside recycling and trash collection, street sweeping, park maintenance, and sewer maintenance."
+    },
+    {
+      "category": "Municipal Debt Service (Bonds & Notes)",
+      "amount": 9500000,
+      "percentage": 9.0,
+      "details": "Principal redemption and interest payments on municipal capital improvement bonds, fire trucks, road reconstruction debt, and drainage projects."
+    },
+    {
+      "category": "General Government & Administration",
+      "amount": 4200000,
+      "percentage": 4.0,
+      "details": "City Manager's office, City Clerk (elections, records, OPRA), Tax Assessor, Tax Collector, Finance Director/CFO, Purchasing, and Information Technology."
+    },
+    {
+      "category": "Public Library (Mandatory 1/3 Mill Appropriation)",
+      "amount": 3400000,
+      "percentage": 3.2,
+      "details": "Dedicated municipal library levy funding Clifton Main Memorial Library and Allwood Branch library staff, books, digital resources, and programs."
+    },
+    {
+      "category": "Legal, Municipal Court & Code Enforcement",
+      "amount": 1800000,
+      "percentage": 1.7,
+      "details": "Municipal Attorney/legal defense counsel, Municipal Court judge, court administrator, prosecutor, public defender, and Uniform Construction Code (UCC) inspectors."
+    },
+    {
+      "category": "Health & Human Services, Senior Services & Recreation",
+      "amount": 1000000,
+      "percentage": 1.0,
+      "details": "City health officer, restaurant inspections, animal control, Clifton Senior Center, recreation league coordination, and community events."
+    }
+  ]
+}

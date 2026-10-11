@@ -1,0 +1,254 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-11",
+    "certifiedDate": "Certified for Tax Year 2026 by Passaic County & Essex County Boards of Taxation",
+    "sources": [
+      "Passaic County Board of Taxation 2026 Abstract of Ratables & Certification Table",
+      "Essex County Board of Taxation 2026 Tax Table (Nutley & Montclair)",
+      "State of New Jersey Division of Taxation Equalization Tables",
+      "NJ Department of Community Affairs Local Government Services (DLGS) Comparative Budget Database",
+      "U.S. Census Bureau ACS 5-Year Demographic Profiles"
+    ],
+    "benchmarkMunicipality": "Clifton City"
+  },
+  "summaryAnalysis": {
+    "cliftonContext": "Clifton's certified general rate is 6.527% due to its ~33.3% equalization ratio (market values ~3x assessed values). When adjusted to true 100% market value (effective tax rate), Clifton's effective rate is 2.18%, which is lower than neighboring urban centers (Paterson at 3.24%, Passaic City at 2.82%) and higher than wealthy residential suburbs (Montclair at 1.98%, Wayne at 2.05%).",
+    "taxBurdenDrivers": "School funding is the largest cost across all suburban North Jersey towns (typically 45% - 55% of the total tax check). Urban neighbors (Paterson & Passaic City) rely predominantly on Abbott/SDA state equalization aid (covering 75%-85% of school costs), resulting in lower local school tax shares but significantly higher municipal and county levies."
+  },
+  "towns": [
+    {
+      "id": "clifton",
+      "name": "Clifton City",
+      "county": "Passaic County",
+      "relationship": "Focus Municipality",
+      "certifiedTaxRate": 6.527,
+      "equalizationRatio": 33.35,
+      "effectiveTaxRateMarket": 2.177,
+      "medianHomeValueMarket": 585000,
+      "medianAssessedValue": 195000,
+      "medianAnnualTaxBill": 12727.65,
+      "monthlyTaxBill": 1060.64,
+      "medianHouseholdIncome": 98237,
+      "taxBurdenPercentOfIncome": 12.96,
+      "population": 89379,
+      "taxSplit": {
+        "schoolsPercent": 47.66,
+        "municipalPercent": 29.41,
+        "countyPercent": 22.92
+      },
+      "schoolBudget": 293240500,
+      "municipalBudget": 105400000,
+      "schoolStateAidShare": 37.0,
+      "localLevyShare": 55.2,
+      "fundBalanceSurplus": 1845181,
+      "strengthsAndWatchdogNotes": "Dense middle-class suburb with strong commercial corridors (Rt 3 & Rt 46) providing commercial ratable relief. However, 07011 bears higher income strain than 07013, and PILOT abatements contribute 0% to schools."
+    },
+    {
+      "id": "passaic-city",
+      "name": "Passaic City",
+      "county": "Passaic County",
+      "relationship": "Immediate Eastern Border (Urban Neighbor)",
+      "certifiedTaxRate": 3.482,
+      "equalizationRatio": 81.10,
+      "effectiveTaxRateMarket": 2.824,
+      "medianHomeValueMarket": 420000,
+      "medianAssessedValue": 340620,
+      "medianAnnualTaxBill": 11860.39,
+      "monthlyTaxBill": 988.37,
+      "medianHouseholdIncome": 54200,
+      "taxBurdenPercentOfIncome": 21.88,
+      "population": 69800,
+      "taxSplit": {
+        "schoolsPercent": 26.50,
+        "municipalPercent": 54.20,
+        "countyPercent": 19.30
+      },
+      "schoolBudget": 348000000,
+      "municipalBudget": 126500000,
+      "schoolStateAidShare": 84.5,
+      "localLevyShare": 11.2,
+      "fundBalanceSurplus": 2450000,
+      "strengthsAndWatchdogNotes": "Severe regressive tax burden (21.9% of median income). Schools are 85% funded by state Abbott aid, meaning local property taxes overwhelmingly go to municipal City Hall and police operations (54.2%) rather than classrooms."
+    },
+    {
+      "id": "paterson",
+      "name": "Paterson City",
+      "county": "Passaic County",
+      "relationship": "Immediate Northern Border (County Seat)",
+      "certifiedTaxRate": 3.240,
+      "equalizationRatio": 100.0,
+      "effectiveTaxRateMarket": 3.240,
+      "medianHomeValueMarket": 375000,
+      "medianAssessedValue": 375000,
+      "medianAnnualTaxBill": 12150.00,
+      "monthlyTaxBill": 1012.50,
+      "medianHouseholdIncome": 48600,
+      "taxBurdenPercentOfIncome": 25.00,
+      "population": 157800,
+      "taxSplit": {
+        "schoolsPercent": 24.10,
+        "municipalPercent": 56.40,
+        "countyPercent": 19.50
+      },
+      "schoolBudget": 695000000,
+      "municipalBudget": 310000000,
+      "schoolStateAidShare": 86.8,
+      "localLevyShare": 8.5,
+      "fundBalanceSurplus": 4100000,
+      "strengthsAndWatchdogNotes": "Completed 100% property revaluation. Highest effective property tax rate in Passaic County (3.24%). Massive municipal spending burden ($310M) with extraordinary state supervision and high municipal structural deficits."
+    },
+    {
+      "id": "montclair",
+      "name": "Montclair Township",
+      "county": "Essex County",
+      "relationship": "Southwest Border (Affluent Suburban)",
+      "certifiedTaxRate": 3.766,
+      "equalizationRatio": 52.40,
+      "effectiveTaxRateMarket": 1.973,
+      "medianHomeValueMarket": 985000,
+      "medianAssessedValue": 516140,
+      "medianAnnualTaxBill": 19437.83,
+      "monthlyTaxBill": 1619.82,
+      "medianHouseholdIncome": 160500,
+      "taxBurdenPercentOfIncome": 12.11,
+      "population": 40500,
+      "taxSplit": {
+        "schoolsPercent": 55.40,
+        "municipalPercent": 28.10,
+        "countyPercent": 16.50
+      },
+      "schoolBudget": 154000000,
+      "municipalBudget": 102500000,
+      "schoolStateAidShare": 11.5,
+      "localLevyShare": 82.4,
+      "fundBalanceSurplus": 9800000,
+      "strengthsAndWatchdogNotes": "Top-tier public school district where 55.4% of taxes fund schools with minimal state aid (82% locally funded). Average tax bill approaches $20,000/yr, but higher median income keeps relative burden moderate at 12.1%."
+    },
+    {
+      "id": "nutley",
+      "name": "Nutley Township",
+      "county": "Essex County",
+      "relationship": "Southern Border (Suburban Essex Neighbor)",
+      "certifiedTaxRate": 2.844,
+      "equalizationRatio": 78.50,
+      "effectiveTaxRateMarket": 2.233,
+      "medianHomeValueMarket": 560000,
+      "medianAssessedValue": 439600,
+      "medianAnnualTaxBill": 12502.22,
+      "monthlyTaxBill": 1041.85,
+      "medianHouseholdIncome": 104800,
+      "taxBurdenPercentOfIncome": 11.93,
+      "population": 29800,
+      "taxSplit": {
+        "schoolsPercent": 51.41,
+        "municipalPercent": 33.23,
+        "countyPercent": 15.36
+      },
+      "schoolBudget": 82500000,
+      "municipalBudget": 64000000,
+      "schoolStateAidShare": 18.2,
+      "localLevyShare": 76.5,
+      "fundBalanceSurplus": 4500000,
+      "strengthsAndWatchdogNotes": "Directly comparable suburban demographic profile to Clifton's Allwood/Delawanna. Clean commission form of government; schools receive over 51% of tax dollars with high local ratable retention."
+    },
+    {
+      "id": "wayne",
+      "name": "Wayne Township",
+      "county": "Passaic County",
+      "relationship": "Northwest Border (Suburban Passaic Peer)",
+      "certifiedTaxRate": 5.720,
+      "equalizationRatio": 35.80,
+      "effectiveTaxRateMarket": 2.048,
+      "medianHomeValueMarket": 670000,
+      "medianAssessedValue": 239860,
+      "medianAnnualTaxBill": 13720.00,
+      "monthlyTaxBill": 1143.33,
+      "medianHouseholdIncome": 132400,
+      "taxBurdenPercentOfIncome": 10.36,
+      "population": 54700,
+      "taxSplit": {
+        "schoolsPercent": 53.80,
+        "municipalPercent": 25.10,
+        "countyPercent": 21.10
+      },
+      "schoolBudget": 182000000,
+      "municipalBudget": 92000000,
+      "schoolStateAidShare": 12.0,
+      "localLevyShare": 81.5,
+      "fundBalanceSurplus": 8200000,
+      "strengthsAndWatchdogNotes": "Suburban commercial power (Willowbrook Mall corridor) generating massive non-residential ratables that offset homeowner burdens, resulting in Passaic County's lowest tax burden relative to income (10.36%)."
+    },
+    {
+      "id": "little-falls",
+      "name": "Little Falls Township",
+      "county": "Passaic County",
+      "relationship": "Western Border (Passaic River Neighbor)",
+      "certifiedTaxRate": 3.125,
+      "equalizationRatio": 72.10,
+      "effectiveTaxRateMarket": 2.253,
+      "medianHomeValueMarket": 530000,
+      "medianAssessedValue": 382130,
+      "medianAnnualTaxBill": 11941.56,
+      "monthlyTaxBill": 995.13,
+      "medianHouseholdIncome": 108200,
+      "taxBurdenPercentOfIncome": 11.04,
+      "population": 14200,
+      "taxSplit": {
+        "schoolsPercent": 48.90,
+        "municipalPercent": 28.50,
+        "countyPercent": 22.60
+      },
+      "schoolBudget": 28500000,
+      "municipalBudget": 22100000,
+      "schoolStateAidShare": 19.5,
+      "localLevyShare": 74.0,
+      "fundBalanceSurplus": 1900000,
+      "strengthsAndWatchdogNotes": "Small commuter suburb sharing high school district with Passaic Valley Regional. Tight municipal budget with moderate flood mitigation debt service along the Passaic River."
+    },
+    {
+      "id": "totowa",
+      "name": "Totowa Borough",
+      "county": "Passaic County",
+      "relationship": "Northwest Border (Low-Tax Commercial Hub)",
+      "certifiedTaxRate": 2.380,
+      "equalizationRatio": 89.20,
+      "effectiveTaxRateMarket": 2.123,
+      "medianHomeValueMarket": 595000,
+      "medianAssessedValue": 530740,
+      "medianAnnualTaxBill": 12631.61,
+      "monthlyTaxBill": 1052.63,
+      "medianHouseholdIncome": 118400,
+      "taxBurdenPercentOfIncome": 10.67,
+      "population": 11000,
+      "taxSplit": {
+        "schoolsPercent": 46.20,
+        "municipalPercent": 31.40,
+        "countyPercent": 22.40
+      },
+      "schoolBudget": 24200000,
+      "municipalBudget": 21800000,
+      "schoolStateAidShare": 17.5,
+      "localLevyShare": 76.8,
+      "fundBalanceSurplus": 3400000,
+      "strengthsAndWatchdogNotes": "Beneficiary of huge corporate office parks and retail ratables (Rt 46 corridor) that subsidize borough services and maintain healthy cash surpluses."
+    }
+  ],
+  "comparativeKeyFindings": [
+    {
+      "title": "Why Does Clifton's Rate Appear so High (6.527%) vs Nutley (2.844%)?",
+      "detail": "It is an optical illusion of New Jersey's Assessment Equalization Ratio. Clifton has not reassessed properties across the entire city in decades, so assessments remain frozen at ~33% of real value. Nutley is assessed at 78.5% and Paterson at 100%. When adjusted to True Market Value (Effective Rate), Clifton's 2.18% is right in line with Nutley (2.23%) and lower than Passaic City (2.82%) or Paterson (3.24%)."
+    },
+    {
+      "title": "The School Funding Disparity (Suburbs vs Urban Centers)",
+      "detail": "In suburban peers (Clifton, Wayne, Nutley, Montclair), homeowners pay 75% to 85% of school budgets out of local property tax checks (47% to 55% of your total tax bill). In contrast, urban neighbors Paterson and Passaic receive 84% to 87% of school budgets from State Aid, meaning their property taxes predominantly fund City Hall, police, fire, and municipal debt."
+    },
+    {
+      "title": "Commercial Ratable Cushion (Wayne & Totowa vs Clifton)",
+      "detail": "Wayne (Willowbrook corridor) and Totowa enjoy vast commercial and corporate tax bases that absorb a large share of the tax levy, keeping residential tax burdens at ~10.4% of income compared to Clifton's 12.96%."
+    },
+    {
+      "title": "The Urban Tax-to-Income Crisis",
+      "detail": "Due to lower median household incomes, families in Passaic City and Paterson pay an astonishing 21.9% to 25.0% of annual income on housing property taxes, representing one of the most regressive local tax environments in the United States."
+    }
+  ]
+}

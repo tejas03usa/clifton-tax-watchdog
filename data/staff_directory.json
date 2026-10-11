@@ -1,0 +1,351 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-10",
+    "payrollVintage": "2025-2026 Public Contracts & NJ Civil Service Listings",
+    "sourceAgency": "City of Clifton Salary Ordinances, Clifton BOE User-Friendly Budget & APP DataUniverse",
+    "dataFreshness": "Current (Reflects 2025/2026 administrative appointments, including Gary DeMarzo Interim City Manager)"
+  },
+  "staff": [
+    {
+      "id": "boe-01",
+      "entity": "Clifton Board of Education",
+      "name": "Dr. Danny A. Robertozzi",
+      "title": "Superintendent of Schools",
+      "department": "District Executive Leadership",
+      "salaryReported": 240000,
+      "salaryRange": "$240,000 - $255,000",
+      "type": "Full-Time Executive Contract",
+      "notes": "Chief School Administrator overseeing ~11,000 students and 18 schools. Contract subject to NJ state regulations and board approval."
+    },
+    {
+      "id": "boe-02",
+      "entity": "Clifton Board of Education",
+      "name": "Ahmed Shehata",
+      "title": "Assistant Superintendent for Business / Board Secretary",
+      "department": "Business Office & Finance",
+      "salaryReported": 189390,
+      "salaryRange": "$185,000 - $195,000",
+      "type": "Full-Time Executive Contract",
+      "notes": "Oversees the district's ~$293M operating budget, purchasing, facility contracts, payroll, and statutory board records."
+    },
+    {
+      "id": "boe-03",
+      "entity": "Clifton Board of Education",
+      "name": "Janina Kusielewicz",
+      "title": "Assistant Superintendent of Curriculum & Instruction",
+      "department": "Academic Programs",
+      "salaryReported": 178500,
+      "salaryRange": "$170,000 - $185,000",
+      "type": "Full-Time Administrator",
+      "notes": "Supervises K-12 academic standards, curriculum development, state assessment compliance, and instructional coaching."
+    },
+    {
+      "id": "boe-04",
+      "entity": "Clifton Board of Education",
+      "name": "Ahmad Hamdeh",
+      "title": "Principal - Clifton High School",
+      "department": "School Administration (High School)",
+      "salaryReported": 172400,
+      "salaryRange": "$165,000 - $178,000",
+      "type": "Full-Time Administrator (CAA Union)",
+      "notes": "Leads Clifton High School (one of New Jersey's largest public high schools with ~2,800+ students)."
+    },
+    {
+      "id": "boe-05",
+      "entity": "Clifton Board of Education",
+      "name": "David A. Shirley",
+      "title": "Principal - Christopher Columbus Middle School",
+      "department": "School Administration (Middle School)",
+      "salaryReported": 164200,
+      "salaryRange": "$155,000 - $168,000",
+      "type": "Full-Time Administrator (CAA Union)",
+      "notes": "Principal of CCMS."
+    },
+    {
+      "id": "boe-06",
+      "entity": "Clifton Board of Education",
+      "name": "Michael R. Rose",
+      "title": "Principal - Woodrow Wilson Middle School",
+      "department": "School Administration (Middle School)",
+      "salaryReported": 161800,
+      "salaryRange": "$155,000 - $165,000",
+      "type": "Full-Time Administrator (CAA Union)",
+      "notes": "Principal of WWMS."
+    },
+    {
+      "id": "boe-07",
+      "entity": "Clifton Board of Education",
+      "name": "Judith A. Bassford",
+      "title": "Board President / Trustee",
+      "department": "Board of Education (Elected Oversight)",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Unpaid Public Service)",
+      "type": "Elected Board Trustee (Term to 2026)",
+      "notes": "Elected school board trustee; files annual School Ethics Commission financial disclosures."
+    },
+    {
+      "id": "boe-08",
+      "entity": "Clifton Board of Education",
+      "name": "Anthony Santiago",
+      "title": "Board Vice President / Trustee",
+      "department": "Board of Education (Elected Oversight)",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Unpaid Public Service)",
+      "type": "Elected Board Trustee",
+      "notes": "Elected school board trustee; files annual School Ethics Commission financial disclosures."
+    },
+    {
+      "id": "boe-09",
+      "entity": "Clifton Board of Education",
+      "name": "Mark Brunciak",
+      "title": "Board Trustee",
+      "department": "Board of Education (Elected Oversight)",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Unpaid Public Service)",
+      "type": "Elected Board Trustee",
+      "notes": "Elected school board trustee."
+    },
+    {
+      "id": "boe-10",
+      "entity": "Clifton Board of Education",
+      "name": "Joe Canova",
+      "title": "Board Trustee",
+      "department": "Board of Education (Elected Oversight)",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Unpaid Public Service)",
+      "type": "Elected Board Trustee",
+      "notes": "Elected school board trustee."
+    },
+    {
+      "id": "boe-11",
+      "entity": "Clifton Board of Education",
+      "name": "Eve Estrict-Barnes",
+      "title": "Board Trustee",
+      "department": "Board of Education (Elected Oversight)",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Unpaid Public Service)",
+      "type": "Elected Board Trustee",
+      "notes": "Sworn in 2026."
+    },
+    {
+      "id": "boe-12",
+      "entity": "Clifton Board of Education",
+      "name": "Alan Paris",
+      "title": "Board Trustee",
+      "department": "Board of Education (Elected Oversight)",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Unpaid Public Service)",
+      "type": "Elected Board Trustee",
+      "notes": "Elected school board trustee."
+    },
+    {
+      "id": "boe-13",
+      "entity": "Clifton Board of Education",
+      "name": "Alias Ragsdale",
+      "title": "Board Trustee",
+      "department": "Board of Education (Elected Oversight)",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Unpaid Public Service)",
+      "type": "Elected Board Trustee",
+      "notes": "Elected school board trustee."
+    },
+    {
+      "id": "boe-14",
+      "entity": "Clifton Board of Education",
+      "name": "Joseph Siano",
+      "title": "Board Trustee",
+      "department": "Board of Education (Elected Oversight)",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Unpaid Public Service)",
+      "type": "Elected Board Trustee",
+      "notes": "Elected school board trustee."
+    },
+    {
+      "id": "boe-15",
+      "entity": "Clifton Board of Education",
+      "name": "Tanya Suarez",
+      "title": "Board Trustee",
+      "department": "Board of Education (Elected Oversight)",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Unpaid Public Service)",
+      "type": "Elected Board Trustee",
+      "notes": "Elected school board trustee."
+    },
+    {
+      "id": "boe-16",
+      "entity": "Clifton Board of Education",
+      "name": "Classroom Teaching Staff (General & SpEd)",
+      "title": "Certified Classroom Teachers (~920 FTE)",
+      "department": "Instruction (CEA Bargaining Unit)",
+      "salaryReported": 74500,
+      "salaryRange": "$56,000 (Step 1 BA) - $105,000 (Top Step MA+30)",
+      "type": "Collective Bargaining Agreement",
+      "notes": "Average teacher salary in Clifton is ~$74,500 based on NJ DOE Taxpayers' Guide. Stepped pay scale negotiated by Clifton Education Association (CEA)."
+    },
+    {
+      "id": "city-01",
+      "entity": "City of Clifton",
+      "name": "Gary S. DeMarzo",
+      "title": "Interim City Manager",
+      "department": "Municipal Executive Administration",
+      "salaryReported": 195000,
+      "salaryRange": "$185,000 - $210,000",
+      "type": "Chief Executive Officer / Manager",
+      "notes": "Appointed Interim City Manager following retirement of long-time City Manager Nick Villano in 2025. Directs all city departments, appoints personnel, and prepares municipal budget."
+    },
+    {
+      "id": "city-02",
+      "entity": "City of Clifton",
+      "name": "Thomas Rinaldi",
+      "title": "Chief of Police",
+      "department": "Clifton Police Department",
+      "salaryReported": 215000,
+      "salaryRange": "$195,000 - $225,000",
+      "type": "Sworn Law Enforcement Executive",
+      "notes": "Leads Clifton Police Department (~150 sworn officers, support personnel, and dispatch). Clifton PD member since 1995."
+    },
+    {
+      "id": "city-03",
+      "entity": "City of Clifton",
+      "name": "Raymond Grabowski",
+      "title": "Mayor / Council Member",
+      "department": "City Council (Elected Governing Body)",
+      "salaryReported": 7500,
+      "salaryRange": "$7,000 - $8,000",
+      "type": "Part-Time Elected Official",
+      "notes": "Elected Mayor & Councilman. Files annual Local Government Ethics Law FDS; operates private investigation business and landscaping company."
+    },
+    {
+      "id": "city-04",
+      "entity": "City of Clifton",
+      "name": "Mary Sadrakula",
+      "title": "Councilwoman",
+      "department": "City Council (Elected Governing Body)",
+      "salaryReported": 5500,
+      "salaryRange": "$5,000 - $6,500",
+      "type": "Part-Time Elected Official",
+      "notes": "City Councilwoman; 40-year career on Wall Street (retired); serves on city Real Estate & Budget committees."
+    },
+    {
+      "id": "city-05",
+      "entity": "City of Clifton",
+      "name": "Rosemary Pino",
+      "title": "Councilwoman",
+      "department": "City Council (Elected Governing Body)",
+      "salaryReported": 5500,
+      "salaryRange": "$5,000 - $6,500",
+      "type": "Part-Time Elected Official",
+      "notes": "City Councilwoman (elected 2018/2022); former BOE trustee (2013-2019); founder of Latino Leaders of Clifton; career in finance/workforce development."
+    },
+    {
+      "id": "city-06",
+      "entity": "City of Clifton",
+      "name": "Joseph Kolodziej",
+      "title": "Councilman",
+      "department": "City Council (Elected Governing Body)",
+      "salaryReported": 5500,
+      "salaryRange": "$5,000 - $6,500",
+      "type": "Part-Time Elected Official",
+      "notes": "City Councilman; Certified Municipal CFO (serves as full-time CFO for Mt. Olive Township); former PVWC commissioner; former BOE trustee."
+    },
+    {
+      "id": "city-07",
+      "entity": "City of Clifton",
+      "name": "Antonio Latona",
+      "title": "Councilman",
+      "department": "City Council (Elected Governing Body)",
+      "salaryReported": 5500,
+      "salaryRange": "$5,000 - $6,500",
+      "type": "Part-Time Elected Official",
+      "notes": "City Councilman; retired Clifton firefighter; US Air Force veteran."
+    },
+    {
+      "id": "city-08",
+      "entity": "City of Clifton",
+      "name": "Chris D'Amato",
+      "title": "Councilman",
+      "department": "City Council (Elected Governing Body)",
+      "salaryReported": 5500,
+      "salaryRange": "$5,000 - $6,500",
+      "type": "Part-Time Elected Official",
+      "notes": "Appointed to Council in 2024 to fill vacancy; community advocate and writer."
+    },
+    {
+      "id": "city-09",
+      "entity": "City of Clifton",
+      "name": "Clifton Fire Chief",
+      "title": "Chief of Fire & Emergency Services",
+      "department": "Clifton Fire Department",
+      "salaryReported": 208000,
+      "salaryRange": "$166,000 - $246,000",
+      "type": "Sworn Fire Official Executive",
+      "notes": "Commands ~130 professional career firefighters and EMTs operating from 5 neighborhood fire stations."
+    },
+    {
+      "id": "city-10",
+      "entity": "City of Clifton",
+      "name": "Chief Financial Officer (CFO)",
+      "title": "Director of Finance / Municipal CFO",
+      "department": "Department of Finance",
+      "salaryReported": 158000,
+      "salaryRange": "$145,000 - $165,000",
+      "type": "Certified Municipal Finance Officer (CMFO)",
+      "notes": "Manages municipal treasury, bond issuances, annual financial statement (AFS), and municipal budget."
+    },
+    {
+      "id": "city-11",
+      "entity": "City of Clifton",
+      "name": "City Clerk",
+      "title": "Municipal Clerk",
+      "department": "City Clerk's Office",
+      "salaryReported": 125000,
+      "salaryRange": "$115,000 - $135,000",
+      "type": "Statutory Officer (RMC)",
+      "notes": "Official custodian of municipal records, secretary to City Council, chief election official, and OPRA records officer."
+    },
+    {
+      "id": "city-12",
+      "entity": "City of Clifton",
+      "name": "Tax Assessor",
+      "title": "Municipal Tax Assessor",
+      "department": "Assessment Office",
+      "salaryReported": 138000,
+      "salaryRange": "$125,000 - $145,000",
+      "type": "Certified Tax Assessor (CTA)",
+      "notes": "Statutory officer responsible for assessing all commercial, industrial, and residential real estate parcels in Clifton for property taxation."
+    },
+    {
+      "id": "city-13",
+      "entity": "City of Clifton",
+      "name": "Director of Public Works",
+      "title": "Director of Public Works (DPW)",
+      "department": "Department of Public Works",
+      "salaryReported": 142000,
+      "salaryRange": "$130,000 - $150,000",
+      "type": "Certified Public Works Manager (CPWM)",
+      "notes": "Oversees municipal fleet, street repairs, snow plowing, solid waste, and municipal infrastructure."
+    },
+    {
+      "id": "city-14",
+      "entity": "City of Clifton",
+      "name": "Patrol Officers & Detectives (PBA Local 36)",
+      "title": "Sworn Police Officers (~140 Officers)",
+      "department": "Clifton Police Department",
+      "salaryReported": 128500,
+      "salaryRange": "$48,000 (Academy) - $144,000 (Senior Patrol Step)",
+      "type": "Collective Bargaining Agreement (PBA Local 36)",
+      "notes": "Senior patrol officer base salary reaches ~$144k before longevity, holiday pay, and contractual stipends. Overtime and off-duty private security details are paid separately."
+    },
+    {
+      "id": "city-15",
+      "entity": "City of Clifton",
+      "name": "Career Firefighters (FMBA Local 21)",
+      "title": "Professional Firefighters & EMTs (~125 Firefighters)",
+      "department": "Clifton Fire Department",
+      "salaryReported": 124000,
+      "salaryRange": "$46,000 (Probationary) - $139,000 (Top Step)",
+      "type": "Collective Bargaining Agreement (FMBA Local 21)",
+      "notes": "Top step firefighters earn ~$139k base, excluding overtime, specialty certification pay, and longevity."
+    }
+  ]
+}

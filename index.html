@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clifton NJ Taxpayer Watchdog | Where Does Your Money Go?</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Announcement / Live Indicator Bar -->
+  <aside class="top-status-bar">
+    <div class="container status-bar-content">
+      <div class="live-status-pill">
+        <span class="live-beacon"></span>
+        <span class="status-text"><strong>Live Citizen Watchdog:</strong> October 2026 Certified Rates • Passaic County Board of Taxation & State Audits</span>
+      </div>
+      <div class="status-quick-links">
+        <span class="status-item">Total Tax Rate: <strong>6.527%</strong></span>
+        <span class="status-sep">•</span>
+        <span class="status-item">Schools Share: <strong>47.66%</strong></span>
+        <span class="status-sep">•</span>
+        <span class="status-item">Municipal Share: <strong>29.41%</strong></span>
+        <span class="status-sep">•</span>
+        <span class="status-item">County Share: <strong>22.92%</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modern App Header -->
+  <header class="app-header">
+    <div class="container header-container">
+      <div class="header-titles">
+        <div class="brand-badge">
+          <span class="badge-icon">🏛️</span>
+          <span>CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG</span>
+        </div>
+        <h1>Clifton Taxpayer Watchdog</h1>
+        <p class="subtitle">Real-time public investigation into where your Clifton property taxes go, the ~$293M school budget, public employee healthcare benefits, outside staff businesses, and official state audits.</p>
+      </div>
+
+      <div class="header-stat-cards">
+        <div class="stat-card">
+          <div class="stat-card-label">Certified Tax Rate (2026)</div>
+          <div class="stat-card-num">6.527%</div>
+          <div class="stat-card-sub">per $100 assessed value</div>
+        </div>
+        <div class="stat-card highlight-school">
+          <div class="stat-card-label">School District (BOE)</div>
+          <div class="stat-card-num">47.66%</div>
+          <div class="stat-card-sub">~$0.48 of every dollar</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Combined City & BOE Budget</div>
+          <div class="stat-card-num">$398.6M</div>
+          <div class="stat-card-sub">Annual public expenditures</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modern Categorized Navigation Bar with Dropdowns -->
+  <nav class="nav-bar" id="main-nav" role="navigation" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <div class="nav-menu" role="menubar">
+        
+        <!-- 1. Primary Direct Tab: Tax Calculator -->
+        <button class="nav-item-btn tab-btn active" role="menuitem" data-tab="tab-calculator">
+          <span class="tab-icon">💰</span>
+          <span class="tab-title">Tax Calculator</span>
+        </button>
+
+        <!-- 2. DROPDOWN: Budgets & Spending -->
+        <div class="nav-dropdown" id="dropdown-budgets">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-budgets">
+            <span class="tab-icon">📊</span>
+            <span class="tab-title">Budgets & Spending</span>
+            <span class="dropdown-arrow">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="trigger-budgets">
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-budgets">
+              <span class="d-item-icon">🏛️</span>
+              <div class="d-item-text">
+                <strong>Where Money Goes</strong>
+                <small>BOE ($293M) & City Hall ($105M) budgets</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-benefits">
+              <span class="d-item-icon">🏥</span>
+              <div class="d-item-text">
+                <strong>Healthcare & Benefits</strong>
+                <small>SHBP/SEHBP plans, pensions & $87M costs</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-vendors">
+              <span class="d-item-icon">📜</span>
+              <div class="d-item-text">
+                <strong>Vendor Bill Lists</strong>
+                <small>Warrant lists, top contractors & legal fees</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. DROPDOWN: Demographics & Comparison -->
+        <div class="nav-dropdown" id="dropdown-demographics">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-demographics">
+            <span class="tab-icon">🏘️</span>
+            <span class="tab-title">Properties & Areas</span>
+            <span class="dropdown-arrow">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="trigger-demographics">
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-properties">
+              <span class="d-item-icon">🏡</span>
+              <div class="d-item-text">
+                <strong>Property Values & Taxes <span class="badge-tag">520 Homes</span></strong>
+                <small>Filter assessments, beds/baths & who pays more</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-demographics">
+              <span class="d-item-icon">📍</span>
+              <div class="d-item-text">
+                <strong>Demographics & ZIP Codes</strong>
+                <small>07011 vs 07013 income & tax disparities</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-surrounding">
+              <span class="d-item-icon">🗺️</span>
+              <div class="d-item-text">
+                <strong>Surrounding Towns Benchmark</strong>
+                <small>Compare 8 towns (Nutley, Wayne, Montclair, etc.)</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. DROPDOWN: Personnel & Accountability -->
+        <div class="nav-dropdown" id="dropdown-personnel">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-personnel">
+            <span class="tab-icon">⚖️</span>
+            <span class="tab-title">Accountability & Staff</span>
+            <span class="tab-count-badge">7</span>
+            <span class="dropdown-arrow">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="trigger-personnel">
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-staff">
+              <span class="d-item-icon">👥</span>
+              <div class="d-item-text">
+                <strong>Staff & Payroll Directory</strong>
+                <small>City and BOE leadership, salary steps & CBAs</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-controversies">
+              <span class="d-item-icon">🚨</span>
+              <div class="d-item-text">
+                <strong>Ethics & Audit Alerts <span class="badge-alert">7 Cases</span></strong>
+                <small>State Comptroller sick leave audit & PILOT shifts</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-ethics">
+              <span class="d-item-icon">🏢</span>
+              <div class="d-item-text">
+                <strong>Outside Businesses & Assets</strong>
+                <small>Financial Disclosure Statements (FDS) & holdings</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. Primary Direct Tab: Citizen Toolkit & OPRA -->
+        <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-investigate">
+          <span class="tab-icon">🔍</span>
+          <span class="tab-title">Citizen Toolkit</span>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <main class="container main-content">
+    
+    <!-- TAB 1: TAX CALCULATOR -->
+    <section id="tab-calculator" class="tab-pane active" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Certified: Tax Year 2026 • Passaic County Board of Taxation</span>
+        </div>
+        <h2>Your Clifton Property Tax Breakdown</h2>
+        <p>In Clifton, the 2026 general tax rate is <strong>$6.527 per $100 of assessed property value</strong>. Enter your home's assessed value or drag the slider below to see where every dollar and cent of your property tax goes.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-card input-card">
+          <div class="card-title-row">
+            <h3>1. Property Assessed Value</h3>
+            <span class="tooltip-badge" title="This is your assessed value, not market sale value.">Avg: $182.5k</span>
+          </div>
+          <p class="calc-hint">Look on your Clifton Tax Bill or Assessment Postcard (or drag the slider below):</p>
+          
+          <div class="input-group">
+            <span class="currency-symbol">$</span>
+            <input type="number" id="calc-assessment-input" value="182500" min="10000" max="1000000" step="2500" class="styled-input">
+          </div>
+
+          <div class="slider-wrapper">
+            <input type="range" id="calc-assessment-slider" min="50000" max="600000" step="2500" value="182500" class="styled-slider">
+            <div class="slider-labels">
+              <span>$50k</span>
+              <span>$182.5k (Avg)</span>
+              <span>$350k</span>
+              <span>$600k+</span>
+            </div>
+          </div>
+
+          <div class="quick-presets">
+            <span class="preset-label">Quick Presets:</span>
+            <button class="preset-btn" data-val="125000">$125k</button>
+            <button class="preset-btn" data-val="150000">$150k</button>
+            <button class="preset-btn active" data-val="182500">Clifton Avg ($182.5k)</button>
+            <button class="preset-btn" data-val="250000">$250k</button>
+            <button class="preset-btn" data-val="350000">$350k</button>
+          </div>
+
+          <div class="calc-summary-panel">
+            <div class="summary-line main-total">
+              <span>Total Annual Property Tax:</span>
+              <strong id="calc-total-annual" class="total-highlight">$11,911.78</strong>
+            </div>
+            <div class="summary-line">
+              <span>Monthly Payment:</span>
+              <strong id="calc-total-monthly">$992.65 / mo</strong>
+            </div>
+            <div class="summary-line">
+              <span>Quarterly Tax Bill:</span>
+              <strong id="calc-total-quarterly">$2,977.94 / qtr</strong>
+            </div>
+          </div>
+
+          <div class="info-alert">
+            <span class="alert-icon">💡</span>
+            <div class="alert-text">
+              <strong>Assessment vs. Market Value:</strong> In Clifton, homes are assessed at a fractional ratio of market value. A home selling on the market for $550,000 typically has an assessed tax value of ~$185,000.
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-card breakdown-results-card">
+          <div class="card-title-row">
+            <h3>2. Where Your Property Taxes Go</h3>
+            <span class="formula-badge">Formula: (Assessment / 100) × Tax Rate</span>
+          </div>
+          
+          <div class="progress-stacked-wrapper">
+            <div class="progress-stacked" id="calc-stacked-bar">
+              <!-- Rendered by JS -->
+            </div>
+            <div class="legend-row">
+              <span class="legend-item"><span class="dot school-dot"></span> Schools (47.7%)</span>
+              <span class="legend-item"><span class="dot city-dot"></span> City Hall / Police / Fire (29.4%)</span>
+              <span class="legend-item"><span class="dot county-dot"></span> Passaic County (22.9%)</span>
+            </div>
+          </div>
+
+          <div class="entity-cards-container" id="calc-entity-breakdown">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for Tab 1 -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation Certified 2026 Tax Table ↗</a>
+            <span class="source-doc-desc">Certifies Clifton's 6.527% general tax rate and equalization ratio (~33.3%).</span>
+          </li>
+          <li>
+            <a href="https://www.cliftonnj.org/218/Tax-Collector" target="_blank" rel="noopener">City of Clifton Office of the Tax Collector ↗</a>
+            <span class="source-doc-desc">Certified quarterly billing schedules, municipal collection accounts, and statutory rates.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/treasury/taxation/lpt/lpt-property-tax-list-search.shtml" target="_blank" rel="noopener">NJ Division of Taxation: Property Tax Tables ↗</a>
+            <span class="source-doc-desc">State of New Jersey official certification of municipal, school, and county tax levies.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 2: BUDGET BREAKDOWN -->
+    <section id="tab-budgets" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Current Fiscal Cycles: FY 2025-2026 / CY 2026 Adopted Budgets</span>
+        </div>
+        <h2>Clifton Public Spending: The Two Mega-Budgets</h2>
+        <p>Clifton taxpayers fund two separate local government entities: the <strong>Clifton Board of Education (~$293.2M)</strong> and the <strong>City of Clifton Municipal Government (~$105.4M)</strong>, alongside county taxes.</p>
+      </div>
+
+      <div class="budget-comparison-grid">
+        <!-- BOE Card -->
+        <div class="budget-overview-card school-theme">
+          <div class="card-header">
+            <div class="badge school-badge">47.66% OF YOUR TAXES</div>
+            <h3>Clifton Public Schools (BOE)</h3>
+            <div class="big-amount">$293,240,500 <span class="per-year">/ year</span></div>
+            <p class="overview-desc">Educates 11,080 students across 18 public schools with ~1,500+ teachers, aides, administrators, and support staff.</p>
+          </div>
+
+          <div class="budget-metrics">
+            <div class="b-metric">
+              <span class="label">Per Pupil Spending</span>
+              <span class="val">$22,450</span>
+            </div>
+            <div class="b-metric">
+              <span class="label">Local Property Tax Levy</span>
+              <span class="val">$161.8M (55%)</span>
+            </div>
+            <div class="b-metric">
+              <span class="label">State Education Aid</span>
+              <span class="val">$108.4M (37%)</span>
+            </div>
+          </div>
+
+          <h4>Major Appropriations Line Items:</h4>
+          <div class="line-items-list" id="boe-line-items">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Municipal Card -->
+        <div class="budget-overview-card city-theme">
+          <div class="card-header">
+            <div class="badge city-badge">29.41% OF YOUR TAXES</div>
+            <h3>City of Clifton (Municipal)</h3>
+            <div class="big-amount">$105,400,000 <span class="per-year">/ year</span></div>
+            <p class="overview-desc">Funds Police, Fire/EMS, Public Works (DPW), trash collection, road paving, health department, and public library for 89,800 residents.</p>
+          </div>
+
+          <div class="budget-metrics">
+            <div class="b-metric">
+              <span class="label">Full-Time Workforce</span>
+              <span class="val">465 Staff</span>
+            </div>
+            <div class="b-metric">
+              <span class="label">Local Municipal Tax Levy</span>
+              <span class="val">$76.8M (73%)</span>
+            </div>
+            <div class="b-metric">
+              <span class="label">Police & Fire Share</span>
+              <span class="val">$47.2M (45%)</span>
+            </div>
+          </div>
+
+          <h4>Major Appropriations Line Items:</h4>
+          <div class="line-items-list" id="city-line-items">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for Tab 2 -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.clifton.k12.nj.us/departments/business-office" target="_blank" rel="noopener">Clifton Public Schools Adopted User-Friendly Budget (UFB) ↗</a>
+            <span class="source-doc-desc">Official $293.2M budget appropriations submitted to the NJ Department of Education.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/dca/dlgs/" target="_blank" rel="noopener">NJ DCA Division of Local Government Services (DLGS) Budget Portals ↗</a>
+            <span class="source-doc-desc">Certified City of Clifton Annual Municipal Adopted Budget ($105.4M) and tax levy filings.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/education/finance/fp/ufb/" target="_blank" rel="noopener">NJ DOE School District User-Friendly Budget Database ↗</a>
+            <span class="source-doc-desc">Comparative statewide database of administrative ratios, per-pupil spending, and debt service.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB: DEMOGRAPHICS & AREAS -->
+    <section id="tab-demographics" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Data: U.S. Census Bureau ACS 5-Year Estimates & Passaic County 2026 Certified Rolls</span>
+        </div>
+        <h2>Clifton Demographics, Neighborhoods & Tax Disparities</h2>
+        <p>Merging census population records with certified property assessments reveals how tax burdens, age groups, income levels, and school utilization vary dramatically between Clifton's zip codes and neighborhoods.</p>
+      </div>
+
+      <!-- Citywide Demographic Highlights Bar -->
+      <div class="demo-citywide-banner" id="demo-citywide-banner">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Zip Code Comparison: 07013 vs 07011 -->
+      <div class="zip-comparison-section">
+        <div class="section-subtitle-row">
+          <h3>The ZIP Code Divide: 07013 vs. 07011</h3>
+          <span class="pill-tag">Spatial Tax Analysis</span>
+        </div>
+        <p class="section-subtitle-desc">Clifton is divided into two primary postal zones with fundamentally different demographic makeups, median incomes, and property tax footprints.</p>
+        
+        <div class="zip-cards-grid" id="zip-cards-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Neighborhood Breakdown Grid -->
+      <div class="neighborhoods-section">
+        <div class="section-subtitle-row">
+          <h3>Clifton Neighborhood Explorer: 6 Distinct Zones</h3>
+          <span class="pill-tag">Granular Property Tax Breakdown</span>
+        </div>
+        <p class="section-subtitle-desc">From prestigious Montclair Heights to historic Botany Village, explore how property values, taxes, and demographics shift across town:</p>
+        
+        <div class="neighborhoods-grid" id="neighborhoods-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Inequity and Watchdog Policy Analysis -->
+      <div class="equity-takeaways-section">
+        <div class="section-subtitle-row">
+          <h3>Fiscal Equity & Watchdog Insights: Who Pays vs. Who Benefits?</h3>
+          <span class="pill-tag alert-tag">Citizen Analysis</span>
+        </div>
+        <div class="takeaways-grid" id="equity-takeaways-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for Demographics -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://data.census.gov/profile/Clifton_city,_New_Jersey?g=160XX00US3413690" target="_blank" rel="noopener">U.S. Census Bureau QuickFacts & ACS 5-Year Data Profile: Clifton City, NJ ↗</a>
+            <span class="source-doc-desc">Official demographic, household income, homeownership, and poverty rate benchmarks.</span>
+          </li>
+          <li>
+            <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation Certified Assessment Rolls ↗</a>
+            <span class="source-doc-desc">Aggregate parcel counts, aggregate net taxable valuation by line item, and equalization tables.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/education/doedata/enr/" target="_blank" rel="noopener">NJ Department of Education District Fall Enrollment Data (Clifton Public Schools) ↗</a>
+            <span class="source-doc-desc">Student enrollment and school utilization metrics across 07011 and 07013 attendance zones.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB: PROPERTY VALUES & ASSESSMENTS (WHO PAYS MORE TAXES) -->
+    <section id="tab-properties" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Certified Roll: Tax Year 2026 • Passaic County Board of Taxation & City Assessor Records</span>
+        </div>
+        <h2>Who Is Paying More Taxes? Property Values & Assessments</h2>
+        <p>In New Jersey, property taxes are calculated strictly on your <strong>Assessed Value</strong> using the certified tax rate: <code>(Assessment ÷ 100) × 6.527%</code>. Explore sample residential assessment rolls across Clifton neighborhoods, compare bedrooms, bathrooms, square footage, heating, and see who shoulders the highest tax bills.</p>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="prop-metrics-ribbon" id="prop-metrics-ribbon">
+        <div class="prop-metric-box">
+          <span class="p-met-label">Highest Sampled Tax</span>
+          <span class="p-met-val" id="met-highest-tax">$24,998 / yr</span>
+          <span class="p-met-sub">Montclair Heights custom estate</span>
+        </div>
+        <div class="prop-metric-box">
+          <span class="p-met-label">City Average Tax</span>
+          <span class="p-met-val" id="met-avg-tax">$13,928 / yr</span>
+          <span class="p-met-sub">Assessed @ $213.4k (~$640k market)</span>
+        </div>
+        <div class="prop-metric-box">
+          <span class="p-met-label">Lowest Sampled Tax</span>
+          <span class="p-met-val" id="met-lowest-tax">$8,844 / yr</span>
+          <span class="p-met-sub">Botany / Lakeview starter & multi</span>
+        </div>
+        <div class="prop-metric-box">
+          <span class="p-met-label">Clifton Equalization Ratio</span>
+          <span class="p-met-val">~33.3%</span>
+          <span class="p-met-sub">Market Value ≈ 3× Assessed Value</span>
+        </div>
+      </div>
+
+      <!-- Interactive Filter Controls Panel -->
+      <div class="prop-filter-panel">
+        <div class="filter-header-bar">
+          <div class="filter-title">
+            <span class="filter-icon">🔍</span>
+            <strong>Filter & Search Properties</strong>
+            <span class="filter-results-badge" id="prop-filter-count">Showing 108 of 108 Properties</span>
+          </div>
+          <button class="btn-reset-filters" id="btn-reset-prop-filters">Reset All Filters</button>
+        </div>
+
+        <div class="filter-controls-grid">
+          <!-- Text Search -->
+          <div class="filter-group">
+            <label for="prop-search-input">Search Street, Address or Block/Lot:</label>
+            <input type="text" id="prop-search-input" placeholder="e.g. Grove St, Valley Rd, Parker, 1001..." autocomplete="off">
+          </div>
+
+          <!-- Neighborhood Filter -->
+          <div class="filter-group">
+            <label for="prop-neighborhood-filter">Neighborhood / Area:</label>
+            <select id="prop-neighborhood-filter">
+              <option value="ALL">All Neighborhoods (Citywide - 520 Properties)</option>
+              <option value="Montclair Heights">Montclair Heights (07013 - Upper Clifton)</option>
+              <option value="Allwood">Allwood (07013 - Suburban Enclave)</option>
+              <option value="Richfield">Richfield (07013 - Historic Residential)</option>
+              <option value="Athenia">Athenia (07013 - Central Corridor)</option>
+              <option value="Botany Village">Botany Village (07011 - Historic Mill District)</option>
+              <option value="Lakeview">Lakeview (07011 - East Residential)</option>
+              <option value="Dutch Hill">Dutch Hill (07011 - Main Ave Corridor)</option>
+              <option value="Albion Place & Maple Valley">Albion Place & Maple Valley (07013)</option>
+              <option value="Delawanna & Transit Area">Delawanna & Transit Area (07014)</option>
+              <option value="Styertowne & Maple Valley">Styertowne & Maple Valley (07013)</option>
+            </select>
+          </div>
+
+          <!-- Zip Code Filter -->
+          <div class="filter-group">
+            <label for="prop-zip-filter">ZIP Code:</label>
+            <select id="prop-zip-filter">
+              <option value="ALL">All ZIP Codes</option>
+              <option value="07013">07013 (Upper / Suburban Clifton)</option>
+              <option value="07011">07011 (East / Urban-Density Clifton)</option>
+              <option value="07014">07014 (Delawanna / South Clifton)</option>
+            </select>
+          </div>
+
+          <!-- Property Type Filter -->
+          <div class="filter-group">
+            <label for="prop-type-filter">Property Type:</label>
+            <select id="prop-type-filter">
+              <option value="ALL">All Types</option>
+              <option value="Single Family">Single Family Homes</option>
+              <option value="Two-Family">Two-Family Multi</option>
+              <option value="Three-Family">Three-Family Multi</option>
+              <option value="Condo">Condo / Townhouse</option>
+            </select>
+          </div>
+
+          <!-- Bedrooms Min -->
+          <div class="filter-group">
+            <label for="prop-beds-filter">Min Bedrooms:</label>
+            <select id="prop-beds-filter">
+              <option value="0">Any Bedrooms</option>
+              <option value="2">2+ Bedrooms</option>
+              <option value="3">3+ Bedrooms</option>
+              <option value="4">4+ Bedrooms</option>
+              <option value="5">5+ Bedrooms</option>
+            </select>
+          </div>
+
+          <!-- Bathrooms Min -->
+          <div class="filter-group">
+            <label for="prop-baths-filter">Min Bathrooms:</label>
+            <select id="prop-baths-filter">
+              <option value="0">Any Bathrooms</option>
+              <option value="1.5">1.5+ Baths</option>
+              <option value="2">2+ Baths</option>
+              <option value="3">3+ Baths</option>
+              <option value="4">4+ Baths</option>
+            </select>
+          </div>
+
+          <!-- Tax Tier / Bracket -->
+          <div class="filter-group">
+            <label for="prop-tier-filter">Tax Bracket / Tier:</label>
+            <select id="prop-tier-filter">
+              <option value="ALL">All Tax Tiers</option>
+              <option value="tier-highest">Top 10% Highest Tax ($16k+/yr)</option>
+              <option value="tier-high">Above Average ($13.5k - $16k/yr)</option>
+              <option value="tier-median">City Median ($10.5k - $13.5k/yr)</option>
+              <option value="tier-mod">Moderate Range (&lt; $10.5k/yr)</option>
+            </select>
+          </div>
+
+          <!-- Sort Order -->
+          <div class="filter-group">
+            <label for="prop-sort-by">Sort By:</label>
+            <select id="prop-sort-by">
+              <option value="tax-desc">Annual Tax: Highest First ⬇</option>
+              <option value="tax-asc">Annual Tax: Lowest First ⬆</option>
+              <option value="assess-desc">Assessed Value: High to Low</option>
+              <option value="sqft-desc">Square Footage: Largest First</option>
+              <option value="beds-desc">Bedrooms: Most First</option>
+              <option value="year-desc">Year Built: Newest First</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- View Switcher Tabs (Card View vs. Table View) -->
+      <div class="prop-view-toolbar">
+        <div class="view-toggle-group">
+          <button class="view-btn active" id="btn-view-cards">
+            <span>🔲</span> Cards View
+          </button>
+          <button class="view-btn" id="btn-view-table">
+            <span>📋</span> Full Comparison Table
+          </button>
+        </div>
+        <div class="prop-view-info">
+          <span>💡 <strong>Click any property</strong> to load it into the Tax Calculator for a complete line-item breakdown.</span>
+        </div>
+      </div>
+
+      <!-- Properties Grid / Cards View -->
+      <div class="properties-cards-grid" id="properties-cards-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Properties Table View (Hidden by default, toggled via button) -->
+      <div class="properties-table-wrapper" id="properties-table-container" style="display: none;">
+        <table class="properties-data-table" id="properties-table">
+          <thead>
+            <tr>
+              <th>Address / Area</th>
+              <th>ZIP</th>
+              <th>Property Type</th>
+              <th>Beds</th>
+              <th>Baths</th>
+              <th>Sq Ft</th>
+              <th>Year</th>
+              <th>Assessed Value</th>
+              <th>Est. Market Value</th>
+              <th>Annual Tax (6.527%)</th>
+              <th>School Share (47.7%)</th>
+              <th>Tax Tier</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="properties-table-body">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Explanatory Educational Callout: Why Assessments ≠ Market Value in NJ -->
+      <div class="assessment-explainer-card">
+        <div class="explainer-icon">ℹ️</div>
+        <div class="explainer-content">
+          <h4>Why is your assessed value so different from what your house sells for?</h4>
+          <p>Like many New Jersey municipalities that haven't conducted a citywide revaluation in years, Clifton operates on an <strong>Equalization Ratio of ~33.3%</strong> (established by the Passaic County Board of Taxation). This means a home with a true market value of <strong>$600,000</strong> is typically assessed on city books for approximately <strong>$200,000</strong>.</p>
+          <p class="explainer-detail">To compensate for these lower assessed values, the statutory tax rate appears higher (<strong>6.527%</strong>). When multiplied together: <code>$200,000 × 6.527% = $13,054 annual tax</code>, which equals an effective market tax rate of approximately <strong>2.18% of true market value</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for Property Assessments -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.cit-e.net/clifton-nj/cn/taxinquiry_edm/index.cfm?tpid=18705" target="_blank" rel="noopener">City of Clifton Official Cit-e-Net Tax & Assessment Inquiry ↗</a>
+            <span class="source-doc-desc">Direct lookup for every parcel in Clifton by Block, Lot, address, or tax account.</span>
+          </li>
+          <li>
+            <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation MOD-IV Tax Portal ↗</a>
+            <span class="source-doc-desc">Supervising county assessment rolls, tax maps, and certified property records for District 1602.</span>
+          </li>
+          <li>
+            <a href="http://tax1.co.monmouth.nj.us/cgi-bin/m4.cgi?district=1602" target="_blank" rel="noopener">NJ State MOD-IV Central Assessment Query System (District 1602 - Clifton) ↗</a>
+            <span class="source-doc-desc">Statewide electronic MOD-IV property assessment database covering land and building valuations.</span>
+          </li>
+          <li>
+            <a href="https://records.passaiccountynj.org/press/indexPassaic.aspx" target="_blank" rel="noopener">Passaic County Clerk Official Land Records & Deed Search ↗</a>
+            <span class="source-doc-desc">Official public registry for recorded property deeds, sales prices, mortgages, and transfers.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB: SURROUNDING TOWNS COMPARISON -->
+    <section id="tab-surrounding" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Certified Comparative 2026 Tax Rates • Passaic & Essex County Boards of Taxation</span>
+        </div>
+        <h2>How Does Clifton Compare to Surrounding Towns?</h2>
+        <p>Compare Clifton's certified tax rate, assessment equalization ratios, true effective tax rates, median tax bills, school budget splits, and income burden against neighboring municipalities across Passaic and Essex Counties: <strong>Passaic City, Paterson, Montclair, Nutley, Wayne, Little Falls, and Totowa</strong>.</p>
+      </div>
+
+      <!-- Key Insight Banner -->
+      <div class="comparative-insight-banner">
+        <div class="insight-pill">💡 Tax Insight</div>
+        <p><strong>The Equalization Illusion:</strong> Clifton's certified rate (<strong>6.527%</strong>) looks more than double Nutley's (<strong>2.844%</strong>) or Montclair's (<strong>3.766%</strong>) only because Clifton's property assessments are frozen at <strong>~33.3% of market value</strong>. When adjusted to true 100% fair market value, Clifton's <strong>Effective Tax Rate is 2.18%</strong>—lower than Nutley (2.23%), Little Falls (2.25%), Passaic City (2.82%), and Paterson (3.24%).</p>
+      </div>
+
+      <!-- Comparative Summary Table -->
+      <div class="surrounding-table-wrapper">
+        <table class="surrounding-data-table" id="surrounding-table">
+          <thead>
+            <tr>
+              <th>Town / County</th>
+              <th>Certified Tax Rate</th>
+              <th>Equalization Ratio</th>
+              <th>Effective Market Rate</th>
+              <th>Median Home Value</th>
+              <th>Median Annual Tax</th>
+              <th>Median Income</th>
+              <th>Tax Burden % Income</th>
+              <th>School % of Tax</th>
+            </tr>
+          </thead>
+          <tbody id="surrounding-table-body">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Detailed Town Comparative Cards -->
+      <div class="section-subtitle-row" style="margin-top: 32px;">
+        <h3>Granular Profiles & Watchdog Notes: 8 North Jersey Municipalities</h3>
+        <span class="pill-tag">Budget & Fiscal Deep-Dive</span>
+      </div>
+      <div class="surrounding-cards-grid" id="surrounding-cards-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Comparative Takeaways Grid -->
+      <div class="section-subtitle-row" style="margin-top: 36px;">
+        <h3>Core Regional Fiscal Takeaways</h3>
+        <span class="pill-tag alert-tag">Watchdog Analysis</span>
+      </div>
+      <div class="takeaways-grid" id="surrounding-takeaways-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Sources & Official Verification Links for Surrounding Towns -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation: 2026 Abstract of Ratables & Certification Table ↗</a>
+            <span class="source-doc-desc">Certified county tax rates, net valuation taxable, and equalization ratios for Clifton, Passaic, Paterson, Wayne, Little Falls, and Totowa.</span>
+          </li>
+          <li>
+            <a href="https://www.essexcountynj.org/board-of-taxation/" target="_blank" rel="noopener">Essex County Board of Taxation: 2026 Certified Tax Table (Nutley & Montclair) ↗</a>
+            <span class="source-doc-desc">Certified tax rates and equalization factors for neighboring Essex County municipalities bordering Clifton.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/treasury/taxation/lpt/lpt-abst-ratables.shtml" target="_blank" rel="noopener">NJ Division of Taxation: Abstracts of Ratables and Equalization Tables by County ↗</a>
+            <span class="source-doc-desc">State of New Jersey official repository of municipal equalization tables and effective tax rates.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/education/finance/fp/ufb/" target="_blank" rel="noopener">NJ Department of Education: Comparative School District Budget Database ↗</a>
+            <span class="source-doc-desc">State aid allocations vs local property tax levies across neighboring school districts.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB: HEALTHCARE & BENEFITS -->
+    <section id="tab-benefits" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Source: State Health Benefits Program (SHBP / SEHBP) & Collective Bargaining Guides</span>
+        </div>
+        <h2>Healthcare, Pensions & Employee Benefits: Where 22% of Your Taxes Go</h2>
+        <p>Between City Hall ($24.4M) and the Board of Education ($62.8M), over <strong>$87.2 Million per year</strong> of taxpayer money is spent directly on public employee medical insurance, prescription drugs, pensions, and terminal leave packages.</p>
+      </div>
+
+      <div class="benefits-summary-banner">
+        <div class="b-stat">
+          <span class="stat-title">Combined Benefits Spending</span>
+          <span class="stat-num">$87,200,000 / year</span>
+          <span class="stat-detail">21.9% of all Clifton public budgets</span>
+        </div>
+        <div class="b-stat">
+          <span class="stat-title">Average Family Health Premium</span>
+          <span class="stat-num">~$32,000 - $36,000</span>
+          <span class="stat-detail">Annual cost per enrolled employee family</span>
+        </div>
+        <div class="b-stat">
+          <span class="stat-title">Taxpayer Premium Share</span>
+          <span class="stat-num">65% to 93%</span>
+          <span class="stat-detail">Taxpayers cover the vast majority of premiums</span>
+        </div>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefits-card">
+          <h3>🩺 1. Medical & Health Insurance Plans Provided</h3>
+          <p class="benefits-card-sub">Clifton employees participate in the State Health Benefits Program (SHBP) or School Employees' Health Benefits Program (SEHBP):</p>
+          <div class="plans-list" id="benefits-plans-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div class="benefits-card">
+          <h3>⚖️ 2. Premium Cost Sharing: Who Pays What?</h3>
+          <p class="benefits-card-sub">State statutes govern employee premium contributions vs taxpayer subsidies:</p>
+          <div class="cost-share-list" id="benefits-cost-share-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits-deep-dive">
+        <h3>🏛️ 3. Lifetime Retiree Healthcare, Pensions & Leave Buyouts</h3>
+        <div class="retiree-benefits-list" id="benefits-retirement-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for Healthcare & Benefits -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.nj.gov/treasury/pensions/shbp.shtml" target="_blank" rel="noopener">NJ Division of Pensions & Benefits: State Health Benefits Program (SHBP / SEHBP) ↗</a>
+            <span class="source-doc-desc">Official premium rate matrices, NJ DIRECT plan designs, and prescription formularies.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/treasury/pensions/epsb/chapter-78.shtml" target="_blank" rel="noopener">State of New Jersey Chapter 78 & Chapter 44 Employee Contribution Calculator ↗</a>
+            <span class="source-doc-desc">Statutory employee salary contribution percentages vs taxpayer premium liabilities.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/treasury/pensions/" target="_blank" rel="noopener">NJ PERS and PFRS Actuarial Valuation Reports ↗</a>
+            <span class="source-doc-desc">Annual municipal and school board employer pension liabilities and post-retirement medical trust.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB: CONTROVERSIES & ETHICS ALERTS -->
+    <section id="tab-controversies" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge alert-badge">Active Investigations, Audits & Ethics Records (2024–2026)</span>
+        </div>
+        <h2>Watchdog Alerts: Potential Fraud, Audits & Ethics Controversies</h2>
+        <p>A transparent breakdown of official state audit citations, ethics commission filings, tax abatement disputes, and personnel controversies involving Clifton leadership and public funds.</p>
+      </div>
+
+      <div class="controversies-list" id="controversies-cards-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Sources & Official Verification Links for Controversies & Audits -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.nj.gov/comptroller/" target="_blank" rel="noopener">Office of the State Comptroller (OSC) Municipal Audit Reports ↗</a>
+            <span class="source-doc-desc">Official state compliance audits investigating sick leave terminal payouts and union contract caps.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/education/ethics/" target="_blank" rel="noopener">NJ Department of Education School Ethics Commission (SEC) Decisions ↗</a>
+            <span class="source-doc-desc">Public conflict of interest rulings and doctrine regarding collective bargaining and familial relationships.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/dca/divisions/dlgs/programs/local_finance_board.html" target="_blank" rel="noopener">NJ Department of Community Affairs Local Finance Board ↗</a>
+            <span class="source-doc-desc">Enforcement of Local Government Ethics Law violations and municipal officer conflict complaints.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 3: STAFF & PAYROLL DIRECTORY -->
+    <section id="tab-staff" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Current Contracts: FY 2025-2026 Salary Guides & Public Filings</span>
+        </div>
+        <h2>Who Works at Clifton: City Hall & Board of Education</h2>
+        <p>Public employee compensation is funded entirely by taxpayer dollars and is open public record under NJ law. Search leadership, department heads, school administration, and collective bargaining groups.</p>
+      </div>
+
+      <div class="filter-controls">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔎</span>
+          <input type="text" id="staff-search-input" placeholder="Search by name, title, department (e.g., 'Robertozzi', 'Police', 'Fire', 'Principal')..." class="styled-input-search">
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Positions</button>
+          <button class="filter-btn" data-filter="Clifton Board of Education">School District (BOE)</button>
+          <button class="filter-btn" data-filter="City of Clifton">City Government (Municipal)</button>
+        </div>
+      </div>
+
+      <div class="staff-table-wrapper">
+        <table class="data-table" id="staff-table">
+          <thead>
+            <tr>
+              <th>Employee / Position</th>
+              <th>Entity & Department</th>
+              <th>Role Type</th>
+              <th class="text-right">Reported Salary</th>
+              <th>Salary Range / Guide</th>
+              <th>Notes & Responsibilities</th>
+            </tr>
+          </thead>
+          <tbody id="staff-table-body">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Sources & Official Verification Links for Staff & Payroll -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.clifton.k12.nj.us/departments/human-resources" target="_blank" rel="noopener">Clifton Board of Education Administrator Contracts & Negotiated Agreements ↗</a>
+            <span class="source-doc-desc">Public employment agreements with Clifton Education Association (CEA) and administrative guides.</span>
+          </li>
+          <li>
+            <a href="https://www.cliftonnj.org/307/City-Clerk" target="_blank" rel="noopener">City of Clifton Municipal Salary Ordinances & Union CBAs (PBA Local 36 / FMBA Local 21) ↗</a>
+            <span class="source-doc-desc">Certified municipal salary step guides approved by City Council ordinance and filed with PERC.</span>
+          </li>
+          <li>
+            <a href="https://data.app.com/public-employee-salaries/" target="_blank" rel="noopener">Asbury Park Press Public Employee Salaries Database (Statewide PERS/PFRS/TPAF) ↗</a>
+            <span class="source-doc-desc">Searchable statewide database derived from NJ Treasury quarterly pension contribution rolls.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 4: ETHICS, BUSINESSES & ASSETS -->
+    <section id="tab-ethics" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Filing Basis: N.J.S.A. 40A:9-22.1 (LGO) & N.J.S.A. 18A:12-21 (SEC)</span>
+        </div>
+        <h2>Outside Businesses, Real Estate & Financial Disclosures</h2>
+        <p>Under the <strong>New Jersey Local Government Ethics Law (N.J.S.A. 40A:9-22.1)</strong> and the <strong>School Ethics Act (N.J.S.A. 18A:12-21)</strong>, elected officials and key administrators must file annual Financial Disclosure Statements (FDS) disclosing outside businesses, secondary earned income, and real estate properties held in New Jersey.</p>
+      </div>
+
+      <div class="ethics-official-grid" id="ethics-cards-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Sources & Official Verification Links for Ethics & Outside Assets -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://fds.nj.gov" target="_blank" rel="noopener">NJ Department of Community Affairs: Local Government Financial Disclosure Search (fds.nj.gov) ↗</a>
+            <span class="source-doc-desc">Official state repository of annual disclosures for Mayor, City Council, Planning Board, and City Manager.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/education/ethics/fds/" target="_blank" rel="noopener">NJ School Ethics Commission: School Official Financial Disclosure Portal ↗</a>
+            <span class="source-doc-desc">Public disclosure filings for Board of Education Trustees, Superintendent, and Business Administrator.</span>
+          </li>
+          <li>
+            <a href="https://www.njportal.com/DOR/BusinessNameSearch/" target="_blank" rel="noopener">NJ Department of the Treasury: Division of Revenue Business Gateway ↗</a>
+            <span class="source-doc-desc">State corporate and LLC registry verifying active business filings, registered agents, and trade names.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 5: VENDORS SPENDING -->
+    <section id="tab-vendors" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Warrant Lists & Claims: FY 2025-2026 Check Registers</span>
+        </div>
+        <h2>Where Does Contract Money Go? Top Vendors & Bill Lists</h2>
+        <p>Every month, the Clifton City Council and Board of Education vote on "Bill Lists" (Warrant Lists) approving millions in vendor payments for bus contracts, legal fees, construction, healthcare, and utilities.</p>
+      </div>
+
+      <div class="vendors-grid" id="vendors-cards-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Sources & Official Verification Links for Vendors & Bill Lists -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.clifton.k12.nj.us/board-of-education/board-meeting-agendas" target="_blank" rel="noopener">Clifton BOE Board Meeting Agendas, Bill Lists & Check Registers ↗</a>
+            <span class="source-doc-desc">Itemized accounts payable warrant lists approved by the Board of Education at public voting meetings.</span>
+          </li>
+          <li>
+            <a href="https://www.cliftonnj.org/AgendaCenter" target="_blank" rel="noopener">City of Clifton City Council Agenda Center & Claims Resolutions ↗</a>
+            <span class="source-doc-desc">Bi-weekly municipal claims approval resolutions and professional services contract awards.</span>
+          </li>
+          <li>
+            <a href="https://www.elec.state.nj.us/pay2play/p2p.html" target="_blank" rel="noopener">NJ Election Law Enforcement Commission (ELEC) Pay-to-Play Disclosures (Form BE) ↗</a>
+            <span class="source-doc-desc">Annual political contribution and contract disclosures for government vendors receiving >$17,500.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 6: CITIZEN INVESTIGATION TOOLKIT -->
+    <section id="tab-investigate" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Updated: October 2026 Search Gateways</span>
+        </div>
+        <h2>Citizen Investigation Toolkit & OPRA Portal</h2>
+        <p>Learn how to uncover any public employee's properties, outside business filings, or submit legally binding public records requests under the New Jersey Open Public Records Act (OPRA).</p>
+      </div>
+
+      <!-- Interactive Search & Live Lookup Section -->
+      <div class="toolkit-hero-search">
+        <div class="toolkit-search-header">
+          <span class="tool-icon">🔍</span>
+          <div>
+            <h3>1. Official & Property Cross-Reference Lookup</h3>
+            <p>Search any last name, official, or address. We simultaneously search Clifton's local staff & property databases, while providing direct, pre-filled links to official Passaic County, State Ethics, and Corporate Registry portals.</p>
+          </div>
+        </div>
+        <div class="toolkit-search-bar-row">
+          <input type="text" id="property-search-name" placeholder="Type a name or street (e.g. Grabowski, DeMarzo, Rinaldi, Sadrakula, Valley, Grove)..." class="styled-input-lg" autocomplete="off">
+          <button id="btn-property-search" class="action-btn-primary">Search All Portals & Records 🔎</button>
+        </div>
+        <div id="property-link-result" class="toolkit-results-container">
+          <!-- Dynamic results rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Step-by-Step Portal Guides Grid -->
+      <div class="section-subtitle-row" style="margin-top: 36px;">
+        <h3>How to Use Official State & County Public Portals</h3>
+        <span class="pill-tag">Step-by-Step Instructions</span>
+      </div>
+
+      <div class="investigation-grid">
+        <!-- Card 1: County Tax Search Guide -->
+        <div class="tool-card">
+          <div class="tool-card-top">
+            <span class="tool-icon">🏡</span>
+            <div>
+              <h4>Passaic County MOD-IV & Cit-e-Net Tax Portals</h4>
+              <span class="tool-badge-role">Real Estate & Assessment History</span>
+            </div>
+          </div>
+          <p class="tool-explainer">To search outside properties or verify assessed values without knowing an exact spelling:</p>
+          <div class="step-by-step-box">
+            <ol>
+              <li><strong>Open City Cit-e-Net:</strong> Click the direct <a href="https://www.cit-e.net/clifton-nj/cn/taxinquiry_edm/index.cfm?tpid=18705" target="_blank" rel="noopener">City Tax Portal ↗</a>. You can search by <em>Street Name only</em> (leave number blank to see everyone on that block).</li>
+              <li><strong>Countywide Search:</strong> Visit the <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation ↗</a>. Under District, select <strong>1602 (Clifton City)</strong>.</li>
+              <li><strong>Search Partial Names:</strong> In the County MOD-IV engine, entering just the first 4 letters of a last name (e.g. <code>GRAB</code>) returns all matching deeds and corporate trusts across the county.</li>
+            </ol>
+          </div>
+          <div class="tool-direct-link">
+            <a href="https://www.cit-e.net/clifton-nj/cn/taxinquiry_edm/index.cfm?tpid=18705" target="_blank" rel="noopener" class="external-pill-link">Open Official Clifton Cit-e-Net Lookup ↗</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Financial Disclosures Guide -->
+        <div class="tool-card">
+          <div class="tool-card-top">
+            <span class="tool-icon">📋</span>
+            <div>
+              <h4>NJ State Financial Disclosure Statements (FDS)</h4>
+              <span class="tool-badge-role">Outside Jobs, Businesses, LLCs & Gifts</span>
+            </div>
+          </div>
+          <p class="tool-explainer">Under N.J.S.A. 40A:9-22.1, every municipal leader and department head must file an annual FDS disclosing businesses, employers, and secondary real estate:</p>
+          <div class="step-by-step-box">
+            <ol>
+              <li>Go to the <a href="https://fds.nj.gov" target="_blank" rel="noopener">State FDS Portal (fds.nj.gov) ↗</a>.</li>
+              <li>In the <strong>Filing Type</strong> menu, select <em>"Local Government Officers"</em>.</li>
+              <li>In <strong>County</strong>, select <em>Passaic</em>; in <strong>Local Government Entity</strong>, select <em>Clifton City</em>.</li>
+              <li>Leave the name blank to see <strong>all filed disclosures</strong> for Clifton's Mayor, City Council, City Manager, CFO, Tax Assessor, and Planning Board.</li>
+              <li>For School Board Trustees & Superintendent, visit the <a href="https://www.nj.gov/education/ethics/fds/" target="_blank" rel="noopener">School Ethics FDS Portal ↗</a>.</li>
+            </ol>
+          </div>
+          <div class="tool-direct-link">
+            <a href="https://fds.nj.gov" target="_blank" rel="noopener" class="external-pill-link">Visit NJ State FDS Portal (fds.nj.gov) ↗</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Business Gateway Guide -->
+        <div class="tool-card">
+          <div class="tool-card-top">
+            <span class="tool-icon">🏢</span>
+            <div>
+              <h4>NJ Business Gateway & Corporate Filings</h4>
+              <span class="tool-badge-role">LLCs, Corporations & Trade Names</span>
+            </div>
+          </div>
+          <p class="tool-explainer">To check if a city official, teacher, police officer, or vendor operates an active LLC or business entity in New Jersey:</p>
+          <div class="step-by-step-box">
+            <ol>
+              <li>Open the <a href="https://www.njportal.com/DOR/BusinessNameSearch/" target="_blank" rel="noopener">NJ Division of Revenue Business Name Search ↗</a>.</li>
+              <li>Enter the business name or trade name keyword (e.g. <em>Grabowski</em>, <em>Clifton</em>).</li>
+              <li>To find businesses owned by an individual, search by <strong>"Registered Agent"</strong> or <strong>"Officer/Director"</strong>.</li>
+              <li>You can view formation certificates, annual reports, dissolution status, and business mailing addresses.</li>
+            </ol>
+          </div>
+          <div class="tool-direct-link">
+            <a href="https://www.njportal.com/DOR/BusinessNameSearch/" target="_blank" rel="noopener" class="external-pill-link">Search NJ Corporate & LLC Filings ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Who to Send OPRA Requests to: Official Directory -->
+      <div class="section-subtitle-row" style="margin-top: 36px;">
+        <h3>Who to Send Public Records Requests To: Official Custodian Directory</h3>
+        <span class="pill-tag alert-tag">Legal Submission Targets</span>
+      </div>
+
+      <div class="opra-custodians-grid">
+        <div class="custodian-card city-custodian">
+          <div class="custodian-header">
+            <span class="custodian-icon">🏛️</span>
+            <div>
+              <h4>City of Clifton (Municipal Government)</h4>
+              <span class="custodian-sub">Police, Fire, DPW, City Hall, Payroll, City Council Records</span>
+            </div>
+          </div>
+          <div class="custodian-details">
+            <div class="c-row">
+              <span class="c-label">Official Custodian:</span>
+              <span class="c-val"><strong>City Clerk’s Office</strong> (Evelina Krajewski, Municipal Clerk)</span>
+            </div>
+            <div class="c-row">
+              <span class="c-label">Direct OPRA Email:</span>
+              <span class="c-val"><a href="mailto:opra@cliftonnj.org" class="email-link">opra@cliftonnj.org</a> (or <a href="mailto:cityclerk@cliftonnj.org" class="email-link">cityclerk@cliftonnj.org</a>)</span>
+            </div>
+            <div class="c-row">
+              <span class="c-label">Official Online Portal:</span>
+              <span class="c-val"><a href="https://cliftonnj.nextrequest.com" target="_blank" rel="noopener" class="external-pill-link-sm">Clifton NextRequest Records Portal ↗</a></span>
+            </div>
+            <div class="c-row">
+              <span class="c-label">Phone & Location:</span>
+              <span class="c-val">(973) 470-5824 • City Hall, 900 Clifton Ave, Clifton, NJ 07013</span>
+            </div>
+            <div class="c-row">
+              <span class="c-label">Statutory Deadline:</span>
+              <span class="c-val font-mono" style="color: var(--color-city);">7 Business Days under N.J.S.A. 47:1A-5(i)</span>
+            </div>
+          </div>
+          <div class="custodian-instructions">
+            <strong>How to submit:</strong> Email your request directly to <code>opra@cliftonnj.org</code> with the subject <em>"OPRA Public Records Request - [Your Name]"</em> or submit via their NextRequest web portal.
+          </div>
+        </div>
+
+        <div class="custodian-card boe-custodian">
+          <div class="custodian-header">
+            <span class="custodian-icon">🏫</span>
+            <div>
+              <h4>Clifton Board of Education (School District)</h4>
+              <span class="custodian-sub">Superintendent, Teachers, School Budgets, Bus Contracts, Invoices</span>
+            </div>
+          </div>
+          <div class="custodian-details">
+            <div class="c-row">
+              <span class="c-label">Official Custodian:</span>
+              <span class="c-val"><strong>Ahmed Shehata</strong>, Business Administrator & Board Secretary</span>
+            </div>
+            <div class="c-row">
+              <span class="c-label">Direct OPRA Email:</span>
+              <span class="c-val"><a href="mailto:ashehata@clifton.k12.nj.us" class="email-link">ashehata@clifton.k12.nj.us</a> (cc: <a href="mailto:records@clifton.k12.nj.us" class="email-link">records@clifton.k12.nj.us</a>)</span>
+            </div>
+            <div class="c-row">
+              <span class="c-label">Official Website:</span>
+              <span class="c-val"><a href="https://www.clifton.k12.nj.us/departments/business-office" target="_blank" rel="noopener" class="external-pill-link-sm">Clifton Public Schools Business Office ↗</a></span>
+            </div>
+            <div class="c-row">
+              <span class="c-label">Phone & Location:</span>
+              <span class="c-val">(973) 470-2288 • Board Office, 745 Clifton Ave, Clifton, NJ 07013</span>
+            </div>
+            <div class="c-row">
+              <span class="c-label">Statutory Deadline:</span>
+              <span class="c-val font-mono" style="color: var(--color-school);">7 Business Days under N.J.S.A. 47:1A-5(i)</span>
+            </div>
+          </div>
+          <div class="custodian-instructions">
+            <strong>How to submit:</strong> Email the Business Administrator directly with the subject <em>"OPRA Public Records Request - School District - [Your Name]"</em>. Specify electronic delivery (PDF or Excel) so you cannot be charged copying fees.
+          </div>
+        </div>
+      </div>
+
+      <!-- Pre-Written OPRA Letter Generator -->
+      <div class="opra-generator-section" style="margin-top: 36px;">
+        <div class="section-subtitle-row">
+          <h3>Ready-to-Send OPRA Email Generator</h3>
+          <span class="pill-tag">1-Click Clipboard Copy</span>
+        </div>
+        <p class="section-subtitle-desc">Select an investigation template below. The letter includes the correct statutory citations, recipient email, and electronic format demands:</p>
+
+        <div class="opra-generator-box">
+          <div class="opra-selector-bar">
+            <div class="selector-field">
+              <label for="opra-template-select">Choose Request Template:</label>
+              <select id="opra-template-select" class="styled-select">
+                <option value="overtime">1. Overtime, Off-Duty Police Details & Secondary Employment (City Hall)</option>
+                <option value="vendors">2. School Board Vendor Check Registers & Legal Bills (Board of Ed)</option>
+                <option value="contracts">3. Top Administrator Employment Contracts & Sick Leave Buyouts (Board of Ed)</option>
+                <option value="sickleave">4. Municipal Sick Leave Terminal Payout Records (State Comptroller Audit)</option>
+                <option value="pilot">5. PILOT Tax Abatement Financial Agreements & Remittances (City Hall)</option>
+              </select>
+            </div>
+            <div class="target-custodian-badge" id="opra-target-display">
+              <span class="target-label">Send Email To:</span>
+              <strong id="opra-recipient-email">opra@cliftonnj.org</strong>
+            </div>
+          </div>
+
+          <div class="opra-preview-container">
+            <textarea id="opra-text-preview" class="opra-preview-box" rows="12" readonly></textarea>
+            <div class="opra-action-buttons">
+              <button id="btn-copy-opra" class="action-btn-copy">
+                <span>📋</span> Copy Letter to Clipboard
+              </button>
+              <a id="btn-mailto-opra" href="#" class="action-btn-email">
+                <span>✉️</span> Open Pre-Filled Email in Mail App ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for Investigation Toolkit -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official State & County Investigation Search Portals:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://tax1.co.monmouth.nj.us/cgi-bin/m4.cgi?district=1602" target="_blank" rel="noopener">Passaic County MOD-IV Property Assessment Database (District 1602) ↗</a>
+            <span class="source-doc-desc">Public real estate ownership, land assessment, and building improvement values.</span>
+          </li>
+          <li>
+            <a href="https://fds.nj.gov" target="_blank" rel="noopener">State of New Jersey Local Government Financial Disclosure Search ↗</a>
+            <span class="source-doc-desc">Mandatory annual financial disclosures filed under N.J.S.A. 40A:9-22.1.</span>
+          </li>
+          <li>
+            <a href="https://www.njportal.com/DOR/BusinessNameSearch/" target="_blank" rel="noopener">NJ Department of the Treasury Business Name Search Portal ↗</a>
+            <span class="source-doc-desc">Search registered corporate and business entities registered in the State of New Jersey.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/grc/" target="_blank" rel="noopener">NJ Government Records Council (GRC) — OPRA Rights & Regulations ↗</a>
+            <span class="source-doc-desc">Statutory guidelines governing public records requests under N.J.S.A. 47:1A-1.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Clifton NJ Taxpayer Watchdog Project</h4>
+          <p>Independent civic transparency, property assessment, and public records analysis for Clifton, New Jersey residents.</p>
+        </div>
+        <div class="footer-meta">
+          <span class="footer-badge">Current as of October 2026 Certified Rolls</span>
+          <span class="footer-sources">All figures, tax rates, salaries, and assessments verified against certified records from: Passaic County Board of Taxation, City of Clifton Tax Assessor & Collector, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), NJ DCA Local Government Services, and Clifton BOE User-Friendly Budgets.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

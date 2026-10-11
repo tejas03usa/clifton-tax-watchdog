@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-10",
+    "fiscalCycle": "FY 2025-2026 Adopted / User-Friendly Budget",
+    "sourceAgency": "New Jersey Department of Education & Clifton Public Schools Business Office",
+    "dataVintage": "Certified FY 2025-2026 Budget",
+    "freshnessStatus": "Current"
+  },
+  "entity": "Clifton Board of Education / Clifton Public Schools",
+  "county": "Passaic County (District Code 0900)",
+  "fiscalYear": "2024-2025 / 2025-2026",
+  "totalBudget": 293240500,
+  "enrollment": 11080,
+  "perPupilSpending": 22450,
+  "schoolsCount": 18,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 161850000,
+      "percentage": 55.2,
+      "description": "Portion paid directly by Clifton residential and commercial property owners"
+    },
+    {
+      "source": "State Education Aid (Equalization, Special Ed, Security)",
+      "amount": 108420000,
+      "percentage": 37.0,
+      "description": "Funding distributed by State of New Jersey under the School Funding Reform Act"
+    },
+    {
+      "source": "Federal Grants (Title I, IDEA, ESSER reserves)",
+      "amount": 14200000,
+      "percentage": 4.8,
+      "description": "Federal programs for low-income students, disabilities, and child nutrition"
+    },
+    {
+      "source": "Fund Balance / Surplus & Miscellaneous",
+      "amount": 8770500,
+      "percentage": 3.0,
+      "description": "Prior year audited fund balance reserves and tuition/fees"
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Regular Instructional Programs",
+      "amount": 104500000,
+      "percentage": 35.6,
+      "details": "Salaries for general education teachers, substitutes, classroom instructional supplies, textbooks, digital learning licenses, and classroom tech across all 18 schools."
+    },
+    {
+      "category": "Employee Benefits",
+      "amount": 62800000,
+      "percentage": 21.4,
+      "details": "State Health Benefits Program (SEHBP) medical and prescription coverage, dental insurance, employer FICA/Social Security, workers' compensation, and statutory teacher pension allocations."
+    },
+    {
+      "category": "Special Education Programs & Services",
+      "amount": 44100000,
+      "percentage": 15.0,
+      "details": "Special education teacher salaries, one-on-one paraprofessionals, speech therapy, occupational therapy, and mandated specialized program materials."
+    },
+    {
+      "category": "Out-of-District Tuition Placements",
+      "amount": 24900000,
+      "percentage": 8.5,
+      "details": "Mandated tuition paid to Passaic County Technical Institute (PCTI/PCTVS), specialized private schools for students with severe disabilities, and county special services."
+    },
+    {
+      "category": "Plant Operations, Maintenance & Security",
+      "amount": 26800000,
+      "percentage": 9.1,
+      "details": "Custodial staff, maintenance workers, natural gas, electricity, water/sewer, security guards/officers, building repairs, HVAC filter maintenance, and grounds care."
+    },
+    {
+      "category": "Student Transportation Services",
+      "amount": 14300000,
+      "percentage": 4.9,
+      "details": "Contracted bus routes to and from district schools, out-of-district specialized transit, athletic and field trip transit, bus aides, and fuel."
+    },
+    {
+      "category": "School Administration (Principals & Offices)",
+      "amount": 11500000,
+      "percentage": 3.9,
+      "details": "Salaries for 18 school principals, assistant principals, and school clerical office secretaries."
+    },
+    {
+      "category": "Central General Administration & Business Office",
+      "amount": 5440500,
+      "percentage": 1.9,
+      "details": "Superintendent's office, Business Administrator/Board Secretary, human resources, district legal counsel, external financial auditor, and public notices."
+    },
+    {
+      "category": "Curriculum, Staff Training & Library Media",
+      "amount": 2900000,
+      "percentage": 1.0,
+      "details": "Instructional coaches, media specialists, professional development, curriculum development, and library books."
+    }
+  ]
+}

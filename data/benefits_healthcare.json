@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-10",
+    "fiscalCycle": "FY 2025-2026 / CY 2026",
+    "dataVintage": "Certified 2026 Plan Year & State Comptroller Review",
+    "sourceAgencies": [
+      "NJ Division of Pensions and Benefits (SHBP / SEHBP)",
+      "City of Clifton Annual Financial Statement & Collective Bargaining Agreements",
+      "Clifton Board of Education User-Friendly Budget",
+      "NJ Office of the State Comptroller (OSC)"
+    ],
+    "freshnessStatus": "Current"
+  },
+  "overview": {
+    "annualTaxpayerCostCity": 24400000,
+    "annualTaxpayerCostBOE": 62800000,
+    "combinedTaxpayerBenefitsCost": 87200000,
+    "percentageOfCombinedBudgets": "21.9% of all Clifton tax dollars go directly to employee benefits, healthcare, and pensions"
+  },
+  "healthcarePlans": {
+    "providers": "State Health Benefits Program (SHBP) for Municipal & School Employees' Health Benefits Program (SEHBP) for Board of Ed",
+    "primaryPlans": [
+      {
+        "planName": "NJ DIRECT 10 / NJ DIRECT 15 (Horizon Blue Cross Blue Shield)",
+        "type": "PPO (Preferred Provider Organization)",
+        "description": "Comprehensive statewide and nationwide network with $10 or $15 primary care copays, low in-network deductibles ($100-$400), and 100% preventive care coverage."
+      },
+      {
+        "planName": "NJ Educators Health Plan (NJEHP / Chapter 44)",
+        "type": "Tiered PPO for School Employees",
+        "description": "Created under P.L. 2020, c. 44 for teachers and school staff. Caps employee contribution to a percentage of base salary (1.7% - 7.2%) rather than a percentage of insurance premium, shifting more cost to the school district."
+      },
+      {
+        "planName": "Horizon OMNIA / Tiered Network",
+        "type": "Tiered Network Health Plan",
+        "description": "Lower out-of-pocket costs at Tier 1 designated hospitals and physicians (e.g. St. Joseph's Health, Hackensack Meridian)."
+      },
+      {
+        "planName": "Prescription Drug Coverage (OptumRx / Express Scripts)",
+        "type": "Standalone Formulary Plan",
+        "description": "Carve-out prescription coverage. Low copays ($3 generic, $10 preferred brand, $25 non-preferred). Taxpayer covers remaining cost of specialty drugs."
+      },
+      {
+        "planName": "Dental & Optical Coverage",
+        "type": "Employee & Family Dental/Vision",
+        "description": "Full preventive and restorative dental coverage (up to $1,500 - $2,000 annual maximum per member) and biennial optical exams/glasses allowances."
+      }
+    ]
+  },
+  "costSharing": {
+    "statutoryFramework": "Chapter 78 (P.L. 2011, c. 78) & Chapter 44 (P.L. 2020, c. 44)",
+    "rules": [
+      {
+        "tier": "Municipal Staff (Chapter 78 Grid)",
+        "employeeContribution": "3.0% to 35.0% of insurance premium based on salary tier",
+        "taxpayerContribution": "65.0% to 97.0% of premium cost",
+        "note": "For an employee earning $120,000 with family coverage costing $34,000/year, the employee pays ~35% ($11,900) while the City of Clifton taxpayer pays 65% ($22,100/year)."
+      },
+      {
+        "tier": "School Staff (Chapter 44 NJEHP)",
+        "employeeContribution": "1.7% to 7.2% of annual base salary",
+        "taxpayerContribution": "Balance of total premium cost",
+        "note": "A teacher making $75,000 pays ~4.5% of salary ($3,375), while the Board of Education pays the remaining ~$28,000+ family premium cost."
+      }
+    ]
+  },
+  "retirementAndLeaveBenefits": [
+    {
+      "benefitName": "Lifetime Retiree Health Insurance (The 25-Year Rule)",
+      "legalAuthority": "N.J.S.A. 40A:10-23 / Chapter 48",
+      "taxpayerImpact": "Multi-million dollar unfunded other post-employment benefits (OPEB) liability",
+      "details": "City employees and teachers who retire with 25 or more years of credited service in the state pension system receive 100% employer-provided health insurance coverage for themselves and eligible dependents until eligible for Medicare, plus Medicare Part B reimbursement."
+    },
+    {
+      "benefitName": "Statutory Pension Systems (PFRS, PERS, TPAF)",
+      "legalAuthority": "NJ Division of Pensions and Benefits",
+      "taxpayerImpact": "City pays ~$12.8M annually into PFRS/PERS",
+      "details": "Police and Firemen's Retirement System (PFRS) allows retirement after 20-25 years with pension payments up to 65%-70% of final compensation. Civilian workers belong to PERS. School teachers belong to TPAF (funded via State appropriation)."
+    },
+    {
+      "benefitName": "Accumulated Sick Leave & Terminal Leave Payouts",
+      "legalAuthority": "Collective Bargaining Agreements & P.L. 2010, c. 3",
+      "taxpayerImpact": "Significant lump-sum liability upon employee retirements",
+      "details": "Under New Jersey P.L. 2010, c. 3, sick leave payouts for employees hired after May 21, 2010 are supposed to be capped at $15,000. However, the NJ State Comptroller found that five of Clifton's union contracts bypassed or omitted this cap, permitting employees to accumulate and cash out up to 260 unused sick days upon departure."
+    },
+    {
+      "benefitName": "Health Insurance Opt-Out Waiver Payments",
+      "legalAuthority": "N.J.S.A. 40A:10-17.1",
+      "taxpayerImpact": "Direct cash stipends of up to $5,000/year",
+      "details": "Employees who are covered under a spouse's health plan can opt out of Clifton's coverage and receive a cash incentive payment of 25% of the premium saved, capped at $5,000 annually."
+    },
+    {
+      "benefitName": "Contractual Longevity Pay",
+      "legalAuthority": "PBA Local 36, FMBA Local 21, and DPW Union Guides",
+      "taxpayerImpact": "Automatic 2% to 10%+ base salary step increases",
+      "details": "Police officers, firefighters, and senior DPW staff receive automatic longevity step percentage increases added directly to base pay after 5, 10, 15, and 20 years of municipal service."
+    }
+  ]
+}
