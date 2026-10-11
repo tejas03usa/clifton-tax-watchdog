@@ -352,6 +352,11 @@ body {
   animation: dropdownFade 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+#dropdown-personnel .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
 .nav-dropdown.open .dropdown-menu {
   display: flex;
 }
@@ -1340,7 +1345,7 @@ body {
 
 .search-input-wrapper {
   flex: 1;
-  min-width: 320px;
+  min-width: min(100%, 280px);
   position: relative;
   display: flex;
   align-items: center;
@@ -1664,7 +1669,7 @@ body {
 
 .styled-input-lg {
   flex: 1;
-  min-width: 280px;
+  min-width: min(100%, 260px);
   padding: 14px 18px;
   font-size: 1rem;
   font-family: var(--font-sans);
@@ -2242,7 +2247,7 @@ body {
 
 .selector-field {
   flex: 1;
-  min-width: 300px;
+  min-width: min(100%, 260px);
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -3548,6 +3553,372 @@ body {
   line-height: 1.5;
   margin-top: auto;
 }
+
+/* ==========================================================================
+   COMPREHENSIVE MOBILE PHONE RESPONSIVENESS (< 768px & < 480px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Container & Layout */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Status Bar */
+  .top-status-bar {
+    padding: 6px 0;
+  }
+
+  .status-bar-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .status-quick-links {
+    font-size: 0.72rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .status-sep {
+    display: inline;
+  }
+
+  /* Header Section */
+  .app-header {
+    padding: 24px 0 20px;
+  }
+
+  .header-titles h1 {
+    font-size: 1.85rem;
+    letter-spacing: -0.02em;
+    word-break: break-word;
+  }
+
+  .header-titles .subtitle {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .header-stat-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .stat-card {
+    padding: 14px 16px;
+  }
+
+  .stat-card-num {
+    font-size: 1.45rem;
+  }
+
+  /* Mobile Navigation Bar */
+  .nav-bar {
+    top: 0;
+    padding: 4px 0;
+  }
+
+  .nav-container {
+    padding: 0 12px;
+  }
+
+  .nav-menu {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 2px;
+    gap: 8px;
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item-btn,
+  .nav-dropdown-trigger {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* Mobile Bottom Sheet for Dropdowns */
+  .dropdown-menu {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100vw;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid var(--border-light);
+    border-bottom: none;
+    box-shadow: 0 -12px 35px rgba(0, 0, 0, 0.3);
+    padding: 24px 16px calc(18px + env(safe-area-inset-bottom, 12px));
+    max-height: 82vh;
+    overflow-y: auto;
+    animation: mobileSheetSlide 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2200;
+  }
+
+  /* Visual handle on top of bottom sheet */
+  .dropdown-menu::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 4px;
+    background: var(--border-subtle);
+    border-radius: var(--radius-pill);
+  }
+
+  /* Blurred Backdrop when sheet is open */
+  .nav-dropdown.open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 2150;
+  }
+
+  @keyframes mobileSheetSlide {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .dropdown-item {
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    border-radius: var(--radius-sm);
+  }
+
+  .d-item-text strong {
+    font-size: 0.94rem;
+  }
+
+  .d-item-text small {
+    font-size: 0.78rem;
+  }
+
+  /* Calculator Section on Mobile */
+  .calc-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .calc-card {
+    padding: 20px 16px;
+  }
+
+  .styled-input {
+    font-size: 1.35rem;
+    padding: 14px 14px 14px 34px;
+  }
+
+  .currency-symbol {
+    font-size: 1.2rem;
+    left: 14px;
+  }
+
+  .calc-summary-panel {
+    padding: 16px;
+  }
+
+  .summary-line.main-total .total-highlight {
+    font-size: 1.45rem;
+  }
+
+  .quick-presets {
+    gap: 6px;
+  }
+
+  .preset-btn {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    min-height: 40px;
+  }
+
+  .entity-calc-card {
+    padding: 16px;
+  }
+
+  .entity-name {
+    font-size: 1.05rem;
+  }
+
+  .entity-amt {
+    font-size: 1.25rem;
+  }
+
+  /* Grids to Single Column */
+  .budget-comparison-grid,
+  .neighborhoods-grid,
+  .takeaways-grid,
+  .properties-cards-grid,
+  .investigation-grid,
+  .opra-custodians-grid,
+  .vendors-grid,
+  .surrounding-cards-grid,
+  .result-cards-subgrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Filter Controls */
+  .prop-filter-panel {
+    padding: 18px 16px;
+  }
+
+  .filter-controls-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .filter-btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  /* Horizontal Scrolling Tables Touch Momentum */
+  .staff-table-wrapper,
+  .properties-table-wrapper,
+  .surrounding-table-wrapper {
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
+  }
+
+  .data-table th,
+  .data-table td,
+  .properties-data-table th,
+  .properties-data-table td,
+  .surrounding-data-table th,
+  .surrounding-data-table td {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+
+  /* Citizen Investigation Toolkit */
+  .toolkit-hero-search {
+    padding: 20px 16px;
+  }
+
+  .toolkit-search-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .toolkit-search-bar-row {
+    flex-direction: column;
+  }
+
+  .action-btn-primary {
+    width: 100%;
+    padding: 12px 18px;
+    text-align: center;
+  }
+
+  .opra-generator-box {
+    padding: 18px 16px;
+  }
+
+  .opra-selector-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .target-custodian-badge {
+    width: 100%;
+  }
+
+  .opra-action-buttons {
+    flex-direction: column;
+  }
+
+  .action-btn-copy,
+  .action-btn-email {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Page Footer */
+  .footer-top {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra compact for smaller mobile devices */
+  .container {
+    padding: 0 12px;
+  }
+
+  .section-intro h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-intro p {
+    font-size: 0.88rem;
+  }
+
+  .prop-metrics-ribbon {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .prop-metric-box {
+    padding: 12px 14px;
+  }
+
+  .p-met-val {
+    font-size: 1.35rem;
+  }
+
+  .prop-specs-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .spec-item {
+    padding: 6px 8px;
+  }
+
+  .spec-val {
+    font-size: 0.82rem;
+  }
+}
+
 
 
 

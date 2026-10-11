@@ -167,15 +167,18 @@ function setupTabs() {
     }
   });
 
-  // Close dropdowns on click outside
+  // Close dropdowns on click outside or on mobile backdrop
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-dropdown')) {
-      dropdowns.forEach(dd => {
-        dd.classList.remove('open');
-        const trig = dd.querySelector('.nav-dropdown-trigger');
-        if (trig) trig.setAttribute('aria-expanded', 'false');
-      });
-    }
+    dropdowns.forEach(dd => {
+      if (dd.classList.contains('open')) {
+        const menu = dd.querySelector('.dropdown-menu');
+        const trigger = dd.querySelector('.nav-dropdown-trigger');
+        if ((!menu || !menu.contains(e.target)) && (!trigger || !trigger.contains(e.target))) {
+          dd.classList.remove('open');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
   });
 
   // Close dropdown on Escape key
