@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-11 21:11:29 UTC",
+  "lastRun": "2026-10-11 21:50:37 UTC",
   "date": "2026-10-11",
   "allDatasetsValid": true,
   "portalHealth": [
@@ -118,7 +118,8 @@
         "cityOverview",
         "zipCodeComparison",
         "neighborhoods",
-        "equityAnalysis"
+        "equityAnalysis",
+        "familyChildDemographics"
       ]
     },
     "surrounding_towns_comparison.json": {

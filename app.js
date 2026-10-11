@@ -716,6 +716,158 @@ function renderDemographics() {
       </div>
     `).join('');
   }
+
+  // Render Family & School Enrollment Demographics
+  renderFamilyAndSchools();
+}
+
+// Render Family Child Demographics & School Feeder Network
+function renderFamilyAndSchools() {
+  if (!demographicsData || !demographicsData.familyChildDemographics) return;
+
+  const fData = demographicsData.familyChildDemographics;
+
+  // 1. Family Stats Ribbon
+  const ribbon = document.getElementById('family-stats-ribbon');
+  if (ribbon && fData.citywide) {
+    const c = fData.citywide;
+    ribbon.innerHTML = `
+      <div class="family-stat-box highlight-stat">
+        <span class="f-stat-label">Families With Children</span>
+        <span class="f-stat-val">${c.householdsWithChildrenPercent}%</span>
+        <span class="f-stat-sub">${c.householdsWithChildrenUnder18.toLocaleString()} of ${c.totalHouseholds.toLocaleString()} Clifton households</span>
+      </div>
+      <div class="family-stat-box">
+        <span class="f-stat-label">Public School Students</span>
+        <span class="f-stat-val font-mono" style="color: var(--color-school);">${c.enrolledPublicSchools.toLocaleString()}</span>
+        <span class="f-stat-sub">${c.enrolledPublicPercent}% of all ${c.totalSchoolAgeChildren.toLocaleString()} school-age kids</span>
+      </div>
+      <div class="family-stat-box">
+        <span class="f-stat-label">East Clifton (07011) Share</span>
+        <span class="f-stat-val" style="color: #dc2626;">53.2%</span>
+        <span class="f-stat-sub">Supplies 5,720 students • Pays 36.7% school levy</span>
+      </div>
+      <div class="family-stat-box">
+        <span class="f-stat-label">West Clifton (07013) Share</span>
+        <span class="f-stat-val" style="color: #166534;">40.7%</span>
+        <span class="f-stat-sub">Supplies 4,380 students • Pays 57.4% school levy</span>
+      </div>
+    `;
+  }
+
+  // 2. Family vs Tax Comparison Table
+  const tableBody = document.getElementById('family-tax-table-body');
+  if (tableBody && fData.zipBreakdown) {
+    tableBody.innerHTML = fData.zipBreakdown.map(z => {
+      const isRecipient = z.ratioStudentsToTaxes > 1.1;
+      const isSubsidizer = z.ratioStudentsToTaxes < 0.9;
+      const badgeClass = isRecipient ? 'badge-recipient' : (isSubsidizer ? 'badge-subsidizer' : 'badge-balanced');
+      const badgeIcon = isRecipient ? '📥' : (isSubsidizer ? '📤' : '⚖️');
+      return `
+        <tr>
+          <td>
+            <strong>ZIP ${z.zip}</strong><br>
+            <small style="color: var(--text-muted);">${z.area}</small>
+          </td>
+          <td><strong>${z.households.toLocaleString()}</strong></td>
+          <td><span class="stat-highlight-tag">${z.householdsWithChildrenPercent}%</span></td>
+          <td>${z.schoolAgeChildren.toLocaleString()}</td>
+          <td style="font-weight: 700; color: var(--color-school);">${z.districtStudentsSent.toLocaleString()}</td>
+          <td><strong>${z.districtStudentsPercent}%</strong></td>
+          <td style="font-weight: 700; color: #b91c1c;">${z.residentialTaxSharePaid}%</td>
+          <td>
+            <span class="fiscal-badge ${badgeClass}">
+              ${badgeIcon} ${z.ratioStudentsToTaxes}× (${z.subsidyStatus})
+            </span>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  // 3. School Feeder Cards Grid
+  const schoolsGrid = document.getElementById('schools-cards-grid');
+  const filterPills = document.querySelectorAll('#school-type-filters .filter-btn');
+
+  function renderSchools(filterType = 'all') {
+    if (!schoolsGrid || !fData.schools) return;
+
+    let list = fData.schools;
+    if (filterType !== 'all') {
+      list = list.filter(s => s.type === filterType);
+    }
+
+    schoolsGrid.innerHTML = list.map(s => {
+      const typeClass = s.type === 'Elementary' ? 'pill-school' : (s.type === 'Middle School' ? 'pill-city' : 'pill-county');
+      return `
+        <div class="school-card">
+          <div class="school-card-top">
+            <div>
+              <span class="school-type-pill ${typeClass}">${s.type}</span>
+              <h4 class="school-name">${s.name}</h4>
+              <div class="school-address">📍 ${s.address}</div>
+            </div>
+            <div class="school-enrollment-badge">
+              <span class="seb-num">${s.enrollment.toLocaleString()}</span>
+              <span class="seb-label">Students</span>
+            </div>
+          </div>
+
+          <div class="school-specs-grid">
+            <div class="s-spec-item">
+              <span class="s-spec-label">Grades Served</span>
+              <span class="s-spec-val">🎒 ${s.grades}</span>
+            </div>
+            <div class="s-spec-item">
+              <span class="s-spec-label">Attendance Zone</span>
+              <span class="s-spec-val">🏘️ ${s.neighborhood}</span>
+            </div>
+            <div class="s-spec-item">
+              <span class="s-spec-label">Kids In Zone</span>
+              <span class="s-spec-val">👨‍👩‍👧 ${s.familiesWithKidsPercentInZone}% Families</span>
+            </div>
+            <div class="s-spec-item">
+              <span class="s-spec-label">Student-Teacher</span>
+              <span class="s-spec-val">👩‍🏫 ${s.studentTeacherRatio}</span>
+            </div>
+            <div class="s-spec-item">
+              <span class="s-spec-label">Economically Disadvantaged</span>
+              <span class="s-spec-val highlight-warn">${s.economicallyDisadvantagedPercent}%</span>
+            </div>
+            <div class="s-spec-item">
+              <span class="s-spec-label">Multilingual / ELL</span>
+              <span class="s-spec-val">${s.multilingualLearnersPercent}%</span>
+            </div>
+          </div>
+
+          <div class="school-feeder-box">
+            <span class="feeder-label">Feeder Pathway:</span>
+            <div class="feeder-path">
+              <span>${s.name}</span>
+              ${s.feederMiddle !== 'N/A (Feeds into Clifton High School)' && !s.feederMiddle.startsWith('Receives') ? `➔ <span>${s.feederMiddle}</span>` : ''}
+              ${s.type !== 'High School' ? `➔ <span>Clifton High School (CHS)</span>` : ''}
+            </div>
+          </div>
+
+          <div class="school-notes-footer">
+            ${s.notes}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // Setup School Filter Buttons
+  filterPills.forEach(btn => {
+    btn.onclick = () => {
+      filterPills.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-school-filter');
+      renderSchools(filter);
+    };
+  });
+
+  renderSchools('all');
 }
 
 // Pagination Range Helper
