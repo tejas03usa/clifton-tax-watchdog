@@ -1,9 +1,14 @@
 import json
 import random
+from decimal import Decimal, ROUND_HALF_UP
 
 random.seed(101)  # reproducible seed
 
-tax_rate = 6.527 / 100.0  # 6.527% Certified 2026 Rate
+def calc_tax(assessed, rate_str):
+    return float((Decimal(str(assessed)) * Decimal(str(rate_str)) / Decimal('100')).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP))
+
+def round_cents(val):
+    return float(Decimal(str(val)).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP))
 
 neighborhood_definitions = [
     {
@@ -26,7 +31,7 @@ neighborhood_definitions = [
         'year_range': (1950, 2018),
         'assessed_range': (235000, 420000),
         'market_ratio': 3.0,
-        'count': 60
+        'count': 200
     },
     {
         'name': 'Allwood',
@@ -35,7 +40,8 @@ neighborhood_definitions = [
             'Allwood Rd', 'Chelsea Rd', 'Surrey Ln', 'Devonshire Rd', 'Rutgers Pl',
             'Market St', 'Styertowne Rd', 'Linzenbold Dr', 'Mount Prospect Ave', 'Richfield Ter',
             'Cambridge Rd', 'Oxford Rd', 'Sheffield Rd', 'Windsor Rd', 'Eton Pl',
-            'Kensington Ter', 'Berkshire Rd', 'Somerset Pl', 'Dorset Rd', 'Warwick Rd'
+            'Kensington Ter', 'Berkshire Rd', 'Somerset Pl', 'Dorset Rd', 'Warwick Rd',
+            'Hastings Rd', 'Coventry Rd', 'Canterbury Rd', 'Marlborough Rd'
         ],
         'types': [
             'Single Family - Cape Cod', 'Single Family - Ranch',
@@ -48,7 +54,7 @@ neighborhood_definitions = [
         'year_range': (1940, 1988),
         'assessed_range': (185000, 285000),
         'market_ratio': 3.0,
-        'count': 65
+        'count': 220
     },
     {
         'name': 'Richfield',
@@ -56,7 +62,8 @@ neighborhood_definitions = [
         'streets': [
             'Richfield Ter', 'Mount Prospect Ave', 'Linzenbold Dr', 'Grover Ave',
             'Richardson Dr', 'Clifton Blvd', 'Parkway', 'Fenner Ave', 'Rock Hill Rd',
-            'Robinwood Dr', 'Meadow Ln', 'Broad St', 'Horton Ave', 'Althea Ln'
+            'Robinwood Dr', 'Meadow Ln', 'Broad St', 'Horton Ave', 'Althea Ln',
+            'Montclair Ave', 'Fairmount Ave', 'Orchard Dr'
         ],
         'types': [
             'Single Family - Colonial', 'Single Family - Ranch', 'Single Family - Split-Level'
@@ -68,7 +75,7 @@ neighborhood_definitions = [
         'year_range': (1948, 1992),
         'assessed_range': (190000, 295000),
         'market_ratio': 3.0,
-        'count': 50
+        'count': 175
     },
     {
         'name': 'Athenia',
@@ -77,7 +84,7 @@ neighborhood_definitions = [
             'Clifton Ave', 'Van Houten Ave', 'Colfax Ave', 'Grover Ave', 'Nash Park Rd',
             'Stonestown Rd', 'Barbour Ave', 'Arthur St', 'Darwin Ave', 'Gould Ave',
             'Emerson St', 'Whittier St', 'Longfellow Ave', 'Bryant Ave', 'Lowell Pl',
-            'Athenia Dr', 'Harding Ave', 'Coolidge Ave', 'Hoover Ave'
+            'Athenia Dr', 'Harding Ave', 'Coolidge Ave', 'Hoover Ave', 'Wilson Ave', 'Roosevelt Ave'
         ],
         'types': [
             'Single Family - Colonial', 'Single Family - Cape Cod',
@@ -90,7 +97,7 @@ neighborhood_definitions = [
         'year_range': (1920, 1985),
         'assessed_range': (155000, 235000),
         'market_ratio': 3.05,
-        'count': 60
+        'count': 215
     },
     {
         'name': 'Botany Village',
@@ -99,7 +106,7 @@ neighborhood_definitions = [
             'Randolph Ave', 'Parker Ave', 'Highland Ave', 'Dayton Ave', 'Lake Ave',
             'Ackerman Ave', 'Center St', 'Smyth St', 'East 5th St', 'East 7th St',
             'East 9th St', 'Russell St', 'Hope Ave', 'Van Winkle Ave', 'Mercer St',
-            'Merselis Ave', 'Chester St', 'Holdsworth Dr', 'Dundee Ave'
+            'Merselis Ave', 'Chester St', 'Holdsworth Dr', 'Dundee Ave', 'Clinton Ave'
         ],
         'types': [
             'Two-Family Multi', 'Three-Family Multi', 'Single Family - Victorian',
@@ -112,7 +119,7 @@ neighborhood_definitions = [
         'year_range': (1900, 1968),
         'assessed_range': (130000, 205000),
         'market_ratio': 3.1,
-        'count': 60
+        'count': 210
     },
     {
         'name': 'Lakeview',
@@ -120,7 +127,8 @@ neighborhood_definitions = [
         'streets': [
             'Lakeview Ave', 'Crooks Ave', 'Trenton Ave', 'Lexington Ave', 'Piaget Ave',
             'Sipp Ave', 'East 1st St', 'East 3rd St', 'Railway Ave', 'Knickerbocker Ave',
-            'Vreeland Ave', 'Garrison Ave', 'Fleischer Pl', 'Kuller Rd', 'Sutherland Rd'
+            'Vreeland Ave', 'Garrison Ave', 'Fleischer Pl', 'Kuller Rd', 'Sutherland Rd',
+            'Weasel Brook Park Dr'
         ],
         'types': [
             'Single Family - Colonial', 'Two-Family Multi', 'Single Family - Ranch',
@@ -133,7 +141,7 @@ neighborhood_definitions = [
         'year_range': (1915, 1995),
         'assessed_range': (130000, 190000),
         'market_ratio': 3.1,
-        'count': 55
+        'count': 190
     },
     {
         'name': 'Dutch Hill',
@@ -141,7 +149,7 @@ neighborhood_definitions = [
         'streets': [
             'Main Ave', 'Clifton Ave', 'First St', 'Second St', 'Third St',
             'Fourth St', 'Passaic Ave', 'Union Ave', 'Madison Ave', 'Washington Ave',
-            'Jefferson St', 'Adams St', 'Monroe St', 'Jackson St'
+            'Jefferson St', 'Adams St', 'Monroe St', 'Jackson St', 'Harrison St'
         ],
         'types': [
             'Single Family - Colonial', 'Two-Family Multi', 'Single Family - Cape Cod',
@@ -154,7 +162,7 @@ neighborhood_definitions = [
         'year_range': (1910, 1975),
         'assessed_range': (145000, 215000),
         'market_ratio': 3.05,
-        'count': 45
+        'count': 170
     },
     {
         'name': 'Albion Place & Maple Valley',
@@ -162,7 +170,7 @@ neighborhood_definitions = [
         'streets': [
             'Paulison Ave', 'Hazel St', 'Van Houten Ave', 'Clifton Blvd', 'Broad St',
             'Maple St', 'Garret Rd', 'Reservoir Dr', 'Mountain Ave', 'Valley Rd',
-            'Viewmont Ave', 'Fairview Ave', 'Glen Rock Rd', 'Highland Ave'
+            'Viewmont Ave', 'Fairview Ave', 'Glen Rock Rd', 'Highland Ave', 'Albion St'
         ],
         'types': [
             'Single Family - Colonial', 'Single Family - Split-Level',
@@ -175,7 +183,7 @@ neighborhood_definitions = [
         'year_range': (1930, 1989),
         'assessed_range': (170000, 255000),
         'market_ratio': 3.0,
-        'count': 45
+        'count': 165
     },
     {
         'name': 'Delawanna & Transit Area',
@@ -183,7 +191,7 @@ neighborhood_definitions = [
         'streets': [
             'Delawanna Ave', 'Main Ave', 'Rutherford Ave', 'Oakridge Rd', 'Penn Ave',
             'River Rd', 'Kuller Rd', 'Franklin Ave', 'Belleville Ave', 'Locust Ave',
-            'Linden Ave', 'Chestnut St', 'Maple Ave', 'Kingsland Rd'
+            'Linden Ave', 'Chestnut St', 'Maple Ave', 'Kingsland Rd', 'Rutgers Ave'
         ],
         'types': [
             'Single Family - Colonial', 'Townhouse / Condo', 'Two-Family Multi',
@@ -196,14 +204,15 @@ neighborhood_definitions = [
         'year_range': (1930, 2021),
         'assessed_range': (150000, 225000),
         'market_ratio': 3.0,
-        'count': 45
+        'count': 165
     },
     {
         'name': 'Styertowne & Maple Valley',
         'zip': '07013',
         'streets': [
             'Robinhood Rd', 'Styertowne Rd', 'Van Houten Ave', 'Clifton Ave',
-            'Meadow Ln', 'Woodlawn Ave', 'Orchard Dr', 'Bramble Ln', 'Briarwood Rd'
+            'Meadow Ln', 'Woodlawn Ave', 'Orchard Dr', 'Bramble Ln', 'Briarwood Rd',
+            'Bloomfield Ave', 'Allwood Rd'
         ],
         'types': [
             'Single Family - Colonial', 'Single Family - Cape Cod', 'Townhouse / Condo'
@@ -215,18 +224,28 @@ neighborhood_definitions = [
         'year_range': (1952, 1985),
         'assessed_range': (180000, 250000),
         'market_ratio': 3.0,
-        'count': 35
+        'count': 140
     }
 ]
 
 properties = []
 prop_id = 1001
+used_addresses = set()
 
 for cfg in neighborhood_definitions:
     for i in range(cfg['count']):
-        street = random.choice(cfg['streets'])
-        st_num = random.randint(11, 899)
-        address = f"{st_num} {street}"
+        # Ensure unique addresses
+        for _ in range(50):
+            street = random.choice(cfg['streets'])
+            st_num = random.randint(11, 989)
+            address = f"{st_num} {street}"
+            if address not in used_addresses:
+                used_addresses.add(address)
+                break
+        else:
+            address = f"{1000 + i} {random.choice(cfg['streets'])}"
+            used_addresses.add(address)
+
         ptype = random.choice(cfg['types'])
         sqft = round(random.randint(cfg['sqft_range'][0], cfg['sqft_range'][1]) / 50) * 50
         
@@ -256,16 +275,18 @@ for cfg in neighborhood_definitions:
         bldg_val = assessed_val - land_val
         
         market_val = round((assessed_val * cfg['market_ratio']) / 5000) * 5000
-        annual_tax = round(assessed_val * tax_rate, 2)
-        quarterly_tax = round(annual_tax / 4.0, 2)
-        monthly_tax = round(annual_tax / 12.0, 2)
         
-        school_tax = round(annual_tax * 0.476635, 2)
-        muni_tax = round(annual_tax * 0.294163, 2)
-        county_tax = round(annual_tax * 0.229202, 2)
+        # Exact certified sub-rates reconciliation: 6.527% = 3.324% School + 2.072% City + 1.131% County
+        annual_tax = calc_tax(assessed_val, '6.527')
+        quarterly_tax = round_cents(annual_tax / 4.0)
+        monthly_tax = round_cents(annual_tax / 12.0)
         
-        block = random.randint(10, 125)
-        lot_no = random.randint(1, 60)
+        school_tax = calc_tax(assessed_val, '3.324')
+        muni_tax = calc_tax(assessed_val, '2.072')
+        county_tax = round_cents(annual_tax - school_tax - muni_tax)
+        
+        block = random.randint(10, 195)
+        lot_no = random.randint(1, 90)
         
         has_garage = random.choice(['1-Car Attached', '2-Car Attached', '2-Car Detached', '1-Car Detached', 'Driveway / None'])
         basement = random.choice(['Full Finished', 'Full Unfinished', 'Partial Finished', 'Crawl Space'])
@@ -319,6 +340,11 @@ for cfg in neighborhood_definitions:
         })
         prop_id += 1
 
+sorted_taxes = sorted(p['annualTax'] for p in properties)
+median_tax = round(sorted_taxes[len(sorted_taxes) // 2], 2)
+sorted_assessed = sorted(p['assessedTotal'] for p in properties)
+median_assessed = round(sorted_assessed[len(sorted_assessed) // 2], 2)
+
 output_data = {
     'metadata': {
         'lastUpdated': '2026-10-11',
@@ -339,10 +365,11 @@ output_data = {
         'highestTax': max(p['annualTax'] for p in properties),
         'lowestTax': min(p['annualTax'] for p in properties),
         'averageTax': round(sum(p['annualTax'] for p in properties) / len(properties), 2),
-        'medianTax': 12466.57,
+        'medianTax': median_tax,
         'highestAssessed': max(p['assessedTotal'] for p in properties),
         'lowestAssessed': min(p['assessedTotal'] for p in properties),
-        'averageAssessed': round(sum(p['assessedTotal'] for p in properties) / len(properties), 2)
+        'averageAssessed': round(sum(p['assessedTotal'] for p in properties) / len(properties), 2),
+        'medianAssessed': median_assessed
     },
     'properties': properties
 }

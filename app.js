@@ -15,6 +15,8 @@ let demographicsData = null;
 let propertyAssessmentsData = null;
 let surroundingTownsData = null;
 let currentFilteredProperties = [];
+let propCurrentPage = 1;
+const propPageSize = 36;
 
 // OPRA Templates
 const opraTemplates = {
@@ -692,7 +694,7 @@ function renderDemographics() {
         </div>
         <div class="card-action-bar-jumps" style="margin-top: 12px;">
           <button class="btn-jump-action" data-jump-tab="tab-properties" data-jump-neighborhood="${n.name}">
-            <span>🏡</span> Filter 520 Properties in ${n.name} ➔
+            <span>🏡</span> Filter Properties in ${n.name} ➔
           </button>
         </div>
       </div>
@@ -716,12 +718,129 @@ function renderDemographics() {
   }
 }
 
+// Pagination Range Helper
+function getPaginationRange(current, total) {
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+  const delta = 2, range = [], rangeWithDots = [];
+  let l;
+  for (let i = 1; i <= total; i++) {
+    if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) range.push(i);
+  }
+  for (const i of range) {
+    if (l) {
+      if (i - l === 2) rangeWithDots.push(l + 1);
+      else if (i - l !== 1) rangeWithDots.push('…');
+    }
+    rangeWithDots.push(i);
+    l = i;
+  }
+  return rangeWithDots;
+}
+
+// Go to specific property pagination page
+function goToPropertyPage(page) {
+  if (!propertyAssessmentsData || !currentFilteredProperties) return;
+  const totalPages = Math.max(1, Math.ceil(currentFilteredProperties.length / propPageSize));
+  if (page < 1 || page > totalPages) return;
+  propCurrentPage = page;
+  renderProperties(currentFilteredProperties, propCurrentPage);
+  
+  const anchor = document.getElementById('properties-pagination-top') || document.getElementById('tab-properties');
+  if (anchor) {
+    anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// Render Top and Bottom Pagination Controls
+function renderPaginationControls(totalProps, currentPage, totalPages) {
+  const topContainer = document.getElementById('properties-pagination-top');
+  const bottomContainer = document.getElementById('properties-pagination-bottom');
+  if (!topContainer && !bottomContainer) return;
+
+  if (totalProps === 0 || totalPages <= 1) {
+    if (topContainer) topContainer.innerHTML = '';
+    if (bottomContainer) bottomContainer.innerHTML = '';
+    return;
+  }
+
+  const startItem = (currentPage - 1) * propPageSize + 1;
+  const endItem = Math.min(currentPage * propPageSize, totalProps);
+  const pagesList = getPaginationRange(currentPage, totalPages);
+
+  const pagesHtml = pagesList.map(item => {
+    if (item === '…') {
+      return `<span class="pagination-ellipsis">…</span>`;
+    }
+    const isActive = item === currentPage;
+    return `
+      <button class="pagination-btn ${isActive ? 'active' : ''}" 
+              onclick="goToPropertyPage(${item})" 
+              ${isActive ? 'aria-current="page"' : ''}
+              title="Go to page ${item}">
+        ${item}
+      </button>
+    `;
+  }).join('');
+
+  const paginationHtml = `
+    <div class="pagination-bar">
+      <div class="pagination-summary">
+        Showing <strong>${startItem.toLocaleString()}–${endItem.toLocaleString()}</strong> of <strong>${totalProps.toLocaleString()}</strong> Homes (Page ${currentPage} of ${totalPages})
+      </div>
+      <div class="pagination-nav">
+        <button class="pagination-nav-btn" 
+                onclick="goToPropertyPage(1)" 
+                ${currentPage <= 1 ? 'disabled' : ''} 
+                title="First Page">
+          « First
+        </button>
+        <button class="pagination-nav-btn" 
+                onclick="goToPropertyPage(${currentPage - 1})" 
+                ${currentPage <= 1 ? 'disabled' : ''} 
+                title="Previous Page">
+          ‹ Prev
+        </button>
+        <div class="pagination-pages-group">
+          ${pagesHtml}
+        </div>
+        <button class="pagination-nav-btn" 
+                onclick="goToPropertyPage(${currentPage + 1})" 
+                ${currentPage >= totalPages ? 'disabled' : ''} 
+                title="Next Page">
+          Next ›
+        </button>
+        <button class="pagination-nav-btn" 
+                onclick="goToPropertyPage(${totalPages})" 
+                ${currentPage >= totalPages ? 'disabled' : ''} 
+                title="Last Page">
+          Last »
+        </button>
+      </div>
+    </div>
+  `;
+
+  if (topContainer) topContainer.innerHTML = paginationHtml;
+  if (bottomContainer) bottomContainer.innerHTML = paginationHtml;
+}
+
 // TAB: PROPERTY VALUES & ASSESSMENTS
-function renderProperties(propsToRender) {
+function renderProperties(propsToRender, page) {
   if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
 
   const list = propsToRender || propertyAssessmentsData.properties;
   currentFilteredProperties = list;
+
+  const totalProps = list.length;
+  const totalPages = Math.max(1, Math.ceil(totalProps / propPageSize));
+  if (typeof page === 'number') {
+    propCurrentPage = Math.min(Math.max(1, page), totalPages);
+  } else {
+    propCurrentPage = Math.min(Math.max(1, propCurrentPage), totalPages);
+  }
+
+  const startIndex = (propCurrentPage - 1) * propPageSize;
+  const endIndex = Math.min(startIndex + propPageSize, totalProps);
+  const pageItems = list.slice(startIndex, endIndex);
 
   // Update summary ribbon stats
   const metHighest = document.getElementById('met-highest-tax');
@@ -740,16 +859,20 @@ function renderProperties(propsToRender) {
   }
 
   if (countBadge) {
-    countBadge.textContent = `Showing ${list.length} of ${propertyAssessmentsData.properties.length} Properties`;
+    if (totalProps === 0) {
+      countBadge.textContent = `0 of ${propertyAssessmentsData.properties.length.toLocaleString()} Properties`;
+    } else {
+      countBadge.textContent = `Showing ${startIndex + 1}–${endIndex} of ${totalProps.toLocaleString()} Properties (Page ${propCurrentPage} of ${totalPages})`;
+    }
   }
   if (navBadge) {
-    navBadge.textContent = list.length;
+    navBadge.textContent = totalProps.toLocaleString();
   }
 
-  // Render Cards Grid
+  // Render Cards Grid (Paginated)
   const cardsContainer = document.getElementById('properties-cards-container');
   if (cardsContainer) {
-    if (list.length === 0) {
+    if (totalProps === 0) {
       cardsContainer.innerHTML = `
         <div class="no-properties-msg">
           <div style="font-size: 2rem; margin-bottom: 8px;">🔍</div>
@@ -758,7 +881,7 @@ function renderProperties(propsToRender) {
         </div>
       `;
     } else {
-      cardsContainer.innerHTML = list.map(p => `
+      cardsContainer.innerHTML = pageItems.map(p => `
         <div class="property-card" data-id="${p.id}">
           <div class="prop-card-header">
             <div>
@@ -844,13 +967,13 @@ function renderProperties(propsToRender) {
     }
   }
 
-  // Render Table View
+  // Render Table View (Paginated)
   const tableBody = document.getElementById('properties-table-body');
   if (tableBody) {
-    if (list.length === 0) {
+    if (totalProps === 0) {
       tableBody.innerHTML = `<tr><td colspan="13" style="text-align: center; padding: 24px; color: var(--text-muted);">No properties match your filter criteria</td></tr>`;
     } else {
-      tableBody.innerHTML = list.map(p => `
+      tableBody.innerHTML = pageItems.map(p => `
         <tr>
           <td>
             <strong>${p.address}</strong><br>
@@ -876,6 +999,9 @@ function renderProperties(propsToRender) {
       `).join('');
     }
   }
+
+  // Render Top & Bottom Pagination Controls
+  renderPaginationControls(totalProps, propCurrentPage, totalPages);
 }
 
 // Load property assessment value into Calculator tab and switch tabs
@@ -1003,7 +1129,8 @@ function setupPropertyFilters() {
       }
     }
 
-    renderProperties(filtered);
+    propCurrentPage = 1;
+    renderProperties(filtered, 1);
   }
 
   applyPropertyFilters = applyFilters;
@@ -1029,6 +1156,7 @@ function setupPropertyFilters() {
       if (bathsSelect) bathsSelect.value = '0';
       if (tierSelect) tierSelect.value = 'ALL';
       if (sortSelect) sortSelect.value = 'tax-desc';
+      propCurrentPage = 1;
       applyFilters();
     });
   }
@@ -1122,7 +1250,7 @@ function renderSurroundingTowns() {
           ${isClifton ? `
             <div class="card-action-bar-jumps">
               <button class="btn-jump-action" data-jump-tab="tab-properties">
-                <span>🏡</span> Browse 520 Clifton Sample Properties ➔
+                <span>🏡</span> Browse 1,850 Clifton Sample Properties ➔
               </button>
               <button class="btn-jump-action secondary" data-jump-tab="tab-calculator">
                 <span>🧮</span> Calculate Your Property Taxes ➔

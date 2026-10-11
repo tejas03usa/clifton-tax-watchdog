@@ -11,7 +11,7 @@ This project visualizes where Clifton property tax dollars go, documents public 
 | Dataset | Last Updated | Certification / Vintage | Official Source Agency |
 | :--- | :--- | :--- | :--- |
 | **Property Tax Breakdown** | October 10, 2026 | **2026 Certified Rates** | Passaic County Board of Taxation & Clifton Tax Collector |
-| **Property Values & Assessments** | October 11, 2026 | **2026 Certified Assessment Rolls (520 Properties)** | Passaic County Board of Taxation & City Assessor Records |
+| **Property Values & Assessments** | October 11, 2026 | **2026 Certified Assessment Rolls (1,850 Properties)** | Passaic County Board of Taxation & City Assessor Records |
 | **Surrounding Towns Comparison** | October 11, 2026 | **2026 Abstracts of Ratables (8 Towns)** | Passaic & Essex County Boards of Taxation |
 | **Clifton BOE Budget (~$293M)** | October 10, 2026 | **Certified FY 2025-2026 Budget** | NJ Department of Education & Clifton Public Schools |
 | **City Municipal Budget (~$105M)** | October 10, 2026 | **Certified CY 2026 Adopted Budget** | NJ Department of Community Affairs (DLGS) & Clifton CFO |
@@ -25,7 +25,7 @@ This project visualizes where Clifton property tax dollars go, documents public 
 
 ## 1. Property Values & Assessments: Who Pays More Taxes?
 
-A dedicated investigation tool with **520 sampled residential properties** across all 10 Clifton neighborhoods:
+A dedicated investigation tool with **1,850 sampled residential properties** across all 10 Clifton neighborhoods:
 * **Certified Tax Formula**: In NJ, property tax is strictly: `(Assessed Value ÷ 100) × 6.527%`.
 * **The Assessment vs. Market Equalization Ratio (~33.3%)**: Because Clifton has not conducted a citywide revaluation recently, market values are approximately **3× their municipal assessed values**. A home selling for **\$600,000** is assessed on city tax rolls for **~\$200,000**, generating **\$13,054/year** in property taxes.
 * **Who Pays the Most?**:

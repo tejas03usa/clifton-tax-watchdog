@@ -55,7 +55,7 @@
         </div>
         <div class="stat-card clickable-stat-card" data-jump-tab="tab-properties" role="button" tabindex="0" title="Click to view Property Assessments">
           <div class="stat-card-label">Sampled Assessments ↗</div>
-          <div class="stat-card-num">520 Homes</div>
+          <div class="stat-card-num">1,850 Homes</div>
           <div class="stat-card-sub">Who pays more taxes?</div>
         </div>
       </div>
@@ -116,7 +116,7 @@
             <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-properties">
               <span class="d-item-icon">🏡</span>
               <div class="d-item-text">
-                <strong>Property Values & Taxes <span class="badge-tag">520 Homes</span></strong>
+                <strong>Property Values & Taxes <span class="badge-tag">1,850 Homes</span></strong>
                 <small>Filter assessments, beds/baths & who pays more</small>
               </div>
             </button>
@@ -245,7 +245,7 @@
               <strong>Assessment vs. Market Value:</strong> In Clifton, homes are assessed at a fractional ratio (~33.3%) of market value. A home selling on the market for $550,000 typically has an assessed tax value of ~$185,000.
               <div style="margin-top: 8px;">
                 <button class="btn-jump-action" data-jump-tab="tab-properties">
-                  <span>🏡</span> Who Pays More? Explore 520 Clifton Homes & Assessments ➔
+                  <span>🏡</span> Who Pays More? Explore 1,850 Clifton Homes & Assessments ➔
                 </button>
               </div>
             </div>
@@ -487,8 +487,8 @@
         </div>
         <div class="prop-metric-box">
           <span class="p-met-label">City Average Tax</span>
-          <span class="p-met-val" id="met-avg-tax">$14,042 / yr</span>
-          <span class="p-met-sub">Assessed @ $215.1k (~$645k market)</span>
+          <span class="p-met-val" id="met-avg-tax">$13,965 / yr</span>
+          <span class="p-met-sub">Assessed @ $214.0k (~$642k market)</span>
         </div>
         <div class="prop-metric-box">
           <span class="p-met-label">Lowest Sampled Tax</span>
@@ -508,7 +508,7 @@
           <div class="filter-title">
             <span class="filter-icon">🔍</span>
             <strong>Filter & Search Properties</strong>
-            <span class="filter-results-badge" id="prop-filter-count">Showing 520 of 520 Properties</span>
+            <span class="filter-results-badge" id="prop-filter-count">Showing 1,850 of 1,850 Properties</span>
           </div>
           <button class="btn-reset-filters" id="btn-reset-prop-filters">Reset All Filters</button>
         </div>
@@ -524,7 +524,7 @@
           <div class="filter-group">
             <label for="prop-neighborhood-filter">Neighborhood / Area:</label>
             <select id="prop-neighborhood-filter">
-              <option value="ALL">All Neighborhoods (Citywide - 520 Properties)</option>
+              <option value="ALL">All Neighborhoods (Citywide - 1,850 Properties)</option>
               <option value="Montclair Heights">Montclair Heights (07013 - Upper Clifton)</option>
               <option value="Allwood">Allwood (07013 - Suburban Enclave)</option>
               <option value="Richfield">Richfield (07013 - Historic Residential)</option>
@@ -627,6 +627,9 @@
         </div>
       </div>
 
+      <!-- Top Pagination Bar -->
+      <div class="properties-pagination-wrapper" id="properties-pagination-top"></div>
+
       <!-- Properties Grid / Cards View -->
       <div class="properties-cards-grid" id="properties-cards-container">
         <!-- Rendered by JS -->
@@ -657,6 +660,9 @@
           </tbody>
         </table>
       </div>
+
+      <!-- Bottom Pagination Bar -->
+      <div class="properties-pagination-wrapper" id="properties-pagination-bottom"></div>
 
       <!-- Explanatory Educational Callout: Why Assessments ≠ Market Value in NJ -->
       <div class="assessment-explainer-card">
