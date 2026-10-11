@@ -1,0 +1,41 @@
+name: Automated Tax Data Refresh & Verification
+
+on:
+  schedule:
+    # Run every Monday at 06:00 UTC (02:00 AM EDT)
+    - cron: '0 6 * * 1'
+  workflow_dispatch: # Allows manual one-click trigger from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-and-verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run scheduled data updater and verification audit
+        run: |
+          python scrapers/scheduled_updater.py
+
+      - name: Commit and push updates if data changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add data/
+            git commit -m "Automated data verification and refresh: $(date -u +'%Y-%m-%d') [skip ci]"
+            git push
+            echo "Successfully committed and pushed updated data to main branch."
+          else
+            echo "No data changes detected. Everything is current and verified."
+          fi

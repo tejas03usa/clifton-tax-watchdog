@@ -146,3 +146,16 @@ python3 scrapers/investigation_toolkit.py ethics "Grabowski"
 # View top vendors and contractors:
 python3 scrapers/investigation_toolkit.py vendors
 ```
+
+---
+
+## Automated Data Refresh & Health Check Workflow
+
+The repository is equipped with an automated GitHub Actions workflow (`.github/workflows/refresh-data.yml`):
+* **Execution Schedule:** Runs automatically every Monday at 06:00 UTC (02:00 AM EDT) and can be triggered on demand via the **Actions** tab (`workflow_dispatch`).
+* **Tasks Executed:**
+  1. Pings official portals (City of Clifton, Clifton BOE, Passaic County Tax Board, Cit-e Tax Collector).
+  2. Runs mathematical verification across all 1,850 property assessments ensuring zero calculation discrepancies.
+  3. Records audit results in `data/audit_log.json`.
+  4. Automatically commits changes and triggers a GitHub Pages deployment if updates are found.
+

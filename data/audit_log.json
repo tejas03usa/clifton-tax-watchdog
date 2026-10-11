@@ -1,0 +1,142 @@
+{
+  "lastRun": "2026-10-11 21:11:29 UTC",
+  "date": "2026-10-11",
+  "allDatasetsValid": true,
+  "portalHealth": [
+    {
+      "name": "City of Clifton Official Portal",
+      "url": "https://www.cliftonnj.org",
+      "status": "ONLINE",
+      "code": 200
+    },
+    {
+      "name": "Clifton Public Schools (BOE)",
+      "url": "https://www.clifton.k12.nj.us",
+      "status": "ONLINE",
+      "code": 200
+    },
+    {
+      "name": "Passaic County Board of Taxation",
+      "url": "https://www.passaiccountynj.org/residents/board-of-taxation",
+      "status": "ONLINE_HTTP_CODE",
+      "code": 403
+    },
+    {
+      "name": "Clifton Cit-e Tax Collector Inquiry",
+      "url": "https://www.cit-e.net/clifton-nj/cn/taxinquiry_edm/index.cfm?tpid=18705",
+      "status": "ONLINE",
+      "code": 200
+    }
+  ],
+  "datasetAudit": {
+    "tax_breakdown.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "location",
+        "taxYear",
+        "certifiedTotalRate",
+        "ratePerHundredDollars",
+        "effectiveTaxRateMarketValue",
+        "averageResidentialAssessment",
+        "averageTaxBill",
+        "breakdown"
+      ]
+    },
+    "boe_budget.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "entity",
+        "county",
+        "fiscalYear",
+        "totalBudget",
+        "enrollment",
+        "perPupilSpending",
+        "schoolsCount",
+        "revenueSources",
+        "majorAppropriations"
+      ]
+    },
+    "municipal_budget.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "entity",
+        "county",
+        "fiscalYear",
+        "totalBudget",
+        "population",
+        "governmentType",
+        "fullTimeEmployees",
+        "revenueSources",
+        "majorAppropriations"
+      ]
+    },
+    "benefits_healthcare.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "overview",
+        "healthcarePlans",
+        "costSharing",
+        "retirementAndLeaveBenefits"
+      ]
+    },
+    "ethics_controversies.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "controversies"
+      ]
+    },
+    "ethics_disclosures.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "disclosures"
+      ]
+    },
+    "staff_directory.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "staff"
+      ]
+    },
+    "vendors_spending.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "vendors"
+      ]
+    },
+    "demographics_taxes.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "cityOverview",
+        "zipCodeComparison",
+        "neighborhoods",
+        "equityAnalysis"
+      ]
+    },
+    "surrounding_towns_comparison.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "summaryAnalysis",
+        "towns",
+        "comparativeKeyFindings"
+      ]
+    },
+    "property_assessments.json": {
+      "valid": true,
+      "recordCount": 1850,
+      "calculationDiscrepancies": 0
+    }
+  },
+  "certifiedTaxRate": "6.527%",
+  "totalSampledProperties": 1850,
+  "status": "OPERATIONAL"
+}
