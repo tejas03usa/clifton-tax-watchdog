@@ -43,20 +43,20 @@
       </div>
 
       <div class="header-stat-cards">
-        <div class="stat-card">
-          <div class="stat-card-label">Certified Tax Rate (2026)</div>
+        <div class="stat-card clickable-stat-card" data-jump-tab="tab-calculator" role="button" tabindex="0" title="Click to open Tax Calculator">
+          <div class="stat-card-label">Certified Tax Rate (2026) ↗</div>
           <div class="stat-card-num">6.527%</div>
-          <div class="stat-card-sub">per $100 assessed value</div>
+          <div class="stat-card-sub">Calculate your taxes</div>
         </div>
-        <div class="stat-card highlight-school">
-          <div class="stat-card-label">School District (BOE)</div>
+        <div class="stat-card highlight-school clickable-stat-card" data-jump-tab="tab-budgets" role="button" tabindex="0" title="Click to view School Budget">
+          <div class="stat-card-label">School District (BOE) ↗</div>
           <div class="stat-card-num">47.66%</div>
-          <div class="stat-card-sub">~$0.48 of every dollar</div>
+          <div class="stat-card-sub">Explore $293.2M budget</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-card-label">Combined City & BOE Budget</div>
-          <div class="stat-card-num">$398.6M</div>
-          <div class="stat-card-sub">Annual public expenditures</div>
+        <div class="stat-card clickable-stat-card" data-jump-tab="tab-properties" role="button" tabindex="0" title="Click to view Property Assessments">
+          <div class="stat-card-label">Sampled Assessments ↗</div>
+          <div class="stat-card-num">520 Homes</div>
+          <div class="stat-card-sub">Who pays more taxes?</div>
         </div>
       </div>
     </div>
@@ -242,7 +242,12 @@
           <div class="info-alert">
             <span class="alert-icon">💡</span>
             <div class="alert-text">
-              <strong>Assessment vs. Market Value:</strong> In Clifton, homes are assessed at a fractional ratio of market value. A home selling on the market for $550,000 typically has an assessed tax value of ~$185,000.
+              <strong>Assessment vs. Market Value:</strong> In Clifton, homes are assessed at a fractional ratio (~33.3%) of market value. A home selling on the market for $550,000 typically has an assessed tax value of ~$185,000.
+              <div style="margin-top: 8px;">
+                <button class="btn-jump-action" data-jump-tab="tab-properties">
+                  <span>🏡</span> Who Pays More? Explore 520 Clifton Homes & Assessments ➔
+                </button>
+              </div>
             </div>
           </div>
         </div>

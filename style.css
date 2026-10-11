@@ -3161,6 +3161,11 @@ body {
 /* Card Actions */
 .prop-card-actions {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-light);
 }
 
 .btn-load-calculator {
@@ -3555,6 +3560,259 @@ body {
 }
 
 /* ==========================================================================
+   INTERACTIVE CROSS-SECTION NAVIGATION BUTTONS & JUMP LINKS
+   ========================================================================== */
+
+/* Header Stat Cards Clickable Style */
+.clickable-stat-card {
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.18s ease;
+  user-select: none;
+}
+
+.clickable-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  border-color: var(--color-school);
+}
+
+.clickable-stat-card:focus-visible {
+  outline: 2px solid var(--color-school);
+  outline-offset: 2px;
+}
+
+.clickable-stat-card::after {
+  content: "Explore ➔";
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-subtle);
+  background: var(--bg-subtle);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  transition: all 0.15s ease;
+}
+
+.clickable-stat-card:hover::after {
+  background: var(--color-school);
+  color: #ffffff;
+}
+
+/* Calculator Entity Card Action Bars */
+.entity-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-light);
+}
+
+/* Action Bars in Cards (Controversies, Ethics, Vendors, Surrounding Towns) */
+.card-action-bar-jumps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Primary Jump Action Button */
+.btn-jump-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid var(--color-school);
+  background: #eff6ff;
+  color: var(--color-school);
+  transition: all 0.15s ease;
+  text-align: center;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.btn-jump-action:hover {
+  background: var(--color-school);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.btn-jump-action:active {
+  transform: translateY(0);
+}
+
+/* Secondary Jump Action Button */
+.btn-jump-action.secondary {
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+}
+
+.btn-jump-action.secondary:hover {
+  border-color: var(--text-main);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Alert / Urgency Jump Button */
+.btn-jump-alert {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid #f87171;
+  background: #fef2f2;
+  color: #b91c1c;
+  transition: all 0.15s ease;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.btn-jump-alert:hover {
+  background: #b91c1c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(185, 28, 28, 0.2);
+}
+
+/* Budget Inline Jump Link */
+.btn-jump-budget-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.btn-jump-budget-link:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Property Card Action Jump Buttons */
+.btn-jump-prop-toolkit {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid #fed7aa;
+  background: #fff7ed;
+  color: #c2410c;
+  transition: all 0.15s ease;
+}
+
+.btn-jump-prop-toolkit:hover {
+  background: #ea580c;
+  color: #ffffff;
+  border-color: #ea580c;
+  transform: translateY(-1px);
+}
+
+.btn-jump-prop-area {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #475569;
+  transition: all 0.15s ease;
+}
+
+.btn-jump-prop-area:hover {
+  background: #334155;
+  color: #ffffff;
+  border-color: #334155;
+  transform: translateY(-1px);
+}
+
+/* Staff Table Pill Tags & Jump Links */
+.btn-jump-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: 1px solid #fde047;
+  background: #fef9c3;
+  color: #854d0e;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-jump-tag:hover {
+  background: #ca8a04;
+  color: #ffffff;
+  border-color: #ca8a04;
+}
+
+.btn-jump-tag-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: 1px solid #bae6fd;
+  background: #e0f2fe;
+  color: #0369a1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-jump-tag-search:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+/* ==========================================================================
    COMPREHENSIVE MOBILE PHONE RESPONSIVENESS (< 768px & < 480px)
    ========================================================================== */
 
@@ -3869,6 +4127,20 @@ body {
   .action-btn-email {
     width: 100%;
     justify-content: center;
+  }
+
+  /* Mobile Jump Links & Navigation Buttons */
+  .card-action-bar-jumps {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-jump-action,
+  .btn-jump-alert,
+  .btn-jump-budget-link {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
   }
 
   /* Page Footer */

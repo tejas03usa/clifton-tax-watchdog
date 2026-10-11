@@ -121,6 +121,96 @@ async function initApp() {
   setupInvestigationTools();
 }
 
+// Global Cross-Section Navigation & Tab Switcher
+function switchTab(targetId, options = {}) {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+  tabBtns.forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+  // Highlight corresponding nav tab if exists
+  const matchingBtn = document.querySelector(`.tab-btn[data-tab="${targetId}"]`);
+  if (matchingBtn) {
+    matchingBtn.classList.add('active');
+    matchingBtn.setAttribute('aria-selected', 'true');
+  }
+
+  // Close open dropdowns
+  dropdowns.forEach(dd => {
+    dd.classList.remove('open');
+    const trig = dd.querySelector('.nav-dropdown-trigger');
+    if (trig) trig.setAttribute('aria-expanded', 'false');
+  });
+
+  // Sync parent dropdown active state
+  dropdowns.forEach(dd => {
+    const hasActiveChild = dd.querySelector('.dropdown-item.active') !== null;
+    if (hasActiveChild) {
+      dd.classList.add('has-active');
+    } else {
+      dd.classList.remove('has-active');
+    }
+  });
+
+  const targetPane = document.getElementById(targetId);
+  if (targetPane) {
+    targetPane.classList.add('active');
+
+    // Contextual actions
+    if (options.neighborhood && targetId === 'tab-properties') {
+      const neighSelect = document.getElementById('prop-neighborhood-filter');
+      if (neighSelect) {
+        neighSelect.value = options.neighborhood;
+        if (typeof applyPropertyFilters === 'function') {
+          applyPropertyFilters();
+        }
+      }
+    }
+
+    if (options.searchQuery && targetId === 'tab-investigate') {
+      const propInput = document.getElementById('property-search-name');
+      const propBtn = document.getElementById('btn-property-search');
+      if (propInput) {
+        propInput.value = options.searchQuery;
+        setTimeout(() => {
+          if (propBtn) propBtn.click();
+        }, 120);
+      }
+    }
+
+    if (options.opraTemplate && targetId === 'tab-investigate') {
+      const opraSelect = document.getElementById('opra-template-select');
+      if (opraSelect) {
+        opraSelect.value = options.opraTemplate;
+        opraSelect.dispatchEvent(new Event('change'));
+      }
+    }
+
+    if (options.staffFilter && targetId === 'tab-staff') {
+      const filterBtn = document.querySelector(`.filter-btn[data-filter="${options.staffFilter}"]`);
+      if (filterBtn) filterBtn.click();
+    }
+
+    // Scroll handling
+    if (options.scrollToElement) {
+      setTimeout(() => {
+        const el = document.querySelector(options.scrollToElement);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }, 50);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+}
+
 // Tab Switching & Dropdown Navigation System
 function setupTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
@@ -195,31 +285,31 @@ function setupTabs() {
   // Setup Tab Button switching
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      tabBtns.forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-
-      // Close open dropdowns after selection
-      dropdowns.forEach(dd => {
-        dd.classList.remove('open');
-        const trig = dd.querySelector('.nav-dropdown-trigger');
-        if (trig) trig.setAttribute('aria-expanded', 'false');
-      });
-
-      syncDropdownActiveState();
-
       const targetId = btn.getAttribute('data-tab');
-      const targetPane = document.getElementById(targetId);
-      if (targetPane) {
-        targetPane.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      if (targetId) switchTab(targetId);
     });
+  });
+
+  // Global listener for interactive cross-section jump links
+  document.addEventListener('click', (e) => {
+    const jumpBtn = e.target.closest('[data-jump-tab]');
+    if (jumpBtn) {
+      e.preventDefault();
+      const targetTab = jumpBtn.getAttribute('data-jump-tab');
+      const neighborhood = jumpBtn.getAttribute('data-jump-neighborhood');
+      const searchQuery = jumpBtn.getAttribute('data-jump-search');
+      const opraTemplate = jumpBtn.getAttribute('data-jump-opra');
+      const staffFilter = jumpBtn.getAttribute('data-jump-staff-filter');
+      const scrollTo = jumpBtn.getAttribute('data-jump-scroll');
+
+      switchTab(targetTab, {
+        neighborhood,
+        searchQuery,
+        opraTemplate,
+        staffFilter,
+        scrollToElement: scrollTo
+      });
+    }
   });
 
   syncDropdownActiveState();
@@ -323,6 +413,39 @@ function setupCalculator() {
         `;
       }
 
+      let actionsHtml = '';
+      if (b.id === 'schools') {
+        actionsHtml = `
+          <div class="entity-card-actions">
+            <button class="btn-jump-action" data-jump-tab="tab-budgets">
+              <span>🏛️</span> Full BOE $293.2M Budget Breakdown ➔
+            </button>
+            <button class="btn-jump-action secondary" data-jump-tab="tab-benefits">
+              <span>🏥</span> School Benefits & Healthcare ($62.8M) ➔
+            </button>
+          </div>
+        `;
+      } else if (b.id === 'municipal') {
+        actionsHtml = `
+          <div class="entity-card-actions">
+            <button class="btn-jump-action" data-jump-tab="tab-budgets">
+              <span>🏛️</span> Full City $105.4M Budget Breakdown ➔
+            </button>
+            <button class="btn-jump-action secondary" data-jump-tab="tab-staff" data-jump-staff-filter="police">
+              <span>👮</span> Police & Staff Payroll ➔
+            </button>
+          </div>
+        `;
+      } else if (b.id === 'county') {
+        actionsHtml = `
+          <div class="entity-card-actions">
+            <button class="btn-jump-action" data-jump-tab="tab-surrounding">
+              <span>🗺️</span> Compare Surrounding Town Rates ➔
+            </button>
+          </div>
+        `;
+      }
+
       card.innerHTML = `
         <div class="card-top-row">
           <div class="entity-name">${b.entity}</div>
@@ -334,6 +457,7 @@ function setupCalculator() {
         </div>
         <p style="font-size: 0.85rem; color: var(--text-muted);">${b.description}</p>
         ${componentsHtml}
+        ${actionsHtml}
       `;
       container.appendChild(card);
     });
@@ -373,26 +497,52 @@ function renderBudgets() {
   if (!boeBudgetData || !cityBudgetData) return;
 
   const boeContainer = document.getElementById('boe-line-items');
-  boeContainer.innerHTML = boeBudgetData.majorAppropriations.map(item => `
-    <div class="line-item-row">
-      <div class="line-header">
-        <span>${item.category}</span>
-        <span class="line-amt">${formatUSDWhole(item.amount)} (${item.percentage}%)</span>
+  boeContainer.innerHTML = boeBudgetData.majorAppropriations.map(item => {
+    let actionBtn = '';
+    const cat = item.category.toLowerCase();
+    if (cat.includes('benefit') || cat.includes('insurance')) {
+      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">Explore Healthcare Plans, Copays & Benefit Costs ($62.8M) ➔</button>`;
+    } else if (cat.includes('regular instructional') || cat.includes('administration')) {
+      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-staff" data-jump-staff-filter="boe">View School District Staff Directory & Salaries ➔</button>`;
+    } else if (cat.includes('transportation') || cat.includes('facilities') || cat.includes('special')) {
+      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-vendors">View Vendor Warrant & Check Lists ➔</button>`;
+    }
+
+    return `
+      <div class="line-item-row">
+        <div class="line-header">
+          <span>${item.category}</span>
+          <span class="line-amt">${formatUSDWhole(item.amount)} (${item.percentage}%)</span>
+        </div>
+        <div class="line-desc">${item.details}</div>
+        ${actionBtn ? `<div style="margin-top: 6px;">${actionBtn}</div>` : ''}
       </div>
-      <div class="line-desc">${item.details}</div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
   const cityContainer = document.getElementById('city-line-items');
-  cityContainer.innerHTML = cityBudgetData.majorAppropriations.map(item => `
-    <div class="line-item-row">
-      <div class="line-header">
-        <span>${item.category}</span>
-        <span class="line-amt">${formatUSDWhole(item.amount)} (${item.percentage}%)</span>
+  cityContainer.innerHTML = cityBudgetData.majorAppropriations.map(item => {
+    let actionBtn = '';
+    const cat = item.category.toLowerCase();
+    if (cat.includes('police') || cat.includes('safety')) {
+      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-staff" data-jump-staff-filter="police">View Police Salaries, Overtime & Details ➔</button>`;
+    } else if (cat.includes('pension') || cat.includes('benefit')) {
+      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">View Municipal Benefit Liabilities ($24.4M) ➔</button>`;
+    } else if (cat.includes('general government') || cat.includes('debt') || cat.includes('legal')) {
+      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-controversies">View Audit & PILOT Abatement Analyses ➔</button>`;
+    }
+
+    return `
+      <div class="line-item-row">
+        <div class="line-header">
+          <span>${item.category}</span>
+          <span class="line-amt">${formatUSDWhole(item.amount)} (${item.percentage}%)</span>
+        </div>
+        <div class="line-desc">${item.details}</div>
+        ${actionBtn ? `<div style="margin-top: 6px;">${actionBtn}</div>` : ''}
       </div>
-      <div class="line-desc">${item.details}</div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 // TAB: DEMOGRAPHICS & AREAS
@@ -484,6 +634,14 @@ function renderDemographics() {
             ${z.keyFindings.map(f => `<li>${f}</li>`).join('')}
           </ul>
         </div>
+        <div class="card-action-bar-jumps" style="margin-top: 14px;">
+          <button class="btn-jump-action" data-jump-tab="tab-properties" data-jump-neighborhood="ALL">
+            <span>🔍</span> View Residential Assessments in ${z.zip} ➔
+          </button>
+          <button class="btn-jump-action secondary" data-jump-tab="tab-surrounding">
+            <span>🗺️</span> Benchmark Disparities with Neighbor Towns ➔
+          </button>
+        </div>
       </div>
     `).join('');
   }
@@ -532,6 +690,11 @@ function renderDemographics() {
         <div class="n-tax-dynamic">
           <strong>Tax Dynamic:</strong> ${n.taxDynamic}
         </div>
+        <div class="card-action-bar-jumps" style="margin-top: 12px;">
+          <button class="btn-jump-action" data-jump-tab="tab-properties" data-jump-neighborhood="${n.name}">
+            <span>🏡</span> Filter 520 Properties in ${n.name} ➔
+          </button>
+        </div>
       </div>
     `).join('');
   }
@@ -543,6 +706,11 @@ function renderDemographics() {
       <div class="takeaway-card">
         <h4>${t.title}</h4>
         <p>${t.detail}</p>
+        <div style="margin-top: 12px;">
+          <button class="btn-jump-action secondary" data-jump-tab="tab-surrounding">
+            <span>🗺️</span> Compare Tax Disparities with Neighbor Towns ➔
+          </button>
+        </div>
       </div>
     `).join('');
   }
@@ -664,6 +832,12 @@ function renderProperties(propsToRender) {
             <button class="btn-load-calculator" onclick="loadPropertyToCalculator(${p.assessedTotal})">
               <span>🧮</span> Load in Tax Calculator & Line Items
             </button>
+            <button class="btn-jump-prop-toolkit" data-jump-tab="tab-investigate" data-jump-search="${p.address}">
+              <span>🔍</span> Cross-Reference Owner & Deed in Toolkit ➔
+            </button>
+            <button class="btn-jump-prop-area" data-jump-tab="tab-demographics">
+              <span>📍</span> View ${p.neighborhood} Demographics ➔
+            </button>
           </div>
         </div>
       `).join('');
@@ -714,12 +888,8 @@ function loadPropertyToCalculator(assessedValue) {
     input.dispatchEvent(new Event('input'));
   }
 
-  // Switch to Calculator tab
-  const calcBtn = document.querySelector('[data-tab="tab-calculator"]');
-  if (calcBtn) {
-    calcBtn.click();
-    window.scrollTo({ top: 380, behavior: 'smooth' });
-  }
+  // Switch to Calculator tab smoothly
+  switchTab('tab-calculator', { scrollToElement: '#calc-assessment-input' });
 }
 
 // Setup Property Filters & View Switching
@@ -836,6 +1006,8 @@ function setupPropertyFilters() {
     renderProperties(filtered);
   }
 
+  applyPropertyFilters = applyFilters;
+
   // Attach event listeners
   if (searchInput) searchInput.addEventListener('input', applyFilters);
   if (neighSelect) neighSelect.addEventListener('change', applyFilters);
@@ -947,6 +1119,16 @@ function renderSurroundingTowns() {
           <div class="surround-notes">
             <strong>Watchdog Analysis:</strong> ${t.strengthsAndWatchdogNotes}
           </div>
+          ${isClifton ? `
+            <div class="card-action-bar-jumps">
+              <button class="btn-jump-action" data-jump-tab="tab-properties">
+                <span>🏡</span> Browse 520 Clifton Sample Properties ➔
+              </button>
+              <button class="btn-jump-action secondary" data-jump-tab="tab-calculator">
+                <span>🧮</span> Calculate Your Property Taxes ➔
+              </button>
+            </div>
+          ` : ''}
         </div>
       `;
     }).join('');
@@ -959,6 +1141,11 @@ function renderSurroundingTowns() {
       <div class="takeaway-card">
         <h4>${f.title}</h4>
         <p>${f.detail}</p>
+        <div style="margin-top: 10px;">
+          <button class="btn-jump-action secondary" data-jump-tab="tab-demographics">
+            <span>📍</span> Explore Clifton Demographics & ZIP Codes ➔
+          </button>
+        </div>
       </div>
     `).join('');
   }
@@ -1007,6 +1194,14 @@ function renderBenefits() {
         </div>
         <div class="retiree-authority">Legal Basis: ${b.legalAuthority}</div>
         <div class="retiree-details">${b.details}</div>
+        <div class="card-action-bar-jumps">
+          <button class="btn-jump-alert" data-jump-tab="tab-controversies">
+            <span>🚨</span> View Comptroller Sick Leave Audit ➔
+          </button>
+          <button class="btn-jump-action" data-jump-tab="tab-investigate" data-jump-opra="sickleave">
+            <span>✉️</span> Generate OPRA Payout Request ➔
+          </button>
+        </div>
       </div>
     `).join('');
   }
@@ -1024,6 +1219,15 @@ function renderControversies() {
     if (c.severity === 'HIGH') sevClass = 'sev-high';
     if (c.severity === 'LOW') sevClass = 'sev-low';
 
+    let opraKey = 'overtime';
+    const cat = c.category.toLowerCase();
+    const tit = c.title.toLowerCase();
+    if (tit.includes('sick leave') || cat.includes('sick') || cat.includes('leave')) opraKey = 'sickleave';
+    else if (tit.includes('pilot') || cat.includes('pilot')) opraKey = 'pilot';
+    else if (tit.includes('police') || tit.includes('overtime') || cat.includes('police')) opraKey = 'overtime';
+    else if (tit.includes('vendor') || tit.includes('bus') || tit.includes('legal') || cat.includes('contract')) opraKey = 'vendors';
+    else if (tit.includes('contract') || tit.includes('superintendent') || cat.includes('administrator')) opraKey = 'contracts';
+
     return `
       <div class="controversy-card ${sevClass}">
         <div class="controversy-header">
@@ -1040,6 +1244,22 @@ function renderControversies() {
         <div class="controversy-impact-box">
           <div><strong>Taxpayer Impact:</strong> ${c.taxpayerImpact}</div>
           <div class="controversy-status"><strong>Current Oversight Status:</strong> ${c.status}</div>
+        </div>
+
+        <div class="card-action-bar-jumps">
+          <button class="btn-jump-alert" data-jump-tab="tab-investigate" data-jump-opra="${opraKey}">
+            <span>✉️</span> Draft OPRA Public Records Request on this Issue ➔
+          </button>
+          ${cat.includes('benefit') || cat.includes('leave') ? `
+            <button class="btn-jump-action secondary" data-jump-tab="tab-benefits">
+              <span>🏥</span> See Healthcare & Benefits Cost Data ➔
+            </button>
+          ` : ''}
+          ${c.entityInvolved.includes('Board of Ed') ? `
+            <button class="btn-jump-action secondary" data-jump-tab="tab-budgets">
+              <span>🏛️</span> View Board of Ed Budget Line Items ➔
+            </button>
+          ` : ''}
         </div>
       </div>
     `;
@@ -1076,11 +1296,17 @@ function renderStaffTable(filterEntity = 'all', searchQuery = '') {
     const pillClass = isSchool ? 'pill-school' : 'pill-city';
     const salaryDisplay = s.salaryReported > 0 ? formatUSDWhole(s.salaryReported) : '$0 (Unpaid Public Service)';
 
+    const hasEthics = (ethicsData || []).some(e => e.officialName.toLowerCase().includes(s.name.toLowerCase()) || s.name.toLowerCase().includes(e.officialName.toLowerCase()));
+
     return `
       <tr>
         <td>
           <strong>${s.name}</strong>
           <div><small style="color: var(--text-subtle);">${s.title}</small></div>
+          <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px;">
+            ${hasEthics ? `<button class="btn-jump-tag" data-jump-tab="tab-ethics"><span>🏢</span> Outside Businesses & FDS ➔</button>` : ''}
+            <button class="btn-jump-tag-search" data-jump-tab="tab-investigate" data-jump-search="${s.name}"><span>🔍</span> Check Deeds & Records ➔</button>
+          </div>
         </td>
         <td>
           <span class="entity-pill ${pillClass}">${s.entity}</span>
@@ -1166,10 +1392,13 @@ function renderEthicsCards() {
           <strong>Ethics / Conflict Notice:</strong> ${d.conflictGuidance}
         </div>
 
-        <div class="card-action-bar">
+        <div class="card-action-bar" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px;">
           <a href="${propUrl}" target="_blank" rel="noopener" class="verify-link">
             🔍 Check Passaic County Tax Board for ${d.officialName} ↗
           </a>
+          <button class="btn-jump-action secondary" data-jump-tab="tab-investigate" data-jump-search="${d.officialName}">
+            <span>🔍</span> Search All Records in Toolkit ➔
+          </button>
         </div>
       </div>
     `;
@@ -1187,6 +1416,14 @@ function renderVendorsCards() {
       <h3>${v.vendorName}</h3>
       <div class="vendor-spend">~${formatUSDWhole(v.annualEstimatedSpend)} <small style="font-size: 0.8rem; color: var(--text-subtle);">/ year</small></div>
       <p class="vendor-desc">${v.description}</p>
+      <div class="card-action-bar-jumps">
+        <button class="btn-jump-action" data-jump-tab="tab-investigate" data-jump-opra="vendors">
+          <span>📋</span> Request PO Invoices via OPRA ➔
+        </button>
+        <button class="btn-jump-action secondary" data-jump-tab="tab-investigate" data-jump-search="${v.vendorName}">
+          <span>🏢</span> Search State Corporate Gateway ➔
+        </button>
+      </div>
     </div>
   `).join('');
 }
