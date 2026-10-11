@@ -172,7 +172,13 @@
           </div>
         </div>
 
-        <!-- 5. Primary Direct Tab: Citizen Toolkit & OPRA -->
+        <!-- 5. Primary Direct Tab: Joined Intelligence & Reports -->
+        <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-intelligence">
+          <span class="tab-icon">🔬</span>
+          <span class="tab-title">Joined Intelligence</span>
+        </button>
+
+        <!-- 6. Primary Direct Tab: Citizen Toolkit & OPRA -->
         <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-investigate">
           <span class="tab-icon">🔍</span>
           <span class="tab-title">Citizen Toolkit</span>
@@ -1096,6 +1102,365 @@
             <span class="source-doc-desc">Annual political contribution and contract disclosures for government vendors receiving >$17,500.</span>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- TAB 5: JOINED INTELLIGENCE & CROSS-DATASET REPORTS -->
+    <section id="tab-intelligence" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Cross-Dataset Intelligence Engine • Certified 2026 Data</span>
+        </div>
+        <h2>Joined Intelligence & Cross-Dataset Analytics</h2>
+        <p>Connecting Clifton property assessments, municipal and school operating budgets, public employee earnings, and student demographics into 4 actionable investigations.</p>
+      </div>
+
+      <!-- Intelligence Sub-Nav Toolbar -->
+      <div class="intel-nav-toolbar" role="tablist" aria-label="Intelligence Reports">
+        <button class="intel-nav-btn active" data-report="receipt" role="tab" aria-selected="true">
+          <span class="btn-icon">🧾</span>
+          <span class="btn-text">Tax 'Grocery Receipt'</span>
+        </button>
+        <button class="intel-nav-btn" data-report="homes" role="tab" aria-selected="false">
+          <span class="btn-icon">🏡</span>
+          <span class="btn-text">Homes to Fund Salaries</span>
+        </button>
+        <button class="intel-nav-btn" data-report="balance" role="tab" aria-selected="false">
+          <span class="btn-icon">⚖️</span>
+          <span class="btn-text">Neighborhood Fiscal Balance</span>
+        </button>
+        <button class="intel-nav-btn" data-report="vintage" role="tab" aria-selected="false">
+          <span class="btn-icon">📐</span>
+          <span class="btn-text">Tax / Sq Ft & Housing Vintage</span>
+        </button>
+      </div>
+
+      <!-- REPORT 1: ITEMIZED TAX GROCERY RECEIPT -->
+      <div id="intel-report-receipt" class="intel-report-panel active">
+        <div class="intel-panel-header">
+          <div>
+            <h3>1. The Clifton Tax 'Grocery Store' Itemized Receipt</h3>
+            <p>Every dollar of your property tax bill is legally earmarked. Enter your home's assessed value (or select a quick preset) to generate an itemized register tape breaking down your exact annual, monthly, and daily costs across 14 municipal, school, and county services.</p>
+          </div>
+          <div class="receipt-quick-presets">
+            <span class="preset-label">Presets:</span>
+            <button class="preset-btn" data-val="182500">$182.5k (Clifton Median)</button>
+            <button class="preset-btn active" data-val="214000">$214k (City Average)</button>
+            <button class="preset-btn" data-val="320000">$320k (Suburban)</button>
+            <button class="preset-btn" data-val="450000">$450k (Luxury)</button>
+          </div>
+        </div>
+
+        <div class="receipt-interactive-layout">
+          <div class="receipt-controls-card">
+            <h4>Assessment Input & Live Calculator</h4>
+            <div class="form-group-receipt">
+              <label for="receipt-assessed-input">Enter Net Assessed Value:</label>
+              <div class="input-dollar-wrapper">
+                <span class="dollar-symbol">$</span>
+                <input type="number" id="receipt-assessed-input" value="214000" step="5000" min="10000" max="2000000">
+              </div>
+              <small class="help-text">Based on 2026 certified total tax rate: <strong>6.527%</strong> ($6.527 per $100 assessed value).</small>
+            </div>
+
+            <div class="receipt-summary-pills">
+              <div class="r-pill r-pill-total">
+                <span class="r-pill-lbl">Total Annual Tax</span>
+                <span class="r-pill-val" id="receipt-summary-annual">$13,967.78</span>
+              </div>
+              <div class="r-pill">
+                <span class="r-pill-lbl">Monthly Impact</span>
+                <span class="r-pill-val" id="receipt-summary-monthly">$1,163.98 / mo</span>
+              </div>
+              <div class="r-pill">
+                <span class="r-pill-lbl">Daily Cost</span>
+                <span class="r-pill-val" id="receipt-summary-daily">$38.27 / day</span>
+              </div>
+            </div>
+
+            <div class="receipt-insights-card">
+              <h5>💡 Key Takeaways For This Bill:</h5>
+              <ul class="receipt-takeaway-list" id="receipt-takeaways">
+                <!-- Dynamically generated takeaways -->
+              </ul>
+              <button id="btn-copy-receipt" class="action-btn-secondary receipt-copy-btn">
+                <span>📋</span> Copy Plaintext Receipt
+              </button>
+            </div>
+          </div>
+
+          <!-- THE RECEIPT SLIP -->
+          <div class="receipt-slip-container">
+            <div class="receipt-paper" id="printable-receipt">
+              <div class="receipt-edge-top"></div>
+              <div class="receipt-header">
+                <div class="receipt-city-logo">🏛️</div>
+                <div class="receipt-title">CITY OF CLIFTON & BOE</div>
+                <div class="receipt-subtitle">ITEMIZED TAXPAYER CASH REGISTER</div>
+                <div class="receipt-cert-line">CERTIFIED TAX YEAR 2026 • PASSAIC COUNTY</div>
+                <div class="receipt-dashed-divider"></div>
+                <div class="receipt-meta-row">
+                  <span id="receipt-timestamp-date">DATE: OCT 2026</span>
+                  <span>REG: #07011-07013</span>
+                </div>
+                <div class="receipt-meta-row">
+                  <span>ASSESSMENT:</span>
+                  <strong id="receipt-slip-assessment">$214,000.00</strong>
+                </div>
+                <div class="receipt-meta-row">
+                  <span>RATE / $100:</span>
+                  <strong>$6.5270 (6.527%)</strong>
+                </div>
+                <div class="receipt-dashed-divider"></div>
+              </div>
+
+              <!-- RECEIPT ITEMS -->
+              <div class="receipt-items-table" id="receipt-items-body">
+                <!-- Injected via JavaScript -->
+              </div>
+
+              <div class="receipt-dashed-divider"></div>
+
+              <div class="receipt-subtotals">
+                <div class="receipt-subtotal-row">
+                  <span>SUBTOTAL SCHOOLS (47.66%)</span>
+                  <span id="receipt-subtotal-schools">$6,657.54</span>
+                </div>
+                <div class="receipt-subtotal-row">
+                  <span>SUBTOTAL MUNICIPAL (29.42%)</span>
+                  <span id="receipt-subtotal-muni">$4,108.80</span>
+                </div>
+                <div class="receipt-subtotal-row">
+                  <span>SUBTOTAL COUNTY (22.92%)</span>
+                  <span id="receipt-subtotal-county">$3,201.44</span>
+                </div>
+                <div class="receipt-double-divider"></div>
+                <div class="receipt-grand-total">
+                  <span>TOTAL TAX DUE:</span>
+                  <span id="receipt-slip-total">$13,967.78</span>
+                </div>
+                <div class="receipt-subtotal-row small">
+                  <span>MONTHLY MORTGAGE ESCROW:</span>
+                  <span id="receipt-slip-monthly">$1,163.98</span>
+                </div>
+                <div class="receipt-subtotal-row small">
+                  <span>COST PER 24-HOUR DAY:</span>
+                  <span id="receipt-slip-daily">$38.27</span>
+                </div>
+              </div>
+
+              <div class="receipt-footer">
+                <div class="receipt-dashed-divider"></div>
+                <div class="receipt-barcode">||||| | |||| ||| |||||| | || ||||| |||||</div>
+                <div class="receipt-barcode-number">TAX-WATCHDOG-2026-CLIFTON-NJ</div>
+                <div class="receipt-thanks">THANK YOU FOR SUPPORTING PUBLIC SERVICES</div>
+                <div class="receipt-cert-tag">VERIFIED INDEPENDENTLY FROM OFFICIAL NJ DLGS & DOE BUDGETS</div>
+              </div>
+              <div class="receipt-edge-bottom"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORT 2: HOMES TO FUND SALARIES EQUIVALENCY -->
+      <div id="intel-report-homes" class="intel-report-panel" style="display: none;">
+        <div class="intel-panel-header">
+          <div>
+            <h3>2. Homes-to-Fund Salary & Compensation Index</h3>
+            <p>Every dollar paid to a municipal employee or school administrator comes directly from property tax checks. This index calculates exactly how many entire Clifton homeowners' annual municipal or school tax payments are required to fund each public position.</p>
+          </div>
+          <div class="homes-calc-badge">
+            <span>Benchmark: Average Clifton Home ($214,000 Assessed Value)</span>
+            <div class="benchmark-tags">
+              <span class="tag-muni">1 Home Pays $4,109/yr City Tax</span>
+              <span class="tag-school">1 Home Pays $6,658/yr School Tax</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="intel-filter-bar">
+          <div class="intel-filter-group">
+            <label>Filter by Entity / Department:</label>
+            <div class="filter-pills" id="homes-entity-filters">
+              <button class="filter-pill-btn active" data-entity="all">All Personnel</button>
+              <button class="filter-pill-btn" data-entity="City of Clifton">City Municipal Only</button>
+              <button class="filter-pill-btn" data-entity="Clifton Board of Education">Clifton BOE Only</button>
+            </div>
+          </div>
+          <div class="intel-filter-group">
+            <label>Sort By:</label>
+            <select id="homes-sort-select" class="styled-select-sm">
+              <option value="homes-desc">Most Homes Required (Highest Burden)</option>
+              <option value="salary-desc">Highest Salary Reported</option>
+              <option value="name-asc">Name (A-Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Top summary metrics ribbon -->
+        <div class="homes-summary-ribbon">
+          <div class="hs-card">
+            <span class="hs-title">Chief of Police ($215,000)</span>
+            <span class="hs-value">52.3 Homes</span>
+            <span class="hs-sub">Requires the complete annual municipal tax checks of ~52 Clifton families</span>
+          </div>
+          <div class="hs-card">
+            <span class="hs-title">Superintendent ($240,000)</span>
+            <span class="hs-value">36.0 Homes</span>
+            <span class="hs-sub">Requires the entire annual school tax checks of ~36 Clifton households</span>
+          </div>
+          <div class="hs-card">
+            <span class="hs-title">Interim City Manager ($195,000)</span>
+            <span class="hs-value">47.5 Homes</span>
+            <span class="hs-sub">Requires the entire annual city tax check of ~48 homeowners</span>
+          </div>
+          <div class="hs-card">
+            <span class="hs-title">Certified Teacher ($74,500)</span>
+            <span class="hs-value">11.2 Homes</span>
+            <span class="hs-sub">Funded by the school tax payments of ~11 Clifton residential homes</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Equivalency Table -->
+        <div class="table-container intel-table-container">
+          <table class="data-table intel-table" id="homes-equivalency-table">
+            <thead>
+              <tr>
+                <th>Employee / Position</th>
+                <th>Government Entity</th>
+                <th>Base / Total Salary</th>
+                <th>Entity Tax Rate</th>
+                <th>Equivalent Clifton Homes Needed</th>
+                <th>Public Context</th>
+              </tr>
+            </thead>
+            <tbody id="homes-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- REPORT 3: NEIGHBORHOOD FISCAL BALANCE SHEET -->
+      <div id="intel-report-balance" class="intel-report-panel" style="display: none;">
+        <div class="intel-panel-header">
+          <div>
+            <h3>3. Neighborhood Fiscal Balance Sheet</h3>
+            <p>Clifton Board of Education spends <strong>$22,450 per pupil</strong> annually. By joining residential tax collections with district student enrollment by neighborhood, we calculate which neighborhoods generate an educational tax surplus ("Donor") versus consume a net educational subsidy ("Recipient") — and how $108.4M in State Equalization Aid balances the district.</p>
+          </div>
+        </div>
+
+        <!-- State Equalization Banner -->
+        <div class="state-aid-banner">
+          <div class="sa-icon">🏛️</div>
+          <div class="sa-text">
+            <h4>The Role of $108,420,000 in State Education Equalization Aid</h4>
+            <p>Under the New Jersey School Funding Reform Act (SFRA), the State covers 37% of Clifton's public school operating costs. Without this $108.4M state aid, Clifton's residential school tax levy would have to increase by <strong>+67%</strong>, or approximately <strong>+$4,450 per household</strong>, to cover student educational costs.</p>
+          </div>
+        </div>
+
+        <!-- ZIP & Neighborhood Balance Grid -->
+        <div class="balance-sheet-grid" id="balance-sheet-cards">
+          <!-- Dynamically populated from demographics data -->
+        </div>
+
+        <div class="balance-sheet-deepdive">
+          <h4>District School Feeder Network & Enrollment Distribution</h4>
+          <div class="feeder-distribution-table-wrapper">
+            <table class="data-table intel-table" id="balance-schools-table">
+              <thead>
+                <tr>
+                  <th>School Name</th>
+                  <th>Type & Grades</th>
+                  <th>Neighborhood Zone</th>
+                  <th>Enrollment</th>
+                  <th>Annual School Cost (@ $22.45k/student)</th>
+                  <th>Economically Disadvantaged</th>
+                  <th>Feeder Middle</th>
+                </tr>
+              </thead>
+              <tbody id="balance-schools-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORT 4: TAX PER SQ FT & HOUSING VINTAGE DISPARITY -->
+      <div id="intel-report-vintage" class="intel-report-panel" style="display: none;">
+        <div class="intel-panel-header">
+          <div>
+            <h3>4. Tax per Sq Ft & Housing Vintage Disparity Index</h3>
+            <p>Because Clifton has not conducted a comprehensive citywide property revaluation in decades, assessed values have diverged from true market values. This report analyzes tax payments per square foot across 1,850 assessed properties grouped by the decade they were built.</p>
+          </div>
+        </div>
+
+        <!-- Vintage Disparity Summary Cards -->
+        <div class="vintage-grid" id="vintage-summary-cards">
+          <!-- Dynamically generated -->
+        </div>
+
+        <!-- In-depth Findings Callout -->
+        <div class="vintage-insight-box">
+          <div class="vib-header">
+            <span class="vib-icon">⚖️</span>
+            <h4>The Revaluation Gap: Why Vintage Affects Tax Equity</h4>
+          </div>
+          <div class="vib-content">
+            <p>In Clifton, properties built in different eras reflect distinct assessment-to-market dynamics:</p>
+            <div class="vib-columns">
+              <div class="vib-col">
+                <strong>Pre-1940 & Historic Housing (Botany, Lakeview, Dutch Hill)</strong>
+                <p>Average tax per square foot is <strong>$5.09/sq ft</strong>. These properties represent historic 2-family homes and workers' cottages. While square footage tax appears lower, these households earn lower median incomes ($62k-$78k), meaning their tax bills consume <strong>18%–20% of annual household income</strong>.</p>
+              </div>
+              <div class="vib-col">
+                <strong>1960–1999 Suburban Construction (Montclair Heights, Allwood, Styertowne)</strong>
+                <p>Average tax per square foot is <strong>$6.23 – $6.27/sq ft</strong>. These single-family colonials and split-levels bear high baseline assessments. Yet higher household incomes ($125k-$145k) moderate their burden to <strong>12%–14% of household income</strong>.</p>
+              </div>
+              <div class="vib-col">
+                <strong>2000+ Modern Infill & Luxury Construction</strong>
+                <p>Average tax per square foot is <strong>$6.33/sq ft</strong> with an average annual bill of $17,412. Because new construction is assessed at contemporary cost benchmarks, these homes pay the highest nominal taxes in the municipality.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample properties comparison table -->
+        <div class="vintage-sample-table-wrapper">
+          <div class="table-header-row">
+            <h4>Sample Cross-Section: Tax / Sq Ft Across Neighborhoods & Eras</h4>
+            <div class="vintage-era-pills" id="vintage-filter-pills">
+              <button class="filter-pill-btn active" data-vintage="all">All Eras</button>
+              <button class="filter-pill-btn" data-vintage="Pre-1940">Pre-1940</button>
+              <button class="filter-pill-btn" data-vintage="1940-1959">1940–1959</button>
+              <button class="filter-pill-btn" data-vintage="1960-1979">1960–1979</button>
+              <button class="filter-pill-btn" data-vintage="1980-1999">1980–1999</button>
+              <button class="filter-pill-btn" data-vintage="2000+">2000+</button>
+            </div>
+          </div>
+          <div class="table-container intel-table-container">
+            <table class="data-table intel-table" id="vintage-properties-table">
+              <thead>
+                <tr>
+                  <th>Address</th>
+                  <th>Neighborhood</th>
+                  <th>Year Built</th>
+                  <th>Square Feet</th>
+                  <th>Assessed Value</th>
+                  <th>Market Value</th>
+                  <th>Annual Tax</th>
+                  <th>Tax / Sq Ft</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="vintage-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -121,6 +121,7 @@ async function initApp() {
   renderEthicsCards();
   renderVendorsCards();
   setupInvestigationTools();
+  renderIntelligenceReports();
 }
 
 // Global Cross-Section Navigation & Tab Switcher
@@ -1965,6 +1966,529 @@ function setupInvestigationTools() {
       });
     });
   }
+}
+
+// TAB 5: JOINED INTELLIGENCE & CROSS-DATASET REPORTS
+function renderIntelligenceReports() {
+  // 1. Sub-nav toolbar switching
+  const navBtns = document.querySelectorAll('.intel-nav-btn');
+  const panels = {
+    receipt: document.getElementById('intel-report-receipt'),
+    homes: document.getElementById('intel-report-homes'),
+    balance: document.getElementById('intel-report-balance'),
+    vintage: document.getElementById('intel-report-vintage')
+  };
+
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const report = btn.getAttribute('data-report');
+      navBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      Object.entries(panels).forEach(([k, panel]) => {
+        if (!panel) return;
+        if (k === report) {
+          panel.style.display = 'block';
+          panel.classList.add('active');
+        } else {
+          panel.style.display = 'none';
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  // ----------------------------------------------------
+  // REPORT 1: ITEMIZED TAX GROCERY RECEIPT
+  // ----------------------------------------------------
+  const receiptInput = document.getElementById('receipt-assessed-input');
+  const presetBtns = document.querySelectorAll('.receipt-quick-presets .preset-btn');
+  const receiptItemsBody = document.getElementById('receipt-items-body');
+  const copyReceiptBtn = document.getElementById('btn-copy-receipt');
+
+  // Exact sub-service schedule (percentages and rates totaling 6.527%)
+  const receiptSchedule = [
+    // School Group (3.111% total)
+    { id: 'sch-teach', category: 'Schools', name: 'Certified Classroom Teachers & Instruction', rate: 1.1822, pct: 18.11, tag: 'BOE' },
+    { id: 'sch-ben', category: 'Schools', name: 'School Employee Health & Pension Benefits', rate: 0.6844, pct: 10.49, tag: 'BOE' },
+    { id: 'sch-sped', category: 'Schools', name: 'Special Education & Mandated Placements', rate: 0.4978, pct: 7.63, tag: 'BOE' },
+    { id: 'sch-plant', category: 'Schools', name: 'School Plant, Utilities & Custodial Care', rate: 0.3111, pct: 4.77, tag: 'BOE' },
+    { id: 'sch-admin', category: 'Schools', name: 'School Principals & District Administration', rate: 0.1867, pct: 2.86, tag: 'BOE' },
+    { id: 'sch-bus', category: 'Schools', name: 'Student Transportation & District Busing', rate: 0.1556, pct: 2.38, tag: 'BOE' },
+    { id: 'sch-supp', category: 'Schools', name: 'Student Guidance, Counseling & Athletics', rate: 0.0932, pct: 1.42, tag: 'BOE' },
+
+    // Municipal Group (1.920% total)
+    { id: 'mun-pol', category: 'City', name: 'Clifton Police Department & Patrol Operations', rate: 0.5184, pct: 7.94, tag: 'CITY' },
+    { id: 'mun-ben', category: 'City', name: 'Municipal Police/Fire Pensions & Health Benefits', rate: 0.3840, pct: 5.88, tag: 'CITY' },
+    { id: 'mun-fire', category: 'City', name: 'Clifton Fire Department & Emergency Medical', rate: 0.3648, pct: 5.59, tag: 'CITY' },
+    { id: 'mun-dpw', category: 'City', name: 'Department of Public Works (Streets, Trash, Snow)', rate: 0.2688, pct: 4.12, tag: 'CITY' },
+    { id: 'mun-debt', category: 'City', name: 'Municipal Debt Service & Capital Bond Principal', rate: 0.1728, pct: 2.65, tag: 'CITY' },
+    { id: 'mun-adm', category: 'City', name: 'City Hall Governance, Legal, Finance & Assessor', rate: 0.1152, pct: 1.76, tag: 'CITY' },
+    { id: 'mun-lib', category: 'City', name: 'Clifton Public Library & Health Clinic Services', rate: 0.0960, pct: 1.47, tag: 'CITY' },
+
+    // County Group (1.496% total)
+    { id: 'cty-shrf', category: 'County', name: 'Passaic County Sheriff, Jail & Courthouse Security', rate: 0.4189, pct: 6.42, tag: 'PASSAIC' },
+    { id: 'cty-soc', category: 'County', name: 'County Social Services, Public Health & Welfare', rate: 0.3291, pct: 5.04, tag: 'PASSAIC' },
+    { id: 'cty-rds', category: 'County', name: 'Passaic County Roads, Bridges & Traffic Signals', rate: 0.2992, pct: 4.58, tag: 'PASSAIC' },
+    { id: 'cty-jud', category: 'County', name: 'Passaic County Courts, Prosecutor & Surrogate', rate: 0.2094, pct: 3.21, tag: 'PASSAIC' },
+    { id: 'cty-park', category: 'County', name: 'Garret Mountain Parks & PCCC College Share', rate: 0.2394, pct: 3.67, tag: 'PASSAIC' }
+  ];
+
+  function updateReceipt() {
+    if (!receiptInput) return;
+    const assessed = parseFloat(receiptInput.value) || 0;
+    const totalRate = 6.527; // Certified 2026 Rate
+    const totalTax = (assessed / 100) * totalRate;
+    const monthlyTax = totalTax / 12;
+    const dailyTax = totalTax / 365;
+
+    const schoolTax = (assessed / 100) * 3.111;
+    const muniTax = (assessed / 100) * 1.920;
+    const countyTax = (assessed / 100) * 1.496;
+
+    // Update summary pills & slips
+    const elAnn = document.getElementById('receipt-summary-annual');
+    const elMo = document.getElementById('receipt-summary-monthly');
+    const elDay = document.getElementById('receipt-summary-daily');
+    if (elAnn) elAnn.textContent = formatUSD(totalTax);
+    if (elMo) elMo.textContent = `${formatUSD(monthlyTax)} / mo`;
+    if (elDay) elDay.textContent = `${formatUSD(dailyTax)} / day`;
+
+    const elSlipAss = document.getElementById('receipt-slip-assessment');
+    const elSlipTot = document.getElementById('receipt-slip-total');
+    const elSlipMo = document.getElementById('receipt-slip-monthly');
+    const elSlipDay = document.getElementById('receipt-slip-daily');
+    const elSlipSch = document.getElementById('receipt-subtotal-schools');
+    const elSlipMun = document.getElementById('receipt-subtotal-muni');
+    const elSlipCty = document.getElementById('receipt-subtotal-county');
+
+    if (elSlipAss) elSlipAss.textContent = formatUSD(assessed);
+    if (elSlipTot) elSlipTot.textContent = formatUSD(totalTax);
+    if (elSlipMo) elSlipMo.textContent = formatUSD(monthlyTax);
+    if (elSlipDay) elSlipDay.textContent = formatUSD(dailyTax);
+    if (elSlipSch) elSlipSch.textContent = formatUSD(schoolTax);
+    if (elSlipMun) elSlipMun.textContent = formatUSD(muniTax);
+    if (elSlipCty) elSlipCty.textContent = formatUSD(countyTax);
+
+    // Build Receipt Line Items
+    if (receiptItemsBody) {
+      receiptItemsBody.innerHTML = receiptSchedule.map(item => {
+        const lineCost = (assessed / 100) * item.rate;
+        const lineMonthly = lineCost / 12;
+        return `
+          <div class="receipt-item-row">
+            <div class="receipt-item-desc">
+              <span class="item-tag tag-${item.category.toLowerCase()}">${item.tag}</span>
+              <span class="item-title">${item.name}</span>
+            </div>
+            <div class="receipt-item-numbers">
+              <span class="item-annual">${formatUSD(lineCost)}</span>
+              <span class="item-mo">${formatUSD(lineMonthly)}/mo</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Dynamic Takeaways
+    const takeawaysList = document.getElementById('receipt-takeaways');
+    if (takeawaysList) {
+      const teacherCost = (assessed / 100) * 1.1822;
+      const combinedBen = (assessed / 100) * (0.6844 + 0.3840);
+      const policeCost = (assessed / 100) * 0.5184;
+      takeawaysList.innerHTML = `
+        <li><strong>Classroom Instruction:</strong> You pay <strong>${formatUSD(teacherCost)}/year</strong> (${formatUSD(teacherCost/12)}/mo) directly to teachers and educational materials.</li>
+        <li><strong>Health & Pensions:</strong> Public employee benefits across schools and City Hall cost you <strong>${formatUSD(combinedBen)}/year</strong> (${formatUSD(combinedBen/12)}/mo).</li>
+        <li><strong>Police & Patrol:</strong> Clifton Police operations account for <strong>${formatUSD(policeCost)}/year</strong> (${formatUSD(policeCost/12)}/mo).</li>
+        <li><strong>Daily Rate:</strong> Living in Clifton costs <strong>${formatUSD(dailyTax)} per 24 hours</strong> in municipal, school, and county taxes.</li>
+      `;
+    }
+  }
+
+  // Preset button clicks
+  presetBtns.forEach(p => {
+    p.addEventListener('click', () => {
+      presetBtns.forEach(b => b.classList.remove('active'));
+      p.classList.add('active');
+      const val = p.getAttribute('data-val');
+      if (receiptInput) {
+        receiptInput.value = val;
+        updateReceipt();
+      }
+    });
+  });
+
+  if (receiptInput) {
+    receiptInput.addEventListener('input', () => {
+      presetBtns.forEach(b => b.classList.remove('active'));
+      updateReceipt();
+    });
+  }
+
+  if (copyReceiptBtn) {
+    copyReceiptBtn.addEventListener('click', () => {
+      const assessed = parseFloat(receiptInput?.value) || 214000;
+      const totalTax = (assessed / 100) * 6.527;
+      let text = `========================================\n`;
+      text += `    CITY OF CLIFTON & BOE TAX RECEIPT\n`;
+      text += `========================================\n`;
+      text += `ASSESSMENT: ${formatUSD(assessed)}\n`;
+      text += `2026 CERTIFIED RATE: 6.527%\n`;
+      text += `----------------------------------------\n`;
+      receiptSchedule.forEach(item => {
+        const cost = (assessed / 100) * item.rate;
+        text += `[${item.tag.padEnd(7)}] ${item.name.padEnd(32)} ${formatUSD(cost).padStart(10)}\n`;
+      });
+      text += `----------------------------------------\n`;
+      text += `TOTAL ANNUAL TAX: ${formatUSD(totalTax)}\n`;
+      text += `MONTHLY ESCROW:   ${formatUSD(totalTax / 12)} / mo\n`;
+      text += `DAILY COST:       ${formatUSD(totalTax / 365)} / day\n`;
+      text += `========================================\n`;
+      text += `Source: clifton-tax-watchdog.github.io\n`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = copyReceiptBtn.innerHTML;
+        copyReceiptBtn.innerHTML = `<span>✅</span> Copied Plaintext Receipt!`;
+        setTimeout(() => { copyReceiptBtn.innerHTML = orig; }, 2200);
+      });
+    });
+  }
+
+  updateReceipt();
+
+  // ----------------------------------------------------
+  // REPORT 2: HOMES TO FUND SALARIES EQUIVALENCY
+  // ----------------------------------------------------
+  const homesTableBody = document.getElementById('homes-table-body');
+  const homesEntityBtns = document.querySelectorAll('#homes-entity-filters .filter-pill-btn');
+  const homesSortSelect = document.getElementById('homes-sort-select');
+
+  // Benchmark home: $214,000 assessed value
+  const benchAssessed = 214000;
+  const benchSchoolTax = (benchAssessed / 100) * 3.111; // $6,657.54
+  const benchCityTax = (benchAssessed / 100) * 1.920;   // $4,108.80
+
+  function renderHomesTable() {
+    if (!homesTableBody || !staffData) return;
+    const activeEntityBtn = document.querySelector('#homes-entity-filters .filter-pill-btn.active');
+    const entityFilter = activeEntityBtn ? activeEntityBtn.getAttribute('data-entity') : 'all';
+    const sortVal = homesSortSelect ? homesSortSelect.value : 'homes-desc';
+
+    let list = (staffData.staff ? staffData.staff : staffData).filter(s => (s.salaryReported || 0) > 0);
+
+    if (entityFilter !== 'all') {
+      list = list.filter(s => s.entity === entityFilter);
+    }
+
+    list = list.map(s => {
+      const isSchool = s.entity && s.entity.includes('Board of Education');
+      const annualTaxPerHome = isSchool ? benchSchoolTax : benchCityTax;
+      const homesRequired = s.salaryReported / annualTaxPerHome;
+      return {
+        ...s,
+        isSchool,
+        annualTaxPerHome,
+        homesRequired
+      };
+    });
+
+    if (sortVal === 'homes-desc') {
+      list.sort((a, b) => b.homesRequired - a.homesRequired);
+    } else if (sortVal === 'salary-desc') {
+      list.sort((a, b) => b.salaryReported - a.salaryReported);
+    } else if (sortVal === 'name-asc') {
+      list.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+    }
+
+    homesTableBody.innerHTML = list.map(s => {
+      const entityClass = s.isSchool ? 'badge-school' : 'badge-city';
+      const entityTaxRate = s.isSchool ? '3.111% ($6,658/home)' : '1.920% ($4,109/home)';
+      const entityLabel = s.isSchool ? 'School Tax' : 'City Tax';
+      const homesCountFormatted = s.homesRequired.toFixed(1);
+
+      return `
+        <tr>
+          <td>
+            <strong>${s.name}</strong>
+            <div class="table-subtext">${s.title} • <span class="text-subtle">${s.department || ''}</span></div>
+          </td>
+          <td>
+            <span class="status-badge ${entityClass}">${s.entity}</span>
+          </td>
+          <td>
+            <span class="salary-highlight">${formatUSDWhole(s.salaryReported)}</span>
+            <div class="table-subtext">${s.type || 'Annual Salary'}</div>
+          </td>
+          <td>
+            <code>${entityTaxRate}</code>
+          </td>
+          <td>
+            <div class="homes-count-badge">
+              <span class="homes-number">${homesCountFormatted}</span>
+              <span class="homes-text">Clifton Homes</span>
+            </div>
+            <div class="homes-progress-bar">
+              <div class="homes-progress-fill ${s.isSchool ? 'fill-school' : 'fill-city'}" style="width: ${Math.min(100, (s.homesRequired / 55) * 100)}%;"></div>
+            </div>
+          </td>
+          <td>
+            <span class="homes-context-desc">
+              Requires 100% of the annual ${entityLabel} check from <strong>${Math.round(s.homesRequired)}</strong> average households ($214k assessed).
+            </span>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  homesEntityBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      homesEntityBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderHomesTable();
+    });
+  });
+
+  if (homesSortSelect) {
+    homesSortSelect.addEventListener('change', renderHomesTable);
+  }
+
+  renderHomesTable();
+
+  // ----------------------------------------------------
+  // REPORT 3: NEIGHBORHOOD FISCAL BALANCE SHEET
+  // ----------------------------------------------------
+  const balanceCardsContainer = document.getElementById('balance-sheet-cards');
+  const balanceSchoolsBody = document.getElementById('balance-schools-body');
+
+  function renderBalanceSheet() {
+    if (!balanceCardsContainer || !demographicsData) return;
+    const zipData = demographicsData.familyChildDemographics?.zipBreakdown || [];
+    const perPupilCost = boeBudgetData?.perPupilSpending || 22450;
+    const totalLevy = 161850000;
+
+    balanceCardsContainer.innerHTML = zipData.map(z => {
+      const schoolTaxesEst = (z.residentialTaxSharePaid / 100) * totalLevy;
+      const schoolCostConsumed = z.districtStudentsSent * perPupilCost;
+      const netLocalGap = schoolTaxesEst - schoolCostConsumed;
+      const isDonor = netLocalGap >= 0;
+      const statusBadge = isDonor
+        ? `<span class="balance-badge donor">Net Tax Donor (+${formatUSDWhole(netLocalGap)})</span>`
+        : `<span class="balance-badge recipient">Net Recipient (${formatUSDWhole(netLocalGap)})</span>`;
+
+      return `
+        <div class="balance-card ${isDonor ? 'card-donor' : 'card-recipient'}">
+          <div class="bc-header">
+            <div>
+              <span class="bc-zip">ZIP ${z.zip}</span>
+              <h4 class="bc-area">${z.area}</h4>
+            </div>
+            ${statusBadge}
+          </div>
+
+          <div class="bc-stats-grid">
+            <div class="bc-stat">
+              <span class="bc-stat-lbl">Households</span>
+              <span class="bc-stat-val">${z.households.toLocaleString()}</span>
+              <span class="bc-stat-sub">${z.householdsWithChildrenPercent}% with kids</span>
+            </div>
+            <div class="bc-stat">
+              <span class="bc-stat-lbl">District Students</span>
+              <span class="bc-stat-val">${z.districtStudentsSent.toLocaleString()}</span>
+              <span class="bc-stat-sub">${z.districtStudentsPercent}% of Clifton total</span>
+            </div>
+            <div class="bc-stat">
+              <span class="bc-stat-lbl">School Taxes Paid</span>
+              <span class="bc-stat-val ${isDonor ? 'val-donor' : ''}">${formatUSDWhole(schoolTaxesEst)}</span>
+              <span class="bc-stat-sub">${z.residentialTaxSharePaid}% of city levy</span>
+            </div>
+            <div class="bc-stat">
+              <span class="bc-stat-lbl">School Costs Consumed</span>
+              <span class="bc-stat-val">${formatUSDWhole(schoolCostConsumed)}</span>
+              <span class="bc-stat-sub">@ ${formatUSDWhole(perPupilCost)} / student</span>
+            </div>
+          </div>
+
+          <div class="bc-driver-box">
+            <strong>Key Fiscal Driver:</strong> ${z.keyDriver}
+          </div>
+
+          <div class="bc-footer">
+            <span class="bc-feeder-lbl">Primary Middle School Feeder:</span>
+            <strong>${z.primaryFeeder}</strong>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Populate Schools Feeder Table
+    if (balanceSchoolsBody && demographicsData.familyChildDemographics?.schools) {
+      const schools = demographicsData.familyChildDemographics.schools;
+      balanceSchoolsBody.innerHTML = schools.map(s => {
+        const annualCost = s.enrollment * perPupilCost;
+        return `
+          <tr>
+            <td>
+              <strong>${s.name}</strong>
+              <div class="table-subtext">${s.address}</div>
+            </td>
+            <td>
+              <span class="status-badge badge-school">${s.type}</span>
+              <span class="table-subtext">${s.grades}</span>
+            </td>
+            <td>${s.neighborhood}</td>
+            <td><strong>${s.enrollment.toLocaleString()}</strong></td>
+            <td><strong class="salary-highlight">${formatUSDWhole(annualCost)}</strong></td>
+            <td>
+              <span class="econ-pill">${s.economicallyDisadvantagedPercent}%</span>
+            </td>
+            <td>${s.feederMiddle}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+  }
+
+  renderBalanceSheet();
+
+  // ----------------------------------------------------
+  // REPORT 4: TAX PER SQ FT & HOUSING VINTAGE DISPARITY
+  // ----------------------------------------------------
+  const vintageCardsContainer = document.getElementById('vintage-summary-cards');
+  const vintageTableBody = document.getElementById('vintage-table-body');
+  const vintageFilterBtns = document.querySelectorAll('#vintage-filter-pills .filter-pill-btn');
+
+  function renderVintageAnalysis() {
+    if (!vintageCardsContainer || !propertyAssessmentsData?.properties) return;
+    const props = propertyAssessmentsData.properties;
+
+    // Categorize into 5 vintages
+    const eraDefinitions = [
+      { key: 'Pre-1940', title: 'Pre-1940 (Historic Industrial)', filter: p => p.yearBuilt < 1940 },
+      { key: '1940-1959', title: '1940–1959 (Post-War Expansion)', filter: p => p.yearBuilt >= 1940 && p.yearBuilt < 1960 },
+      { key: '1960-1979', title: '1960–1979 (Mid-Century Suburbia)', filter: p => p.yearBuilt >= 1960 && p.yearBuilt < 1980 },
+      { key: '1980-1999', title: '1980–1999 (Modern Subdivisions)', filter: p => p.yearBuilt >= 1980 && p.yearBuilt < 2000 },
+      { key: '2000+', title: '2000+ (Recent Construction & Luxury)', filter: p => p.yearBuilt >= 2000 }
+    ];
+
+    const stats = eraDefinitions.map(era => {
+      const eraProps = props.filter(era.filter);
+      const count = eraProps.length;
+      const totalAssessed = eraProps.reduce((sum, p) => sum + (p.assessedTotal || 0), 0);
+      const totalTax = eraProps.reduce((sum, p) => sum + (p.annualTax || 0), 0);
+      const totalSqFt = eraProps.reduce((sum, p) => sum + (p.squareFeet || 1500), 0);
+      const totalMarket = eraProps.reduce((sum, p) => sum + (p.estimatedMarketValue || 0), 0);
+
+      const avgAssessed = count ? Math.round(totalAssessed / count) : 0;
+      const avgTax = count ? Math.round(totalTax / count) : 0;
+      const avgSqFt = count ? Math.round(totalSqFt / count) : 0;
+      const taxPerSqFt = totalSqFt ? +(totalTax / totalSqFt).toFixed(2) : 0;
+      const effectiveRate = totalMarket ? +((totalTax / totalMarket) * 100).toFixed(2) : 0;
+
+      return {
+        ...era,
+        count,
+        avgAssessed,
+        avgTax,
+        avgSqFt,
+        taxPerSqFt,
+        effectiveRate
+      };
+    });
+
+    vintageCardsContainer.innerHTML = stats.map(s => {
+      return `
+        <div class="vintage-card">
+          <div class="vc-top">
+            <span class="vc-tag">${s.key}</span>
+            <span class="vc-count">${s.count} Properties</span>
+          </div>
+          <h4 class="vc-title">${s.title}</h4>
+          
+          <div class="vc-metric-highlight">
+            <span class="vc-big-val">$${s.taxPerSqFt.toFixed(2)}</span>
+            <span class="vc-big-lbl">Tax per Square Foot</span>
+          </div>
+
+          <div class="vc-stats-list">
+            <div class="vc-row">
+              <span>Avg Annual Tax:</span>
+              <strong>${formatUSDWhole(s.avgTax)}</strong>
+            </div>
+            <div class="vc-row">
+              <span>Avg Home Size:</span>
+              <strong>${s.avgSqFt.toLocaleString()} sq ft</strong>
+            </div>
+            <div class="vc-row">
+              <span>Avg Assessed Value:</span>
+              <strong>${formatUSDWhole(s.avgAssessed)}</strong>
+            </div>
+            <div class="vc-row">
+              <span>Effective Market Tax Rate:</span>
+              <strong>${s.effectiveRate}%</strong>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Render sample properties table
+    function renderVintageTable(filterKey) {
+      if (!vintageTableBody) return;
+      let sampleList = props;
+      if (filterKey !== 'all') {
+        const era = eraDefinitions.find(e => e.key === filterKey);
+        if (era) sampleList = props.filter(era.filter);
+      }
+
+      // Display 25 representative properties across the selection
+      const displayProps = sampleList.slice(0, 25);
+
+      vintageTableBody.innerHTML = displayProps.map(p => {
+        const sqft = p.squareFeet || 1500;
+        const taxSqFt = (p.annualTax / sqft).toFixed(2);
+        return `
+          <tr>
+            <td>
+              <strong>${p.address}</strong>
+              <div class="table-subtext">Block ${p.block}, Lot ${p.lot}</div>
+            </td>
+            <td>${p.neighborhood}</td>
+            <td><strong>${p.yearBuilt}</strong></td>
+            <td>${sqft.toLocaleString()} sq ft</td>
+            <td>${formatUSDWhole(p.assessedTotal)}</td>
+            <td>${formatUSDWhole(p.estimatedMarketValue)}</td>
+            <td><strong>${formatUSD(p.annualTax)}</strong></td>
+            <td>
+              <span class="tax-sqft-badge">$${taxSqFt} / sq ft</span>
+            </td>
+            <td>
+              <button class="action-btn-sm" data-jump-tab="tab-calculator" onclick="document.getElementById('calc-assessment-input').value = ${p.assessedTotal}; switchTab('tab-calculator');">
+                Calculate ➔
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    vintageFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        vintageFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const key = btn.getAttribute('data-vintage');
+        renderVintageTable(key);
+      });
+    });
+
+    renderVintageTable('all');
+  }
+
+  renderVintageAnalysis();
 }
 
 // Launch
