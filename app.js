@@ -14,6 +14,7 @@ let controversiesData = null;
 let demographicsData = null;
 let propertyAssessmentsData = null;
 let surroundingTownsData = null;
+let commercialPilotData = null;
 let currentFilteredProperties = [];
 let propCurrentPage = 1;
 const propPageSize = 36;
@@ -122,6 +123,7 @@ async function initApp() {
   renderVendorsCards();
   setupInvestigationTools();
   renderIntelligenceReports();
+  renderCommercialPilot();
 }
 
 // Global Cross-Section Navigation & Tab Switcher
@@ -321,7 +323,7 @@ function setupTabs() {
 // Data Loader
 async function loadAllData() {
   try {
-    const [taxRes, boeRes, cityRes, staffRes, ethicsRes, vendRes, benRes, contRes, demoRes, propRes, surrRes] = await Promise.all([
+    const [taxRes, boeRes, cityRes, staffRes, ethicsRes, vendRes, benRes, contRes, demoRes, propRes, surrRes, pilotRes] = await Promise.all([
       fetch('data/tax_breakdown.json'),
       fetch('data/boe_budget.json'),
       fetch('data/municipal_budget.json'),
@@ -332,7 +334,8 @@ async function loadAllData() {
       fetch('data/ethics_controversies.json'),
       fetch('data/demographics_taxes.json'),
       fetch('data/property_assessments.json'),
-      fetch('data/surrounding_towns_comparison.json')
+      fetch('data/surrounding_towns_comparison.json'),
+      fetch('data/commercial_pilot_shift.json')
     ]);
 
     taxData = await taxRes.json();
@@ -353,6 +356,7 @@ async function loadAllData() {
     demographicsData = await demoRes.json();
     propertyAssessmentsData = await propRes.json();
     surroundingTownsData = await surrRes.json();
+    commercialPilotData = await pilotRes.json();
 
   } catch (err) {
     console.error("Data load issue:", err);
@@ -2485,6 +2489,174 @@ function renderIntelligenceReports() {
   }
 
   renderVintageAnalysis();
+}
+
+// TAB 6: COMMERCIAL RATABLES & PILOT TAX SHIFT
+function renderCommercialPilot() {
+  if (!commercialPilotData) return;
+
+  // 1. Ratable Shift Timeline
+  const timelineContainer = document.getElementById('ratable-shift-timeline');
+  if (timelineContainer && commercialPilotData.ratableShift?.historicalTrend) {
+    timelineContainer.innerHTML = commercialPilotData.ratableShift.historicalTrend.map(t => {
+      const isCurrent = t.year === 2026;
+      return `
+        <div class="rst-row ${isCurrent ? 'rst-current' : ''}">
+          <div class="rst-year-badge">
+            <strong>${t.year}</strong>
+            ${isCurrent ? '<span class="pill-current">CURRENT ROLL</span>' : ''}
+          </div>
+          <div class="rst-bars-container">
+            <div class="rst-bar-split">
+              <div class="rst-bar-res" style="width: ${t.residentialShare}%;">
+                <span>Residential ${t.residentialShare}%</span>
+              </div>
+              <div class="rst-bar-comm" style="width: ${t.commercialIndustrialShare}%;">
+                <span>Commercial/Ind ${t.commercialIndustrialShare}%</span>
+              </div>
+            </div>
+            <div class="rst-notes">${t.notes}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // 2. Interactive PILOT Simulator
+  const projectSelect = document.getElementById('pilot-project-select');
+  const comparisonContainer = document.getElementById('pilot-comparison-container');
+  const impactBanner = document.getElementById('pilot-school-impact-banner');
+  const projects = commercialPilotData.pilotMechanism?.sampleProjects || [];
+
+  if (projectSelect && projects.length) {
+    projectSelect.innerHTML = projects.map(p => `
+      <option value="${p.id}">${p.name} (${p.units} Units • ${formatUSDWhole(p.estimatedMarketValue)})</option>
+    `).join('');
+
+    function updatePilotComparison(projectId) {
+      const proj = projects.find(p => p.id === projectId) || projects[0];
+      if (!comparisonContainer || !proj) return;
+
+      comparisonContainer.innerHTML = `
+        <div class="pilot-col pilot-col-standard">
+          <div class="p-col-head">
+            <span class="p-col-tag">STANDARD AD VALOREM TAXES</span>
+            <h4>Standard Certified Property Tax (6.527%)</h4>
+            <div class="p-col-total font-mono">${formatUSDWhole(proj.standardTotalTax)} <small>/ year</small></div>
+          </div>
+          <div class="p-col-breakdown">
+            <div class="p-row">
+              <span class="p-label">Clifton Public Schools (47.66%):</span>
+              <strong class="p-val-school font-mono">${formatUSDWhole(proj.standardSchoolShare)}</strong>
+            </div>
+            <div class="p-row">
+              <span class="p-label">City of Clifton Municipal (29.42%):</span>
+              <strong class="p-val-city font-mono">${formatUSDWhole(proj.standardCityShare)}</strong>
+            </div>
+            <div class="p-row">
+              <span class="p-label">Passaic County Share (22.92%):</span>
+              <strong class="p-val-county font-mono">${formatUSDWhole(proj.standardCountyShare)}</strong>
+            </div>
+          </div>
+          <div class="p-col-footer standard-footer">
+            <span>✓ School district receives full 48% tax support to fund classroom seats.</span>
+          </div>
+        </div>
+
+        <div class="pilot-col pilot-col-abatement">
+          <div class="p-col-head">
+            <span class="p-col-tag pilot-tag">PILOT TAX ABATEMENT (LONG-TERM EXEMPTION)</span>
+            <h4>Annual Service Charge (PILOT)</h4>
+            <div class="p-col-total font-mono" style="color: #059669;">${formatUSDWhole(proj.pilotServiceCharge)} <small>/ year</small></div>
+          </div>
+          <div class="p-col-breakdown">
+            <div class="p-row zero-row">
+              <span class="p-label">Clifton Public Schools (0.0%):</span>
+              <strong class="p-val-zero font-mono">$0.00 (EXCLUDED)</strong>
+            </div>
+            <div class="p-row">
+              <span class="p-label">City Hall General Fund (95.0%):</span>
+              <strong class="p-val-city font-mono" style="color: #059669;">${formatUSDWhole(proj.pilotCityKeeps)}</strong>
+            </div>
+            <div class="p-row">
+              <span class="p-label">Passaic County Remittance (5.0%):</span>
+              <strong class="p-val-county font-mono">${formatUSDWhole(proj.pilotCountyGets)}</strong>
+            </div>
+          </div>
+          <div class="p-col-footer pilot-footer">
+            <strong>Developer Savings: ${formatUSDWhole(proj.developerAnnualSavings)} / yr</strong>
+            <small>City Hall retains +${formatUSDWhole(proj.pilotCityKeeps - proj.standardCityShare)} more than standard taxes while schools receive zero.</small>
+          </div>
+        </div>
+      `;
+
+      if (impactBanner) {
+        impactBanner.innerHTML = `
+          <div class="psib-icon">⚠️</div>
+          <div class="psib-content">
+            <h4>The Hidden School Shift for This Development:</h4>
+            <p>
+              This <strong>${proj.units}-unit complex</strong> generates an estimated <strong>${proj.estimatedDistrictStudents} school-age children</strong>.
+              At Clifton's certified per-pupil spending of $22,450/student, educating these students costs <strong>${formatUSDWhole(proj.annualDistrictCostGenerated)} every single year</strong>.
+            </p>
+            <div class="psib-bottom">
+              <span class="psib-pill">Schools receive from Developer: $0.00</span>
+              <span class="psib-pill danger">Cost absorbed by existing Clifton homeowners: +${formatUSDWhole(proj.homeownerBurdenAbsorbed)} / yr</span>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    projectSelect.addEventListener('change', (e) => {
+      updatePilotComparison(e.target.value);
+    });
+
+    updatePilotComparison(projects[0].id);
+  }
+
+  // 3. Top Commercial Ratables Table
+  const commBody = document.getElementById('commercial-ratables-body');
+  const ratables = commercialPilotData.taxAppeals?.topCommercialRatables || [];
+  if (commBody && ratables.length) {
+    commBody.innerHTML = ratables.map(r => {
+      let riskClass = 'risk-low';
+      if (r.appealRisk.includes('High')) riskClass = 'risk-high';
+      else if (r.appealRisk.includes('Moderate')) riskClass = 'risk-med';
+
+      return `
+        <tr>
+          <td>
+            <strong>${r.name}</strong>
+          </td>
+          <td>${r.location}</td>
+          <td><small>${r.type}</small></td>
+          <td><strong>${formatUSDWhole(r.assessedValue)}</strong></td>
+          <td>${formatUSDWhole(r.marketValueEst)}</td>
+          <td><strong class="salary-highlight font-mono">${formatUSDWhole(r.annualTaxPaid)}</strong></td>
+          <td>
+            <span class="appeal-risk-badge ${riskClass}">${r.appealRisk}</span>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  // 4. Taxpayer Policy Solutions
+  const solutionsContainer = document.getElementById('pilot-solutions-container');
+  const solutions = commercialPilotData.taxpayerSolutions || [];
+  if (solutionsContainer && solutions.length) {
+    solutionsContainer.innerHTML = solutions.map((s, idx) => `
+      <div class="solution-card">
+        <div class="sol-num">0${idx + 1}</div>
+        <h4>${s.title}</h4>
+        <p class="sol-proposal">${s.proposal}</p>
+        <div class="sol-benefit">
+          <strong>Taxpayer Benefit:</strong> ${s.benefit}
+        </div>
+      </div>
+    `).join('');
+  }
 }
 
 // Launch

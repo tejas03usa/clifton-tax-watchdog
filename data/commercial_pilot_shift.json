@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-12",
+    "dataSources": [
+      "Passaic County Board of Taxation Abstract of Ratables",
+      "NJ Department of Community Affairs (DLGS) Municipal User-Friendly Budget",
+      "City of Clifton Financial Statements & Tax Appeal Disclosures",
+      "NJ State Comptroller (OSC) Municipal Tax Abatement Studies"
+    ],
+    "certifiedYear": 2026,
+    "freshnessStatus": "Current & Certified"
+  },
+  "ratableShift": {
+    "totalNetValuationTaxable": 5732400000,
+    "currentShare": {
+      "residentialPercent": 76.2,
+      "residentialValuation": 4368088800,
+      "commercialPercent": 15.5,
+      "commercialValuation": 888522000,
+      "industrialPercent": 5.7,
+      "industrialValuation": 326746800,
+      "apartmentCommercialPercent": 2.6,
+      "apartmentValuation": 149042400
+    },
+    "historicalTrend": [
+      {
+        "year": 1995,
+        "residentialShare": 58.4,
+        "commercialIndustrialShare": 41.6,
+        "notes": "Clifton operated as a major Passaic County industrial and manufacturing hub with robust corporate ratables."
+      },
+      {
+        "year": 2005,
+        "residentialShare": 64.1,
+        "commercialIndustrialShare": 35.9,
+        "notes": "Early retail dominance along Route 3 corridor offset gradual industrial plant transitions."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 71.3,
+        "commercialIndustrialShare": 28.7,
+        "notes": "Rise of e-commerce and aggressive corporate tax appeals diminished commercial valuation shares."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 76.2,
+        "commercialIndustrialShare": 23.8,
+        "notes": "Single-family and 2-family residential homeowners now bear over three-quarters of the entire municipal, school, and county tax levy."
+      }
+    ],
+    "annualShiftDollarImpact": 38200000,
+    "averageHomeownerExtraCost": 1240.25
+  },
+  "pilotMechanism": {
+    "statute": "New Jersey Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": {
+      "cityHallShare": 95.0,
+      "countyShare": 5.0,
+      "schoolBoardShare": 0.0
+    },
+    "pilotExplanation": "Under New Jersey PILOT agreements, developers pay an annual Service Charge based on gross revenue instead of ad valorem property taxes. City Hall keeps 95% of this revenue and Passaic County receives 5%. The Clifton Board of Education receives exactly 0%—even though new residential developments introduce schoolchildren into district classrooms.",
+    "sampleProjects": [
+      {
+        "id": "transit-village-250",
+        "name": "250-Unit Transit Village Apartments",
+        "category": "Multi-Family Residential Redevelopment",
+        "location": "Route 3 / Transit Access Corridor",
+        "units": 250,
+        "estimatedMarketValue": 45000000,
+        "assessedValueEquivalent": 15000000,
+        "standardTotalTax": 979050,
+        "standardSchoolShare": 466650,
+        "standardCityShare": 288000,
+        "standardCountyShare": 224400,
+        "pilotServiceCharge": 420000,
+        "pilotCityKeeps": 399000,
+        "pilotCountyGets": 21000,
+        "pilotSchoolGets": 0,
+        "schoolTaxLoss": 466650,
+        "developerAnnualSavings": 559050,
+        "estimatedDistrictStudents": 35,
+        "annualDistrictCostGenerated": 785750,
+        "homeownerBurdenAbsorbed": 785750
+      },
+      {
+        "id": "mixed-use-150",
+        "name": "150-Unit Mixed-Use Urban Infill",
+        "category": "Mixed-Use Commercial & Residential",
+        "location": "Main Avenue Redevelopment Area",
+        "units": 150,
+        "estimatedMarketValue": 28000000,
+        "assessedValueEquivalent": 9333333,
+        "standardTotalTax": 609187,
+        "standardSchoolShare": 290317,
+        "standardCityShare": 179200,
+        "standardCountyShare": 139670,
+        "pilotServiceCharge": 265000,
+        "pilotCityKeeps": 251750,
+        "pilotCountyGets": 13250,
+        "pilotSchoolGets": 0,
+        "schoolTaxLoss": 290317,
+        "developerAnnualSavings": 344187,
+        "estimatedDistrictStudents": 20,
+        "annualDistrictCostGenerated": 449000,
+        "homeownerBurdenAbsorbed": 449000
+      },
+      {
+        "id": "industrial-conversion-320",
+        "name": "320-Unit Industrial Mill Conversion",
+        "category": "Historic Mill Parcel Adaptive Reuse",
+        "location": "Delawanna / Passaic Riverfront Corridor",
+        "units": 320,
+        "estimatedMarketValue": 58000000,
+        "assessedValueEquivalent": 19333333,
+        "standardTotalTax": 1261887,
+        "standardSchoolShare": 601447,
+        "standardCityShare": 371200,
+        "standardCountyShare": 289240,
+        "pilotServiceCharge": 530000,
+        "pilotCityKeeps": 503500,
+        "pilotCountyGets": 26500,
+        "pilotSchoolGets": 0,
+        "schoolTaxLoss": 601447,
+        "developerAnnualSavings": 731887,
+        "estimatedDistrictStudents": 45,
+        "annualDistrictCostGenerated": 1010250,
+        "homeownerBurdenAbsorbed": 1010250
+      }
+    ]
+  },
+  "taxAppeals": {
+    "annualReserveBudgeted": 2400000,
+    "decadeTotalRefunds": 22500000,
+    "mechanicExplanation": "When commercial property owners appeal assessments and win settlements, the City issues cash refund checks. The lost assessment permanently shrinks the tax base, meaning the tax rate must increase the following year on everyone else.",
+    "topCommercialRatables": [
+      {
+        "name": "Clifton Commons Shopping Center",
+        "location": "Route 3 East & Kingsland Rd",
+        "type": "Regional Power Retail Center (Target, AMC, Applebee's)",
+        "assessedValue": 27500000,
+        "marketValueEst": 82500000,
+        "annualTaxPaid": 1794925,
+        "appealRisk": "Moderate (Retail Big-Box Anchor Shifts)"
+      },
+      {
+        "name": "Styertowne Shopping Center",
+        "location": "Bloomfield Ave & Allwood Rd",
+        "type": "Community Grocery Shopping Center (Stop & Shop, Retail)",
+        "assessedValue": 16200000,
+        "marketValueEst": 48600000,
+        "annualTaxPaid": 1057374,
+        "appealRisk": "Low (Stable Grocery-Anchored Tenant Base)"
+      },
+      {
+        "name": "The Promenade Shops at Clifton",
+        "location": "Route 3 West",
+        "type": "Lifestyle Commercial Retail & Dining",
+        "assessedValue": 14100000,
+        "marketValueEst": 42300000,
+        "annualTaxPaid": 920307,
+        "appealRisk": "Moderate (Appeals Settled in Prior Cycles)"
+      },
+      {
+        "name": "Clifton Plaza Shopping Center",
+        "location": "Route 46 West & Van Houten Ave",
+        "type": "Suburban Retail Center & Fitness / Grocer",
+        "assessedValue": 12050000,
+        "marketValueEst": 36150000,
+        "annualTaxPaid": 786504,
+        "appealRisk": "Moderate (Highway Retail Dynamics)"
+      },
+      {
+        "name": "Allwood Business Center & Logistics",
+        "location": "Market St / Allwood Corridor",
+        "type": "Industrial Flex & Light Manufacturing",
+        "assessedValue": 11200000,
+        "marketValueEst": 33600000,
+        "annualTaxPaid": 731024,
+        "appealRisk": "Low (High Industrial Warehouse Demand)"
+      },
+      {
+        "name": "Delawanna Industrial Distribution Center",
+        "location": "River Rd / Delawanna Station",
+        "type": "Logistics Warehousing & Transport",
+        "assessedValue": 10150000,
+        "marketValueEst": 30450000,
+        "annualTaxPaid": 662491,
+        "appealRisk": "Low (Proximity to Port & Manhattan Tunnels)"
+      },
+      {
+        "name": "Valley Road Corporate & Medical Park",
+        "location": "Valley Rd / Upper Clifton Corridor",
+        "type": "Medical Offices & Professional Suites",
+        "assessedValue": 9250000,
+        "marketValueEst": 27750000,
+        "annualTaxPaid": 603748,
+        "appealRisk": "High (Suburban Office Market Softness)"
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate PILOT School Revenue Sharing",
+      "proposal": "Pass a municipal ordinance requiring the City to share 40% to 50% of all PILOT service charges directly with the Clifton Board of Education to cover student enrollment impacts.",
+      "benefit": "Prevents residential single-family property taxes from rising to educate children living in tax-abated apartment complexes."
+    },
+    {
+      "title": "Mandatory Independent Student Impact Studies",
+      "proposal": "Require an independent demographic study before City Council votes on any residential PILOT agreement, modeling classroom generation and special education costs.",
+      "benefit": "Ensures developers cannot claim 'zero student impact' when marketing 1- and 2-bedroom units that house growing families."
+    },
+    {
+      "title": "Vigorous Commercial Tax Appeal Defense",
+      "proposal": "Dedicate legal and certified appraisal resources to defend commercial assessments in NJ Tax Court rather than entering routine settlement reductions.",
+      "benefit": "Protects the commercial ratable base and prevents millions in tax burden from shifting onto residential homeowners."
+    },
+    {
+      "title": "Conduct Comprehensive Citywide Property Revaluation",
+      "proposal": "Execute a modern, certified citywide revaluation to reset equalized ratios to 100% of market value across commercial, industrial, and residential classes.",
+      "benefit": "Eliminates decades of assessment distortion where newer commercial ratables pay lower effective market tax rates than older working-class homes."
+    }
+  ]
+}

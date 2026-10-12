@@ -178,13 +178,11 @@
           <span class="tab-title">Joined Intelligence</span>
         </button>
 
-        <!-- 6. Citizen Toolkit & OPRA (Hidden) -->
-        <!--
-        <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-investigate">
-          <span class="tab-icon">🔍</span>
-          <span class="tab-title">Citizen Toolkit</span>
+        <!-- 6. Primary Direct Tab: Commercial & PILOT Shift -->
+        <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-commercial-pilot">
+          <span class="tab-icon">🏢</span>
+          <span class="tab-title">Commercial & PILOT Shift</span>
         </button>
-        -->
 
       </div>
     </div>
@@ -1465,6 +1463,151 @@
           </div>
         </div>
       </div>
+    </section>
+ 
+    <!-- TAB 6: COMMERCIAL RATABLES & PILOT TAX SHIFT -->
+    <section id="tab-commercial-pilot" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Certified Ratables & PILOT Analysis • Passaic County Tax Board & DLGS</span>
+        </div>
+        <h2>Commercial Ratables, PILOT Abatements & The Tax Shift</h2>
+        <p>Why have residential property taxes grown so fast in Clifton? Over the last 30 years, commercial ratables dropped from 42% to under 24% of the tax base, while long-term PILOT abatements give 95% of revenues to City Hall and $0 to the School District—shifting an extra <strong>+$38 Million per year</strong> directly onto single-family homeowners.</p>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="pilot-metrics-ribbon">
+        <div class="pm-box">
+          <span class="pm-lbl">Residential Tax Share</span>
+          <span class="pm-val font-mono" style="color: var(--color-danger);">76.2%</span>
+          <span class="pm-sub">Up from 58.4% in 1995 • $4.37B of $5.73B total base</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Commercial Ratable Share</span>
+          <span class="pm-val font-mono" style="color: var(--text-muted);">23.8%</span>
+          <span class="pm-sub">Down from 41.6% in 1995 • Lost industrial & commercial base</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Annual Shift onto Homeowners</span>
+          <span class="pm-val font-mono" style="color: #b91c1c;">+$38.2M</span>
+          <span class="pm-sub">~$1,240 extra per average single-family home/yr</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">PILOT Share to School District</span>
+          <span class="pm-val font-mono" style="color: #dc2626;">$0.00 (0%)</span>
+          <span class="pm-sub">City Hall keeps 95% • County gets 5% • Schools get zero</span>
+        </div>
+      </div>
+
+      <!-- SECTION 1: 30-YEAR RATABLE SHIFT -->
+      <div class="pilot-content-card">
+        <div class="card-head-row">
+          <div>
+            <h3>1. The 30-Year Shift: How Homeowners Became 76% of the Tax Base</h3>
+            <p>Under New Jersey law, the total municipal, school, and county tax levy is divided across the town's net valuation. As commercial and industrial ratables declined or won tax appeals, residential homeowners were forced to pick up the slack.</p>
+          </div>
+        </div>
+
+        <!-- Visual Progress Comparison Bars -->
+        <div class="ratable-shift-timeline" id="ratable-shift-timeline">
+          <!-- Rendered by JS from data/commercial_pilot_shift.json -->
+        </div>
+
+        <div class="shift-callout-grid">
+          <div class="sc-item">
+            <span class="sc-icon">📉</span>
+            <div>
+              <strong>Commercial Tax Appeal Clawbacks</strong>
+              <p>Corporate retail centers, big-box stores, and office parks regularly sue the City in NJ Tax Court. Over the past decade, Clifton paid over <strong>$22.5 Million in appeal refunds</strong> and reduced commercial assessments permanently.</p>
+            </div>
+          </div>
+          <div class="sc-item">
+            <span class="sc-icon">🏭</span>
+            <div>
+              <strong>Industrial to Residential Conversion</strong>
+              <p>Former manufacturing plants and research campuses (Hoffmann-La Roche, historic Botany mills) closed or converted into multi-family housing, replacing heavy taxpayers with student-generating residences.</p>
+            </div>
+          </div>
+          <div class="sc-item">
+            <span class="sc-icon">🏛️</span>
+            <div>
+              <strong>The Assessment Equalization Lag</strong>
+              <p>Without a periodic citywide revaluation, rising residential home values outpaced commercial assessments, silently shifting a higher mathematical ratio of the county and school levy onto homeowners.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: INTERACTIVE PILOT SIMULATOR -->
+      <div class="pilot-content-card highlight-card">
+        <div class="card-head-row">
+          <div>
+            <span class="badge-alert">Interactive Simulator</span>
+            <h3>2. The PILOT Loophole: Why City Hall Wins & Schools Lose</h3>
+            <p>Under the NJ Long Term Tax Exemption Law (N.J.S.A. 40A:20-1), a developer negotiates a Payment in Lieu of Taxes. See what happens to school funding and existing homeowners under different redevelopment projects:</p>
+          </div>
+          <div class="pilot-project-selector">
+            <label for="pilot-project-select">Select Development Project:</label>
+            <select id="pilot-project-select" class="styled-select-sm">
+              <!-- Rendered by JS -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Side by Side Comparison Layout -->
+        <div class="pilot-comparison-grid" id="pilot-comparison-container">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- School Impact Callout -->
+        <div class="pilot-school-impact-banner" id="pilot-school-impact-banner">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- SECTION 3: TOP COMMERCIAL RATABLES & TAX APPEAL ROLL -->
+      <div class="pilot-content-card">
+        <div class="card-head-row">
+          <div>
+            <h3>3. Major Commercial Ratables in Clifton & Tax Appeal Exposure</h3>
+            <p>Clifton's major shopping centers, retail plazas, and industrial distribution centers generate essential tax revenue. Here is how Clifton's premier commercial ratables compare in assessed value and appeal vulnerability:</p>
+          </div>
+        </div>
+
+        <div class="table-container intel-table-container">
+          <table class="data-table intel-table" id="commercial-ratables-table">
+            <thead>
+              <tr>
+                <th>Commercial Property Name</th>
+                <th>Corridor Location</th>
+                <th>Property Type & Tenants</th>
+                <th>Assessed Value</th>
+                <th>Estimated Market Value</th>
+                <th>Annual Property Tax Paid</th>
+                <th>Appeal Vulnerability</th>
+              </tr>
+            </thead>
+            <tbody id="commercial-ratables-body">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION 4: TAXPAYER ACTION & POLICY SOLUTIONS -->
+      <div class="pilot-content-card">
+        <div class="card-head-row">
+          <div>
+            <h3>4. What Taxpayers Can Demand: 4 Policy Solutions for Clifton</h3>
+            <p>Cities across New Jersey have addressed these disparities through local ordinances. Here is what Clifton citizens and taxpayers can advocate for:</p>
+          </div>
+        </div>
+
+        <div class="solutions-grid" id="pilot-solutions-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
     </section>
 
     <!-- TAB 6: CITIZEN INVESTIGATION TOOLKIT (HIDDEN) -->

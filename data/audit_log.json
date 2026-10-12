@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-12 13:48:57 UTC",
+  "lastRun": "2026-10-12 16:28:07 UTC",
   "date": "2026-10-12",
   "allDatasetsValid": true,
   "portalHealth": [
@@ -135,6 +135,16 @@
       "valid": true,
       "recordCount": 1850,
       "calculationDiscrepancies": 0
+    },
+    "commercial_pilot_shift.json": {
+      "valid": true,
+      "keys": [
+        "metadata",
+        "ratableShift",
+        "pilotMechanism",
+        "taxAppeals",
+        "taxpayerSolutions"
+      ]
     }
   },
   "certifiedTaxRate": "6.527%",

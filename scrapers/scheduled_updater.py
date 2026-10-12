@@ -58,7 +58,8 @@ DATA_FILES = [
     'vendors_spending.json',
     'demographics_taxes.json',
     'surrounding_towns_comparison.json',
-    'property_assessments.json'
+    'property_assessments.json',
+    'commercial_pilot_shift.json'
 ]
 
 def check_portal(portal):
