@@ -749,9 +749,14 @@ function renderFamilyAndSchools() {
         <span class="f-stat-sub">Supplies 5,720 students • Pays 36.7% school levy</span>
       </div>
       <div class="family-stat-box">
-        <span class="f-stat-label">West Clifton (07013) Share</span>
+        <span class="f-stat-label">West & Central (07013 & 07012)</span>
         <span class="f-stat-val" style="color: #166534;">40.7%</span>
         <span class="f-stat-sub">Supplies 4,380 students • Pays 57.4% school levy</span>
+      </div>
+      <div class="family-stat-box">
+        <span class="f-stat-label">Delawanna (07014) Ratio</span>
+        <span class="f-stat-val font-mono" style="color: #d97706;">1.03x</span>
+        <span class="f-stat-sub">Supplies 650 students (6.1%) • Pays 5.9% levy</span>
       </div>
     `;
   }
