@@ -1113,8 +1113,8 @@ function renderProperties(propsToRender, page) {
             <button class="btn-load-calculator" onclick="loadPropertyToCalculator(${p.assessedTotal})">
               <span>🧮</span> Load in Tax Calculator & Line Items
             </button>
-            <button class="btn-jump-prop-toolkit" data-jump-tab="tab-investigate" data-jump-search="${p.address}">
-              <span>🔍</span> Cross-Reference Owner & Deed in Toolkit ➔
+            <button class="btn-jump-prop-toolkit" data-jump-tab="tab-intelligence" onclick="if(document.getElementById('receipt-assessed-input')){document.getElementById('receipt-assessed-input').value=${p.assessedTotal};document.querySelector('.intel-nav-btn[data-report=\'receipt\']')?.click();}">
+              <span>🧾</span> Itemized Tax Grocery Receipt ➔
             </button>
             <button class="btn-jump-prop-area" data-jump-tab="tab-demographics">
               <span>📍</span> View ${p.neighborhood} Demographics ➔
@@ -1484,9 +1484,6 @@ function renderBenefits() {
           <button class="btn-jump-alert" data-jump-tab="tab-controversies">
             <span>🚨</span> View Comptroller Sick Leave Audit ➔
           </button>
-          <button class="btn-jump-action" data-jump-tab="tab-investigate" data-jump-opra="sickleave">
-            <span>✉️</span> Generate OPRA Payout Request ➔
-          </button>
         </div>
       </div>
     `).join('');
@@ -1533,8 +1530,8 @@ function renderControversies() {
         </div>
 
         <div class="card-action-bar-jumps">
-          <button class="btn-jump-alert" data-jump-tab="tab-investigate" data-jump-opra="${opraKey}">
-            <span>✉️</span> Draft OPRA Public Records Request on this Issue ➔
+          <button class="btn-jump-alert" data-jump-tab="tab-intelligence" onclick="document.querySelector('.intel-nav-btn[data-report=\'homes\']')?.click();">
+            <span>🔬</span> View Public Personnel & Cost Equivalency ➔
           </button>
           ${cat.includes('benefit') || cat.includes('leave') ? `
             <button class="btn-jump-action secondary" data-jump-tab="tab-benefits">
@@ -1591,7 +1588,7 @@ function renderStaffTable(filterEntity = 'all', searchQuery = '') {
           <div><small style="color: var(--text-subtle);">${s.title}</small></div>
           <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px;">
             ${hasEthics ? `<button class="btn-jump-tag" data-jump-tab="tab-ethics"><span>🏢</span> Outside Businesses & FDS ➔</button>` : ''}
-            <button class="btn-jump-tag-search" data-jump-tab="tab-investigate" data-jump-search="${s.name}"><span>🔍</span> Check Deeds & Records ➔</button>
+            <button class="btn-jump-tag-search" data-jump-tab="tab-intelligence" onclick="document.querySelector('.intel-nav-btn[data-report=\'homes\']')?.click();"><span>🏡</span> Homes to Fund Salary ➔</button>
           </div>
         </td>
         <td>
@@ -1682,9 +1679,6 @@ function renderEthicsCards() {
           <a href="${propUrl}" target="_blank" rel="noopener" class="verify-link">
             🔍 Check Passaic County Tax Board for ${d.officialName} ↗
           </a>
-          <button class="btn-jump-action secondary" data-jump-tab="tab-investigate" data-jump-search="${d.officialName}">
-            <span>🔍</span> Search All Records in Toolkit ➔
-          </button>
         </div>
       </div>
     `;
@@ -1703,12 +1697,9 @@ function renderVendorsCards() {
       <div class="vendor-spend">~${formatUSDWhole(v.annualEstimatedSpend)} <small style="font-size: 0.8rem; color: var(--text-subtle);">/ year</small></div>
       <p class="vendor-desc">${v.description}</p>
       <div class="card-action-bar-jumps">
-        <button class="btn-jump-action" data-jump-tab="tab-investigate" data-jump-opra="vendors">
-          <span>📋</span> Request PO Invoices via OPRA ➔
-        </button>
-        <button class="btn-jump-action secondary" data-jump-tab="tab-investigate" data-jump-search="${v.vendorName}">
-          <span>🏢</span> Search State Corporate Gateway ➔
-        </button>
+        <a href="https://www.google.com/search?q=${encodeURIComponent(v.vendorName + ' Clifton NJ contract')}" target="_blank" rel="noopener" class="btn-jump-action secondary">
+          <span>🔍</span> Search Contract Awards ↗
+        </a>
       </div>
     </div>
   `).join('');
