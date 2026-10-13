@@ -3139,6 +3139,510 @@ function renderFairTaxEngine() {
         `;
       }).join('');
     }
+
+    // Update the 5 Visual Components
+    updateBalanceScale(commShare, pilotShare);
+    renderWaterfall(currentBill, commReliefM, pilotReliefM, utilityReliefM, whatIfBill);
+    renderLineItemInspector(activeDitEntity, whatIfBill);
+    renderNeighborhoodVisualCards(reductionFactor, circuitCap);
+  }
+
+  // =========================================================================
+  // VISUAL ENGINE 1: INTERACTIVE TAX FLOW ECOSYSTEM (SANKEY FLOW)
+  // =========================================================================
+  const flowContainer = document.getElementById('tax-flow-diagram');
+  const btnFlowStatusQuo = document.getElementById('btn-flow-status-quo');
+  const btnFlowWhatIf = document.getElementById('btn-flow-what-if');
+
+  function renderTaxFlow(mode = 'status_quo') {
+    if (!flowContainer) return;
+
+    if (mode === 'status_quo') {
+      flowContainer.innerHTML = `
+        <!-- Column 1: Sources -->
+        <div class="flow-col">
+          <div class="flow-col-title">📥 1. Revenue Sources ($374.2M)</div>
+          <div class="flow-node" style="border-left: 5px solid #ef4444;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🏠 Residential Homeowners</span>
+              <span class="flow-node-pct text-danger">76.2%</span>
+            </div>
+            <div class="flow-node-val text-danger">$285.11 Million</div>
+            <div class="flow-node-sub">22,965 single-family & 2-family parcels carry 3.2× the burden of commercial property.</div>
+          </div>
+          <div class="flow-node" style="border-left: 5px solid #3b82f6;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🏢 Commercial / Industrial</span>
+              <span class="flow-node-pct text-info">23.8%</span>
+            </div>
+            <div class="flow-node-val text-info">$89.05 Million</div>
+            <div class="flow-node-sub">Eroded down from 41.6% in 1995. Corporate tax appeals stripped $38.2M onto homeowners.</div>
+          </div>
+          <div class="flow-node" style="border-left: 5px solid #8b5cf6;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🏗️ Developer PILOT Payments</span>
+              <span class="flow-node-pct text-purple">$4.82M</span>
+            </div>
+            <div class="flow-node-val text-purple">12 Abatement Deals</div>
+            <div class="flow-node-sub"><strong>$0 goes to public schools!</strong> 95% is kept by City Hall and 5% sent to Passaic County.</div>
+          </div>
+        </div>
+
+        <div class="flow-connector">➔</div>
+
+        <!-- Column 2: Central Pool -->
+        <div class="flow-col">
+          <div class="flow-col-title">🏛️ 2. Clifton Treasury Pool</div>
+          <div class="flow-node pool-node">
+            <div class="flow-node-header">
+              <span class="flow-node-title">Certified 2026 Budget Pool</span>
+            </div>
+            <div class="flow-node-val">$374.15 Million</div>
+            <div class="flow-node-sub">
+              <strong>Assessment Base:</strong> $5.73B Assessed<br>
+              <strong>True Market Value:</strong> $14.22 Billion<br>
+              <span class="text-danger">Equalization Ratio: 40.3%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-connector">➔</div>
+
+        <!-- Column 3: Service Entities -->
+        <div class="flow-col">
+          <div class="flow-col-title">📤 3. Where Levy is Spent</div>
+          <div class="flow-node" style="border-left: 5px solid #2563eb;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🎓 Clifton Public Schools</span>
+              <span class="flow-node-pct text-primary">47.7%</span>
+            </div>
+            <div class="flow-node-val text-primary">$178.34 Million</div>
+            <div class="flow-node-sub">Educates 10,800+ students. 100% of new development students funded by homeowners.</div>
+          </div>
+          <div class="flow-node" style="border-left: 5px solid #059669;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🚔 Municipal City Hall</span>
+              <span class="flow-node-pct text-success">29.4%</span>
+            </div>
+            <div class="flow-node-val text-success">$110.06 Million</div>
+            <div class="flow-node-sub">Police, Fire, DPW, Municipal Court, Sanitation, Parks, and Administration.</div>
+          </div>
+          <div class="flow-node" style="border-left: 5px solid #d97706;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🏛️ Passaic County Services</span>
+              <span class="flow-node-pct text-warning">22.9%</span>
+            </div>
+            <div class="flow-node-val text-warning">$85.76 Million</div>
+            <div class="flow-node-sub">County roads, Sheriff, Jail, County College, and Regional Parks system.</div>
+          </div>
+        </div>
+      `;
+    } else {
+      flowContainer.innerHTML = `
+        <!-- Column 1: Sources (What-If Equalized) -->
+        <div class="flow-col">
+          <div class="flow-col-title">📥 1. Revenue Sources (Rebalanced)</div>
+          <div class="flow-node" style="border-left: 5px solid #10b981;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🏠 Residential Homeowners</span>
+              <span class="flow-node-pct text-success">64.0%</span>
+            </div>
+            <div class="flow-node-val text-success">$239.50 Million</div>
+            <div class="flow-node-sub"><strong>-$45.6M citywide relief!</strong> Average homeowner saves $1,973/yr while budgets stay whole.</div>
+          </div>
+          <div class="flow-node" style="border-left: 5px solid #3b82f6;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🏢 Commercial Ratables</span>
+              <span class="flow-node-pct text-info">32.0%</span>
+            </div>
+            <div class="flow-node-val text-info">$119.73 Million</div>
+            <div class="flow-node-sub">Corridor revitalization & logistics hubs absorb their constitutional fair share (+$30.7M).</div>
+          </div>
+          <div class="flow-node" style="border-left: 5px solid #8b5cf6;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🏗️ 50% PILOT Dedicated to BOE</span>
+              <span class="flow-node-pct text-purple">+$2.41M</span>
+            </div>
+            <div class="flow-node-val text-purple">Fair Student Funding</div>
+            <div class="flow-node-sub">Ordinance directs 50% of developer fees directly to public schools, ending homeowner subsidization.</div>
+          </div>
+        </div>
+
+        <div class="flow-connector">➔</div>
+
+        <!-- Column 2: Central Pool -->
+        <div class="flow-col">
+          <div class="flow-col-title">🏛️ 2. Clifton Treasury Pool</div>
+          <div class="flow-node pool-node" style="border-color: #10b981; box-shadow: 0 0 20px -3px rgba(16, 185, 129, 0.25);">
+            <div class="flow-node-header">
+              <span class="flow-node-title">Equalized 2026 Budget Pool</span>
+            </div>
+            <div class="flow-node-val" style="color: #059669;">$374.15 Million</div>
+            <div class="flow-node-sub">
+              <strong>Assessment Base:</strong> $14.22B (100% Reval)<br>
+              <strong>Tax Rate Compressed:</strong> <span class="text-success font-bold">2.215%</span><br>
+              <span class="text-success font-bold">Zero service cuts. 100% funded.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-connector">➔</div>
+
+        <!-- Column 3: Service Entities -->
+        <div class="flow-col">
+          <div class="flow-col-title">📤 3. Fully Funded Services</div>
+          <div class="flow-node" style="border-left: 5px solid #2563eb;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🎓 Clifton Public Schools</span>
+              <span class="flow-node-pct text-primary">Fully Funded</span>
+            </div>
+            <div class="flow-node-val text-primary">$180.75 Million</div>
+            <div class="flow-node-sub">Includes $178.34M tax levy + $2.41M new recurring PILOT allocation for classrooms and teachers.</div>
+          </div>
+          <div class="flow-node" style="border-left: 5px solid #059669;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🚔 Municipal City Hall</span>
+              <span class="flow-node-pct text-success">Fully Funded</span>
+            </div>
+            <div class="flow-node-val text-success">$110.06 Million</div>
+            <div class="flow-node-sub">100% operational budget retained via commercial corridor growth and enterprise utility fees.</div>
+          </div>
+          <div class="flow-node" style="border-left: 5px solid #d97706;">
+            <div class="flow-node-header">
+              <span class="flow-node-title">🏛️ Passaic County Services</span>
+              <span class="flow-node-pct text-warning">Fully Funded</span>
+            </div>
+            <div class="flow-node-val text-warning">$85.76 Million</div>
+            <div class="flow-node-sub">Full county statutory assessment met without burdening senior citizens and low-income wards.</div>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  if (btnFlowStatusQuo && btnFlowWhatIf) {
+    btnFlowStatusQuo.addEventListener('click', () => {
+      btnFlowStatusQuo.classList.add('active');
+      btnFlowWhatIf.classList.remove('active');
+      renderTaxFlow('status_quo');
+    });
+
+    btnFlowWhatIf.addEventListener('click', () => {
+      btnFlowWhatIf.classList.add('active');
+      btnFlowStatusQuo.classList.remove('active');
+      renderTaxFlow('what_if');
+    });
+  }
+
+  // Initial Flow Render
+  renderTaxFlow('status_quo');
+
+  // =========================================================================
+  // VISUAL ENGINE 2: THE EQUITY BALANCE SCALE WIDGET
+  // =========================================================================
+  const bswBeam = document.getElementById('bsw-beam');
+  const bswLeftVal = document.getElementById('bsw-left-val');
+  const bswLeftSub = document.getElementById('bsw-left-sub');
+  const bswRightVal = document.getElementById('bsw-right-val');
+  const bswRightSub = document.getElementById('bsw-right-sub');
+  const bswStatusBadge = document.getElementById('bsw-status-badge');
+  const bswSubtext = document.getElementById('bsw-subtext');
+
+  function updateBalanceScale(commShare, pilotShare) {
+    if (!bswBeam) return;
+
+    const resShare = 100.0 - commShare;
+    const totalLevyM = 374.15;
+    const resLevyM = totalLevyM * (resShare / 100.0);
+    const commLevyM = totalLevyM * (commShare / 100.0);
+
+    if (bswLeftVal) bswLeftVal.textContent = `${resShare.toFixed(1)}%`;
+    if (bswLeftSub) bswLeftSub.textContent = `$${resLevyM.toFixed(1)}M`;
+    if (bswRightVal) bswRightVal.textContent = `${commShare.toFixed(1)}%`;
+    if (bswRightSub) bswRightSub.textContent = `$${commLevyM.toFixed(1)}M`;
+
+    // Baseline commercial is 23.8% (tilt = -14 deg). Fair equilibrium is ~35% (tilt = 0 deg).
+    const factor = Math.min(1.0, Math.max(0, (commShare - 23.8) / (35.0 - 23.8)));
+    const tiltDeg = Math.round(-14 * (1.0 - factor));
+
+    bswBeam.style.transform = `rotate(${tiltDeg}deg)`;
+
+    if (bswStatusBadge) {
+      if (Math.abs(tiltDeg) <= 2) {
+        bswStatusBadge.textContent = '⚖️ Balanced Equilibrium (Fair Share)';
+        bswStatusBadge.style.background = '#dcfce7';
+        bswStatusBadge.style.color = '#15803d';
+        bswStatusBadge.style.borderColor = '#86efac';
+      } else if (Math.abs(tiltDeg) <= 7) {
+        bswStatusBadge.textContent = `Progressing: ${resShare.toFixed(1)}% Residential`;
+        bswStatusBadge.style.background = '#fef3c7';
+        bswStatusBadge.style.color = '#b45309';
+        bswStatusBadge.style.borderColor = '#fde68a';
+      } else {
+        bswStatusBadge.textContent = `Tilted: ${resShare.toFixed(1)}% Homeowners`;
+        bswStatusBadge.style.background = '#fee2e2';
+        bswStatusBadge.style.color = '#b91c1c';
+        bswStatusBadge.style.borderColor = '#fca5a5';
+      }
+    }
+
+    if (bswSubtext) {
+      if (Math.abs(tiltDeg) <= 2) {
+        bswSubtext.innerHTML = `<strong>Scale Level:</strong> Commercial & PILOT revenue balances the scale, lifting over $35M in excess burden off Clifton families.`;
+      } else {
+        const excessM = (resLevyM - (totalLevyM * 0.65)).toFixed(1);
+        bswSubtext.innerHTML = `Homeowners shoulder <strong>${(resShare / Math.max(1, commShare)).toFixed(1)}×</strong> the burden of commercial ratables (~+$${excessM}M excess residential shift).`;
+      }
+    }
+  }
+
+  // =========================================================================
+  // VISUAL ENGINE 3: PERSONAL SAVINGS WATERFALL BREAKDOWN
+  // =========================================================================
+  const wfbTrack = document.getElementById('wfb-steps-track');
+
+  function renderWaterfall(currentBill, commReliefM, pilotReliefM, utilityReliefM, whatIfBill) {
+    if (!wfbTrack) return;
+
+    // Per-home savings across 22,965 single-family parcels
+    const parcels = 22965;
+    const commReliefHome = Math.round((commReliefM * 1000000) / parcels);
+    const pilotReliefHome = Math.round((pilotReliefM * 1000000) / parcels);
+    const utilityReliefHome = Math.round((utilityReliefM * 1000000) / parcels);
+
+    let runningBill = currentBill;
+    const step1Bill = Math.max(0, runningBill - commReliefHome);
+    const step2Bill = Math.max(0, step1Bill - pilotReliefHome);
+    const step3Bill = Math.max(0, step2Bill - utilityReliefHome);
+    const step4Delta = Math.round(step3Bill - whatIfBill);
+
+    wfbTrack.innerHTML = `
+      <div class="wfb-step-row">
+        <span class="wfb-step-icon">🏠</span>
+        <div class="wfb-step-info">
+          <span class="wfb-step-title">1. Starting Status Quo Baseline</span>
+          <span class="wfb-step-desc">Existing 2026 property tax levy under current assessment</span>
+        </div>
+        <span class="wfb-step-delta neutral">Base</span>
+        <span class="wfb-step-total">${formatUSDWhole(currentBill)}</span>
+      </div>
+
+      <div class="wfb-step-row">
+        <span class="wfb-step-icon">🏢</span>
+        <div class="wfb-step-info">
+          <span class="wfb-step-title">2. Commercial Ratable Restoration</span>
+          <span class="wfb-step-desc">Growth in Route 3 / 46 corridors shifts +$${commReliefM.toFixed(1)}M off homeowners</span>
+        </div>
+        <span class="wfb-step-delta relief">-${formatUSDWhole(commReliefHome)}</span>
+        <span class="wfb-step-total">${formatUSDWhole(step1Bill)}</span>
+      </div>
+
+      <div class="wfb-step-row">
+        <span class="wfb-step-icon">🎓</span>
+        <div class="wfb-step-info">
+          <span class="wfb-step-title">3. 50% PILOT Sharing to Schools</span>
+          <span class="wfb-step-desc">Developer fees fund classroom costs for new housing</span>
+        </div>
+        <span class="wfb-step-delta relief">-${formatUSDWhole(pilotReliefHome)}</span>
+        <span class="wfb-step-total">${formatUSDWhole(step2Bill)}</span>
+      </div>
+
+      <div class="wfb-step-row">
+        <span class="wfb-step-icon">🌊</span>
+        <div class="wfb-step-info">
+          <span class="wfb-step-title">4. Enterprise Utility Unbundling</span>
+          <span class="wfb-step-desc">Stormwater/trash shifted to high-volume commercial users</span>
+        </div>
+        <span class="wfb-step-delta relief">-${formatUSDWhole(utilityReliefHome)}</span>
+        <span class="wfb-step-total">${formatUSDWhole(step3Bill)}</span>
+      </div>
+
+      <div class="wfb-step-row">
+        <span class="wfb-step-icon">⚖️</span>
+        <div class="wfb-step-info">
+          <span class="wfb-step-title">5. Market Reval & Circuit Breaker</span>
+          <span class="wfb-step-desc">Assessment equalization + safety cap for low-income seniors</span>
+        </div>
+        <span class="wfb-step-delta ${step4Delta >= 0 ? 'relief' : 'neutral'}">${step4Delta >= 0 ? `-${formatUSDWhole(step4Delta)}` : `+${formatUSDWhole(Math.abs(step4Delta))}`}</span>
+        <span class="wfb-step-total" style="color: #15803d;">${formatUSDWhole(whatIfBill)}</span>
+      </div>
+    `;
+  }
+
+  // =========================================================================
+  // VISUAL ENGINE 4: CLICK-TO-DRILL-DOWN TAX DOLLAR INSPECTOR
+  // =========================================================================
+  let activeDitEntity = 'schools';
+  const ditContentBody = document.getElementById('dit-content-body');
+  const ditTabBtns = document.querySelectorAll('.dit-tab-btn');
+
+  function renderLineItemInspector(entityId, currentWhatIfBill) {
+    if (!ditContentBody) return;
+
+    activeDitEntity = entityId;
+    ditTabBtns.forEach(btn => {
+      if (btn.getAttribute('data-entity') === entityId) btn.classList.add('active');
+      else btn.classList.remove('active');
+    });
+
+    if (!taxData || !taxData.breakdown) {
+      ditContentBody.innerHTML = '<p class="text-muted text-center">Breakdown data unavailable.</p>';
+      return;
+    }
+
+    const matchedEntity = taxData.breakdown.find(b => b.id === entityId);
+    if (!matchedEntity || !matchedEntity.components) {
+      ditContentBody.innerHTML = '<p class="text-muted text-center">No line items for this category.</p>';
+      return;
+    }
+
+    // matchedEntity share of whatIfBill
+    const entityPortion = currentWhatIfBill * (matchedEntity.percentage / 100.0);
+
+    ditContentBody.innerHTML = matchedEntity.components.map(c => {
+      const shareKey = Object.keys(c).find(k => k.startsWith('shareOf'));
+      const share = c[shareKey] || 0;
+      const itemAmount = entityPortion * share;
+      const pctLabel = `${Math.round(share * 100)}% of ${matchedEntity.name}`;
+
+      return `
+        <div class="dit-line-item">
+          <div class="dit-item-name">
+            ${c.name}
+            <small>${c.details || 'Certified budget allocation'}</small>
+          </div>
+          <span class="dit-item-pct">${pctLabel}</span>
+          <span class="dit-item-amt">${formatUSDWhole(itemAmount)} / yr</span>
+        </div>
+      `;
+    }).join('');
+  }
+
+  ditTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const ent = btn.getAttribute('data-entity');
+      // Recalculate with latest bill
+      const assessedVal = parseFloat(inputAssessed?.value) || 191425;
+      const currentBill = (assessedVal / 100.0) * (baseline.certifiedTaxRateAssessed || 6.527);
+      const commShare = parseFloat(leverCommercial?.value) || 32.0;
+      const pilotShare = parseFloat(leverPilot?.value) || 50;
+      const utilityUnbundle = parseFloat(leverUtility?.value) || 7.5;
+      const totalReliefM = Math.max(0, (commShare - 23.8) * 3.7415) + ((pilotShare / 100.0) * 4.82) + utilityUnbundle;
+      const reductionFactor = Math.min(0.42, totalReliefM / 285.105);
+      const whatIfBill = currentBill * (1.0 - reductionFactor);
+
+      renderLineItemInspector(ent, whatIfBill);
+    });
+  });
+
+  // =========================================================================
+  // VISUAL ENGINE 5: INTERACTIVE NEIGHBORHOOD COMPARISON CARDS & GAUGES
+  // =========================================================================
+  const neighborhoodCardsGrid = document.getElementById('neighborhood-visual-cards-grid');
+
+  function renderNeighborhoodVisualCards(reductionFactor, circuitCap) {
+    if (!neighborhoodCardsGrid || !neighborhoodData.length) return;
+
+    neighborhoodCardsGrid.innerHTML = neighborhoodData.map(item => {
+      const itemCurrentTax = item.currentTaxBill;
+      let itemWhatIfTax = itemCurrentTax * (1.0 - reductionFactor);
+
+      if (circuitCap !== 'none' && item.medianHouseholdIncome <= 90000) {
+        const capPct = parseFloat(circuitCap);
+        const maxAllowed = item.medianHouseholdIncome * (capPct / 100.0);
+        if (itemWhatIfTax > maxAllowed) itemWhatIfTax = maxAllowed;
+      }
+
+      const itemSavings = Math.max(0, itemCurrentTax - itemWhatIfTax);
+      const currentEffort = item.currentTaxEffortPct;
+      const whatIfEffort = item.medianHouseholdIncome > 0 
+        ? (itemWhatIfTax / item.medianHouseholdIncome) * 100.0 
+        : 0;
+
+      let badgeClass = 'moderate';
+      let badgeLabel = 'Moderate Burden';
+      let barFillColor = '#f59e0b';
+
+      if (currentEffort >= 13.0) {
+        badgeClass = 'severe';
+        badgeLabel = 'Severe Disparity';
+        barFillColor = '#ef4444';
+      } else if (item.zip === '07013') {
+        badgeClass = 'high-gross';
+        badgeLabel = 'High Gross Levy';
+        barFillColor = '#3b82f6';
+      }
+
+      // Gauge width (scale max 16% effort to 100%)
+      const gaugeWidth = Math.min(100, (whatIfEffort / 16.0) * 100);
+
+      return `
+        <div class="nvc-card">
+          <div class="nvc-header">
+            <span class="nvc-zip">${item.zip}</span>
+            <span class="nvc-badge ${badgeClass}">${badgeLabel}</span>
+          </div>
+          <div class="nvc-name">${item.name}</div>
+
+          <div class="nvc-metric-row">
+            <span class="nvc-metric-label">Median Income</span>
+            <span class="nvc-metric-val">${formatUSDWhole(item.medianHouseholdIncome)}</span>
+          </div>
+          <div class="nvc-metric-row">
+            <span class="nvc-metric-label">Current Avg Bill</span>
+            <span class="nvc-metric-val text-danger">${formatUSDWhole(itemCurrentTax)}</span>
+          </div>
+
+          <!-- Tax Effort Gauge -->
+          <div class="nvc-effort-track">
+            <div class="nvc-effort-labels">
+              <span>Tax Effort: <strong>${currentEffort.toFixed(1)}% ➔ ${whatIfEffort.toFixed(1)}%</strong></span>
+              <span class="text-success font-bold">-${(currentEffort - whatIfEffort).toFixed(1)}%</span>
+            </div>
+            <div class="nvc-progress-bar">
+              <div class="nvc-bar-fill" style="width: ${gaugeWidth.toFixed(1)}%; background: ${barFillColor};"></div>
+            </div>
+          </div>
+
+          <!-- Relief Callout -->
+          <div class="nvc-relief-box">
+            <span>Projected Bill: <strong>${formatUSDWhole(itemWhatIfTax)}</strong></span>
+            <span class="nvc-relief-val">-${formatUSDWhole(itemSavings)}/yr</span>
+          </div>
+
+          <button class="nvc-load-btn" 
+            data-market="${item.avgMarketValue}" 
+            data-assessed="${item.avgAssessment}" 
+            data-income="${item.medianHouseholdIncome}" 
+            data-zip="${item.zip}">
+            Simulate ${item.zip} Average Home ➔
+          </button>
+        </div>
+      `;
+    }).join('');
+
+    // Attach click listeners to "Simulate ZIP Home" buttons
+    neighborhoodCardsGrid.querySelectorAll('.nvc-load-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const m = btn.getAttribute('data-market');
+        const a = btn.getAttribute('data-assessed');
+        const inc = btn.getAttribute('data-income');
+        const z = btn.getAttribute('data-zip');
+
+        if (inputMarket && m) inputMarket.value = m;
+        if (inputAssessed && a) inputAssessed.value = a;
+        if (inputIncome && inc) inputIncome.value = inc;
+        if (selectZip && z) selectZip.value = z;
+
+        runSimulation();
+
+        // Smooth scroll to sandbox results
+        const sandboxEl = document.querySelector('.what-if-sandbox');
+        if (sandboxEl) {
+          sandboxEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
   }
 
   // Detect Custom Levers vs Preset Matches

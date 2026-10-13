@@ -1672,6 +1672,32 @@
         </div>
       </div>
 
+      <!-- VISUAL 1: INTERACTIVE TAX FLOW ECOSYSTEM (SANKEY FLOW) -->
+      <div class="fair-card tax-flow-card">
+        <div class="fair-card-header">
+          <span class="fc-icon">🌊</span>
+          <div>
+            <h3>Interactive Clifton Tax Flow Ecosystem ($374.2M)</h3>
+            <p>Trace where tax dollars originate, pool into the Clifton Treasury, and distribute across services. Toggle between the Status Quo and the Fair Reform flow:</p>
+          </div>
+        </div>
+
+        <div class="flow-toggle-bar">
+          <button class="flow-toggle-btn active" id="btn-flow-status-quo">
+            <span class="ft-indicator status-quo"></span>
+            <strong>Status Quo Flow</strong> (76.2% Residential / $0 PILOT to Schools)
+          </button>
+          <button class="flow-toggle-btn" id="btn-flow-what-if">
+            <span class="ft-indicator what-if"></span>
+            <strong>What-If Equalized Flow</strong> (32% Commercial / 50% PILOT to Schools)
+          </button>
+        </div>
+
+        <div class="tax-flow-diagram" id="tax-flow-diagram">
+          <!-- Flow columns rendered dynamically by JS -->
+        </div>
+      </div>
+
       <!-- Root Cause Diagnosis: Why Current Taxation is Unfair -->
       <div class="fair-card">
         <div class="fair-card-header">
@@ -1870,6 +1896,36 @@
               <span class="equity-badge" id="res-equity-badge">★ Optimal Balance (96/100)</span>
             </div>
 
+            <!-- VISUAL 5: THE EQUITY BALANCE SCALE WIDGET -->
+            <div class="balance-scale-widget">
+              <div class="bsw-header">
+                <span class="bsw-title">⚖️ Clifton Tax Burden Balance Scale</span>
+                <span class="bsw-status-badge" id="bsw-status-badge">Tilted: 76.2% Homeowners</span>
+              </div>
+              <div class="bsw-stage">
+                <div class="bsw-beam-container" id="bsw-beam">
+                  <div class="bsw-beam-bar"></div>
+                  <div class="bsw-pan left-pan" id="bsw-left-pan">
+                    <span class="pan-icon">🏠</span>
+                    <span class="pan-label">Residential</span>
+                    <span class="pan-val" id="bsw-left-val">76.2%</span>
+                    <span class="pan-sub" id="bsw-left-sub">$285.1M</span>
+                  </div>
+                  <div class="bsw-pan right-pan" id="bsw-right-pan">
+                    <span class="pan-icon">🏢</span>
+                    <span class="pan-label">Commercial / PILOT</span>
+                    <span class="pan-val" id="bsw-right-val">23.8%</span>
+                    <span class="pan-sub" id="bsw-right-sub">$89.0M</span>
+                  </div>
+                </div>
+                <div class="bsw-fulcrum"></div>
+                <div class="bsw-base"></div>
+              </div>
+              <div class="bsw-subtext" id="bsw-subtext">
+                Homeowners currently shoulder 3.2× the burden of commercial ratables. Move sliders to balance the scale.
+              </div>
+            </div>
+
             <!-- Big Impact Cards -->
             <div class="kpi-impact-grid">
               <div class="kpi-impact-card">
@@ -1912,6 +1968,17 @@
               </div>
             </div>
 
+            <!-- VISUAL 2: PERSONAL SAVINGS WATERFALL BREAKDOWN -->
+            <div class="waterfall-breakdown-box">
+              <div class="wfb-header">
+                <span class="wfb-title">📊 Where Your Savings Come From (Waterfall Breakdown)</span>
+                <span class="wfb-hint">Step-by-step policy savings</span>
+              </div>
+              <div class="wfb-steps-track" id="wfb-steps-track">
+                <!-- Rendered dynamically by JS -->
+              </div>
+            </div>
+
             <!-- Equity Score Meter -->
             <div class="equity-score-meter-box">
               <div class="esm-header">
@@ -1928,14 +1995,29 @@
               </div>
             </div>
 
-            <!-- Tax Dollar Destination Breakdown -->
+            <!-- VISUAL 3: CLICK-TO-DRILL-DOWN TAX DOLLAR INSPECTOR -->
             <div class="destination-breakdown-box">
-              <h5>Where Your What-If Tax Dollar Goes:</h5>
+              <div class="dest-header-row">
+                <h5>Where Your What-If Tax Dollar Goes:</h5>
+                <span class="dest-hint">Click a category below to drill down into line items</span>
+              </div>
               <div class="dest-split-bars" id="dest-split-bars">
                 <!-- Bars rendered by JS -->
               </div>
               <div class="dest-legend" id="dest-legend">
                 <!-- Legend items rendered by JS -->
+              </div>
+
+              <!-- Interactive Line-Item Inspector -->
+              <div class="dest-inspector-tray">
+                <div class="dit-tab-bar">
+                  <button class="dit-tab-btn active" data-entity="schools" id="btn-dit-schools">🎓 Schools Line Items</button>
+                  <button class="dit-tab-btn" data-entity="municipal" id="btn-dit-muni">🚔 City Hall Line Items</button>
+                  <button class="dit-tab-btn" data-entity="county" id="btn-dit-county">🏛️ County Line Items</button>
+                </div>
+                <div class="dit-content-body" id="dit-content-body">
+                  <!-- Line items rendered by JS with exact dollar figures for this resident -->
+                </div>
               </div>
             </div>
 
@@ -1971,11 +2053,17 @@
         <div class="fair-card-header">
           <span class="fc-icon">📍</span>
           <div>
-            <h3>Neighborhood Equity Impact Across All Clifton ZIP Codes</h3>
-            <p>See how your chosen reform scenario impacts homeowners, renters, and tax effort across every section of Clifton:</p>
+            <h3>Neighborhood Equity Comparison & Gauges (07011, 07012, 07013, 07014)</h3>
+            <p>Visual gauges showing tax effort, student population share vs. tax base share, and projected relief across Clifton neighborhoods:</p>
           </div>
         </div>
-        <div class="table-responsive">
+
+        <!-- VISUAL 4: INTERACTIVE NEIGHBORHOOD COMPARISON CARDS & GAUGES -->
+        <div class="neighborhood-visual-cards-grid" id="neighborhood-visual-cards-grid">
+          <!-- Populated by JS with visual gauges, split bars, and drill-down buttons -->
+        </div>
+
+        <div class="table-responsive" style="margin-top: 24px;">
           <table class="data-table" id="neighborhood-equity-table">
             <thead>
               <tr>

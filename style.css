@@ -7582,6 +7582,660 @@ input:checked + .slider.round:before {
   }
 }
 
+/* ==========================================================================
+   5 VISUAL ILLUSTRATIONS & DRILL-DOWN ENGINES
+   ========================================================================== */
+
+/* 1. INTERACTIVE TAX FLOW ECOSYSTEM (SANKEY FLOW) */
+.tax-flow-card {
+  margin-bottom: 30px;
+}
+
+.flow-toggle-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.flow-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flow-toggle-btn:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-subtle);
+  color: var(--text-main);
+}
+
+.flow-toggle-btn.active {
+  background: var(--bg-dark);
+  color: #ffffff;
+  border-color: var(--bg-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ft-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.ft-indicator.status-quo {
+  background: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+}
+
+.ft-indicator.what-if {
+  background: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.tax-flow-diagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 16px;
+  align-items: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  overflow-x: auto;
+}
+
+.flow-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 220px;
+}
+
+.flow-col-title {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-subtle);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flow-node {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.flow-node:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-subtle);
+}
+
+.flow-node-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.flow-node-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flow-node-pct {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.flow-node-val {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.flow-node-sub {
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+  line-height: 1.35;
+}
+
+.flow-node.pool-node {
+  background: linear-gradient(145deg, #ffffff, #f1f5f9);
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 20px -3px rgba(59, 130, 246, 0.25);
+  text-align: center;
+  padding: 24px 18px;
+}
+
+.flow-node.pool-node .flow-node-header {
+  justify-content: center;
+}
+
+.flow-node.pool-node .flow-node-val {
+  font-size: 1.55rem;
+  color: var(--color-school);
+}
+
+.flow-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-subtle);
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+/* 2. THE EQUITY BALANCE SCALE WIDGET */
+.balance-scale-widget {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+
+.bsw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.bsw-title {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.bsw-status-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+  transition: all 0.3s ease;
+}
+
+.bsw-stage {
+  position: relative;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.bsw-beam-container {
+  position: relative;
+  width: 90%;
+  max-width: 320px;
+  height: 8px;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center center;
+}
+
+.bsw-beam-bar {
+  width: 100%;
+  height: 6px;
+  background: #475569;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.bsw-pan {
+  position: absolute;
+  top: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  min-width: 95px;
+  text-align: center;
+}
+
+.bsw-pan.left-pan {
+  left: -20px;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+}
+
+.bsw-pan.right-pan {
+  right: -20px;
+  background: #dbeafe;
+  border: 1px solid #bfdbfe;
+}
+
+.pan-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.pan-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pan-val {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.pan-sub {
+  font-size: 0.68rem;
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+}
+
+.bsw-fulcrum {
+  position: absolute;
+  bottom: 12px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 22px solid #334155;
+}
+
+.bsw-base {
+  position: absolute;
+  bottom: 4px;
+  width: 48px;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+.bsw-subtext {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* 3. PERSONAL SAVINGS WATERFALL BREAKDOWN */
+.waterfall-breakdown-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.wfb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.wfb-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.wfb-hint {
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+}
+
+.wfb-steps-track {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wfb-step-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+}
+
+.wfb-step-icon {
+  font-size: 1rem;
+}
+
+.wfb-step-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.wfb-step-title {
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.wfb-step-desc {
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+}
+
+.wfb-step-delta {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+}
+
+.wfb-step-delta.relief {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.wfb-step-delta.neutral {
+  background: #e2e8f0;
+  color: var(--text-muted);
+}
+
+.wfb-step-total {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  min-width: 72px;
+  text-align: right;
+}
+
+/* 4. CLICK-TO-DRILL-DOWN TAX DOLLAR INSPECTOR */
+.dest-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.dest-hint {
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+}
+
+.dest-inspector-tray {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.dit-tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.dit-tab-btn {
+  padding: 5px 10px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dit-tab-btn:hover {
+  background: var(--bg-surface);
+  color: var(--text-main);
+}
+
+.dit-tab-btn.active {
+  background: var(--bg-dark);
+  color: #ffffff;
+  border-color: var(--bg-dark);
+}
+
+.dit-content-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.dit-line-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+}
+
+.dit-item-name {
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.dit-item-name small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-subtle);
+  font-weight: 400;
+}
+
+.dit-item-pct {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+}
+
+.dit-item-amt {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text-main);
+}
+
+/* 5. INTERACTIVE NEIGHBORHOOD COMPARISON CARDS & GAUGES */
+.neighborhood-visual-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.nvc-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.nvc-card:hover {
+  background: var(--bg-surface);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.nvc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.nvc-zip {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.nvc-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+}
+
+.nvc-badge.severe {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.nvc-badge.moderate {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.nvc-badge.high-gross {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.nvc-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.nvc-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+}
+
+.nvc-metric-label {
+  color: var(--text-subtle);
+}
+
+.nvc-metric-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.nvc-effort-track {
+  margin-bottom: 12px;
+}
+
+.nvc-effort-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  margin-bottom: 4px;
+}
+
+.nvc-progress-bar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.nvc-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.nvc-relief-box {
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  font-size: 0.78rem;
+}
+
+.nvc-relief-val {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  color: #15803d;
+  font-size: 0.88rem;
+}
+
+.nvc-load-btn {
+  margin-top: 8px;
+  padding: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-school);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nvc-load-btn:hover {
+  background: var(--color-school);
+  color: #ffffff;
+  border-color: var(--color-school);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .tax-flow-diagram {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .flow-connector {
+    transform: rotate(90deg);
+    margin: 4px 0;
+  }
+}
+
+
 
 
 
