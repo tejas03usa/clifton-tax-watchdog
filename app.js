@@ -15,6 +15,7 @@ let demographicsData = null;
 let propertyAssessmentsData = null;
 let surroundingTownsData = null;
 let commercialPilotData = null;
+let fairTaxData = null;
 let currentFilteredProperties = [];
 let propCurrentPage = 1;
 const propPageSize = 36;
@@ -124,6 +125,7 @@ async function initApp() {
   setupInvestigationTools();
   renderIntelligenceReports();
   renderCommercialPilot();
+  renderFairTaxEngine();
 }
 
 // Global Cross-Section Navigation & Tab Switcher
@@ -335,7 +337,8 @@ async function loadAllData() {
       fetch('data/demographics_taxes.json'),
       fetch('data/property_assessments.json'),
       fetch('data/surrounding_towns_comparison.json'),
-      fetch('data/commercial_pilot_shift.json')
+      fetch('data/commercial_pilot_shift.json'),
+      fetch('data/fair_tax_scenarios.json')
     ]);
 
     taxData = await taxRes.json();
@@ -357,6 +360,7 @@ async function loadAllData() {
     propertyAssessmentsData = await propRes.json();
     surroundingTownsData = await surrRes.json();
     commercialPilotData = await pilotRes.json();
+    fairTaxData = await fairRes.json();
 
   } catch (err) {
     console.error("Data load issue:", err);
@@ -2657,6 +2661,625 @@ function renderCommercialPilot() {
       </div>
     `).join('');
   }
+}
+
+// ==========================================================================
+// TAB 7: WHAT-IF FAIR TAX BURDEN & EQUALIZATION ENGINE
+// ==========================================================================
+function renderFairTaxEngine() {
+  if (!fairTaxData) return;
+
+  const baseline = fairTaxData.metadata.certifiedBaseline;
+  const inequities = fairTaxData.fairnessDiagnosis.coreInequities || [];
+  const presets = fairTaxData.presetScenarios || [];
+  const sampleProfiles = fairTaxData.sampleHomeProfiles || [];
+  const roadmapSteps = fairTaxData.policyRoadmap || [];
+  const neighborhoodData = fairTaxData.neighborhoodEquityImpact || [];
+
+  // 1. Render Inequities Grid
+  const ineqContainer = document.getElementById('fair-inequities-grid');
+  if (ineqContainer && inequities.length) {
+    ineqContainer.innerHTML = inequities.map(item => {
+      let sevClass = 'medium';
+      if (item.severity === 'Critical') sevClass = 'critical';
+      else if (item.severity === 'High') sevClass = 'high';
+
+      return `
+        <div class="inequity-card">
+          <div class="inequity-header">
+            <span class="inequity-metric">${item.metric}</span>
+            <span class="inequity-severity ${sevClass}">${item.severity}</span>
+          </div>
+          <h4>${item.title}</h4>
+          <p class="inequity-desc">${item.description}</p>
+          <div class="inequity-remedy">
+            <strong>Actionable Remedy:</strong> ${item.remedy}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // 2. Render Scenario Presets
+  const presetsContainer = document.getElementById('scenario-presets-container');
+  const activeCallout = document.getElementById('active-scenario-callout');
+
+  function renderScenarioCallout(scenario) {
+    if (!activeCallout || !scenario) return;
+    activeCallout.innerHTML = `
+      <div class="sdc-summary">
+        <strong>${scenario.name}</strong>
+        <p>${scenario.summary}</p>
+      </div>
+      <div class="sdc-impact winners">
+        <strong>Direct Winners:</strong>
+        ${scenario.winners}
+      </div>
+      <div class="sdc-impact losers">
+        <strong>Fair Share Contributors:</strong>
+        ${scenario.losers}
+      </div>
+    `;
+  }
+
+  // Default active scenario: Unified Blueprint
+  let currentPresetId = 'unified_blueprint';
+
+  if (presetsContainer && presets.length) {
+    presetsContainer.innerHTML = presets.map(p => `
+      <button class="preset-pill-btn ${p.id === currentPresetId ? 'active' : ''}" data-preset-id="${p.id}">
+        <span class="pill-badge ${p.badgeClass}">${p.badge}</span>
+        <span>${p.name}</span>
+      </button>
+    `).join('');
+
+    const initPreset = presets.find(p => p.id === currentPresetId) || presets[0];
+    renderScenarioCallout(initPreset);
+  }
+
+  // 3. Sandbox Inputs & Controls
+  const inputMarket = document.getElementById('wif-market-val');
+  const inputAssessed = document.getElementById('wif-assessed-val');
+  const inputIncome = document.getElementById('wif-income');
+  const selectZip = document.getElementById('wif-zip');
+  const selectResType = document.getElementById('wif-resident-type');
+
+  const leverCommercial = document.getElementById('wif-lever-commercial');
+  const valCommercial = document.getElementById('wif-val-commercial');
+  const badgeCommercial = document.getElementById('wif-badge-commercial');
+
+  const leverPilot = document.getElementById('wif-lever-pilot');
+  const valPilot = document.getElementById('wif-val-pilot');
+  const badgePilot = document.getElementById('wif-badge-pilot');
+
+  const toggleReval = document.getElementById('wif-toggle-reval');
+
+  const selectCircuit = document.getElementById('wif-select-circuit');
+  const badgeCircuit = document.getElementById('wif-badge-circuit');
+
+  const leverUtility = document.getElementById('wif-lever-utility');
+  const valUtility = document.getElementById('wif-val-utility');
+  const badgeUtility = document.getElementById('wif-badge-utility');
+
+  const btnReset = document.getElementById('btn-reset-sandbox');
+
+  // Results DOM elements
+  const resEquityBadge = document.getElementById('res-equity-badge');
+  const resCurrentBill = document.getElementById('res-current-bill');
+  const resCurrentRate = document.getElementById('res-current-rate');
+  const resProjectedBill = document.getElementById('res-projected-bill');
+  const resProjectedRate = document.getElementById('res-projected-rate');
+  const resAnnualSavings = document.getElementById('res-annual-savings');
+  const resSavingsPct = document.getElementById('res-savings-pct');
+  const resMonthlySavings = document.getElementById('res-monthly-savings');
+  const vcBeforeLabel = document.getElementById('vc-before-label');
+  const vcAfterLabel = document.getElementById('vc-after-label');
+  const vcAfterBar = document.getElementById('vc-after-bar');
+  const vcNarrative = document.getElementById('vc-narrative');
+  const esmScoreVal = document.getElementById('esm-score-val');
+  const esmFillBar = document.getElementById('esm-fill-bar');
+  const destSplitBars = document.getElementById('dest-split-bars');
+  const destLegend = document.getElementById('dest-legend');
+  const neighborhoodTbody = document.getElementById('neighborhood-equity-tbody');
+
+  // Equalization Ratio for Clifton
+  const eqRatio = baseline.equalizationRatio || 0.403;
+
+  // Auto-sync Assessment <-> Market Value
+  if (inputMarket && inputAssessed) {
+    inputMarket.addEventListener('input', () => {
+      const mVal = parseFloat(inputMarket.value) || 0;
+      inputAssessed.value = Math.round(mVal * eqRatio);
+      runSimulation();
+    });
+
+    inputAssessed.addEventListener('input', () => {
+      const aVal = parseFloat(inputAssessed.value) || 0;
+      if (eqRatio > 0) {
+        inputMarket.value = Math.round(aVal / eqRatio);
+      }
+      runSimulation();
+    });
+  }
+
+  // Core Simulation Function
+  function runSimulation() {
+    const marketVal = parseFloat(inputMarket?.value) || 475000;
+    const assessedVal = parseFloat(inputAssessed?.value) || 191425;
+    const income = parseFloat(inputIncome?.value) || 95000;
+    const zipCode = selectZip?.value || '07012';
+    const resType = selectResType?.value || 'general';
+
+    const commShare = parseFloat(leverCommercial?.value) || 32.0;
+    const pilotShare = parseFloat(leverPilot?.value) || 50;
+    const revalOn = toggleReval ? toggleReval.checked : true;
+    const circuitCap = selectCircuit?.value || '8';
+    const utilityUnbundle = parseFloat(leverUtility?.value) || 7.5;
+
+    // Update Slider Readout Labels
+    if (valCommercial) valCommercial.textContent = `${commShare.toFixed(1)}%`;
+    if (badgeCommercial) {
+      const shiftDiff = (commShare - 23.8) * 3.7415;
+      badgeCommercial.textContent = shiftDiff >= 0 
+        ? `+$${shiftDiff.toFixed(1)}M Commercial Shift` 
+        : `-$${Math.abs(shiftDiff).toFixed(1)}M Deficit`;
+    }
+
+    if (valPilot) valPilot.textContent = `${pilotShare}%`;
+    if (badgePilot) {
+      const pilotSchoolM = (pilotShare / 100) * 4.82;
+      badgePilot.textContent = `+$${pilotSchoolM.toFixed(2)}M to BOE`;
+    }
+
+    if (valUtility) valUtility.textContent = `$${utilityUnbundle.toFixed(1)}M`;
+    if (badgeUtility) {
+      const perHomeRelief = Math.round((utilityUnbundle * 1000000) / 22965);
+      badgeUtility.textContent = `-$${perHomeRelief}/yr Residential Relief`;
+    }
+
+    if (badgeCircuit) {
+      badgeCircuit.textContent = circuitCap === 'none' ? 'No Income Cap' : `Cap @ ${circuitCap}% Income`;
+    }
+
+    // 1. Baseline Calculation
+    const baselineRate = baseline.certifiedTaxRateAssessed || 6.527; // 6.527%
+    const currentBill = (assessedVal / 100.0) * baselineRate;
+
+    // 2. Relief Calculation (Shifting burden off residential)
+    const commReliefM = Math.max(0, (commShare - 23.8) * 3.7415); // e.g. 30.68M
+    const pilotReliefM = (pilotShare / 100.0) * 4.82; // e.g. 2.41M
+    const utilityReliefM = utilityUnbundle; // e.g. 7.5M
+    const totalReliefM = commReliefM + pilotReliefM + utilityReliefM;
+
+    // Baseline Residential Levy is ~$285.1M
+    const baselineResLevyM = 285.105;
+    const reductionFactor = Math.min(0.42, totalReliefM / baselineResLevyM);
+
+    // 3. Raw Tax Bill
+    let rawBill = 0;
+    let effectiveRateText = '';
+
+    if (revalOn) {
+      // 100% Market Value Revaluation: Certified market rate base is 2.630%
+      const newMarketRate = 2.630 * (1.0 - reductionFactor);
+      rawBill = (marketVal / 100.0) * newMarketRate;
+      effectiveRateText = `${newMarketRate.toFixed(3)}% on Market Value`;
+    } else {
+      // Old Assessment Roll: Rate adjusted down on assessed value
+      const newAssessedRate = baselineRate * (1.0 - reductionFactor);
+      rawBill = (assessedVal / 100.0) * newAssessedRate;
+      effectiveRateText = `${newAssessedRate.toFixed(3)}% on Assessed Value`;
+    }
+
+    // 4. Circuit Breaker / Ability to Pay Cap
+    let circuitBreakerApplied = false;
+    let cappedBill = rawBill;
+
+    if (circuitCap !== 'none' && income > 0 && income <= 130000) {
+      const capPct = parseFloat(circuitCap);
+      const maxAllowed = income * (capPct / 100.0);
+      if (rawBill > maxAllowed) {
+        cappedBill = maxAllowed;
+        circuitBreakerApplied = true;
+      }
+    }
+
+    // Senior Additional Safety Cap
+    if (resType === 'senior' && income <= 70000 && income > 0) {
+      const seniorMax = income * 0.06;
+      if (cappedBill > seniorMax) {
+        cappedBill = seniorMax;
+        circuitBreakerApplied = true;
+      }
+    }
+
+    const whatIfBill = Math.max(650, cappedBill);
+    const annualSavings = currentBill - whatIfBill;
+    const monthlySavings = annualSavings / 12.0;
+    const savingsPct = currentBill > 0 ? (annualSavings / currentBill) * 100.0 : 0;
+
+    // 5. Equity Score Calculation (0 to 100)
+    let score = 38; // baseline
+    score += Math.min(24, Math.max(0, ((commShare - 23.8) / (40.0 - 23.8)) * 24));
+    score += Math.min(16, (pilotShare / 60.0) * 16);
+    if (revalOn) score += 18;
+    if (circuitCap === '8' || circuitCap === '6') score += 14;
+    else if (circuitCap === '10') score += 10;
+    score += Math.min(8, (utilityUnbundle / 15.0) * 8);
+
+    score = Math.round(Math.min(98, Math.max(38, score)));
+
+    // Update Results Display
+    if (resCurrentBill) resCurrentBill.textContent = formatUSDWhole(currentBill);
+    if (resCurrentRate) resCurrentRate.textContent = `6.527% on ${formatUSDWhole(assessedVal)} assessment`;
+
+    if (resProjectedBill) resProjectedBill.textContent = formatUSDWhole(whatIfBill);
+    if (resProjectedRate) resProjectedRate.textContent = effectiveRateText;
+
+    if (resAnnualSavings) {
+      if (annualSavings >= 0) {
+        resAnnualSavings.textContent = `-${formatUSDWhole(annualSavings)} / yr`;
+        resAnnualSavings.className = 'kpi-value savings-val text-success';
+      } else {
+        resAnnualSavings.textContent = `+${formatUSDWhole(Math.abs(annualSavings))} / yr`;
+        resAnnualSavings.className = 'kpi-value savings-val text-danger';
+      }
+    }
+
+    if (resSavingsPct) {
+      if (savingsPct >= 0) {
+        resSavingsPct.textContent = `-${savingsPct.toFixed(1)}% tax reduction`;
+        resSavingsPct.style.color = '#15803d';
+      } else {
+        resSavingsPct.textContent = `+${Math.abs(savingsPct).toFixed(1)}% adjustment`;
+        resSavingsPct.style.color = '#b91c1c';
+      }
+    }
+
+    if (resMonthlySavings) {
+      if (monthlySavings >= 0) {
+        resMonthlySavings.textContent = `-${formatUSDWhole(monthlySavings)} / mo`;
+        resMonthlySavings.className = 'kpi-value monthly-val text-info';
+      } else {
+        resMonthlySavings.textContent = `+${formatUSDWhole(Math.abs(monthlySavings))} / mo`;
+        resMonthlySavings.className = 'kpi-value monthly-val text-danger';
+      }
+    }
+
+    // Comparison Visual Bar
+    if (vcBeforeLabel) vcBeforeLabel.textContent = formatUSDWhole(currentBill);
+    if (vcAfterLabel) vcAfterLabel.textContent = formatUSDWhole(whatIfBill);
+    if (vcAfterBar) {
+      const pctOfCurrent = currentBill > 0 ? Math.min(100, Math.max(10, (whatIfBill / currentBill) * 100)) : 100;
+      vcAfterBar.style.width = `${pctOfCurrent.toFixed(1)}%`;
+      if (pctOfCurrent > 95) vcAfterBar.style.background = '#f59e0b';
+      else vcAfterBar.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+    }
+
+    if (vcNarrative) {
+      if (annualSavings > 0) {
+        let circuitNote = circuitBreakerApplied ? ' (including targeted income circuit-breaker relief)' : '';
+        vcNarrative.innerHTML = `You save <strong>${formatUSDWhole(annualSavings)} per year</strong> (-${formatUSDWhole(monthlySavings)}/month)${circuitNote} through equalized market assessments and restoring corporate/PILOT contributions.`;
+      } else if (annualSavings === 0) {
+        vcNarrative.innerHTML = `Under the Status Quo, your tax bill remains unchanged at <strong>${formatUSDWhole(currentBill)}</strong>, continuing the $38.2M residential burden shift.`;
+      } else {
+        vcNarrative.innerHTML = `Your property would see an adjustment of <strong>+${formatUSDWhole(Math.abs(annualSavings))}/year</strong> to eliminate assessment lag that favored this parcel relative to citywide market value.`;
+      }
+    }
+
+    // Equity Meter
+    if (esmScoreVal) esmScoreVal.textContent = `${score} / 100`;
+    if (esmFillBar) {
+      esmFillBar.style.width = `${score}%`;
+      if (score >= 90) esmFillBar.style.background = '#10b981';
+      else if (score >= 75) esmFillBar.style.background = '#3b82f6';
+      else if (score >= 60) esmFillBar.style.background = '#f59e0b';
+      else esmFillBar.style.background = '#ef4444';
+    }
+
+    if (resEquityBadge) {
+      if (score >= 90) {
+        resEquityBadge.textContent = `★ Optimal Balance (${score}/100)`;
+        resEquityBadge.style.background = '#dcfce7';
+        resEquityBadge.style.color = '#15803d';
+        resEquityBadge.style.borderColor = '#86efac';
+      } else if (score >= 75) {
+        resEquityBadge.textContent = `Substantial Equity (${score}/100)`;
+        resEquityBadge.style.background = '#ede9fe';
+        resEquityBadge.style.color = '#6d28d9';
+        resEquityBadge.style.borderColor = '#c4b5fd';
+      } else if (score >= 60) {
+        resEquityBadge.textContent = `Moderate Progress (${score}/100)`;
+        resEquityBadge.style.background = '#fef3c7';
+        resEquityBadge.style.color = '#b45309';
+        resEquityBadge.style.borderColor = '#fde68a';
+      } else {
+        resEquityBadge.textContent = `Severe Disparity (${score}/100)`;
+        resEquityBadge.style.background = '#fee2e2';
+        resEquityBadge.style.color = '#b91c1c';
+        resEquityBadge.style.borderColor = '#fca5a5';
+      }
+    }
+
+    // Destination Breakdown
+    const schoolSharePct = 47.7;
+    const muniSharePct = 29.4;
+    const countySharePct = 22.9;
+
+    const schoolAmount = whatIfBill * (schoolSharePct / 100.0);
+    const muniAmount = whatIfBill * (muniSharePct / 100.0);
+    const countyAmount = whatIfBill * (countySharePct / 100.0);
+
+    if (destSplitBars) {
+      destSplitBars.innerHTML = `
+        <div class="dest-bar-segment" style="width: ${schoolSharePct}%; background: #2563eb;" title="Public Schools: ${formatUSDWhole(schoolAmount)}"></div>
+        <div class="dest-bar-segment" style="width: ${muniSharePct}%; background: #059669;" title="City Municipal: ${formatUSDWhole(muniAmount)}"></div>
+        <div class="dest-bar-segment" style="width: ${countySharePct}%; background: #d97706;" title="Passaic County: ${formatUSDWhole(countyAmount)}"></div>
+      `;
+    }
+
+    if (destLegend) {
+      destLegend.innerHTML = `
+        <div class="dest-legend-item">
+          <span class="dest-legend-dot" style="background: #2563eb;"></span>
+          <span>Clifton Schools: <strong>${formatUSDWhole(schoolAmount)}</strong> (${schoolSharePct}%)</span>
+        </div>
+        <div class="dest-legend-item">
+          <span class="dest-legend-dot" style="background: #059669;"></span>
+          <span>City Hall: <strong>${formatUSDWhole(muniAmount)}</strong> (${muniSharePct}%)</span>
+        </div>
+        <div class="dest-legend-item">
+          <span class="dest-legend-dot" style="background: #d97706;"></span>
+          <span>Passaic County: <strong>${formatUSDWhole(countyAmount)}</strong> (${countySharePct}%)</span>
+        </div>
+      `;
+    }
+
+    // Update Neighborhood Impact Table
+    if (neighborhoodTbody && neighborhoodData.length) {
+      neighborhoodTbody.innerHTML = neighborhoodData.map(item => {
+        const itemCurrentTax = item.currentTaxBill;
+        // Project What-If for this neighborhood
+        let itemWhatIfTax = itemCurrentTax * (1.0 - reductionFactor);
+
+        // Apply circuit breaker if low median income
+        if (circuitCap !== 'none' && item.medianHouseholdIncome <= 90000) {
+          const capPct = parseFloat(circuitCap);
+          const maxAllowed = item.medianHouseholdIncome * (capPct / 100.0);
+          if (itemWhatIfTax > maxAllowed) itemWhatIfTax = maxAllowed;
+        }
+
+        const itemSavings = Math.max(0, itemCurrentTax - itemWhatIfTax);
+        const itemNewEffort = item.medianHouseholdIncome > 0 
+          ? (itemWhatIfTax / item.medianHouseholdIncome) * 100.0 
+          : 0;
+
+        const renterMonthlyRelief = Math.round((itemSavings / 12.0) * 0.85);
+
+        return `
+          <tr>
+            <td><strong>${item.zip}</strong></td>
+            <td>${item.name}</td>
+            <td><strong>${formatUSDWhole(item.medianHouseholdIncome)}</strong></td>
+            <td>${formatUSDWhole(itemCurrentTax)}</td>
+            <td><span class="text-danger font-mono">${item.currentTaxEffortPct.toFixed(2)}%</span></td>
+            <td><strong class="text-success font-mono">${formatUSDWhole(itemWhatIfTax)}</strong></td>
+            <td><span class="text-success font-mono font-bold">${itemNewEffort.toFixed(2)}%</span></td>
+            <td><span class="salary-highlight font-mono">-${formatUSDWhole(itemSavings)}/yr</span></td>
+            <td><small class="text-muted">~$${renterMonthlyRelief}/mo rent relief</small></td>
+          </tr>
+        `;
+      }).join('');
+    }
+  }
+
+  // Bind Listeners to Controls
+  [inputIncome, selectZip, selectResType].forEach(el => {
+    if (el) el.addEventListener('change', runSimulation);
+  });
+
+  [leverCommercial, leverPilot, leverUtility].forEach(el => {
+    if (el) el.addEventListener('input', runSimulation);
+  });
+
+  if (toggleReval) toggleReval.addEventListener('change', runSimulation);
+  if (selectCircuit) selectCircuit.addEventListener('change', runSimulation);
+
+  // Preset Buttons Click Handler
+  if (presetsContainer) {
+    presetsContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.preset-pill-btn');
+      if (!btn) return;
+
+      const presetId = btn.getAttribute('data-preset-id');
+      const targetPreset = presets.find(p => p.id === presetId);
+      if (!targetPreset) return;
+
+      // Update Active Classes
+      presetsContainer.querySelectorAll('.preset-pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      renderScenarioCallout(targetPreset);
+
+      // Apply Preset Parameters to Levers
+      if (leverCommercial) leverCommercial.value = targetPreset.commercialSharePct;
+      if (leverPilot) leverPilot.value = targetPreset.pilotSchoolSharePct;
+      if (toggleReval) toggleReval.checked = targetPreset.revaluationEnabled;
+      if (selectCircuit) {
+        selectCircuit.value = targetPreset.circuitBreakerCapPct > 0 
+          ? String(Math.round(targetPreset.circuitBreakerCapPct)) 
+          : 'none';
+      }
+      if (leverUtility) leverUtility.value = targetPreset.utilityUnbundlingM;
+
+      runSimulation();
+    });
+  }
+
+  // Reset Button
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      if (inputMarket) inputMarket.value = 475000;
+      if (inputAssessed) inputAssessed.value = 191425;
+      if (inputIncome) inputIncome.value = 95000;
+      if (selectZip) selectZip.value = '07012';
+      if (selectResType) selectResType.value = 'general';
+
+      // Default to Blueprint
+      const bpPreset = presets.find(p => p.id === 'unified_blueprint');
+      if (bpPreset) {
+        if (leverCommercial) leverCommercial.value = bpPreset.commercialSharePct;
+        if (leverPilot) leverPilot.value = bpPreset.pilotSchoolSharePct;
+        if (toggleReval) toggleReval.checked = bpPreset.revaluationEnabled;
+        if (selectCircuit) selectCircuit.value = String(Math.round(bpPreset.circuitBreakerCapPct));
+        if (leverUtility) leverUtility.value = bpPreset.utilityUnbundlingM;
+
+        presetsContainer.querySelectorAll('.preset-pill-btn').forEach(b => {
+          if (b.getAttribute('data-preset-id') === 'unified_blueprint') b.classList.add('active');
+          else b.classList.remove('active');
+        });
+
+        renderScenarioCallout(bpPreset);
+      }
+
+      runSimulation();
+    });
+  }
+
+  // 4. Render Sample Profiles
+  const profilesContainer = document.getElementById('sample-profiles-container');
+  if (profilesContainer && sampleProfiles.length) {
+    profilesContainer.innerHTML = sampleProfiles.map((p, idx) => `
+      <div class="sample-profile-card">
+        <div class="spc-title">${p.label}</div>
+        <div class="spc-meta">
+          Market: <strong>${formatUSDWhole(p.marketValue)}</strong> • Income: ${formatUSDWhole(p.householdIncome)} (${p.zip})
+        </div>
+        <div class="spc-comparison">
+          <div class="spc-col">
+            <span class="spc-label">Status Quo</span>
+            <span class="spc-val text-danger">${formatUSDWhole(p.statusQuoBill)}</span>
+          </div>
+          <div class="spc-col">
+            <span class="spc-label">Blueprint</span>
+            <span class="spc-val text-success">${formatUSDWhole(p.blueprintBill)}</span>
+          </div>
+        </div>
+        <div class="spc-relief-badge">
+          -${formatUSDWhole(p.blueprintSavings)}/yr (-${p.percentSavings}%)
+        </div>
+        <button class="spc-apply-btn" 
+          data-market="${p.marketValue}" 
+          data-assessed="${p.assessedValue}" 
+          data-income="${p.householdIncome}" 
+          data-zip="${p.zip}"
+          data-type="${idx === 3 ? 'senior' : 'general'}">
+          Apply to Sandbox ➔
+        </button>
+      </div>
+    `).join('');
+
+    profilesContainer.addEventListener('click', (e) => {
+      const applyBtn = e.target.closest('.spc-apply-btn');
+      if (!applyBtn) return;
+
+      const m = applyBtn.getAttribute('data-market');
+      const a = applyBtn.getAttribute('data-assessed');
+      const inc = applyBtn.getAttribute('data-income');
+      const z = applyBtn.getAttribute('data-zip');
+      const t = applyBtn.getAttribute('data-type');
+
+      if (inputMarket && m) inputMarket.value = m;
+      if (inputAssessed && a) inputAssessed.value = a;
+      if (inputIncome && inc) inputIncome.value = inc;
+      if (selectZip && z) selectZip.value = z;
+      if (selectResType && t) selectResType.value = t;
+
+      runSimulation();
+
+      // Smooth scroll to sandbox
+      const sandboxEl = document.querySelector('.what-if-sandbox');
+      if (sandboxEl) {
+        sandboxEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  // 5. Render Policy Roadmap Steps
+  const roadmapContainer = document.getElementById('fair-roadmap-container');
+  if (roadmapContainer && roadmapSteps.length) {
+    roadmapContainer.innerHTML = roadmapSteps.map(step => `
+      <div class="roadmap-step-card">
+        <div class="rsc-number">${step.step}</div>
+        <div class="rsc-content">
+          <h4>${step.title}</h4>
+          <span class="rsc-law">Authority: ${step.legalAuthority}</span>
+          <p><strong>Action:</strong> ${step.action}</p>
+          <p style="margin-top: 4px;"><strong>Outcome:</strong> ${step.outcome}</p>
+        </div>
+        <div class="rsc-timeline">${step.timeline}</div>
+      </div>
+    `).join('');
+  }
+
+  // 6. Civic Action Buttons: Copy Summary & Print
+  const btnCopy = document.getElementById('btn-copy-fair-tax-summary');
+  const btnPrint = document.getElementById('btn-print-fair-tax');
+
+  if (btnCopy) {
+    btnCopy.addEventListener('click', () => {
+      const currentBillText = resCurrentBill?.textContent || '$12,494';
+      const projectedBillText = resProjectedBill?.textContent || '$10,521';
+      const annualSavingsText = resAnnualSavings?.textContent || '-$1,973 / yr';
+      const monthlySavingsText = resMonthlySavings?.textContent || '-$164 / mo';
+      const marketVal = inputMarket?.value || '475,000';
+      const income = inputIncome?.value || '95,000';
+      const commShare = leverCommercial?.value || '32.0';
+      const pilotShare = leverPilot?.value || '50';
+
+      const summaryText = `CLIFTON CITIZEN FAIR TAX REFORM SUMMARY
+Date: October 2026
+Source: Clifton Tax Watchdog Project (https://tejas03usa.github.io/clifton-tax-watchdog/)
+
+HOUSEHOLD PROFILE:
+• Home Market Value: $${Number(marketVal).toLocaleString()}
+• Household Income: $${Number(income).toLocaleString()}
+• Status Quo Tax Bill: ${currentBillText}
+
+WHAT-IF EQUALIZATION REFORM PLAN:
+• Projected Tax Bill: ${projectedBillText}
+• Net Annual Relief: ${annualSavingsText} (${monthlySavingsText})
+• Key Levers:
+  - Restore Commercial Ratables from 23.8% to ${commShare}%
+  - Dedicate ${pilotShare}% of municipal PILOT funds to Clifton Public Schools (BOE)
+  - Perform 100% Citywide Market Revaluation to eliminate assessment lag
+  - Cap tax burden for seniors and families earning under $100k at 8% of income
+
+FISCAL STABILITY:
+Clifton's municipal and school budgets remain 100% funded with zero layoffs or service cuts by redirecting lost commercial and developer revenues back into the public ledger.`;
+
+      navigator.clipboard.writeText(summaryText).then(() => {
+        const origText = btnCopy.textContent;
+        btnCopy.textContent = '✓ Copied Summary to Clipboard!';
+        btnCopy.classList.add('btn-success');
+        setTimeout(() => {
+          btnCopy.textContent = origText;
+          btnCopy.classList.remove('btn-success');
+        }, 2800);
+      }).catch(err => {
+        console.error('Copy failed:', err);
+      });
+    });
+  }
+
+  if (btnPrint) {
+    btnPrint.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  // Initial Simulation Run
+  runSimulation();
 }
 
 // Launch

@@ -59,7 +59,8 @@ DATA_FILES = [
     'demographics_taxes.json',
     'surrounding_towns_comparison.json',
     'property_assessments.json',
-    'commercial_pilot_shift.json'
+    'commercial_pilot_shift.json',
+    'fair_tax_scenarios.json'
 ]
 
 def check_portal(portal):
