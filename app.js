@@ -319,6 +319,34 @@ function setupTabs() {
     }
   });
 
+  // Nav Brand Lockup click -> Smooth scroll to top
+  const brandHomeBtn = document.getElementById('nav-brand-home');
+  if (brandHomeBtn) {
+    brandHomeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Sticky Header Visual Stability: Add subtle elevation shadow on scroll
+  const navBarEl = document.getElementById('main-nav');
+  if (navBarEl) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 20) {
+            navBarEl.classList.add('is-scrolled');
+          } else {
+            navBarEl.classList.remove('is-scrolled');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
   syncDropdownActiveState();
 }
 
