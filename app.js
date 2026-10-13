@@ -2765,13 +2765,19 @@ function renderFairTaxEngine() {
 
   // Results DOM elements
   const resEquityBadge = document.getElementById('res-equity-badge');
+  const resLabelCurrent = document.getElementById('res-label-current');
   const resCurrentBill = document.getElementById('res-current-bill');
   const resCurrentRate = document.getElementById('res-current-rate');
+  const resLabelProjected = document.getElementById('res-label-projected');
   const resProjectedBill = document.getElementById('res-projected-bill');
   const resProjectedRate = document.getElementById('res-projected-rate');
+  const resLabelSavings = document.getElementById('res-label-savings');
   const resAnnualSavings = document.getElementById('res-annual-savings');
   const resSavingsPct = document.getElementById('res-savings-pct');
+  const resLabelMonthly = document.getElementById('res-label-monthly');
   const resMonthlySavings = document.getElementById('res-monthly-savings');
+  const resSubMonthly = document.getElementById('res-sub-monthly');
+
   const vcBeforeLabel = document.getElementById('vc-before-label');
   const vcAfterLabel = document.getElementById('vc-after-label');
   const vcAfterBar = document.getElementById('vc-after-bar');
@@ -2909,62 +2915,124 @@ function renderFairTaxEngine() {
 
     score = Math.round(Math.min(98, Math.max(38, score)));
 
-    // Update Results Display
-    if (resCurrentBill) resCurrentBill.textContent = formatUSDWhole(currentBill);
-    if (resCurrentRate) resCurrentRate.textContent = `6.527% on ${formatUSDWhole(assessedVal)} assessment`;
+    // Update Results Display Tailored to Resident Type
+    if (resType === 'renter') {
+      const embeddedCurrent = Math.round(currentBill * 0.28);
+      const embeddedWhatIf = Math.round(whatIfBill * 0.28);
+      const renterSavings = Math.round(annualSavings * 0.28);
+      const renterMonthly = Math.round((annualSavings * 0.28) / 12.0);
 
-    if (resProjectedBill) resProjectedBill.textContent = formatUSDWhole(whatIfBill);
-    if (resProjectedRate) resProjectedRate.textContent = effectiveRateText;
+      if (resLabelCurrent) resLabelCurrent.textContent = 'Est. Embedded Rent Tax';
+      if (resCurrentBill) resCurrentBill.textContent = formatUSDWhole(embeddedCurrent);
+      if (resCurrentRate) resCurrentRate.textContent = 'Taxes embedded in monthly rent lease (~28%)';
 
-    if (resAnnualSavings) {
-      if (annualSavings >= 0) {
-        resAnnualSavings.textContent = `-${formatUSDWhole(annualSavings)} / yr`;
+      if (resLabelProjected) resLabelProjected.textContent = 'What-If Embedded Rent Tax';
+      if (resProjectedBill) resProjectedBill.textContent = formatUSDWhole(embeddedWhatIf);
+      if (resProjectedRate) resProjectedRate.textContent = effectiveRateText;
+
+      if (resLabelSavings) resLabelSavings.textContent = 'Est. Annual Rent Relief';
+      if (resAnnualSavings) {
+        resAnnualSavings.textContent = `-${formatUSDWhole(renterSavings)} / yr`;
         resAnnualSavings.className = 'kpi-value savings-val text-success';
-      } else {
-        resAnnualSavings.textContent = `+${formatUSDWhole(Math.abs(annualSavings))} / yr`;
-        resAnnualSavings.className = 'kpi-value savings-val text-danger';
       }
-    }
 
-    if (resSavingsPct) {
-      if (savingsPct >= 0) {
-        resSavingsPct.textContent = `-${savingsPct.toFixed(1)}% tax reduction`;
+      if (resSavingsPct) {
+        resSavingsPct.textContent = `-${savingsPct.toFixed(1)}% landlord cost reduction`;
         resSavingsPct.style.color = '#15803d';
-      } else {
-        resSavingsPct.textContent = `+${Math.abs(savingsPct).toFixed(1)}% adjustment`;
-        resSavingsPct.style.color = '#b91c1c';
       }
-    }
 
-    if (resMonthlySavings) {
-      if (monthlySavings >= 0) {
-        resMonthlySavings.textContent = `-${formatUSDWhole(monthlySavings)} / mo`;
+      if (resLabelMonthly) resLabelMonthly.textContent = 'Est. Monthly Rent Moderation';
+      if (resMonthlySavings) {
+        resMonthlySavings.textContent = `-${formatUSDWhole(renterMonthly)} / mo`;
         resMonthlySavings.className = 'kpi-value monthly-val text-info';
+      }
+      if (resSubMonthly) resSubMonthly.textContent = 'Estimated lease pass-through relief';
+
+      if (vcBeforeLabel) vcBeforeLabel.textContent = formatUSDWhole(embeddedCurrent);
+      if (vcAfterLabel) vcAfterLabel.textContent = formatUSDWhole(embeddedWhatIf);
+
+      if (vcNarrative) {
+        vcNarrative.innerHTML = `As a renter in <strong>${zipCode}</strong>, your monthly lease includes roughly $300 to $450 in embedded property taxes. Under this reform, your building's annual tax burden drops, creating room for <strong>-${formatUSDWhole(renterMonthly)}/month in rent moderation</strong> (-${formatUSDWhole(renterSavings)}/year)!`;
+      }
+    } else {
+      // Homeowner / Senior / Multi-family
+      if (resType === 'senior') {
+        if (resLabelCurrent) resLabelCurrent.textContent = 'Current Property Tax Bill';
+        if (resLabelProjected) resLabelProjected.textContent = 'Senior Protected Tax Bill';
+        if (resLabelSavings) resLabelSavings.textContent = 'Senior Net Tax Relief';
+        if (resLabelMonthly) resLabelMonthly.textContent = 'Monthly Escrow Savings';
+        if (resSubMonthly) resSubMonthly.textContent = 'Protected by 6.0% retirement income cap';
+      } else if (resType === 'multifamily') {
+        if (resLabelCurrent) resLabelCurrent.textContent = 'Current Multi-Family Tax Bill';
+        if (resLabelProjected) resLabelProjected.textContent = 'What-If Building Tax Bill';
+        if (resLabelSavings) resLabelSavings.textContent = 'Total Building Tax Relief';
+        if (resLabelMonthly) resLabelMonthly.textContent = 'Monthly Operating Relief';
+        if (resSubMonthly) resSubMonthly.textContent = 'Shared across owner + rental units';
       } else {
-        resMonthlySavings.textContent = `+${formatUSDWhole(Math.abs(monthlySavings))} / mo`;
-        resMonthlySavings.className = 'kpi-value monthly-val text-danger';
+        if (resLabelCurrent) resLabelCurrent.textContent = 'Current 2026 Tax Bill';
+        if (resLabelProjected) resLabelProjected.textContent = 'What-If Projected Tax Bill';
+        if (resLabelSavings) resLabelSavings.textContent = 'Your Net Annual Tax Relief';
+        if (resLabelMonthly) resLabelMonthly.textContent = 'Monthly Pocketbook Impact';
+        if (resSubMonthly) resSubMonthly.textContent = 'Direct monthly escrow reduction';
+      }
+
+      if (resCurrentBill) resCurrentBill.textContent = formatUSDWhole(currentBill);
+      if (resCurrentRate) resCurrentRate.textContent = `6.527% on ${formatUSDWhole(assessedVal)} assessment`;
+
+      if (resProjectedBill) resProjectedBill.textContent = formatUSDWhole(whatIfBill);
+      if (resProjectedRate) resProjectedRate.textContent = effectiveRateText;
+
+      if (resAnnualSavings) {
+        if (annualSavings >= 0) {
+          resAnnualSavings.textContent = `-${formatUSDWhole(annualSavings)} / yr`;
+          resAnnualSavings.className = 'kpi-value savings-val text-success';
+        } else {
+          resAnnualSavings.textContent = `+${formatUSDWhole(Math.abs(annualSavings))} / yr`;
+          resAnnualSavings.className = 'kpi-value savings-val text-danger';
+        }
+      }
+
+      if (resSavingsPct) {
+        if (savingsPct >= 0) {
+          resSavingsPct.textContent = `-${savingsPct.toFixed(1)}% tax reduction`;
+          resSavingsPct.style.color = '#15803d';
+        } else {
+          resSavingsPct.textContent = `+${Math.abs(savingsPct).toFixed(1)}% adjustment`;
+          resSavingsPct.style.color = '#b91c1c';
+        }
+      }
+
+      if (resMonthlySavings) {
+        if (monthlySavings >= 0) {
+          resMonthlySavings.textContent = `-${formatUSDWhole(monthlySavings)} / mo`;
+          resMonthlySavings.className = 'kpi-value monthly-val text-info';
+        } else {
+          resMonthlySavings.textContent = `+${formatUSDWhole(Math.abs(monthlySavings))} / mo`;
+          resMonthlySavings.className = 'kpi-value monthly-val text-danger';
+        }
+      }
+
+      if (vcBeforeLabel) vcBeforeLabel.textContent = formatUSDWhole(currentBill);
+      if (vcAfterLabel) vcAfterLabel.textContent = formatUSDWhole(whatIfBill);
+
+      if (vcNarrative) {
+        if (annualSavings > 0) {
+          let circuitNote = circuitBreakerApplied ? ' (including targeted income circuit-breaker relief)' : '';
+          vcNarrative.innerHTML = `You save <strong>${formatUSDWhole(annualSavings)} per year</strong> (-${formatUSDWhole(monthlySavings)}/month)${circuitNote} through equalized market assessments and restoring corporate/PILOT contributions.`;
+        } else if (annualSavings === 0) {
+          vcNarrative.innerHTML = `Under the Status Quo, your tax bill remains unchanged at <strong>${formatUSDWhole(currentBill)}</strong>, continuing the $38.2M residential burden shift.`;
+        } else {
+          vcNarrative.innerHTML = `Your property would see an adjustment of <strong>+${formatUSDWhole(Math.abs(annualSavings))}/year</strong> to eliminate assessment lag that favored this parcel relative to citywide market value.`;
+        }
       }
     }
 
     // Comparison Visual Bar
-    if (vcBeforeLabel) vcBeforeLabel.textContent = formatUSDWhole(currentBill);
-    if (vcAfterLabel) vcAfterLabel.textContent = formatUSDWhole(whatIfBill);
     if (vcAfterBar) {
       const pctOfCurrent = currentBill > 0 ? Math.min(100, Math.max(10, (whatIfBill / currentBill) * 100)) : 100;
       vcAfterBar.style.width = `${pctOfCurrent.toFixed(1)}%`;
       if (pctOfCurrent > 95) vcAfterBar.style.background = '#f59e0b';
       else vcAfterBar.style.background = 'linear-gradient(90deg, #10b981, #059669)';
-    }
-
-    if (vcNarrative) {
-      if (annualSavings > 0) {
-        let circuitNote = circuitBreakerApplied ? ' (including targeted income circuit-breaker relief)' : '';
-        vcNarrative.innerHTML = `You save <strong>${formatUSDWhole(annualSavings)} per year</strong> (-${formatUSDWhole(monthlySavings)}/month)${circuitNote} through equalized market assessments and restoring corporate/PILOT contributions.`;
-      } else if (annualSavings === 0) {
-        vcNarrative.innerHTML = `Under the Status Quo, your tax bill remains unchanged at <strong>${formatUSDWhole(currentBill)}</strong>, continuing the $38.2M residential burden shift.`;
-      } else {
-        vcNarrative.innerHTML = `Your property would see an adjustment of <strong>+${formatUSDWhole(Math.abs(annualSavings))}/year</strong> to eliminate assessment lag that favored this parcel relative to citywide market value.`;
-      }
     }
 
     // Equity Meter
@@ -3073,17 +3141,81 @@ function renderFairTaxEngine() {
     }
   }
 
+  // Detect Custom Levers vs Preset Matches
+  function checkPresetMatch() {
+    const commShare = parseFloat(leverCommercial?.value) || 32.0;
+    const pilotShare = parseFloat(leverPilot?.value) || 50;
+    const revalOn = toggleReval ? toggleReval.checked : true;
+    const circuitCap = selectCircuit?.value || '8';
+    const utilityUnbundle = parseFloat(leverUtility?.value) || 7.5;
+
+    const matched = presets.find(p => 
+      Math.abs(p.commercialSharePct - commShare) < 0.2 &&
+      Math.abs(p.pilotSchoolSharePct - pilotShare) < 0.2 &&
+      p.revaluationEnabled === revalOn &&
+      (p.circuitBreakerCapPct > 0 ? String(Math.round(p.circuitBreakerCapPct)) : 'none') === circuitCap &&
+      Math.abs(p.utilityUnbundlingM - utilityUnbundle) < 0.2
+    );
+
+    presetsContainer.querySelectorAll('.preset-pill-btn').forEach(b => {
+      if (matched && b.getAttribute('data-preset-id') === matched.id) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+
+    if (matched) {
+      renderScenarioCallout(matched);
+    } else if (activeCallout) {
+      activeCallout.innerHTML = `
+        <div class="sdc-summary">
+          <strong>Custom Citizen Scenario</strong>
+          <p>You are testing custom policy parameters for Clifton. Adjust any slider or toggle to see live fiscal and household impacts.</p>
+        </div>
+        <div class="sdc-impact winners">
+          <strong>Custom Levers:</strong>
+          ${commShare.toFixed(1)}% Commercial • ${pilotShare}% PILOT to Schools • ${revalOn ? '100% Reval' : 'Old Roll'}
+        </div>
+        <div class="sdc-impact losers">
+          <strong>Target Equity:</strong>
+          ${circuitCap !== 'none' ? `Cap @ ${circuitCap}% Income` : 'No Income Cap'} • $${utilityUnbundle}M Utility Shift
+        </div>
+      `;
+    }
+  }
+
   // Bind Listeners to Controls
   [inputIncome, selectZip, selectResType].forEach(el => {
     if (el) el.addEventListener('change', runSimulation);
   });
 
+  if (inputIncome) {
+    inputIncome.addEventListener('input', runSimulation);
+  }
+
   [leverCommercial, leverPilot, leverUtility].forEach(el => {
-    if (el) el.addEventListener('input', runSimulation);
+    if (el) {
+      el.addEventListener('input', () => {
+        runSimulation();
+        checkPresetMatch();
+      });
+    }
   });
 
-  if (toggleReval) toggleReval.addEventListener('change', runSimulation);
-  if (selectCircuit) selectCircuit.addEventListener('change', runSimulation);
+  if (toggleReval) {
+    toggleReval.addEventListener('change', () => {
+      runSimulation();
+      checkPresetMatch();
+    });
+  }
+
+  if (selectCircuit) {
+    selectCircuit.addEventListener('change', () => {
+      runSimulation();
+      checkPresetMatch();
+    });
+  }
 
   // Preset Buttons Click Handler
   if (presetsContainer) {

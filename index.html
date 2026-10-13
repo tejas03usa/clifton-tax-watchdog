@@ -257,9 +257,12 @@
             <span class="alert-icon">💡</span>
             <div class="alert-text">
               <strong>Assessment vs. Market Value:</strong> In Clifton, homes are assessed at a fractional ratio (~33.3%) of market value. A home selling on the market for $550,000 typically has an assessed tax value of ~$185,000.
-              <div style="margin-top: 8px;">
+              <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
                 <button class="btn-jump-action" data-jump-tab="tab-properties">
                   <span>🏡</span> Who Pays More? Explore 1,850 Clifton Homes & Assessments ➔
+                </button>
+                <button class="btn-jump-action secondary" data-jump-tab="tab-fair-tax">
+                  <span>⚖️</span> What If Taxes Were Fair? Test Scenarios in What-If Simulator ➔
                 </button>
               </div>
             </div>
@@ -1612,6 +1615,20 @@
         <div class="solutions-grid" id="pilot-solutions-container">
           <!-- Rendered by JS -->
         </div>
+
+        <!-- Jump to What-If Fair Tax Simulator -->
+        <div class="pilot-fair-tax-callout">
+          <div class="pftc-content">
+            <span class="pftc-icon">⚖️</span>
+            <div>
+              <h4>Test These Reforms Live on Your Own Home</h4>
+              <p>See exactly how much your personal property tax bill would drop if Clifton adopted 50% PILOT school sharing and restored commercial ratables.</p>
+            </div>
+          </div>
+          <button class="btn btn-primary" data-jump-tab="tab-fair-tax">
+            Open What-If? Fair Tax Simulator ➔
+          </button>
+        </div>
       </div>
 
     </section>
@@ -1856,27 +1873,27 @@
             <!-- Big Impact Cards -->
             <div class="kpi-impact-grid">
               <div class="kpi-impact-card">
-                <span class="kpi-label">Current 2026 Tax Bill</span>
+                <span class="kpi-label" id="res-label-current">Current 2026 Tax Bill</span>
                 <span class="kpi-value current-val" id="res-current-bill">$12,494</span>
                 <span class="kpi-sub" id="res-current-rate">6.527% on $191.4k assessment</span>
               </div>
 
               <div class="kpi-impact-card highlight-card">
-                <span class="kpi-label">What-If Projected Tax Bill</span>
+                <span class="kpi-label" id="res-label-projected">What-If Projected Tax Bill</span>
                 <span class="kpi-value projected-val text-success" id="res-projected-bill">$10,521</span>
                 <span class="kpi-sub" id="res-projected-rate">2.215% equalized market rate</span>
               </div>
 
               <div class="kpi-impact-card savings-card">
-                <span class="kpi-label">Your Net Annual Tax Relief</span>
+                <span class="kpi-label" id="res-label-savings">Your Net Annual Tax Relief</span>
                 <span class="kpi-value savings-val text-success" id="res-annual-savings">-$1,973 / yr</span>
                 <span class="kpi-sub savings-pct" id="res-savings-pct">-15.8% tax reduction</span>
               </div>
 
               <div class="kpi-impact-card">
-                <span class="kpi-label">Monthly Pocketbook Impact</span>
+                <span class="kpi-label" id="res-label-monthly">Monthly Pocketbook Impact</span>
                 <span class="kpi-value monthly-val text-info" id="res-monthly-savings">-$164.42 / mo</span>
-                <span class="kpi-sub">Direct monthly escrow reduction</span>
+                <span class="kpi-sub" id="res-sub-monthly">Direct monthly escrow reduction</span>
               </div>
             </div>
 

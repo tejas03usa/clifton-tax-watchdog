@@ -7431,6 +7431,158 @@ input:checked + .slider.round:before {
   }
 }
 
+/* Table Responsive Container */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  background: var(--bg-surface);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.table-responsive .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+
+/* Helpers & Badges */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.salary-highlight {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #065f46;
+  background: #dcfce7;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Generic Button Variants */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--color-school);
+  color: #ffffff;
+  border-color: var(--color-school);
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: #94a3b8;
+}
+
+.btn-outline-secondary {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border-color: var(--border-subtle);
+}
+
+.btn-outline-secondary:hover {
+  background: var(--bg-subtle);
+  color: var(--text-main);
+  border-color: var(--text-subtle);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.78rem;
+}
+
+.btn-success {
+  background: var(--color-city) !important;
+  color: #ffffff !important;
+  border-color: var(--color-city) !important;
+}
+
+/* Cross-Tab Pilot Fair Tax Callout */
+.pilot-fair-tax-callout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+  border: 2px solid #bfdbfe;
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-top: 28px;
+  gap: 20px;
+}
+
+.pftc-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pftc-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.pftc-content h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 4px 0;
+}
+
+.pftc-content p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .pilot-fair-tax-callout {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pftc-content {
+    flex-direction: column;
+  }
+}
+
+
 
 
 
