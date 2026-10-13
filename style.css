@@ -64,13 +64,14 @@ body {
   padding: 0 24px;
 }
 
-/* TOP STATUS BAR */
+/* LIVE CITIZEN STATUS BAR (BELOW HEADER & NAV) */
 .top-status-bar {
-  background: var(--bg-dark);
-  color: #94a3b8;
-  font-size: 0.78rem;
-  padding: 7px 0;
-  border-bottom: 1px solid var(--border-dark);
+  background: #ffffff;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 .status-bar-content {
@@ -85,7 +86,8 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #e2e8f0;
+  color: var(--text-main);
+  font-weight: 500;
 }
 
 .live-beacon {
@@ -93,7 +95,7 @@ body {
   height: 8px;
   background-color: #10b981;
   border-radius: 50%;
-  box-shadow: 0 0 10px #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
   animation: pulse-beacon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
@@ -106,16 +108,17 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #cbd5e1;
+  color: var(--text-muted);
 }
 
 .status-quick-links strong {
-  color: #ffffff;
+  color: var(--text-main);
   font-family: var(--font-mono);
+  font-size: 0.82rem;
 }
 
 .status-sep {
-  color: #475569;
+  color: var(--border-subtle);
 }
 
 /* APP HEADER */
@@ -535,7 +538,7 @@ body {
 
 /* MAIN CONTENT */
 .main-content {
-  padding: 36px 24px 80px;
+  padding: 28px 24px 80px;
 }
 
 .tab-pane {
