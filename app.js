@@ -325,7 +325,7 @@ function setupTabs() {
 // Data Loader
 async function loadAllData() {
   try {
-    const [taxRes, boeRes, cityRes, staffRes, ethicsRes, vendRes, benRes, contRes, demoRes, propRes, surrRes, pilotRes] = await Promise.all([
+    const [taxRes, boeRes, cityRes, staffRes, ethicsRes, vendRes, benRes, contRes, demoRes, propRes, surrRes, pilotRes, fairRes] = await Promise.all([
       fetch('data/tax_breakdown.json'),
       fetch('data/boe_budget.json'),
       fetch('data/municipal_budget.json'),
