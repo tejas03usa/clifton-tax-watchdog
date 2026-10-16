@@ -105,6 +105,18 @@
       "amount": 1000000,
       "percentage": 1.0,
       "details": "City health officer, restaurant inspections, animal control, Clifton Senior Center, recreation league coordination, and community events."
+    },
+    {
+      "category": "Statutory Reserve for Uncollected Taxes (RUT — N.J.S.A. 40A:4-40)",
+      "amount": 6350000,
+      "percentage": 6.0,
+      "details": "Under NJ cash-basis budgeting law, Clifton City Hall must remit 100% of certified school ($161.8M) and county ($85.7M) tax levies regardless of local delinquency, requiring a mandatory ~$6.35M 'overlay' reserve built directly into municipal tax bills."
+    },
+    {
+      "category": "Dedicated Municipal Sewer Utility Enterprise & PVSC Treatment Fees (Separate Utility Bill)",
+      "amount": 14800000,
+      "percentage": 14.0,
+      "details": "Billed separately via tiered consumption statements tied to Passaic Valley Water Commission (PVWC) water meter readings. Funds Passaic Valley Sewerage Commission (PVSC) regional treatment charges and local sanitary sewer line maintenance."
     }
   ]
 }

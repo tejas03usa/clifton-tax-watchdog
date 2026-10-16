@@ -75,6 +75,27 @@
       "category": "Instructional Technology & SaaS",
       "annualEstimatedSpend": 1950000,
       "description": "Student Chromebooks, student information systems (SIS), cybersecurity, firewall maintenance, and classroom software licenses."
+    },
+    {
+      "vendorName": "Passaic Valley Sewerage Commission (PVSC)",
+      "entityServed": "City of Clifton (Dedicated Sewer Utility)",
+      "category": "Regional Wastewater Treatment Mandate",
+      "annualEstimatedSpend": 9200000,
+      "description": "Regional wastewater treatment and interceptor trunk sewer assessments billed to Clifton and funded through residents' tiered municipal Sewer Utility bills."
+    },
+    {
+      "vendorName": "Classical Academy Charter School of Clifton & Regional Charter Transfers",
+      "entityServed": "Clifton Board of Education",
+      "category": "Mandated Charter School Tuition",
+      "annualEstimatedSpend": 3850000,
+      "description": "Statutory per-pupil local tax levy and state aid transfers required under NJ Charter School Program Act (N.J.S.A. 18A:36A) for Clifton students enrolled in charter schools."
+    },
+    {
+      "vendorName": "Appraisal Systems, Inc. (ASI) — Citywide Property Revaluation Contract",
+      "entityServed": "City of Clifton (Tax Assessor Office)",
+      "category": "Mandatory Property Revaluation",
+      "annualEstimatedSpend": 3200000,
+      "description": "Special emergency multi-year contract ordered by the Passaic County Board of Taxation to inspect and revalue all ~24,745 Clifton parcels to 100% market value (first revaluation since 1990)."
     }
   ]
 }

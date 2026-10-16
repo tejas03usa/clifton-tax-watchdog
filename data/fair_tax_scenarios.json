@@ -51,11 +51,11 @@
       },
       {
         "id": "outdated_assessments",
-        "title": "30+ Years Without a Citywide Revaluation",
-        "metric": "40.3% Equalization Ratio",
+        "title": "36 Years Without Revaluation (1990–2026) & Mandatory $3.2M ASI Order",
+        "metric": "1st Reval Since 1990",
         "severity": "High",
-        "description": "Clifton has not conducted a comprehensive municipal-wide revaluation in roughly three decades. Assessment-to-sales ratios fluctuate wildly between 31% and 68% across wards, meaning recent buyers pay disproportionately high effective taxes compared to legacy parcels.",
-        "remedy": "Conduct an order-mandated 100% true market revaluation, compressing the nominal tax rate from 6.527% down to 2.63% and restoring constitutional uniformity."
+        "description": "Clifton had not conducted a citywide revaluation since 1990 (and lacked an approved tax map since 2007). Assessment ratios drifted to ~31.8%–40.3%, causing recent homebuyers to subsidize legacy parcels. Under Passaic County Tax Board order, Appraisal Systems, Inc. (ASI) is now inspecting all 24,745 parcels (Oct 1, 2026 valuation date; effective 2027 tax bills).",
+        "remedy": "Complete the mandatory 100% true market ASI revaluation (compressing nominal rates from 6.527% to ~2.63%) and exercise the extended May 1, 2027 formal appeal window."
       },
       {
         "id": "regressive_zip_disparity",
@@ -322,11 +322,11 @@
   "policyRoadmap": [
     {
       "step": 1,
-      "title": "Passaic County Tax Board Mandatory Revaluation Order",
-      "legalAuthority": "N.J.S.A. 54:4-23 & N.J.A.C. 18:12A-1.14",
-      "action": "City Council petitions or complies with Passaic County Tax Board directive to perform a comprehensive 100% market value revaluation.",
-      "outcome": "Resets the tax rolls to fair market value, compresses tax rate from 6.527% to 2.63%, and stops $2.4M annual tax appeal clawbacks.",
-      "timeline": "Months 1–18"
+      "title": "Complete 2026–2027 ASI Citywide Revaluation & May 1, 2027 Appeal Protection",
+      "legalAuthority": "N.J.S.A. 54:4-23 & Passaic County Board of Taxation Order",
+      "action": "Execute the $3.2M Appraisal Systems, Inc. (ASI) 100% market revaluation (Oct 1, 2026 valuation baseline; effective 2027 tax year) and ensure transparent informal reviews ahead of the extended May 1, 2027 County Tax Board appeal deadline.",
+      "outcome": "Resets all 24,745 parcels from 1990 baselines to fair market value, compresses the nominal tax rate from 6.527% to ~2.63%, and halts $2.4M/yr in commercial appeal clawbacks.",
+      "timeline": "Active (2026–May 1, 2027)"
     },
     {
       "step": 2,
@@ -354,11 +354,11 @@
     },
     {
       "step": 5,
-      "title": "Local Homestead Circuit Breaker & Senior Freeze Expansion",
-      "legalAuthority": "N.J.S.A. 54:4-8.58 et seq. & Local General Welfare Powers",
-      "action": "Establish an income-indexed property tax credit for Clifton households earning under $100k where property taxes exceed 8% of income, funded by commercial vacancy surcharges.",
-      "outcome": "Stops displacement of senior citizens and prevents working-class families from being taxed out of their homes.",
-      "timeline": "Months 4–8"
+      "title": "Local Circuit Breaker + NJ Stay NJ / ANCHOR / Senior Freeze (Form PAS-1) Coordination",
+      "legalAuthority": "P.L. 2023, c. 75 (Stay NJ Act) & N.J.S.A. 54:4-8.58",
+      "action": "Pair a local 8% income circuit breaker for working families under $100k with citywide enrollment assistance for NJ's combined Form PAS-1 (Stay NJ 50% senior property tax cut up to $6,500, ANCHOR $1,000–$1,750 homeowner / $450–$700 renter rebates, and Senior Freeze).",
+      "outcome": "Cuts net property taxes in half for Clifton seniors (65+) and prevents working-class families in 07011 and 07014 from being priced out of their homes.",
+      "timeline": "Immediate (PAS-1 Deadline Nov 2, 2026)"
     }
   ]
 }

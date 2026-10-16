@@ -93,6 +93,18 @@
       "amount": 2900000,
       "percentage": 1.0,
       "details": "Instructional coaches, media specialists, professional development, curriculum development, and library books."
+    },
+    {
+      "category": "Mandated Charter School Tuition Transfers (Classical Academy & Regional Charters)",
+      "amount": 3850000,
+      "percentage": 1.3,
+      "details": "Statutory local tax transfer mandated by the State of New Jersey for Clifton resident students attending public charter schools (including Classical Academy Charter School of Clifton on Main Ave and regional charter schools)."
+    },
+    {
+      "category": "Voter-Approved $168M Facilities Bond Referendum Debt Service",
+      "amount": 8900000,
+      "percentage": 3.0,
+      "details": "Principal and interest debt service on the historic $168.4M voter-approved school facilities bond referendum (offset by ~$64.6M in NJ State Debt Service Aid) funding HVAC, roofs, ADA accessibility, security vestibules, and the Woodrow Wilson MS athletic complex across 19 school facilities."
     }
   ]
 }

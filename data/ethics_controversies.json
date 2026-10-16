@@ -95,6 +95,30 @@
       "investigationDetails": "Mayor Grabowski operates a private landscaping company and a private investigation/security consulting practice. Councilman Kolodziej serves as the full-time Chief Financial Officer of Mt. Olive Township while holding elected office in Clifton. Under the Local Government Ethics Law, both must maintain rigorous recusals on any municipal contract, zoning change, code enforcement matter, or interlocal agreement that intersects with their private clients or secondary public employer.",
       "taxpayerImpact": "Risk of potential conflicts of interest or perceived favoritism in city inspections, contracts, and vendor selection.",
       "status": "Disclosed on annual FDS at fds.nj.gov; requires active citizen recusal monitoring."
+    },
+    {
+      "id": "asi-revaluation-1990-delay",
+      "severity": "HIGH",
+      "category": "Tax Assessment Equity & County Mandate",
+      "title": "36-Year Revaluation Delay (1990–2026) & Mandatory $3.2M ASI Revaluation",
+      "entityInvolved": "City of Clifton Tax Assessor, City Council & Passaic County Board of Taxation",
+      "lastUpdated": "October 2026 (Valuation Date Oct 1, 2026; Effective Tax Year 2027)",
+      "summary": "Clifton failed to conduct a citywide property revaluation since 1990, resulting in a Passaic County Tax Board order and a $3.2M contract with Appraisal Systems, Inc. (ASI).",
+      "investigationDetails": "Because Clifton lacked even an updated state-approved tax map dating back to 2007 and left property assessments frozen at 1990 baselines (~31.8% to 33.3% of market value), massive inequities developed between older under-assessed properties and recently improved or purchased homes. Ordered by the Passaic County Board of Taxation and NJ Division of Taxation, ASI began inspecting all ~24,745 parcels in March 2026 using an October 1, 2026 valuation date. New 100% market assessments take effect on 2027 tax bills, with an extended formal appeal deadline of May 1, 2027.",
+      "taxpayerImpact": "$3.2M emergency revaluation contract cost plus decades of commercial tax appeal refunds ($22.5M+ over 10 years) caused by outdated assessments.",
+      "status": "Active ASI property inspections & informal taxpayer hearings underway; formal appeal deadline May 1, 2027."
+    },
+    {
+      "id": "budget-surplus-cliff-boe-cap",
+      "severity": "HIGH",
+      "category": "Fiscal Sustainability & Structural Deficit Warning",
+      "title": "Municipal Surplus Drawdowns & BOE 6% Tax Levy Escalation (+$14M Healthcare Surge)",
+      "entityInvolved": "Clifton City Council & Clifton Board of Education",
+      "lastUpdated": "2025-2026 Budget Cycles",
+      "summary": "Both municipal and school budgets relied on heavy surplus drawdowns, emergency trust sweeps, and above-cap tax increases to plug structural deficits.",
+      "investigationDetails": "In municipal budget deliberations, the City Council avoided deeper immediate cuts only by drawing down municipal surplus reserves, trimming capital improvement funds, and stripping the storm recovery trust—moves fiscal watchdogs warned would push structural deficits into 2026-2027. Simultaneously, the Clifton Board of Education approved a 6% local school tax levy increase (above the standard 2% statutory cap via banked cap/health care adjustments) driven by a nearly $14 million surge in state health benefit costs and $3.85 million in mandatory charter school transfers—warning that a standard 2% levy would have eliminated 49 school positions.",
+      "taxpayerImpact": "Combined municipal, school, and tiered sewer utility increases compounding annual household tax strain.",
+      "status": "Active fiscal monitoring required ahead of 2027 budget adoption."
     }
   ]
 }
