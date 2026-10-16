@@ -197,12 +197,6 @@ body {
   gap: 12px;
 }
 
-@media (max-width: 640px) {
-  .header-stat-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
 .stat-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -4307,103 +4301,155 @@ div[id] {
 @media (max-width: 768px) {
   /* Container & Layout */
   .container {
-    padding: 0 16px;
+    padding: 0 14px;
   }
 
-  /* Status Bar */
-  .top-status-bar {
-    padding: 6px 0;
-  }
-
-  .status-bar-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-
-  .status-quick-links {
-    font-size: 0.72rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .status-sep {
-    display: inline;
-  }
-
-  /* Header Section */
+  /* 1. App Hero Header on Phones: High-Contrast, Scannable & Compact */
   .app-header {
-    padding: 24px 0 20px;
+    padding: 20px 0 18px;
+  }
+
+  .header-container {
+    gap: 18px;
+  }
+
+  .brand-badge {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    white-space: normal;
   }
 
   .header-titles h1 {
-    font-size: 1.85rem;
-    letter-spacing: -0.02em;
+    font-size: 1.75rem;
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
     word-break: break-word;
   }
 
   .header-titles .subtitle {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     line-height: 1.5;
+    color: #cbd5e1;
   }
 
+  /* 3-Column Scannable Stat Strip on Mobile instead of 3 Tall Stacked Blocks */
   .header-stat-cards {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-top: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 4px;
   }
 
   .stat-card {
-    padding: 14px 16px;
+    padding: 10px 8px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat-card-label {
+    font-size: 0.66rem;
+    color: #cbd5e1;
+    line-height: 1.25;
+    margin-bottom: 3px;
   }
 
   .stat-card-num {
-    font-size: 1.45rem;
+    font-size: 1.18rem;
+    color: #ffffff;
   }
 
-  /* Mobile Navigation Bar */
+  .stat-card-sub {
+    font-size: 0.65rem;
+    color: #93c5fd;
+    margin-top: 2px;
+    line-height: 1.2;
+  }
+
+  /* 2. Sticky Top Header & Navigation Bar on Phones: Two-Tier Clean Layout */
   .nav-bar {
     top: 0;
-    padding: 2px 0;
+    padding: 6px 0 8px;
+    background: #ffffff;
+    border-bottom: 2px solid var(--border-light);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
   }
 
   .nav-container {
-    padding: 0 8px;
-    gap: 8px;
-    overflow: hidden;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 12px;
+    gap: 6px;
+    min-height: auto;
+    overflow: visible;
   }
 
+  /* Tier 1: Full-width readable Brand Header Row */
   .nav-brand-lockup {
-    padding: 2px 6px 2px 2px;
-    gap: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 4px 4px 6px;
+    gap: 10px;
+    border-bottom: 1px solid #f1f5f9;
+    border-radius: 0;
   }
 
   .nav-brand-icon-wrap {
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
   }
 
   .nav-brand-icon {
-    font-size: 0.95rem;
+    font-size: 1rem;
+  }
+
+  .nav-brand-text {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8px;
   }
 
   .nav-brand-title {
-    font-size: 0.82rem;
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
   }
 
   .nav-brand-subtitle {
-    display: none; /* Hide subtitle on compact mobile view to conserve horizontal space */
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 2px 7px;
+    border-radius: 999px;
+    border: 1px solid #bfdbfe;
   }
 
+  /* Tier 2: Full-width Horizontal Touch Tab Bar */
   .nav-menu {
+    display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 4px 2px;
-    gap: 6px;
+    padding: 2px 0;
+    gap: 8px;
+    width: 100%;
   }
 
   .nav-menu::-webkit-scrollbar {
@@ -4412,10 +4458,80 @@ div[id] {
 
   .nav-item-btn,
   .nav-dropdown-trigger {
-    padding: 7px 10px;
-    font-size: 0.8rem;
+    padding: 9px 13px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
     flex-shrink: 0;
     white-space: nowrap;
+    min-height: 40px;
+  }
+
+  .nav-item-btn.active,
+  .nav-dropdown.has-active .nav-dropdown-trigger {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.22);
+  }
+
+  .tab-pane,
+  section[id],
+  div[id] {
+    scroll-margin-top: 105px;
+  }
+
+  /* 3. Live Citizen Status Bar on Phones: Clean Pill Chips */
+  .top-status-bar {
+    padding: 10px 0;
+    background: #f8fafc;
+  }
+
+  .status-bar-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .live-status-pill {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    color: #0f172a;
+  }
+
+  .status-quick-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    width: 100%;
+    font-size: 0.76rem;
+  }
+
+  .status-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 5px 8px;
+    border-radius: 6px;
+    color: #334155;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .status-item:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .status-quick-links strong {
+    font-size: 0.8rem;
+    color: #0f172a;
+  }
+
+  .status-sep {
+    display: none;
   }
 
   /* Mobile Bottom Sheet for Dropdowns */
@@ -4711,9 +4827,41 @@ div[id] {
 }
 
 @media (max-width: 480px) {
-  /* Extra compact for smaller mobile devices */
+  /* Extra compact & readable for smaller mobile devices */
   .container {
     padding: 0 12px;
+  }
+
+  .header-titles h1 {
+    font-size: 1.55rem;
+  }
+
+  .header-stat-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .stat-card {
+    padding: 8px 6px;
+  }
+
+  .stat-card-num {
+    font-size: 1.05rem;
+  }
+
+  .nav-brand-title {
+    font-size: 0.94rem;
+  }
+
+  .nav-brand-subtitle {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+  }
+
+  .nav-item-btn,
+  .nav-dropdown-trigger {
+    padding: 8px 11px;
+    font-size: 0.82rem;
   }
 
   .section-intro h2 {
