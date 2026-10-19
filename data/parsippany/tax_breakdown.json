@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-18",
+    "certifiedDate": "Certified for Tax Year 2026 by Morris County Board of Taxation (District 1429)",
+    "dataVintage": "2026 Certified Rates (Incl. Fire District Average)",
+    "sourceAgency": "Morris County Board of Taxation & Parsippany-Troy Hills Tax Collector",
+    "freshnessStatus": "Current & Certified"
+  },
+  "location": "Township of Parsippany-Troy Hills, Morris County, New Jersey",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.55,
+  "ratePerHundredDollars": 3.55,
+  "effectiveTaxRateMarketValue": "2.25% - 2.36%",
+  "averageResidentialAssessment": 348500,
+  "averageTaxBill": 12371.75,
+  "breakdown": [
+    {
+      "id": "schools",
+      "entity": "Parsippany-Troy Hills Township Schools (PTHSD)",
+      "rate": 2.277,
+      "percentage": 64.14,
+      "subtotalShare": 0.641408,
+      "description": "Funds 14 public schools (10 elementary, 2 middle: Brooklawn & Central, 2 high schools: Parsippany HS & Parsippany Hills HS) educating ~7,120 students.",
+      "annualBudgetEst": 187450000,
+      "color": "#2563eb",
+      "components": [
+        {
+          "name": "Regular Instruction & Classrooms",
+          "shareOfSchool": 0.39,
+          "description": "Teacher salaries across 14 schools, STEM/AP programs, textbooks, and instructional tech"
+        },
+        {
+          "name": "Employee Health & Pension Benefits",
+          "shareOfSchool": 0.22,
+          "description": "SEHBP/NJEHP medical & prescription coverage, dental, FICA, and statutory benefit surges"
+        },
+        {
+          "name": "Special Education & Out-of-District Tuition",
+          "shareOfSchool": 0.16,
+          "description": "Mandated IEP instruction, therapies, and Morris County Vo-Tech / private placements"
+        },
+        {
+          "name": "Operations, Facilities & Plant Maintenance",
+          "shareOfSchool": 0.1,
+          "description": "Upkeep across 14 school campuses, custodial staff, utilities, and security"
+        },
+        {
+          "name": "Student Transportation & Busing",
+          "shareOfSchool": 0.06,
+          "description": "District fleet and contracted routes across 25.4 sq miles"
+        },
+        {
+          "name": "School & District Administration",
+          "shareOfSchool": 0.04,
+          "description": "Superintendent, Business Administrator, 14 school principals, legal & audit"
+        },
+        {
+          "name": "Student Support, Guidance & Athletics",
+          "shareOfSchool": 0.03,
+          "description": "Guidance counselors, nurses, Red Hawks & Vikings athletics, and co-curriculars"
+        }
+      ]
+    },
+    {
+      "id": "municipal",
+      "entity": "Township of Parsippany-Troy Hills (Municipal + Fire Districts 1\u20136)",
+      "rate": 0.935,
+      "percentage": 26.34,
+      "subtotalShare": 0.26338,
+      "description": "Funds Township Police, DPW, Parks & Forestry, Sanitation, Library, Open Space, and Parsippany's 6 independent Fire Districts.",
+      "annualBudgetEst": 92800000,
+      "color": "#059669",
+      "subcategories": [
+        {
+          "name": "Local Municipal Purposes",
+          "rate": 0.765,
+          "percentage": 21.55
+        },
+        {
+          "name": "Fire Districts 1\u20136 (Weighted Avg)",
+          "rate": 0.1,
+          "percentage": 2.82
+        },
+        {
+          "name": "Municipal Free Public Library",
+          "rate": 0.05,
+          "percentage": 1.41
+        },
+        {
+          "name": "Municipal Open Space Trust",
+          "rate": 0.02,
+          "percentage": 0.56
+        }
+      ],
+      "components": [
+        {
+          "name": "Parsippany Police Department & Public Safety",
+          "shareOfMuni": 0.29,
+          "description": "Patrol, detectives, traffic enforcement, 911 communications, and emergency management"
+        },
+        {
+          "name": "Statutory Pensions (PFRS & PERS) & Health Insurance",
+          "shareOfMuni": 0.23,
+          "description": "Police & civilian pensions, active/retiree health benefits, and risk insurance"
+        },
+        {
+          "name": "Public Works, Roads, Parks & Sanitation",
+          "shareOfMuni": 0.17,
+          "description": "Road resurfacing, snow removal across 25+ sq miles, sanitation/recycling, and parks"
+        },
+        {
+          "name": "Municipal Debt Service & Capital Notes",
+          "shareOfMuni": 0.12,
+          "description": "Bond principal and interest for township infrastructure and equipment"
+        },
+        {
+          "name": "6 Independent Fire Districts (Districts 1\u20136)",
+          "shareOfMuni": 0.1,
+          "description": "Mount Tabor (#1), Rainbow Lakes (#2), Lake Parsippany (#3), Lake Hiawatha (#4), Rockaway Neck (#5), Parsippany-Troy Hills (#6)"
+        },
+        {
+          "name": "General Governance, Legal, Finance & Assessor",
+          "shareOfMuni": 0.05,
+          "description": "Mayor & Council, Business Administrator, Clerk, CFO, Tax Assessor, and Township Attorney"
+        },
+        {
+          "name": "Library System (Main, Lake Hiawatha, Mt. Tabor) & Human Services",
+          "shareOfMuni": 0.04,
+          "description": "3 branch libraries, Health Department, Senior Community Center, and Recreation"
+        }
+      ]
+    },
+    {
+      "id": "county",
+      "entity": "Morris County Government",
+      "rate": 0.338,
+      "percentage": 9.52,
+      "subtotalShare": 0.095211,
+      "description": "Parsippany's apportionment of the Morris County budget, funding County College of Morris (CCM), Morris County Park Commission, County Roads, Sheriff, and Human Services.",
+      "annualBudgetEst": 362000000,
+      "color": "#d97706",
+      "subcategories": [
+        {
+          "name": "Morris County General Tax",
+          "rate": 0.328,
+          "percentage": 9.24
+        },
+        {
+          "name": "Morris County Open Space & Farmland Preservation",
+          "rate": 0.01,
+          "percentage": 0.28
+        }
+      ],
+      "components": [
+        {
+          "name": "Morris County Public Safety, Sheriff & Corrections",
+          "shareOfCounty": 0.26,
+          "description": "Morris County Sheriff's Office, Correctional Facility, Prosecutor, and OEM"
+        },
+        {
+          "name": "County Roads, Bridges & Engineering",
+          "shareOfCounty": 0.22,
+          "description": "Maintenance of county arteries (Littleton Rd, Parsippany Blvd, Vail Rd, Intervale Rd)"
+        },
+        {
+          "name": "Health, Human Services & Aging",
+          "shareOfCounty": 0.2,
+          "description": "Morris County Office of Temporary Assistance, aging services, and mental health"
+        },
+        {
+          "name": "Higher Education (CCM & Morris Vo-Tech)",
+          "shareOfCounty": 0.14,
+          "description": "County College of Morris (Randolph) and Morris County Vocational School District (Denville)"
+        },
+        {
+          "name": "Morris County Park Commission & Open Space",
+          "shareOfCounty": 0.1,
+          "description": "Central Park of Morris County, Tourne County Park, Jonathan's Woods, and trail network"
+        },
+        {
+          "name": "Judiciary, County Clerk & Administration",
+          "shareOfCounty": 0.08,
+          "description": "Morristown Courthouse operations, Surrogate, County Clerk, and Board of Commissioners"
+        }
+      ]
+    }
+  ]
+}

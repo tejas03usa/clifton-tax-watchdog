@@ -15,29 +15,44 @@
   <header class="app-header">
     <div class="container header-container">
       <div class="header-titles">
-        <div class="brand-badge">
-          <span class="badge-icon">🏛️</span>
-          <span>CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG</span>
+        <div class="header-top-bar">
+          <div class="brand-badge" id="header-brand-badge">
+            <span class="badge-icon" id="header-badge-icon">🏛️</span>
+            <span id="header-badge-text">CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG</span>
+          </div>
+          <div class="city-switcher-group" role="group" aria-label="Select Municipality">
+            <span class="city-switcher-label">Municipality:</span>
+            <button type="button" class="city-switch-btn active" data-city="clifton" aria-pressed="true">
+              <span class="city-btn-icon">🏛️</span>
+              <span class="city-btn-name">Clifton, NJ</span>
+              <span class="city-btn-county">Passaic</span>
+            </button>
+            <button type="button" class="city-switch-btn" data-city="parsippany" aria-pressed="false">
+              <span class="city-btn-icon">🌲</span>
+              <span class="city-btn-name">Parsippany, NJ</span>
+              <span class="city-btn-county">Morris</span>
+            </button>
+          </div>
         </div>
-        <h1>Clifton Taxpayer Watchdog</h1>
-        <p class="subtitle">Real-time public investigation into where your Clifton property taxes go, the ~$293M school budget, public employee healthcare benefits, outside staff businesses, and official state audits.</p>
+        <h1 id="header-main-title">Clifton Taxpayer Watchdog</h1>
+        <p class="subtitle" id="header-main-subtitle">Real-time public investigation into where your Clifton property taxes go, the ~$293M school budget, public employee healthcare benefits, outside staff businesses, and official state audits.</p>
       </div>
 
       <div class="header-stat-cards">
         <div class="stat-card clickable-stat-card" data-jump-tab="tab-calculator" role="button" tabindex="0" title="Click to open Tax Calculator">
-          <div class="stat-card-label">Certified Tax Rate (2026) ↗</div>
-          <div class="stat-card-num">6.527%</div>
-          <div class="stat-card-sub">Calculate your taxes</div>
+          <div class="stat-card-label" id="hdr-stat1-label">Certified Tax Rate (2026) ↗</div>
+          <div class="stat-card-num" id="hdr-stat1-num">6.527%</div>
+          <div class="stat-card-sub" id="hdr-stat1-sub">Calculate your taxes</div>
         </div>
         <div class="stat-card highlight-school clickable-stat-card" data-jump-tab="tab-budgets" role="button" tabindex="0" title="Click to view School Budget">
-          <div class="stat-card-label">School District (BOE) ↗</div>
-          <div class="stat-card-num">47.66%</div>
-          <div class="stat-card-sub">Explore $293.2M budget</div>
+          <div class="stat-card-label" id="hdr-stat2-label">School District (BOE) ↗</div>
+          <div class="stat-card-num" id="hdr-stat2-num">47.66%</div>
+          <div class="stat-card-sub" id="hdr-stat2-sub">Explore $293.2M budget</div>
         </div>
         <div class="stat-card clickable-stat-card" data-jump-tab="tab-properties" role="button" tabindex="0" title="Click to view Property Assessments">
-          <div class="stat-card-label">Sampled Assessments ↗</div>
-          <div class="stat-card-num">1,850 Homes</div>
-          <div class="stat-card-sub">Who pays more taxes?</div>
+          <div class="stat-card-label" id="hdr-stat3-label">Sampled Assessments ↗</div>
+          <div class="stat-card-num" id="hdr-stat3-num">1,850 Homes</div>
+          <div class="stat-card-sub" id="hdr-stat3-sub">Who pays more taxes?</div>
         </div>
       </div>
     </div>
@@ -46,16 +61,26 @@
   <!-- Modern Categorized Navigation Bar with Dropdowns & Sticky Header Brand -->
   <nav class="nav-bar" id="main-nav" role="navigation" aria-label="Main Navigation">
     <div class="container nav-container">
-      <!-- Persistent Brand Lockup (Always available when scrolling) -->
-      <a href="#" class="nav-brand-lockup" id="nav-brand-home" aria-label="Clifton Taxpayer Watchdog - Back to Top">
-        <div class="nav-brand-icon-wrap">
-          <span class="nav-brand-icon">🏛️</span>
+      <!-- Persistent Brand Lockup & Compact City Switcher (Always available when scrolling) -->
+      <div class="nav-top-row">
+        <a href="#" class="nav-brand-lockup" id="nav-brand-home" aria-label="Taxpayer Watchdog - Back to Top">
+          <div class="nav-brand-icon-wrap">
+            <span class="nav-brand-icon" id="nav-brand-icon">🏛️</span>
+          </div>
+          <div class="nav-brand-text">
+            <div class="nav-brand-title" id="nav-brand-title">Clifton Watchdog</div>
+            <div class="nav-brand-subtitle" id="nav-brand-subtitle">CITIZEN FISCAL AUDIT • 2026</div>
+          </div>
+        </a>
+        <div class="nav-city-switcher" role="group" aria-label="Quick Switch Municipality">
+          <button type="button" class="city-switch-btn compact active" data-city="clifton" title="Switch to City of Clifton (Passaic County)">
+            <span>🏛️</span> <span>Clifton</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="parsippany" title="Switch to Parsippany-Troy Hills (Morris County)">
+            <span>🌲</span> <span>Parsippany</span>
+          </button>
         </div>
-        <div class="nav-brand-text">
-          <div class="nav-brand-title">Clifton Watchdog</div>
-          <div class="nav-brand-subtitle">CITIZEN FISCAL AUDIT • 2026</div>
-        </div>
-      </a>
+      </div>
 
       <div class="nav-menu" role="menubar">
         

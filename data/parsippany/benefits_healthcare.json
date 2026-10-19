@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-18",
+    "fiscalCycle": "FY 2025-2026 / CY 2026",
+    "dataVintage": "Certified 2026 Plan Year",
+    "sourceAgencies": [
+      "NJ Division of Pensions and Benefits (SHBP / SEHBP)",
+      "Township of Parsippany-Troy Hills Adopted Budget & PBA/Teamsters Contracts",
+      "Parsippany-Troy Hills School District User-Friendly Budget (PTHEA Contract)"
+    ],
+    "freshnessStatus": "Current"
+  },
+  "overview": {
+    "annualTaxpayerCostCity": 24700000,
+    "annualTaxpayerCostBOE": 39800000,
+    "combinedTaxpayerBenefitsCost": 64500000,
+    "percentageOfCombinedBudgets": "23.0% of all Parsippany municipal and school spending ($64.5M of $280.2M) goes directly to employee health insurance, pensions, and retirement benefits"
+  },
+  "healthcarePlans": {
+    "providers": "Horizon Blue Cross Blue Shield / SEHBP (School District) & Township Health Benefits Program",
+    "primaryPlans": [
+      {
+        "planName": "NJ Educators Health Plan (NJEHP / Chapter 44) & Garden State Health Plan",
+        "type": "School District PPO (PTHEA & Staff)",
+        "description": "Enacted under P.L. 2020, c. 44. Caps teacher and school staff premium contributions at 1.7% to 7.2% of salary rather than percentage of premium, shifting double-digit healthcare inflation directly onto Parsippany property taxpayers."
+      },
+      {
+        "planName": "NJ DIRECT 10 / NJ DIRECT 15 (Horizon BCBSNJ)",
+        "type": "Comprehensive PPO Plan",
+        "description": "Nationwide PPO network with $10-$15 primary care copays and low out-of-network deductibles for grandfathered and municipal bargaining units."
+      },
+      {
+        "planName": "Prescription Drug Card (OptumRx / Benecard)",
+        "type": "Retail & Mail-Order Formulary",
+        "description": "Covers brand, generic, and high-cost GLP-1/specialty biologics with low employee copays; taxpayers absorb the remaining 85%+ formulary cost."
+      },
+      {
+        "planName": "Delta Dental & Vision Service Plan",
+        "type": "Preventive, Restorative & Orthodontic Dental",
+        "description": "Employer-paid family dental and optical benefits for eligible full-time township and school employees."
+      }
+    ]
+  },
+  "costSharing": {
+    "statutoryFramework": "Chapter 78 (P.L. 2011, c. 78) & Chapter 44 (P.L. 2020, c. 44)",
+    "rules": [
+      {
+        "tier": "Township Police & Municipal Staff (Chapter 78 / CBA Grid)",
+        "employeeContribution": "10.0% to 35.0% of premium based on salary tier",
+        "taxpayerContribution": "65.0% to 90.0% of total premium ($22,500 - $29,000/yr per family)",
+        "note": "For a police officer or supervisor with a $36,000 family health plan, Parsippany taxpayers subsidize ~$23,400+ every year."
+      },
+      {
+        "tier": "PTHSD Teachers & School Staff (Chapter 44 NJEHP)",
+        "employeeContribution": "1.7% to 7.2% of base salary",
+        "taxpayerContribution": "80.0% to 92.0% of total family premium",
+        "note": "Because employee contributions are tied to salary rather than premium growth, 100% of annual health insurance rate hikes fall on the PTHSD school tax levy."
+      }
+    ]
+  },
+  "retirementAndLeaveBenefits": [
+    {
+      "benefitName": "Post-Retirement Medical Benefits (25-Year Service Rule)",
+      "legalAuthority": "N.J.S.A. 40A:10-23 & Collective Bargaining Agreements",
+      "taxpayerImpact": "Multi-million dollar annual retiree medical expenditure",
+      "details": "Eligible employees retiring after 25 years of pensionable service receive township- or state-paid medical coverage in retirement plus Medicare Part B reimbursements."
+    },
+    {
+      "benefitName": "Police & Firemen's Retirement System (PFRS) & PERS",
+      "legalAuthority": "NJ Division of Pensions and Benefits",
+      "taxpayerImpact": "$10.9M annual mandatory municipal budget appropriation",
+      "details": "Funds special retirement pensions (65%-70% of final salary after 25 years) for sworn Parsippany police officers and standard pensions for civilian employees."
+    },
+    {
+      "benefitName": "Unused Sick & Vacation Terminal Payouts",
+      "legalAuthority": "N.J.S.A. 11A:6-19.2 & PBA / PTHEA Contracts",
+      "taxpayerImpact": "Lump-sum retirement cash-outs funded via municipal & school reserves",
+      "details": "Veteran employees hired prior to the 2010 statutory reform retain grandfathered contractual rights to cash out accumulated unused sick and vacation days upon retirement."
+    }
+  ]
+}

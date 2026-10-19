@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-18",
+    "certifiedDate": "Certified for Tax Year 2026 by Morris County Board of Taxation",
+    "sources": [
+      "Morris County Board of Taxation 2026 Abstract of Ratables & Table of Aggregates",
+      "State of New Jersey Division of Taxation Equalization Tables",
+      "NJ DCA Division of Local Government Services Comparative Budgets",
+      "U.S. Census Bureau ACS 5-Year Profiles"
+    ],
+    "benchmarkMunicipality": "Parsippany-Troy Hills"
+  },
+  "summaryAnalysis": {
+    "cliftonContext": "Parsippany-Troy Hills has a certified tax rate of 3.550% (including Fire District avg) and a 66.60% equalization ratio, yielding an effective true-market tax rate of ~2.30%. That effective rate is higher than neighboring Hanover/Whippany (1.49%), Morris Plains (1.92%), Florham Park (1.42%), and Montville (2.06%), driven by Parsippany's loss of corporate office ratables and 64.1% school tax share.",
+    "taxBurdenDrivers": "In Morris County, county taxes are remarkably low (~9.5% of the bill), while local school districts represent 60%\u201370% of every homeowner's property tax check."
+  },
+  "towns": [
+    {
+      "id": "clifton",
+      "name": "Parsippany-Troy Hills",
+      "county": "Morris County",
+      "relationship": "Focus Municipality (Largest in Morris County)",
+      "certifiedTaxRate": 3.55,
+      "equalizationRatio": 66.6,
+      "effectiveTaxRateMarket": 2.302,
+      "medianHomeValueMarket": 625000,
+      "medianAssessedValue": 348500,
+      "medianAnnualTaxBill": 12371.75,
+      "monthlyTaxBill": 1030.98,
+      "medianHouseholdIncome": 124850,
+      "taxBurdenPercentOfIncome": 9.91,
+      "population": 56162,
+      "taxSplit": {
+        "schoolsPercent": 64.14,
+        "municipalPercent": 26.34,
+        "countyPercent": 9.52
+      },
+      "schoolBudget": 187450000,
+      "municipalBudget": 92800000,
+      "schoolStateAidShare": 9.7,
+      "localLevyShare": 86.4,
+      "fundBalanceSurplus": 8500000,
+      "strengthsAndWatchdogNotes": "Largest township in Morris County with 14 public schools and major highway access (I-80, I-287, Rt 10, Rt 46). However, corporate office park vacancies and 30-year PILOT apartment conversions have shifted +$29.4M/yr onto residential homeowners."
+    },
+    {
+      "id": "morris-plains",
+      "name": "Morris Plains Borough",
+      "county": "Morris County",
+      "relationship": "Immediate Southwest Border",
+      "certifiedTaxRate": 2.415,
+      "equalizationRatio": 79.5,
+      "effectiveTaxRateMarket": 1.92,
+      "medianHomeValueMarket": 685000,
+      "medianAssessedValue": 544575,
+      "medianAnnualTaxBill": 13151.49,
+      "monthlyTaxBill": 1095.96,
+      "medianHouseholdIncome": 154200,
+      "taxBurdenPercentOfIncome": 8.53,
+      "population": 6150,
+      "taxSplit": {
+        "schoolsPercent": 58.2,
+        "municipalPercent": 30.1,
+        "countyPercent": 11.7
+      },
+      "schoolBudget": 24800000,
+      "municipalBudget": 14900000,
+      "schoolStateAidShare": 8.2,
+      "localLevyShare": 88.5,
+      "fundBalanceSurplus": 2400000,
+      "strengthsAndWatchdogNotes": "Compact borough with strong commercial ratables (Honeywell HQ, Tabor Road Gables) and K-8 district sending high schoolers to Morristown High School."
+    },
+    {
+      "id": "hanover",
+      "name": "Hanover Township (Whippany / Cedar Knolls)",
+      "county": "Morris County",
+      "relationship": "Immediate Southern Border",
+      "certifiedTaxRate": 2.118,
+      "equalizationRatio": 70.4,
+      "effectiveTaxRateMarket": 1.491,
+      "medianHomeValueMarket": 695000,
+      "medianAssessedValue": 489280,
+      "medianAnnualTaxBill": 10362.95,
+      "monthlyTaxBill": 863.58,
+      "medianHouseholdIncome": 148500,
+      "taxBurdenPercentOfIncome": 6.98,
+      "population": 14680,
+      "taxSplit": {
+        "schoolsPercent": 59.4,
+        "municipalPercent": 26.8,
+        "countyPercent": 13.8
+      },
+      "schoolBudget": 64200000,
+      "municipalBudget": 26400000,
+      "schoolStateAidShare": 7.5,
+      "localLevyShare": 89.0,
+      "fundBalanceSurplus": 4900000,
+      "strengthsAndWatchdogNotes": "Enjoys one of the lowest effective tax rates in Morris County (1.49%) thanks to strong corporate/pharma ratables (Bayer, Barclays, Wegmans corridor) and disciplined commercial retention."
+    },
+    {
+      "id": "denville",
+      "name": "Denville Township",
+      "county": "Morris County",
+      "relationship": "Immediate Western Border",
+      "certifiedTaxRate": 2.584,
+      "equalizationRatio": 83.2,
+      "effectiveTaxRateMarket": 2.15,
+      "medianHomeValueMarket": 670000,
+      "medianAssessedValue": 557440,
+      "medianAnnualTaxBill": 14404.25,
+      "monthlyTaxBill": 1200.35,
+      "medianHouseholdIncome": 156800,
+      "taxBurdenPercentOfIncome": 9.19,
+      "population": 17120,
+      "taxSplit": {
+        "schoolsPercent": 63.8,
+        "municipalPercent": 25.4,
+        "countyPercent": 10.8
+      },
+      "schoolBudget": 76500000,
+      "municipalBudget": 25800000,
+      "schoolStateAidShare": 8.4,
+      "localLevyShare": 88.2,
+      "fundBalanceSurplus": 3800000,
+      "strengthsAndWatchdogNotes": "Vibrant walkable downtown and lake communities (Indian Lake, Cedar Lake); funds K-8 Denville schools plus Morris Hills Regional High School."
+    },
+    {
+      "id": "montville",
+      "name": "Montville Township",
+      "county": "Morris County",
+      "relationship": "Immediate Northeastern Border",
+      "certifiedTaxRate": 2.492,
+      "equalizationRatio": 82.8,
+      "effectiveTaxRateMarket": 2.063,
+      "medianHomeValueMarket": 785000,
+      "medianAssessedValue": 649980,
+      "medianAnnualTaxBill": 16197.5,
+      "monthlyTaxBill": 1349.79,
+      "medianHouseholdIncome": 174500,
+      "taxBurdenPercentOfIncome": 9.28,
+      "population": 22450,
+      "taxSplit": {
+        "schoolsPercent": 66.2,
+        "municipalPercent": 22.9,
+        "countyPercent": 10.9
+      },
+      "schoolBudget": 98400000,
+      "municipalBudget": 31200000,
+      "schoolStateAidShare": 7.8,
+      "localLevyShare": 89.4,
+      "fundBalanceSurplus": 5100000,
+      "strengthsAndWatchdogNotes": "Affluent suburban township with top-rated school district; like Parsippany, Montville also uses separate Fire Districts (Fire Districts 1\u20133)."
+    },
+    {
+      "id": "mountain-lakes",
+      "name": "Mountain Lakes Borough",
+      "county": "Morris County",
+      "relationship": "Immediate Northern Border",
+      "certifiedTaxRate": 2.865,
+      "equalizationRatio": 84.5,
+      "effectiveTaxRateMarket": 2.421,
+      "medianHomeValueMarket": 1180000,
+      "medianAssessedValue": 997100,
+      "medianAnnualTaxBill": 28566.92,
+      "monthlyTaxBill": 2380.58,
+      "medianHouseholdIncome": 245000,
+      "taxBurdenPercentOfIncome": 11.66,
+      "population": 4480,
+      "taxSplit": {
+        "schoolsPercent": 68.5,
+        "municipalPercent": 22.1,
+        "countyPercent": 9.4
+      },
+      "schoolBudget": 44200000,
+      "municipalBudget": 11400000,
+      "schoolStateAidShare": 6.2,
+      "localLevyShare": 90.5,
+      "fundBalanceSurplus": 1950000,
+      "strengthsAndWatchdogNotes": "Historic Hapgood estate community with $28,500+ average property tax bills due to nearly 100% residential tax base and minimal commercial ratables."
+    },
+    {
+      "id": "boonton",
+      "name": "Boonton Town",
+      "county": "Morris County",
+      "relationship": "Northern Border (Main Street Hub)",
+      "certifiedTaxRate": 3.12,
+      "equalizationRatio": 76.4,
+      "effectiveTaxRateMarket": 2.384,
+      "medianHomeValueMarket": 535000,
+      "medianAssessedValue": 408740,
+      "medianAnnualTaxBill": 12752.69,
+      "monthlyTaxBill": 1062.72,
+      "medianHouseholdIncome": 108400,
+      "taxBurdenPercentOfIncome": 11.76,
+      "population": 8850,
+      "taxSplit": {
+        "schoolsPercent": 61.4,
+        "municipalPercent": 29.2,
+        "countyPercent": 9.4
+      },
+      "schoolBudget": 38900000,
+      "municipalBudget": 14600000,
+      "schoolStateAidShare": 18.5,
+      "localLevyShare": 76.2,
+      "fundBalanceSurplus": 1850000,
+      "strengthsAndWatchdogNotes": "Historic Main Street town; higher effective tax rate (2.384%) due to smaller geographic footprint and limited corporate office parks."
+    },
+    {
+      "id": "morristown",
+      "name": "Morristown Town",
+      "county": "Morris County",
+      "relationship": "Southern Neighbor (Morris County Seat)",
+      "certifiedTaxRate": 2.285,
+      "equalizationRatio": 85.1,
+      "effectiveTaxRateMarket": 1.945,
+      "medianHomeValueMarket": 680000,
+      "medianAssessedValue": 578680,
+      "medianAnnualTaxBill": 13222.84,
+      "monthlyTaxBill": 1101.9,
+      "medianHouseholdIncome": 119500,
+      "taxBurdenPercentOfIncome": 11.07,
+      "population": 20380,
+      "taxSplit": {
+        "schoolsPercent": 54.8,
+        "municipalPercent": 33.9,
+        "countyPercent": 11.3
+      },
+      "schoolBudget": 136500000,
+      "municipalBudget": 48200000,
+      "schoolStateAidShare": 14.2,
+      "localLevyShare": 81.0,
+      "fundBalanceSurplus": 6200000,
+      "strengthsAndWatchdogNotes": "Booming regional downtown with surging commercial office/retail ratables (M Station / Deloitte / Sanofi), keeping Morristown's effective tax rate (1.945%) well below Parsippany's (2.302%)."
+    }
+  ],
+  "comparativeKeyFindings": [
+    {
+      "title": "Why Hanover (1.49%) & Morristown (1.95%) Beat Parsippany's Effective Rate (2.30%)",
+      "detail": "Hanover Township (Whippany) and Morristown protected and modernized their commercial ratables without giving away 30-year school-exempt residential PILOTs. In contrast, Parsippany's office park conversions shifted school costs onto homeowners."
+    },
+    {
+      "title": "Schools Take 64.1% of Parsippany's Tax Bill vs. 9.5% for Morris County",
+      "detail": "Unlike Passaic or Essex Counties where county taxes consume 18%\u201323% of a homeowner's bill, Morris County takes just 9.52%. However, because NJ State Aid covers under 10% of PTHSD's budget, 64.14% of every Parsippany tax dollar goes to the school district."
+    },
+    {
+      "title": "The 66.6% Equalization Ratio & Upcoming Revaluation Pressure",
+      "detail": "Parsippany's assessments sit at 66.60% of true market value ($348.5k average assessment vs. ~$595k+ market value). As the ratio drops toward the 60% threshold, Morris County Tax Board scrutiny increases."
+    }
+  ]
+}

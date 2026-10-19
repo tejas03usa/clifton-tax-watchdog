@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-18",
+    "dataSources": [
+      "Morris County Board of Taxation Abstract of Ratables (District 1429)",
+      "Township of Parsippany-Troy Hills Financial Agreements & PILOT Ordinances",
+      "Parsippany-Troy Hills Board of Education Special Redevelopment Analysis",
+      "NJ Tax Court Commercial Appeal Filings (Campus Dr, Sylvan Way, Route 10, Lanidex)"
+    ],
+    "certifiedYear": 2026,
+    "freshnessStatus": "Current & Certified"
+  },
+  "ratableShift": {
+    "totalNetValuationTaxable": 7385400000,
+    "currentShare": {
+      "residentialPercent": 72.8,
+      "residentialValuation": 5376571200,
+      "commercialPercent": 21.4,
+      "commercialValuation": 1580475600,
+      "industrialPercent": 2.6,
+      "industrialValuation": 192020400,
+      "apartmentCommercialPercent": 3.2,
+      "apartmentValuation": 236332800
+    },
+    "historicalTrend": [
+      {
+        "year": 1995,
+        "residentialShare": 54.2,
+        "commercialIndustrialShare": 45.8,
+        "notes": "Peak of Parsippany's 'Corporate Capital' era: AT&T, Nabisco, Prudential, Cendant, and Mack-Cali paid nearly half of all property taxes."
+      },
+      {
+        "year": 2005,
+        "residentialShare": 60.5,
+        "commercialIndustrialShare": 39.5,
+        "notes": "Corporate mergers and early suburban office consolidations began trimming commercial share."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 67.8,
+        "commercialIndustrialShare": 32.2,
+        "notes": "Post-2008 office vacancies and aggressive commercial tax appeals eroded over $400M in ratables."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 72.8,
+        "commercialIndustrialShare": 27.2,
+        "notes": "Office parks converted to 30-year PILOT apartment complexes; single-family homeowners now fund 72.8% of the ad valorem tax levy."
+      }
+    ],
+    "annualShiftDollarImpact": 29400000,
+    "averageHomeownerExtraCost": 1680.5
+  },
+  "pilotMechanism": {
+    "statute": "New Jersey Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": {
+      "cityHallShare": 95.0,
+      "countyShare": 5.0,
+      "schoolBoardShare": 0.0
+    },
+    "pilotExplanation": "When Parsippany grants a 30-year PILOT to convert an office building on Route 10 or Campus Drive into 400+ luxury apartments, the developer pays an Annual Service Charge instead of standard property taxes. Township Hall keeps 95% and Morris County gets 5%, while the Parsippany-Troy Hills School District (which normally receives 64.14% of property taxes) gets $0 statutory share\u2014forcing homeowners to pay $23,180/yr for every new student.",
+    "sampleProjects": [
+      {
+        "id": "route-10-1515-stanbery",
+        "name": "1515 Route 10 Mixed-Use Redevelopment (500+ Units)",
+        "category": "Corporate Office to Multi-Family & Retail Conversion",
+        "location": "1515 Route 10 East (Stanbery Development)",
+        "units": 512,
+        "estimatedMarketValue": 165000000,
+        "assessedValueEquivalent": 109890000,
+        "standardTotalTax": 3901095,
+        "standardSchoolShare": 2502195,
+        "standardCityShare": 1027472,
+        "standardCountyShare": 371428,
+        "pilotServiceCharge": 1850000,
+        "pilotCityKeeps": 1757500,
+        "pilotCountyGets": 92500,
+        "pilotSchoolGets": 0,
+        "schoolTaxLoss": 2502195,
+        "developerAnnualSavings": 2051095,
+        "estimatedDistrictStudents": 78,
+        "annualDistrictCostGenerated": 1808040,
+        "homeownerBurdenAbsorbed": 1808040
+      },
+      {
+        "id": "campus-drive-avalon-410",
+        "name": "Campus Drive Corporate Park Conversion (410 Units)",
+        "category": "Mack-Cali / Campus Drive Multi-Family PILOT",
+        "location": "Campus Drive & Hilton Court Corridor",
+        "units": 410,
+        "estimatedMarketValue": 132000000,
+        "assessedValueEquivalent": 87912000,
+        "standardTotalTax": 3120876,
+        "standardSchoolShare": 2001756,
+        "standardCityShare": 821977,
+        "standardCountyShare": 297143,
+        "pilotServiceCharge": 1480000,
+        "pilotCityKeeps": 1406000,
+        "pilotCountyGets": 74000,
+        "pilotSchoolGets": 0,
+        "schoolTaxLoss": 2001756,
+        "developerAnnualSavings": 1640876,
+        "estimatedDistrictStudents": 62,
+        "annualDistrictCostGenerated": 1437160,
+        "homeownerBurdenAbsorbed": 1437160
+      },
+      {
+        "id": "lanidex-sylvan-325",
+        "name": "Lanidex Plaza / Sylvan Way Redevelopment (325 Units)",
+        "category": "Office Park Adaptive Reuse",
+        "location": "Lanidex Plaza / Parsippany Blvd Corridor",
+        "units": 325,
+        "estimatedMarketValue": 98000000,
+        "assessedValueEquivalent": 65268000,
+        "standardTotalTax": 2317014,
+        "standardSchoolShare": 1486152,
+        "standardCityShare": 610256,
+        "standardCountyShare": 220606,
+        "pilotServiceCharge": 1120000,
+        "pilotCityKeeps": 1064000,
+        "pilotCountyGets": 56000,
+        "pilotSchoolGets": 0,
+        "schoolTaxLoss": 1486152,
+        "developerAnnualSavings": 1197014,
+        "estimatedDistrictStudents": 48,
+        "annualDistrictCostGenerated": 1112640,
+        "homeownerBurdenAbsorbed": 1112640
+      }
+    ]
+  },
+  "taxAppeals": {
+    "annualReserveBudgeted": 3100000,
+    "decadeTotalRefunds": 34800000,
+    "mechanicExplanation": "Suburban Class-A and Class-B office landlords along Campus Drive, Sylvan Way, and Route 10 have filed hundreds of NJ Tax Court appeals claiming high post-pandemic vacancy rates. Every successful appeal forces Parsippany to refund cash and permanently lowers the commercial assessment base.",
+    "topCommercialRatables": [
+      {
+        "name": "MCC / Campus Drive Corporate Center (Former Mack-Cali / Prudential)",
+        "location": "Campus Drive & Route 202 Corridor",
+        "type": "Class-A Corporate Office & Mixed-Use Campus",
+        "assessedValue": 94500000,
+        "marketValueEst": 141800000,
+        "annualTaxPaid": 3354750,
+        "appealRisk": "High (Suburban Office Vacancy Appeals)"
+      },
+      {
+        "name": "Waterview Marketplace (Whole Foods / Homesense / Retail & Office)",
+        "location": "Route 202 (Littleton Rd) & Waterview Blvd",
+        "type": "Premier Regional Retail & Medical/Office Center",
+        "assessedValue": 52400000,
+        "marketValueEst": 78600000,
+        "annualTaxPaid": 1860200,
+        "appealRisk": "Low (High-Occupancy Retail Anchor)"
+      },
+      {
+        "name": "Sylvan Way Corporate Park (Wyndham / Reckitt / Tiffany)",
+        "location": "Sylvan Way & Ridgedale Ave",
+        "type": "Global Corporate Headquarters & R&D Campus",
+        "assessedValue": 78200000,
+        "marketValueEst": 117400000,
+        "annualTaxPaid": 2776100,
+        "appealRisk": "Moderate (Lease Restructuring Exposure)"
+      },
+      {
+        "name": "Hilton / Sheraton Parsippany Hotel & Conference Complex",
+        "location": "1 Hilton Ct & Smith Rd (Route 10 / I-287)",
+        "type": "Full-Service Convention Hotel & Hospitality",
+        "assessedValue": 48600000,
+        "marketValueEst": 72900000,
+        "annualTaxPaid": 1725300,
+        "appealRisk": "Moderate (Hospitality Cap-Rate Appeals)"
+      },
+      {
+        "name": "Morris Corporate Center (Interpace Pkwy / Cherry Hill Rd)",
+        "location": "Interpace Pkwy & I-80 Corridor",
+        "type": "Multi-Building Corporate Office Complex",
+        "assessedValue": 64800000,
+        "marketValueEst": 97200000,
+        "annualTaxPaid": 2300400,
+        "appealRisk": "High (Active Tax Court Valuation Challenges)"
+      },
+      {
+        "name": "Troy Hills Shopping Center & Route 46 Retail Plazas (Target, ShopRite, Home Depot)",
+        "location": "Route 46 & Beverwyck Rd Corridor",
+        "type": "Big-Box Power Retail & Grocery Centers",
+        "assessedValue": 61500000,
+        "marketValueEst": 92300000,
+        "annualTaxPaid": 2183250,
+        "appealRisk": "Low (Stable Retail Cash Flow)"
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Enact a Mandatory 60% PILOT School Revenue-Sharing Ordinance",
+      "proposal": "Because PTHSD represents 64.14% of Parsippany's property tax bill, the Township Council should enact a binding ordinance requiring at least 50%\u201360% of all residential PILOT service charges (including 1515 Route 10 and Campus Drive) to be transferred directly to the Parsippany-Troy Hills School District.",
+      "benefit": "Provides +$4.9M/yr directly to PTHSD classrooms and prevents single-family homeowners from subsidizing luxury apartment developers."
+    },
+    {
+      "title": "Halt Non-Distressed Residential PILOT Giveaways",
+      "proposal": "Restrict Long Term Tax Exemptions strictly to contaminated brownfields or non-student-generating biotech/medical/clean-tech commercial facilities rather than profitable luxury apartment complexes.",
+      "benefit": "Preserves the full 64.1% school tax share on all new residential construction."
+    },
+    {
+      "title": "Consolidate Administrative Overhead Across the 6 Fire Districts",
+      "proposal": "Establish a shared-services purchasing, audit, insurance, and apparatus maintenance consortium across Parsippany's 6 independent Fire Districts (#1\u2013#6).",
+      "benefit": "Saves $850,000+ annually in duplicate legal, audit, and administrative overhead without reducing volunteer or career fire protection."
+    },
+    {
+      "title": "Attract Life-Sciences & R&D to Repurpose Vacant Office Campuses",
+      "proposal": "Follow neighboring Hanover and Morristown by rezoning vacant Class-B office buildings along Campus Drive and Interpace Pkwy for life-sciences, medical diagnostics, and AI data/research centers.",
+      "benefit": "Restores commercial ratables from 27.2% toward 35%+, generating high tax revenue with zero public school student load."
+    }
+  ]
+}

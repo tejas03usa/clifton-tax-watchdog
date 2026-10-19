@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-18",
+    "payrollCycle": "FY 2025-2026 Active Contracts & Salary Ordinances",
+    "sourceAgency": "Township of Parsippany-Troy Hills Salary Ordinances, PTHSD User-Friendly Budget & NJ Pension Rolls",
+    "freshnessStatus": "Current"
+  },
+  "staff": [
+    {
+      "name": "Dr. Karen Chase",
+      "title": "Superintendent of Schools",
+      "entity": "Parsippany-Troy Hills School District",
+      "department": "Central Administration",
+      "type": "Executive Contract",
+      "salaryReported": 238500,
+      "salaryRange": "$225,000 - $248,000",
+      "notes": "Appointed Chief School Administrator overseeing 14 schools, 7,120 students, and $187.45M budget (succeeded Dr. Robert Sutter in late 2025)."
+    },
+    {
+      "name": "Richard Pantina",
+      "title": "Chief of Police",
+      "entity": "Township of Parsippany-Troy Hills",
+      "department": "Police Department",
+      "type": "Sworn Executive",
+      "salaryReported": 224000,
+      "salaryRange": "$210,000 - $232,000",
+      "notes": "Commands 105+ sworn officers, Detective Bureau, Patrol Division, and Emergency Management across 25.4 sq miles."
+    },
+    {
+      "name": "Robin Tedesco",
+      "title": "Interim/School Business Administrator & Board Secretary",
+      "entity": "Parsippany-Troy Hills School District",
+      "department": "Business Office",
+      "type": "Executive Contract",
+      "salaryReported": 198000,
+      "salaryRange": "$185,000 - $210,000",
+      "notes": "Oversees $187.45M school budget, OPRA records, transportation contracts, and PILOT impact analysis."
+    },
+    {
+      "name": "Dr. Denis Mulroony",
+      "title": "Assistant Superintendent for Curriculum & Instruction",
+      "entity": "Parsippany-Troy Hills School District",
+      "department": "Curriculum & Instruction",
+      "type": "Executive Contract",
+      "salaryReported": 192500,
+      "salaryRange": "$180,000 - $200,000",
+      "notes": "Directs K-12 academic standards, STEM pathways, and curriculum across 14 schools."
+    },
+    {
+      "name": "Todd Ricker",
+      "title": "Assistant Superintendent of Human Resources",
+      "entity": "Parsippany-Troy Hills School District",
+      "department": "Human Resources",
+      "type": "Executive Contract",
+      "salaryReported": 188000,
+      "salaryRange": "$175,000 - $195,000",
+      "notes": "Manages district personnel, PTHEA collective bargaining, and staffing across 1,100+ employees."
+    },
+    {
+      "name": "Juan Uribe",
+      "title": "Chief Financial Officer (CFO) & Finance Director",
+      "entity": "Township of Parsippany-Troy Hills",
+      "department": "Department of Finance",
+      "type": "Statutory Officer",
+      "salaryReported": 176500,
+      "salaryRange": "$160,000 - $185,000",
+      "notes": "Certified Municipal Finance Officer overseeing $92.8M general budget and $35.8M utility budgets."
+    },
+    {
+      "name": "Khaled Madin",
+      "title": "Township Clerk & Business Administrator",
+      "entity": "Township of Parsippany-Troy Hills",
+      "department": "Administration & Municipal Clerk",
+      "type": "Statutory Executive",
+      "salaryReported": 182000,
+      "salaryRange": "$155,000 - $190,000",
+      "notes": "Serves as Official Custodian of Records (OPRA), Council Secretary, and Chief Election Official."
+    },
+    {
+      "name": "Dr. Melissakh Carucci / Keith Cortright",
+      "title": "High School Principals (Parsippany HS & Parsippany Hills HS)",
+      "entity": "Parsippany-Troy Hills School District",
+      "department": "High School Administration",
+      "type": "Administrators Association (PTHAA)",
+      "salaryReported": 178400,
+      "salaryRange": "$162,000 - $186,000",
+      "notes": "Building leadership for Parsippany High School (Red Hawks) and Parsippany Hills High School (Vikings)."
+    },
+    {
+      "name": "Police Deputy Chiefs & Captains",
+      "title": "Command Staff (Operations & Administration)",
+      "entity": "Township of Parsippany-Troy Hills",
+      "department": "Police Department (SOA)",
+      "type": "Superior Officers Association",
+      "salaryReported": 189000,
+      "salaryRange": "$172,000 - $198,000",
+      "notes": "Base contractual command salary excluding off-duty utility traffic details and longevity."
+    },
+    {
+      "name": "Police Lieutenants & Sergeants",
+      "title": "Frontline Patrol & Detective Supervisors",
+      "entity": "Township of Parsippany-Troy Hills",
+      "department": "Police Department (SOA)",
+      "type": "Superior Officers Association",
+      "salaryReported": 162500,
+      "salaryRange": "$145,000 - $172,000",
+      "notes": "Supervises patrol squads, traffic enforcement along Routes 10, 46, 80, and 287, and detective units."
+    },
+    {
+      "name": "Senior Patrol Officer (Top Step)",
+      "title": "Sworn Police Officer (PBA Local 131)",
+      "entity": "Township of Parsippany-Troy Hills",
+      "department": "Police Department",
+      "type": "PBA Local 131 Guide",
+      "salaryReported": 134500,
+      "salaryRange": "$58,000 (Academy) - $138,000 (Top Step)",
+      "notes": "PBA Local 131 collective bargaining agreement; eligible for overtime and private utility road details."
+    },
+    {
+      "name": "Senior Classroom Teacher (MA+30 / Top Step)",
+      "title": "Certified Teacher (PTHEA Guide)",
+      "entity": "Parsippany-Troy Hills School District",
+      "department": "Instructional Staff",
+      "type": "PTHEA Union Guide",
+      "salaryReported": 106800,
+      "salaryRange": "$62,500 (Step 1 BA) - $112,400 (Top MA+30)",
+      "notes": "Parsippany-Troy Hills Education Association (PTHEA) negotiated salary guide across 14 schools."
+    },
+    {
+      "name": "Pulkit Desai",
+      "title": "Mayor of Parsippany-Troy Hills",
+      "entity": "Township of Parsippany-Troy Hills",
+      "department": "Office of the Mayor",
+      "type": "Full-Time Elected Executive",
+      "salaryReported": 125000,
+      "salaryRange": "$120,000 - $130,000 (Faulkner Act Mayor)",
+      "notes": "Elected Chief Executive under Mayor-Council plan (took office Jan 2026 following former Mayor James R. Barberio); campaigned on halting unchecked PILOT giveaways."
+    },
+    {
+      "name": "Judy Hernandez",
+      "title": "Township Council President",
+      "entity": "Township of Parsippany-Troy Hills",
+      "department": "Township Council",
+      "type": "Elected Governing Body",
+      "salaryReported": 12000,
+      "salaryRange": "$12,000 Stipend",
+      "notes": "Presides over Township Council legislative sessions, budget hearings, and land-use ordinances."
+    },
+    {
+      "name": "Paul Carifi Jr. / Diya Patel / Matt McGrath / Matthew Kavanagh",
+      "title": "Township Councilmembers",
+      "entity": "Township of Parsippany-Troy Hills",
+      "department": "Township Council",
+      "type": "Elected Governing Body",
+      "salaryReported": 10000,
+      "salaryRange": "$10,000 Stipend",
+      "notes": "Votes on municipal budget, PILOT redevelopment ordinances, bond issues, and vendor bill lists."
+    },
+    {
+      "name": "Alison Cogan / Susy Golderer / Timothy Berrios",
+      "title": "Board of Education Trustees & Leadership",
+      "entity": "Parsippany-Troy Hills School District",
+      "department": "Board of Education",
+      "type": "Elected Unpaid Trustees",
+      "salaryReported": 0,
+      "salaryRange": "$0 (Statutory Unpaid Service)",
+      "notes": "9-member elected Board of Education overseeing $187.45M school budget and challenging uncompensated Township PILOTs."
+    }
+  ]
+}

@@ -8490,10 +8490,162 @@ input:checked + .slider.round:before {
   }
 }
 
+/* ==========================================================================
+   CITY SWITCHER (CLIFTON vs. PARSIPPANY-TROY HILLS) & PARSIPPANY ZIP STYLES
+   ========================================================================== */
+.header-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
 
+.header-top-bar .brand-badge {
+  margin-bottom: 0;
+}
 
+.city-switcher-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 4px 6px 4px 12px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(10px);
+}
 
+.city-switcher-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  margin-right: 2px;
+}
 
+.city-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #cbd5e1;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
 
+.city-switch-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
 
+.city-switch-btn.active {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border-color: rgba(147, 197, 253, 0.5);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
+}
 
+.city-btn-county {
+  font-size: 0.65rem;
+  font-weight: 600;
+  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.22);
+  padding: 1px 6px;
+  border-radius: var(--radius-pill);
+}
+
+/* Nav Bar City Switcher */
+.nav-top-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav-city-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+}
+
+.city-switch-btn.compact {
+  padding: 4px 10px;
+  font-size: 0.74rem;
+  color: #475569;
+  border-radius: var(--radius-pill);
+}
+
+.city-switch-btn.compact:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.city-switch-btn.compact.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.25);
+}
+
+/* Parsippany ZIP Code Card Accent Top Borders */
+.zip-card.zip-07054 { border-top-color: #2563eb; }
+.zip-card.zip-07034 { border-top-color: #dc2626; }
+.zip-card.zip-07878 { border-top-color: #059669; }
+.zip-card.zip-07950 { border-top-color: #7c3aed; }
+
+@media (max-width: 768px) {
+  .header-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .city-switcher-group {
+    width: 100%;
+    justify-content: space-between;
+    padding: 4px 6px;
+  }
+
+  .city-switcher-label {
+    display: none;
+  }
+
+  .city-switch-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 6px 8px;
+    font-size: 0.76rem;
+  }
+
+  .nav-top-row {
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 6px;
+  }
+
+  .nav-brand-lockup {
+    width: auto;
+    border-bottom: none;
+    padding: 2px 0;
+  }
+
+  .nav-brand-subtitle {
+    display: none;
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-18",
+    "billListCycles": "FY 2025-2026 Accounts Payable & Warrant Lists",
+    "sourceAgency": "Township of Parsippany-Troy Hills Bill Lists & PTHSD Board Secretary Warrant Registers",
+    "freshnessStatus": "Current"
+  },
+  "vendors": [
+    {
+      "vendorName": "State Health Benefits Program (SHBP / SEHBP) & Horizon BCBS",
+      "entityServed": "Both Township of Parsippany & PTHSD",
+      "category": "Employee Healthcare & Prescription",
+      "annualEstimatedSpend": 51200000,
+      "description": "Combined medical, prescription drug, and dental insurance coverage for active and retired township and school district personnel."
+    },
+    {
+      "vendorName": "Police & Firemen's Retirement System (PFRS) & PERS",
+      "entityServed": "Township of Parsippany-Troy Hills",
+      "category": "Statutory Pension Mandates",
+      "annualEstimatedSpend": 10900000,
+      "description": "Mandatory annual employer pension billing from the NJ Division of Pensions & Benefits for police officers and civilian staff."
+    },
+    {
+      "vendorName": "Student Transportation Contractors (First Student, STA, Educational Services Commission of Morris County)",
+      "entityServed": "Parsippany-Troy Hills School District",
+      "category": "Student Busing & Special Ed Transit",
+      "annualEstimatedSpend": 9450000,
+      "description": "Contracted daily school bus routes across 14 schools, non-public aid-in-lieu payments, and coordinated special education transportation through ESCMC."
+    },
+    {
+      "vendorName": "Out-of-District Special Education & Morris County Vo-Tech (MCVSD)",
+      "entityServed": "Parsippany-Troy Hills School District",
+      "category": "Mandated Vocational & Special Ed Tuition",
+      "annualEstimatedSpend": 11800000,
+      "description": "Tuition paid to Morris County School of Technology (Denville), Allegro School, Shepard School, P.G. Chambers School, and Celebrate the Children."
+    },
+    {
+      "vendorName": "Suburban Disposal / Municipal Solid Waste & Recycling Hauling",
+      "entityServed": "Township of Parsippany-Troy Hills",
+      "category": "Sanitation & Recycling Collection",
+      "annualEstimatedSpend": 6850000,
+      "description": "Curbside solid waste, bulk trash, and recycling collection & Morris County MUA tipping fees across 16,500+ residential households."
+    },
+    {
+      "vendorName": "Weiner Law Group / Inglesino Taylor / Special Redevelopment & PILOT Counsel",
+      "entityServed": "Township of Parsippany & PTHSD",
+      "category": "Municipal, Land Use & BOE Legal Services",
+      "annualEstimatedSpend": 2150000,
+      "description": "Township Attorney, tax appeal defense counsel, redevelopment/PILOT attorneys, and special legal counsel retained by the Board of Education to contest uncompensated PILOTs."
+    },
+    {
+      "vendorName": "Boswell Engineering / Suburban Consulting Engineers / Parette Somjen Architects",
+      "entityServed": "Township of Parsippany & PTHSD",
+      "category": "Engineering, Water/Sewer & School Facilities",
+      "annualEstimatedSpend": 3400000,
+      "description": "PFAS water treatment upgrades, sanitary sewer pump station rehab, road resurfacing design, and school roof/HVAC capital projects."
+    },
+    {
+      "vendorName": "JCP&L (FirstEnergy) & NJ Natural Gas",
+      "entityServed": "Township of Parsippany & PTHSD",
+      "category": "Public Utilities, Streetlights & Water Pumping",
+      "annualEstimatedSpend": 4600000,
+      "description": "Electricity for 14 schools, municipal complex, wastewater treatment plant, water wells, and township street lighting."
+    }
+  ]
+}

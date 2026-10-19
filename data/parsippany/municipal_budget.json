@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-18",
+    "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
+    "sourceAgency": "NJ Department of Community Affairs (DLGS) & Township of Parsippany-Troy Hills Finance Department",
+    "dataVintage": "Certified CY 2026 Municipal Budget",
+    "freshnessStatus": "Current"
+  },
+  "entity": "Township of Parsippany-Troy Hills (Municipal Government)",
+  "county": "Morris County",
+  "fiscalYear": "2025 / 2026",
+  "totalBudget": 92800000,
+  "population": 56162,
+  "governmentType": "Faulkner Act Mayor-Council Plan",
+  "fullTimeEmployees": 385,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax for Municipal & Library Purposes",
+      "amount": 59200000,
+      "percentage": 63.8,
+      "description": "Portion paid on quarterly property tax bills by Parsippany homeowners and commercial properties"
+    },
+    {
+      "source": "PILOT Service Charges & Hotel/Motel Occupancy Fees",
+      "amount": 9850000,
+      "percentage": 10.6,
+      "description": "Annual service charges from corporate/residential PILOT redevelopment agreements (Campus Dr, Route 10, Lanidex) plus hotel occupancy taxes"
+    },
+    {
+      "source": "State Aid (Energy Tax Receipts)",
+      "amount": 5650000,
+      "percentage": 6.1,
+      "description": "Direct state formula aid distributed by NJ Department of Community Affairs"
+    },
+    {
+      "source": "Local Fees, Permits, Municipal Court & Interest",
+      "amount": 9600000,
+      "percentage": 10.3,
+      "description": "UCC building permits on new redevelopments, court fines, health licenses, and investment interest"
+    },
+    {
+      "source": "Surplus Anticipated & Utility Transfers",
+      "amount": 8500000,
+      "percentage": 9.2,
+      "description": "Audited fund balance reserves and interfund operating transfers"
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Parsippany Police Department & 911 Communications",
+      "amount": 22400000,
+      "percentage": 24.1,
+      "details": "Salaries for ~105+ sworn police officers (Patrol, Investigative Division, Traffic Safety, Community Relations), 911 dispatchers, police cruisers, and tactical gear."
+    },
+    {
+      "category": "Employee Group Health Insurance & Risk Management",
+      "amount": 13800000,
+      "percentage": 14.9,
+      "details": "Medical, prescription, and dental coverage for active township employees and retirees, plus Morris County Joint Insurance Fund (JIF) liability coverage."
+    },
+    {
+      "category": "Department of Public Works (Streets, Sanitation, Recycling & Parks)",
+      "amount": 15200000,
+      "percentage": 16.4,
+      "details": "Road maintenance across 200+ township road miles, municipal sanitation & recycling pickup, snow plowing, forestry, and maintenance of Smith Field, Veterans Park, and Knoll Park."
+    },
+    {
+      "category": "Statutory Pensions (PFRS & PERS) & Social Security",
+      "amount": 10900000,
+      "percentage": 11.7,
+      "details": "Mandatory employer pension contributions to Police & Firemen's Retirement System (PFRS) and Public Employees' Retirement System (PERS)."
+    },
+    {
+      "category": "Municipal Debt Service (Bonds & BANS)",
+      "amount": 11400000,
+      "percentage": 12.3,
+      "details": "Principal and interest payments on general capital improvement bonds, road reconstruction, and open space acquisitions."
+    },
+    {
+      "category": "General Government, Finance, Tax Assessment & Legal",
+      "amount": 6800000,
+      "percentage": 7.3,
+      "details": "Mayor's Office, Township Council, Business Administrator, Township Clerk, CFO, Tax Assessor (commercial appeal defense), and Township Attorney."
+    },
+    {
+      "category": "Parsippany Public Library System (Main, Lake Hiawatha, Mount Tabor)",
+      "amount": 3650000,
+      "percentage": 3.9,
+      "details": "Mandatory 1/3 mill library appropriation funding the Main Library on Halsey Rd, Lake Hiawatha Branch, and historic Mount Tabor Branch."
+    },
+    {
+      "category": "6 Independent Fire Districts Tax Levies (Billed on Property Tax Roll)",
+      "amount": 7150000,
+      "percentage": 7.7,
+      "details": "Parsippany operates 6 separate voter-elected Fire Districts (Districts 1 through 6), each levying its own dedicated fire tax ($0.072 to $0.135 per $100 assessed) for apparatus, stations, and volunteer/career fire protection."
+    },
+    {
+      "category": "Dedicated Water, Sewer & Knoll Golf Utilities (Self-Liquidating Enterprise Budgets)",
+      "amount": 35800000,
+      "percentage": 38.6,
+      "details": "Billed separately from property taxes: Parsippany Water Utility (~$14.2M), Sewer Utility (~$18.5M), and Knoll Country Club Golf Utility (~$3.1M)."
+    }
+  ]
+}
