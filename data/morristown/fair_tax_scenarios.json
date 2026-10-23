@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "Town of Morristown Fair Tax Burden & Equalization Engine",
+    "lastUpdated": "2026-10-23",
+    "taxYear": 2026,
+    "certifiedBaseline": {
+      "equalizationRatio": 0.851,
+      "certifiedTaxRateAssessed": 2.285,
+      "certifiedTaxRateMarket": 1.945,
+      "totalTaxLevy": 212404999,
+      "schoolLevy": 116025000,
+      "municipalLevy": 33740000,
+      "countyLevy": 27705000,
+      "residentialLevySharePct": 56.4,
+      "residentialLevyTotal": 119796419,
+      "commercialLevySharePct": 43.6,
+      "commercialLevyTotal": 92608579,
+      "averageResidentialAssessment": 578680,
+      "averageResidentialMarketValue": 680000,
+      "averageResidentialTaxBill": 13222.84,
+      "totalResidentialParcels": 7278,
+      "totalCommercialParcels": 950,
+      "annualPilotRevenueCollected": 8450000,
+      "pilotShareToSchoolsPct": 0.0
+    }
+  },
+  "fairnessDiagnosis": {
+    "summary": "Why property taxes in Town of Morristown have shifted heavily onto residential homeowners, and how balanced commercial ratables and 50% PILOT sharing can cut tax bills while keeping schools 100% funded.",
+    "coreInequities": [
+      {
+        "id": "pilot_exclusion",
+        "title": "PILOT Agreements Exclude Morris School District (Regional K-12) (54.8% of Tax Rate)",
+        "metric": "$0 Statutory BOE Share",
+        "severity": "Critical",
+        "description": "Schools represent 54.8% of property taxes in Town of Morristown, but 30-year PILOTs send 95% of fees to Town Hall and $0 to classrooms.",
+        "remedy": "Codify a binding municipal ordinance dedicating 50% of PILOT revenues directly to public schools."
+      },
+      {
+        "id": "commercial_shift",
+        "title": "Homeowners Shoulder 56.4% of the Tax Base",
+        "metric": "56.4% Residential",
+        "severity": "High",
+        "description": "Commercial ratables have eroded over 20 years, forcing single-family families to absorb larger shares of municipal and school budgets.",
+        "remedy": "Incentivize commercial redevelopment to restore commercial share back toward 35%."
+      }
+    ]
+  },
+  "presetScenarios": [
+    {
+      "id": "status_quo",
+      "name": "Status Quo Baseline (2026 Town of Morristown)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 43.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 2.285,
+      "avgResidentialTaxBill": 13222.84,
+      "fairnessEquityScore": 44,
+      "summary": "Current certified tax distribution in Town of Morristown. Homeowners fund 56.4% of the budget.",
+      "winners": "Commercial developers with long-term PILOT abatements.",
+      "losers": "Town of Morristown single-family homeowners and public school students."
+    },
+    {
+      "id": "unified_blueprint",
+      "name": "The Town of Morristown Unified Fair Tax Blueprint",
+      "badge": "\u2605 Optimal Balance",
+      "badgeClass": "badge-success",
+      "commercialSharePct": 36.0,
+      "pilotSchoolSharePct": 50.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 8.0,
+      "utilityUnbundlingM": 6.5,
+      "projectedTaxRate": 1.653,
+      "avgResidentialTaxBill": 11107.19,
+      "fairnessEquityScore": 95,
+      "summary": "Dedicating 50% of PILOTs to schools, restoring commercial ratables, and capping senior burdens saves the average Town of Morristown homeowner ~$1,950/yr.",
+      "winners": "90%+ of Town of Morristown homeowners, public schools, and fixed-income seniors.",
+      "losers": "Speculative developers seeking 30-year school-exempt tax abatements."
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07960",
+      "name": "Town of Morristown Central District",
+      "medianHouseholdIncome": 119500,
+      "avgAssessment": 578680,
+      "avgMarketValue": 680000,
+      "currentTaxBill": 13222.84,
+      "currentTaxEffortPct": 11.07
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "label": "Typical Town of Morristown Single-Family Home",
+      "marketValue": 680000,
+      "assessedValue": 578680,
+      "householdIncome": 119500,
+      "zip": "07960",
+      "statusQuoBill": 13222.84,
+      "blueprintBill": 11107.19,
+      "blueprintSavings": 2115.65,
+      "percentSavings": 16.0
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Enact 50% PILOT Revenue-Sharing with Morris School District (Regional K-12)",
+      "legalAuthority": "N.J.S.A. 40A:20-12",
+      "action": "Codify a mandatory municipal ordinance transferring half of all PILOT fees to the school district.",
+      "outcome": "Saves Town of Morristown homeowners millions in school tax subsidies.",
+      "timeline": "Months 1\u20133"
+    },
+    {
+      "step": 2,
+      "title": "Commercial Ratable Corridor Revitalization",
+      "legalAuthority": "N.J.S.A. 40A:12A-1",
+      "action": "Attract high-value biotech, retail, and corporate ratables to relieve single-family homeowners.",
+      "outcome": "Restores commercial ratable share toward 35% in Town of Morristown.",
+      "timeline": "Months 3\u201318"
+    }
+  ]
+}

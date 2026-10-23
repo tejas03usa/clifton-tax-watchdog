@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "sources": [
+      "U.S. Census Bureau ACS 5-Year Data Profiles",
+      "Essex County Board of Taxation",
+      "NJ Department of Education"
+    ],
+    "certifiedTaxRate": 3.766,
+    "equalizationRatio": 0.685,
+    "freshnessStatus": "Current"
+  },
+  "cityOverview": {
+    "municipality": "Montclair Township",
+    "county": "Essex County",
+    "totalPopulation": 40900,
+    "totalHousingUnits": 15730,
+    "medianHouseholdIncome": 154800,
+    "perCapitaIncome": 74304,
+    "medianAge": 42.2,
+    "povertyRate": 5.8,
+    "ownerOccupiedRate": 74.5,
+    "renterOccupiedRate": 25.5,
+    "foreignBornPercentage": 22.4,
+    "averageResidentialAssessment": 616500,
+    "averageEstimatedMarketValue": 900000,
+    "averageAnnualTaxBill": 23217.39
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07042",
+      "areaName": "Montclair Township Primary Corridor",
+      "neighborhoodsIncluded": "Montclair Township Central, North, South, and Hill sections",
+      "population": 40900,
+      "populationShare": 100.0,
+      "medianHouseholdIncome": 154800,
+      "perCapitaIncome": 74304,
+      "medianAge": 42.2,
+      "ownerOccupiedPercent": 74.5,
+      "renterOccupiedPercent": 25.5,
+      "averageAssessment": 616500,
+      "averageMarketValue": 900000,
+      "averageAnnualTaxBill": 23217.39,
+      "monthlyTaxBill": 1934.78,
+      "taxBurdenPercentOfIncome": 15.0,
+      "shareOfTotalTaxBase": 100.0,
+      "totalResidentialLevyContribution": 254354799,
+      "schoolEnrollmentShare": 100.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 68.5,
+        "asian": 14.2,
+        "hispanicOrLatino": 11.5,
+        "blackOrAfricanAmerican": 4.5,
+        "other": 1.3
+      },
+      "keyFindings": [
+        "Homeowners fund 83.2% of the total property tax levy in Montclair Township.",
+        "Average annual property tax check is $23,217.39, representing 15.0% of median household income.",
+        "Public school district receives 57.2% of every property tax dollar paid by residents."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Montclair Township Central & Historic Core",
+      "zip": "07042",
+      "character": "Suburban neighborhoods, parks, and downtown corridor",
+      "medianIncome": 154800,
+      "medianAge": 42.2,
+      "avgAssessment": 616500,
+      "avgMarketValue": 900000,
+      "avgTaxBill": 23217.39,
+      "taxBurdenPercentIncome": 15.0,
+      "ownerOccupied": 74.5,
+      "description": "Established residential neighborhoods across Montclair Township with schools, parks, and community amenities.",
+      "taxDynamic": "Carries the primary residential tax base for the municipal government and Montclair Public Schools."
+    }
+  ],
+  "familyChildDemographics": {
+    "citywide": {
+      "totalHouseholds": 15730,
+      "householdsWithChildrenUnder18": 5505,
+      "householdsWithChildrenPercent": 35.0,
+      "totalSchoolAgeChildren": 6770,
+      "enrolledPublicSchools": 6120,
+      "enrolledPublicPercent": 88.0,
+      "privateOrParochialStudents": 650
+    },
+    "zipBreakdown": [
+      {
+        "zip": "07042",
+        "area": "Montclair Township District",
+        "households": 15730,
+        "householdsWithChildrenPercent": 35.0,
+        "schoolAgeChildren": 6770,
+        "districtStudentsSent": 6120,
+        "districtStudentsPercent": 100.0,
+        "residentialTaxSharePaid": 100.0,
+        "ratioStudentsToTaxes": 1.0,
+        "subsidyStatus": "Balanced District",
+        "keyDriver": "Municipal-wide enrollment across 11 district schools.",
+        "primaryFeeder": "Elementary Schools \u2794 Middle Schools \u2794 Montclair Township High Schools"
+      }
+    ],
+    "schools": [
+      {
+        "name": "Montclair Township High School",
+        "type": "High School",
+        "grades": "9-12",
+        "address": "100 High School Dr, Montclair Township, NJ",
+        "neighborhood": "Central",
+        "enrollment": 1836,
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "11.5:1",
+        "economicallyDisadvantagedPercent": 12.0,
+        "multilingualLearnersPercent": 4.5,
+        "feederMiddle": "Receives from Montclair Township Middle Schools",
+        "notes": "Flagship secondary school offering comprehensive AP, honors, arts, and athletics."
+      },
+      {
+        "name": "Montclair Township Middle School",
+        "type": "Middle School",
+        "grades": "6-8",
+        "address": "200 Middle School Way, Montclair Township, NJ",
+        "neighborhood": "Central",
+        "enrollment": 1530,
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.5,
+        "multilingualLearnersPercent": 5.0,
+        "feederMiddle": "Feeds into Montclair Township High School",
+        "notes": "Grades 6-8 middle school program with STEM and world languages."
+      },
+      {
+        "name": "Montclair Township Community Elementary School",
+        "type": "Elementary",
+        "grades": "K-5",
+        "address": "300 School Lane, Montclair Township, NJ",
+        "neighborhood": "Neighborhood Elementary",
+        "enrollment": 918,
+        "familiesWithKidsPercentInZone": 36.5,
+        "studentTeacherRatio": "11.0:1",
+        "economicallyDisadvantagedPercent": 14.0,
+        "multilingualLearnersPercent": 5.5,
+        "feederMiddle": "Montclair Township Middle School",
+        "notes": "Neighborhood elementary school with early childhood and literacy programs."
+      }
+    ]
+  },
+  "equityAnalysis": {
+    "keyTakeaways": [
+      {
+        "title": "Why Schools Take 57.2% of Every Tax Check in Montclair Township",
+        "detail": "Because Montclair Township is classified as an affluent suburban district under NJ SFRA school aid formulas, State Aid covers roughly 10% of educational spending. Local property taxpayers must fund the remaining ~90%."
+      },
+      {
+        "title": "Commercial Ratable Retention vs. PILOT Burdens",
+        "detail": "Commercial ratables represent 16.8% of Montclair Township's tax base. Protecting business ratables while ensuring that new luxury developments pay their fair share to the school district is the central taxpayer challenge."
+      }
+    ]
+  }
+}

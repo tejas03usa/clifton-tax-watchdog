@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "reportVintage": "October 2026 Montclair Township Watchdog Analysis",
+    "sources": [
+      "Montclair Township Council Minutes & Ordinances",
+      "Montclair Public Schools Resolutions & Budgets",
+      "Essex County Board of Taxation Abstract of Ratables"
+    ],
+    "freshnessStatus": "Current"
+  },
+  "controversies": [
+    {
+      "id": "montclair-pilot-school-dispute",
+      "severity": "HIGH",
+      "category": "PILOT Tax Abatements & School Funding Exclusion",
+      "title": "PILOT Tax Breaks vs. School District Revenues in Montclair Township",
+      "entityInvolved": "Township of Montclair (Municipal Government) vs. Montclair Public Schools",
+      "lastUpdated": "2025-2026",
+      "summary": "Long-term tax exemptions granted to major developments along commercial corridors bypass the school district (which normal takes 57.2% of property taxes), forcing existing homeowners to absorb student enrollment costs.",
+      "investigationDetails": "Under New Jersey's Long Term Tax Exemption Law (N.J.S.A. 40A:20), municipalities can grant 30-year PILOTs where the developer pays an Annual Service Charge directly to Town Hall (95%) and the County (5%), while the public school district receives $0 statutory share. In Montclair Township, where schools consume 57.2% of standard taxes, each new luxury residential unit adds student load without contributing ad valorem school tax support.",
+      "taxpayerImpact": "Millions in abated school taxes shifted directly onto single-family homeowners across Montclair Township.",
+      "status": "Active community oversight and school board revenue-sharing debate."
+    },
+    {
+      "id": "montclair-main-fiscal-issue",
+      "severity": "HIGH",
+      "category": "Budget & Ratable Pressures",
+      "title": "School District Deficit Crisis, Infrastructure Bonds & Lackawanna PILOT Protests",
+      "entityInvolved": "Montclair Township",
+      "lastUpdated": "2025-2026",
+      "summary": "Recurring multi-million dollar public school structural budget deficits, an $188M school bond referendum, and fierce community opposition over 30-year PILOT tax breaks at Lackawanna Plaza and Seymour Street.",
+      "investigationDetails": "With inflation pushing employee healthcare past $64.2M and commercial ratables under pressure (16.8% of the tax base), Montclair Township has had to manage tax levy growth against the 2% statutory cap, leading to school and municipal fiscal tension.",
+      "taxpayerImpact": "Homeowners fund 83.2% of the property tax check, heightening public scrutiny on every budget line item.",
+      "status": "Ongoing legislative and budget audit monitoring."
+    }
+  ]
+}

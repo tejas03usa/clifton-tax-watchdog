@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "reportVintage": "October 2026 Wayne Township Watchdog Analysis",
+    "sources": [
+      "Wayne Township Council Minutes & Ordinances",
+      "Wayne Township Public Schools Resolutions & Budgets",
+      "Passaic County Board of Taxation Abstract of Ratables"
+    ],
+    "freshnessStatus": "Current"
+  },
+  "controversies": [
+    {
+      "id": "wayne-pilot-school-dispute",
+      "severity": "HIGH",
+      "category": "PILOT Tax Abatements & School Funding Exclusion",
+      "title": "PILOT Tax Breaks vs. School District Revenues in Wayne Township",
+      "entityInvolved": "Township of Wayne (Municipal Government) vs. Wayne Township Public Schools",
+      "lastUpdated": "2025-2026",
+      "summary": "Long-term tax exemptions granted to major developments along commercial corridors bypass the school district (which normal takes 58.4% of property taxes), forcing existing homeowners to absorb student enrollment costs.",
+      "investigationDetails": "Under New Jersey's Long Term Tax Exemption Law (N.J.S.A. 40A:20), municipalities can grant 30-year PILOTs where the developer pays an Annual Service Charge directly to Town Hall (95%) and the County (5%), while the public school district receives $0 statutory share. In Wayne Township, where schools consume 58.4% of standard taxes, each new luxury residential unit adds student load without contributing ad valorem school tax support.",
+      "taxpayerImpact": "Millions in abated school taxes shifted directly onto single-family homeowners across Wayne Township.",
+      "status": "Active community oversight and school board revenue-sharing debate."
+    },
+    {
+      "id": "wayne-main-fiscal-issue",
+      "severity": "HIGH",
+      "category": "Budget & Ratable Pressures",
+      "title": "Willowbrook Mall & Route 23 Corporate Vacancy Appeals Shift Taxes onto Homeowners",
+      "entityInvolved": "Wayne Township",
+      "lastUpdated": "2025-2026",
+      "summary": "Loss of major retail and corporate headquarters (former Toys 'R' Us world HQ) prompted extensive Tax Court appeals, reducing commercial ratables and shifting tax levy increases onto Wayne residential neighborhoods.",
+      "investigationDetails": "With inflation pushing employee healthcare past $57.4M and commercial ratables under pressure (25.5% of the tax base), Wayne Township has had to manage tax levy growth against the 2% statutory cap, leading to school and municipal fiscal tension.",
+      "taxpayerImpact": "Homeowners fund 74.5% of the property tax check, heightening public scrutiny on every budget line item.",
+      "status": "Ongoing legislative and budget audit monitoring."
+    }
+  ]
+}

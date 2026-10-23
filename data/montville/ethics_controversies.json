@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "reportVintage": "October 2026 Montville Township Watchdog Analysis",
+    "sources": [
+      "Montville Township Council Minutes & Ordinances",
+      "Montville Township Public Schools Resolutions & Budgets",
+      "Morris County Board of Taxation Abstract of Ratables"
+    ],
+    "freshnessStatus": "Current"
+  },
+  "controversies": [
+    {
+      "id": "montville-pilot-school-dispute",
+      "severity": "HIGH",
+      "category": "PILOT Tax Abatements & School Funding Exclusion",
+      "title": "PILOT Tax Breaks vs. School District Revenues in Montville Township",
+      "entityInvolved": "Township of Montville (Municipal & Fire Districts 1\u20133) vs. Montville Township Public Schools",
+      "lastUpdated": "2025-2026",
+      "summary": "Long-term tax exemptions granted to major developments along commercial corridors bypass the school district (which normal takes 66.2% of property taxes), forcing existing homeowners to absorb student enrollment costs.",
+      "investigationDetails": "Under New Jersey's Long Term Tax Exemption Law (N.J.S.A. 40A:20), municipalities can grant 30-year PILOTs where the developer pays an Annual Service Charge directly to Town Hall (95%) and the County (5%), while the public school district receives $0 statutory share. In Montville Township, where schools consume 66.2% of standard taxes, each new luxury residential unit adds student load without contributing ad valorem school tax support.",
+      "taxpayerImpact": "Millions in abated school taxes shifted directly onto single-family homeowners across Montville Township.",
+      "status": "Active community oversight and school board revenue-sharing debate."
+    },
+    {
+      "id": "montville-main-fiscal-issue",
+      "severity": "HIGH",
+      "category": "Budget & Ratable Pressures",
+      "title": "66.2% School Tax Reliance with Sub-8% State Aid & 3 Independent Fire Districts",
+      "entityInvolved": "Montville Township",
+      "lastUpdated": "2025-2026",
+      "summary": "Because Montville receives less than 8% in NJ State Education Aid, local single-family homeowners shoulder 66.2% of the tax burden for Lazar Middle and Montville Twp High School, alongside separate tax rates across Fire Districts #1, #2, and #3.",
+      "investigationDetails": "With inflation pushing employee healthcare past $28.6M and commercial ratables under pressure (15.9% of the tax base), Montville Township has had to manage tax levy growth against the 2% statutory cap, leading to school and municipal fiscal tension.",
+      "taxpayerImpact": "Homeowners fund 84.1% of the property tax check, heightening public scrutiny on every budget line item.",
+      "status": "Ongoing legislative and budget audit monitoring."
+    }
+  ]
+}

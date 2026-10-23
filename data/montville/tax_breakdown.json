@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "certifiedDate": "Certified for Tax Year 2026 by Morris County Board of Taxation",
+    "dataVintage": "2026 Certified Rates",
+    "sourceAgency": "Morris County Board of Taxation & Montville Township Tax Collector",
+    "freshnessStatus": "Current & Certified"
+  },
+  "location": "Montville Township, Morris County, New Jersey",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.492,
+  "ratePerHundredDollars": 2.492,
+  "effectiveTaxRateMarketValue": "2.063%",
+  "averageResidentialAssessment": 649980,
+  "averageTaxBill": 16197.5,
+  "breakdown": [
+    {
+      "id": "schools",
+      "entity": "Montville Township Public Schools",
+      "rate": 1.65,
+      "percentage": 66.2,
+      "subtotalShare": 0.662,
+      "description": "Funds 7 public schools educating ~3,520 students, instructional programs, and special services.",
+      "annualBudgetEst": 98400000,
+      "color": "#2563eb",
+      "components": [
+        {
+          "name": "Regular Instruction & Classrooms",
+          "shareOfSchool": 0.4,
+          "description": "Teacher salaries across 7 schools, curricula, AP/STEM programs"
+        },
+        {
+          "name": "Employee Health & Pension Benefits",
+          "shareOfSchool": 0.22,
+          "description": "State medical/prescription benefits, statutory pension employer charges"
+        },
+        {
+          "name": "Special Education & Out-of-District Tuition",
+          "shareOfSchool": 0.16,
+          "description": "Specialized IEP instruction, therapy, and county vocational tuition"
+        },
+        {
+          "name": "Operations, Facilities & Plant Maintenance",
+          "shareOfSchool": 0.1,
+          "description": "School building upkeep, utilities, HVAC, and campus security"
+        },
+        {
+          "name": "Student Transportation & Busing",
+          "shareOfSchool": 0.06,
+          "description": "Contracted routes and busing across township territory"
+        },
+        {
+          "name": "Administration & Business Office",
+          "shareOfSchool": 0.04,
+          "description": "Superintendent, business office, school principals, audit, legal"
+        },
+        {
+          "name": "Student Support, Guidance & Athletics",
+          "shareOfSchool": 0.02,
+          "description": "Counseling, nursing, extracurriculars, and varsity sports"
+        }
+      ]
+    },
+    {
+      "id": "municipal",
+      "entity": "Township of Montville (Municipal & Fire Districts 1\u20133)",
+      "rate": 0.571,
+      "percentage": 22.9,
+      "subtotalShare": 0.229,
+      "description": "Funds local municipal operations including Police, Public Works, Parks, Sanitation, Library, and emergency services.",
+      "annualBudgetEst": 31200000,
+      "color": "#059669",
+      "subcategories": [
+        {
+          "name": "Local Municipal Purposes",
+          "rate": 0.502,
+          "percentage": 20.15
+        },
+        {
+          "name": "Municipal Library & Open Space",
+          "rate": 0.069,
+          "percentage": 2.75
+        }
+      ],
+      "components": [
+        {
+          "name": "Police Department & Public Safety",
+          "shareOfMuni": 0.3,
+          "description": "Patrol, detectives, emergency dispatch, traffic safety, and equipment"
+        },
+        {
+          "name": "Statutory Pensions (PFRS/PERS) & Health Insurance",
+          "shareOfMuni": 0.22,
+          "description": "Employer statutory retirement and group health plan contributions"
+        },
+        {
+          "name": "Department of Public Works (DPW) & Roads",
+          "shareOfMuni": 0.18,
+          "description": "Road maintenance, snow plowing, sanitation/recycling, and parks upkeep"
+        },
+        {
+          "name": "Municipal Debt Service & Capital Notes",
+          "shareOfMuni": 0.12,
+          "description": "Bond repayments, interest, infrastructure capital funds"
+        },
+        {
+          "name": "Fire Protection & EMS",
+          "shareOfMuni": 0.1,
+          "description": "Fire apparatus, volunteer stipends, hydrants, and emergency response"
+        },
+        {
+          "name": "General Administration, Legal & Finance",
+          "shareOfMuni": 0.08,
+          "description": "Mayor & Council, Business Admin, Clerk, Tax Assessor, Legal Counsel"
+        }
+      ]
+    },
+    {
+      "id": "county",
+      "entity": "Morris County Services",
+      "rate": 0.271,
+      "percentage": 10.9,
+      "subtotalShare": 0.109,
+      "description": "Apportioned share of Morris County operations, funding County Roads, Sheriff, Jail, County College, and Regional Parks.",
+      "annualBudgetEst": 365000000,
+      "color": "#d97706",
+      "components": [
+        {
+          "name": "County Law Enforcement & Sheriff",
+          "shareOfCounty": 0.28,
+          "description": "Sheriff patrols, jail, prosecutor's office, court security"
+        },
+        {
+          "name": "County Roads, Bridges & Public Works",
+          "shareOfCounty": 0.24,
+          "description": "Major thoroughfares, traffic signals, drainage, and bridge maintenance"
+        },
+        {
+          "name": "Health, Social Services & Welfare",
+          "shareOfCounty": 0.2,
+          "description": "County welfare board, public health, nursing facilities"
+        },
+        {
+          "name": "County College & Technical Schools",
+          "shareOfCounty": 0.15,
+          "description": "County College and Vocational-Technical School District funding"
+        },
+        {
+          "name": "County Parks, Open Space & Administration",
+          "shareOfCounty": 0.13,
+          "description": "Regional park system, recreation, county clerk, board of commissioners"
+        }
+      ]
+    }
+  ]
+}

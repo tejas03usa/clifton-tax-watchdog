@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "Montclair Township Fair Tax Burden & Equalization Engine",
+    "lastUpdated": "2026-10-23",
+    "taxYear": 2026,
+    "certifiedBaseline": {
+      "equalizationRatio": 0.685,
+      "certifiedTaxRateAssessed": 3.766,
+      "certifiedTaxRateMarket": 2.58,
+      "totalTaxLevy": 303830000,
+      "schoolLevy": 138040000,
+      "municipalLevy": 71260000,
+      "countyLevy": 39630000,
+      "residentialLevySharePct": 83.2,
+      "residentialLevyTotal": 252786560,
+      "commercialLevySharePct": 16.8,
+      "commercialLevyTotal": 51043440,
+      "averageResidentialAssessment": 616500,
+      "averageResidentialMarketValue": 900000,
+      "averageResidentialTaxBill": 23217.39,
+      "totalResidentialParcels": 14607,
+      "totalCommercialParcels": 950,
+      "annualPilotRevenueCollected": 7820000,
+      "pilotShareToSchoolsPct": 0.0
+    }
+  },
+  "fairnessDiagnosis": {
+    "summary": "Why property taxes in Montclair Township have shifted heavily onto residential homeowners, and how balanced commercial ratables and 50% PILOT sharing can cut tax bills while keeping schools 100% funded.",
+    "coreInequities": [
+      {
+        "id": "pilot_exclusion",
+        "title": "PILOT Agreements Exclude Montclair Public Schools (57.2% of Tax Rate)",
+        "metric": "$0 Statutory BOE Share",
+        "severity": "Critical",
+        "description": "Schools represent 57.2% of property taxes in Montclair Township, but 30-year PILOTs send 95% of fees to Town Hall and $0 to classrooms.",
+        "remedy": "Codify a binding municipal ordinance dedicating 50% of PILOT revenues directly to public schools."
+      },
+      {
+        "id": "commercial_shift",
+        "title": "Homeowners Shoulder 83.2% of the Tax Base",
+        "metric": "83.2% Residential",
+        "severity": "High",
+        "description": "Commercial ratables have eroded over 20 years, forcing single-family families to absorb larger shares of municipal and school budgets.",
+        "remedy": "Incentivize commercial redevelopment to restore commercial share back toward 35%."
+      }
+    ]
+  },
+  "presetScenarios": [
+    {
+      "id": "status_quo",
+      "name": "Status Quo Baseline (2026 Montclair Township)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 16.8,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.766,
+      "avgResidentialTaxBill": 23217.39,
+      "fairnessEquityScore": 44,
+      "summary": "Current certified tax distribution in Montclair Township. Homeowners fund 83.2% of the budget.",
+      "winners": "Commercial developers with long-term PILOT abatements.",
+      "losers": "Montclair Township single-family homeowners and public school students."
+    },
+    {
+      "id": "unified_blueprint",
+      "name": "The Montclair Township Unified Fair Tax Blueprint",
+      "badge": "\u2605 Optimal Balance",
+      "badgeClass": "badge-success",
+      "commercialSharePct": 24.8,
+      "pilotSchoolSharePct": 50.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 8.0,
+      "utilityUnbundlingM": 6.5,
+      "projectedTaxRate": 2.193,
+      "avgResidentialTaxBill": 19502.61,
+      "fairnessEquityScore": 95,
+      "summary": "Dedicating 50% of PILOTs to schools, restoring commercial ratables, and capping senior burdens saves the average Montclair Township homeowner ~$1,950/yr.",
+      "winners": "90%+ of Montclair Township homeowners, public schools, and fixed-income seniors.",
+      "losers": "Speculative developers seeking 30-year school-exempt tax abatements."
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07042",
+      "name": "Montclair Township Central District",
+      "medianHouseholdIncome": 154800,
+      "avgAssessment": 616500,
+      "avgMarketValue": 900000,
+      "currentTaxBill": 23217.39,
+      "currentTaxEffortPct": 15.0
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "label": "Typical Montclair Township Single-Family Home",
+      "marketValue": 900000,
+      "assessedValue": 616500,
+      "householdIncome": 154800,
+      "zip": "07042",
+      "statusQuoBill": 23217.39,
+      "blueprintBill": 19502.61,
+      "blueprintSavings": 3714.78,
+      "percentSavings": 16.0
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Enact 50% PILOT Revenue-Sharing with Montclair Public Schools",
+      "legalAuthority": "N.J.S.A. 40A:20-12",
+      "action": "Codify a mandatory municipal ordinance transferring half of all PILOT fees to the school district.",
+      "outcome": "Saves Montclair Township homeowners millions in school tax subsidies.",
+      "timeline": "Months 1\u20133"
+    },
+    {
+      "step": 2,
+      "title": "Commercial Ratable Corridor Revitalization",
+      "legalAuthority": "N.J.S.A. 40A:12A-1",
+      "action": "Attract high-value biotech, retail, and corporate ratables to relieve single-family homeowners.",
+      "outcome": "Restores commercial ratable share toward 35% in Montclair Township.",
+      "timeline": "Months 3\u201318"
+    }
+  ]
+}

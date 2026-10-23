@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "fiscalCycle": "FY 2025-2026 Adopted / User-Friendly Budget",
+    "sourceAgency": "NJ Department of Education & Montclair Public Schools Business Office",
+    "dataVintage": "Certified FY 2025-2026 Budget",
+    "freshnessStatus": "Current"
+  },
+  "entity": "Montclair Public Schools",
+  "county": "Essex County",
+  "fiscalYear": "2025-2026",
+  "totalBudget": 162400000,
+  "enrollment": 6120,
+  "perPupilSpending": 24800,
+  "schoolsCount": 11,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 138040000,
+      "percentage": 85.0,
+      "description": "Portion paid directly by Montclair Township residential and commercial property owners (57.2% of your tax bill)"
+    },
+    {
+      "source": "State Education Aid (Equalization & Categorical)",
+      "amount": 17864000,
+      "percentage": 11.0,
+      "description": "State of New Jersey formula aid covering special education, transit, and security"
+    },
+    {
+      "source": "Surplus / Fund Balance & Federal Grants",
+      "amount": 6496000,
+      "percentage": 4.0,
+      "description": "Audited prior-year fund balance, tuition, and IDEA federal grants"
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Regular Instructional Programs (11 Schools)",
+      "amount": 61712000,
+      "percentage": 38.0,
+      "details": "Classroom teacher compensation, textbook adoptions, and curriculum materials across all 11 district schools."
+    },
+    {
+      "category": "Employee Health Benefits & Statutory Insurance",
+      "amount": 35728000,
+      "percentage": 22.0,
+      "details": "Medical, prescription, and dental coverage under SEHBP/NJEHP (Chapter 44), employer Social Security/FICA, and workers' compensation."
+    },
+    {
+      "category": "Special Education Programs & Related Services",
+      "amount": 25984000,
+      "percentage": 16.0,
+      "details": "In-district specialized education teachers, paraprofessional aides, speech therapy, and child study teams."
+    },
+    {
+      "category": "Plant Operations, Utilities & Security",
+      "amount": 16240000,
+      "percentage": 10.0,
+      "details": "Heating, electricity, custodial staff, and school security across 11 facilities."
+    },
+    {
+      "category": "Out-of-District Tuition & Vo-Tech",
+      "amount": 9744000,
+      "percentage": 6.0,
+      "details": "Mandated tuition for specialized external placements and Essex County Vocational-Technical schools."
+    },
+    {
+      "category": "Student Transportation & Busing",
+      "amount": 8120000,
+      "percentage": 5.0,
+      "details": "Contracted bus routes and special education vehicle transit."
+    },
+    {
+      "category": "District Administration & Principals",
+      "amount": 4872000,
+      "percentage": 3.0,
+      "details": "Superintendent, Business Administrator, building principals, and curriculum supervisors."
+    }
+  ]
+}

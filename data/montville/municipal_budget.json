@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
+    "sourceAgency": "NJ Department of Community Affairs (DLGS) & Montville Township Finance Department",
+    "dataVintage": "Certified CY 2026 Municipal Budget",
+    "freshnessStatus": "Current"
+  },
+  "entity": "Township of Montville (Municipal & Fire Districts 1\u20133)",
+  "county": "Morris County",
+  "fiscalYear": "2026",
+  "totalBudget": 31200000,
+  "population": 22450,
+  "governmentType": "Faulkner Act Mayor-Council",
+  "fullTimeEmployees": 285,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax for Municipal Purposes",
+      "amount": 21840000,
+      "percentage": 70.0,
+      "description": "Portion paid on quarterly property tax bills by Montville Township property owners"
+    },
+    {
+      "source": "PILOT Service Charges & Commercial Fees",
+      "amount": 1950000,
+      "percentage": 6.2,
+      "description": "Annual service charges from commercial & apartment PILOT agreements in Montville Township"
+    },
+    {
+      "source": "State Aid (Energy Tax Receipts)",
+      "amount": 2184000,
+      "percentage": 7.0,
+      "description": "Direct state formula aid distributed by NJ Department of Community Affairs"
+    },
+    {
+      "source": "Local Fees, Permits, Municipal Court & Surplus",
+      "amount": 4680000,
+      "percentage": 15.0,
+      "description": "Construction UCC code permits, court fines, health licenses, and fund balance reserves"
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Montville Township Police Department & Dispatch",
+      "amount": 8736000,
+      "percentage": 28.0,
+      "details": "Salaries for sworn police officers, patrol division, detectives, 911 dispatch, and vehicles."
+    },
+    {
+      "category": "Employee Health Benefits & Risk Insurance",
+      "amount": 4992000,
+      "percentage": 16.0,
+      "details": "Medical, prescription, and dental coverage for active and retired municipal employees."
+    },
+    {
+      "category": "Department of Public Works (Streets, Sanitation & Parks)",
+      "amount": 5616000,
+      "percentage": 18.0,
+      "details": "Road resurfacing, snow plowing, garbage/recycling collection, and township park maintenance."
+    },
+    {
+      "category": "Statutory Pensions (PFRS & PERS)",
+      "amount": 3744000,
+      "percentage": 12.0,
+      "details": "Mandatory employer pension billings from the State of New Jersey."
+    },
+    {
+      "category": "Municipal Debt Service (Bonds & BANS)",
+      "amount": 3432000,
+      "percentage": 11.0,
+      "details": "Principal and interest payments on capital improvement and infrastructure bonds."
+    },
+    {
+      "category": "General Government, Administration & Legal",
+      "amount": 2496000,
+      "percentage": 8.0,
+      "details": "Mayor, Council, Township Clerk, CFO, Tax Assessor, and legal defense counsel."
+    },
+    {
+      "category": "Public Library & Recreation Services",
+      "amount": 2184000,
+      "percentage": 7.0,
+      "details": "Public library operations, senior citizen services, and municipal recreation."
+    }
+  ]
+}

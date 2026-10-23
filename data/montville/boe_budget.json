@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "fiscalCycle": "FY 2025-2026 Adopted / User-Friendly Budget",
+    "sourceAgency": "NJ Department of Education & Montville Township Public Schools Business Office",
+    "dataVintage": "Certified FY 2025-2026 Budget",
+    "freshnessStatus": "Current"
+  },
+  "entity": "Montville Township Public Schools",
+  "county": "Morris County",
+  "fiscalYear": "2025-2026",
+  "totalBudget": 98400000,
+  "enrollment": 3520,
+  "perPupilSpending": 23600,
+  "schoolsCount": 7,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 83640000,
+      "percentage": 85.0,
+      "description": "Portion paid directly by Montville Township residential and commercial property owners (66.2% of your tax bill)"
+    },
+    {
+      "source": "State Education Aid (Equalization & Categorical)",
+      "amount": 10824000,
+      "percentage": 11.0,
+      "description": "State of New Jersey formula aid covering special education, transit, and security"
+    },
+    {
+      "source": "Surplus / Fund Balance & Federal Grants",
+      "amount": 3936000,
+      "percentage": 4.0,
+      "description": "Audited prior-year fund balance, tuition, and IDEA federal grants"
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Regular Instructional Programs (7 Schools)",
+      "amount": 37392000,
+      "percentage": 38.0,
+      "details": "Classroom teacher compensation, textbook adoptions, and curriculum materials across all 7 district schools."
+    },
+    {
+      "category": "Employee Health Benefits & Statutory Insurance",
+      "amount": 21648000,
+      "percentage": 22.0,
+      "details": "Medical, prescription, and dental coverage under SEHBP/NJEHP (Chapter 44), employer Social Security/FICA, and workers' compensation."
+    },
+    {
+      "category": "Special Education Programs & Related Services",
+      "amount": 15744000,
+      "percentage": 16.0,
+      "details": "In-district specialized education teachers, paraprofessional aides, speech therapy, and child study teams."
+    },
+    {
+      "category": "Plant Operations, Utilities & Security",
+      "amount": 9840000,
+      "percentage": 10.0,
+      "details": "Heating, electricity, custodial staff, and school security across 7 facilities."
+    },
+    {
+      "category": "Out-of-District Tuition & Vo-Tech",
+      "amount": 5904000,
+      "percentage": 6.0,
+      "details": "Mandated tuition for specialized external placements and Morris County Vocational-Technical schools."
+    },
+    {
+      "category": "Student Transportation & Busing",
+      "amount": 4920000,
+      "percentage": 5.0,
+      "details": "Contracted bus routes and special education vehicle transit."
+    },
+    {
+      "category": "District Administration & Principals",
+      "amount": 2952000,
+      "percentage": 3.0,
+      "details": "Superintendent, Business Administrator, building principals, and curriculum supervisors."
+    }
+  ]
+}

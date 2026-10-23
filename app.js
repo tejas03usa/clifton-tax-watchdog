@@ -165,6 +165,417 @@ Please furnish these public records in electronic format via email.`
         subject: 'OPRA Public Records Request - Parsippany PILOT Financial Agreements & Remittances'
       }
     }
+  },
+  wayne: {
+    templates: {
+      overtime: `To the Township Clerk / Custodian of Records, Township of Wayne (clerk@waynetownship.com):
+
+Pursuant to the New Jersey Open Public Records Act (N.J.S.A. 47:1A-1 et seq.), I hereby request:
+1. The complete payroll and compensation ledger for all Township of Wayne employees for the most recent completed fiscal year, showing Employee Name, Department, Title, Base Salary, Overtime, and Stipends/Longevity.
+2. All approved Secondary Employment / Outside Employment Notification and Authorization forms filed by Wayne Police Department sworn officers currently active.
+3. The annual summary of Outside Police Employment Details (utility and roadway contractor traffic details) showing vendors, township administrative fees collected, and officer payouts.
+
+Please provide records electronically in Excel/CSV or searchable PDF format.`,
+      vendors: `To the Business Administrator / Board Secretary, Wayne Township Public Schools (boe@wayneschools.com):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq., I hereby request electronic copies of:
+1. The complete Accounts Payable / Check Register / Bill List approved by the Board of Education for the past 12 months, detailing Vendor Name, PO Number, Budget Line Code, Check Date, Check Amount, and Description.
+2. Awarded agreements and fee schedules for Professional Services contracts (Board Attorney, Auditor, Architect, Insurance Broker).
+3. Chapter 271 Political Contribution Disclosures / Pay-to-Play certifications for all vendors receiving over $17,500.
+
+Please furnish these records electronically via email.`,
+      contracts: `To the Custodian of Records, Wayne Township Public Schools (boe@wayneschools.com):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq. and N.J.S.A. 47:1A-10, please provide:
+1. Current employment contracts and amendments for the Superintendent of Schools and Business Administrator.
+2. Official calculation of accrued unused sick leave, unused vacation leave, and contractual buyout liability for top district administrators.
+
+Please furnish these records electronically via email.`,
+      sickleave: `To the Township Clerk / Custodian of Records, Township of Wayne (clerk@waynetownship.com):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq. and state sick leave reform guidelines:
+1. The official detailed ledger of all terminal leave / accumulated sick and vacation leave payouts issued to retiring or departing Township of Wayne employees for the past 3 fiscal years.
+2. Any municipal policy or collective bargaining agreement addenda establishing current payout formulas or statutory caps ($15,000 cap under N.J.S.A. 11A:6-19.2).
+
+Please provide records electronically.`,
+      pilot: `To the Township Clerk / Custodian of Records, Township of Wayne (clerk@waynetownship.com):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq., please provide copies of:
+1. All active Financial Agreements for Payments in Lieu of Taxes (PILOT) for redevelopment projects in Wayne.
+2. Annual service charge audit statements and 5% Passaic County remittances.
+
+Please furnish these records electronically via email.`
+    },
+    meta: {
+      overtime: { recipientEmail: 'clerk@waynetownship.com', recipientDisplay: 'clerk@waynetownship.com • Township Clerk Paul Margiotta', subject: 'OPRA Request - Wayne Township Payroll, Overtime & Secondary Details' },
+      vendors: { recipientEmail: 'boe@wayneschools.com', recipientDisplay: 'boe@wayneschools.com • Wayne BOE Business Administrator', subject: 'OPRA Request - Wayne School Board Vendor Check Registers' },
+      contracts: { recipientEmail: 'boe@wayneschools.com', recipientDisplay: 'boe@wayneschools.com • Wayne BOE Records Custodian', subject: 'OPRA Request - Wayne District Administrator Employment Contracts' },
+      sickleave: { recipientEmail: 'clerk@waynetownship.com', recipientDisplay: 'clerk@waynetownship.com • Township Clerk Paul Margiotta', subject: 'OPRA Request - Wayne Terminal Sick Leave Payout Records' },
+      pilot: { recipientEmail: 'clerk@waynetownship.com', recipientDisplay: 'clerk@waynetownship.com • Township Clerk Paul Margiotta', subject: 'OPRA Request - Wayne PILOT Tax Agreements & County Remittances' }
+    }
+  },
+  montclair: {
+    templates: {
+      overtime: `To the Municipal Clerk / Custodian of Records, Township of Montclair (clerk@montclairnj.gov):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq., please furnish:
+1. Complete payroll and compensation ledger for all Township of Montclair employees for the most recent completed fiscal year, detailing Name, Department, Title, Base Salary, Overtime, and Stipends.
+2. Outside police employment detail authorizations and vendor billings.
+
+Please provide records electronically in searchable PDF or Excel format.`,
+      vendors: `To the Business Administrator, Montclair Public Schools (records@mpsdnj.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq., please furnish:
+1. Complete Accounts Payable Check Register / Bill List for the past 12 months.
+2. Legal services invoices and retainer agreements.`,
+      contracts: `To the Custodian of Records, Montclair Public Schools (records@mpsdnj.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Current employment contracts for Superintendent of Schools and Business Administrator.
+2. Accrued unused leave buyout calculations.`,
+      sickleave: `To the Municipal Clerk, Township of Montclair (clerk@montclairnj.gov):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Detailed ledger of all terminal sick and vacation payouts to retiring municipal employees for the past 3 fiscal years.
+2. Compliance documentation with the $15,000 statutory cap (N.J.S.A. 11A:6-19.2).`,
+      pilot: `To the Municipal Clerk, Township of Montclair (clerk@montclairnj.gov):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq., please provide:
+1. Active PILOT Financial Agreements for downtown Montclair redevelopment projects (including Seymour Street, MC Hotel, and Lackawanna Plaza).
+2. Annual service charge audit statements and 5% Essex County remittances.`
+    },
+    meta: {
+      overtime: { recipientEmail: 'clerk@montclairnj.gov', recipientDisplay: 'clerk@montclairnj.gov • Municipal Clerk Angelese Bermúdez Nieves', subject: 'OPRA Request - Montclair Township Payroll & Overtime' },
+      vendors: { recipientEmail: 'records@mpsdnj.org', recipientDisplay: 'records@mpsdnj.org • Montclair BOE Business Administrator', subject: 'OPRA Request - Montclair School Check Registers & Legal Fees' },
+      contracts: { recipientEmail: 'records@mpsdnj.org', recipientDisplay: 'records@mpsdnj.org • Montclair BOE Records Custodian', subject: 'OPRA Request - Montclair Administrator Employment Contracts' },
+      sickleave: { recipientEmail: 'clerk@montclairnj.gov', recipientDisplay: 'clerk@montclairnj.gov • Municipal Clerk Angelese Bermúdez Nieves', subject: 'OPRA Request - Montclair Municipal Sick Leave Buyout Records' },
+      pilot: { recipientEmail: 'clerk@montclairnj.gov', recipientDisplay: 'clerk@montclairnj.gov • Municipal Clerk Angelese Bermúdez Nieves', subject: 'OPRA Request - Montclair PILOT Redevelopment Agreements' }
+    }
+  },
+  morristown: {
+    templates: {
+      overtime: `To the Town Clerk / Custodian of Records, Town of Morristown (clerk@townofmorristown.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Complete compensation ledger for all Town of Morristown employees, showing Base Salary, Overtime, and Stipends.
+2. Police secondary employment / traffic detail ledger.
+
+Please provide records in Excel/CSV or searchable PDF format.`,
+      vendors: `To the Business Administrator, Morris School District (records@msdk12.net):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Check register and bill lists for Morris School District for the past 12 months.
+2. Professional services contracts and legal fees.`,
+      contracts: `To the Custodian of Records, Morris School District (records@msdk12.net):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Current employment contract for Superintendent of Schools and Business Administrator.
+2. Joint funding cost-sharing agreement between Morristown and Morris Township.`,
+      sickleave: `To the Town Clerk, Town of Morristown (clerk@townofmorristown.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Detailed ledger of terminal leave and sick buyout disbursements for the past 3 fiscal years.`,
+      pilot: `To the Town Clerk, Town of Morristown (clerk@townofmorristown.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. PILOT financial agreements for M Station, HQ Plaza, and Speedwell Avenue redevelopment projects.
+2. Annual service charges collected and 5% Morris County remittances.`
+    },
+    meta: {
+      overtime: { recipientEmail: 'clerk@townofmorristown.org', recipientDisplay: 'clerk@townofmorristown.org • Town Clerk Margot G. Cawley', subject: 'OPRA Request - Morristown Municipal Payroll & Overtime' },
+      vendors: { recipientEmail: 'records@msdk12.net', recipientDisplay: 'records@msdk12.net • Morris School District Business Admin', subject: 'OPRA Request - Morris School District Bill Lists' },
+      contracts: { recipientEmail: 'records@msdk12.net', recipientDisplay: 'records@msdk12.net • Morris School District Records Custodian', subject: 'OPRA Request - Morris School District Executive Contracts' },
+      sickleave: { recipientEmail: 'clerk@townofmorristown.org', recipientDisplay: 'clerk@townofmorristown.org • Town Clerk Margot G. Cawley', subject: 'OPRA Request - Morristown Terminal Sick Leave Buyout Records' },
+      pilot: { recipientEmail: 'clerk@townofmorristown.org', recipientDisplay: 'clerk@townofmorristown.org • Town Clerk Margot G. Cawley', subject: 'OPRA Request - Morristown PILOT Agreements & Remittances' }
+    }
+  },
+  montville: {
+    templates: {
+      overtime: `To the Township Clerk / Custodian of Records, Township of Montville (clerk@montvillenj.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Complete compensation and overtime ledger for all Township of Montville employees for the most recent completed fiscal year.
+2. Police secondary employment notification forms.
+
+Please provide records in electronic format.`,
+      vendors: `To the Business Administrator, Montville Township Public Schools (records@montville.net):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Complete accounts payable check register for the past 12 months.
+2. Professional service contracts and legal invoices.`,
+      contracts: `To the Custodian of Records, Montville Township Public Schools (records@montville.net):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Employment contracts for Superintendent of Schools and Business Administrator.
+2. Sick and vacation leave buyout liability calculations.`,
+      sickleave: `To the Township Clerk, Township of Montville (clerk@montvillenj.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Ledger of all terminal leave / accumulated sick leave payouts for the past 3 fiscal years.
+2. Compliance documentation with the $15,000 statutory cap.`,
+      pilot: `To the Township Clerk, Township of Montville (clerk@montvillenj.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Any active Long Term Tax Exemption / PILOT agreements entered into under N.J.S.A. 40A:20-1 et seq.
+2. Annual service charges collected and county remittances.`
+    },
+    meta: {
+      overtime: { recipientEmail: 'clerk@montvillenj.org', recipientDisplay: 'clerk@montvillenj.org • Township Clerk Stacy Sullivan-Gruca', subject: 'OPRA Request - Montville Township Payroll & Overtime' },
+      vendors: { recipientEmail: 'records@montville.net', recipientDisplay: 'records@montville.net • Montville BOE Business Administrator', subject: 'OPRA Request - Montville School Check Registers' },
+      contracts: { recipientEmail: 'records@montville.net', recipientDisplay: 'records@montville.net • Montville BOE Records Custodian', subject: 'OPRA Request - Montville Administrator Employment Contracts' },
+      sickleave: { recipientEmail: 'clerk@montvillenj.org', recipientDisplay: 'clerk@montvillenj.org • Township Clerk Stacy Sullivan-Gruca', subject: 'OPRA Request - Montville Terminal Sick Leave Buyout Records' },
+      pilot: { recipientEmail: 'clerk@montvillenj.org', recipientDisplay: 'clerk@montvillenj.org • Township Clerk Stacy Sullivan-Gruca', subject: 'OPRA Request - Montville Tax Exemption Agreements' }
+    }
+  }
+};
+
+// Full Multi-City Registry for Watchdog Platforms
+const CITY_REGISTRY = {
+  clifton: {
+    id: 'clifton',
+    name: 'Clifton',
+    fullName: 'City of Clifton',
+    badgeText: 'CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG',
+    icon: '🏛️',
+    county: 'Passaic County',
+    countyShort: 'Passaic County',
+    districtCode: '1602',
+    auditBadge: 'CITIZEN FISCAL AUDIT • 2026',
+    certifiedTaxRate: '6.527%',
+    rateNum: 6.527,
+    equalizationRatio: 33.3,
+    avgTaxBill: '$11,912 / yr',
+    schoolsShare: '47.66%',
+    muniShare: '29.41%',
+    countyShare: '22.92%',
+    schoolDistrictName: 'Clifton Public Schools (BOE)',
+    schoolDistrictShort: 'Clifton BOE',
+    schoolBudgetDisplay: '$293.2M',
+    muniBudgetDisplay: '$105.4M',
+    benefitsSpendDisplay: '$87.2M',
+    avgAssessed: '$182.5k',
+    typicalMarket: 550000,
+    sliderMin: 50000,
+    sliderMax: 600000,
+    sliderDefault: 182500,
+    zipCodesDisplay: '07011, 07012, 07013 & 07014',
+    controversyHighlight: 'OSC audits, PILOT shifts, ASI Reval & budget cliffs',
+    title: 'Clifton Taxpayer Watchdog',
+    pageTitle: 'Clifton NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    subtitle: 'Real-time public investigation into where your Clifton property taxes go, the ~$293M school budget, public employee healthcare benefits, outside staff businesses, and official state audits.',
+    basePath: 'data',
+    sliderLabelsHtml: `<span>$50k</span><span>$182.5k (Avg)</span><span>$350k</span><span>$600k+</span>`,
+    quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
+       <button class="preset-btn" data-val="125000">$125k (Botany)</button>
+       <button class="preset-btn" data-val="150000">$150k (Delawanna)</button>
+       <button class="preset-btn active" data-val="182500">Clifton Avg ($182.5k)</button>
+       <button class="preset-btn" data-val="250000">$250k (Allwood)</button>
+       <button class="preset-btn" data-val="350000">$350k (Montclair Hts)</button>`
+  },
+  parsippany: {
+    id: 'parsippany',
+    name: 'Parsippany',
+    fullName: 'Township of Parsippany-Troy Hills',
+    badgeText: 'TOWNSHIP OF PARSIPPANY-TROY HILLS • CITIZEN FISCAL WATCHDOG',
+    icon: '🌲',
+    county: 'Morris County',
+    countyShort: 'Morris County',
+    districtCode: '1429',
+    auditBadge: 'MORRIS COUNTY AUDIT • 2026',
+    certifiedTaxRate: '3.550%',
+    rateNum: 3.550,
+    equalizationRatio: 57.8,
+    avgTaxBill: '$12,372 / yr',
+    schoolsShare: '64.14%',
+    muniShare: '26.33%',
+    countyShare: '9.53%',
+    schoolDistrictName: 'PTHSD School District',
+    schoolDistrictShort: 'PTHSD Schools',
+    schoolBudgetDisplay: '$187.5M',
+    muniBudgetDisplay: '$92.8M',
+    benefitsSpendDisplay: '$61.1M',
+    avgAssessed: '$348.5k',
+    typicalMarket: 603000,
+    sliderMin: 100000,
+    sliderMax: 900000,
+    sliderDefault: 348500,
+    zipCodesDisplay: '07054, 07034, 07878 & 07950',
+    controversyHighlight: 'Route 10 PILOTs, BOE funding disputes & utility funds',
+    title: 'Parsippany Taxpayer Watchdog',
+    pageTitle: 'Parsippany-Troy Hills NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    subtitle: 'Real-time public investigation into where your Parsippany-Troy Hills property taxes go, the $187.5M PTHSD school budget, $92.8M Township budget, 6 independent Fire Districts, Route 10 & Campus Drive PILOT controversies, and Morris County tax records.',
+    basePath: 'data/parsippany',
+    sliderLabelsHtml: `<span>$100k</span><span>$348.5k (Avg)</span><span>$550k</span><span>$900k+</span>`,
+    quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
+       <button class="preset-btn" data-val="225000">$225k (Lake Hiawatha)</button>
+       <button class="preset-btn" data-val="295000">$295k (Lake Parsippany)</button>
+       <button class="preset-btn active" data-val="348500">Parsippany Avg ($348.5k)</button>
+       <button class="preset-btn" data-val="435000">$435k (Mount Tabor)</button>
+       <button class="preset-btn" data-val="545000">$545k (Tabor Hills)</button>`
+  },
+  wayne: {
+    id: 'wayne',
+    name: 'Wayne',
+    fullName: 'Township of Wayne',
+    badgeText: 'TOWNSHIP OF WAYNE • CITIZEN FISCAL WATCHDOG',
+    icon: '🌳',
+    county: 'Passaic County',
+    countyShort: 'Passaic County',
+    districtCode: '1614',
+    auditBadge: 'PASSAIC COUNTY AUDIT • 2026',
+    certifiedTaxRate: '2.748%',
+    rateNum: 2.748,
+    equalizationRatio: 80.4,
+    avgTaxBill: '$13,245 / yr',
+    schoolsShare: '58.40%',
+    muniShare: '26.20%',
+    countyShare: '15.40%',
+    schoolDistrictName: 'Wayne Township Public Schools',
+    schoolDistrictShort: 'Wayne BOE',
+    schoolBudgetDisplay: '$186.2M',
+    muniBudgetDisplay: '$83.5M',
+    benefitsSpendDisplay: '$57.4M',
+    avgAssessed: '$482.0k',
+    typicalMarket: 599500,
+    sliderMin: 150000,
+    sliderMax: 1200000,
+    sliderDefault: 482000,
+    zipCodesDisplay: '07470 & 07474',
+    controversyHighlight: 'Willowbrook Mall ratable appeals, Toys R Us HQ loss & flood bonds',
+    title: 'Wayne Township Taxpayer Watchdog',
+    pageTitle: 'Wayne Township NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    subtitle: 'Citizen audit of Wayne Township public spending ($83.5M), Wayne Board of Education school levy ($186.2M), Willowbrook Mall commercial ratable appeals, Packanack Lake & Pines Lake assessments, and Passaic County tax levies.',
+    basePath: 'data/wayne',
+    sliderLabelsHtml: `<span>$150k</span><span>$482k (Avg)</span><span>$750k</span><span>$1.2M+</span>`,
+    quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
+       <button class="preset-btn" data-val="325000">$325k (Preakness Starter)</button>
+       <button class="preset-btn" data-val="420000">$420k (Packanack Lake)</button>
+       <button class="preset-btn active" data-val="482000">Wayne Avg ($482k)</button>
+       <button class="preset-btn" data-val="650000">$650k (Pines Lake)</button>
+       <button class="preset-btn" data-val="850000">$850k (High Mountain)</button>`
+  },
+  montclair: {
+    id: 'montclair',
+    name: 'Montclair',
+    fullName: 'Township of Montclair',
+    badgeText: 'TOWNSHIP OF MONTCLAIR • CITIZEN FISCAL WATCHDOG',
+    icon: '🏡',
+    county: 'Essex County',
+    countyShort: 'Essex County',
+    districtCode: '0713',
+    auditBadge: 'ESSEX COUNTY AUDIT • 2026',
+    certifiedTaxRate: '3.766%',
+    rateNum: 3.766,
+    equalizationRatio: 68.5,
+    avgTaxBill: '$23,217 / yr',
+    schoolsShare: '57.20%',
+    muniShare: '26.50%',
+    countyShare: '16.30%',
+    schoolDistrictName: 'Montclair Public Schools',
+    schoolDistrictShort: 'Montclair BOE',
+    schoolBudgetDisplay: '$162.4M',
+    muniBudgetDisplay: '$101.8M',
+    benefitsSpendDisplay: '$64.2M',
+    avgAssessed: '$616.5k',
+    typicalMarket: 900000,
+    sliderMin: 200000,
+    sliderMax: 1800000,
+    sliderDefault: 616500,
+    zipCodesDisplay: '07042 & 07043 (Upper Montclair)',
+    controversyHighlight: 'Highest tax bills in region, school bond debt & Lackawanna PILOTs',
+    title: 'Montclair Taxpayer Watchdog',
+    pageTitle: 'Montclair Township NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    subtitle: 'Citizen audit of Montclair Township\'s highest-in-region property taxes ($23,217 avg bill), $162.4M public school budget, municipal bond debt service, Seymour Street & Lackawanna Plaza PILOT exemptions, and Essex County rates.',
+    basePath: 'data/montclair',
+    sliderLabelsHtml: `<span>$200k</span><span>$616.5k (Avg)</span><span>$1.0M</span><span>$1.8M+</span>`,
+    quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
+       <button class="preset-btn" data-val="420000">$420k (South End)</button>
+       <button class="preset-btn" data-val="550000">$550k (Walnut St)</button>
+       <button class="preset-btn active" data-val="616500">Montclair Avg ($616.5k)</button>
+       <button class="preset-btn" data-val="875000">$875k (Watchung)</button>
+       <button class="preset-btn" data-val="1250000">$1.25M (Upper Montclair)</button>`
+  },
+  morristown: {
+    id: 'morristown',
+    name: 'Morristown',
+    fullName: 'Town of Morristown',
+    badgeText: 'TOWN OF MORRISTOWN • CITIZEN FISCAL WATCHDOG',
+    icon: '📜',
+    county: 'Morris County',
+    countyShort: 'Morris County',
+    districtCode: '1424',
+    auditBadge: 'MORRIS COUNTY SEAT AUDIT • 2026',
+    certifiedTaxRate: '2.285%',
+    rateNum: 2.285,
+    equalizationRatio: 85.1,
+    avgTaxBill: '$13,223 / yr',
+    schoolsShare: '54.80%',
+    muniShare: '33.90%',
+    countyShare: '11.30%',
+    schoolDistrictName: 'Morris School District (MSD)',
+    schoolDistrictShort: 'Morris School Dist',
+    schoolBudgetDisplay: '$136.5M',
+    muniBudgetDisplay: '$48.2M',
+    benefitsSpendDisplay: '$33.8M',
+    avgAssessed: '$578.7k',
+    typicalMarket: 680000,
+    sliderMin: 150000,
+    sliderMax: 1200000,
+    sliderDefault: 578700,
+    zipCodesDisplay: '07960 (Historic Green, Speedwell & Washington)',
+    controversyHighlight: 'HQ Plaza & M Station PILOT deals, joint school district cost sharing',
+    title: 'Morristown Taxpayer Watchdog',
+    pageTitle: 'Town of Morristown NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    subtitle: 'Citizen audit of the Morris County seat: $48.2M Town operating budget, Morris School District joint funding with Morris Township ($136.5M), HQ Plaza & M Station PILOT abatements, and Morris County tax distribution.',
+    basePath: 'data/morristown',
+    sliderLabelsHtml: `<span>$150k</span><span>$578.7k (Avg)</span><span>$750k</span><span>$1.2M+</span>`,
+    quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
+       <button class="preset-btn" data-val="280000">$280k (Speedwell Ave)</button>
+       <button class="preset-btn" data-val="360000">$360k (Historic District)</button>
+       <button class="preset-btn active" data-val="578700">Morristown Avg ($578.7k)</button>
+       <button class="preset-btn" data-val="680000">$680k (Morristown Green)</button>
+       <button class="preset-btn" data-val="880000">$880k (Washington Valley)</button>`
+  },
+  montville: {
+    id: 'montville',
+    name: 'Montville',
+    fullName: 'Township of Montville',
+    badgeText: 'TOWNSHIP OF MONTVILLE • CITIZEN FISCAL WATCHDOG',
+    icon: '🏞️',
+    county: 'Morris County',
+    countyShort: 'Morris County',
+    districtCode: '1421',
+    auditBadge: 'MORRIS COUNTY AUDIT • 2026',
+    certifiedTaxRate: '2.492%',
+    rateNum: 2.492,
+    equalizationRatio: 82.8,
+    avgTaxBill: '$16,198 / yr',
+    schoolsShare: '66.20%',
+    muniShare: '22.90%',
+    countyShare: '10.90%',
+    schoolDistrictName: 'Montville Township Public Schools',
+    schoolDistrictShort: 'Montville BOE',
+    schoolBudgetDisplay: '$98.4M',
+    muniBudgetDisplay: '$31.2M',
+    benefitsSpendDisplay: '$28.6M',
+    avgAssessed: '$650.0k',
+    typicalMarket: 785000,
+    sliderMin: 200000,
+    sliderMax: 1500000,
+    sliderDefault: 650000,
+    zipCodesDisplay: '07045 (Montville), 07058 (Pine Brook), 07082 (Towaco)',
+    controversyHighlight: '66.2% school levy share due to State Aid cliff, low 10.9% county tax',
+    title: 'Montville Taxpayer Watchdog',
+    pageTitle: 'Montville Township NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    subtitle: 'Citizen investigation into Montville Township taxes: high 66.2% local school levy share caused by state aid cuts, low 10.9% Morris County burden, Pine Brook commercial strip ratables, and Towaco residential tax bills.',
+    basePath: 'data/montville',
+    sliderLabelsHtml: `<span>$200k</span><span>$650k (Avg)</span><span>$950k</span><span>$1.5M+</span>`,
+    quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
+       <button class="preset-btn" data-val="380000">$380k (Pine Brook Condo)</button>
+       <button class="preset-btn" data-val="495000">$495k (Towaco Station)</button>
+       <button class="preset-btn active" data-val="650000">Montville Avg ($650k)</button>
+       <button class="preset-btn" data-val="850000">$850k (Changebridge Rd)</button>
+       <button class="preset-btn" data-val="1150000">$1.15M (Taylortown Estates)</button>`
   }
 };
 
@@ -182,11 +593,11 @@ function getInitialCity() {
   try {
     const params = new URLSearchParams(window.location.search);
     const urlCity = (params.get('city') || '').toLowerCase();
-    if (urlCity === 'parsippany' || urlCity === 'clifton') {
+    if (CITY_REGISTRY[urlCity]) {
       return urlCity;
     }
     const saved = localStorage.getItem('watchdog_city');
-    if (saved === 'parsippany' || saved === 'clifton') {
+    if (saved && CITY_REGISTRY[saved]) {
       return saved;
     }
   } catch (e) {
@@ -215,16 +626,16 @@ function setupCitySwitcher() {
   });
 }
 
-// Switch Active Municipality (Clifton vs. Parsippany-Troy Hills)
+// Switch Active Municipality across all 6 switchable cities
 async function switchCity(cityId, updateUrl = true) {
-  currentCity = cityId === 'parsippany' ? 'parsippany' : 'clifton';
+  currentCity = CITY_REGISTRY[cityId] ? cityId : 'clifton';
 
   try {
     localStorage.setItem('watchdog_city', currentCity);
     if (updateUrl && window.history && window.history.replaceState) {
       const url = new URL(window.location.href);
-      if (currentCity === 'parsippany') {
-        url.searchParams.set('city', 'parsippany');
+      if (currentCity !== 'clifton') {
+        url.searchParams.set('city', currentCity);
       } else {
         url.searchParams.delete('city');
       }
@@ -268,12 +679,12 @@ async function switchCity(cityId, updateUrl = true) {
 
 // Dynamically update all static copy, headers, dropdowns, presets, and links for the active city
 function applyCityStaticCopy(cityId) {
+  const meta = CITY_REGISTRY[cityId] || CITY_REGISTRY.clifton;
   const isParsippany = cityId === 'parsippany';
+  const isClifton = cityId === 'clifton';
 
   // 1. Document Title & App Header
-  document.title = isParsippany
-    ? 'Parsippany-Troy Hills NJ Taxpayer Watchdog | Where Does Your Money Go?'
-    : 'Clifton NJ Taxpayer Watchdog | Where Does Your Money Go?';
+  document.title = meta.pageTitle;
 
   const setElText = (id, text) => {
     const el = document.getElementById(id);
@@ -284,153 +695,92 @@ function applyCityStaticCopy(cityId) {
     if (el) el.innerHTML = html;
   };
 
-  setElText('header-badge-icon', isParsippany ? '🌲' : '🏛️');
-  setElText('header-badge-text', isParsippany
-    ? 'TOWNSHIP OF PARSIPPANY-TROY HILLS • CITIZEN FISCAL WATCHDOG'
-    : 'CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG');
-  setElText('header-main-title', isParsippany
-    ? 'Parsippany Taxpayer Watchdog'
-    : 'Clifton Taxpayer Watchdog');
-  setElText('header-main-subtitle', isParsippany
-    ? 'Real-time public investigation into where your Parsippany-Troy Hills property taxes go, the $187.5M PTHSD school budget, $92.8M Township budget, 6 independent Fire Districts, Route 10 & Campus Drive PILOT controversies, and Morris County tax records.'
-    : 'Real-time public investigation into where your Clifton property taxes go, the ~$293M school budget, public employee healthcare benefits, outside staff businesses, and official state audits.');
+  setElText('header-badge-icon', meta.icon);
+  setElText('header-badge-text', meta.badgeText);
+  setElText('header-main-title', meta.title);
+  setElText('header-main-subtitle', meta.subtitle);
 
   setElText('hdr-stat1-label', 'Certified Tax Rate (2026) ↗');
-  setElText('hdr-stat1-num', isParsippany ? '3.550%' : '6.527%');
-  setElText('hdr-stat1-sub', isParsippany ? 'Avg Bill: $12,372 / yr' : 'Calculate your taxes');
+  setElText('hdr-stat1-num', meta.certifiedTaxRate);
+  setElText('hdr-stat1-sub', 'Avg Bill: ' + meta.avgTaxBill);
 
-  setElText('hdr-stat2-label', isParsippany ? 'Schools Share (PTHSD) ↗' : 'School District (BOE) ↗');
-  setElText('hdr-stat2-num', isParsippany ? '64.14%' : '47.66%');
-  setElText('hdr-stat2-sub', isParsippany ? 'Explore $187.5M budget' : 'Explore $293.2M budget');
+  setElText('hdr-stat2-label', meta.schoolDistrictName + ' ↗');
+  setElText('hdr-stat2-num', meta.schoolsShare);
+  setElText('hdr-stat2-sub', 'Explore ' + meta.schoolBudgetDisplay + ' budget');
 
   setElText('hdr-stat3-label', 'Sampled Assessments ↗');
   setElText('hdr-stat3-num', '1,850 Homes');
-  setElText('hdr-stat3-sub', isParsippany ? 'Avg Assessed: $348.5k' : 'Who pays more taxes?');
+  setElText('hdr-stat3-sub', 'Avg Assessed: ' + meta.avgAssessed);
 
   // 2. Sticky Nav Brand & Dropdown Subtitles
-  setElText('nav-brand-icon', isParsippany ? '🌲' : '🏛️');
-  setElText('nav-brand-title', isParsippany ? 'Parsippany Watchdog' : 'Clifton Watchdog');
-  setElText('nav-brand-subtitle', isParsippany ? 'MORRIS COUNTY AUDIT • 2026' : 'CITIZEN FISCAL AUDIT • 2026');
+  setElText('nav-brand-icon', meta.icon);
+  setElText('nav-brand-title', meta.name + ' Watchdog');
+  setElText('nav-brand-subtitle', meta.auditBadge);
 
-  setElHtml('.dropdown-item[data-tab="tab-budgets"] .d-item-text small', isParsippany
-    ? 'PTHSD ($187.5M) & Township ($92.8M) budgets'
-    : 'BOE ($293M) & City Hall ($105M) budgets');
-  setElHtml('.dropdown-item[data-tab="tab-benefits"] .d-item-text small', isParsippany
-    ? 'SHBP/SEHBP plans, pensions & $61.1M costs'
-    : 'SHBP/SEHBP plans, pensions & $87M costs');
-  setElHtml('.dropdown-item[data-tab="tab-demographics"] .d-item-text small', isParsippany
-    ? '07054, 07034, 07878 & 07950 disparities'
-    : '07011, 07012, 07013 & 07014 disparities');
-  setElHtml('.dropdown-item[data-tab="tab-surrounding"] .d-item-text small', isParsippany
-    ? 'Compare 8 Morris County towns (Montville, Denville, etc.)'
-    : 'Compare 8 towns (Nutley, Wayne, Montclair, etc.)');
-  setElHtml('.dropdown-item[data-tab="tab-controversies"] .d-item-text small', isParsippany
-    ? 'Route 10 PILOTs, BOE lawsuit threat & surplus drop'
-    : 'OSC audits, PILOT shifts, ASI Reval & budget cliffs');
+  setElHtml('.dropdown-item[data-tab="tab-budgets"] .d-item-text small',
+    `${meta.schoolDistrictShort} (${meta.schoolBudgetDisplay}) & Muni (${meta.muniBudgetDisplay}) budgets`);
+  setElHtml('.dropdown-item[data-tab="tab-benefits"] .d-item-text small',
+    `SHBP/SEHBP plans, pensions & ${meta.benefitsSpendDisplay} costs`);
+  setElHtml('.dropdown-item[data-tab="tab-demographics"] .d-item-text small',
+    `${meta.zipCodesDisplay} disparities`);
+  setElHtml('.dropdown-item[data-tab="tab-surrounding"] .d-item-text small',
+    `Compare 14 North Jersey towns (${meta.county})`);
+  setElHtml('.dropdown-item[data-tab="tab-controversies"] .d-item-text small',
+    meta.controversyHighlight);
 
   // 3. Top Status Bar
-  setElHtml('.top-status-bar .status-text', isParsippany
-    ? '<strong>Live Citizen Watchdog:</strong> Certified 2026 Tax Rates • Morris County Board of Taxation (District 1429) & Official Audits'
-    : '<strong>Live Citizen Watchdog:</strong> Certified 2026 Tax Rates • Passaic County Board of Taxation & Official Audits');
-  setElHtml('.top-status-bar .status-quick-links', isParsippany
-    ? `<span class="status-item">Total Rate: <strong>3.550%</strong></span>
-       <span class="status-sep">•</span>
-       <span class="status-item">Schools Share: <strong>64.14%</strong></span>
-       <span class="status-sep">•</span>
-       <span class="status-item">Township & Fire: <strong>26.34%</strong></span>
-       <span class="status-sep">•</span>
-       <span class="status-item">Morris County: <strong>9.52%</strong></span>
-       <span class="status-sep">•</span>
-       <span class="status-item">Auto-Refresh: <strong style="color: #15803d;">Active (Weekly Cron)</strong></span>`
-    : `<span class="status-item">Total Rate: <strong>6.527%</strong></span>
-       <span class="status-sep">•</span>
-       <span class="status-item">Schools Share: <strong>47.66%</strong></span>
-       <span class="status-sep">•</span>
-       <span class="status-item">City Share: <strong>29.41%</strong></span>
-       <span class="status-sep">•</span>
-       <span class="status-item">County Share: <strong>22.92%</strong></span>
-       <span class="status-sep">•</span>
-       <span class="status-item">Auto-Refresh: <strong style="color: #15803d;">Active (Weekly Cron)</strong></span>`);
+  setElHtml('.top-status-bar .status-text',
+    `<strong>Live Citizen Watchdog:</strong> Certified 2026 Tax Rates • ${meta.county} Board of Taxation & Official Audits`);
+  setElHtml('.top-status-bar .status-quick-links',
+    `<span class="status-item">Total Rate: <strong>${meta.certifiedTaxRate}</strong></span>
+     <span class="status-sep">•</span>
+     <span class="status-item">Schools Share: <strong>${meta.schoolsShare}</strong></span>
+     <span class="status-sep">•</span>
+     <span class="status-item">City/Muni Share: <strong>${meta.muniShare}</strong></span>
+     <span class="status-sep">•</span>
+     <span class="status-item">County Share: <strong>${meta.countyShare}</strong></span>
+     <span class="status-sep">•</span>
+     <span class="status-item">Auto-Refresh: <strong style="color: #15803d;">Active (Weekly Cron)</strong></span>`);
 
   // 4. Tab 1: Calculator
-  setElHtml('#tab-calculator .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified: Tax Year 2026 • Morris County Board of Taxation (District 1429)</span>
-       </div>
-       <h2>Your Parsippany-Troy Hills Property Tax Breakdown</h2>
-       <p>In Parsippany-Troy Hills, the 2026 certified composite tax rate is <strong>$3.550 per $100 of assessed property value</strong> (including Fire District average). Enter your home's assessed value or drag the slider below to see where every dollar of your property tax goes.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified: Tax Year 2026 • Passaic County Board of Taxation</span>
-       </div>
-       <h2>Your Clifton Property Tax Breakdown</h2>
-       <p>In Clifton, the 2026 general tax rate is <strong>$6.527 per $100 of assessed property value</strong>. Enter your home's assessed value or drag the slider below to see where every dollar and cent of your property tax goes.</p>`);
+  setElHtml('#tab-calculator .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Certified: Tax Year 2026 • ${meta.county} Board of Taxation (District ${meta.districtCode})</span>
+     </div>
+     <h2>Your ${meta.fullName} Property Tax Breakdown</h2>
+     <p>In ${meta.name}, the 2026 certified composite tax rate is <strong>$${meta.rateNum.toFixed(3)} per $100 of assessed property value</strong>. Enter your home's assessed value or drag the slider below to see where every dollar of your property tax goes.</p>`);
 
-  setElHtml('#tab-calculator .input-card .tooltip-badge', isParsippany ? 'Avg: $348.5k' : 'Avg: $182.5k');
-  setElHtml('#tab-calculator .calc-hint', isParsippany
-    ? 'Look on your Parsippany-Troy Hills Tax Bill or Assessment Postcard (or drag the slider below):'
-    : 'Look on your Clifton Tax Bill or Assessment Postcard (or drag the slider below):');
+  setElHtml('#tab-calculator .input-card .tooltip-badge', 'Avg: ' + meta.avgAssessed);
+  setElHtml('#tab-calculator .calc-hint',
+    `Look on your ${meta.name} Tax Bill or Assessment Postcard (or drag the slider below):`);
 
   const calcInput = document.getElementById('calc-assessment-input');
   const calcSlider = document.getElementById('calc-assessment-slider');
   if (calcInput && calcSlider) {
-    if (isParsippany) {
-      calcSlider.min = '100000';
-      calcSlider.max = '900000';
-      calcInput.value = '348500';
-      calcSlider.value = '348500';
-    } else {
-      calcSlider.min = '50000';
-      calcSlider.max = '600000';
-      calcInput.value = '182500';
-      calcSlider.value = '182500';
-    }
+    calcSlider.min = meta.sliderMin.toString();
+    calcSlider.max = meta.sliderMax.toString();
+    calcInput.value = meta.sliderDefault.toString();
+    calcSlider.value = meta.sliderDefault.toString();
   }
 
-  setElHtml('#tab-calculator .slider-labels', isParsippany
-    ? `<span>$100k</span><span>$348.5k (Avg)</span><span>$550k</span><span>$900k+</span>`
-    : `<span>$50k</span><span>$182.5k (Avg)</span><span>$350k</span><span>$600k+</span>`);
+  setElHtml('#tab-calculator .slider-labels', meta.sliderLabelsHtml);
+  setElHtml('#tab-calculator .quick-presets', meta.quickPresetsHtml);
 
-  setElHtml('#tab-calculator .quick-presets', isParsippany
-    ? `<span class="preset-label">Quick Presets:</span>
-       <button class="preset-btn" data-val="225000">$225k (Lake Hiawatha)</button>
-       <button class="preset-btn" data-val="295000">$295k (Lake Parsippany)</button>
-       <button class="preset-btn active" data-val="348500">Parsippany Avg ($348.5k)</button>
-       <button class="preset-btn" data-val="435000">$435k (Mount Tabor)</button>
-       <button class="preset-btn" data-val="545000">$545k (Tabor Hills)</button>`
-    : `<span class="preset-label">Quick Presets:</span>
-       <button class="preset-btn" data-val="125000">$125k</button>
-       <button class="preset-btn" data-val="150000">$150k</button>
-       <button class="preset-btn active" data-val="182500">Clifton Avg ($182.5k)</button>
-       <button class="preset-btn" data-val="250000">$250k</button>
-       <button class="preset-btn" data-val="350000">$350k</button>`);
+  setElHtml('#tab-calculator .info-alert .alert-text',
+    `<strong>Assessment vs. Market Value:</strong> In ${meta.name}, homes are assessed at an Equalization Ratio of <strong>${meta.equalizationRatio.toFixed(1)}%</strong> of true market value. A home selling on the market for $${(meta.typicalMarket/1000).toFixed(0)}k typically has an assessed tax value of ~$${(meta.sliderDefault/1000).toFixed(0)}k.
+     <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+       <button class="btn-jump-action" data-jump-tab="tab-properties">
+         <span>🏡</span> Who Pays More? Explore 1,850 ${meta.name} Homes & Assessments ➔
+       </button>
+       <button class="btn-jump-action secondary" data-jump-tab="tab-fair-tax">
+         <span>⚖️</span> What If Taxes Were Fair? Test Scenarios in What-If Simulator ➔
+       </button>
+     </div>`);
 
-  setElHtml('#tab-calculator .info-alert .alert-text', isParsippany
-    ? `<strong>Assessment vs. Market Value:</strong> In Parsippany-Troy Hills, homes are assessed at a Morris County Equalization Ratio of <strong>66.60%</strong> of true market value. A home selling on the market for $523,000 has a typical tax assessment of ~$348,500.
-       <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
-         <button class="btn-jump-action" data-jump-tab="tab-properties">
-           <span>🏡</span> Who Pays More? Explore 1,850 Parsippany Homes & Assessments ➔
-         </button>
-         <button class="btn-jump-action secondary" data-jump-tab="tab-fair-tax">
-           <span>⚖️</span> What If Taxes Were Fair? Test Scenarios in What-If Simulator ➔
-         </button>
-       </div>`
-    : `<strong>Assessment vs. Market Value:</strong> In Clifton, homes are assessed at a fractional ratio (~33.3%) of market value. A home selling on the market for $550,000 typically has an assessed tax value of ~$185,000.
-       <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
-         <button class="btn-jump-action" data-jump-tab="tab-properties">
-           <span>🏡</span> Who Pays More? Explore 1,850 Clifton Homes & Assessments ➔
-         </button>
-         <button class="btn-jump-action secondary" data-jump-tab="tab-fair-tax">
-           <span>⚖️</span> What If Taxes Were Fair? Test Scenarios in What-If Simulator ➔
-         </button>
-       </div>`);
-
-  setElHtml('#tab-calculator .legend-row', isParsippany
-    ? `<span class="legend-item"><span class="dot school-dot"></span> PTHSD Schools (64.1%)</span>
-       <span class="legend-item"><span class="dot city-dot"></span> Township & Fire Dists (26.3%)</span>
-       <span class="legend-item"><span class="dot county-dot"></span> Morris County (9.5%)</span>`
-    : `<span class="legend-item"><span class="dot school-dot"></span> Schools (47.7%)</span>
-       <span class="legend-item"><span class="dot city-dot"></span> City Hall / Police / Fire (29.4%)</span>
-       <span class="legend-item"><span class="dot county-dot"></span> Passaic County (22.9%)</span>`);
+  setElHtml('#tab-calculator .legend-row',
+    `<span class="legend-item"><span class="dot school-dot"></span> ${meta.schoolDistrictShort} (${meta.schoolsShare})</span>
+     <span class="legend-item"><span class="dot city-dot"></span> Municipal Services (${meta.muniShare})</span>
+     <span class="legend-item"><span class="dot county-dot"></span> ${meta.countyShort} (${meta.countyShare})</span>`);
 
   setElHtml('#tab-calculator .taxpayer-critical-intel-grid', isParsippany
     ? `<!-- Card 1: 6 Independent Fire Districts & 2020 Revaluation Drift -->
@@ -1385,9 +1735,10 @@ function setupTabs() {
   syncDropdownActiveState();
 }
 
-// Data Loader (Supports 'clifton' -> data/ and 'parsippany' -> data/parsippany/)
+// Data Loader (Supports all 6 cities: clifton, parsippany, wayne, montclair, morristown, montville)
 async function loadAllData(cityId = currentCity) {
-  const basePath = cityId === 'parsippany' ? 'data/parsippany' : 'data';
+  const meta = CITY_REGISTRY[cityId] || CITY_REGISTRY.clifton;
+  const basePath = meta.basePath || (cityId === 'clifton' ? 'data' : `data/${cityId}`);
   try {
     const [taxRes, boeRes, cityRes, staffRes, ethicsRes, vendRes, benRes, contRes, demoRes, propRes, surrRes, pilotRes, fairRes] = await Promise.all([
       fetch(`${basePath}/tax_breakdown.json`),
@@ -2427,49 +2778,211 @@ function setupPropertyFilters() {
   }
 }
 
-// TAB: SURROUNDING TOWNS COMPARISON
+// TAB: SURROUNDING TOWNS / CROSS-TOWN COMPARISON HUB
+let crossTownState = {
+  homeValue: 600000,
+  income: 125000,
+  county: 'all',
+  sortBy: 'tax-asc'
+};
+let surroundingEventsInitialized = false;
+
+function setupSurroundingComparatorEvents() {
+  if (surroundingEventsInitialized) return;
+  surroundingEventsInitialized = true;
+
+  const homeInput = document.getElementById('cross-home-val');
+  const incomeInput = document.getElementById('cross-income-val');
+  const sortSelect = document.getElementById('cross-sort-by');
+
+  if (homeInput) {
+    homeInput.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value) || 0;
+      crossTownState.homeValue = Math.max(10000, val);
+      document.querySelectorAll('.comp-preset-btn').forEach(btn => {
+        btn.classList.toggle('active', parseFloat(btn.dataset.val) === crossTownState.homeValue);
+      });
+      renderSurroundingTowns();
+    });
+  }
+
+  // Preset Home Values
+  document.querySelectorAll('.comp-preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const val = parseFloat(btn.dataset.val);
+      if (val) {
+        crossTownState.homeValue = val;
+        if (homeInput) homeInput.value = val;
+        document.querySelectorAll('.comp-preset-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderSurroundingTowns();
+      }
+    });
+  });
+
+  if (incomeInput) {
+    incomeInput.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value) || 0;
+      crossTownState.income = Math.max(1000, val);
+      renderSurroundingTowns();
+    });
+  }
+
+  if (sortSelect) {
+    sortSelect.addEventListener('change', (e) => {
+      crossTownState.sortBy = e.target.value;
+      renderSurroundingTowns();
+    });
+  }
+
+  // County Filter Buttons
+  document.querySelectorAll('.comp-county-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      crossTownState.county = btn.dataset.county;
+      document.querySelectorAll('.comp-county-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderSurroundingTowns();
+    });
+  });
+}
+
 function renderSurroundingTowns() {
   if (!surroundingTownsData || !surroundingTownsData.towns) return;
-  const isParsippany = currentCity === 'parsippany';
+  setupSurroundingComparatorEvents();
 
+  const homeVal = crossTownState.homeValue;
+  const income = crossTownState.income;
+  const countyFilter = crossTownState.county;
+  const sortBy = crossTownState.sortBy;
+
+  // Filter towns by county
+  let towns = surroundingTownsData.towns.filter(t => {
+    if (countyFilter === 'all') return true;
+    return t.county.toLowerCase().includes(countyFilter.toLowerCase().replace(' county', ''));
+  });
+
+  // Calculate dynamic metrics for this specific home value
+  const enriched = towns.map(t => {
+    const effectiveRate = t.effectiveTaxRateMarket || (t.certifiedTaxRate * (t.equalizationRatio / 100));
+    const annualTax = homeVal * (effectiveRate / 100);
+    const monthlyTax = annualTax / 12;
+    const burdenPct = income > 0 ? (annualTax / income) * 100 : 0;
+    
+    const schoolPct = t.taxSplit?.schoolsPercent || 50;
+    const muniPct = t.taxSplit?.municipalPercent || 30;
+    const countyPct = t.taxSplit?.countyPercent || 20;
+
+    const schoolDollars = annualTax * (schoolPct / 100);
+    const muniDollars = annualTax * (muniPct / 100);
+    const countyDollars = annualTax * (countyPct / 100);
+
+    return {
+      ...t,
+      computedAnnualTax: annualTax,
+      computedMonthlyTax: monthlyTax,
+      computedBurdenPct: burdenPct,
+      schoolDollars,
+      muniDollars,
+      countyDollars,
+      schoolPct,
+      muniPct,
+      countyPct
+    };
+  });
+
+  // Sort towns based on selected option
+  enriched.sort((a, b) => {
+    switch (sortBy) {
+      case 'tax-asc':
+        return a.computedAnnualTax - b.computedAnnualTax;
+      case 'tax-desc':
+        return b.computedAnnualTax - a.computedAnnualTax;
+      case 'rate-asc':
+        return a.effectiveTaxRateMarket - b.effectiveTaxRateMarket;
+      case 'school-desc':
+        return b.schoolPct - a.schoolPct;
+      case 'muni-desc':
+        return b.muniPct - a.muniPct;
+      case 'name-asc':
+      default:
+        return a.name.localeCompare(b.name);
+    }
+  });
+
+  // Render Table Rows
   const tableBody = document.getElementById('surrounding-table-body');
   if (tableBody) {
-    tableBody.innerHTML = surroundingTownsData.towns.map(t => {
-      const isFocus = t.id === 'clifton' || t.id === 'parsippany';
+    tableBody.innerHTML = enriched.map(t => {
+      const isCurrent = t.id === currentCity;
+      const isFull = t.hasFullWatchdogProfile;
+
       return `
-        <tr class="${isFocus ? 'highlight-clifton-row' : ''}">
-          <td>
-            <strong>${t.name}</strong> ${isFocus ? '⭐ <em>(Focus)</em>' : ''}<br>
-            <small style="color: var(--text-subtle);">${t.county} • ${t.relationship}</small>
-          </td>
-          <td style="font-family: var(--font-mono); font-weight: 700; ${isFocus ? 'color: #dc2626;' : ''}">${t.certifiedTaxRate.toFixed(3)}%</td>
+        <tr class="${isCurrent ? 'highlight-focus-row' : ''}">
+          <th scope="row">
+            <strong>${t.name}</strong> ${isCurrent ? '⭐ <span style="color: #2563eb; font-size: 0.72rem; font-weight: 800;">(Active Focus)</span>' : ''}<br>
+            <small style="color: var(--text-subtle);">${t.county} • Pop. ${t.population.toLocaleString()}</small>
+          </th>
+          <td style="font-family: var(--font-mono); font-weight: 700; color: #dc2626;">${t.certifiedTaxRate.toFixed(3)}%</td>
           <td style="font-family: var(--font-mono);">${t.equalizationRatio.toFixed(1)}%</td>
-          <td style="font-family: var(--font-mono); font-weight: 800; color: var(--color-school);">${t.effectiveTaxRateMarket.toFixed(3)}%</td>
-          <td style="font-family: var(--font-mono);">${formatUSDWhole(t.medianHomeValueMarket)}</td>
-          <td style="font-family: var(--font-mono); font-weight: 700;">${formatUSDWhole(t.medianAnnualTaxBill)}</td>
-          <td style="font-family: var(--font-mono);">${formatUSDWhole(t.medianHouseholdIncome)}</td>
-          <td style="font-family: var(--font-mono); font-weight: 700; color: ${t.taxBurdenPercentOfIncome > 12 ? '#b91c1c' : 'var(--text-main)'};">
-            ${t.taxBurdenPercentOfIncome.toFixed(1)}%
+          <td style="font-family: var(--font-mono); font-weight: 800; color: #059669;">${t.effectiveTaxRateMarket.toFixed(3)}%</td>
+          <td style="font-family: var(--font-mono); font-weight: 800; font-size: 0.95rem; color: #0f172a;">${formatUSDWhole(t.computedAnnualTax)}</td>
+          <td style="font-family: var(--font-mono); font-weight: 600;">${formatUSDWhole(t.computedMonthlyTax)}</td>
+          <td style="font-family: var(--font-mono); font-weight: 700; color: ${t.computedBurdenPct > 12 ? '#dc2626' : '#15803d'};">
+            ${t.computedBurdenPct.toFixed(1)}%
           </td>
-          <td style="font-family: var(--font-mono); color: var(--color-school); font-weight: 700;">${t.taxSplit.schoolsPercent.toFixed(1)}%</td>
+          <td>
+            <div class="comp-split-container">
+              <div class="comp-stacked-bar" title="Schools: ${t.schoolPct.toFixed(1)}% | Muni: ${t.muniPct.toFixed(1)}% | County: ${t.countyPct.toFixed(1)}%">
+                <div class="bar-seg bar-seg-school" style="width: ${t.schoolPct}%;"></div>
+                <div class="bar-seg bar-seg-muni" style="width: ${t.muniPct}%;"></div>
+                <div class="bar-seg bar-seg-county" style="width: ${t.countyPct}%;"></div>
+              </div>
+              <div class="comp-split-labels">
+                <span class="label-school" title="School Taxes">🏫 ${formatUSDWhole(t.schoolDollars)} (${t.schoolPct.toFixed(0)}%)</span>
+                <span class="label-muni" title="Municipal Taxes">🚔 ${formatUSDWhole(t.muniDollars)} (${t.muniPct.toFixed(0)}%)</span>
+                <span class="label-county" title="County Taxes">🏛️ ${formatUSDWhole(t.countyDollars)} (${t.countyPct.toFixed(0)}%)</span>
+              </div>
+            </div>
+          </td>
+          <td>
+            ${isFull ? `
+              <button type="button" class="btn-town-switch ${isCurrent ? 'active-town' : ''}" data-switch-city="${t.id}" title="Switch platform to ${t.name}">
+                ${isCurrent ? '✓ Active Platform' : `Switch to ${t.name} ➔`}
+              </button>
+            ` : `
+              <span class="town-badge-bench" title="Comparative Ratable Benchmark">Benchmark</span>
+            `}
+          </td>
         </tr>
       `;
     }).join('');
+
+    // Attach switchCity handler to buttons in table
+    tableBody.querySelectorAll('[data-switch-city]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-switch-city');
+        if (target && target !== currentCity) {
+          switchCity(target, true);
+        }
+      });
+    });
   }
 
-  // Render Town Detail Cards
+  // Render Detailed Town Comparative Cards
   const cardsContainer = document.getElementById('surrounding-cards-container');
   if (cardsContainer) {
-    cardsContainer.innerHTML = surroundingTownsData.towns.map(t => {
-      const isFocus = t.id === 'clifton' || t.id === 'parsippany';
+    cardsContainer.innerHTML = enriched.map(t => {
+      const isCurrent = t.id === currentCity;
+      const isFull = t.hasFullWatchdogProfile;
+
       return `
-        <div class="surround-card ${isFocus ? 'clifton-border' : ''}">
+        <div class="surround-card ${isCurrent ? 'clifton-border' : ''}">
           <div class="surround-card-header">
             <div>
-              <div class="surround-town-name">${t.name} ${isFocus ? '⭐' : ''}</div>
+              <div class="surround-town-name">${t.name} ${isCurrent ? '⭐' : ''}</div>
               <div class="surround-town-sub">${t.county} • ${t.relationship}</div>
             </div>
-            <span class="pill-tag ${isFocus ? 'active-pill' : ''}">Pop. ${t.population.toLocaleString()}</span>
+            <span class="pill-tag ${isCurrent ? 'active-pill' : ''}">Pop. ${t.population.toLocaleString()}</span>
           </div>
 
           <div class="surround-tax-strip">
@@ -2487,11 +3000,30 @@ function renderSurroundingTowns() {
             </div>
           </div>
 
+          <div style="margin: 12px 0 14px 0; padding: 10px 12px; background: #f8fafc; border: 1px solid var(--border-light); border-radius: var(--radius-md);">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+              <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Tax on $${(homeVal/1000).toFixed(0)}k Home:</span>
+              <span style="font-family: var(--font-mono); font-size: 1.1rem; font-weight: 800; color: #0f172a;">${formatUSDWhole(t.computedAnnualTax)} <small style="font-size: 0.75rem; font-weight: 600; color: var(--text-subtle);">(${formatUSDWhole(t.computedMonthlyTax)}/mo)</small></span>
+            </div>
+            <div class="comp-split-container">
+              <div class="comp-stacked-bar">
+                <div class="bar-seg bar-seg-school" style="width: ${t.schoolPct}%;"></div>
+                <div class="bar-seg bar-seg-muni" style="width: ${t.muniPct}%;"></div>
+                <div class="bar-seg bar-seg-county" style="width: ${t.countyPct}%;"></div>
+              </div>
+              <div class="comp-split-labels" style="margin-top: 4px;">
+                <span class="label-school">🏫 Schools: ${formatUSDWhole(t.schoolDollars)} (${t.schoolPct.toFixed(0)}%)</span>
+                <span class="label-muni">🚔 Muni: ${formatUSDWhole(t.muniDollars)} (${t.muniPct.toFixed(0)}%)</span>
+                <span class="label-county">🏛️ County: ${formatUSDWhole(t.countyDollars)} (${t.countyPct.toFixed(0)}%)</span>
+              </div>
+            </div>
+          </div>
+
           <div class="surround-metrics-grid">
             <div class="sm-metric">
-              <span class="sm-label">Median Annual Tax</span>
+              <span class="sm-label">Median Annual Tax Bill</span>
               <span class="sm-val font-mono">${formatUSDWhole(t.medianAnnualTaxBill)}</span>
-              <span class="sm-sub">${formatUSDWhole(t.monthlyTaxBill)} / month</span>
+              <span class="sm-sub">On ${formatUSDWhole(t.medianHomeValueMarket)} median home</span>
             </div>
             <div class="sm-metric">
               <span class="sm-label">Median Household Income</span>
@@ -2499,33 +3031,46 @@ function renderSurroundingTowns() {
               <span class="sm-sub">Tax: ${t.taxBurdenPercentOfIncome.toFixed(1)}% of income</span>
             </div>
             <div class="sm-metric">
-              <span class="sm-label">School District Budget</span>
-              <span class="sm-val font-mono">${formatUSDWhole(t.schoolBudget)}</span>
-              <span class="sm-sub">${t.taxSplit.schoolsPercent.toFixed(1)}% of tax check</span>
+              <span class="sm-label">School District Spending</span>
+              <span class="sm-val font-mono">${t.schoolBudget ? formatUSDWhole(t.schoolBudget) : 'N/A'}</span>
+              <span class="sm-sub">${t.perPupilCost ? `$${t.perPupilCost.toLocaleString()}/pupil` : ''} ${t.schoolStateAidShare ? `• ${t.schoolStateAidShare}% State Aid` : ''}</span>
             </div>
             <div class="sm-metric">
               <span class="sm-label">Municipal Operating Budget</span>
-              <span class="sm-val font-mono">${formatUSDWhole(t.municipalBudget)}</span>
-              <span class="sm-sub">${t.taxSplit.municipalPercent.toFixed(1)}% of tax check</span>
+              <span class="sm-val font-mono">${t.municipalBudget ? formatUSDWhole(t.municipalBudget) : 'N/A'}</span>
+              <span class="sm-sub">${t.commercialSharePct ? `${t.commercialSharePct}% Commercial Base` : 'Local Tax Base'}</span>
             </div>
           </div>
 
           <div class="surround-notes">
             <strong>Watchdog Analysis:</strong> ${t.strengthsAndWatchdogNotes}
           </div>
-          ${isFocus ? `
-            <div class="card-action-bar-jumps">
-              <button class="btn-jump-action" data-jump-tab="tab-properties">
-                <span>🏡</span> Browse 1,850 ${isParsippany ? 'Parsippany' : 'Clifton'} Sample Properties ➔
+
+          <div class="card-action-bar-jumps" style="margin-top: 14px;">
+            ${isFull ? `
+              <button class="btn-jump-action" data-switch-city="${t.id}" style="${isCurrent ? 'background: #059669;' : ''}">
+                <span>${t.id === 'clifton' ? '🏛️' : t.id === 'parsippany' ? '🌲' : t.id === 'wayne' ? '🌳' : t.id === 'montclair' ? '🏡' : t.id === 'morristown' ? '📜' : '🏞️'}</span>
+                ${isCurrent ? `Currently Exploring ${t.name} Watchdog` : `Switch Watchdog Platform to ${t.name} ➔`}
               </button>
+            ` : `
               <button class="btn-jump-action secondary" data-jump-tab="tab-calculator">
-                <span>🧮</span> Calculate Your Property Taxes ➔
+                <span>🧮</span> Calculate Clifton & Parsippany Tax Details ➔
               </button>
-            </div>
-          ` : ''}
+            `}
+          </div>
         </div>
       `;
     }).join('');
+
+    // Attach switchCity handler to card buttons
+    cardsContainer.querySelectorAll('[data-switch-city]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-switch-city');
+        if (target && target !== currentCity) {
+          switchCity(target, true);
+        }
+      });
+    });
   }
 
   // Render Comparative Takeaways
@@ -2535,11 +3080,6 @@ function renderSurroundingTowns() {
       <div class="takeaway-card">
         <h4>${f.title}</h4>
         <p>${f.detail}</p>
-        <div style="margin-top: 10px;">
-          <button class="btn-jump-action secondary" data-jump-tab="tab-demographics">
-            <span>📍</span> Explore ${isParsippany ? 'Parsippany' : 'Clifton'} Demographics & ZIP Codes ➔
-          </button>
-        </div>
       </div>
     `).join('');
   }

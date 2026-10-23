@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "fiscalCycle": "FY 2025-2026 Adopted / User-Friendly Budget",
+    "sourceAgency": "NJ Department of Education & Morris School District (Regional K-12) Business Office",
+    "dataVintage": "Certified FY 2025-2026 Budget",
+    "freshnessStatus": "Current"
+  },
+  "entity": "Morris School District (Regional K-12)",
+  "county": "Morris County",
+  "fiscalYear": "2025-2026",
+  "totalBudget": 136500000,
+  "enrollment": 5740,
+  "perPupilSpending": 22800,
+  "schoolsCount": 10,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 116025000,
+      "percentage": 85.0,
+      "description": "Portion paid directly by Town of Morristown residential and commercial property owners (54.8% of your tax bill)"
+    },
+    {
+      "source": "State Education Aid (Equalization & Categorical)",
+      "amount": 15015000,
+      "percentage": 11.0,
+      "description": "State of New Jersey formula aid covering special education, transit, and security"
+    },
+    {
+      "source": "Surplus / Fund Balance & Federal Grants",
+      "amount": 5460000,
+      "percentage": 4.0,
+      "description": "Audited prior-year fund balance, tuition, and IDEA federal grants"
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Regular Instructional Programs (10 Schools)",
+      "amount": 51870000,
+      "percentage": 38.0,
+      "details": "Classroom teacher compensation, textbook adoptions, and curriculum materials across all 10 district schools."
+    },
+    {
+      "category": "Employee Health Benefits & Statutory Insurance",
+      "amount": 30030000,
+      "percentage": 22.0,
+      "details": "Medical, prescription, and dental coverage under SEHBP/NJEHP (Chapter 44), employer Social Security/FICA, and workers' compensation."
+    },
+    {
+      "category": "Special Education Programs & Related Services",
+      "amount": 21840000,
+      "percentage": 16.0,
+      "details": "In-district specialized education teachers, paraprofessional aides, speech therapy, and child study teams."
+    },
+    {
+      "category": "Plant Operations, Utilities & Security",
+      "amount": 13650000,
+      "percentage": 10.0,
+      "details": "Heating, electricity, custodial staff, and school security across 10 facilities."
+    },
+    {
+      "category": "Out-of-District Tuition & Vo-Tech",
+      "amount": 8190000,
+      "percentage": 6.0,
+      "details": "Mandated tuition for specialized external placements and Morris County Vocational-Technical schools."
+    },
+    {
+      "category": "Student Transportation & Busing",
+      "amount": 6825000,
+      "percentage": 5.0,
+      "details": "Contracted bus routes and special education vehicle transit."
+    },
+    {
+      "category": "District Administration & Principals",
+      "amount": 4095000,
+      "percentage": 3.0,
+      "details": "Superintendent, Business Administrator, building principals, and curriculum supervisors."
+    }
+  ]
+}

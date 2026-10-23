@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "billListCycles": "FY 2025-2026 Accounts Payable Warrant Lists",
+    "sourceAgency": "Wayne Township Bill Lists & Board Secretary Warrant Registers",
+    "freshnessStatus": "Current"
+  },
+  "vendors": [
+    {
+      "vendorName": "State Health Benefits Program (SHBP / SEHBP) & Horizon BCBS",
+      "entityServed": "Both Wayne Township & Wayne Township Public Schools",
+      "category": "Employee Healthcare & Prescription",
+      "annualEstimatedSpend": 41328000,
+      "description": "Comprehensive medical, prescription drug, and dental insurance coverage for active and retired municipal and school personnel."
+    },
+    {
+      "vendorName": "Police & Firemen's Retirement System (PFRS) & PERS",
+      "entityServed": "Township of Wayne (Municipal Government)",
+      "category": "Statutory Pension Mandates",
+      "annualEstimatedSpend": 10020000,
+      "description": "Mandatory annual employer pension billing from the NJ Division of Pensions & Benefits."
+    },
+    {
+      "vendorName": "Contracted Student Transportation & Busing Consortium",
+      "entityServed": "Wayne Township Public Schools",
+      "category": "Student Busing & Transit",
+      "annualEstimatedSpend": 9310000,
+      "description": "Daily route busing across district schools, special education transit, and non-public aid-in-lieu."
+    },
+    {
+      "vendorName": "Out-of-District Special Education Placements & County Vo-Tech",
+      "entityServed": "Wayne Township Public Schools",
+      "category": "Special Ed & Vo-Tech Tuition",
+      "annualEstimatedSpend": 11172000,
+      "description": "Mandated tuition paid to state-approved private schools and Passaic County Vocational-Technical schools."
+    },
+    {
+      "vendorName": "Municipal Waste Management & Recycling Hauling",
+      "entityServed": "Township of Wayne (Municipal Government)",
+      "category": "Sanitation & Recycling",
+      "annualEstimatedSpend": 5010000,
+      "description": "Curbside trash, bulk collection, and county transfer station tipping fees."
+    },
+    {
+      "vendorName": "Township & School Board Legal Counsel & Redevelopment Attorneys",
+      "entityServed": "Both Municipal & School Board",
+      "category": "Legal Services & PILOT Representation",
+      "annualEstimatedSpend": 1850000,
+      "description": "Municipal Attorney, labor negotiators, bond counsel, tax appeal defense, and redevelopment lawyers."
+    }
+  ]
+}

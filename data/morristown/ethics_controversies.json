@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "reportVintage": "October 2026 Town of Morristown Watchdog Analysis",
+    "sources": [
+      "Town of Morristown Council Minutes & Ordinances",
+      "Morris School District (Regional K-12) Resolutions & Budgets",
+      "Morris County Board of Taxation Abstract of Ratables"
+    ],
+    "freshnessStatus": "Current"
+  },
+  "controversies": [
+    {
+      "id": "morristown-pilot-school-dispute",
+      "severity": "HIGH",
+      "category": "PILOT Tax Abatements & School Funding Exclusion",
+      "title": "PILOT Tax Breaks vs. School District Revenues in Town of Morristown",
+      "entityInvolved": "Town of Morristown (Municipal Government) vs. Morris School District (Regional K-12)",
+      "lastUpdated": "2025-2026",
+      "summary": "Long-term tax exemptions granted to major developments along commercial corridors bypass the school district (which normal takes 54.8% of property taxes), forcing existing homeowners to absorb student enrollment costs.",
+      "investigationDetails": "Under New Jersey's Long Term Tax Exemption Law (N.J.S.A. 40A:20), municipalities can grant 30-year PILOTs where the developer pays an Annual Service Charge directly to Town Hall (95%) and the County (5%), while the public school district receives $0 statutory share. In Town of Morristown, where schools consume 54.8% of standard taxes, each new luxury residential unit adds student load without contributing ad valorem school tax support.",
+      "taxpayerImpact": "Millions in abated school taxes shifted directly onto single-family homeowners across Town of Morristown.",
+      "status": "Active community oversight and school board revenue-sharing debate."
+    },
+    {
+      "id": "morristown-main-fiscal-issue",
+      "severity": "HIGH",
+      "category": "Budget & Ratable Pressures",
+      "title": "Morristown Medical Center Property Tax Exemption & Transit PILOT Density",
+      "entityInvolved": "Town of Morristown",
+      "lastUpdated": "2025-2026",
+      "summary": "Historic legal battles over hospital property tax exemptions (Morristown landmark ruling) and town disputes over keeping 95% of PILOT revenue from M Station and Speedwell redevelopments away from the Morris School District.",
+      "investigationDetails": "With inflation pushing employee healthcare past $33.8M and commercial ratables under pressure (43.6% of the tax base), Town of Morristown has had to manage tax levy growth against the 2% statutory cap, leading to school and municipal fiscal tension.",
+      "taxpayerImpact": "Homeowners fund 56.4% of the property tax check, heightening public scrutiny on every budget line item.",
+      "status": "Ongoing legislative and budget audit monitoring."
+    }
+  ]
+}

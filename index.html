@@ -24,12 +24,32 @@
             <span class="city-switcher-label">Municipality:</span>
             <button type="button" class="city-switch-btn active" data-city="clifton" aria-pressed="true">
               <span class="city-btn-icon">🏛️</span>
-              <span class="city-btn-name">Clifton, NJ</span>
+              <span class="city-btn-name">Clifton</span>
               <span class="city-btn-county">Passaic</span>
             </button>
             <button type="button" class="city-switch-btn" data-city="parsippany" aria-pressed="false">
               <span class="city-btn-icon">🌲</span>
-              <span class="city-btn-name">Parsippany, NJ</span>
+              <span class="city-btn-name">Parsippany</span>
+              <span class="city-btn-county">Morris</span>
+            </button>
+            <button type="button" class="city-switch-btn" data-city="wayne" aria-pressed="false">
+              <span class="city-btn-icon">🌳</span>
+              <span class="city-btn-name">Wayne</span>
+              <span class="city-btn-county">Passaic</span>
+            </button>
+            <button type="button" class="city-switch-btn" data-city="montclair" aria-pressed="false">
+              <span class="city-btn-icon">🏡</span>
+              <span class="city-btn-name">Montclair</span>
+              <span class="city-btn-county">Essex</span>
+            </button>
+            <button type="button" class="city-switch-btn" data-city="morristown" aria-pressed="false">
+              <span class="city-btn-icon">📜</span>
+              <span class="city-btn-name">Morristown</span>
+              <span class="city-btn-county">Morris</span>
+            </button>
+            <button type="button" class="city-switch-btn" data-city="montville" aria-pressed="false">
+              <span class="city-btn-icon">🏞️</span>
+              <span class="city-btn-name">Montville</span>
               <span class="city-btn-county">Morris</span>
             </button>
           </div>
@@ -73,11 +93,23 @@
           </div>
         </a>
         <div class="nav-city-switcher" role="group" aria-label="Quick Switch Municipality">
-          <button type="button" class="city-switch-btn compact active" data-city="clifton" title="Switch to City of Clifton (Passaic County)">
+          <button type="button" class="city-switch-btn compact active" data-city="clifton" title="Switch to Clifton (Passaic County)">
             <span>🏛️</span> <span>Clifton</span>
           </button>
           <button type="button" class="city-switch-btn compact" data-city="parsippany" title="Switch to Parsippany-Troy Hills (Morris County)">
             <span>🌲</span> <span>Parsippany</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="wayne" title="Switch to Wayne Township (Passaic County)">
+            <span>🌳</span> <span>Wayne</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="montclair" title="Switch to Montclair Township (Essex County)">
+            <span>🏡</span> <span>Montclair</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="morristown" title="Switch to Morristown (Morris County)">
+            <span>📜</span> <span>Morristown</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="montville" title="Switch to Montville Township (Morris County)">
+            <span>🏞️</span> <span>Montville</span>
           </button>
         </div>
       </div>
@@ -90,7 +122,13 @@
           <span class="tab-title">Tax Calculator</span>
         </button>
 
-        <!-- 2. DROPDOWN: Budgets & Spending -->
+        <!-- 2. Primary Direct Tab: Compare Towns -->
+        <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-surrounding">
+          <span class="tab-icon">🗺️</span>
+          <span class="tab-title">Compare Towns</span>
+        </button>
+
+        <!-- 3. DROPDOWN: Budgets & Spending -->
         <div class="nav-dropdown" id="dropdown-budgets">
           <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-budgets">
             <span class="tab-icon">📊</span>
@@ -889,32 +927,98 @@
     <section id="tab-surrounding" class="tab-pane" role="tabpanel">
       <div class="section-intro">
         <div class="section-badge-bar">
-          <span class="section-date-badge">Certified Comparative 2026 Tax Rates • Passaic & Essex County Boards of Taxation</span>
+          <span class="section-date-badge">Certified Comparative 2026 Tax Rates • Passaic, Morris & Essex County Boards of Taxation</span>
         </div>
-        <h2>How Does Clifton Compare to Surrounding Towns?</h2>
-        <p>Compare Clifton's certified tax rate, assessment equalization ratios, true effective tax rates, median tax bills, school budget splits, and income burden against neighboring municipalities across Passaic and Essex Counties: <strong>Passaic City, Paterson, Montclair, Nutley, Wayne, Little Falls, and Totowa</strong>.</p>
+        <h2 id="surrounding-heading">Cross-Town Tax & Spending Comparison: How Much Each Town Pays & Where the Money Goes</h2>
+        <p id="surrounding-desc">Compare <strong>14 North Jersey municipalities</strong> across Passaic, Morris, and Essex Counties. Simulate what your exact home would pay in property taxes in each municipality, adjust for New Jersey's Equalization Ratios, and see the exact dollar and percentage breakdown of <strong>where your tax dollars go</strong> (Public Schools, Municipal Police/Fire/DPW, and County Government).</p>
       </div>
 
       <!-- Key Insight Banner -->
       <div class="comparative-insight-banner">
         <div class="insight-pill">💡 Tax Insight</div>
-        <p><strong>The Equalization Illusion:</strong> Clifton's certified rate (<strong>6.527%</strong>) looks more than double Nutley's (<strong>2.844%</strong>) or Montclair's (<strong>3.766%</strong>) only because Clifton's property assessments are frozen at <strong>~33.3% of market value</strong>. When adjusted to true 100% fair market value, Clifton's <strong>Effective Tax Rate is 2.18%</strong>—lower than Nutley (2.23%), Little Falls (2.25%), Passaic City (2.82%), and Paterson (3.24%).</p>
+        <p><strong>The Equalization Illusion:</strong> Nominal certified rates can be highly deceiving. For example, Clifton's certified rate (<strong>6.527%</strong>) appears over double Wayne's (<strong>2.748%</strong>) or Montclair's (<strong>3.766%</strong>) because Clifton's property assessments are frozen at <strong>~33.3% of market value</strong>. When equalized to true 100% fair market value, Clifton's <strong>Effective Tax Rate is 2.173%</strong>—lower than Wayne (2.209%), Little Falls (2.246%), Montclair (3.111%), Passaic City (2.822%), and Paterson (3.242%).</p>
       </div>
 
-      <!-- Comparative Summary Table -->
-      <div class="surrounding-table-wrapper">
+      <!-- Interactive Cross-Town Simulator & Control Hub -->
+      <div class="comparator-control-panel">
+        <div class="comparator-control-header">
+          <div class="cch-title-wrap">
+            <span class="cch-icon">🧮</span>
+            <div>
+              <h3>"What Would My Home Pay in Each Town?" Simulator</h3>
+              <p>Enter any home value and household income to compare your exact tax bill and spending split side-by-side across all 14 municipalities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparator-inputs-grid">
+          <div class="comp-input-group">
+            <label for="cross-home-val">Home Market Value ($)</label>
+            <div class="input-with-affix">
+              <span class="input-affix">$</span>
+              <input type="number" id="cross-home-val" value="600000" step="10000" min="50000" max="10000000" aria-label="Home Market Value">
+            </div>
+            <div class="comparator-presets" role="group" aria-label="Preset home values">
+              <button type="button" class="comp-preset-btn" data-val="450000">$450k Starter</button>
+              <button type="button" class="comp-preset-btn active" data-val="600000">$600k Typical</button>
+              <button type="button" class="comp-preset-btn" data-val="850000">$850k Suburban</button>
+              <button type="button" class="comp-preset-btn" data-val="1200000">$1.2M Luxury</button>
+            </div>
+          </div>
+
+          <div class="comp-input-group">
+            <label for="cross-income-val">Household Annual Income ($)</label>
+            <div class="input-with-affix">
+              <span class="input-affix">$</span>
+              <input type="number" id="cross-income-val" value="125000" step="5000" min="20000" max="2000000" aria-label="Household Annual Income">
+            </div>
+            <small class="comp-help-text">Used to calculate property tax burden as % of annual income.</small>
+          </div>
+
+          <div class="comp-input-group">
+            <label for="cross-sort-by">Sort Municipalities</label>
+            <select id="cross-sort-by" class="comp-select" aria-label="Sort comparison table">
+              <option value="tax-asc" selected>Tax Bill: Lowest to Highest</option>
+              <option value="tax-desc">Tax Bill: Highest to Lowest</option>
+              <option value="rate-asc">Effective Rate: Lowest to Highest</option>
+              <option value="school-desc">School Spending %: Highest First</option>
+              <option value="muni-desc">Municipal %: Highest First</option>
+              <option value="name-asc">Town Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="comparator-filter-row">
+          <span class="c-filter-label">Filter by County:</span>
+          <div class="comp-county-filters" role="group" aria-label="Filter by county">
+            <button type="button" class="comp-county-btn active" data-county="all">All Counties (14)</button>
+            <button type="button" class="comp-county-btn" data-county="Passaic County">Passaic (5)</button>
+            <button type="button" class="comp-county-btn" data-county="Morris County">Morris (6)</button>
+            <button type="button" class="comp-county-btn" data-county="Essex County">Essex (3)</button>
+          </div>
+
+          <div class="comp-legend" aria-label="Spending breakdown color legend">
+            <span class="legend-item"><span class="legend-color-box seg-school"></span> 🏫 Schools</span>
+            <span class="legend-item"><span class="legend-color-box seg-muni"></span> 🚔 Municipal</span>
+            <span class="legend-item"><span class="legend-color-box seg-county"></span> 🏛️ County</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparative Summary Table with Accessible Scrollable Wrapper -->
+      <div class="surrounding-table-wrapper" tabindex="0" role="region" aria-label="North Jersey Municipal Tax and Spending Comparison Table">
         <table class="surrounding-data-table" id="surrounding-table">
           <thead>
             <tr>
-              <th>Town / County</th>
-              <th>Certified Tax Rate</th>
-              <th>Equalization Ratio</th>
-              <th>Effective Market Rate</th>
-              <th>Median Home Value</th>
-              <th>Median Annual Tax</th>
-              <th>Median Income</th>
-              <th>Tax Burden % Income</th>
-              <th>School % of Tax</th>
+              <th scope="col">Town & County</th>
+              <th scope="col">Certified Rate</th>
+              <th scope="col">Equalization</th>
+              <th scope="col">Effective Rate</th>
+              <th scope="col">Your Annual Tax</th>
+              <th scope="col">Monthly Bill</th>
+              <th scope="col">Tax % Income</th>
+              <th scope="col" style="min-width: 260px;">Where the Money Goes (Split)</th>
+              <th scope="col">Watchdog Platform</th>
             </tr>
           </thead>
           <tbody id="surrounding-table-body">
@@ -924,9 +1028,9 @@
       </div>
 
       <!-- Detailed Town Comparative Cards -->
-      <div class="section-subtitle-row" style="margin-top: 32px;">
-        <h3>Granular Profiles & Watchdog Notes: 8 North Jersey Municipalities</h3>
-        <span class="pill-tag">Budget & Fiscal Deep-Dive</span>
+      <div class="section-subtitle-row" style="margin-top: 36px;">
+        <h3>Granular Town Profiles & Budget Deep-Dives</h3>
+        <span class="pill-tag">14 North Jersey Municipalities</span>
       </div>
       <div class="surrounding-cards-grid" id="surrounding-cards-container">
         <!-- Rendered by JS -->
@@ -951,6 +1055,10 @@
           <li>
             <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation: 2026 Abstract of Ratables & Certification Table ↗</a>
             <span class="source-doc-desc">Certified county tax rates, net valuation taxable, and equalization ratios for Clifton, Passaic, Paterson, Wayne, Little Falls, and Totowa.</span>
+          </li>
+          <li>
+            <a href="https://www.morriscountynj.gov/Departments/Taxation" target="_blank" rel="noopener">Morris County Board of Taxation: 2026 Abstract of Ratables & Equalization Table ↗</a>
+            <span class="source-doc-desc">Certified rates and assessments for Parsippany-Troy Hills, Morristown, Montville, Denville, Hanover, and Mountain Lakes.</span>
           </li>
           <li>
             <a href="https://www.essexcountynj.org/board-of-taxation/" target="_blank" rel="noopener">Essex County Board of Taxation: 2026 Certified Tax Table (Nutley & Montclair) ↗</a>

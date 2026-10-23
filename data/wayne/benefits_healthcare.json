@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "fiscalCycle": "FY 2025-2026",
+    "dataVintage": "Certified 2026 Plan Year",
+    "sourceAgencies": [
+      "NJ Division of Pensions and Benefits (SHBP / SEHBP)",
+      "Wayne Township Adopted Budget",
+      "Wayne Township Public Schools User-Friendly Budget"
+    ],
+    "freshnessStatus": "Current"
+  },
+  "overview": {
+    "annualTaxpayerCostCity": 21812000,
+    "annualTaxpayerCostBOE": 35588000,
+    "combinedTaxpayerBenefitsCost": 57400000,
+    "percentageOfCombinedBudgets": "21.3% of all public spending in Wayne Township goes directly to employee health insurance and pensions"
+  },
+  "healthcarePlans": {
+    "providers": "Horizon Blue Cross Blue Shield / SEHBP & Municipal Health Plan",
+    "primaryPlans": [
+      {
+        "planName": "NJ Educators Health Plan (NJEHP / Chapter 44) & Garden State Plan",
+        "type": "School District Plan (Teachers & Staff)",
+        "description": "Caps employee premium contributions as a percentage of base salary (1.7% to 7.2%), shifting annual double-digit healthcare premium spikes onto local property taxes."
+      },
+      {
+        "planName": "NJ DIRECT 10 / NJ DIRECT 15 (PPO)",
+        "type": "Comprehensive PPO Plan",
+        "description": "Nationwide PPO network with low copays and low deductibles for grandfathered municipal employees."
+      },
+      {
+        "planName": "Prescription Drug Card Formulary",
+        "type": "Prescription Plan",
+        "description": "Comprehensive drug formulary covering retail, mail-order, and specialty biologics with taxpayers subsidizing over 85% of costs."
+      }
+    ]
+  },
+  "costSharing": {
+    "statutoryFramework": "Chapter 78 (P.L. 2011, c. 78) & Chapter 44 (P.L. 2020, c. 44)",
+    "rules": [
+      {
+        "tier": "Municipal Staff & Police (Chapter 78 Tier 4 Grid)",
+        "employeeContribution": "10% to 35% of premium based on salary",
+        "taxpayerContribution": "65% to 90% of total family premium ($24,000 - $32,000/yr subsidy)",
+        "note": "For an employee with a $35,000 family health plan, Wayne Township taxpayers subsidize ~$24,500+ every year."
+      },
+      {
+        "tier": "School District Faculty & Staff (Chapter 44 NJEHP)",
+        "employeeContribution": "1.7% to 7.2% of base salary",
+        "taxpayerContribution": "80% to 92% of total family premium",
+        "note": "Because employee share is tied to salary rather than premium cost, 100% of health insurance rate hikes fall on the property tax levy."
+      }
+    ]
+  },
+  "retirementAndLeaveBenefits": [
+    {
+      "benefitName": "Post-Retirement Medical Coverage (25-Year Service Rule)",
+      "legalAuthority": "N.J.S.A. 40A:10-23 & Union Contracts",
+      "taxpayerImpact": "Multi-million dollar ongoing retiree health expenditure",
+      "details": "Employees retiring with 25+ years of pensionable service receive employer-paid health benefits in retirement."
+    },
+    {
+      "benefitName": "Unused Sick & Vacation Leave Retirement Payouts",
+      "legalAuthority": "N.J.S.A. 11A:6-19.2 & Labor Agreements",
+      "taxpayerImpact": "Lump-sum retirement payouts funded from budget reserves",
+      "details": "Grandfathered veteran employees retain contractual rights to cash out accumulated unused sick and vacation days upon retirement."
+    }
+  ]
+}

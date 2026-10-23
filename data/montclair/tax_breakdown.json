@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "certifiedDate": "Certified for Tax Year 2026 by Essex County Board of Taxation",
+    "dataVintage": "2026 Certified Rates",
+    "sourceAgency": "Essex County Board of Taxation & Montclair Township Tax Collector",
+    "freshnessStatus": "Current & Certified"
+  },
+  "location": "Montclair Township, Essex County, New Jersey",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.766,
+  "ratePerHundredDollars": 3.766,
+  "effectiveTaxRateMarketValue": "2.580%",
+  "averageResidentialAssessment": 616500,
+  "averageTaxBill": 23217.39,
+  "breakdown": [
+    {
+      "id": "schools",
+      "entity": "Montclair Public Schools",
+      "rate": 2.154,
+      "percentage": 57.2,
+      "subtotalShare": 0.572,
+      "description": "Funds 11 public schools educating ~6,120 students, instructional programs, and special services.",
+      "annualBudgetEst": 162400000,
+      "color": "#2563eb",
+      "components": [
+        {
+          "name": "Regular Instruction & Classrooms",
+          "shareOfSchool": 0.4,
+          "description": "Teacher salaries across 11 schools, curricula, AP/STEM programs"
+        },
+        {
+          "name": "Employee Health & Pension Benefits",
+          "shareOfSchool": 0.22,
+          "description": "State medical/prescription benefits, statutory pension employer charges"
+        },
+        {
+          "name": "Special Education & Out-of-District Tuition",
+          "shareOfSchool": 0.16,
+          "description": "Specialized IEP instruction, therapy, and county vocational tuition"
+        },
+        {
+          "name": "Operations, Facilities & Plant Maintenance",
+          "shareOfSchool": 0.1,
+          "description": "School building upkeep, utilities, HVAC, and campus security"
+        },
+        {
+          "name": "Student Transportation & Busing",
+          "shareOfSchool": 0.06,
+          "description": "Contracted routes and busing across township territory"
+        },
+        {
+          "name": "Administration & Business Office",
+          "shareOfSchool": 0.04,
+          "description": "Superintendent, business office, school principals, audit, legal"
+        },
+        {
+          "name": "Student Support, Guidance & Athletics",
+          "shareOfSchool": 0.02,
+          "description": "Counseling, nursing, extracurriculars, and varsity sports"
+        }
+      ]
+    },
+    {
+      "id": "municipal",
+      "entity": "Township of Montclair (Municipal Government)",
+      "rate": 0.998,
+      "percentage": 26.5,
+      "subtotalShare": 0.265,
+      "description": "Funds local municipal operations including Police, Public Works, Parks, Sanitation, Library, and emergency services.",
+      "annualBudgetEst": 101800000,
+      "color": "#059669",
+      "subcategories": [
+        {
+          "name": "Local Municipal Purposes",
+          "rate": 0.878,
+          "percentage": 23.32
+        },
+        {
+          "name": "Municipal Library & Open Space",
+          "rate": 0.12,
+          "percentage": 3.18
+        }
+      ],
+      "components": [
+        {
+          "name": "Police Department & Public Safety",
+          "shareOfMuni": 0.3,
+          "description": "Patrol, detectives, emergency dispatch, traffic safety, and equipment"
+        },
+        {
+          "name": "Statutory Pensions (PFRS/PERS) & Health Insurance",
+          "shareOfMuni": 0.22,
+          "description": "Employer statutory retirement and group health plan contributions"
+        },
+        {
+          "name": "Department of Public Works (DPW) & Roads",
+          "shareOfMuni": 0.18,
+          "description": "Road maintenance, snow plowing, sanitation/recycling, and parks upkeep"
+        },
+        {
+          "name": "Municipal Debt Service & Capital Notes",
+          "shareOfMuni": 0.12,
+          "description": "Bond repayments, interest, infrastructure capital funds"
+        },
+        {
+          "name": "Fire Protection & EMS",
+          "shareOfMuni": 0.1,
+          "description": "Fire apparatus, volunteer stipends, hydrants, and emergency response"
+        },
+        {
+          "name": "General Administration, Legal & Finance",
+          "shareOfMuni": 0.08,
+          "description": "Mayor & Council, Business Admin, Clerk, Tax Assessor, Legal Counsel"
+        }
+      ]
+    },
+    {
+      "id": "county",
+      "entity": "Essex County Services",
+      "rate": 0.614,
+      "percentage": 16.3,
+      "subtotalShare": 0.163,
+      "description": "Apportioned share of Essex County operations, funding County Roads, Sheriff, Jail, County College, and Regional Parks.",
+      "annualBudgetEst": 680000000,
+      "color": "#d97706",
+      "components": [
+        {
+          "name": "County Law Enforcement & Sheriff",
+          "shareOfCounty": 0.28,
+          "description": "Sheriff patrols, jail, prosecutor's office, court security"
+        },
+        {
+          "name": "County Roads, Bridges & Public Works",
+          "shareOfCounty": 0.24,
+          "description": "Major thoroughfares, traffic signals, drainage, and bridge maintenance"
+        },
+        {
+          "name": "Health, Social Services & Welfare",
+          "shareOfCounty": 0.2,
+          "description": "County welfare board, public health, nursing facilities"
+        },
+        {
+          "name": "County College & Technical Schools",
+          "shareOfCounty": 0.15,
+          "description": "County College and Vocational-Technical School District funding"
+        },
+        {
+          "name": "County Parks, Open Space & Administration",
+          "shareOfCounty": 0.13,
+          "description": "Regional park system, recreation, county clerk, board of commissioners"
+        }
+      ]
+    }
+  ]
+}

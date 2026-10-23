@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "filingYear": "2025/2026 Annual Ethics Filings",
+    "sourceAgency": "NJ Department of Community Affairs (LFB/FDS) & NJ School Ethics Commission (SEC)",
+    "statutoryBasis": "N.J.S.A. 40A:9-22.1 & N.J.S.A. 18A:12-21",
+    "freshnessStatus": "Current"
+  },
+  "disclosures": [
+    {
+      "officialName": "Frank W. Cooney",
+      "publicTitle": "Mayor (Montville Township)",
+      "mandatoryFiling": "Local Government Ethics Law (N.J.S.A. 40A:9-22.1) - Annual FDS",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Private Professional Advisory / Consulting",
+          "nature": "Business Consulting",
+          "location": "Morris County, NJ",
+          "ownership": "Principal"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residence",
+          "municipality": "Montville Township, NJ",
+          "ownershipType": "Fee Simple",
+          "taxRecordLookup": "Search Morris County MOD-IV"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Montville Township (Elected Mayor)",
+        "Private consulting income"
+      ],
+      "unearnedIncomeSources": [
+        "Retirement & investment distributions"
+      ],
+      "conflictGuidance": "Must recuse from any municipal contract or PILOT redevelopment project touching personal commercial holdings in Montville Township."
+    },
+    {
+      "officialName": "Dr. Rene Rovtar",
+      "publicTitle": "Superintendent of Schools (Montville Township Public Schools)",
+      "mandatoryFiling": "School Ethics Act (N.J.S.A. 18A:12-21) - SEC Disclosure",
+      "disclosedBusinesses": [
+        {
+          "businessName": "None (Full-Time Public Educator)",
+          "nature": "Public Education",
+          "location": "Montville Township, NJ",
+          "ownership": "N/A"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residence",
+          "municipality": "New Jersey",
+          "ownershipType": "Fee Simple",
+          "taxRecordLookup": "Filed with School Ethics Commission"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Montville Township Public Schools (Superintendent Salary)"
+      ],
+      "unearnedIncomeSources": [
+        "TPAF Pension credits & personal savings"
+      ],
+      "conflictGuidance": "Prohibited from holding financial interests in textbook, transportation, or educational software vendors under district contract."
+    }
+  ]
+}

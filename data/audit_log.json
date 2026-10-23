@@ -1,9 +1,10 @@
 {
-  "lastRun": "2026-10-19 11:29:13 UTC",
-  "date": "2026-10-19",
+  "lastRun": "2026-10-23 16:21:40 UTC",
+  "date": "2026-10-23",
   "allDatasetsValid": true,
   "municipalities": {
     "clifton": {
+      "name": "Clifton",
       "certifiedTaxRate": "6.527%",
       "totalSampledProperties": 1850,
       "allValid": true,
@@ -139,7 +140,552 @@
       }
     },
     "parsippany": {
+      "name": "Parsippany-Troy Hills",
       "certifiedTaxRate": "3.550%",
+      "totalSampledProperties": 1850,
+      "allValid": true,
+      "datasetAudit": {
+        "tax_breakdown.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "location",
+            "taxYear",
+            "certifiedTotalRate",
+            "ratePerHundredDollars",
+            "effectiveTaxRateMarketValue",
+            "averageResidentialAssessment",
+            "averageTaxBill",
+            "breakdown"
+          ]
+        },
+        "boe_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "enrollment",
+            "perPupilSpending",
+            "schoolsCount",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "municipal_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "population",
+            "governmentType",
+            "fullTimeEmployees",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "benefits_healthcare.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "overview",
+            "healthcarePlans",
+            "costSharing",
+            "retirementAndLeaveBenefits"
+          ]
+        },
+        "ethics_controversies.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "controversies"
+          ]
+        },
+        "ethics_disclosures.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "disclosures"
+          ]
+        },
+        "staff_directory.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "staff"
+          ]
+        },
+        "vendors_spending.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "vendors"
+          ]
+        },
+        "demographics_taxes.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "cityOverview",
+            "zipCodeComparison",
+            "neighborhoods",
+            "familyChildDemographics",
+            "equityAnalysis"
+          ]
+        },
+        "surrounding_towns_comparison.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "summaryAnalysis",
+            "towns",
+            "comparativeKeyFindings"
+          ]
+        },
+        "property_assessments.json": {
+          "valid": true,
+          "recordCount": 1850,
+          "calculationDiscrepancies": 0
+        },
+        "commercial_pilot_shift.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "ratableShift",
+            "pilotMechanism",
+            "taxAppeals",
+            "taxpayerSolutions"
+          ]
+        },
+        "fair_tax_scenarios.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "fairnessDiagnosis",
+            "presetScenarios",
+            "neighborhoodEquityImpact",
+            "sampleHomeProfiles",
+            "policyRoadmap"
+          ]
+        }
+      }
+    },
+    "wayne": {
+      "name": "Wayne Township",
+      "certifiedTaxRate": "2.748%",
+      "totalSampledProperties": 1850,
+      "allValid": true,
+      "datasetAudit": {
+        "tax_breakdown.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "location",
+            "taxYear",
+            "certifiedTotalRate",
+            "ratePerHundredDollars",
+            "effectiveTaxRateMarketValue",
+            "averageResidentialAssessment",
+            "averageTaxBill",
+            "breakdown"
+          ]
+        },
+        "boe_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "enrollment",
+            "perPupilSpending",
+            "schoolsCount",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "municipal_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "population",
+            "governmentType",
+            "fullTimeEmployees",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "benefits_healthcare.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "overview",
+            "healthcarePlans",
+            "costSharing",
+            "retirementAndLeaveBenefits"
+          ]
+        },
+        "ethics_controversies.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "controversies"
+          ]
+        },
+        "ethics_disclosures.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "disclosures"
+          ]
+        },
+        "staff_directory.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "staff"
+          ]
+        },
+        "vendors_spending.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "vendors"
+          ]
+        },
+        "demographics_taxes.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "cityOverview",
+            "zipCodeComparison",
+            "neighborhoods",
+            "familyChildDemographics",
+            "equityAnalysis"
+          ]
+        },
+        "surrounding_towns_comparison.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "summaryAnalysis",
+            "towns",
+            "comparativeKeyFindings"
+          ]
+        },
+        "property_assessments.json": {
+          "valid": true,
+          "recordCount": 1850,
+          "calculationDiscrepancies": 0
+        },
+        "commercial_pilot_shift.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "ratableShift",
+            "pilotMechanism",
+            "taxAppeals",
+            "taxpayerSolutions"
+          ]
+        },
+        "fair_tax_scenarios.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "fairnessDiagnosis",
+            "presetScenarios",
+            "neighborhoodEquityImpact",
+            "sampleHomeProfiles",
+            "policyRoadmap"
+          ]
+        }
+      }
+    },
+    "montclair": {
+      "name": "Montclair Township",
+      "certifiedTaxRate": "3.766%",
+      "totalSampledProperties": 1850,
+      "allValid": true,
+      "datasetAudit": {
+        "tax_breakdown.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "location",
+            "taxYear",
+            "certifiedTotalRate",
+            "ratePerHundredDollars",
+            "effectiveTaxRateMarketValue",
+            "averageResidentialAssessment",
+            "averageTaxBill",
+            "breakdown"
+          ]
+        },
+        "boe_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "enrollment",
+            "perPupilSpending",
+            "schoolsCount",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "municipal_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "population",
+            "governmentType",
+            "fullTimeEmployees",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "benefits_healthcare.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "overview",
+            "healthcarePlans",
+            "costSharing",
+            "retirementAndLeaveBenefits"
+          ]
+        },
+        "ethics_controversies.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "controversies"
+          ]
+        },
+        "ethics_disclosures.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "disclosures"
+          ]
+        },
+        "staff_directory.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "staff"
+          ]
+        },
+        "vendors_spending.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "vendors"
+          ]
+        },
+        "demographics_taxes.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "cityOverview",
+            "zipCodeComparison",
+            "neighborhoods",
+            "familyChildDemographics",
+            "equityAnalysis"
+          ]
+        },
+        "surrounding_towns_comparison.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "summaryAnalysis",
+            "towns",
+            "comparativeKeyFindings"
+          ]
+        },
+        "property_assessments.json": {
+          "valid": true,
+          "recordCount": 1850,
+          "calculationDiscrepancies": 0
+        },
+        "commercial_pilot_shift.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "ratableShift",
+            "pilotMechanism",
+            "taxAppeals",
+            "taxpayerSolutions"
+          ]
+        },
+        "fair_tax_scenarios.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "fairnessDiagnosis",
+            "presetScenarios",
+            "neighborhoodEquityImpact",
+            "sampleHomeProfiles",
+            "policyRoadmap"
+          ]
+        }
+      }
+    },
+    "morristown": {
+      "name": "Town of Morristown",
+      "certifiedTaxRate": "2.285%",
+      "totalSampledProperties": 1850,
+      "allValid": true,
+      "datasetAudit": {
+        "tax_breakdown.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "location",
+            "taxYear",
+            "certifiedTotalRate",
+            "ratePerHundredDollars",
+            "effectiveTaxRateMarketValue",
+            "averageResidentialAssessment",
+            "averageTaxBill",
+            "breakdown"
+          ]
+        },
+        "boe_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "enrollment",
+            "perPupilSpending",
+            "schoolsCount",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "municipal_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "population",
+            "governmentType",
+            "fullTimeEmployees",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "benefits_healthcare.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "overview",
+            "healthcarePlans",
+            "costSharing",
+            "retirementAndLeaveBenefits"
+          ]
+        },
+        "ethics_controversies.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "controversies"
+          ]
+        },
+        "ethics_disclosures.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "disclosures"
+          ]
+        },
+        "staff_directory.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "staff"
+          ]
+        },
+        "vendors_spending.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "vendors"
+          ]
+        },
+        "demographics_taxes.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "cityOverview",
+            "zipCodeComparison",
+            "neighborhoods",
+            "familyChildDemographics",
+            "equityAnalysis"
+          ]
+        },
+        "surrounding_towns_comparison.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "summaryAnalysis",
+            "towns",
+            "comparativeKeyFindings"
+          ]
+        },
+        "property_assessments.json": {
+          "valid": true,
+          "recordCount": 1850,
+          "calculationDiscrepancies": 0
+        },
+        "commercial_pilot_shift.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "ratableShift",
+            "pilotMechanism",
+            "taxAppeals",
+            "taxpayerSolutions"
+          ]
+        },
+        "fair_tax_scenarios.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "fairnessDiagnosis",
+            "presetScenarios",
+            "neighborhoodEquityImpact",
+            "sampleHomeProfiles",
+            "policyRoadmap"
+          ]
+        }
+      }
+    },
+    "montville": {
+      "name": "Montville Township",
+      "certifiedTaxRate": "2.492%",
       "totalSampledProperties": 1850,
       "allValid": true,
       "datasetAudit": {
@@ -308,6 +854,12 @@
     {
       "name": "Morris County Board of Taxation",
       "url": "https://www.morriscountynj.gov/Departments/Taxation",
+      "status": "ONLINE_HTTP_CODE",
+      "code": 404
+    },
+    {
+      "name": "Essex County Board of Taxation",
+      "url": "https://www.essexcountynj.org/board-of-taxation/",
       "status": "ONLINE_HTTP_CODE",
       "code": 404
     }

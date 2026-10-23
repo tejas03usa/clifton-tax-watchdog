@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
+    "sourceAgency": "NJ Department of Community Affairs (DLGS) & Town of Morristown Finance Department",
+    "dataVintage": "Certified CY 2026 Municipal Budget",
+    "freshnessStatus": "Current"
+  },
+  "entity": "Town of Morristown (Municipal Government)",
+  "county": "Morris County",
+  "fiscalYear": "2026",
+  "totalBudget": 48200000,
+  "population": 20380,
+  "governmentType": "Faulkner Act Mayor-Council",
+  "fullTimeEmployees": 285,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax for Municipal Purposes",
+      "amount": 33740000,
+      "percentage": 70.0,
+      "description": "Portion paid on quarterly property tax bills by Town of Morristown property owners"
+    },
+    {
+      "source": "PILOT Service Charges & Commercial Fees",
+      "amount": 8450000,
+      "percentage": 17.5,
+      "description": "Annual service charges from commercial & apartment PILOT agreements in Town of Morristown"
+    },
+    {
+      "source": "State Aid (Energy Tax Receipts)",
+      "amount": 3374000,
+      "percentage": 7.0,
+      "description": "Direct state formula aid distributed by NJ Department of Community Affairs"
+    },
+    {
+      "source": "Local Fees, Permits, Municipal Court & Surplus",
+      "amount": 7230000,
+      "percentage": 15.0,
+      "description": "Construction UCC code permits, court fines, health licenses, and fund balance reserves"
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Town of Morristown Police Department & Dispatch",
+      "amount": 13496000,
+      "percentage": 28.0,
+      "details": "Salaries for sworn police officers, patrol division, detectives, 911 dispatch, and vehicles."
+    },
+    {
+      "category": "Employee Health Benefits & Risk Insurance",
+      "amount": 7712000,
+      "percentage": 16.0,
+      "details": "Medical, prescription, and dental coverage for active and retired municipal employees."
+    },
+    {
+      "category": "Department of Public Works (Streets, Sanitation & Parks)",
+      "amount": 8676000,
+      "percentage": 18.0,
+      "details": "Road resurfacing, snow plowing, garbage/recycling collection, and township park maintenance."
+    },
+    {
+      "category": "Statutory Pensions (PFRS & PERS)",
+      "amount": 5784000,
+      "percentage": 12.0,
+      "details": "Mandatory employer pension billings from the State of New Jersey."
+    },
+    {
+      "category": "Municipal Debt Service (Bonds & BANS)",
+      "amount": 5302000,
+      "percentage": 11.0,
+      "details": "Principal and interest payments on capital improvement and infrastructure bonds."
+    },
+    {
+      "category": "General Government, Administration & Legal",
+      "amount": 3856000,
+      "percentage": 8.0,
+      "details": "Mayor, Council, Township Clerk, CFO, Tax Assessor, and legal defense counsel."
+    },
+    {
+      "category": "Public Library & Recreation Services",
+      "amount": 3374000,
+      "percentage": 7.0,
+      "details": "Public library operations, senior citizen services, and municipal recreation."
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "certifiedYear": 2026,
+    "freshnessStatus": "Current & Certified"
+  },
+  "ratableShift": {
+    "totalNetValuationTaxable": 5475552828,
+    "currentShare": {
+      "residentialPercent": 56.4,
+      "commercialPercent": 43.6
+    },
+    "historicalTrend": [
+      {
+        "year": 1995,
+        "residentialShare": 38.4,
+        "commercialIndustrialShare": 61.6,
+        "notes": "Peak commercial/industrial era before office downsizing and tax appeals."
+      },
+      {
+        "year": 2005,
+        "residentialShare": 44.4,
+        "commercialIndustrialShare": 55.6,
+        "notes": "Suburban retail transitions and corporate consolidations."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 50.4,
+        "commercialIndustrialShare": 49.6,
+        "notes": "Post-recession office vacancies and commercial tax appeals."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 56.4,
+        "commercialIndustrialShare": 43.6,
+        "notes": "Current certified tax roll: homeowners shoulder 56.4% of the property tax check."
+      }
+    ],
+    "annualShiftDollarImpact": 24500000,
+    "averageHomeownerExtraCost": 1450.0
+  },
+  "pilotMechanism": {
+    "statute": "New Jersey Long Term Tax Exemption Law (N.J.S.A. 40A:20)",
+    "statutoryDistribution": {
+      "cityHallShare": 95.0,
+      "countyShare": 5.0,
+      "schoolBoardShare": 0.0
+    },
+    "pilotExplanation": "In Town of Morristown, 30-year PILOT agreements pay an Annual Service Charge to Town Hall (95%) and the County (5%), while the public schools receive $0 statutory allocation.",
+    "sampleProjects": [
+      {
+        "id": "morristown-redevelopment-1",
+        "name": "M Station (Deloitte & Sanofi HQ) (350 Units)",
+        "category": "Mixed-Use Multi-Family PILOT",
+        "location": "Main Redevelopment Corridor, Town of Morristown, NJ",
+        "units": 350,
+        "estimatedMarketValue": 125000000,
+        "assessedValueEquivalent": 106375000,
+        "standardTotalTax": 2430668,
+        "standardSchoolShare": 1332006,
+        "standardCityShare": 823996,
+        "standardCountyShare": 274665,
+        "pilotServiceCharge": 1336867,
+        "pilotCityKeeps": 1270024,
+        "pilotCountyGets": 66843,
+        "pilotSchoolGets": 0,
+        "developerAnnualSavings": 1093800,
+        "estimatedDistrictStudents": 55,
+        "annualDistrictCostGenerated": 1254000,
+        "homeownerBurdenAbsorbed": 1254000
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "M Station (Deloitte & Sanofi HQ)",
+        "location": "Commercial Corridor, Town of Morristown",
+        "type": "Premier Regional Commercial Center",
+        "assessedValue": 88500000,
+        "marketValueEst": 103995299,
+        "annualTaxPaid": 2022225,
+        "appealRisk": "Moderate (Retail & Commercial Market Shifts)"
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandatory 50% PILOT School Revenue-Sharing in Town of Morristown",
+      "proposal": "Enact a municipal ordinance transferring at least 50% of residential PILOT service charges directly to Morris School District (Regional K-12).",
+      "benefit": "Prevents single-family homeowners from paying 100% of the educational cost for new apartment complexes."
+    },
+    {
+      "title": "Commercial Ratable Modernization & Retention",
+      "proposal": "Rezone vacant commercial corridors for high-value research, medical, and technology ratables that generate property taxes with zero school enrollment load.",
+      "benefit": "Restores commercial ratable share from 43.6% toward 35%, cutting residential taxes."
+    }
+  ]
+}

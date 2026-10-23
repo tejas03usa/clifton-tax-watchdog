@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "sources": [
+      "U.S. Census Bureau ACS 5-Year Data Profiles",
+      "Morris County Board of Taxation",
+      "NJ Department of Education"
+    ],
+    "certifiedTaxRate": 2.285,
+    "equalizationRatio": 0.851,
+    "freshnessStatus": "Current"
+  },
+  "cityOverview": {
+    "municipality": "Town of Morristown",
+    "county": "Morris County",
+    "totalPopulation": 20380,
+    "totalHousingUnits": 7838,
+    "medianHouseholdIncome": 119500,
+    "perCapitaIncome": 57360,
+    "medianAge": 42.2,
+    "povertyRate": 4.2,
+    "ownerOccupiedRate": 42.5,
+    "renterOccupiedRate": 57.5,
+    "foreignBornPercentage": 22.4,
+    "averageResidentialAssessment": 578680,
+    "averageEstimatedMarketValue": 680000,
+    "averageAnnualTaxBill": 13222.84
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07960",
+      "areaName": "Town of Morristown Primary Corridor",
+      "neighborhoodsIncluded": "Town of Morristown Central, North, South, and Hill sections",
+      "population": 20380,
+      "populationShare": 100.0,
+      "medianHouseholdIncome": 119500,
+      "perCapitaIncome": 57360,
+      "medianAge": 42.2,
+      "ownerOccupiedPercent": 42.5,
+      "renterOccupiedPercent": 57.5,
+      "averageAssessment": 578680,
+      "averageMarketValue": 680000,
+      "averageAnnualTaxBill": 13222.84,
+      "monthlyTaxBill": 1101.9,
+      "taxBurdenPercentOfIncome": 11.07,
+      "shareOfTotalTaxBase": 100.0,
+      "totalResidentialLevyContribution": 72182539,
+      "schoolEnrollmentShare": 100.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 68.5,
+        "asian": 14.2,
+        "hispanicOrLatino": 11.5,
+        "blackOrAfricanAmerican": 4.5,
+        "other": 1.3
+      },
+      "keyFindings": [
+        "Homeowners fund 56.4% of the total property tax levy in Town of Morristown.",
+        "Average annual property tax check is $13,222.84, representing 11.1% of median household income.",
+        "Public school district receives 54.8% of every property tax dollar paid by residents."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Town of Morristown Central & Historic Core",
+      "zip": "07960",
+      "character": "Suburban neighborhoods, parks, and downtown corridor",
+      "medianIncome": 119500,
+      "medianAge": 42.2,
+      "avgAssessment": 578680,
+      "avgMarketValue": 680000,
+      "avgTaxBill": 13222.84,
+      "taxBurdenPercentIncome": 11.07,
+      "ownerOccupied": 42.5,
+      "description": "Established residential neighborhoods across Town of Morristown with schools, parks, and community amenities.",
+      "taxDynamic": "Carries the primary residential tax base for the municipal government and Morris School District (Regional K-12)."
+    }
+  ],
+  "familyChildDemographics": {
+    "citywide": {
+      "totalHouseholds": 7838,
+      "householdsWithChildrenUnder18": 2743,
+      "householdsWithChildrenPercent": 35.0,
+      "totalSchoolAgeChildren": 6390,
+      "enrolledPublicSchools": 5740,
+      "enrolledPublicPercent": 88.0,
+      "privateOrParochialStudents": 650
+    },
+    "zipBreakdown": [
+      {
+        "zip": "07960",
+        "area": "Town of Morristown District",
+        "households": 7838,
+        "householdsWithChildrenPercent": 35.0,
+        "schoolAgeChildren": 6390,
+        "districtStudentsSent": 5740,
+        "districtStudentsPercent": 100.0,
+        "residentialTaxSharePaid": 100.0,
+        "ratioStudentsToTaxes": 1.0,
+        "subsidyStatus": "Balanced District",
+        "keyDriver": "Municipal-wide enrollment across 10 district schools.",
+        "primaryFeeder": "Elementary Schools \u2794 Middle Schools \u2794 Town of Morristown High Schools"
+      }
+    ],
+    "schools": [
+      {
+        "name": "Town of Morristown High School",
+        "type": "High School",
+        "grades": "9-12",
+        "address": "100 High School Dr, Town of Morristown, NJ",
+        "neighborhood": "Central",
+        "enrollment": 1722,
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "11.5:1",
+        "economicallyDisadvantagedPercent": 12.0,
+        "multilingualLearnersPercent": 4.5,
+        "feederMiddle": "Receives from Town of Morristown Middle Schools",
+        "notes": "Flagship secondary school offering comprehensive AP, honors, arts, and athletics."
+      },
+      {
+        "name": "Town of Morristown Middle School",
+        "type": "Middle School",
+        "grades": "6-8",
+        "address": "200 Middle School Way, Town of Morristown, NJ",
+        "neighborhood": "Central",
+        "enrollment": 1435,
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.5,
+        "multilingualLearnersPercent": 5.0,
+        "feederMiddle": "Feeds into Town of Morristown High School",
+        "notes": "Grades 6-8 middle school program with STEM and world languages."
+      },
+      {
+        "name": "Town of Morristown Community Elementary School",
+        "type": "Elementary",
+        "grades": "K-5",
+        "address": "300 School Lane, Town of Morristown, NJ",
+        "neighborhood": "Neighborhood Elementary",
+        "enrollment": 861,
+        "familiesWithKidsPercentInZone": 36.5,
+        "studentTeacherRatio": "11.0:1",
+        "economicallyDisadvantagedPercent": 14.0,
+        "multilingualLearnersPercent": 5.5,
+        "feederMiddle": "Town of Morristown Middle School",
+        "notes": "Neighborhood elementary school with early childhood and literacy programs."
+      }
+    ]
+  },
+  "equityAnalysis": {
+    "keyTakeaways": [
+      {
+        "title": "Why Schools Take 54.8% of Every Tax Check in Town of Morristown",
+        "detail": "Because Town of Morristown is classified as an affluent suburban district under NJ SFRA school aid formulas, State Aid covers roughly 10% of educational spending. Local property taxpayers must fund the remaining ~90%."
+      },
+      {
+        "title": "Commercial Ratable Retention vs. PILOT Burdens",
+        "detail": "Commercial ratables represent 43.6% of Town of Morristown's tax base. Protecting business ratables while ensuring that new luxury developments pay their fair share to the school district is the central taxpayer challenge."
+      }
+    ]
+  }
+}

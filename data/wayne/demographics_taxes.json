@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "sources": [
+      "U.S. Census Bureau ACS 5-Year Data Profiles",
+      "Passaic County Board of Taxation",
+      "NJ Department of Education"
+    ],
+    "certifiedTaxRate": 2.748,
+    "equalizationRatio": 0.804,
+    "freshnessStatus": "Current"
+  },
+  "cityOverview": {
+    "municipality": "Wayne Township",
+    "county": "Passaic County",
+    "totalPopulation": 54800,
+    "totalHousingUnits": 21076,
+    "medianHouseholdIncome": 138600,
+    "perCapitaIncome": 66528,
+    "medianAge": 42.2,
+    "povertyRate": 4.2,
+    "ownerOccupiedRate": 74.5,
+    "renterOccupiedRate": 25.5,
+    "foreignBornPercentage": 22.4,
+    "averageResidentialAssessment": 482000,
+    "averageEstimatedMarketValue": 599500,
+    "averageAnnualTaxBill": 13245.36
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07470",
+      "areaName": "Wayne Township Primary Corridor",
+      "neighborhoodsIncluded": "Wayne Township Central, North, South, and Hill sections",
+      "population": 54800,
+      "populationShare": 100.0,
+      "medianHouseholdIncome": 138600,
+      "perCapitaIncome": 66528,
+      "medianAge": 42.2,
+      "ownerOccupiedPercent": 74.5,
+      "renterOccupiedPercent": 25.5,
+      "averageAssessment": 482000,
+      "averageMarketValue": 599500,
+      "averageAnnualTaxBill": 13245.36,
+      "monthlyTaxBill": 1103.78,
+      "taxBurdenPercentOfIncome": 9.56,
+      "shareOfTotalTaxBase": 100.0,
+      "totalResidentialLevyContribution": 194422962,
+      "schoolEnrollmentShare": 100.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 68.5,
+        "asian": 14.2,
+        "hispanicOrLatino": 11.5,
+        "blackOrAfricanAmerican": 4.5,
+        "other": 1.3
+      },
+      "keyFindings": [
+        "Homeowners fund 74.5% of the total property tax levy in Wayne Township.",
+        "Average annual property tax check is $13,245.36, representing 9.6% of median household income.",
+        "Public school district receives 58.4% of every property tax dollar paid by residents."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Wayne Township Central & Historic Core",
+      "zip": "07470",
+      "character": "Suburban neighborhoods, parks, and downtown corridor",
+      "medianIncome": 138600,
+      "medianAge": 42.2,
+      "avgAssessment": 482000,
+      "avgMarketValue": 599500,
+      "avgTaxBill": 13245.36,
+      "taxBurdenPercentIncome": 9.56,
+      "ownerOccupied": 74.5,
+      "description": "Established residential neighborhoods across Wayne Township with schools, parks, and community amenities.",
+      "taxDynamic": "Carries the primary residential tax base for the municipal government and Wayne Township Public Schools."
+    }
+  ],
+  "familyChildDemographics": {
+    "citywide": {
+      "totalHouseholds": 21076,
+      "householdsWithChildrenUnder18": 7376,
+      "householdsWithChildrenPercent": 35.0,
+      "totalSchoolAgeChildren": 8170,
+      "enrolledPublicSchools": 7520,
+      "enrolledPublicPercent": 88.0,
+      "privateOrParochialStudents": 650
+    },
+    "zipBreakdown": [
+      {
+        "zip": "07470",
+        "area": "Wayne Township District",
+        "households": 21076,
+        "householdsWithChildrenPercent": 35.0,
+        "schoolAgeChildren": 8170,
+        "districtStudentsSent": 7520,
+        "districtStudentsPercent": 100.0,
+        "residentialTaxSharePaid": 100.0,
+        "ratioStudentsToTaxes": 1.0,
+        "subsidyStatus": "Balanced District",
+        "keyDriver": "Municipal-wide enrollment across 14 district schools.",
+        "primaryFeeder": "Elementary Schools \u2794 Middle Schools \u2794 Wayne Township High Schools"
+      }
+    ],
+    "schools": [
+      {
+        "name": "Wayne Township High School",
+        "type": "High School",
+        "grades": "9-12",
+        "address": "100 High School Dr, Wayne Township, NJ",
+        "neighborhood": "Central",
+        "enrollment": 2256,
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "11.5:1",
+        "economicallyDisadvantagedPercent": 12.0,
+        "multilingualLearnersPercent": 4.5,
+        "feederMiddle": "Receives from Wayne Township Middle Schools",
+        "notes": "Flagship secondary school offering comprehensive AP, honors, arts, and athletics."
+      },
+      {
+        "name": "Wayne Township Middle School",
+        "type": "Middle School",
+        "grades": "6-8",
+        "address": "200 Middle School Way, Wayne Township, NJ",
+        "neighborhood": "Central",
+        "enrollment": 1880,
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.5,
+        "multilingualLearnersPercent": 5.0,
+        "feederMiddle": "Feeds into Wayne Township High School",
+        "notes": "Grades 6-8 middle school program with STEM and world languages."
+      },
+      {
+        "name": "Wayne Township Community Elementary School",
+        "type": "Elementary",
+        "grades": "K-5",
+        "address": "300 School Lane, Wayne Township, NJ",
+        "neighborhood": "Neighborhood Elementary",
+        "enrollment": 1128,
+        "familiesWithKidsPercentInZone": 36.5,
+        "studentTeacherRatio": "11.0:1",
+        "economicallyDisadvantagedPercent": 14.0,
+        "multilingualLearnersPercent": 5.5,
+        "feederMiddle": "Wayne Township Middle School",
+        "notes": "Neighborhood elementary school with early childhood and literacy programs."
+      }
+    ]
+  },
+  "equityAnalysis": {
+    "keyTakeaways": [
+      {
+        "title": "Why Schools Take 58.4% of Every Tax Check in Wayne Township",
+        "detail": "Because Wayne Township is classified as an affluent suburban district under NJ SFRA school aid formulas, State Aid covers roughly 10% of educational spending. Local property taxpayers must fund the remaining ~90%."
+      },
+      {
+        "title": "Commercial Ratable Retention vs. PILOT Burdens",
+        "detail": "Commercial ratables represent 25.5% of Wayne Township's tax base. Protecting business ratables while ensuring that new luxury developments pay their fair share to the school district is the central taxpayer challenge."
+      }
+    ]
+  }
+}

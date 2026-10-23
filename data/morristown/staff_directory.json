@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "payrollCycle": "FY 2025-2026 Active Contracts & Salary Guides",
+    "sourceAgency": "Town of Morristown Salary Ordinances & Morris School District (Regional K-12) Public Filings",
+    "freshnessStatus": "Current"
+  },
+  "staff": [
+    {
+      "name": "Dr. Anne Mucci",
+      "title": "Superintendent of Schools",
+      "entity": "Morris School District (Regional K-12)",
+      "department": "Central Administration",
+      "type": "Executive Contract",
+      "salaryReported": 235000,
+      "salaryRange": "$220,000 - $245,000",
+      "notes": "Chief School Administrator overseeing 10 schools and $136.5M budget."
+    },
+    {
+      "name": "Darnell Richardson",
+      "title": "Chief of Police",
+      "entity": "Town of Morristown (Municipal Government)",
+      "department": "Police Department",
+      "type": "Sworn Executive",
+      "salaryReported": 220000,
+      "salaryRange": "$205,000 - $230,000",
+      "notes": "Commands sworn officers, patrol division, and emergency operations across Town of Morristown."
+    },
+    {
+      "name": "Jillian Vigliotti",
+      "title": "Business Administrator / Board Secretary",
+      "entity": "Town of Morristown (Municipal Government)",
+      "department": "Business Administration",
+      "type": "Statutory Officer",
+      "salaryReported": 192000,
+      "salaryRange": "$175,000 - $200,000",
+      "notes": "Oversees municipal/district fiscal operations, state compliance, and purchasing."
+    },
+    {
+      "name": "Tim Dougherty",
+      "title": "Mayor of Town of Morristown",
+      "entity": "Town of Morristown (Municipal Government)",
+      "department": "Executive Office",
+      "type": "Elected Executive",
+      "salaryReported": 25000,
+      "salaryRange": "Elected Executive Stipend",
+      "notes": "Elected head of Town of Morristown municipal government."
+    },
+    {
+      "name": "High School Principals",
+      "title": "High School Principals",
+      "entity": "Morris School District (Regional K-12)",
+      "department": "Secondary Administration",
+      "type": "Administrators Guide",
+      "salaryReported": 178500,
+      "salaryRange": "$160,000 - $185,000",
+      "notes": "Building leadership for high school academic and athletic programs."
+    },
+    {
+      "name": "Senior Police Patrol (Top Step)",
+      "title": "Sworn Police Officer",
+      "entity": "Town of Morristown (Municipal Government)",
+      "department": "Police Department",
+      "type": "PBA Collective Bargaining Guide",
+      "salaryReported": 136000,
+      "salaryRange": "$56,000 - $138,000",
+      "notes": "Contractual top-step patrol compensation excluding overtime and road details."
+    },
+    {
+      "name": "Senior Classroom Teacher (MA / Top Step)",
+      "title": "Tenured Teacher",
+      "entity": "Morris School District (Regional K-12)",
+      "department": "Instructional Faculty",
+      "type": "Education Association Guide",
+      "salaryReported": 104500,
+      "salaryRange": "$60,000 - $110,000",
+      "notes": "Negotiated union salary guide for veteran instructional staff."
+    }
+  ]
+}

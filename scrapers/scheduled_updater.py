@@ -22,7 +22,45 @@ import urllib.error
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
-PARSIPPANY_DATA_DIR = os.path.join(DATA_DIR, 'parsippany')
+
+MUNICIPALITIES = [
+    {
+        'id': 'clifton',
+        'name': 'Clifton',
+        'dir': DATA_DIR,
+        'expectedRate': 6.527
+    },
+    {
+        'id': 'parsippany',
+        'name': 'Parsippany-Troy Hills',
+        'dir': os.path.join(DATA_DIR, 'parsippany'),
+        'expectedRate': 3.550
+    },
+    {
+        'id': 'wayne',
+        'name': 'Wayne Township',
+        'dir': os.path.join(DATA_DIR, 'wayne'),
+        'expectedRate': 2.748
+    },
+    {
+        'id': 'montclair',
+        'name': 'Montclair Township',
+        'dir': os.path.join(DATA_DIR, 'montclair'),
+        'expectedRate': 3.766
+    },
+    {
+        'id': 'morristown',
+        'name': 'Town of Morristown',
+        'dir': os.path.join(DATA_DIR, 'morristown'),
+        'expectedRate': 2.285
+    },
+    {
+        'id': 'montville',
+        'name': 'Montville Township',
+        'dir': os.path.join(DATA_DIR, 'montville'),
+        'expectedRate': 2.492
+    }
+]
 
 OFFICIAL_PORTALS = [
     {
@@ -54,6 +92,11 @@ OFFICIAL_PORTALS = [
         'name': 'Morris County Board of Taxation',
         'url': 'https://www.morriscountynj.gov/Departments/Taxation',
         'type': 'County Tax Board (Morris)'
+    },
+    {
+        'name': 'Essex County Board of Taxation',
+        'url': 'https://www.essexcountynj.org/board-of-taxation/',
+        'type': 'County Tax Board (Essex)'
     }
 ]
 
@@ -136,15 +179,24 @@ def main():
             'code': status.get('code')
         })
 
-    # 2. Audit local dataset integrity for both Clifton and Parsippany
-    print("\n[2/3] Auditing JSON dataset integrity for Clifton & Parsippany...")
-    clifton_health = audit_directory_integrity(DATA_DIR, 6.527)
-    parsippany_health = audit_directory_integrity(PARSIPPANY_DATA_DIR, 3.550)
-    clifton_valid = all(v.get('valid') for v in clifton_health.values())
-    parsippany_valid = all(v.get('valid') for v in parsippany_health.values())
-    all_valid = clifton_valid and parsippany_valid
-    print(f"  • Clifton ({len(DATA_FILES)} datasets): valid={clifton_valid}")
-    print(f"  • Parsippany ({len(DATA_FILES)} datasets): valid={parsippany_valid}")
+    # 2. Audit local dataset integrity across all 6 municipalities
+    print(f"\n[2/3] Auditing JSON dataset integrity across {len(MUNICIPALITIES)} municipalities...")
+    muni_health_records = {}
+    all_valid = True
+
+    for m in MUNICIPALITIES:
+        health = audit_directory_integrity(m['dir'], m['expectedRate'])
+        is_valid = all(v.get('valid') for v in health.values())
+        if not is_valid:
+            all_valid = False
+        print(f"  • {m['name']} ({len(DATA_FILES)} datasets): valid={is_valid} (Rate: {m['expectedRate']}%)")
+        muni_health_records[m['id']] = {
+            'name': m['name'],
+            'certifiedTaxRate': f"{m['expectedRate']:.3f}%",
+            'totalSampledProperties': 1850,
+            'allValid': is_valid,
+            'datasetAudit': health
+        }
 
     # 3. Write automated health check and update verification timestamp
     print("\n[3/3] Recording audit log & updating verification status...")
@@ -152,20 +204,7 @@ def main():
         'lastRun': now_iso,
         'date': date_str,
         'allDatasetsValid': all_valid,
-        'municipalities': {
-            'clifton': {
-                'certifiedTaxRate': '6.527%',
-                'totalSampledProperties': 1850,
-                'allValid': clifton_valid,
-                'datasetAudit': clifton_health
-            },
-            'parsippany': {
-                'certifiedTaxRate': '3.550%',
-                'totalSampledProperties': 1850,
-                'allValid': parsippany_valid,
-                'datasetAudit': parsippany_health
-            }
-        },
+        'municipalities': muni_health_records,
         'portalHealth': portal_statuses,
         'status': 'OPERATIONAL' if all_valid else 'DEGRADED'
     }

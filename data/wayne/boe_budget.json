@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "fiscalCycle": "FY 2025-2026 Adopted / User-Friendly Budget",
+    "sourceAgency": "NJ Department of Education & Wayne Township Public Schools Business Office",
+    "dataVintage": "Certified FY 2025-2026 Budget",
+    "freshnessStatus": "Current"
+  },
+  "entity": "Wayne Township Public Schools",
+  "county": "Passaic County",
+  "fiscalYear": "2025-2026",
+  "totalBudget": 186200000,
+  "enrollment": 7520,
+  "perPupilSpending": 21900,
+  "schoolsCount": 14,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 158270000,
+      "percentage": 85.0,
+      "description": "Portion paid directly by Wayne Township residential and commercial property owners (58.4% of your tax bill)"
+    },
+    {
+      "source": "State Education Aid (Equalization & Categorical)",
+      "amount": 20482000,
+      "percentage": 11.0,
+      "description": "State of New Jersey formula aid covering special education, transit, and security"
+    },
+    {
+      "source": "Surplus / Fund Balance & Federal Grants",
+      "amount": 7448000,
+      "percentage": 4.0,
+      "description": "Audited prior-year fund balance, tuition, and IDEA federal grants"
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Regular Instructional Programs (14 Schools)",
+      "amount": 70756000,
+      "percentage": 38.0,
+      "details": "Classroom teacher compensation, textbook adoptions, and curriculum materials across all 14 district schools."
+    },
+    {
+      "category": "Employee Health Benefits & Statutory Insurance",
+      "amount": 40964000,
+      "percentage": 22.0,
+      "details": "Medical, prescription, and dental coverage under SEHBP/NJEHP (Chapter 44), employer Social Security/FICA, and workers' compensation."
+    },
+    {
+      "category": "Special Education Programs & Related Services",
+      "amount": 29792000,
+      "percentage": 16.0,
+      "details": "In-district specialized education teachers, paraprofessional aides, speech therapy, and child study teams."
+    },
+    {
+      "category": "Plant Operations, Utilities & Security",
+      "amount": 18620000,
+      "percentage": 10.0,
+      "details": "Heating, electricity, custodial staff, and school security across 14 facilities."
+    },
+    {
+      "category": "Out-of-District Tuition & Vo-Tech",
+      "amount": 11172000,
+      "percentage": 6.0,
+      "details": "Mandated tuition for specialized external placements and Passaic County Vocational-Technical schools."
+    },
+    {
+      "category": "Student Transportation & Busing",
+      "amount": 9310000,
+      "percentage": 5.0,
+      "details": "Contracted bus routes and special education vehicle transit."
+    },
+    {
+      "category": "District Administration & Principals",
+      "amount": 5586000,
+      "percentage": 3.0,
+      "details": "Superintendent, Business Administrator, building principals, and curriculum supervisors."
+    }
+  ]
+}

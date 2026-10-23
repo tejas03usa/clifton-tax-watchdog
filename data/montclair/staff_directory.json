@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "payrollCycle": "FY 2025-2026 Active Contracts & Salary Guides",
+    "sourceAgency": "Montclair Township Salary Ordinances & Montclair Public Schools Public Filings",
+    "freshnessStatus": "Current"
+  },
+  "staff": [
+    {
+      "name": "Damein Phoenix (Interim)",
+      "title": "Superintendent of Schools",
+      "entity": "Montclair Public Schools",
+      "department": "Central Administration",
+      "type": "Executive Contract",
+      "salaryReported": 235000,
+      "salaryRange": "$220,000 - $245,000",
+      "notes": "Chief School Administrator overseeing 11 schools and $162.4M budget."
+    },
+    {
+      "name": "Todd Conforti",
+      "title": "Chief of Police",
+      "entity": "Township of Montclair (Municipal Government)",
+      "department": "Police Department",
+      "type": "Sworn Executive",
+      "salaryReported": 220000,
+      "salaryRange": "$205,000 - $230,000",
+      "notes": "Commands sworn officers, patrol division, and emergency operations across Montclair Township."
+    },
+    {
+      "name": "Michael Lapolla (Town Manager)",
+      "title": "Business Administrator / Board Secretary",
+      "entity": "Township of Montclair (Municipal Government)",
+      "department": "Business Administration",
+      "type": "Statutory Officer",
+      "salaryReported": 192000,
+      "salaryRange": "$175,000 - $200,000",
+      "notes": "Oversees municipal/district fiscal operations, state compliance, and purchasing."
+    },
+    {
+      "name": "Renee Baskerville",
+      "title": "Mayor of Montclair Township",
+      "entity": "Township of Montclair (Municipal Government)",
+      "department": "Executive Office",
+      "type": "Elected Executive",
+      "salaryReported": 25000,
+      "salaryRange": "Elected Executive Stipend",
+      "notes": "Elected head of Montclair Township municipal government."
+    },
+    {
+      "name": "High School Principals",
+      "title": "High School Principals",
+      "entity": "Montclair Public Schools",
+      "department": "Secondary Administration",
+      "type": "Administrators Guide",
+      "salaryReported": 178500,
+      "salaryRange": "$160,000 - $185,000",
+      "notes": "Building leadership for high school academic and athletic programs."
+    },
+    {
+      "name": "Senior Police Patrol (Top Step)",
+      "title": "Sworn Police Officer",
+      "entity": "Township of Montclair (Municipal Government)",
+      "department": "Police Department",
+      "type": "PBA Collective Bargaining Guide",
+      "salaryReported": 136000,
+      "salaryRange": "$56,000 - $138,000",
+      "notes": "Contractual top-step patrol compensation excluding overtime and road details."
+    },
+    {
+      "name": "Senior Classroom Teacher (MA / Top Step)",
+      "title": "Tenured Teacher",
+      "entity": "Montclair Public Schools",
+      "department": "Instructional Faculty",
+      "type": "Education Association Guide",
+      "salaryReported": 104500,
+      "salaryRange": "$60,000 - $110,000",
+      "notes": "Negotiated union salary guide for veteran instructional staff."
+    }
+  ]
+}

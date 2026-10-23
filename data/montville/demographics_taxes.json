@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "sources": [
+      "U.S. Census Bureau ACS 5-Year Data Profiles",
+      "Morris County Board of Taxation",
+      "NJ Department of Education"
+    ],
+    "certifiedTaxRate": 2.492,
+    "equalizationRatio": 0.828,
+    "freshnessStatus": "Current"
+  },
+  "cityOverview": {
+    "municipality": "Montville Township",
+    "county": "Morris County",
+    "totalPopulation": 22450,
+    "totalHousingUnits": 8634,
+    "medianHouseholdIncome": 174500,
+    "perCapitaIncome": 83760,
+    "medianAge": 42.2,
+    "povertyRate": 4.2,
+    "ownerOccupiedRate": 74.5,
+    "renterOccupiedRate": 25.5,
+    "foreignBornPercentage": 22.4,
+    "averageResidentialAssessment": 649980,
+    "averageEstimatedMarketValue": 785000,
+    "averageAnnualTaxBill": 16197.5
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07045",
+      "areaName": "Montville Township Primary Corridor",
+      "neighborhoodsIncluded": "Montville Township Central, North, South, and Hill sections",
+      "population": 22450,
+      "populationShare": 100.0,
+      "medianHouseholdIncome": 174500,
+      "perCapitaIncome": 83760,
+      "medianAge": 42.2,
+      "ownerOccupiedPercent": 74.5,
+      "renterOccupiedPercent": 25.5,
+      "averageAssessment": 649980,
+      "averageMarketValue": 785000,
+      "averageAnnualTaxBill": 16197.5,
+      "monthlyTaxBill": 1349.79,
+      "taxBurdenPercentOfIncome": 9.28,
+      "shareOfTotalTaxBase": 100.0,
+      "totalResidentialLevyContribution": 97401930,
+      "schoolEnrollmentShare": 100.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 68.5,
+        "asian": 14.2,
+        "hispanicOrLatino": 11.5,
+        "blackOrAfricanAmerican": 4.5,
+        "other": 1.3
+      },
+      "keyFindings": [
+        "Homeowners fund 84.1% of the total property tax levy in Montville Township.",
+        "Average annual property tax check is $16,197.50, representing 9.3% of median household income.",
+        "Public school district receives 66.2% of every property tax dollar paid by residents."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Montville Township Central & Historic Core",
+      "zip": "07045",
+      "character": "Suburban neighborhoods, parks, and downtown corridor",
+      "medianIncome": 174500,
+      "medianAge": 42.2,
+      "avgAssessment": 649980,
+      "avgMarketValue": 785000,
+      "avgTaxBill": 16197.5,
+      "taxBurdenPercentIncome": 9.28,
+      "ownerOccupied": 74.5,
+      "description": "Established residential neighborhoods across Montville Township with schools, parks, and community amenities.",
+      "taxDynamic": "Carries the primary residential tax base for the municipal government and Montville Township Public Schools."
+    }
+  ],
+  "familyChildDemographics": {
+    "citywide": {
+      "totalHouseholds": 8634,
+      "householdsWithChildrenUnder18": 3022,
+      "householdsWithChildrenPercent": 35.0,
+      "totalSchoolAgeChildren": 4170,
+      "enrolledPublicSchools": 3520,
+      "enrolledPublicPercent": 88.0,
+      "privateOrParochialStudents": 650
+    },
+    "zipBreakdown": [
+      {
+        "zip": "07045",
+        "area": "Montville Township District",
+        "households": 8634,
+        "householdsWithChildrenPercent": 35.0,
+        "schoolAgeChildren": 4170,
+        "districtStudentsSent": 3520,
+        "districtStudentsPercent": 100.0,
+        "residentialTaxSharePaid": 100.0,
+        "ratioStudentsToTaxes": 1.0,
+        "subsidyStatus": "Balanced District",
+        "keyDriver": "Municipal-wide enrollment across 7 district schools.",
+        "primaryFeeder": "Elementary Schools \u2794 Middle Schools \u2794 Montville Township High Schools"
+      }
+    ],
+    "schools": [
+      {
+        "name": "Montville Township High School",
+        "type": "High School",
+        "grades": "9-12",
+        "address": "100 High School Dr, Montville Township, NJ",
+        "neighborhood": "Central",
+        "enrollment": 1056,
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "11.5:1",
+        "economicallyDisadvantagedPercent": 12.0,
+        "multilingualLearnersPercent": 4.5,
+        "feederMiddle": "Receives from Montville Township Middle Schools",
+        "notes": "Flagship secondary school offering comprehensive AP, honors, arts, and athletics."
+      },
+      {
+        "name": "Montville Township Middle School",
+        "type": "Middle School",
+        "grades": "6-8",
+        "address": "200 Middle School Way, Montville Township, NJ",
+        "neighborhood": "Central",
+        "enrollment": 880,
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.5,
+        "multilingualLearnersPercent": 5.0,
+        "feederMiddle": "Feeds into Montville Township High School",
+        "notes": "Grades 6-8 middle school program with STEM and world languages."
+      },
+      {
+        "name": "Montville Township Community Elementary School",
+        "type": "Elementary",
+        "grades": "K-5",
+        "address": "300 School Lane, Montville Township, NJ",
+        "neighborhood": "Neighborhood Elementary",
+        "enrollment": 528,
+        "familiesWithKidsPercentInZone": 36.5,
+        "studentTeacherRatio": "11.0:1",
+        "economicallyDisadvantagedPercent": 14.0,
+        "multilingualLearnersPercent": 5.5,
+        "feederMiddle": "Montville Township Middle School",
+        "notes": "Neighborhood elementary school with early childhood and literacy programs."
+      }
+    ]
+  },
+  "equityAnalysis": {
+    "keyTakeaways": [
+      {
+        "title": "Why Schools Take 66.2% of Every Tax Check in Montville Township",
+        "detail": "Because Montville Township is classified as an affluent suburban district under NJ SFRA school aid formulas, State Aid covers roughly 10% of educational spending. Local property taxpayers must fund the remaining ~90%."
+      },
+      {
+        "title": "Commercial Ratable Retention vs. PILOT Burdens",
+        "detail": "Commercial ratables represent 15.9% of Montville Township's tax base. Protecting business ratables while ensuring that new luxury developments pay their fair share to the school district is the central taxpayer challenge."
+      }
+    ]
+  }
+}

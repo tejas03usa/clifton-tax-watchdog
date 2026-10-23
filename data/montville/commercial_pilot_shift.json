@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-23",
+    "certifiedYear": 2026,
+    "freshnessStatus": "Current & Certified"
+  },
+  "ratableShift": {
+    "totalNetValuationTaxable": 6774880821,
+    "currentShare": {
+      "residentialPercent": 84.1,
+      "commercialPercent": 15.9
+    },
+    "historicalTrend": [
+      {
+        "year": 1995,
+        "residentialShare": 66.1,
+        "commercialIndustrialShare": 33.9,
+        "notes": "Peak commercial/industrial era before office downsizing and tax appeals."
+      },
+      {
+        "year": 2005,
+        "residentialShare": 72.1,
+        "commercialIndustrialShare": 27.9,
+        "notes": "Suburban retail transitions and corporate consolidations."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 78.1,
+        "commercialIndustrialShare": 21.9,
+        "notes": "Post-recession office vacancies and commercial tax appeals."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 84.1,
+        "commercialIndustrialShare": 15.9,
+        "notes": "Current certified tax roll: homeowners shoulder 84.1% of the property tax check."
+      }
+    ],
+    "annualShiftDollarImpact": 24500000,
+    "averageHomeownerExtraCost": 1450.0
+  },
+  "pilotMechanism": {
+    "statute": "New Jersey Long Term Tax Exemption Law (N.J.S.A. 40A:20)",
+    "statutoryDistribution": {
+      "cityHallShare": 95.0,
+      "countyShare": 5.0,
+      "schoolBoardShare": 0.0
+    },
+    "pilotExplanation": "In Montville Township, 30-year PILOT agreements pay an Annual Service Charge to Town Hall (95%) and the County (5%), while the public schools receive $0 statutory allocation.",
+    "sampleProjects": [
+      {
+        "id": "montville-redevelopment-1",
+        "name": "Towaco Station (350 Units)",
+        "category": "Mixed-Use Multi-Family PILOT",
+        "location": "Main Redevelopment Corridor, Montville Township, NJ",
+        "units": 350,
+        "estimatedMarketValue": 125000000,
+        "assessedValueEquivalent": 103500000,
+        "standardTotalTax": 2579220,
+        "standardSchoolShare": 1707443,
+        "standardCityShare": 590641,
+        "standardCountyShare": 281134,
+        "pilotServiceCharge": 1418571,
+        "pilotCityKeeps": 1347642,
+        "pilotCountyGets": 70928,
+        "pilotSchoolGets": 0,
+        "developerAnnualSavings": 1160649,
+        "estimatedDistrictStudents": 55,
+        "annualDistrictCostGenerated": 1298000,
+        "homeownerBurdenAbsorbed": 1298000
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Towaco Station",
+        "location": "Commercial Corridor, Montville Township",
+        "type": "Premier Regional Commercial Center",
+        "assessedValue": 88500000,
+        "marketValueEst": 106884057,
+        "annualTaxPaid": 2205420,
+        "appealRisk": "Moderate (Retail & Commercial Market Shifts)"
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandatory 50% PILOT School Revenue-Sharing in Montville Township",
+      "proposal": "Enact a municipal ordinance transferring at least 50% of residential PILOT service charges directly to Montville Township Public Schools.",
+      "benefit": "Prevents single-family homeowners from paying 100% of the educational cost for new apartment complexes."
+    },
+    {
+      "title": "Commercial Ratable Modernization & Retention",
+      "proposal": "Rezone vacant commercial corridors for high-value research, medical, and technology ratables that generate property taxes with zero school enrollment load.",
+      "benefit": "Restores commercial ratable share from 15.9% toward 35%, cutting residential taxes."
+    }
+  ]
+}

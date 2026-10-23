@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "Montville Township Fair Tax Burden & Equalization Engine",
+    "lastUpdated": "2026-10-23",
+    "taxYear": 2026,
+    "certifiedBaseline": {
+      "equalizationRatio": 0.828,
+      "certifiedTaxRateAssessed": 2.492,
+      "certifiedTaxRateMarket": 2.063,
+      "totalTaxLevy": 149040000,
+      "schoolLevy": 83640000,
+      "municipalLevy": 21840000,
+      "countyLevy": 19440000,
+      "residentialLevySharePct": 84.1,
+      "residentialLevyTotal": 125342640,
+      "commercialLevySharePct": 15.9,
+      "commercialLevyTotal": 23697360,
+      "averageResidentialAssessment": 649980,
+      "averageResidentialMarketValue": 785000,
+      "averageResidentialTaxBill": 16197.5,
+      "totalResidentialParcels": 8017,
+      "totalCommercialParcels": 950,
+      "annualPilotRevenueCollected": 1950000,
+      "pilotShareToSchoolsPct": 0.0
+    }
+  },
+  "fairnessDiagnosis": {
+    "summary": "Why property taxes in Montville Township have shifted heavily onto residential homeowners, and how balanced commercial ratables and 50% PILOT sharing can cut tax bills while keeping schools 100% funded.",
+    "coreInequities": [
+      {
+        "id": "pilot_exclusion",
+        "title": "PILOT Agreements Exclude Montville Township Public Schools (66.2% of Tax Rate)",
+        "metric": "$0 Statutory BOE Share",
+        "severity": "Critical",
+        "description": "Schools represent 66.2% of property taxes in Montville Township, but 30-year PILOTs send 95% of fees to Town Hall and $0 to classrooms.",
+        "remedy": "Codify a binding municipal ordinance dedicating 50% of PILOT revenues directly to public schools."
+      },
+      {
+        "id": "commercial_shift",
+        "title": "Homeowners Shoulder 84.1% of the Tax Base",
+        "metric": "84.1% Residential",
+        "severity": "High",
+        "description": "Commercial ratables have eroded over 20 years, forcing single-family families to absorb larger shares of municipal and school budgets.",
+        "remedy": "Incentivize commercial redevelopment to restore commercial share back toward 35%."
+      }
+    ]
+  },
+  "presetScenarios": [
+    {
+      "id": "status_quo",
+      "name": "Status Quo Baseline (2026 Montville Township)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 15.9,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 2.492,
+      "avgResidentialTaxBill": 16197.5,
+      "fairnessEquityScore": 44,
+      "summary": "Current certified tax distribution in Montville Township. Homeowners fund 84.1% of the budget.",
+      "winners": "Commercial developers with long-term PILOT abatements.",
+      "losers": "Montville Township single-family homeowners and public school students."
+    },
+    {
+      "id": "unified_blueprint",
+      "name": "The Montville Township Unified Fair Tax Blueprint",
+      "badge": "\u2605 Optimal Balance",
+      "badgeClass": "badge-success",
+      "commercialSharePct": 23.9,
+      "pilotSchoolSharePct": 50.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 8.0,
+      "utilityUnbundlingM": 6.5,
+      "projectedTaxRate": 1.754,
+      "avgResidentialTaxBill": 13605.9,
+      "fairnessEquityScore": 95,
+      "summary": "Dedicating 50% of PILOTs to schools, restoring commercial ratables, and capping senior burdens saves the average Montville Township homeowner ~$1,950/yr.",
+      "winners": "90%+ of Montville Township homeowners, public schools, and fixed-income seniors.",
+      "losers": "Speculative developers seeking 30-year school-exempt tax abatements."
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07045",
+      "name": "Montville Township Central District",
+      "medianHouseholdIncome": 174500,
+      "avgAssessment": 649980,
+      "avgMarketValue": 785000,
+      "currentTaxBill": 16197.5,
+      "currentTaxEffortPct": 9.28
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "label": "Typical Montville Township Single-Family Home",
+      "marketValue": 785000,
+      "assessedValue": 649980,
+      "householdIncome": 174500,
+      "zip": "07045",
+      "statusQuoBill": 16197.5,
+      "blueprintBill": 13605.9,
+      "blueprintSavings": 2591.6,
+      "percentSavings": 16.0
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Enact 50% PILOT Revenue-Sharing with Montville Township Public Schools",
+      "legalAuthority": "N.J.S.A. 40A:20-12",
+      "action": "Codify a mandatory municipal ordinance transferring half of all PILOT fees to the school district.",
+      "outcome": "Saves Montville Township homeowners millions in school tax subsidies.",
+      "timeline": "Months 1\u20133"
+    },
+    {
+      "step": 2,
+      "title": "Commercial Ratable Corridor Revitalization",
+      "legalAuthority": "N.J.S.A. 40A:12A-1",
+      "action": "Attract high-value biotech, retail, and corporate ratables to relieve single-family homeowners.",
+      "outcome": "Restores commercial ratable share toward 35% in Montville Township.",
+      "timeline": "Months 3\u201318"
+    }
+  ]
+}
