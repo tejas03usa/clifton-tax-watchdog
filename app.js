@@ -17,6 +17,10 @@ let propertyAssessmentsData = null;
 let surroundingTownsData = null;
 let commercialPilotData = null;
 let fairTaxData = null;
+let cliftonElectionData = null;
+let electionFilterStatus = 'all';
+let electionFilterCategory = 'all';
+let electionSearchQuery = '';
 let currentFilteredProperties = [];
 let propCurrentPage = 1;
 const propPageSize = 36;
@@ -675,6 +679,8 @@ async function switchCity(cityId, updateUrl = true) {
   renderIntelligenceReports();
   renderCommercialPilot();
   renderFairTaxEngine();
+  renderElectionHub();
+  setupElectionControls();
 }
 
 // Dynamically update all static copy, headers, dropdowns, presets, and links for the active city
@@ -716,6 +722,23 @@ function applyCityStaticCopy(cityId) {
   setElText('nav-brand-icon', meta.icon);
   setElText('nav-brand-title', meta.name + ' Watchdog');
   setElText('nav-brand-subtitle', meta.auditBadge);
+
+  const electionTabBtn = document.getElementById('nav-btn-election');
+  if (electionTabBtn) {
+    if (cityId === 'clifton') {
+      electionTabBtn.innerHTML = `
+        <span class="tab-icon">🗳️</span>
+        <span class="tab-title">Election 2026</span>
+        <span class="badge-tag" style="background: #2563eb; color: #fff; margin-left: 4px; padding: 1px 7px; font-size: 0.72rem; border-radius: 999px;">19 Candidates</span>
+      `;
+    } else {
+      electionTabBtn.innerHTML = `
+        <span class="tab-icon">🗳️</span>
+        <span class="tab-title">Clifton Election 2026</span>
+        <span class="badge-tag" style="background: #64748b; color: #fff; margin-left: 4px; padding: 1px 7px; font-size: 0.72rem; border-radius: 999px;">Clifton Guide</span>
+      `;
+    }
+  }
 
   setElHtml('.dropdown-item[data-tab="tab-budgets"] .d-item-text small',
     `${meta.schoolDistrictShort} (${meta.schoolBudgetDisplay}) & Muni (${meta.muniBudgetDisplay}) budgets`);
@@ -1587,6 +1610,11 @@ function switchTab(targetId, options = {}) {
       if (filterBtn) filterBtn.click();
     }
 
+    if (targetId === 'tab-election') {
+      renderElectionHub();
+      setupElectionControls();
+    }
+
     // Scroll handling
     if (options.scrollToElement) {
       setTimeout(() => {
@@ -1777,9 +1805,23 @@ async function loadAllData(cityId = currentCity) {
     commercialPilotData = await pilotRes.json();
     fairTaxData = await fairRes.json();
 
+    await loadElectionData();
+
   } catch (err) {
     console.error("Data load issue:", err);
   }
+}
+
+async function loadElectionData() {
+  if (!cliftonElectionData) {
+    try {
+      const res = await fetch('data/clifton_election_candidates.json');
+      cliftonElectionData = await res.json();
+    } catch (err) {
+      console.error("Clifton election data load issue:", err);
+    }
+  }
+  return cliftonElectionData;
 }
 
 // TAB 1: CALCULATOR
@@ -5764,6 +5806,543 @@ ${isParsippany ? "Parsippany's township and school budgets" : "Clifton's municip
   // Initial Simulation Run
   runSimulation();
 }
+
+// =========================================================================
+// TAB: CLIFTON ELECTION 2026 CANDIDATE DOSSIERS & VOTER GUIDE
+// =========================================================================
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+let electionControlsInitialized = false;
+
+function setupElectionControls() {
+  if (electionControlsInitialized) return;
+  electionControlsInitialized = true;
+
+  const searchInput = document.getElementById('election-search-input');
+  const clearBtn = document.getElementById('election-search-clear');
+  const statusBtns = document.querySelectorAll('.filter-group-status .filter-btn');
+  const expandAllBtn = document.getElementById('btn-expand-all-candidates');
+  const collapseAllBtn = document.getElementById('btn-collapse-all-candidates');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      electionSearchQuery = (e.target.value || '').trim().toLowerCase();
+      if (clearBtn) {
+        clearBtn.style.display = electionSearchQuery ? 'block' : 'none';
+      }
+      filterAndRenderCandidates();
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+      }
+      electionSearchQuery = '';
+      clearBtn.style.display = 'none';
+      filterAndRenderCandidates();
+    });
+  }
+
+  statusBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      statusBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      electionFilterStatus = btn.getAttribute('data-status') || 'all';
+      filterAndRenderCandidates();
+    });
+  });
+
+  if (expandAllBtn) {
+    expandAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('#election-candidates-grid details.candidate-accordion').forEach(d => {
+        d.open = true;
+      });
+    });
+  }
+
+  if (collapseAllBtn) {
+    collapseAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('#election-candidates-grid details.candidate-accordion').forEach(d => {
+        d.open = false;
+      });
+    });
+  }
+}
+
+async function renderElectionHub() {
+  if (!cliftonElectionData) {
+    await loadElectionData();
+  }
+  if (!cliftonElectionData) return;
+
+  renderCategoryPills();
+  filterAndRenderCandidates();
+  renderPlatformMatrix();
+  renderBoeCandidates();
+  renderVotingGuide();
+}
+
+function renderCategoryPills() {
+  const container = document.getElementById('election-category-pills');
+  if (!container || !cliftonElectionData) return;
+
+  const categories = cliftonElectionData.categories || [];
+  let html = `
+    <button class="cat-pill-btn ${electionFilterCategory === 'all' ? 'active' : ''}" data-cat="all">
+      <span>🌟</span> All Priorities
+    </button>
+  `;
+
+  categories.forEach(cat => {
+    const isActive = electionFilterCategory === cat.id;
+    html += `
+      <button class="cat-pill-btn ${isActive ? 'active' : ''}" data-cat="${cat.id}" title="${cat.shortDesc || ''}">
+        <span>${cat.icon}</span> ${cat.name}
+      </button>
+    `;
+  });
+
+  container.innerHTML = html;
+
+  container.querySelectorAll('.cat-pill-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.cat-pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      electionFilterCategory = btn.getAttribute('data-cat') || 'all';
+      filterAndRenderCandidates();
+    });
+  });
+}
+
+function filterAndRenderCandidates() {
+  const grid = document.getElementById('election-candidates-grid');
+  const countEl = document.getElementById('election-results-count');
+  if (!grid || !cliftonElectionData) return;
+
+  const allCandidates = cliftonElectionData.councilCandidates || [];
+  const totalCount = allCandidates.length;
+
+  const filtered = allCandidates.filter(c => {
+    // 1. Status Filter
+    if (electionFilterStatus === 'incumbent' && c.status.toLowerCase() !== 'incumbent') {
+      return false;
+    }
+    if (electionFilterStatus === 'challenger' && c.status.toLowerCase() !== 'challenger') {
+      return false;
+    }
+
+    // 2. Category Filter
+    if (electionFilterCategory !== 'all') {
+      if (!c.categories || !c.categories.includes(electionFilterCategory)) {
+        return false;
+      }
+    }
+
+    // 3. Search Query
+    if (electionSearchQuery) {
+      const q = electionSearchQuery;
+      const searchableText = [
+        c.name,
+        `ballot ${c.ballotNumber}`,
+        `#${c.ballotNumber}`,
+        c.status,
+        c.role,
+        c.experience,
+        c.tagline,
+        c.civicBackground,
+        (c.quotes || []).join(' '),
+        (c.keyPlatformPillars || []).map(p => `${p.title} ${p.details}`).join(' ')
+      ].join(' ').toLowerCase();
+
+      if (!searchableText.includes(q)) {
+        return false;
+      }
+    }
+
+    return true;
+  });
+
+  // Update count badge
+  if (countEl) {
+    if (filtered.length === totalCount) {
+      countEl.textContent = `Showing all 19 of 19 Council Candidates`;
+    } else {
+      countEl.innerHTML = `Showing <strong>${filtered.length}</strong> of ${totalCount} Candidates matching filter`;
+    }
+  }
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div class="empty-election-state">
+        <div class="empty-icon">🔎</div>
+        <h4>No Candidates Match Your Filters</h4>
+        <p>Try clearing your search terms or selecting "All Priorities" / "All Candidates".</p>
+        <button class="action-btn-secondary" onclick="resetElectionFilters()">Reset All Filters</button>
+      </div>
+    `;
+    return;
+  }
+
+  // Category map for icons and names
+  const catMap = {};
+  (cliftonElectionData.categories || []).forEach(cat => {
+    catMap[cat.id] = cat;
+  });
+
+  let cardsHtml = '';
+  filtered.forEach(c => {
+    const isIncumbent = c.status.toLowerCase() === 'incumbent';
+
+    const categoryBadgesHtml = (c.categories || []).map(catId => {
+      const cat = catMap[catId];
+      if (!cat) return '';
+      return `<span class="cand-cat-tag"><span>${cat.icon}</span> ${cat.name}</span>`;
+    }).join('');
+
+    const pillarsHtml = (c.keyPlatformPillars || []).map(p => {
+      const cat = catMap[p.category] || { icon: '📌', name: 'Platform' };
+      return `
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-icon">${cat.icon}</span>
+            <strong class="pillar-title">${escapeHtml(p.title)}</strong>
+          </div>
+          <p class="pillar-desc">${escapeHtml(p.details)}</p>
+        </div>
+      `;
+    }).join('');
+
+    const quotesHtml = (c.quotes && c.quotes.length > 0) ? `
+      <div class="candidate-quote-box">
+        <span class="quote-mark">“</span>
+        <blockquote>${escapeHtml(c.quotes[0])}</blockquote>
+      </div>
+    ` : '';
+
+    cardsHtml += `
+      <article class="candidate-card ${isIncumbent ? 'is-incumbent' : 'is-challenger'}" id="candidate-card-${c.id}">
+        <div class="candidate-card-top">
+          <div class="candidate-ballot-badge">
+            <span class="ballot-num">Ballot #${c.ballotNumber}</span>
+            <span class="candidate-status-tag ${isIncumbent ? 'status-incumbent' : 'status-challenger'}">
+              ${isIncumbent ? '🏛️ Incumbent' : '⚡ Challenger'}
+            </span>
+          </div>
+          <div class="candidate-avatar" aria-hidden="true">${c.initials}</div>
+          <div class="candidate-identity">
+            <h4 class="candidate-name">${escapeHtml(c.name)}</h4>
+            <div class="candidate-role">${escapeHtml(c.role)}</div>
+          </div>
+        </div>
+
+        <div class="candidate-tagline">
+          ${escapeHtml(c.tagline)}
+        </div>
+
+        <div class="candidate-badges-bar">
+          <span class="badge-pledge" title="Formally signed pledge declining taxpayer-funded municipal healthcare insurance">
+            🌿 Declines Health Benefits
+          </span>
+          ${categoryBadgesHtml}
+        </div>
+
+        <!-- Accessible Mutually Exclusive Disclosure Accordion conforming to search-hidden-content guidance -->
+        <details class="disclosure candidate-accordion" name="candidate-accordion">
+          <summary class="candidate-accordion-summary">
+            <span class="summary-btn-text">
+              <span class="summary-icon">📖</span>
+              <span>Full Platform, Policy Pillars & Background</span>
+            </span>
+            <span class="accordion-arrow">▾</span>
+          </summary>
+          <div class="candidate-expanded-content">
+            <div class="pillars-section-title">
+              <span>🎯 Key Policy Pillars & Debate Promises</span>
+            </div>
+            <div class="candidate-pillars-list">
+              ${pillarsHtml}
+            </div>
+
+            ${quotesHtml}
+
+            <div class="candidate-civic-box">
+              <span class="civic-box-label">🏛️ Public Service & Civic Background:</span>
+              <p>${escapeHtml(c.civicBackground || c.experience)}</p>
+            </div>
+          </div>
+        </details>
+      </article>
+    `;
+  });
+
+  grid.innerHTML = cardsHtml;
+}
+
+function resetElectionFilters() {
+  electionFilterStatus = 'all';
+  electionFilterCategory = 'all';
+  electionSearchQuery = '';
+
+  const searchInput = document.getElementById('election-search-input');
+  const clearBtn = document.getElementById('election-search-clear');
+  if (searchInput) searchInput.value = '';
+  if (clearBtn) clearBtn.style.display = 'none';
+
+  document.querySelectorAll('.filter-group-status .filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-status') === 'all');
+  });
+
+  renderCategoryPills();
+  filterAndRenderCandidates();
+}
+
+function renderPlatformMatrix() {
+  const table = document.getElementById('election-matrix-table');
+  if (!table || !cliftonElectionData) return;
+
+  const candidates = cliftonElectionData.councilCandidates || [];
+
+  let thead = `
+    <thead>
+      <tr>
+        <th scope="col" style="min-width: 180px;">Candidate & Ballot #</th>
+        <th scope="col" style="min-width: 120px;">Status</th>
+        <th scope="col" style="min-width: 200px;">💰 Taxes & Spending Stance</th>
+        <th scope="col" style="min-width: 200px;">🏗️ Flooding & PVWC Water</th>
+        <th scope="col" style="min-width: 200px;">🏡 Zoning & Data Centers</th>
+        <th scope="col" style="min-width: 190px;">⚖️ Dais Decorum & Governance</th>
+        <th scope="col" style="min-width: 140px;">🌿 Health Benefits</th>
+      </tr>
+    </thead>
+  `;
+
+  let tbody = '<tbody>';
+  candidates.forEach(c => {
+    const isInc = c.status.toLowerCase() === 'incumbent';
+
+    // Extract quick pillar summaries
+    const taxPillar = (c.keyPlatformPillars || []).find(p => p.category === 'taxes');
+    const floodPillar = (c.keyPlatformPillars || []).find(p => p.category === 'infrastructure');
+    const housePillar = (c.keyPlatformPillars || []).find(p => p.category === 'housing');
+    const govPillar = (c.keyPlatformPillars || []).find(p => p.category === 'governance');
+
+    const taxSummary = taxPillar ? taxPillar.title : 'Fiscal constraint & budget review';
+    const floodSummary = floodPillar ? floodPillar.title : 'PVWC water main upgrades & Third River desilting';
+    const houseSummary = housePillar ? housePillar.title : 'Protect suburban zoning; anti-data center sprawl';
+    const govSummary = govPillar ? govPillar.title : 'Restoring civility & administrative stability';
+
+    tbody += `
+      <tr>
+        <td>
+          <div class="matrix-candidate-cell">
+            <span class="matrix-ballot-badge">#${c.ballotNumber}</span>
+            <div>
+              <strong>${escapeHtml(c.name)}</strong>
+              <small class="matrix-role-sub">${escapeHtml(c.role)}</small>
+            </div>
+          </div>
+        </td>
+        <td>
+          <span class="candidate-status-tag ${isInc ? 'status-incumbent' : 'status-challenger'}">
+            ${isInc ? '🏛️ Incumbent' : '⚡ Challenger'}
+          </span>
+        </td>
+        <td>
+          <div class="matrix-pillar-text">
+            <strong>${escapeHtml(taxSummary)}</strong>
+            <p>${taxPillar ? escapeHtml(taxPillar.details) : 'Line-item oversight and grant revenue capture.'}</p>
+          </div>
+        </td>
+        <td>
+          <div class="matrix-pillar-text">
+            <strong>${escapeHtml(floodSummary)}</strong>
+            <p>${floodPillar ? escapeHtml(floodPillar.details) : 'Third River detention and quarterly water testing.'}</p>
+          </div>
+        </td>
+        <td>
+          <div class="matrix-pillar-text">
+            <strong>${escapeHtml(houseSummary)}</strong>
+            <p>${housePillar ? escapeHtml(housePillar.details) : 'Rigorous code enforcement on illegal rental conversions.'}</p>
+          </div>
+        </td>
+        <td>
+          <div class="matrix-pillar-text">
+            <strong>${escapeHtml(govSummary)}</strong>
+            <p>${govPillar ? escapeHtml(govPillar.details) : 'Encouraging public comment and respectful council workshops.'}</p>
+          </div>
+        </td>
+        <td>
+          <span class="matrix-pledge-badge" title="Pledged to decline city medical benefits">
+            ✓ 100% Declined
+          </span>
+        </td>
+      </tr>
+    `;
+  });
+  tbody += '</tbody>';
+
+  table.innerHTML = thead + tbody;
+}
+
+function renderBoeCandidates() {
+  const container = document.getElementById('election-boe-grid');
+  if (!container || !cliftonElectionData) return;
+
+  const boeList = cliftonElectionData.boeCandidates || [];
+  let html = '';
+
+  boeList.forEach(b => {
+    const isInc = b.status.toLowerCase().includes('incumbent');
+    html += `
+      <div class="boe-card">
+        <div class="boe-card-header">
+          <div class="boe-badge-row">
+            <span class="boe-school-badge">🏫 Board of Education</span>
+            <span class="candidate-status-tag ${isInc ? 'status-incumbent' : 'status-challenger'}">
+              ${isInc ? '🏛️ Incumbent Trustee' : '⚡ Challenger'}
+            </span>
+          </div>
+          <h4 class="boe-name">${escapeHtml(b.name)}</h4>
+          <div class="boe-slogan">"${escapeHtml(b.ballotSlogan)}"</div>
+        </div>
+        <div class="boe-card-body">
+          <div class="boe-focus-title">Key Educational & Fiscal Priorities:</div>
+          <p class="boe-focus-text">${escapeHtml(b.keyFocus)}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function renderVotingGuide() {
+  const container = document.getElementById('election-voting-guide');
+  if (!container || !cliftonElectionData) return;
+
+  const res = cliftonElectionData.votingResources;
+  if (!res) return;
+
+  const dropboxesHtml = (res.mailInDropboxes || []).map(box => `
+    <li class="dropbox-item">
+      <div class="dropbox-icon">📬</div>
+      <div class="dropbox-info">
+        <strong>${escapeHtml(box.name)}</strong>
+        <span>${escapeHtml(box.address)}</span>
+        <small class="dropbox-notes">${escapeHtml(box.notes || '')}</small>
+      </div>
+    </li>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="voting-guide-grid">
+      <!-- Card 1: Key Dates & Hours -->
+      <div class="voting-card">
+        <div class="voting-card-header">
+          <span class="voting-card-icon">🗓️</span>
+          <div>
+            <h4>Election Day & Early Voting</h4>
+            <span class="voting-sub">In-Person Voting Schedule</span>
+          </div>
+        </div>
+        <div class="voting-card-body">
+          <div class="voting-fact-item">
+            <span class="v-label">Election Day:</span>
+            <span class="v-val"><strong>Tuesday, November 3, 2026</strong></span>
+          </div>
+          <div class="voting-fact-item">
+            <span class="v-label">Polling Hours:</span>
+            <span class="v-val font-mono"><strong>6:00 AM – 8:00 PM EST</strong></span>
+          </div>
+          <div class="voting-fact-item">
+            <span class="v-label">Early In-Person:</span>
+            <span class="v-val">${escapeHtml(res.earlyVotingPeriod || 'Late October – Early November 2026')}</span>
+          </div>
+          <div class="voting-fact-item">
+            <span class="v-label">Early Voting Site:</span>
+            <span class="v-val"><strong>${escapeHtml(res.earlyVotingLocation || 'Clifton Arts Center / Wellmont Reserve')}</strong></span>
+          </div>
+          <div class="voting-link-row" style="margin-top: 14px;">
+            <a href="${escapeHtml(res.passaicCountyElections.voterRegistrationLookup)}" target="_blank" rel="noopener" class="external-pill-link">
+              Find Your Assigned Polling Place (SVRS NJ) ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Secure Mail-In Drop Boxes -->
+      <div class="voting-card">
+        <div class="voting-card-header">
+          <span class="voting-card-icon">📫</span>
+          <div>
+            <h4>Official 24/7 Mail-In Drop Boxes</h4>
+            <span class="voting-sub">Passaic County Board of Elections</span>
+          </div>
+        </div>
+        <div class="voting-card-body">
+          <p class="dropbox-explainer">Voters may deposit their sealed Mail-In Ballot into any of these secure, video-monitored drop boxes up until <strong>8:00 PM on Election Night</strong>:</p>
+          <ul class="dropbox-list">
+            ${dropboxesHtml}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3: Municipal Clerk & Election Officials -->
+      <div class="voting-card" style="grid-column: 1 / -1;">
+        <div class="voting-card-header">
+          <span class="voting-card-icon">🏛️</span>
+          <div>
+            <h4>Clifton Municipal Clerk & County Election Administration</h4>
+            <span class="voting-sub">Official Questions & Ballot Inquiries</span>
+          </div>
+        </div>
+        <div class="voting-card-body">
+          <div class="clerk-info-row">
+            <div class="clerk-info-item">
+              <span class="v-label">Municipal Clerk:</span>
+              <span class="v-val"><strong>${escapeHtml(res.municipalClerk.name)}</strong> (${escapeHtml(res.municipalClerk.title)})</span>
+            </div>
+            <div class="clerk-info-item">
+              <span class="v-label">Clerk Office:</span>
+              <span class="v-val">${escapeHtml(res.municipalClerk.office)} • ${escapeHtml(res.municipalClerk.phone)}</span>
+            </div>
+            <div class="clerk-info-item">
+              <span class="v-label">Direct Email:</span>
+              <span class="v-val"><a href="mailto:${escapeHtml(res.municipalClerk.email)}" class="email-link">${escapeHtml(res.municipalClerk.email)}</a></span>
+            </div>
+            <div class="clerk-info-item">
+              <span class="v-label">County Elections:</span>
+              <span class="v-val">${escapeHtml(res.passaicCountyElections.superintendent)} • ${escapeHtml(res.passaicCountyElections.phone)}</span>
+            </div>
+          </div>
+          <div class="voting-links-flex" style="margin-top: 16px;">
+            <a href="${escapeHtml(res.passaicCountyElections.website)}" target="_blank" rel="noopener" class="external-pill-link">
+              Passaic County Clerk Elections Portal ↗
+            </a>
+            <a href="https://cliftonnj.org/218/City-Clerk" target="_blank" rel="noopener" class="external-pill-link">
+              City of Clifton Municipal Clerk Portal ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Global window attachment for inline button onclick
+window.resetElectionFilters = resetElectionFilters;
 
 // Launch
 document.addEventListener('DOMContentLoaded', initApp);

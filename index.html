@@ -122,7 +122,14 @@
           <span class="tab-title">Tax Calculator</span>
         </button>
 
-        <!-- 2. Primary Direct Tab: Compare Towns -->
+        <!-- 2. Primary Direct Tab: Clifton Election 2026 -->
+        <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-election" id="nav-btn-election">
+          <span class="tab-icon">🗳️</span>
+          <span class="tab-title">Election 2026</span>
+          <span class="badge-tag" style="background: #2563eb; color: #fff; margin-left: 4px; padding: 1px 7px; font-size: 0.72rem; border-radius: 999px;">19 Candidates</span>
+        </button>
+
+        <!-- 3. Primary Direct Tab: Compare Towns -->
         <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-surrounding">
           <span class="tab-icon">🗺️</span>
           <span class="tab-title">Compare Towns</span>
@@ -2387,6 +2394,166 @@
           <li>
             <a href="https://propertytaxrelief.nj.gov" target="_blank" rel="noopener">NJ Division of Taxation: Stay NJ, ANCHOR & Senior Freeze (Combined Form PAS-1) ↗</a>
             <span class="source-doc-desc">State property tax relief programs (up to $6,500 Stay NJ credit for seniors 65+, $1,750 ANCHOR homeowner rebate, and $700 tenant rebate).</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- TAB: CLIFTON ELECTION 2026 CANDIDATE DOSSIERS & VOTER GUIDE -->
+    <section id="tab-election" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Official Election Date: Tuesday, Nov 3, 2026</span>
+          <span class="section-source-badge">Passaic County Clerk Certified Ballot Roster</span>
+          <span class="section-update-badge">19 Council Candidates • 7 BOE Candidates</span>
+        </div>
+        <h2>Clifton Municipal Election 2026: Candidate Guide & Dossiers</h2>
+        <p>Comprehensive, nonpartisan guide to all 19 Clifton City Council candidates running for 7 at-large seats, plus Board of Education candidates. Explore detailed platforms, promises, debate positions, and policy comparison matrix.</p>
+      </div>
+
+      <!-- Quick Highlights Grid / Banner -->
+      <div class="election-hero-banner">
+        <div class="election-hero-card">
+          <div class="hero-icon">🏛️</div>
+          <div class="hero-content">
+            <h4>7 At-Large Council Seats</h4>
+            <p>4-year terms under the 1923 Council-Manager Act. The top vote-getter traditionally becomes <strong>Mayor</strong>.</p>
+          </div>
+        </div>
+        <div class="election-hero-card">
+          <div class="hero-icon">🌿</div>
+          <div class="hero-content">
+            <h4>100% Health Benefits Pledge</h4>
+            <p>All 19 candidates have formally committed to declining taxpayer-funded municipal health insurance benefits.</p>
+          </div>
+        </div>
+        <div class="election-hero-card">
+          <div class="hero-icon">💰</div>
+          <div class="hero-content">
+            <h4>6.527% Certified Tax Rate</h4>
+            <p>Citywide revaluation pending by Appraisal Systems, Inc. Candidates offer differing tax freeze vs. CMFO models.</p>
+          </div>
+        </div>
+        <div class="election-hero-card">
+          <div class="hero-icon">🗳️</div>
+          <div class="hero-content">
+            <h4>Polls Open 6 AM – 8 PM</h4>
+            <p>In-person voting Tuesday, Nov 3, 2026. 3 secure 24/7 county dropboxes available across Clifton.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Navigation Quick Anchor Bar -->
+      <div class="election-quick-nav">
+        <a href="#election-search-anchor" class="election-quick-pill">🔍 Candidate Search & Filter</a>
+        <a href="#election-candidates-heading" class="election-quick-pill">📋 All 19 Council Candidates</a>
+        <a href="#election-matrix-heading" class="election-quick-pill">📊 Platform Comparison Matrix</a>
+        <a href="#election-boe-heading" class="election-quick-pill">🏫 Board of Education Candidates</a>
+        <a href="#election-voting-heading" class="election-quick-pill">📍 Voting & Polling Guide</a>
+      </div>
+
+      <!-- Search & Filtering Toolbar -->
+      <div class="election-controls-wrapper" id="election-search-anchor">
+        <div class="election-search-row">
+          <div class="election-search-input-box">
+            <span class="search-input-icon">🔍</span>
+            <input type="text" id="election-search-input" placeholder="Search candidates by name, ballot #, role, or policy keyword (e.g. Grabowski, Sadrakula, taxes, flooding, zoning, DPW)..." class="styled-input-lg" autocomplete="off">
+            <button id="election-search-clear" class="btn-clear-search" title="Clear Search">✕</button>
+          </div>
+        </div>
+
+        <div class="election-filters-row">
+          <div class="filter-group-status">
+            <span class="filter-label">Status:</span>
+            <div class="btn-group-toggle" role="group" aria-label="Candidate Status Filter">
+              <button class="filter-btn active" data-status="all">All (19)</button>
+              <button class="filter-btn" data-status="incumbent">Incumbents (5)</button>
+              <button class="filter-btn" data-status="challenger">Challengers (14)</button>
+            </div>
+          </div>
+
+          <div class="filter-group-category">
+            <span class="filter-label">Filter by Platform Issue:</span>
+            <div class="category-pills-row" id="election-category-pills">
+              <!-- Dynamically populated by JS with icons and names -->
+            </div>
+          </div>
+        </div>
+
+        <div class="election-results-status">
+          <span id="election-results-count">Showing 19 of 19 Council Candidates</span>
+          <span class="election-expand-controls">
+            <button id="btn-expand-all-candidates" class="btn-toggle-expand">Expand All Profiles</button>
+            <button id="btn-collapse-all-candidates" class="btn-toggle-expand">Collapse All</button>
+          </span>
+        </div>
+      </div>
+
+      <!-- Candidates Grid -->
+      <div class="section-subtitle-row" id="election-candidates-heading" style="margin-top: 32px;">
+        <h3>Clifton City Council Candidates (Ballot Positions #1 – #19)</h3>
+        <span class="pill-tag">Certified Passaic County Ballot Order</span>
+      </div>
+      <div id="election-candidates-grid" class="candidate-cards-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Platform Comparison Matrix -->
+      <div class="section-subtitle-row" id="election-matrix-heading" style="margin-top: 48px;">
+        <h3>Candidate Platform Comparison Matrix</h3>
+        <span class="pill-tag alert-tag">Side-by-Side Policy Stances</span>
+      </div>
+      <p class="section-subtitle-desc">Compare all 19 candidates across key voting priorities: Property Tax Relief, Flooding & Water, Zoning & Data Centers, Dais Decorum, and Public Safety.</p>
+      <div class="election-matrix-container">
+        <div class="table-responsive">
+          <table class="election-matrix-table" id="election-matrix-table">
+            <!-- Table content populated by app.js -->
+          </table>
+        </div>
+      </div>
+
+      <!-- Board of Education Candidates Section -->
+      <div class="section-subtitle-row" id="election-boe-heading" style="margin-top: 48px;">
+        <h3>Clifton Board of Education Candidates (7 Running)</h3>
+        <span class="pill-tag" style="background: var(--color-school); color: #fff;">Clifton Public Schools ($293M Budget)</span>
+      </div>
+      <p class="section-subtitle-desc">School Board Trustees oversee 17 public schools, over 10,000 students, and roughly 48% of your total property tax bill.</p>
+      <div id="election-boe-grid" class="boe-cards-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Official Voting Guide & Polling Locations -->
+      <div class="section-subtitle-row" id="election-voting-heading" style="margin-top: 48px;">
+        <h3>Official Clifton Voting Guide & Polling Information</h3>
+        <span class="pill-tag">Election Day Essentials</span>
+      </div>
+      <div id="election-voting-guide" class="voting-guide-container">
+        <!-- Rendered by JavaScript / Pre-structured -->
+      </div>
+
+      <!-- Sources & Official Verification Links for Election -->
+      <div class="page-source-footer" style="margin-top: 40px;">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Nonpartisan Election Sources & Records:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.passaiccountynj.org/government/county-clerk/elections" target="_blank" rel="noopener">Passaic County Clerk Elections Division: Certified Candidate Ballot Drawing ↗</a>
+            <span class="source-doc-desc">Official ballot positions determined by public drawing conducted by the Passaic County Clerk.</span>
+          </li>
+          <li>
+            <a href="https://voter.svrs.nj.gov/registration-check" target="_blank" rel="noopener">NJ Division of Elections: Voter Registration Status & Polling Place Locator ↗</a>
+            <span class="source-doc-desc">Verify your voter registration status and find your assigned Clifton polling district.</span>
+          </li>
+          <li>
+            <a href="https://cliftonnj.org/218/City-Clerk" target="_blank" rel="noopener">City of Clifton Municipal Clerk: Municipal Election Archive & Notices ↗</a>
+            <span class="source-doc-desc">Official municipal resolutions, meeting minutes, and election administration.</span>
+          </li>
+          <li>
+            <a href="https://cliftonmerchant.com" target="_blank" rel="noopener">Clifton Merchant Magazine & Local Press Archives ↗</a>
+            <span class="source-doc-desc">Candidate forum coverage, editorial profiles, and public statements.</span>
           </li>
         </ul>
       </div>

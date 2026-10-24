@@ -1,0 +1,844 @@
+{
+  "municipality": "Clifton",
+  "county": "Passaic County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "electionType": "Clifton Municipal Nonpartisan General Election & Board of Education",
+  "votingHours": "6:00 AM \u2013 8:00 PM EST",
+  "councilStructure": "7 At-Large Council Seats (4-year terms). 1923 Council-Manager form of government (Municipal Manager Act). The candidate receiving the highest number of votes traditionally serves as Mayor.",
+  "totalCouncilCandidates": 19,
+  "totalCouncilSeats": 7,
+  "certifiedTaxRateContext": "6.527% Total Certified Tax Rate (2026). Upcoming Citywide Revaluation by Appraisal Systems, Inc. (ASI).",
+  "unanimousHealthBenefitPledge": "All 19 candidates have formally committed to declining taxpayer-funded municipal health insurance benefits, protecting taxpayers from tens of thousands in annual fringe benefit costs.",
+  "votingResources": {
+    "earlyVotingPeriod": "Late October \u2013 Early November 2026 (Mon-Sat 10 AM-8 PM, Sun 10 AM-6 PM)",
+    "earlyVotingLocation": "Clifton Arts Center / Community Recreation Center, 900 Clifton Ave, Clifton, NJ 07013",
+    "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
+    "mailInDropboxes": [
+      {
+        "name": "Clifton City Hall (Main Entrance)",
+        "address": "900 Clifton Ave, Clifton, NJ 07013",
+        "notes": "24/7 Monitored Secure Drop Box"
+      },
+      {
+        "name": "Clifton Public Library (Main Branch)",
+        "address": "292 Piaget Ave, Clifton, NJ 07011",
+        "notes": "Drive-up accessible secure box"
+      },
+      {
+        "name": "Allwood Branch Library",
+        "address": "44 Lyall Rd, Clifton, NJ 07012",
+        "notes": "Walk-up secure drop box"
+      }
+    ],
+    "municipalClerk": {
+      "name": "Evelina Krajewski",
+      "title": "Municipal Clerk",
+      "office": "Clifton City Hall, Room 103",
+      "phone": "(973) 470-5824",
+      "email": "cityclerk@cliftonnj.org"
+    },
+    "passaicCountyElections": {
+      "superintendent": "Passaic County Superintendent of Elections",
+      "phone": "(973) 881-4515",
+      "website": "https://www.passaiccountynj.org/government/county-clerk/elections",
+      "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
+    }
+  },
+  "categories": [
+    {
+      "id": "taxes",
+      "name": "Property Taxes & Spending",
+      "icon": "\ud83d\udcb0",
+      "shortDesc": "Tax freeze, forensic audits, grant writing, and debt caps"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Flooding & PVWC Water",
+      "icon": "\ud83c\udfd7\ufe0f",
+      "shortDesc": "Third River stormwater mitigation, desilting, and clean tap water"
+    },
+    {
+      "id": "governance",
+      "name": "Governance & Dais Decorum",
+      "icon": "\u2696\ufe0f",
+      "shortDesc": "Charter study commission, televised meetings, and administrative stability"
+    },
+    {
+      "id": "housing",
+      "name": "Housing, Zoning & Data Centers",
+      "icon": "\ud83c\udfe1",
+      "shortDesc": "Anti-data center, cracking down on illegal rentals, and suburban preservation"
+    },
+    {
+      "id": "safety",
+      "name": "Public Safety & Traffic",
+      "icon": "\ud83d\ude94",
+      "shortDesc": "Police patrol strength, speed humps, and commercial truck parking bans"
+    },
+    {
+      "id": "benefits",
+      "name": "Health Perks & Ethics",
+      "icon": "\ud83c\udf3f",
+      "shortDesc": "Declining city healthcare benefits and strict conflict-of-interest enforcement"
+    }
+  ],
+  "councilCandidates": [
+    {
+      "ballotNumber": 1,
+      "id": "john-thomas-jr",
+      "name": "John Thomas Jr.",
+      "status": "Challenger",
+      "role": "Municipal Consultant & Licensed Private Investigator",
+      "experience": "Former Clifton Housing Authority Commissioner; 25+ years in corporate compliance, forensic investigation, and local government analysis.",
+      "initials": "JT",
+      "tagline": "Forensic spending audits, ending no-bid professional service contracts, and aggressive flood mitigation grants.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Forensic Municipal Auditing & No-Bid Contract Ban",
+          "details": "Mandate independent forensic audits of all recurring legal, engineering, and architectural professional service contracts. Transition to strict competitive bidding to end cronyism and drive down annual vendor overhead."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Aggressive Federal & State Flood Grant Capture",
+          "details": "Establish a dedicated full-time municipal grant procurement officer to capture FEMA, NJDEP, and Bipartisan Infrastructure Law funds for Third River and Weasel Brook watershed desilting and retention basin enlargement."
+        },
+        {
+          "category": "governance",
+          "title": "Dais Transparency & Council Stipend Freeze",
+          "details": "Pledged to decline all city-funded medical benefits. Proposes freezing council stipends and requiring all council workshop discussions and committee reports to be fully video-recorded and published online."
+        }
+      ],
+      "quotes": [
+        "Clifton taxpayers are tired of rubber-stamped professional bill lists and reactive government. We need forensic oversight, zero-based budgeting, and real flood defenses."
+      ],
+      "civicBackground": "Clifton resident for over 30 years; Clifton Housing Authority Commissioner (past); Licensed New Jersey Private Detective."
+    },
+    {
+      "ballotNumber": 2,
+      "id": "richard-richie-mejia",
+      "name": "Richard \"Richie\" Mejia",
+      "status": "Challenger",
+      "role": "Former Clifton BOE Trustee & University Operations Project Manager",
+      "experience": "Elected Clifton Board of Education Trustee (served 2021\u20132024); Higher education operations manager, logistics coordinator, and community advocate.",
+      "initials": "RM",
+      "tagline": "Bridging City Hall and the School District to eliminate duplicate costs, fixing Third River flooding, and revitalizing Botany Village.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "housing",
+        "safety"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "City-School District Shared Services Accord",
+          "details": "Break down the wall between City Hall ($105M) and Clifton Board of Education ($293M). Consolidate bulk procurement for fuel, vehicle fleet maintenance, IT infrastructure, and groundskeeping to generate millions in joint taxpayer savings."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Third River Basin Upgrades & PVWC Oversight",
+          "details": "Work directly with Passaic County and Army Corps of Engineers to desilt and widen the Third River choke points. Demand monthly public water quality testing from PVWC to resolve brown tap water issues."
+        },
+        {
+          "category": "housing",
+          "title": "Botany Village & Main Avenue Revitalization",
+          "details": "Deploy smart facade grants, enhanced pedestrian lighting, and targeted commercial ratables along Botany Village and Clifton Avenue, relieving residential homeowners of the tax burden."
+        }
+      ],
+      "quotes": [
+        "When City Hall and the Board of Education work in silos, taxpayers pay double. By pooling our purchasing power and investing in smart infrastructure, we build a stronger Clifton."
+      ],
+      "civicBackground": "Former Clifton Board of Education Trustee; Clifton Little League coach; Montclair State University administrative leadership."
+    },
+    {
+      "ballotNumber": 3,
+      "id": "george-sikora",
+      "name": "George Sikora",
+      "status": "Challenger",
+      "role": "Civic Reform Advocate & Small Business Owner",
+      "experience": "Lifelong Clifton resident, neighborhood preservation organizer, commercial property owner, and active voice at City Council meetings for over two decades.",
+      "initials": "GS",
+      "tagline": "Aggressive crackdown on illegal basement/attic apartments, proactive code enforcement, and preserving suburban neighborhood character.",
+      "declinedBenefits": true,
+      "categories": [
+        "housing",
+        "safety",
+        "taxes"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "housing",
+          "title": "Crackdown on Illegal Multi-Family Rentals",
+          "details": "Quadruple proactive code and health inspections of unpermitted basement, cellar, and attic apartments that overburden neighborhood street parking, school classrooms, and emergency services."
+        },
+        {
+          "category": "safety",
+          "title": "Neighborhood Parking & Quality of Life",
+          "details": "Strict enforcement of overnight commercial truck parking bans on residential streets. Install speed humps and high-visibility crosswalks around elementary and middle school routes."
+        },
+        {
+          "category": "taxes",
+          "title": "Retaining Commercial Ratables to Halt Residential Hikes",
+          "details": "Keep Clifton's corporate business parks (Route 3 / Route 46 corridor) thriving so commercial ratables pay their fair share, preventing tax increases on fixed-income senior homeowners."
+        }
+      ],
+      "quotes": [
+        "Our suburban neighborhoods are under assault from illegal overcrowded housing and out-of-town landlords. Clifton needs code enforcement with real teeth."
+      ],
+      "civicBackground": "Clifton homeowner for 35+ years; Clifton Citizen Watchdog contributor; local trade business operator."
+    },
+    {
+      "ballotNumber": 4,
+      "id": "ray-grabowski",
+      "name": "Ray Grabowski",
+      "status": "Incumbent",
+      "role": "Mayor of Clifton (Top Vote-Getter 2022) & Small Business Owner",
+      "experience": "Elected to Clifton City Council in 2014, re-elected 2018, 2022 (finished #1 as Mayor). Small business owner of Ray Grabowski Sound & Music Studio.",
+      "initials": "RG",
+      "tagline": "Restoring dais civility and decorum, mitigating PVWC discolored water, senior property tax freeze support, and backing Clifton Police and Fire.",
+      "declinedBenefits": true,
+      "categories": [
+        "governance",
+        "infrastructure",
+        "taxes",
+        "safety"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "governance",
+          "title": "Restoring Civility, Respect & Decorum on the Dais",
+          "details": "Lead council meetings with professional decorum, ending personal attacks and political theatrics that have paralyzed City Hall. Maintain steady leadership while stabilizing municipal department heads."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Passaic Valley Water Commission (PVWC) Remediation",
+          "details": "Aggressively push PVWC to accelerate its multi-million dollar water main cleaning, lead service line replacements, and filtration upgrades to end chronic brown water complaints in Clifton homes."
+        },
+        {
+          "category": "taxes",
+          "title": "Fiscal Responsibility & Senior Tax Relief",
+          "details": "Maintain essential city services while adhering strictly to state budget caps. Champion municipal property tax relief programs and expanded recreational opportunities for seniors and youth."
+        },
+        {
+          "category": "safety",
+          "title": "Fully Equipping Clifton Police & Fire",
+          "details": "Ensure competitive patrol staffing levels, modernize frontline firefighting gear, and complete crucial facility improvements for Clifton's emergency responders."
+        }
+      ],
+      "quotes": [
+        "Government should be about serving the residents, not political theatre. My focus is on safe neighborhoods, clean tap water, and bringing civility back to Clifton City Hall."
+      ],
+      "civicBackground": "Mayor of Clifton (2022\u2013present); Councilman (2014\u2013present); Clifton Rotary Club past officer; Clifton Boys & Girls Club booster."
+    },
+    {
+      "ballotNumber": 5,
+      "id": "tom-whittles",
+      "name": "Tom Whittles",
+      "status": "Challenger",
+      "role": "Local Business Owner & Former Planning Board Member",
+      "experience": "Former Clifton Planning Board Member; local trade business operator; former CASA (Court Appointed Special Advocates) youth volunteer.",
+      "initials": "TW",
+      "tagline": "Halting high-density residential overdevelopment, cutting unnecessary municipal overtime, and revitalizing Clifton's small business corridors.",
+      "declinedBenefits": true,
+      "categories": [
+        "housing",
+        "taxes",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "housing",
+          "title": "Defending Suburban Zoning Against High-Density Sprawl",
+          "details": "Strictly enforce zoning master plan rules to block oversized apartment complexes that congest Clifton roads and overload the school system. Protect single-family neighborhood zoning."
+        },
+        {
+          "category": "taxes",
+          "title": "Departmental Overtime & Spending Audits",
+          "details": "Deploy modern scheduling software to reduce runaway municipal overtime costs in public works and non-emergency departments. Zero-based departmental budgeting."
+        },
+        {
+          "category": "governance",
+          "title": "Ending Council Perks & Lifetime Benefits",
+          "details": "Signed the pledge declining municipal healthcare benefits. Proposes term limits for municipal boards and commissioners to encourage fresh civic involvement."
+        }
+      ],
+      "quotes": [
+        "Clifton was built as a great suburban community of homeowners. We must stop overdevelopment dead in its tracks and protect our residential quality of life."
+      ],
+      "civicBackground": "Clifton Planning Board member (past); CASA child advocacy booster; Clifton Chamber of Commerce member."
+    },
+    {
+      "ballotNumber": 6,
+      "id": "tarek-alnatur",
+      "name": "Tarek Alnatur",
+      "status": "Challenger",
+      "role": "Corporate Finance Specialist & Budget Modeler",
+      "experience": "Senior corporate financial analyst specializing in multi-million dollar cash flow management, enterprise budgeting, and debt portfolio structuring.",
+      "initials": "TA",
+      "tagline": "Line-by-line review of Clifton's $105M city budget, debt service reduction, and pedestrian traffic safety upgrades.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "safety",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Line-by-Line Zero-Based Municipal Budgeting",
+          "details": "Apply corporate financial auditing to Clifton's $105M+ municipal budget. Require every city department to justify annual budget requests from zero rather than defaulting to automatic annual bumps."
+        },
+        {
+          "category": "taxes",
+          "title": "Debt Service Optimization & Yield Maximization",
+          "details": "Restructure Clifton's municipal debt portfolio and maximize interest yields on municipal operating reserves to generate non-tax revenues for road repaving."
+        },
+        {
+          "category": "safety",
+          "title": "Traffic Calming on High-Volume Arteries",
+          "details": "Install raised pedestrian crosswalks, rapid flashing beacons, and speed cushions along hazardous sections of Clifton Avenue, Paulison Avenue, and Van Houten Avenue."
+        }
+      ],
+      "quotes": [
+        "A $105 million municipal budget requires modern financial modeling, not back-of-the-envelope estimations. We can cut waste without cutting services."
+      ],
+      "civicBackground": "Master's degree in Finance; corporate financial modeling specialist; Clifton community soccer league volunteer."
+    },
+    {
+      "ballotNumber": 7,
+      "id": "matt-mullins",
+      "name": "Matt Mullins",
+      "status": "Challenger",
+      "role": "Public Policy Specialist & Community Organizer",
+      "experience": "Background in public administration, municipal policy research, digital civic engagement, and grassroots community organizing in Passaic County.",
+      "initials": "MM",
+      "tagline": "Modernizing DPW with open-data tracking, cracking down on absentee landlords, and expanding youth mental health resources.",
+      "declinedBenefits": true,
+      "categories": [
+        "governance",
+        "housing",
+        "safety"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "governance",
+          "title": "Open-Data Civic Technology for DPW & City Hall",
+          "details": "Launch a modern, mobile-friendly 311 citizen reporting app with real-time GPS tracking for pothole repairs, street sweeping, snow plowing, and bulk leaf collection."
+        },
+        {
+          "category": "housing",
+          "title": "Holding Absentee Landlords Accountable",
+          "details": "Establish a public registry of habitual code violators and absentee corporate landlords who neglect residential properties, imposing escalating daily fines."
+        },
+        {
+          "category": "safety",
+          "title": "Youth Recreation & Mental Health Partnerships",
+          "details": "Partner with Passaic County health agencies to expand after-school programs, teen mental health counseling, and modernized park facilities across all 4 Clifton ZIP codes."
+        }
+      ],
+      "quotes": [
+        "Government should work at the speed of modern technology. When a resident reports a pothole or streetlight out, they deserve real-time status updates, not a busy signal."
+      ],
+      "civicBackground": "Passaic County youth mentor; community organizer; civic open-source technology advocate."
+    },
+    {
+      "ballotNumber": 8,
+      "id": "iris-a-reyes",
+      "name": "Iris A. Reyes",
+      "status": "Challenger",
+      "role": "Retired Law Enforcement Detective & Military Veteran",
+      "experience": "Over 25 years of honorable service in law enforcement as a detective and field supervisor; U.S. Armed Forces veteran; community anti-crime coordinator.",
+      "initials": "IR",
+      "tagline": "Public safety first: increasing neighborhood police patrols, school safety speed tables, and zero tolerance for ethics violations.",
+      "declinedBenefits": true,
+      "categories": [
+        "safety",
+        "governance",
+        "housing"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "safety",
+          "title": "Frontline Police Patrol Strength & Neighborhood Walking Beats",
+          "details": "Address police staffing vacancies to restore proactive neighborhood patrols, bicycle details in commercial centers, and anti-narcotics enforcement in crime hotspots."
+        },
+        {
+          "category": "safety",
+          "title": "School Zone Traffic Safety & Modern Speed Tables",
+          "details": "Upgrade crossing guard coverage and deploy modern rubberized speed tables in high-risk school zones (CHIS, CCMS, Elementary Schools) to safeguard children."
+        },
+        {
+          "category": "governance",
+          "title": "Zero Tolerance for Municipal Ethics Violations",
+          "details": "Enforce strict anti-nepotism rules, mandatory ethics training for municipal appointees, and clear whistleblower protections for City Hall employees."
+        }
+      ],
+      "quotes": [
+        "Safe streets and secure neighborhoods are the cornerstone of property values. As a retired detective and veteran, I will ensure Clifton remains a safe haven for families."
+      ],
+      "civicBackground": "Retired Detective; Veteran of the U.S. Armed Forces; PBA member; Clifton Hispanic community cultural liaison."
+    },
+    {
+      "ballotNumber": 9,
+      "id": "dr-assad-mujtaba",
+      "name": "Dr. Assad Mujtaba",
+      "status": "Challenger",
+      "role": "Board-Certified Physician & Healthcare Clinic Founder",
+      "experience": "Practicing medical doctor, healthcare administrator, clinic director, and community healthcare advocate serving North Jersey families.",
+      "initials": "AM",
+      "tagline": "Multi-year municipal property tax freeze, Clifton Economic Development Task Force for high-paying ratables, and senior health clinics.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "governance",
+        "benefits"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Proposed Multi-Year Municipal Property Tax Freeze",
+          "details": "Institute an immediate hold on municipal tax levy increases by auditing departmental line items, tapping non-tax revenue streams, and curbing outside consultant retainers."
+        },
+        {
+          "category": "taxes",
+          "title": "Clifton Economic Development Task Force",
+          "details": "Create an aggressive business attraction commission to recruit biotech, specialty healthcare, and clean tech ratables to the ON3 / Route 3 corridor, shifting the burden off homeowners."
+        },
+        {
+          "category": "governance",
+          "title": "Senior Healthcare & Mobile Wellness Clinics",
+          "details": "Expand Clifton Health Department partnerships to deliver free preventative wellness screenings, cardiovascular checks, and flu/vaccine clinics directly to senior housing complexes."
+        }
+      ],
+      "quotes": [
+        "Skyrocketing property taxes are forcing our seniors and working families to move out of Clifton. We need a disciplined tax freeze and a physician's diagnostic approach to City Hall spending."
+      ],
+      "civicBackground": "Board-Certified Physician; Medical Director; Philanthropic organizer supporting Clifton free health fairs and food pantries."
+    },
+    {
+      "ballotNumber": 10,
+      "id": "raj-rana",
+      "name": "Raj Rana",
+      "status": "Challenger",
+      "role": "Management Consultant & Civic Organizer",
+      "experience": "Corporate enterprise management consultant, small business investor, Clifton Asian-American civic advocate, and local non-profit director.",
+      "initials": "RR",
+      "tagline": "Restoring council decorum, establishing a Small Business Concierge desk, and desilting Weasel Brook to stop neighborhood flooding.",
+      "declinedBenefits": true,
+      "categories": [
+        "governance",
+        "infrastructure",
+        "taxes"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "governance",
+          "title": "Restoring Decorum, Unity & Constructive Dialogue",
+          "details": "End personal rancor on the council dais. Institute strict parliamentary decorum rules and focus council workshops on measurable outcomes rather than political squabbling."
+        },
+        {
+          "category": "taxes",
+          "title": "Clifton Small Business Concierge Desk",
+          "details": "Create a one-stop business liaison office at City Hall to fast-track permits, licensing, and inspections for local retail and culinary entrepreneurs, boosting sales tax and commercial ratables."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Weasel Brook & Third River Sediment Remediation",
+          "details": "Partner with Passaic County Soil Conservation to clear accumulated silt, fallen trees, and debris that choke Weasel Brook and cause backwater flooding during heavy rains."
+        }
+      ],
+      "quotes": [
+        "Our council spends too much time arguing with each other instead of solving problems. Clifton needs professional leadership that unites people and makes City Hall responsive."
+      ],
+      "civicBackground": "Clifton resident; Management consulting executive; cultural association trustee; local merchant advocate."
+    },
+    {
+      "ballotNumber": 11,
+      "id": "matthew-j-ward",
+      "name": "Matthew J. Ward",
+      "status": "Challenger",
+      "role": "Attorney, Former City Councilman (2002\u20132014) & Former BOE Trustee",
+      "experience": "Served 12 years on Clifton City Council (2002\u20132014) and 6 years on Clifton Board of Education (1996\u20132002); practicing municipal and civil attorney.",
+      "initials": "MW",
+      "tagline": "Voter referendum for a Municipal Charter Study Commission to modernize Clifton's 1923 government, ending council micromanagement, and capping bonded debt.",
+      "declinedBenefits": true,
+      "categories": [
+        "governance",
+        "taxes",
+        "infrastructure"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "governance",
+          "title": "Charter Study Commission Voter Referendum",
+          "details": "Place a binding question on the ballot for a Charter Study Commission to review Clifton's century-old 1923 1923 Municipal Manager Act, evaluating ward-based representation or a directly elected mayor to increase accountability."
+        },
+        {
+          "category": "governance",
+          "title": "Ending Council Micromanagement & Stabilizing City Hall",
+          "details": "Enforce the statutory boundary between legislative policy (Council) and professional administration (City Manager), ending the interference that caused turnover in City Manager, Attorney, and CFO roles."
+        },
+        {
+          "category": "taxes",
+          "title": "Hard Cap on Municipal Bonded Debt",
+          "details": "Implement a strict debt ceiling to prevent future generations from being burdened by runaway capital borrowing and soaring debt service interest payments."
+        }
+      ],
+      "quotes": [
+        "Clifton is running a 21st-century city of 90,000 residents on a 1923 government blueprint. It's time for a citizen charter study and professional municipal management."
+      ],
+      "civicBackground": "Clifton City Council Member (2002\u20132014); Clifton BOE Trustee (1996\u20132002); NJ Bar Association member; lifelong Clifton resident."
+    },
+    {
+      "ballotNumber": 12,
+      "id": "tafari-k-anderson",
+      "name": "Tafari K. Anderson",
+      "status": "Challenger",
+      "role": "Technology Executive & Former 12-Year Clifton BOE Trustee",
+      "experience": "Served 12 consecutive years on the Clifton Board of Education (longest-tenured modern trustee); technology infrastructure executive; school facilities committee chair.",
+      "initials": "TA",
+      "tagline": "A \"DOGE-style\" municipal efficiency audit, joint municipal-BOE bulk purchasing, and advanced stormwater retention basins.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Comprehensive \"DOGE-Style\" Municipal Efficiency Audit",
+          "details": "Commission an exhaustive external efficiency review of every city division to root out redundant software subscriptions, outdated fleet practices, and administrative bloat."
+        },
+        {
+          "category": "taxes",
+          "title": "Joint City-BOE Bulk Purchasing & Operations",
+          "details": "Leverage deep Board of Education experience to merge bulk purchasing for health insurance brokerages, energy auctions, fuel, vehicle tires, and building automation across city and school operations."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Underground Stormwater Detention & Permeable Pavement",
+          "details": "Mandate high-capacity subterranean detention tanks and permeable asphalt for all major municipal and commercial redevelopment projects to absorb runoff before it hits Third River."
+        }
+      ],
+      "quotes": [
+        "Having served 12 years on the school board managing a $290M budget, I know exactly where the overlap and waste hide. It's time to bring modern technology and financial discipline to City Hall."
+      ],
+      "civicBackground": "Clifton Board of Education Trustee (12 years); Technology operations leader; Passaic County educational equity advocate."
+    },
+    {
+      "ballotNumber": 13,
+      "id": "rosemary-rosie-pino",
+      "name": "Rosemary \"Rosie\" Pino",
+      "status": "Incumbent",
+      "role": "Clifton Councilwoman (Elected 2018, Re-elected 2022) & Senior Bank Examiner",
+      "experience": "Serving second term on Clifton City Council; former Clifton Board of Education Commissioner; Senior National Bank Examiner (U.S. Department of the Treasury / OCC).",
+      "initials": "RP",
+      "tagline": "Applying federal banking audit rigor to municipal capital plans, expanding senior tax deductions, and holding PVWC accountable for clean water without rate hikes.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Federal Banking Audit Rigor on Capital Improvement Budgets",
+          "details": "Utilize decades of U.S. Treasury bank regulatory experience to stress-test municipal capital forecasts, scrutinize bank depository yields, and protect Clifton's bond rating."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Holding PVWC Accountable on Clean Water & Rate Hikes",
+          "details": "Demanded quarterly public appearances by Passaic Valley Water Commission executives before Council. Adamantly oppose unjustified water rate hikes while residents deal with discolored tap water."
+        },
+        {
+          "category": "taxes",
+          "title": "Expanding Tax Relief for Seniors & Disabled Veterans",
+          "details": "Expand city outreach for ANCHOR, Senior Freeze (PTR), and municipal veteran tax exemptions to ensure all eligible Clifton seniors receive maximum state and local deductions."
+        }
+      ],
+      "quotes": [
+        "As a federal bank examiner, I look at the numbers without emotion. Clifton needs rigorous financial safeguards, clean drinking water, and true protections for our seniors on fixed incomes."
+      ],
+      "civicBackground": "Councilwoman (2018\u2013present); Clifton BOE Trustee (past); U.S. Treasury Senior Bank Examiner; Clifton Hispanic Chamber supporter."
+    },
+    {
+      "ballotNumber": 14,
+      "id": "mary-sadrakula",
+      "name": "Mary Sadrakula",
+      "status": "Incumbent",
+      "role": "Clifton Councilwoman (Longtime Taxpayer Watchdog) & Real Estate Broker",
+      "experience": "First elected to Clifton City Council in 2004; known as the ultimate council watchdog; licensed real estate broker; decades of municipal budget scrutiny.",
+      "initials": "MS",
+      "tagline": "Fierce opposition to AI data centers and warehouse sprawl, voting NO on tax increases, and relentless auditing of legal and engineering bill lists.",
+      "declinedBenefits": true,
+      "categories": [
+        "housing",
+        "taxes",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "housing",
+          "title": "Uncompromising Opposition to AI Data Centers & Warehouses",
+          "details": "Leading the fight to block high-voltage AI data centers and mega-warehouses that consume excessive water, strain electrical grids, generate humming noise pollution, and provide zero local jobs."
+        },
+        {
+          "category": "taxes",
+          "title": "Voting NO on Tax Increases & Municipal Borrowing",
+          "details": "Maintains an unblemished record of voting against unnecessary municipal bond ordinances, tax hikes, and wasteful consultant contracts. Scrutinizes every line of the bi-weekly municipal bill list."
+        },
+        {
+          "category": "housing",
+          "title": "Stopping Overdevelopment & Preserving Neighborhoods",
+          "details": "Fight high-density variance approvals at the Zoning and Planning Boards to keep Clifton from turning into an overcrowded extension of urban centers."
+        }
+      ],
+      "quotes": [
+        "I don't go along to get along. I examine every single dollar on the bill list and vote against tax increases. Clifton needs someone who will stand up against the developers and tax-and-spend politicians."
+      ],
+      "civicBackground": "Councilwoman (2004\u2013present); Clifton Taxpayers Association leader; Clifton Historical Society booster; Clifton Chamber member."
+    },
+    {
+      "ballotNumber": 15,
+      "id": "joseph-kolodziej",
+      "name": "Joseph Kolodziej",
+      "status": "Incumbent",
+      "role": "Clifton Councilman (Elected 2010, 2014, 2018, 2022) & Certified Municipal Finance Officer",
+      "experience": "Serving fourth term on Clifton City Council; Certified Municipal Finance Officer (CMFO); Qualified Purchasing Agent (QPA); Master of Public Administration (MPA).",
+      "initials": "JK",
+      "tagline": "Protecting Clifton's AA credit rating, structural budgeting under state 2% caps, modernizing DPW equipment, and expert municipal finance oversight.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Structural Budgeting & Preserving AA Bond Rating",
+          "details": "Bring professional CMFO credentials to the council dais. Kept Clifton's municipal tax rate growth consistently below the state statutory 2% cap while maintaining healthy surplus reserves and protecting Clifton's AA Wall Street bond rating."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Long-Term Capital Fleet & DPW Modernization",
+          "details": "Author of Clifton's rolling 6-year capital improvement plan to replace aging DPW snow plows, street sweepers, and sewer vacuum trucks without sudden tax spikes."
+        },
+        {
+          "category": "governance",
+          "title": "Fair Collective Bargaining & Contract Negotiations",
+          "details": "Lead fiscally sound collective bargaining negotiations with city employee unions (PBA, FMBA, DPW) that balance fair competitive compensation with taxpayer affordability."
+        }
+      ],
+      "quotes": [
+        "Municipal finance is not an amateur sport. My professional training as a CMFO ensures that Clifton's budget is structurally balanced, our debt is controlled, and our credit rating stays top-tier."
+      ],
+      "civicBackground": "Councilman (2010\u2013present); Certified Municipal Finance Officer (CMFO); Master of Public Administration (Rutgers); Clifton Little League booster."
+    },
+    {
+      "ballotNumber": 16,
+      "id": "antonio-tony-latona",
+      "name": "Antonio \"Tony\" Latona",
+      "status": "Incumbent",
+      "role": "Clifton Councilman (Elected 2022) & Retired Clifton Police Officer",
+      "experience": "Elected to Council in 2022 with Team Clifton; 25+ years as a decorated Clifton Police Officer; Quality of Life task force leader.",
+      "initials": "TL",
+      "tagline": "Quality of Life Task Force addressing neighborhood noise and commercial truck parking, backing police and fire, and road resurfacing catch-up.",
+      "declinedBenefits": true,
+      "categories": [
+        "safety",
+        "housing",
+        "infrastructure",
+        "taxes"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "safety",
+          "title": "Active Quality of Life Task Force",
+          "details": "Spearheaded targeted enforcement against late-night residential noise disturbances, illegal commercial semi-truck parking in residential driveways, and unpermitted construction."
+        },
+        {
+          "category": "safety",
+          "title": "Supporting Police, Fire & Emergency EMS Readiness",
+          "details": "Ensured funding for upgraded police body cameras, ballistic protection, and modern fire pumper apparatus. Championed paramedic retention initiatives."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Accelerated Municipal Road Resurfacing",
+          "details": "Pushed for aggressive mill-and-pave resurfacing of neglected secondary residential streets and clearing of storm catch basins to prevent localized street ponding."
+        }
+      ],
+      "quotes": [
+        "As someone who patrolled Clifton's streets for over two decades, I know the quality-of-life issues that keep neighbors awake. We are delivering results on noise, parking, and safety."
+      ],
+      "civicBackground": "Councilman (2022\u2013present); Retired Clifton Police Officer; Clifton PBA Local 36 member; Clifton youth sports coach."
+    },
+    {
+      "ballotNumber": 17,
+      "id": "fred-barnes",
+      "name": "Fred Barnes",
+      "status": "Challenger",
+      "role": "Operations & Logistics Manager, Civic Volunteer",
+      "experience": "Senior supply chain and distribution operations manager; Clifton neighborhood association volunteer; youth baseball coach.",
+      "initials": "FB",
+      "tagline": "Neighborhood zoning preservation, halting overcrowded rentals, commercial parking bans on residential streets, and park upgrades.",
+      "declinedBenefits": true,
+      "categories": [
+        "housing",
+        "safety",
+        "taxes"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "housing",
+          "title": "Neighborhood Zoning Defense & Anti-Crowding",
+          "details": "Protect established single-family and two-family neighborhoods from conversion into unpermitted multi-unit boarding houses. Empower inspectors with nighttime inspection authority."
+        },
+        {
+          "category": "safety",
+          "title": "Residential Commercial Vehicle Bans",
+          "details": "Implement stricter towing and summons penalties for out-of-town commercial box trucks, landscaper trailers, and commercial vans taking up resident parking spots on tight streets."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Community Park & Recreation Upgrades",
+          "details": "Renovate neighborhood parks (Nash Park, Weasel Brook Park, Main Memorial) with upgraded turf fields, modern ADA-compliant playgrounds, and LED night lighting."
+        }
+      ],
+      "quotes": [
+        "Our working-class neighborhoods deserve peace, clean streets, and somewhere to park when you come home from work. Let's stand up for Clifton's neighborhood families."
+      ],
+      "civicBackground": "Lifelong Passaic County resident; Clifton youth baseball coach; logistics operations professional."
+    },
+    {
+      "ballotNumber": 18,
+      "id": "avraham-shaya-eisenman",
+      "name": "Avraham Shaya Eisenman",
+      "status": "Challenger",
+      "role": "Small Business Owner & Community Advocate",
+      "experience": "Clifton small business proprietor, local commercial property manager, active community volunteer and civic participant.",
+      "initials": "SE",
+      "tagline": "A proposed 2-year municipal tax freeze, retail support on Clifton and Van Houten corridors, and citizen participation at council meetings.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "governance",
+        "safety"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Two-Year Municipal Property Tax Freeze",
+          "details": "Enact an immediate two-year moratorium on municipal tax hikes. Reallocate surplus reserves and audit vendor billing to stabilize tax bills for hard-pressed homeowners."
+        },
+        {
+          "category": "taxes",
+          "title": "Revitalizing Local Retail & Dining Corridors",
+          "details": "Work with merchant groups along Van Houten Ave, Clifton Ave, and Lakeview to implement pedestrian-friendly streetscapes, parking meter modernization, and shop-local incentives."
+        },
+        {
+          "category": "governance",
+          "title": "Expanding Public Speaking Time & Open Town Halls",
+          "details": "Expand citizen public comment periods at council meetings and institute quarterly open town halls in each Clifton ZIP code so residents have direct access to their elected officials."
+        }
+      ],
+      "quotes": [
+        "Small businesses and homeowners are the lifeblood of Clifton. We need a two-year tax freeze to let residents catch their breath, and a City Hall that listens to everyone."
+      ],
+      "civicBackground": "Clifton small business operator; civic activist; community charitable volunteer."
+    },
+    {
+      "ballotNumber": 19,
+      "id": "norman-a-tahan",
+      "name": "Norman A. Tahan",
+      "status": "Challenger",
+      "role": "Retired Clifton Deputy Fire Chief (35 Yrs), Former Councilman & BOE Member",
+      "experience": "35 years of distinguished service in the Clifton Fire Department rising to Deputy Chief; served on Clifton City Council (1998\u20132002); served on Clifton BOE (2005\u20132008).",
+      "initials": "NT",
+      "tagline": "Deep municipal operations knowledge, emergency service capital planning, stabilizing City Hall leadership, and cutting outside legal fees.",
+      "declinedBenefits": true,
+      "categories": [
+        "governance",
+        "safety",
+        "taxes",
+        "infrastructure"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "governance",
+          "title": "Restoring Stability, Trust & Experience to City Hall",
+          "details": "Bring over 40 years of combined municipal public safety and elected governance experience to resolve administrative dysfunction, fill critical department head vacancies, and end costly internal lawsuits."
+        },
+        {
+          "category": "safety",
+          "title": "Long-Term Emergency Services Capital Planning",
+          "details": "Develop a structured 10-year replacement cycle for fire trucks, ambulance rigs, and emergency equipment, eliminating emergency debt bonding and maintaining Clifton's Class 1 fire rating."
+        },
+        {
+          "category": "taxes",
+          "title": "Cutting Wasteful Outside Litigation & Legal Fees",
+          "details": "Reign in millions paid to outside law firms and specialized legal counsel by establishing stronger in-house legal oversight and preventing avoidable municipal litigation."
+        }
+      ],
+      "quotes": [
+        "I spent 35 years protecting Clifton as a firefighter and Deputy Chief, and I know how every department in City Hall operates. We need steady, seasoned leadership to put Clifton back on track."
+      ],
+      "civicBackground": "Retired Deputy Fire Chief (Clifton Fire Dept, 35 yrs); Clifton City Council (1998\u20132002); Clifton BOE Trustee (2005\u20132008); FMBA Local 21."
+    }
+  ],
+  "boeCandidates": [
+    {
+      "name": "Judith Bassford",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Experience, Transparency & Student Advocacy",
+      "keyFocus": "Champion for special education funding, curriculum transparency, taxpayer fiscal watchdog on the school board, and direct constituent responsiveness."
+    },
+    {
+      "name": "Alan Paris",
+      "status": "Incumbent Trustee / Finance Chair",
+      "ballotSlogan": "Fiscal Discipline & Educational Excellence",
+      "keyFocus": "Certified Public Accountant (CPA); focus on zero-based school budgeting, mitigating state formula aid cuts, and overseeing multi-million dollar capital improvement bonds."
+    },
+    {
+      "name": "Cameron Hebron",
+      "status": "Challenger",
+      "ballotSlogan": "Empowering Students, Strengthening Community",
+      "keyFocus": "Focus on student mental health resources, updating school athletic and arts facilities, and expanding community engagement between parents and administrators."
+    },
+    {
+      "name": "Alias Ragsdale",
+      "status": "Challenger",
+      "ballotSlogan": "Pathways to Success for Every Child",
+      "keyFocus": "Expanding vocational and technical career pathways (CTE), youth mentoring programs, and competitive compensation to attract and retain top-tier teachers."
+    },
+    {
+      "name": "Mark Brunciak",
+      "status": "Challenger",
+      "ballotSlogan": "Modern Tech, Secure Schools & Strong STEM",
+      "keyFocus": "STEM education expansion, school cybersecurity modernization, and upgrading digital classroom tools to prepare students for the 21st-century economy."
+    },
+    {
+      "name": "Anthony Santiago",
+      "status": "Challenger",
+      "ballotSlogan": "Safe Schools, Accountable Leadership",
+      "keyFocus": "School campus security upgrades, safe pedestrian corridors around Clifton High and middle schools, and cross-agency emergency coordination with Clifton PD."
+    },
+    {
+      "name": "Eve Barnes",
+      "status": "Challenger",
+      "ballotSlogan": "Classroom Investment & Bilingual Support",
+      "keyFocus": "Classroom size reduction, expanded resources for English Language Learners (ELL), and strengthening early childhood education across Clifton public schools."
+    }
+  ]
+}
