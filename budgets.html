@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clifton NJ Budgets & Taxes | School Budget, Municipal Budget & PILOT</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page-title="Budgets, PILOT & Fair Tax Reval">
+
+  <!-- Modern App Header (Top of Page) -->
+  <header class="app-header">
+    <!-- Top Utility Bar: Live Verification Status & Sleek Municipality Selector -->
+    <div class="container header-top-bar">
+      <div class="header-live-status" id="header-brand-badge">
+        <span class="live-dot-pulse"></span>
+        <span class="header-live-text" id="header-badge-text">Certified 2026 Fiscal Watchdog • Passaic County Board of Taxation & Audits</span>
+      </div>
+      <div class="city-switcher-group" role="group" aria-label="Select Municipality">
+        <span class="city-switcher-label">Switch Town:</span>
+        <div class="city-switcher-pills">
+          <button type="button" class="city-switch-btn active" data-city="clifton" aria-pressed="true">
+            <span class="city-btn-icon">🏛️</span>
+            <span class="city-btn-name">Clifton</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="parsippany" aria-pressed="false">
+            <span class="city-btn-icon">🌲</span>
+            <span class="city-btn-name">Parsippany</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="wayne" aria-pressed="false">
+            <span class="city-btn-icon">🌳</span>
+            <span class="city-btn-name">Wayne</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="montclair" aria-pressed="false">
+            <span class="city-btn-icon">🏡</span>
+            <span class="city-btn-name">Montclair</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="morristown" aria-pressed="false">
+            <span class="city-btn-icon">📜</span>
+            <span class="city-btn-name">Morristown</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="montville" aria-pressed="false">
+            <span class="city-btn-icon">🏞️</span>
+            <span class="city-btn-name">Montville</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header Body: Title/Subtitle & KPI Stat Cards -->
+    <div class="container header-container">
+      <div class="header-titles">
+        <h1 id="header-main-title">Clifton Taxpayer Watchdog</h1>
+        <p class="subtitle" id="header-main-subtitle">Real-time public investigation into where your Clifton property taxes go, the ~$293M school budget, public employee healthcare benefits, outside staff businesses, and official state audits.</p>
+      </div>
+
+      <div class="header-stat-cards">
+        <a href="index.html" class="stat-card clickable-stat-card" title="Click to open Tax Calculator">
+          <div class="stat-card-label" id="hdr-stat1-label">Certified Tax Rate (2026) ↗</div>
+          <div class="stat-card-num" id="hdr-stat1-num">6.527%</div>
+          <div class="stat-card-sub" id="hdr-stat1-sub">Avg Bill: $11,912 / yr</div>
+        </a>
+        <a href="budgets.html" class="stat-card highlight-school clickable-stat-card" title="Click to view School Budget">
+          <div class="stat-card-label" id="hdr-stat2-label">Clifton Public Schools (BOE) ↗</div>
+          <div class="stat-card-num" id="hdr-stat2-num">47.66%</div>
+          <div class="stat-card-sub" id="hdr-stat2-sub">Explore $293.2M budget</div>
+        </a>
+        <a href="properties.html" class="stat-card clickable-stat-card" title="Click to view Property Assessments">
+          <div class="stat-card-label" id="hdr-stat3-label">Sampled Assessments ↗</div>
+          <div class="stat-card-num" id="hdr-stat3-num">1,850 Homes</div>
+          <div class="stat-card-sub" id="hdr-stat3-sub">Avg Assessed: $182.5k</div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modern Streamlined Sticky Navigation Bar: 4 Core Hubs -->
+  <nav class="nav-bar sticky-nav" id="main-nav" role="navigation" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <!-- Persistent Brand Lockup on Left -->
+      <a href="index.html" class="nav-brand-lockup" id="nav-brand-home" aria-label="Taxpayer Watchdog - Back to Home">
+        <div class="nav-brand-icon-wrap">
+          <span class="nav-brand-icon" id="nav-brand-icon">🏛️</span>
+        </div>
+        <div class="nav-brand-text">
+          <div class="nav-brand-title" id="nav-brand-title">Clifton Watchdog</div>
+          <div class="nav-brand-subtitle" id="nav-brand-subtitle">CITIZEN FISCAL AUDIT • 2026</div>
+        </div>
+      </a>
+
+      <!-- Clean 4-Item Hub Navigation Menu -->
+      <div class="nav-menu" role="menubar">
+        <a href="index.html" class="nav-item-btn tab-btn" id="nav-link-calculator" role="menuitem">
+          <span class="tab-icon">💰</span>
+          <span class="tab-title">Tax Calculator</span>
+        </a>
+
+        <a href="election.html" class="nav-item-btn tab-btn" id="nav-link-election" role="menuitem">
+          <span class="tab-icon">🗳️</span>
+          <span class="tab-title">Election 2026</span>
+          <span class="badge-tag" style="background: #2563eb; color: #fff; margin-left: 4px; padding: 2px 7px; font-size: 0.72rem; border-radius: 999px;">19 Candidates</span>
+        </a>
+
+        <a href="budgets.html" class="nav-item-btn tab-btn active" id="nav-link-budgets" role="menuitem" aria-current="page">
+          <span class="tab-icon">📊</span>
+          <span class="tab-title">Budgets & Taxes</span>
+        </a>
+
+        <a href="properties.html" class="nav-item-btn tab-btn" id="nav-link-properties" role="menuitem">
+          <span class="tab-icon">🔍</span>
+          <span class="tab-title">Properties & Audits</span>
+          <span class="badge-tag" style="background: #059669; color: #fff; margin-left: 4px; padding: 2px 7px; font-size: 0.72rem; border-radius: 999px;">1,850</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Live Citizen Status Bar (Certified 2026 Tax Rates) -->
+  <div class="live-status-bar">
+    <div class="container status-container">
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span class="status-title">Live Citizen Watchdog:</span>
+        <span class="status-value" id="status-cert-text">Certified 2026 Tax Rates • Passaic County Board of Taxation & Official Audits</span>
+      </div>
+      <div class="status-metrics">
+        <div class="status-metric-pill">
+          <span class="pill-label">Total Rate:</span>
+          <strong class="pill-val" id="pill-total-rate">6.527%</strong>
+        </div>
+        <div class="status-metric-pill">
+          <span class="pill-label">Schools Share:</span>
+          <strong class="pill-val" id="pill-schools-share">47.66%</strong>
+        </div>
+        <div class="status-metric-pill">
+          <span class="pill-label">City/Muni Share:</span>
+          <strong class="pill-val" id="pill-city-share">29.41%</strong>
+        </div>
+        <div class="status-metric-pill">
+          <span class="pill-label">County Share:</span>
+          <strong class="pill-val" id="pill-county-share">22.92%</strong>
+        </div>
+        <div class="status-metric-pill refresh-pill">
+          <span class="pill-label">Auto-Refresh:</span>
+          <span class="pill-badge-green">Active (Weekly Cron)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary In-Hub Navigation Bar: Budgets, PILOT, Fair Tax & Benefits -->
+  <div class="hub-subnav-bar">
+    <div class="container hub-subnav-container">
+      <button type="button" class="hub-subnav-btn tab-btn active" data-tab="tab-budgets">
+        <span>🏫</span> School & City Budgets
+      </button>
+      <button type="button" class="hub-subnav-btn tab-btn" data-tab="tab-commercial-pilot">
+        <span>🏢</span> Commercial PILOT
+      </button>
+      <button type="button" class="hub-subnav-btn tab-btn" data-tab="tab-fair-tax">
+        <span>⚖️</span> 100% Reval Simulator
+      </button>
+      <button type="button" class="hub-subnav-btn tab-btn" data-tab="tab-benefits">
+        <span>🏥</span> Healthcare & Benefits
+      </button>
+      <button type="button" class="hub-subnav-btn tab-btn" data-tab="tab-vendors">
+        <span>📑</span> Vendor Spending
+      </button>
+      <button type="button" class="hub-subnav-btn tab-btn" data-tab="tab-surrounding">
+        <span>🗺️</span> Compare Towns
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Application Content Area -->
+  <main class="main-content container">
+    <section id="tab-budgets" class="tab-pane active" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Current Fiscal Cycles: FY 2025-2026 / CY 2026 Adopted Budgets</span>
+        </div>
+        <h2>Clifton Public Spending: The Two Mega-Budgets</h2>
+        <p>Clifton taxpayers fund two separate local government entities: the <strong>Clifton Board of Education (~$293.2M)</strong> and the <strong>City of Clifton Municipal Government (~$105.4M)</strong>, alongside county taxes.</p>
+      </div>
+
+      <div class="budget-comparison-grid">
+        <!-- BOE Card -->
+        <div class="budget-overview-card school-theme">
+          <div class="card-header">
+            <div class="badge school-badge">47.66% OF YOUR TAXES</div>
+            <h3>Clifton Public Schools (BOE)</h3>
+            <div class="big-amount">$293,240,500 <span class="per-year">/ year</span></div>
+            <p class="overview-desc">Educates 11,080 students across 18 public schools with ~1,500+ teachers, aides, administrators, and support staff.</p>
+          </div>
+
+          <div class="budget-metrics">
+            <div class="b-metric">
+              <span class="label">Per Pupil Spending</span>
+              <span class="val">$22,450</span>
+            </div>
+            <div class="b-metric">
+              <span class="label">Local Property Tax Levy</span>
+              <span class="val">$161.8M (55%)</span>
+            </div>
+            <div class="b-metric">
+              <span class="label">State Education Aid</span>
+              <span class="val">$108.4M (37%)</span>
+            </div>
+          </div>
+
+          <h4>Major Appropriations Line Items:</h4>
+          <div class="line-items-list" id="boe-line-items">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Municipal Card -->
+        <div class="budget-overview-card city-theme">
+          <div class="card-header">
+            <div class="badge city-badge">29.41% OF YOUR TAXES</div>
+            <h3>City of Clifton (Municipal)</h3>
+            <div class="big-amount">$105,400,000 <span class="per-year">/ year</span></div>
+            <p class="overview-desc">Funds Police, Fire/EMS, Public Works (DPW), trash collection, road paving, health department, and public library for 89,800 residents.</p>
+          </div>
+
+          <div class="budget-metrics">
+            <div class="b-metric">
+              <span class="label">Full-Time Workforce</span>
+              <span class="val">465 Staff</span>
+            </div>
+            <div class="b-metric">
+              <span class="label">Local Municipal Tax Levy</span>
+              <span class="val">$76.8M (73%)</span>
+            </div>
+            <div class="b-metric">
+              <span class="label">Police & Fire Share</span>
+              <span class="val">$47.2M (45%)</span>
+            </div>
+          </div>
+
+          <h4>Major Appropriations Line Items:</h4>
+          <div class="line-items-list" id="city-line-items">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for Tab 2 -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.clifton.k12.nj.us/departments/business-office" target="_blank" rel="noopener">Clifton Public Schools Adopted User-Friendly Budget (UFB) ↗</a>
+            <span class="source-doc-desc">Official $293.2M budget appropriations submitted to the NJ Department of Education.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/dca/dlgs/" target="_blank" rel="noopener">NJ DCA Division of Local Government Services (DLGS) Budget Portals ↗</a>
+            <span class="source-doc-desc">Certified City of Clifton Annual Municipal Adopted Budget ($105.4M) and tax levy filings.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/education/finance/fp/ufb/" target="_blank" rel="noopener">NJ DOE School District User-Friendly Budget Database ↗</a>
+            <span class="source-doc-desc">Comparative statewide database of administrative ratios, per-pupil spending, and debt service.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="tab-commercial-pilot" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Certified Ratables & PILOT Analysis • Passaic County Tax Board & DLGS</span>
+        </div>
+        <h2>Commercial Ratables, PILOT Abatements & The Tax Shift</h2>
+        <p>Why have residential property taxes grown so fast in Clifton? Over the last 30 years, commercial ratables dropped from 42% to under 24% of the tax base, while long-term PILOT abatements give 95% of revenues to City Hall and $0 to the School District—shifting an extra <strong>+$38 Million per year</strong> directly onto single-family homeowners.</p>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="pilot-metrics-ribbon">
+        <div class="pm-box">
+          <span class="pm-lbl">Residential Tax Share</span>
+          <span class="pm-val font-mono" style="color: var(--color-danger);">76.2%</span>
+          <span class="pm-sub">Up from 58.4% in 1995 • $4.37B of $5.73B total base</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Commercial Ratable Share</span>
+          <span class="pm-val font-mono" style="color: var(--text-muted);">23.8%</span>
+          <span class="pm-sub">Down from 41.6% in 1995 • Lost industrial & commercial base</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Annual Shift onto Homeowners</span>
+          <span class="pm-val font-mono" style="color: #b91c1c;">+$38.2M</span>
+          <span class="pm-sub">~$1,240 extra per average single-family home/yr</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">PILOT Share to School District</span>
+          <span class="pm-val font-mono" style="color: #dc2626;">$0.00 (0%)</span>
+          <span class="pm-sub">City Hall keeps 95% • County gets 5% • Schools get zero</span>
+        </div>
+      </div>
+
+      <!-- SECTION 1: 30-YEAR RATABLE SHIFT -->
+      <div class="pilot-content-card">
+        <div class="card-head-row">
+          <div>
+            <h3>1. The 30-Year Shift: How Homeowners Became 76% of the Tax Base</h3>
+            <p>Under New Jersey law, the total municipal, school, and county tax levy is divided across the town's net valuation. As commercial and industrial ratables declined or won tax appeals, residential homeowners were forced to pick up the slack.</p>
+          </div>
+        </div>
+
+        <!-- Visual Progress Comparison Bars -->
+        <div class="ratable-shift-timeline" id="ratable-shift-timeline">
+          <!-- Rendered by JS from data/commercial_pilot_shift.json -->
+        </div>
+
+        <div class="shift-callout-grid">
+          <div class="sc-item">
+            <span class="sc-icon">📉</span>
+            <div>
+              <strong>Commercial Tax Appeal Clawbacks</strong>
+              <p>Corporate retail centers, big-box stores, and office parks regularly sue the City in NJ Tax Court. Over the past decade, Clifton paid over <strong>$22.5 Million in appeal refunds</strong> and reduced commercial assessments permanently.</p>
+            </div>
+          </div>
+          <div class="sc-item">
+            <span class="sc-icon">🏭</span>
+            <div>
+              <strong>Industrial to Residential Conversion</strong>
+              <p>Former manufacturing plants and research campuses (Hoffmann-La Roche, historic Botany mills) closed or converted into multi-family housing, replacing heavy taxpayers with student-generating residences.</p>
+            </div>
+          </div>
+          <div class="sc-item">
+            <span class="sc-icon">🏛️</span>
+            <div>
+              <strong>The Assessment Equalization Lag</strong>
+              <p>Without a periodic citywide revaluation, rising residential home values outpaced commercial assessments, silently shifting a higher mathematical ratio of the county and school levy onto homeowners.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: INTERACTIVE PILOT SIMULATOR -->
+      <div class="pilot-content-card highlight-card">
+        <div class="card-head-row">
+          <div>
+            <span class="badge-alert">Interactive Simulator</span>
+            <h3>2. The PILOT Loophole: Why City Hall Wins & Schools Lose</h3>
+            <p>Under the NJ Long Term Tax Exemption Law (N.J.S.A. 40A:20-1), a developer negotiates a Payment in Lieu of Taxes. See what happens to school funding and existing homeowners under different redevelopment projects:</p>
+          </div>
+          <div class="pilot-project-selector">
+            <label for="pilot-project-select">Select Development Project:</label>
+            <select id="pilot-project-select" class="styled-select-sm">
+              <!-- Rendered by JS -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Side by Side Comparison Layout -->
+        <div class="pilot-comparison-grid" id="pilot-comparison-container">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- School Impact Callout -->
+        <div class="pilot-school-impact-banner" id="pilot-school-impact-banner">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- SECTION 3: TOP COMMERCIAL RATABLES & TAX APPEAL ROLL -->
+      <div class="pilot-content-card">
+        <div class="card-head-row">
+          <div>
+            <h3>3. Major Commercial Ratables in Clifton & Tax Appeal Exposure</h3>
+            <p>Clifton's major shopping centers, retail plazas, and industrial distribution centers generate essential tax revenue. Here is how Clifton's premier commercial ratables compare in assessed value and appeal vulnerability:</p>
+          </div>
+        </div>
+
+        <div class="table-container intel-table-container">
+          <table class="data-table intel-table" id="commercial-ratables-table">
+            <thead>
+              <tr>
+                <th>Commercial Property Name</th>
+                <th>Corridor Location</th>
+                <th>Property Type & Tenants</th>
+                <th>Assessed Value</th>
+                <th>Estimated Market Value</th>
+                <th>Annual Property Tax Paid</th>
+                <th>Appeal Vulnerability</th>
+              </tr>
+            </thead>
+            <tbody id="commercial-ratables-body">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION 4: TAXPAYER ACTION & POLICY SOLUTIONS -->
+      <div class="pilot-content-card">
+        <div class="card-head-row">
+          <div>
+            <h3>4. What Taxpayers Can Demand: 4 Policy Solutions for Clifton</h3>
+            <p>Cities across New Jersey have addressed these disparities through local ordinances. Here is what Clifton citizens and taxpayers can advocate for:</p>
+          </div>
+        </div>
+
+        <div class="solutions-grid" id="pilot-solutions-container">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Jump to What-If Fair Tax Simulator -->
+        <div class="pilot-fair-tax-callout">
+          <div class="pftc-content">
+            <span class="pftc-icon">⚖️</span>
+            <div>
+              <h4>Test These Reforms Live on Your Own Home</h4>
+              <p>See exactly how much your personal property tax bill would drop if Clifton adopted 50% PILOT school sharing and restored commercial ratables.</p>
+            </div>
+          </div>
+          <button class="btn btn-primary" data-jump-tab="tab-fair-tax">
+            Open What-If? Fair Tax Simulator ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for Commercial & PILOT Shift -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation: Abstract of Ratables (Property Class Breakdown) ↗</a>
+            <span class="source-doc-desc">Certifies Class 2 (Residential 76.2%) vs Class 4A/4B/4C (Commercial, Industrial & Apartment 23.8%) valuations.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/comptroller/" target="_blank" rel="noopener">NJ Office of the State Comptroller (OSC): Municipal Tax Abatement & PILOT Transparency Reports ↗</a>
+            <span class="source-doc-desc">Statewide analysis of N.J.S.A. 40A:20 Long Term Tax Exemptions and their fiscal impact on local school districts.</span>
+          </li>
+          <li>
+            <a href="https://www.njcourts.gov/courts/tax" target="_blank" rel="noopener">Tax Court of New Jersey: Commercial Property Tax Appeal Docket ↗</a>
+            <span class="source-doc-desc">Public record of commercial retail and corporate tax appeal filings, stipulated settlements, and municipal refund liabilities.</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section id="tab-fair-tax" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Certified Reform Simulator • 2026 Fiscal Base • NJ Title 54 & Title 40A</span>
+        </div>
+        <h2>What-If? Fair Tax Simulator & Equalization Engine</h2>
+        <p>Explore data-driven scenarios to distribute Clifton's <strong>$374.15M tax burden</strong> fairly across corporate entities, commercial developers, and residential neighborhoods—ending the 30-year tax shift onto homeowners while fully funding public schools and safeguarding seniors.</p>
+      </div>
+
+      <!-- Diagnostic Metrics Ribbon -->
+      <div class="fair-metrics-ribbon">
+        <div class="fm-box">
+          <span class="fm-label">Current Residential Burden</span>
+          <span class="fm-val text-danger">76.2%</span>
+          <span class="fm-sub">Single-family homes fund $285.1M of the $374.2M levy</span>
+        </div>
+        <div class="fm-box">
+          <span class="fm-label">Commercial Ratable Share</span>
+          <span class="fm-val text-warning">23.8%</span>
+          <span class="fm-sub">Fell from 41.6% in 1995 (+$38.2M/yr residential shift)</span>
+        </div>
+        <div class="fm-box">
+          <span class="fm-label">Equalized Rate on 100% Value</span>
+          <span class="fm-val text-info">2.630%</span>
+          <span class="fm-sub">Vs. 6.527% certified rate (40.3% equalization ratio)</span>
+        </div>
+        <div class="fm-box">
+          <span class="fm-label">BOE Share of PILOT Revenue</span>
+          <span class="fm-val text-danger">$0.00 (0%)</span>
+          <span class="fm-sub">95% stays with City Hall, $0 allocated to school students</span>
+        </div>
+        <div class="fm-box">
+          <span class="fm-label">Neighborhood Tax Effort Gap</span>
+          <span class="fm-val text-purple">13.55% vs 11.45%</span>
+          <span class="fm-sub">07011 pays higher % of paycheck than wealthier 07013</span>
+        </div>
+      </div>
+
+      <!-- VISUAL 1: INTERACTIVE TAX FLOW ECOSYSTEM (SANKEY FLOW) -->
+      <div class="fair-card tax-flow-card">
+        <div class="fair-card-header">
+          <span class="fc-icon">🌊</span>
+          <div>
+            <h3>Interactive Clifton Tax Flow Ecosystem ($374.2M)</h3>
+            <p>Trace where tax dollars originate, pool into the Clifton Treasury, and distribute across services. Toggle between the Status Quo and the Fair Reform flow:</p>
+          </div>
+        </div>
+
+        <div class="flow-toggle-bar">
+          <button class="flow-toggle-btn active" id="btn-flow-status-quo">
+            <span class="ft-indicator status-quo"></span>
+            <strong>Status Quo Flow</strong> (76.2% Residential / $0 PILOT to Schools)
+          </button>
+          <button class="flow-toggle-btn" id="btn-flow-what-if">
+            <span class="ft-indicator what-if"></span>
+            <strong>What-If Equalized Flow</strong> (32% Commercial / 50% PILOT to Schools)
+          </button>
+        </div>
+
+        <div class="tax-flow-diagram" id="tax-flow-diagram">
+          <!-- Flow columns rendered dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- Root Cause Diagnosis: Why Current Taxation is Unfair -->
+      <div class="fair-card">
+        <div class="fair-card-header">
+          <span class="fc-icon">⚖️</span>
+          <div>
+            <h3>The 5 Root Causes of Tax Inequity in Clifton</h3>
+            <p>Certified public records reveal five structural distortions that artificially inflate residential property taxes:</p>
+          </div>
+        </div>
+        <div class="inequities-grid" id="fair-inequities-grid">
+          <!-- Populated by JS from fair_tax_scenarios.json -->
+        </div>
+      </div>
+
+      <!-- 1-Click Scenario Presets Selector -->
+      <div class="fair-card">
+        <div class="fair-card-header">
+          <span class="fc-icon">🎯</span>
+          <div>
+            <h3>1-Click Policy Scenarios: Test Different Visions for Clifton</h3>
+            <p>Select a pre-configured policy scenario below, or use the interactive sliders in the sandbox to craft your custom reform plan:</p>
+          </div>
+        </div>
+        <div class="scenario-presets-pills" id="scenario-presets-container">
+          <!-- Populated by JS -->
+        </div>
+        <div class="scenario-details-callout" id="active-scenario-callout">
+          <!-- Dynamic details of active scenario -->
+        </div>
+      </div>
+
+      <!-- The What-If Interactive Sandbox Calculator -->
+      <div class="what-if-sandbox">
+        <!-- Controls Column -->
+        <div class="sandbox-controls-col">
+          <div class="sandbox-panel">
+            <div class="sandbox-panel-header">
+              <span class="sp-icon">🏡</span>
+              <h4>1. Your Household Profile</h4>
+            </div>
+
+            <div class="sandbox-input-group">
+              <label for="wif-market-val">Estimated Current Market Value ($)
+                <span class="tooltip-hint" title="What your home would sell for in today's Clifton real estate market">ⓘ</span>
+              </label>
+              <div class="input-with-affix">
+                <span class="affix">$</span>
+                <input type="number" id="wif-market-val" value="475000" min="150000" max="2500000" step="5000">
+              </div>
+              <small class="field-hint">City median: ~$472,000 (Redfin/Zillow 2026)</small>
+            </div>
+
+            <div class="sandbox-input-group">
+              <label for="wif-assessed-val">Official Tax Assessment ($)
+                <span class="tooltip-hint" title="The taxable assessed value listed on your municipal property tax bill">ⓘ</span>
+              </label>
+              <div class="input-with-affix">
+                <span class="affix">$</span>
+                <input type="number" id="wif-assessed-val" value="191425" min="50000" max="1000000" step="1000">
+              </div>
+              <small class="field-hint">Auto-synced via Clifton's 40.3% equalization ratio</small>
+            </div>
+
+            <div class="sandbox-input-group">
+              <label for="wif-income">Annual Household Income ($)
+                <span class="tooltip-hint" title="Total pre-tax income of all wage earners in the home">ⓘ</span>
+              </label>
+              <div class="input-with-affix">
+                <span class="affix">$</span>
+                <input type="number" id="wif-income" value="95000" min="20000" max="1000000" step="5000">
+              </div>
+              <small class="field-hint">Clifton citywide median: ~$89,500</small>
+            </div>
+
+            <div class="sandbox-row-2">
+              <div class="sandbox-input-group">
+                <label for="wif-zip">Clifton Neighborhood ZIP</label>
+                <select id="wif-zip">
+                  <option value="07011">07011 (Botany / Lakeview / East)</option>
+                  <option value="07012" selected>07012 (Allwood / Central)</option>
+                  <option value="07013">07013 (Montclair Heights / Albion)</option>
+                  <option value="07014">07014 (Delawanna / South)</option>
+                </select>
+              </div>
+
+              <div class="sandbox-input-group">
+                <label for="wif-resident-type">Household Status</label>
+                <select id="wif-resident-type">
+                  <option value="general" selected>Standard Homeowner</option>
+                  <option value="senior">Senior Citizen (65+ on Fixed Income)</option>
+                  <option value="multifamily">Multi-Family Owner-Occupied</option>
+                  <option value="renter">Renter (Estimate Rent Pass-Through)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="sandbox-panel policy-levers-panel">
+            <div class="sandbox-panel-header">
+              <span class="sp-icon">⚙️</span>
+              <h4>2. Interactive Policy Levers</h4>
+            </div>
+
+            <!-- Lever 1: Commercial Ratables Share -->
+            <div class="slider-control-group">
+              <div class="slider-label-row">
+                <label for="wif-lever-commercial">Commercial Ratables Share:
+                  <strong id="wif-val-commercial">32.0%</strong>
+                </label>
+                <span class="lever-badge" id="wif-badge-commercial">+$32.6M Commercial Share</span>
+              </div>
+              <input type="range" id="wif-lever-commercial" min="23.8" max="40.0" step="0.5" value="32.0">
+              <div class="slider-ticks">
+                <span>23.8% (Current)</span>
+                <span>30.0%</span>
+                <span>35.0%</span>
+                <span>40.0% (1995 Peak)</span>
+              </div>
+              <small class="slider-desc">Restore commercial/industrial tax base via Route 3/Route 46 redevelopment.</small>
+            </div>
+
+            <!-- Lever 2: PILOT School Revenue Sharing -->
+            <div class="slider-control-group">
+              <div class="slider-label-row">
+                <label for="wif-lever-pilot">PILOT Revenue Dedication to Schools:
+                  <strong id="wif-val-pilot">50%</strong>
+                </label>
+                <span class="lever-badge" id="wif-badge-pilot">+$2.41M to BOE</span>
+              </div>
+              <input type="range" id="wif-lever-pilot" min="0" max="60" step="5" value="50">
+              <div class="slider-ticks">
+                <span>0% (Current Law)</span>
+                <span>25%</span>
+                <span>50% (Recommended)</span>
+                <span>60%</span>
+              </div>
+              <small class="slider-desc">Directs municipal PILOT payments to Clifton BOE to cover incoming students.</small>
+            </div>
+
+            <!-- Lever 3: Citywide Revaluation -->
+            <div class="toggle-control-group">
+              <div class="toggle-text">
+                <strong>100% Citywide Market Revaluation</strong>
+                <small>Resets all 24,745 parcels to current fair market value. Slashes certified rate to 2.63% or lower.</small>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="wif-toggle-reval" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+            <!-- Lever 4: Income Circuit Breaker -->
+            <div class="sandbox-input-group">
+              <div class="slider-label-row">
+                <label for="wif-select-circuit">Ability-to-Pay Circuit Breaker Cap</label>
+                <span class="lever-badge" id="wif-badge-circuit">Anti-Displacement</span>
+              </div>
+              <select id="wif-select-circuit">
+                <option value="none">Disabled (No Income Cap)</option>
+                <option value="10">Cap Taxes at 10.0% of Income</option>
+                <option value="8" selected>Cap Taxes at 8.0% of Income (Recommended)</option>
+                <option value="6">Cap Taxes at 6.0% of Income (Aggressive Senior Cap)</option>
+              </select>
+              <small class="field-hint">Protects working families & seniors under $100k income from excessive burdens.</small>
+            </div>
+
+            <!-- Lever 5: Municipal Utility Unbundling -->
+            <div class="slider-control-group">
+              <div class="slider-label-row">
+                <label for="wif-lever-utility">Municipal Utility Unbundling (Trash & Stormwater):
+                  <strong id="wif-val-utility">$7.5M</strong>
+                </label>
+                <span class="lever-badge" id="wif-badge-utility">-$750/yr Residential Relief</span>
+              </div>
+              <input type="range" id="wif-lever-utility" min="0" max="15" step="1.5" value="7.5">
+              <div class="slider-ticks">
+                <span>$0M (Bundled)</span>
+                <span>$5M</span>
+                <span>$7.5M</span>
+                <span>$15M</span>
+              </div>
+              <small class="slider-desc">Shifts sanitation & stormwater into enterprise fees paid by commercial runoff footprints.</small>
+            </div>
+
+            <div class="sandbox-reset-bar">
+              <button class="btn btn-outline-secondary btn-sm" id="btn-reset-sandbox">↺ Reset to Default Baseline</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Results Dashboard Column -->
+        <div class="sandbox-results-col">
+          <div class="sandbox-results-panel">
+            <div class="results-panel-header">
+              <span class="rph-title">Real-Time What-If Impact Dashboard</span>
+              <span class="equity-badge" id="res-equity-badge">★ Optimal Balance (96/100)</span>
+            </div>
+
+            <!-- VISUAL 5: THE EQUITY BALANCE SCALE WIDGET -->
+            <div class="balance-scale-widget">
+              <div class="bsw-header">
+                <span class="bsw-title">⚖️ Clifton Tax Burden Balance Scale</span>
+                <span class="bsw-status-badge" id="bsw-status-badge">Tilted: 76.2% Homeowners</span>
+              </div>
+              <div class="bsw-stage">
+                <div class="bsw-beam-container" id="bsw-beam">
+                  <div class="bsw-beam-bar"></div>
+                  <div class="bsw-pan left-pan" id="bsw-left-pan">
+                    <span class="pan-icon">🏠</span>
+                    <span class="pan-label">Residential</span>
+                    <span class="pan-val" id="bsw-left-val">76.2%</span>
+                    <span class="pan-sub" id="bsw-left-sub">$285.1M</span>
+                  </div>
+                  <div class="bsw-pan right-pan" id="bsw-right-pan">
+                    <span class="pan-icon">🏢</span>
+                    <span class="pan-label">Commercial / PILOT</span>
+                    <span class="pan-val" id="bsw-right-val">23.8%</span>
+                    <span class="pan-sub" id="bsw-right-sub">$89.0M</span>
+                  </div>
+                </div>
+                <div class="bsw-fulcrum"></div>
+                <div class="bsw-base"></div>
+              </div>
+              <div class="bsw-subtext" id="bsw-subtext">
+                Homeowners currently shoulder 3.2× the burden of commercial ratables. Move sliders to balance the scale.
+              </div>
+            </div>
+
+            <!-- Big Impact Cards -->
+            <div class="kpi-impact-grid">
+              <div class="kpi-impact-card">
+                <span class="kpi-label" id="res-label-current">Current 2026 Tax Bill</span>
+                <span class="kpi-value current-val" id="res-current-bill">$12,494</span>
+                <span class="kpi-sub" id="res-current-rate">6.527% on $191.4k assessment</span>
+              </div>
+
+              <div class="kpi-impact-card highlight-card">
+                <span class="kpi-label" id="res-label-projected">What-If Projected Tax Bill</span>
+                <span class="kpi-value projected-val text-success" id="res-projected-bill">$10,521</span>
+                <span class="kpi-sub" id="res-projected-rate">2.215% equalized market rate</span>
+              </div>
+
+              <div class="kpi-impact-card savings-card">
+                <span class="kpi-label" id="res-label-savings">Your Net Annual Tax Relief</span>
+                <span class="kpi-value savings-val text-success" id="res-annual-savings">-$1,973 / yr</span>
+                <span class="kpi-sub savings-pct" id="res-savings-pct">-15.8% tax reduction</span>
+              </div>
+
+              <div class="kpi-impact-card">
+                <span class="kpi-label" id="res-label-monthly">Monthly Pocketbook Impact</span>
+                <span class="kpi-value monthly-val text-info" id="res-monthly-savings">-$164.42 / mo</span>
+                <span class="kpi-sub" id="res-sub-monthly">Direct monthly escrow reduction</span>
+              </div>
+            </div>
+
+            <!-- Visual Comparison Bar -->
+            <div class="visual-comparison-box">
+              <div class="vc-labels">
+                <span>Before: <strong id="vc-before-label">$12,494</strong></span>
+                <span>After: <strong id="vc-after-label" class="text-success">$10,521</strong></span>
+              </div>
+              <div class="vc-bar-track">
+                <div class="vc-bar-before" style="width: 100%;"></div>
+                <div class="vc-bar-after" id="vc-after-bar" style="width: 84.2%;"></div>
+              </div>
+              <div class="vc-subtext" id="vc-narrative">
+                You save <strong>$1,973 per year</strong> through restored commercial ratables, PILOT school contributions, and rate equalization.
+              </div>
+            </div>
+
+            <!-- VISUAL 2: PERSONAL SAVINGS WATERFALL BREAKDOWN -->
+            <div class="waterfall-breakdown-box">
+              <div class="wfb-header">
+                <span class="wfb-title">📊 Where Your Savings Come From (Waterfall Breakdown)</span>
+                <span class="wfb-hint">Step-by-step policy savings</span>
+              </div>
+              <div class="wfb-steps-track" id="wfb-steps-track">
+                <!-- Rendered dynamically by JS -->
+              </div>
+            </div>
+
+            <!-- Equity Score Meter -->
+            <div class="equity-score-meter-box">
+              <div class="esm-header">
+                <span class="esm-title">Fairness & Equity Score</span>
+                <span class="esm-score" id="esm-score-val">96 / 100</span>
+              </div>
+              <div class="esm-track">
+                <div class="esm-fill" id="esm-fill-bar" style="width: 96%; background: #10b981;"></div>
+              </div>
+              <div class="esm-legend">
+                <span>0 (Severely Regressive)</span>
+                <span>50 (Moderate Disparity)</span>
+                <span>100 (Equally Proportional)</span>
+              </div>
+            </div>
+
+            <!-- VISUAL 3: CLICK-TO-DRILL-DOWN TAX DOLLAR INSPECTOR -->
+            <div class="destination-breakdown-box">
+              <div class="dest-header-row">
+                <h5>Where Your What-If Tax Dollar Goes:</h5>
+                <span class="dest-hint">Click a category below to drill down into line items</span>
+              </div>
+              <div class="dest-split-bars" id="dest-split-bars">
+                <!-- Bars rendered by JS -->
+              </div>
+              <div class="dest-legend" id="dest-legend">
+                <!-- Legend items rendered by JS -->
+              </div>
+
+              <!-- Interactive Line-Item Inspector -->
+              <div class="dest-inspector-tray">
+                <div class="dit-tab-bar">
+                  <button class="dit-tab-btn active" data-entity="schools" id="btn-dit-schools">🎓 Schools Line Items</button>
+                  <button class="dit-tab-btn" data-entity="municipal" id="btn-dit-muni">🚔 City Hall Line Items</button>
+                  <button class="dit-tab-btn" data-entity="county" id="btn-dit-county">🏛️ County Line Items</button>
+                </div>
+                <div class="dit-content-body" id="dit-content-body">
+                  <!-- Line items rendered by JS with exact dollar figures for this resident -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Fiscal Guarantee Callout -->
+            <div class="fiscal-guarantee-banner">
+              <span class="fgb-icon">🛡️</span>
+              <div class="fgb-text">
+                <strong>Fiscal Neutrality & Zero-Deficit Guarantee:</strong>
+                <p id="res-fiscal-note">This reform does not cut a single teacher, firefighter, police officer, or municipal road project. Clifton's full $374.15M budget remains 100% funded by redirecting lost commercial ratables ($32.6M) and PILOT revenue ($2.4M) into the public ledger.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample Home Profiles (1-Click Archetypes) -->
+      <div class="fair-card">
+        <div class="fair-card-header">
+          <span class="fc-icon">🏘️</span>
+          <div>
+            <h3>Sample Clifton Resident Profiles: How Different Households Fare</h3>
+            <p>Click any household card below to instantly load their real-world profile into the simulator:</p>
+          </div>
+        </div>
+        <div class="sample-profiles-grid" id="sample-profiles-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Neighborhood Equity Impact Table (All ZIP Codes) -->
+      <div class="fair-card">
+        <div class="fair-card-header">
+          <span class="fc-icon">📍</span>
+          <div>
+            <h3>Neighborhood Equity Comparison & Gauges (07011, 07012, 07013, 07014)</h3>
+            <p>Visual gauges showing tax effort, student population share vs. tax base share, and projected relief across Clifton neighborhoods:</p>
+          </div>
+        </div>
+
+        <!-- VISUAL 4: INTERACTIVE NEIGHBORHOOD COMPARISON CARDS & GAUGES -->
+        <div class="neighborhood-visual-cards-grid" id="neighborhood-visual-cards-grid">
+          <!-- Populated by JS with visual gauges, split bars, and drill-down buttons -->
+        </div>
+
+        <div class="table-responsive" style="margin-top: 24px;">
+          <table class="data-table" id="neighborhood-equity-table">
+            <thead>
+              <tr>
+                <th>ZIP Code</th>
+                <th>Area / Neighborhoods</th>
+                <th>Median Income</th>
+                <th>Current Avg Tax</th>
+                <th>Current Effort (% Inc)</th>
+                <th>What-If Avg Tax</th>
+                <th>What-If Effort (% Inc)</th>
+                <th>Annual Relief</th>
+                <th>Est. Renter Savings</th>
+              </tr>
+            </thead>
+            <tbody id="neighborhood-equity-tbody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Legal & Legislative Roadmap: How Clifton Can Enact This -->
+      <div class="fair-card">
+        <div class="fair-card-header">
+          <span class="fc-icon">🏛️</span>
+          <div>
+            <h3>Actionable 5-Step Policy Roadmap: How Clifton Can Legally Enact This</h3>
+            <p>Every reform modeled here is authorized under existing New Jersey statutes. Here is how City Council and the Board of Education can execute it:</p>
+          </div>
+        </div>
+        <div class="roadmap-steps-list" id="fair-roadmap-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Share / Civic Resolution Action Box -->
+      <div class="civic-action-card">
+        <div class="cac-content">
+          <span class="cac-icon">📢</span>
+          <div>
+            <h4>Take Action for Clifton Tax Fairness</h4>
+            <p>Share this data with your neighbors, bring it to the next City Council meeting, or copy the resolution summary for your neighborhood association.</p>
+          </div>
+        </div>
+        <div class="cac-actions">
+          <button class="btn btn-primary" id="btn-copy-fair-tax-summary">📋 Copy Citizen Fair Tax Summary</button>
+          <button class="btn btn-outline" id="btn-print-fair-tax">🖨️ Print / Save PDF Report</button>
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for What-If Fair Tax Simulator -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Statutory Authorities & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.asinj.com" target="_blank" rel="noopener">Appraisal Systems, Inc. (ASI): Clifton 2026–2027 Municipal Revaluation Portal (N.J.S.A. 54:4-23) ↗</a>
+            <span class="source-doc-desc">Official revaluation contractor portal, inspection schedules, Oct 1, 2026 valuation baseline, and May 1, 2027 appeal deadline.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/dca/divisions/dlgs/" target="_blank" rel="noopener">NJ Long Term Tax Exemption Law (N.J.S.A. 40A:20-12) & Clean Stormwater Act (N.J.S.A. 40A:26B-1) ↗</a>
+            <span class="source-doc-desc">Statutory authority for municipal PILOT school revenue-sharing ordinances and commercial stormwater/sanitation enterprise unbundling.</span>
+          </li>
+          <li>
+            <a href="https://propertytaxrelief.nj.gov" target="_blank" rel="noopener">NJ Division of Taxation: Stay NJ, ANCHOR & Senior Freeze (Combined Form PAS-1) ↗</a>
+            <span class="source-doc-desc">State property tax relief programs (up to $6,500 Stay NJ credit for seniors 65+, $1,750 ANCHOR homeowner rebate, and $700 tenant rebate).</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section id="tab-benefits" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Source: State Health Benefits Program (SHBP / SEHBP) & Collective Bargaining Guides</span>
+        </div>
+        <h2>Healthcare, Pensions & Employee Benefits: Where 22% of Your Taxes Go</h2>
+        <p>Between City Hall ($24.4M) and the Board of Education ($62.8M), over <strong>$87.2 Million per year</strong> of taxpayer money is spent directly on public employee medical insurance, prescription drugs, pensions, and terminal leave packages.</p>
+      </div>
+
+      <div class="benefits-summary-banner">
+        <div class="b-stat">
+          <span class="stat-title">Combined Benefits Spending</span>
+          <span class="stat-num">$87,200,000 / year</span>
+          <span class="stat-detail">21.9% of all Clifton public budgets</span>
+        </div>
+        <div class="b-stat">
+          <span class="stat-title">Average Family Health Premium</span>
+          <span class="stat-num">~$32,000 - $36,000</span>
+          <span class="stat-detail">Annual cost per enrolled employee family</span>
+        </div>
+        <div class="b-stat">
+          <span class="stat-title">Taxpayer Premium Share</span>
+          <span class="stat-num">65% to 93%</span>
+          <span class="stat-detail">Taxpayers cover the vast majority of premiums</span>
+        </div>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefits-card">
+          <h3>🩺 1. Medical & Health Insurance Plans Provided</h3>
+          <p class="benefits-card-sub">Clifton employees participate in the State Health Benefits Program (SHBP) or School Employees' Health Benefits Program (SEHBP):</p>
+          <div class="plans-list" id="benefits-plans-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div class="benefits-card">
+          <h3>⚖️ 2. Premium Cost Sharing: Who Pays What?</h3>
+          <p class="benefits-card-sub">State statutes govern employee premium contributions vs taxpayer subsidies:</p>
+          <div class="cost-share-list" id="benefits-cost-share-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <div class="benefits-deep-dive">
+        <h3>🏛️ 3. Lifetime Retiree Healthcare, Pensions & Leave Buyouts</h3>
+        <div class="retiree-benefits-list" id="benefits-retirement-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Sources & Official Verification Links for Healthcare & Benefits -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.nj.gov/treasury/pensions/shbp.shtml" target="_blank" rel="noopener">NJ Division of Pensions & Benefits: State Health Benefits Program (SHBP / SEHBP) ↗</a>
+            <span class="source-doc-desc">Official premium rate matrices, NJ DIRECT plan designs, and prescription formularies.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/treasury/pensions/epsb/chapter-78.shtml" target="_blank" rel="noopener">State of New Jersey Chapter 78 & Chapter 44 Employee Contribution Calculator ↗</a>
+            <span class="source-doc-desc">Statutory employee salary contribution percentages vs taxpayer premium liabilities.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/treasury/pensions/" target="_blank" rel="noopener">NJ PERS and PFRS Actuarial Valuation Reports ↗</a>
+            <span class="source-doc-desc">Annual municipal and school board employer pension liabilities and post-retirement medical trust.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="tab-vendors" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Warrant Lists & Claims: FY 2025-2026 Check Registers</span>
+        </div>
+        <h2>Where Does Contract Money Go? Top Vendors & Bill Lists</h2>
+        <p>Every month, the Clifton City Council and Board of Education vote on "Bill Lists" (Warrant Lists) approving millions in vendor payments for bus contracts, legal fees, construction, healthcare, and utilities.</p>
+      </div>
+
+      <div class="vendors-grid" id="vendors-cards-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Sources & Official Verification Links for Vendors & Bill Lists -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.clifton.k12.nj.us/board-of-education/board-meeting-agendas" target="_blank" rel="noopener">Clifton BOE Board Meeting Agendas, Bill Lists & Check Registers ↗</a>
+            <span class="source-doc-desc">Itemized accounts payable warrant lists approved by the Board of Education at public voting meetings.</span>
+          </li>
+          <li>
+            <a href="https://www.cliftonnj.org/AgendaCenter" target="_blank" rel="noopener">City of Clifton City Council Agenda Center & Claims Resolutions ↗</a>
+            <span class="source-doc-desc">Bi-weekly municipal claims approval resolutions and professional services contract awards.</span>
+          </li>
+          <li>
+            <a href="https://www.elec.state.nj.us/pay2play/p2p.html" target="_blank" rel="noopener">NJ Election Law Enforcement Commission (ELEC) Pay-to-Play Disclosures (Form BE) ↗</a>
+            <span class="source-doc-desc">Annual political contribution and contract disclosures for government vendors receiving >$17,500.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="tab-surrounding" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Certified Comparative 2026 Tax Rates • Passaic, Morris & Essex County Boards of Taxation</span>
+        </div>
+        <h2 id="surrounding-heading">Cross-Town Tax & Spending Comparison: How Much Each Town Pays & Where the Money Goes</h2>
+        <p id="surrounding-desc">Compare <strong>14 North Jersey municipalities</strong> across Passaic, Morris, and Essex Counties. Simulate what your exact home would pay in property taxes in each municipality, adjust for New Jersey's Equalization Ratios, and see the exact dollar and percentage breakdown of <strong>where your tax dollars go</strong> (Public Schools, Municipal Police/Fire/DPW, and County Government).</p>
+      </div>
+
+      <!-- Key Insight Banner -->
+      <div class="comparative-insight-banner">
+        <div class="insight-pill">💡 Tax Insight</div>
+        <p><strong>The Equalization Illusion:</strong> Nominal certified rates can be highly deceiving. For example, Clifton's certified rate (<strong>6.527%</strong>) appears over double Wayne's (<strong>2.748%</strong>) or Montclair's (<strong>3.766%</strong>) because Clifton's property assessments are frozen at <strong>~33.3% of market value</strong>. When equalized to true 100% fair market value, Clifton's <strong>Effective Tax Rate is 2.173%</strong>—lower than Wayne (2.209%), Little Falls (2.246%), Montclair (3.111%), Passaic City (2.822%), and Paterson (3.242%).</p>
+      </div>
+
+      <!-- Interactive Cross-Town Simulator & Control Hub -->
+      <div class="comparator-control-panel">
+        <div class="comparator-control-header">
+          <div class="cch-title-wrap">
+            <span class="cch-icon">🧮</span>
+            <div>
+              <h3>"What Would My Home Pay in Each Town?" Simulator</h3>
+              <p>Enter any home value and household income to compare your exact tax bill and spending split side-by-side across all 14 municipalities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparator-inputs-grid">
+          <div class="comp-input-group">
+            <label for="cross-home-val">Home Market Value ($)</label>
+            <div class="input-with-affix">
+              <span class="input-affix">$</span>
+              <input type="number" id="cross-home-val" value="600000" step="10000" min="50000" max="10000000" aria-label="Home Market Value">
+            </div>
+            <div class="comparator-presets" role="group" aria-label="Preset home values">
+              <button type="button" class="comp-preset-btn" data-val="450000">$450k Starter</button>
+              <button type="button" class="comp-preset-btn active" data-val="600000">$600k Typical</button>
+              <button type="button" class="comp-preset-btn" data-val="850000">$850k Suburban</button>
+              <button type="button" class="comp-preset-btn" data-val="1200000">$1.2M Luxury</button>
+            </div>
+          </div>
+
+          <div class="comp-input-group">
+            <label for="cross-income-val">Household Annual Income ($)</label>
+            <div class="input-with-affix">
+              <span class="input-affix">$</span>
+              <input type="number" id="cross-income-val" value="125000" step="5000" min="20000" max="2000000" aria-label="Household Annual Income">
+            </div>
+            <small class="comp-help-text">Used to calculate property tax burden as % of annual income.</small>
+          </div>
+
+          <div class="comp-input-group">
+            <label for="cross-sort-by">Sort Municipalities</label>
+            <select id="cross-sort-by" class="comp-select" aria-label="Sort comparison table">
+              <option value="tax-asc" selected>Tax Bill: Lowest to Highest</option>
+              <option value="tax-desc">Tax Bill: Highest to Lowest</option>
+              <option value="rate-asc">Effective Rate: Lowest to Highest</option>
+              <option value="school-desc">School Spending %: Highest First</option>
+              <option value="muni-desc">Municipal %: Highest First</option>
+              <option value="name-asc">Town Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="comparator-filter-row">
+          <span class="c-filter-label">Filter by County:</span>
+          <div class="comp-county-filters" role="group" aria-label="Filter by county">
+            <button type="button" class="comp-county-btn active" data-county="all">All Counties (14)</button>
+            <button type="button" class="comp-county-btn" data-county="Passaic County">Passaic (5)</button>
+            <button type="button" class="comp-county-btn" data-county="Morris County">Morris (6)</button>
+            <button type="button" class="comp-county-btn" data-county="Essex County">Essex (3)</button>
+          </div>
+
+          <div class="comp-legend" aria-label="Spending breakdown color legend">
+            <span class="legend-item"><span class="legend-color-box seg-school"></span> 🏫 Schools</span>
+            <span class="legend-item"><span class="legend-color-box seg-muni"></span> 🚔 Municipal</span>
+            <span class="legend-item"><span class="legend-color-box seg-county"></span> 🏛️ County</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparative Summary Table with Accessible Scrollable Wrapper -->
+      <div class="surrounding-table-wrapper" tabindex="0" role="region" aria-label="North Jersey Municipal Tax and Spending Comparison Table">
+        <table class="surrounding-data-table" id="surrounding-table">
+          <thead>
+            <tr>
+              <th scope="col">Town & County</th>
+              <th scope="col">Certified Rate</th>
+              <th scope="col">Equalization</th>
+              <th scope="col">Effective Rate</th>
+              <th scope="col">Your Annual Tax</th>
+              <th scope="col">Monthly Bill</th>
+              <th scope="col">Tax % Income</th>
+              <th scope="col" style="min-width: 260px;">Where the Money Goes (Split)</th>
+              <th scope="col">Watchdog Platform</th>
+            </tr>
+          </thead>
+          <tbody id="surrounding-table-body">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Detailed Town Comparative Cards -->
+      <div class="section-subtitle-row" style="margin-top: 36px;">
+        <h3>Granular Town Profiles & Budget Deep-Dives</h3>
+        <span class="pill-tag">14 North Jersey Municipalities</span>
+      </div>
+      <div class="surrounding-cards-grid" id="surrounding-cards-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Comparative Takeaways Grid -->
+      <div class="section-subtitle-row" style="margin-top: 36px;">
+        <h3>Core Regional Fiscal Takeaways</h3>
+        <span class="pill-tag alert-tag">Watchdog Analysis</span>
+      </div>
+      <div class="takeaways-grid" id="surrounding-takeaways-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Sources & Official Verification Links for Surrounding Towns -->
+      <div class="page-source-footer">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Data Sources & Verification Links for This Page:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation: 2026 Abstract of Ratables & Certification Table ↗</a>
+            <span class="source-doc-desc">Certified county tax rates, net valuation taxable, and equalization ratios for Clifton, Passaic, Paterson, Wayne, Little Falls, and Totowa.</span>
+          </li>
+          <li>
+            <a href="https://www.morriscountynj.gov/Departments/Taxation" target="_blank" rel="noopener">Morris County Board of Taxation: 2026 Abstract of Ratables & Equalization Table ↗</a>
+            <span class="source-doc-desc">Certified rates and assessments for Parsippany-Troy Hills, Morristown, Montville, Denville, Hanover, and Mountain Lakes.</span>
+          </li>
+          <li>
+            <a href="https://www.essexcountynj.org/board-of-taxation/" target="_blank" rel="noopener">Essex County Board of Taxation: 2026 Certified Tax Table (Nutley & Montclair) ↗</a>
+            <span class="source-doc-desc">Certified tax rates and equalization factors for neighboring Essex County municipalities bordering Clifton.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/treasury/taxation/lpt/lpt-abst-ratables.shtml" target="_blank" rel="noopener">NJ Division of Taxation: Abstracts of Ratables and Equalization Tables by County ↗</a>
+            <span class="source-doc-desc">State of New Jersey official repository of municipal equalization tables and effective tax rates.</span>
+          </li>
+          <li>
+            <a href="https://www.nj.gov/education/finance/fp/ufb/" target="_blank" rel="noopener">NJ Department of Education: Comparative School District Budget Database ↗</a>
+            <span class="source-doc-desc">State aid allocations vs local property tax levies across neighboring school districts.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Clifton NJ Taxpayer Watchdog Project</h4>
+          <p>Independent civic transparency, property assessment, and public records analysis for Clifton, New Jersey residents.</p>
+        </div>
+        <div class="footer-meta">
+          <span class="footer-badge">Current as of October 2026 Certified Rolls</span>
+          <span class="footer-sources">All figures, tax rates, salaries, and assessments verified against certified records from: Passaic County Board of Taxation, City of Clifton Tax Assessor & Collector, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), NJ DCA Local Government Services, and Clifton BOE User-Friendly Budgets.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

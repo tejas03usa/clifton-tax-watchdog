@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clifton NJ Election 2026 | Candidates, School Board & NJ Statewide</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page-title="Election 2026 Voter Guide & Candidates">
+
+  <!-- Modern App Header (Top of Page) -->
+  <header class="app-header">
+    <!-- Top Utility Bar: Live Verification Status & Sleek Municipality Selector -->
+    <div class="container header-top-bar">
+      <div class="header-live-status" id="header-brand-badge">
+        <span class="live-dot-pulse"></span>
+        <span class="header-live-text" id="header-badge-text">Certified 2026 Fiscal Watchdog • Passaic County Board of Taxation & Audits</span>
+      </div>
+      <div class="city-switcher-group" role="group" aria-label="Select Municipality">
+        <span class="city-switcher-label">Switch Town:</span>
+        <div class="city-switcher-pills">
+          <button type="button" class="city-switch-btn active" data-city="clifton" aria-pressed="true">
+            <span class="city-btn-icon">🏛️</span>
+            <span class="city-btn-name">Clifton</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="parsippany" aria-pressed="false">
+            <span class="city-btn-icon">🌲</span>
+            <span class="city-btn-name">Parsippany</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="wayne" aria-pressed="false">
+            <span class="city-btn-icon">🌳</span>
+            <span class="city-btn-name">Wayne</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="montclair" aria-pressed="false">
+            <span class="city-btn-icon">🏡</span>
+            <span class="city-btn-name">Montclair</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="morristown" aria-pressed="false">
+            <span class="city-btn-icon">📜</span>
+            <span class="city-btn-name">Morristown</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="montville" aria-pressed="false">
+            <span class="city-btn-icon">🏞️</span>
+            <span class="city-btn-name">Montville</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header Body: Title/Subtitle & KPI Stat Cards -->
+    <div class="container header-container">
+      <div class="header-titles">
+        <h1 id="header-main-title">Clifton Taxpayer Watchdog</h1>
+        <p class="subtitle" id="header-main-subtitle">Real-time public investigation into where your Clifton property taxes go, the ~$293M school budget, public employee healthcare benefits, outside staff businesses, and official state audits.</p>
+      </div>
+
+      <div class="header-stat-cards">
+        <a href="index.html" class="stat-card clickable-stat-card" title="Click to open Tax Calculator">
+          <div class="stat-card-label" id="hdr-stat1-label">Certified Tax Rate (2026) ↗</div>
+          <div class="stat-card-num" id="hdr-stat1-num">6.527%</div>
+          <div class="stat-card-sub" id="hdr-stat1-sub">Avg Bill: $11,912 / yr</div>
+        </a>
+        <a href="budgets.html" class="stat-card highlight-school clickable-stat-card" title="Click to view School Budget">
+          <div class="stat-card-label" id="hdr-stat2-label">Clifton Public Schools (BOE) ↗</div>
+          <div class="stat-card-num" id="hdr-stat2-num">47.66%</div>
+          <div class="stat-card-sub" id="hdr-stat2-sub">Explore $293.2M budget</div>
+        </a>
+        <a href="properties.html" class="stat-card clickable-stat-card" title="Click to view Property Assessments">
+          <div class="stat-card-label" id="hdr-stat3-label">Sampled Assessments ↗</div>
+          <div class="stat-card-num" id="hdr-stat3-num">1,850 Homes</div>
+          <div class="stat-card-sub" id="hdr-stat3-sub">Avg Assessed: $182.5k</div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Modern Streamlined Sticky Navigation Bar: 4 Core Hubs -->
+  <nav class="nav-bar sticky-nav" id="main-nav" role="navigation" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <!-- Persistent Brand Lockup on Left -->
+      <a href="index.html" class="nav-brand-lockup" id="nav-brand-home" aria-label="Taxpayer Watchdog - Back to Home">
+        <div class="nav-brand-icon-wrap">
+          <span class="nav-brand-icon" id="nav-brand-icon">🏛️</span>
+        </div>
+        <div class="nav-brand-text">
+          <div class="nav-brand-title" id="nav-brand-title">Clifton Watchdog</div>
+          <div class="nav-brand-subtitle" id="nav-brand-subtitle">CITIZEN FISCAL AUDIT • 2026</div>
+        </div>
+      </a>
+
+      <!-- Clean 4-Item Hub Navigation Menu -->
+      <div class="nav-menu" role="menubar">
+        <a href="index.html" class="nav-item-btn tab-btn" id="nav-link-calculator" role="menuitem">
+          <span class="tab-icon">💰</span>
+          <span class="tab-title">Tax Calculator</span>
+        </a>
+
+        <a href="election.html" class="nav-item-btn tab-btn active" id="nav-link-election" role="menuitem" aria-current="page">
+          <span class="tab-icon">🗳️</span>
+          <span class="tab-title">Election 2026</span>
+          <span class="badge-tag" style="background: #2563eb; color: #fff; margin-left: 4px; padding: 2px 7px; font-size: 0.72rem; border-radius: 999px;">19 Candidates</span>
+        </a>
+
+        <a href="budgets.html" class="nav-item-btn tab-btn" id="nav-link-budgets" role="menuitem">
+          <span class="tab-icon">📊</span>
+          <span class="tab-title">Budgets & Taxes</span>
+        </a>
+
+        <a href="properties.html" class="nav-item-btn tab-btn" id="nav-link-properties" role="menuitem">
+          <span class="tab-icon">🔍</span>
+          <span class="tab-title">Properties & Audits</span>
+          <span class="badge-tag" style="background: #059669; color: #fff; margin-left: 4px; padding: 2px 7px; font-size: 0.72rem; border-radius: 999px;">1,850</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Live Citizen Status Bar (Certified 2026 Tax Rates) -->
+  <div class="live-status-bar">
+    <div class="container status-container">
+      <div class="status-indicator">
+        <span class="pulse-dot"></span>
+        <span class="status-title">Live Citizen Watchdog:</span>
+        <span class="status-value" id="status-cert-text">Certified 2026 Tax Rates • Passaic County Board of Taxation & Official Audits</span>
+      </div>
+      <div class="status-metrics">
+        <div class="status-metric-pill">
+          <span class="pill-label">Total Rate:</span>
+          <strong class="pill-val" id="pill-total-rate">6.527%</strong>
+        </div>
+        <div class="status-metric-pill">
+          <span class="pill-label">Schools Share:</span>
+          <strong class="pill-val" id="pill-schools-share">47.66%</strong>
+        </div>
+        <div class="status-metric-pill">
+          <span class="pill-label">City/Muni Share:</span>
+          <strong class="pill-val" id="pill-city-share">29.41%</strong>
+        </div>
+        <div class="status-metric-pill">
+          <span class="pill-label">County Share:</span>
+          <strong class="pill-val" id="pill-county-share">22.92%</strong>
+        </div>
+        <div class="status-metric-pill refresh-pill">
+          <span class="pill-label">Auto-Refresh:</span>
+          <span class="pill-badge-green">Active (Weekly Cron)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application Content Area -->
+  <main class="main-content container">
+    <section id="tab-election" class="tab-pane active" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">Official Election: Tuesday, Nov 3, 2026</span>
+          <span class="section-source-badge">Passaic County Clerk Certified Ballot Roster</span>
+          <span class="section-update-badge">Council: Vote 7 • BOE: Vote 3 • NJ & County Offices</span>
+        </div>
+        <h2>Clifton Municipal & General Election 2026: Comprehensive Voter Guide & Dossiers</h2>
+        <p>Your nonpartisan, investigative voter guide to all candidates appearing on your Clifton ballot on November 3, 2026: 19 Clifton City Council candidates competing for 7 at-large seats, 4 Board of Education candidates (3 full terms & 1 unexpired term), plus New Jersey Statewide (U.S. Senate), Congressional (NJ-09), and Passaic County government races.</p>
+      </div>
+
+      <!-- Condensed Quick Highlights Strip -->
+      <div class="election-hero-banner election-hero-strip">
+        <div class="election-hero-card hero-strip-item">
+          <div class="hero-icon">🏛️</div>
+          <div class="hero-content">
+            <h4>City Council (Vote 7)</h4>
+            <p>19 running at-large • 4-yr terms • Top vote traditionally becomes <strong>Mayor</strong>.</p>
+          </div>
+        </div>
+        <div class="election-hero-card hero-strip-item">
+          <div class="hero-icon">🏫</div>
+          <div class="hero-content">
+            <h4>Board of Ed (Vote 3 + 1)</h4>
+            <p>4 running (3 Full-Term seats + 1 Unexpired seat) • $293.4M budget (47.7% of taxes) • 17 schools.</p>
+          </div>
+        </div>
+        <div class="election-hero-card hero-strip-item">
+          <div class="hero-icon">🌿</div>
+          <div class="hero-content">
+            <h4>100% Healthcare Waiver</h4>
+            <p>All 19 council candidates signed pledge declining taxpayer-funded health benefits.</p>
+          </div>
+        </div>
+        <div class="election-hero-card hero-strip-item">
+          <div class="hero-icon">🗳️</div>
+          <div class="hero-content">
+            <h4>Polls Open 6 AM – 8 PM</h4>
+            <p>Tuesday, Nov 3, 2026 • 3 Clifton 24/7 dropboxes & early voting at Community Rec Center.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Navigation Quick Anchor Bar -->
+      <div class="election-quick-nav">
+        <a href="#election-ballot-overview" class="election-quick-pill">🗳️ Full Ballot & Offices Breakdown</a>
+        <a href="#election-search-anchor" class="election-quick-pill">🔍 Council Search & Filter</a>
+        <a href="#election-candidates-heading" class="election-quick-pill">📋 All 19 Council Candidates (Vote 7)</a>
+        <a href="#election-controversies-heading" class="election-quick-pill">⚖️ Outside Businesses & Allegations</a>
+        <a href="#election-matrix-heading" class="election-quick-pill">📊 Platform Comparison Matrix</a>
+        <a href="#election-boe-heading" class="election-quick-pill">🏫 Board of Education (Vote 3 + 1)</a>
+        <a href="#election-nj-candidates-heading" class="election-quick-pill">🇺🇸 NJ Senate, Congress & County</a>
+        <a href="#election-voting-heading" class="election-quick-pill">📍 Voting & Polling Guide</a>
+      </div>
+
+      <!-- Complete Ballot Architecture & Offices Guide -->
+      <div class="section-subtitle-row" id="election-ballot-overview" style="margin-top: 24px;">
+        <h3>Clifton Ballot Architecture & Offices Guide (Nov 3, 2026)</h3>
+        <span class="pill-tag" style="background: #0f172a; color: #fff;">4 Government Levels</span>
+      </div>
+      <p class="section-subtitle-desc" style="margin-bottom: 14px;">Exact selection limits and property tax connections across municipal, school district, county, and federal offices:</p>
+      <div id="election-ballot-overview-grid" class="ballot-overview-grid" style="margin-bottom: 24px;">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Search & Filtering Toolbar -->
+      <div class="election-controls-wrapper" id="election-search-anchor">
+        <div class="election-search-row">
+          <div class="election-search-input-box">
+            <span class="search-input-icon">🔍</span>
+            <input type="text" id="election-search-input" placeholder="Search candidates by name, ballot #, business, or controversy keyword (e.g. Sadrakula, Pino, Tahan, DeMarzo, clinic, lawsuit, censure, real estate, landscaping)..." class="styled-input-lg" autocomplete="off">
+            <button id="election-search-clear" class="btn-clear-search" title="Clear Search">✕</button>
+          </div>
+        </div>
+
+        <div class="election-filters-row">
+          <div class="filter-group-status">
+            <span class="filter-label">Status & Vetting:</span>
+            <div class="btn-group-toggle" role="group" aria-label="Candidate Status Filter">
+              <button class="filter-btn active" data-status="all">All (19)</button>
+              <button class="filter-btn" data-status="incumbent">Incumbents (5)</button>
+              <button class="filter-btn" data-status="challenger">Challengers (14)</button>
+              <button class="filter-btn filter-btn-alert" data-status="controversy">⚠️ Under Scrutiny (6)</button>
+              <button class="filter-btn filter-btn-clean" data-status="clean">✓ Verified Clean (13)</button>
+            </div>
+          </div>
+
+          <div class="filter-group-category">
+            <span class="filter-label">Filter by Platform Issue:</span>
+            <div class="category-pills-row" id="election-category-pills">
+              <!-- Dynamically populated by JS with icons and names -->
+            </div>
+          </div>
+        </div>
+
+        <div class="election-results-status">
+          <span id="election-results-count">Showing 19 of 19 Council Candidates</span>
+          <span class="election-expand-controls">
+            <button id="btn-expand-all-candidates" class="btn-toggle-expand">Expand All Profiles</button>
+            <button id="btn-collapse-all-candidates" class="btn-toggle-expand">Collapse All</button>
+          </span>
+        </div>
+      </div>
+
+      <!-- Candidates Grid -->
+      <div class="section-subtitle-row" id="election-candidates-heading" style="margin-top: 28px;">
+        <h3>Clifton City Council Candidates — Vote for up to 7 (19 Running At-Large)</h3>
+        <span class="pill-tag">Select up to 7 • Top Vote-Getter Becomes Mayor</span>
+      </div>
+      <div id="election-candidates-grid" class="election-candidates-main-container">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Citizen Watchdog Dossier: Outside Businesses, Disclosures & Allegations -->
+      <div class="section-subtitle-row" id="election-controversies-heading" style="margin-top: 48px;">
+        <h3>Citizen Watchdog Dossier: Outside Businesses, Disclosures & Allegations</h3>
+        <span class="pill-tag alert-tag">FDS Filings • Court Dockets • Council Censures</span>
+      </div>
+      <p class="section-subtitle-desc">In-depth investigative vetting of outside commercial interests, state financial disclosures (FDS), court records, municipal censures, and ethics inquiries for all Clifton City Council candidates.</p>
+      <div id="election-controversies-spotlight" class="controversies-spotlight-container">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Platform Comparison Matrix -->
+      <div class="section-subtitle-row" id="election-matrix-heading" style="margin-top: 48px;">
+        <h3>Candidate Platform Comparison Matrix</h3>
+        <span class="pill-tag alert-tag">Side-by-Side Policy Stances</span>
+      </div>
+      <p class="section-subtitle-desc">Compare all 19 candidates across key voting priorities: Property Tax Relief, Flooding & Water, Zoning & Data Centers, Dais Decorum, and Public Safety.</p>
+      <div class="election-matrix-container">
+        <div class="table-responsive">
+          <table class="election-matrix-table" id="election-matrix-table">
+            <!-- Table content populated by app.js -->
+          </table>
+        </div>
+      </div>
+
+      <!-- Board of Education Candidates Section -->
+      <div class="section-subtitle-row" id="election-boe-heading" style="margin-top: 48px;">
+        <h3>Clifton Board of Education Candidates (2026 General Election)</h3>
+        <span class="pill-tag" style="background: var(--color-school); color: #fff;">Full 3-Year Terms (Vote 3) & Unexpired Term (Vote 1) • $293.4M Budget (47.7% of Taxes)</span>
+      </div>
+      <p class="section-subtitle-desc">School Board Trustees oversee 17 public schools, ~11,000 students, and roughly 47.7% ($3.11 per $100) of your property tax bill. On the November 3, 2026 ballot, voters will elect three trustees for full 3-year terms (2027–2029) and one trustee to complete an unexpired 1-year term (2027):</p>
+      <div id="election-boe-grid" class="boe-cards-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- New Jersey Statewide & Passaic County Candidates Section -->
+      <div class="section-subtitle-row" id="election-nj-candidates-heading" style="margin-top: 48px;">
+        <h3>New Jersey Statewide & Passaic County Candidates on Your Ballot</h3>
+        <span class="pill-tag" style="background: #1d4ed8; color: #fff;">Federal (U.S. Senate & NJ-09) • Passaic County Government</span>
+      </div>
+      <p class="section-subtitle-desc">In addition to local municipal and school races, Clifton voters will elect representation for United States Senate (Class II), U.S. House of Representatives (New Jersey's 9th Congressional District), Passaic County Board of County Commissioners (Full 3-Year & 1-Year Unexpired), and Passaic County Surrogate (Passaic County Sheriff is off-cycle until 2027).</p>
+      <div id="election-nj-candidates-container" class="nj-candidates-container">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Official Voting Guide & Polling Locations -->
+      <div class="section-subtitle-row" id="election-voting-heading" style="margin-top: 48px;">
+        <h3>Official Clifton Voting Guide & Polling Information</h3>
+        <span class="pill-tag">Election Day Essentials</span>
+      </div>
+      <div id="election-voting-guide" class="voting-guide-container">
+        <!-- Rendered by JavaScript / Pre-structured -->
+      </div>
+
+      <!-- Sources & Official Verification Links for Election -->
+      <div class="page-source-footer" style="margin-top: 40px;">
+        <div class="source-footer-header">
+          <span class="source-icon">📚</span>
+          <strong>Official Nonpartisan Election Sources & Records:</strong>
+        </div>
+        <ul class="source-links-list">
+          <li>
+            <a href="https://www.passaiccountynj.org/government/county-clerk/elections" target="_blank" rel="noopener">Passaic County Clerk Elections Division: Certified Candidate Ballot Drawing ↗</a>
+            <span class="source-doc-desc">Official ballot positions determined by public drawing conducted by the Passaic County Clerk.</span>
+          </li>
+          <li>
+            <a href="https://voter.svrs.nj.gov/registration-check" target="_blank" rel="noopener">NJ Division of Elections: Voter Registration Status & Polling Place Locator ↗</a>
+            <span class="source-doc-desc">Verify your voter registration status and find your assigned Clifton polling district.</span>
+          </li>
+          <li>
+            <a href="https://cliftonnj.org/218/City-Clerk" target="_blank" rel="noopener">City of Clifton Municipal Clerk: Municipal Election Archive & Notices ↗</a>
+            <span class="source-doc-desc">Official municipal resolutions, meeting minutes, and election administration.</span>
+          </li>
+          <li>
+            <a href="https://cliftonmerchant.com" target="_blank" rel="noopener">Clifton Merchant Magazine & Local Press Archives ↗</a>
+            <span class="source-doc-desc">Candidate forum coverage, editorial profiles, and public statements.</span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Clifton NJ Taxpayer Watchdog Project</h4>
+          <p>Independent civic transparency, property assessment, and public records analysis for Clifton, New Jersey residents.</p>
+        </div>
+        <div class="footer-meta">
+          <span class="footer-badge">Current as of October 2026 Certified Rolls</span>
+          <span class="footer-sources">All figures, tax rates, salaries, and assessments verified against certified records from: Passaic County Board of Taxation, City of Clifton Tax Assessor & Collector, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), NJ DCA Local Government Services, and Clifton BOE User-Friendly Budgets.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

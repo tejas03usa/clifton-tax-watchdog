@@ -26,6 +26,25 @@ let propCurrentPage = 1;
 const propPageSize = 36;
 let applyPropertyFilters = null;
 
+// Cross-Hub Page & Tab Routing Map
+const TAB_PAGE_MAP = {
+  'tab-calculator': 'index.html',
+  'tab-election': 'election.html',
+  'tab-budgets': 'budgets.html#tab-budgets',
+  'tab-commercial-pilot': 'budgets.html#tab-commercial-pilot',
+  'tab-fair-tax': 'budgets.html#tab-fair-tax',
+  'tab-benefits': 'budgets.html#tab-benefits',
+  'tab-vendors': 'budgets.html#tab-vendors',
+  'tab-surrounding': 'budgets.html#tab-surrounding',
+  'tab-properties': 'properties.html#tab-properties',
+  'tab-demographics': 'properties.html#tab-demographics',
+  'tab-staff': 'properties.html#tab-staff',
+  'tab-ethics': 'properties.html#tab-ethics',
+  'tab-intelligence': 'properties.html#tab-intelligence',
+  'tab-controversies': 'properties.html#tab-controversies',
+  'tab-investigate': 'properties.html#tab-investigate'
+};
+
 // City-Specific OPRA Templates & Metadata
 const cityOpraConfig = {
   clifton: {
@@ -610,13 +629,53 @@ function getInitialCity() {
   return 'clifton';
 }
 
+// Highlight Active Hub Link in Navigation Bar
+function syncNavActive() {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-menu a.nav-item-btn').forEach(link => {
+    const href = link.getAttribute('href');
+    const isCurrent = href === currentPath || (currentPath === '' && href === 'index.html');
+    link.classList.toggle('active', isCurrent);
+    if (isCurrent) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
 // Initialize Application
 async function initApp() {
   currentCity = getInitialCity();
+  syncNavActive();
   setupTabs();
   setupCitySwitcher();
   handleUrlHash();
+
+  // Ensure the current page has an active tab pane
+  if (!document.querySelector('.tab-pane.active')) {
+    const firstPane = document.querySelector('.tab-pane');
+    if (firstPane) {
+      firstPane.classList.add('active');
+      const firstTabBtn = document.querySelector(`.hub-subnav-btn[data-tab="${firstPane.id}"]`) || document.querySelector(`.tab-btn[data-tab="${firstPane.id}"]`);
+      if (firstTabBtn) firstTabBtn.classList.add('active');
+    }
+  }
+
   await switchCity(currentCity, false);
+
+  // Check for ?calc= param to preload calculator from property links
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('calc')) {
+    const val = parseInt(urlParams.get('calc'), 10);
+    const input = document.getElementById('calc-assessment-input');
+    const slider = document.getElementById('calc-assessment-slider');
+    if (!isNaN(val) && input) {
+      input.value = val;
+      if (slider) slider.value = val;
+      input.dispatchEvent(new Event('input'));
+    }
+  }
 }
 
 // Setup City Switcher Buttons in Header & Sticky Nav
@@ -663,25 +722,33 @@ async function switchCity(cityId, updateUrl = true) {
   // Reset pagination to page 1 when switching cities
   propCurrentPage = 1;
 
-  // Render all 13 sections with the active city's dataset
-  setupCalculator();
-  renderBudgets();
-  renderDemographics();
-  renderProperties();
-  setupPropertyFilters();
-  renderSurroundingTowns();
-  renderBenefits();
-  renderControversies();
-  renderStaffTable('all', document.getElementById('staff-search-input')?.value || '');
-  setupStaffFilters();
-  renderEthicsCards();
-  renderVendorsCards();
-  setupInvestigationTools();
-  renderIntelligenceReports();
-  renderCommercialPilot();
-  renderFairTaxEngine();
-  renderElectionHub();
-  setupElectionControls();
+  // Render sections conditionally based on DOM elements present on the active page
+  if (document.getElementById('calc-assessment-input')) setupCalculator();
+  if (document.getElementById('boe-line-items')) renderBudgets();
+  if (document.getElementById('demo-population') || document.getElementById('demo-median-income-07013')) renderDemographics();
+  if (document.getElementById('properties-table-body') || document.getElementById('properties-cards-grid')) {
+    renderProperties();
+    setupPropertyFilters();
+  }
+  if (document.getElementById('surrounding-towns-grid')) renderSurroundingTowns();
+  if (document.getElementById('benefits-costs-grid')) renderBenefits();
+  if (document.getElementById('controversies-timeline')) renderControversies();
+  if (document.getElementById('staff-table-body')) {
+    renderStaffTable('all', document.getElementById('staff-search-input')?.value || '');
+    setupStaffFilters();
+  }
+  if (document.getElementById('ethics-cards-grid')) renderEthicsCards();
+  if (document.getElementById('vendors-cards-grid')) renderVendorsCards();
+  if (document.getElementById('intel-reports-list')) {
+    setupInvestigationTools();
+    renderIntelligenceReports();
+  }
+  if (document.getElementById('pilot-projects-grid')) renderCommercialPilot();
+  if (document.getElementById('fair-tax-engine-container') || document.getElementById('ft-scenarios-pills')) renderFairTaxEngine();
+  if (document.getElementById('election-candidates-grid') || document.getElementById('election-ballot-overview-grid')) {
+    renderElectionHub();
+    setupElectionControls();
+  }
 }
 
 // Dynamically update all static copy, headers, dropdowns, presets, and links for the active city
@@ -691,7 +758,12 @@ function applyCityStaticCopy(cityId) {
   const isClifton = cityId === 'clifton';
 
   // 1. Document Title & App Header
-  document.title = meta.pageTitle;
+  const pageSuffix = document.body.getAttribute('data-page-title');
+  if (pageSuffix) {
+    document.title = `${meta.name} NJ ${pageSuffix} | Taxpayer Watchdog`;
+  } else {
+    document.title = meta.pageTitle;
+  }
 
   const setElText = (id, text) => {
     const el = document.getElementById(id);
@@ -1540,6 +1612,19 @@ function applyCityStaticCopy(cityId) {
 
 // Global Cross-Section Navigation & Tab Switcher
 function switchTab(targetId, options = {}) {
+  const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+  const targetPane = document.getElementById(targetId);
+
+  // If tab pane is on another hub page, seamlessly navigate there
+  if (!targetPane && TAB_PAGE_MAP[targetId]) {
+    const targetUrl = TAB_PAGE_MAP[targetId];
+    const targetFile = targetUrl.split('#')[0];
+    if (targetFile !== currentFile) {
+      window.location.href = targetUrl;
+      return;
+    }
+  }
+
   const tabBtns = document.querySelectorAll('.tab-btn');
   const dropdowns = document.querySelectorAll('.nav-dropdown');
 
@@ -1555,6 +1640,12 @@ function switchTab(targetId, options = {}) {
     matchingBtn.classList.add('active');
     matchingBtn.setAttribute('aria-selected', 'true');
   }
+
+  // Sync hub subnav buttons
+  document.querySelectorAll('.hub-subnav-btn').forEach(btn => {
+    const isMatch = btn.getAttribute('data-tab') === targetId;
+    btn.classList.toggle('active', isMatch);
+  });
 
   // Close open dropdowns
   dropdowns.forEach(dd => {
@@ -1573,7 +1664,6 @@ function switchTab(targetId, options = {}) {
     }
   });
 
-  const targetPane = document.getElementById(targetId);
   if (targetPane) {
     targetPane.classList.add('active');
 
@@ -1647,6 +1737,24 @@ function switchTab(targetId, options = {}) {
 function handleUrlHash() {
   const rawHash = (window.location.hash || '').replace(/^#/, '').trim();
   if (!rawHash) return;
+
+  const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+
+  // If hash points to election and we are on another page, navigate to election.html
+  if ((rawHash === 'election' || rawHash.startsWith('election-')) && currentFile !== 'election.html') {
+    window.location.href = 'election.html#' + rawHash;
+    return;
+  }
+
+  // Cross-page redirect if hash points to a tab on another page
+  if (TAB_PAGE_MAP[rawHash]) {
+    const targetUrl = TAB_PAGE_MAP[rawHash];
+    const targetFile = targetUrl.split('#')[0];
+    if (currentFile !== targetFile) {
+      window.location.href = targetUrl;
+      return;
+    }
+  }
 
   const targetEl = document.getElementById(rawHash);
   const activePane = document.querySelector('.tab-pane.active');
@@ -1755,6 +1863,18 @@ function setupTabs() {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-tab');
       if (targetId) switchTab(targetId);
+    });
+  });
+
+  // Setup Hub Subnav Buttons (budgets.html and properties.html)
+  document.querySelectorAll('.hub-subnav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-tab');
+      if (targetId) {
+        document.querySelectorAll('.hub-subnav-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        switchTab(targetId);
+      }
     });
   });
 
@@ -2723,10 +2843,10 @@ function loadPropertyToCalculator(assessedValue) {
     input.value = assessedValue;
     if (slider) slider.value = assessedValue;
     input.dispatchEvent(new Event('input'));
+    switchTab('tab-calculator', { scrollToElement: '#calc-assessment-input' });
+  } else {
+    window.location.href = `index.html?calc=${assessedValue}#tab-calculator`;
   }
-
-  // Switch to Calculator tab smoothly
-  switchTab('tab-calculator', { scrollToElement: '#calc-assessment-input' });
 }
 
 // Setup Property Filters & View Switching
