@@ -6197,14 +6197,17 @@ function renderCandidateCard(c, catMap) {
 
   return `
     <article class="candidate-card ${isIncumbent ? 'is-incumbent' : 'is-challenger'} ${hasControversy ? 'has-controversies' : 'is-clean-record'}" id="candidate-card-${c.id}">
-      <div class="candidate-card-top">
+      <div class="candidate-card-header-bar">
+        <span class="card-council-badge">🏛️ City Council (Vote 7)</span>
         <div class="candidate-ballot-badge">
           <span class="ballot-num">Ballot #${c.ballotNumber}</span>
           <span class="candidate-status-tag ${isIncumbent ? 'status-incumbent' : 'status-challenger'}">
             ${isIncumbent ? '🏛️ Incumbent' : '⚡ Challenger'}
           </span>
         </div>
-        
+      </div>
+
+      <div class="candidate-card-top">
         <div class="candidate-photo-box">
           ${c.photoUrl ? `
             <img src="${escapeHtml(c.photoUrl)}" alt="${escapeHtml(c.name)}" class="candidate-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
