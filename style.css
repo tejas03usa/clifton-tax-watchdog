@@ -10137,6 +10137,14 @@ input:checked + .slider.round:before {
   font-weight: 700;
 }
 
+.off-cycle-notice-block {
+  border: 1px solid var(--border-color);
+  border-left: 4px solid #64748b !important;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background: rgba(100, 116, 139, 0.05);
+}
+
 .boe-card-header {
   margin-bottom: 10px;
 }

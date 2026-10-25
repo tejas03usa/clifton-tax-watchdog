@@ -198,7 +198,8 @@
           "Clifton emergency disaster preparedness advocate and local neighborhood organizer."
         ]
       },
-      "photoUrl": "data/candidates/1-thomas.jpg"
+      "photoUrl": "data/candidates/1-thomas.jpg",
+      "ballotPosition": "Row 1"
     },
     {
       "ballotNumber": 2,
@@ -321,7 +322,8 @@
           "Botany Village streetscape and small business revitalization booster"
         ]
       },
-      "photoUrl": "data/candidates/2-mejia.jpg"
+      "photoUrl": "data/candidates/2-mejia.jpg",
+      "ballotPosition": "Row 2"
     },
     {
       "ballotNumber": 3,
@@ -436,7 +438,8 @@
           "Advocate for expanded Clifton Police foot patrols and aggressive code enforcement sweeps against illegal multi-family overcrowding"
         ]
       },
-      "photoUrl": "data/candidates/3-sikora.jpg"
+      "photoUrl": "data/candidates/3-sikora.jpg",
+      "ballotPosition": "Row 3"
     },
     {
       "ballotNumber": 4,
@@ -592,7 +595,8 @@
           "Performer in community charity bands including Cerberus and Swingman & The Misfit Mutts"
         ]
       },
-      "photoUrl": "data/candidates/4-grabowski.jpg"
+      "photoUrl": "data/candidates/4-grabowski.jpg",
+      "ballotPosition": "Row 4"
     },
     {
       "ballotNumber": 5,
@@ -727,7 +731,8 @@
           "Proponent of Council consensus-building and fiscal accountability"
         ]
       },
-      "photoUrl": "data/candidates/5-whittles.jpg"
+      "photoUrl": "data/candidates/5-whittles.jpg",
+      "ballotPosition": "Row 5"
     },
     {
       "ballotNumber": 6,
@@ -850,55 +855,78 @@
           "Proponent of a municipal real-time citizen issue reporting app"
         ]
       },
-      "photoUrl": "data/candidates/6-alnatur.jpg"
+      "photoUrl": "data/candidates/6-alnatur.jpg",
+      "ballotPosition": "Row 6"
     },
     {
       "ballotNumber": 7,
-      "id": "matt-mullins",
-      "name": "Matt Mullins",
-      "status": "Challenger",
-      "role": "Public Policy Specialist & Community Organizer",
-      "experience": "Background in public administration, municipal policy research, digital civic engagement, and grassroots community organizing in Passaic County.",
-      "initials": "MM",
-      "tagline": "Modernizing DPW with open-data tracking, cracking down on absentee landlords, and expanding youth mental health resources.",
+      "id": "mary-sadrakula",
+      "name": "Mary Sadrakula",
+      "status": "Incumbent",
+      "role": "Clifton Councilwoman (Longtime Taxpayer Watchdog) & Real Estate Broker",
+      "experience": "First elected to Clifton City Council in 2004; known as the ultimate council watchdog; licensed real estate broker; decades of municipal budget scrutiny.",
+      "initials": "MS",
+      "tagline": "Fierce opposition to AI data centers and warehouse sprawl, voting NO on tax increases, and relentless auditing of legal and engineering bill lists.",
       "declinedBenefits": true,
       "categories": [
-        "governance",
         "housing",
-        "safety"
+        "taxes",
+        "governance"
       ],
       "keyPlatformPillars": [
         {
-          "category": "governance",
-          "title": "Open-Data Civic Technology for DPW & City Hall",
-          "details": "Launch a modern, mobile-friendly 311 citizen reporting app with real-time GPS tracking for pothole repairs, street sweeping, snow plowing, and bulk leaf collection."
+          "category": "housing",
+          "title": "Uncompromising Opposition to AI Data Centers & Warehouses",
+          "details": "Leading the fight to block high-voltage AI data centers and mega-warehouses that consume excessive water, strain electrical grids, generate humming noise pollution, and provide zero local jobs."
+        },
+        {
+          "category": "taxes",
+          "title": "Voting NO on Tax Increases & Municipal Borrowing",
+          "details": "Maintains an unblemished record of voting against unnecessary municipal bond ordinances, tax hikes, and wasteful consultant contracts. Scrutinizes every line of the bi-weekly municipal bill list."
         },
         {
           "category": "housing",
-          "title": "Holding Absentee Landlords Accountable",
-          "details": "Establish a public registry of habitual code violators and absentee corporate landlords who neglect residential properties, imposing escalating daily fines."
-        },
-        {
-          "category": "safety",
-          "title": "Youth Recreation & Mental Health Partnerships",
-          "details": "Partner with Passaic County health agencies to expand after-school programs, teen mental health counseling, and modernized park facilities across all 4 Clifton ZIP codes."
+          "title": "Stopping Overdevelopment & Preserving Neighborhoods",
+          "details": "Fight high-density variance approvals at the Zoning and Planning Boards to keep Clifton from turning into an overcrowded extension of urban centers."
         }
       ],
       "quotes": [
-        "Government should work at the speed of modern technology. When a resident reports a pothole or streetlight out, they deserve real-time status updates, not a busy signal."
+        "I don't go along to get along. I examine every single dollar on the bill list and vote against tax increases. Clifton needs someone who will stand up against the developers and tax-and-spend politicians."
       ],
-      "civicBackground": "Passaic County youth mentor; community organizer; civic open-source technology advocate.",
+      "civicBackground": "Councilwoman (2004–present); Clifton Taxpayers Association leader; Clifton Historical Society booster; Clifton Chamber member.",
       "investigativeDossier": {
         "outsideBusinesses": [
-          "Public Administration & Civic Technology Policy Specialist",
-          "Grassroots Community Organizer & Youth Mentor"
+          "Sadrakula Real Estate / Licensed Real Estate Brokerage (Clifton, NJ)",
+          "Retired Wall Street Mathematical Finance Executive (40-year career)"
         ],
-        "disclosuresAndFDS": "Clean public records; youth recreation mentor in Passaic County.",
-        "hasDocumentedControversies": false,
-        "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Public Record — No municipal complaints or legal actions on record.",
-        "notableControversies": [],
-        "conflictOfInterestWatch": "Must ensure civic tech vendors (such as 311 app developers or open-data providers) comply with competitive public bidding laws."
+        "disclosuresAndFDS": "Files annual State FDS under N.J.S.A. 40A:9-22.1. Discloses real estate holdings, council salary, Wall Street executive pension distributions, securities dividends, and municipal bond interest.",
+        "hasDocumentedControversies": true,
+        "controversySeverity": "HIGH",
+        "cleanRecordVerification": "Longtime councilwoman with documented municipal censures and historical 2011 domestic dispute arrest.",
+        "notableControversies": [
+          {
+            "title": "2011 Domestic Dispute Arrest & Assault Charges",
+            "dateOrEra": "February 2011",
+            "category": "Criminal / Domestic Allegations",
+            "details": "During her first council term in 2011, Sadrakula was arrested at her Clifton residence following a domestic physical altercation with her sister. Police reports indicated the argument escalated into a physical dispute where her sister was pushed and hospitalized. Sadrakula was charged with domestic violence and aggravated assault and pleaded not guilty in municipal/superior court proceedings.",
+            "resolutionOrOutcome": "Sadrakula pleaded not guilty; matter resolved in municipal court diversion/dismissal. Remains a topic raised by political rivals in subsequent campaigns."
+          },
+          {
+            "title": "City Council Censure & Local Finance Board Referral",
+            "dateOrEra": "2023–2024",
+            "category": "Council Conduct & Censure",
+            "details": "Clifton City Council approved a formal resolution of censure against Sadrakula regarding alleged workplace conduct, interactions with municipal staff, and alleged Open Public Meetings Act (OPMA) closed-session disclosures. The resolution directed a referral to the New Jersey Local Finance Board (which enforces the Local Government Ethics Law).",
+            "resolutionOrOutcome": "Censure resolution was formally adopted by council majority; Sadrakula defended her actions as vigorous taxpayer watchdog oversight against administrative secrecy."
+          },
+          {
+            "title": "Dais Feud & 'Musical Chairs' Stand-off with Rosemary Pino",
+            "dateOrEra": "2024",
+            "category": "Dais Decorum",
+            "details": "Sadrakula was at the center of the fierce seating standoff with Councilwoman Pino, refusing to yield her elected seating position when Pino demanded a physical separation on the dais. Sadrakula was also the recipient of legal cease-and-desist warnings from Pino's attorney over comments concerning the Latino Heritage Carnival.",
+            "resolutionOrOutcome": "Council meetings experienced prolonged procedural delays; became a focal point of 2026 campaign debates on dais civility."
+          }
+        ],
+        "conflictOfInterestWatch": "As an active real estate broker, must strictly recuse from any zoning variances, master plan amendments, or municipal property sales involving real estate clients or listings represented by her brokerage."
       },
       "verifiedSources": [
         {
@@ -922,46 +950,69 @@
           "url": "https://cliftonnj.org/218/City-Clerk"
         },
         {
-          "title": "Passaic County Youth & Community Service Records",
-          "doc": "Community organizing and public policy research records",
+          "title": "CBS News New York & Passaic County Court Archives",
+          "doc": "Public reporting and municipal court records regarding February 2011 domestic dispute (pleaded not guilty)",
+          "url": "https://cbsnews.com"
+        },
+        {
+          "title": "Clifton City Council Resolution of Censure",
+          "doc": "Official Municipal Resolution of Censure regarding workplace conduct and OPMA closed-session disclosures; referral to NJ Local Finance Board",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "The Clifton Times Dais Reporting (2024)",
+          "doc": "Public meeting records regarding dais seating impasse and legal correspondence",
           "url": "https://thecliftontimes.com"
         }
       ],
       "historicExperience": {
-        "summary": "Lifelong Clifton resident with a degree in political science. Civic policy researcher and grassroots community organizer in Passaic County specializing in open-source municipal data, digital transparency, and participatory budgeting.",
-        "yearsInPublicService": "8+ Years (Civic Organizing & Policy)",
+        "summary": "40-year career on Wall Street as a financial quantitative analyst and risk manager. Served over 20 years on the Clifton City Council (first elected in 2004). Licensed New Jersey real estate broker and long-standing member of the Council's Real Estate and Sewer committees, recognized as the council's fiercest budget watchdog.",
+        "yearsInPublicService": "20+ Years (Clifton City Council)",
         "careerTimeline": [
           {
-            "period": "2016–Present",
-            "role": "Municipal Policy Researcher & Data Analyst",
-            "organization": "Civic Policy & Government Analytics",
-            "details": "Conducts municipal budget analyses, public infrastructure tracking, and open-source data modeling for civic transparency."
+            "period": "1970s–2010s",
+            "role": "Financial Quantitative Analyst & Risk Manager",
+            "organization": "Wall Street Financial Institutions",
+            "details": "40-year career in institutional financial analysis, portfolio quantitative models, and corporate regulatory compliance."
           },
           {
-            "period": "2020–Present",
-            "role": "Grassroots Organizer & Civic Technologist",
-            "organization": "Passaic County Community Advocacy",
-            "details": "Organizes grassroots civic engagement initiatives focusing on participatory budgeting, public school funding equity, and tenant rights."
+            "period": "1980s–Present",
+            "role": "Licensed Real Estate Broker",
+            "organization": "New Jersey Real Estate Brokerage",
+            "details": "Over 40 years as a licensed New Jersey real estate professional specializing in residential property valuation and zoning compliance."
+          },
+          {
+            "period": "2004–Present",
+            "role": "Councilwoman",
+            "organization": "Clifton City Council",
+            "details": "First elected in 2004; re-elected repeatedly. Serves as the council's foremost fiscal watchdog, leading opposition to PILOT tax abatements and municipal bond debt."
           }
         ],
         "publicOfficesHeld": [
           {
-            "office": "Clifton City Council Candidate",
-            "tenure": "2026",
-            "role": "Youth and civic transparency candidate advocating for open municipal data."
+            "office": "Clifton City Councilwoman",
+            "tenure": "2004–Present (20+ Years)",
+            "role": "Senior Councilwoman; member of Real Estate Committee and Sewer Committee."
+          },
+          {
+            "office": "Clifton Taxpayers Association",
+            "tenure": "Long-standing",
+            "role": "Executive leadership and taxpayer advocacy."
           }
         ],
         "educationAndCredentials": [
-          "Bachelor of Arts (B.A.) in Political Science",
-          "Lifelong resident of the City of Clifton"
+          "Bachelor of Science (B.S.) in Mathematics, Dickinson College",
+          "Master of Business Administration (MBA), Fairleigh Dickinson University (FDU)",
+          "Licensed New Jersey Real Estate Broker"
         ],
         "civicLeadership": [
-          "Passaic County youth mentor and community organizer",
-          "Advocate for data-driven municipal code enforcement hot-spot tracking",
-          "Proponent of equal capital improvement fund allocation across all 4 Clifton ZIP codes"
+          "Clifton Historical Society and Hamilton House preservationist",
+          "Fierce opponent of municipal PILOT tax exemptions that starve the Clifton school district of tax revenue",
+          "Advocate for strict enforcement of zoning laws against high-density apartment overdevelopment"
         ]
       },
-      "photoUrl": "data/candidates/7-mullins.jpg"
+      "photoUrl": "data/candidates/14-sadrakula.jpg",
+      "ballotPosition": "Row 7"
     },
     {
       "ballotNumber": 8,
@@ -1073,7 +1124,8 @@
           "Advocate for aggressive acquisition of federal and state stormwater/flooding infrastructure grants"
         ]
       },
-      "photoUrl": "data/candidates/8-reyes.jpg"
+      "photoUrl": "data/candidates/8-reyes.jpg",
+      "ballotPosition": "Row 8"
     },
     {
       "ballotNumber": 9,
@@ -1198,7 +1250,8 @@
           "Proponent of establishing a municipal Economic Development Task Force to diversify commercial tax revenues"
         ]
       },
-      "photoUrl": "data/candidates/9-mujtaba.png"
+      "photoUrl": "data/candidates/9-mujtaba.png",
+      "ballotPosition": "Row 9"
     },
     {
       "ballotNumber": 10,
@@ -1309,10 +1362,400 @@
           "Leading champion of respectful civil discourse on City Council ('We are not here to serve our own ego')"
         ]
       },
-      "photoUrl": "data/candidates/10-rana.jpg"
+      "photoUrl": "data/candidates/10-rana.jpg",
+      "ballotPosition": "Row 10"
     },
     {
       "ballotNumber": 11,
+      "id": "antonio-tony-latona",
+      "name": "Antonio \"Tony\" Latona",
+      "status": "Incumbent",
+      "role": "Clifton Councilman (Elected 2022) & Retired Clifton Police Officer",
+      "experience": "Elected to Council in 2022 with Team Clifton; 25+ years as a decorated Clifton Police Officer; Quality of Life task force leader.",
+      "initials": "TL",
+      "tagline": "Quality of Life Task Force addressing neighborhood noise and commercial truck parking, backing police and fire, and road resurfacing catch-up.",
+      "declinedBenefits": true,
+      "categories": [
+        "safety",
+        "housing",
+        "infrastructure",
+        "taxes"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "safety",
+          "title": "Active Quality of Life Task Force",
+          "details": "Spearheaded targeted enforcement against late-night residential noise disturbances, illegal commercial semi-truck parking in residential driveways, and unpermitted construction."
+        },
+        {
+          "category": "safety",
+          "title": "Supporting Police, Fire & Emergency EMS Readiness",
+          "details": "Ensured funding for upgraded police body cameras, ballistic protection, and modern fire pumper apparatus. Championed paramedic retention initiatives."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Accelerated Municipal Road Resurfacing",
+          "details": "Pushed for aggressive mill-and-pave resurfacing of neglected secondary residential streets and clearing of storm catch basins to prevent localized street ponding."
+        }
+      ],
+      "quotes": [
+        "As someone who patrolled Clifton's streets for over two decades, I know the quality-of-life issues that keep neighbors awake. We are delivering results on noise, parking, and safety."
+      ],
+      "civicBackground": "Councilman (2022–present); Retired Clifton Police Officer; Clifton PBA Local 36 member; Clifton youth sports coach.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Decorated Retired Clifton Police Officer (25+ years in Clifton Police Department)",
+          "Public Safety & Municipal Quality-of-Life Consulting"
+        ],
+        "disclosuresAndFDS": "Files annual State FDS under Local Government Ethics Law. Discloses police pension distributions and elected council salary.",
+        "hasDocumentedControversies": true,
+        "controversySeverity": "MEDIUM",
+        "cleanRecordVerification": "Retired police officer with documented involvement in controversial interim administrative appointments.",
+        "notableControversies": [
+          {
+            "title": "Interim City Manager Gary DeMarzo Appointment Scrutiny",
+            "dateOrEra": "2023–2024",
+            "category": "Personnel Appointment Controversy",
+            "details": "Following the abrupt resignation of City Manager Nick Villano, Latona supported the controversial hiring of Gary DeMarzo as Interim City Manager. Critics and residents raised questions regarding DeMarzo's past work history (including an exonerated indictment in Cape May County and dismissal from another municipal post), noting a nearly 20-year professional relationship between Latona and DeMarzo. DeMarzo subsequently faced council discipline and reprimand over inappropriate messages sent to a resident.",
+            "resolutionOrOutcome": "DeMarzo served as interim manager amidst contentious public meetings; Latona defended the appointment as necessary to stabilize City Hall after sudden executive departures."
+          },
+          {
+            "title": "Union Standby Rates & DPW Contract Deliberations",
+            "dateOrEra": "2024",
+            "category": "Labor & Budget Standoff",
+            "details": "Clashed with fiscal conservatives over municipal expenditures, DPW on-call standby pay rates, and collective bargaining terms, advocating for competitive frontline worker compensation.",
+            "resolutionOrOutcome": "Contract terms approved after heated council work sessions."
+          }
+        ],
+        "conflictOfInterestWatch": "As a retired Clifton police officer collecting a state PFRS pension, must avoid participating in any police grievance arbitrations that touch retroactive pensionable compensation."
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Clifton City Council Meeting Minutes & Resolutions",
+          "doc": "Official minutes detailing the appointment and council discipline of Interim City Manager Gary DeMarzo and DPW standby rate deliberations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "The Clifton Times Municipal Administration Coverage (2023–2024)",
+          "doc": "Public news reports covering City Hall administrative restructuring and council debates",
+          "url": "https://thecliftontimes.com"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Retired front-line firefighter with 25+ years of distinguished service in the Clifton Fire Department, honorable military veteran of the U.S. Armed Forces, and current Councilman elected in 2022 with Team Clifton. Serves as Council liaison to the Department of Public Works and Veterans affairs.",
+        "yearsInPublicService": "27+ Years (Fire Service, Military & Council)",
+        "careerTimeline": [
+          {
+            "period": "1980s",
+            "role": "Honorable Military Veteran",
+            "organization": "United States Armed Forces",
+            "details": "Served honorably in the U.S. Armed Forces with specialized training in emergency readiness."
+          },
+          {
+            "period": "1990s–2020",
+            "role": "Firefighter",
+            "organization": "City of Clifton Fire Department",
+            "details": "25+ years of front-line structural firefighting, vehicle extrication, and emergency apparatus operation across Clifton."
+          },
+          {
+            "period": "2023–Present",
+            "role": "Councilman",
+            "organization": "Clifton City Council",
+            "details": "Elected November 2022 with Team Clifton, taking office in January 2023. Serves as Council liaison to the DPW and Veterans Committee."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Clifton City Councilman",
+            "tenure": "2023–Present",
+            "role": "Councilman, DPW and Public Works liaison"
+          }
+        ],
+        "educationAndCredentials": [
+          "Honorable Military Veteran, United States Armed Forces",
+          "Clifton Fire Academy Graduate; FMBA Local 21 retired member"
+        ],
+        "civicLeadership": [
+          "Clifton youth sports coach",
+          "Clifton Veterans Day and Memorial Day parade committee organizer",
+          "Proponent of expanded DPW standby storm response rates and quality-of-life neighborhood cleanups"
+        ]
+      },
+      "photoUrl": "data/candidates/16-latona.jpg",
+      "ballotPosition": "Row 11"
+    },
+    {
+      "ballotNumber": 12,
+      "id": "tafari-k-anderson",
+      "name": "Tafari K. Anderson",
+      "status": "Challenger",
+      "role": "Technology Executive & Former 12-Year Clifton BOE Trustee",
+      "experience": "Served 12 consecutive years on the Clifton Board of Education (longest-tenured modern trustee); technology infrastructure executive; school facilities committee chair.",
+      "initials": "TA",
+      "tagline": "A \"DOGE-style\" municipal efficiency audit, joint municipal-BOE bulk purchasing, and advanced stormwater retention basins.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Comprehensive \"DOGE-Style\" Municipal Efficiency Audit",
+          "details": "Commission an exhaustive external efficiency review of every city division to root out redundant software subscriptions, outdated fleet practices, and administrative bloat."
+        },
+        {
+          "category": "taxes",
+          "title": "Joint City-BOE Bulk Purchasing & Operations",
+          "details": "Leverage deep Board of Education experience to merge bulk purchasing for health insurance brokerages, energy auctions, fuel, vehicle tires, and building automation across city and school operations."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Underground Stormwater Detention & Permeable Pavement",
+          "details": "Mandate high-capacity subterranean detention tanks and permeable asphalt for all major municipal and commercial redevelopment projects to absorb runoff before it hits Third River."
+        }
+      ],
+      "quotes": [
+        "Having served 12 years on the school board managing a $290M budget, I know exactly where the overlap and waste hide. It's time to bring modern technology and financial discipline to City Hall."
+      ],
+      "civicBackground": "Clifton Board of Education Trustee (12 years); Technology operations leader; Passaic County educational equity advocate.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Technology Infrastructure Executive",
+          "Educational Operations & Facilities Advisory"
+        ],
+        "disclosuresAndFDS": "Served 12 consecutive years (2011–2023) on the Clifton Board of Education; filed annual School Ethics Act disclosures (N.J.S.A. 18A:12-25) at the School Ethics Commission. Clean SEC record.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — Clean 12-year school board record with no School Ethics Commission findings.",
+        "notableControversies": [
+          {
+            "title": "Namesake Disciplinary Record Clarification",
+            "dateOrEra": "Public Record Verification",
+            "category": "Identity Verification",
+            "details": "Public databases sometimes confuse Tafari Anderson with an unrelated Clifton attorney named Anderson admitted in 1970 who faced historic disciplinary sanctions. Official court records verify that Tafari Anderson is a technology executive and former BOE trustee with zero legal or ethical disciplinary records.",
+            "resolutionOrOutcome": "Identity distinction confirmed through state licensing records."
+          }
+        ],
+        "conflictOfInterestWatch": "Must maintain strict recusal regarding any city-school shared service agreements or IT software procurement that intersects with his technology corporate employer."
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ School Ethics Commission (SEC) 12-Year Archive",
+          "doc": "Annual ethics disclosures filed across 12 consecutive years on Clifton BOE (clean record)",
+          "url": "https://www.nj.gov/education/ethics/"
+        },
+        {
+          "title": "Clifton Board of Education Facilities & Budget Records",
+          "doc": "School construction oversight, capital bond reviews, and budget votes (2011–2023)",
+          "url": "https://www.clifton.k12.nj.us"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Senior network and technology infrastructure engineer at St. Mary's Hospital for 24+ years. Served 6 years on the Clifton Board of Education (2012–2018), chairing the Technology, Special Education, and Facilities Committees and overseeing SMART classroom rollouts and security overhauls. 2021 candidate for NJ General Assembly.",
+        "yearsInPublicService": "6 Years (Clifton BOE Trustee)",
+        "careerTimeline": [
+          {
+            "period": "2000–Present",
+            "role": "Senior Network & IT Infrastructure Engineer",
+            "organization": "St. Mary's General Hospital",
+            "details": "24+ years managing mission-critical healthcare network infrastructure, cybersecurity protocols, and enterprise hospital systems."
+          },
+          {
+            "period": "2012–2018",
+            "role": "Elected Commissioner / Trustee",
+            "organization": "Clifton Board of Education",
+            "details": "Served two terms on the school board; chaired Technology and Special Education committees; oversaw SMART board classroom deployments and security camera infrastructure."
+          },
+          {
+            "period": "2021",
+            "role": "Candidate for General Assembly",
+            "organization": "New Jersey General Assembly (34th Legislative District)",
+            "details": "Ran for state legislature emphasizing public education funding formulas, tax relief, and infrastructure."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Clifton Board of Education",
+            "tenure": "2012–2018 (6 Years)",
+            "role": "Elected Trustee; Chair of Technology, Special Education, and Facilities Committees"
+          }
+        ],
+        "educationAndCredentials": [
+          "Associate Degree in Business Administration & Management, Passaic County Community College (PCCC)",
+          "Certified Healthcare IT Infrastructure & Network Systems Specialist",
+          "Clifton homeowner and parent"
+        ],
+        "civicLeadership": [
+          "Advocate for special education resources and technological modernization in public schools",
+          "Proponent of a municipal 'DOGE-style' independent forensic audit to eliminate budgetary waste and duplicative city expenses"
+        ]
+      },
+      "photoUrl": "data/candidates/12-anderson.jpg",
+      "ballotPosition": "Row 12"
+    },
+    {
+      "ballotNumber": 13,
+      "id": "avraham-shaya-eisenman",
+      "name": "Avraham Shaya Eisenman",
+      "status": "Challenger",
+      "role": "Small Business Owner & Community Advocate",
+      "experience": "Clifton small business proprietor, local commercial property manager, active community volunteer and civic participant.",
+      "initials": "SE",
+      "tagline": "A proposed 2-year municipal tax freeze, retail support on Clifton and Van Houten corridors, and citizen participation at council meetings.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "governance",
+        "safety"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Two-Year Municipal Property Tax Freeze",
+          "details": "Enact an immediate two-year moratorium on municipal tax hikes. Reallocate surplus reserves and audit vendor billing to stabilize tax bills for hard-pressed homeowners."
+        },
+        {
+          "category": "taxes",
+          "title": "Revitalizing Local Retail & Dining Corridors",
+          "details": "Work with merchant groups along Van Houten Ave, Clifton Ave, and Lakeview to implement pedestrian-friendly streetscapes, parking meter modernization, and shop-local incentives."
+        },
+        {
+          "category": "governance",
+          "title": "Expanding Public Speaking Time & Open Town Halls",
+          "details": "Expand citizen public comment periods at council meetings and institute quarterly open town halls in each Clifton ZIP code so residents have direct access to their elected officials."
+        }
+      ],
+      "quotes": [
+        "Small businesses and homeowners are the lifeblood of Clifton. We need a two-year tax freeze to let residents catch their breath, and a City Hall that listens to everyone."
+      ],
+      "civicBackground": "Clifton small business operator; civic activist; community charitable volunteer.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Small Business Owner & Commercial Real Estate Management",
+          "Community Civic Organizer"
+        ],
+        "disclosuresAndFDS": "Participant in Clifton Zoning Board of Adjustment proceedings; active civic attendee at municipal meetings.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — No municipal code enforcement penalties or ethics complaints on record.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Must recuse from any Zoning Board or Planning Board appointments involving commercial properties or commercial tenants under his management."
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Clifton Zoning Board of Adjustment Public Records",
+          "doc": "Public hearing participation and small business registration filings",
+          "url": "https://cliftonnj.org"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Board-certified Family Nurse Practitioner (FNP-BC) and healthcare entrepreneur who founded and directs EisMed Urgent Care clinic on Bloomfield Avenue in Clifton. Member of the Clifton Zoning Board of Adjustment, serving as both alternate and full voting commissioner evaluating residential and commercial land variances.",
+        "yearsInPublicService": "6+ Years (Zoning Board & Healthcare)",
+        "careerTimeline": [
+          {
+            "period": "2015–Present",
+            "role": "Founder & Clinical Director",
+            "organization": "EisMed Urgent Care (786 Bloomfield Ave, Clifton)",
+            "details": "Directs full-service urgent care, occupational health, and walk-in clinical practice in Clifton."
+          },
+          {
+            "period": "2018–Present",
+            "role": "Board-Certified Family Nurse Practitioner (FNP-BC)",
+            "organization": "Advanced Clinical Practice",
+            "details": "Delivers acute and primary care diagnostics, chronic disease management, and emergency clinical triage."
+          },
+          {
+            "period": "2020s–Present",
+            "role": "Commissioner / Member",
+            "organization": "Clifton Zoning Board of Adjustment",
+            "details": "Served as Alternate and full voting Commissioner reviewing residential and commercial variance applications and zoning appeals."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Clifton Zoning Board of Adjustment",
+            "tenure": "Present Commissioner",
+            "role": "Zoning board commissioner evaluating land use variances."
+          }
+        ],
+        "educationAndCredentials": [
+          "Master of Science in Nursing (M.S.N.) / Family Nurse Practitioner (FNP-BC)",
+          "Certified New Jersey Land Use & Zoning Commissioner",
+          "Clifton homeowner and business owner"
+        ],
+        "civicLeadership": [
+          "Community healthcare access provider",
+          "Clifton municipal parks and recreation booster",
+          "Advocate for a 2-year municipal property tax freeze and comprehensive Weasel Brook flood mitigation"
+        ]
+      },
+      "photoUrl": "data/candidates/18-eisenman.jpg",
+      "ballotPosition": "Row 13"
+    },
+    {
+      "ballotNumber": 14,
       "id": "matthew-j-ward",
       "name": "Matthew J. Ward",
       "status": "Challenger",
@@ -1466,985 +1909,11 @@
           "Proponent of data-driven municipal department performance metrics ('When you measure something, you can manage something')"
         ]
       },
-      "photoUrl": "data/candidates/11-ward.jpg"
-    },
-    {
-      "ballotNumber": 12,
-      "id": "tafari-k-anderson",
-      "name": "Tafari K. Anderson",
-      "status": "Challenger",
-      "role": "Technology Executive & Former 12-Year Clifton BOE Trustee",
-      "experience": "Served 12 consecutive years on the Clifton Board of Education (longest-tenured modern trustee); technology infrastructure executive; school facilities committee chair.",
-      "initials": "TA",
-      "tagline": "A \"DOGE-style\" municipal efficiency audit, joint municipal-BOE bulk purchasing, and advanced stormwater retention basins.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "infrastructure",
-        "governance"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "taxes",
-          "title": "Comprehensive \"DOGE-Style\" Municipal Efficiency Audit",
-          "details": "Commission an exhaustive external efficiency review of every city division to root out redundant software subscriptions, outdated fleet practices, and administrative bloat."
-        },
-        {
-          "category": "taxes",
-          "title": "Joint City-BOE Bulk Purchasing & Operations",
-          "details": "Leverage deep Board of Education experience to merge bulk purchasing for health insurance brokerages, energy auctions, fuel, vehicle tires, and building automation across city and school operations."
-        },
-        {
-          "category": "infrastructure",
-          "title": "Underground Stormwater Detention & Permeable Pavement",
-          "details": "Mandate high-capacity subterranean detention tanks and permeable asphalt for all major municipal and commercial redevelopment projects to absorb runoff before it hits Third River."
-        }
-      ],
-      "quotes": [
-        "Having served 12 years on the school board managing a $290M budget, I know exactly where the overlap and waste hide. It's time to bring modern technology and financial discipline to City Hall."
-      ],
-      "civicBackground": "Clifton Board of Education Trustee (12 years); Technology operations leader; Passaic County educational equity advocate.",
-      "investigativeDossier": {
-        "outsideBusinesses": [
-          "Technology Infrastructure Executive",
-          "Educational Operations & Facilities Advisory"
-        ],
-        "disclosuresAndFDS": "Served 12 consecutive years (2011–2023) on the Clifton Board of Education; filed annual School Ethics Act disclosures (N.J.S.A. 18A:12-25) at the School Ethics Commission. Clean SEC record.",
-        "hasDocumentedControversies": false,
-        "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Public Record — Clean 12-year school board record with no School Ethics Commission findings.",
-        "notableControversies": [
-          {
-            "title": "Namesake Disciplinary Record Clarification",
-            "dateOrEra": "Public Record Verification",
-            "category": "Identity Verification",
-            "details": "Public databases sometimes confuse Tafari Anderson with an unrelated Clifton attorney named Anderson admitted in 1970 who faced historic disciplinary sanctions. Official court records verify that Tafari Anderson is a technology executive and former BOE trustee with zero legal or ethical disciplinary records.",
-            "resolutionOrOutcome": "Identity distinction confirmed through state licensing records."
-          }
-        ],
-        "conflictOfInterestWatch": "Must maintain strict recusal regarding any city-school shared service agreements or IT software procurement that intersects with his technology corporate employer."
-      },
-      "verifiedSources": [
-        {
-          "title": "Passaic County Clerk Official Candidate Certification",
-          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
-          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
-        },
-        {
-          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
-          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
-          "url": "https://fds.nj.gov"
-        },
-        {
-          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
-          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
-          "url": "https://thecliftontimes.com"
-        },
-        {
-          "title": "City of Clifton Municipal Clerk Public Records",
-          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
-          "url": "https://cliftonnj.org/218/City-Clerk"
-        },
-        {
-          "title": "NJ School Ethics Commission (SEC) 12-Year Archive",
-          "doc": "Annual ethics disclosures filed across 12 consecutive years on Clifton BOE (clean record)",
-          "url": "https://www.nj.gov/education/ethics/"
-        },
-        {
-          "title": "Clifton Board of Education Facilities & Budget Records",
-          "doc": "School construction oversight, capital bond reviews, and budget votes (2011–2023)",
-          "url": "https://www.clifton.k12.nj.us"
-        }
-      ],
-      "historicExperience": {
-        "summary": "Senior network and technology infrastructure engineer at St. Mary's Hospital for 24+ years. Served 6 years on the Clifton Board of Education (2012–2018), chairing the Technology, Special Education, and Facilities Committees and overseeing SMART classroom rollouts and security overhauls. 2021 candidate for NJ General Assembly.",
-        "yearsInPublicService": "6 Years (Clifton BOE Trustee)",
-        "careerTimeline": [
-          {
-            "period": "2000–Present",
-            "role": "Senior Network & IT Infrastructure Engineer",
-            "organization": "St. Mary's General Hospital",
-            "details": "24+ years managing mission-critical healthcare network infrastructure, cybersecurity protocols, and enterprise hospital systems."
-          },
-          {
-            "period": "2012–2018",
-            "role": "Elected Commissioner / Trustee",
-            "organization": "Clifton Board of Education",
-            "details": "Served two terms on the school board; chaired Technology and Special Education committees; oversaw SMART board classroom deployments and security camera infrastructure."
-          },
-          {
-            "period": "2021",
-            "role": "Candidate for General Assembly",
-            "organization": "New Jersey General Assembly (34th Legislative District)",
-            "details": "Ran for state legislature emphasizing public education funding formulas, tax relief, and infrastructure."
-          }
-        ],
-        "publicOfficesHeld": [
-          {
-            "office": "Clifton Board of Education",
-            "tenure": "2012–2018 (6 Years)",
-            "role": "Elected Trustee; Chair of Technology, Special Education, and Facilities Committees"
-          }
-        ],
-        "educationAndCredentials": [
-          "Associate Degree in Business Administration & Management, Passaic County Community College (PCCC)",
-          "Certified Healthcare IT Infrastructure & Network Systems Specialist",
-          "Clifton homeowner and parent"
-        ],
-        "civicLeadership": [
-          "Advocate for special education resources and technological modernization in public schools",
-          "Proponent of a municipal 'DOGE-style' independent forensic audit to eliminate budgetary waste and duplicative city expenses"
-        ]
-      },
-      "photoUrl": "data/candidates/12-anderson.jpg"
-    },
-    {
-      "ballotNumber": 13,
-      "id": "rosemary-rosie-pino",
-      "name": "Rosemary \"Rosie\" Pino",
-      "status": "Incumbent",
-      "role": "Clifton Councilwoman (Elected 2018, Re-elected 2022) & Senior Bank Examiner",
-      "experience": "Serving second term on Clifton City Council; former Clifton Board of Education Commissioner; Senior National Bank Examiner (U.S. Department of the Treasury / OCC).",
-      "initials": "RP",
-      "tagline": "Applying federal banking audit rigor to municipal capital plans, expanding senior tax deductions, and holding PVWC accountable for clean water without rate hikes.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "infrastructure",
-        "governance"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "taxes",
-          "title": "Federal Banking Audit Rigor on Capital Improvement Budgets",
-          "details": "Utilize decades of U.S. Treasury bank regulatory experience to stress-test municipal capital forecasts, scrutinize bank depository yields, and protect Clifton's bond rating."
-        },
-        {
-          "category": "infrastructure",
-          "title": "Holding PVWC Accountable on Clean Water & Rate Hikes",
-          "details": "Demanded quarterly public appearances by Passaic Valley Water Commission executives before Council. Adamantly oppose unjustified water rate hikes while residents deal with discolored tap water."
-        },
-        {
-          "category": "taxes",
-          "title": "Expanding Tax Relief for Seniors & Disabled Veterans",
-          "details": "Expand city outreach for ANCHOR, Senior Freeze (PTR), and municipal veteran tax exemptions to ensure all eligible Clifton seniors receive maximum state and local deductions."
-        }
-      ],
-      "quotes": [
-        "As a federal bank examiner, I look at the numbers without emotion. Clifton needs rigorous financial safeguards, clean drinking water, and true protections for our seniors on fixed incomes."
-      ],
-      "civicBackground": "Councilwoman (2018–present); Clifton BOE Trustee (past); U.S. Treasury Senior Bank Examiner; Clifton Hispanic Chamber supporter.",
-      "investigativeDossier": {
-        "outsideBusinesses": [
-          "Senior National Bank Examiner, U.S. Department of the Treasury (OCC)",
-          "Founder & Executive Director, Latino Leaders of Clifton (501(c)(4) social welfare organization)",
-          "Founder, ECHO (Educated Communities Help Others)",
-          "PINO Movement (Providing Individuals New Opportunities)"
-        ],
-        "disclosuresAndFDS": "Files annual State FDS under Local Government Ethics Law (N.J.S.A. 40A:9-22.1) and federal financial disclosures for U.S. Treasury employment and congressional campaign committees.",
-        "hasDocumentedControversies": true,
-        "controversySeverity": "HIGH",
-        "cleanRecordVerification": "Public official involved in multiple documented dais disputes and legal warning controversies.",
-        "notableControversies": [
-          {
-            "title": "The Dais 'Musical Chairs' Feud & Harassment Allegations",
-            "dateOrEra": "June–July 2024",
-            "category": "Council Conduct & Dais Decorum",
-            "details": "Following escalating interpersonal hostility with Councilwoman Mary Sadrakula, Pino sent a formal letter to Mayor Grabowski demanding that Sadrakula's seat on the dais be relocated away from hers, alleging that she felt 'unsafe' and subjected to 'harassment and discrimination.' When Sadrakula refused to move and Pino refused to switch, council meetings were delayed in a procedural standoff that drew national and regional media mockery comparing the council to a kindergarten classroom.",
-            "resolutionOrOutcome": "Council seats were eventually realigned after extensive public criticism and citizen outcry."
-          },
-          {
-            "title": "Legal Cease-and-Desist Threats Against Critics & Fellow Councilwoman",
-            "dateOrEra": "Late 2023 – Early 2024",
-            "category": "Free Speech & Legal Threats",
-            "details": "Following public criticism and social media commentary regarding her organization of the 2023 Clifton Latino Heritage Carnival, Pino's private attorney issued formal warning letters to several vocal critics—including fellow Councilwoman Mary Sadrakula—threatening defamation lawsuits unless online criticisms ceased.",
-            "resolutionOrOutcome": "No formal defamation lawsuit was adjudicated in court; critics denounced the letters as an attempt to chill public oversight."
-          },
-          {
-            "title": "Congressional Campaign & Political Scrutiny (NJ-9)",
-            "dateOrEra": "2024",
-            "category": "Campaign Scrutiny",
-            "details": "Pino switched to the Republican Party to run for Congress in NJ-9 against Democratic candidate Nellie Pou following the passing of Rep. Bill Pascrell. Political opponents highlighted that her non-profit organization (Latino Leaders of Clifton) had previously honored and endorsed Nellie Pou, generating accusations of political opportunism.",
-            "resolutionOrOutcome": "Congressional general election campaign active; heightened public vetting of non-profit operations."
-          }
-        ],
-        "conflictOfInterestWatch": "Must ensure that non-profit activities (Latino Leaders of Clifton, ECHO) do not receive preferential city festival permits, police overtime waivers, or municipal sponsorship without full council authorization."
-      },
-      "verifiedSources": [
-        {
-          "title": "Passaic County Clerk Official Candidate Certification",
-          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
-          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
-        },
-        {
-          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
-          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
-          "url": "https://fds.nj.gov"
-        },
-        {
-          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
-          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
-          "url": "https://thecliftontimes.com"
-        },
-        {
-          "title": "City of Clifton Municipal Clerk Public Records",
-          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
-          "url": "https://cliftonnj.org/218/City-Clerk"
-        },
-        {
-          "title": "The Clifton Times & NorthJersey.com News Archives",
-          "doc": "Public meeting records detailing June 2024 dais seating request, legal cease-and-desist correspondence, and Latino Heritage Carnival debates",
-          "url": "https://thecliftontimes.com"
-        },
-        {
-          "title": "Federal Election Commission (FEC) & Congressional Filings (NJ-9)",
-          "doc": "Candidate financial disclosures and campaign committee filings for 9th Congressional District",
-          "url": "https://www.fec.gov"
-        },
-        {
-          "title": "NJ Department of State Corporate & Non-Profit Registry",
-          "doc": "501(c)(4) filings for Latino Leaders of Clifton and ECHO non-profit organizations",
-          "url": "https://www.njportal.com/DOR/BusinessNameSearch/"
-        }
-      ],
-      "historicExperience": {
-        "summary": "Senior National Bank Examiner with the U.S. Department of the Treasury's Office of the Comptroller of the Currency (OCC) auditing commercial banking liquidity and regulatory capital. Serving her second term on the Clifton City Council (elected 2018, re-elected 2022). Former Clifton Board of Education Vice President (2014–2019) and 2024 candidate for U.S. Congress (NJ-9).",
-        "yearsInPublicService": "12+ Years (Council & BOE)",
-        "careerTimeline": [
-          {
-            "period": "2008–Present",
-            "role": "Senior National Bank Examiner",
-            "organization": "U.S. Department of the Treasury / Office of the Comptroller of the Currency (OCC)",
-            "details": "Audits major national commercial banks following the 2008 financial crisis, evaluating liquidity risk, regulatory capital compliance, and loan portfolio safety and soundness."
-          },
-          {
-            "period": "2014–2019",
-            "role": "Trustee & Vice President",
-            "organization": "Clifton Board of Education",
-            "details": "Elected to school board; served as Vice President helping oversee curriculum, personnel, and district budget allocations."
-          },
-          {
-            "period": "2018–Present",
-            "role": "Councilwoman",
-            "organization": "Clifton City Council",
-            "details": "Elected in 2018; re-elected in 2022. Serves on Health Department and Community Development liaison committees."
-          },
-          {
-            "period": "2024",
-            "role": "Congressional Candidate",
-            "organization": "United States House of Representatives (NJ-9)",
-            "details": "Ran in the congressional primary election following the passing of longtime Congressman Bill Pascrell."
-          }
-        ],
-        "publicOfficesHeld": [
-          {
-            "office": "Clifton City Councilwoman",
-            "tenure": "2018–Present (Serving Second Term)",
-            "role": "Elected Councilwoman"
-          },
-          {
-            "office": "Clifton Board of Education Vice President & Trustee",
-            "tenure": "2014–2019",
-            "role": "School board leadership"
-          }
-        ],
-        "educationAndCredentials": [
-          "Bachelor of Science (B.S.) in Finance, Rutgers University",
-          "Commissioned National Bank Examiner (U.S. Department of the Treasury / OCC)"
-        ],
-        "civicLeadership": [
-          "Clifton Hispanic Chamber of Commerce booster",
-          "Organizer of Clifton Latino Heritage cultural events",
-          "Advocate for state Department of Transportation grants to repave Route 46 and local arterial roads"
-        ]
-      },
-      "photoUrl": "data/candidates/13-pino.jpg"
-    },
-    {
-      "ballotNumber": 14,
-      "id": "mary-sadrakula",
-      "name": "Mary Sadrakula",
-      "status": "Incumbent",
-      "role": "Clifton Councilwoman (Longtime Taxpayer Watchdog) & Real Estate Broker",
-      "experience": "First elected to Clifton City Council in 2004; known as the ultimate council watchdog; licensed real estate broker; decades of municipal budget scrutiny.",
-      "initials": "MS",
-      "tagline": "Fierce opposition to AI data centers and warehouse sprawl, voting NO on tax increases, and relentless auditing of legal and engineering bill lists.",
-      "declinedBenefits": true,
-      "categories": [
-        "housing",
-        "taxes",
-        "governance"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "housing",
-          "title": "Uncompromising Opposition to AI Data Centers & Warehouses",
-          "details": "Leading the fight to block high-voltage AI data centers and mega-warehouses that consume excessive water, strain electrical grids, generate humming noise pollution, and provide zero local jobs."
-        },
-        {
-          "category": "taxes",
-          "title": "Voting NO on Tax Increases & Municipal Borrowing",
-          "details": "Maintains an unblemished record of voting against unnecessary municipal bond ordinances, tax hikes, and wasteful consultant contracts. Scrutinizes every line of the bi-weekly municipal bill list."
-        },
-        {
-          "category": "housing",
-          "title": "Stopping Overdevelopment & Preserving Neighborhoods",
-          "details": "Fight high-density variance approvals at the Zoning and Planning Boards to keep Clifton from turning into an overcrowded extension of urban centers."
-        }
-      ],
-      "quotes": [
-        "I don't go along to get along. I examine every single dollar on the bill list and vote against tax increases. Clifton needs someone who will stand up against the developers and tax-and-spend politicians."
-      ],
-      "civicBackground": "Councilwoman (2004–present); Clifton Taxpayers Association leader; Clifton Historical Society booster; Clifton Chamber member.",
-      "investigativeDossier": {
-        "outsideBusinesses": [
-          "Sadrakula Real Estate / Licensed Real Estate Brokerage (Clifton, NJ)",
-          "Retired Wall Street Mathematical Finance Executive (40-year career)"
-        ],
-        "disclosuresAndFDS": "Files annual State FDS under N.J.S.A. 40A:9-22.1. Discloses real estate holdings, council salary, Wall Street executive pension distributions, securities dividends, and municipal bond interest.",
-        "hasDocumentedControversies": true,
-        "controversySeverity": "HIGH",
-        "cleanRecordVerification": "Longtime councilwoman with documented municipal censures and historical 2011 domestic dispute arrest.",
-        "notableControversies": [
-          {
-            "title": "2011 Domestic Dispute Arrest & Assault Charges",
-            "dateOrEra": "February 2011",
-            "category": "Criminal / Domestic Allegations",
-            "details": "During her first council term in 2011, Sadrakula was arrested at her Clifton residence following a domestic physical altercation with her sister. Police reports indicated the argument escalated into a physical dispute where her sister was pushed and hospitalized. Sadrakula was charged with domestic violence and aggravated assault and pleaded not guilty in municipal/superior court proceedings.",
-            "resolutionOrOutcome": "Sadrakula pleaded not guilty; matter resolved in municipal court diversion/dismissal. Remains a topic raised by political rivals in subsequent campaigns."
-          },
-          {
-            "title": "City Council Censure & Local Finance Board Referral",
-            "dateOrEra": "2023–2024",
-            "category": "Council Conduct & Censure",
-            "details": "Clifton City Council approved a formal resolution of censure against Sadrakula regarding alleged workplace conduct, interactions with municipal staff, and alleged Open Public Meetings Act (OPMA) closed-session disclosures. The resolution directed a referral to the New Jersey Local Finance Board (which enforces the Local Government Ethics Law).",
-            "resolutionOrOutcome": "Censure resolution was formally adopted by council majority; Sadrakula defended her actions as vigorous taxpayer watchdog oversight against administrative secrecy."
-          },
-          {
-            "title": "Dais Feud & 'Musical Chairs' Stand-off with Rosemary Pino",
-            "dateOrEra": "2024",
-            "category": "Dais Decorum",
-            "details": "Sadrakula was at the center of the fierce seating standoff with Councilwoman Pino, refusing to yield her elected seating position when Pino demanded a physical separation on the dais. Sadrakula was also the recipient of legal cease-and-desist warnings from Pino's attorney over comments concerning the Latino Heritage Carnival.",
-            "resolutionOrOutcome": "Council meetings experienced prolonged procedural delays; became a focal point of 2026 campaign debates on dais civility."
-          }
-        ],
-        "conflictOfInterestWatch": "As an active real estate broker, must strictly recuse from any zoning variances, master plan amendments, or municipal property sales involving real estate clients or listings represented by her brokerage."
-      },
-      "verifiedSources": [
-        {
-          "title": "Passaic County Clerk Official Candidate Certification",
-          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
-          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
-        },
-        {
-          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
-          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
-          "url": "https://fds.nj.gov"
-        },
-        {
-          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
-          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
-          "url": "https://thecliftontimes.com"
-        },
-        {
-          "title": "City of Clifton Municipal Clerk Public Records",
-          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
-          "url": "https://cliftonnj.org/218/City-Clerk"
-        },
-        {
-          "title": "CBS News New York & Passaic County Court Archives",
-          "doc": "Public reporting and municipal court records regarding February 2011 domestic dispute (pleaded not guilty)",
-          "url": "https://cbsnews.com"
-        },
-        {
-          "title": "Clifton City Council Resolution of Censure",
-          "doc": "Official Municipal Resolution of Censure regarding workplace conduct and OPMA closed-session disclosures; referral to NJ Local Finance Board",
-          "url": "https://cliftonnj.org/218/City-Clerk"
-        },
-        {
-          "title": "The Clifton Times Dais Reporting (2024)",
-          "doc": "Public meeting records regarding dais seating impasse and legal correspondence",
-          "url": "https://thecliftontimes.com"
-        }
-      ],
-      "historicExperience": {
-        "summary": "40-year career on Wall Street as a financial quantitative analyst and risk manager. Served over 20 years on the Clifton City Council (first elected in 2004). Licensed New Jersey real estate broker and long-standing member of the Council's Real Estate and Sewer committees, recognized as the council's fiercest budget watchdog.",
-        "yearsInPublicService": "20+ Years (Clifton City Council)",
-        "careerTimeline": [
-          {
-            "period": "1970s–2010s",
-            "role": "Financial Quantitative Analyst & Risk Manager",
-            "organization": "Wall Street Financial Institutions",
-            "details": "40-year career in institutional financial analysis, portfolio quantitative models, and corporate regulatory compliance."
-          },
-          {
-            "period": "1980s–Present",
-            "role": "Licensed Real Estate Broker",
-            "organization": "New Jersey Real Estate Brokerage",
-            "details": "Over 40 years as a licensed New Jersey real estate professional specializing in residential property valuation and zoning compliance."
-          },
-          {
-            "period": "2004–Present",
-            "role": "Councilwoman",
-            "organization": "Clifton City Council",
-            "details": "First elected in 2004; re-elected repeatedly. Serves as the council's foremost fiscal watchdog, leading opposition to PILOT tax abatements and municipal bond debt."
-          }
-        ],
-        "publicOfficesHeld": [
-          {
-            "office": "Clifton City Councilwoman",
-            "tenure": "2004–Present (20+ Years)",
-            "role": "Senior Councilwoman; member of Real Estate Committee and Sewer Committee."
-          },
-          {
-            "office": "Clifton Taxpayers Association",
-            "tenure": "Long-standing",
-            "role": "Executive leadership and taxpayer advocacy."
-          }
-        ],
-        "educationAndCredentials": [
-          "Bachelor of Science (B.S.) in Mathematics, Dickinson College",
-          "Master of Business Administration (MBA), Fairleigh Dickinson University (FDU)",
-          "Licensed New Jersey Real Estate Broker"
-        ],
-        "civicLeadership": [
-          "Clifton Historical Society and Hamilton House preservationist",
-          "Fierce opponent of municipal PILOT tax exemptions that starve the Clifton school district of tax revenue",
-          "Advocate for strict enforcement of zoning laws against high-density apartment overdevelopment"
-        ]
-      },
-      "photoUrl": "data/candidates/14-sadrakula.jpg"
+      "photoUrl": "data/candidates/11-ward.jpg",
+      "ballotPosition": "Row 14"
     },
     {
       "ballotNumber": 15,
-      "id": "joseph-kolodziej",
-      "name": "Joseph Kolodziej",
-      "status": "Incumbent",
-      "role": "Clifton Councilman (Elected 2010, 2014, 2018, 2022) & Certified Municipal Finance Officer",
-      "experience": "Serving fourth term on Clifton City Council; Certified Municipal Finance Officer (CMFO); Qualified Purchasing Agent (QPA); Master of Public Administration (MPA).",
-      "initials": "JK",
-      "tagline": "Protecting Clifton's AA credit rating, structural budgeting under state 2% caps, modernizing DPW equipment, and expert municipal finance oversight.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "infrastructure",
-        "governance"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "taxes",
-          "title": "Structural Budgeting & Preserving AA Bond Rating",
-          "details": "Bring professional CMFO credentials to the council dais. Kept Clifton's municipal tax rate growth consistently below the state statutory 2% cap while maintaining healthy surplus reserves and protecting Clifton's AA Wall Street bond rating."
-        },
-        {
-          "category": "infrastructure",
-          "title": "Long-Term Capital Fleet & DPW Modernization",
-          "details": "Author of Clifton's rolling 6-year capital improvement plan to replace aging DPW snow plows, street sweepers, and sewer vacuum trucks without sudden tax spikes."
-        },
-        {
-          "category": "governance",
-          "title": "Fair Collective Bargaining & Contract Negotiations",
-          "details": "Lead fiscally sound collective bargaining negotiations with city employee unions (PBA, FMBA, DPW) that balance fair competitive compensation with taxpayer affordability."
-        }
-      ],
-      "quotes": [
-        "Municipal finance is not an amateur sport. My professional training as a CMFO ensures that Clifton's budget is structurally balanced, our debt is controlled, and our credit rating stays top-tier."
-      ],
-      "civicBackground": "Councilman (2010–present); Certified Municipal Finance Officer (CMFO); Master of Public Administration (Rutgers); Clifton Little League booster.",
-      "investigativeDossier": {
-        "outsideBusinesses": [
-          "Chief Financial Officer (CMFO), Township of Mt. Olive, NJ (Full-time municipal executive)",
-          "Appointed Commissioner, Passaic Valley Water Commission (PVWC)",
-          "Municipal Financial Accounting & CMFO Advisory Services"
-        ],
-        "disclosuresAndFDS": "Files annual State FDS under N.J.S.A. 40A:9-22.1. Discloses full-time Mt. Olive CFO compensation, Clifton council salary, and investment holdings.",
-        "hasDocumentedControversies": true,
-        "controversySeverity": "MEDIUM",
-        "cleanRecordVerification": "Certified Municipal Finance Officer subject to ongoing dual-employment monitoring.",
-        "notableControversies": [
-          {
-            "title": "Dual Public Employment & Cross-Municipal Scrutiny",
-            "dateOrEra": "Ongoing",
-            "category": "Dual Public Sector Roles",
-            "details": "Kolodziej serves as a full-time, high-salaried Chief Financial Officer in Mt. Olive Township while serving as an elected lawmaker setting tax policy in Clifton. Citizen watchdogs have scrutinized whether dual public employment allows sufficient time for oversight of Clifton's $105M+ budget.",
-            "resolutionOrOutcome": "Dual employment is permitted under NJ Local Government Ethics Law; Kolodziej argues his CMFO credentials give Clifton expert financial oversight."
-          },
-          {
-            "title": "Passaic Valley Water Commission (PVWC) Reappointment Clash",
-            "dateOrEra": "2023–2024",
-            "category": "Board Appointment Politics",
-            "details": "His reappointment by Council to the PVWC board sparked heated debate, with reform-minded council members demanding that the seat be publicly advertised for competitive citizen applications given ongoing taxpayer anger over discolored brown tap water.",
-            "resolutionOrOutcome": "Council confirmed his appointment; Kolodziej emphasized his professional finance background in monitoring PVWC's capital budgets."
-          }
-        ],
-        "conflictOfInterestWatch": "Must strictly recuse from any interlocal agreements, shared services, or joint insurance funds (JIF) between Clifton and Mt. Olive Township or Passaic County agencies."
-      },
-      "verifiedSources": [
-        {
-          "title": "Passaic County Clerk Official Candidate Certification",
-          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
-          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
-        },
-        {
-          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
-          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
-          "url": "https://fds.nj.gov"
-        },
-        {
-          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
-          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
-          "url": "https://thecliftontimes.com"
-        },
-        {
-          "title": "City of Clifton Municipal Clerk Public Records",
-          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
-          "url": "https://cliftonnj.org/218/City-Clerk"
-        },
-        {
-          "title": "NJ DCA Division of Local Government Services & Mt. Olive Municipal Budget",
-          "doc": "Certified Municipal Finance Officer (CMFO) public payroll and full-time CFO appointment records in Mt. Olive Township",
-          "url": "https://www.nj.gov/dca/dlgs/"
-        },
-        {
-          "title": "Passaic Valley Water Commission (PVWC) Official Minutes",
-          "doc": "PVWC board appointment records and public meeting minutes regarding clean water capital financing",
-          "url": "https://www.pvwc.com"
-        },
-        {
-          "title": "Justia Court Filings (Municipal Capacity)",
-          "doc": "Sam Arnowitz et al. v. City of Clifton et al. (official municipal defendant naming)",
-          "url": "https://justia.com"
-        }
-      ],
-      "historicExperience": {
-        "summary": "Serving his fourth term on the Clifton City Council (2010–2018, 2022–present). Full-time Chief Financial Officer (CFO) for the Township of Mount Olive managing a $40M+ municipal budget. Certified Municipal Finance Officer (CMFO), Qualified Purchasing Agent (QPA), and holds an MPA from Penn State University. Past President of the Clifton Board of Education and current Passaic Valley Water Commission (PVWC) Commissioner.",
-        "yearsInPublicService": "18+ Years (Council, BOE, PVWC, CFO)",
-        "careerTimeline": [
-          {
-            "period": "2000s–Present",
-            "role": "Chief Financial Officer (CFO)",
-            "organization": "Township of Mount Olive (Morris County, NJ)",
-            "details": "Manages a $40M+ municipal operating budget, capital debt issuance, municipal payroll, and statutory state audits as a licensed CMFO and QPA."
-          },
-          {
-            "period": "1990s–2000s",
-            "role": "Trustee & President",
-            "organization": "Clifton Board of Education",
-            "details": "Elected to school board; served as President managing district fiscal operations and educational policy."
-          },
-          {
-            "period": "2010–2018 & 2022–Present",
-            "role": "Councilman",
-            "organization": "Clifton City Council",
-            "details": "Serving fourth term on City Council; crafts capital improvement programs and municipal budget debt structures."
-          },
-          {
-            "period": "Present",
-            "role": "Commissioner",
-            "organization": "Passaic Valley Water Commission (PVWC)",
-            "details": "Appointed to the PVWC board representing Clifton ratepayer interests, lead service line replacements, and water treatment capital projects."
-          }
-        ],
-        "publicOfficesHeld": [
-          {
-            "office": "Clifton City Councilman",
-            "tenure": "2010–2018, 2022–Present",
-            "role": "Council member, capital budget architect"
-          },
-          {
-            "office": "Clifton Board of Education President & Trustee",
-            "tenure": "Past",
-            "role": "School board leadership"
-          },
-          {
-            "office": "Passaic Valley Water Commission (PVWC)",
-            "tenure": "Present Commissioner",
-            "role": "Regional water utility oversight"
-          }
-        ],
-        "educationAndCredentials": [
-          "Master of Public Administration (M.P.A.), Penn State University",
-          "Certified Municipal Finance Officer (CMFO), State of New Jersey",
-          "Qualified Purchasing Agent (QPA), State of New Jersey",
-          "Son of former Clifton Mayor Gloria Kolodziej and Councilman Joseph Kolodziej Sr."
-        ],
-        "civicLeadership": [
-          "Clifton Little League booster and youth soccer coach",
-          "Evergreen Manor non-profit senior housing board member",
-          "Architect of Clifton's multi-year capital improvement bonding stabilization strategies"
-        ]
-      },
-      "photoUrl": "data/candidates/15-kolodziej.jpg"
-    },
-    {
-      "ballotNumber": 16,
-      "id": "antonio-tony-latona",
-      "name": "Antonio \"Tony\" Latona",
-      "status": "Incumbent",
-      "role": "Clifton Councilman (Elected 2022) & Retired Clifton Police Officer",
-      "experience": "Elected to Council in 2022 with Team Clifton; 25+ years as a decorated Clifton Police Officer; Quality of Life task force leader.",
-      "initials": "TL",
-      "tagline": "Quality of Life Task Force addressing neighborhood noise and commercial truck parking, backing police and fire, and road resurfacing catch-up.",
-      "declinedBenefits": true,
-      "categories": [
-        "safety",
-        "housing",
-        "infrastructure",
-        "taxes"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "safety",
-          "title": "Active Quality of Life Task Force",
-          "details": "Spearheaded targeted enforcement against late-night residential noise disturbances, illegal commercial semi-truck parking in residential driveways, and unpermitted construction."
-        },
-        {
-          "category": "safety",
-          "title": "Supporting Police, Fire & Emergency EMS Readiness",
-          "details": "Ensured funding for upgraded police body cameras, ballistic protection, and modern fire pumper apparatus. Championed paramedic retention initiatives."
-        },
-        {
-          "category": "infrastructure",
-          "title": "Accelerated Municipal Road Resurfacing",
-          "details": "Pushed for aggressive mill-and-pave resurfacing of neglected secondary residential streets and clearing of storm catch basins to prevent localized street ponding."
-        }
-      ],
-      "quotes": [
-        "As someone who patrolled Clifton's streets for over two decades, I know the quality-of-life issues that keep neighbors awake. We are delivering results on noise, parking, and safety."
-      ],
-      "civicBackground": "Councilman (2022–present); Retired Clifton Police Officer; Clifton PBA Local 36 member; Clifton youth sports coach.",
-      "investigativeDossier": {
-        "outsideBusinesses": [
-          "Decorated Retired Clifton Police Officer (25+ years in Clifton Police Department)",
-          "Public Safety & Municipal Quality-of-Life Consulting"
-        ],
-        "disclosuresAndFDS": "Files annual State FDS under Local Government Ethics Law. Discloses police pension distributions and elected council salary.",
-        "hasDocumentedControversies": true,
-        "controversySeverity": "MEDIUM",
-        "cleanRecordVerification": "Retired police officer with documented involvement in controversial interim administrative appointments.",
-        "notableControversies": [
-          {
-            "title": "Interim City Manager Gary DeMarzo Appointment Scrutiny",
-            "dateOrEra": "2023–2024",
-            "category": "Personnel Appointment Controversy",
-            "details": "Following the abrupt resignation of City Manager Nick Villano, Latona supported the controversial hiring of Gary DeMarzo as Interim City Manager. Critics and residents raised questions regarding DeMarzo's past work history (including an exonerated indictment in Cape May County and dismissal from another municipal post), noting a nearly 20-year professional relationship between Latona and DeMarzo. DeMarzo subsequently faced council discipline and reprimand over inappropriate messages sent to a resident.",
-            "resolutionOrOutcome": "DeMarzo served as interim manager amidst contentious public meetings; Latona defended the appointment as necessary to stabilize City Hall after sudden executive departures."
-          },
-          {
-            "title": "Union Standby Rates & DPW Contract Deliberations",
-            "dateOrEra": "2024",
-            "category": "Labor & Budget Standoff",
-            "details": "Clashed with fiscal conservatives over municipal expenditures, DPW on-call standby pay rates, and collective bargaining terms, advocating for competitive frontline worker compensation.",
-            "resolutionOrOutcome": "Contract terms approved after heated council work sessions."
-          }
-        ],
-        "conflictOfInterestWatch": "As a retired Clifton police officer collecting a state PFRS pension, must avoid participating in any police grievance arbitrations that touch retroactive pensionable compensation."
-      },
-      "verifiedSources": [
-        {
-          "title": "Passaic County Clerk Official Candidate Certification",
-          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
-          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
-        },
-        {
-          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
-          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
-          "url": "https://fds.nj.gov"
-        },
-        {
-          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
-          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
-          "url": "https://thecliftontimes.com"
-        },
-        {
-          "title": "City of Clifton Municipal Clerk Public Records",
-          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
-          "url": "https://cliftonnj.org/218/City-Clerk"
-        },
-        {
-          "title": "Clifton City Council Meeting Minutes & Resolutions",
-          "doc": "Official minutes detailing the appointment and council discipline of Interim City Manager Gary DeMarzo and DPW standby rate deliberations",
-          "url": "https://cliftonnj.org/218/City-Clerk"
-        },
-        {
-          "title": "The Clifton Times Municipal Administration Coverage (2023–2024)",
-          "doc": "Public news reports covering City Hall administrative restructuring and council debates",
-          "url": "https://thecliftontimes.com"
-        }
-      ],
-      "historicExperience": {
-        "summary": "Retired front-line firefighter with 25+ years of distinguished service in the Clifton Fire Department, honorable military veteran of the U.S. Armed Forces, and current Councilman elected in 2022 with Team Clifton. Serves as Council liaison to the Department of Public Works and Veterans affairs.",
-        "yearsInPublicService": "27+ Years (Fire Service, Military & Council)",
-        "careerTimeline": [
-          {
-            "period": "1980s",
-            "role": "Honorable Military Veteran",
-            "organization": "United States Armed Forces",
-            "details": "Served honorably in the U.S. Armed Forces with specialized training in emergency readiness."
-          },
-          {
-            "period": "1990s–2020",
-            "role": "Firefighter",
-            "organization": "City of Clifton Fire Department",
-            "details": "25+ years of front-line structural firefighting, vehicle extrication, and emergency apparatus operation across Clifton."
-          },
-          {
-            "period": "2023–Present",
-            "role": "Councilman",
-            "organization": "Clifton City Council",
-            "details": "Elected November 2022 with Team Clifton, taking office in January 2023. Serves as Council liaison to the DPW and Veterans Committee."
-          }
-        ],
-        "publicOfficesHeld": [
-          {
-            "office": "Clifton City Councilman",
-            "tenure": "2023–Present",
-            "role": "Councilman, DPW and Public Works liaison"
-          }
-        ],
-        "educationAndCredentials": [
-          "Honorable Military Veteran, United States Armed Forces",
-          "Clifton Fire Academy Graduate; FMBA Local 21 retired member"
-        ],
-        "civicLeadership": [
-          "Clifton youth sports coach",
-          "Clifton Veterans Day and Memorial Day parade committee organizer",
-          "Proponent of expanded DPW standby storm response rates and quality-of-life neighborhood cleanups"
-        ]
-      },
-      "photoUrl": "data/candidates/16-latona.jpg"
-    },
-    {
-      "ballotNumber": 17,
-      "id": "fred-barnes",
-      "name": "Fred Barnes",
-      "status": "Challenger",
-      "role": "Operations & Logistics Manager, Civic Volunteer",
-      "experience": "Senior supply chain and distribution operations manager; Clifton neighborhood association volunteer; youth baseball coach.",
-      "initials": "FB",
-      "tagline": "Neighborhood zoning preservation, halting overcrowded rentals, commercial parking bans on residential streets, and park upgrades.",
-      "declinedBenefits": true,
-      "categories": [
-        "housing",
-        "safety",
-        "taxes"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "housing",
-          "title": "Neighborhood Zoning Defense & Anti-Crowding",
-          "details": "Protect established single-family and two-family neighborhoods from conversion into unpermitted multi-unit boarding houses. Empower inspectors with nighttime inspection authority."
-        },
-        {
-          "category": "safety",
-          "title": "Residential Commercial Vehicle Bans",
-          "details": "Implement stricter towing and summons penalties for out-of-town commercial box trucks, landscaper trailers, and commercial vans taking up resident parking spots on tight streets."
-        },
-        {
-          "category": "infrastructure",
-          "title": "Community Park & Recreation Upgrades",
-          "details": "Renovate neighborhood parks (Nash Park, Weasel Brook Park, Main Memorial) with upgraded turf fields, modern ADA-compliant playgrounds, and LED night lighting."
-        }
-      ],
-      "quotes": [
-        "Our working-class neighborhoods deserve peace, clean streets, and somewhere to park when you come home from work. Let's stand up for Clifton's neighborhood families."
-      ],
-      "civicBackground": "Lifelong Passaic County resident; Clifton youth baseball coach; logistics operations professional.",
-      "investigativeDossier": {
-        "outsideBusinesses": [
-          "Senior Operations & Logistics Supply Chain Manager",
-          "Clifton Youth Baseball Coach & Civic Volunteer"
-        ],
-        "disclosuresAndFDS": "Clean corporate logistics background; active in neighborhood association meetings.",
-        "hasDocumentedControversies": false,
-        "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Public Record — No corporate regulatory infractions, municipal citations, or litigation on record.",
-        "notableControversies": [],
-        "conflictOfInterestWatch": "Must ensure commercial shipping and trucking logistics companies receive no preferential municipal parking or zoning treatment."
-      },
-      "verifiedSources": [
-        {
-          "title": "Passaic County Clerk Official Candidate Certification",
-          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
-          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
-        },
-        {
-          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
-          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
-          "url": "https://fds.nj.gov"
-        },
-        {
-          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
-          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
-          "url": "https://thecliftontimes.com"
-        },
-        {
-          "title": "City of Clifton Municipal Clerk Public Records",
-          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
-          "url": "https://cliftonnj.org/218/City-Clerk"
-        },
-        {
-          "title": "Clifton Neighborhood Association Minutes & Corporate Logistics",
-          "doc": "Public hearing testimony on commercial vehicle parking bans and residential zoning",
-          "url": "https://thecliftontimes.com"
-        }
-      ],
-      "historicExperience": {
-        "summary": "Clifton small business owner for nearly 28 years and graduate of Syracuse University with a degree in political science. Longest-tenured President and Vice President of the New Jersey Licensed Beverage Association (NJLBA) representing hospitality license holders statewide before state regulators and legislative bodies.",
-        "yearsInPublicService": "25+ Years (Small Business & Industry Leadership)",
-        "careerTimeline": [
-          {
-            "period": "1995–Present",
-            "role": "Small Business Proprietor",
-            "organization": "Retail & Hospitality Businesses (Clifton, NJ)",
-            "details": "Nearly 28 years owning and operating local retail and hospitality establishments in Passaic County."
-          },
-          {
-            "period": "2005–Present",
-            "role": "President & Vice President",
-            "organization": "New Jersey Licensed Beverage Association (NJLBA)",
-            "details": "Longest-tenured statewide President representing liquor license holders before the NJ Division of Alcoholic Beverage Control and the state legislature."
-          }
-        ],
-        "publicOfficesHeld": [
-          {
-            "office": "Clifton City Council Candidate",
-            "tenure": "2026",
-            "role": "Small business and quality-of-life candidate."
-          }
-        ],
-        "educationAndCredentials": [
-          "Bachelor of Arts (B.A.) in Political Science, Syracuse University",
-          "Multi-decade commercial license holder and regulatory compliance specialist"
-        ],
-        "civicLeadership": [
-          "Clifton youth baseball coach",
-          "Neighborhood block association organizer",
-          "Champion of commercial business district cleanliness and crackdowns on illegal boarding houses and noise violations"
-        ]
-      },
-      "photoUrl": "data/candidates/17-barnes.jpg"
-    },
-    {
-      "ballotNumber": 18,
-      "id": "avraham-shaya-eisenman",
-      "name": "Avraham Shaya Eisenman",
-      "status": "Challenger",
-      "role": "Small Business Owner & Community Advocate",
-      "experience": "Clifton small business proprietor, local commercial property manager, active community volunteer and civic participant.",
-      "initials": "SE",
-      "tagline": "A proposed 2-year municipal tax freeze, retail support on Clifton and Van Houten corridors, and citizen participation at council meetings.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "governance",
-        "safety"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "taxes",
-          "title": "Two-Year Municipal Property Tax Freeze",
-          "details": "Enact an immediate two-year moratorium on municipal tax hikes. Reallocate surplus reserves and audit vendor billing to stabilize tax bills for hard-pressed homeowners."
-        },
-        {
-          "category": "taxes",
-          "title": "Revitalizing Local Retail & Dining Corridors",
-          "details": "Work with merchant groups along Van Houten Ave, Clifton Ave, and Lakeview to implement pedestrian-friendly streetscapes, parking meter modernization, and shop-local incentives."
-        },
-        {
-          "category": "governance",
-          "title": "Expanding Public Speaking Time & Open Town Halls",
-          "details": "Expand citizen public comment periods at council meetings and institute quarterly open town halls in each Clifton ZIP code so residents have direct access to their elected officials."
-        }
-      ],
-      "quotes": [
-        "Small businesses and homeowners are the lifeblood of Clifton. We need a two-year tax freeze to let residents catch their breath, and a City Hall that listens to everyone."
-      ],
-      "civicBackground": "Clifton small business operator; civic activist; community charitable volunteer.",
-      "investigativeDossier": {
-        "outsideBusinesses": [
-          "Small Business Owner & Commercial Real Estate Management",
-          "Community Civic Organizer"
-        ],
-        "disclosuresAndFDS": "Participant in Clifton Zoning Board of Adjustment proceedings; active civic attendee at municipal meetings.",
-        "hasDocumentedControversies": false,
-        "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Public Record — No municipal code enforcement penalties or ethics complaints on record.",
-        "notableControversies": [],
-        "conflictOfInterestWatch": "Must recuse from any Zoning Board or Planning Board appointments involving commercial properties or commercial tenants under his management."
-      },
-      "verifiedSources": [
-        {
-          "title": "Passaic County Clerk Official Candidate Certification",
-          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
-          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
-        },
-        {
-          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
-          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
-          "url": "https://fds.nj.gov"
-        },
-        {
-          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
-          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
-          "url": "https://thecliftontimes.com"
-        },
-        {
-          "title": "City of Clifton Municipal Clerk Public Records",
-          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
-          "url": "https://cliftonnj.org/218/City-Clerk"
-        },
-        {
-          "title": "Clifton Zoning Board of Adjustment Public Records",
-          "doc": "Public hearing participation and small business registration filings",
-          "url": "https://cliftonnj.org"
-        }
-      ],
-      "historicExperience": {
-        "summary": "Board-certified Family Nurse Practitioner (FNP-BC) and healthcare entrepreneur who founded and directs EisMed Urgent Care clinic on Bloomfield Avenue in Clifton. Member of the Clifton Zoning Board of Adjustment, serving as both alternate and full voting commissioner evaluating residential and commercial land variances.",
-        "yearsInPublicService": "6+ Years (Zoning Board & Healthcare)",
-        "careerTimeline": [
-          {
-            "period": "2015–Present",
-            "role": "Founder & Clinical Director",
-            "organization": "EisMed Urgent Care (786 Bloomfield Ave, Clifton)",
-            "details": "Directs full-service urgent care, occupational health, and walk-in clinical practice in Clifton."
-          },
-          {
-            "period": "2018–Present",
-            "role": "Board-Certified Family Nurse Practitioner (FNP-BC)",
-            "organization": "Advanced Clinical Practice",
-            "details": "Delivers acute and primary care diagnostics, chronic disease management, and emergency clinical triage."
-          },
-          {
-            "period": "2020s–Present",
-            "role": "Commissioner / Member",
-            "organization": "Clifton Zoning Board of Adjustment",
-            "details": "Served as Alternate and full voting Commissioner reviewing residential and commercial variance applications and zoning appeals."
-          }
-        ],
-        "publicOfficesHeld": [
-          {
-            "office": "Clifton Zoning Board of Adjustment",
-            "tenure": "Present Commissioner",
-            "role": "Zoning board commissioner evaluating land use variances."
-          }
-        ],
-        "educationAndCredentials": [
-          "Master of Science in Nursing (M.S.N.) / Family Nurse Practitioner (FNP-BC)",
-          "Certified New Jersey Land Use & Zoning Commissioner",
-          "Clifton homeowner and business owner"
-        ],
-        "civicLeadership": [
-          "Community healthcare access provider",
-          "Clifton municipal parks and recreation booster",
-          "Advocate for a 2-year municipal property tax freeze and comprehensive Weasel Brook flood mitigation"
-        ]
-      },
-      "photoUrl": "data/candidates/18-eisenman.jpg"
-    },
-    {
-      "ballotNumber": 19,
       "id": "norman-a-tahan",
       "name": "Norman A. Tahan",
       "status": "Challenger",
@@ -2612,7 +2081,557 @@
           "Advocate for fire department equipment modernizations and emergency radio dispatch upgrades"
         ]
       },
-      "photoUrl": "data/candidates/19-tahan.jpg"
+      "photoUrl": "data/candidates/19-tahan.jpg",
+      "ballotPosition": "Row 15"
+    },
+    {
+      "ballotNumber": 16,
+      "id": "joseph-kolodziej",
+      "name": "Joseph Kolodziej",
+      "status": "Incumbent",
+      "role": "Clifton Councilman (Elected 2010, 2014, 2018, 2022) & Certified Municipal Finance Officer",
+      "experience": "Serving fourth term on Clifton City Council; Certified Municipal Finance Officer (CMFO); Qualified Purchasing Agent (QPA); Master of Public Administration (MPA).",
+      "initials": "JK",
+      "tagline": "Protecting Clifton's AA credit rating, structural budgeting under state 2% caps, modernizing DPW equipment, and expert municipal finance oversight.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Structural Budgeting & Preserving AA Bond Rating",
+          "details": "Bring professional CMFO credentials to the council dais. Kept Clifton's municipal tax rate growth consistently below the state statutory 2% cap while maintaining healthy surplus reserves and protecting Clifton's AA Wall Street bond rating."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Long-Term Capital Fleet & DPW Modernization",
+          "details": "Author of Clifton's rolling 6-year capital improvement plan to replace aging DPW snow plows, street sweepers, and sewer vacuum trucks without sudden tax spikes."
+        },
+        {
+          "category": "governance",
+          "title": "Fair Collective Bargaining & Contract Negotiations",
+          "details": "Lead fiscally sound collective bargaining negotiations with city employee unions (PBA, FMBA, DPW) that balance fair competitive compensation with taxpayer affordability."
+        }
+      ],
+      "quotes": [
+        "Municipal finance is not an amateur sport. My professional training as a CMFO ensures that Clifton's budget is structurally balanced, our debt is controlled, and our credit rating stays top-tier."
+      ],
+      "civicBackground": "Councilman (2010–present); Certified Municipal Finance Officer (CMFO); Master of Public Administration (Rutgers); Clifton Little League booster.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Chief Financial Officer (CMFO), Township of Mt. Olive, NJ (Full-time municipal executive)",
+          "Appointed Commissioner, Passaic Valley Water Commission (PVWC)",
+          "Municipal Financial Accounting & CMFO Advisory Services"
+        ],
+        "disclosuresAndFDS": "Files annual State FDS under N.J.S.A. 40A:9-22.1. Discloses full-time Mt. Olive CFO compensation, Clifton council salary, and investment holdings.",
+        "hasDocumentedControversies": true,
+        "controversySeverity": "MEDIUM",
+        "cleanRecordVerification": "Certified Municipal Finance Officer subject to ongoing dual-employment monitoring.",
+        "notableControversies": [
+          {
+            "title": "Dual Public Employment & Cross-Municipal Scrutiny",
+            "dateOrEra": "Ongoing",
+            "category": "Dual Public Sector Roles",
+            "details": "Kolodziej serves as a full-time, high-salaried Chief Financial Officer in Mt. Olive Township while serving as an elected lawmaker setting tax policy in Clifton. Citizen watchdogs have scrutinized whether dual public employment allows sufficient time for oversight of Clifton's $105M+ budget.",
+            "resolutionOrOutcome": "Dual employment is permitted under NJ Local Government Ethics Law; Kolodziej argues his CMFO credentials give Clifton expert financial oversight."
+          },
+          {
+            "title": "Passaic Valley Water Commission (PVWC) Reappointment Clash",
+            "dateOrEra": "2023–2024",
+            "category": "Board Appointment Politics",
+            "details": "His reappointment by Council to the PVWC board sparked heated debate, with reform-minded council members demanding that the seat be publicly advertised for competitive citizen applications given ongoing taxpayer anger over discolored brown tap water.",
+            "resolutionOrOutcome": "Council confirmed his appointment; Kolodziej emphasized his professional finance background in monitoring PVWC's capital budgets."
+          }
+        ],
+        "conflictOfInterestWatch": "Must strictly recuse from any interlocal agreements, shared services, or joint insurance funds (JIF) between Clifton and Mt. Olive Township or Passaic County agencies."
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ DCA Division of Local Government Services & Mt. Olive Municipal Budget",
+          "doc": "Certified Municipal Finance Officer (CMFO) public payroll and full-time CFO appointment records in Mt. Olive Township",
+          "url": "https://www.nj.gov/dca/dlgs/"
+        },
+        {
+          "title": "Passaic Valley Water Commission (PVWC) Official Minutes",
+          "doc": "PVWC board appointment records and public meeting minutes regarding clean water capital financing",
+          "url": "https://www.pvwc.com"
+        },
+        {
+          "title": "Justia Court Filings (Municipal Capacity)",
+          "doc": "Sam Arnowitz et al. v. City of Clifton et al. (official municipal defendant naming)",
+          "url": "https://justia.com"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Serving his fourth term on the Clifton City Council (2010–2018, 2022–present). Full-time Chief Financial Officer (CFO) for the Township of Mount Olive managing a $40M+ municipal budget. Certified Municipal Finance Officer (CMFO), Qualified Purchasing Agent (QPA), and holds an MPA from Penn State University. Past President of the Clifton Board of Education and current Passaic Valley Water Commission (PVWC) Commissioner.",
+        "yearsInPublicService": "18+ Years (Council, BOE, PVWC, CFO)",
+        "careerTimeline": [
+          {
+            "period": "2000s–Present",
+            "role": "Chief Financial Officer (CFO)",
+            "organization": "Township of Mount Olive (Morris County, NJ)",
+            "details": "Manages a $40M+ municipal operating budget, capital debt issuance, municipal payroll, and statutory state audits as a licensed CMFO and QPA."
+          },
+          {
+            "period": "1990s–2000s",
+            "role": "Trustee & President",
+            "organization": "Clifton Board of Education",
+            "details": "Elected to school board; served as President managing district fiscal operations and educational policy."
+          },
+          {
+            "period": "2010–2018 & 2022–Present",
+            "role": "Councilman",
+            "organization": "Clifton City Council",
+            "details": "Serving fourth term on City Council; crafts capital improvement programs and municipal budget debt structures."
+          },
+          {
+            "period": "Present",
+            "role": "Commissioner",
+            "organization": "Passaic Valley Water Commission (PVWC)",
+            "details": "Appointed to the PVWC board representing Clifton ratepayer interests, lead service line replacements, and water treatment capital projects."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Clifton City Councilman",
+            "tenure": "2010–2018, 2022–Present",
+            "role": "Council member, capital budget architect"
+          },
+          {
+            "office": "Clifton Board of Education President & Trustee",
+            "tenure": "Past",
+            "role": "School board leadership"
+          },
+          {
+            "office": "Passaic Valley Water Commission (PVWC)",
+            "tenure": "Present Commissioner",
+            "role": "Regional water utility oversight"
+          }
+        ],
+        "educationAndCredentials": [
+          "Master of Public Administration (M.P.A.), Penn State University",
+          "Certified Municipal Finance Officer (CMFO), State of New Jersey",
+          "Qualified Purchasing Agent (QPA), State of New Jersey",
+          "Son of former Clifton Mayor Gloria Kolodziej and Councilman Joseph Kolodziej Sr."
+        ],
+        "civicLeadership": [
+          "Clifton Little League booster and youth soccer coach",
+          "Evergreen Manor non-profit senior housing board member",
+          "Architect of Clifton's multi-year capital improvement bonding stabilization strategies"
+        ]
+      },
+      "photoUrl": "data/candidates/15-kolodziej.jpg",
+      "ballotPosition": "Row 16"
+    },
+    {
+      "ballotNumber": 17,
+      "id": "fred-barnes",
+      "name": "Fred Barnes",
+      "status": "Challenger",
+      "role": "Operations & Logistics Manager, Civic Volunteer",
+      "experience": "Senior supply chain and distribution operations manager; Clifton neighborhood association volunteer; youth baseball coach.",
+      "initials": "FB",
+      "tagline": "Neighborhood zoning preservation, halting overcrowded rentals, commercial parking bans on residential streets, and park upgrades.",
+      "declinedBenefits": true,
+      "categories": [
+        "housing",
+        "safety",
+        "taxes"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "housing",
+          "title": "Neighborhood Zoning Defense & Anti-Crowding",
+          "details": "Protect established single-family and two-family neighborhoods from conversion into unpermitted multi-unit boarding houses. Empower inspectors with nighttime inspection authority."
+        },
+        {
+          "category": "safety",
+          "title": "Residential Commercial Vehicle Bans",
+          "details": "Implement stricter towing and summons penalties for out-of-town commercial box trucks, landscaper trailers, and commercial vans taking up resident parking spots on tight streets."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Community Park & Recreation Upgrades",
+          "details": "Renovate neighborhood parks (Nash Park, Weasel Brook Park, Main Memorial) with upgraded turf fields, modern ADA-compliant playgrounds, and LED night lighting."
+        }
+      ],
+      "quotes": [
+        "Our working-class neighborhoods deserve peace, clean streets, and somewhere to park when you come home from work. Let's stand up for Clifton's neighborhood families."
+      ],
+      "civicBackground": "Lifelong Passaic County resident; Clifton youth baseball coach; logistics operations professional.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Senior Operations & Logistics Supply Chain Manager",
+          "Clifton Youth Baseball Coach & Civic Volunteer"
+        ],
+        "disclosuresAndFDS": "Clean corporate logistics background; active in neighborhood association meetings.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — No corporate regulatory infractions, municipal citations, or litigation on record.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Must ensure commercial shipping and trucking logistics companies receive no preferential municipal parking or zoning treatment."
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Clifton Neighborhood Association Minutes & Corporate Logistics",
+          "doc": "Public hearing testimony on commercial vehicle parking bans and residential zoning",
+          "url": "https://thecliftontimes.com"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Clifton small business owner for nearly 28 years and graduate of Syracuse University with a degree in political science. Longest-tenured President and Vice President of the New Jersey Licensed Beverage Association (NJLBA) representing hospitality license holders statewide before state regulators and legislative bodies.",
+        "yearsInPublicService": "25+ Years (Small Business & Industry Leadership)",
+        "careerTimeline": [
+          {
+            "period": "1995–Present",
+            "role": "Small Business Proprietor",
+            "organization": "Retail & Hospitality Businesses (Clifton, NJ)",
+            "details": "Nearly 28 years owning and operating local retail and hospitality establishments in Passaic County."
+          },
+          {
+            "period": "2005–Present",
+            "role": "President & Vice President",
+            "organization": "New Jersey Licensed Beverage Association (NJLBA)",
+            "details": "Longest-tenured statewide President representing liquor license holders before the NJ Division of Alcoholic Beverage Control and the state legislature."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Clifton City Council Candidate",
+            "tenure": "2026",
+            "role": "Small business and quality-of-life candidate."
+          }
+        ],
+        "educationAndCredentials": [
+          "Bachelor of Arts (B.A.) in Political Science, Syracuse University",
+          "Multi-decade commercial license holder and regulatory compliance specialist"
+        ],
+        "civicLeadership": [
+          "Clifton youth baseball coach",
+          "Neighborhood block association organizer",
+          "Champion of commercial business district cleanliness and crackdowns on illegal boarding houses and noise violations"
+        ]
+      },
+      "photoUrl": "data/candidates/17-barnes.jpg",
+      "ballotPosition": "Row 17"
+    },
+    {
+      "ballotNumber": 18,
+      "id": "matt-mullins",
+      "name": "Matt Mullins",
+      "status": "Challenger",
+      "role": "Public Policy Specialist & Community Organizer",
+      "experience": "Background in public administration, municipal policy research, digital civic engagement, and grassroots community organizing in Passaic County.",
+      "initials": "MM",
+      "tagline": "Modernizing DPW with open-data tracking, cracking down on absentee landlords, and expanding youth mental health resources.",
+      "declinedBenefits": true,
+      "categories": [
+        "governance",
+        "housing",
+        "safety"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "governance",
+          "title": "Open-Data Civic Technology for DPW & City Hall",
+          "details": "Launch a modern, mobile-friendly 311 citizen reporting app with real-time GPS tracking for pothole repairs, street sweeping, snow plowing, and bulk leaf collection."
+        },
+        {
+          "category": "housing",
+          "title": "Holding Absentee Landlords Accountable",
+          "details": "Establish a public registry of habitual code violators and absentee corporate landlords who neglect residential properties, imposing escalating daily fines."
+        },
+        {
+          "category": "safety",
+          "title": "Youth Recreation & Mental Health Partnerships",
+          "details": "Partner with Passaic County health agencies to expand after-school programs, teen mental health counseling, and modernized park facilities across all 4 Clifton ZIP codes."
+        }
+      ],
+      "quotes": [
+        "Government should work at the speed of modern technology. When a resident reports a pothole or streetlight out, they deserve real-time status updates, not a busy signal."
+      ],
+      "civicBackground": "Passaic County youth mentor; community organizer; civic open-source technology advocate.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Public Administration & Civic Technology Policy Specialist",
+          "Grassroots Community Organizer & Youth Mentor"
+        ],
+        "disclosuresAndFDS": "Clean public records; youth recreation mentor in Passaic County.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — No municipal complaints or legal actions on record.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Must ensure civic tech vendors (such as 311 app developers or open-data providers) comply with competitive public bidding laws."
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Passaic County Youth & Community Service Records",
+          "doc": "Community organizing and public policy research records",
+          "url": "https://thecliftontimes.com"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Lifelong Clifton resident with a degree in political science. Civic policy researcher and grassroots community organizer in Passaic County specializing in open-source municipal data, digital transparency, and participatory budgeting.",
+        "yearsInPublicService": "8+ Years (Civic Organizing & Policy)",
+        "careerTimeline": [
+          {
+            "period": "2016–Present",
+            "role": "Municipal Policy Researcher & Data Analyst",
+            "organization": "Civic Policy & Government Analytics",
+            "details": "Conducts municipal budget analyses, public infrastructure tracking, and open-source data modeling for civic transparency."
+          },
+          {
+            "period": "2020–Present",
+            "role": "Grassroots Organizer & Civic Technologist",
+            "organization": "Passaic County Community Advocacy",
+            "details": "Organizes grassroots civic engagement initiatives focusing on participatory budgeting, public school funding equity, and tenant rights."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Clifton City Council Candidate",
+            "tenure": "2026",
+            "role": "Youth and civic transparency candidate advocating for open municipal data."
+          }
+        ],
+        "educationAndCredentials": [
+          "Bachelor of Arts (B.A.) in Political Science",
+          "Lifelong resident of the City of Clifton"
+        ],
+        "civicLeadership": [
+          "Passaic County youth mentor and community organizer",
+          "Advocate for data-driven municipal code enforcement hot-spot tracking",
+          "Proponent of equal capital improvement fund allocation across all 4 Clifton ZIP codes"
+        ]
+      },
+      "photoUrl": "data/candidates/7-mullins.jpg",
+      "ballotPosition": "Row 18"
+    },
+    {
+      "ballotNumber": 19,
+      "id": "rosemary-rosie-pino",
+      "name": "Rosemary \"Rosie\" Pino",
+      "status": "Incumbent",
+      "role": "Clifton Councilwoman (Elected 2018, Re-elected 2022) & Senior Bank Examiner",
+      "experience": "Serving second term on Clifton City Council; former Clifton Board of Education Commissioner; Senior National Bank Examiner (U.S. Department of the Treasury / OCC).",
+      "initials": "RP",
+      "tagline": "Applying federal banking audit rigor to municipal capital plans, expanding senior tax deductions, and holding PVWC accountable for clean water without rate hikes.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Federal Banking Audit Rigor on Capital Improvement Budgets",
+          "details": "Utilize decades of U.S. Treasury bank regulatory experience to stress-test municipal capital forecasts, scrutinize bank depository yields, and protect Clifton's bond rating."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Holding PVWC Accountable on Clean Water & Rate Hikes",
+          "details": "Demanded quarterly public appearances by Passaic Valley Water Commission executives before Council. Adamantly oppose unjustified water rate hikes while residents deal with discolored tap water."
+        },
+        {
+          "category": "taxes",
+          "title": "Expanding Tax Relief for Seniors & Disabled Veterans",
+          "details": "Expand city outreach for ANCHOR, Senior Freeze (PTR), and municipal veteran tax exemptions to ensure all eligible Clifton seniors receive maximum state and local deductions."
+        }
+      ],
+      "quotes": [
+        "As a federal bank examiner, I look at the numbers without emotion. Clifton needs rigorous financial safeguards, clean drinking water, and true protections for our seniors on fixed incomes."
+      ],
+      "civicBackground": "Councilwoman (2018–present); Clifton BOE Trustee (past); U.S. Treasury Senior Bank Examiner; Clifton Hispanic Chamber supporter.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Senior National Bank Examiner, U.S. Department of the Treasury (OCC)",
+          "Founder & Executive Director, Latino Leaders of Clifton (501(c)(4) social welfare organization)",
+          "Founder, ECHO (Educated Communities Help Others)",
+          "PINO Movement (Providing Individuals New Opportunities)"
+        ],
+        "disclosuresAndFDS": "Files annual State FDS under Local Government Ethics Law (N.J.S.A. 40A:9-22.1) and federal financial disclosures for U.S. Treasury employment and congressional campaign committees.",
+        "hasDocumentedControversies": true,
+        "controversySeverity": "HIGH",
+        "cleanRecordVerification": "Public official involved in multiple documented dais disputes and legal warning controversies.",
+        "notableControversies": [
+          {
+            "title": "The Dais 'Musical Chairs' Feud & Harassment Allegations",
+            "dateOrEra": "June–July 2024",
+            "category": "Council Conduct & Dais Decorum",
+            "details": "Following escalating interpersonal hostility with Councilwoman Mary Sadrakula, Pino sent a formal letter to Mayor Grabowski demanding that Sadrakula's seat on the dais be relocated away from hers, alleging that she felt 'unsafe' and subjected to 'harassment and discrimination.' When Sadrakula refused to move and Pino refused to switch, council meetings were delayed in a procedural standoff that drew national and regional media mockery comparing the council to a kindergarten classroom.",
+            "resolutionOrOutcome": "Council seats were eventually realigned after extensive public criticism and citizen outcry."
+          },
+          {
+            "title": "Legal Cease-and-Desist Threats Against Critics & Fellow Councilwoman",
+            "dateOrEra": "Late 2023 – Early 2024",
+            "category": "Free Speech & Legal Threats",
+            "details": "Following public criticism and social media commentary regarding her organization of the 2023 Clifton Latino Heritage Carnival, Pino's private attorney issued formal warning letters to several vocal critics—including fellow Councilwoman Mary Sadrakula—threatening defamation lawsuits unless online criticisms ceased.",
+            "resolutionOrOutcome": "No formal defamation lawsuit was adjudicated in court; critics denounced the letters as an attempt to chill public oversight."
+          },
+          {
+            "title": "Congressional Campaign & Political Scrutiny (NJ-9)",
+            "dateOrEra": "2024",
+            "category": "Campaign Scrutiny",
+            "details": "Pino switched to the Republican Party to run for Congress in NJ-9 against Democratic candidate Nellie Pou following the passing of Rep. Bill Pascrell. Political opponents highlighted that her non-profit organization (Latino Leaders of Clifton) had previously honored and endorsed Nellie Pou, generating accusations of political opportunism.",
+            "resolutionOrOutcome": "Congressional general election campaign active; heightened public vetting of non-profit operations."
+          }
+        ],
+        "conflictOfInterestWatch": "Must ensure that non-profit activities (Latino Leaders of Clifton, ECHO) do not receive preferential city festival permits, police overtime waivers, or municipal sponsorship without full council authorization."
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "The Clifton Times & NorthJersey.com News Archives",
+          "doc": "Public meeting records detailing June 2024 dais seating request, legal cease-and-desist correspondence, and Latino Heritage Carnival debates",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "Federal Election Commission (FEC) & Congressional Filings (NJ-9)",
+          "doc": "Candidate financial disclosures and campaign committee filings for 9th Congressional District",
+          "url": "https://www.fec.gov"
+        },
+        {
+          "title": "NJ Department of State Corporate & Non-Profit Registry",
+          "doc": "501(c)(4) filings for Latino Leaders of Clifton and ECHO non-profit organizations",
+          "url": "https://www.njportal.com/DOR/BusinessNameSearch/"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Senior National Bank Examiner with the U.S. Department of the Treasury's Office of the Comptroller of the Currency (OCC) auditing commercial banking liquidity and regulatory capital. Serving her second term on the Clifton City Council (elected 2018, re-elected 2022). Former Clifton Board of Education Vice President (2014–2019) and 2024 candidate for U.S. Congress (NJ-9).",
+        "yearsInPublicService": "12+ Years (Council & BOE)",
+        "careerTimeline": [
+          {
+            "period": "2008–Present",
+            "role": "Senior National Bank Examiner",
+            "organization": "U.S. Department of the Treasury / Office of the Comptroller of the Currency (OCC)",
+            "details": "Audits major national commercial banks following the 2008 financial crisis, evaluating liquidity risk, regulatory capital compliance, and loan portfolio safety and soundness."
+          },
+          {
+            "period": "2014–2019",
+            "role": "Trustee & Vice President",
+            "organization": "Clifton Board of Education",
+            "details": "Elected to school board; served as Vice President helping oversee curriculum, personnel, and district budget allocations."
+          },
+          {
+            "period": "2018–Present",
+            "role": "Councilwoman",
+            "organization": "Clifton City Council",
+            "details": "Elected in 2018; re-elected in 2022. Serves on Health Department and Community Development liaison committees."
+          },
+          {
+            "period": "2024",
+            "role": "Congressional Candidate",
+            "organization": "United States House of Representatives (NJ-9)",
+            "details": "Ran in the congressional primary election following the passing of longtime Congressman Bill Pascrell."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Clifton City Councilwoman",
+            "tenure": "2018–Present (Serving Second Term)",
+            "role": "Elected Councilwoman"
+          },
+          {
+            "office": "Clifton Board of Education Vice President & Trustee",
+            "tenure": "2014–2019",
+            "role": "School board leadership"
+          }
+        ],
+        "educationAndCredentials": [
+          "Bachelor of Science (B.S.) in Finance, Rutgers University",
+          "Commissioned National Bank Examiner (U.S. Department of the Treasury / OCC)"
+        ],
+        "civicLeadership": [
+          "Clifton Hispanic Chamber of Commerce booster",
+          "Organizer of Clifton Latino Heritage cultural events",
+          "Advocate for state Department of Transportation grants to repave Route 46 and local arterial roads"
+        ]
+      },
+      "photoUrl": "data/candidates/13-pino.jpg",
+      "ballotPosition": "Row 19"
     }
   ],
   "boeCandidates": [
@@ -2679,47 +2698,60 @@
         "voteRule": "Vote for up to SEVEN (7)",
         "termLength": "4 Years (2026 – 2030)",
         "ballotType": "Nonpartisan Municipal (At-Large)",
-        "taxShare": "29.41% of Clifton Property Tax ($1.92 per $100)",
-        "description": "Controls the $142M municipal budget, police & fire departments, DPW, zoning, and municipal ordinances. Under Clifton's 1923 Municipal Manager Act, the top vote-getter traditionally serves as Mayor.",
+        "taxShare": "29.41% of Clifton Property Tax (.92 per )",
+        "description": "Controls the M municipal budget, police & fire departments, DPW, zoning, and municipal ordinances. Under Clifton's 1923 Municipal Manager Act, the top vote-getter traditionally serves as Mayor.",
         "badgeColor": "var(--color-city)"
       },
       {
         "id": "clifton-boe",
         "office": "Clifton Board of Education",
         "level": "School District",
-        "seatsAvailable": 3,
+        "seatsAvailable": 4,
         "candidatesRunning": 4,
         "voteRule": "Full Term: Vote for 3 • Unexpired: Vote for 1",
-        "termLength": "3 Full-Term Seats (2027–2029) + 1 Unexpired Term",
+        "termLength": "3 Full-Term Seats (2027–2029) + 1 Unexpired Term (2027)",
         "ballotType": "Nonpartisan School Board",
-        "taxShare": "47.66% of Clifton Property Tax ($3.11 per $100)",
+        "taxShare": "47.66% of Clifton Property Tax (.11 per )",
         "description": "Oversees 17 public schools, ~11,000 students, and the .4M Clifton Public Schools budget. Includes 3 full three-year seats (Suarez, Siano, Canova) plus the 1-year unexpired term vacated by Dr. Lucy Danny (Estrict-Barnes).",
         "badgeColor": "var(--color-school)"
       },
       {
-        "id": "passaic-commissioners",
-        "office": "Passaic County Board of County Commissioners",
+        "id": "passaic-commissioners-full",
+        "office": "Passaic County Commissioners (Full Term)",
         "level": "Countywide (Passaic County)",
-        "seatsAvailable": 3,
-        "candidatesRunning": 6,
-        "voteRule": "Vote for up to THREE (3)",
+        "seatsAvailable": 2,
+        "candidatesRunning": 4,
+        "voteRule": "Vote for up to TWO (2)",
         "termLength": "3 Years (2027 – 2029)",
         "ballotType": "Partisan Countywide",
-        "taxShare": "22.92% of Clifton Property Tax ($0.749 per $100)",
-        "description": "Governs Passaic County government, allocating the ~$515M county budget. Maintains county roads in Clifton (Valley Rd, Van Houten Ave, Clifton Ave, Broad St), Passaic County Community College, and county park systems.",
+        "taxShare": "22.92% of Clifton Property Tax (zsh.749 per )",
+        "description": "Governs Passaic County government, allocating the ~M county budget. Maintains county roads in Clifton (Valley Rd, Van Houten Ave, Clifton Ave, Broad St), Passaic County Community College, and county park systems.",
         "badgeColor": "var(--color-county)"
       },
       {
-        "id": "passaic-sheriff",
-        "office": "Passaic County Sheriff",
+        "id": "passaic-commissioners-unexpired",
+        "office": "Passaic County Commissioners (Unexpired Term)",
+        "level": "Countywide (Passaic County)",
+        "seatsAvailable": 1,
+        "candidatesRunning": 2,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "1 Year (2027)",
+        "ballotType": "Partisan Countywide",
+        "taxShare": "22.92% of Clifton Property Tax (zsh.749 per )",
+        "description": "Fills an unexpired term on the 7-member Board of County Commissioners through December 31, 2027.",
+        "badgeColor": "var(--color-county)"
+      },
+      {
+        "id": "passaic-surrogate",
+        "office": "Passaic County Surrogate",
         "level": "County Constitutional Officer",
         "seatsAvailable": 1,
         "candidatesRunning": 2,
         "voteRule": "Vote for ONE (1)",
-        "termLength": "3 Years (2027 – 2029)",
+        "termLength": "5 Years (2027 – 2031)",
         "ballotType": "Partisan Countywide",
         "taxShare": "Funded via Passaic County General Fund",
-        "description": "Oversees county courthouse security in Paterson, Passaic County Jail operations, countywide patrol units, warrants, and criminal investigation support.",
+        "description": "Constitutional Officer serving as Judge of the Surrogate's Court. Manages wills, probate, estates, guardianships, and adoptions across Passaic County.",
         "badgeColor": "var(--color-county)"
       },
       {
@@ -2732,7 +2764,7 @@
         "termLength": "6 Years (2027 – 2033)",
         "ballotType": "Partisan Statewide",
         "taxShare": "Federal Taxation & Grants (SALT Deduction Relief)",
-        "description": "Represents all New Jerseyans in the U.S. Senate. Confirms federal judges, votes on federal legislation, and advocates for federal infrastructure grants (Gateway Tunnel, NJ Transit, flood mitigation) and restoring full SALT deductions.",
+        "description": "Represents all New Jerseyans in the U.S. Senate. Confirms federal judges, votes on federal legislation, and advocates for federal infrastructure grants and restoring full SALT deductions.",
         "badgeColor": "#1d4ed8"
       },
       {
@@ -2745,7 +2777,7 @@
         "termLength": "2 Years (2027 – 2029)",
         "ballotType": "Partisan Congressional District",
         "taxShare": "Federal Earmarks & Community Project Funding",
-        "description": "Represents Clifton, Passaic, Paterson, and Bergen/Hudson portions in Congress. Focuses on Passaic River flood control, Route 3/Route 46 corridor federal funding, and federal public safety grants.",
+        "description": "Represents Clifton, Passaic, Paterson, and Bergen/Hudson portions in Congress. Focuses on Passaic River flood control, Route 3/Route 46 corridor funding, and federal public safety grants.",
         "badgeColor": "#059669"
       }
     ]
@@ -2755,26 +2787,26 @@
       "office": "United States Senate (New Jersey, Class II)",
       "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
       "voteRule": "Vote for ONE (1)",
-      "importance": "Represents 9.3M New Jerseyans in Washington D.C. Key powers include confirming federal judges, voting on federal budgets, and fighting for New Jersey's fair share of federal tax returns.",
+      "importance": "Represents 9.3M New Jerseyans in Washington D.C. Key powers include confirming federal judges, voting on federal budgets, and fighting for New Jersey's fair share of federal tax returns and SALT deductions.",
       "candidates": [
         {
           "name": "Cory Booker",
           "party": "Democrat",
           "status": "Incumbent U.S. Senator",
           "role": "U.S. Senator from New Jersey (in office since 2013); former Mayor of Newark.",
-          "keyPriorities": "Restoring full federal State and Local Tax (SALT) deduction ($10K cap repeal); funding the Gateway Tunnel & NJ Transit; securing federal clean water grants for the Passaic Valley Water Commission (PVWC); prescription drug cost caps.",
+          "keyPriorities": "Restoring full federal State and Local Tax (SALT) deduction (K cap repeal); funding Gateway Tunnel & NJ Transit; securing federal clean water grants for Passaic Valley Water Commission (PVWC); prescription drug cost caps.",
           "localImpact": "Secured federal appropriations for Passaic River flood mitigation and lead water pipe replacement projects directly serving Clifton residents."
         },
         {
-          "name": "Republican Nominee",
+          "name": "Justin Murphy",
           "party": "Republican",
-          "status": "Challenger Nominee",
-          "role": "GOP Nominee for U.S. Senate.",
+          "status": "Republican Nominee",
+          "role": "GOP Nominee for U.S. Senate; attorney, former Tabernacle Deputy Mayor and township committeeman. Won the June 2, 2026 Republican primary.",
           "keyPriorities": "Federal fiscal restraint to curb inflation; national border security; lowering federal middle-class and small-business income tax brackets; full federal SALT relief for suburban homeowners; domestic energy independence.",
-          "localImpact": "Advocating for reducing federal unfunded mandates on New Jersey municipalities and school districts."
+          "localImpact": "Pledging to eliminate federal regulatory hurdles delaying North Jersey flood wall infrastructure projects and lower federal cost burdens on New Jersey taxpayers."
         },
         {
-          "name": "Third-Party & Independent Slate",
+          "name": "Third-Party & Independent Contenders",
           "party": "Libertarian / Green / Independent",
           "status": "Challengers",
           "role": "Independent & alternative party nominees.",
@@ -2786,75 +2818,103 @@
       "office": "U.S. House of Representatives (New Jersey's 9th Congressional District — NJ-09)",
       "term": "2-Year Term (January 3, 2027 – January 3, 2029)",
       "voteRule": "Vote for ONE (1)",
-      "importance": "Clifton is located entirely within New Jersey's 9th Congressional District. The district encompasses Passaic County (Clifton, Passaic, Paterson), southern Bergen County (Hackensack, Fort Lee, Teaneck, Englewood), and Secaucus.",
+      "importance": "Clifton is located entirely within New Jersey's 9th Congressional District. The district encompasses Passaic County (Clifton, Passaic, Paterson), southern Bergen County (Hackensack, Fort Lee, Teaneck, Englewood), and Secaucus in Hudson County.",
       "candidates": [
         {
           "name": "Nellie Pou",
           "party": "Democrat",
           "status": "Incumbent Representative",
-          "role": "U.S. Representative (NJ-09). Long-time NJ State Senator (District 35) and former Assemblywoman; succeeded late Congressman Bill Pascrell Jr. in 2024.",
+          "role": "U.S. Representative (NJ-09). Longtime NJ State Senator (District 35) and former Assemblywoman; succeeded late Congressman Bill Pascrell Jr. in 2024.",
           "keyPriorities": "Securing federal Army Corps of Engineers funding for Passaic River Basin and Third River flood barriers; federal Community Project Funding (earmarks) for Clifton Police & Fire communications; full SALT deduction repeal; expanding federal community health center grants.",
           "localImpact": "Spearheaded state and federal funding for Route 46 and Route 3 highway bottleneck improvements in Clifton and Passaic County."
         },
         {
-          "name": "Republican Nominee",
+          "name": "Rosemary \"Rosie\" Pino",
           "party": "Republican",
-          "status": "Challenger Nominee",
-          "role": "GOP Nominee for Congressional District 9.",
-          "keyPriorities": "Cutting federal spending and regulatory red tape; revitalizing commercial and industrial corridors along Route 3 and Route 46; supporting local law enforcement with federal grants; parent choice in education.",
-          "localImpact": "Pledging to fight federal congestion pricing models and reduce federal tax burdens on North Jersey suburban commuters."
+          "status": "Republican Nominee",
+          "role": "GOP Nominee for NJ-09; current Clifton City Councilwoman (first elected 2018) and former Clifton Board of Education Commissioner (2013–2018). Born to immigrant parents, former U.S. Treasury bank examiner, finance professional. Note: Running concurrently for Congress and for re-election to Clifton City Council.",
+          "keyPriorities": "Cutting federal spending and regulatory red tape; small business tax relief; revitalizing commercial and industrial corridors along Route 3 and Route 46; supporting local law enforcement with federal Byrne JAG grants; parent choice in education.",
+          "localImpact": "Lifelong advocate for Clifton homeowners on municipal tax relief, flood basin maintenance, and opposing regional congestion pricing models."
         }
       ]
     },
-    "passaicCountyCommissioners": {
-      "office": "Passaic County Board of County Commissioners",
+    "passaicCountyCommissionersFull": {
+      "office": "Passaic County Board of County Commissioners (Full 3-Year Terms)",
       "term": "3-Year Staggered Terms (January 2027 – December 2029)",
-      "voteRule": "Vote for up to THREE (3)",
-      "importance": "The 7-member Board of County Commissioners sets the county tax rate ($0.749 per $100, or 22.92% of your property tax bill). They manage the $515M county budget, Passaic County Sheriff, county roads in Clifton, and Passaic County Community College.",
+      "voteRule": "Vote for up to TWO (2)",
+      "importance": "The 7-member Board of County Commissioners sets the county tax rate (zsh.749 per , or 22.92% of your property tax bill). They manage the M county budget, county roads in Clifton (Valley Rd, Van Houten Ave, Clifton Ave, Broad St), Passaic County Community College, and Passaic County Technical-Vocational Schools (PCTVS).",
       "candidates": [
         {
-          "slate": "Democratic Commissioner Slate",
+          "slate": "Democratic Commissioner Slate (Vote for up to 2)",
           "party": "Democrat",
-          "status": "Incumbent Slate",
+          "status": "Democratic Nominees",
           "candidates": [
-            "John Bartlett (Incumbent)",
-            "Cassandra 'Sandi' Lazzara (Incumbent)",
-            "Running Mate"
+            "Nicholas Veliky",
+            "Orlando Cruz"
           ],
-          "keyPriorities": "Maintaining Passaic County's strong AA bond credit rating; major county road paving and stormwater culvert modernizations in Clifton (Van Houten Ave, Valley Rd, Clifton Ave); funding Passaic County Technical-Vocational Schools (PCTVS); expanding county senior transit and meals-on-wheels; preserving county open space at Garret Mountain and Weasel Brook Park in Clifton."
+          "keyPriorities": "Maintaining Passaic County's strong AA bond credit rating; major county road paving and stormwater culvert modernizations in Clifton (Van Houten Ave, Valley Rd, Clifton Ave); funding PCTVS career/vocational programs; expanding county senior transit and meals-on-wheels; preserving county open space at Garret Mountain and Weasel Brook Park in Clifton."
         },
         {
-          "slate": "Republican Commissioner Slate",
+          "slate": "Republican Commissioner Slate (Vote for up to 2)",
           "party": "Republican",
-          "status": "Challenger Slate",
+          "status": "Republican Nominees",
           "candidates": [
-            "GOP Nominee 1",
-            "GOP Nominee 2",
-            "GOP Nominee 3"
+            "Edward \"Ed\" Leonard",
+            "Bill J. Rodriguez"
           ],
-          "keyPriorities": "Enacting a county property tax freeze; commissioning an independent forensic audit of all Passaic County departmental spending; eliminating county political patronage positions; redirecting county infrastructure dollars to flood-prone neighborhoods in Clifton."
+          "keyPriorities": "Enacting a county property tax freeze; commissioning an independent forensic audit of all Passaic County departmental spending and vendor contracts; eliminating political patronage positions; prioritizing county stormwater infrastructure dollars for flood-prone neighborhoods in Clifton."
         }
       ]
     },
-    "passaicCountySheriff": {
-      "office": "Passaic County Sheriff",
-      "term": "3-Year Term (January 2027 – December 2029)",
+    "passaicCountyCommissionersUnexpired": {
+      "office": "Passaic County Board of County Commissioners (1-Year Unexpired Term)",
+      "term": "1-Year Term (January 2027 – December 2027)",
       "voteRule": "Vote for ONE (1)",
-      "importance": "Constitutional officer directing countywide law enforcement, courthouse safety in Paterson, the Passaic County Jail, warrants division, and municipal police mutual aid.",
+      "importance": "Fills an unexpired vacancy on the Passaic County Board of County Commissioners for the remainder of the calendar year.",
       "candidates": [
         {
-          "name": "Democratic Nominee",
+          "name": "Aleksandra Tasic",
           "party": "Democrat",
-          "status": "Major Party Nominee",
-          "keyPriorities": "Modernizing jail mental health rehabilitation; expanding narcotics enforcement task forces; tactical support and drone technology to assist municipal police departments like Clifton PD."
+          "status": "Democratic Nominee",
+          "role": "Public policy advocate and civic leader.",
+          "keyPriorities": "Transparent county budgeting, expanding youth recreation and mental health counseling services, and upgrading county parks."
         },
         {
-          "name": "Republican Nominee",
+          "name": "Marko Kopic",
           "party": "Republican",
-          "status": "Major Party Nominee",
-          "keyPriorities": "Strict fiscal auditing of the Sheriff's Department overtime budget; increasing county sheriff patrol presence in suburban commercial corridors; cracking down on car theft rings operating across Passaic County."
+          "status": "Republican Nominee",
+          "role": "Small business owner and fiscal watchdog.",
+          "keyPriorities": "Holding the line on county property taxes, eliminating wasteful spending, and improving county public works efficiency."
         }
       ]
+    },
+    "passaicCountySurrogate": {
+      "office": "Passaic County Surrogate (Constitutional Officer)",
+      "term": "5-Year Term (January 2027 – December 2031)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Constitutional Officer serving as Judge of the Surrogate's Court. Manages the probate of wills, administration of intestate estates, legal guardianships for minors and incapacitated adults, and adoption records across Passaic County.",
+      "candidates": [
+        {
+          "name": "Zoila Cassanova",
+          "party": "Democrat",
+          "status": "Incumbent Surrogate",
+          "role": "Passaic County Surrogate (serving since 2021); attorney with extensive estate and probate litigation background.",
+          "keyPriorities": "Expanding community outreach seminars in multiple languages across Clifton to educate seniors and families on wills and estates; expanding digital court filings; safeguarding protected assets for vulnerable residents."
+        },
+        {
+          "name": "Jessica Sprague",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Attorney and municipal prosecutor with deep estate law and family litigation experience.",
+          "keyPriorities": "Modernizing Surrogate's Court operations to eliminate probate delays for grieving families; expanding evening and satellite hours in Clifton and suburban towns; enhancing public transparency."
+        }
+      ]
+    },
+    "sheriffNotice": {
+      "office": "Passaic County Sheriff (Off-Cycle Notice)",
+      "term": "Next Election: November 2027",
+      "status": "Not on 2026 Ballot",
+      "notice": "Sheriff Thomas Adamo (D) was elected in November 2024 to complete an unexpired 3-year term ending December 31, 2027. There is NO Passaic County Sheriff race on the November 2026 ballot."
     }
   }
 }

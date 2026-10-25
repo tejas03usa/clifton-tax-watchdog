@@ -6862,25 +6862,25 @@ function renderNjCandidates() {
         </div>
       </div>
 
-      <!-- 3. Passaic County Board of County Commissioners -->
+      <!-- 3. Passaic County Board of County Commissioners (Full 3-Year Terms) -->
       <div class="nj-office-block" style="margin-top: 24px;">
         <div class="nj-office-header">
           <div class="nj-office-title-row">
             <span class="office-flag-icon">⚖️</span>
             <div>
-              <h4>${escapeHtml(nj.passaicCountyCommissioners.office)}</h4>
+              <h4>${escapeHtml(nj.passaicCountyCommissionersFull.office)}</h4>
               <div class="nj-office-meta">
-                <span>${escapeHtml(nj.passaicCountyCommissioners.term)}</span>
+                <span>${escapeHtml(nj.passaicCountyCommissionersFull.term)}</span>
                 <span>•</span>
-                <span class="highlight-vote-rule">${escapeHtml(nj.passaicCountyCommissioners.voteRule)}</span>
+                <span class="highlight-vote-rule">${escapeHtml(nj.passaicCountyCommissionersFull.voteRule)}</span>
               </div>
             </div>
           </div>
           <span class="nj-office-badge county-badge">Passaic County Government (22.92% of Clifton Taxes)</span>
         </div>
-        <p class="nj-office-importance">${escapeHtml(nj.passaicCountyCommissioners.importance)}</p>
+        <p class="nj-office-importance">${escapeHtml(nj.passaicCountyCommissionersFull.importance)}</p>
         <div class="nj-candidates-subgrid">
-          ${nj.passaicCountyCommissioners.candidates.map(c => `
+          ${nj.passaicCountyCommissionersFull.candidates.map(c => `
             <div class="nj-candidate-card">
               <div class="nj-cand-top">
                 <span class="nj-party-pill ${c.party.toLowerCase().includes('democrat') ? 'party-dem' : 'party-rep'}">${escapeHtml(c.party)}</span>
@@ -6897,39 +6897,96 @@ function renderNjCandidates() {
         </div>
       </div>
 
-      <!-- 4. Passaic County Sheriff -->
+      <!-- 4. Passaic County Board of County Commissioners (1-Year Unexpired Term) -->
       <div class="nj-office-block" style="margin-top: 24px;">
         <div class="nj-office-header">
           <div class="nj-office-title-row">
-            <span class="office-flag-icon">🛡️</span>
+            <span class="office-flag-icon">⚖️</span>
             <div>
-              <h4>${escapeHtml(nj.passaicCountySheriff.office)}</h4>
+              <h4>${escapeHtml(nj.passaicCountyCommissionersUnexpired.office)}</h4>
               <div class="nj-office-meta">
-                <span>${escapeHtml(nj.passaicCountySheriff.term)}</span>
+                <span>${escapeHtml(nj.passaicCountyCommissionersUnexpired.term)}</span>
                 <span>•</span>
-                <span class="highlight-vote-rule">${escapeHtml(nj.passaicCountySheriff.voteRule)}</span>
+                <span class="highlight-vote-rule">${escapeHtml(nj.passaicCountyCommissionersUnexpired.voteRule)}</span>
               </div>
             </div>
           </div>
-          <span class="nj-office-badge county-badge">County Constitutional Officer</span>
+          <span class="nj-office-badge county-badge">1-Year Unexpired Term</span>
         </div>
-        <p class="nj-office-importance">${escapeHtml(nj.passaicCountySheriff.importance)}</p>
+        <p class="nj-office-importance">${escapeHtml(nj.passaicCountyCommissionersUnexpired.importance)}</p>
         <div class="nj-candidates-subgrid">
-          ${nj.passaicCountySheriff.candidates.map(c => `
+          ${nj.passaicCountyCommissionersUnexpired.candidates.map(c => `
             <div class="nj-candidate-card">
               <div class="nj-cand-top">
                 <span class="nj-party-pill ${c.party.toLowerCase().includes('democrat') ? 'party-dem' : 'party-rep'}">${escapeHtml(c.party)}</span>
                 <span class="candidate-status-tag ${c.status.toLowerCase().includes('incumbent') ? 'status-incumbent' : 'status-challenger'}">${escapeHtml(c.status)}</span>
               </div>
               <h5 class="nj-cand-name">${escapeHtml(c.name)}</h5>
+              <div class="nj-cand-role">${escapeHtml(c.role)}</div>
               <div class="nj-cand-section">
-                <div class="nj-section-label">Law Enforcement & Jail Oversight Priorities:</div>
+                <div class="nj-section-label">Platform Priorities:</div>
                 <p>${escapeHtml(c.keyPriorities)}</p>
               </div>
             </div>
           `).join('')}
         </div>
       </div>
+
+      <!-- 5. Passaic County Surrogate -->
+      <div class="nj-office-block" style="margin-top: 24px;">
+        <div class="nj-office-header">
+          <div class="nj-office-title-row">
+            <span class="office-flag-icon">📜</span>
+            <div>
+              <h4>${escapeHtml(nj.passaicCountySurrogate.office)}</h4>
+              <div class="nj-office-meta">
+                <span>${escapeHtml(nj.passaicCountySurrogate.term)}</span>
+                <span>•</span>
+                <span class="highlight-vote-rule">${escapeHtml(nj.passaicCountySurrogate.voteRule)}</span>
+              </div>
+            </div>
+          </div>
+          <span class="nj-office-badge county-badge">County Constitutional Officer</span>
+        </div>
+        <p class="nj-office-importance">${escapeHtml(nj.passaicCountySurrogate.importance)}</p>
+        <div class="nj-candidates-subgrid">
+          ${nj.passaicCountySurrogate.candidates.map(c => `
+            <div class="nj-candidate-card">
+              <div class="nj-cand-top">
+                <span class="nj-party-pill ${c.party.toLowerCase().includes('democrat') ? 'party-dem' : 'party-rep'}">${escapeHtml(c.party)}</span>
+                <span class="candidate-status-tag ${c.status.toLowerCase().includes('incumbent') ? 'status-incumbent' : 'status-challenger'}">${escapeHtml(c.status)}</span>
+              </div>
+              <h5 class="nj-cand-name">${escapeHtml(c.name)}</h5>
+              <div class="nj-cand-role">${escapeHtml(c.role)}</div>
+              <div class="nj-cand-section">
+                <div class="nj-section-label">Judicial & Estate Service Priorities:</div>
+                <p>${escapeHtml(c.keyPriorities)}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- 6. Passaic County Sheriff Notice (Off-Cycle) -->
+      ${nj.sheriffNotice ? `
+        <div class="nj-office-block off-cycle-notice-block" style="margin-top: 24px; border-left: 4px solid #64748b; background: rgba(100, 116, 139, 0.05);">
+          <div class="nj-office-header">
+            <div class="nj-office-title-row">
+              <span class="office-flag-icon">🛡️</span>
+              <div>
+                <h4>${escapeHtml(nj.sheriffNotice.office)}</h4>
+                <div class="nj-office-meta">
+                  <span>${escapeHtml(nj.sheriffNotice.term)}</span>
+                  <span>•</span>
+                  <span class="highlight-vote-rule" style="background: #e2e8f0; color: #475569;">${escapeHtml(nj.sheriffNotice.status)}</span>
+                </div>
+              </div>
+            </div>
+            <span class="nj-office-badge" style="background: #64748b; color: #fff;">Off-Cycle</span>
+          </div>
+          <p class="nj-office-importance" style="margin-top: 8px; color: var(--text-secondary);">${escapeHtml(nj.sheriffNotice.notice)}</p>
+        </div>
+      ` : ''}
     </div>
   `;
 
