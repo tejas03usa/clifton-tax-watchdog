@@ -335,15 +335,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   flex-grow: 1;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
-.nav-city-quick-wrap {
+.nav-municipality-indicator {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+}
+
+.nav-municipality-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.nav-city-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.6);
 }
 
 /* Base Nav Button Styles - Modern Segmented Pills */
@@ -351,14 +373,14 @@ body {
 .nav-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(248, 250, 252, 0.9);
-  border: 1px solid rgba(226, 232, 240, 0.95);
+  gap: 7px;
+  background: #ffffff;
+  border: 1px solid rgba(203, 213, 225, 0.85);
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.83rem;
   font-weight: 600;
-  color: #475569;
-  padding: 6px 12px;
+  color: #334155;
+  padding: 6px 13px;
   border-radius: var(--radius-pill);
   cursor: pointer;
   white-space: nowrap;
@@ -368,10 +390,10 @@ body {
 
 .nav-item-btn:hover,
 .nav-dropdown-trigger:hover {
-  background: #ffffff;
+  background: #f8fafc;
   color: var(--text-main);
-  border-color: #cbd5e1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  border-color: #94a3b8;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   transform: translateY(-1px);
 }
 
@@ -4748,6 +4770,7 @@ div[id] {
     overflow: visible;
   }
 
+  .nav-municipality-indicator,
   .nav-city-quick-wrap {
     display: none;
   }
@@ -8866,6 +8889,34 @@ input:checked + .slider.round:before {
   width: 100%;
 }
 
+.header-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+  color: #cbd5e1;
+  backdrop-filter: blur(8px);
+}
+
+.live-dot-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulseBeacon 2s infinite;
+  flex-shrink: 0;
+}
+
+.header-live-text {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .header-top-bar .brand-badge {
   margin-bottom: 0;
 }
@@ -10705,4 +10756,210 @@ input:checked + .slider.round:before {
   color: #ffffff;
   border-color: #2563eb;
   text-decoration: none;
+}
+
+/* ==========================================================================
+   CANDIDATE HISTORIC EXPERIENCE & CAREER TIMELINE STYLES
+   ========================================================================== */
+.candidate-history-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.history-box-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.history-service-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #1e40af;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.history-summary-text {
+  font-size: 0.81rem;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.history-sub-title {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+/* Timeline */
+.history-timeline-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timeline-entry {
+  display: flex;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  align-items: flex-start;
+}
+
+.timeline-period-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timeline-role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.timeline-org {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.timeline-desc {
+  font-size: 0.76rem;
+  color: #475569;
+  line-height: 1.4;
+  margin: 2px 0 0 0;
+}
+
+/* Credentials Row (Two Columns on Desktop) */
+.history-creds-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .history-creds-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.history-col {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+
+.history-bullets-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.history-bullets-list li {
+  font-size: 0.76rem;
+  color: #334155;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 12px;
+}
+
+.history-bullets-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 900;
+}
+
+.history-tenure {
+  font-size: 0.71rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.history-item-sub {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+/* Civic Leadership Tags */
+.history-civic-row {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+
+.history-civic-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.history-civic-pill {
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  line-height: 1.35;
 }

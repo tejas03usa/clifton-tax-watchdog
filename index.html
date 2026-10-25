@@ -13,14 +13,14 @@
 
   <!-- Modern App Header (Top of Page) -->
   <header class="app-header">
-    <!-- Top Utility Bar: Live Brand Badge & Modern Municipality Selector -->
+    <!-- Top Utility Bar: Live Verification Status & Sleek Municipality Selector -->
     <div class="container header-top-bar">
-      <div class="brand-badge" id="header-brand-badge">
-        <span class="badge-icon" id="header-badge-icon">🏛️</span>
-        <span id="header-badge-text">CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG</span>
+      <div class="header-live-status" id="header-brand-badge">
+        <span class="live-dot-pulse"></span>
+        <span class="header-live-text" id="header-badge-text">Certified 2026 Fiscal Watchdog • Passaic County Board of Taxation & Audits</span>
       </div>
       <div class="city-switcher-group" role="group" aria-label="Select Municipality">
-        <span class="city-switcher-label">Select Municipality:</span>
+        <span class="city-switcher-label">Switch Town:</span>
         <div class="city-switcher-pills">
           <button type="button" class="city-switch-btn active" data-city="clifton" aria-pressed="true">
             <span class="city-btn-icon">🏛️</span>
@@ -83,8 +83,8 @@
     </div>
   </header>
 
-  <!-- Modern Categorized Navigation Bar with Dropdowns & Sticky Header Brand -->
-  <nav class="nav-bar" id="main-nav" role="navigation" aria-label="Main Navigation">
+  <!-- Modern Streamlined Sticky Navigation Bar (Clean 5-Item Single Row) -->
+  <nav class="nav-bar sticky-nav" id="main-nav" role="navigation" aria-label="Main Navigation">
     <div class="container nav-container">
       <!-- Persistent Brand Lockup on Left -->
       <a href="#" class="nav-brand-lockup" id="nav-brand-home" aria-label="Taxpayer Watchdog - Back to Top">
@@ -97,7 +97,7 @@
         </div>
       </a>
 
-      <!-- Centered Modern Navigation Menu -->
+      <!-- Clean 5-Item Navigation Menu: Perfectly Fits on Single Horizontal Line -->
       <div class="nav-menu" role="menubar">
         
         <!-- 1. Primary Direct Tab: Tax Calculator -->
@@ -110,7 +110,7 @@
         <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-election" id="nav-btn-election">
           <span class="tab-icon">🗳️</span>
           <span class="tab-title">Election 2026</span>
-          <span class="badge-tag" style="background: #2563eb; color: #fff; margin-left: 4px; padding: 1px 7px; font-size: 0.72rem; border-radius: 999px;">19 Candidates</span>
+          <span class="badge-tag" style="background: #2563eb; color: #fff; margin-left: 4px; padding: 2px 7px; font-size: 0.72rem; border-radius: 999px;">19 Candidates</span>
         </button>
 
         <!-- 3. Primary Direct Tab: Compare Towns -->
@@ -119,11 +119,11 @@
           <span class="tab-title">Compare Towns</span>
         </button>
 
-        <!-- 4. DROPDOWN: Budgets & Spending -->
+        <!-- 4. DROPDOWN: Budgets & Taxes -->
         <div class="nav-dropdown" id="dropdown-budgets">
           <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-budgets">
             <span class="tab-icon">📊</span>
-            <span class="tab-title">Budgets & Spending</span>
+            <span class="tab-title">Budgets & Taxes</span>
             <span class="dropdown-arrow">▾</span>
           </button>
           <div class="dropdown-menu" role="menu" aria-labelledby="trigger-budgets">
@@ -134,11 +134,25 @@
                 <small>BOE ($293M) & City Hall ($105M) budgets</small>
               </div>
             </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-commercial-pilot">
+              <span class="d-item-icon">🏢</span>
+              <div class="d-item-text">
+                <strong>Commercial & PILOT Shift</strong>
+                <small>Tax exemption impact & residential shift</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-fair-tax">
+              <span class="d-item-icon">⚖️</span>
+              <div class="d-item-text">
+                <strong>What-If? Fair Tax Engine</strong>
+                <small>Interactive revenue & assessment simulation</small>
+              </div>
+            </button>
             <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-benefits">
               <span class="d-item-icon">🏥</span>
               <div class="d-item-text">
-                <strong>Healthcare & Benefits</strong>
-                <small>SHBP/SEHBP plans, pensions & $87M costs</small>
+                <strong>Healthcare & Benefits ($87M)</strong>
+                <small>SHBP/SEHBP plans, pensions & healthcare liabilities</small>
               </div>
             </button>
             <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-vendors">
@@ -151,54 +165,15 @@
           </div>
         </div>
 
-        <!-- 5. DROPDOWN: Demographics & Comparison -->
-        <div class="nav-dropdown" id="dropdown-demographics">
-          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-demographics">
-            <span class="tab-icon">🏘️</span>
-            <span class="tab-title">Properties & Areas</span>
-            <span class="dropdown-arrow">▾</span>
-          </button>
-          <div class="dropdown-menu" role="menu" aria-labelledby="trigger-demographics">
-            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-properties">
-              <span class="d-item-icon">🏡</span>
-              <div class="d-item-text">
-                <strong>Property Values & Taxes <span class="badge-tag">1,850 Homes</span></strong>
-                <small>Filter assessments, beds/baths & who pays more</small>
-              </div>
-            </button>
-            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-demographics">
-              <span class="d-item-icon">📍</span>
-              <div class="d-item-text">
-                <strong>Demographics & ZIP Codes</strong>
-                <small>07011, 07012, 07013 & 07014 disparities</small>
-              </div>
-            </button>
-            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-surrounding">
-              <span class="d-item-icon">🗺️</span>
-              <div class="d-item-text">
-                <strong>Surrounding Towns Benchmark</strong>
-                <small>Compare 8 towns (Nutley, Wayne, Montclair, etc.)</small>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <!-- 6. DROPDOWN: Personnel & Accountability -->
-        <div class="nav-dropdown" id="dropdown-personnel">
-          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-personnel">
-            <span class="tab-icon">⚖️</span>
-            <span class="tab-title">Accountability & Staff</span>
+        <!-- 5. DROPDOWN: Audits & Accountability -->
+        <div class="nav-dropdown" id="dropdown-accountability">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-accountability">
+            <span class="tab-icon">🔍</span>
+            <span class="tab-title">Audits & Accountability</span>
             <span class="tab-count-badge">9</span>
             <span class="dropdown-arrow">▾</span>
           </button>
-          <div class="dropdown-menu" role="menu" aria-labelledby="trigger-personnel">
-            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-staff">
-              <span class="d-item-icon">👥</span>
-              <div class="d-item-text">
-                <strong>Staff & Payroll Directory</strong>
-                <small>City and BOE leadership, salary steps & CBAs</small>
-              </div>
-            </button>
+          <div class="dropdown-menu" role="menu" aria-labelledby="trigger-accountability">
             <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-controversies">
               <span class="d-item-icon">🚨</span>
               <div class="d-item-text">
@@ -206,58 +181,52 @@
                 <small>OSC audits, PILOT shifts, ASI Reval & budget cliffs</small>
               </div>
             </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-intelligence">
+              <span class="d-item-icon">🔬</span>
+              <div class="d-item-text">
+                <strong>Joined Intelligence Reports</strong>
+                <small>Cross-tab deep dives, correlations & audit findings</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-staff">
+              <span class="d-item-icon">👥</span>
+              <div class="d-item-text">
+                <strong>Staff & Payroll Directory</strong>
+                <small>City and BOE leadership, salary steps & CBAs</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-properties">
+              <span class="d-item-icon">🏡</span>
+              <div class="d-item-text">
+                <strong>Property Assessments <span class="badge-tag">1,850 Homes</span></strong>
+                <small>Filter assessments, beds/baths & who pays more</small>
+              </div>
+            </button>
             <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-ethics">
               <span class="d-item-icon">🏢</span>
               <div class="d-item-text">
                 <strong>Outside Businesses & Assets</strong>
-                <small>Financial Disclosure Statements (FDS) & holdings</small>
+                <small>Financial Disclosure Statements (FDS) & private holdings</small>
+              </div>
+            </button>
+            <button class="dropdown-item tab-btn" role="menuitem" data-tab="tab-demographics">
+              <span class="d-item-icon">📍</span>
+              <div class="d-item-text">
+                <strong>Demographics & ZIP Wards</strong>
+                <small>07011, 07012, 07013 & 07014 disparities</small>
               </div>
             </button>
           </div>
         </div>
 
-        <!-- 7. Primary Direct Tab: Joined Intelligence & Reports -->
-        <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-intelligence">
-          <span class="tab-icon">🔬</span>
-          <span class="tab-title">Intelligence</span>
-        </button>
-
-        <!-- 8. Primary Direct Tab: Commercial & PILOT Shift -->
-        <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-commercial-pilot">
-          <span class="tab-icon">🏢</span>
-          <span class="tab-title">PILOT Shift</span>
-        </button>
-
-        <!-- 9. Primary Direct Tab: What-If? Fair Tax Engine -->
-        <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-fair-tax">
-          <span class="tab-icon">⚖️</span>
-          <span class="tab-title">Fair Tax Engine</span>
-        </button>
-
       </div>
 
-      <!-- Compact Quick City Switcher on Far Right -->
-      <div class="nav-city-quick-wrap">
-        <div class="nav-city-switcher" role="group" aria-label="Quick Switch Municipality">
-          <button type="button" class="city-switch-btn compact active" data-city="clifton" title="Switch to Clifton (Passaic County)">
-            <span>🏛️</span> <span>Clifton</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="parsippany" title="Switch to Parsippany-Troy Hills (Morris County)">
-            <span>🌲</span> <span>Parsippany</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="wayne" title="Switch to Wayne Township (Passaic County)">
-            <span>🌳</span> <span>Wayne</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="montclair" title="Switch to Montclair Township (Essex County)">
-            <span>🏡</span> <span>Montclair</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="morristown" title="Switch to Morristown (Morris County)">
-            <span>📜</span> <span>Morristown</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="montville" title="Switch to Montville Township (Morris County)">
-            <span>🏞️</span> <span>Montville</span>
-          </button>
-        </div>
+      <!-- Single Compact Current Municipality Indicator on Right (No Duplicate Cluttered Switcher!) -->
+      <div class="nav-municipality-indicator">
+        <span class="nav-municipality-pill" id="nav-current-municipality-pill" title="Currently active municipality data">
+          <span class="nav-city-dot"></span>
+          <span id="nav-city-name-text">🏛️ Clifton, NJ</span>
+        </span>
       </div>
     </div>
   </nav>

@@ -722,6 +722,7 @@ function applyCityStaticCopy(cityId) {
   setElText('nav-brand-icon', meta.icon);
   setElText('nav-brand-title', meta.name + ' Watchdog');
   setElText('nav-brand-subtitle', meta.auditBadge);
+  setElText('nav-city-name-text', meta.icon + ' ' + meta.name + ', ' + (meta.state || 'NJ'));
 
   const electionTabBtn = document.getElementById('nav-btn-election');
   if (electionTabBtn) {
@@ -6186,10 +6187,81 @@ function filterAndRenderCandidates() {
 
             ${quotesHtml}
 
-            <div class="candidate-civic-box">
-              <span class="civic-box-label">🏛️ Public Service & Civic Background:</span>
-              <p>${escapeHtml(c.civicBackground || c.experience)}</p>
-            </div>
+            <!-- Historic Experience & Career Record -->
+            ${c.historicExperience ? `
+              <div class="candidate-history-box">
+                <div class="history-box-header">
+                  <div class="history-box-title">
+                    <span class="history-icon">📜</span>
+                    <strong>Historic Experience & Public Service Record:</strong>
+                  </div>
+                  <span class="history-service-badge">${escapeHtml(c.historicExperience.yearsInPublicService || 'Public Record')}</span>
+                </div>
+                <p class="history-summary-text">${escapeHtml(c.historicExperience.summary || '')}</p>
+
+                <!-- Chronological Career & Service Timeline -->
+                <div class="history-timeline-section">
+                  <span class="history-sub-title">⏳ Career & Civic Timeline:</span>
+                  <div class="history-timeline-items">
+                    ${(c.historicExperience.careerTimeline || []).map(t => `
+                      <div class="timeline-entry">
+                        <div class="timeline-period-badge">${escapeHtml(t.period)}</div>
+                        <div class="timeline-content">
+                          <strong class="timeline-role">${escapeHtml(t.role)}</strong>
+                          <span class="timeline-org">${escapeHtml(t.organization)}</span>
+                          <p class="timeline-desc">${escapeHtml(t.details)}</p>
+                        </div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <!-- Two-Column Row: Public Offices & Education Credentials -->
+                <div class="history-creds-row">
+                  ${(c.historicExperience.publicOfficesHeld && c.historicExperience.publicOfficesHeld.length > 0) ? `
+                    <div class="history-col">
+                      <span class="history-sub-title">🏛️ Public Offices & Appointments:</span>
+                      <ul class="history-bullets-list">
+                        ${c.historicExperience.publicOfficesHeld.map(o => `
+                          <li>
+                            <strong>${escapeHtml(o.office)}</strong> <span class="history-tenure">(${escapeHtml(o.tenure)})</span>
+                            <div class="history-item-sub">${escapeHtml(o.role)}</div>
+                          </li>
+                        `).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+
+                  ${(c.historicExperience.educationAndCredentials && c.historicExperience.educationAndCredentials.length > 0) ? `
+                    <div class="history-col">
+                      <span class="history-sub-title">🎓 Education & Professional Credentials:</span>
+                      <ul class="history-bullets-list">
+                        ${c.historicExperience.educationAndCredentials.map(e => `
+                          <li>${escapeHtml(e)}</li>
+                        `).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+                </div>
+
+                <!-- Civic Leadership & Community Service -->
+                ${(c.historicExperience.civicLeadership && c.historicExperience.civicLeadership.length > 0) ? `
+                  <div class="history-civic-row">
+                    <span class="history-sub-title">🤝 Civic Leadership & Community Impact:</span>
+                    <ul class="history-civic-tags">
+                      ${c.historicExperience.civicLeadership.map(l => `
+                        <li class="history-civic-pill">${escapeHtml(l)}</li>
+                      `).join('')}
+                    </ul>
+                  </div>
+                ` : ''}
+              </div>
+            ` : `
+              <div class="candidate-civic-box">
+                <span class="civic-box-label">🏛️ Public Service & Civic Background:</span>
+                <p>${escapeHtml(c.civicBackground || c.experience)}</p>
+              </div>
+            `}
 
             <!-- Verified Public Records & Sources -->
             <div class="candidate-sources-box">
