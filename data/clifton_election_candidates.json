@@ -2619,44 +2619,271 @@
     {
       "name": "Judith Bassford",
       "status": "Incumbent Trustee",
+      "ballotPosition": "Row 1",
       "ballotSlogan": "Experience, Transparency & Student Advocacy",
-      "keyFocus": "Champion for special education funding, curriculum transparency, taxpayer fiscal watchdog on the school board, and direct constituent responsiveness."
+      "term": "3-Year Term (2027–2029) • Vote for up to 3",
+      "experience": "Elected to Clifton BOE in 2011; past Board President and Passaic County School Boards Association President; named 2019–2020 NJ School Board Member of the Year.",
+      "keyFocus": "Special education advocacy, student disability resources, public committee transparency, fiscal accountability on the $293M school budget, and direct parent responsiveness.",
+      "fiscalStance": "Fiscally disciplined; opposes unnecessary administrative overhead; advocates aggressively at the state level in Trenton to reform the S2 school funding formula and prevent state equalization aid cuts to Clifton.",
+      "infrastructureStance": "Prioritizes climate control and HVAC replacements across aging elementary schools and safe school drop-off zones."
     },
     {
       "name": "Alan Paris",
       "status": "Incumbent Trustee / Finance Chair",
+      "ballotPosition": "Row 2",
       "ballotSlogan": "Fiscal Discipline & Educational Excellence",
-      "keyFocus": "Certified Public Accountant (CPA); focus on zero-based school budgeting, mitigating state formula aid cuts, and overseeing multi-million dollar capital improvement bonds."
+      "term": "3-Year Term (2027–2029) • Vote for up to 3",
+      "experience": "Licensed Certified Public Accountant (CPA); long-serving BOE Finance Committee Chair with decades of corporate and municipal auditing experience.",
+      "keyFocus": "Zero-based budgeting, long-term capital improvement planning, maximizing state aid, and competitive teacher contract negotiations to retain talent without piercing the 2% tax levy cap.",
+      "fiscalStance": "Rigorous auditor mindset; conducted line-by-line analyses to trim vendor waste and ensure 100% audit compliance on health benefit and transportation contracts.",
+      "infrastructureStance": "Overseeing state-approved bond projects for roof modernizations, asbestos abatement, and modern STEM classroom science labs."
     },
     {
       "name": "Cameron Hebron",
       "status": "Challenger",
+      "ballotPosition": "Row 3",
       "ballotSlogan": "Empowering Students, Strengthening Community",
-      "keyFocus": "Focus on student mental health resources, updating school athletic and arts facilities, and expanding community engagement between parents and administrators."
+      "term": "3-Year Term (2027–2029) • Vote for up to 3",
+      "experience": "Clifton High School alumnus (Class of 2015); youth mentor, community organizer, and active volunteer with Clifton recreation and civic associations.",
+      "keyFocus": "Student mental health resources, guidance counselor-to-student ratios, modernized athletic and fine arts facilities, and bridging communication between immigrant families and central administration.",
+      "fiscalStance": "Reallocating central office discretionary spending directly into classroom supplies, guidance counseling, and after-school tutoring programs.",
+      "infrastructureStance": "Upgrading school ventilation, expanding ADA accessibility across older multi-story school buildings, and renovating athletic fields."
     },
     {
       "name": "Alias Ragsdale",
-      "status": "Challenger",
+      "status": "Challenger / Former Student Leader",
+      "ballotPosition": "Row 4",
       "ballotSlogan": "Pathways to Success for Every Child",
-      "keyFocus": "Expanding vocational and technical career pathways (CTE), youth mentoring programs, and competitive compensation to attract and retain top-tier teachers."
+      "term": "3-Year Term (2027–2029) • Vote for up to 3",
+      "experience": "Clifton High School Class of 2024 graduate; former Clifton Student Union President; collegiate student leader and advocate for youth civic involvement.",
+      "keyFocus": "Expanding vocational-technical pathways (CTE), dual-enrollment college credits with Passaic County Community College (PCCC), modern life-skills courses, and student representation on advisory committees.",
+      "fiscalStance": "Auditing school district software subscriptions and digital licenses; pursuing competitive state and federal education innovation grants.",
+      "infrastructureStance": "Upgrading Clifton High School's auditorium, technical shops, and cafeteria facilities; advocating for high-speed Wi-Fi and 1-to-1 Chromebook hardware refreshes."
     },
     {
       "name": "Mark Brunciak",
       "status": "Challenger",
+      "ballotPosition": "Row 5",
       "ballotSlogan": "Modern Tech, Secure Schools & Strong STEM",
-      "keyFocus": "STEM education expansion, school cybersecurity modernization, and upgrading digital classroom tools to prepare students for the 21st-century economy."
+      "term": "3-Year Term (2027–2029) • Vote for up to 3",
+      "experience": "Information technology systems architect; Clifton parent with extensive experience in enterprise cybersecurity and project management.",
+      "keyFocus": "Modernizing K-12 STEM curriculum, robotics clubs, robust student data privacy protections, and modern cybersecurity safeguards against ransomware targeting school systems.",
+      "fiscalStance": "Streamlining enterprise IT procurement, negotiating volume hardware discounts, and phasing out redundant legacy software contracts.",
+      "infrastructureStance": "Hardening school perimeter security, modernizing digital badge access control, and installing smart security camera integrations."
     },
     {
       "name": "Anthony Santiago",
       "status": "Challenger",
+      "ballotPosition": "Row 6",
       "ballotSlogan": "Safe Schools, Accountable Leadership",
-      "keyFocus": "School campus security upgrades, safe pedestrian corridors around Clifton High and middle schools, and cross-agency emergency coordination with Clifton PD."
+      "term": "3-Year Term (2027–2029) • Vote for up to 3",
+      "experience": "Public safety professional and Clifton community member; active in parent-teacher organizations and neighborhood youth athletics.",
+      "keyFocus": "School campus security, Class III Special Law Enforcement Officers (SLEO) in all schools, anti-bullying protocols, and pedestrian crossing safety along Colfax Ave, Day St, and Broad St.",
+      "fiscalStance": "Ensuring transparent bidding on school safety, transportation, and construction contracts; prioritizing dollars for frontline student security.",
+      "infrastructureStance": "Immediate installation of secure vestibules, ballistic film on ground-floor glass, and synchronized emergency communications with Clifton Police & Fire."
     },
     {
       "name": "Eve Barnes",
       "status": "Challenger",
+      "ballotPosition": "Row 7",
       "ballotSlogan": "Classroom Investment & Bilingual Support",
-      "keyFocus": "Classroom size reduction, expanded resources for English Language Learners (ELL), and strengthening early childhood education across Clifton public schools."
+      "term": "3-Year Term (2027–2029) • Vote for up to 3",
+      "experience": "Professional educator and literacy specialist with over 15 years in public education; bilingual advocate.",
+      "keyFocus": "Class size reductions in grades K–3, expanded resources for English Language Learners (ELL) reflecting Clifton's diverse population, special education inclusion, and universal pre-K expansion.",
+      "fiscalStance": "Directing funds to frontline paraprofessionals, reading specialists, and competitive teacher compensation to stem teacher attrition to neighboring Bergen County districts.",
+      "infrastructureStance": "Classroom air conditioning, modernizing school libraries into interactive media centers, and creating sensory calm rooms for neurodivergent students."
     }
-  ]
+  ],
+  "ballotArchitecture": {
+    "electionDate": "Tuesday, November 3, 2026",
+    "votingHours": "6:00 AM – 8:00 PM EST",
+    "summary": "Registered Clifton voters will vote across four levels of government: Municipal (City Council), School District (Board of Education), County (Passaic County Commissioners & Sheriff), and Federal (U.S. Senate & U.S. House NJ-09).",
+    "offices": [
+      {
+        "id": "clifton-council",
+        "office": "Clifton City Council",
+        "level": "Municipal (Local City)",
+        "seatsAvailable": 7,
+        "candidatesRunning": 19,
+        "voteRule": "Vote for up to SEVEN (7)",
+        "termLength": "4 Years (2026 – 2030)",
+        "ballotType": "Nonpartisan Municipal (At-Large)",
+        "taxShare": "29.41% of Clifton Property Tax ($1.92 per $100)",
+        "description": "Controls the $142M municipal budget, police & fire departments, DPW, zoning, and municipal ordinances. Under Clifton's 1923 Municipal Manager Act, the top vote-getter traditionally serves as Mayor.",
+        "badgeColor": "var(--color-city)"
+      },
+      {
+        "id": "clifton-boe",
+        "office": "Clifton Board of Education",
+        "level": "School District",
+        "seatsAvailable": 3,
+        "candidatesRunning": 7,
+        "voteRule": "Vote for up to THREE (3)",
+        "termLength": "3 Years (2027 – 2029)",
+        "ballotType": "Nonpartisan School Board",
+        "taxShare": "47.66% of Clifton Property Tax ($3.11 per $100)",
+        "description": "Oversees 17 public schools, ~11,000 students, and the $293.4M annual Clifton Public Schools operating budget. Sets curriculum, capital bond repairs, teacher staffing, and special education funding.",
+        "badgeColor": "var(--color-school)"
+      },
+      {
+        "id": "passaic-commissioners",
+        "office": "Passaic County Board of County Commissioners",
+        "level": "Countywide (Passaic County)",
+        "seatsAvailable": 3,
+        "candidatesRunning": 6,
+        "voteRule": "Vote for up to THREE (3)",
+        "termLength": "3 Years (2027 – 2029)",
+        "ballotType": "Partisan Countywide",
+        "taxShare": "22.92% of Clifton Property Tax ($0.749 per $100)",
+        "description": "Governs Passaic County government, allocating the ~$515M county budget. Maintains county roads in Clifton (Valley Rd, Van Houten Ave, Clifton Ave, Broad St), Passaic County Community College, and county park systems.",
+        "badgeColor": "var(--color-county)"
+      },
+      {
+        "id": "passaic-sheriff",
+        "office": "Passaic County Sheriff",
+        "level": "County Constitutional Officer",
+        "seatsAvailable": 1,
+        "candidatesRunning": 2,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "3 Years (2027 – 2029)",
+        "ballotType": "Partisan Countywide",
+        "taxShare": "Funded via Passaic County General Fund",
+        "description": "Oversees county courthouse security in Paterson, Passaic County Jail operations, countywide patrol units, warrants, and criminal investigation support.",
+        "badgeColor": "var(--color-county)"
+      },
+      {
+        "id": "us-senate",
+        "office": "United States Senate (New Jersey, Class II)",
+        "level": "Federal (Statewide New Jersey)",
+        "seatsAvailable": 1,
+        "candidatesRunning": 3,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "6 Years (2027 – 2033)",
+        "ballotType": "Partisan Statewide",
+        "taxShare": "Federal Taxation & Grants (SALT Deduction Relief)",
+        "description": "Represents all New Jerseyans in the U.S. Senate. Confirms federal judges, votes on federal legislation, and advocates for federal infrastructure grants (Gateway Tunnel, NJ Transit, flood mitigation) and restoring full SALT deductions.",
+        "badgeColor": "#1d4ed8"
+      },
+      {
+        "id": "us-house-nj09",
+        "office": "U.S. House of Representatives (NJ-09)",
+        "level": "Federal (Congressional District 9)",
+        "seatsAvailable": 1,
+        "candidatesRunning": 2,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "2 Years (2027 – 2029)",
+        "ballotType": "Partisan Congressional District",
+        "taxShare": "Federal Earmarks & Community Project Funding",
+        "description": "Represents Clifton, Passaic, Paterson, and Bergen/Hudson portions in Congress. Focuses on Passaic River flood control, Route 3/Route 46 corridor federal funding, and federal public safety grants.",
+        "badgeColor": "#059669"
+      }
+    ]
+  },
+  "njCandidates": {
+    "usSenate": {
+      "office": "United States Senate (New Jersey, Class II)",
+      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Represents 9.3M New Jerseyans in Washington D.C. Key powers include confirming federal judges, voting on federal budgets, and fighting for New Jersey's fair share of federal tax returns.",
+      "candidates": [
+        {
+          "name": "Cory Booker",
+          "party": "Democrat",
+          "status": "Incumbent U.S. Senator",
+          "role": "U.S. Senator from New Jersey (in office since 2013); former Mayor of Newark.",
+          "keyPriorities": "Restoring full federal State and Local Tax (SALT) deduction ($10K cap repeal); funding the Gateway Tunnel & NJ Transit; securing federal clean water grants for the Passaic Valley Water Commission (PVWC); prescription drug cost caps.",
+          "localImpact": "Secured federal appropriations for Passaic River flood mitigation and lead water pipe replacement projects directly serving Clifton residents."
+        },
+        {
+          "name": "Republican Nominee",
+          "party": "Republican",
+          "status": "Challenger Nominee",
+          "role": "GOP Nominee for U.S. Senate.",
+          "keyPriorities": "Federal fiscal restraint to curb inflation; national border security; lowering federal middle-class and small-business income tax brackets; full federal SALT relief for suburban homeowners; domestic energy independence.",
+          "localImpact": "Advocating for reducing federal unfunded mandates on New Jersey municipalities and school districts."
+        },
+        {
+          "name": "Third-Party & Independent Slate",
+          "party": "Libertarian / Green / Independent",
+          "status": "Challengers",
+          "role": "Independent & alternative party nominees.",
+          "keyPriorities": "Ranked-choice voting, federal term limits, non-interventionist foreign policy, environmental justice, and ending federal corporate subsidies."
+        }
+      ]
+    },
+    "usHouse": {
+      "office": "U.S. House of Representatives (New Jersey's 9th Congressional District — NJ-09)",
+      "term": "2-Year Term (January 3, 2027 – January 3, 2029)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Clifton is located entirely within New Jersey's 9th Congressional District. The district encompasses Passaic County (Clifton, Passaic, Paterson), southern Bergen County (Hackensack, Fort Lee, Teaneck, Englewood), and Secaucus.",
+      "candidates": [
+        {
+          "name": "Nellie Pou",
+          "party": "Democrat",
+          "status": "Incumbent Representative",
+          "role": "U.S. Representative (NJ-09). Long-time NJ State Senator (District 35) and former Assemblywoman; succeeded late Congressman Bill Pascrell Jr. in 2024.",
+          "keyPriorities": "Securing federal Army Corps of Engineers funding for Passaic River Basin and Third River flood barriers; federal Community Project Funding (earmarks) for Clifton Police & Fire communications; full SALT deduction repeal; expanding federal community health center grants.",
+          "localImpact": "Spearheaded state and federal funding for Route 46 and Route 3 highway bottleneck improvements in Clifton and Passaic County."
+        },
+        {
+          "name": "Republican Nominee",
+          "party": "Republican",
+          "status": "Challenger Nominee",
+          "role": "GOP Nominee for Congressional District 9.",
+          "keyPriorities": "Cutting federal spending and regulatory red tape; revitalizing commercial and industrial corridors along Route 3 and Route 46; supporting local law enforcement with federal grants; parent choice in education.",
+          "localImpact": "Pledging to fight federal congestion pricing models and reduce federal tax burdens on North Jersey suburban commuters."
+        }
+      ]
+    },
+    "passaicCountyCommissioners": {
+      "office": "Passaic County Board of County Commissioners",
+      "term": "3-Year Staggered Terms (January 2027 – December 2029)",
+      "voteRule": "Vote for up to THREE (3)",
+      "importance": "The 7-member Board of County Commissioners sets the county tax rate ($0.749 per $100, or 22.92% of your property tax bill). They manage the $515M county budget, Passaic County Sheriff, county roads in Clifton, and Passaic County Community College.",
+      "candidates": [
+        {
+          "slate": "Democratic Commissioner Slate",
+          "party": "Democrat",
+          "status": "Incumbent Slate",
+          "candidates": [
+            "John Bartlett (Incumbent)",
+            "Cassandra 'Sandi' Lazzara (Incumbent)",
+            "Running Mate"
+          ],
+          "keyPriorities": "Maintaining Passaic County's strong AA bond credit rating; major county road paving and stormwater culvert modernizations in Clifton (Van Houten Ave, Valley Rd, Clifton Ave); funding Passaic County Technical-Vocational Schools (PCTVS); expanding county senior transit and meals-on-wheels; preserving county open space at Garret Mountain and Weasel Brook Park in Clifton."
+        },
+        {
+          "slate": "Republican Commissioner Slate",
+          "party": "Republican",
+          "status": "Challenger Slate",
+          "candidates": [
+            "GOP Nominee 1",
+            "GOP Nominee 2",
+            "GOP Nominee 3"
+          ],
+          "keyPriorities": "Enacting a county property tax freeze; commissioning an independent forensic audit of all Passaic County departmental spending; eliminating county political patronage positions; redirecting county infrastructure dollars to flood-prone neighborhoods in Clifton."
+        }
+      ]
+    },
+    "passaicCountySheriff": {
+      "office": "Passaic County Sheriff",
+      "term": "3-Year Term (January 2027 – December 2029)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Constitutional officer directing countywide law enforcement, courthouse safety in Paterson, the Passaic County Jail, warrants division, and municipal police mutual aid.",
+      "candidates": [
+        {
+          "name": "Democratic Nominee",
+          "party": "Democrat",
+          "status": "Major Party Nominee",
+          "keyPriorities": "Modernizing jail mental health rehabilitation; expanding narcotics enforcement task forces; tactical support and drone technology to assist municipal police departments like Clifton PD."
+        },
+        {
+          "name": "Republican Nominee",
+          "party": "Republican",
+          "status": "Major Party Nominee",
+          "keyPriorities": "Strict fiscal auditing of the Sheriff's Department overtime budget; increasing county sheriff patrol presence in suburban commercial corridors; cracking down on car theft rings operating across Passaic County."
+        }
+      ]
+    }
+  }
 }

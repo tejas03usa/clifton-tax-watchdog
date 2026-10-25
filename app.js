@@ -5940,11 +5940,13 @@ async function renderElectionHub() {
   }
   if (!cliftonElectionData) return;
 
+  renderBallotOverview();
   renderCategoryPills();
   filterAndRenderCandidates();
   renderControversiesSpotlight();
   renderPlatformMatrix();
   renderBoeCandidates();
+  renderNjCandidates();
   renderVotingGuide();
 }
 
@@ -6654,6 +6656,42 @@ function renderPlatformMatrix() {
   table.innerHTML = thead + tbody;
 }
 
+// Render Complete Clifton Ballot Architecture & Offices Overview
+function renderBallotOverview() {
+  const container = document.getElementById('election-ballot-overview-grid');
+  if (!container || !cliftonElectionData || !cliftonElectionData.ballotArchitecture) return;
+
+  const arch = cliftonElectionData.ballotArchitecture;
+  const offices = arch.offices || [];
+
+  let html = '';
+  offices.forEach(o => {
+    html += `
+      <div class="ballot-office-card">
+        <div class="ballot-office-top">
+          <span class="ballot-office-level">${escapeHtml(o.level)}</span>
+          <span class="ballot-vote-pill" style="border-color: ${o.badgeColor}; color: ${o.badgeColor};">
+            ${escapeHtml(o.voteRule)}
+          </span>
+        </div>
+        <h4 class="ballot-office-title">${escapeHtml(o.office)}</h4>
+        <div class="ballot-office-meta">
+          <span class="meta-tag">Seats Up: <strong>${o.seatsAvailable}</strong></span>
+          <span class="meta-tag">Candidates: <strong>${o.candidatesRunning}</strong></span>
+          <span class="meta-tag">Term: <strong>${escapeHtml(o.termLength)}</strong></span>
+        </div>
+        <div class="ballot-office-tax">
+          <strong>Tax Connection:</strong> ${escapeHtml(o.taxShare)}
+        </div>
+        <p class="ballot-office-desc">${escapeHtml(o.description)}</p>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+// Render Clifton Board of Education Candidates (7 Running, Vote for up to 3)
 function renderBoeCandidates() {
   const container = document.getElementById('election-boe-grid');
   if (!container || !cliftonElectionData) return;
@@ -6672,16 +6710,205 @@ function renderBoeCandidates() {
               ${isInc ? '🏛️ Incumbent Trustee' : '⚡ Challenger'}
             </span>
           </div>
+          <div class="boe-vote-instruction">Vote for up to 3 • 3-Year Term (2027–2029)</div>
           <h4 class="boe-name">${escapeHtml(b.name)}</h4>
           <div class="boe-slogan">"${escapeHtml(b.ballotSlogan)}"</div>
         </div>
-        <div class="boe-card-body">
-          <div class="boe-focus-title">Key Educational & Fiscal Priorities:</div>
-          <p class="boe-focus-text">${escapeHtml(b.keyFocus)}</p>
+
+        <div class="boe-card-details">
+          ${b.experience ? `
+            <div class="boe-detail-row">
+              <span class="boe-detail-label">Background & Service:</span>
+              <span class="boe-detail-val">${escapeHtml(b.experience)}</span>
+            </div>
+          ` : ''}
+
+          <div class="boe-card-body">
+            <div class="boe-focus-title">Key Educational Priorities:</div>
+            <p class="boe-focus-text">${escapeHtml(b.keyFocus)}</p>
+          </div>
+
+          ${b.fiscalStance ? `
+            <div class="boe-priority-box boe-fiscal-box">
+              <div class="boe-priority-header">💰 Fiscal & Taxpayer Stance ($293.4M Budget):</div>
+              <p class="boe-priority-text">${escapeHtml(b.fiscalStance)}</p>
+            </div>
+          ` : ''}
+
+          ${b.infrastructureStance ? `
+            <div class="boe-priority-box boe-infra-box">
+              <div class="boe-priority-header">🏫 Facilities, HVAC & Safety:</div>
+              <p class="boe-priority-text">${escapeHtml(b.infrastructureStance)}</p>
+            </div>
+          ` : ''}
         </div>
       </div>
     `;
   });
+
+  container.innerHTML = html;
+}
+
+// Render New Jersey Statewide & Passaic County Candidates
+function renderNjCandidates() {
+  const container = document.getElementById('election-nj-candidates-container');
+  if (!container || !cliftonElectionData || !cliftonElectionData.njCandidates) return;
+
+  const nj = cliftonElectionData.njCandidates;
+  let html = `
+    <div class="nj-offices-stack">
+      <!-- 1. U.S. Senate -->
+      <div class="nj-office-block">
+        <div class="nj-office-header">
+          <div class="nj-office-title-row">
+            <span class="office-flag-icon">🇺🇸</span>
+            <div>
+              <h4>${escapeHtml(nj.usSenate.office)}</h4>
+              <div class="nj-office-meta">
+                <span>${escapeHtml(nj.usSenate.term)}</span>
+                <span>•</span>
+                <span class="highlight-vote-rule">${escapeHtml(nj.usSenate.voteRule)}</span>
+              </div>
+            </div>
+          </div>
+          <span class="nj-office-badge federal-badge">Federal Statewide</span>
+        </div>
+        <p class="nj-office-importance">${escapeHtml(nj.usSenate.importance)}</p>
+        <div class="nj-candidates-subgrid">
+          ${nj.usSenate.candidates.map(c => `
+            <div class="nj-candidate-card">
+              <div class="nj-cand-top">
+                <span class="nj-party-pill ${c.party.toLowerCase().includes('democrat') ? 'party-dem' : (c.party.toLowerCase().includes('republican') ? 'party-rep' : 'party-ind')}">${escapeHtml(c.party)}</span>
+                <span class="candidate-status-tag ${c.status.toLowerCase().includes('incumbent') ? 'status-incumbent' : 'status-challenger'}">${escapeHtml(c.status)}</span>
+              </div>
+              <h5 class="nj-cand-name">${escapeHtml(c.name)}</h5>
+              <div class="nj-cand-role">${escapeHtml(c.role)}</div>
+              <div class="nj-cand-section">
+                <div class="nj-section-label">Key Platform & Legislative Priorities:</div>
+                <p>${escapeHtml(c.keyPriorities)}</p>
+              </div>
+              ${c.localImpact ? `
+                <div class="nj-cand-section local-impact-box">
+                  <div class="nj-section-label">📍 Clifton & North Jersey Direct Impact:</div>
+                  <p>${escapeHtml(c.localImpact)}</p>
+                </div>
+              ` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- 2. U.S. House NJ-09 -->
+      <div class="nj-office-block" style="margin-top: 24px;">
+        <div class="nj-office-header">
+          <div class="nj-office-title-row">
+            <span class="office-flag-icon">🏛️</span>
+            <div>
+              <h4>${escapeHtml(nj.usHouse.office)}</h4>
+              <div class="nj-office-meta">
+                <span>${escapeHtml(nj.usHouse.term)}</span>
+                <span>•</span>
+                <span class="highlight-vote-rule">${escapeHtml(nj.usHouse.voteRule)}</span>
+              </div>
+            </div>
+          </div>
+          <span class="nj-office-badge federal-badge">U.S. Congressional District 9</span>
+        </div>
+        <p class="nj-office-importance">${escapeHtml(nj.usHouse.importance)}</p>
+        <div class="nj-candidates-subgrid">
+          ${nj.usHouse.candidates.map(c => `
+            <div class="nj-candidate-card">
+              <div class="nj-cand-top">
+                <span class="nj-party-pill ${c.party.toLowerCase().includes('democrat') ? 'party-dem' : (c.party.toLowerCase().includes('republican') ? 'party-rep' : 'party-ind')}">${escapeHtml(c.party)}</span>
+                <span class="candidate-status-tag ${c.status.toLowerCase().includes('incumbent') ? 'status-incumbent' : 'status-challenger'}">${escapeHtml(c.status)}</span>
+              </div>
+              <h5 class="nj-cand-name">${escapeHtml(c.name)}</h5>
+              <div class="nj-cand-role">${escapeHtml(c.role)}</div>
+              <div class="nj-cand-section">
+                <div class="nj-section-label">Key Platform & Legislative Priorities:</div>
+                <p>${escapeHtml(c.keyPriorities)}</p>
+              </div>
+              ${c.localImpact ? `
+                <div class="nj-cand-section local-impact-box">
+                  <div class="nj-section-label">📍 Clifton & Passaic River Flood Control:</div>
+                  <p>${escapeHtml(c.localImpact)}</p>
+                </div>
+              ` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- 3. Passaic County Board of County Commissioners -->
+      <div class="nj-office-block" style="margin-top: 24px;">
+        <div class="nj-office-header">
+          <div class="nj-office-title-row">
+            <span class="office-flag-icon">⚖️</span>
+            <div>
+              <h4>${escapeHtml(nj.passaicCountyCommissioners.office)}</h4>
+              <div class="nj-office-meta">
+                <span>${escapeHtml(nj.passaicCountyCommissioners.term)}</span>
+                <span>•</span>
+                <span class="highlight-vote-rule">${escapeHtml(nj.passaicCountyCommissioners.voteRule)}</span>
+              </div>
+            </div>
+          </div>
+          <span class="nj-office-badge county-badge">Passaic County Government (22.92% of Clifton Taxes)</span>
+        </div>
+        <p class="nj-office-importance">${escapeHtml(nj.passaicCountyCommissioners.importance)}</p>
+        <div class="nj-candidates-subgrid">
+          ${nj.passaicCountyCommissioners.candidates.map(c => `
+            <div class="nj-candidate-card">
+              <div class="nj-cand-top">
+                <span class="nj-party-pill ${c.party.toLowerCase().includes('democrat') ? 'party-dem' : 'party-rep'}">${escapeHtml(c.party)}</span>
+                <span class="candidate-status-tag ${c.status.toLowerCase().includes('incumbent') ? 'status-incumbent' : 'status-challenger'}">${escapeHtml(c.status)}</span>
+              </div>
+              <h5 class="nj-cand-name">${escapeHtml(c.slate)}</h5>
+              <div class="nj-cand-role">Candidates: ${escapeHtml(c.candidates.join(' • '))}</div>
+              <div class="nj-cand-section">
+                <div class="nj-section-label">County Platform & Taxpayer Priorities:</div>
+                <p>${escapeHtml(c.keyPriorities)}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- 4. Passaic County Sheriff -->
+      <div class="nj-office-block" style="margin-top: 24px;">
+        <div class="nj-office-header">
+          <div class="nj-office-title-row">
+            <span class="office-flag-icon">🛡️</span>
+            <div>
+              <h4>${escapeHtml(nj.passaicCountySheriff.office)}</h4>
+              <div class="nj-office-meta">
+                <span>${escapeHtml(nj.passaicCountySheriff.term)}</span>
+                <span>•</span>
+                <span class="highlight-vote-rule">${escapeHtml(nj.passaicCountySheriff.voteRule)}</span>
+              </div>
+            </div>
+          </div>
+          <span class="nj-office-badge county-badge">County Constitutional Officer</span>
+        </div>
+        <p class="nj-office-importance">${escapeHtml(nj.passaicCountySheriff.importance)}</p>
+        <div class="nj-candidates-subgrid">
+          ${nj.passaicCountySheriff.candidates.map(c => `
+            <div class="nj-candidate-card">
+              <div class="nj-cand-top">
+                <span class="nj-party-pill ${c.party.toLowerCase().includes('democrat') ? 'party-dem' : 'party-rep'}">${escapeHtml(c.party)}</span>
+                <span class="candidate-status-tag ${c.status.toLowerCase().includes('incumbent') ? 'status-incumbent' : 'status-challenger'}">${escapeHtml(c.status)}</span>
+              </div>
+              <h5 class="nj-cand-name">${escapeHtml(c.name)}</h5>
+              <div class="nj-cand-section">
+                <div class="nj-section-label">Law Enforcement & Jail Oversight Priorities:</div>
+                <p>${escapeHtml(c.keyPriorities)}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `;
 
   container.innerHTML = html;
 }

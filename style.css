@@ -9197,20 +9197,24 @@ input:checked + .slider.round:before {
 
 /* Scroll clearance for Election deep links & in-page anchors */
 #election-search-anchor,
+#election-ballot-overview,
 #election-candidates-heading,
 #election-controversies-heading,
 #election-matrix-heading,
 #election-boe-heading,
+#election-nj-candidates-heading,
 #election-voting-heading {
   scroll-margin-top: 100px;
 }
 
 @media (max-width: 900px) {
   #election-search-anchor,
+  #election-ballot-overview,
   #election-candidates-heading,
   #election-controversies-heading,
   #election-matrix-heading,
   #election-boe-heading,
+  #election-nj-candidates-heading,
   #election-voting-heading {
     scroll-margin-top: 130px;
   }
@@ -9902,10 +9906,104 @@ input:checked + .slider.round:before {
   white-space: nowrap;
 }
 
+/* ==========================================================================
+   BALLOT OVERVIEW & OFFICES ARCHITECTURE GRID
+   ========================================================================== */
+.ballot-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.ballot-office-card {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ballot-office-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.ballot-office-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ballot-office-level {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.ballot-vote-pill {
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border: 1.5px solid currentColor;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  white-space: nowrap;
+}
+
+.ballot-office-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.ballot-office-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.ballot-office-meta .meta-tag {
+  font-size: 0.76rem;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.ballot-office-tax {
+  font-size: 0.78rem;
+  color: #1e293b;
+  background: #eff6ff;
+  border-left: 3px solid #3b82f6;
+  padding: 6px 10px;
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.ballot-office-desc {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* Board of Education Cards Grid */
 .boe-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
   gap: 20px;
   margin-top: 18px;
 }
@@ -9915,10 +10013,16 @@ input:checked + .slider.round:before {
   border: 1.5px solid #bfdbfe;
   border-top: 4px solid var(--color-school);
   border-radius: var(--radius-md);
-  padding: 18px;
+  padding: 20px;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.boe-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .boe-card-header {
@@ -9930,6 +10034,8 @@ input:checked + .slider.round:before {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .boe-school-badge {
@@ -9942,21 +10048,54 @@ input:checked + .slider.round:before {
   border-radius: var(--radius-pill);
 }
 
+.boe-vote-instruction {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
 .boe-name {
-  font-size: 1.08rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--text-main);
   margin-bottom: 4px;
 }
 
 .boe-slogan {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-style: italic;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.boe-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.boe-detail-row {
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.boe-detail-label {
+  font-weight: 700;
+  color: #334155;
+  margin-right: 4px;
+}
+
+.boe-detail-val {
   color: #475569;
 }
 
 .boe-card-body {
-  margin-top: auto;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-sm);
@@ -9975,6 +10114,217 @@ input:checked + .slider.round:before {
   color: #475569;
   line-height: 1.45;
   margin: 0;
+}
+
+.boe-priority-box {
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.boe-fiscal-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.boe-infra-box {
+  background: #fefce8;
+  border: 1px solid #fef08a;
+}
+
+.boe-priority-header {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 3px;
+  font-size: 0.76rem;
+}
+
+.boe-priority-text {
+  margin: 0;
+  color: #334155;
+}
+
+/* ==========================================================================
+   NEW JERSEY STATEWIDE & PASSAIC COUNTY CANDIDATES SECTION
+   ========================================================================== */
+.nj-offices-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.nj-office-block {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.nj-office-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.nj-office-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.office-flag-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.nj-office-title-row h4 {
+  margin: 0 0 3px 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.nj-office-meta {
+  font-size: 0.82rem;
+  color: #64748b;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.highlight-vote-rule {
+  color: #1d4ed8;
+  background: #eff6ff;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid #bfdbfe;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.nj-office-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.federal-badge {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.county-badge {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.nj-office-importance {
+  font-size: 0.84rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  background: #f8fafc;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #cbd5e1;
+}
+
+.nj-candidates-subgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 16px;
+}
+
+.nj-candidate-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.nj-cand-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.nj-party-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.party-dem {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.party-rep {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.party-ind {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.nj-cand-name {
+  margin: 0 0 3px 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.nj-cand-role {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.nj-cand-section {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #334155;
+  margin-top: 8px;
+}
+
+.nj-cand-section p {
+  margin: 0;
+}
+
+.nj-section-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.local-impact-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  padding: 6px 10px;
 }
 
 /* Voting Guide Grid & Cards */
