@@ -5932,6 +5932,33 @@ function setupElectionControls() {
       });
     });
   }
+
+  // Segmented tab switching inside candidate cards
+  const candidatesGrid = document.getElementById('election-candidates-grid');
+  if (candidatesGrid && !candidatesGrid.dataset.tabsInitialized) {
+    candidatesGrid.dataset.tabsInitialized = 'true';
+    candidatesGrid.addEventListener('click', (e) => {
+      const btn = e.target.closest('.cand-tab-btn');
+      if (!btn) return;
+      const targetTab = btn.getAttribute('data-tab');
+      const card = btn.closest('.candidate-card');
+      if (!card) return;
+
+      // Update active tab buttons
+      card.querySelectorAll('.cand-tab-btn').forEach(b => {
+        const isActive = b === btn;
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      // Update active tab panes
+      card.querySelectorAll('.cand-tab-pane').forEach(pane => {
+        const isMatch = pane.getAttribute('data-pane') === targetTab;
+        pane.classList.toggle('active', isMatch);
+        pane.style.display = isMatch ? 'block' : 'none';
+      });
+    });
+  }
 }
 
 async function renderElectionHub() {
@@ -6224,16 +6251,16 @@ function renderCandidateCard(c, catMap) {
       </div>
 
       <div class="candidate-tagline">
-        ${escapeHtml(c.tagline)}
+        "${escapeHtml(c.tagline)}"
       </div>
 
       <div class="candidate-badges-bar">
         <span class="badge-pledge" title="Formally signed pledge declining taxpayer-funded municipal healthcare insurance">
-          🌿 Declines Health Benefits
+          🌿 No Benefits
         </span>
         ${hasControversy ? `
           <span class="badge-controversy-alert" title="Documented municipal censures, lawsuits, or public controversies on file">
-            ⚠️ Under Scrutiny (${dossier.notableControversies.length})
+            ⚠️ Scrutiny (${dossier.notableControversies.length})
           </span>
         ` : `
           <span class="badge-clean-record" title="Verified clean public record across court dockets and ethics filings">
@@ -6243,26 +6270,44 @@ function renderCandidateCard(c, catMap) {
         ${categoryBadgesHtml}
       </div>
 
-      <!-- Accessible Mutually Exclusive Disclosure Accordion conforming to search-hidden-content guidance -->
+      <!-- Accessible Mutually Exclusive Disclosure Accordion with Segmented Tabs -->
       <details class="disclosure candidate-accordion" name="candidate-accordion">
         <summary class="candidate-accordion-summary">
           <span class="summary-btn-text">
             <span class="summary-icon">📖</span>
-            <span>Candidate Dossier, Record & Platform</span>
+            <span>Dossier, Bio & Platform</span>
           </span>
           <span class="accordion-arrow">▾</span>
         </summary>
         <div class="candidate-expanded-content">
           
-          <!-- SECTION 1: Historic Experience & Public Service Record -->
-          <div class="candidate-detail-section section-history">
-            <div class="detail-section-header">
-              <span class="detail-section-num">1</span>
-              <span class="detail-section-icon">📜</span>
-              <h5 class="detail-section-title">Historic Experience & Service Record</h5>
-              <span class="history-service-badge">${escapeHtml(c.historicExperience ? c.historicExperience.yearsInPublicService : 'Public Record')}</span>
+          <!-- Segmented Dossier Tab Nav -->
+          <div class="candidate-tab-nav" role="tablist" aria-label="Candidate Dossier Sections">
+            <button type="button" class="cand-tab-btn active" data-tab="platform" role="tab" aria-selected="true">
+              🎯 Platform
+            </button>
+            <button type="button" class="cand-tab-btn" data-tab="history" role="tab" aria-selected="false">
+              📜 Experience
+            </button>
+            <button type="button" class="cand-tab-btn" data-tab="dossier" role="tab" aria-selected="false">
+              ⚖️ Vetting ${hasControversy ? '⚠️' : '✓'}
+            </button>
+            <button type="button" class="cand-tab-btn" data-tab="sources" role="tab" aria-selected="false">
+              📚 Sources (${(c.verifiedSources || []).length})
+            </button>
+          </div>
+
+          <div class="cand-tab-panes">
+            <!-- TAB 1: Key Policy Pillars & Debate Promises -->
+            <div class="cand-tab-pane active" data-pane="platform">
+              <div class="candidate-pillars-list">
+                ${pillarsHtml}
+              </div>
+              ${quotesHtml}
             </div>
-            <div class="detail-section-body">
+
+            <!-- TAB 2: Historic Experience & Public Service Record -->
+            <div class="cand-tab-pane" data-pane="history" style="display: none;">
               ${c.historicExperience ? `
                 <p class="history-summary-text">${escapeHtml(c.historicExperience.summary || '')}</p>
 
@@ -6283,38 +6328,35 @@ function renderCandidateCard(c, catMap) {
                   </div>
                 </div>
 
-                <!-- Two-Column Row: Public Offices & Education Credentials -->
-                <div class="history-creds-row">
-                  ${(c.historicExperience.publicOfficesHeld && c.historicExperience.publicOfficesHeld.length > 0) ? `
-                    <div class="history-col">
-                      <span class="history-sub-title">🏛️ Public Offices & Appointments:</span>
-                      <ul class="history-bullets-list">
-                        ${c.historicExperience.publicOfficesHeld.map(o => `
-                          <li>
-                            <strong>${escapeHtml(o.office)}</strong> <span class="history-tenure">(${escapeHtml(o.tenure)})</span>
-                            <div class="history-item-sub">${escapeHtml(o.role)}</div>
-                          </li>
-                        `).join('')}
-                      </ul>
-                    </div>
-                  ` : ''}
+                <!-- Public Offices & Credentials -->
+                ${(c.historicExperience.publicOfficesHeld && c.historicExperience.publicOfficesHeld.length > 0) ? `
+                  <div class="history-col" style="margin-top: 10px;">
+                    <span class="history-sub-title">🏛️ Public Offices & Appointments:</span>
+                    <ul class="history-bullets-list">
+                      ${c.historicExperience.publicOfficesHeld.map(o => `
+                        <li>
+                          <strong>${escapeHtml(o.office)}</strong> <span class="history-tenure">(${escapeHtml(o.tenure)})</span>
+                          <div class="history-item-sub">${escapeHtml(o.role)}</div>
+                        </li>
+                      `).join('')}
+                    </ul>
+                  </div>
+                ` : ''}
 
-                  ${(c.historicExperience.educationAndCredentials && c.historicExperience.educationAndCredentials.length > 0) ? `
-                    <div class="history-col">
-                      <span class="history-sub-title">🎓 Education & Professional Credentials:</span>
-                      <ul class="history-bullets-list">
-                        ${c.historicExperience.educationAndCredentials.map(e => `
-                          <li>${escapeHtml(e)}</li>
-                        `).join('')}
-                      </ul>
-                    </div>
-                  ` : ''}
-                </div>
+                ${(c.historicExperience.educationAndCredentials && c.historicExperience.educationAndCredentials.length > 0) ? `
+                  <div class="history-col" style="margin-top: 10px;">
+                    <span class="history-sub-title">🎓 Education & Credentials:</span>
+                    <ul class="history-bullets-list">
+                      ${c.historicExperience.educationAndCredentials.map(e => `
+                        <li>${escapeHtml(e)}</li>
+                      `).join('')}
+                    </ul>
+                  </div>
+                ` : ''}
 
-                <!-- Civic Leadership & Community Service -->
                 ${(c.historicExperience.civicLeadership && c.historicExperience.civicLeadership.length > 0) ? `
-                  <div class="history-civic-row">
-                    <span class="history-sub-title">🤝 Civic Leadership & Community Impact:</span>
+                  <div class="history-civic-row" style="margin-top: 10px;">
+                    <span class="history-sub-title">🤝 Civic Leadership:</span>
                     <ul class="history-civic-tags">
                       ${c.historicExperience.civicLeadership.map(l => `
                         <li class="history-civic-pill">${escapeHtml(l)}</li>
@@ -6329,34 +6371,9 @@ function renderCandidateCard(c, catMap) {
                 </div>
               `}
             </div>
-          </div>
 
-          <!-- SECTION 2: Key Policy Pillars & Debate Promises -->
-          <div class="candidate-detail-section section-platform">
-            <div class="detail-section-header">
-              <span class="detail-section-num">2</span>
-              <span class="detail-section-icon">🎯</span>
-              <h5 class="detail-section-title">Key Policy Pillars & Debate Commitments</h5>
-            </div>
-            <div class="detail-section-body">
-              <div class="candidate-pillars-list">
-                ${pillarsHtml}
-              </div>
-              ${quotesHtml}
-            </div>
-          </div>
-
-          <!-- SECTION 3: Outside Businesses, Disclosures & Recusals -->
-          <div class="candidate-detail-section section-dossier ${hasControversy ? 'has-alerts' : 'is-clean'}">
-            <div class="detail-section-header">
-              <span class="detail-section-num">3</span>
-              <span class="detail-section-icon">⚖️</span>
-              <h5 class="detail-section-title">Outside Businesses, Disclosures & Recusal Watch</h5>
-              <span class="dossier-status-pill ${hasControversy ? 'pill-alert' : 'pill-clean'}">
-                ${hasControversy ? '⚠️ Documented Inquiries' : '✓ Verified Clean Record'}
-              </span>
-            </div>
-            <div class="detail-section-body">
+            <!-- TAB 3: Outside Businesses, Disclosures & Recusals -->
+            <div class="cand-tab-pane" data-pane="dossier" style="display: none;">
               <div class="candidate-investigative-dossier" style="margin-top: 0; border: none; padding: 0; background: transparent;">
                 <div class="dossier-field">
                   <span class="dossier-label">🏢 Outside Businesses & Disclosed Employment:</span>
@@ -6378,17 +6395,9 @@ function renderCandidateCard(c, catMap) {
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- SECTION 4: Verified Public Sources & Official Records -->
-          <div class="candidate-detail-section section-sources">
-            <div class="detail-section-header">
-              <span class="detail-section-num">4</span>
-              <span class="detail-section-icon">📚</span>
-              <h5 class="detail-section-title">Verified Public Sources & Court Records</h5>
-              <span class="sources-count-badge">${(c.verifiedSources || []).length} Records</span>
-            </div>
-            <div class="detail-section-body">
+            <!-- TAB 4: Verified Public Sources & Official Records -->
+            <div class="cand-tab-pane" data-pane="sources" style="display: none;">
               <div class="candidate-sources-box" style="margin-top: 0; border: none; padding: 0; background: transparent;">
                 <ul class="candidate-sources-list">
                   ${(c.verifiedSources || []).map(s => `
@@ -6403,8 +6412,8 @@ function renderCandidateCard(c, catMap) {
                 </ul>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </details>
     </article>
@@ -6438,7 +6447,7 @@ function renderControversiesSpotlight() {
   const cleanCandidates = candidates.filter(c => !c.investigativeDossier || !c.investigativeDossier.hasDocumentedControversies);
 
   let controversyCardsHtml = '';
-  withControversy.forEach(c => {
+  withControversy.forEach((c, idx) => {
     const d = c.investigativeDossier;
     const isInc = c.status.toLowerCase() === 'incumbent';
 
@@ -6461,64 +6470,67 @@ function renderControversiesSpotlight() {
     `).join('');
 
     controversyCardsHtml += `
-      <div class="spotlight-card spotlight-card-alert" id="spotlight-card-${c.id}">
-        <div class="spotlight-card-header">
-          <div class="spotlight-cand-meta">
+      <details class="spotlight-accordion-card" id="spotlight-card-${c.id}" ${idx === 0 ? 'open' : ''}>
+        <summary class="spotlight-accordion-summary">
+          <div class="sp-summary-left">
             <span class="ballot-num">Ballot #${c.ballotNumber}</span>
             <span class="candidate-status-tag ${isInc ? 'status-incumbent' : 'status-challenger'}">
               ${isInc ? '🏛️ Incumbent' : '⚡ Challenger'}
             </span>
+            <h4 class="spotlight-cand-name">${escapeHtml(c.name)}</h4>
+            <span class="spotlight-cand-role">${escapeHtml(c.role)}</span>
           </div>
-          <h4 class="spotlight-cand-name">${escapeHtml(c.name)}</h4>
-          <div class="spotlight-cand-role">${escapeHtml(c.role)}</div>
-        </div>
+          <div class="sp-summary-right">
+            <span class="sp-alert-pill">⚠️ ${(d.notableControversies || []).length} Documented Inquiries</span>
+            <span class="sp-accordion-arrow">▾</span>
+          </div>
+        </summary>
 
-        <div class="spotlight-section">
-          <span class="spotlight-sub-label">Disclosed Outside Businesses & Holdings:</span>
-          <div class="spotlight-biz-list">
-            ${businessesPills}
+        <div class="spotlight-accordion-content">
+          <div class="spotlight-section">
+            <span class="spotlight-sub-label">Disclosed Outside Businesses & Holdings:</span>
+            <div class="spotlight-biz-list">
+              ${businessesPills || '<span style="color: #64748b;">No outside businesses disclosed</span>'}
+            </div>
+          </div>
+
+          <div class="spotlight-section">
+            <span class="spotlight-sub-label">Documented Inquiries, Allegations & Legal Disputes:</span>
+            <div class="spotlight-items-container">
+              ${controversyItems}
+            </div>
+          </div>
+
+          <div class="spotlight-recusal-box">
+            <strong>Conflict-of-Interest & Recusal Watch (N.J.S.A. 40A:9-22.1):</strong>
+            <p>${escapeHtml(d.conflictOfInterestWatch)}</p>
+          </div>
+
+          <div class="spotlight-sources-row">
+            <span class="spotlight-sub-label">Primary Public Sources & Court Records:</span>
+            <div class="sp-sources-list">
+              ${(c.verifiedSources || []).map(s => `
+                <a href="${escapeHtml(s.url || '#')}" target="_blank" rel="noopener" class="sp-source-pill" title="${escapeHtml(s.doc)}">
+                  📄 ${escapeHtml(s.title)} ↗
+                </a>
+              `).join('')}
+            </div>
           </div>
         </div>
-
-        <div class="spotlight-section">
-          <span class="spotlight-sub-label">Documented Inquiries, Allegations & Legal Disputes:</span>
-          <div class="spotlight-items-container">
-            ${controversyItems}
-          </div>
-        </div>
-
-        <div class="spotlight-recusal-box">
-          <strong>Conflict-of-Interest & Recusal Watch (N.J.S.A. 40A:9-22.1):</strong>
-          <p>${escapeHtml(d.conflictOfInterestWatch)}</p>
-        </div>
-
-        <div class="spotlight-sources-row">
-          <span class="spotlight-sub-label">Primary Public Sources & Court Records:</span>
-          <div class="sp-sources-list">
-            ${(c.verifiedSources || []).map(s => `
-              <a href="${escapeHtml(s.url || '#')}" target="_blank" rel="noopener" class="sp-source-pill" title="${escapeHtml(s.doc)}">
-                📄 ${escapeHtml(s.title)} ↗
-              </a>
-            `).join('')}
-          </div>
-        </div>
-      </div>
+      </details>
     `;
   });
 
   const cleanListHtml = cleanCandidates.map(c => {
     const d = c.investigativeDossier || {};
-    const bizList = (d.outsideBusinesses || []).map(b => `<span class="clean-biz-tag">🏢 ${escapeHtml(b)}</span>`).join('');
+    const bizCount = (d.outsideBusinesses || []).length;
     return `
-      <div class="clean-summary-item">
-        <div class="clean-meta">
-          <span class="clean-check">✓</span>
-          <strong class="clean-name">Ballot #${c.ballotNumber}: ${escapeHtml(c.name)}</strong>
-          <span class="clean-role-text">${escapeHtml(c.role)}</span>
-        </div>
-        <div class="clean-businesses-list">
-          ${bizList || '<span class="clean-biz-tag" style="color: #64748b;">No secondary business disclosed</span>'}
-        </div>
+      <div class="clean-candidate-pill">
+        <span class="clean-check">✓</span>
+        <span class="clean-num">#${c.ballotNumber}</span>
+        <strong class="clean-name">${escapeHtml(c.name)}</strong>
+        <span class="clean-role-text">${escapeHtml(c.role)}</span>
+        ${bizCount > 0 ? `<span class="clean-biz-tag" title="${escapeHtml((d.outsideBusinesses || []).join(', '))}">🏢 ${bizCount} entity</span>` : ''}
       </div>
     `;
   }).join('');
@@ -6549,21 +6561,24 @@ function renderControversiesSpotlight() {
     </div>
 
     <!-- Active Inquiries Grid (6 Candidates) -->
-    <h4 class="spotlight-group-title">
-      ⚠️ Candidates with Documented Public Inquiries, Censures, or Legal Disputes (6)
-    </h4>
-    <div class="spotlight-cards-grid">
+    <div class="spotlight-sub-header-row">
+      <h4 class="spotlight-group-title" style="margin: 0;">
+        ⚠️ Candidates with Documented Public Inquiries, Censures, or Legal Disputes (6)
+      </h4>
+      <span class="spotlight-sub-hint">Click any candidate to expand full dossier & court findings</span>
+    </div>
+    <div class="spotlight-accordions-stack">
       ${controversyCardsHtml}
     </div>
 
     <!-- Clean Records Summary (13 Candidates) -->
     <div class="spotlight-clean-section">
-      <h4 class="spotlight-group-title" style="color: #15803d; margin-top: 28px;">
-        ✓ Candidates with Verified Clean Public Records & Disclosed Outside Businesses (13)
-      </h4>
-      <p class="clean-section-explainer">
-        Cross-referenced against Passaic County court dockets, NJ School Ethics Commission (SEC), NJ Local Finance Board (LFB), and corporate filings. Zero lawsuits, criminal findings, or municipal censures on record:
-      </p>
+      <div class="spotlight-sub-header-row">
+        <h4 class="spotlight-group-title" style="color: #15803d; margin: 0;">
+          ✓ Candidates with Verified Clean Public Records (13)
+        </h4>
+        <span class="spotlight-sub-hint" style="color: #15803d;">Cross-referenced against Passaic County courts, NJ SEC, & LFB filings</span>
+      </div>
       <div class="clean-summary-grid">
         ${cleanListHtml}
       </div>
@@ -6580,13 +6595,13 @@ function renderPlatformMatrix() {
   let thead = `
     <thead>
       <tr>
-        <th scope="col" style="min-width: 180px;">Candidate & Ballot #</th>
-        <th scope="col" style="min-width: 120px;">Status</th>
-        <th scope="col" style="min-width: 200px;">💰 Taxes & Spending Stance</th>
-        <th scope="col" style="min-width: 200px;">🏗️ Flooding & PVWC Water</th>
-        <th scope="col" style="min-width: 200px;">🏡 Zoning & Data Centers</th>
-        <th scope="col" style="min-width: 190px;">⚖️ Dais Decorum & Governance</th>
-        <th scope="col" style="min-width: 140px;">🌿 Health Benefits</th>
+        <th scope="col" style="min-width: 170px;">Candidate & Ballot #</th>
+        <th scope="col" style="min-width: 110px;">Status</th>
+        <th scope="col" style="min-width: 190px;">💰 Taxes & Spending Stance</th>
+        <th scope="col" style="min-width: 190px;">🏗️ Flooding & PVWC Water</th>
+        <th scope="col" style="min-width: 190px;">🏡 Zoning & Data Centers</th>
+        <th scope="col" style="min-width: 180px;">⚖️ Dais Decorum</th>
+        <th scope="col" style="min-width: 120px;">🌿 Health Waiver</th>
       </tr>
     </thead>
   `;
@@ -6595,7 +6610,6 @@ function renderPlatformMatrix() {
   candidates.forEach(c => {
     const isInc = c.status.toLowerCase() === 'incumbent';
 
-    // Extract quick pillar summaries
     const taxPillar = (c.keyPlatformPillars || []).find(p => p.category === 'taxes');
     const floodPillar = (c.keyPlatformPillars || []).find(p => p.category === 'infrastructure');
     const housePillar = (c.keyPlatformPillars || []).find(p => p.category === 'housing');
@@ -6625,30 +6639,30 @@ function renderPlatformMatrix() {
         <td>
           <div class="matrix-pillar-text">
             <strong>${escapeHtml(taxSummary)}</strong>
-            <p>${taxPillar ? escapeHtml(taxPillar.details) : 'Line-item oversight and grant revenue capture.'}</p>
+            <p class="matrix-p-condensed" title="${escapeHtml(taxPillar ? taxPillar.details : '')}">${taxPillar ? escapeHtml(taxPillar.details) : 'Line-item oversight and grant revenue capture.'}</p>
           </div>
         </td>
         <td>
           <div class="matrix-pillar-text">
             <strong>${escapeHtml(floodSummary)}</strong>
-            <p>${floodPillar ? escapeHtml(floodPillar.details) : 'Third River detention and quarterly water testing.'}</p>
+            <p class="matrix-p-condensed" title="${escapeHtml(floodPillar ? floodPillar.details : '')}">${floodPillar ? escapeHtml(floodPillar.details) : 'Third River detention and quarterly water testing.'}</p>
           </div>
         </td>
         <td>
           <div class="matrix-pillar-text">
             <strong>${escapeHtml(houseSummary)}</strong>
-            <p>${housePillar ? escapeHtml(housePillar.details) : 'Rigorous code enforcement on illegal rental conversions.'}</p>
+            <p class="matrix-p-condensed" title="${escapeHtml(housePillar ? housePillar.details : '')}">${housePillar ? escapeHtml(housePillar.details) : 'Rigorous code enforcement on illegal rental conversions.'}</p>
           </div>
         </td>
         <td>
           <div class="matrix-pillar-text">
             <strong>${escapeHtml(govSummary)}</strong>
-            <p>${govPillar ? escapeHtml(govPillar.details) : 'Encouraging public comment and respectful council workshops.'}</p>
+            <p class="matrix-p-condensed" title="${escapeHtml(govPillar ? govPillar.details : '')}">${govPillar ? escapeHtml(govPillar.details) : 'Encouraging public comment and respectful council workshops.'}</p>
           </div>
         </td>
         <td>
           <span class="matrix-pledge-badge" title="Pledged to decline city medical benefits">
-            ✓ 100% Declined
+            ✓ Declined
           </span>
         </td>
       </tr>
