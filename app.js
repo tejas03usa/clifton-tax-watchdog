@@ -6708,7 +6708,7 @@ function renderBallotOverview() {
   container.innerHTML = html;
 }
 
-// Render Clifton Board of Education Candidates (5 Running, Vote for up to 3)
+// Render Clifton Board of Education Candidates (2026 General Election)
 function renderBoeCandidates() {
   const container = document.getElementById('election-boe-grid');
   if (!container || !cliftonElectionData) return;
@@ -6718,8 +6718,9 @@ function renderBoeCandidates() {
 
   boeList.forEach(b => {
     const isInc = b.status.toLowerCase().includes('incumbent');
+    const isUnexpired = b.seatType && b.seatType.toLowerCase().includes('unexpired');
     html += `
-      <div class="boe-card">
+      <div class="boe-card ${isUnexpired ? 'boe-card-unexpired' : ''}">
         <div class="boe-card-header">
           <div class="boe-badge-row">
             <span class="boe-school-badge">🏫 Board of Education</span>
@@ -6730,7 +6731,9 @@ function renderBoeCandidates() {
               </span>
             </div>
           </div>
-          <div class="boe-vote-instruction">Vote for up to 3 • 3-Year Term (2027–2029)</div>
+          <div class="boe-vote-instruction ${isUnexpired ? 'instruction-unexpired' : ''}">
+            ${escapeHtml(b.term || 'Vote for up to 3 • 3-Year Term (2027–2029)')}
+          </div>
           <h4 class="boe-name">${escapeHtml(b.name)}</h4>
           <div class="boe-slogan">"${escapeHtml(b.ballotSlogan)}"</div>
         </div>

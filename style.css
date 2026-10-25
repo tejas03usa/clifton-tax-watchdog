@@ -10128,6 +10128,15 @@ input:checked + .slider.round:before {
   box-shadow: var(--shadow-md);
 }
 
+.boe-card.boe-card-unexpired {
+  border-top-color: #f59e0b;
+}
+
+.boe-vote-instruction.instruction-unexpired {
+  color: #b45309;
+  font-weight: 700;
+}
+
 .boe-card-header {
   margin-bottom: 10px;
 }
