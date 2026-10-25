@@ -6708,7 +6708,7 @@ function renderBallotOverview() {
   container.innerHTML = html;
 }
 
-// Render Clifton Board of Education Candidates (7 Running, Vote for up to 3)
+// Render Clifton Board of Education Candidates (5 Running, Vote for up to 3)
 function renderBoeCandidates() {
   const container = document.getElementById('election-boe-grid');
   if (!container || !cliftonElectionData) return;
@@ -6723,9 +6723,12 @@ function renderBoeCandidates() {
         <div class="boe-card-header">
           <div class="boe-badge-row">
             <span class="boe-school-badge">🏫 Board of Education</span>
-            <span class="candidate-status-tag ${isInc ? 'status-incumbent' : 'status-challenger'}">
-              ${isInc ? '🏛️ Incumbent Trustee' : '⚡ Challenger'}
-            </span>
+            <div class="boe-badges-right" style="display: flex; align-items: center; gap: 5px;">
+              ${b.ballotNumber ? `<span class="ballot-num">Ballot #${b.ballotNumber}</span>` : ''}
+              <span class="candidate-status-tag ${isInc ? 'status-incumbent' : 'status-challenger'}">
+                ${isInc ? '🏛️ Incumbent Trustee' : '⚡ Challenger'}
+              </span>
+            </div>
           </div>
           <div class="boe-vote-instruction">Vote for up to 3 • 3-Year Term (2027–2029)</div>
           <h4 class="boe-name">${escapeHtml(b.name)}</h4>
