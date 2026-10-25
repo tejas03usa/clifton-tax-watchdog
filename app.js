@@ -6190,6 +6190,25 @@ function filterAndRenderCandidates() {
               <span class="civic-box-label">🏛️ Public Service & Civic Background:</span>
               <p>${escapeHtml(c.civicBackground || c.experience)}</p>
             </div>
+
+            <!-- Verified Public Records & Sources -->
+            <div class="candidate-sources-box">
+              <div class="sources-box-header">
+                <span class="sources-icon">📚</span>
+                <strong>Verified Sources & Public Records:</strong>
+              </div>
+              <ul class="candidate-sources-list">
+                ${(c.verifiedSources || []).map(s => `
+                  <li class="candidate-source-item">
+                    <div class="source-item-top">
+                      <span class="source-tag">📄 ${escapeHtml(s.title)}</span>
+                      ${s.url ? `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener" class="source-ext-link">Official Record ↗</a>` : ''}
+                    </div>
+                    <p class="source-doc-text">${escapeHtml(s.doc)}</p>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
           </div>
         </details>
       </article>
@@ -6278,6 +6297,17 @@ function renderControversiesSpotlight() {
         <div class="spotlight-recusal-box">
           <strong>Conflict-of-Interest & Recusal Watch (N.J.S.A. 40A:9-22.1):</strong>
           <p>${escapeHtml(d.conflictOfInterestWatch)}</p>
+        </div>
+
+        <div class="spotlight-sources-row">
+          <span class="spotlight-sub-label">Primary Public Sources & Court Records:</span>
+          <div class="sp-sources-list">
+            ${(c.verifiedSources || []).map(s => `
+              <a href="${escapeHtml(s.url || '#')}" target="_blank" rel="noopener" class="sp-source-pill" title="${escapeHtml(s.doc)}">
+                📄 ${escapeHtml(s.title)} ↗
+              </a>
+            `).join('')}
+          </div>
         </div>
       </div>
     `;

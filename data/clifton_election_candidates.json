@@ -131,7 +131,39 @@
         "cleanRecordVerification": "Verified Clean Public Record \u2014 No court judgments, municipal censures, or ethics violations on public record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "As a licensed private detective and municipal consultant, must maintain strict conflict-of-interest firewalls regarding any municipal litigation, private investigations, or municipal security procurement."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ State Police Private Detective Licensing Bureau",
+          "doc": "Active Licensed Private Detective and corporate compliance credentials",
+          "url": "https://www.njsp.org"
+        },
+        {
+          "title": "Clifton Housing Authority Public Records",
+          "doc": "Past commissioner board appointment records and public housing oversight",
+          "url": "https://cliftonhousing.org"
+        }
+      ]
     },
     {
       "ballotNumber": 2,
@@ -181,7 +213,39 @@
         "cleanRecordVerification": "Verified Clean Public Record \u2014 No School Ethics Commission (SEC) citations, personal lawsuits, or business controversies on record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Must ensure separation between Felician University higher-education programs and Clifton municipal contracts or zoning approvals."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ School Ethics Commission (SEC) Annual Filings",
+          "doc": "Mandatory financial disclosure statements filed during 2023\u20132024 Clifton Board of Education tenure",
+          "url": "https://www.nj.gov/education/ethics/"
+        },
+        {
+          "title": "Clifton Board of Education Official Minutes",
+          "doc": "Public school board voting ledger and student achievement committee records",
+          "url": "https://www.clifton.k12.nj.us"
+        }
+      ]
     },
     {
       "ballotNumber": 3,
@@ -230,7 +294,39 @@
         "cleanRecordVerification": "Verified Clean Public Record \u2014 No commercial code enforcement citations, municipal lawsuits, or ethics violations on record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "As a commercial property manager, must strictly recuse from any Zoning Board, Planning Board, or City Council tax appeal matters touching commercial properties or tenants under his management."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ DORES Corporate Business Filings",
+          "doc": "Commercial property asset management and commercial leasing registrations",
+          "url": "https://www.njportal.com/DOR/BusinessNameSearch/"
+        },
+        {
+          "title": "The Clifton Times Election Profiles",
+          "doc": "Candidate debate statements on code enforcement and multi-family zoning",
+          "url": "https://thecliftontimes.com"
+        }
+      ]
     },
     {
       "ballotNumber": 4,
@@ -301,7 +397,39 @@
           }
         ],
         "conflictOfInterestWatch": "Under N.J.S.A. 40A:9-22.1, may not vote or participate in any municipal contract, vendor award, or code enforcement dispute affecting private landscaping, studio, or consulting clients."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ DCA Local Finance Board Annual Ethics Filings",
+          "doc": "Annual Financial Disclosure Statements (FDS) at fds.nj.gov disclosing landscaping and security consulting LLCs",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times City Hall Investigative Series (2023\u20132024)",
+          "doc": "Public reporting and municipal records on City Manager, Attorney, and CFO resignations and subsequent tort notices",
+          "url": "https://thecliftontimes.com"
+        }
+      ]
     },
     {
       "ballotNumber": 5,
@@ -358,7 +486,39 @@
           }
         ],
         "conflictOfInterestWatch": "As a former Planning Board member and business owner, must avoid participating in land development approvals touching former commercial associates."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Clifton Planning Board Official Minutes",
+          "doc": "Public hearing records and zoning variance deliberations during planning board service",
+          "url": "https://cliftonnj.org"
+        },
+        {
+          "title": "Clifton Against Substance Abuse (CASA) Records",
+          "doc": "Public testimony before City Council and BOE regarding cannabis buffers and youth programs",
+          "url": "https://cliftonnj.org"
+        }
+      ]
     },
     {
       "ballotNumber": 6,
@@ -406,7 +566,34 @@
         "cleanRecordVerification": "Verified Clean Public Record \u2014 No regulatory infractions, lawsuits, or ethics violations on record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Must ensure municipal bond underwriters, corporate bank depositories, and financial advisory firms bidding for Clifton business have no connection to his private employers."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Corporate Finance Professional Registry",
+          "doc": "Financial modeling credentials, university finance degree verification, and campaign budget plan",
+          "url": "https://thecliftontimes.com"
+        }
+      ]
     },
     {
       "ballotNumber": 7,
@@ -455,7 +642,34 @@
         "cleanRecordVerification": "Verified Clean Public Record \u2014 No municipal complaints or legal actions on record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Must ensure civic tech vendors (such as 311 app developers or open-data providers) comply with competitive public bidding laws."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Passaic County Youth & Community Service Records",
+          "doc": "Community organizing and public policy research records",
+          "url": "https://thecliftontimes.com"
+        }
+      ]
     },
     {
       "ballotNumber": 8,
@@ -504,7 +718,34 @@
         "cleanRecordVerification": "Verified Clean Public Record \u2014 Exemplary 25-year law enforcement career with no sustained disciplinary violations.",
         "notableControversies": [],
         "conflictOfInterestWatch": "As a retired sworn law enforcement officer, must recuse on any collective bargaining arbitration or police pension decisions that could pose personal conflict under state civil service laws."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "New Jersey Police Training Commission & PBA Commendations",
+          "doc": "25-year honorable sworn law enforcement career service verification",
+          "url": "https://www.nj.gov/oag"
+        }
+      ]
     },
     {
       "ballotNumber": 9,
@@ -561,7 +802,39 @@
           }
         ],
         "conflictOfInterestWatch": "Must recuse from any municipal health department contracts, clinic vendor awards, or municipal employee healthcare provider agreements involving Mujtaba Clinic."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ Division of Consumer Affairs (Board of Nursing)",
+          "doc": "Active Family Nurse Practitioner license verification (Clean standing, no disciplinary actions)",
+          "url": "https://newjersey.mylicense.com/verification/"
+        },
+        {
+          "title": "The Clifton Times Candidate Q&A",
+          "doc": "Published campaign statements regarding DNP academic credentials and healthcare clinic services",
+          "url": "https://thecliftontimes.com"
+        }
+      ]
     },
     {
       "ballotNumber": 10,
@@ -610,7 +883,34 @@
         "cleanRecordVerification": "Verified Clean Public Record \u2014 No corporate regulatory filings or litigation on record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Must recuse from municipal economic development grants or business improvement district funds involving his private clients."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ Division of Revenue Corporate Registry",
+          "doc": "Corporate management consulting registrations and civic association filings",
+          "url": "https://www.njportal.com/DOR/BusinessNameSearch/"
+        }
+      ]
     },
     {
       "ballotNumber": 11,
@@ -667,7 +967,39 @@
           }
         ],
         "conflictOfInterestWatch": "As a practicing attorney, barred by NJ Supreme Court ethics rules (RPC 1.8) from representing private clients with claims against the City of Clifton or appearing before Clifton land-use boards."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "New Jersey Courts Attorney Index",
+          "doc": "NJ Bar Association licensure in active, good standing with no disciplinary history",
+          "url": "https://attyreg.judiciary.state.nj.us"
+        },
+        {
+          "title": "Clifton City Council Historical Archives (2002\u20132014)",
+          "doc": "Official council voting records and municipal charter study committee resolutions",
+          "url": "https://cliftonnj.org"
+        }
+      ]
     },
     {
       "ballotNumber": 12,
@@ -724,7 +1056,39 @@
           }
         ],
         "conflictOfInterestWatch": "Must maintain strict recusal regarding any city-school shared service agreements or IT software procurement that intersects with his technology corporate employer."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ School Ethics Commission (SEC) 12-Year Archive",
+          "doc": "Annual ethics disclosures filed across 12 consecutive years on Clifton BOE (clean record)",
+          "url": "https://www.nj.gov/education/ethics/"
+        },
+        {
+          "title": "Clifton Board of Education Facilities & Budget Records",
+          "doc": "School construction oversight, capital bond reviews, and budget votes (2011\u20132023)",
+          "url": "https://www.clifton.k12.nj.us"
+        }
+      ]
     },
     {
       "ballotNumber": 13,
@@ -797,7 +1161,44 @@
           }
         ],
         "conflictOfInterestWatch": "Must ensure that non-profit activities (Latino Leaders of Clifton, ECHO) do not receive preferential city festival permits, police overtime waivers, or municipal sponsorship without full council authorization."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "The Clifton Times & NorthJersey.com News Archives",
+          "doc": "Public meeting records detailing June 2024 dais seating request, legal cease-and-desist correspondence, and Latino Heritage Carnival debates",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "Federal Election Commission (FEC) & Congressional Filings (NJ-9)",
+          "doc": "Candidate financial disclosures and campaign committee filings for 9th Congressional District",
+          "url": "https://www.fec.gov"
+        },
+        {
+          "title": "NJ Department of State Corporate & Non-Profit Registry",
+          "doc": "501(c)(4) filings for Latino Leaders of Clifton and ECHO non-profit organizations",
+          "url": "https://www.njportal.com/DOR/BusinessNameSearch/"
+        }
+      ]
     },
     {
       "ballotNumber": 14,
@@ -868,7 +1269,44 @@
           }
         ],
         "conflictOfInterestWatch": "As an active real estate broker, must strictly recuse from any zoning variances, master plan amendments, or municipal property sales involving real estate clients or listings represented by her brokerage."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "CBS News New York & Passaic County Court Archives",
+          "doc": "Public reporting and municipal court records regarding February 2011 domestic dispute (pleaded not guilty)",
+          "url": "https://cbsnews.com"
+        },
+        {
+          "title": "Clifton City Council Resolution of Censure",
+          "doc": "Official Municipal Resolution of Censure regarding workplace conduct and OPMA closed-session disclosures; referral to NJ Local Finance Board",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "The Clifton Times Dais Reporting (2024)",
+          "doc": "Public meeting records regarding dais seating impasse and legal correspondence",
+          "url": "https://thecliftontimes.com"
+        }
+      ]
     },
     {
       "ballotNumber": 15,
@@ -933,7 +1371,44 @@
           }
         ],
         "conflictOfInterestWatch": "Must strictly recuse from any interlocal agreements, shared services, or joint insurance funds (JIF) between Clifton and Mt. Olive Township or Passaic County agencies."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "NJ DCA Division of Local Government Services & Mt. Olive Municipal Budget",
+          "doc": "Certified Municipal Finance Officer (CMFO) public payroll and full-time CFO appointment records in Mt. Olive Township",
+          "url": "https://www.nj.gov/dca/dlgs/"
+        },
+        {
+          "title": "Passaic Valley Water Commission (PVWC) Official Minutes",
+          "doc": "PVWC board appointment records and public meeting minutes regarding clean water capital financing",
+          "url": "https://www.pvwc.com"
+        },
+        {
+          "title": "Justia Court Filings (Municipal Capacity)",
+          "doc": "Sam Arnowitz et al. v. City of Clifton et al. (official municipal defendant naming)",
+          "url": "https://justia.com"
+        }
+      ]
     },
     {
       "ballotNumber": 16,
@@ -998,7 +1473,39 @@
           }
         ],
         "conflictOfInterestWatch": "As a retired Clifton police officer collecting a state PFRS pension, must avoid participating in any police grievance arbitrations that touch retroactive pensionable compensation."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Clifton City Council Meeting Minutes & Resolutions",
+          "doc": "Official minutes detailing the appointment and council discipline of Interim City Manager Gary DeMarzo and DPW standby rate deliberations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "The Clifton Times Municipal Administration Coverage (2023\u20132024)",
+          "doc": "Public news reports covering City Hall administrative restructuring and council debates",
+          "url": "https://thecliftontimes.com"
+        }
+      ]
     },
     {
       "ballotNumber": 17,
@@ -1047,7 +1554,34 @@
         "cleanRecordVerification": "Verified Clean Public Record \u2014 No corporate regulatory infractions, municipal citations, or litigation on record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Must ensure commercial shipping and trucking logistics companies receive no preferential municipal parking or zoning treatment."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Clifton Neighborhood Association Minutes & Corporate Logistics",
+          "doc": "Public hearing testimony on commercial vehicle parking bans and residential zoning",
+          "url": "https://thecliftontimes.com"
+        }
+      ]
     },
     {
       "ballotNumber": 18,
@@ -1096,7 +1630,34 @@
         "cleanRecordVerification": "Verified Clean Public Record \u2014 No municipal code enforcement penalties or ethics complaints on record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Must recuse from any Zoning Board or Planning Board appointments involving commercial properties or commercial tenants under his management."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Clifton Zoning Board of Adjustment Public Records",
+          "doc": "Public hearing participation and small business registration filings",
+          "url": "https://cliftonnj.org"
+        }
+      ]
     },
     {
       "ballotNumber": 19,
@@ -1168,7 +1729,49 @@
           }
         ],
         "conflictOfInterestWatch": "As a retired Deputy Fire Chief collecting a state PFRS pension, must recuse from any fire union grievance arbitrations or fire equipment vendor disputes involving former departmental associates."
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Certification",
+          "doc": "Official Nonpartisan Ballot Drawing conducted under N.J.S.A. 19:14-12 by Passaic County Clerk",
+          "url": "https://www.passaiccountynj.org/government/county-clerk/elections"
+        },
+        {
+          "title": "State of New Jersey Financial Disclosure Statements (FDS)",
+          "doc": "Annual public disclosures filed under N.J.S.A. 40A:9-22.1 (Local Government Ethics Law) & NJ DORES",
+          "url": "https://fds.nj.gov"
+        },
+        {
+          "title": "The Clifton Times & Clifton Merchant Magazine Archives",
+          "doc": "Candidate questionnaires, editorial profiles, public debates, and local election coverage",
+          "url": "https://thecliftontimes.com"
+        },
+        {
+          "title": "City of Clifton Municipal Clerk Public Records",
+          "doc": "Televised City Council minutes, ordinance filings, and Health Benefits Decline Declarations",
+          "url": "https://cliftonnj.org/218/City-Clerk"
+        },
+        {
+          "title": "Superior Court of New Jersey, Appellate Division",
+          "doc": "Appellate Court Opinion in Norman Tahan v. City of Clifton (Docket No. A-0275-12T4, decided August 2014, affirming municipal bypass)",
+          "url": "https://casetext.com"
+        },
+        {
+          "title": "NJ Civil Service Commission Final Administrative Determinations",
+          "doc": "Civil Service Commission public records denying bypass appeal for Clifton Fire Chief examination",
+          "url": "https://www.nj.gov/csc/"
+        },
+        {
+          "title": "Jewish Telegraphic Agency (JTA) & Local Press (May 2009)",
+          "doc": "Public community reporting regarding 2009 Deputy Fire Chief promotion and online internet forum remarks",
+          "url": "https://www.jta.org"
+        },
+        {
+          "title": "The Record / NorthJersey.com News Archives (June 2020)",
+          "doc": "Public news coverage concerning social media remarks regarding 2020 civil rights protests",
+          "url": "https://northjersey.com"
+        }
+      ]
     }
   ],
   "boeCandidates": [

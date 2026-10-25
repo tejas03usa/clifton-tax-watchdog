@@ -13,47 +13,52 @@
 
   <!-- Modern App Header (Top of Page) -->
   <header class="app-header">
+    <!-- Top Utility Bar: Live Brand Badge & Modern Municipality Selector -->
+    <div class="container header-top-bar">
+      <div class="brand-badge" id="header-brand-badge">
+        <span class="badge-icon" id="header-badge-icon">🏛️</span>
+        <span id="header-badge-text">CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG</span>
+      </div>
+      <div class="city-switcher-group" role="group" aria-label="Select Municipality">
+        <span class="city-switcher-label">Select Municipality:</span>
+        <div class="city-switcher-pills">
+          <button type="button" class="city-switch-btn active" data-city="clifton" aria-pressed="true">
+            <span class="city-btn-icon">🏛️</span>
+            <span class="city-btn-name">Clifton</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="parsippany" aria-pressed="false">
+            <span class="city-btn-icon">🌲</span>
+            <span class="city-btn-name">Parsippany</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="wayne" aria-pressed="false">
+            <span class="city-btn-icon">🌳</span>
+            <span class="city-btn-name">Wayne</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="montclair" aria-pressed="false">
+            <span class="city-btn-icon">🏡</span>
+            <span class="city-btn-name">Montclair</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="morristown" aria-pressed="false">
+            <span class="city-btn-icon">📜</span>
+            <span class="city-btn-name">Morristown</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn" data-city="montville" aria-pressed="false">
+            <span class="city-btn-icon">🏞️</span>
+            <span class="city-btn-name">Montville</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header Body: Title/Subtitle & KPI Stat Cards -->
     <div class="container header-container">
       <div class="header-titles">
-        <div class="header-top-bar">
-          <div class="brand-badge" id="header-brand-badge">
-            <span class="badge-icon" id="header-badge-icon">🏛️</span>
-            <span id="header-badge-text">CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG</span>
-          </div>
-          <div class="city-switcher-group" role="group" aria-label="Select Municipality">
-            <span class="city-switcher-label">Municipality:</span>
-            <button type="button" class="city-switch-btn active" data-city="clifton" aria-pressed="true">
-              <span class="city-btn-icon">🏛️</span>
-              <span class="city-btn-name">Clifton</span>
-              <span class="city-btn-county">Passaic</span>
-            </button>
-            <button type="button" class="city-switch-btn" data-city="parsippany" aria-pressed="false">
-              <span class="city-btn-icon">🌲</span>
-              <span class="city-btn-name">Parsippany</span>
-              <span class="city-btn-county">Morris</span>
-            </button>
-            <button type="button" class="city-switch-btn" data-city="wayne" aria-pressed="false">
-              <span class="city-btn-icon">🌳</span>
-              <span class="city-btn-name">Wayne</span>
-              <span class="city-btn-county">Passaic</span>
-            </button>
-            <button type="button" class="city-switch-btn" data-city="montclair" aria-pressed="false">
-              <span class="city-btn-icon">🏡</span>
-              <span class="city-btn-name">Montclair</span>
-              <span class="city-btn-county">Essex</span>
-            </button>
-            <button type="button" class="city-switch-btn" data-city="morristown" aria-pressed="false">
-              <span class="city-btn-icon">📜</span>
-              <span class="city-btn-name">Morristown</span>
-              <span class="city-btn-county">Morris</span>
-            </button>
-            <button type="button" class="city-switch-btn" data-city="montville" aria-pressed="false">
-              <span class="city-btn-icon">🏞️</span>
-              <span class="city-btn-name">Montville</span>
-              <span class="city-btn-county">Morris</span>
-            </button>
-          </div>
-        </div>
         <h1 id="header-main-title">Clifton Taxpayer Watchdog</h1>
         <p class="subtitle" id="header-main-subtitle">Real-time public investigation into where your Clifton property taxes go, the ~$293M school budget, public employee healthcare benefits, outside staff businesses, and official state audits.</p>
       </div>
@@ -81,39 +86,18 @@
   <!-- Modern Categorized Navigation Bar with Dropdowns & Sticky Header Brand -->
   <nav class="nav-bar" id="main-nav" role="navigation" aria-label="Main Navigation">
     <div class="container nav-container">
-      <!-- Persistent Brand Lockup & Compact City Switcher (Always available when scrolling) -->
-      <div class="nav-top-row">
-        <a href="#" class="nav-brand-lockup" id="nav-brand-home" aria-label="Taxpayer Watchdog - Back to Top">
-          <div class="nav-brand-icon-wrap">
-            <span class="nav-brand-icon" id="nav-brand-icon">🏛️</span>
-          </div>
-          <div class="nav-brand-text">
-            <div class="nav-brand-title" id="nav-brand-title">Clifton Watchdog</div>
-            <div class="nav-brand-subtitle" id="nav-brand-subtitle">CITIZEN FISCAL AUDIT • 2026</div>
-          </div>
-        </a>
-        <div class="nav-city-switcher" role="group" aria-label="Quick Switch Municipality">
-          <button type="button" class="city-switch-btn compact active" data-city="clifton" title="Switch to Clifton (Passaic County)">
-            <span>🏛️</span> <span>Clifton</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="parsippany" title="Switch to Parsippany-Troy Hills (Morris County)">
-            <span>🌲</span> <span>Parsippany</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="wayne" title="Switch to Wayne Township (Passaic County)">
-            <span>🌳</span> <span>Wayne</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="montclair" title="Switch to Montclair Township (Essex County)">
-            <span>🏡</span> <span>Montclair</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="morristown" title="Switch to Morristown (Morris County)">
-            <span>📜</span> <span>Morristown</span>
-          </button>
-          <button type="button" class="city-switch-btn compact" data-city="montville" title="Switch to Montville Township (Morris County)">
-            <span>🏞️</span> <span>Montville</span>
-          </button>
+      <!-- Persistent Brand Lockup on Left -->
+      <a href="#" class="nav-brand-lockup" id="nav-brand-home" aria-label="Taxpayer Watchdog - Back to Top">
+        <div class="nav-brand-icon-wrap">
+          <span class="nav-brand-icon" id="nav-brand-icon">🏛️</span>
         </div>
-      </div>
+        <div class="nav-brand-text">
+          <div class="nav-brand-title" id="nav-brand-title">Clifton Watchdog</div>
+          <div class="nav-brand-subtitle" id="nav-brand-subtitle">CITIZEN FISCAL AUDIT • 2026</div>
+        </div>
+      </a>
 
+      <!-- Centered Modern Navigation Menu -->
       <div class="nav-menu" role="menubar">
         
         <!-- 1. Primary Direct Tab: Tax Calculator -->
@@ -135,7 +119,7 @@
           <span class="tab-title">Compare Towns</span>
         </button>
 
-        <!-- 3. DROPDOWN: Budgets & Spending -->
+        <!-- 4. DROPDOWN: Budgets & Spending -->
         <div class="nav-dropdown" id="dropdown-budgets">
           <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-budgets">
             <span class="tab-icon">📊</span>
@@ -167,7 +151,7 @@
           </div>
         </div>
 
-        <!-- 3. DROPDOWN: Demographics & Comparison -->
+        <!-- 5. DROPDOWN: Demographics & Comparison -->
         <div class="nav-dropdown" id="dropdown-demographics">
           <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-demographics">
             <span class="tab-icon">🏘️</span>
@@ -199,7 +183,7 @@
           </div>
         </div>
 
-        <!-- 4. DROPDOWN: Personnel & Accountability -->
+        <!-- 6. DROPDOWN: Personnel & Accountability -->
         <div class="nav-dropdown" id="dropdown-personnel">
           <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="trigger-personnel">
             <span class="tab-icon">⚖️</span>
@@ -232,24 +216,48 @@
           </div>
         </div>
 
-        <!-- 5. Primary Direct Tab: Joined Intelligence & Reports -->
+        <!-- 7. Primary Direct Tab: Joined Intelligence & Reports -->
         <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-intelligence">
           <span class="tab-icon">🔬</span>
-          <span class="tab-title">Joined Intelligence</span>
+          <span class="tab-title">Intelligence</span>
         </button>
 
-        <!-- 6. Primary Direct Tab: Commercial & PILOT Shift -->
+        <!-- 8. Primary Direct Tab: Commercial & PILOT Shift -->
         <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-commercial-pilot">
           <span class="tab-icon">🏢</span>
-          <span class="tab-title">Commercial & PILOT Shift</span>
+          <span class="tab-title">PILOT Shift</span>
         </button>
 
-        <!-- 7. Primary Direct Tab: What-If? Fair Tax Engine -->
+        <!-- 9. Primary Direct Tab: What-If? Fair Tax Engine -->
         <button class="nav-item-btn tab-btn" role="menuitem" data-tab="tab-fair-tax">
           <span class="tab-icon">⚖️</span>
-          <span class="tab-title">What-If? Fair Tax</span>
+          <span class="tab-title">Fair Tax Engine</span>
         </button>
 
+      </div>
+
+      <!-- Compact Quick City Switcher on Far Right -->
+      <div class="nav-city-quick-wrap">
+        <div class="nav-city-switcher" role="group" aria-label="Quick Switch Municipality">
+          <button type="button" class="city-switch-btn compact active" data-city="clifton" title="Switch to Clifton (Passaic County)">
+            <span>🏛️</span> <span>Clifton</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="parsippany" title="Switch to Parsippany-Troy Hills (Morris County)">
+            <span>🌲</span> <span>Parsippany</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="wayne" title="Switch to Wayne Township (Passaic County)">
+            <span>🌳</span> <span>Wayne</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="montclair" title="Switch to Montclair Township (Essex County)">
+            <span>🏡</span> <span>Montclair</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="morristown" title="Switch to Morristown (Morris County)">
+            <span>📜</span> <span>Morristown</span>
+          </button>
+          <button type="button" class="city-switch-btn compact" data-city="montville" title="Switch to Montville Township (Morris County)">
+            <span>🏞️</span> <span>Montville</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
