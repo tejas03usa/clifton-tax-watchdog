@@ -69,6 +69,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p, blockquote, .section-subtitle-desc {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
 .container {
   max-width: 1360px;
   margin: 0 auto;
@@ -2548,6 +2558,67 @@ div[id] {
   color: #cbd5e1;
 }
 
+/* Generic Section Header & Badges */
+.section-header {
+  margin-bottom: 24px;
+}
+
+.section-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  line-height: 1.3;
+}
+
+.section-update-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  line-height: 1.3;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.section-header h2 {
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: clamp(0.88rem, 2.5vw, 1rem);
+  line-height: 1.6;
+  text-wrap: pretty;
+  max-width: 85ch;
+}
+
 .section-subtitle-row {
   display: flex;
   justify-content: space-between;
@@ -4735,6 +4806,10 @@ div[id] {
     margin-top: 4px;
   }
 
+  .clickable-stat-card::after {
+    display: none !important;
+  }
+
   .stat-card {
     padding: 10px 8px;
     background: rgba(255, 255, 255, 0.07);
@@ -4742,13 +4817,17 @@ div[id] {
     text-align: center;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
   }
 
   .stat-card-label {
-    font-size: 0.66rem;
+    font-size: 0.68rem;
     color: #cbd5e1;
     line-height: 1.25;
     margin-bottom: 3px;
+    text-wrap: balance;
+    overflow-wrap: break-word;
   }
 
   .stat-card-num {
@@ -4761,6 +4840,7 @@ div[id] {
     color: #93c5fd;
     margin-top: 2px;
     line-height: 1.2;
+    text-wrap: pretty;
   }
 
   /* 2. Sticky Top Header & Navigation Bar on Phones: Two-Tier Clean Layout */
@@ -4838,11 +4918,13 @@ div[id] {
   /* Tier 2: Full-width Horizontal Touch Tab Bar */
   .nav-menu {
     display: flex;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 2px 0;
+    padding: 4px 8px;
+    scroll-padding: 0 8px;
     gap: 8px;
     width: 100%;
   }
@@ -4875,8 +4957,12 @@ div[id] {
 
   .tab-pane,
   section[id],
-  div[id] {
-    scroll-margin-top: 105px;
+  div[id],
+  h1[id],
+  h2[id],
+  h3[id],
+  h4[id] {
+    scroll-margin-top: 135px;
   }
 
   /* 3. Live Citizen Status Bar on Phones: Clean Pill Chips */
@@ -9226,7 +9312,7 @@ input:checked + .slider.round:before {
   #election-boe-heading,
   #election-nj-candidates-heading,
   #election-voting-heading {
-    scroll-margin-top: 130px;
+    scroll-margin-top: 135px;
   }
 }
 
@@ -11783,6 +11869,177 @@ input:checked + .slider.round:before {
   .election-expand-controls .btn-toggle-expand {
     flex: 1;
     text-align: center;
+  }
+
+  /* Mobile Section Headers & Subtitles (Zero Overlap & Zero Cut-Off) */
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  .section-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+    line-height: 1.25;
+    margin-bottom: 8px;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  .section-header p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .section-subtitle-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .section-subtitle-row h3 {
+    font-size: clamp(1.15rem, 4vw, 1.3rem);
+    line-height: 1.3;
+    width: 100%;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  .section-subtitle-row .pill-tag {
+    white-space: normal;
+    line-height: 1.35;
+    max-width: 100%;
+    text-wrap: pretty;
+    word-break: break-word;
+  }
+
+  .section-subtitle-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-wrap: pretty;
+  }
+
+  .nj-office-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .nj-office-title-row {
+    width: 100%;
+  }
+
+  .nj-office-title-row h4 {
+    font-size: 1rem;
+    line-height: 1.3;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  .nj-office-badge {
+    white-space: normal;
+    line-height: 1.35;
+    max-width: 100%;
+    text-wrap: pretty;
+    word-break: break-word;
+  }
+
+  .boe-badge-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .boe-badges-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .boe-name {
+    font-size: 1.15rem;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  .boe-vote-instruction {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    text-wrap: pretty;
+    word-break: break-word;
+  }
+
+  .candidate-card-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .cand-badges-left,
+  .cand-badges-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .candidate-name {
+    font-size: clamp(1.15rem, 4vw, 1.35rem);
+    line-height: 1.25;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  .group-title-lockup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .group-title-lockup h4 {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  .group-subtitle {
+    font-size: 0.72rem;
+    line-height: 1.3;
+    text-wrap: pretty;
+  }
+
+  .election-hero-card {
+    padding: 10px 12px;
+  }
+
+  .election-hero-card h4 {
+    font-size: 0.92rem;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+
+  .election-hero-card p {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    text-wrap: pretty;
+  }
+
+  .election-quick-pill {
+    padding: 5px 10px;
+    font-size: 0.76rem;
+    line-height: 1.3;
+    max-width: 100%;
+    text-wrap: pretty;
   }
 }
 
