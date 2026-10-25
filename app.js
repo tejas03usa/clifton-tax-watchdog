@@ -615,6 +615,7 @@ async function initApp() {
   currentCity = getInitialCity();
   setupTabs();
   setupCitySwitcher();
+  handleUrlHash();
   await switchCity(currentCity, false);
 }
 
@@ -1612,12 +1613,22 @@ function switchTab(targetId, options = {}) {
     }
 
     if (targetId === 'tab-election') {
-      renderElectionHub();
+      const renderPromise = renderElectionHub();
       setupElectionControls();
+      if (options.scrollToElement) {
+        Promise.resolve(renderPromise).then(() => {
+          setTimeout(() => {
+            const el = document.querySelector(options.scrollToElement);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 40);
+        });
+      }
     }
 
     // Scroll handling
-    if (options.scrollToElement) {
+    if (options.scrollToElement && targetId !== 'tab-election') {
       setTimeout(() => {
         const el = document.querySelector(options.scrollToElement);
         if (el) {
@@ -1625,10 +1636,46 @@ function switchTab(targetId, options = {}) {
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-      }, 50);
-    } else {
+      }, 80);
+    } else if (targetId !== 'tab-election' && !options.doNotScroll) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  }
+}
+
+// URL Hash Routing & Deep-Linking System
+function handleUrlHash() {
+  const rawHash = (window.location.hash || '').replace(/^#/, '').trim();
+  if (!rawHash) return;
+
+  const targetEl = document.getElementById(rawHash);
+  const activePane = document.querySelector('.tab-pane.active');
+
+  // 1. If target element is already inside the active tab, simply scroll to it cleanly
+  if (targetEl && activePane && activePane.contains(targetEl)) {
+    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+
+  // 2. If target element is inside an inactive tab pane, activate that tab and scroll to element
+  if (targetEl) {
+    const parentPane = targetEl.closest('.tab-pane');
+    if (parentPane && parentPane.id) {
+      switchTab(parentPane.id, { scrollToElement: '#' + rawHash });
+      return;
+    }
+  }
+
+  // 3. If hash is directly a tab pane ID
+  const directTab = document.getElementById(rawHash);
+  if (directTab && directTab.classList.contains('tab-pane')) {
+    switchTab(rawHash);
+    return;
+  }
+
+  // 4. Aliases for common election deep links
+  if (rawHash === 'election' || rawHash.startsWith('election-')) {
+    switchTab('tab-election', { scrollToElement: targetEl ? '#' + rawHash : '#election-search-anchor' });
   }
 }
 
@@ -1760,6 +1807,11 @@ function setupTabs() {
       }
     }, { passive: true });
   }
+
+  // Handle in-page hash changes & browser back/forward routing
+  window.addEventListener('hashchange', () => {
+    handleUrlHash();
+  });
 
   syncDropdownActiveState();
 }
