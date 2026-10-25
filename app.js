@@ -6023,180 +6023,190 @@ function filterAndRenderCandidates() {
     catMap[cat.id] = cat;
   });
 
-  let cardsHtml = '';
-  filtered.forEach(c => {
-    const isIncumbent = c.status.toLowerCase() === 'incumbent';
-    const dossier = c.investigativeDossier || { outsideBusinesses: [], notableControversies: [] };
-    const hasControversy = dossier.hasDocumentedControversies;
+  if (electionFilterStatus === 'all' && electionFilterCategory === 'all' && !electionSearchQuery) {
+    const incumbents = filtered.filter(c => c.status.toLowerCase() === 'incumbent');
+    const challengers = filtered.filter(c => c.status.toLowerCase() !== 'incumbent');
 
-    const categoryBadgesHtml = (c.categories || []).map(catId => {
-      const cat = catMap[catId];
-      if (!cat) return '';
-      return `<span class="cand-cat-tag"><span>${cat.icon}</span> ${cat.name}</span>`;
-    }).join('');
-
-    const pillarsHtml = (c.keyPlatformPillars || []).map(p => {
-      const cat = catMap[p.category] || { icon: '📌', name: 'Platform' };
-      return `
-        <div class="pillar-card">
-          <div class="pillar-header">
-            <span class="pillar-icon">${cat.icon}</span>
-            <strong class="pillar-title">${escapeHtml(p.title)}</strong>
+    grid.innerHTML = `
+      <div class="candidates-group-wrapper">
+        <div class="candidates-group-header">
+          <div class="group-title-lockup">
+            <span class="group-icon">🏛️</span>
+            <h4>Incumbent City Council Members (${incumbents.length})</h4>
+            <span class="group-subtitle">Sitting officials seeking re-election • Active voting records & Mayoral race</span>
           </div>
-          <p class="pillar-desc">${escapeHtml(p.details)}</p>
         </div>
-      `;
-    }).join('');
-
-    const quotesHtml = (c.quotes && c.quotes.length > 0) ? `
-      <div class="candidate-quote-box">
-        <span class="quote-mark">“</span>
-        <blockquote>${escapeHtml(c.quotes[0])}</blockquote>
+        <div class="candidate-cards-grid">
+          ${incumbents.map(c => renderCandidateCard(c, catMap)).join('')}
+        </div>
       </div>
-    ` : '';
 
-    // Outside businesses pills
-    const businessesHtml = (dossier.outsideBusinesses && dossier.outsideBusinesses.length > 0) ?
-      dossier.outsideBusinesses.map(b => `<span class="dossier-biz-pill">🏢 ${escapeHtml(b)}</span>`).join('') :
-      `<span class="dossier-biz-none">No secondary commercial entity disclosed</span>`;
-
-    // Controversies or Clean Record HTML
-    let controversiesBlockHtml = '';
-    if (hasControversy && dossier.notableControversies.length > 0) {
-      const entriesHtml = dossier.notableControversies.map(nc => `
-        <div class="dossier-controversy-entry">
-          <div class="dc-head">
-            <span class="dc-badge">🚨 ${escapeHtml(nc.category || 'Controversy')}</span>
-            <span class="dc-era">${escapeHtml(nc.dateOrEra || '')}</span>
-          </div>
-          <strong class="dc-title">${escapeHtml(nc.title)}</strong>
-          <p class="dc-details">${escapeHtml(nc.details)}</p>
-          <div class="dc-outcome">
-            <strong>Official Resolution / Response:</strong> ${escapeHtml(nc.resolutionOrOutcome)}
+      <div class="candidates-group-wrapper" style="margin-top: 36px;">
+        <div class="candidates-group-header">
+          <div class="group-title-lockup">
+            <span class="group-icon">🌟</span>
+            <h4>Challengers & Former Officials (${challengers.length})</h4>
+            <span class="group-subtitle">Vying for 7 council seats • Former school trustees, professionals & civic leaders</span>
           </div>
         </div>
-      `).join('');
-
-      controversiesBlockHtml = `
-        <div class="dossier-controversies-box">
-          <div class="dossier-section-alert-head">
-            <span>⚠️ Documented Public Inquiries, Censures & Legal History:</span>
-          </div>
-          <div class="dossier-controversies-list">
-            ${entriesHtml}
-          </div>
+        <div class="candidate-cards-grid">
+          ${challengers.map(c => renderCandidateCard(c, catMap)).join('')}
         </div>
-      `;
-    } else {
-      controversiesBlockHtml = `
-        <div class="dossier-clean-box">
-          <div class="clean-box-header">
-            <span class="clean-check-icon">✓</span>
-            <strong>Verified Clean Public Record</strong>
-          </div>
-          <p>${escapeHtml(dossier.cleanRecordVerification || 'Cross-referenced against Passaic County court filings, NJ School Ethics Commission (SEC), NJ Local Finance Board (LFB), and corporate filings. Zero lawsuits, criminal findings, or municipal censures on record.')}</p>
+      </div>
+    `;
+  } else {
+    grid.innerHTML = `
+      <div class="candidates-group-wrapper">
+        <div class="candidate-cards-grid">
+          ${filtered.map(c => renderCandidateCard(c, catMap)).join('')}
         </div>
-      `;
-    }
+      </div>
+    `;
+  }
+}
 
-    cardsHtml += `
-      <article class="candidate-card ${isIncumbent ? 'is-incumbent' : 'is-challenger'} ${hasControversy ? 'has-controversies' : 'is-clean-record'}" id="candidate-card-${c.id}">
-        <div class="candidate-card-top">
-          <div class="candidate-ballot-badge">
-            <span class="ballot-num">Ballot #${c.ballotNumber}</span>
-            <span class="candidate-status-tag ${isIncumbent ? 'status-incumbent' : 'status-challenger'}">
-              ${isIncumbent ? '🏛️ Incumbent' : '⚡ Challenger'}
-            </span>
-          </div>
-          <div class="candidate-avatar" aria-hidden="true">${c.initials}</div>
-          <div class="candidate-identity">
-            <h4 class="candidate-name">${escapeHtml(c.name)}</h4>
-            <div class="candidate-role">${escapeHtml(c.role)}</div>
-          </div>
+// Helper to render individual candidate card with verified photo and 4 distinct sections
+function renderCandidateCard(c, catMap) {
+  const isIncumbent = c.status.toLowerCase() === 'incumbent';
+  const dossier = c.investigativeDossier || { outsideBusinesses: [], notableControversies: [] };
+  const hasControversy = dossier.hasDocumentedControversies;
+
+  const categoryBadgesHtml = (c.categories || []).map(catId => {
+    const cat = catMap[catId];
+    if (!cat) return '';
+    return `<span class="cand-cat-tag"><span>${cat.icon}</span> ${cat.name}</span>`;
+  }).join('');
+
+  const pillarsHtml = (c.keyPlatformPillars || []).map(p => {
+    const cat = catMap[p.category] || { icon: '📌', name: 'Platform' };
+    return `
+      <div class="pillar-card">
+        <div class="pillar-header">
+          <span class="pillar-icon">${cat.icon}</span>
+          <strong class="pillar-title">${escapeHtml(p.title)}</strong>
         </div>
+        <p class="pillar-desc">${escapeHtml(p.details)}</p>
+      </div>
+    `;
+  }).join('');
 
-        <div class="candidate-tagline">
-          ${escapeHtml(c.tagline)}
+  const quotesHtml = (c.quotes && c.quotes.length > 0) ? `
+    <div class="candidate-quote-box">
+      <span class="quote-mark">“</span>
+      <blockquote>${escapeHtml(c.quotes[0])}</blockquote>
+    </div>
+  ` : '';
+
+  // Outside businesses pills
+  const businessesHtml = (dossier.outsideBusinesses && dossier.outsideBusinesses.length > 0) ?
+    dossier.outsideBusinesses.map(b => `<span class="dossier-biz-pill">🏢 ${escapeHtml(b)}</span>`).join('') :
+    `<span class="dossier-biz-none">No secondary commercial entity disclosed</span>`;
+
+  // Controversies or Clean Record HTML
+  let controversiesBlockHtml = '';
+  if (hasControversy && dossier.notableControversies.length > 0) {
+    const entriesHtml = dossier.notableControversies.map(nc => `
+      <div class="dossier-controversy-entry">
+        <div class="dc-head">
+          <span class="dc-badge">🚨 ${escapeHtml(nc.category || 'Controversy')}</span>
+          <span class="dc-era">${escapeHtml(nc.dateOrEra || '')}</span>
         </div>
+        <strong class="dc-title">${escapeHtml(nc.title)}</strong>
+        <p class="dc-details">${escapeHtml(nc.details)}</p>
+        <div class="dc-outcome">
+          <strong>Official Resolution / Response:</strong> ${escapeHtml(nc.resolutionOrOutcome)}
+        </div>
+      </div>
+    `).join('');
 
-        <div class="candidate-badges-bar">
-          <span class="badge-pledge" title="Formally signed pledge declining taxpayer-funded municipal healthcare insurance">
-            🌿 Declines Health Benefits
+    controversiesBlockHtml = `
+      <div class="dossier-controversies-box">
+        <div class="dossier-section-alert-head">
+          <span>⚠️ Documented Public Inquiries, Censures & Legal History:</span>
+        </div>
+        <div class="dossier-controversies-list">
+          ${entriesHtml}
+        </div>
+      </div>
+    `;
+  } else {
+    controversiesBlockHtml = `
+      <div class="dossier-clean-box">
+        <div class="clean-box-header">
+          <span class="clean-check-icon">✓</span>
+          <strong>Verified Clean Public Record</strong>
+        </div>
+        <p>${escapeHtml(dossier.cleanRecordVerification || 'Cross-referenced against Passaic County court filings, NJ School Ethics Commission (SEC), NJ Local Finance Board (LFB), and corporate filings. Zero lawsuits, criminal findings, or municipal censures on record.')}</p>
+      </div>
+    `;
+  }
+
+  return `
+    <article class="candidate-card ${isIncumbent ? 'is-incumbent' : 'is-challenger'} ${hasControversy ? 'has-controversies' : 'is-clean-record'}" id="candidate-card-${c.id}">
+      <div class="candidate-card-top">
+        <div class="candidate-ballot-badge">
+          <span class="ballot-num">Ballot #${c.ballotNumber}</span>
+          <span class="candidate-status-tag ${isIncumbent ? 'status-incumbent' : 'status-challenger'}">
+            ${isIncumbent ? '🏛️ Incumbent' : '⚡ Challenger'}
           </span>
-          ${hasControversy ? `
-            <span class="badge-controversy-alert" title="Documented municipal censures, lawsuits, or public controversies on file">
-              ⚠️ Under Scrutiny (${dossier.notableControversies.length})
-            </span>
+        </div>
+        
+        <div class="candidate-photo-box">
+          ${c.photoUrl ? `
+            <img src="${escapeHtml(c.photoUrl)}" alt="${escapeHtml(c.name)}" class="candidate-photo-img" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="candidate-avatar-fallback" aria-hidden="true" style="display: none;">${escapeHtml(c.initials)}</div>
           ` : `
-            <span class="badge-clean-record" title="Verified clean public record across court dockets and ethics filings">
-              ✓ Clean Record
-            </span>
+            <div class="candidate-avatar-fallback" aria-hidden="true">${escapeHtml(c.initials)}</div>
           `}
-          ${categoryBadgesHtml}
         </div>
 
-        <!-- Accessible Mutually Exclusive Disclosure Accordion conforming to search-hidden-content guidance -->
-        <details class="disclosure candidate-accordion" name="candidate-accordion">
-          <summary class="candidate-accordion-summary">
-            <span class="summary-btn-text">
-              <span class="summary-icon">📖</span>
-              <span>Full Platform, Outside Businesses & Dossier</span>
-            </span>
-            <span class="accordion-arrow">▾</span>
-          </summary>
-          <div class="candidate-expanded-content">
-            
-            <!-- Citizen Watchdog Investigative Dossier Block -->
-            <div class="candidate-investigative-dossier">
-              <div class="dossier-header-bar">
-                <div class="dossier-title-text">
-                  <span class="dossier-icon">⚖️</span>
-                  <strong>Citizen Watchdog Background Check & Disclosures</strong>
-                </div>
-                <span class="dossier-status-pill ${hasControversy ? 'pill-alert' : 'pill-clean'}">
-                  ${hasControversy ? '⚠️ Documented Inquiries' : '✓ Verified Clean Record'}
-                </span>
-              </div>
+        <div class="candidate-identity">
+          <h4 class="candidate-name">${escapeHtml(c.name)}</h4>
+          <div class="candidate-role">${escapeHtml(c.role)}</div>
+        </div>
+      </div>
 
-              <div class="dossier-field">
-                <span class="dossier-label">🏢 Outside Businesses & Disclosed Employment:</span>
-                <div class="dossier-biz-wrap">
-                  ${businessesHtml}
-                </div>
-              </div>
+      <div class="candidate-tagline">
+        ${escapeHtml(c.tagline)}
+      </div>
 
-              <div class="dossier-field">
-                <span class="dossier-label">📋 Financial Disclosure (FDS) Filing:</span>
-                <p class="dossier-text">${escapeHtml(dossier.disclosuresAndFDS || 'Standard Local Government Ethics Law filing.')}</p>
-              </div>
+      <div class="candidate-badges-bar">
+        <span class="badge-pledge" title="Formally signed pledge declining taxpayer-funded municipal healthcare insurance">
+          🌿 Declines Health Benefits
+        </span>
+        ${hasControversy ? `
+          <span class="badge-controversy-alert" title="Documented municipal censures, lawsuits, or public controversies on file">
+            ⚠️ Under Scrutiny (${dossier.notableControversies.length})
+          </span>
+        ` : `
+          <span class="badge-clean-record" title="Verified clean public record across court dockets and ethics filings">
+            ✓ Clean Record
+          </span>
+        `}
+        ${categoryBadgesHtml}
+      </div>
 
-              ${controversiesBlockHtml}
-
-              <div class="dossier-field recusal-field">
-                <span class="dossier-label">🛡️ Conflict-of-Interest & Recusal Watch (N.J.S.A. 40A:9-22.1):</span>
-                <p class="dossier-recusal-text">${escapeHtml(dossier.conflictOfInterestWatch || 'Must maintain mandatory statutory recusals on related private matters.')}</p>
-              </div>
+      <!-- Accessible Mutually Exclusive Disclosure Accordion conforming to search-hidden-content guidance -->
+      <details class="disclosure candidate-accordion" name="candidate-accordion">
+        <summary class="candidate-accordion-summary">
+          <span class="summary-btn-text">
+            <span class="summary-icon">📖</span>
+            <span>Candidate Dossier, Record & Platform</span>
+          </span>
+          <span class="accordion-arrow">▾</span>
+        </summary>
+        <div class="candidate-expanded-content">
+          
+          <!-- SECTION 1: Historic Experience & Public Service Record -->
+          <div class="candidate-detail-section section-history">
+            <div class="detail-section-header">
+              <span class="detail-section-num">1</span>
+              <span class="detail-section-icon">📜</span>
+              <h5 class="detail-section-title">Historic Experience & Service Record</h5>
+              <span class="history-service-badge">${escapeHtml(c.historicExperience ? c.historicExperience.yearsInPublicService : 'Public Record')}</span>
             </div>
-
-            <div class="pillars-section-title" style="margin-top: 10px;">
-              <span>🎯 Key Policy Pillars & Debate Promises</span>
-            </div>
-            <div class="candidate-pillars-list">
-              ${pillarsHtml}
-            </div>
-
-            ${quotesHtml}
-
-            <!-- Historic Experience & Career Record -->
-            ${c.historicExperience ? `
-              <div class="candidate-history-box">
-                <div class="history-box-header">
-                  <div class="history-box-title">
-                    <span class="history-icon">📜</span>
-                    <strong>Historic Experience & Public Service Record:</strong>
-                  </div>
-                  <span class="history-service-badge">${escapeHtml(c.historicExperience.yearsInPublicService || 'Public Record')}</span>
-                </div>
+            <div class="detail-section-body">
+              ${c.historicExperience ? `
                 <p class="history-summary-text">${escapeHtml(c.historicExperience.summary || '')}</p>
 
                 <!-- Chronological Career & Service Timeline -->
@@ -6255,39 +6265,93 @@ function filterAndRenderCandidates() {
                     </ul>
                   </div>
                 ` : ''}
-              </div>
-            ` : `
-              <div class="candidate-civic-box">
-                <span class="civic-box-label">🏛️ Public Service & Civic Background:</span>
-                <p>${escapeHtml(c.civicBackground || c.experience)}</p>
-              </div>
-            `}
-
-            <!-- Verified Public Records & Sources -->
-            <div class="candidate-sources-box">
-              <div class="sources-box-header">
-                <span class="sources-icon">📚</span>
-                <strong>Verified Sources & Public Records:</strong>
-              </div>
-              <ul class="candidate-sources-list">
-                ${(c.verifiedSources || []).map(s => `
-                  <li class="candidate-source-item">
-                    <div class="source-item-top">
-                      <span class="source-tag">📄 ${escapeHtml(s.title)}</span>
-                      ${s.url ? `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener" class="source-ext-link">Official Record ↗</a>` : ''}
-                    </div>
-                    <p class="source-doc-text">${escapeHtml(s.doc)}</p>
-                  </li>
-                `).join('')}
-              </ul>
+              ` : `
+                <div class="candidate-civic-box">
+                  <span class="civic-box-label">🏛️ Public Service & Civic Background:</span>
+                  <p>${escapeHtml(c.civicBackground || c.experience)}</p>
+                </div>
+              `}
             </div>
           </div>
-        </details>
-      </article>
-    `;
-  });
 
-  grid.innerHTML = cardsHtml;
+          <!-- SECTION 2: Key Policy Pillars & Debate Promises -->
+          <div class="candidate-detail-section section-platform">
+            <div class="detail-section-header">
+              <span class="detail-section-num">2</span>
+              <span class="detail-section-icon">🎯</span>
+              <h5 class="detail-section-title">Key Policy Pillars & Debate Commitments</h5>
+            </div>
+            <div class="detail-section-body">
+              <div class="candidate-pillars-list">
+                ${pillarsHtml}
+              </div>
+              ${quotesHtml}
+            </div>
+          </div>
+
+          <!-- SECTION 3: Outside Businesses, Disclosures & Recusals -->
+          <div class="candidate-detail-section section-dossier ${hasControversy ? 'has-alerts' : 'is-clean'}">
+            <div class="detail-section-header">
+              <span class="detail-section-num">3</span>
+              <span class="detail-section-icon">⚖️</span>
+              <h5 class="detail-section-title">Outside Businesses, Disclosures & Recusal Watch</h5>
+              <span class="dossier-status-pill ${hasControversy ? 'pill-alert' : 'pill-clean'}">
+                ${hasControversy ? '⚠️ Documented Inquiries' : '✓ Verified Clean Record'}
+              </span>
+            </div>
+            <div class="detail-section-body">
+              <div class="candidate-investigative-dossier" style="margin-top: 0; border: none; padding: 0; background: transparent;">
+                <div class="dossier-field">
+                  <span class="dossier-label">🏢 Outside Businesses & Disclosed Employment:</span>
+                  <div class="dossier-biz-wrap">
+                    ${businessesHtml}
+                  </div>
+                </div>
+
+                <div class="dossier-field">
+                  <span class="dossier-label">📋 Financial Disclosure (FDS) Filing:</span>
+                  <p class="dossier-text">${escapeHtml(dossier.disclosuresAndFDS || 'Standard Local Government Ethics Law filing.')}</p>
+                </div>
+
+                ${controversiesBlockHtml}
+
+                <div class="dossier-field recusal-field">
+                  <span class="dossier-label">🛡️ Conflict-of-Interest & Recusal Watch (N.J.S.A. 40A:9-22.1):</span>
+                  <p class="dossier-recusal-text">${escapeHtml(dossier.conflictOfInterestWatch || 'Must maintain mandatory statutory recusals on related private matters.')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 4: Verified Public Sources & Official Records -->
+          <div class="candidate-detail-section section-sources">
+            <div class="detail-section-header">
+              <span class="detail-section-num">4</span>
+              <span class="detail-section-icon">📚</span>
+              <h5 class="detail-section-title">Verified Public Sources & Court Records</h5>
+              <span class="sources-count-badge">${(c.verifiedSources || []).length} Records</span>
+            </div>
+            <div class="detail-section-body">
+              <div class="candidate-sources-box" style="margin-top: 0; border: none; padding: 0; background: transparent;">
+                <ul class="candidate-sources-list">
+                  ${(c.verifiedSources || []).map(s => `
+                    <li class="candidate-source-item">
+                      <div class="source-item-top">
+                        <span class="source-tag">📄 ${escapeHtml(s.title)}</span>
+                        ${s.url ? `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener" class="source-ext-link">Official Record ↗</a>` : ''}
+                      </div>
+                      <p class="source-doc-text">${escapeHtml(s.doc)}</p>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </details>
+    </article>
+  `;
 }
 
 function resetElectionFilters() {
