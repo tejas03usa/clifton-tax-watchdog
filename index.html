@@ -2448,6 +2448,7 @@
       <div class="election-quick-nav">
         <a href="#election-search-anchor" class="election-quick-pill">🔍 Candidate Search & Filter</a>
         <a href="#election-candidates-heading" class="election-quick-pill">📋 All 19 Council Candidates</a>
+        <a href="#election-controversies-heading" class="election-quick-pill">⚖️ Outside Businesses & Allegations</a>
         <a href="#election-matrix-heading" class="election-quick-pill">📊 Platform Comparison Matrix</a>
         <a href="#election-boe-heading" class="election-quick-pill">🏫 Board of Education Candidates</a>
         <a href="#election-voting-heading" class="election-quick-pill">📍 Voting & Polling Guide</a>
@@ -2458,18 +2459,20 @@
         <div class="election-search-row">
           <div class="election-search-input-box">
             <span class="search-input-icon">🔍</span>
-            <input type="text" id="election-search-input" placeholder="Search candidates by name, ballot #, role, or policy keyword (e.g. Grabowski, Sadrakula, taxes, flooding, zoning, DPW)..." class="styled-input-lg" autocomplete="off">
+            <input type="text" id="election-search-input" placeholder="Search candidates by name, ballot #, business, or controversy keyword (e.g. Sadrakula, Pino, Tahan, DeMarzo, clinic, lawsuit, censure, real estate, landscaping)..." class="styled-input-lg" autocomplete="off">
             <button id="election-search-clear" class="btn-clear-search" title="Clear Search">✕</button>
           </div>
         </div>
 
         <div class="election-filters-row">
           <div class="filter-group-status">
-            <span class="filter-label">Status:</span>
+            <span class="filter-label">Status & Vetting:</span>
             <div class="btn-group-toggle" role="group" aria-label="Candidate Status Filter">
               <button class="filter-btn active" data-status="all">All (19)</button>
               <button class="filter-btn" data-status="incumbent">Incumbents (5)</button>
               <button class="filter-btn" data-status="challenger">Challengers (14)</button>
+              <button class="filter-btn filter-btn-alert" data-status="controversy">⚠️ Under Scrutiny (6)</button>
+              <button class="filter-btn filter-btn-clean" data-status="clean">✓ Verified Clean (13)</button>
             </div>
           </div>
 
@@ -2496,6 +2499,16 @@
         <span class="pill-tag">Certified Passaic County Ballot Order</span>
       </div>
       <div id="election-candidates-grid" class="candidate-cards-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+      <!-- Citizen Watchdog Dossier: Outside Businesses, Disclosures & Allegations -->
+      <div class="section-subtitle-row" id="election-controversies-heading" style="margin-top: 48px;">
+        <h3>Citizen Watchdog Dossier: Outside Businesses, Disclosures & Allegations</h3>
+        <span class="pill-tag alert-tag">FDS Filings • Court Dockets • Council Censures</span>
+      </div>
+      <p class="section-subtitle-desc">In-depth investigative vetting of outside commercial interests, state financial disclosures (FDS), court records, municipal censures, and ethics inquiries for all Clifton City Council candidates.</p>
+      <div id="election-controversies-spotlight" class="controversies-spotlight-container">
         <!-- Rendered by JavaScript -->
       </div>
 

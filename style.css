@@ -9972,3 +9972,576 @@ input:checked + .slider.round:before {
     align-items: flex-start;
   }
 }
+
+/* ==========================================================================
+   INVESTIGATIVE DOSSIER, OUTSIDE BUSINESSES & CONTROVERSIES STYLING
+   ========================================================================== */
+
+/* Filter Toggle Buttons: Alert & Clean */
+.filter-btn-alert {
+  color: #b91c1c !important;
+  border-left: 2px solid #ef4444 !important;
+}
+
+.filter-btn-alert:hover,
+.filter-btn-alert.active {
+  background: #fef2f2 !important;
+  color: #991b1b !important;
+  font-weight: 700 !important;
+}
+
+.filter-btn-clean {
+  color: #15803d !important;
+  border-left: 2px solid #22c55e !important;
+}
+
+.filter-btn-clean:hover,
+.filter-btn-clean.active {
+  background: #f0fdf4 !important;
+  color: #166534 !important;
+  font-weight: 700 !important;
+}
+
+/* Card Badges */
+.badge-controversy-alert {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-pill);
+}
+
+.badge-clean-record {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-pill);
+}
+
+/* Candidate Card: Investigative Dossier Block */
+.candidate-investigative-dossier {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.candidate-card.has-controversies .candidate-investigative-dossier {
+  border-color: #fca5a5;
+  background: #fffafa;
+}
+
+.candidate-card.is-clean-record .candidate-investigative-dossier {
+  border-color: #bbf7d0;
+  background: #fcfdfc;
+}
+
+.dossier-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #cbd5e1;
+}
+
+.dossier-title-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dossier-status-pill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+}
+
+.dossier-status-pill.pill-alert {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.dossier-status-pill.pill-clean {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.dossier-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dossier-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dossier-biz-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dossier-biz-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: #ffffff;
+  color: #1e293b;
+  padding: 3px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+}
+
+.dossier-biz-none {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.dossier-text {
+  font-size: 0.8rem;
+  color: #334155;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Controversies List inside Card */
+.dossier-controversies-box {
+  background: #ffffff;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+
+.dossier-section-alert-head {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #991b1b;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dossier-controversies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dossier-controversy-entry {
+  background: #fff5f5;
+  border-left: 3px solid #dc2626;
+  border-radius: 0 4px 4px 0;
+  padding: 8px 10px;
+}
+
+.dc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.dc-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #b91c1c;
+}
+
+.dc-era {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  font-family: var(--font-mono);
+}
+
+.dc-title {
+  display: block;
+  font-size: 0.82rem;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.dc-details {
+  font-size: 0.78rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0 0 6px 0;
+}
+
+.dc-outcome {
+  font-size: 0.76rem;
+  color: #1e293b;
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #fee2e2;
+  line-height: 1.4;
+}
+
+.dc-outcome strong {
+  color: #047857;
+}
+
+/* Clean Record Box inside Card */
+.dossier-clean-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+
+.clean-box-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #15803d;
+  margin-bottom: 4px;
+}
+
+.clean-check-icon {
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+.dossier-clean-box p {
+  font-size: 0.78rem;
+  color: #166534;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Recusal Watch Box */
+.recusal-field {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.dossier-recusal-text {
+  font-size: 0.76rem;
+  color: #1e40af;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SPOTLIGHT SECTION: OUTSIDE BUSINESSES & CONTROVERSIES
+   ========================================================================== */
+.controversies-spotlight-container {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Stats Banner */
+.spotlight-stats-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sp-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.sp-num {
+  font-size: 1.55rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.sp-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.sp-stat.sp-alert .sp-num {
+  color: #dc2626;
+}
+
+.sp-stat.sp-alert {
+  border-color: #fecaca;
+  background: #fff5f5;
+}
+
+.sp-stat.sp-clean .sp-num {
+  color: #15803d;
+}
+
+.sp-stat.sp-clean {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.spotlight-group-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #991b1b;
+  margin: 18px 0 14px;
+}
+
+/* Spotlight Cards Grid (6 Candidates) */
+.spotlight-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.spotlight-card {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.spotlight-card-alert {
+  border-top: 4px solid #dc2626;
+  border-color: #fca5a5;
+}
+
+.spotlight-cand-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.spotlight-cand-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.spotlight-cand-role {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.spotlight-sub-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.spotlight-biz-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.biz-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 3px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+}
+
+.spotlight-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spotlight-controversy-item {
+  background: #fffafa;
+  border: 1px solid #fee2e2;
+  border-left: 3px solid #dc2626;
+  border-radius: 0 6px 6px 0;
+  padding: 10px 12px;
+}
+
+.sc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.sc-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #991b1b;
+}
+
+.sc-date {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  font-family: var(--font-mono);
+}
+
+.sc-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.sc-details {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0 0 6px 0;
+}
+
+.sc-outcome {
+  font-size: 0.76rem;
+  color: #1e293b;
+  background: #ffffff;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #fecaca;
+  line-height: 1.4;
+}
+
+.sc-outcome strong {
+  color: #047857;
+}
+
+.spotlight-recusal-box {
+  margin-top: auto;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: 0.76rem;
+  color: #166534;
+  line-height: 1.4;
+}
+
+.spotlight-recusal-box strong {
+  display: block;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.spotlight-recusal-box p {
+  margin: 0;
+}
+
+/* Clean Section */
+.clean-section-explainer {
+  font-size: 0.84rem;
+  color: #475569;
+  margin-bottom: 14px;
+}
+
+.clean-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.clean-summary-item {
+  background: #ffffff;
+  border: 1px solid #bbf7d0;
+  border-left: 3px solid #15803d;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.clean-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.84rem;
+}
+
+.clean-check {
+  color: #15803d;
+  font-weight: 900;
+  font-size: 0.95rem;
+}
+
+.clean-name {
+  color: #0f172a;
+}
+
+.clean-role-text {
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+.clean-businesses-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.clean-biz-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: #f0fdf4;
+  color: #166534;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #dcfce7;
+}
