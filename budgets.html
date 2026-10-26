@@ -255,26 +255,37 @@
       </div>
 
       <!-- Sources & Official Verification Links for Tab 2 -->
-      <div class="page-source-footer">
-        <div class="source-footer-header">
-          <span class="source-icon">📚</span>
-          <strong>Official Data Sources & Verification Links for This Page:</strong>
+      <details class="collapsible-section" id="budgets-sources-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📚 Official Data Sources & Verification Links</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">Clifton BOE & NJ DLGS Portals</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <ul class="source-links-list">
+            <li>
+              <a href="https://www.clifton.k12.nj.us/departments/business-office" target="_blank" rel="noopener">Clifton Public Schools Adopted User-Friendly Budget (UFB) ↗</a>
+              <span class="source-doc-desc">Official $293.2M budget appropriations submitted to the NJ Department of Education.</span>
+            </li>
+            <li>
+              <a href="https://www.nj.gov/dca/dlgs/" target="_blank" rel="noopener">NJ DCA Division of Local Government Services (DLGS) Budget Portals ↗</a>
+              <span class="source-doc-desc">Certified City of Clifton Annual Municipal Adopted Budget ($105.4M) and tax levy filings.</span>
+            </li>
+            <li>
+              <a href="https://www.nj.gov/education/finance/fp/ufb/" target="_blank" rel="noopener">NJ DOE School District User-Friendly Budget Database ↗</a>
+              <span class="source-doc-desc">Comparative statewide database of administrative ratios, per-pupil spending, and debt service.</span>
+            </li>
+          </ul>
         </div>
-        <ul class="source-links-list">
-          <li>
-            <a href="https://www.clifton.k12.nj.us/departments/business-office" target="_blank" rel="noopener">Clifton Public Schools Adopted User-Friendly Budget (UFB) ↗</a>
-            <span class="source-doc-desc">Official $293.2M budget appropriations submitted to the NJ Department of Education.</span>
-          </li>
-          <li>
-            <a href="https://www.nj.gov/dca/dlgs/" target="_blank" rel="noopener">NJ DCA Division of Local Government Services (DLGS) Budget Portals ↗</a>
-            <span class="source-doc-desc">Certified City of Clifton Annual Municipal Adopted Budget ($105.4M) and tax levy filings.</span>
-          </li>
-          <li>
-            <a href="https://www.nj.gov/education/finance/fp/ufb/" target="_blank" rel="noopener">NJ DOE School District User-Friendly Budget Database ↗</a>
-            <span class="source-doc-desc">Comparative statewide database of administrative ratios, per-pupil spending, and debt service.</span>
-          </li>
-        </ul>
-      </div>
+      </details>
     </section>
 
     <section id="tab-commercial-pilot" class="tab-pane" role="tabpanel">
@@ -311,149 +322,203 @@
       </div>
 
       <!-- SECTION 1: 30-YEAR RATABLE SHIFT -->
-      <div class="pilot-content-card">
-        <div class="card-head-row">
-          <div>
-            <h3>1. The 30-Year Shift: How Homeowners Became 76% of the Tax Base</h3>
-            <p>Under New Jersey law, the total municipal, school, and county tax levy is divided across the town's net valuation. As commercial and industrial ratables declined or won tax appeals, residential homeowners were forced to pick up the slack.</p>
+      <details class="collapsible-section pilot-content-card" id="pilot-ratable-shift" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">1. The 30-Year Shift: How Homeowners Became 76% of the Tax Base</h3>
           </div>
-        </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">Ratable History</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <p style="margin-top: 0; margin-bottom: 18px; color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">Under New Jersey law, the total municipal, school, and county tax levy is divided across the town's net valuation. As commercial and industrial ratables declined or won tax appeals, residential homeowners were forced to pick up the slack.</p>
 
-        <!-- Visual Progress Comparison Bars -->
-        <div class="ratable-shift-timeline" id="ratable-shift-timeline">
-          <!-- Rendered by JS from data/commercial_pilot_shift.json -->
-        </div>
+          <!-- Visual Progress Comparison Bars -->
+          <div class="ratable-shift-timeline" id="ratable-shift-timeline">
+            <!-- Rendered by JS from data/commercial_pilot_shift.json -->
+          </div>
 
-        <div class="shift-callout-grid">
-          <div class="sc-item">
-            <span class="sc-icon">📉</span>
-            <div>
-              <strong>Commercial Tax Appeal Clawbacks</strong>
-              <p>Corporate retail centers, big-box stores, and office parks regularly sue the City in NJ Tax Court. Over the past decade, Clifton paid over <strong>$22.5 Million in appeal refunds</strong> and reduced commercial assessments permanently.</p>
+          <div class="shift-callout-grid">
+            <div class="sc-item">
+              <span class="sc-icon">📉</span>
+              <div>
+                <strong>Commercial Tax Appeal Clawbacks</strong>
+                <p>Corporate retail centers, big-box stores, and office parks regularly sue the City in NJ Tax Court. Over the past decade, Clifton paid over <strong>$22.5 Million in appeal refunds</strong> and reduced commercial assessments permanently.</p>
+              </div>
             </div>
-          </div>
-          <div class="sc-item">
-            <span class="sc-icon">🏭</span>
-            <div>
-              <strong>Industrial to Residential Conversion</strong>
-              <p>Former manufacturing plants and research campuses (Hoffmann-La Roche, historic Botany mills) closed or converted into multi-family housing, replacing heavy taxpayers with student-generating residences.</p>
+            <div class="sc-item">
+              <span class="sc-icon">🏭</span>
+              <div>
+                <strong>Industrial to Residential Conversion</strong>
+                <p>Former manufacturing plants and research campuses (Hoffmann-La Roche, historic Botany mills) closed or converted into multi-family housing, replacing heavy taxpayers with student-generating residences.</p>
+              </div>
             </div>
-          </div>
-          <div class="sc-item">
-            <span class="sc-icon">🏛️</span>
-            <div>
-              <strong>The Assessment Equalization Lag</strong>
-              <p>Without a periodic citywide revaluation, rising residential home values outpaced commercial assessments, silently shifting a higher mathematical ratio of the county and school levy onto homeowners.</p>
+            <div class="sc-item">
+              <span class="sc-icon">🏛️</span>
+              <div>
+                <strong>The Assessment Equalization Lag</strong>
+                <p>Without a periodic citywide revaluation, rising residential home values outpaced commercial assessments, silently shifting a higher mathematical ratio of the county and school levy onto homeowners.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </details>
 
       <!-- SECTION 2: INTERACTIVE PILOT SIMULATOR -->
-      <div class="pilot-content-card highlight-card">
-        <div class="card-head-row">
-          <div>
+      <details class="collapsible-section pilot-content-card highlight-card" id="pilot-loophole-simulator" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">2. The PILOT Loophole: Why City Hall Wins & Schools Lose</h3>
+          </div>
+          <div class="section-summary-right">
             <span class="badge-alert">Interactive Simulator</span>
-            <h3>2. The PILOT Loophole: Why City Hall Wins & Schools Lose</h3>
-            <p>Under the NJ Long Term Tax Exemption Law (N.J.S.A. 40A:20-1), a developer negotiates a Payment in Lieu of Taxes. See what happens to school funding and existing homeowners under different redevelopment projects:</p>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
           </div>
-          <div class="pilot-project-selector">
-            <label for="pilot-project-select">Select Development Project:</label>
-            <select id="pilot-project-select" class="styled-select-sm">
-              <!-- Rendered by JS -->
-            </select>
-          </div>
-        </div>
-
-        <!-- Side by Side Comparison Layout -->
-        <div class="pilot-comparison-grid" id="pilot-comparison-container">
-          <!-- Rendered by JS -->
-        </div>
-
-        <!-- School Impact Callout -->
-        <div class="pilot-school-impact-banner" id="pilot-school-impact-banner">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-
-      <!-- SECTION 3: TOP COMMERCIAL RATABLES & TAX APPEAL ROLL -->
-      <div class="pilot-content-card">
-        <div class="card-head-row">
-          <div>
-            <h3>3. Major Commercial Ratables in Clifton & Tax Appeal Exposure</h3>
-            <p>Clifton's major shopping centers, retail plazas, and industrial distribution centers generate essential tax revenue. Here is how Clifton's premier commercial ratables compare in assessed value and appeal vulnerability:</p>
-          </div>
-        </div>
-
-        <div class="table-container intel-table-container">
-          <table class="data-table intel-table" id="commercial-ratables-table">
-            <thead>
-              <tr>
-                <th>Commercial Property Name</th>
-                <th>Corridor Location</th>
-                <th>Property Type & Tenants</th>
-                <th>Assessed Value</th>
-                <th>Estimated Market Value</th>
-                <th>Annual Property Tax Paid</th>
-                <th>Appeal Vulnerability</th>
-              </tr>
-            </thead>
-            <tbody id="commercial-ratables-body">
-              <!-- Rendered by JS -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- SECTION 4: TAXPAYER ACTION & POLICY SOLUTIONS -->
-      <div class="pilot-content-card">
-        <div class="card-head-row">
-          <div>
-            <h3>4. What Taxpayers Can Demand: 4 Policy Solutions for Clifton</h3>
-            <p>Cities across New Jersey have addressed these disparities through local ordinances. Here is what Clifton citizens and taxpayers can advocate for:</p>
-          </div>
-        </div>
-
-        <div class="solutions-grid" id="pilot-solutions-container">
-          <!-- Rendered by JS -->
-        </div>
-
-        <!-- Jump to What-If Fair Tax Simulator -->
-        <div class="pilot-fair-tax-callout">
-          <div class="pftc-content">
-            <span class="pftc-icon">⚖️</span>
+        </summary>
+        <div class="collapsible-section-body">
+          <div class="card-head-row" style="margin-bottom: 18px; padding-bottom: 0;">
             <div>
-              <h4>Test These Reforms Live on Your Own Home</h4>
-              <p>See exactly how much your personal property tax bill would drop if Clifton adopted 50% PILOT school sharing and restored commercial ratables.</p>
+              <p style="margin: 0; color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">Under the NJ Long Term Tax Exemption Law (N.J.S.A. 40A:20-1), a developer negotiates a Payment in Lieu of Taxes. See what happens to school funding and existing homeowners under different redevelopment projects:</p>
+            </div>
+            <div class="pilot-project-selector">
+              <label for="pilot-project-select">Select Development Project:</label>
+              <select id="pilot-project-select" class="styled-select-sm">
+                <!-- Rendered by JS -->
+              </select>
             </div>
           </div>
-          <button class="btn btn-primary" data-jump-tab="tab-fair-tax">
-            Open What-If? Fair Tax Simulator ➔
-          </button>
+
+          <!-- Side by Side Comparison Layout -->
+          <div class="pilot-comparison-grid" id="pilot-comparison-container">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- School Impact Callout -->
+          <div class="pilot-school-impact-banner" id="pilot-school-impact-banner">
+            <!-- Rendered by JS -->
+          </div>
         </div>
-      </div>
+      </details>
+
+      <!-- SECTION 3: TOP COMMERCIAL RATABLES & TAX APPEAL ROLL -->
+      <details class="collapsible-section pilot-content-card" id="pilot-major-ratables" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">3. Major Commercial Ratables in Clifton & Tax Appeal Exposure</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">Tax Court Roll</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <p style="margin-top: 0; margin-bottom: 18px; color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">Clifton's major shopping centers, retail plazas, and industrial distribution centers generate essential tax revenue. Here is how Clifton's premier commercial ratables compare in assessed value and appeal vulnerability:</p>
+
+          <div class="table-container intel-table-container">
+            <table class="data-table intel-table" id="commercial-ratables-table">
+              <thead>
+                <tr>
+                  <th>Commercial Property Name</th>
+                  <th>Corridor Location</th>
+                  <th>Property Type & Tenants</th>
+                  <th>Assessed Value</th>
+                  <th>Estimated Market Value</th>
+                  <th>Annual Property Tax Paid</th>
+                  <th>Appeal Vulnerability</th>
+                </tr>
+              </thead>
+              <tbody id="commercial-ratables-body">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- SECTION 4: TAXPAYER ACTION & POLICY SOLUTIONS -->
+      <details class="collapsible-section pilot-content-card" id="pilot-taxpayer-solutions" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">4. What Taxpayers Can Demand: 4 Policy Solutions for Clifton</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">Reform Agenda</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <p style="margin-top: 0; margin-bottom: 18px; color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">Cities across New Jersey have addressed these disparities through local ordinances. Here is what Clifton citizens and taxpayers can advocate for:</p>
+
+          <div class="solutions-grid" id="pilot-solutions-container">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Jump to What-If Fair Tax Simulator -->
+          <div class="pilot-fair-tax-callout">
+            <div class="pftc-content">
+              <span class="pftc-icon">⚖️</span>
+              <div>
+                <h4>Test These Reforms Live on Your Own Home</h4>
+                <p>See exactly how much your personal property tax bill would drop if Clifton adopted 50% PILOT school sharing and restored commercial ratables.</p>
+              </div>
+            </div>
+            <button class="btn btn-primary" data-jump-tab="tab-fair-tax">
+              Open What-If? Fair Tax Simulator ➔
+            </button>
+          </div>
+        </div>
+      </details>
 
       <!-- Sources & Official Verification Links for Commercial & PILOT Shift -->
-      <div class="page-source-footer">
-        <div class="source-footer-header">
-          <span class="source-icon">📚</span>
-          <strong>Official Data Sources & Verification Links for This Page:</strong>
+      <details class="collapsible-section" id="pilot-sources-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📚 Official Data Sources & Verification Links</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">Passaic County, OSC & Tax Court</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <ul class="source-links-list">
+            <li>
+              <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation: Abstract of Ratables (Property Class Breakdown) ↗</a>
+              <span class="source-doc-desc">Certifies Class 2 (Residential 76.2%) vs Class 4A/4B/4C (Commercial, Industrial & Apartment 23.8%) valuations.</span>
+            </li>
+            <li>
+              <a href="https://www.nj.gov/comptroller/" target="_blank" rel="noopener">NJ Office of the State Comptroller (OSC): Municipal Tax Abatement & PILOT Transparency Reports ↗</a>
+              <span class="source-doc-desc">Statewide analysis of N.J.S.A. 40A:20 Long Term Tax Exemptions and their fiscal impact on local school districts.</span>
+            </li>
+            <li>
+              <a href="https://www.njcourts.gov/courts/tax" target="_blank" rel="noopener">Tax Court of New Jersey: Commercial Property Tax Appeal Docket ↗</a>
+              <span class="source-doc-desc">Public record of commercial retail and corporate tax appeal filings, stipulated settlements, and municipal refund liabilities.</span>
+            </li>
+          </ul>
         </div>
-        <ul class="source-links-list">
-          <li>
-            <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation: Abstract of Ratables (Property Class Breakdown) ↗</a>
-            <span class="source-doc-desc">Certifies Class 2 (Residential 76.2%) vs Class 4A/4B/4C (Commercial, Industrial & Apartment 23.8%) valuations.</span>
-          </li>
-          <li>
-            <a href="https://www.nj.gov/comptroller/" target="_blank" rel="noopener">NJ Office of the State Comptroller (OSC): Municipal Tax Abatement & PILOT Transparency Reports ↗</a>
-            <span class="source-doc-desc">Statewide analysis of N.J.S.A. 40A:20 Long Term Tax Exemptions and their fiscal impact on local school districts.</span>
-          </li>
-          <li>
-            <a href="https://www.njcourts.gov/courts/tax" target="_blank" rel="noopener">Tax Court of New Jersey: Commercial Property Tax Appeal Docket ↗</a>
-            <span class="source-doc-desc">Public record of commercial retail and corporate tax appeal filings, stipulated settlements, and municipal refund liabilities.</span>
-          </li>
-        </ul>
-      </div>
+      </details>
 
     </section>
 
@@ -938,26 +1003,37 @@
       </div>
 
       <!-- Sources & Official Verification Links for What-If Fair Tax Simulator -->
-      <div class="page-source-footer">
-        <div class="source-footer-header">
-          <span class="source-icon">📚</span>
-          <strong>Official Statutory Authorities & Verification Links for This Page:</strong>
+      <details class="collapsible-section" id="fair-sources-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📚 Official Statutory Authorities & Verification Links</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">ASI, Title 40A & PAS-1</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <ul class="source-links-list">
+            <li>
+              <a href="https://www.asinj.com" target="_blank" rel="noopener">Appraisal Systems, Inc. (ASI): Clifton 2026–2027 Municipal Revaluation Portal (N.J.S.A. 54:4-23) ↗</a>
+              <span class="source-doc-desc">Official revaluation contractor portal, inspection schedules, Oct 1, 2026 valuation baseline, and May 1, 2027 appeal deadline.</span>
+            </li>
+            <li>
+              <a href="https://www.nj.gov/dca/divisions/dlgs/" target="_blank" rel="noopener">NJ Long Term Tax Exemption Law (N.J.S.A. 40A:20-12) & Clean Stormwater Act (N.J.S.A. 40A:26B-1) ↗</a>
+              <span class="source-doc-desc">Statutory authority for municipal PILOT school revenue-sharing ordinances and commercial stormwater/sanitation enterprise unbundling.</span>
+            </li>
+            <li>
+              <a href="https://propertytaxrelief.nj.gov" target="_blank" rel="noopener">NJ Division of Taxation: Stay NJ, ANCHOR & Senior Freeze (Combined Form PAS-1) ↗</a>
+              <span class="source-doc-desc">State property tax relief programs (up to $6,500 Stay NJ credit for seniors 65+, $1,750 ANCHOR homeowner rebate, and $700 tenant rebate).</span>
+            </li>
+          </ul>
         </div>
-        <ul class="source-links-list">
-          <li>
-            <a href="https://www.asinj.com" target="_blank" rel="noopener">Appraisal Systems, Inc. (ASI): Clifton 2026–2027 Municipal Revaluation Portal (N.J.S.A. 54:4-23) ↗</a>
-            <span class="source-doc-desc">Official revaluation contractor portal, inspection schedules, Oct 1, 2026 valuation baseline, and May 1, 2027 appeal deadline.</span>
-          </li>
-          <li>
-            <a href="https://www.nj.gov/dca/divisions/dlgs/" target="_blank" rel="noopener">NJ Long Term Tax Exemption Law (N.J.S.A. 40A:20-12) & Clean Stormwater Act (N.J.S.A. 40A:26B-1) ↗</a>
-            <span class="source-doc-desc">Statutory authority for municipal PILOT school revenue-sharing ordinances and commercial stormwater/sanitation enterprise unbundling.</span>
-          </li>
-          <li>
-            <a href="https://propertytaxrelief.nj.gov" target="_blank" rel="noopener">NJ Division of Taxation: Stay NJ, ANCHOR & Senior Freeze (Combined Form PAS-1) ↗</a>
-            <span class="source-doc-desc">State property tax relief programs (up to $6,500 Stay NJ credit for seniors 65+, $1,750 ANCHOR homeowner rebate, and $700 tenant rebate).</span>
-          </li>
-        </ul>
-      </div>
+      </details>
 
     </section>
 
@@ -1014,26 +1090,37 @@
       </div>
 
       <!-- Sources & Official Verification Links for Healthcare & Benefits -->
-      <div class="page-source-footer">
-        <div class="source-footer-header">
-          <span class="source-icon">📚</span>
-          <strong>Official Data Sources & Verification Links for This Page:</strong>
+      <details class="collapsible-section" id="benefits-sources-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📚 Official Data Sources & Verification Links</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">SHBP, SEHBP & Chapter 78</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <ul class="source-links-list">
+            <li>
+              <a href="https://www.nj.gov/treasury/pensions/shbp.shtml" target="_blank" rel="noopener">NJ Division of Pensions & Benefits: State Health Benefits Program (SHBP / SEHBP) ↗</a>
+              <span class="source-doc-desc">Official premium rate matrices, NJ DIRECT plan designs, and prescription formularies.</span>
+            </li>
+            <li>
+              <a href="https://www.nj.gov/treasury/pensions/epsb/chapter-78.shtml" target="_blank" rel="noopener">State of New Jersey Chapter 78 & Chapter 44 Employee Contribution Calculator ↗</a>
+              <span class="source-doc-desc">Statutory employee salary contribution percentages vs taxpayer premium liabilities.</span>
+            </li>
+            <li>
+              <a href="https://www.nj.gov/treasury/pensions/" target="_blank" rel="noopener">NJ PERS and PFRS Actuarial Valuation Reports ↗</a>
+              <span class="source-doc-desc">Annual municipal and school board employer pension liabilities and post-retirement medical trust.</span>
+            </li>
+          </ul>
         </div>
-        <ul class="source-links-list">
-          <li>
-            <a href="https://www.nj.gov/treasury/pensions/shbp.shtml" target="_blank" rel="noopener">NJ Division of Pensions & Benefits: State Health Benefits Program (SHBP / SEHBP) ↗</a>
-            <span class="source-doc-desc">Official premium rate matrices, NJ DIRECT plan designs, and prescription formularies.</span>
-          </li>
-          <li>
-            <a href="https://www.nj.gov/treasury/pensions/epsb/chapter-78.shtml" target="_blank" rel="noopener">State of New Jersey Chapter 78 & Chapter 44 Employee Contribution Calculator ↗</a>
-            <span class="source-doc-desc">Statutory employee salary contribution percentages vs taxpayer premium liabilities.</span>
-          </li>
-          <li>
-            <a href="https://www.nj.gov/treasury/pensions/" target="_blank" rel="noopener">NJ PERS and PFRS Actuarial Valuation Reports ↗</a>
-            <span class="source-doc-desc">Annual municipal and school board employer pension liabilities and post-retirement medical trust.</span>
-          </li>
-        </ul>
-      </div>
+      </details>
     </section>
 
     <section id="tab-vendors" class="tab-pane" role="tabpanel">
@@ -1050,26 +1137,37 @@
       </div>
 
       <!-- Sources & Official Verification Links for Vendors & Bill Lists -->
-      <div class="page-source-footer">
-        <div class="source-footer-header">
-          <span class="source-icon">📚</span>
-          <strong>Official Data Sources & Verification Links for This Page:</strong>
+      <details class="collapsible-section" id="vendors-sources-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📚 Official Data Sources & Verification Links</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">Warrants, Claims & ELEC</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <ul class="source-links-list">
+            <li>
+              <a href="https://www.clifton.k12.nj.us/board-of-education/board-meeting-agendas" target="_blank" rel="noopener">Clifton BOE Board Meeting Agendas, Bill Lists & Check Registers ↗</a>
+              <span class="source-doc-desc">Itemized accounts payable warrant lists approved by the Board of Education at public voting meetings.</span>
+            </li>
+            <li>
+              <a href="https://www.cliftonnj.org/AgendaCenter" target="_blank" rel="noopener">City of Clifton City Council Agenda Center & Claims Resolutions ↗</a>
+              <span class="source-doc-desc">Bi-weekly municipal claims approval resolutions and professional services contract awards.</span>
+            </li>
+            <li>
+              <a href="https://www.elec.state.nj.us/pay2play/p2p.html" target="_blank" rel="noopener">NJ Election Law Enforcement Commission (ELEC) Pay-to-Play Disclosures (Form BE) ↗</a>
+              <span class="source-doc-desc">Annual political contribution and contract disclosures for government vendors receiving >$17,500.</span>
+            </li>
+          </ul>
         </div>
-        <ul class="source-links-list">
-          <li>
-            <a href="https://www.clifton.k12.nj.us/board-of-education/board-meeting-agendas" target="_blank" rel="noopener">Clifton BOE Board Meeting Agendas, Bill Lists & Check Registers ↗</a>
-            <span class="source-doc-desc">Itemized accounts payable warrant lists approved by the Board of Education at public voting meetings.</span>
-          </li>
-          <li>
-            <a href="https://www.cliftonnj.org/AgendaCenter" target="_blank" rel="noopener">City of Clifton City Council Agenda Center & Claims Resolutions ↗</a>
-            <span class="source-doc-desc">Bi-weekly municipal claims approval resolutions and professional services contract awards.</span>
-          </li>
-          <li>
-            <a href="https://www.elec.state.nj.us/pay2play/p2p.html" target="_blank" rel="noopener">NJ Election Law Enforcement Commission (ELEC) Pay-to-Play Disclosures (Form BE) ↗</a>
-            <span class="source-doc-desc">Annual political contribution and contract disclosures for government vendors receiving >$17,500.</span>
-          </li>
-        </ul>
-      </div>
+      </details>
     </section>
 
     <section id="tab-surrounding" class="tab-pane" role="tabpanel">
@@ -1176,52 +1274,89 @@
       </div>
 
       <!-- Detailed Town Comparative Cards -->
-      <div class="section-subtitle-row" style="margin-top: 36px;">
-        <h3>Granular Town Profiles & Budget Deep-Dives</h3>
-        <span class="pill-tag">14 North Jersey Municipalities</span>
-      </div>
-      <div class="surrounding-cards-grid" id="surrounding-cards-container">
-        <!-- Rendered by JS -->
-      </div>
+      <details class="collapsible-section" id="surrounding-profiles-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">Granular Town Profiles & Budget Deep-Dives</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">14 North Jersey Municipalities</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <div class="surrounding-cards-grid" id="surrounding-cards-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </details>
 
       <!-- Comparative Takeaways Grid -->
-      <div class="section-subtitle-row" style="margin-top: 36px;">
-        <h3>Core Regional Fiscal Takeaways</h3>
-        <span class="pill-tag alert-tag">Watchdog Analysis</span>
-      </div>
-      <div class="takeaways-grid" id="surrounding-takeaways-container">
-        <!-- Rendered by JS -->
-      </div>
+      <details class="collapsible-section" id="surrounding-takeaways-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">Core Regional Fiscal Takeaways</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag alert-tag">Watchdog Analysis</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <div class="takeaways-grid" id="surrounding-takeaways-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </details>
 
       <!-- Sources & Official Verification Links for Surrounding Towns -->
-      <div class="page-source-footer">
-        <div class="source-footer-header">
-          <span class="source-icon">📚</span>
-          <strong>Official Data Sources & Verification Links for This Page:</strong>
+      <details class="collapsible-section" id="surrounding-sources-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📚 Official Data Sources & Verification Links</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">Passaic, Morris & Essex Boards</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <ul class="source-links-list">
+            <li>
+              <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation: 2026 Abstract of Ratables & Certification Table ↗</a>
+              <span class="source-doc-desc">Certified county tax rates, net valuation taxable, and equalization ratios for Clifton, Passaic, Paterson, Wayne, Little Falls, and Totowa.</span>
+            </li>
+            <li>
+              <a href="https://www.morriscountynj.gov/Departments/Taxation" target="_blank" rel="noopener">Morris County Board of Taxation: 2026 Abstract of Ratables & Equalization Table ↗</a>
+              <span class="source-doc-desc">Certified rates and assessments for Parsippany-Troy Hills, Morristown, Montville, Denville, Hanover, and Mountain Lakes.</span>
+            </li>
+            <li>
+              <a href="https://www.essexcountynj.org/board-of-taxation/" target="_blank" rel="noopener">Essex County Board of Taxation: 2026 Certified Tax Table (Nutley & Montclair) ↗</a>
+              <span class="source-doc-desc">Certified tax rates and equalization factors for neighboring Essex County municipalities bordering Clifton.</span>
+            </li>
+            <li>
+              <a href="https://www.nj.gov/treasury/taxation/lpt/lpt-abst-ratables.shtml" target="_blank" rel="noopener">NJ Division of Taxation: Abstracts of Ratables and Equalization Tables by County ↗</a>
+              <span class="source-doc-desc">State of New Jersey official repository of municipal equalization tables and effective tax rates.</span>
+            </li>
+            <li>
+              <a href="https://www.nj.gov/education/finance/fp/ufb/" target="_blank" rel="noopener">NJ Department of Education: Comparative School District Budget Database ↗</a>
+              <span class="source-doc-desc">State aid allocations vs local property tax levies across neighboring school districts.</span>
+            </li>
+          </ul>
         </div>
-        <ul class="source-links-list">
-          <li>
-            <a href="https://www.passaiccountynj.org/residents/board-of-taxation" target="_blank" rel="noopener">Passaic County Board of Taxation: 2026 Abstract of Ratables & Certification Table ↗</a>
-            <span class="source-doc-desc">Certified county tax rates, net valuation taxable, and equalization ratios for Clifton, Passaic, Paterson, Wayne, Little Falls, and Totowa.</span>
-          </li>
-          <li>
-            <a href="https://www.morriscountynj.gov/Departments/Taxation" target="_blank" rel="noopener">Morris County Board of Taxation: 2026 Abstract of Ratables & Equalization Table ↗</a>
-            <span class="source-doc-desc">Certified rates and assessments for Parsippany-Troy Hills, Morristown, Montville, Denville, Hanover, and Mountain Lakes.</span>
-          </li>
-          <li>
-            <a href="https://www.essexcountynj.org/board-of-taxation/" target="_blank" rel="noopener">Essex County Board of Taxation: 2026 Certified Tax Table (Nutley & Montclair) ↗</a>
-            <span class="source-doc-desc">Certified tax rates and equalization factors for neighboring Essex County municipalities bordering Clifton.</span>
-          </li>
-          <li>
-            <a href="https://www.nj.gov/treasury/taxation/lpt/lpt-abst-ratables.shtml" target="_blank" rel="noopener">NJ Division of Taxation: Abstracts of Ratables and Equalization Tables by County ↗</a>
-            <span class="source-doc-desc">State of New Jersey official repository of municipal equalization tables and effective tax rates.</span>
-          </li>
-          <li>
-            <a href="https://www.nj.gov/education/finance/fp/ufb/" target="_blank" rel="noopener">NJ Department of Education: Comparative School District Budget Database ↗</a>
-            <span class="source-doc-desc">State aid allocations vs local property tax levies across neighboring school districts.</span>
-          </li>
-        </ul>
-      </div>
+      </details>
     </section>
   </main>
 

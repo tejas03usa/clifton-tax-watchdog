@@ -649,6 +649,7 @@ async function initApp() {
   currentCity = getInitialCity();
   syncNavActive();
   setupTabs();
+  setupCollapsibleSections();
   setupCitySwitcher();
   handleUrlHash();
 
@@ -1666,6 +1667,7 @@ function switchTab(targetId, options = {}) {
 
   if (targetPane) {
     targetPane.classList.add('active');
+    setupCollapsibleSections();
 
     // Contextual actions
     if (options.neighborhood && targetId === 'tab-properties') {
@@ -6110,26 +6112,29 @@ async function renderElectionHub() {
 let collapsibleSectionsInitialized = false;
 
 function setupCollapsibleSections() {
-  const expandAllBtn = document.getElementById('btn-expand-all-sections');
-  const collapseAllBtn = document.getElementById('btn-collapse-all-sections');
-
-  if (expandAllBtn && !expandAllBtn.dataset.bound) {
-    expandAllBtn.dataset.bound = 'true';
-    expandAllBtn.addEventListener('click', () => {
-      document.querySelectorAll('details.collapsible-section').forEach(d => {
-        d.open = true;
+  document.querySelectorAll('.btn-expand-all-sections, #btn-expand-all-sections').forEach(btn => {
+    if (!btn.dataset.bound) {
+      btn.dataset.bound = 'true';
+      btn.addEventListener('click', () => {
+        const pane = btn.closest('.tab-pane') || document;
+        pane.querySelectorAll('details.collapsible-section').forEach(d => {
+          d.open = true;
+        });
       });
-    });
-  }
+    }
+  });
 
-  if (collapseAllBtn && !collapseAllBtn.dataset.bound) {
-    collapseAllBtn.dataset.bound = 'true';
-    collapseAllBtn.addEventListener('click', () => {
-      document.querySelectorAll('details.collapsible-section').forEach(d => {
-        d.open = false;
+  document.querySelectorAll('.btn-collapse-all-sections, #btn-collapse-all-sections').forEach(btn => {
+    if (!btn.dataset.bound) {
+      btn.dataset.bound = 'true';
+      btn.addEventListener('click', () => {
+        const pane = btn.closest('.tab-pane') || document;
+        pane.querySelectorAll('details.collapsible-section').forEach(d => {
+          d.open = false;
+        });
       });
-    });
-  }
+    }
+  });
 
   // Ensure anchor links and quick-nav pills open their target section if it was collapsed
   if (!collapsibleSectionsInitialized) {

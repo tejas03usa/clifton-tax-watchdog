@@ -13017,6 +13017,45 @@ details.collapsible-section:not([open]) .toggle-text-open {
   }
 }
 
+/* Horizontal scroll overscroll safety & mobile momentum */
+.city-switcher-pills,
+.city-switcher-group,
+.hub-subnav-container,
+.election-quick-nav,
+.table-responsive,
+.surrounding-table-wrapper,
+.properties-table-wrapper,
+.table-responsive-wrapper,
+.intel-nav-toolbar,
+.school-filter-pills,
+.comp-county-filters,
+.filter-controls-grid,
+.comparator-presets,
+.ratable-shift-timeline {
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Seamless collapsible-section integration for card containers */
+details.collapsible-section.pilot-content-card,
+details.collapsible-section.fair-card {
+  padding: 0;
+  margin-bottom: 28px;
+}
+
+details.collapsible-section.highlight-card {
+  border: 2px solid var(--color-school);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.08);
+}
+
+details.collapsible-section .page-source-footer {
+  margin: 0;
+  border: none;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .section-collapse-icon,
   .btn-sections-toggle,
