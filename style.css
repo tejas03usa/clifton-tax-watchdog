@@ -12249,3 +12249,537 @@ input:checked + .slider.round:before {
     flex: 1 1 100%;
   }
 }
+
+/* ==========================================================================
+   VOTER COMPASS & CANDIDATE MATCHMAKER
+   ========================================================================== */
+.matchmaker-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  margin: 32px 0 40px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+  scroll-margin-top: 135px;
+}
+
+.matchmaker-intro-banner {
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.matchmaker-intro-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.matchmaker-intro-text h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.matchmaker-intro-text p {
+  font-size: 0.88rem;
+  color: #334155;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.compass-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.compass-fieldset {
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  background: #f8fafc;
+  margin: 0;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.compass-fieldset:focus-within {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+}
+
+.compass-legend {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #0f172a;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.compass-legend-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.compass-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.compass-option-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.compass-option-label:hover {
+  border-color: #93c5fd;
+  background: #f0f7ff;
+  transform: translateY(-1px);
+}
+
+.compass-option-label input[type="radio"] {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.compass-option-label:has(input[type="radio"]:checked) {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+}
+
+.compass-option-content strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.compass-option-content p {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.compass-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.btn-compass-calc {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.18s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.btn-compass-calc:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.btn-compass-reset {
+  background: #ffffff;
+  color: #475569;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-compass-reset:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+/* Matchmaker Results */
+.matchmaker-results-box {
+  margin-top: 32px;
+  border-top: 2px dashed #cbd5e1;
+  padding-top: 28px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.results-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.results-header h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.results-toggle-group {
+  display: inline-flex;
+  background: #f1f5f9;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #e2e8f0;
+}
+
+.results-toggle-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.results-toggle-btn.active {
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.match-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.match-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.match-card.is-top7 {
+  border-color: #93c5fd;
+  background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.match-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.match-top7-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #1e3a8a;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.match-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.match-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #334155;
+  flex-shrink: 0;
+}
+
+.match-info h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 2px;
+  line-height: 1.25;
+}
+
+.match-meta {
+  font-size: 0.75rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Gauge Meter Bar */
+.match-gauge-wrap {
+  margin: 10px 0 14px;
+}
+
+.match-gauge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.match-gauge-label {
+  font-weight: 700;
+  color: #334155;
+}
+
+.match-gauge-percent {
+  font-weight: 800;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.match-gauge-percent.gauge-high { color: #16a34a; }
+.match-gauge-percent.gauge-mid { color: #2563eb; }
+.match-gauge-percent.gauge-mod { color: #d97706; }
+
+.match-gauge-track {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.match-gauge-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.match-gauge-fill.gauge-high { background: linear-gradient(90deg, #22c55e, #16a34a); }
+.match-gauge-fill.gauge-mid { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+.match-gauge-fill.gauge-mod { background: linear-gradient(90deg, #f59e0b, #d97706); }
+
+.match-shared-reasons {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.match-shared-reasons strong {
+  display: block;
+  font-size: 0.76rem;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 5px;
+}
+
+.match-shared-reasons p {
+  font-size: 0.8rem;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.match-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #2563eb;
+  border: 1.5px solid #bfdbfe;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.match-jump-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* ==========================================================================
+   INTERVIEW & STANCE SUMMARY TAB STYLING IN CANDIDATE CARD
+   ========================================================================== */
+.interview-stance-container {
+  padding: 14px 4px 6px;
+}
+
+.interview-source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 14px;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.interview-featured-quote {
+  background: #f8fafc;
+  border-left: 3px solid #2563eb;
+  padding: 12px 14px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.interview-featured-quote p {
+  font-size: 0.84rem;
+  font-style: italic;
+  color: #1e293b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.interview-stances-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stance-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.stance-item-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+  color: #0f172a;
+}
+
+.stance-item p {
+  font-size: 0.8rem;
+  color: #334155;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.highlight-compass {
+  background: linear-gradient(135deg, #1d4ed8 0%, #047857 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(29, 78, 216, 0.3);
+}
+
+@keyframes cardPulseGlow {
+  0% {
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.6), 0 8px 24px rgba(37, 99, 235, 0.2);
+    transform: scale(1.015);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0.3), 0 12px 28px rgba(37, 99, 235, 0.15);
+  }
+  100% {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transform: scale(1);
+  }
+}
+
+.card-highlight-flash {
+  animation: cardPulseGlow 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border-color: #2563eb !important;
+}
+
+@media (max-width: 768px) {
+  .matchmaker-section {
+    padding: 18px 14px;
+    margin: 24px 0 32px;
+  }
+  .matchmaker-intro-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px;
+  }
+  .compass-options-grid {
+    grid-template-columns: 1fr;
+  }
+  .match-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

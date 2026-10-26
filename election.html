@@ -204,6 +204,7 @@
 
       <!-- Sub-Navigation Quick Anchor Bar -->
       <div class="election-quick-nav">
+        <a href="#election-matchmaker-section" class="election-quick-pill highlight-compass">🧭 Candidate Matchmaker (Voter Quiz)</a>
         <a href="#election-ballot-overview" class="election-quick-pill">🗳️ Full Ballot & Offices Breakdown</a>
         <a href="#election-search-anchor" class="election-quick-pill">🔍 Council Search & Filter</a>
         <a href="#election-candidates-heading" class="election-quick-pill">📋 All 19 Council Candidates (Vote 7)</a>
@@ -223,6 +224,175 @@
       <div id="election-ballot-overview-grid" class="ballot-overview-grid" style="margin-bottom: 24px;">
         <!-- Rendered by JavaScript -->
       </div>
+
+      <!-- Interactive Voter Compass & Candidate Matchmaker (Alignment Gauge) -->
+      <section class="matchmaker-section" id="election-matchmaker-section" aria-labelledby="matchmaker-title">
+        <div class="matchmaker-intro-banner">
+          <div class="matchmaker-intro-icon" aria-hidden="true">🧭</div>
+          <div class="matchmaker-intro-text">
+            <h3 id="matchmaker-title">Clifton Voter Compass & Candidate Matchmaker</h3>
+            <p>Clifton voters elect up to <strong>7 at-large City Council candidates</strong>. Answer these 6 key policy questions—derived directly from candidate video interviews, forums, and public voting records—to see your personalized alignment score across all 19 candidates and discover your Top 7 ballot matches.</p>
+          </div>
+        </div>
+
+        <form id="voter-compass-form" class="compass-form" aria-label="Candidate Policy Alignment Questionnaire">
+          <!-- Question 1 -->
+          <fieldset class="compass-fieldset">
+            <legend class="compass-legend"><span class="compass-legend-num">1</span> Property Taxes & Municipal Spending</legend>
+            <div class="compass-options-grid">
+              <label class="compass-option-label" for="q1-freeze">
+                <input type="radio" id="q1-freeze" name="taxFreezeVsServices" value="freeze">
+                <div class="compass-option-content">
+                  <strong>Immediate Tax Freeze & Forensic Audit</strong>
+                  <p>Halt municipal spending increases, eliminate no-bid vendor contracts, and freeze the municipal property tax levy.</p>
+                </div>
+              </label>
+              <label class="compass-option-label" for="q1-balanced">
+                <input type="radio" id="q1-balanced" name="taxFreezeVsServices" value="balanced">
+                <div class="compass-option-content">
+                  <strong>Balanced 2% Capped Budgets</strong>
+                  <p>Keep tax increases within predictable 2% statutory limits to preserve police, fire, DPW, library, and core municipal services.</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Question 2 -->
+          <fieldset class="compass-fieldset">
+            <legend class="compass-legend"><span class="compass-legend-num">2</span> AI Data Centers & Distribution Mega-Warehouses</legend>
+            <div class="compass-options-grid">
+              <label class="compass-option-label" for="q2-ban">
+                <input type="radio" id="q2-ban" name="developmentStance" value="strict_ban">
+                <div class="compass-option-content">
+                  <strong>Strict Zoning Moratorium / Ban</strong>
+                  <p>Ban high-density warehouses and power-hungry AI data centers to prevent 18-wheeler truck congestion, noise, and power grid strain.</p>
+                </div>
+              </label>
+              <label class="compass-option-label" for="q2-growth">
+                <input type="radio" id="q2-growth" name="developmentStance" value="selective_growth">
+                <div class="compass-option-content">
+                  <strong>Selective Commercial Ratables & Smart Growth</strong>
+                  <p>Attract clean medical offices, light tech, and commercial ratables to expand the tax base and relieve homeowner burdens.</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Question 3 -->
+          <fieldset class="compass-fieldset">
+            <legend class="compass-legend"><span class="compass-legend-num">3</span> Infrastructure, Flooding & Water Supply</legend>
+            <div class="compass-options-grid">
+              <label class="compass-option-label" for="q3-flooding">
+                <input type="radio" id="q3-flooding" name="infrastructurePriority" value="flooding">
+                <div class="compass-option-content">
+                  <strong>Stormwater Retention & PVWC Oversight</strong>
+                  <p>Prioritize regional retention basins along Weasel Brook and Third River, and fight Passaic Valley Water Commission rate hikes.</p>
+                </div>
+              </label>
+              <label class="compass-option-label" for="q3-paving">
+                <input type="radio" id="q3-paving" name="infrastructurePriority" value="paving">
+                <div class="compass-option-content">
+                  <strong>Road Resurfacing & Pedestrian Safety</strong>
+                  <p>Accelerate neighborhood street repaving, eliminate potholes, reline aged sewer mains, and add traffic calming near schools.</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Question 4 -->
+          <fieldset class="compass-fieldset">
+            <legend class="compass-legend"><span class="compass-legend-num">4</span> Dais Governance, Decorum & Charter Reform</legend>
+            <div class="compass-options-grid">
+              <label class="compass-option-label" for="q4-decorum">
+                <input type="radio" id="q4-decorum" name="governanceStyle" value="decorum">
+                <div class="compass-option-content">
+                  <strong>Civic Decorum & Collaborative Governance</strong>
+                  <p>Restore dignity and professionalism to City Council meetings; end public infighting and support professional city management.</p>
+                </div>
+              </label>
+              <label class="compass-option-label" for="q4-watchdog">
+                <input type="radio" id="q4-watchdog" name="governanceStyle" value="watchdog">
+                <div class="compass-option-content">
+                  <strong>Aggressive Citizen Watchdog Scrutiny</strong>
+                  <p>Exercise fierce public oversight, question line-item budget waste, and challenge municipal establishment decisions.</p>
+                </div>
+              </label>
+              <label class="compass-option-label" for="q4-charter">
+                <input type="radio" id="q4-charter" name="governanceStyle" value="charter_reform">
+                <div class="compass-option-content">
+                  <strong>Direct Mayoral Election & Charter Reform</strong>
+                  <p>Establish a Charter Study Commission to transition Clifton to a directly elected mayor and ward-based council seats.</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Question 5 -->
+          <fieldset class="compass-fieldset">
+            <legend class="compass-legend"><span class="compass-legend-num">5</span> Neighborhood Housing & Quality of Life</legend>
+            <div class="compass-options-grid">
+              <label class="compass-option-label" for="q5-code">
+                <input type="radio" id="q5-code" name="housingEnforcement" value="code_enforcement">
+                <div class="compass-option-content">
+                  <strong>Strict Code Enforcement on Overcrowding</strong>
+                  <p>Crack down on illegal multi-family basement/attic conversions, absentee landlords, and commercial vehicle parking on residential streets.</p>
+                </div>
+              </label>
+              <label class="compass-option-label" for="q5-corridor">
+                <input type="radio" id="q5-corridor" name="housingEnforcement" value="corridor_grants">
+                <div class="compass-option-content">
+                  <strong>Main & Bloomfield Ave Corridor Revitalization</strong>
+                  <p>Support small business revitalization, facade renovation grants, and pedestrian-friendly commercial shopping districts.</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Question 6 -->
+          <fieldset class="compass-fieldset">
+            <legend class="compass-legend"><span class="compass-legend-num">6</span> City Hall & School District (BOE) Collaboration</legend>
+            <div class="compass-options-grid">
+              <label class="compass-option-label" for="q6-merger">
+                <input type="radio" id="q6-merger" name="sharedServices" value="city_boe_merger">
+                <div class="compass-option-content">
+                  <strong>Aggressive Shared Services Consolidation</strong>
+                  <p>Consolidate City Hall and Clifton Public Schools healthcare benefit pooling, vehicle fleet repairs, and joint IT purchasing to save taxpayers millions.</p>
+                </div>
+              </label>
+              <label class="compass-option-label" for="q6-classroom">
+                <input type="radio" id="q6-classroom" name="sharedServices" value="classroom_focus">
+                <div class="compass-option-content">
+                  <strong>Preserve School Independence & State Aid Advocacy</strong>
+                  <p>Respect Board of Education independence, protect classroom education budgets, and lobby Trenton for Clifton's fair share of state school aid.</p>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="compass-actions-bar">
+            <button type="submit" class="btn-compass-calc" id="btn-calc-compass">🧭 Calculate My Top 7 Candidate Matches</button>
+            <button type="button" class="btn-compass-reset" id="btn-reset-compass">🔄 Reset Answers</button>
+            <span id="compass-answers-status" class="compass-status-text">Select your preferences above to see your live alignment match.</span>
+          </div>
+        </form>
+
+        <!-- Matchmaker Results Box -->
+        <div id="matchmaker-results-box" class="matchmaker-results-box" style="display: none;" aria-live="polite">
+          <div class="results-header">
+            <div>
+              <h3>Your Clifton Candidate Alignment Results</h3>
+              <p style="font-size: 0.85rem; color: #64748b; margin: 4px 0 0;">Ranked match based on your answers. Clifton voters cast up to <strong>7 votes</strong> at-large.</p>
+            </div>
+            <div class="results-toggle-group" role="group" aria-label="Toggle results view">
+              <button type="button" class="results-toggle-btn active" id="btn-show-top7">Top 7 Matches (Your Ballot Limit)</button>
+              <button type="button" class="results-toggle-btn" id="btn-show-all-matches">Show All 19 Candidates</button>
+            </div>
+          </div>
+          <div id="matchmaker-results-grid" class="match-cards-grid">
+            <!-- Dynamically populated by JavaScript -->
+          </div>
+        </div>
+      </section>
 
       <!-- Search & Filtering Toolbar -->
       <div class="election-controls-wrapper" id="election-search-anchor">

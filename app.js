@@ -6095,6 +6095,237 @@ async function renderElectionHub() {
   renderBoeCandidates();
   renderNjCandidates();
   renderVotingGuide();
+  setupVoterCompass();
+}
+
+let voterCompassInitialized = false;
+let voterCompassViewMode = 'top7'; // 'top7' or 'all'
+
+function setupVoterCompass() {
+  const form = document.getElementById('voter-compass-form');
+  const resultsBox = document.getElementById('matchmaker-results-box');
+  const resultsGrid = document.getElementById('matchmaker-results-grid');
+  const resetBtn = document.getElementById('btn-reset-compass');
+  const showTop7Btn = document.getElementById('btn-show-top7');
+  const showAllBtn = document.getElementById('btn-show-all-matches');
+  const statusEl = document.getElementById('compass-answers-status');
+
+  if (!form || !resultsBox || !resultsGrid) return;
+
+  function calculateMatches() {
+    if (!cliftonElectionData || !cliftonElectionData.councilCandidates) return;
+
+    const formData = new FormData(form);
+    const answers = {};
+    for (const [k, v] of formData.entries()) {
+      answers[k] = v;
+    }
+    const answeredKeys = Object.keys(answers);
+    const totalAnswered = answeredKeys.length;
+
+    if (totalAnswered === 0) {
+      if (statusEl) statusEl.textContent = 'Select your preferences above to see your live alignment match.';
+      resultsBox.style.display = 'none';
+      return;
+    }
+
+    if (statusEl) {
+      statusEl.textContent = `Calculated alignment across ${totalAnswered} of 6 questions:`;
+    }
+
+    const reasonMap = {
+      taxFreezeVsServices: {
+        freeze: 'Supports immediate tax freeze & forensic audit',
+        balanced: 'Supports balanced 2% caps to protect municipal services'
+      },
+      developmentStance: {
+        strict_ban: 'Supports strict ban on AI data centers & warehouses',
+        selective_growth: 'Favors selective commercial ratables to expand the tax base'
+      },
+      infrastructurePriority: {
+        flooding: 'Prioritizes stormwater retention & PVWC water oversight',
+        paving: 'Prioritizes neighborhood road repaving & pedestrian safety'
+      },
+      governanceStyle: {
+        decorum: 'Champions dais civility and professional city administration',
+        watchdog: 'Brings relentless citizen watchdog budget oversight',
+        charter_reform: 'Advocates Charter Study Commission for directly-elected mayor'
+      },
+      housingEnforcement: {
+        code_enforcement: 'Focuses on strict code enforcement against illegal overcrowding',
+        corridor_grants: 'Supports Main & Bloomfield Ave small business revival grants'
+      },
+      sharedServices: {
+        city_boe_merger: 'Urges consolidated City-BOE purchasing & healthcare pooling',
+        classroom_focus: 'Protects school classroom budgets & state aid advocacy'
+      }
+    };
+
+    const candidates = cliftonElectionData.councilCandidates.map(c => {
+      const stances = (c.interviewStances && c.interviewStances.matchmakerScores) || {};
+      let matchCount = 0;
+      const sharedReasons = [];
+
+      answeredKeys.forEach(q => {
+        const userVal = answers[q];
+        const candVal = stances[q];
+        if (userVal && candVal && userVal === candVal) {
+          matchCount++;
+          const reasonText = (reasonMap[q] && reasonMap[q][userVal]) || null;
+          if (reasonText) sharedReasons.push(reasonText);
+        }
+      });
+
+      const matchPercent = Math.round((matchCount / totalAnswered) * 100);
+      return {
+        candidate: c,
+        matchCount,
+        matchPercent,
+        sharedReasons
+      };
+    });
+
+    // Sort descending by match percentage, then by ballotNumber
+    candidates.sort((a, b) => {
+      if (b.matchPercent !== a.matchPercent) {
+        return b.matchPercent - a.matchPercent;
+      }
+      return (a.candidate.ballotNumber || 0) - (b.candidate.ballotNumber || 0);
+    });
+
+    resultsBox.style.display = 'block';
+
+    const displayedCandidates = voterCompassViewMode === 'top7' ? candidates.slice(0, 7) : candidates;
+
+    resultsGrid.innerHTML = displayedCandidates.map((item, idx) => {
+      const c = item.candidate;
+      const rank = idx + 1;
+      const isTop7 = voterCompassViewMode === 'top7' || rank <= 7;
+      const pct = item.matchPercent;
+      const gaugeClass = pct >= 80 ? 'gauge-high' : (pct >= 50 ? 'gauge-mid' : 'gauge-mod');
+
+      return `
+        <article class="match-card ${isTop7 ? 'is-top7' : ''}" data-rank="${rank}">
+          ${isTop7 ? `
+            <div class="match-top7-badge">
+              <span>★</span>
+              <span>Top Match #${rank} (Ballot Recommendation)</span>
+            </div>
+          ` : `
+            <div class="match-meta" style="margin-bottom: 8px;">
+              <span>Rank #${rank} of 19 Candidates</span>
+            </div>
+          `}
+
+          <div class="match-card-head">
+            ${c.photoUrl ? `
+              <img src="${escapeHtml(c.photoUrl)}" alt="${escapeHtml(c.name)}" class="match-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="match-avatar" style="display: none;">${escapeHtml(c.initials)}</div>
+            ` : `
+              <div class="match-avatar">${escapeHtml(c.initials)}</div>
+            `}
+            <div class="match-info">
+              <h4>${escapeHtml(c.name)}</h4>
+              <div class="match-meta">
+                <span>Ballot #${c.ballotNumber}</span>
+                <span>•</span>
+                <span>${c.status.toLowerCase() === 'incumbent' ? '🏛️ Incumbent' : '⚡ Challenger'}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="match-gauge-wrap">
+            <div class="match-gauge-header">
+              <span class="match-gauge-label">Voter Alignment Gauge</span>
+              <span class="match-gauge-percent ${gaugeClass}">${pct}% Match</span>
+            </div>
+            <div class="match-gauge-track">
+              <div class="match-gauge-fill ${gaugeClass}" style="width: ${pct}%;"></div>
+            </div>
+          </div>
+
+          <div class="match-shared-reasons">
+            <strong>Aligned Priorities (${item.matchCount}/${totalAnswered}):</strong>
+            <p>${item.sharedReasons.length > 0 ? item.sharedReasons.join(' • ') : 'Stands on differing sides of your selected priorities.'}</p>
+          </div>
+
+          <button type="button" class="match-jump-btn" data-candidate-id="${c.id}">
+            <span>View Full Dossier & Stances</span>
+            <span>↗</span>
+          </button>
+        </article>
+      `;
+    }).join('');
+
+    // Wire jump buttons
+    resultsGrid.querySelectorAll('.match-jump-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const candId = btn.getAttribute('data-candidate-id');
+        if (!candId) return;
+
+        let candCard = document.getElementById(`candidate-card-${candId}`);
+        // If hidden due to active search/filter, reset filters first
+        if (!candCard || candCard.offsetParent === null) {
+          resetElectionFilters();
+          candCard = document.getElementById(`candidate-card-${candId}`);
+        }
+
+        if (candCard) {
+          const accordion = candCard.querySelector('details.candidate-accordion');
+          if (accordion) accordion.open = true;
+
+          const interviewTab = candCard.querySelector('.cand-tab-btn[data-tab="interviews"]');
+          if (interviewTab) interviewTab.click();
+
+          candCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          candCard.classList.remove('card-highlight-flash');
+          void candCard.offsetWidth; // trigger reflow
+          candCard.classList.add('card-highlight-flash');
+        }
+      });
+    });
+  }
+
+  // Listeners
+  if (!voterCompassInitialized) {
+    voterCompassInitialized = true;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      calculateMatches();
+      resultsBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    form.addEventListener('change', () => {
+      calculateMatches();
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        form.reset();
+        calculateMatches();
+      });
+    }
+
+    if (showTop7Btn && showAllBtn) {
+      showTop7Btn.addEventListener('click', () => {
+        voterCompassViewMode = 'top7';
+        showTop7Btn.classList.add('active');
+        showAllBtn.classList.remove('active');
+        calculateMatches();
+      });
+
+      showAllBtn.addEventListener('click', () => {
+        voterCompassViewMode = 'all';
+        showAllBtn.classList.add('active');
+        showTop7Btn.classList.remove('active');
+        calculateMatches();
+      });
+    }
+  }
+
+  // Initial calculation check if pre-filled
+  calculateMatches();
 }
 
 function renderCategoryPills() {
@@ -6406,6 +6637,9 @@ function renderCandidateCard(c, catMap) {
             <button type="button" class="cand-tab-btn active" data-tab="platform" role="tab" aria-selected="true">
               🎯 Platform
             </button>
+            <button type="button" class="cand-tab-btn" data-tab="interviews" role="tab" aria-selected="false">
+              🎙️ Interviews & Stances
+            </button>
             <button type="button" class="cand-tab-btn" data-tab="history" role="tab" aria-selected="false">
               📜 Experience
             </button>
@@ -6424,6 +6658,92 @@ function renderCandidateCard(c, catMap) {
                 ${pillarsHtml}
               </div>
               ${quotesHtml}
+            </div>
+
+            <!-- TAB: Verified Interview Stances & Q&A Summary -->
+            <div class="cand-tab-pane" data-pane="interviews" style="display: none;">
+              ${c.interviewStances ? `
+                <div class="interview-stance-container">
+                  ${c.interviewStances.interviewSource ? `
+                    <div class="interview-source-badge">
+                      <span>🎙️ Primary Source:</span>
+                      <span>${escapeHtml(c.interviewStances.interviewSource)}</span>
+                    </div>
+                  ` : ''}
+
+                  ${c.interviewStances.keyInterviewQuote ? `
+                    <div class="interview-featured-quote">
+                      <p>“${escapeHtml(c.interviewStances.keyInterviewQuote)}”</p>
+                    </div>
+                  ` : ''}
+
+                  <div class="interview-stances-grid">
+                    ${c.interviewStances.taxesAndSpending ? `
+                      <div class="stance-item">
+                        <div class="stance-item-header">
+                          <span>💰</span>
+                          <strong>Property Taxes & Spending:</strong>
+                        </div>
+                        <p>${escapeHtml(c.interviewStances.taxesAndSpending)}</p>
+                      </div>
+                    ` : ''}
+
+                    ${c.interviewStances.zoningAndDataCenters ? `
+                      <div class="stance-item">
+                        <div class="stance-item-header">
+                          <span>🏭</span>
+                          <strong>Zoning, Warehouses & AI Data Centers:</strong>
+                        </div>
+                        <p>${escapeHtml(c.interviewStances.zoningAndDataCenters)}</p>
+                      </div>
+                    ` : ''}
+
+                    ${c.interviewStances.floodingAndWater ? `
+                      <div class="stance-item">
+                        <div class="stance-item-header">
+                          <span>💧</span>
+                          <strong>Flooding & Water Commission (PVWC):</strong>
+                        </div>
+                        <p>${escapeHtml(c.interviewStances.floodingAndWater)}</p>
+                      </div>
+                    ` : ''}
+
+                    ${c.interviewStances.governanceAndDecorum ? `
+                      <div class="stance-item">
+                        <div class="stance-item-header">
+                          <span>🏛️</span>
+                          <strong>Council Decorum & City Management:</strong>
+                        </div>
+                        <p>${escapeHtml(c.interviewStances.governanceAndDecorum)}</p>
+                      </div>
+                    ` : ''}
+
+                    ${c.interviewStances.publicSafetyAndTraffic ? `
+                      <div class="stance-item">
+                        <div class="stance-item-header">
+                          <span>🚓</span>
+                          <strong>Public Safety & Traffic Calming:</strong>
+                        </div>
+                        <p>${escapeHtml(c.interviewStances.publicSafetyAndTraffic)}</p>
+                      </div>
+                    ` : ''}
+
+                    ${c.interviewStances.cannabisLicensing ? `
+                      <div class="stance-item">
+                        <div class="stance-item-header">
+                          <span>🌿</span>
+                          <strong>Cannabis Retail & Buffer Zones:</strong>
+                        </div>
+                        <p>${escapeHtml(c.interviewStances.cannabisLicensing)}</p>
+                      </div>
+                    ` : ''}
+                  </div>
+                </div>
+              ` : `
+                <div class="interview-stance-container">
+                  <p style="font-size: 0.85rem; color: #64748b; font-style: italic;">No specific video interview or forum transcript recorded yet for this candidate.</p>
+                </div>
+              `}
             </div>
 
             <!-- TAB 2: Historic Experience & Public Service Record -->
@@ -6882,6 +7202,14 @@ function renderBoeCandidates() {
             <div class="boe-priority-box boe-infra-box">
               <div class="boe-priority-header">🏫 Facilities, HVAC & Safety:</div>
               <p class="boe-priority-text">${escapeHtml(b.infrastructureStance)}</p>
+            </div>
+          ` : ''}
+
+          ${b.interviewStances ? `
+            <div class="boe-priority-box" style="background: #f0fdf4; border-left: 3px solid #16a34a; margin-top: 10px;">
+              <div class="boe-priority-header" style="color: #15803d;">🎙️ Interview & Public Forum Stance:</div>
+              ${b.interviewStances.keyInterviewQuote ? `<p style="font-style: italic; font-size: 0.82rem; margin: 4px 0 6px; color: #166534; line-height: 1.45;">“${escapeHtml(b.interviewStances.keyInterviewQuote)}”</p>` : ''}
+              <p class="boe-priority-text" style="font-size: 0.78rem; color: #14532d; line-height: 1.4;">${escapeHtml(b.interviewStances.taxesAndSpending || b.interviewStances.governanceAndDecorum || '')}</p>
             </div>
           ` : ''}
         </div>
