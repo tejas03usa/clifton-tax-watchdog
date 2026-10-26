@@ -6194,13 +6194,13 @@ function setupVoterCompass() {
     const totalAnswered = answeredKeys.length;
 
     if (totalAnswered === 0) {
-      if (statusEl) statusEl.textContent = 'Select your preferences above to see your live alignment match.';
+      if (statusEl) statusEl.textContent = 'Select your views above to see which candidates match your priorities.';
       resultsBox.style.display = 'none';
       return;
     }
 
     if (statusEl) {
-      statusEl.textContent = `Calculated alignment across ${totalAnswered} of 6 questions:`;
+      statusEl.textContent = `Your match scores based on ${totalAnswered} of 6 answered questions:`;
     }
 
     const reasonMap = {
@@ -6306,7 +6306,7 @@ function setupVoterCompass() {
 
           <div class="match-gauge-wrap">
             <div class="match-gauge-header">
-              <span class="match-gauge-label">Voter Alignment Gauge</span>
+              <span class="match-gauge-label">Your Match Score</span>
               <span class="match-gauge-percent ${gaugeClass}">${pct}% Match</span>
             </div>
             <div class="match-gauge-track">
