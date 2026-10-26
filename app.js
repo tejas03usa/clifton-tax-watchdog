@@ -1759,6 +1759,14 @@ function handleUrlHash() {
   const targetEl = document.getElementById(rawHash);
   const activePane = document.querySelector('.tab-pane.active');
 
+  // Auto-expand collapsible section if target is inside one
+  if (targetEl) {
+    const parentSection = targetEl.classList.contains('collapsible-section') ? targetEl : targetEl.closest('details.collapsible-section');
+    if (parentSection) {
+      parentSection.open = true;
+    }
+  }
+
   // 1. If target element is already inside the active tab, simply scroll to it cleanly
   if (targetEl && activePane && activePane.contains(targetEl)) {
     targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -6096,6 +6104,68 @@ async function renderElectionHub() {
   renderNjCandidates();
   renderVotingGuide();
   setupVoterCompass();
+  setupCollapsibleSections();
+}
+
+let collapsibleSectionsInitialized = false;
+
+function setupCollapsibleSections() {
+  const expandAllBtn = document.getElementById('btn-expand-all-sections');
+  const collapseAllBtn = document.getElementById('btn-collapse-all-sections');
+
+  if (expandAllBtn && !expandAllBtn.dataset.bound) {
+    expandAllBtn.dataset.bound = 'true';
+    expandAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('details.collapsible-section').forEach(d => {
+        d.open = true;
+      });
+    });
+  }
+
+  if (collapseAllBtn && !collapseAllBtn.dataset.bound) {
+    collapseAllBtn.dataset.bound = 'true';
+    collapseAllBtn.addEventListener('click', () => {
+      document.querySelectorAll('details.collapsible-section').forEach(d => {
+        d.open = false;
+      });
+    });
+  }
+
+  // Ensure anchor links and quick-nav pills open their target section if it was collapsed
+  if (!collapsibleSectionsInitialized) {
+    collapsibleSectionsInitialized = true;
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || !href.startsWith('#')) return;
+
+      const targetId = href.substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        const parentSection = targetEl.classList.contains('collapsible-section') ? targetEl : targetEl.closest('details.collapsible-section');
+        if (parentSection) {
+          parentSection.open = true;
+          setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 50);
+        }
+      }
+    });
+
+    // Check hash on load
+    const hash = (window.location.hash || '').replace(/^#/, '');
+    if (hash) {
+      const targetEl = document.getElementById(hash);
+      if (targetEl) {
+        const parentSection = targetEl.classList.contains('collapsible-section') ? targetEl : targetEl.closest('details.collapsible-section');
+        if (parentSection) {
+          parentSection.open = true;
+        }
+      }
+    }
+  }
 }
 
 let voterCompassInitialized = false;
@@ -6271,6 +6341,9 @@ function setupVoterCompass() {
         }
 
         if (candCard) {
+          const parentSection = candCard.closest('details.collapsible-section');
+          if (parentSection) parentSection.open = true;
+
           const accordion = candCard.querySelector('details.candidate-accordion');
           if (accordion) accordion.open = true;
 

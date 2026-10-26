@@ -215,311 +215,444 @@
         <a href="#election-voting-heading" class="election-quick-pill">📍 Voting & Polling Guide</a>
       </div>
 
-      <!-- Complete Ballot Architecture & Offices Guide -->
-      <div class="section-subtitle-row" id="election-ballot-overview" style="margin-top: 24px;">
-        <h3>Clifton Ballot Architecture & Offices Guide (Nov 3, 2026)</h3>
-        <span class="pill-tag" style="background: #0f172a; color: #fff;">4 Government Levels</span>
-      </div>
-      <p class="section-subtitle-desc" style="margin-bottom: 14px;">Exact selection limits and property tax connections across municipal, school district, county, and federal offices:</p>
-      <div id="election-ballot-overview-grid" class="ballot-overview-grid" style="margin-bottom: 24px;">
-        <!-- Rendered by JavaScript -->
-      </div>
-
-      <!-- Interactive Voter Compass & Candidate Matchmaker (Alignment Gauge) -->
-      <section class="matchmaker-section" id="election-matchmaker-section" aria-labelledby="matchmaker-title">
-        <div class="matchmaker-intro-banner">
-          <div class="matchmaker-intro-icon" aria-hidden="true">🧭</div>
-          <div class="matchmaker-intro-text">
-            <h3 id="matchmaker-title">Clifton Voter Compass & Candidate Matchmaker</h3>
-            <p>Clifton voters elect up to <strong>7 at-large City Council candidates</strong>. Answer these 6 key policy questions—derived directly from candidate video interviews, forums, and public voting records—to see your personalized alignment score across all 19 candidates and discover your Top 7 ballot matches.</p>
-          </div>
+      <!-- Global Collapsible Sections Toolbar -->
+      <div class="sections-global-controls" role="region" aria-label="Page Sections Controls">
+        <div class="sections-controls-left">
+          <span class="sections-controls-icon">📑</span>
+          <span class="sections-status-text"><strong>8 Interactive Page Sections</strong> • Click any section header to collapse or expand</span>
         </div>
-
-        <form id="voter-compass-form" class="compass-form" aria-label="Candidate Policy Alignment Questionnaire">
-          <!-- Question 1 -->
-          <fieldset class="compass-fieldset">
-            <legend class="compass-legend"><span class="compass-legend-num">1</span> Property Taxes & Municipal Spending</legend>
-            <div class="compass-options-grid">
-              <label class="compass-option-label" for="q1-freeze">
-                <input type="radio" id="q1-freeze" name="taxFreezeVsServices" value="freeze">
-                <div class="compass-option-content">
-                  <strong>Immediate Tax Freeze & Forensic Audit</strong>
-                  <p>Halt municipal spending increases, eliminate no-bid vendor contracts, and freeze the municipal property tax levy.</p>
-                </div>
-              </label>
-              <label class="compass-option-label" for="q1-balanced">
-                <input type="radio" id="q1-balanced" name="taxFreezeVsServices" value="balanced">
-                <div class="compass-option-content">
-                  <strong>Balanced 2% Capped Budgets</strong>
-                  <p>Keep tax increases within predictable 2% statutory limits to preserve police, fire, DPW, library, and core municipal services.</p>
-                </div>
-              </label>
-            </div>
-          </fieldset>
-
-          <!-- Question 2 -->
-          <fieldset class="compass-fieldset">
-            <legend class="compass-legend"><span class="compass-legend-num">2</span> AI Data Centers & Distribution Mega-Warehouses</legend>
-            <div class="compass-options-grid">
-              <label class="compass-option-label" for="q2-ban">
-                <input type="radio" id="q2-ban" name="developmentStance" value="strict_ban">
-                <div class="compass-option-content">
-                  <strong>Strict Zoning Moratorium / Ban</strong>
-                  <p>Ban high-density warehouses and power-hungry AI data centers to prevent 18-wheeler truck congestion, noise, and power grid strain.</p>
-                </div>
-              </label>
-              <label class="compass-option-label" for="q2-growth">
-                <input type="radio" id="q2-growth" name="developmentStance" value="selective_growth">
-                <div class="compass-option-content">
-                  <strong>Selective Commercial Ratables & Smart Growth</strong>
-                  <p>Attract clean medical offices, light tech, and commercial ratables to expand the tax base and relieve homeowner burdens.</p>
-                </div>
-              </label>
-            </div>
-          </fieldset>
-
-          <!-- Question 3 -->
-          <fieldset class="compass-fieldset">
-            <legend class="compass-legend"><span class="compass-legend-num">3</span> Infrastructure, Flooding & Water Supply</legend>
-            <div class="compass-options-grid">
-              <label class="compass-option-label" for="q3-flooding">
-                <input type="radio" id="q3-flooding" name="infrastructurePriority" value="flooding">
-                <div class="compass-option-content">
-                  <strong>Stormwater Retention & PVWC Oversight</strong>
-                  <p>Prioritize regional retention basins along Weasel Brook and Third River, and fight Passaic Valley Water Commission rate hikes.</p>
-                </div>
-              </label>
-              <label class="compass-option-label" for="q3-paving">
-                <input type="radio" id="q3-paving" name="infrastructurePriority" value="paving">
-                <div class="compass-option-content">
-                  <strong>Road Resurfacing & Pedestrian Safety</strong>
-                  <p>Accelerate neighborhood street repaving, eliminate potholes, reline aged sewer mains, and add traffic calming near schools.</p>
-                </div>
-              </label>
-            </div>
-          </fieldset>
-
-          <!-- Question 4 -->
-          <fieldset class="compass-fieldset">
-            <legend class="compass-legend"><span class="compass-legend-num">4</span> Dais Governance, Decorum & Charter Reform</legend>
-            <div class="compass-options-grid">
-              <label class="compass-option-label" for="q4-decorum">
-                <input type="radio" id="q4-decorum" name="governanceStyle" value="decorum">
-                <div class="compass-option-content">
-                  <strong>Civic Decorum & Collaborative Governance</strong>
-                  <p>Restore dignity and professionalism to City Council meetings; end public infighting and support professional city management.</p>
-                </div>
-              </label>
-              <label class="compass-option-label" for="q4-watchdog">
-                <input type="radio" id="q4-watchdog" name="governanceStyle" value="watchdog">
-                <div class="compass-option-content">
-                  <strong>Aggressive Citizen Watchdog Scrutiny</strong>
-                  <p>Exercise fierce public oversight, question line-item budget waste, and challenge municipal establishment decisions.</p>
-                </div>
-              </label>
-              <label class="compass-option-label" for="q4-charter">
-                <input type="radio" id="q4-charter" name="governanceStyle" value="charter_reform">
-                <div class="compass-option-content">
-                  <strong>Direct Mayoral Election & Charter Reform</strong>
-                  <p>Establish a Charter Study Commission to transition Clifton to a directly elected mayor and ward-based council seats.</p>
-                </div>
-              </label>
-            </div>
-          </fieldset>
-
-          <!-- Question 5 -->
-          <fieldset class="compass-fieldset">
-            <legend class="compass-legend"><span class="compass-legend-num">5</span> Neighborhood Housing & Quality of Life</legend>
-            <div class="compass-options-grid">
-              <label class="compass-option-label" for="q5-code">
-                <input type="radio" id="q5-code" name="housingEnforcement" value="code_enforcement">
-                <div class="compass-option-content">
-                  <strong>Strict Code Enforcement on Overcrowding</strong>
-                  <p>Crack down on illegal multi-family basement/attic conversions, absentee landlords, and commercial vehicle parking on residential streets.</p>
-                </div>
-              </label>
-              <label class="compass-option-label" for="q5-corridor">
-                <input type="radio" id="q5-corridor" name="housingEnforcement" value="corridor_grants">
-                <div class="compass-option-content">
-                  <strong>Main & Bloomfield Ave Corridor Revitalization</strong>
-                  <p>Support small business revitalization, facade renovation grants, and pedestrian-friendly commercial shopping districts.</p>
-                </div>
-              </label>
-            </div>
-          </fieldset>
-
-          <!-- Question 6 -->
-          <fieldset class="compass-fieldset">
-            <legend class="compass-legend"><span class="compass-legend-num">6</span> City Hall & School District (BOE) Collaboration</legend>
-            <div class="compass-options-grid">
-              <label class="compass-option-label" for="q6-merger">
-                <input type="radio" id="q6-merger" name="sharedServices" value="city_boe_merger">
-                <div class="compass-option-content">
-                  <strong>Aggressive Shared Services Consolidation</strong>
-                  <p>Consolidate City Hall and Clifton Public Schools healthcare benefit pooling, vehicle fleet repairs, and joint IT purchasing to save taxpayers millions.</p>
-                </div>
-              </label>
-              <label class="compass-option-label" for="q6-classroom">
-                <input type="radio" id="q6-classroom" name="sharedServices" value="classroom_focus">
-                <div class="compass-option-content">
-                  <strong>Preserve School Independence & State Aid Advocacy</strong>
-                  <p>Respect Board of Education independence, protect classroom education budgets, and lobby Trenton for Clifton's fair share of state school aid.</p>
-                </div>
-              </label>
-            </div>
-          </fieldset>
-
-          <div class="compass-actions-bar">
-            <button type="submit" class="btn-compass-calc" id="btn-calc-compass">🧭 Calculate My Top 7 Candidate Matches</button>
-            <button type="button" class="btn-compass-reset" id="btn-reset-compass">🔄 Reset Answers</button>
-            <span id="compass-answers-status" class="compass-status-text">Select your preferences above to see your live alignment match.</span>
-          </div>
-        </form>
-
-        <!-- Matchmaker Results Box -->
-        <div id="matchmaker-results-box" class="matchmaker-results-box" style="display: none;" aria-live="polite">
-          <div class="results-header">
-            <div>
-              <h3>Your Clifton Candidate Alignment Results</h3>
-              <p style="font-size: 0.85rem; color: #64748b; margin: 4px 0 0;">Ranked match based on your answers. Clifton voters cast up to <strong>7 votes</strong> at-large.</p>
-            </div>
-            <div class="results-toggle-group" role="group" aria-label="Toggle results view">
-              <button type="button" class="results-toggle-btn active" id="btn-show-top7">Top 7 Matches (Your Ballot Limit)</button>
-              <button type="button" class="results-toggle-btn" id="btn-show-all-matches">Show All 19 Candidates</button>
-            </div>
-          </div>
-          <div id="matchmaker-results-grid" class="match-cards-grid">
-            <!-- Dynamically populated by JavaScript -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Search & Filtering Toolbar -->
-      <div class="election-controls-wrapper" id="election-search-anchor">
-        <div class="election-search-row">
-          <div class="election-search-input-box">
-            <span class="search-input-icon">🔍</span>
-            <input type="text" id="election-search-input" placeholder="Search candidates by name, ballot #, business, or controversy keyword (e.g. Sadrakula, Pino, Tahan, DeMarzo, clinic, lawsuit, censure, real estate, landscaping)..." class="styled-input-lg" autocomplete="off">
-            <button id="election-search-clear" class="btn-clear-search" title="Clear Search">✕</button>
-          </div>
-        </div>
-
-        <div class="election-filters-row">
-          <div class="filter-group-status">
-            <span class="filter-label">Status & Vetting:</span>
-            <div class="btn-group-toggle" role="group" aria-label="Candidate Status Filter">
-              <button class="filter-btn active" data-status="all">All (19)</button>
-              <button class="filter-btn" data-status="incumbent">Incumbents (5)</button>
-              <button class="filter-btn" data-status="challenger">Challengers (14)</button>
-              <button class="filter-btn filter-btn-alert" data-status="controversy">⚠️ Under Scrutiny (6)</button>
-              <button class="filter-btn filter-btn-clean" data-status="clean">✓ Verified Clean (13)</button>
-            </div>
-          </div>
-
-          <div class="filter-group-category">
-            <span class="filter-label">Filter by Platform Issue:</span>
-            <div class="category-pills-row" id="election-category-pills">
-              <!-- Dynamically populated by JS with icons and names -->
-            </div>
-          </div>
-        </div>
-
-        <div class="election-results-status">
-          <span id="election-results-count">Showing 19 of 19 Council Candidates</span>
-          <span class="election-expand-controls">
-            <button id="btn-expand-all-candidates" class="btn-toggle-expand">Expand All Profiles</button>
-            <button id="btn-collapse-all-candidates" class="btn-toggle-expand">Collapse All</button>
-          </span>
+        <div class="sections-btn-group">
+          <button type="button" class="btn-sections-toggle" id="btn-expand-all-sections" title="Expand all sections">
+            <span>▾</span> Expand All Sections
+          </button>
+          <button type="button" class="btn-sections-toggle" id="btn-collapse-all-sections" title="Collapse all sections for a compact overview">
+            <span>▸</span> Collapse All Sections
+          </button>
         </div>
       </div>
 
-      <!-- Candidates Grid -->
-      <div class="section-subtitle-row" id="election-candidates-heading" style="margin-top: 28px;">
-        <h3>Clifton City Council Candidates — Vote for up to 7 (19 Running At-Large)</h3>
-        <span class="pill-tag">Select up to 7 • Top Vote-Getter Becomes Mayor</span>
-      </div>
-      <div id="election-candidates-grid" class="election-candidates-main-container">
-        <!-- Rendered by JavaScript -->
-      </div>
-
-      <!-- Citizen Watchdog Dossier: Outside Businesses, Disclosures & Allegations -->
-      <div class="section-subtitle-row" id="election-controversies-heading" style="margin-top: 48px;">
-        <h3>Citizen Watchdog Dossier: Outside Businesses, Disclosures & Allegations</h3>
-        <span class="pill-tag alert-tag">FDS Filings • Court Dockets • Council Censures</span>
-      </div>
-      <p class="section-subtitle-desc">In-depth investigative vetting of outside commercial interests, state financial disclosures (FDS), court records, municipal censures, and ethics inquiries for all Clifton City Council candidates.</p>
-      <div id="election-controversies-spotlight" class="controversies-spotlight-container">
-        <!-- Rendered by JavaScript -->
-      </div>
-
-      <!-- Platform Comparison Matrix -->
-      <div class="section-subtitle-row" id="election-matrix-heading" style="margin-top: 48px;">
-        <h3>Candidate Platform Comparison Matrix</h3>
-        <span class="pill-tag alert-tag">Side-by-Side Policy Stances</span>
-      </div>
-      <p class="section-subtitle-desc">Compare all 19 candidates across key voting priorities: Property Tax Relief, Flooding & Water, Zoning & Data Centers, Dais Decorum, and Public Safety.</p>
-      <div class="election-matrix-container">
-        <div class="table-responsive">
-          <table class="election-matrix-table" id="election-matrix-table">
-            <!-- Table content populated by app.js -->
-          </table>
+      <!-- 1. Complete Ballot Architecture & Offices Guide (Collapsible Section) -->
+      <details class="collapsible-section" id="election-ballot-overview" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">🗳️ Clifton Ballot Architecture & Offices Guide (Nov 3, 2026)</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag" style="background: #0f172a; color: #fff;">4 Government Levels</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <p class="section-subtitle-desc" style="margin-bottom: 14px;">Exact selection limits and property tax connections across municipal, school district, county, and federal offices:</p>
+          <div id="election-ballot-overview-grid" class="ballot-overview-grid" style="margin-bottom: 8px;">
+            <!-- Rendered by JavaScript -->
+          </div>
         </div>
-      </div>
+      </details>
 
-      <!-- Board of Education Candidates Section -->
-      <div class="section-subtitle-row" id="election-boe-heading" style="margin-top: 48px;">
-        <h3>Clifton Board of Education Candidates (2026 General Election)</h3>
-        <span class="pill-tag" style="background: var(--color-school); color: #fff;">Full 3-Year Terms (Vote 3) & Unexpired Term (Vote 1) • $293.4M Budget (47.7% of Taxes)</span>
-      </div>
-      <p class="section-subtitle-desc">School Board Trustees oversee 17 public schools, ~11,000 students, and roughly 47.7% ($3.11 per $100) of your property tax bill. On the November 3, 2026 ballot, voters will elect three trustees for full 3-year terms (2027–2029) and one trustee to complete an unexpired 1-year term (2027):</p>
-      <div id="election-boe-grid" class="boe-cards-grid">
-        <!-- Rendered by JavaScript -->
-      </div>
+      <!-- 2. Interactive Voter Compass & Candidate Matchmaker (Collapsible Section) -->
+      <details class="collapsible-section" id="election-matchmaker-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">🧭 Clifton Voter Compass & Candidate Matchmaker (Alignment Gauge)</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag" style="background: #047857; color: #fff;">Personalized Alignment Quiz • 6 Questions</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <div class="matchmaker-intro-banner">
+            <div class="matchmaker-intro-icon" aria-hidden="true">🧭</div>
+            <div class="matchmaker-intro-text">
+              <h4 id="matchmaker-title" style="margin: 0 0 4px; font-size: 1.1rem; color: #1e3a8a; font-weight: 800;">Find Your Top 7 Candidate Matches</h4>
+              <p>Clifton voters elect up to <strong>7 at-large City Council candidates</strong>. Answer these 6 key policy questions—derived directly from candidate video interviews, forums, and public voting records—to see your personalized alignment score across all 19 candidates and discover your Top 7 ballot matches.</p>
+            </div>
+          </div>
 
-      <!-- New Jersey Statewide & Passaic County Candidates Section -->
-      <div class="section-subtitle-row" id="election-nj-candidates-heading" style="margin-top: 48px;">
-        <h3>New Jersey Statewide & Passaic County Candidates on Your Ballot</h3>
-        <span class="pill-tag" style="background: #1d4ed8; color: #fff;">Federal (U.S. Senate & NJ-09) • Passaic County Government</span>
-      </div>
-      <p class="section-subtitle-desc">In addition to local municipal and school races, Clifton voters will elect representation for United States Senate (Class II), U.S. House of Representatives (New Jersey's 9th Congressional District), Passaic County Board of County Commissioners (Full 3-Year & 1-Year Unexpired), and Passaic County Surrogate (Passaic County Sheriff is off-cycle until 2027).</p>
-      <div id="election-nj-candidates-container" class="nj-candidates-container">
-        <!-- Rendered by JavaScript -->
-      </div>
+          <form id="voter-compass-form" class="compass-form" aria-label="Candidate Policy Alignment Questionnaire">
+            <!-- Question 1 -->
+            <fieldset class="compass-fieldset">
+              <legend class="compass-legend"><span class="compass-legend-num">1</span> Property Taxes & Municipal Spending</legend>
+              <div class="compass-options-grid">
+                <label class="compass-option-label" for="q1-freeze">
+                  <input type="radio" id="q1-freeze" name="taxFreezeVsServices" value="freeze">
+                  <div class="compass-option-content">
+                    <strong>Immediate Tax Freeze & Forensic Audit</strong>
+                    <p>Halt municipal spending increases, eliminate no-bid vendor contracts, and freeze the municipal property tax levy.</p>
+                  </div>
+                </label>
+                <label class="compass-option-label" for="q1-balanced">
+                  <input type="radio" id="q1-balanced" name="taxFreezeVsServices" value="balanced">
+                  <div class="compass-option-content">
+                    <strong>Balanced 2% Capped Budgets</strong>
+                    <p>Keep tax increases within predictable 2% statutory limits to preserve police, fire, DPW, library, and core municipal services.</p>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
 
-      <!-- Official Voting Guide & Polling Locations -->
-      <div class="section-subtitle-row" id="election-voting-heading" style="margin-top: 48px;">
-        <h3>Official Clifton Voting Guide & Polling Information</h3>
-        <span class="pill-tag">Election Day Essentials</span>
-      </div>
-      <div id="election-voting-guide" class="voting-guide-container">
-        <!-- Rendered by JavaScript / Pre-structured -->
-      </div>
+            <!-- Question 2 -->
+            <fieldset class="compass-fieldset">
+              <legend class="compass-legend"><span class="compass-legend-num">2</span> AI Data Centers & Distribution Mega-Warehouses</legend>
+              <div class="compass-options-grid">
+                <label class="compass-option-label" for="q2-ban">
+                  <input type="radio" id="q2-ban" name="developmentStance" value="strict_ban">
+                  <div class="compass-option-content">
+                    <strong>Strict Zoning Moratorium / Ban</strong>
+                    <p>Ban high-density warehouses and power-hungry AI data centers to prevent 18-wheeler truck congestion, noise, and power grid strain.</p>
+                  </div>
+                </label>
+                <label class="compass-option-label" for="q2-growth">
+                  <input type="radio" id="q2-growth" name="developmentStance" value="selective_growth">
+                  <div class="compass-option-content">
+                    <strong>Selective Commercial Ratables & Smart Growth</strong>
+                    <p>Attract clean medical offices, light tech, and commercial ratables to expand the tax base and relieve homeowner burdens.</p>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
 
-      <!-- Sources & Official Verification Links for Election -->
-      <div class="page-source-footer" style="margin-top: 40px;">
-        <div class="source-footer-header">
-          <span class="source-icon">📚</span>
-          <strong>Official Nonpartisan Election Sources & Records:</strong>
+            <!-- Question 3 -->
+            <fieldset class="compass-fieldset">
+              <legend class="compass-legend"><span class="compass-legend-num">3</span> Infrastructure, Flooding & Water Supply</legend>
+              <div class="compass-options-grid">
+                <label class="compass-option-label" for="q3-flooding">
+                  <input type="radio" id="q3-flooding" name="infrastructurePriority" value="flooding">
+                  <div class="compass-option-content">
+                    <strong>Stormwater Retention & PVWC Oversight</strong>
+                    <p>Prioritize regional retention basins along Weasel Brook and Third River, and fight Passaic Valley Water Commission rate hikes.</p>
+                  </div>
+                </label>
+                <label class="compass-option-label" for="q3-paving">
+                  <input type="radio" id="q3-paving" name="infrastructurePriority" value="paving">
+                  <div class="compass-option-content">
+                    <strong>Road Resurfacing & Pedestrian Safety</strong>
+                    <p>Accelerate neighborhood street repaving, eliminate potholes, reline aged sewer mains, and add traffic calming near schools.</p>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Question 4 -->
+            <fieldset class="compass-fieldset">
+              <legend class="compass-legend"><span class="compass-legend-num">4</span> Dais Governance, Decorum & Charter Reform</legend>
+              <div class="compass-options-grid">
+                <label class="compass-option-label" for="q4-decorum">
+                  <input type="radio" id="q4-decorum" name="governanceStyle" value="decorum">
+                  <div class="compass-option-content">
+                    <strong>Civic Decorum & Collaborative Governance</strong>
+                    <p>Restore dignity and professionalism to City Council meetings; end public infighting and support professional city management.</p>
+                  </div>
+                </label>
+                <label class="compass-option-label" for="q4-watchdog">
+                  <input type="radio" id="q4-watchdog" name="governanceStyle" value="watchdog">
+                  <div class="compass-option-content">
+                    <strong>Aggressive Citizen Watchdog Scrutiny</strong>
+                    <p>Exercise fierce public oversight, question line-item budget waste, and challenge municipal establishment decisions.</p>
+                  </div>
+                </label>
+                <label class="compass-option-label" for="q4-charter">
+                  <input type="radio" id="q4-charter" name="governanceStyle" value="charter_reform">
+                  <div class="compass-option-content">
+                    <strong>Direct Mayoral Election & Charter Reform</strong>
+                    <p>Establish a Charter Study Commission to transition Clifton to a directly elected mayor and ward-based council seats.</p>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Question 5 -->
+            <fieldset class="compass-fieldset">
+              <legend class="compass-legend"><span class="compass-legend-num">5</span> Neighborhood Housing & Quality of Life</legend>
+              <div class="compass-options-grid">
+                <label class="compass-option-label" for="q5-code">
+                  <input type="radio" id="q5-code" name="housingEnforcement" value="code_enforcement">
+                  <div class="compass-option-content">
+                    <strong>Strict Code Enforcement on Overcrowding</strong>
+                    <p>Crack down on illegal multi-family basement/attic conversions, absentee landlords, and commercial vehicle parking on residential streets.</p>
+                  </div>
+                </label>
+                <label class="compass-option-label" for="q5-corridor">
+                  <input type="radio" id="q5-corridor" name="housingEnforcement" value="corridor_grants">
+                  <div class="compass-option-content">
+                    <strong>Main & Bloomfield Ave Corridor Revitalization</strong>
+                    <p>Support small business revitalization, facade renovation grants, and pedestrian-friendly commercial shopping districts.</p>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Question 6 -->
+            <fieldset class="compass-fieldset">
+              <legend class="compass-legend"><span class="compass-legend-num">6</span> City Hall & School District (BOE) Collaboration</legend>
+              <div class="compass-options-grid">
+                <label class="compass-option-label" for="q6-merger">
+                  <input type="radio" id="q6-merger" name="sharedServices" value="city_boe_merger">
+                  <div class="compass-option-content">
+                    <strong>Aggressive Shared Services Consolidation</strong>
+                    <p>Consolidate City Hall and Clifton Public Schools healthcare benefit pooling, vehicle fleet repairs, and joint IT purchasing to save taxpayers millions.</p>
+                  </div>
+                </label>
+                <label class="compass-option-label" for="q6-classroom">
+                  <input type="radio" id="q6-classroom" name="sharedServices" value="classroom_focus">
+                  <div class="compass-option-content">
+                    <strong>Preserve School Independence & State Aid Advocacy</strong>
+                    <p>Respect Board of Education independence, protect classroom education budgets, and lobby Trenton for Clifton's fair share of state school aid.</p>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="compass-actions-bar">
+              <button type="submit" class="btn-compass-calc" id="btn-calc-compass">🧭 Calculate My Top 7 Candidate Matches</button>
+              <button type="button" class="btn-compass-reset" id="btn-reset-compass">🔄 Reset Answers</button>
+              <span id="compass-answers-status" class="compass-status-text">Select your preferences above to see your live alignment match.</span>
+            </div>
+          </form>
+
+          <!-- Matchmaker Results Box -->
+          <div id="matchmaker-results-box" class="matchmaker-results-box" style="display: none;" aria-live="polite">
+            <div class="results-header">
+              <div>
+                <h4 style="margin: 0; font-size: 1.2rem; font-weight: 800; color: #0f172a;">Your Clifton Candidate Alignment Results</h4>
+                <p style="font-size: 0.85rem; color: #64748b; margin: 4px 0 0;">Ranked match based on your answers. Clifton voters cast up to <strong>7 votes</strong> at-large.</p>
+              </div>
+              <div class="results-toggle-group" role="group" aria-label="Toggle results view">
+                <button type="button" class="results-toggle-btn active" id="btn-show-top7">Top 7 Matches (Your Ballot Limit)</button>
+                <button type="button" class="results-toggle-btn" id="btn-show-all-matches">Show All 19 Candidates</button>
+              </div>
+            </div>
+            <div id="matchmaker-results-grid" class="match-cards-grid">
+              <!-- Dynamically populated by JavaScript -->
+            </div>
+          </div>
         </div>
-        <ul class="source-links-list">
-          <li>
-            <a href="https://www.passaiccountynj.org/government/county-clerk/elections" target="_blank" rel="noopener">Passaic County Clerk Elections Division: Certified Candidate Ballot Drawing ↗</a>
-            <span class="source-doc-desc">Official ballot positions determined by public drawing conducted by the Passaic County Clerk.</span>
-          </li>
-          <li>
-            <a href="https://voter.svrs.nj.gov/registration-check" target="_blank" rel="noopener">NJ Division of Elections: Voter Registration Status & Polling Place Locator ↗</a>
-            <span class="source-doc-desc">Verify your voter registration status and find your assigned Clifton polling district.</span>
-          </li>
-          <li>
-            <a href="https://cliftonnj.org/218/City-Clerk" target="_blank" rel="noopener">City of Clifton Municipal Clerk: Municipal Election Archive & Notices ↗</a>
-            <span class="source-doc-desc">Official municipal resolutions, meeting minutes, and election administration.</span>
-          </li>
-          <li>
-            <a href="https://cliftonmerchant.com" target="_blank" rel="noopener">Clifton Merchant Magazine & Local Press Archives ↗</a>
-            <span class="source-doc-desc">Candidate forum coverage, editorial profiles, and public statements.</span>
-          </li>
-        </ul>
-      </div>
+      </details>
+
+      <!-- 3. Clifton City Council Candidates (Collapsible Section) -->
+      <details class="collapsible-section" id="election-candidates-heading" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📋 Clifton City Council Candidates (Vote for up to 7)</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag" style="background: #2563eb; color: #fff;">19 Running At-Large • Top Vote Becomes Mayor</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <!-- Search & Filtering Toolbar -->
+          <div class="election-controls-wrapper" id="election-search-anchor">
+            <div class="election-search-row">
+              <div class="election-search-input-box">
+                <span class="search-input-icon">🔍</span>
+                <input type="text" id="election-search-input" placeholder="Search candidates by name, ballot #, business, or controversy keyword (e.g. Sadrakula, Pino, Tahan, DeMarzo, clinic, lawsuit, censure, real estate, landscaping)..." class="styled-input-lg" autocomplete="off">
+                <button id="election-search-clear" class="btn-clear-search" title="Clear Search">✕</button>
+              </div>
+            </div>
+
+            <div class="election-filters-row">
+              <div class="filter-group-status">
+                <span class="filter-label">Status & Vetting:</span>
+                <div class="btn-group-toggle" role="group" aria-label="Candidate Status Filter">
+                  <button class="filter-btn active" data-status="all">All (19)</button>
+                  <button class="filter-btn" data-status="incumbent">Incumbents (5)</button>
+                  <button class="filter-btn" data-status="challenger">Challengers (14)</button>
+                  <button class="filter-btn filter-btn-alert" data-status="controversy">⚠️ Under Scrutiny (6)</button>
+                  <button class="filter-btn filter-btn-clean" data-status="clean">✓ Verified Clean (13)</button>
+                </div>
+              </div>
+
+              <div class="filter-group-category">
+                <span class="filter-label">Filter by Platform Issue:</span>
+                <div class="category-pills-row" id="election-category-pills">
+                  <!-- Dynamically populated by JS with icons and names -->
+                </div>
+              </div>
+            </div>
+
+            <div class="election-results-status">
+              <span id="election-results-count">Showing 19 of 19 Council Candidates</span>
+              <span class="election-expand-controls">
+                <button id="btn-expand-all-candidates" class="btn-toggle-expand">Expand All Profiles</button>
+                <button id="btn-collapse-all-candidates" class="btn-toggle-expand">Collapse All</button>
+              </span>
+            </div>
+          </div>
+
+          <div id="election-candidates-grid" class="election-candidates-main-container">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+      </details>
+
+      <!-- 4. Citizen Watchdog Dossier: Outside Businesses, Disclosures & Allegations (Collapsible Section) -->
+      <details class="collapsible-section" id="election-controversies-heading" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">⚖️ Citizen Watchdog Dossier: Outside Businesses & Allegations</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag alert-tag">FDS Filings • Court Dockets • Council Censures</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <p class="section-subtitle-desc">In-depth investigative vetting of outside commercial interests, state financial disclosures (FDS), court records, municipal censures, and ethics inquiries for all Clifton City Council candidates.</p>
+          <div id="election-controversies-spotlight" class="controversies-spotlight-container">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+      </details>
+
+      <!-- 5. Platform Comparison Matrix (Collapsible Section) -->
+      <details class="collapsible-section" id="election-matrix-heading" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📊 Candidate Platform Comparison Matrix</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag alert-tag">Side-by-Side Policy Stances</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <p class="section-subtitle-desc">Compare all 19 candidates across key voting priorities: Property Tax Relief, Flooding & Water, Zoning & Data Centers, Dais Decorum, and Public Safety.</p>
+          <div class="election-matrix-container">
+            <div class="table-responsive">
+              <table class="election-matrix-table" id="election-matrix-table">
+                <!-- Table content populated by app.js -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 6. Board of Education Candidates Section (Collapsible Section) -->
+      <details class="collapsible-section" id="election-boe-heading" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">🏫 Clifton Board of Education Candidates (2026 General Election)</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag" style="background: var(--color-school); color: #fff;">Vote 3 Full-Term + 1 Unexpired Term • $293.4M Budget (47.7% of Taxes)</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <p class="section-subtitle-desc">School Board Trustees oversee 17 public schools, ~11,000 students, and roughly 47.7% ($3.11 per $100) of your property tax bill. On the November 3, 2026 ballot, voters will elect three trustees for full 3-year terms (2027–2029) and one trustee to complete an unexpired 1-year term (2027):</p>
+          <div id="election-boe-grid" class="boe-cards-grid">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+      </details>
+
+      <!-- 7. New Jersey Statewide & Passaic County Candidates Section (Collapsible Section) -->
+      <details class="collapsible-section" id="election-nj-candidates-heading" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">🇺🇸 New Jersey Statewide & Passaic County Candidates on Your Ballot</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag" style="background: #1d4ed8; color: #fff;">Federal (U.S. Senate & NJ-09) • Passaic County Government</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <p class="section-subtitle-desc">In addition to local municipal and school races, Clifton voters will elect representation for United States Senate (Class II), U.S. House of Representatives (New Jersey's 9th Congressional District), Passaic County Board of County Commissioners (Full 3-Year & 1-Year Unexpired), and Passaic County Surrogate (Passaic County Sheriff is off-cycle until 2027).</p>
+          <div id="election-nj-candidates-container" class="nj-candidates-container">
+            <!-- Rendered by JavaScript -->
+          </div>
+        </div>
+      </details>
+
+      <!-- 8. Official Voting Guide & Polling Locations (Collapsible Section) -->
+      <details class="collapsible-section" id="election-voting-heading" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📍 Official Clifton Voting Guide & Polling Information</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">Election Day Essentials • Nov 3, 2026</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <div id="election-voting-guide" class="voting-guide-container">
+            <!-- Rendered by JavaScript / Pre-structured -->
+          </div>
+        </div>
+      </details>
+
+      <!-- 9. Sources & Official Verification Links for Election (Collapsible Section) -->
+      <details class="collapsible-section" id="election-sources-heading" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">📚 Official Nonpartisan Election Sources & Records</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag">County Clerk, NJ DOS & City Records</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <ul class="source-links-list" style="margin-top: 0;">
+            <li>
+              <a href="https://www.passaiccountynj.org/government/county-clerk/elections" target="_blank" rel="noopener">Passaic County Clerk Elections Division: Certified Candidate Ballot Drawing ↗</a>
+              <span class="source-doc-desc">Official ballot positions determined by public drawing conducted by the Passaic County Clerk.</span>
+            </li>
+            <li>
+              <a href="https://voter.svrs.nj.gov/registration-check" target="_blank" rel="noopener">NJ Division of Elections: Voter Registration Status & Polling Place Locator ↗</a>
+              <span class="source-doc-desc">Verify your voter registration status and find your assigned Clifton polling district.</span>
+            </li>
+            <li>
+              <a href="https://cliftonnj.org/218/City-Clerk" target="_blank" rel="noopener">City of Clifton Municipal Clerk: Municipal Election Archive & Notices ↗</a>
+              <span class="source-doc-desc">Official municipal resolutions, meeting minutes, and election administration.</span>
+            </li>
+            <li>
+              <a href="https://cliftonmerchant.com" target="_blank" rel="noopener">Clifton Merchant Magazine & Local Press Archives ↗</a>
+              <span class="source-doc-desc">Candidate forum coverage, editorial profiles, and public statements.</span>
+            </li>
+          </ul>
+        </div>
+      </details>
 
     </section>
   </main>
