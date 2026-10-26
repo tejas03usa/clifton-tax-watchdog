@@ -6988,7 +6988,7 @@ function renderControversiesSpotlight() {
     `).join('');
 
     controversyCardsHtml += `
-      <details class="spotlight-accordion-card" id="spotlight-card-${c.id}" ${idx === 0 ? 'open' : ''}>
+      <details class="spotlight-accordion-card" id="spotlight-card-${c.id}">
         <summary class="spotlight-accordion-summary">
           <div class="sp-summary-left">
             <span class="ballot-num">Ballot #${c.ballotNumber}</span>
