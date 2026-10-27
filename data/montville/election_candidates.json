@@ -1,0 +1,715 @@
+{
+  "municipality": "Montville",
+  "county": "Morris County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "electionType": "Montville Township Committee, Board of Education & General Election",
+  "votingHours": "6:00 AM – 8:00 PM EST",
+  "councilStructure": "Township of Montville operates under the Township Committee form of government. 5 Committee members are elected at-large for staggered 3-year terms, annually selecting one member as Mayor. In 2026, voters elect 2 Township Committee members, alongside 3 School Board trustees.",
+  "totalCouncilCandidates": 4,
+  "totalCouncilSeats": 2,
+  "certifiedTaxRateContext": "2.418% Total Certified Tax Rate (2026). Equalization Ratio 88.2%.",
+  "unanimousHealthBenefitPledge": "Township Committee members and BOE trustees adhere strictly to state ethics guidelines, health benefit contribution statutes, and public contracting laws.",
+  "votingResources": {
+    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingLocation": "Montville Municipal Building (Council Chambers), 195 Changebridge Rd, Montville, NJ 07045",
+    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "mailInDropboxes": [
+      {
+        "name": "Montville Municipal Building",
+        "address": "195 Changebridge Rd, Montville, NJ 07045",
+        "notes": "Located outside main entrance parking lot • Open 24/7 until 8:00 PM Election Night"
+      }
+    ],
+    "municipalClerk": {
+      "name": "Leena M. Abaza",
+      "title": "Township Clerk",
+      "office": "Montville Municipal Building, 195 Changebridge Rd",
+      "phone": "(973) 331-3304",
+      "email": "clerk@montvillenj.org"
+    },
+    "passaicCountyElections": {
+      "superintendent": "Morris County Clerk Elections Division: (973) 285-6066 • Morris County Board of Elections: (973) 285-6715",
+      "phone": "(973) 285-6066",
+      "website": "https://www.morriscountyclerk.org/Elections",
+      "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
+    }
+  },
+  "categories": [
+    {
+      "id": "taxes",
+      "name": "Property Taxes & Debt",
+      "icon": "💰",
+      "shortDesc": "Conservative capital budgeting, municipal debt reduction, and state 2% cap adherence"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Stormwater & Road Paving",
+      "icon": "🏗️",
+      "shortDesc": "Drainage culvert maintenance, municipal road repaving schedules, and water utility reserves"
+    },
+    {
+      "id": "governance",
+      "name": "Open Government & Ethics",
+      "icon": "⚖️",
+      "shortDesc": "Televised committee meetings, competitive bidding transparency, and public advisory boards"
+    },
+    {
+      "id": "housing",
+      "name": "Zoning & Open Space Preservation",
+      "icon": "🏡",
+      "shortDesc": "Preserving suburban low-density character, defending against overdevelopment, and farmland trust"
+    },
+    {
+      "id": "safety",
+      "name": "Police & Volunteer Fire Depts",
+      "icon": "🚓",
+      "shortDesc": "Montville Police Department traffic safety, volunteer fire/first aid equipment funding"
+    },
+    {
+      "id": "education",
+      "name": "Top-Ranked School System",
+      "icon": "🏫",
+      "shortDesc": "Montville Township Public Schools ($84M budget), STEM programs, and academic excellence"
+    }
+  ],
+  "councilCandidates": [
+    {
+      "ballotNumber": 1,
+      "id": "matthew-kayne",
+      "name": "Matthew S. Kayne",
+      "status": "Incumbent",
+      "role": "Montville Township Committeeman & Former Mayor",
+      "experience": "Longtime Montville Committeeman with extensive private sector commercial and municipal budgeting expertise.",
+      "initials": "MK",
+      "party": "Republican",
+      "tagline": "Fiscal conservatism, protecting Montville's AAA credit rating, and rigorous open space conservation.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "housing"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Low Debt & Tax Cap Discipline",
+          "bullets": [
+            "Maintained one of Morris County's most prudent debt-to-valuation ratios.",
+            "Consistently keeps municipal tax levy increases well beneath the statutory 2% limit.",
+            "Prioritizes pay-as-you-go capital budgeting for vehicle and equipment upgrades."
+          ]
+        },
+        {
+          "category": "housing",
+          "title": "Zoning Defense & Suburban Character",
+          "bullets": [
+            "Vigorously defends Montville's master plan against predatory high-density residential rezonings.",
+            "Collaborates with Morris County Open Space Trust to protect sensitive ridge lands and watersheds.",
+            "Protects neighborhood aesthetics while supporting compliant local commercial ratables."
+          ]
+        }
+      ],
+      "quizAnswers": {
+        "taxes": "strict_cap",
+        "infrastructure": "pay_as_you_go",
+        "governance": "fiscally_conservative",
+        "housing": "anti_overdevelopment",
+        "safety": "support_first_responders",
+        "education": "community_support"
+      },
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "flooding",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 2,
+      "id": "richard-witty",
+      "name": "Richard D. Witty",
+      "status": "Incumbent",
+      "role": "Montville Township Committeeman & Attorney",
+      "experience": "Township Committeeman with legal and municipal governance background; former planning board member.",
+      "initials": "RW",
+      "party": "Republican",
+      "tagline": "Protecting neighborhood zoning, infrastructure resilience, and public safety support.",
+      "declinedBenefits": true,
+      "categories": [
+        "housing",
+        "safety",
+        "infrastructure"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "safety",
+          "title": "Police & Volunteer Emergency Services",
+          "bullets": [
+            "Ensuring Montville Police have cutting-edge equipment, patrol vehicles, and training.",
+            "Providing capital support and modern apparatus for Montville, Pine Brook, and Towaco volunteer fire departments.",
+            "Enhancing school resource officer (SRO) coordination with Montville public schools."
+          ]
+        },
+        {
+          "category": "infrastructure",
+          "title": "Roadways & Flood Mitigation",
+          "bullets": [
+            "Aggressive multi-year road resurfacing program across all three sections of Montville.",
+            "Maintaining stormwater retention ponds and clearing drainage easements before severe storms.",
+            "Upgrading water utility infrastructure without raising municipal utility tax rates."
+          ]
+        }
+      ],
+      "quizAnswers": {
+        "taxes": "strict_cap",
+        "infrastructure": "paving_drainage_focus",
+        "governance": "fiscally_conservative",
+        "housing": "anti_overdevelopment",
+        "safety": "support_first_responders",
+        "education": "community_support"
+      },
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 3,
+      "id": "emily-ryzuk",
+      "name": "Emily Ryzuk",
+      "status": "Challenger",
+      "role": "Community Leader & Environmental Scientist",
+      "initials": "ER",
+      "party": "Democratic",
+      "tagline": "Transparent municipal planning, proactive stormwater management, and pedestrian safety.",
+      "declinedBenefits": true,
+      "categories": [
+        "governance",
+        "infrastructure",
+        "safety"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "governance",
+          "title": "Transparency & Community Voice",
+          "bullets": [
+            "Implementing interactive digital town halls and transparent online tracking of township contracts.",
+            "Broadening resident participation on planning and environmental advisory commissions.",
+            "Publishing plain-English quarterly summaries of municipal revenue and spending."
+          ]
+        },
+        {
+          "category": "infrastructure",
+          "title": "Green Infrastructure & Climate Resilience",
+          "bullets": [
+            "Utilizing federal and state clean water grants to reinforce vulnerable stormwater basins.",
+            "Creating continuous pedestrian sidewalks and bike routes connecting Towaco and Pine Brook.",
+            "Promoting municipal solar initiatives to reduce town utility operating expenses."
+          ]
+        }
+      ],
+      "quizAnswers": {
+        "taxes": "grant_maximization",
+        "infrastructure": "green_modernization",
+        "governance": "full_transparency",
+        "housing": "smart_growth",
+        "safety": "pedestrian_walkways",
+        "education": "collaborative_funding"
+      },
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "flooding",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "ballotNumber": 4,
+      "id": "david-seffer",
+      "name": "David Seffer",
+      "status": "Challenger",
+      "role": "Small Business Owner & Civic Volunteer",
+      "initials": "DS",
+      "party": "Democratic",
+      "tagline": "Revitalizing Towaco business district, fiscal transparency, and smart infrastructure investment.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Business District Vitality & Tax Diversification",
+          "bullets": [
+            "Strengthening commercial ratables in Route 46 and Towaco village centers to ease residential tax pressure.",
+            "Conducting forensic audits of municipal vendor contracts to identify competitive savings.",
+            "Pursuing interlocal shared service agreements with neighboring Morris County municipalities."
+          ]
+        },
+        {
+          "category": "infrastructure",
+          "title": "Modernizing Municipal Facilities",
+          "bullets": [
+            "Refurbishing township recreational parks and youth sports fields.",
+            "Accelerating lead water service line replacements with zero cost to residential property owners.",
+            "Improving traffic flow and signal synchronization along Route 202 and Changebridge Road."
+          ]
+        }
+      ],
+      "quizAnswers": {
+        "taxes": "business_ratables",
+        "infrastructure": "park_road_upgrades",
+        "governance": "full_transparency",
+        "housing": "smart_growth",
+        "safety": "traffic_calming",
+        "education": "collaborative_funding"
+      },
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    }
+  ],
+  "boeElection": {
+    "title": "Montville Township Board of Education",
+    "seatsAvailable": 3,
+    "termLength": "3-Year Full Term",
+    "totalCandidates": 6,
+    "budgetOverview": "$84.2M Operating Budget (2026–2027) serving 3,400+ students across 7 school facilities including Montville Township High School (MTHS).",
+    "candidates": [
+      {
+        "ballotNumber": 1,
+        "id": "charles-daughtry",
+        "name": "Charles Daughtry",
+        "status": "Incumbent",
+        "role": "School Board Trustee & Corporate Director",
+        "initials": "CD",
+        "slate": "Academic Rigor & Fiscal Responsibility",
+        "tagline": "STEM program expansion, budget discipline, and classroom-focused funding.",
+        "priorities": [
+          "Preserving MTHS high state rankings in STEM, AP offerings, and college admissions.",
+          "Holding school district administrative costs under strict line-item scrutiny.",
+          "Maintaining cutting-edge classroom technology and laboratory equipment."
+        ],
+        "quizAnswers": {
+          "taxes": "strict_cap",
+          "infrastructure": "stem_labs",
+          "governance": "full_transparency",
+          "education": "stem_excellence",
+          "housing": "preserve_neighborhoods",
+          "safety": "physical_security"
+        }
+      },
+      {
+        "ballotNumber": 2,
+        "id": "joseph-pisano",
+        "name": "Joseph Pisano",
+        "status": "Incumbent",
+        "role": "School Board Member & Former PTA President",
+        "initials": "JP",
+        "slate": "Excellence for Every Student",
+        "tagline": "Student mental health wellness, arts and athletics enrichment, and school security.",
+        "priorities": [
+          "Expanding student wellness counselors and guidance resources across middle and high schools.",
+          "Upgrading high school athletic fields, marching band facilities, and performing arts centers.",
+          "Strengthening armed SRO coverage across all elementary schools."
+        ],
+        "quizAnswers": {
+          "taxes": "balanced_growth",
+          "infrastructure": "athletic_upgrades",
+          "governance": "community_voice",
+          "education": "holistic_development",
+          "housing": "smart_planning",
+          "safety": "armed_sro_security"
+        }
+      },
+      {
+        "ballotNumber": 3,
+        "id": "michael-palma",
+        "name": "Michael Palma",
+        "status": "Incumbent",
+        "role": "Finance Professional & Board Trustee",
+        "initials": "MP",
+        "slate": "Accountability & Transparency",
+        "tagline": "Defending taxpayers, eliminating non-essential spending, and teacher support.",
+        "priorities": [
+          "Ensuring the 2% tax levy cap is never breached while protecting teacher-student ratios.",
+          "Publishing clear, transparent quarterly financial audits on the school district portal.",
+          "Renovating elementary school HVAC and indoor air quality systems."
+        ],
+        "quizAnswers": {
+          "taxes": "strict_cap",
+          "infrastructure": "hvac_air_quality",
+          "governance": "full_transparency",
+          "education": "core_curriculum",
+          "housing": "preserve_neighborhoods",
+          "safety": "safe_routes"
+        }
+      },
+      {
+        "ballotNumber": 4,
+        "id": "david-shenkman",
+        "name": "David Shenkman",
+        "status": "Challenger",
+        "role": "Educator & Parent Advocate",
+        "initials": "DS",
+        "slate": "Children First Montville",
+        "tagline": "Special education advocacy, early reading literacy, and teacher retention.",
+        "priorities": [
+          "Strengthening special education case management and reducing out-of-district placement costs.",
+          "Implementing proven phonics-based early literacy instruction in K-2.",
+          "Providing competitive compensation and support to retain outstanding teachers."
+        ],
+        "quizAnswers": {
+          "taxes": "smart_investment",
+          "infrastructure": "accessible_schools",
+          "governance": "parental_partnership",
+          "education": "special_ed_inclusion",
+          "housing": "smart_planning",
+          "safety": "mental_health_focus"
+        }
+      },
+      {
+        "ballotNumber": 5,
+        "id": "rohit-trivedi",
+        "name": "Rohit Trivedi",
+        "status": "Challenger",
+        "role": "Technology Executive & STEM Volunteer",
+        "initials": "RT",
+        "slate": "Future Ready Montville",
+        "tagline": "AI and computer science literacy, modern career technical education, and efficiency.",
+        "priorities": [
+          "Introducing modern AI and computer science electives from middle school through high school.",
+          "Partnering with Morris County tech firms for student internships and career readiness.",
+          "Streamlining school district administrative IT operations to reduce overhead."
+        ],
+        "quizAnswers": {
+          "taxes": "strict_cap",
+          "infrastructure": "tech_modernization",
+          "governance": "data_driven",
+          "education": "stem_excellence",
+          "housing": "smart_planning",
+          "safety": "cyber_and_physical"
+        }
+      },
+      {
+        "ballotNumber": 6,
+        "id": "christine-lieberman",
+        "name": "Christine Lieberman",
+        "status": "Challenger",
+        "role": "Pediatric Healthcare Specialist & HSA Leader",
+        "initials": "CL",
+        "slate": "Healthy Minds, Strong Schools",
+        "tagline": "Whole-child wellness, comprehensive special education, and transparent budgeting.",
+        "priorities": [
+          "Prioritizing student mental health, anti-bullying programs, and emotional resilience.",
+          "Ensuring complete transparency in school board committee deliberations and budget decisions.",
+          "Enhancing school cafeteria nutritional standards and campus wellness amenities."
+        ],
+        "quizAnswers": {
+          "taxes": "balanced_growth",
+          "infrastructure": "clean_facilities",
+          "governance": "full_transparency",
+          "education": "holistic_development",
+          "housing": "smart_planning",
+          "safety": "mental_health_focus"
+        }
+      }
+    ]
+  },
+  "countyAndFederal": {
+    "usRepresentative": {
+      "district": "New Jersey's 11th Congressional District (NJ-11)",
+      "candidates": [
+        {
+          "name": "Mikie Sherrill / Democratic Nominee",
+          "party": "Democratic",
+          "role": "U.S. Representative (NJ-11) / Former Navy Pilot & Federal Prosecutor",
+          "keyIssues": "Federal infrastructure funding (Route 46/I-80 corridor), flood mitigation grants, and reinstating SALT deductions for Morris County families."
+        },
+        {
+          "name": "Joseph Belnome / Republican Nominee",
+          "party": "Republican",
+          "role": "Building Inspector & Conservative Nominee",
+          "keyIssues": "Controlling federal spending, cutting energy regulations, and supporting law enforcement."
+        }
+      ]
+    },
+    "countyCommissioners": {
+      "county": "Morris County",
+      "races": [
+        {
+          "office": "Morris County Board of County Commissioners",
+          "term": "3-Year Term",
+          "seats": 1,
+          "candidates": [
+            {
+              "name": "Tayfun Selen",
+              "party": "Republican",
+              "status": "Incumbent",
+              "tagline": "Prudent fiscal leadership, preserving Morris County's AAA bond rating, supporting county parks, and vocational technical education."
+            },
+            {
+              "name": "Chris Russo",
+              "party": "Democratic",
+              "status": "Challenger",
+              "tagline": "Increasing county government transparency, enhancing county open space preservation, and modernizing emergency 911 dispatch."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "boeCandidates": [
+    {
+      "name": "Charles Daughtry",
+      "ballotNumber": 1,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Academic Rigor & Fiscal Responsibility",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Incumbent Montville BOE Trustee, corporate director, parent of MTHS students.",
+      "keyFocus": "Preserving Montville High School state STEM rankings, expanding AP offerings, and line-item budget discipline.",
+      "fiscalStance": "Ensuring Montville $84.2M school budget adheres strictly to 2% statutory cap while prioritizing classroom instruction.",
+      "infrastructureStance": "Modernizing high school science laboratories and classroom technology.",
+      "interviewStances": {
+        "keyInterviewQuote": "Academic rigor and fiscal conservatism must walk hand in hand to keep Montville schools at the top.",
+        "keyPriorities": "STEM excellence, college placement, and line-item budget discipline.",
+        "facilitiesAndBudget": "High school science lab upgrades and strict cap adherence.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "name": "Joseph Pisano",
+      "ballotNumber": 2,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Excellence for Every Student",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "School Board Member, former PTA president, active youth athletics leader in Montville.",
+      "keyFocus": "Student mental health wellness, arts and athletics facility modernizations, and school safety.",
+      "fiscalStance": "Maximizing shared services with the Township Committee on fields and facility maintenance.",
+      "infrastructureStance": "Refurbishing athletic complexes, marching band rehearsal halls, and elementary playground safety.",
+      "interviewStances": {
+        "keyInterviewQuote": "A well-rounded education prepares students for life—in academics, athletics, and the arts.",
+        "keyPriorities": "Mental wellness, athletic facility upgrades, and armed SRO security.",
+        "facilitiesAndBudget": "Shared municipal maintenance and athletic enhancements.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "name": "Michael Palma",
+      "ballotNumber": 3,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Accountability & Transparency",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Finance professional, certified auditor, incumbent Montville BOE trustee.",
+      "keyFocus": "Defending taxpayers against unnecessary administrative expenditures and protecting teacher-student ratios.",
+      "fiscalStance": "Guarantees zero tax levy increases above 2%; demands competitive bidding on all district vendor contracts.",
+      "infrastructureStance": "Renovating elementary school HVAC systems, clean indoor air filtration, and roof replacements.",
+      "interviewStances": {
+        "keyInterviewQuote": "Montville taxpayers deserve full transparency into where every single school tax dollar goes.",
+        "keyPriorities": "Low tax levies, competitive vendor bidding, and clean air HVAC.",
+        "facilitiesAndBudget": "Zero-waste budgeting and energy efficiency.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "name": "David Shenkman",
+      "ballotNumber": 4,
+      "seatType": "Full Term",
+      "status": "Challenger",
+      "ballotSlogan": "Children First Montville",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Special educator, parent advocate, lifelong Montville resident.",
+      "keyFocus": "Strengthening special education case management, reducing out-of-district tuition costs, and early literacy.",
+      "fiscalStance": "Investing in in-district specialized programs to save millions in outside private placements.",
+      "infrastructureStance": "Ensuring all elementary school facilities are fully accessible and sensory-friendly.",
+      "interviewStances": {
+        "keyInterviewQuote": "By keeping special education services in Montville, we help our children stay home and save tax dollars.",
+        "keyPriorities": "Special ed in-district programs, early reading, and teacher retention.",
+        "facilitiesAndBudget": "Cost-effective special education and grant pursuit.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "flooding",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "name": "Rohit Trivedi",
+      "ballotNumber": 5,
+      "seatType": "Full Term",
+      "status": "Challenger",
+      "ballotSlogan": "Future Ready Montville",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Technology executive, STEM mentor, corporate data architect.",
+      "keyFocus": "Integrating AI and data literacy into middle and high school curricula; corporate tech partnerships.",
+      "fiscalStance": "Streamlining administrative software and district IT infrastructure to eliminate recurring software licensing waste.",
+      "infrastructureStance": "High-speed campus fiber networking, modern computer labs, and digital classroom security.",
+      "interviewStances": {
+        "keyInterviewQuote": "Our children are entering an AI-driven workforce; Montville must prepare them to lead.",
+        "keyPriorities": "AI and computer science literacy, tech internships, and IT efficiency.",
+        "facilitiesAndBudget": "Modern technology infrastructure and software cost reduction.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "name": "Christine Lieberman",
+      "ballotNumber": 6,
+      "seatType": "Full Term",
+      "status": "Challenger",
+      "ballotSlogan": "Healthy Minds, Strong Schools",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Pediatric healthcare professional, Home & School Association leader, Montville parent.",
+      "keyFocus": "Whole-child mental health, nutrition standards, anti-bullying programs, and parent-teacher collaboration.",
+      "fiscalStance": "Pursuing county and state health grants to support mental health counselors without burdening the local levy.",
+      "infrastructureStance": "School cafeteria modernization, clean water filtration stations, and green outdoor learning spaces.",
+      "interviewStances": {
+        "keyInterviewQuote": "When children feel safe, supported, and healthy, their academic potential is limitless.",
+        "keyPriorities": "Mental health counselors, anti-bullying initiatives, and school nutrition.",
+        "facilitiesAndBudget": "External grant funding for student wellness.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "flooding",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    }
+  ],
+  "njCandidates": {
+    "usSenate": {
+      "office": "United States Senate (New Jersey)",
+      "term": "6-Year Term",
+      "voteRule": "Vote for 1",
+      "importance": "Represents all 9.3 million New Jersey residents in the U.S. Senate, voting on federal judges, infrastructure packages, education grants, and tax policy.",
+      "candidates": [
+        {
+          "name": "Andy Kim",
+          "party": "Democrat",
+          "status": "Democratic Nominee",
+          "role": "U.S. Representative (NJ-03) / Former National Security Advisor",
+          "keyPriorities": "Restoring the federal SALT deduction, ethics reform, combating corporate price gouging, and public school funding.",
+          "localImpact": "Securing federal clean energy and transit funding for North Jersey commuter corridors."
+        },
+        {
+          "name": "Curtis Bashaw",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Small Business Owner & Historic Preservationist",
+          "keyPriorities": "Fiscal restraint, curbing federal spending to control inflation, restoring SALT deductions, and small business relief.",
+          "localImpact": "Reducing federal regulatory compliance costs on Morris County small businesses."
+        }
+      ]
+    },
+    "usHouse": {
+      "office": "United States House of Representatives (NJ-11)",
+      "term": "2-Year Term",
+      "voteRule": "Vote for 1",
+      "badge": "U.S. Congressional District 11",
+      "importance": "Represents Montville and Morris County in the U.S. House, shaping transportation grants, healthcare, and federal tax reform.",
+      "candidates": [
+        {
+          "name": "Mikie Sherrill",
+          "party": "Democrat",
+          "status": "Incumbent",
+          "role": "U.S. Representative (NJ-11) / Former Navy Pilot & Federal Prosecutor",
+          "keyPriorities": "Securing federal infrastructure grants for the Route 46/I-80 corridor, flood mitigation for the Passaic River basin, and restoring SALT deductions.",
+          "localImpact": "Delivering direct federal funding for Morris County infrastructure and stormwater management."
+        },
+        {
+          "name": "Joseph Belnome",
+          "party": "Republican",
+          "status": "Challenger",
+          "role": "Building Inspector & Conservative Nominee",
+          "keyPriorities": "Controlling federal spending, cutting energy taxes, and supporting law enforcement.",
+          "localImpact": "Advocating for reduced federal spending to lower mortgage rates and suburban cost of living."
+        }
+      ]
+    },
+    "passaicCountyCommissionersFull": {
+      "office": "Morris County Board of County Commissioners",
+      "term": "3-Year Term",
+      "voteRule": "Vote for 1",
+      "importance": "Oversees Morris County's $360M+ budget, county roads, Morris County Park Commission, County College of Morris, and emergency dispatch.",
+      "candidates": [
+        {
+          "party": "Republican",
+          "status": "Incumbent",
+          "slate": "Morris County Republican Committee",
+          "candidates": [
+            "Tayfun Selen (Incumbent Commissioner)"
+          ],
+          "keyPriorities": "Preserving Morris County's AAA bond rating, keeping county taxes low, expanding County College of Morris technical apprenticeships, and supporting local police."
+        },
+        {
+          "party": "Democrat",
+          "status": "Challenger",
+          "slate": "Morris County Democratic Committee",
+          "candidates": [
+            "Chris Russo (Challenger)"
+          ],
+          "keyPriorities": "Enhancing county open space preservation, increasing county contracting transparency, and expanding shared county emergency dispatch services."
+        }
+      ]
+    }
+  }
+}

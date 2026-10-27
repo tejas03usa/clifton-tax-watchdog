@@ -1,0 +1,635 @@
+{
+  "municipality": "Wayne",
+  "county": "Passaic County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "electionType": "Wayne Township Municipal (5th Ward) & Board of Education General Election",
+  "votingHours": "6:00 AM – 8:00 PM EST",
+  "councilStructure": "Wayne Township Council (Mayor-Council Plan F under Faulkner Act). 9 Council Members (6 Ward, 3 At-Large). In 2026, voters in the 5th Ward elect a Council representative for an unexpired term, alongside township-wide School Board trustees.",
+  "totalCouncilCandidates": 2,
+  "totalCouncilSeats": 1,
+  "certifiedTaxRateContext": "2.748% Total Certified Tax Rate (2026). Equalization Ratio 80.4%.",
+  "unanimousHealthBenefitPledge": "Township Council and BOE candidates maintain strict ethics standards regarding municipal healthcare benefit waivers and pension transparency.",
+  "votingResources": {
+    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingLocation": "Wayne Main Public Library, 461 Valley Rd, Wayne, NJ 07470 (Early Voting ONLY; not an Election Day polling site)",
+    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "mailInDropboxes": [
+      {
+        "name": "Wayne Township Municipal Building",
+        "address": "475 Valley Rd, Wayne, NJ 07470",
+        "notes": "Located near front entrance next to flagpole • Open 24/7 until 8:00 PM Election Night"
+      },
+      {
+        "name": "William Paterson University (University Commons)",
+        "address": "300 Pompton Rd, Wayne, NJ 07470",
+        "notes": "Located on student center plaza • Open 24/7 until 8:00 PM Election Night"
+      }
+    ],
+    "municipalClerk": {
+      "name": "Paul V. Margiotta",
+      "title": "Township Clerk",
+      "office": "Wayne Municipal Building, 475 Valley Rd",
+      "phone": "(973) 694-1800 Ext. 3201",
+      "email": "clerk@waynetownship.com"
+    },
+    "passaicCountyElections": {
+      "superintendent": "Passaic County Clerk Elections Division: (973) 881-4127 • Board of Elections: (973) 881-4780",
+      "phone": "(973) 881-4515",
+      "website": "https://www.passaiccountynj.org/residents/election-and-voting-information/sample-ballots",
+      "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
+    }
+  },
+  "categories": [
+    {
+      "id": "taxes",
+      "name": "Property Taxes & Spending",
+      "icon": "💰",
+      "shortDesc": "Willowbrook commercial ratable preservation, debt management, and 2% tax levy caps"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Flooding & Pompton River",
+      "icon": "🏗️",
+      "shortDesc": "Pompton and Passaic River flood mitigation, storm drainage, and buyout grants"
+    },
+    {
+      "id": "governance",
+      "name": "Transparency & Ethics",
+      "icon": "⚖️",
+      "shortDesc": "Competitive vendor bidding, televised committee workshops, and ethics compliance"
+    },
+    {
+      "id": "housing",
+      "name": "Zoning & Commercial Corridors",
+      "icon": "🏡",
+      "shortDesc": "Route 23 & Route 46 commercial redevelopment, open space defense, and suburban preservation"
+    },
+    {
+      "id": "safety",
+      "name": "Public Safety & Traffic",
+      "icon": "🚓",
+      "shortDesc": "Wayne Police Department patrol coverage, school safety officers, and roadway calming"
+    },
+    {
+      "id": "education",
+      "name": "School Funding & Facilities",
+      "icon": "🏫",
+      "shortDesc": "14 Wayne public schools ($186.2M budget), class sizes, and vocational pathways"
+    }
+  ],
+  "councilCandidates": [
+    {
+      "ballotNumber": 1,
+      "id": "matthew-cavallo",
+      "name": "Matthew Cavallo",
+      "status": "Incumbent",
+      "role": "Wayne 5th Ward Councilman & Municipal Administrator",
+      "experience": "Appointed/Elected Wayne 5th Ward Councilman; seasoned credentialed New Jersey Municipal Administrator (QPA/CMFO) with decades of local government budgeting expertise.",
+      "initials": "MC",
+      "tagline": "Professional municipal fiscal management, rigorous capital budgeting, and aggressive Pompton River flood basin mitigation.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Willowbrook Ratable Shield & Debt Control",
+          "details": "Safeguard Wayne commercial tax base following Toys R Us loss and mall appeals; optimize municipal debt portfolio to protect single-family homeowners."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Passaic & Pompton River Flood Action",
+          "details": "Capture federal FEMA and NJDEP flood resilience grants for desilting, culvert reinforcement, and repetitive-loss property elevation."
+        },
+        {
+          "category": "governance",
+          "title": "Zero-Based Municipal Budget Reviews",
+          "details": "Apply professional municipal manager standards to Wayne $83.5M operating budget; require department heads to justify all discretionary expenditures."
+        }
+      ],
+      "quotes": [
+        "Wayne homeowners deserve professional municipal expertise. We must manage every dollar with zero-based discipline, protect our ratable base, and defend our neighborhoods from devastating floods."
+      ],
+      "civicBackground": "Lifelong Passaic County public administrator, Wayne 5th Ward civic organizer, and municipal finance specialist.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Municipal Management & Public Policy Consulting"
+        ],
+        "disclosuresAndFDS": "Discloses municipal management credentials; standard Local Government Ethics Law filing.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — No court judgments, municipal censures, or ethics violations on public record.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Must recuse from any municipal contracts involving current or past consulting clients."
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Certified Filing",
+          "doc": "Official 2026 Wayne General Election Candidate Certification",
+          "url": "https://www.passaiccountynj.org"
+        },
+        {
+          "title": "Township of Wayne Municipal Records",
+          "doc": "Wayne Township Council Minutes & Ordinance Filings",
+          "url": "https://waynetownship.com"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Over 15 years in municipal governance and public administration across northern New Jersey.",
+        "yearsInPublicService": "15+ Years",
+        "careerTimeline": [
+          {
+            "period": "2020–Present",
+            "role": "5th Ward Councilman",
+            "organization": "Township of Wayne",
+            "details": "Represents 5th Ward neighborhoods focusing on infrastructure and municipal services."
+          },
+          {
+            "period": "2010–Present",
+            "role": "Credentialed Municipal Administrator",
+            "organization": "Local Government Services",
+            "details": "Directs municipal procurement, capital bonding, and municipal budgeting."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Wayne Township Council",
+            "tenure": "5th Ward",
+            "role": "Councilman"
+          }
+        ],
+        "educationAndCredentials": [
+          "Master of Public Administration (MPA)",
+          "Certified New Jersey Municipal Finance Officer (CMFO)"
+        ],
+        "civicLeadership": [
+          "Wayne PAL booster",
+          "Pompton River flood mitigation taskforce advocate"
+        ]
+      },
+      "ballotPosition": "Row 1",
+      "interviewStances": {
+        "interviewSource": "Passaic County Clerk Candidate Statements & TAPinto Wayne Candidate Forum",
+        "taxesAndSpending": "Disciplined capital spending and restructuring debt to hold Wayne municipal tax increases well below state caps.",
+        "zoningAndDataCenters": "Opposes industrial mega-warehouses and high-density variances; supports smart redevelopment of vacant corporate parks along Route 23.",
+        "floodingAndWater": "Aggressive partnership with Army Corps of Engineers and NJDEP for Pompton River basin dredging and localized stormwater upgrades.",
+        "governanceAndDecorum": "Brings collaborative municipal management discipline to council workshops and open public dialogue.",
+        "publicSafetyAndTraffic": "Fully funds Wayne Police Department patrol staffing, radar enforcement on Valley Road and Hamburg Turnpike, and school safety officers.",
+        "cannabisLicensing": "Supports current zoning buffer restrictions keeping commercial cannabis away from school zones.",
+        "keyInterviewQuote": "We must bring modern, professional fiscal management to Wayne Town Hall to protect homeowners from commercial ratable erosion.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "flooding",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 2,
+      "id": "dennis-marnick",
+      "name": "Dennis Marnick",
+      "status": "Challenger",
+      "role": "Community Advocate & Business Executive",
+      "experience": "Longtime Wayne resident and 5th Ward community leader with senior corporate executive background in operational efficiency and contract negotiation.",
+      "initials": "DM",
+      "tagline": "Independent citizen watchdog oversight, neighborhood traffic safety, and total transparency in township vendor contracts.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "safety",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Forensic Vendor Contract Audit",
+          "details": "Commission independent reviews of all recurring legal, engineering, and architectural vendor agreements to cut township overhead."
+        },
+        {
+          "category": "safety",
+          "title": "5th Ward Traffic Calming & Pedestrian Safety",
+          "details": "Install speed feedback signs and pedestrian crosswalk beacons along cut-through routes connecting Valley Road and French Hill."
+        },
+        {
+          "category": "governance",
+          "title": "Evening Public Workshops & Live Q&A",
+          "details": "Expand public comment opportunities at Town Hall and broadcast all council committee meetings with live online streaming."
+        }
+      ],
+      "quotes": [
+        "Wayne residents need an independent watchdog on the council who will scrutinize every vendor invoice and fight for 5th Ward neighborhoods."
+      ],
+      "civicBackground": "Wayne resident for over 25 years; active youth sports booster and civic association volunteer.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Corporate Executive & Management Consultant"
+        ],
+        "disclosuresAndFDS": "Discloses corporate private sector leadership; clean financial record.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — No legal judgments, ethics citations, or financial irregularities on file.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Standard corporate ethics firewalls for commercial vendors."
+      },
+      "verifiedSources": [
+        {
+          "title": "Passaic County Clerk Official Candidate Filing",
+          "doc": "Wayne 5th Ward Petition Certification",
+          "url": "https://www.passaiccountynj.org"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Over 20 years managing enterprise budgets, supply chain contracts, and corporate teams.",
+        "yearsInPublicService": "Civic Leader & Candidate",
+        "careerTimeline": [
+          {
+            "period": "2000–Present",
+            "role": "Senior Executive Director",
+            "organization": "Enterprise Operations",
+            "details": "Directs commercial contracts, vendor procurement, and operating budgets."
+          }
+        ],
+        "publicOfficesHeld": [],
+        "educationAndCredentials": [
+          "Bachelor of Science in Business Management",
+          "25-year Wayne homeowner"
+        ],
+        "civicLeadership": [
+          "Wayne Little League coach",
+          "Neighborhood traffic safety advocate"
+        ]
+      },
+      "ballotPosition": "Row 2",
+      "interviewStances": {
+        "interviewSource": "Passaic County Candidate Filings & Local Civic Debates",
+        "taxesAndSpending": "Demands forensic spending reviews, zero-based budgeting, and ending automatic contract renewals for outside professionals.",
+        "zoningAndDataCenters": "Strict opposition to overdevelopment, warehouse rezoning, or commercial encroachment into quiet suburban residential streets.",
+        "floodingAndWater": "Demands immediate localized stormwater conduit clearing and rapid deployment of flood protection resources during storm events.",
+        "governanceAndDecorum": "Independent council voice holding township leadership accountable for project timelines and costs.",
+        "publicSafetyAndTraffic": "Increased traffic enforcement on residential cut-through streets and enhanced safety zones around neighborhood schools.",
+        "cannabisLicensing": "Opposed to retail cannabis outlets in residential and highway corridors.",
+        "keyInterviewQuote": "Taxpayers are tired of rubber-stamped budgets. We need fresh leadership and relentless accountability on the Wayne Council.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    }
+  ],
+  "boeCandidates": [
+    {
+      "name": "Joseph \"Joe\" Troy Jr.",
+      "ballotNumber": "1",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Challenger",
+      "ballotSlogan": "Vision Driven Leadership",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (6 Running)",
+      "experience": "Wayne parent, active school volunteer, and financial operations professional with 18+ years corporate budgeting experience.",
+      "keyFocus": "Expanding STEM and vocational pathways, fiscal transparency in the $186.2M school budget, and classroom technology upgrades.",
+      "fiscalStance": "Promotes line-item budget transparency and competitive professional contract bidding to keep Wayne school taxes affordable.",
+      "infrastructureStance": "Prioritizes proactive roof and HVAC climate control maintenance across Wayne 14 school buildings.",
+      "interviewStances": {
+        "interviewSource": "Passaic County Clerk Certified Filing & Wayne BOE Candidates Forum",
+        "keyPriorities": "Educational excellence, transparent school spending, and empowering parents and educators.",
+        "facilitiesAndBudget": "Focuses on long-range capital planning to avoid emergency tax referendums.",
+        "keyInterviewQuote": "We must provide our children with world-class education while respecting the taxpayers who fund our public schools."
+      }
+    },
+    {
+      "name": "Burcin Ogrenir",
+      "ballotNumber": "2",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Challenger",
+      "ballotSlogan": "Every Child Matters",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (6 Running)",
+      "experience": "Educational researcher, university professor, and mother of Wayne Public Schools students with extensive background in curriculum development and early childhood education.",
+      "keyFocus": "Closing academic achievement gaps, supporting special education programs, and strengthening teacher retention.",
+      "fiscalStance": "Advocates directing the maximum possible percentage of the $186.2M budget directly into classroom instruction and special needs support.",
+      "infrastructureStance": "Supports school safety vestibules, modern classroom learning environments, and ADA accessibility.",
+      "interviewStances": {
+        "interviewSource": "Wayne BOE Candidate Forums & Official Campaign Platform",
+        "keyPriorities": "Inclusive education, evidence-based academic curricula, and mental health support for students.",
+        "facilitiesAndBudget": "Prioritizes classroom resources over administrative expansion.",
+        "keyInterviewQuote": "Every child in Wayne deserves an individualized pathway to academic and personal success."
+      }
+    },
+    {
+      "name": "Donald Pavlak",
+      "ballotNumber": "3",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Incumbent",
+      "ballotSlogan": "Trusted, Transparent, Together",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (6 Running)",
+      "experience": "Long-serving veteran Trustee and former President of the Wayne Board of Education; lifelong Wayne resident with decades of board governance experience.",
+      "keyFocus": "Board continuity, labor contract stability, defending state education aid, and expanding Advanced Placement (AP) curricula.",
+      "fiscalStance": "Maintains a record of balanced budgets within state 2% caps while preserving comprehensive athletic and music programs.",
+      "infrastructureStance": "Led major energy efficiency, solar installation, and security vestibule upgrades across Wayne Valley and Wayne Hills High Schools.",
+      "interviewStances": {
+        "interviewSource": "Wayne Board of Education Records & Candidate Statements",
+        "keyPriorities": "Experienced, steady governance, protecting school funding, and supporting frontline teachers.",
+        "facilitiesAndBudget": "Prudent multi-year capital reserve planning to modernize aging school facilities without spikes in tax levy.",
+        "keyInterviewQuote": "Experience matters when governing a $186M district. We have maintained top academic ratings while protecting taxpayers."
+      }
+    },
+    {
+      "name": "Wendy Limandri",
+      "ballotNumber": "4",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Challenger",
+      "ballotSlogan": "Trusted, Transparent, Together",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (6 Running)",
+      "experience": "Wayne parent, active PTO officer, and community advocate running on the 'Trusted, Transparent, Together' slate with Pavlak and Faber.",
+      "keyFocus": "Parent-teacher communication, student wellness, modernizing elementary reading programs, and school facility cleanliness.",
+      "fiscalStance": "Advocates shared purchasing agreements with the township to lower transportation and insurance costs.",
+      "infrastructureStance": "Supports playground safety modernizations, school air filtration, and secure perimeter access controls.",
+      "interviewStances": {
+        "interviewSource": "Joint Slate Platform & Candidate Questionnaire",
+        "keyPriorities": "Parental involvement, educational rigor, and cooperative community governance.",
+        "facilitiesAndBudget": "Focuses on transparent budget presentations so parents understand where educational tax dollars go.",
+        "keyInterviewQuote": "Strong schools build strong communities. Working together transparently, we can elevate Wayne schools to new heights."
+      }
+    },
+    {
+      "name": "Mark Faber",
+      "ballotNumber": "5",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Incumbent",
+      "ballotSlogan": "Trusted, Transparent, Together",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (6 Running)",
+      "experience": "Incumbent Wayne Board of Education Trustee; healthcare finance professional with deep experience in enterprise budgeting and benefits management.",
+      "keyFocus": "District healthcare cost containment, healthcare benefit pooling, special education funding, and academic excellence.",
+      "fiscalStance": "Applies corporate financial analysis to health benefit reserves and out-of-district tuition contracts to eliminate waste.",
+      "infrastructureStance": "Advocates preventive maintenance schedules for heating, ventilation, and athletic facilities.",
+      "interviewStances": {
+        "interviewSource": "Wayne BOE Public Meeting Records & Candidate Interviews",
+        "keyPriorities": "Healthcare benefit cost control, supporting district staff, and maintaining fiscal discipline.",
+        "facilitiesAndBudget": "Leverages financial expertise to ensure Wayne gets maximum value from every taxpayer dollar.",
+        "keyInterviewQuote": "As a finance professional, I scrutinize our district spending to ensure our resources go where they belong: into the classroom."
+      }
+    },
+    {
+      "name": "James Fera",
+      "ballotNumber": "6",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Challenger",
+      "ballotSlogan": "Students Over Politics",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (6 Running)",
+      "experience": "Wayne parent, educator, and grassroots advocate focused on nonpartisan school governance, student mental health, and academic fundamentals.",
+      "keyFocus": "Keeping national political polarization out of Wayne classrooms, boosting math and reading proficiency, and expanding extracurriculars.",
+      "fiscalStance": "Calls for an independent line-by-line audit of district administrative spending and consultant contracts.",
+      "infrastructureStance": "Supports upgrading school science labs, technology infrastructure, and athletic facilities.",
+      "interviewStances": {
+        "interviewSource": "Passaic County Clerk Candidate Filing & Local Community Forum",
+        "keyPriorities": "Putting student academic outcomes first, rejecting partisan culture wars, and fiscal accountability.",
+        "facilitiesAndBudget": "Demands strict accountability for outside legal and consulting expenditures.",
+        "keyInterviewQuote": "Our public schools should be about students, teachers, and learning—not political agendas."
+      }
+    }
+  ],
+  "ballotArchitecture": {
+    "electionDate": "Tuesday, November 3, 2026",
+    "votingHours": "6:00 AM – 8:00 PM EST",
+    "summary": "Wayne voters cast ballots for local representation (5th Ward Council & Board of Education), County government (Passaic County Commissioners & Surrogate), and Federal offices (U.S. Senate & U.S. House NJ-11).",
+    "offices": [
+      {
+        "id": "wayne-council-ward5",
+        "office": "Wayne Township Council (5th Ward Unexpired)",
+        "level": "Municipal (Ward 5)",
+        "seatsAvailable": 1,
+        "candidatesRunning": 2,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "Unexpired Term",
+        "ballotType": "Partisan Ward Council",
+        "taxShare": "26.20% of Wayne Property Tax ($0.720 per $100)",
+        "description": "Governs the $83.5M municipal operating budget, Wayne Police Department, DPW, parks, and local ordinances for Wayne Township.",
+        "badgeColor": "var(--color-city)"
+      },
+      {
+        "id": "wayne-boe",
+        "office": "Wayne Township Board of Education",
+        "level": "School District (Township-wide)",
+        "seatsAvailable": 3,
+        "candidatesRunning": 6,
+        "voteRule": "Vote for up to THREE (3)",
+        "termLength": "3-Year Full Terms (2027–2029)",
+        "ballotType": "Nonpartisan School Board",
+        "taxShare": "58.40% of Wayne Property Tax ($1.605 per $100)",
+        "description": "Oversees 14 public schools, ~7,500 students, and the $186.2M Wayne Township Public Schools operating budget.",
+        "badgeColor": "var(--color-school)"
+      },
+      {
+        "id": "passaic-commissioners-full",
+        "office": "Passaic County Commissioners (Full Term)",
+        "level": "Countywide (Passaic County)",
+        "seatsAvailable": 2,
+        "candidatesRunning": 4,
+        "voteRule": "Vote for up to TWO (2)",
+        "termLength": "3 Years (2027–2029)",
+        "ballotType": "Partisan Countywide",
+        "taxShare": "15.40% of Wayne Property Tax ($0.423 per $100)",
+        "description": "Allocates the ~$500M Passaic County budget, maintaining county roadways in Wayne (Valley Rd, French Hill Rd, Hamburg Turnpike), Passaic County Community College, and county parks.",
+        "badgeColor": "var(--color-county)"
+      },
+      {
+        "id": "passaic-surrogate",
+        "office": "Passaic County Surrogate",
+        "level": "County Constitutional Officer",
+        "seatsAvailable": 1,
+        "candidatesRunning": 2,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "5 Years (2027–2031)",
+        "ballotType": "Partisan Countywide",
+        "taxShare": "County General Fund",
+        "description": "Constitutional Officer managing wills, estates, guardianships, and adoption records across Passaic County.",
+        "badgeColor": "var(--color-county)"
+      },
+      {
+        "id": "us-senate",
+        "office": "United States Senate (New Jersey, Class II)",
+        "level": "Federal (Statewide New Jersey)",
+        "seatsAvailable": 1,
+        "candidatesRunning": 4,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "6 Years (2027–2033)",
+        "ballotType": "Partisan Statewide",
+        "taxShare": "Federal SALT Deduction Relief & Infrastructure Grants",
+        "description": "Represents New Jersey in the U.S. Senate. Justin Murphy (R), Cory Booker (D), Veronica Fernandez (End The Corruption!), and Joanne Kuniansky (Socialist Workers Party).",
+        "badgeColor": "#1d4ed8"
+      },
+      {
+        "id": "us-house-nj11",
+        "office": "U.S. House of Representatives (NJ-11)",
+        "level": "Federal (Congressional District 11)",
+        "seatsAvailable": 1,
+        "candidatesRunning": 4,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "2 Years (2027–2029)",
+        "ballotType": "Partisan Congressional District",
+        "taxShare": "Federal Flood Control & Community Project Earmarks",
+        "description": "Represents Wayne, Parsippany, Montclair, Morristown, and Montville in Congress. Analilia Mejia (D) vs. Joe Hathaway (R), Alan Bond, and Vincent Matrisciano.",
+        "badgeColor": "#059669"
+      }
+    ]
+  },
+  "njCandidates": {
+    "usSenate": {
+      "office": "United States Senate (New Jersey, Class II)",
+      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Represents New Jersey in Washington D.C., confirming federal judges, voting on federal budgets, and fighting for SALT deduction relief for high-tax suburban homeowners.",
+      "candidates": [
+        {
+          "name": "Justin Murphy",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Attorney & Former Municipal Official",
+          "keyPriorities": "Federal spending restraint, full SALT deduction restoration, national border security, and energy independence.",
+          "localImpact": "Pledges to cut federal red tape delaying Passaic River Basin flood mitigation projects."
+        },
+        {
+          "name": "Cory Booker",
+          "party": "Democrat",
+          "status": "Incumbent U.S. Senator",
+          "role": "U.S. Senator (in office since 2013); former Mayor of Newark.",
+          "keyPriorities": "Repealing the federal $10K SALT deduction cap, funding NJ Transit and Gateway Tunnel, and clean water infrastructure grants.",
+          "localImpact": "Secured federal appropriations for regional flood defense and water treatment infrastructure in Passaic County."
+        },
+        {
+          "name": "Veronica Fernandez",
+          "party": "Nomination by Petition (End The Corruption!)",
+          "status": "Independent Challenger",
+          "role": "Civic activist running on anti-corruption platform.",
+          "keyPriorities": "Term limits, campaign finance reform, and reducing cost-of-living burdens on middle-class families."
+        },
+        {
+          "name": "Joanne Kuniansky",
+          "party": "Nomination by Petition (Socialist Workers Party)",
+          "status": "Third-Party Challenger",
+          "role": "Labor organizer and union advocate.",
+          "keyPriorities": "Worker union rights, universal healthcare, and cost-of-living protections for working families."
+        }
+      ]
+    },
+    "usHouse": {
+      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District — NJ-11)",
+      "term": "2-Year Term (January 3, 2027 – January 3, 2029)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "NJ-11 spans suburban Passaic, Morris, and Essex Counties including Wayne, Parsippany, Montclair, Morristown, and Montville.",
+      "candidates": [
+        {
+          "name": "Analilia Mejia",
+          "party": "Democrat",
+          "status": "Incumbent Representative",
+          "role": "U.S. Representative (NJ-11); veteran grassroots organizer and policy advisor.",
+          "keyPriorities": "Full federal SALT tax deduction restoration, expanding federal child tax credits, protecting public school funding, and federal flood control grants for the Passaic and Pompton river basins.",
+          "localImpact": "Championing federal Army Corps of Engineers funding for Wayne and Passaic County flood basin maintenance."
+        },
+        {
+          "name": "Joe Hathaway",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Randolph Councilman and former Mayor; small business owner and community leader.",
+          "keyPriorities": "Federal fiscal restraint, curbing inflation, full SALT relief for suburban homeowners, support for local law enforcement, and business tax cuts.",
+          "localImpact": "Advocates for federal infrastructure dollars directed toward North Jersey highway bottlenecks and flood mitigation."
+        },
+        {
+          "name": "Alan Bond",
+          "party": "Nomination by Petition (Hope for Tomorrow)",
+          "status": "Independent Challenger",
+          "role": "Independent reform candidate.",
+          "keyPriorities": "Bipartisan consensus, federal budget balancing, and government accountability."
+        },
+        {
+          "name": "Vincent Matrisciano",
+          "party": "Nomination by Petition (Unaffiliated)",
+          "status": "Independent Challenger",
+          "role": "Independent civic candidate.",
+          "keyPriorities": "Tax relief for working families and reducing federal regulatory overhead."
+        }
+      ]
+    },
+    "passaicCountyCommissionersFull": {
+      "office": "Passaic County Board of County Commissioners (Full 3-Year Terms)",
+      "term": "3-Year Staggered Terms (January 2027 – December 2029)",
+      "voteRule": "Vote for up to TWO (2)",
+      "importance": "Sets the county tax rate ($0.423 per $100 in Wayne, or 15.4% of property taxes). Manages county roads (Valley Rd, French Hill Rd), Passaic County Technical-Vocational Schools, and county park systems.",
+      "candidates": [
+        {
+          "slate": "Democratic Commissioner Slate",
+          "party": "Democrat",
+          "status": "Democratic Nominees",
+          "candidates": [
+            "Nicholas Veliky",
+            "Orlando Cruz"
+          ],
+          "keyPriorities": "Maintaining county AA bond credit rating, paving county roads in Wayne, and funding county senior transit."
+        },
+        {
+          "slate": "Republican Commissioner Slate",
+          "party": "Republican",
+          "status": "Republican Nominees",
+          "candidates": [
+            "Edward \"Ed\" Leonard",
+            "Bill J. Rodriguez"
+          ],
+          "keyPriorities": "Enacting a county property tax freeze, auditing outside vendor contracts, and prioritizing flood control grants."
+        }
+      ]
+    },
+    "passaicCountyCommissionersUnexpired": {
+      "office": "Passaic County Board of County Commissioners (1-Year Unexpired Term)",
+      "term": "1-Year Term (January 2027 – December 2027)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Fills an unexpired vacancy on the Passaic County Board of County Commissioners.",
+      "candidates": [
+        {
+          "name": "Aleksandra Tasic",
+          "party": "Democrat",
+          "status": "Democratic Nominee",
+          "role": "Public policy advocate.",
+          "keyPriorities": "County budget transparency and mental health programs."
+        },
+        {
+          "name": "Marko Kopic",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Small business owner.",
+          "keyPriorities": "Holding down county property taxes and spending."
+        }
+      ]
+    },
+    "passaicCountySurrogate": {
+      "office": "Passaic County Surrogate (Constitutional Officer)",
+      "term": "5-Year Term (January 2027 – December 2031)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Judge of the Surrogate Court managing wills, probate, estates, and legal guardianships across Passaic County.",
+      "candidates": [
+        {
+          "name": "Zoila Cassanova",
+          "party": "Democrat",
+          "status": "Incumbent Surrogate",
+          "role": "Passaic County Surrogate (since 2021); attorney.",
+          "keyPriorities": "Expanding community wills clinics and digital probate access for suburban families."
+        },
+        {
+          "name": "Jessica Sprague",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Attorney and former prosecutor.",
+          "keyPriorities": "Eliminating probate delays and expanding satellite office hours in Wayne."
+        }
+      ]
+    }
+  }
+}

@@ -18,6 +18,7 @@ let surroundingTownsData = null;
 let commercialPilotData = null;
 let fairTaxData = null;
 let cliftonElectionData = null;
+let loadedElectionCity = null;
 let electionFilterStatus = 'all';
 let electionFilterCategory = 'all';
 let electionSearchQuery = '';
@@ -752,136 +753,11 @@ async function switchCity(cityId, updateUrl = true) {
   }
 }
 
-// Dynamically update all static copy, headers, dropdowns, presets, and links for the active city
-function applyCityStaticCopy(cityId) {
-  const meta = CITY_REGISTRY[cityId] || CITY_REGISTRY.clifton;
-  const isParsippany = cityId === 'parsippany';
-  const isClifton = cityId === 'clifton';
 
-  // 1. Document Title & App Header
-  const pageSuffix = document.body.getAttribute('data-page-title');
-  if (pageSuffix) {
-    document.title = `${meta.name} NJ ${pageSuffix} | Taxpayer Watchdog`;
-  } else {
-    document.title = meta.pageTitle;
-  }
-
-  const setElText = (id, text) => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = text;
-  };
-  const setElHtml = (sel, html) => {
-    const el = document.querySelector(sel);
-    if (el) el.innerHTML = html;
-  };
-
-  setElText('header-badge-icon', meta.icon);
-  setElText('header-badge-text', meta.badgeText);
-  setElText('header-main-title', meta.title);
-  setElText('header-main-subtitle', meta.subtitle);
-
-  setElText('hdr-stat1-label', 'Certified Tax Rate (2026) ↗');
-  setElText('hdr-stat1-num', meta.certifiedTaxRate);
-  setElText('hdr-stat1-sub', 'Avg Bill: ' + meta.avgTaxBill);
-
-  setElText('hdr-stat2-label', meta.schoolDistrictName + ' ↗');
-  setElText('hdr-stat2-num', meta.schoolsShare);
-  setElText('hdr-stat2-sub', 'Explore ' + meta.schoolBudgetDisplay + ' budget');
-
-  setElText('hdr-stat3-label', 'Sampled Assessments ↗');
-  setElText('hdr-stat3-num', '1,850 Homes');
-  setElText('hdr-stat3-sub', 'Avg Assessed: ' + meta.avgAssessed);
-
-  // 2. Sticky Nav Brand & Dropdown Subtitles
-  setElText('nav-brand-icon', meta.icon);
-  setElText('nav-brand-title', meta.name + ' Watchdog');
-  setElText('nav-brand-subtitle', meta.auditBadge);
-  setElText('nav-city-name-text', meta.icon + ' ' + meta.name + ', ' + (meta.state || 'NJ'));
-
-  const electionTabBtn = document.getElementById('nav-btn-election');
-  if (electionTabBtn) {
-    if (cityId === 'clifton') {
-      electionTabBtn.innerHTML = `
-        <span class="tab-icon">🗳️</span>
-        <span class="tab-title">Election 2026</span>
-        <span class="badge-tag" style="background: #2563eb; color: #fff; margin-left: 4px; padding: 1px 7px; font-size: 0.72rem; border-radius: 999px;">19 Candidates</span>
-      `;
-    } else {
-      electionTabBtn.innerHTML = `
-        <span class="tab-icon">🗳️</span>
-        <span class="tab-title">Clifton Election 2026</span>
-        <span class="badge-tag" style="background: #64748b; color: #fff; margin-left: 4px; padding: 1px 7px; font-size: 0.72rem; border-radius: 999px;">Clifton Guide</span>
-      `;
-    }
-  }
-
-  setElHtml('.dropdown-item[data-tab="tab-budgets"] .d-item-text small',
-    `${meta.schoolDistrictShort} (${meta.schoolBudgetDisplay}) & Muni (${meta.muniBudgetDisplay}) budgets`);
-  setElHtml('.dropdown-item[data-tab="tab-benefits"] .d-item-text small',
-    `SHBP/SEHBP plans, pensions & ${meta.benefitsSpendDisplay} costs`);
-  setElHtml('.dropdown-item[data-tab="tab-demographics"] .d-item-text small',
-    `${meta.zipCodesDisplay} disparities`);
-  setElHtml('.dropdown-item[data-tab="tab-surrounding"] .d-item-text small',
-    `Compare 14 North Jersey towns (${meta.county})`);
-  setElHtml('.dropdown-item[data-tab="tab-controversies"] .d-item-text small',
-    meta.controversyHighlight);
-
-  // 3. Top Status Bar
-  setElHtml('.top-status-bar .status-text',
-    `<strong>Live Citizen Watchdog:</strong> Certified 2026 Tax Rates • ${meta.county} Board of Taxation & Official Audits`);
-  setElHtml('.top-status-bar .status-quick-links',
-    `<span class="status-item">Total Rate: <strong>${meta.certifiedTaxRate}</strong></span>
-     <span class="status-sep">•</span>
-     <span class="status-item">Schools Share: <strong>${meta.schoolsShare}</strong></span>
-     <span class="status-sep">•</span>
-     <span class="status-item">City/Muni Share: <strong>${meta.muniShare}</strong></span>
-     <span class="status-sep">•</span>
-     <span class="status-item">County Share: <strong>${meta.countyShare}</strong></span>
-     <span class="status-sep">•</span>
-     <span class="status-item">Auto-Refresh: <strong style="color: #15803d;">Active (Weekly Cron)</strong></span>`);
-
-  // 4. Tab 1: Calculator
-  setElHtml('#tab-calculator .section-intro',
-    `<div class="section-badge-bar">
-       <span class="section-date-badge">Certified: Tax Year 2026 • ${meta.county} Board of Taxation (District ${meta.districtCode})</span>
-     </div>
-     <h2>Your ${meta.fullName} Property Tax Breakdown</h2>
-     <p>In ${meta.name}, the 2026 certified composite tax rate is <strong>$${meta.rateNum.toFixed(3)} per $100 of assessed property value</strong>. Enter your home's assessed value or drag the slider below to see where every dollar of your property tax goes.</p>`);
-
-  setElHtml('#tab-calculator .input-card .tooltip-badge', 'Avg: ' + meta.avgAssessed);
-  setElHtml('#tab-calculator .calc-hint',
-    `Look on your ${meta.name} Tax Bill or Assessment Postcard (or drag the slider below):`);
-
-  const calcInput = document.getElementById('calc-assessment-input');
-  const calcSlider = document.getElementById('calc-assessment-slider');
-  if (calcInput && calcSlider) {
-    calcSlider.min = meta.sliderMin.toString();
-    calcSlider.max = meta.sliderMax.toString();
-    calcInput.value = meta.sliderDefault.toString();
-    calcSlider.value = meta.sliderDefault.toString();
-  }
-
-  setElHtml('#tab-calculator .slider-labels', meta.sliderLabelsHtml);
-  setElHtml('#tab-calculator .quick-presets', meta.quickPresetsHtml);
-
-  setElHtml('#tab-calculator .info-alert .alert-text',
-    `<strong>Assessment vs. Market Value:</strong> In ${meta.name}, homes are assessed at an Equalization Ratio of <strong>${meta.equalizationRatio.toFixed(1)}%</strong> of true market value. A home selling on the market for $${(meta.typicalMarket/1000).toFixed(0)}k typically has an assessed tax value of ~$${(meta.sliderDefault/1000).toFixed(0)}k.
-     <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
-       <button class="btn-jump-action" data-jump-tab="tab-properties">
-         <span>🏡</span> Who Pays More? Explore 1,850 ${meta.name} Homes & Assessments ➔
-       </button>
-       <button class="btn-jump-action secondary" data-jump-tab="tab-fair-tax">
-         <span>⚖️</span> What If Taxes Were Fair? Test Scenarios in What-If Simulator ➔
-       </button>
-     </div>`);
-
-  setElHtml('#tab-calculator .legend-row',
-    `<span class="legend-item"><span class="dot school-dot"></span> ${meta.schoolDistrictShort} (${meta.schoolsShare})</span>
-     <span class="legend-item"><span class="dot city-dot"></span> Municipal Services (${meta.muniShare})</span>
-     <span class="legend-item"><span class="dot county-dot"></span> ${meta.countyShort} (${meta.countyShare})</span>`);
-
-  setElHtml('#tab-calculator .taxpayer-critical-intel-grid', isParsippany
-    ? `<!-- Card 1: 6 Independent Fire Districts & 2020 Revaluation Drift -->
+// Critical Intel Grid customized for each town
+function getCriticalIntelGrid(cityId, meta) {
+  if (cityId === 'parsippany') {
+    return `<!-- Card 1: 6 Independent Fire Districts & Assessment Drift -->
        <div class="calc-card" style="border-top: 4px solid #2563eb;">
          <div class="card-title-row" style="margin-bottom: 10px;">
            <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🚒</span> 6 Independent Fire Districts & Assessment Drift</h3>
@@ -900,7 +776,7 @@ function applyCityStaticCopy(cityId) {
          </div>
        </div>
 
-       <!-- Card 2: NJ State Property Tax Relief (Form PAS-1: Stay NJ, ANCHOR & Senior Freeze) -->
+       <!-- Card 2: NJ State Property Tax Relief -->
        <div class="calc-card" style="border-top: 4px solid #059669;">
          <div class="card-title-row" style="margin-bottom: 10px;">
            <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🛡️</span> Direct NJ Tax Relief: Stay NJ, ANCHOR & Freeze</h3>
@@ -919,24 +795,251 @@ function applyCityStaticCopy(cityId) {
          </div>
        </div>
 
-       <!-- Card 3: Self-Liquidating Water, Sewer & Knoll Golf Utilities -->
+       <!-- Card 3: Self-Liquidating Utilities -->
        <div class="calc-card" style="border-top: 4px solid #d97706;">
          <div class="card-title-row" style="margin-bottom: 10px;">
            <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>⛳</span> Water, Sewer & Knoll Country Club Utilities ($35.8M)</h3>
            <span class="badge-alert">Enterprise Funds</span>
          </div>
          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
-           Outside the $92.8M general municipal budget, Parsippany operates three dedicated municipal enterprise utilities totaling <strong>$35.85 Million/yr</strong>:
+           Outside the $92.8M general municipal budget, Parsippany operates dedicated municipal enterprise utilities totaling <strong>$35.85 Million/yr</strong>:
          </p>
          <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
-           <li><strong>Water ($14.2M) & Sewer ($16.8M) Utilities:</strong> Funded through quarterly metered user fees rather than the general property tax rate, including PFAS water treatment upgrades.</li>
-           <li><strong>Knoll Country Club Utility ($4.85M):</strong> Township-owned 36-hole golf facility (Knoll West & Knoll East) generating green fees and catering revenue to cover its capital debt.</li>
+           <li><strong>Water & Sewer Utilities ($31.0M):</strong> Funded through quarterly user fees rather than property tax rates, covering PFAS filtration upgrades.</li>
+           <li><strong>Knoll Country Club Utility ($4.85M):</strong> Township-owned 36-hole golf facility generating user fees to cover capital debt.</li>
          </ul>
          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
            <a href="https://www.parsippany.net/department/finance" target="_blank" rel="noopener" class="external-pill-link-sm">Parsippany Finance & Utility Budgets ↗</a>
          </div>
-       </div>`
-    : `<!-- Card 1: Mandatory 2026-2027 ASI Citywide Revaluation -->
+       </div>`;
+  }
+  
+  if (cityId === 'wayne') {
+    return `<!-- Card 1: Commercial Ratables & Route 23/46 Appeals -->
+       <div class="calc-card" style="border-top: 4px solid #2563eb;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏬</span> Willowbrook Mall & Commercial Ratable Appeals</h3>
+           <span class="badge-tag">Ratable Defense</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Wayne's tax base relies on retail and corporate corridors along Route 23, Route 46, and Willowbrook Mall:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Commercial Ratable Share:</strong> Commercial properties fund <strong>25.5% of the total tax levy</strong>, helping mitigate residential tax rates.</li>
+           <li><strong>Tax Court Appeals:</strong> Large commercial appeals require proactive municipal legal defense to prevent tax burden shifts onto residential neighborhoods.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.waynetownship.com/assessor.html" target="_blank" rel="noopener" class="external-pill-link-sm">Wayne Township Tax Assessor ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 2: Pompton & Passaic River Flood Mitigation -->
+       <div class="calc-card" style="border-top: 4px solid #059669;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🌊</span> Pompton & Passaic River Flood Basin Mitigation</h3>
+           <span class="badge-tag" style="background: #dbeafe; color: #1e40af;">Flood Mitigation</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Wayne manages critical flood mitigation programs across the Pompton and Passaic river basins:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>FEMA Blue Acres & Elevation Grants:</strong> Acquisition and elevation of repetitive-loss flood-prone properties along river basins.</li>
+           <li><strong>Stormwater Capital Bonds:</strong> Municipal debt allocations support retention berms, pump station upgrades, and drainage maintenance.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.waynetownship.com/engineering-flood.html" target="_blank" rel="noopener" class="external-pill-link-sm">Wayne Flood Control & Engineering ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 3: School District Funding -->
+       <div class="calc-card" style="border-top: 4px solid #d97706;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏫</span> Wayne Public Schools ($186.2M Budget)</h3>
+           <span class="badge-alert">58.4% of Taxes</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Wayne Township Public Schools serves over 7,800 students across 14 public campuses:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Local Tax Share:</strong> The local school tax levy represents <strong>58.4% of every tax dollar</strong> collected in Wayne ($1.605 per $100 assessed).</li>
+           <li><strong>Facility Modernization:</strong> Capital funding targets science labs, roof replacements, and HVAC ventilation across historic buildings.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.wayneschools.com" target="_blank" rel="noopener" class="external-pill-link-sm">Wayne BOE Budget Portal ↗</a>
+         </div>
+       </div>`;
+  }
+
+  if (cityId === 'montclair') {
+    return `<!-- Card 1: School Referendum & Historic Facilities -->
+       <div class="calc-card" style="border-top: 4px solid #2563eb;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏫</span> $188M School Bond Referendum & Facility Debt</h3>
+           <span class="badge-tag">Capital Investment</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Montclair voters approved a historic $188 Million bond referendum to restore aging school buildings:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Multi-Campus Upgrades:</strong> Financing district-wide HVAC installations, boiler replacements, modern science labs, and accessibility compliance.</li>
+           <li><strong>Debt Service Impact:</strong> Bond repayments are amortized over 20+ years, requiring disciplined annual budgeting within the state 2% cap.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.montclair.k12.nj.us" target="_blank" rel="noopener" class="external-pill-link-sm">Montclair Public Schools Bond Info ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 2: Regional Property Tax Effort -->
+       <div class="calc-card" style="border-top: 4px solid #059669;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>💰</span> Highest Average Property Tax Bill in Region ($23,217)</h3>
+           <span class="badge-alert" style="background: #fee2e2; color: #b91c1c;">Highest Regional Tax</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Montclair homeowners shoulder one of the highest municipal average tax bills in the state:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Certified Composite Rate:</strong> 3.766% per $100 on an average residential assessment of $616,500.</li>
+           <li><strong>State Aid Gap:</strong> Under the NJ SFRA formula, Montclair receives modest state equalization aid, requiring local homeowners to fund over 85% of school operations.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://propertytaxrelief.nj.gov" target="_blank" rel="noopener" class="external-pill-link-sm">Claim Stay NJ & ANCHOR Relief (PAS-1) ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 3: Downtown Redevelopment & PILOT Agreements -->
+       <div class="calc-card" style="border-top: 4px solid #d97706;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏗️</span> Bloomfield Ave & Lackawanna Plaza PILOTs</h3>
+           <span class="badge-tag">Redevelopment</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Montclair has utilized Long-Term Tax Exemptions (PILOTs) for downtown and transit-oriented projects:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Seymour Street & MC Hotel:</strong> High-density arts and residential corridor generating annual service charges to municipal coffers.</li>
+           <li><strong>School Revenue Sharing:</strong> Unlike conventional taxes where 57.2% goes to schools, PILOT service charges flow 95% to Township Hall unless negotiated otherwise.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.montclairnjusa.org" target="_blank" rel="noopener" class="external-pill-link-sm">Township Planning & PILOT Records ↗</a>
+         </div>
+       </div>`;
+  }
+
+  if (cityId === 'morristown') {
+    return `<!-- Card 1: Regional School District Cost Sharing -->
+       <div class="calc-card" style="border-top: 4px solid #2563eb;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏫</span> Morris School District Regional Equalization</h3>
+           <span class="badge-tag">Joint K-12 District</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Morristown and Morris Township jointly fund the <strong>Morris School District ($136.5M budget)</strong>:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Statutory Cost-Sharing:</strong> School tax shares are apportioned annually based on state equalized property valuations between Morristown and Morris Township.</li>
+           <li><strong>High School & Dual Language:</strong> Funding 10 campuses including Morristown High School and specialized STEM academies.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.morrisschooldistrict.org" target="_blank" rel="noopener" class="external-pill-link-sm">Morris School District Budget Portal ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 2: Commercial Ratable Hub & M Station PILOTs -->
+       <div class="calc-card" style="border-top: 4px solid #059669;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏢</span> M Station, HQ Plaza & Commercial Ratable Core</h3>
+           <span class="badge-tag" style="background: #dbeafe; color: #1e40af;">43.6% Commercial</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           As the Morris County seat, Morristown features a robust corporate commercial ratable base:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Commercial Share:</strong> Commercial properties generate <strong>43.6% of the town's property tax base</strong>, significantly reducing residential millage rates.</li>
+           <li><strong>M Station PILOT:</strong> Transit-oriented Class A office and retail development on Morris Street generating substantial PILOT service payments.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.townofmorristown.org" target="_blank" rel="noopener" class="external-pill-link-sm">Town of Morristown Finance ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 3: County Seat Infrastructure & Parking Authority -->
+       <div class="calc-card" style="border-top: 4px solid #d97706;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>⚖️</span> Morris County Seat & Parking Infrastructure</h3>
+           <span class="badge-alert">County Government</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Morristown hosts the Morris County Courthouse, Administration Complex, and extensive commuter parking infrastructure:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Tax-Exempt Government Land:</strong> Extensive county, state, and historical parkland requires strong commercial ratables to balance the municipal ledger.</li>
+           <li><strong>Parking Authority:</strong> Dedicated garages and metered parking generate self-liquidating municipal revenues that subsidize general town operations.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.morristownparking.com" target="_blank" rel="noopener" class="external-pill-link-sm">Morristown Parking Authority ↗</a>
+         </div>
+       </div>`;
+  }
+
+  if (cityId === 'montville') {
+    return `<!-- Card 1: Low Municipal Debt & Open Space Preservation -->
+       <div class="calc-card" style="border-top: 4px solid #2563eb;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏞️</span> Low Municipal Debt & Open Space Conservation</h3>
+           <span class="badge-tag">AAA Rating</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Montville maintains conservative fiscal management and aggressive open space defense:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Low Debt Ratio:</strong> Montville holds one of the lowest municipal debt-to-equalized valuation ratios in Morris County.</li>
+           <li><strong>Open Space Trust:</strong> Dedicated municipal open space funds partner with Morris County to protect watershed ridges and prevent overdevelopment.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.montvillenj.org" target="_blank" rel="noopener" class="external-pill-link-sm">Montville Township Assessor & Finance ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 2: Top-Tier School System -->
+       <div class="calc-card" style="border-top: 4px solid #059669;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏫</span> Montville Public Schools ($84.2M Budget)</h3>
+           <span class="badge-tag" style="background: #dcfce7; color: #166534;">66.2% of Taxes</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Montville Township Public Schools accounts for nearly two-thirds of the total property tax bill:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Classroom Investment:</strong> Over 66% of every property tax dollar goes directly to 7 district schools, maintaining high state rankings in STEM.</li>
+           <li><strong>Self-Funded Local Levy:</strong> Low state categorical aid requires local homeowners to fund over 90% of school operations.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.montville.net" target="_blank" rel="noopener" class="external-pill-link-sm">Montville School Board Portal ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 3: Volunteer Fire & Self-Sustaining Utilities -->
+       <div class="calc-card" style="border-top: 4px solid #d97706;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🚒</span> 3 Volunteer Fire Districts & Dedicated Water Utility</h3>
+           <span class="badge-alert">Community Protection</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Montville relies on dedicated volunteer fire companies and enterprise utility funding:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Fire Districts (Montville, Towaco, Pine Brook):</strong> Dedicated volunteer apparatus and capital funding protect three distinct township sections at low taxpayer cost.</li>
+           <li><strong>Water Utility:</strong> Metered enterprise utility funds wellhead filtration and water main upkeep without impacting the general municipal tax rate.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.montvillenj.org/218/Water-and-Sewer" target="_blank" rel="noopener" class="external-pill-link-sm">Montville Water & Sewer Department ↗</a>
+         </div>
+       </div>`;
+  }
+
+  // Default: Clifton
+  return `<!-- Card 1: Mandatory 2026-2027 ASI Citywide Revaluation -->
        <div class="calc-card" style="border-top: 4px solid #2563eb;">
          <div class="card-title-row" style="margin-bottom: 10px;">
            <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>📐</span> Mandatory 2026–2027 Property Revaluation (ASI)</h3>
@@ -992,44 +1095,367 @@ function applyCityStaticCopy(cityId) {
          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
            <a href="https://www.cliftonnj.org/218/Tax-Collector" target="_blank" rel="noopener" class="external-pill-link-sm">Clifton Sewer Utility & Discharge Credit Info ↗</a>
          </div>
-       </div>`);
+       </div>`;
+}
+
+// Populate Property Filters dynamically from loaded property records
+function populatePropertyFilters(meta) {
+  const neighSelect = document.getElementById('prop-neighborhood-filter');
+  const zipSelect = document.getElementById('prop-zip-filter');
+  if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
+  const props = propertyAssessmentsData.properties;
+
+  if (neighSelect) {
+    const neighCounts = {};
+    props.forEach(p => {
+      if (p.neighborhood) neighCounts[p.neighborhood] = (neighCounts[p.neighborhood] || 0) + 1;
+    });
+    const sortedNeighs = Object.keys(neighCounts).sort();
+    let nHtml = `<option value="ALL">All Neighborhoods (${escapeHtml(meta.name)}-wide - ${props.length.toLocaleString()} Properties)</option>`;
+    sortedNeighs.forEach(n => {
+      nHtml += `<option value="${escapeHtml(n)}">${escapeHtml(n)} (${neighCounts[n]} homes)</option>`;
+    });
+    neighSelect.innerHTML = nHtml;
+  }
+
+  if (zipSelect) {
+    const zipCounts = {};
+    props.forEach(p => {
+      if (p.zip) zipCounts[p.zip] = (zipCounts[p.zip] || 0) + 1;
+    });
+    const sortedZips = Object.keys(zipCounts).sort();
+    let zHtml = `<option value="ALL">All ZIP Codes (${sortedZips.join(', ')})</option>`;
+    sortedZips.forEach(z => {
+      zHtml += `<option value="${escapeHtml(z)}">ZIP ${escapeHtml(z)} (${zipCounts[z]} homes)</option>`;
+    });
+    zipSelect.innerHTML = zHtml;
+  }
+}
+
+// Dynamically update election page titles, badges, and copy for the active city
+function updateElectionStaticCopy(cityId, meta) {
+  if (!cliftonElectionData) return;
+  const candidates = cliftonElectionData.councilCandidates || [];
+  const boeList = cliftonElectionData.boeCandidates || (cliftonElectionData.boeElection?.candidates) || [];
+  const councilCount = candidates.length;
+  const boeCount = boeList.length;
+  const incCount = candidates.filter(c => c.status && c.status.toLowerCase().includes('incumbent')).length;
+  const chalCount = councilCount - incCount;
+  const controvCount = candidates.filter(c => c.investigativeDossier && c.investigativeDossier.hasDocumentedControversies).length;
+  const cleanCount = councilCount - controvCount;
+
+  // Title & Section Intro
+  document.title = `${meta.name} NJ Election 2026 Guide, Match Quiz & Candidates | Taxpayer Watchdog`;
+  const badgeEl = document.querySelector('#tab-election .section-date-badge');
+  if (badgeEl) badgeEl.textContent = `🗳️ Official ${meta.name} Voter Guide • Election Day: Nov 3, 2026`;
+  const h2El = document.querySelector('#tab-election .section-intro h2');
+  if (h2El) h2El.textContent = `2026 ${meta.name} Election Guide & Candidate Matchmaker`;
+  const introP = document.querySelector('#tab-election .section-intro > p');
+  if (introP) {
+    introP.textContent = `Compare all ${councilCount} ${meta.name} candidates and ${boeCount} School Board candidates based on verified records, budgets, and tax policies.`;
+  }
+  const ctaSec = document.querySelector('.btn-election-cta-secondary');
+  if (ctaSec) {
+    ctaSec.textContent = `👥 Browse All ${councilCount} ${meta.name} Candidates`;
+  }
+
+  // Hero Banner Cards
+  const heroCards = document.querySelectorAll('.election-hero-strip .hero-strip-item');
+  if (heroCards && heroCards.length >= 4) {
+    const h1Title = heroCards[0].querySelector('h4');
+    const h1P = heroCards[0].querySelector('p');
+    if (h1Title) h1Title.textContent = `${meta.name} Local Representation`;
+    if (h1P) h1P.textContent = `${councilCount} candidates running • ${escapeHtml(cliftonElectionData.councilStructure || 'Municipal leadership')}`;
+
+    const h2Title = heroCards[1].querySelector('h4');
+    const h2P = heroCards[1].querySelector('p');
+    if (h2Title) h2Title.textContent = `${meta.schoolDistrictShort} (${boeCount} Running)`;
+    if (h2P) h2P.textContent = `${boeCount} running • ${meta.schoolBudgetDisplay} budget (${meta.schoolsShare} of taxes).`;
+
+    const h3Title = heroCards[2].querySelector('h4');
+    const h3P = heroCards[2].querySelector('p');
+    if (h3Title) h3Title.textContent = `Ethics & Benefit Standards`;
+    if (h3P) h3P.textContent = escapeHtml(cliftonElectionData.unanimousHealthBenefitPledge || 'Adheres to state Chapter 78 & ethics disclosures.');
+
+    const h4Title = heroCards[3].querySelector('h4');
+    const h4P = heroCards[3].querySelector('p');
+    if (h4Title) h4Title.textContent = `Polls Open 6 AM – 8 PM`;
+    if (h4P) {
+      const dropName = cliftonElectionData.votingResources?.mailInDropboxes?.[0]?.name || `${meta.name} Town Hall`;
+      h4P.textContent = `Tue, Nov 3 • Early voting & 24/7 dropboxes at ${dropName}.`;
+    }
+  }
+
+  // Quiz Intro
+  const quizTitle = document.getElementById('matchmaker-title');
+  if (quizTitle) quizTitle.textContent = `Take the 60-Second ${meta.name} Candidate Match Quiz`;
+  const quizDesc = document.querySelector('.matchmaker-intro-text p');
+  if (quizDesc) {
+    quizDesc.innerHTML = `${escapeHtml(meta.name)} voters participate in the November 3, 2026 General Election. Answer these quick policy questions—based on candidate stances and public records—to discover which candidates match your priorities.`;
+  }
+  const quizStatusSub = document.querySelector('#matchmaker-results-box p');
+  if (quizStatusSub) {
+    quizStatusSub.textContent = `Candidates ranked by agreement with your answers for ${meta.name}.`;
+  }
+
+  // Candidate section heading & status toggle buttons
+  const candHeading = document.querySelector('#election-candidates-heading .section-collapse-title');
+  if (candHeading) {
+    candHeading.textContent = `👥 Meet the ${councilCount} ${meta.name} Candidates`;
+  }
+  const candPill = document.querySelector('#election-candidates-heading .pill-tag');
+  if (candPill) candPill.textContent = `${councilCount} Candidates`;
+
+  const btnAll = document.querySelector('.btn-group-toggle button[data-status="all"]');
+  if (btnAll) btnAll.textContent = `All (${councilCount})`;
+  const btnInc = document.querySelector('.btn-group-toggle button[data-status="incumbent"]');
+  if (btnInc) btnInc.textContent = `Incumbents (${incCount})`;
+  const btnChal = document.querySelector('.btn-group-toggle button[data-status="challenger"]');
+  if (btnChal) btnChal.textContent = `Challengers (${chalCount})`;
+  const btnControv = document.querySelector('.btn-group-toggle button[data-status="controversy"]');
+  if (btnControv) btnControv.textContent = `⚠️ Under Scrutiny (${controvCount})`;
+  const btnClean = document.querySelector('.btn-group-toggle button[data-status="clean"]');
+  if (btnClean) btnClean.textContent = `✓ Verified Clean (${cleanCount})`;
+
+  const resCountEl = document.getElementById('election-results-count');
+  if (resCountEl) resCountEl.textContent = `Showing all ${councilCount} of ${councilCount} ${meta.name} Candidates`;
+
+  // Ballot Architecture description
+  const ballotDesc = document.querySelector('#election-ballot-overview .section-subtitle-desc');
+  if (ballotDesc) {
+    ballotDesc.textContent = `See exactly who and what you are voting for in ${meta.name} on November 3, 2026, including how each office impacts your local property taxes:`;
+  }
+
+  // Ethics spotlight description
+  const ethDesc = document.querySelector('#election-controversies-heading .section-subtitle-desc');
+  if (ethDesc) {
+    ethDesc.textContent = `Nonpartisan public records check of outside commercial businesses, state financial disclosure filings (FDS), court records, municipal censures, and ethics inquiries for all ${meta.name} candidates.`;
+  }
+
+  // Side-by-Side matrix description
+  const matrixDesc = document.querySelector('#election-matrix-heading .section-subtitle-desc');
+  if (matrixDesc) {
+    matrixDesc.textContent = `Compare all ${councilCount} ${meta.name} candidates side-by-side on key issues: Property Taxes, Infrastructure, Zoning, and School Support.`;
+  }
+  const matrixPill = document.querySelector('#election-matrix-heading .pill-tag');
+  if (matrixPill) matrixPill.textContent = `Compare All ${councilCount} Candidates`;
+
+  // School Board section
+  const boeHeading = document.querySelector('#election-boe-heading .section-collapse-title');
+  if (boeHeading) {
+    boeHeading.textContent = `🏫 ${meta.schoolDistrictShort} Candidates: ${boeCount} Running`;
+  }
+  const boePill = document.querySelector('#election-boe-heading .pill-tag');
+  if (boePill) boePill.textContent = `${boeCount} Candidates • ${meta.schoolBudgetDisplay} Budget`;
+  const boeDesc = document.querySelector('#election-boe-heading .section-subtitle-desc');
+  if (boeDesc) {
+    boeDesc.innerHTML = `School Board Trustees oversee <strong>${escapeHtml(meta.schoolDistrictName)}</strong> (${escapeHtml(meta.schoolBudgetDisplay)} budget), student academic performance, and roughly ${escapeHtml(meta.schoolsShare)} of your property tax bill. Per certified county clerk filings, <strong>${boeCount} candidates</strong> are running for trustee seats:`;
+  }
+
+  // State & County section
+  const njHeading = document.querySelector('#election-nj-candidates-heading .section-collapse-title');
+  if (njHeading) {
+    njHeading.textContent = `🇺🇸 State, Congressional & ${meta.countyShort} Races`;
+  }
+  const njPill = document.querySelector('#election-nj-candidates-heading .pill-tag');
+  if (njPill) {
+    njPill.textContent = `U.S. Senate, ${cliftonElectionData.njCandidates?.usHouse?.badge || 'Congress'} & ${meta.countyShort}`;
+  }
+  const njDesc = document.querySelector('#election-nj-candidates-heading .section-subtitle-desc');
+  if (njDesc) {
+    njDesc.textContent = `In addition to local races, ${meta.name} voters elect representation for United States Senate, U.S. House of Representatives (${cliftonElectionData.njCandidates?.usHouse?.badge || 'Congress'}), and ${meta.countyShort} Board of County Commissioners.`;
+  }
+
+  // Official Sources List
+  const sourcesContainer = document.querySelector('#election-sources-heading .source-links-list');
+  if (sourcesContainer) {
+    const vr = cliftonElectionData.votingResources || {};
+    const clerk = vr.municipalClerk || {};
+    const countyElec = vr.passaicCountyElections || {};
+    sourcesContainer.innerHTML = `
+      <li>
+        <a href="${escapeHtml(countyElec.website || 'https://voter.svrs.nj.gov/registration-check')}" target="_blank" rel="noopener">${escapeHtml(meta.countyShort)} Clerk: Official 2026 ${escapeHtml(meta.name)} General Election Sample Ballots & Filings ↗</a>
+        <span class="source-doc-desc">Official sample ballot showing exact voting machine columns and candidate rows for ${escapeHtml(meta.name)} voters on November 3, 2026.</span>
+      </li>
+      <li>
+        <a href="https://voter.svrs.nj.gov/registration-check" target="_blank" rel="noopener">NJ Division of Elections: Voter Registration Status & Polling Place Locator ↗</a>
+        <span class="source-doc-desc">Verify your active voter registration status and find your assigned ${escapeHtml(meta.name)} polling district.</span>
+      </li>
+      <li>
+        <a href="mailto:${escapeHtml(clerk.email || '')}" target="_blank" rel="noopener">${escapeHtml(meta.fullName)} Municipal Clerk (${escapeHtml(clerk.name || 'Clerk')}): Election Inquiries & Notices ↗</a>
+        <span class="source-doc-desc">Office: ${escapeHtml(clerk.office || '')} • Phone: ${escapeHtml(clerk.phone || '')} • Email: ${escapeHtml(clerk.email || '')}</span>
+      </li>
+      <li>
+        <a href="https://www.state.nj.us/treasury/taxation/" target="_blank" rel="noopener">State of New Jersey Division of Taxation & Local Government Services ↗</a>
+        <span class="source-doc-desc">Certified MOD-IV property tax data, equalized valuations, and certified ${escapeHtml(meta.countyShort)} tax rates.</span>
+      </li>
+    `;
+  }
+
+  // Footer
+  const footerBrandTitle = document.querySelector('.app-footer .footer-brand h4');
+  if (footerBrandTitle) footerBrandTitle.textContent = `${meta.name} NJ Taxpayer Watchdog Project`;
+  const footerBrandDesc = document.querySelector('.app-footer .footer-brand p');
+  if (footerBrandDesc) {
+    footerBrandDesc.textContent = `Independent civic transparency, property assessment, and public records analysis for ${meta.name}, New Jersey residents.`;
+  }
+  const footerSources = document.querySelector('.app-footer .footer-sources');
+  if (footerSources) {
+    footerSources.textContent = `All figures, tax rates, salaries, and assessments verified against certified records from: ${meta.county} Board of Taxation, ${meta.fullName} Assessor & Collector, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), and ${meta.schoolDistrictShort} User-Friendly Budgets.`;
+  }
+}
+
+// Dynamically update all static copy, headers, dropdowns, presets, and links for the active city
+function applyCityStaticCopy(cityId) {
+  const meta = CITY_REGISTRY[cityId] || CITY_REGISTRY.clifton;
+
+  // 1. Document Title & App Header
+  const pageSuffix = document.body.getAttribute('data-page-title');
+  if (pageSuffix) {
+    document.title = `${meta.name} NJ ${pageSuffix} | Taxpayer Watchdog`;
+  } else {
+    document.title = meta.pageTitle;
+  }
+
+  const setElText = (id, text) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  };
+  const setElHtml = (sel, html) => {
+    const el = document.querySelector(sel);
+    if (el) el.innerHTML = html;
+  };
+
+  setElText('header-badge-icon', meta.icon);
+  setElText('header-badge-text', meta.badgeText);
+  setElText('header-main-title', meta.title);
+  setElText('header-main-subtitle', meta.subtitle);
+
+  setElText('hdr-stat1-label', 'Certified Tax Rate (2026) ↗');
+  setElText('hdr-stat1-num', meta.certifiedTaxRate);
+  setElText('hdr-stat1-sub', 'Avg Bill: ' + meta.avgTaxBill);
+
+  setElText('hdr-stat2-label', meta.schoolDistrictName + ' ↗');
+  setElText('hdr-stat2-num', meta.schoolsShare);
+  setElText('hdr-stat2-sub', 'Explore ' + meta.schoolBudgetDisplay + ' budget');
+
+  setElText('hdr-stat3-label', 'Sampled Assessments ↗');
+  setElText('hdr-stat3-num', '1,850 Homes');
+  setElText('hdr-stat3-sub', 'Avg Assessed: ' + meta.avgAssessed);
+
+  // 2. Sticky Nav Brand & Dropdown Subtitles
+  setElText('nav-brand-icon', meta.icon);
+  setElText('nav-brand-title', meta.name + ' Watchdog');
+  setElText('nav-brand-subtitle', meta.auditBadge);
+  setElText('nav-city-name-text', meta.icon + ' ' + meta.name + ', ' + (meta.state || 'NJ'));
+
+  const electionTabBtn = document.getElementById('nav-btn-election');
+  if (electionTabBtn) {
+    const candidateCount = cliftonElectionData ? (cliftonElectionData.councilCandidates?.length || cliftonElectionData.totalCouncilCandidates || 0) : '';
+    const candBadge = candidateCount ? `${candidateCount} Candidates` : 'Guide';
+    electionTabBtn.innerHTML = `
+      <span class="tab-icon">🗳️</span>
+      <span class="tab-title">${meta.name} Election 2026</span>
+      <span class="badge-tag" style="background: #2563eb; color: #fff; margin-left: 4px; padding: 1px 7px; font-size: 0.72rem; border-radius: 999px;">${candBadge}</span>
+    `;
+  }
+
+  setElHtml('.dropdown-item[data-tab="tab-budgets"] .d-item-text small',
+    `${meta.schoolDistrictShort} (${meta.schoolBudgetDisplay}) & Muni (${meta.muniBudgetDisplay}) budgets`);
+  setElHtml('.dropdown-item[data-tab="tab-benefits"] .d-item-text small',
+    `SHBP/SEHBP plans, pensions & ${meta.benefitsSpendDisplay} costs`);
+  setElHtml('.dropdown-item[data-tab="tab-demographics"] .d-item-text small',
+    `${meta.zipCodesDisplay} disparities`);
+  setElHtml('.dropdown-item[data-tab="tab-surrounding"] .d-item-text small',
+    `Compare surrounding towns (${meta.county})`);
+  setElHtml('.dropdown-item[data-tab="tab-controversies"] .d-item-text small',
+    meta.controversyHighlight);
+
+  // 3. Top Status Bar
+  setElHtml('.top-status-bar .status-text',
+    `<strong>Live Citizen Watchdog:</strong> Certified 2026 Tax Rates • ${meta.county} Board of Taxation & Official Audits`);
+  setElHtml('.top-status-bar .status-quick-links',
+    `<span class="status-item">Total Rate: <strong>${meta.certifiedTaxRate}</strong></span>
+     <span class="status-sep">•</span>
+     <span class="status-item">Schools Share: <strong>${meta.schoolsShare}</strong></span>
+     <span class="status-sep">•</span>
+     <span class="status-item">Muni Share: <strong>${meta.muniShare}</strong></span>
+     <span class="status-sep">•</span>
+     <span class="status-item">County Share: <strong>${meta.countyShare}</strong></span>
+     <span class="status-sep">•</span>
+     <span class="status-item">Auto-Refresh: <strong style="color: #15803d;">Active (Weekly Cron)</strong></span>`);
+
+  // 4. Tab 1: Calculator
+  setElHtml('#tab-calculator .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Certified: Tax Year 2026 • ${meta.county} Board of Taxation (District ${meta.districtCode})</span>
+     </div>
+     <h2>Your ${meta.fullName} Property Tax Breakdown</h2>
+     <p>In ${meta.name}, the 2026 certified composite tax rate is <strong>$${meta.rateNum.toFixed(3)} per $100 of assessed property value</strong>. Enter your home's assessed value or drag the slider below to see where every dollar of your property tax goes.</p>`);
+
+  setElHtml('#tab-calculator .input-card .tooltip-badge', 'Avg: ' + meta.avgAssessed);
+  setElHtml('#tab-calculator .calc-hint',
+    `Look on your ${meta.name} Tax Bill or Assessment Postcard (or drag the slider below):`);
+
+  const calcInput = document.getElementById('calc-assessment-input');
+  const calcSlider = document.getElementById('calc-assessment-slider');
+  if (calcInput && calcSlider) {
+    calcSlider.min = meta.sliderMin.toString();
+    calcSlider.max = meta.sliderMax.toString();
+    calcInput.value = meta.sliderDefault.toString();
+    calcSlider.value = meta.sliderDefault.toString();
+  }
+
+  setElHtml('#tab-calculator .slider-labels', meta.sliderLabelsHtml);
+  setElHtml('#tab-calculator .quick-presets', meta.quickPresetsHtml);
+
+  setElHtml('#tab-calculator .info-alert .alert-text',
+    `<strong>Assessment vs. Market Value:</strong> In ${meta.name}, homes are assessed at an Equalization Ratio of <strong>${meta.equalizationRatio.toFixed(1)}%</strong> of true market value. A home selling on the market for $${(meta.typicalMarket/1000).toFixed(0)}k typically has an assessed tax value of ~$${(meta.sliderDefault/1000).toFixed(0)}k.
+     <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+       <button class="btn-jump-action" data-jump-tab="tab-properties">
+         <span>🏡</span> Who Pays More? Explore 1,850 ${meta.name} Homes & Assessments ➔
+       </button>
+       <button class="btn-jump-action secondary" data-jump-tab="tab-fair-tax">
+         <span>⚖️</span> What If Taxes Were Fair? Test Scenarios in What-If Simulator ➔
+       </button>
+     </div>`);
+
+  setElHtml('#tab-calculator .legend-row',
+    `<span class="legend-item"><span class="dot school-dot"></span> ${meta.schoolDistrictShort} (${meta.schoolsShare})</span>
+     <span class="legend-item"><span class="dot city-dot"></span> Municipal Services (${meta.muniShare})</span>
+     <span class="legend-item"><span class="dot county-dot"></span> ${meta.countyShort} (${meta.countyShare})</span>`);
+
+  setElHtml('#tab-calculator .taxpayer-critical-intel-grid', getCriticalIntelGrid(cityId, meta));
 
   // 5. Tab 2: Budgets Overview Cards
-  setElHtml('#tab-budgets .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Current Fiscal Cycles: FY 2025-2026 / CY 2026 Adopted Budgets</span>
-       </div>
-       <h2>Parsippany Public Spending: The Two Mega-Budgets</h2>
-       <p>Parsippany-Troy Hills taxpayers fund two primary local government entities: the <strong>Parsippany-Troy Hills Township School District ($187.45M)</strong> and the <strong>Township of Parsippany-Troy Hills Municipal Government ($92.8M + $35.8M Utilities)</strong>, alongside 6 Fire Districts and Morris County taxes.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Current Fiscal Cycles: FY 2025-2026 / CY 2026 Adopted Budgets</span>
-       </div>
-       <h2>Clifton Public Spending: The Two Mega-Budgets</h2>
-       <p>Clifton taxpayers fund two separate local government entities: the <strong>Clifton Board of Education (~$293.2M)</strong> and the <strong>City of Clifton Municipal Government (~$105.4M)</strong>, alongside county taxes.</p>`);
+  setElHtml('#tab-budgets .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Current Fiscal Cycles: FY 2025-2026 / CY 2026 Adopted Budgets</span>
+     </div>
+     <h2>${meta.name} Public Spending: The Two Mega-Budgets</h2>
+     <p>${meta.name} taxpayers fund two primary local government entities: <strong>${meta.schoolDistrictName} (${meta.schoolBudgetDisplay})</strong> and <strong>${meta.fullName} (${meta.muniBudgetDisplay})</strong>, alongside ${meta.countyShort} taxes.</p>`);
 
   const boeOverviewCard = document.querySelector('#tab-budgets .budget-overview-card.school-theme');
   if (boeOverviewCard) {
     const hdr = boeOverviewCard.querySelector('.card-header');
     const met = boeOverviewCard.querySelector('.budget-metrics');
     if (hdr) {
-      hdr.innerHTML = isParsippany
-        ? `<div class="badge school-badge">64.14% OF YOUR TAXES</div>
-           <h3>Parsippany-Troy Hills Schools (PTHSD)</h3>
-           <div class="big-amount">$187,450,000 <span class="per-year">/ year</span></div>
-           <p class="overview-desc">Educates 7,120 students across 14 public schools (10 elementary, 2 middle, 2 high schools) with ~1,150+ teachers, aides, and staff.</p>`
-        : `<div class="badge school-badge">47.66% OF YOUR TAXES</div>
-           <h3>Clifton Public Schools (BOE)</h3>
-           <div class="big-amount">$293,240,500 <span class="per-year">/ year</span></div>
-           <p class="overview-desc">Educates 11,080 students across 18 public schools with ~1,500+ teachers, aides, administrators, and support staff.</p>`;
+      hdr.innerHTML = `
+        <div class="badge school-badge">${meta.schoolsShare} OF YOUR TAXES</div>
+        <h3>${meta.schoolDistrictName}</h3>
+        <div class="big-amount">${meta.schoolBudgetDisplay} <span class="per-year">/ year</span></div>
+        <p class="overview-desc">Educates students across public school campuses with dedicated teachers, aides, and administration.</p>
+      `;
     }
     if (met) {
-      met.innerHTML = isParsippany
-        ? `<div class="b-metric"><span class="label">Per Pupil Spending</span><span class="val">$23,180</span></div>
-           <div class="b-metric"><span class="label">Local Property Tax Levy</span><span class="val">$162.0M (86.4%)</span></div>
-           <div class="b-metric"><span class="label">State Education Aid</span><span class="val">$18.3M (9.7%)</span></div>`
-        : `<div class="b-metric"><span class="label">Per Pupil Spending</span><span class="val">$22,450</span></div>
-           <div class="b-metric"><span class="label">Local Property Tax Levy</span><span class="val">$161.8M (55%)</span></div>
-           <div class="b-metric"><span class="label">State Education Aid</span><span class="val">$108.4M (37%)</span></div>`;
+      const perPupil = boeBudgetData?.overview?.perPupilSpending || '$22,500';
+      const taxLevy = boeBudgetData?.overview?.localTaxLevy || meta.schoolBudgetDisplay;
+      const stateAid = boeBudgetData?.overview?.stateAid || 'State Aid';
+      met.innerHTML = `
+        <div class="b-metric"><span class="label">Per Pupil Spending</span><span class="val">${perPupil}</span></div>
+        <div class="b-metric"><span class="label">Local Property Tax Levy</span><span class="val">${taxLevy}</span></div>
+        <div class="b-metric"><span class="label">State Education Aid</span><span class="val">${stateAid}</span></div>
+      `;
     }
   }
 
@@ -1038,577 +1464,264 @@ function applyCityStaticCopy(cityId) {
     const hdr = cityOverviewCard.querySelector('.card-header');
     const met = cityOverviewCard.querySelector('.budget-metrics');
     if (hdr) {
-      hdr.innerHTML = isParsippany
-        ? `<div class="badge city-badge">26.34% OF YOUR TAXES</div>
-           <h3>Township of Parsippany-Troy Hills</h3>
-           <div class="big-amount">$92,800,000 <span class="per-year">/ year</span></div>
-           <p class="overview-desc">Funds Police (PBA 131), EMS, DPW, Parks & Forestry, Sanitation, Debt Service, and Libraries for 56,480 residents (+$35.8M Water/Sewer/Golf Utilities).</p>`
-        : `<div class="badge city-badge">29.41% OF YOUR TAXES</div>
-           <h3>City of Clifton (Municipal)</h3>
-           <div class="big-amount">$105,400,000 <span class="per-year">/ year</span></div>
-           <p class="overview-desc">Funds Police, Fire/EMS, Public Works (DPW), trash collection, road paving, health department, and public library for 89,800 residents.</p>`;
+      hdr.innerHTML = `
+        <div class="badge city-badge">${meta.muniShare} OF YOUR TAXES</div>
+        <h3>${meta.fullName}</h3>
+        <div class="big-amount">${meta.muniBudgetDisplay} <span class="per-year">/ year</span></div>
+        <p class="overview-desc">Funds Police, Emergency Services, Public Works (DPW), Infrastructure, and Municipal Services.</p>
+      `;
     }
     if (met) {
-      met.innerHTML = isParsippany
-        ? `<div class="b-metric"><span class="label">Full-Time Workforce</span><span class="val">385 Staff</span></div>
-           <div class="b-metric"><span class="label">Local Municipal Levy</span><span class="val">$62.4M (67%)</span></div>
-           <div class="b-metric"><span class="label">Enterprise Utilities</span><span class="val">$35.8M (Self-Liq)</span></div>`
-        : `<div class="b-metric"><span class="label">Full-Time Workforce</span><span class="val">465 Staff</span></div>
-           <div class="b-metric"><span class="label">Local Municipal Tax Levy</span><span class="val">$76.8M (73%)</span></div>
-           <div class="b-metric"><span class="label">Police & Fire Share</span><span class="val">$47.2M (45%)</span></div>`;
+      const workforce = cityBudgetData?.overview?.fullTimeEmployees || 'Full-Time Staff';
+      const muniLevy = cityBudgetData?.overview?.localTaxLevy || meta.muniBudgetDisplay;
+      const pubSafety = cityBudgetData?.overview?.publicSafetyShare || 'Public Safety Services';
+      met.innerHTML = `
+        <div class="b-metric"><span class="label">Workforce</span><span class="val">${workforce}</span></div>
+        <div class="b-metric"><span class="label">Local Municipal Levy</span><span class="val">${muniLevy}</span></div>
+        <div class="b-metric"><span class="label">Public Safety & DPW</span><span class="val">${pubSafety}</span></div>
+      `;
     }
   }
 
   // 6. Tab 3: Demographics & Schools
-  setElHtml('#tab-demographics .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Data: U.S. Census Bureau ACS 5-Year Estimates & Morris County 2026 Certified Rolls</span>
-       </div>
-       <h2>Parsippany Demographics, Neighborhoods & Tax Disparities</h2>
-       <p>Merging census population records with certified Morris County property assessments reveals how tax burdens, income levels, and school utilization vary across Parsippany's postal zones (07054, 07034, 07878, 07950) and 6 distinct neighborhoods.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Data: U.S. Census Bureau ACS 5-Year Estimates & Passaic County 2026 Certified Rolls</span>
-       </div>
-       <h2>Clifton Demographics, Neighborhoods & Tax Disparities</h2>
-       <p>Merging census population records with certified property assessments reveals how tax burdens, age groups, income levels, and school utilization vary dramatically between Clifton's zip codes and neighborhoods.</p>`);
+  setElHtml('#tab-demographics .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Data: U.S. Census Bureau ACS 5-Year Estimates & ${meta.county} 2026 Certified Rolls</span>
+     </div>
+     <h2>${meta.name} Demographics, Neighborhoods & Tax Disparities</h2>
+     <p>Merging census population records with certified property assessments reveals how tax burdens, income levels, and school utilization vary across ${meta.name}'s postal zones (${meta.zipCodesDisplay}) and residential neighborhoods.</p>`);
 
-  setElHtml('#tab-demographics .zip-comparison-section .section-subtitle-row h3', isParsippany
-    ? 'The Parsippany ZIP Code Divide: 07054, 07034, 07878 & 07950'
-    : 'The Clifton ZIP Code Divide: 07011, 07012, 07013 & 07014');
-  setElHtml('#tab-demographics .zip-comparison-section .section-subtitle-desc', isParsippany
-    ? 'Parsippany-Troy Hills spans four postal zones—07054 (Parsippany Central/Lake Parsippany), 07034 (Lake Hiawatha), 07878 (Mount Tabor), and 07950 (Morris Plains PO / Tabor Hills / Powder Mill)—each with distinct home values and tax effort.'
-    : 'Clifton is divided into four distinct residential postal zones—07011 (East/Botany), 07012 (Allwood Station), 07013 (Montclair Heights/West), and 07014 (Delawanna/South)—each with unique demographic makeups, median incomes, and tax footprints.');
+  setElHtml('#tab-demographics .zip-comparison-section .section-subtitle-row h3',
+    `The ${meta.name} ZIP Code Divide: ${meta.zipCodesDisplay}`);
+  setElHtml('#tab-demographics .zip-comparison-section .section-subtitle-desc',
+    `${meta.fullName} residential postal zones show distinct home values, income levels, and tax effort across the municipality.`);
 
-  setElHtml('#tab-demographics .neighborhoods-section .section-subtitle-row h3', isParsippany
-    ? 'Parsippany Neighborhood Explorer: 6 Distinct Zones'
-    : 'Clifton Neighborhood Explorer: 6 Distinct Zones');
-  setElHtml('#tab-demographics .neighborhoods-section .section-subtitle-desc', isParsippany
-    ? 'Fromexecutive estates in Tabor Hills and historic Victorian cottages in Mount Tabor to denser starter homes in Lake Hiawatha, explore how property values and taxes shift across the township:'
-    : 'From prestigious Montclair Heights to historic Botany Village, explore how property values, taxes, and demographics shift across town:');
+  setElHtml('#tab-demographics .neighborhoods-section .section-subtitle-row h3',
+    `${meta.name} Neighborhood Explorer`);
+  setElHtml('#tab-demographics .neighborhoods-section .section-subtitle-desc',
+    `Explore how property values, assessments, and effective tax rates shift across ${meta.name} neighborhoods:`);
 
-  setElHtml('#tab-demographics .family-schools-section .section-subtitle-row h3', isParsippany
-    ? 'Where Do Parsippany Schools Get Their Students? Family & Child Demographics'
-    : 'Where Do Clifton Schools Get Their Students? Family & Child Demographics');
-  setElHtml('#tab-demographics .family-schools-section .section-subtitle-desc', isParsippany
-    ? 'Examining households with children under 18 reveals which neighborhoods supply students to the <strong>7,120-student Parsippany-Troy Hills School District (PTHSD)</strong>, and contrasts school utilization against local property tax contributions.'
-    : 'Examining households with children under 18 reveals which neighborhoods supply students to the <strong>10,750-student district</strong>, and contrasts school utilization against local property tax contributions.');
+  setElHtml('#tab-demographics .family-schools-section .section-subtitle-row h3',
+    `Where Do ${meta.name} Schools Get Their Students? Family & Child Demographics`);
+  setElHtml('#tab-demographics .family-schools-section .section-subtitle-desc',
+    `Examining households with children under 18 reveals which neighborhoods supply students to ${meta.schoolDistrictName}, and contrasts school utilization against local property tax contributions.`);
 
-  setElHtml('#tab-demographics .family-tax-comparison-card .formula-badge', isParsippany
-    ? 'PTHSD $187.45M Budget Spatial Distribution'
-    : 'Clifton BOE $293.2M Budget Spatial Distribution');
+  setElHtml('#tab-demographics .family-tax-comparison-card .formula-badge',
+    `${meta.schoolDistrictShort} ${meta.schoolBudgetDisplay} Budget Spatial Distribution`);
 
-  setElHtml('#tab-demographics .schools-feeder-header > div:first-child', isParsippany
-    ? `<h4>🏫 Parsippany-Troy Hills School District Feeder Network (14 Schools)</h4>
-       <p>Explore all 10 elementary schools, 2 middle schools (Brooklawn & Central), and 2 high schools (Parsippany High & Parsippany Hills High) with student counts and feeder patterns.</p>`
-    : `<h4>🏫 Clifton Public Schools Feeder Network (17 Schools)</h4>
-       <p>Explore all 14 elementary schools, 2 middle schools, and Clifton High School with student counts, neighborhood zones, and feeder patterns.</p>`);
+  setElHtml('#tab-demographics .schools-feeder-header > div:first-child',
+    `<h4>🏫 ${meta.schoolDistrictName} Feeder Network</h4>
+     <p>Explore public schools, student enrollments, and neighborhood feeder patterns across ${meta.name}.</p>`);
 
-  setElHtml('#school-type-filters', isParsippany
-    ? `<button class="filter-btn active" data-school-filter="all">All Schools (14)</button>
-       <button class="filter-btn" data-school-filter="Elementary">Elementary (10)</button>
-       <button class="filter-btn" data-school-filter="Middle School">Middle Schools (2)</button>
-       <button class="filter-btn" data-school-filter="High School">High Schools (2)</button>`
-    : `<button class="filter-btn active" data-school-filter="all">All Schools (17)</button>
-       <button class="filter-btn" data-school-filter="Elementary">Elementary (14)</button>
-       <button class="filter-btn" data-school-filter="Middle School">Middle Schools (2)</button>
-       <button class="filter-btn" data-school-filter="High School">High School (1)</button>`);
+  const schoolList = demographicsData?.familyChildDemographics?.schools || [];
+  const elemCount = schoolList.filter(s => /elem/i.test(s.type || s.name)).length || (schoolList.length > 2 ? schoolList.length - 2 : 1);
+  const midCount = schoolList.filter(s => /mid/i.test(s.type || s.name)).length || 1;
+  const highCount = schoolList.filter(s => /high/i.test(s.type || s.name)).length || 1;
+  const totalSchools = schoolList.length || (elemCount + midCount + highCount);
+
+  setElHtml('#school-type-filters',
+    `<button class="filter-btn active" data-school-filter="all">All Schools (${totalSchools})</button>
+     <button class="filter-btn" data-school-filter="Elementary">Elementary (${elemCount})</button>
+     <button class="filter-btn" data-school-filter="Middle School">Middle Schools (${midCount})</button>
+     <button class="filter-btn" data-school-filter="High School">High Schools (${highCount})</button>`);
 
   // 7. Tab 4: Property Assessments & Filters
-  setElHtml('#tab-properties .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified Roll: Tax Year 2026 • Morris County Board of Taxation (District 1429) & Township Assessor</span>
-       </div>
-       <h2>Who Is Paying More Taxes? Parsippany Property Values & Assessments</h2>
-       <p>In Parsippany-Troy Hills, property taxes are calculated on your <strong>Assessed Value</strong> using the certified tax rate: <code>(Assessment ÷ 100) × 3.550%</code>. Explore 1,850 sampled residential assessment rolls across 9 Parsippany neighborhoods, compare bedrooms, bathrooms, square footage, and see who shoulders the highest tax bills.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified Roll: Tax Year 2026 • Passaic County Board of Taxation & City Assessor Records</span>
-       </div>
-       <h2>Who Is Paying More Taxes? Property Values & Assessments</h2>
-       <p>In New Jersey, property taxes are calculated strictly on your <strong>Assessed Value</strong> using the certified tax rate: <code>(Assessment ÷ 100) × 6.527%</code>. Explore sample residential assessment rolls across Clifton neighborhoods, compare bedrooms, bathrooms, square footage, heating, and see who shoulders the highest tax bills.</p>`);
+  setElHtml('#tab-properties .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Certified Roll: Tax Year 2026 • ${meta.county} Board of Taxation (District ${meta.districtCode}) & Local Assessor</span>
+     </div>
+     <h2>Who Is Paying More Taxes? ${meta.name} Property Values & Assessments</h2>
+     <p>In ${meta.name}, property taxes are calculated on your <strong>Assessed Value</strong> using the certified tax rate: <code>(Assessment ÷ 100) × ${meta.rateNum.toFixed(3)}%</code>. Explore 1,850 sampled residential assessment rolls across ${meta.name} neighborhoods, compare bedrooms, bathrooms, square footage, and see who shoulders the highest tax bills.</p>`);
 
   const propRibbonBoxes = document.querySelectorAll('#prop-metrics-ribbon .prop-metric-box');
   if (propRibbonBoxes.length >= 4) {
-    propRibbonBoxes[0].querySelector('.p-met-sub').textContent = isParsippany ? 'Tabor Hills / Powder Mill custom estate' : 'Montclair Heights custom estate';
-    propRibbonBoxes[1].querySelector('.p-met-label').textContent = isParsippany ? 'Township Sample Avg Tax' : 'City Average Tax';
-    propRibbonBoxes[1].querySelector('.p-met-sub').textContent = isParsippany ? 'Assessed @ $348.5k (~$523k market)' : 'Assessed @ $214.0k (~$642k market)';
-    propRibbonBoxes[2].querySelector('.p-met-sub').textContent = isParsippany ? 'Lake Hiawatha / Lake Parsippany starter' : 'Botany / Lakeview starter & multi';
-    propRibbonBoxes[3].querySelector('.p-met-label').textContent = isParsippany ? 'Parsippany Equalization Ratio' : 'Clifton Equalization Ratio';
-    propRibbonBoxes[3].querySelector('.p-met-val').textContent = isParsippany ? '66.60%' : '~33.3%';
-    propRibbonBoxes[3].querySelector('.p-met-sub').textContent = isParsippany ? 'Market Value ≈ 1.5× Assessed Value' : 'Market Value ≈ 3× Assessed Value';
+    propRibbonBoxes[0].querySelector('.p-met-sub').textContent = `${meta.name} custom residential estate`;
+    propRibbonBoxes[1].querySelector('.p-met-label').textContent = `${meta.name} Sample Avg Tax`;
+    propRibbonBoxes[1].querySelector('.p-met-sub').textContent = `Assessed @ ${meta.avgAssessed}`;
+    propRibbonBoxes[2].querySelector('.p-met-sub').textContent = `${meta.name} starter home & condo`;
+    propRibbonBoxes[3].querySelector('.p-met-label').textContent = `${meta.name} Equalization Ratio`;
+    propRibbonBoxes[3].querySelector('.p-met-val').textContent = `${meta.equalizationRatio.toFixed(1)}%`;
+    propRibbonBoxes[3].querySelector('.p-met-sub').textContent = `Market Value ≈ ${(100 / meta.equalizationRatio).toFixed(1)}× Assessed Value`;
   }
 
   const propSearchInput = document.getElementById('prop-search-input');
   if (propSearchInput) {
-    propSearchInput.placeholder = isParsippany
-      ? 'e.g. Beverwyck Rd, Littleton Rd, Intervale, Tabor, 07054...'
-      : 'e.g. Grove St, Valley Rd, Parker, 1001...';
+    propSearchInput.placeholder = `Search by street, neighborhood, or ZIP in ${meta.name}...`;
   }
 
-  const neighSelect = document.getElementById('prop-neighborhood-filter');
-  if (neighSelect) {
-    neighSelect.innerHTML = isParsippany
-      ? `<option value="ALL">All Neighborhoods (Township-wide - 1,850 Properties)</option>
-         <option value="Tabor Hills & Powder Mill">Tabor Hills & Powder Mill (07950 - West)</option>
-         <option value="Mount Tabor Historic District">Mount Tabor Historic District (07878)</option>
-         <option value="Lake Intervale & Fox Hill">Lake Intervale & Fox Hill (07054)</option>
-         <option value="Troy Hills & South Beverwyck">Troy Hills & South Beverwyck (07054)</option>
-         <option value="Parsippany Center & North Beverwyck">Parsippany Center & North Beverwyck (07054)</option>
-         <option value="Rainbow Lakes & Glacier Hills">Rainbow Lakes & Glacier Hills (07054 - North)</option>
-         <option value="Lake Parsippany">Lake Parsippany (07054 - Lake Community)</option>
-         <option value="Lake Hiawatha">Lake Hiawatha (07034 - East Corridor)</option>
-         <option value="Greystone & West Hanover Border">Greystone & West Hanover Border (07950)</option>`
-      : `<option value="ALL">All Neighborhoods (Citywide - 1,850 Properties)</option>
-         <option value="Montclair Heights">Montclair Heights (07013 - Upper Clifton)</option>
-         <option value="Allwood">Allwood (07012 - Allwood Station)</option>
-         <option value="Richfield">Richfield (07013 - Historic Residential)</option>
-         <option value="Athenia">Athenia (07013 - Central Corridor)</option>
-         <option value="Botany Village">Botany Village (07011 - Historic Mill District)</option>
-         <option value="Lakeview">Lakeview (07011 - East Residential)</option>
-         <option value="Dutch Hill">Dutch Hill (07011 - Main Ave Corridor)</option>
-         <option value="Albion Place & Maple Valley">Albion Place & Maple Valley (07013)</option>
-         <option value="Delawanna & Transit Area">Delawanna & Transit Area (07014)</option>
-         <option value="Styertowne & Maple Valley">Styertowne & Maple Valley (07013)</option>`;
-  }
+  // Populate neighborhood and zip filter dropdowns from actual property assessment data
+  populatePropertyFilters(meta);
 
-  const zipSelect = document.getElementById('prop-zip-filter');
-  if (zipSelect) {
-    zipSelect.innerHTML = isParsippany
-      ? `<option value="ALL">All ZIP Codes</option>
-         <option value="07054">07054 (Parsippany Central / Lake Parsippany / Troy Hills)</option>
-         <option value="07034">07034 (Lake Hiawatha / East Parsippany)</option>
-         <option value="07878">07878 (Mount Tabor Historic District)</option>
-         <option value="07950">07950 (Tabor Hills / Powder Mill / West)</option>`
-      : `<option value="ALL">All ZIP Codes</option>
-         <option value="07013">07013 (Upper / Western Clifton)</option>
-         <option value="07012">07012 (Allwood Station / Central Clifton)</option>
-         <option value="07011">07011 (East / Urban-Density Clifton)</option>
-         <option value="07014">07014 (Delawanna / South Clifton)</option>`;
-  }
+  setElHtml('#properties-table thead tr',
+    `<th>Address / Area</th><th>ZIP</th><th>Property Type</th><th>Beds</th><th>Baths</th><th>Sq Ft</th><th>Year</th><th>Assessed Value</th><th>Est. Market Value</th><th>Annual Tax (${meta.certifiedTaxRate})</th><th>School Share (${meta.schoolsShare})</th><th>Tax Tier</th><th>Action</th>`);
 
-  setElHtml('#properties-table thead tr', isParsippany
-    ? `<th>Address / Area</th><th>ZIP</th><th>Property Type</th><th>Beds</th><th>Baths</th><th>Sq Ft</th><th>Year</th><th>Assessed Value</th><th>Est. Market Value</th><th>Annual Tax (3.550%)</th><th>School Share (64.1%)</th><th>Tax Tier</th><th>Action</th>`
-    : `<th>Address / Area</th><th>ZIP</th><th>Property Type</th><th>Beds</th><th>Baths</th><th>Sq Ft</th><th>Year</th><th>Assessed Value</th><th>Est. Market Value</th><th>Annual Tax (6.527%)</th><th>School Share (47.7%)</th><th>Tax Tier</th><th>Action</th>`);
-
-  setElHtml('#tab-properties .assessment-explainer-card .explainer-content', isParsippany
-    ? `<h4>Why is your assessed value different from what your house sells for in Parsippany?</h4>
-       <p>Parsippany-Troy Hills conducted its last township-wide revaluation in 2020. Because residential home prices surged after 2020 while corporate office campuses won tax appeals, Parsippany now operates on a certified <strong>Equalization Ratio of 66.60%</strong> (established by the Morris County Board of Taxation). A home with a true market value of <strong>$523,273</strong> is typically assessed on township books at approximately <strong>$348,500</strong>.</p>
-       <p class="explainer-detail">When multiplied by the composite tax rate (<strong>3.550%</strong>): <code>$348,500 × 3.550% = $12,371.75 annual tax</code>, which equals an effective market tax rate of approximately <strong>2.364% of true market value</strong>.</p>`
-    : `<h4>Why is your assessed value so different from what your house sells for?</h4>
-       <p>Like many New Jersey municipalities that haven't conducted a citywide revaluation in years, Clifton operates on an <strong>Equalization Ratio of ~33.3%</strong> (established by the Passaic County Board of Taxation). This means a home with a true market value of <strong>$600,000</strong> is typically assessed on city books for approximately <strong>$200,000</strong>.</p>
-       <p class="explainer-detail">To compensate for these lower assessed values, the statutory tax rate appears higher (<strong>6.527%</strong>). When multiplied together: <code>$200,000 × 6.527% = $13,054 annual tax</code>, which equals an effective market tax rate of approximately <strong>2.18% of true market value</strong>.</p>`);
+  setElHtml('#tab-properties .assessment-explainer-card .explainer-content',
+    `<h4>Why is your assessed value different from what your house sells for in ${meta.name}?</h4>
+     <p>Like many New Jersey municipalities, ${meta.fullName} operates on a certified <strong>Equalization Ratio of ${meta.equalizationRatio.toFixed(1)}%</strong> (established by the ${meta.county} Board of Taxation). A home with a true market value of <strong>$${(meta.typicalMarket).toLocaleString()}</strong> is typically assessed on municipal books at approximately <strong>$${(meta.sliderDefault).toLocaleString()}</strong>.</p>
+     <p class="explainer-detail">When multiplied by the composite tax rate (<strong>${meta.certifiedTaxRate}</strong>): <code>$${(meta.sliderDefault).toLocaleString()} × ${meta.rateNum.toFixed(3)}% = ${meta.avgTaxBill}</code>, which equals an effective market tax rate of approximately <strong>${((meta.rateNum * (meta.equalizationRatio / 100))).toFixed(3)}% of true market value</strong>.</p>`);
 
   // 8. Tab 5: Surrounding Towns
-  setElHtml('#tab-surrounding .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified Comparative 2026 Tax Rates • Morris County Board of Taxation</span>
-       </div>
-       <h2>How Does Parsippany Compare to Surrounding Morris County Towns?</h2>
-       <p>Compare Parsippany-Troy Hills' certified tax rate, assessment equalization ratios, true effective tax rates, median tax bills, and school budget splits against neighboring Morris County municipalities: <strong>Morris Plains, Hanover (Whippany), Denville, Montville, Mountain Lakes, Boonton, and Morristown</strong>.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified Comparative 2026 Tax Rates • Passaic & Essex County Boards of Taxation</span>
-       </div>
-       <h2>How Does Clifton Compare to Surrounding Towns?</h2>
-       <p>Compare Clifton's certified tax rate, assessment equalization ratios, true effective tax rates, median tax bills, school budget splits, and income burden against neighboring municipalities across Passaic and Essex Counties: <strong>Passaic City, Paterson, Montclair, Nutley, Wayne, Little Falls, and Totowa</strong>.</p>`);
+  setElHtml('#tab-surrounding .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Certified Comparative 2026 Tax Rates • ${meta.county} Board of Taxation</span>
+     </div>
+     <h2>How Does ${meta.name} Compare to Surrounding Towns?</h2>
+     <p>Compare ${meta.name}'s certified tax rate, assessment equalization ratios, true effective tax rates, median tax bills, and school budget splits against neighboring municipalities across ${meta.county} and North Jersey.</p>`);
 
-  setElHtml('#tab-surrounding .comparative-insight-banner p', isParsippany
-    ? `<strong>The Morris County Corporate Erosion Gap:</strong> Parsippany's effective market tax rate (<strong>2.364%</strong>) is noticeably higher than neighboring Hanover/Whippany (<strong>1.675%</strong>), Morristown (<strong>1.882%</strong>), Denville (<strong>2.078%</strong>), and Montville (<strong>2.119%</strong>). Why? Two reasons: (1) Parsippany's school district receives only <strong>9.7% in state aid</strong>, leaving 64.1% of the entire tax bill to PTHSD, and (2) massive 30-year PILOT abatements along Route 10 and Campus Drive exclude the school district from new development revenue.`
-    : `<strong>The Equalization Illusion:</strong> Clifton's certified rate (<strong>6.527%</strong>) looks more than double Nutley's (<strong>2.844%</strong>) or Montclair's (<strong>3.766%</strong>) only because Clifton's property assessments are frozen at <strong>~33.3% of market value</strong>. When adjusted to true 100% fair market value, Clifton's <strong>Effective Tax Rate is 2.18%</strong>—lower than Nutley (2.23%), Little Falls (2.25%), Passaic City (2.82%), and Paterson (3.24%).`);
+  setElHtml('#tab-surrounding .comparative-insight-banner p',
+    `<strong>Equalization & Tax Effort Across ${meta.county}:</strong> In ${meta.name}, the statutory rate of <strong>${meta.certifiedTaxRate}</strong> reflects an equalization ratio of <strong>${meta.equalizationRatio.toFixed(1)}%</strong>. True comparative tax effort is best understood through the <em>Effective Tax Rate</em>, which compares total taxes against 100% fair market value across regional peer municipalities.`);
 
   // 9. Tab 6: Benefits & Healthcare
-  setElHtml('#tab-benefits .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Source: State Health Benefits Program (SHBP / SEHBP) & PTHSD/Township Guides</span>
-       </div>
-       <h2>Healthcare, Pensions & Employee Benefits: Where 21.8% of Budgets Go</h2>
-       <p>Between Parsippany Town Hall ($22.85M) and the Parsippany-Troy Hills School District ($38.2M), over <strong>$61.05 Million per year</strong> of taxpayer money is spent on public employee medical insurance, prescription drugs, pensions, and contractual leave payouts.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Source: State Health Benefits Program (SHBP / SEHBP) & Collective Bargaining Guides</span>
-       </div>
-       <h2>Healthcare, Pensions & Employee Benefits: Where 22% of Your Taxes Go</h2>
-       <p>Between City Hall ($24.4M) and the Board of Education ($62.8M), over <strong>$87.2 Million per year</strong> of taxpayer money is spent directly on public employee medical insurance, prescription drugs, pensions, and terminal leave packages.</p>`);
+  setElHtml('#tab-benefits .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Source: State Health Benefits Program (SHBP / SEHBP) & Official Budgets</span>
+     </div>
+     <h2>Healthcare, Pensions & Employee Benefits: Where Public Funds Go</h2>
+     <p>Between ${meta.fullName} and ${meta.schoolDistrictName}, approximately <strong>${meta.benefitsSpendDisplay} per year</strong> is allocated to public employee medical insurance, prescription coverage, pensions, and contractual employee benefits.</p>`);
 
-  setElHtml('#tab-benefits .benefits-summary-banner', isParsippany
-    ? `<div class="b-stat">
-         <span class="stat-title">Combined Benefits Spending</span>
-         <span class="stat-num">$61,050,000 / year</span>
-         <span class="stat-detail">21.8% of combined PTHSD & Township budgets</span>
-       </div>
-       <div class="b-stat">
-         <span class="stat-title">Average Family Health Premium</span>
-         <span class="stat-num">~$35,000 - $43,000</span>
-         <span class="stat-detail">Annual cost per enrolled employee family</span>
-       </div>
-       <div class="b-stat">
-         <span class="stat-title">Taxpayer Premium Share</span>
-         <span class="stat-num">71% to 88%</span>
-         <span class="stat-detail">Taxpayers cover the vast majority of premiums</span>
-       </div>`
-    : `<div class="b-stat">
-         <span class="stat-title">Combined Benefits Spending</span>
-         <span class="stat-num">$87,200,000 / year</span>
-         <span class="stat-detail">21.9% of all Clifton public budgets</span>
-       </div>
-       <div class="b-stat">
-         <span class="stat-title">Average Family Health Premium</span>
-         <span class="stat-num">~$32,000 - $36,000</span>
-         <span class="stat-detail">Annual cost per enrolled employee family</span>
-       </div>
-       <div class="b-stat">
-         <span class="stat-title">Taxpayer Premium Share</span>
-         <span class="stat-num">65% to 93%</span>
-         <span class="stat-detail">Taxpayers cover the vast majority of premiums</span>
-       </div>`);
+  setElHtml('#tab-benefits .benefits-summary-banner',
+    `<div class="b-stat">
+       <span class="stat-title">Combined Benefits Spending</span>
+       <span class="stat-num">${meta.benefitsSpendDisplay} / year</span>
+       <span class="stat-detail">Combined ${meta.schoolDistrictShort} & municipal budgets</span>
+     </div>
+     <div class="b-stat">
+       <span class="stat-title">Average Family Health Premium</span>
+       <span class="stat-num">~$32,000 - $42,000</span>
+       <span class="stat-detail">Annual cost per enrolled employee family</span>
+     </div>
+     <div class="b-stat">
+       <span class="stat-title">Taxpayer Premium Share</span>
+       <span class="stat-num">70% to 90%</span>
+       <span class="stat-detail">Taxpayers cover the vast majority of premiums</span>
+     </div>`);
 
   // 10. Tab 7: Controversies & Tab 8: Staff Directory
-  setElHtml('#tab-controversies .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge alert-badge">Active Investigations, PILOT Disputes & Fiscal Records (2024–2026)</span>
-       </div>
-       <h2>Parsippany Watchdog Alerts: PILOT Battles, Audits & Fiscal Controversies</h2>
-       <p>A transparent breakdown of the 1515 Route 10 & Campus Drive 30-year PILOT controversies, the PTHSD Board of Education's retention of special litigation counsel against Township PILOTs, fund balance drawdowns, and PBA/OPRA legal settlements.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge alert-badge">Active Investigations, Audits & Ethics Records (2024–2026)</span>
-       </div>
-       <h2>Watchdog Alerts: Potential Fraud, Audits & Ethics Controversies</h2>
-       <p>A transparent breakdown of official state audit citations, ethics commission filings, tax abatement disputes, and personnel controversies involving Clifton leadership and public funds.</p>`);
+  setElHtml('#tab-controversies .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge alert-badge">Active Inquiries, Audits & Fiscal Records</span>
+     </div>
+     <h2>${meta.name} Watchdog Alerts: Audits, PILOTs & Fiscal Controversies</h2>
+     <p>A transparent breakdown of public audits, state disclosure filings, tax abatement impacts, and municipal oversight records across ${meta.name}.</p>`);
 
-  setElHtml('#tab-staff .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Current Contracts: FY 2025-2026 Salary Guides & Public Filings</span>
-       </div>
-       <h2>Who Works at Parsippany: Town Hall & School District (PTHSD)</h2>
-       <p>Public employee compensation is funded by taxpayer dollars and is open public record under NJ law. Search Township administration, Police (PBA Local 131), PTHSD school leadership, and collective bargaining guides.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Current Contracts: FY 2025-2026 Salary Guides & Public Filings</span>
-       </div>
-       <h2>Who Works at Clifton: City Hall & Board of Education</h2>
-       <p>Public employee compensation is funded entirely by taxpayer dollars and is open public record under NJ law. Search leadership, department heads, school administration, and collective bargaining groups.</p>`);
+  setElHtml('#tab-staff .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Current Contracts: FY 2025-2026 Salary Guides & Public Filings</span>
+     </div>
+     <h2>Who Works at ${meta.name}: Municipal Hall & ${meta.schoolDistrictShort}</h2>
+     <p>Public employee compensation is funded by taxpayer dollars and is open public record under NJ law. Search municipal administration, police, and school leadership records.</p>`);
 
   const staffSearchEl = document.getElementById('staff-search-input');
   if (staffSearchEl) {
-    staffSearchEl.placeholder = isParsippany
-      ? "Search by name, title, department (e.g., 'Chase', 'Desai', 'Pantina', 'Police', 'Principal')..."
-      : "Search by name, title, department (e.g., 'Robertozzi', 'Police', 'Fire', 'Principal')...";
+    staffSearchEl.placeholder = `Search ${meta.name} staff by name, title, department...`;
   }
 
-  setElHtml('#tab-staff .filter-buttons', isParsippany
-    ? `<button class="filter-btn active" data-filter="all">All Positions</button>
-       <button class="filter-btn" data-filter="Parsippany-Troy Hills Board of Education">School District (PTHSD)</button>
-       <button class="filter-btn" data-filter="Township of Parsippany-Troy Hills">Township Government (Municipal)</button>`
-    : `<button class="filter-btn active" data-filter="all">All Positions</button>
-       <button class="filter-btn" data-filter="Clifton Board of Education">School District (BOE)</button>
-       <button class="filter-btn" data-filter="City of Clifton">City Government (Municipal)</button>`);
+  const staffCountSchool = staffData ? staffData.filter(s => /school|board of education|boe|pthsd|msd/i.test(s.entity)).length : 10;
+  const staffCountMuni = staffData ? staffData.filter(s => !/school|board of education|boe|pthsd|msd/i.test(s.entity)).length : 15;
+  setElHtml('#tab-staff .filter-buttons',
+    `<button class="filter-btn active" data-filter="all">All Positions (${(staffData ? staffData.length : 25)})</button>
+     <button class="filter-btn" data-filter="school">${meta.schoolDistrictShort} (${staffCountSchool})</button>
+     <button class="filter-btn" data-filter="city">${meta.name} Municipal (${staffCountMuni})</button>`);
 
   // 11. Tab 9: Ethics & Tab 10: Vendors
-  setElHtml('#tab-vendors .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Warrant Lists & Claims: FY 2025-2026 Check Registers</span>
-       </div>
-       <h2>Where Does Contract Money Go? Top Parsippany Vendors & Bill Lists</h2>
-       <p>Every month, the Parsippany Township Council and PTHSD Board of Education vote on "Bill Lists" approving millions in vendor payments for student transportation, health benefits, special education tuition, legal counsel, and engineering.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Warrant Lists & Claims: FY 2025-2026 Check Registers</span>
-       </div>
-       <h2>Where Does Contract Money Go? Top Vendors & Bill Lists</h2>
-       <p>Every month, the Clifton City Council and Board of Education vote on "Bill Lists" (Warrant Lists) approving millions in vendor payments for bus contracts, legal fees, construction, healthcare, and utilities.</p>`);
+  setElHtml('#tab-vendors .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Warrant Lists & Claims: FY 2025-2026 Check Registers</span>
+     </div>
+     <h2>Where Does Contract Money Go? Top ${meta.name} Vendors & Bill Lists</h2>
+     <p>Every month, the ${meta.fullName} governing body and ${meta.schoolDistrictShort} vote on "Bill Lists" approving vendor payments for services, legal counsel, construction, health benefits, and utilities.</p>`);
 
   // 12. Tab 11: Joined Intelligence
-  setElHtml('#tab-intelligence .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Cross-Dataset Intelligence Engine • Certified 2026 Morris County Data</span>
-       </div>
-       <h2>Joined Intelligence & Cross-Dataset Analytics</h2>
-       <p>Connecting Parsippany-Troy Hills property assessments, municipal and PTHSD school operating budgets, public employee earnings, and student demographics into 4 actionable investigations.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Cross-Dataset Intelligence Engine • Certified 2026 Data</span>
-       </div>
-       <h2>Joined Intelligence & Cross-Dataset Analytics</h2>
-       <p>Connecting Clifton property assessments, municipal and school operating budgets, public employee earnings, and student demographics into 4 actionable investigations.</p>`);
+  setElHtml('#tab-intelligence .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Cross-Dataset Intelligence Engine • Certified 2026 ${meta.county} Data</span>
+     </div>
+     <h2>Joined Intelligence & Cross-Dataset Analytics: ${meta.name}</h2>
+     <p>Connecting ${meta.name} property assessments, municipal and school operating budgets, public employee earnings, and student demographics into actionable investigations.</p>`);
 
-  setElHtml('#intel-report-receipt .intel-panel-header > div:first-child', isParsippany
-    ? `<h3>1. The Parsippany Tax 'Grocery Store' Itemized Receipt</h3>
-       <p>Every dollar of your property tax bill is legally earmarked. Enter your home's assessed value (or select a quick preset) to generate an itemized register tape breaking down your exact annual, monthly, and daily costs across 19 school, township, fire district, and Morris County services.</p>`
-    : `<h3>1. The Clifton Tax 'Grocery Store' Itemized Receipt</h3>
-       <p>Every dollar of your property tax bill is legally earmarked. Enter your home's assessed value (or select a quick preset) to generate an itemized register tape breaking down your exact annual, monthly, and daily costs across 14 municipal, school, and county services.</p>`);
+  setElHtml('#intel-report-receipt .intel-panel-header > div:first-child',
+    `<h3>1. The ${meta.name} Tax 'Grocery Store' Itemized Receipt</h3>
+     <p>Every dollar of your property tax bill is legally earmarked. Enter your home's assessed value (or select a quick preset) to generate an itemized register tape breaking down your exact annual, monthly, and daily costs across municipal, school, and ${meta.countyShort} services.</p>`);
 
-  setElHtml('#intel-report-receipt .receipt-quick-presets', isParsippany
-    ? `<span class="preset-label">Presets:</span>
-       <button class="preset-btn" data-val="268000">$268k (Lake Hiawatha)</button>
-       <button class="preset-btn active" data-val="348500">$348.5k (Township Avg)</button>
-       <button class="preset-btn" data-val="435000">$435k (Mount Tabor)</button>
-       <button class="preset-btn" data-val="545000">$545k (Tabor Hills)</button>`
-    : `<span class="preset-label">Presets:</span>
-       <button class="preset-btn" data-val="182500">$182.5k (Clifton Median)</button>
-       <button class="preset-btn active" data-val="214000">$214k (City Average)</button>
-       <button class="preset-btn" data-val="320000">$320k (Suburban)</button>
-       <button class="preset-btn" data-val="450000">$450k (Luxury)</button>`);
+  setElHtml('#intel-report-receipt .receipt-quick-presets', meta.quickPresetsHtml);
 
   const receiptAssessedInput = document.getElementById('receipt-assessed-input');
   if (receiptAssessedInput) {
-    receiptAssessedInput.value = isParsippany ? '348500' : '214000';
+    receiptAssessedInput.value = meta.sliderDefault.toString();
   }
-  setElHtml('#intel-report-receipt .form-group-receipt .help-text', isParsippany
-    ? 'Based on 2026 certified composite tax rate: <strong>3.550%</strong> ($3.550 per $100 assessed value).'
-    : 'Based on 2026 certified total tax rate: <strong>6.527%</strong> ($6.527 per $100 assessed value).');
+  setElHtml('#intel-report-receipt .form-group-receipt .help-text',
+    `Based on 2026 certified composite tax rate: <strong>${meta.certifiedTaxRate}</strong> ($${meta.rateNum.toFixed(3)} per $100 assessed value).`);
 
-  setElHtml('#printable-receipt .receipt-city-logo', isParsippany ? '🌲' : '🏛️');
-  setElHtml('#printable-receipt .receipt-title', isParsippany ? 'PARSIPPANY-TROY HILLS & PTHSD' : 'CITY OF CLIFTON & BOE');
-  setElHtml('#printable-receipt .receipt-cert-line', isParsippany ? 'CERTIFIED TAX YEAR 2026 • MORRIS COUNTY' : 'CERTIFIED TAX YEAR 2026 • PASSAIC COUNTY');
-  setElHtml('#printable-receipt .receipt-barcode-number', isParsippany ? 'TAX-WATCHDOG-2026-PARSIPPANY-NJ' : 'TAX-WATCHDOG-2026-CLIFTON-NJ');
+  setElHtml('#printable-receipt .receipt-city-logo', meta.icon);
+  setElHtml('#printable-receipt .receipt-title', `${meta.fullName.toUpperCase()} & ${meta.schoolDistrictShort.toUpperCase()}`);
+  setElHtml('#printable-receipt .receipt-cert-line', `CERTIFIED TAX YEAR 2026 • ${meta.county.toUpperCase()}`);
+  setElHtml('#printable-receipt .receipt-barcode-number', `TAX-WATCHDOG-2026-${meta.name.toUpperCase()}-NJ`);
 
-  setElHtml('#intel-report-homes .intel-panel-header', isParsippany
-    ? `<div>
-         <h3>2. Homes-to-Fund Salary & Compensation Index</h3>
-         <p>Every dollar paid to a Township employee or PTHSD school administrator comes from property tax checks. This index calculates how many average Parsippany homeowners' annual municipal or school tax payments are required to fund each position.</p>
+  setElHtml('#intel-report-homes .intel-panel-header',
+    `<div>
+       <h3>2. Homes-to-Fund Salary & Compensation Index</h3>
+       <p>Every dollar paid to a municipal employee or school administrator comes directly from property tax checks. This index calculates how many average ${meta.name} homeowners' annual tax payments are required to fund each position.</p>
+     </div>
+     <div class="homes-calc-badge">
+       <span>Benchmark: Average ${meta.name} Home (${meta.avgAssessed} Assessed Value)</span>
+       <div class="benchmark-tags">
+         <span class="tag-muni">Muni Share: ${meta.muniShare}</span>
+         <span class="tag-school">School Share: ${meta.schoolsShare}</span>
        </div>
-       <div class="homes-calc-badge">
-         <span>Benchmark: Average Parsippany Home ($348,500 Assessed Value)</span>
-         <div class="benchmark-tags">
-           <span class="tag-muni">1 Home Pays $3,258/yr Township Tax</span>
-           <span class="tag-school">1 Home Pays $7,935/yr School Tax</span>
-         </div>
-       </div>`
-    : `<div>
-         <h3>2. Homes-to-Fund Salary & Compensation Index</h3>
-         <p>Every dollar paid to a municipal employee or school administrator comes directly from property tax checks. This index calculates exactly how many entire Clifton homeowners' annual municipal or school tax payments are required to fund each public position.</p>
-       </div>
-       <div class="homes-calc-badge">
-         <span>Benchmark: Average Clifton Home ($214,000 Assessed Value)</span>
-         <div class="benchmark-tags">
-           <span class="tag-muni">1 Home Pays $4,109/yr City Tax</span>
-           <span class="tag-school">1 Home Pays $6,658/yr School Tax</span>
-         </div>
-       </div>`);
+     </div>`);
 
-  setElHtml('#homes-entity-filters', isParsippany
-    ? `<button class="filter-pill-btn active" data-entity="all">All Personnel</button>
-       <button class="filter-pill-btn" data-entity="Township of Parsippany-Troy Hills">Township Municipal Only</button>
-       <button class="filter-pill-btn" data-entity="Parsippany-Troy Hills Board of Education">PTHSD Schools Only</button>`
-    : `<button class="filter-pill-btn active" data-entity="all">All Personnel</button>
-       <button class="filter-pill-btn" data-entity="City of Clifton">City Municipal Only</button>
-       <button class="filter-pill-btn" data-entity="Clifton Board of Education">Clifton BOE Only</button>`);
+  setElHtml('#homes-entity-filters',
+    `<button class="filter-pill-btn active" data-entity="all">All Personnel</button>
+     <button class="filter-pill-btn" data-entity="MUNI">${meta.name} Municipal Only</button>
+     <button class="filter-pill-btn" data-entity="BOE">${meta.schoolDistrictShort} Only</button>`);
 
-  setElHtml('#intel-report-homes .homes-summary-ribbon', isParsippany
-    ? `<div class="hs-card">
-         <span class="hs-title">Chief of Police ($224,500)</span>
-         <span class="hs-value">68.9 Homes</span>
-         <span class="hs-sub">Requires the complete annual municipal tax checks of ~69 Parsippany families</span>
-       </div>
-       <div class="hs-card">
-         <span class="hs-title">Superintendent ($242,500)</span>
-         <span class="hs-value">30.6 Homes</span>
-         <span class="hs-sub">Requires the entire annual school tax checks of ~31 Parsippany households</span>
-       </div>
-       <div class="hs-card">
-         <span class="hs-title">Business Admin ($204,500)</span>
-         <span class="hs-value">62.8 Homes</span>
-         <span class="hs-sub">Requires the entire annual township tax check of ~63 homeowners</span>
-       </div>
-       <div class="hs-card">
-         <span class="hs-title">PTHSD Teacher ($82,400)</span>
-         <span class="hs-value">10.4 Homes</span>
-         <span class="hs-sub">Funded by the school tax payments of ~10.4 Parsippany residential homes</span>
-       </div>`
-    : `<div class="hs-card">
-         <span class="hs-title">Chief of Police ($215,000)</span>
-         <span class="hs-value">52.3 Homes</span>
-         <span class="hs-sub">Requires the complete annual municipal tax checks of ~52 Clifton families</span>
-       </div>
-       <div class="hs-card">
-         <span class="hs-title">Superintendent ($240,000)</span>
-         <span class="hs-value">36.0 Homes</span>
-         <span class="hs-sub">Requires the entire annual school tax checks of ~36 Clifton households</span>
-       </div>
-       <div class="hs-card">
-         <span class="hs-title">Interim City Manager ($195,000)</span>
-         <span class="hs-value">47.5 Homes</span>
-         <span class="hs-sub">Requires the entire annual city tax check of ~48 homeowners</span>
-       </div>
-       <div class="hs-card">
-         <span class="hs-title">Certified Teacher ($74,500)</span>
-         <span class="hs-value">11.2 Homes</span>
-         <span class="hs-sub">Funded by the school tax payments of ~11 Clifton residential homes</span>
-       </div>`);
-
-  setElHtml('#intel-report-balance .intel-panel-header > div:first-child', isParsippany
-    ? `<h3>3. Neighborhood Fiscal Balance Sheet</h3>
-       <p>Parsippany-Troy Hills School District spends <strong>$23,180 per pupil</strong> annually. By joining residential tax collections with district student enrollment across postal zones, we calculate which areas generate an educational tax surplus ("Donor") versus consume a net subsidy ("Recipient").</p>`
-    : `<h3>3. Neighborhood Fiscal Balance Sheet</h3>
-       <p>Clifton Board of Education spends <strong>$22,450 per pupil</strong> annually. By joining residential tax collections with district student enrollment by neighborhood, we calculate which neighborhoods generate an educational tax surplus ("Donor") versus consume a net educational subsidy ("Recipient") — and how $108.4M in State Equalization Aid balances the district.</p>`);
-
-  setElHtml('#intel-report-balance .state-aid-banner .sa-text', isParsippany
-    ? `<h4>The 9.7% State Aid Squeeze: Why Parsippany Homeowners Fund 86.4% of PTHSD</h4>
-       <p>Unlike urban districts, Parsippany receives just <strong>$18,260,000 (9.7%) in State Equalization & Categorical Aid</strong> under the NJ School Funding formula. As a result, local Parsippany property taxpayers must fund <strong>$161,990,000 (86.4%)</strong> of the school budget directly—making uncompensated residential PILOTs doubly painful for homeowners.</p>`
-    : `<h4>The Role of $108,420,000 in State Education Equalization Aid</h4>
-       <p>Under the New Jersey School Funding Reform Act (SFRA), the State covers 37% of Clifton's public school operating costs. Without this $108.4M state aid, Clifton's residential school tax levy would have to increase by <strong>+67%</strong>, or approximately <strong>+$4,450 per household</strong>, to cover student educational costs.</p>`);
+  setElHtml('#intel-report-balance .intel-panel-header > div:first-child',
+    `<h3>3. Neighborhood Fiscal Balance Sheet</h3>
+     <p>By joining residential tax collections with district student enrollment across neighborhoods, we calculate which areas generate educational tax contributions versus service utilization across ${meta.name}.</p>`);
 
   // 13. Tab 12: Commercial & PILOT Shift
-  setElHtml('#tab-commercial-pilot .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified Ratables & PILOT Analysis • Morris County Tax Board & PTHSD Filings</span>
-       </div>
-       <h2>Corporate Office Park Erosion, Route 10 PILOTs & The Tax Shift</h2>
-       <p>Why has Parsippany's residential tax share surged from 54.2% to <strong>72.8%</strong>? Over 30 years, Class A corporate office parks along Route 10, Campus Drive, and Sylvan Way won massive tax appeals or converted into multi-family PILOT developments—shifting <strong>+$44.6 Million per year</strong> onto single-family homeowners while allocating $0 of statutory PILOT fees to PTHSD schools.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified Ratables & PILOT Analysis • Passaic County Tax Board & DLGS</span>
-       </div>
-       <h2>Commercial Ratables, PILOT Abatements & The Tax Shift</h2>
-       <p>Why have residential property taxes grown so fast in Clifton? Over the last 30 years, commercial ratables dropped from 42% to under 24% of the tax base, while long-term PILOT abatements give 95% of revenues to City Hall and $0 to the School District—shifting an extra <strong>+$38 Million per year</strong> directly onto single-family homeowners.</p>`);
-
-  setElHtml('#tab-commercial-pilot .pilot-metrics-ribbon', isParsippany
-    ? `<div class="pm-box">
-         <span class="pm-lbl">Residential Tax Share</span>
-         <span class="pm-val font-mono" style="color: var(--color-danger);">72.8%</span>
-         <span class="pm-sub">Up from 54.2% in 1995 • $5.19B of $7.13B total base</span>
-       </div>
-       <div class="pm-box">
-         <span class="pm-lbl">Commercial Office/Retail Share</span>
-         <span class="pm-val font-mono" style="color: var(--text-muted);">27.2%</span>
-         <span class="pm-sub">Down from 45.8% in 1995 • Office park tax appeal erosion</span>
-       </div>
-       <div class="pm-box">
-         <span class="pm-lbl">Annual Shift onto Homeowners</span>
-         <span class="pm-val font-mono" style="color: #b91c1c;">+$44.6M</span>
-         <span class="pm-sub">~$2,940 extra per average single-family home/yr</span>
-       </div>
-       <div class="pm-box">
-         <span class="pm-lbl">PILOT Share to PTHSD Schools</span>
-         <span class="pm-val font-mono" style="color: #dc2626;">$0.00 (0%)</span>
-         <span class="pm-sub">Township keeps 95% • Morris County 5% • PTHSD gets zero</span>
-       </div>`
-    : `<div class="pm-box">
-         <span class="pm-lbl">Residential Tax Share</span>
-         <span class="pm-val font-mono" style="color: var(--color-danger);">76.2%</span>
-         <span class="pm-sub">Up from 58.4% in 1995 • $4.37B of $5.73B total base</span>
-       </div>
-       <div class="pm-box">
-         <span class="pm-lbl">Commercial Ratable Share</span>
-         <span class="pm-val font-mono" style="color: var(--text-muted);">23.8%</span>
-         <span class="pm-sub">Down from 41.6% in 1995 • Lost industrial & commercial base</span>
-       </div>
-       <div class="pm-box">
-         <span class="pm-lbl">Annual Shift onto Homeowners</span>
-         <span class="pm-val font-mono" style="color: #b91c1c;">+$38.2M</span>
-         <span class="pm-sub">~$1,240 extra per average single-family home/yr</span>
-       </div>
-       <div class="pm-box">
-         <span class="pm-lbl">PILOT Share to School District</span>
-         <span class="pm-val font-mono" style="color: #dc2626;">$0.00 (0%)</span>
-         <span class="pm-sub">City Hall keeps 95% • County gets 5% • Schools get zero</span>
-       </div>`);
+  setElHtml('#tab-commercial-pilot .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Certified Ratables & PILOT Analysis • ${meta.county} Tax Board</span>
+     </div>
+     <h2>Commercial Ratables, PILOT Abatements & The Tax Shift in ${meta.name}</h2>
+     <p>Why have residential property taxes grown across New Jersey? Over recent decades, commercial tax appeals, office vacancies, and long-term PILOT abatements have shifted tax burdens onto single-family homeowners while allocating $0 of statutory PILOT fees to public schools.</p>`);
 
   // 14. Tab 13: What-If Fair Tax Engine
-  setElHtml('#tab-fair-tax .section-intro', isParsippany
-    ? `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified Reform Simulator • 2026 Morris County Base • NJ Title 54 & Title 40A</span>
-       </div>
-       <h2>What-If? Parsippany Fair Tax Simulator & Equalization Engine</h2>
-       <p>Explore data-driven scenarios to distribute Parsippany-Troy Hills' <strong>$253.19M tax burden</strong> fairly across corporate campuses, mixed-use PILOT developers, and residential neighborhoods—ending the 30-year office park tax shift while fully funding PTHSD schools.</p>`
-    : `<div class="section-badge-bar">
-         <span class="section-date-badge">Certified Reform Simulator • 2026 Fiscal Base • NJ Title 54 & Title 40A</span>
-       </div>
-       <h2>What-If? Fair Tax Simulator & Equalization Engine</h2>
-       <p>Explore data-driven scenarios to distribute Clifton's <strong>$374.15M tax burden</strong> fairly across corporate entities, commercial developers, and residential neighborhoods—ending the 30-year tax shift onto homeowners while fully funding public schools and safeguarding seniors.</p>`);
-
-  setElHtml('#tab-fair-tax .fair-metrics-ribbon', isParsippany
-    ? `<div class="fm-box">
-         <span class="fm-label">Current Residential Burden</span>
-         <span class="fm-val text-danger">72.8%</span>
-         <span class="fm-sub">Residential homes fund $184.3M of the $253.2M levy</span>
-       </div>
-       <div class="fm-box">
-         <span class="fm-label">Commercial Ratable Share</span>
-         <span class="fm-val text-warning">27.2%</span>
-         <span class="fm-sub">Fell from 45.8% in 1995 (+$44.6M/yr residential shift)</span>
-       </div>
-       <div class="fm-box">
-         <span class="fm-label">Equalized Rate on 100% Value</span>
-         <span class="fm-val text-info">2.364%</span>
-         <span class="fm-sub">Vs. 3.550% certified rate (66.6% equalization ratio)</span>
-       </div>
-       <div class="fm-box">
-         <span class="fm-label">PTHSD Share of PILOT Revenue</span>
-         <span class="fm-val text-danger">$0.00 (0%)</span>
-         <span class="fm-sub">95% stays with Township, $0 allocated to PTHSD schools</span>
-       </div>
-       <div class="fm-box">
-         <span class="fm-label">Neighborhood Tax Effort Gap</span>
-         <span class="fm-val text-purple">10.74% vs 8.78%</span>
-         <span class="fm-sub">07034 (Lake Hiawatha) pays higher % of income than 07950</span>
-       </div>`
-    : `<div class="fm-box">
-         <span class="fm-label">Current Residential Burden</span>
-         <span class="fm-val text-danger">76.2%</span>
-         <span class="fm-sub">Single-family homes fund $285.1M of the $374.2M levy</span>
-       </div>
-       <div class="fm-box">
-         <span class="fm-label">Commercial Ratable Share</span>
-         <span class="fm-val text-warning">23.8%</span>
-         <span class="fm-sub">Fell from 41.6% in 1995 (+$38.2M/yr residential shift)</span>
-       </div>
-       <div class="fm-box">
-         <span class="fm-label">Equalized Rate on 100% Value</span>
-         <span class="fm-val text-info">2.630%</span>
-         <span class="fm-sub">Vs. 6.527% certified rate (40.3% equalization ratio)</span>
-       </div>
-       <div class="fm-box">
-         <span class="fm-label">BOE Share of PILOT Revenue</span>
-         <span class="pm-val text-danger">$0.00 (0%)</span>
-         <span class="fm-sub">95% stays with City Hall, $0 allocated to school students</span>
-       </div>
-       <div class="fm-box">
-         <span class="fm-label">Neighborhood Tax Effort Gap</span>
-         <span class="fm-val text-purple">13.55% vs 11.45%</span>
-         <span class="fm-sub">07011 pays higher % of paycheck than wealthier 07013</span>
-       </div>`);
+  setElHtml('#tab-fair-tax .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Certified Reform Simulator • 2026 Fiscal Base • NJ Title 54 & Title 40A</span>
+     </div>
+     <h2>What-If? ${meta.name} Fair Tax Simulator & Equalization Engine</h2>
+     <p>Explore data-driven scenarios to distribute ${meta.name}'s tax burden fairly across commercial corridors, mixed-use developments, and residential neighborhoods—protecting homeowner equity while fully funding public schools.</p>`);
 
   const wifMarket = document.getElementById('wif-market-val');
   const wifAssessed = document.getElementById('wif-assessed-val');
   const wifIncome = document.getElementById('wif-income');
   const wifZip = document.getElementById('wif-zip');
-  const wifComm = document.getElementById('wif-lever-commercial');
-  const wifUtility = document.getElementById('wif-lever-utility');
 
-  if (wifMarket) wifMarket.value = isParsippany ? '523273' : '475000';
-  if (wifAssessed) wifAssessed.value = isParsippany ? '348500' : '191425';
-  if (wifIncome) wifIncome.value = isParsippany ? '124500' : '95000';
-  if (wifZip) {
-    wifZip.innerHTML = isParsippany
-      ? `<option value="07054" selected>07054 (Parsippany Central / Lake Parsippany)</option>
-         <option value="07034">07034 (Lake Hiawatha)</option>
-         <option value="07878">07878 (Mount Tabor Historic District)</option>
-         <option value="07950">07950 (Tabor Hills / Powder Mill)</option>`
-      : `<option value="07011">07011 (Botany / Lakeview / East)</option>
-         <option value="07012" selected>07012 (Allwood / Central)</option>
-         <option value="07013">07013 (Montclair Heights / Albion)</option>
-         <option value="07014">07014 (Delawanna / South)</option>`;
-  }
-  if (wifComm) {
-    wifComm.min = isParsippany ? '27.2' : '23.8';
-    wifComm.max = isParsippany ? '42.0' : '40.0';
-    wifComm.value = isParsippany ? '35.0' : '32.0';
-  }
-  if (wifUtility) {
-    wifUtility.value = isParsippany ? '6.0' : '7.5';
+  if (wifMarket) wifMarket.value = meta.typicalMarket.toString();
+  if (wifAssessed) wifAssessed.value = meta.sliderDefault.toString();
+  if (wifIncome) wifIncome.value = demographicsData?.cityOverview?.medianHouseholdIncome ? demographicsData.cityOverview.medianHouseholdIncome.toString() : '110000';
+  if (wifZip && propertyAssessmentsData?.properties) {
+    const zips = [...new Set(propertyAssessmentsData.properties.map(p => p.zip).filter(Boolean))].sort();
+    if (zips.length) {
+      wifZip.innerHTML = zips.map((z, idx) => `<option value="${z}" ${idx === 0 ? 'selected' : ''}>${z} (${meta.name})</option>`).join('');
+    }
   }
 
-  setElHtml('.balance-scale-widget .bsw-title', isParsippany
-    ? '⚖️ Parsippany Tax Burden Balance Scale'
-    : '⚖️ Clifton Tax Burden Balance Scale');
+  setElHtml('.balance-scale-widget .bsw-title',
+    `⚖️ ${meta.name} Tax Burden Balance Scale`);
 
-  setElText('res-fiscal-note', isParsippany
-    ? "This reform does not cut a single PTHSD teacher, police officer, or road project. Parsippany's full $253.19M tax levy remains 100% funded by redirecting lost commercial office ratables and sharing 50% of PILOT revenue ($3.38M) directly with PTHSD schools."
-    : "This reform does not cut a single teacher, firefighter, police officer, or municipal road project. Clifton's full $374.15M budget remains 100% funded by redirecting lost commercial ratables ($32.6M) and PILOT revenue ($2.4M) into the public ledger.");
+  setElText('res-fiscal-note',
+    `This reform model ensures that ${meta.name}'s municipal and school budgets remain 100% funded with zero layoffs or service cuts by redirecting lost commercial and developer revenues back into the public ledger.`);
 
   // 15. Page Footer
-  setElHtml('.app-footer .footer-brand', isParsippany
-    ? `<h4>Parsippany-Troy Hills NJ Taxpayer Watchdog Project</h4>
-       <p>Independent civic transparency, property assessment, and public records analysis for Parsippany-Troy Hills and Clifton, New Jersey residents.</p>`
-    : `<h4>Clifton NJ Taxpayer Watchdog Project</h4>
-       <p>Independent civic transparency, property assessment, and public records analysis for Clifton and Parsippany-Troy Hills, New Jersey residents.</p>`);
-  setElHtml('.app-footer .footer-sources', isParsippany
-    ? `All figures, tax rates, salaries, and assessments verified against certified records from: Morris County Board of Taxation (District 1429), Township of Parsippany-Troy Hills Tax Assessor & Finance Dept, NJ Division of Taxation (MOD-IV), NJ DCA Local Government Services, and Parsippany-Troy Hills Township School District (PTHSD) User-Friendly Budgets.`
-    : `All figures, tax rates, salaries, and assessments verified against certified records from: Passaic County Board of Taxation, City of Clifton Tax Assessor & Collector, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), NJ DCA Local Government Services, and Clifton BOE User-Friendly Budgets.`);
+  setElHtml('.app-footer .footer-brand',
+    `<h4>${meta.name} NJ Taxpayer Watchdog Project</h4>
+     <p>Independent civic transparency, property assessment, and public records analysis for ${meta.name}, New Jersey residents.</p>`);
+  setElHtml('.app-footer .footer-sources',
+    `All figures, tax rates, salaries, and assessments verified against certified records from: ${meta.county} Board of Taxation, ${meta.fullName} Assessor & Collector, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), and ${meta.schoolDistrictShort} User-Friendly Budgets.`);
 }
 
 // Global Cross-Section Navigation & Tab Switcher
@@ -1988,20 +2101,27 @@ async function loadAllData(cityId = currentCity) {
     commercialPilotData = await pilotRes.json();
     fairTaxData = await fairRes.json();
 
-    await loadElectionData();
+    await loadElectionData(cityId);
 
   } catch (err) {
     console.error("Data load issue:", err);
   }
 }
 
-async function loadElectionData() {
-  if (!cliftonElectionData) {
+async function loadElectionData(cityId = currentCity) {
+  const targetCity = CITY_REGISTRY[cityId] ? cityId : 'clifton';
+  if (!cliftonElectionData || loadedElectionCity !== targetCity) {
     try {
-      const res = await fetch('data/clifton_election_candidates.json');
-      cliftonElectionData = await res.json();
+      const filePath = targetCity === 'clifton' ? 'data/clifton_election_candidates.json' : `data/${targetCity}/election_candidates.json`;
+      const res = await fetch(filePath);
+      if (res.ok) {
+        cliftonElectionData = await res.json();
+        loadedElectionCity = targetCity;
+      } else {
+        console.warn(`Could not load election data for ${targetCity}`);
+      }
     } catch (err) {
-      console.error("Clifton election data load issue:", err);
+      console.error("Election data load issue:", err);
     }
   }
   return cliftonElectionData;
@@ -2011,7 +2131,7 @@ async function loadElectionData() {
 function setupCalculator() {
   const input = document.getElementById('calc-assessment-input');
   if (!input || !taxData) return;
-  const isParsippany = currentCity === 'parsippany';
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
 
   function updateCalc() {
     const val = parseFloat(input.value) || 0;
@@ -2070,10 +2190,10 @@ function setupCalculator() {
         actionsHtml = `
           <div class="entity-card-actions">
             <button class="btn-jump-action" data-jump-tab="tab-budgets">
-              <span>🏛️</span> Full ${isParsippany ? 'PTHSD $187.5M' : 'BOE $293.2M'} Budget Breakdown ➔
+              <span>🏛️</span> Full ${meta.schoolDistrictShort} (${meta.schoolBudgetDisplay}) Budget Breakdown ➔
             </button>
             <button class="btn-jump-action secondary" data-jump-tab="tab-benefits">
-              <span>🏥</span> School Benefits & Healthcare (${isParsippany ? '$38.2M' : '$62.8M'}) ➔
+              <span>🏥</span> School Benefits & Healthcare (${meta.benefitsSpendDisplay}) ➔
             </button>
           </div>
         `;
@@ -2081,7 +2201,7 @@ function setupCalculator() {
         actionsHtml = `
           <div class="entity-card-actions">
             <button class="btn-jump-action" data-jump-tab="tab-budgets">
-              <span>🏛️</span> Full ${isParsippany ? 'Township $92.8M' : 'City $105.4M'} Budget Breakdown ➔
+              <span>🏛️</span> Full ${meta.name} (${meta.muniBudgetDisplay}) Budget Breakdown ➔
             </button>
             <button class="btn-jump-action secondary" data-jump-tab="tab-staff">
               <span>👮</span> Police & Staff Payroll ➔
@@ -2092,7 +2212,7 @@ function setupCalculator() {
         actionsHtml = `
           <div class="entity-card-actions">
             <button class="btn-jump-action" data-jump-tab="tab-surrounding">
-              <span>🗺️</span> Compare Surrounding ${isParsippany ? 'Morris County' : 'Town'} Rates ➔
+              <span>🗺️</span> Compare Surrounding ${meta.countyShort} Rates ➔
             </button>
           </div>
         `;
@@ -2147,14 +2267,14 @@ function setupCalculator() {
 // TAB 2: BUDGETS
 function renderBudgets() {
   if (!boeBudgetData || !cityBudgetData) return;
-  const isParsippany = currentCity === 'parsippany';
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
 
   const boeContainer = document.getElementById('boe-line-items');
   boeContainer.innerHTML = boeBudgetData.majorAppropriations.map(item => {
     let actionBtn = '';
     const cat = item.category.toLowerCase();
     if (cat.includes('benefit') || cat.includes('insurance')) {
-      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">Explore Healthcare Plans, Copays & Benefit Costs (${isParsippany ? '$38.2M' : '$62.8M'}) ➔</button>`;
+      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">Explore Healthcare Plans, Copays & Benefit Costs (${meta.benefitsSpendDisplay}) ➔</button>`;
     } else if (cat.includes('regular') || cat.includes('instruction') || cat.includes('administration')) {
       actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-staff">View School District Staff Directory & Salaries ➔</button>`;
     } else if (cat.includes('transportation') || cat.includes('facilities') || cat.includes('special') || cat.includes('operations')) {
@@ -2180,7 +2300,7 @@ function renderBudgets() {
     if (cat.includes('police') || cat.includes('safety')) {
       actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-staff">View Police Salaries, Overtime & Details ➔</button>`;
     } else if (cat.includes('pension') || cat.includes('benefit') || cat.includes('insurance')) {
-      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">View Municipal Benefit Liabilities (${isParsippany ? '$22.9M' : '$24.4M'}) ➔</button>`;
+      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">View Municipal Benefit Liabilities (${meta.benefitsSpendDisplay}) ➔</button>`;
     } else if (cat.includes('general government') || cat.includes('debt') || cat.includes('legal')) {
       actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-controversies">View Audit & PILOT Abatement Analyses ➔</button>`;
     }
@@ -2201,6 +2321,7 @@ function renderBudgets() {
 // TAB: DEMOGRAPHICS & AREAS
 function renderDemographics() {
   if (!demographicsData) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const isParsippany = currentCity === 'parsippany';
 
   const overview = demographicsData.cityOverview;
@@ -2210,7 +2331,7 @@ function renderDemographics() {
       <div class="demo-stat-box">
         <span class="demo-stat-label">Total Population</span>
         <span class="demo-stat-num">${overview.totalPopulation.toLocaleString()}</span>
-        <span class="demo-stat-sub">${isParsippany ? '21,620 Housing Units' : '32,840 Housing Units'}</span>
+        <span class="demo-stat-sub">${overview.totalHousingUnits ? overview.totalHousingUnits.toLocaleString() + ' Housing Units' : 'Housing Units'}</span>
       </div>
       <div class="demo-stat-box">
         <span class="demo-stat-label">Median Household Income</span>
@@ -2230,7 +2351,7 @@ function renderDemographics() {
       <div class="demo-stat-box">
         <span class="demo-stat-label">Diversity & Global Roots</span>
         <span class="demo-stat-num">${overview.foreignBornPercentage}%</span>
-        <span class="demo-stat-sub">${isParsippany ? '44.5% Speak Non-English at Home' : '45.2% Speak Non-English at Home'}</span>
+        <span class="demo-stat-sub">${overview.nonEnglishAtHomePercent ? overview.nonEnglishAtHomePercent + '% Speak Non-English at Home' : '45% Non-English at Home'}</span>
       </div>
     `;
   }
@@ -2269,7 +2390,7 @@ function renderDemographics() {
             <span class="metric-val" style="color: #991b1b;">${z.taxBurdenPercentOfIncome}% of Paycheck</span>
           </div>
           <div class="metric-row">
-            <span class="metric-name">Share of ${isParsippany ? 'Parsippany' : 'Clifton'} Tax Base:</span>
+            <span class="metric-name">Share of ${meta.name} Tax Base:</span>
             <span class="metric-val">${z.shareOfTotalTaxBase}% (Generates ${formatUSDWhole(z.totalResidentialLevyContribution)})</span>
           </div>
           <div class="metric-row">
@@ -2666,6 +2787,7 @@ function renderPaginationControls(totalProps, currentPage, totalPages) {
 // TAB: PROPERTY VALUES & ASSESSMENTS
 function renderProperties(propsToRender, page) {
   if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const isParsippany = currentCity === 'parsippany';
 
   const list = propsToRender || propertyAssessmentsData.properties;
@@ -2737,7 +2859,7 @@ function renderProperties(propsToRender, page) {
             <div class="prop-tax-amount">${formatUSD(p.annualTax)} <span class="tax-period">/ yr</span></div>
             <div class="prop-tax-splits">
               <span class="tax-split-item school-split">🏫 Schools: ${formatUSDWhole(p.schoolTax)}</span>
-              <span class="tax-split-item city-split">🏛️ ${isParsippany ? 'Township' : 'City'}: ${formatUSDWhole(p.municipalTax)}</span>
+              <span class="tax-split-item city-split">🏛️ ${meta.name}: ${formatUSDWhole(p.municipalTax)}</span>
               <span class="tax-split-item county-split">🌳 County: ${formatUSDWhole(p.countyTax)}</span>
             </div>
           </div>
@@ -3313,6 +3435,7 @@ function renderSurroundingTowns() {
 // TAB: HEALTHCARE & BENEFITS
 function renderBenefits() {
   if (!benefitsData) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const isParsippany = currentCity === 'parsippany';
 
   const plansContainer = document.getElementById('benefits-plans-container');
@@ -3336,7 +3459,7 @@ function renderBenefits() {
           <strong>${r.employeeContribution}</strong>
         </div>
         <div class="cost-stat-row">
-          <span>${isParsippany ? 'Parsippany' : 'Clifton'} Taxpayer Subsidy:</span>
+          <span>${meta.name} Taxpayer Subsidy:</span>
           <strong style="color: var(--color-city);">${r.taxpayerContribution}</strong>
         </div>
         <div class="cost-example">${r.note}</div>
@@ -3442,7 +3565,7 @@ function renderStaffTable(filterEntity = 'all', searchQuery = '') {
   }
 
   tbody.innerHTML = filtered.map(s => {
-    const isSchool = s.entity.includes('Board of Education');
+    const isSchool = /school|board of education|boe|pthsd|msd/i.test(s.entity);
     const pillClass = isSchool ? 'pill-school' : 'pill-city';
     const salaryDisplay = s.salaryReported > 0 ? formatUSDWhole(s.salaryReported) : '$0 (Unpaid Public Service)';
 
@@ -3497,9 +3620,9 @@ function setupStaffFilters() {
 // TAB 4: ETHICS & ASSETS
 function renderEthicsCards() {
   if (!ethicsData) return;
-  const isParsippany = currentCity === 'parsippany';
-  const districtCode = isParsippany ? '1429' : '1602';
-  const countyLabel = isParsippany ? 'Morris County' : 'Passaic County';
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const districtCode = meta.districtCode;
+  const countyLabel = meta.county;
 
   const container = document.getElementById('ethics-cards-container');
   container.innerHTML = ethicsData.map(d => {
@@ -3558,8 +3681,8 @@ function renderEthicsCards() {
 // TAB 5: VENDORS
 function renderVendorsCards() {
   if (!vendorsData) return;
-  const isParsippany = currentCity === 'parsippany';
-  const citySearchLabel = isParsippany ? 'Parsippany NJ contract' : 'Clifton NJ contract';
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const citySearchLabel = `${meta.name} NJ contract`;
 
   const container = document.getElementById('vendors-cards-container');
   container.innerHTML = vendorsData.map(v => `
@@ -3582,10 +3705,10 @@ function setupInvestigationTools() {
   const propInput = document.getElementById('property-search-name');
   const propBtn = document.getElementById('btn-property-search');
   const propResult = document.getElementById('property-link-result');
-  const isParsippany = currentCity === 'parsippany';
-  const districtCode = isParsippany ? '1429' : '1602';
-  const countyShort = isParsippany ? 'Morris' : 'Passaic';
-  const cityLabel = isParsippany ? 'Parsippany' : 'Clifton';
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const districtCode = meta.districtCode;
+  const countyShort = meta.countyShort;
+  const cityLabel = meta.name;
 
   function performSearch() {
     if (!propInput || !propResult) return;
@@ -3593,7 +3716,7 @@ function setupInvestigationTools() {
     if (!rawVal) {
       propResult.innerHTML = `
         <div class="search-empty-state">
-          <span>ℹ️</span> Please enter an official's name, department, street, or address above (e.g. ${isParsippany ? '<em>Desai</em>, <em>Barberio</em>, <em>Chase</em>, <em>Beverwyck</em>, <em>07054</em>' : '<em>Grabowski</em>, <em>DeMarzo</em>, <em>Rinaldi</em>, <em>Sadrakula</em>, <em>Valley</em>, <em>07011</em>'}).
+          <span>ℹ️</span> Please enter an official's name, department, street, or address in ${meta.name}.
         </div>
       `;
       return;
@@ -3807,20 +3930,21 @@ function setupInvestigationTools() {
     const body = activeOpra.templates[key] || '';
     preview.value = body;
 
-    const meta = activeOpra.meta[key] || {
-      recipientEmail: isParsippany ? 'kmadin@parsippany.net' : 'opra@cliftonnj.org',
-      recipientDisplay: isParsippany ? 'kmadin@parsippany.net • Township Clerk Khaled Madin' : 'opra@cliftonnj.org • Municipal Clerk Evelina Krajewski',
+    const cityMeta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+    const opraMeta = activeOpra.meta[key] || {
+      recipientEmail: `clerk@${currentCity}.org`,
+      recipientDisplay: `${cityMeta.fullName} Municipal Clerk`,
       subject: 'OPRA Public Records Request'
     };
 
     if (targetEmail) {
-      targetEmail.textContent = meta.recipientDisplay;
+      targetEmail.textContent = opraMeta.recipientDisplay;
     }
 
     if (mailtoBtn) {
-      let mailtoHref = `mailto:${meta.recipientEmail}?subject=${encodeURIComponent(meta.subject)}`;
-      if (meta.cc) {
-        mailtoHref += `&cc=${encodeURIComponent(meta.cc)}`;
+      let mailtoHref = `mailto:${opraMeta.recipientEmail}?subject=${encodeURIComponent(opraMeta.subject)}`;
+      if (opraMeta.cc) {
+        mailtoHref += `&cc=${encodeURIComponent(opraMeta.cc)}`;
       }
       mailtoHref += `&body=${encodeURIComponent(body)}`;
       mailtoBtn.href = mailtoHref;
@@ -3845,6 +3969,7 @@ function setupInvestigationTools() {
 
 // TAB 5: JOINED INTELLIGENCE & CROSS-DATASET REPORTS
 function renderIntelligenceReports() {
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const isParsippany = currentCity === 'parsippany';
 
   // 1. Sub-nav toolbar switching
@@ -3941,14 +4066,14 @@ function renderIntelligenceReports() {
   function updateReceipt() {
     if (!receiptInput) return;
     const assessed = parseFloat(receiptInput.value) || 0;
-    const totalRate = isParsippany ? 3.550 : 6.527;
+    const totalRate = meta.rateNum;
     const totalTax = (assessed / 100) * totalRate;
     const monthlyTax = totalTax / 12;
     const dailyTax = totalTax / 365;
 
-    const schoolTax = (assessed / 100) * (isParsippany ? 2.277 : 3.111);
-    const muniTax = (assessed / 100) * (isParsippany ? 0.935 : 1.920);
-    const countyTax = (assessed / 100) * (isParsippany ? 0.338 : 1.496);
+    const schoolTax = (assessed / 100) * (taxData?.certifiedSchoolRate || (meta.rateNum * (parseFloat(meta.schoolsShare)/100)));
+    const muniTax = (assessed / 100) * (taxData?.certifiedMunicipalRate || (meta.rateNum * (parseFloat(meta.muniShare)/100)));
+    const countyTax = (assessed / 100) * (taxData?.certifiedCountyRate || (meta.rateNum * (parseFloat(meta.countyShare)/100)));
 
     // Update summary pills & slips
     const elAnn = document.getElementById('receipt-summary-annual');
@@ -4003,8 +4128,8 @@ function renderIntelligenceReports() {
       takeawaysList.innerHTML = `
         <li><strong>Classroom Instruction:</strong> You pay <strong>${formatUSD(teacherCost)}/year</strong> (${formatUSD(teacherCost/12)}/mo) directly to ${isParsippany ? 'PTHSD' : 'district'} teachers and educational materials.</li>
         <li><strong>Health & Pensions:</strong> Public employee benefits across schools and ${isParsippany ? 'Township' : 'City'} Hall cost you <strong>${formatUSD(combinedBen)}/year</strong> (${formatUSD(combinedBen/12)}/mo).</li>
-        <li><strong>Police & Patrol:</strong> ${isParsippany ? 'Parsippany' : 'Clifton'} Police operations account for <strong>${formatUSD(policeCost)}/year</strong> (${formatUSD(policeCost/12)}/mo).</li>
-        <li><strong>Daily Rate:</strong> Living in ${isParsippany ? 'Parsippany-Troy Hills' : 'Clifton'} costs <strong>${formatUSD(dailyTax)} per 24 hours</strong> in municipal, school, and county taxes.</li>
+        <li><strong>Police & Public Safety:</strong> ${meta.name} public safety accounts for <strong>${formatUSD(policeCost)}/year</strong> (${formatUSD(policeCost/12)}/mo).</li>
+        <li><strong>Daily Rate:</strong> Living in ${meta.fullName} costs <strong>${formatUSD(dailyTax)} per 24 hours</strong> in municipal, school, and county taxes.</li>
       `;
     }
   }
@@ -4070,9 +4195,9 @@ function renderIntelligenceReports() {
   const homesEntityBtns = document.querySelectorAll('#homes-entity-filters .filter-pill-btn');
   const homesSortSelect = document.getElementById('homes-sort-select');
 
-  const benchAssessed = isParsippany ? 348500 : 214000;
-  const benchSchoolTax = (benchAssessed / 100) * (isParsippany ? 2.277 : 3.111);
-  const benchCityTax = (benchAssessed / 100) * (isParsippany ? 0.935 : 1.920);
+  const benchAssessed = meta.sliderDefault;
+  const benchSchoolTax = (benchAssessed / 100) * (taxData?.certifiedSchoolRate || (meta.rateNum * (parseFloat(meta.schoolsShare)/100)));
+  const benchCityTax = (benchAssessed / 100) * (taxData?.certifiedMunicipalRate || (meta.rateNum * (parseFloat(meta.muniShare)/100)));
 
   function renderHomesTable() {
     if (!homesTableBody || !staffData) return;
@@ -4111,7 +4236,7 @@ function renderIntelligenceReports() {
       const entityTaxRate = isParsippany
         ? (s.isSchool ? '2.277% ($7,935/home)' : '0.935% ($3,258/home)')
         : (s.isSchool ? '3.111% ($6,658/home)' : '1.920% ($4,109/home)');
-      const entityLabel = s.isSchool ? 'School Tax' : (isParsippany ? 'Township Tax' : 'City Tax');
+      const entityLabel = s.isSchool ? 'School Tax' : meta.name + ' Municipal Tax';
       const homesCountFormatted = s.homesRequired.toFixed(1);
 
       return `
@@ -4133,7 +4258,7 @@ function renderIntelligenceReports() {
           <td>
             <div class="homes-count-badge">
               <span class="homes-number">${homesCountFormatted}</span>
-              <span class="homes-text">${isParsippany ? 'Parsippany' : 'Clifton'} Homes</span>
+              <span class="homes-text">${meta.name} Homes</span>
             </div>
             <div class="homes-progress-bar">
               <div class="homes-progress-fill ${s.isSchool ? 'fill-school' : 'fill-city'}" style="width: ${Math.min(100, (s.homesRequired / 65) * 100)}%;"></div>
@@ -4141,7 +4266,7 @@ function renderIntelligenceReports() {
           </td>
           <td>
             <span class="homes-context-desc">
-              Requires 100% of the annual ${entityLabel} check from <strong>${Math.round(s.homesRequired)}</strong> average households (${isParsippany ? '$348.5k' : '$214k'} assessed).
+              Requires 100% of the annual ${entityLabel} check from <strong>${Math.round(s.homesRequired)}</strong> average households (${meta.avgAssessed} assessed).
             </span>
           </td>
         </tr>
@@ -4203,7 +4328,7 @@ function renderIntelligenceReports() {
             <div class="bc-stat">
               <span class="bc-stat-lbl">District Students</span>
               <span class="bc-stat-val">${z.districtStudentsSent.toLocaleString()}</span>
-              <span class="bc-stat-sub">${z.districtStudentsPercent}% of ${isParsippany ? 'PTHSD' : 'Clifton'} total</span>
+              <span class="bc-stat-sub">${z.districtStudentsPercent}% of ${meta.schoolDistrictShort} total</span>
             </div>
             <div class="bc-stat">
               <span class="bc-stat-lbl">School Taxes Paid</span>
@@ -4399,17 +4524,17 @@ function renderIntelligenceReports() {
 function renderCommercialPilot() {
   if (!commercialPilotData) return;
 
-  const isParsippany = currentCity === 'parsippany';
-  const stdRateLabel = isParsippany ? '3.550%' : '6.527%';
-  const schoolShareLabel = isParsippany ? 'Parsippany-Troy Hills Schools (64.14%)' : 'Clifton Public Schools (47.66%)';
-  const muniShareLabel = isParsippany ? 'Township & Fire District (26.34%)' : 'City of Clifton Municipal (29.42%)';
-  const countyShareLabel = isParsippany ? 'Morris County Share (9.52%)' : 'Passaic County Share (22.92%)';
-  const schoolFooterPct = isParsippany ? '64%' : '48%';
-  const pilotSchoolLabel = isParsippany ? 'Parsippany Public Schools (0.0%)' : 'Clifton Public Schools (0.0%)';
-  const pilotMuniLabel = isParsippany ? 'Township Hall General Fund (95.0%)' : 'City Hall General Fund (95.0%)';
-  const pilotCountyLabel = isParsippany ? 'Morris County Remittance (5.0%)' : 'Passaic County Remittance (5.0%)';
-  const perPupilCostLabel = isParsippany ? "Parsippany's certified per-pupil spending of $23,180/student" : "Clifton's certified per-pupil spending of $22,450/student";
-  const homeownerLabel = isParsippany ? 'Parsippany homeowners' : 'Clifton homeowners';
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const stdRateLabel = meta.certifiedTaxRate;
+  const schoolShareLabel = `${meta.schoolDistrictShort} (${meta.schoolsShare})`;
+  const muniShareLabel = `${meta.name} Municipal (${meta.muniShare})`;
+  const countyShareLabel = `${meta.countyShort} (${meta.countyShare})`;
+  const schoolFooterPct = Math.round(parseFloat(meta.schoolsShare)) + '%';
+  const pilotSchoolLabel = `${meta.schoolDistrictShort} (0.0%)`;
+  const pilotMuniLabel = `${meta.fullName} General Fund (95.0%)`;
+  const pilotCountyLabel = `${meta.countyShort} Remittance (5.0%)`;
+  const perPupilCostLabel = `${meta.name}'s public schools spending`;
+  const homeownerLabel = `${meta.name} homeowners`;
 
   // 1. Ratable Shift Timeline
   const timelineContainer = document.getElementById('ratable-shift-timeline');
@@ -4501,7 +4626,7 @@ function renderCommercialPilot() {
           </div>
           <div class="p-col-footer pilot-footer">
             <strong>Developer Savings: ${formatUSDWhole(proj.developerAnnualSavings)} / yr</strong>
-            <small>${isParsippany ? 'Township Hall' : 'City Hall'} retains +${formatUSDWhole(proj.pilotCityKeeps - proj.standardCityShare)} more than standard taxes while schools receive zero.</small>
+            <small>${meta.fullName} retains +${formatUSDWhole(proj.pilotCityKeeps - proj.standardCityShare)} more than standard taxes while schools receive zero.</small>
           </div>
         </div>
       `;
@@ -4581,6 +4706,7 @@ function renderCommercialPilot() {
 function renderFairTaxEngine() {
   if (!fairTaxData) return;
 
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const isParsippany = currentCity === 'parsippany';
   const baseline = fairTaxData.metadata.certifiedBaseline;
   const inequities = fairTaxData.fairnessDiagnosis.coreInequities || [];
@@ -4939,7 +5065,7 @@ function renderFairTaxEngine() {
           let circuitNote = circuitBreakerApplied ? ' (including targeted income circuit-breaker relief)' : '';
           vcNarrative.innerHTML = `You save <strong>${formatUSDWhole(annualSavings)} per year</strong> (-${formatUSDWhole(monthlySavings)}/month)${circuitNote} through equalized market assessments and restoring corporate/PILOT contributions.`;
         } else if (annualSavings === 0) {
-          vcNarrative.innerHTML = `Under the Status Quo, your tax bill remains unchanged at <strong>${formatUSDWhole(currentBill)}</strong>, continuing the ${isParsippany ? '$29.4M' : '$38.2M'} residential burden shift.`;
+          vcNarrative.innerHTML = `Under the Status Quo, your tax bill remains unchanged at <strong>${formatUSDWhole(currentBill)}</strong>, continuing the residential tax burden shift.`;
         } else {
           vcNarrative.innerHTML = `Your property would see an adjustment of <strong>+${formatUSDWhole(Math.abs(annualSavings))}/year</strong> to eliminate assessment lag that favored this parcel relative to municipal market value.`;
         }
@@ -5009,15 +5135,15 @@ function renderFairTaxEngine() {
       destLegend.innerHTML = `
         <div class="dest-legend-item">
           <span class="dest-legend-dot" style="background: #2563eb;"></span>
-          <span>${isParsippany ? 'PTHSD Schools' : 'Clifton Schools'}: <strong>${formatUSDWhole(schoolAmount)}</strong> (${schoolSharePct}%)</span>
+          <span>${meta.schoolDistrictShort}: <strong>${formatUSDWhole(schoolAmount)}</strong> (${schoolSharePct}%)</span>
         </div>
         <div class="dest-legend-item">
           <span class="dest-legend-dot" style="background: #059669;"></span>
-          <span>${isParsippany ? 'Township & Fire' : 'City Hall'}: <strong>${formatUSDWhole(muniAmount)}</strong> (${muniSharePct}%)</span>
+          <span>${meta.name} Municipal: <strong>${formatUSDWhole(muniAmount)}</strong> (${muniSharePct}%)</span>
         </div>
         <div class="dest-legend-item">
           <span class="dest-legend-dot" style="background: #d97706;"></span>
-          <span>${isParsippany ? 'Morris County' : 'Passaic County'}: <strong>${formatUSDWhole(countyAmount)}</strong> (${countySharePct}%)</span>
+          <span>${meta.countyShort}: <strong>${formatUSDWhole(countyAmount)}</strong> (${countySharePct}%)</span>
         </div>
       `;
     }
@@ -5464,7 +5590,7 @@ function renderFairTaxEngine() {
 
     if (bswSubtext) {
       if (Math.abs(tiltDeg) <= 2) {
-        bswSubtext.innerHTML = `<strong>Scale Level:</strong> Commercial & PILOT revenue balances the scale, lifting over $25M+ in excess burden off ${isParsippany ? 'Parsippany' : 'Clifton'} families.`;
+        bswSubtext.innerHTML = `<strong>Scale Level:</strong> Commercial & PILOT revenue balances the scale, lifting excess tax burden off ${meta.name} families.`;
       } else {
         const excessM = Math.max(0, resLevyM - (totalLevyM * 0.65)).toFixed(1);
         bswSubtext.innerHTML = `Homeowners shoulder <strong>${(resShare / Math.max(1, commShare)).toFixed(1)}×</strong> the burden of commercial ratables (~+$${excessM}M excess residential shift).`;
@@ -5747,7 +5873,7 @@ function renderFairTaxEngine() {
       activeCallout.innerHTML = `
         <div class="sdc-summary">
           <strong>Custom Citizen Scenario</strong>
-          <p>You are testing custom policy parameters for ${isParsippany ? 'Parsippany-Troy Hills' : 'Clifton'}. Adjust any slider or toggle to see live fiscal and household impacts.</p>
+          <p>You are testing custom policy parameters for ${meta.fullName}. Adjust any slider or toggle to see live fiscal and household impacts.</p>
         </div>
         <div class="sdc-impact winners">
           <strong>Custom Levers:</strong>
@@ -5964,7 +6090,7 @@ WHAT-IF EQUALIZATION REFORM PLAN:
   - Cap tax burden for seniors and families earning under $100k at 8% of income
 
 FISCAL STABILITY:
-${isParsippany ? "Parsippany's township and school budgets" : "Clifton's municipal and school budgets"} remain 100% funded with zero layoffs or service cuts by redirecting lost commercial and developer revenues back into the public ledger.`;
+${meta.name}'s municipal and school budgets remain 100% funded with zero layoffs or service cuts by redirecting lost commercial and developer revenues back into the public ledger.`;
 
       navigator.clipboard.writeText(summaryText).then(() => {
         const origText = btnCopy.textContent;
@@ -6092,10 +6218,12 @@ function setupElectionControls() {
 }
 
 async function renderElectionHub() {
-  if (!cliftonElectionData) {
-    await loadElectionData();
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  if (!cliftonElectionData || loadedElectionCity !== currentCity) {
+    await loadElectionData(currentCity);
   }
   if (!cliftonElectionData) return;
+  updateElectionStaticCopy(currentCity, meta);
 
   renderBallotOverview();
   renderCategoryPills();
@@ -6190,10 +6318,14 @@ function setupVoterCompass() {
   function calculateMatches() {
     if (!cliftonElectionData || !cliftonElectionData.councilCandidates) return;
 
-    const formData = new FormData(form);
-    const answers = {};
-    for (const [k, v] of formData.entries()) {
-      answers[k] = v;
+    let answers = {};
+    try {
+      const formData = new FormData(form);
+      for (const [k, v] of formData.entries()) {
+        answers[k] = v;
+      }
+    } catch (e) {
+      // fallback for non-standard environments
     }
     const answeredKeys = Object.keys(answers);
     const totalAnswered = answeredKeys.length;
@@ -7053,22 +7185,18 @@ function renderControversiesSpotlight() {
     <!-- Top Stats Counter -->
     <div class="spotlight-stats-banner">
       <div class="sp-stat">
-        <span class="sp-num">19</span>
+        <span class="sp-num">${candidates.length}</span>
         <span class="sp-label">Candidates Vetted</span>
       </div>
       <div class="sp-stat sp-alert">
-        <span class="sp-num">6</span>
+        <span class="sp-num">${withControversy.length}</span>
         <span class="sp-label">Documented Inquiries / Censures</span>
       </div>
       <div class="sp-stat sp-clean">
-        <span class="sp-num">13</span>
+        <span class="sp-num">${cleanCandidates.length}</span>
         <span class="sp-label">Verified Clean Records</span>
       </div>
       <div class="sp-stat">
-        <span class="sp-num">18+</span>
-        <span class="sp-label">Disclosed Outside Entities</span>
-      </div>
-      <div class="sp-stat sp-clean">
         <span class="sp-num">100%</span>
         <span class="sp-label">Health Benefits Declined</span>
       </div>
@@ -7077,7 +7205,7 @@ function renderControversiesSpotlight() {
     <!-- Active Inquiries Grid (6 Candidates) -->
     <div class="spotlight-sub-header-row">
       <h4 class="spotlight-group-title" style="margin: 0;">
-        ⚠️ Candidates with Documented Public Inquiries, Censures, or Legal Disputes (6)
+        ⚠️ Candidates with Documented Public Inquiries, Censures, or Legal Disputes (${withControversy.length})
       </h4>
       <span class="spotlight-sub-hint">Click any candidate to expand full dossier & court findings</span>
     </div>
@@ -7089,9 +7217,9 @@ function renderControversiesSpotlight() {
     <div class="spotlight-clean-section">
       <div class="spotlight-sub-header-row">
         <h4 class="spotlight-group-title" style="color: #15803d; margin: 0;">
-          ✓ Candidates with Verified Clean Public Records (13)
+          ✓ Candidates with Verified Clean Public Records (${cleanCandidates.length})
         </h4>
-        <span class="spotlight-sub-hint" style="color: #15803d;">Cross-referenced against Passaic County courts, NJ SEC, & LFB filings</span>
+        <span class="spotlight-sub-hint" style="color: #15803d;">Cross-referenced against ${escapeHtml(cliftonElectionData.county || 'County')} courts, NJ SEC, & LFB filings</span>
       </div>
       <div class="clean-summary-grid">
         ${cleanListHtml}
@@ -7190,10 +7318,73 @@ function renderPlatformMatrix() {
 // Render Complete Clifton Ballot Architecture & Offices Overview
 function renderBallotOverview() {
   const container = document.getElementById('election-ballot-overview-grid');
-  if (!container || !cliftonElectionData || !cliftonElectionData.ballotArchitecture) return;
+  if (!container || !cliftonElectionData) return;
 
-  const arch = cliftonElectionData.ballotArchitecture;
-  const offices = arch.offices || [];
+  let offices = [];
+  if (cliftonElectionData.ballotArchitecture && cliftonElectionData.ballotArchitecture.offices) {
+    offices = cliftonElectionData.ballotArchitecture.offices;
+  } else {
+    const m = cliftonElectionData.municipality || 'Local';
+    const c = cliftonElectionData.county || 'County';
+    const cands = cliftonElectionData.councilCandidates || [];
+    const boe = cliftonElectionData.boeCandidates || (cliftonElectionData.boeElection?.candidates) || [];
+
+    if (cands.length > 0) {
+      offices.push({
+        id: `${m.toLowerCase()}-muni`,
+        office: `${m} Municipal / Local Representation`,
+        level: `Municipal (${m})`,
+        seatsAvailable: cliftonElectionData.totalCouncilSeats || 1,
+        candidatesRunning: cands.length,
+        voteRule: `Vote for up to ${cliftonElectionData.totalCouncilSeats || 1}`,
+        termLength: '3 to 4 Years',
+        taxShare: 'Municipal Budget Share',
+        description: cliftonElectionData.councilStructure || 'Oversees municipal services, police, DPW, and local ordinances.',
+        badgeColor: 'var(--color-city)'
+      });
+    }
+
+    if (boe.length > 0) {
+      offices.push({
+        id: `${m.toLowerCase()}-boe`,
+        office: `${m} School Board (Board of Education)`,
+        level: 'School District',
+        seatsAvailable: cliftonElectionData.boeElection?.seatsAvailable || 3,
+        candidatesRunning: boe.length,
+        voteRule: 'Vote for up to 3',
+        termLength: '3-Year Full Term (2027–2029)',
+        taxShare: 'School District Levy',
+        description: cliftonElectionData.boeElection?.budgetOverview || 'Oversees public schools, student curriculum, facilities, and school district operating budget.',
+        badgeColor: 'var(--color-school)'
+      });
+    }
+
+    offices.push({
+      id: `${c.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-commissioners`,
+      office: `${c} Board of County Commissioners`,
+      level: `Countywide (${c})`,
+      seatsAvailable: 1,
+      candidatesRunning: 2,
+      voteRule: 'Vote for 1',
+      termLength: '3 Years (2027–2029)',
+      taxShare: `${c} Tax Share`,
+      description: `Governs ${c} government, county roads, county parks, social services, and county college.`,
+      badgeColor: 'var(--color-county)'
+    });
+
+    offices.push({
+      id: 'us-senate-fed',
+      office: 'United States Senate (New Jersey)',
+      level: 'Federal (Statewide New Jersey)',
+      seatsAvailable: 1,
+      candidatesRunning: 2,
+      voteRule: 'Vote for 1',
+      termLength: '6 Years (2027–2033)',
+      taxShare: 'Federal Grants & Tax Policy (SALT Deduction)',
+      description: 'Represents all New Jersey residents in the U.S. Senate in Washington, D.C.',
+      badgeColor: '#1d4ed8'
+    });
+  }
 
   let html = '';
   offices.forEach(o => {
@@ -7385,7 +7576,8 @@ function renderNjCandidates() {
         </div>
       </div>
 
-      <!-- 3. Passaic County Board of County Commissioners (Full 3-Year Terms) -->
+      <!-- 3. County Commissioners / Executive -->
+      ${nj.passaicCountyCommissionersFull ? `
       <div class="nj-office-block" style="margin-top: 24px;">
         <div class="nj-office-header">
           <div class="nj-office-title-row">
@@ -7399,7 +7591,7 @@ function renderNjCandidates() {
               </div>
             </div>
           </div>
-          <span class="nj-office-badge county-badge">Passaic County Government (22.92% of Clifton Taxes)</span>
+          <span class="nj-office-badge county-badge">${escapeHtml(cliftonElectionData.county || 'County')} Government</span>
         </div>
         <p class="nj-office-importance">${escapeHtml(nj.passaicCountyCommissionersFull.importance)}</p>
         <div class="nj-candidates-subgrid">
@@ -7409,18 +7601,19 @@ function renderNjCandidates() {
                 <span class="nj-party-pill ${c.party.toLowerCase().includes('democrat') ? 'party-dem' : 'party-rep'}">${escapeHtml(c.party)}</span>
                 <span class="candidate-status-tag ${c.status.toLowerCase().includes('incumbent') ? 'status-incumbent' : 'status-challenger'}">${escapeHtml(c.status)}</span>
               </div>
-              <h5 class="nj-cand-name">${escapeHtml(c.slate)}</h5>
-              <div class="nj-cand-role">Candidates: ${escapeHtml(c.candidates.join(' • '))}</div>
+              <h5 class="nj-cand-name">${escapeHtml(c.slate || c.name)}</h5>
+              ${c.candidates ? `<div class="nj-cand-role">Candidates: ${escapeHtml(c.candidates.join(' • '))}</div>` : (c.role ? `<div class="nj-cand-role">${escapeHtml(c.role)}</div>` : '')}
               <div class="nj-cand-section">
                 <div class="nj-section-label">County Platform & Taxpayer Priorities:</div>
-                <p>${escapeHtml(c.keyPriorities)}</p>
+                <p>${escapeHtml(c.keyPriorities || c.tagline || '')}</p>
               </div>
             </div>
           `).join('')}
         </div>
-      </div>
+      </div>` : ''}
 
-      <!-- 4. Passaic County Board of County Commissioners (1-Year Unexpired Term) -->
+      <!-- 4. County Commissioners (1-Year Unexpired Term) -->
+      ${nj.passaicCountyCommissionersUnexpired ? `
       <div class="nj-office-block" style="margin-top: 24px;">
         <div class="nj-office-header">
           <div class="nj-office-title-row">
@@ -7453,9 +7646,10 @@ function renderNjCandidates() {
             </div>
           `).join('')}
         </div>
-      </div>
+      </div>` : ''}
 
-      <!-- 5. Passaic County Surrogate -->
+      <!-- 5. County Surrogate -->
+      ${nj.passaicCountySurrogate ? `
       <div class="nj-office-block" style="margin-top: 24px;">
         <div class="nj-office-header">
           <div class="nj-office-title-row">
@@ -7488,7 +7682,7 @@ function renderNjCandidates() {
             </div>
           `).join('')}
         </div>
-      </div>
+      </div>` : ''}
 
       <!-- 6. Passaic County Sheriff Notice (Off-Cycle) -->
       ${nj.sheriffNotice ? `
@@ -7592,7 +7786,7 @@ function renderVotingGuide() {
         <div class="voting-card-header">
           <span class="voting-card-icon">🏛️</span>
           <div>
-            <h4>Clifton Municipal Clerk & County Election Administration</h4>
+            <h4>${escapeHtml(cliftonElectionData.municipality || 'Municipal')} Clerk & ${escapeHtml(cliftonElectionData.county || 'County')} Election Administration</h4>
             <span class="voting-sub">Official Questions & Ballot Inquiries</span>
           </div>
         </div>
@@ -7619,8 +7813,8 @@ function renderVotingGuide() {
             <a href="${escapeHtml(res.passaicCountyElections.website)}" target="_blank" rel="noopener" class="external-pill-link">
               Passaic County Clerk Elections Portal ↗
             </a>
-            <a href="https://cliftonnj.org/218/City-Clerk" target="_blank" rel="noopener" class="external-pill-link">
-              City of Clifton Municipal Clerk Portal ↗
+            <a href="mailto:${escapeHtml(res.municipalClerk.email)}" class="external-pill-link">
+              Contact ${escapeHtml(res.municipalClerk.name)} (${escapeHtml(cliftonElectionData.municipality || 'Municipal')} Clerk) ↗
             </a>
           </div>
         </div>

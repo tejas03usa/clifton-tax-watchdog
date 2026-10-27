@@ -1,0 +1,1053 @@
+{
+  "municipality": "Parsippany-Troy Hills",
+  "county": "Morris County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "electionType": "Parsippany-Troy Hills Board of Education & Morris County General Election",
+  "votingHours": "6:00 AM – 8:00 PM EST",
+  "councilStructure": "Township of Parsippany-Troy Hills (Mayor-Council Faulkner Act). 5-member Township Council. In 2026, Parsippany voters elect 3 School Board Trustees (7 running) and Morris County Commissioner, alongside Congressional and U.S. Senate representation.",
+  "totalCouncilCandidates": 7,
+  "totalCouncilSeats": 3,
+  "certifiedTaxRateContext": "3.550% Total Certified Tax Rate (2026). 6 Independent Fire Districts. 66.6% Equalization Ratio.",
+  "unanimousHealthBenefitPledge": "All school board and local candidates pledge transparent oversight over the $187.5M school budget and 30-year Route 10 PILOT tax shifts.",
+  "votingResources": {
+    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingLocation": "Parsippany-Troy Hills Municipal Building, 1001 Parsippany Blvd, Parsippany, NJ 07054 (Council Chambers)",
+    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "mailInDropboxes": [
+      {
+        "name": "Parsippany Municipal Building",
+        "address": "1001 Parsippany Blvd, Parsippany, NJ 07054",
+        "notes": "Located outside Police / Municipal entrance • Open 24/7 until 8:00 PM Election Night"
+      },
+      {
+        "name": "Parsippany Main Public Library",
+        "address": "449 Halsey Rd, Parsippany, NJ 07054",
+        "notes": "Located near front entrance parking lot • Open 24/7 until 8:00 PM Election Night"
+      }
+    ],
+    "municipalClerk": {
+      "name": "Khaled Madin",
+      "title": "Township Clerk & Business Administrator",
+      "office": "Parsippany Town Hall, 1001 Parsippany Blvd",
+      "phone": "(973) 263-4357",
+      "email": "kmadin@parsippany.net"
+    },
+    "passaicCountyElections": {
+      "superintendent": "Morris County Clerk Elections Division: (973) 285-6066 • Morris County Board of Elections: (973) 285-6715",
+      "phone": "(973) 285-6066",
+      "website": "https://www.morriscountyclerk.org/Elections",
+      "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
+    }
+  },
+  "categories": [
+    {
+      "id": "taxes",
+      "name": "Property Taxes & PILOTs",
+      "icon": "💰",
+      "shortDesc": "Route 10 PILOT revenue sharing for schools, corporate office tax appeal defense, and budget caps"
+    },
+    {
+      "id": "infrastructure",
+      "name": "PFAS Water & Facilities",
+      "icon": "💧",
+      "shortDesc": "Township municipal water PFAS filtration, HVAC upgrades across 14 schools, and stormwater drainage"
+    },
+    {
+      "id": "governance",
+      "name": "Transparency & Decorum",
+      "icon": "⚖️",
+      "shortDesc": "Board decorum, televised committee work sessions, and independent legal billing oversight"
+    },
+    {
+      "id": "housing",
+      "name": "Zoning & Corporate Office Parks",
+      "icon": "🏢",
+      "shortDesc": "Campus Drive & Lanidex multi-family conversions, traffic congestion, and protecting single-family zoning"
+    },
+    {
+      "id": "safety",
+      "name": "Public Safety & Traffic",
+      "icon": "🚓",
+      "shortDesc": "Parsippany Police patrol staffing, school resource officers (Class III), and Beverwyck Road safety"
+    },
+    {
+      "id": "education",
+      "name": "Classroom Education & Special Ed",
+      "icon": "🏫",
+      "shortDesc": "7,120 PTHSD students ($187.5M budget), special education funding, and academic proficiency"
+    }
+  ],
+  "councilCandidates": [
+    {
+      "ballotNumber": 1,
+      "id": "wendy-wright",
+      "name": "Wendy Wright",
+      "status": "Incumbent",
+      "role": "PTHSD Board of Education Trustee & Educator",
+      "experience": "Incumbent School Board Trustee; experienced public educator and parent advocate with deep knowledge of curriculum development and state testing benchmarks.",
+      "initials": "WW",
+      "tagline": "Classroom educational focus, supporting special education families, and protecting Parsippany school funding.",
+      "declinedBenefits": true,
+      "categories": [
+        "education",
+        "taxes",
+        "infrastructure"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "education",
+          "title": "Classroom-Centered Educational Investments",
+          "details": "Ensure budget resources directly reach teachers and students rather than expanding administrative bureaucracy across Parsippany 14 public schools."
+        },
+        {
+          "category": "taxes",
+          "title": "Advocating for School PILOT Revenue Sharing",
+          "details": "Support legal and municipal mechanisms to ensure Township multi-family PILOT developments on Route 10 and Campus Drive contribute their fair share to school operating costs."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Long-Term School Facility Maintenance",
+          "details": "Oversee proactive HVAC, roofing, and air filtration improvements across elementary and middle schools without costly emergency referendums."
+        }
+      ],
+      "quotes": [
+        "Our public schools are the heart of Parsippany. We must protect our classrooms, support our teachers, and demand that new corporate redevelopments pay their fair share to educate incoming students."
+      ],
+      "civicBackground": "Longtime Parsippany homeowner, active PTO volunteer, and credentialed New Jersey educator.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Public School Educator / Academic Professional"
+        ],
+        "disclosuresAndFDS": "Annual School Ethics Commission (SEC) financial disclosure filing; no private commercial conflicts.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — No ethics sanctions, lawsuits, or regulatory violations on record.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Maintains statutory recusals on teacher collective bargaining agreements where applicable under NJ School Ethics Act."
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris County Clerk Certified Candidate Filings",
+          "doc": "Official 2026 Parsippany School Board Candidate List",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Decades of classroom teaching experience and dedicated service on the Parsippany-Troy Hills Board of Education.",
+        "yearsInPublicService": "10+ Years",
+        "careerTimeline": [
+          {
+            "period": "2021–Present",
+            "role": "School Board Trustee",
+            "organization": "Parsippany-Troy Hills BOE",
+            "details": "Oversees curriculum, policy, and budget committees for the $187.5M district."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Parsippany-Troy Hills Board of Education",
+            "tenure": "2021–Present",
+            "role": "Trustee"
+          }
+        ],
+        "educationAndCredentials": [
+          "Master of Arts in Education",
+          "New Jersey Certified Educator"
+        ],
+        "civicLeadership": [
+          "Parsippany youth mentor",
+          "Special education parent support volunteer"
+        ]
+      },
+      "ballotPosition": "Column 1",
+      "interviewStances": {
+        "interviewSource": "Morris County Clerk Candidate Filing & PTHSD Board Meeting Transcripts",
+        "taxesAndSpending": "Holds district spending within 2% statutory caps while fighting for Trenton to increase state equalization aid above the current meager 9.7%.",
+        "zoningAndDataCenters": "Opposes unmitigated multi-family residential zoning conversions that add student enrollment without dedicated school tax revenue.",
+        "floodingAndWater": "Supports township-wide PFAS water treatment investments to guarantee clean tap water in all school cafeterias.",
+        "governanceAndDecorum": "Advocates civil, student-centered board debate and respectful public comment sessions.",
+        "publicSafetyAndTraffic": "Supports Class III Special Law Enforcement Officers in all 14 school buildings and safe walking corridors.",
+        "cannabisLicensing": "Strict support for municipal 1,000-foot buffer zones keeping dispensaries away from schools.",
+        "keyInterviewQuote": "We must ensure every dollar in our $187M budget directly benefits students in the classroom.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "flooding",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "ballotNumber": 2,
+      "id": "nicole-dellafave",
+      "name": "Nicole DellaFave",
+      "status": "Incumbent",
+      "role": "PTHSD Board of Education Trustee & Parent Advocate",
+      "experience": "Incumbent Parsippany School Board Trustee; active parent advocate and education professional running on the 'Parent. Educator. Logical.' slogan.",
+      "initials": "ND",
+      "tagline": "Logical, transparent school board governance, parental partnership, and fiscal discipline.",
+      "declinedBenefits": true,
+      "categories": [
+        "education",
+        "governance",
+        "taxes"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "governance",
+          "title": "Logical, Evidence-Based School Governance",
+          "details": "Brings educator and parent logic to board decisions, ensuring educational policies are grounded in classroom reality and measurable student growth."
+        },
+        {
+          "category": "education",
+          "title": "Parental Engagement & Transparency",
+          "details": "Foster open communication between district administration, classroom educators, and Parsippany families."
+        },
+        {
+          "category": "taxes",
+          "title": "Fiscal Responsibility in School Operations",
+          "details": "Scrutinize recurring vendor and legal expenditures to protect homeowners from unnecessary tax spikes."
+        }
+      ],
+      "quotes": [
+        "Parents, educators, and taxpayers all want the same thing: high-quality schools that prepare our children for the future while remaining fiscally responsible."
+      ],
+      "civicBackground": "Parsippany resident, mother of district students, and active community volunteer.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Educator & Academic Program Specialist"
+        ],
+        "disclosuresAndFDS": "Filed required NJ School Ethics Commission disclosures.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — No legal judgments or ethics citations on file.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Standard educational ethics compliance."
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris County Clerk Candidate Certification",
+          "doc": "Parsippany-Troy Hills School Board Filings",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Experienced educator and active community leader serving on the Parsippany Board of Education.",
+        "yearsInPublicService": "5+ Years",
+        "careerTimeline": [
+          {
+            "period": "2023–Present",
+            "role": "Trustee",
+            "organization": "Parsippany-Troy Hills BOE",
+            "details": "Serves on policy, student services, and personnel committees."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Parsippany-Troy Hills Board of Education",
+            "tenure": "2023–Present",
+            "role": "Trustee"
+          }
+        ],
+        "educationAndCredentials": [
+          "Bachelor of Arts in Education",
+          "10-year Parsippany resident"
+        ],
+        "civicLeadership": [
+          "Parsippany school PTO leader",
+          "Community youth sports organizer"
+        ]
+      },
+      "ballotPosition": "Column 2",
+      "interviewStances": {
+        "interviewSource": "PTHSD Public Meeting Records & Community Candidate Forums",
+        "taxesAndSpending": "Disciplined oversight of the district $187.5M budget, prioritizing classroom instruction over central administrative overhead.",
+        "zoningAndDataCenters": "Concerns over high-density residential PILOT projects placing uncompensated burdens on neighborhood elementary schools.",
+        "floodingAndWater": "Supports capital drainage improvements around school athletic complexes and grounds.",
+        "governanceAndDecorum": "Promotes dignified, open governance where all parents feel heard and respected.",
+        "publicSafetyAndTraffic": "Strong support for school security infrastructure and student mental health counselors.",
+        "cannabisLicensing": "Supports strict enforcement of youth substance prevention buffers.",
+        "keyInterviewQuote": "Logical, transparent leadership is how we maintain trust between the community and our schools.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 3,
+      "id": "timothy-berrios",
+      "name": "Timothy Berrios",
+      "status": "Incumbent",
+      "role": "PTHSD Board of Education Trustee (Former Board President)",
+      "experience": "Veteran School Board Trustee and former Board President; veteran corporate project manager and long-serving fiscal watchdog running on 'Selfless Public Service' with Jack Raia.",
+      "initials": "TB",
+      "tagline": "Decade of selfless public service, defending taxpayers, and standing up against uncompensated Township PILOT abatements.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "governance",
+        "infrastructure"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Holding the Line on PILOT Tax Shifts",
+          "details": "Championed the Board of Education's retention of special litigation counsel to demand fair funding from 30-year Township PILOT abatements on Route 10."
+        },
+        {
+          "category": "governance",
+          "title": "Selfless Public Service & Fiscal Watchdog",
+          "details": "Brings corporate project engineering discipline to multi-million dollar capital improvement projects across Parsippany 14 school facilities."
+        },
+        {
+          "category": "infrastructure",
+          "title": "School Infrastructure Modernization",
+          "details": "Spearheaded HVAC upgrades, window replacements, and cybersecurity infrastructure without raising the debt burden."
+        }
+      ],
+      "quotes": [
+        "When corporate developers receive 30-year PILOT tax breaks, single-family homeowners end up footing the bill to educate incoming children. We must demand fiscal fairness for Parsippany taxpayers."
+      ],
+      "civicBackground": "Over 10 years on the Parsippany School Board; lifelong community booster and youth mentor.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Corporate Project Manager & Technology Specialist"
+        ],
+        "disclosuresAndFDS": "Discloses technology corporate employment; clean regulatory and ethics filings.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — No legal findings or SEC citations on record.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Firewall on technology procurement contracts."
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris County Clerk Election Certification",
+          "doc": "Parsippany-Troy Hills BOE Ballot Petitions",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Over 10 years of senior leadership on the Parsippany Board of Education, including service as Board President.",
+        "yearsInPublicService": "10+ Years",
+        "careerTimeline": [
+          {
+            "period": "2014–Present",
+            "role": "Trustee & Former Board President",
+            "organization": "Parsippany-Troy Hills BOE",
+            "details": "Led district negotiations, budget oversight, and superintendent searches."
+          }
+        ],
+        "publicOfficesHeld": [
+          {
+            "office": "Parsippany Board of Education",
+            "tenure": "2014–Present",
+            "role": "President & Trustee"
+          }
+        ],
+        "educationAndCredentials": [
+          "Bachelor of Science in Engineering / Computer Science",
+          "Senior Corporate Project Manager"
+        ],
+        "civicLeadership": [
+          "Parsippany youth sports coach",
+          "Board facilities committee chair"
+        ]
+      },
+      "ballotPosition": "Column 3",
+      "interviewStances": {
+        "interviewSource": "PTHSD Meeting Records & Candidate Forum Transcripts",
+        "taxesAndSpending": "Aggressive watchdog on the $187.5M budget; led the charge to protect the school tax base against corporate PILOT abatements.",
+        "zoningAndDataCenters": "Strict opposition to warehouse sprawl and commercial rezonings that degrade suburban quality of life.",
+        "floodingAndWater": "Supports township-wide stormwater resilience and modernizing school detention basins.",
+        "governanceAndDecorum": "Experienced board leader who emphasizes accountability, decorum, and fiscal scrutiny.",
+        "publicSafetyAndTraffic": "Fully supports armed school security officers and advanced visitor screening.",
+        "cannabisLicensing": "Opposed to cannabis commercial activities near schools.",
+        "keyInterviewQuote": "Homeowners cannot continue carrying 86% of the school budget while developers get 30-year tax abatements.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "flooding",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "ballotNumber": 4,
+      "id": "jack-raia",
+      "name": "Jack Raia",
+      "status": "Challenger",
+      "role": "Finance Professional & Community Advocate",
+      "experience": "Corporate finance executive and Parsippany parent running on the 'Selfless Public Service' slate with Tim Berrios; expert in enterprise cash flow management.",
+      "initials": "JR",
+      "tagline": "Corporate financial analysis, eliminating school budget waste, and defending homeowner property tax bills.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "education",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Corporate Financial Auditing of District Spending",
+          "details": "Apply corporate financial modeling to the $187.5M PTHSD operating budget to identify administrative efficiencies and lower the tax levy."
+        },
+        {
+          "category": "governance",
+          "title": "Demanding PILOT School Contributions",
+          "details": "Work alongside township leaders to ensure mixed-use redevelopment agreements provide dedicated funding for classroom additions."
+        },
+        {
+          "category": "education",
+          "title": "Targeted Academic Excellence",
+          "details": "Direct savings into STEM, reading specialists, and honors programs across Parsippany High and Parsippany Hills High."
+        }
+      ],
+      "quotes": [
+        "A $187 million school budget requires rigorous corporate financial modeling. We can improve our educational standards while keeping taxes affordable for seniors and working families."
+      ],
+      "civicBackground": "Parsippany resident, youth athletic coach, and financial management professional.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Corporate Finance Executive"
+        ],
+        "disclosuresAndFDS": "Discloses corporate finance background; clean record.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Record — No court judgments or ethics infractions.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Banking and financial advisory contract firewalls."
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris County Clerk Filing",
+          "doc": "Parsippany BOE Candidate Certification",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Over 20 years in corporate finance, financial planning and analysis (FP&A), and treasury operations.",
+        "yearsInPublicService": "Candidate & Civic Leader",
+        "careerTimeline": [
+          {
+            "period": "2005–Present",
+            "role": "Senior Financial Director",
+            "organization": "Enterprise Financial Services",
+            "details": "Manages enterprise capital budgeting and cash flow."
+          }
+        ],
+        "publicOfficesHeld": [],
+        "educationAndCredentials": [
+          "B.S. in Finance / Accounting",
+          "Parsippany homeowner"
+        ],
+        "civicLeadership": [
+          "Parsippany Little League coach",
+          "Community budget advocate"
+        ]
+      },
+      "ballotPosition": "Column 4",
+      "interviewStances": {
+        "interviewSource": "Parsippany Candidate Statements & Community Forums",
+        "taxesAndSpending": "Line-by-line review of discretionary vendor contracts and professional bill lists.",
+        "zoningAndDataCenters": "Opposes heavy industrial rezonings and warehouse distribution centers in suburban sectors.",
+        "floodingAndWater": "Supports rapid infrastructure repairs and flood basin maintenance.",
+        "governanceAndDecorum": "Independent fiscal watchdog perspective.",
+        "publicSafetyAndTraffic": "Focuses on school zone crosswalk safety and pedestrian paths.",
+        "cannabisLicensing": "Opposed to cannabis retail near residential neighborhoods.",
+        "keyInterviewQuote": "We must bring modern corporate financial analysis to Parsippany school spending.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 5,
+      "id": "jaya-trivedi",
+      "name": "Jaya Trivedi",
+      "status": "Challenger",
+      "role": "Community Leader & Technology Specialist",
+      "experience": "Parsippany community organizer and IT specialist running on the 'Vision Learning Success' slate with Trivikrama Reddy and Akshay Pujara.",
+      "initials": "JT",
+      "tagline": "Modernizing classroom technology, STEM enrichment, and transparent community-focused school governance.",
+      "declinedBenefits": true,
+      "categories": [
+        "education",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "education",
+          "title": "STEM & AI Educational Pathways",
+          "details": "Equip Parsippany students with modern AI, coding, and biotechnology curricula to prepare them for competitive college admissions."
+        },
+        {
+          "category": "infrastructure",
+          "title": "School Technology Modernization",
+          "details": "Upgrade district digital infrastructure, classroom smart boards, and cybersecurity access controls."
+        },
+        {
+          "category": "governance",
+          "title": "Inclusive Community Representation",
+          "details": "Ensure Parsippany diverse cultural communities have an active, welcoming voice on the Board of Education."
+        }
+      ],
+      "quotes": [
+        "Parsippany is a vibrant, diverse community. We need forward-looking leadership that modernizes our curriculum and equips every student for tomorrow's technology careers."
+      ],
+      "civicBackground": "Parsippany resident, cultural community leader, and STEM youth mentor.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Enterprise IT & Systems Consulting"
+        ],
+        "disclosuresAndFDS": "Filed required NJ disclosures; clean professional record.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Public Record — No legal judgments or citations.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "IT vendor procurement firewalls."
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris County Clerk Official Petitions",
+          "doc": "Parsippany BOE Candidate Roster",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ],
+      "historicExperience": {
+        "summary": "15+ years in enterprise information technology, data systems, and community educational leadership.",
+        "yearsInPublicService": "Civic Advocate",
+        "careerTimeline": [
+          {
+            "period": "2010–Present",
+            "role": "Senior Technology Consultant",
+            "organization": "Enterprise Software",
+            "details": "Directs systems modernization and digital infrastructure."
+          }
+        ],
+        "publicOfficesHeld": [],
+        "educationAndCredentials": [
+          "Master of Science in Information Technology",
+          "Parsippany homeowner"
+        ],
+        "civicLeadership": [
+          "Parsippany cultural association booster",
+          "Youth STEM mentor"
+        ]
+      },
+      "ballotPosition": "Column 5",
+      "interviewStances": {
+        "interviewSource": "Vision Learning Success Campaign Platform & Forum Statements",
+        "taxesAndSpending": "Smart spending focused on modern learning tools while keeping administrative costs lean.",
+        "zoningAndDataCenters": "Selective smart commercial redevelopment to grow the township ratable base.",
+        "floodingAndWater": "Supports environmentally sustainable green infrastructure on school grounds.",
+        "governanceAndDecorum": "Advocates inclusive, respectful community dialogue.",
+        "publicSafetyAndTraffic": "Focuses on school perimeter security and student mental health.",
+        "cannabisLicensing": "Maintains strict youth buffers.",
+        "keyInterviewQuote": "Investing in modern technology and educational excellence builds the foundation for our children's future.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 6,
+      "id": "trivikrama-reddy",
+      "name": "Trivikrama Reddy",
+      "status": "Challenger",
+      "role": "Healthcare & Biotech Professional",
+      "experience": "Senior pharmaceutical and healthcare research professional; running on the 'Vision Learning Success' slate with Trivedi and Pujara.",
+      "initials": "TR",
+      "tagline": "Science and research excellence, student wellness, and transparent district budget oversight.",
+      "declinedBenefits": true,
+      "categories": [
+        "education",
+        "taxes",
+        "infrastructure"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "education",
+          "title": "Biotech & Healthcare Science Labs",
+          "details": "Leverage Morris County pharmaceutical corridor partnerships to create student research internships and modern lab facilities."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Healthy Classroom Environments",
+          "details": "Upgrade air filtration, lighting, and environmental health across all Parsippany school buildings."
+        },
+        {
+          "category": "taxes",
+          "title": "Transparent Grant Procurement",
+          "details": "Capture federal and private foundation educational grants to fund specialized academic programs without taxpayer burden."
+        }
+      ],
+      "quotes": [
+        "Morris County is the pharmaceutical and biotech capital of the nation. Parsippany students deserve world-class science labs and hands-on research opportunities."
+      ],
+      "civicBackground": "Parsippany resident, parent of district students, and healthcare research mentor.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Pharmaceutical Research & Development"
+        ],
+        "disclosuresAndFDS": "Discloses private sector healthcare research leadership.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Record — No legal or ethics infractions on file.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Standard compliance firewalls."
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris County Clerk Candidate Filing",
+          "doc": "Parsippany School Board Certified List",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ],
+      "historicExperience": {
+        "summary": "Over 18 years in healthcare, pharmaceutical research, and clinical trials management.",
+        "yearsInPublicService": "Civic Advocate",
+        "careerTimeline": [
+          {
+            "period": "2006–Present",
+            "role": "Senior Clinical Research Scientist",
+            "organization": "Biotech / Pharma",
+            "details": "Oversees clinical data and research programs."
+          }
+        ],
+        "publicOfficesHeld": [],
+        "educationAndCredentials": [
+          "Master of Science in Healthcare / Pharmacy",
+          "Parsippany parent"
+        ],
+        "civicLeadership": [
+          "Community STEM mentor",
+          "Youth athletic volunteer"
+        ]
+      },
+      "ballotPosition": "Column 6",
+      "interviewStances": {
+        "interviewSource": "Vision Learning Success Candidate Statements",
+        "taxesAndSpending": "Disciplined resource allocation; maximizing private and state grant funding.",
+        "zoningAndDataCenters": "Opposes industrial encroachment into residential school zones.",
+        "floodingAndWater": "Ensuring clean, tested water supplies in all public facilities.",
+        "governanceAndDecorum": "Collaborative, evidence-driven board governance.",
+        "publicSafetyAndTraffic": "Pedestrian safety and comprehensive school security.",
+        "cannabisLicensing": "Strict protective buffers.",
+        "keyInterviewQuote": "We can elevate our school curriculum through science and innovation while being careful stewards of taxpayer funds.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "flooding",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 7,
+      "id": "akshay-pujara",
+      "name": "Akshay Pujara",
+      "status": "Challenger",
+      "role": "Business Operations & Supply Chain Director",
+      "experience": "Corporate supply chain and procurement specialist running on the 'Vision Learning Success' slate; expert in contract negotiations and operational cost cutting.",
+      "initials": "AP",
+      "tagline": "Vendor contract negotiation, competitive bidding, and maximizing classroom funding.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "governance",
+        "education"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Competitive Vendor Contract Auditing",
+          "details": "Scrutinize district transportation, custodial, and professional contracts to drive down costs through competitive bidding."
+        },
+        {
+          "category": "governance",
+          "title": "Open-Data Budget Transparency",
+          "details": "Advocate for an accessible public dashboard showing district vendor payments and project milestones."
+        },
+        {
+          "category": "education",
+          "title": "Vocational & Practical Career Skills",
+          "details": "Expand vocational training, financial literacy, and career mentorship for high school students."
+        }
+      ],
+      "quotes": [
+        "As a supply chain professional, I know how to cut vendor costs without cutting services. We must ensure every dollar spent by the district delivers maximum educational value."
+      ],
+      "civicBackground": "Parsippany homeowner, active civic booster, and corporate operations specialist.",
+      "investigativeDossier": {
+        "outsideBusinesses": [
+          "Supply Chain & Procurement Management"
+        ],
+        "disclosuresAndFDS": "Discloses corporate procurement leadership; clean record.",
+        "hasDocumentedControversies": false,
+        "controversySeverity": "CLEAN",
+        "cleanRecordVerification": "Verified Clean Record — No court dockets or ethics infractions.",
+        "notableControversies": [],
+        "conflictOfInterestWatch": "Procurement and vendor bidding compliance."
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris County Clerk Certified Petition",
+          "doc": "Parsippany BOE Official Filing",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ],
+      "historicExperience": {
+        "summary": "15+ years managing enterprise supply chains, multi-million dollar vendor contracts, and logistics operations.",
+        "yearsInPublicService": "Civic Advocate",
+        "careerTimeline": [
+          {
+            "period": "2008–Present",
+            "role": "Director of Supply Chain & Operations",
+            "organization": "Enterprise Logistics",
+            "details": "Directs vendor negotiations and operational cost containment."
+          }
+        ],
+        "publicOfficesHeld": [],
+        "educationAndCredentials": [
+          "Master of Business Administration (MBA)",
+          "Parsippany homeowner"
+        ],
+        "civicLeadership": [
+          "Parsippany community volunteer",
+          "Youth financial literacy booster"
+        ]
+      },
+      "ballotPosition": "Column 7",
+      "interviewStances": {
+        "interviewSource": "Vision Learning Success Platform & Candidate Questionnaires",
+        "taxesAndSpending": "Aggressive competitive bidding on all district contracts to eliminate waste and protect taxpayers.",
+        "zoningAndDataCenters": "Strict zoning preservation to prevent commercial intrusion into neighborhoods.",
+        "floodingAndWater": "Modernizing stormwater infrastructure.",
+        "governanceAndDecorum": "Independent, business-minded fiscal scrutiny on the board.",
+        "publicSafetyAndTraffic": "Safe school routes and robust campus security.",
+        "cannabisLicensing": "Preserves protective school buffers.",
+        "keyInterviewQuote": "Applying modern procurement standards will save taxpayers hundreds of thousands that can be redirected to our classrooms.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    }
+  ],
+  "boeCandidates": [
+    {
+      "name": "Wendy Wright",
+      "ballotNumber": "1",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Incumbent",
+      "ballotSlogan": "Students, Teachers, Families",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "experience": "Incumbent School Board Trustee; experienced public educator and parent advocate with deep knowledge of curriculum development.",
+      "keyFocus": "Directing funds into classrooms, supporting special education programs, and fighting for fair state education aid.",
+      "fiscalStance": "Demands accountability for discretionary spending and advocates for municipal PILOT revenue sharing with schools.",
+      "infrastructureStance": "Supports proactive HVAC, roofing, and air filtration improvements across Parsippany 14 school buildings.",
+      "interviewStances": {
+        "interviewSource": "Morris County Clerk Filing & PTHSD Meeting Records",
+        "keyPriorities": "Classroom instruction, special education resources, and taxpayer fairness.",
+        "facilitiesAndBudget": "Focuses on long-range capital maintenance without emergency tax hikes.",
+        "keyInterviewQuote": "Our public schools are the heart of Parsippany. We must protect our classrooms and demand fiscal fairness."
+      }
+    },
+    {
+      "name": "Nicole DellaFave",
+      "ballotNumber": "2",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Incumbent",
+      "ballotSlogan": "Parent. Educator. Logical.",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "experience": "Incumbent School Board Trustee; parent advocate and educator focused on evidence-based academic growth.",
+      "keyFocus": "Logical, transparent school board governance, parental partnership, and fiscal discipline.",
+      "fiscalStance": "Scrutinizes recurring vendor and legal contracts to protect homeowners from tax spikes.",
+      "infrastructureStance": "Supports safe school walking routes, security vestibules, and playground upgrades.",
+      "interviewStances": {
+        "interviewSource": "PTHSD Public Transcripts & Candidate Questionnaires",
+        "keyPriorities": "Educational rigor, parent engagement, and sound fiscal planning.",
+        "facilitiesAndBudget": "Prioritizes classroom resources over administrative overhead.",
+        "keyInterviewQuote": "Logical, transparent leadership is how we maintain trust between the community and our schools."
+      }
+    },
+    {
+      "name": "Timothy Berrios",
+      "ballotNumber": "3",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Incumbent",
+      "ballotSlogan": "Selfless Public Service",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "experience": "Veteran School Board Trustee and former Board President; corporate project manager with 10+ years board service.",
+      "keyFocus": "Holding the line on corporate PILOT abatements, protecting the school tax levy, and facility upgrades.",
+      "fiscalStance": "Championed retaining special counsel to demand school funding from Route 10 PILOT developments.",
+      "infrastructureStance": "Spearheaded HVAC upgrades, window replacements, and cybersecurity infrastructure.",
+      "interviewStances": {
+        "interviewSource": "PTHSD Meeting Records & Candidate Forum Transcripts",
+        "keyPriorities": "Fiscal watchdog oversight, stopping PILOT tax shifts, and school modernization.",
+        "facilitiesAndBudget": "Disciplined project engineering across all 14 school facilities.",
+        "keyInterviewQuote": "Homeowners cannot continue carrying 86% of the school budget while corporate developers get 30-year tax abatements."
+      }
+    },
+    {
+      "name": "Jack Raia",
+      "ballotNumber": "4",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Challenger",
+      "ballotSlogan": "Selfless Public Service",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "experience": "Corporate finance executive and Parsippany parent running on the 'Selfless Public Service' slate with Tim Berrios.",
+      "keyFocus": "Corporate financial modeling, eliminating school budget waste, and defending homeowner property tax bills.",
+      "fiscalStance": "Calls for line-by-line financial analysis of the $187.5M operating budget.",
+      "infrastructureStance": "Supports modernizing science and technology classrooms.",
+      "interviewStances": {
+        "interviewSource": "Candidate Statements & Civic Debates",
+        "keyPriorities": "Financial discipline, academic excellence, and taxpayer relief.",
+        "facilitiesAndBudget": "Focuses on corporate efficiency and debt service optimization.",
+        "keyInterviewQuote": "A $187 million school budget requires rigorous corporate financial modeling."
+      }
+    },
+    {
+      "name": "Jaya Trivedi",
+      "ballotNumber": "5",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Challenger",
+      "ballotSlogan": "Vision Learning Success",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "experience": "Parsippany community organizer and IT specialist running on the 'Vision Learning Success' slate with Reddy and Pujara.",
+      "keyFocus": "Modernizing classroom technology, STEM enrichment, and inclusive community representation.",
+      "fiscalStance": "Advocates smart spending on digital learning tools while keeping administrative costs lean.",
+      "infrastructureStance": "Supports classroom smart board upgrades and digital network security.",
+      "interviewStances": {
+        "interviewSource": "Vision Learning Success Campaign Platform",
+        "keyPriorities": "Technology integration, STEM careers, and community representation.",
+        "facilitiesAndBudget": "Promotes cost-effective technology investments.",
+        "keyInterviewQuote": "Investing in modern technology and educational excellence builds the foundation for our children's future."
+      }
+    },
+    {
+      "name": "Trivikrama Reddy",
+      "ballotNumber": "6",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Challenger",
+      "ballotSlogan": "Vision Learning Success",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "experience": "Senior pharmaceutical and healthcare research professional; running on the 'Vision Learning Success' slate.",
+      "keyFocus": "Science and research excellence, student wellness, and transparent district budget oversight.",
+      "fiscalStance": "Promotes capturing private and state educational grants to fund lab modernizations.",
+      "infrastructureStance": "Advocates for air filtration, clean water testing, and lab upgrades.",
+      "interviewStances": {
+        "interviewSource": "Vision Learning Success Statements",
+        "keyPriorities": "Biotech partnerships, student mental wellness, and grant capture.",
+        "facilitiesAndBudget": "Ensuring healthy, modern physical learning spaces.",
+        "keyInterviewQuote": "We can elevate our school curriculum through science and innovation while being careful stewards of taxpayer funds."
+      }
+    },
+    {
+      "name": "Akshay Pujara",
+      "ballotNumber": "7",
+      "seatType": "Full 3-Year Term (2027–2029)",
+      "status": "Challenger",
+      "ballotSlogan": "Vision Learning Success",
+      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "experience": "Corporate supply chain and procurement specialist running on the 'Vision Learning Success' slate.",
+      "keyFocus": "Vendor contract negotiation, competitive bidding, and maximizing classroom funding.",
+      "fiscalStance": "Applies supply chain auditing to district vendor lists to lower recurring overhead.",
+      "infrastructureStance": "Supports safe school bus routes and energy-efficient facilities.",
+      "interviewStances": {
+        "interviewSource": "Candidate Platform & Questionnaires",
+        "keyPriorities": "Competitive bidding, transparent public reporting, and vocational career skills.",
+        "facilitiesAndBudget": "Focuses on operational cost containment.",
+        "keyInterviewQuote": "Applying modern procurement standards will save taxpayers hundreds of thousands that can be redirected to our classrooms."
+      }
+    }
+  ],
+  "ballotArchitecture": {
+    "electionDate": "Tuesday, November 3, 2026",
+    "votingHours": "6:00 AM – 8:00 PM EST",
+    "summary": "Parsippany voters elect School Board Trustees, Morris County Commissioner, and Federal representation (U.S. Senate & U.S. House NJ-11).",
+    "offices": [
+      {
+        "id": "parsippany-boe",
+        "office": "Parsippany-Troy Hills Board of Education",
+        "level": "School District (Township-wide)",
+        "seatsAvailable": 3,
+        "candidatesRunning": 7,
+        "voteRule": "Vote for up to THREE (3)",
+        "termLength": "3-Year Full Terms (2027–2029)",
+        "ballotType": "Nonpartisan School Board",
+        "taxShare": "64.14% of Parsippany Property Tax ($2.277 per $100)",
+        "description": "Oversees 14 public schools, ~7,120 students, and the $187.45M PTHSD school budget. Seven candidates are competing for 3 seats.",
+        "badgeColor": "var(--color-school)"
+      },
+      {
+        "id": "morris-commissioners",
+        "office": "Morris County Board of County Commissioners",
+        "level": "Countywide (Morris County)",
+        "seatsAvailable": 1,
+        "candidatesRunning": 2,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "3 Years (2027–2029)",
+        "ballotType": "Partisan Countywide",
+        "taxShare": "9.52% of Parsippany Property Tax ($0.338 per $100)",
+        "description": "Allocates the Morris County budget, maintaining county roads (Parsippany Rd, Littleton Rd), County College of Morris (CCM), and Morris County Parks.",
+        "badgeColor": "var(--color-county)"
+      },
+      {
+        "id": "us-senate",
+        "office": "United States Senate (New Jersey, Class II)",
+        "level": "Federal (Statewide New Jersey)",
+        "seatsAvailable": 1,
+        "candidatesRunning": 4,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "6 Years (2027–2033)",
+        "ballotType": "Partisan Statewide",
+        "taxShare": "Federal SALT Deduction Relief & Grants",
+        "description": "Represents New Jersey in the U.S. Senate. Justin Murphy (R), Cory Booker (D), Veronica Fernandez (End The Corruption!), and Joanne Kuniansky (Socialist Workers Party).",
+        "badgeColor": "#1d4ed8"
+      },
+      {
+        "id": "us-house-nj11",
+        "office": "U.S. House of Representatives (NJ-11)",
+        "level": "Federal (Congressional District 11)",
+        "seatsAvailable": 1,
+        "candidatesRunning": 4,
+        "voteRule": "Vote for ONE (1)",
+        "termLength": "2 Years (2027–2029)",
+        "ballotType": "Partisan Congressional District",
+        "taxShare": "Federal Infrastructure & Earmarks",
+        "description": "Represents Parsippany, Wayne, Montclair, Morristown, and Montville in Congress. Analilia Mejia (D) vs. Joe Hathaway (R), Alan Bond, and Vincent Matrisciano.",
+        "badgeColor": "#059669"
+      }
+    ]
+  },
+  "njCandidates": {
+    "usSenate": {
+      "office": "United States Senate (New Jersey, Class II)",
+      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Represents New Jersey in the U.S. Senate, voting on federal tax policies, judicial confirmations, and fighting for SALT deduction relief.",
+      "candidates": [
+        {
+          "name": "Justin Murphy",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Attorney & Former Municipal Official",
+          "keyPriorities": "Federal fiscal discipline, restoring full SALT deduction, border security, and energy independence.",
+          "localImpact": "Advocates lowering federal regulatory burdens on suburban New Jersey homeowners."
+        },
+        {
+          "name": "Cory Booker",
+          "party": "Democrat",
+          "status": "Incumbent U.S. Senator",
+          "role": "U.S. Senator (since 2013); former Mayor of Newark.",
+          "keyPriorities": "Full repeal of the $10K SALT cap, NJ Transit funding, and federal clean water infrastructure grants.",
+          "localImpact": "Secured federal appropriations for regional water infrastructure and PFAS remediation."
+        },
+        {
+          "name": "Veronica Fernandez",
+          "party": "Nomination by Petition (End The Corruption!)",
+          "status": "Independent Challenger",
+          "role": "Civic activist running on anti-corruption platform.",
+          "keyPriorities": "Term limits, campaign finance reform, and working-class tax relief."
+        },
+        {
+          "name": "Joanne Kuniansky",
+          "party": "Nomination by Petition (Socialist Workers Party)",
+          "status": "Third-Party Challenger",
+          "role": "Labor organizer and working-class advocate.",
+          "keyPriorities": "Trade union solidarity, universal healthcare, and wage protections."
+        }
+      ]
+    },
+    "usHouse": {
+      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District — NJ-11)",
+      "term": "2-Year Term (January 3, 2027 – January 3, 2029)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "NJ-11 encompasses suburban Morris, Passaic, and Essex County communities including Parsippany-Troy Hills.",
+      "candidates": [
+        {
+          "name": "Analilia Mejia",
+          "party": "Democrat",
+          "status": "Incumbent Representative",
+          "role": "U.S. Representative (NJ-11); community leader and policy advisor.",
+          "keyPriorities": "Full federal SALT tax deduction restoration, expanding child tax credits, and federal environmental resilience grants.",
+          "localImpact": "Advocates for federal infrastructure funds to support Morris County water and transportation corridors."
+        },
+        {
+          "name": "Joe Hathaway",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Randolph Councilman and former Mayor; small business owner.",
+          "keyPriorities": "Fiscal constraint, curbing inflation, full SALT relief for suburban homeowners, and support for law enforcement.",
+          "localImpact": "Pledges to cut federal red tape on highway and municipal infrastructure projects."
+        },
+        {
+          "name": "Alan Bond",
+          "party": "Nomination by Petition (Hope for Tomorrow)",
+          "status": "Independent Challenger",
+          "role": "Independent reform candidate.",
+          "keyPriorities": "Bipartisan consensus and federal budget balancing."
+        },
+        {
+          "name": "Vincent Matrisciano",
+          "party": "Nomination by Petition (Unaffiliated)",
+          "status": "Independent Challenger",
+          "role": "Independent civic candidate.",
+          "keyPriorities": "Middle-class tax relief and economic accountability."
+        }
+      ]
+    },
+    "passaicCountyCommissionersFull": {
+      "office": "Morris County Board of County Commissioners",
+      "term": "3-Year Term (January 2027 – December 2029)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Sets the Morris County tax rate ($0.338 per $100 in Parsippany, or 9.52% of property taxes). Manages county roadways (Parsippany Rd, Littleton Rd), County College of Morris (CCM), and Morris County Parks.",
+      "candidates": [
+        {
+          "name": "Tayfun Selen",
+          "party": "Republican",
+          "status": "Incumbent Commissioner",
+          "role": "Morris County Commissioner (former Director/Mayor of Chatham Twp); licensed architect and CPA.",
+          "keyPriorities": "Maintaining Morris County AAA bond rating, holding county tax rate among lowest in NJ, and preserving open space."
+        },
+        {
+          "name": "Christopher 'Chris' Russo",
+          "party": "Democrat",
+          "status": "Democratic Nominee",
+          "role": "Morristown Council Vice President and corporate business executive.",
+          "keyPriorities": "Expanding county mental health and addiction recovery programs, infrastructure grants for towns, and budget transparency."
+        }
+      ]
+    }
+  }
+}

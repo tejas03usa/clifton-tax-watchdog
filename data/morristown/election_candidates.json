@@ -1,0 +1,594 @@
+{
+  "municipality": "Morristown",
+  "county": "Morris County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "electionType": "Morristown School District, Morris County & Congressional General Election",
+  "votingHours": "6:00 AM – 8:00 PM EST",
+  "councilStructure": "Town of Morristown operates under Mayor-Council Plan B (Faulkner Act) with a Mayor and 7 Town Council Members (3 At-Large, 4 Wards). In November 2026, voters elect trustees to the Morris School District Board of Education, Morris County Board of County Commissioners, and Federal representatives.",
+  "totalCouncilCandidates": 4,
+  "totalCouncilSeats": 3,
+  "certifiedTaxRateContext": "2.684% Total Certified Tax Rate (2026). Equalization Ratio 84.1%.",
+  "unanimousHealthBenefitPledge": "Morristown public officials and Morris School District trustees operate under strict Chapter 78 health contribution requirements and state financial disclosure guidelines.",
+  "votingResources": {
+    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingLocation": "Morristown Town Hall (Senior Center), 200 South St, Morristown, NJ 07960",
+    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "mailInDropboxes": [
+      {
+        "name": "Morris County Administration & Records Building",
+        "address": "10 Court St, Morristown, NJ 07960",
+        "notes": "Outside Court Street entrance • Open 24/7 until 8:00 PM Election Night"
+      },
+      {
+        "name": "Morristown Town Hall",
+        "address": "200 South St, Morristown, NJ 07960",
+        "notes": "Front entrance exterior drop box • Open 24/7 until 8:00 PM Election Night"
+      }
+    ],
+    "municipalClerk": {
+      "name": "Margot G. Kaye",
+      "title": "Town Clerk",
+      "office": "Morristown Town Hall, 200 South St",
+      "phone": "(973) 292-6636",
+      "email": "townclerk@townofmorristown.org"
+    },
+    "passaicCountyElections": {
+      "superintendent": "Morris County Clerk Elections Division: (973) 285-6066 • Morris County Board of Elections: (973) 285-6715",
+      "phone": "(973) 285-6066",
+      "website": "https://www.morriscountyclerk.org/Elections",
+      "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
+    }
+  },
+  "categories": [
+    {
+      "id": "taxes",
+      "name": "School Budget & Town Ratables",
+      "icon": "💰",
+      "shortDesc": "Downtown commercial ratable growth, school tax levy caps, and smart PILOT redevelopment"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Historic District & School Facilities",
+      "icon": "🏗️",
+      "shortDesc": "Morristown High School science wing modernization, historic district preservation, and parking"
+    },
+    {
+      "id": "governance",
+      "name": "Regional Board Cooperation",
+      "icon": "⚖️",
+      "shortDesc": "Joint Morristown-Morris Township regional school cost sharing and board transparency"
+    },
+    {
+      "id": "education",
+      "name": "Academic Excellence & Dual Language",
+      "icon": "🏫",
+      "shortDesc": "Morris School District STEM curriculum, AP expansion, and award-winning dual-language programs"
+    },
+    {
+      "id": "housing",
+      "name": "Transit-Oriented Density",
+      "icon": "🏡",
+      "shortDesc": "Morristown Train Station redevelopment, affordable housing quotas, and neighborhood traffic"
+    },
+    {
+      "id": "safety",
+      "name": "Pedestrian Safety & Youth Well-Being",
+      "icon": "🚓",
+      "shortDesc": "Morristown Green pedestrian walkways, crossing guards, and student mental health initiatives"
+    }
+  ],
+  "councilCandidates": [
+    {
+      "ballotNumber": 1,
+      "id": "melissa-rowan",
+      "name": "Melissa Rowan",
+      "status": "Incumbent Trustee",
+      "role": "Morris School District BOE Candidate • \"Excellence, Equity & Inclusion\"",
+      "experience": "Incumbent Morris School District Trustee, community volunteer, parent of Morristown High School students.",
+      "initials": "MR",
+      "tagline": "Preserving small elementary class sizes, supporting STEM labs at Morristown High School, and regional parity. Rigorous oversight of Morris School District $138.6M operating budget; strictly adhering to the 2% statutory cap.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "education"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "School Budget & Levy Oversight",
+          "bullets": [
+            "Rigorous oversight of Morris School District $138.6M operating budget; strictly adhering to the 2% statutory cap.",
+            "Strict adherence to 2% state tax levy cap."
+          ]
+        },
+        {
+          "category": "education",
+          "title": "Academic & Campus Priorities",
+          "bullets": [
+            "Preserving small elementary class sizes, supporting STEM labs at Morristown High School, and regional parity.",
+            "Modernizing science wings, athletic fields, and energy-efficient building heating systems."
+          ]
+        }
+      ],
+      "interviewStances": {
+        "keyInterviewQuote": "Our regional school district is a model of diversity and academic achievement; we must protect it with smart budgeting.",
+        "keyPriorities": "Classroom investment, STEM lab expansions, and equitable student achievement.",
+        "facilitiesAndBudget": "Prudent multi-year capital planning and 2% levy cap enforcement.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "ballotNumber": 2,
+      "id": "meredith-wall",
+      "name": "Meredith Wall",
+      "status": "Incumbent Trustee",
+      "role": "Morris School District BOE Candidate • \"Students First Morristown\"",
+      "experience": "Morris School District Board Member, non-profit director, bilingual community advocate.",
+      "initials": "MW",
+      "tagline": "Strengthening dual-language immersion programs, expanding after-school tutoring, and career readiness. Ensuring transparent competitive bidding on transportation, facilities, and food service contracts.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "education"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "School Budget & Levy Oversight",
+          "bullets": [
+            "Ensuring transparent competitive bidding on transportation, facilities, and food service contracts.",
+            "Strict adherence to 2% state tax levy cap."
+          ]
+        },
+        {
+          "category": "education",
+          "title": "Academic & Campus Priorities",
+          "bullets": [
+            "Strengthening dual-language immersion programs, expanding after-school tutoring, and career readiness.",
+            "Sustainable school facilities, solar retrofits, and pedestrian crossing safety along Morristown campuses."
+          ]
+        }
+      ],
+      "interviewStances": {
+        "keyInterviewQuote": "Every child in Morristown should have the linguistic, technical, and academic tools to excel anywhere in the world.",
+        "keyPriorities": "Dual-language immersion, student mental wellness, and contract transparency.",
+        "facilitiesAndBudget": "Competitive bidding and fiscal accountability.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 3,
+      "id": "caryleen-davidson",
+      "name": "Caryleen Davidson",
+      "status": "Incumbent Trustee",
+      "role": "Morris School District BOE Candidate • \"Proven Educational Leadership\"",
+      "experience": "Veteran educator, curriculum specialist, longtime Morristown civic volunteer.",
+      "initials": "CD",
+      "tagline": "Rigorous K-5 math and reading diagnostics, teacher retention, and special education inclusion. Defending classroom teaching positions by curtailing non-instructional administrative overhead.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "education"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "School Budget & Levy Oversight",
+          "bullets": [
+            "Defending classroom teaching positions by curtailing non-instructional administrative overhead.",
+            "Strict adherence to 2% state tax levy cap."
+          ]
+        },
+        {
+          "category": "education",
+          "title": "Academic & Campus Priorities",
+          "bullets": [
+            "Rigorous K-5 math and reading diagnostics, teacher retention, and special education inclusion.",
+            "Classroom technology upgrades, modern library media centers, and enhanced security vestibules."
+          ]
+        }
+      ],
+      "interviewStances": {
+        "keyInterviewQuote": "Strong foundational reading and math skills in early grades are the bedrock of lifelong academic success.",
+        "keyPriorities": "Early literacy benchmarks, retaining top educators, and special education support.",
+        "facilitiesAndBudget": "Directing maximum revenue into classrooms and frontline educators.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "ballotNumber": 4,
+      "id": "kathleen-murphy",
+      "name": "Kathleen Murphy",
+      "status": "Challenger",
+      "role": "Morris School District BOE Candidate • \"Taxpayer Accountability & Academic Rigor\"",
+      "experience": "Corporate financial executive, Home & School Association officer, Morristown parent.",
+      "initials": "KM",
+      "tagline": "Line-item fiscal auditing, expanding Advanced Placement (AP) electives, and campus security audits. Advocates an independent taxpayer audit of district consultant contracts and administrative overhead.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "education"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "School Budget & Levy Oversight",
+          "bullets": [
+            "Advocates an independent taxpayer audit of district consultant contracts and administrative overhead.",
+            "Strict adherence to 2% state tax levy cap."
+          ]
+        },
+        {
+          "category": "education",
+          "title": "Academic & Campus Priorities",
+          "bullets": [
+            "Line-item fiscal auditing, expanding Advanced Placement (AP) electives, and campus security audits.",
+            "Upgrading safety barriers, security vestibules, and modernizing High School technical labs."
+          ]
+        }
+      ],
+      "interviewStances": {
+        "keyInterviewQuote": "Morristown homeowners pay significant property taxes; our school board must deliver excellence and transparency.",
+        "keyPriorities": "Line-item audits, enhanced AP options, and campus security.",
+        "facilitiesAndBudget": "Ending administrative waste and protecting property taxpayers.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    }
+  ],
+  "boeElection": {
+    "title": "Morris School District Board of Education (Morristown Seats)",
+    "seatsAvailable": 3,
+    "termLength": "3-Year Full Term",
+    "totalCandidates": 4,
+    "budgetOverview": "$138.6M Operating Budget (2026–2027) serving 5,700+ Morristown and Morris Township students across 10 campuses including Morristown High School.",
+    "candidates": [
+      {
+        "ballotNumber": 1,
+        "id": "melissa-rowan",
+        "name": "Melissa Rowan",
+        "status": "Incumbent",
+        "role": "Morris School District Trustee & Community Leader",
+        "initials": "MR",
+        "slate": "Excellence, Equity & Inclusion",
+        "tagline": "Fostering inclusive classroom excellence, expanding early literacy, and sound long-range budgeting.",
+        "priorities": [
+          "Preserving small class sizes and personalized interventions across primary schools.",
+          "Strengthening regional partnership between Morristown and Morris Township taxpayers.",
+          "Investing in modern science, technology, and career technical facilities at Morristown High School."
+        ],
+        "quizAnswers": {
+          "taxes": "strict_cap",
+          "infrastructure": "school_modernization",
+          "governance": "regional_parity",
+          "education": "academic_excellence",
+          "housing": "smart_growth",
+          "safety": "mental_health_focus"
+        }
+      },
+      {
+        "ballotNumber": 2,
+        "id": "meredith-wall",
+        "name": "Meredith Wall",
+        "status": "Incumbent",
+        "role": "School Board Member & Non-Profit Director",
+        "initials": "MW",
+        "slate": "Students First Morristown",
+        "tagline": "Strengthening bilingual education pathways, career readiness, and transparent governance.",
+        "priorities": [
+          "Expanding dual-language immersion curricula to prepare students for a global economy.",
+          "Enhancing after-school academic tutoring and mental health support services.",
+          "Ensuring competitive bidding on all capital repair and transportation vendor contracts."
+        ],
+        "quizAnswers": {
+          "taxes": "balanced_growth",
+          "infrastructure": "sustainable_schools",
+          "governance": "full_transparency",
+          "education": "dual_language_stem",
+          "housing": "capacity_review",
+          "safety": "safe_routes"
+        }
+      },
+      {
+        "ballotNumber": 3,
+        "id": "caryleen-davidson",
+        "name": "Caryleen Davidson",
+        "status": "Incumbent",
+        "role": "Veteran Educator & Curriculum Specialist",
+        "initials": "CD",
+        "slate": "Proven Educational Leadership",
+        "tagline": "Deep curriculum expertise, student achievement tracking, and teacher retention.",
+        "priorities": [
+          "Implementing rigorous math and reading benchmark diagnostics across all elementary levels.",
+          "Supporting teacher professional development and retention in high-demand STEM specialties.",
+          "Guarding taxpayer dollars by adhering strictly to the state 2% property tax cap."
+        ],
+        "quizAnswers": {
+          "taxes": "strict_cap",
+          "infrastructure": "classroom_priority",
+          "governance": "regional_parity",
+          "education": "academic_excellence",
+          "housing": "smart_growth",
+          "safety": "safe_routes"
+        }
+      },
+      {
+        "ballotNumber": 4,
+        "id": "kathleen-murphy",
+        "name": "Kathleen Murphy",
+        "status": "Challenger",
+        "role": "Corporate Financial Executive & HSA Volunteer",
+        "initials": "KM",
+        "slate": "Taxpayer Accountability & Academic Rigor",
+        "tagline": "Line-item fiscal accountability, enhanced AP options, and facility safety audits.",
+        "priorities": [
+          "Conducting independent line-item audits of administrative expenditures to maximize classroom investment.",
+          "Modernizing Morristown High School STEM labs and career-technical equipment.",
+          "Enhancing security vestibules and pedestrian crosswalk safety around Morristown campuses."
+        ],
+        "quizAnswers": {
+          "taxes": "audit_spending",
+          "infrastructure": "stem_modernization",
+          "governance": "full_transparency",
+          "education": "academic_excellence",
+          "housing": "smart_growth",
+          "safety": "physical_security"
+        }
+      }
+    ]
+  },
+  "countyAndFederal": {
+    "usRepresentative": {
+      "district": "New Jersey's 11th Congressional District (NJ-11)",
+      "candidates": [
+        {
+          "name": "Mikie Sherrill / Democratic Nominee",
+          "party": "Democratic",
+          "role": "U.S. Representative (NJ-11) / Former Navy Pilot & Federal Prosecutor",
+          "keyIssues": "Federal infrastructure funding (Route 24/I-287 corridors), flood control grants, and expanding SALT deductions for Morris County homeowners."
+        },
+        {
+          "name": "Joseph Belnome / Republican Nominee",
+          "party": "Republican",
+          "role": "Building Inspector & Conservative Nominee",
+          "keyIssues": "Controlling federal spending, cutting federal regulations, and supporting law enforcement."
+        }
+      ]
+    },
+    "countyCommissioners": {
+      "county": "Morris County",
+      "races": [
+        {
+          "office": "Morris County Board of County Commissioners",
+          "term": "3-Year Term",
+          "seats": 1,
+          "candidates": [
+            {
+              "name": "Tayfun Selen",
+              "party": "Republican",
+              "status": "Incumbent",
+              "tagline": "Proven fiscal conservatism, maintaining Morris County's AAA bond rating, supporting County College of Morris and Morris County Vocational School."
+            },
+            {
+              "name": "Chris Russo",
+              "party": "Democratic",
+              "status": "Challenger",
+              "tagline": "Increased county transparency, expanding shared municipal emergency dispatch services, and preserving county open space."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "boeCandidates": [
+    {
+      "name": "Melissa Rowan",
+      "ballotNumber": 1,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Excellence, Equity & Inclusion",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Incumbent Morris School District Trustee, community volunteer, parent of Morristown High School students.",
+      "keyFocus": "Preserving small elementary class sizes, supporting STEM labs at Morristown High School, and regional parity.",
+      "fiscalStance": "Rigorous oversight of Morris School District $138.6M operating budget; strictly adhering to the 2% statutory cap.",
+      "infrastructureStance": "Modernizing science wings, athletic fields, and energy-efficient building heating systems.",
+      "interviewStances": {
+        "keyInterviewQuote": "Our regional school district is a model of diversity and academic achievement; we must protect it with smart budgeting.",
+        "keyPriorities": "Classroom investment, STEM lab expansions, and equitable student achievement.",
+        "facilitiesAndBudget": "Prudent multi-year capital planning and 2% levy cap enforcement.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "name": "Meredith Wall",
+      "ballotNumber": 2,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Students First Morristown",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Morris School District Board Member, non-profit director, bilingual community advocate.",
+      "keyFocus": "Strengthening dual-language immersion programs, expanding after-school tutoring, and career readiness.",
+      "fiscalStance": "Ensuring transparent competitive bidding on transportation, facilities, and food service contracts.",
+      "infrastructureStance": "Sustainable school facilities, solar retrofits, and pedestrian crossing safety along Morristown campuses.",
+      "interviewStances": {
+        "keyInterviewQuote": "Every child in Morristown should have the linguistic, technical, and academic tools to excel anywhere in the world.",
+        "keyPriorities": "Dual-language immersion, student mental wellness, and contract transparency.",
+        "facilitiesAndBudget": "Competitive bidding and fiscal accountability.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "name": "Caryleen Davidson",
+      "ballotNumber": 3,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Proven Educational Leadership",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Veteran educator, curriculum specialist, longtime Morristown civic volunteer.",
+      "keyFocus": "Rigorous K-5 math and reading diagnostics, teacher retention, and special education inclusion.",
+      "fiscalStance": "Defending classroom teaching positions by curtailing non-instructional administrative overhead.",
+      "infrastructureStance": "Classroom technology upgrades, modern library media centers, and enhanced security vestibules.",
+      "interviewStances": {
+        "keyInterviewQuote": "Strong foundational reading and math skills in early grades are the bedrock of lifelong academic success.",
+        "keyPriorities": "Early literacy benchmarks, retaining top educators, and special education support.",
+        "facilitiesAndBudget": "Directing maximum revenue into classrooms and frontline educators.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "name": "Kathleen Murphy",
+      "ballotNumber": 4,
+      "seatType": "Full Term",
+      "status": "Challenger",
+      "ballotSlogan": "Taxpayer Accountability & Academic Rigor",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Corporate financial executive, Home & School Association officer, Morristown parent.",
+      "keyFocus": "Line-item fiscal auditing, expanding Advanced Placement (AP) electives, and campus security audits.",
+      "fiscalStance": "Advocates an independent taxpayer audit of district consultant contracts and administrative overhead.",
+      "infrastructureStance": "Upgrading safety barriers, security vestibules, and modernizing High School technical labs.",
+      "interviewStances": {
+        "keyInterviewQuote": "Morristown homeowners pay significant property taxes; our school board must deliver excellence and transparency.",
+        "keyPriorities": "Line-item audits, enhanced AP options, and campus security.",
+        "facilitiesAndBudget": "Ending administrative waste and protecting property taxpayers.",
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    }
+  ],
+  "njCandidates": {
+    "usSenate": {
+      "office": "United States Senate (New Jersey)",
+      "term": "6-Year Term",
+      "voteRule": "Vote for 1",
+      "importance": "Represents all 9.3 million New Jersey residents in the U.S. Senate, voting on federal judges, infrastructure packages, education grants, and tax policy.",
+      "candidates": [
+        {
+          "name": "Andy Kim",
+          "party": "Democrat",
+          "status": "Democratic Nominee",
+          "role": "U.S. Representative (NJ-03) / Former National Security Advisor",
+          "keyPriorities": "Restoring the federal SALT deduction, ethics reform, combating corporate price gouging, and funding public education.",
+          "localImpact": "Securing federal funding for North Jersey commuter rail and Morris County infrastructure."
+        },
+        {
+          "name": "Curtis Bashaw",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Small Business Owner & Historic Preservationist",
+          "keyPriorities": "Fiscal restraint, curbing federal spending to control inflation, restoring SALT deductions, and regulatory relief.",
+          "localImpact": "Cutting federal red tape on suburban small businesses and downtown development."
+        }
+      ]
+    },
+    "usHouse": {
+      "office": "United States House of Representatives (NJ-11)",
+      "term": "2-Year Term",
+      "voteRule": "Vote for 1",
+      "badge": "U.S. Congressional District 11",
+      "importance": "Represents Morristown and Morris County in the U.S. House, shaping transportation grants, healthcare, and federal tax reform.",
+      "candidates": [
+        {
+          "name": "Mikie Sherrill",
+          "party": "Democrat",
+          "status": "Incumbent",
+          "role": "U.S. Representative (NJ-11) / Former Navy Pilot & Federal Prosecutor",
+          "keyPriorities": "Securing federal grants for Route 24 and I-287 corridors, defending public school funding, and restoring the SALT deduction.",
+          "localImpact": "Delivering direct federal community grants for Morristown infrastructure and green spaces."
+        },
+        {
+          "name": "Joseph Belnome",
+          "party": "Republican",
+          "status": "Challenger",
+          "role": "Building Inspector & Conservative Nominee",
+          "keyPriorities": "Controlling federal spending, cutting energy taxes, and supporting law enforcement.",
+          "localImpact": "Advocating for reduced federal spending to lower mortgage rates and suburban cost of living."
+        }
+      ]
+    },
+    "passaicCountyCommissionersFull": {
+      "office": "Morris County Board of County Commissioners",
+      "term": "3-Year Term",
+      "voteRule": "Vote for 1",
+      "importance": "Oversees Morris County's $360M+ budget, county roads, Morris County Park Commission, County College of Morris, and emergency dispatch.",
+      "candidates": [
+        {
+          "party": "Republican",
+          "status": "Incumbent",
+          "slate": "Morris County Republican Committee",
+          "candidates": [
+            "Tayfun Selen (Incumbent Commissioner)"
+          ],
+          "keyPriorities": "Preserving Morris County's AAA bond rating, keeping county taxes low, expanding County College of Morris technical apprenticeships, and supporting local police."
+        },
+        {
+          "party": "Democrat",
+          "status": "Challenger",
+          "slate": "Morris County Democratic Committee",
+          "candidates": [
+            "Chris Russo (Challenger)"
+          ],
+          "keyPriorities": "Enhancing county open space preservation, increasing county contracting transparency, and expanding shared county emergency dispatch services."
+        }
+      ]
+    }
+  }
+}
