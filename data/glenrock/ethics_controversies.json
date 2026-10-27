@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "source": "Glen Rock Public Records, Council Minutes & State Audits",
+    "year": 2026
+  },
+  "controversies": [
+    {
+      "id": "controv-health-shbp",
+      "title": "Transition Away from State Health Benefits Plan (SHBP)",
+      "date": "2023–2025",
+      "category": "Fiscal Management & Benefits",
+      "summary": "Faced with steep 20%+ annual rate spikes imposed by the State Health Benefits Commission, Glen Rock negotiated a municipal exit from SHBP to join private insurance pools, saving taxpayers ~$450,000 annually while protecting employee healthcare networks.",
+      "outcome": "Borough Council approved JIF membership with overwhelming bipartisan support."
+    },
+    {
+      "id": "controv-school-tax-cap",
+      "title": "State 2% Tax Cap Pressure & Low Foundation Aid ($3.7M)",
+      "date": "2024–2026",
+      "category": "School District Fiscal Equity",
+      "summary": "Under the NJ School Funding formula (SFRA), Glen Rock is categorized as high property wealth, receiving only ~6% of its $61.8M budget from Trenton. This forces local homeowners to shoulder nearly 89% of educational costs, creating annual structural challenges under the 2% cap.",
+      "outcome": "District continues proactive state legislative advocacy and shared services."
+    },
+    {
+      "id": "controv-faber-field",
+      "title": "Faber Field Athletic Complex Drainage & Turf Renovations",
+      "date": "2023–2026",
+      "category": "Capital Infrastructure & Environmental Oversight",
+      "summary": "Debates among residents regarding environmental safety, artificial turf vs. natural grass, and stormwater runoff mitigation along Diamond Brook resulted in comprehensive independent engineering reviews prior to municipal bond authorizations.",
+      "outcome": "Environmental safeguards and enhanced stormwater detention basins incorporated into project bids."
+    }
+  ]
+}

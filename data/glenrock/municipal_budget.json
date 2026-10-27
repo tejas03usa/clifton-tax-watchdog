@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "source": "Borough of Glen Rock Municipal Financial Statements (NJ DCA DLGS)",
+    "districtCode": "0222",
+    "county": "Bergen County"
+  },
+  "entity": "Borough of Glen Rock",
+  "county": "Bergen County",
+  "fiscalYear": "CY 2026 Adopted Municipal Budget",
+  "totalBudget": 27431732,
+  "population": 12250,
+  "governmentType": "Borough (Mayor-Council Form under NJ Title 40A)",
+  "fullTimeEmployees": 85,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax for Municipal Purposes",
+      "amount": 19675815,
+      "percentage": 71.73
+    },
+    {
+      "source": "Minimum Library Tax (N.J.S.A. 40:54-8)",
+      "amount": 1313521,
+      "percentage": 4.79
+    },
+    {
+      "source": "Municipal Surplus Anticipated",
+      "amount": 2443000,
+      "percentage": 8.91
+    },
+    {
+      "source": "State Energy Tax Receipts & Formula Aid",
+      "amount": 1320000,
+      "percentage": 4.81
+    },
+    {
+      "source": "Commuter Parking, Court & Construction Fees",
+      "amount": 1642396,
+      "percentage": 5.99
+    },
+    {
+      "source": "Delinquent Tax Receipts & Interlocal Services",
+      "amount": 1037000,
+      "percentage": 3.77
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Police Department (GRPD) & Public Safety",
+      "amount": 7650000,
+      "percentage": 27.89,
+      "details": "24/7 patrol coverage, emergency 911 dispatch, school resource officers (SRO), and Glen Rock Volunteer Ambulance Corps support."
+    },
+    {
+      "category": "Public Works (DPW), Roads & Sanitation",
+      "amount": 4920000,
+      "percentage": 17.94,
+      "details": "Curbside trash and recycling collection, snow plowing, road repaving, municipal fleet maintenance, and tree forestry."
+    },
+    {
+      "category": "Municipal Employee Health, Life & Pension Benefits",
+      "amount": 3950000,
+      "percentage": 14.4,
+      "details": "Health insurance coverage (privately pooled JIF after exiting SHBP), PFRS/PERS state pension obligations, and workers comp."
+    },
+    {
+      "category": "Municipal Debt Service & Capital Notes",
+      "amount": 2536300,
+      "percentage": 9.25,
+      "details": "Principal and interest payments on voter-approved capital improvement bonds for roadway reconstruction and flood prevention."
+    },
+    {
+      "category": "Glen Rock Public Library (Dedicated 1/3 Mill Levy)",
+      "amount": 1313521,
+      "percentage": 4.79,
+      "details": "Operational funding for the Glen Rock Public Library on Broad Street, digital media archives, and youth programming."
+    },
+    {
+      "category": "Municipal Court, Legal & Professional Services",
+      "amount": 1285000,
+      "percentage": 4.68,
+      "details": "Shared municipal court, Borough Attorney, labor counsel, engineering, and independent certified municipal audits."
+    },
+    {
+      "category": "General Government Administration & Finance",
+      "amount": 1850000,
+      "percentage": 6.74,
+      "details": "Borough Administrator, Municipal Clerk, Tax Collector, Tax Assessor, and Information Technology operations."
+    },
+    {
+      "category": "Parks, Recreation & Municipal Pool",
+      "amount": 1420000,
+      "percentage": 5.18,
+      "details": "Maintenance of Faber Field, Wilde Memorial Park, tennis courts, and the self-sustaining Glen Rock Municipal Pool utility."
+    },
+    {
+      "category": "Reserve for Uncollected Taxes",
+      "amount": 1014000,
+      "percentage": 3.7,
+      "details": "State-mandated cash reserve to ensure 100% tax payments to the school district and Bergen County regardless of delinquency rates."
+    },
+    {
+      "category": "Volunteer Fire Department (GRFD) Operations",
+      "amount": 1492911,
+      "percentage": 5.44,
+      "details": "Apparatus acquisition, turnout gear, firehouse maintenance, and water hydrant service charges."
+    }
+  ]
+}

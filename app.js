@@ -350,6 +350,44 @@ Pursuant to N.J.S.A. 47:1A-1 et seq.:
       sickleave: { recipientEmail: 'clerk@montvillenj.org', recipientDisplay: 'clerk@montvillenj.org • Township Clerk Stacy Sullivan-Gruca', subject: 'OPRA Request - Montville Terminal Sick Leave Buyout Records' },
       pilot: { recipientEmail: 'clerk@montvillenj.org', recipientDisplay: 'clerk@montvillenj.org • Township Clerk Stacy Sullivan-Gruca', subject: 'OPRA Request - Montville Tax Exemption Agreements' }
     }
+  },
+  glenrock: {
+    templates: {
+      overtime: `To the Borough Clerk / Custodian of Records, Borough of Glen Rock (clerk@glenrocknj.net):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Complete compensation, base salary, and overtime ledger for all Borough of Glen Rock employees (including GRPD and DPW) for the most recent completed fiscal year.
+2. Police secondary employment / outside contractor traffic detail logs, admin fee rates, and officer payouts.
+
+Please provide records in electronic format.`,
+      vendors: `To the Business Administrator / Board Secretary, Glen Rock Board of Education (rinderknechtm@glenrocknj.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Complete accounts payable check register and bill list for the Glen Rock School District for the past 12 months.
+2. Awarded professional service agreements and legal counsel invoices.`,
+      contracts: `To the Custodian of Records, Glen Rock Board of Education (rinderknechtm@glenrocknj.org):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Employment contracts and amendments for the Superintendent of Schools and School Business Administrator.
+2. Official calculation of unused sick leave buyout liability and executive benefits.`,
+      sickleave: `To the Borough Clerk, Borough of Glen Rock (clerk@glenrocknj.net):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Detailed ledger of all terminal leave / accumulated sick and vacation leave payouts issued to retiring or departing Borough employees for the past 3 fiscal years.
+2. Compliance documentation with statutory caps under N.J.S.A. 11A:6-19.2.`,
+      pilot: `To the Borough Clerk, Borough of Glen Rock (clerk@glenrocknj.net):
+
+Pursuant to N.J.S.A. 47:1A-1 et seq.:
+1. Any active Long Term Tax Exemption / PILOT agreements entered into under N.J.S.A. 40A:20-1 et seq.
+2. Annual service charges collected and Bergen County remittances.`
+    },
+    meta: {
+      overtime: { recipientEmail: 'clerk@glenrocknj.net', recipientDisplay: 'clerk@glenrocknj.net • Borough Clerk Jacqueline Scalia', subject: 'OPRA Request - Glen Rock Borough Payroll & Overtime' },
+      vendors: { recipientEmail: 'rinderknechtm@glenrocknj.org', recipientDisplay: 'rinderknechtm@glenrocknj.org • BOE Business Admin Michael Rinderknecht', subject: 'OPRA Request - Glen Rock School District Check Registers' },
+      contracts: { recipientEmail: 'rinderknechtm@glenrocknj.org', recipientDisplay: 'rinderknechtm@glenrocknj.org • BOE Business Admin Michael Rinderknecht', subject: 'OPRA Request - Glen Rock BOE Administrator Contracts' },
+      sickleave: { recipientEmail: 'clerk@glenrocknj.net', recipientDisplay: 'clerk@glenrocknj.net • Borough Clerk Jacqueline Scalia', subject: 'OPRA Request - Glen Rock Terminal Sick Leave Buyout Records' },
+      pilot: { recipientEmail: 'clerk@glenrocknj.net', recipientDisplay: 'clerk@glenrocknj.net • Borough Clerk Jacqueline Scalia', subject: 'OPRA Request - Glen Rock Redevelopment & Exemption Records' }
+    }
   }
 };
 
@@ -600,6 +638,47 @@ const CITY_REGISTRY = {
        <button class="preset-btn active" data-val="650000">Montville Avg ($650k)</button>
        <button class="preset-btn" data-val="850000">$850k (Changebridge Rd)</button>
        <button class="preset-btn" data-val="1150000">$1.15M (Taylortown Estates)</button>`
+  },
+  glenrock: {
+    id: 'glenrock',
+    name: 'Glen Rock',
+    fullName: 'Borough of Glen Rock',
+    badgeText: 'BOROUGH OF GLEN ROCK • CITIZEN FISCAL WATCHDOG',
+    icon: '🪨',
+    county: 'Bergen County',
+    countyShort: 'Bergen County',
+    districtCode: '0222',
+    auditBadge: 'BERGEN COUNTY AUDIT • 2026',
+    certifiedTaxRate: '3.407%',
+    rateNum: 3.407,
+    equalizationRatio: 71.5,
+    avgTaxBill: '$20,138 / yr',
+    schoolsShare: '68.21%',
+    muniShare: '22.39%',
+    countyShare: '9.40%',
+    schoolDistrictName: 'Glen Rock Public Schools (BOE)',
+    schoolDistrictShort: 'Glen Rock BOE',
+    schoolBudgetDisplay: '$61.8M',
+    muniBudgetDisplay: '$27.4M',
+    benefitsSpendDisplay: '$16.8M',
+    avgAssessed: '$591.2k',
+    typicalMarket: 826000,
+    sliderMin: 200000,
+    sliderMax: 1800000,
+    sliderDefault: 591156,
+    zipCodesDisplay: '07452',
+    controversyHighlight: '68% school tax burden, SHBP healthcare exit to JIF & rail crossing infrastructure',
+    title: 'Glen Rock Taxpayer Watchdog',
+    pageTitle: 'Borough of Glen Rock NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    subtitle: 'Citizen audit of Glen Rock\'s property taxes ($20,138 avg bill), $61.8M public school budget (68.2% share), Borough municipal operations ($27.4M), SHBP health insurance transition, and Bergen County tax levies.',
+    basePath: 'data/glenrock',
+    sliderLabelsHtml: `<span>$200k</span><span>$591.2k (Avg)</span><span>$1.0M</span><span>$1.8M+</span>`,
+    quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
+       <button class="preset-btn" data-val="450000">$450k (Radburn / South)</button>
+       <button class="preset-btn" data-val="530000">$530k (Central / Maple)</button>
+       <button class="preset-btn active" data-val="591156">Glen Rock Avg ($591.2k)</button>
+       <button class="preset-btn" data-val="720000">$720k (Byrd / Highwood)</button>
+       <button class="preset-btn" data-val="950000">$950k (Hamilton Estates)</button>`
   }
 };
 
@@ -1034,6 +1113,62 @@ function getCriticalIntelGrid(cityId, meta) {
          </ul>
          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
            <a href="https://www.montvillenj.org/218/Water-and-Sewer" target="_blank" rel="noopener" class="external-pill-link-sm">Montville Water & Sewer Department ↗</a>
+         </div>
+       </div>`;
+  }
+
+  if (cityId === 'glenrock') {
+    return `<!-- Card 1: SHBP Exit & Health Benefit Stabilization -->
+       <div class="calc-card" style="border-top: 4px solid #2563eb;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏥</span> Exit from SHBP to Municipal JIF Health Pool</h3>
+           <span class="badge-tag">Cost Stabilization</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Facing double-digit rate hikes in the NJ State Health Benefits Program (SHBP), Glen Rock Borough transitioned municipal employees to a joint insurance fund (JIF):
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Healthcare Premium Savings:</strong> Exiting SHBP stabilized healthcare expenditure trends, preventing an estimated 15%–22% compounding annual hike on municipal premiums.</li>
+           <li><strong>Chapter 78 Contributions:</strong> Borough and school staff continue paying tiered cost-sharing percentages toward their health benefits based on statutory salary brackets.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://glenrocknj.net" target="_blank" rel="noopener" class="external-pill-link-sm">Glen Rock Borough Administration ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 2: 68.2% School Tax Burden & Low State Aid -->
+       <div class="calc-card" style="border-top: 4px solid #059669;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🏫</span> 68.2% School Tax Share & Low SFRA State Aid</h3>
+           <span class="badge-tag" style="background: #dcfce7; color: #166534;">68.2% of Taxes</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Glen Rock Public Schools ($61.8M budget) represents the largest share of property taxes in Bergen County:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Local Levy Reliance:</strong> Under the NJ School Funding Reform Act (SFRA), Glen Rock receives modest state equalization aid (~$3.7M), requiring residential taxpayers to fund over 88% of district operating costs.</li>
+           <li><strong>Top-Tier Academic Investment:</strong> Funds 6 neighborhood campuses serving ~2,580 students, consistently ranking among New Jersey's top public school systems.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://www.glenrocknj.org" target="_blank" rel="noopener" class="external-pill-link-sm">Glen Rock Public Schools BOE ↗</a>
+         </div>
+       </div>
+
+       <!-- Card 3: Commuter Rail Transit & Diamond Brook Mitigation -->
+       <div class="calc-card" style="border-top: 4px solid #d97706;">
+         <div class="card-title-row" style="margin-bottom: 10px;">
+           <h3 style="font-size: 1.08rem; display: flex; align-items: center; gap: 8px;"><span>🚆</span> Dual NJ Transit Stations & Diamond Brook Stormwater</h3>
+           <span class="badge-alert">Transit & Drainage</span>
+         </div>
+         <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+           Glen Rock maintains unique dual-station rail transit corridors and regional stormwater infrastructure:
+         </p>
+         <ul style="font-size: 0.84rem; color: var(--text-main); line-height: 1.55; padding-left: 18px; margin-bottom: 14px;">
+           <li><strong>Dual Rail Hubs:</strong> Served by both the Main Line (Glen Rock Main Line Station) and Bergen County Line (Glen Rock Boro Hall Station), anchoring property values and commuter parking enterprise funds.</li>
+           <li><strong>Diamond Brook Flood Mitigation:</strong> Ongoing capital stormwater engineering along Diamond Brook and drainage culverts reduces flash flood risks during severe weather events.</li>
+         </ul>
+         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+           <a href="https://glenrocknj.net/departments/department-of-public-works" target="_blank" rel="noopener" class="external-pill-link-sm">Glen Rock DPW & Engineering ↗</a>
          </div>
        </div>`;
   }
@@ -2059,7 +2194,7 @@ function setupTabs() {
   syncDropdownActiveState();
 }
 
-// Data Loader (Supports all 6 cities: clifton, parsippany, wayne, montclair, morristown, montville)
+// Data Loader (Supports all 7 cities: clifton, parsippany, wayne, montclair, morristown, montville, glenrock)
 async function loadAllData(cityId = currentCity) {
   const meta = CITY_REGISTRY[cityId] || CITY_REGISTRY.clifton;
   const basePath = meta.basePath || (cityId === 'clifton' ? 'data' : `data/${cityId}`);
@@ -7491,6 +7626,7 @@ function renderNjCandidates() {
   const container = document.getElementById('election-nj-candidates-container');
   if (!container || !cliftonElectionData || !cliftonElectionData.njCandidates) return;
 
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const nj = cliftonElectionData.njCandidates;
   let html = `
     <div class="nj-offices-stack">
@@ -7526,7 +7662,7 @@ function renderNjCandidates() {
               </div>
               ${c.localImpact ? `
                 <div class="nj-cand-section local-impact-box">
-                  <div class="nj-section-label">📍 Clifton & North Jersey Direct Impact:</div>
+                  <div class="nj-section-label">📍 ${escapeHtml(meta.name)} & Regional Direct Impact:</div>
                   <p>${escapeHtml(c.localImpact)}</p>
                 </div>
               ` : ''}
@@ -7535,7 +7671,7 @@ function renderNjCandidates() {
         </div>
       </div>
 
-      <!-- 2. U.S. House NJ-09 -->
+      <!-- 2. U.S. House -->
       <div class="nj-office-block" style="margin-top: 24px;">
         <div class="nj-office-header">
           <div class="nj-office-title-row">
@@ -7549,7 +7685,7 @@ function renderNjCandidates() {
               </div>
             </div>
           </div>
-          <span class="nj-office-badge federal-badge">U.S. Congressional District 9</span>
+          <span class="nj-office-badge federal-badge">${escapeHtml(nj.usHouse.badge || 'U.S. Congressional District')}</span>
         </div>
         <p class="nj-office-importance">${escapeHtml(nj.usHouse.importance)}</p>
         <div class="nj-candidates-subgrid">
@@ -7567,7 +7703,7 @@ function renderNjCandidates() {
               </div>
               ${c.localImpact ? `
                 <div class="nj-cand-section local-impact-box">
-                  <div class="nj-section-label">📍 Clifton & Passaic River Flood Control:</div>
+                  <div class="nj-section-label">📍 ${escapeHtml(meta.name)} & District Priorities:</div>
                   <p>${escapeHtml(c.localImpact)}</p>
                 </div>
               ` : ''}

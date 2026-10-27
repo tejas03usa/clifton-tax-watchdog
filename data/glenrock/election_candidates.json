@@ -1,0 +1,427 @@
+{
+  "municipality": "Glen Rock",
+  "county": "Bergen County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "electionType": "Glen Rock Borough Council & Board of Education General Election",
+  "votingHours": "6:00 AM – 8:00 PM EST",
+  "councilStructure": "Borough of Glen Rock operates under the Borough form of government. 6 Borough Council members are elected at-large for staggered 3-year terms (2 elected each year), with a Mayor elected quadrennially. In 2026, Glen Rock voters elect 2 Borough Council members, alongside 3 School Board trustees.",
+  "totalCouncilCandidates": 4,
+  "totalCouncilSeats": 2,
+  "certifiedTaxRateContext": "3.407% Total Certified Tax Rate (2026). Equalization Ratio 71.50%.",
+  "unanimousHealthBenefitPledge": "Borough Council and BOE trustees adhere to state Chapter 78 healthcare contribution statutes and strict Local Government Ethics disclosures.",
+  "votingResources": {
+    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingLocation": "Anne Zusy Youth Center / Glen Rock Municipal Building, 1 Harding Plaza, Glen Rock, NJ 07452",
+    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "mailInDropboxes": [
+      {
+        "name": "Glen Rock Borough Hall",
+        "address": "1 Harding Plaza, Glen Rock, NJ 07452",
+        "notes": "Located near main entrance adjacent to campus walkway • Open 24/7 until 8:00 PM Election Night"
+      }
+    ],
+    "municipalClerk": {
+      "name": "Jacqueline Scalia",
+      "title": "Borough Clerk",
+      "office": "Glen Rock Borough Hall, 1 Harding Plaza",
+      "phone": "(201) 670-3956",
+      "email": "clerk@glenrocknj.net"
+    },
+    "passaicCountyElections": {
+      "superintendent": "Bergen County Clerk Elections Division: (201) 336-7020 • Bergen County Board of Elections: (201) 336-6230",
+      "phone": "(201) 336-7020",
+      "website": "https://www.bergencountyclerk.gov/Services/2",
+      "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
+    }
+  },
+  "categories": [
+    {
+      "id": "taxes",
+      "name": "Property Taxes & Cap Discipline",
+      "icon": "💰",
+      "shortDesc": "Managing the 2% state cap, self-sustaining municipal utilities, and debt amortization"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Stormwater & Diamond Brook",
+      "icon": "🏗️",
+      "shortDesc": "Diamond Brook flood resilience, road resurfacing program, and park modernizations"
+    },
+    {
+      "id": "governance",
+      "name": "Civic Transparency & Ethics",
+      "icon": "⚖️",
+      "shortDesc": "Open public comment, competitive professional contracting, and public committee reports"
+    },
+    {
+      "id": "housing",
+      "name": "Downtown Rock Road Zoning",
+      "icon": "🏡",
+      "shortDesc": "Preserving suburban small-town character while enhancing downtown commuter walkability"
+    },
+    {
+      "id": "safety",
+      "name": "Pedestrian Safety & GRPD",
+      "icon": "🚓",
+      "shortDesc": "Safe routes to school, rail crossing alerts, and police school resource officer coverage"
+    },
+    {
+      "id": "education",
+      "name": "Top-Ranked School System",
+      "icon": "🏫",
+      "shortDesc": "Glen Rock Public Schools ($61.8M budget), small elementary class sizes, and STEM labs"
+    }
+  ],
+  "councilCandidates": [
+    {
+      "ballotNumber": 1,
+      "id": "teresa-gilbreath",
+      "name": "Teresa Gilbreath",
+      "status": "Incumbent",
+      "role": "Borough Council President & Finance Committee Chair",
+      "experience": "Incumbent Council President with extensive corporate legal background; led municipal budget reviews and shared services negotiations.",
+      "initials": "TG",
+      "party": "Democratic",
+      "tagline": "Fiscally responsible borough administration, downtown revitalizations, and proactive stormwater investment.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Strict 2% Levy Cap Management",
+          "bullets": [
+            "Held municipal operational increases within statutory state caps.",
+            "Led transition to private health JIF to eliminate double-digit state health insurance premium hikes.",
+            "Prioritizes pay-as-you-go capital funding for emergency vehicle replacements."
+          ]
+        },
+        {
+          "category": "infrastructure",
+          "title": "Diamond Brook Flood Mitigation",
+          "bullets": [
+            "Secured Bergen County open space grants to reinforce stream banks and culverts.",
+            "Expanded annual road resurfacing schedules across all borough quadrants."
+          ]
+        }
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "flooding",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 2,
+      "id": "amy-martin",
+      "name": "Amy Martin",
+      "status": "Incumbent",
+      "role": "Borough Councilwoman & Public Safety Liaison",
+      "experience": "Incumbent Councilwoman, healthcare administrator, active liaison to Glen Rock Police and Volunteer Fire.",
+      "initials": "AM",
+      "party": "Democratic",
+      "tagline": "Pedestrian crosswalk safety, volunteer emergency services support, and sustainable green community programs.",
+      "declinedBenefits": true,
+      "categories": [
+        "safety",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "safety",
+          "title": "Pedestrian & Commuter Rail Safety",
+          "bullets": [
+            "Implemented lighted crosswalks along Rock Road and Maple Avenue corridors.",
+            "Enhanced School Resource Officer (SRO) coordination with Glen Rock public schools.",
+            "Modernized emergency equipment for the Volunteer Fire Department and Volunteer Ambulance Corps."
+          ]
+        },
+        {
+          "category": "governance",
+          "title": "Community Inclusion & Environmental Trust",
+          "bullets": [
+            "Expanded municipal environmental commission programs and shade tree canopy replantings.",
+            "Promotes transparent online streaming of council workshops and committee reports."
+          ]
+        }
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "classroom_focus"
+        }
+      }
+    },
+    {
+      "ballotNumber": 3,
+      "id": "robert-saydah",
+      "name": "Robert E. Saydah",
+      "status": "Challenger",
+      "role": "Corporate Financial Executive & Civic Volunteer",
+      "experience": "Longtime Glen Rock resident with senior corporate executive and capital budgeting credentials.",
+      "initials": "RS",
+      "party": "Republican",
+      "tagline": "Line-item fiscal auditing, tax relief for homeowners, and defending suburban zoning.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "housing",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Taxpayer Watchdog & Spending Restraint",
+          "bullets": [
+            "Conducts rigorous forensic reviews of municipal professional service contracts.",
+            "Advocates zero tax rate hikes to relieve burden on fixed-income seniors and young families.",
+            "Pledges complete municipal budget transparency before public hearings."
+          ]
+        },
+        {
+          "category": "housing",
+          "title": "Defending Single-Family Character",
+          "bullets": [
+            "Vigorously defends Glen Rock's master plan against high-density residential overdevelopment.",
+            "Protects suburban residential neighborhood aesthetics and commuter parking availability."
+          ]
+        }
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    },
+    {
+      "ballotNumber": 4,
+      "id": "elizabeth-carr",
+      "name": "Elizabeth R. Carr",
+      "status": "Challenger",
+      "role": "Business Analyst & Community Volunteer",
+      "experience": "Civic leader with private sector data analytics and operational efficiency background.",
+      "initials": "EC",
+      "party": "Republican",
+      "tagline": "Government accountability, infrastructure modernization, and small business support.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "safety"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "taxes",
+          "title": "Operational Efficiency & Cost Containment",
+          "bullets": [
+            "Streamlines municipal administrative overhead through modern digital services.",
+            "Explores expanded interlocal shared service agreements with Ridgewood and Bergen County."
+          ]
+        },
+        {
+          "category": "infrastructure",
+          "title": "Infrastructure & Park Accountability",
+          "bullets": [
+            "Demands rigorous independent contractor oversight on capital paving and park projects.",
+            "Prioritizes traffic calming around elementary school zones."
+          ]
+        }
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "city_boe_merger"
+        }
+      }
+    }
+  ],
+  "boeCandidates": [
+    {
+      "name": "Damali Robinson",
+      "ballotNumber": 1,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Glen Rock United for Education",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Incumbent BOE Trustee, corporate strategist, active parent volunteer.",
+      "keyFocus": "Academic excellence, STEM curriculum integration, and student mental wellness support.",
+      "fiscalStance": "Prudent stewardship of the $61.8M school budget; ensuring dollars go directly into classroom teachers and technology.",
+      "infrastructureStance": "Continuing facility modernizations, HVAC improvements, and campus security enhancements across all 6 schools.",
+      "interviewStances": {
+        "keyInterviewQuote": "Our public schools are the heart of Glen Rock; we must invest wisely to maintain our top state rankings.",
+        "keyPriorities": "Classroom instruction, mental wellness, and 2% cap fiscal discipline.",
+        "facilitiesAndBudget": "Transparent budgeting and energy-efficient school facilities."
+      }
+    },
+    {
+      "name": "Elizabeth Calvez",
+      "ballotNumber": 2,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Glen Rock United for Education",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "BOE Trustee, marketing executive, former Home & School Association (HSA) leader.",
+      "keyFocus": "Special education advocacy, early reading literacy, and transparent board-community communication.",
+      "fiscalStance": "Advocating for state education funding reform while protecting instructional programs under the 2% cap.",
+      "infrastructureStance": "Supporting sustainable school retrofits, clean indoor air quality, and athletic facility upkeep.",
+      "interviewStances": {
+        "keyInterviewQuote": "Every child in Glen Rock deserves the resources and encouragement to realize their highest academic potential.",
+        "keyPriorities": "Special education inclusion, early literacy, and community transparency.",
+        "facilitiesAndBudget": "Cost-effective special education case management and fiscal cap discipline."
+      }
+    },
+    {
+      "name": "Ed Hayward",
+      "ballotNumber": 3,
+      "seatType": "Full Term",
+      "status": "Challenger / Education Leader",
+      "ballotSlogan": "Glen Rock United for Education",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Veteran educator, university administrator, long-time Glen Rock community mentor.",
+      "keyFocus": "College and career readiness, teacher retention, and Advanced Placement (AP) course expansion.",
+      "fiscalStance": "Focusing budget allocations on competitive educator compensation and classroom learning tools.",
+      "infrastructureStance": "Modernizing high school and middle school science laboratories and media centers.",
+      "interviewStances": {
+        "keyInterviewQuote": "Great schools attract great families and protect our home values; retaining top educators is paramount.",
+        "keyPriorities": "AP course expansion, educator retention, and modern laboratory learning.",
+        "facilitiesAndBudget": "Classroom-first budgeting and competitive educator contracts."
+      }
+    },
+    {
+      "name": "Danielle Seltzer",
+      "ballotNumber": 4,
+      "seatType": "Full Term",
+      "status": "Challenger",
+      "ballotSlogan": "Excellence & Taxpayer Accountability",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Finance professional, certified public accountant, Glen Rock parent.",
+      "keyFocus": "Line-item fiscal analysis, zero-waste budgeting, and expanding math enrichment.",
+      "fiscalStance": "Demands independent audit reviews of administrative software and outside legal/consulting fees.",
+      "infrastructureStance": "Ensuring transparent competitive bidding on all school construction and maintenance contracts.",
+      "interviewStances": {
+        "keyInterviewQuote": "Glen Rock homeowners pay substantial school property taxes; we must ensure maximum value in the classroom.",
+        "keyPriorities": "Line-item budget reviews, math enrichment, and contracting transparency.",
+        "facilitiesAndBudget": "Zero-waste administrative budgeting and cap enforcement."
+      }
+    },
+    {
+      "name": "Boas Rosenblat",
+      "ballotNumber": 5,
+      "seatType": "Full Term",
+      "status": "Challenger",
+      "ballotSlogan": "Students First Glen Rock",
+      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "experience": "Technology director, robotics mentor, parent advocate.",
+      "keyFocus": "AI literacy, computer science electives, and robotics programs across middle and high schools.",
+      "fiscalStance": "Streamlining district IT infrastructure to eliminate recurring legacy software costs.",
+      "infrastructureStance": "Upgrading high-speed campus networking and modern digital classroom security.",
+      "interviewStances": {
+        "keyInterviewQuote": "Equipping Glen Rock students with 21st-century technology and computational skills will set them apart.",
+        "keyPriorities": "AI literacy, robotics programs, and IT efficiency.",
+        "facilitiesAndBudget": "Modern technology infrastructure and software cost reduction."
+      }
+    }
+  ],
+  "njCandidates": {
+    "usSenate": {
+      "office": "United States Senate (New Jersey)",
+      "term": "6-Year Term",
+      "voteRule": "Vote for 1",
+      "importance": "Represents all 9.3 million New Jersey residents in Washington, D.C., voting on federal judicial nominations, infrastructure packages, education grants, and tax policy.",
+      "candidates": [
+        {
+          "name": "Andy Kim",
+          "party": "Democrat",
+          "status": "Democratic Nominee",
+          "role": "U.S. Representative (NJ-03) / Former National Security Advisor",
+          "keyPriorities": "Restoring the federal SALT deduction, ethics reform, combating corporate price gouging, and defending public education funding.",
+          "localImpact": "Securing federal clean transit funding for Bergen County commuter rail corridors."
+        },
+        {
+          "name": "Curtis Bashaw",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "Small Business Owner & Historic Preservationist",
+          "keyPriorities": "Fiscal restraint, curbing federal spending to control inflation, restoring SALT deductions, and small business regulatory relief.",
+          "localImpact": "Cutting federal regulatory compliance burdens on Bergen County small businesses."
+        }
+      ]
+    },
+    "usHouse": {
+      "office": "United States House of Representatives (NJ-05)",
+      "term": "2-Year Term",
+      "voteRule": "Vote for 1",
+      "badge": "U.S. Congressional District 5",
+      "importance": "Represents Glen Rock and Bergen County in the U.S. House, shaping transportation grants, federal tax policy, and school security funding.",
+      "candidates": [
+        {
+          "name": "Josh Gottheimer",
+          "party": "Democrat",
+          "status": "Incumbent",
+          "role": "U.S. Representative (NJ-05) / Co-Chair Problem Solvers Caucus",
+          "keyPriorities": "Leading the fight to repeal the $10,000 SALT cap, clawing back federal tax dollars to North Jersey for police and fire grants, and Gateway Tunnel funding.",
+          "localImpact": "Delivering direct federal assistance for Glen Rock flood mitigation and emergency services equipment."
+        },
+        {
+          "name": "Mary Jo-Ann",
+          "party": "Republican",
+          "status": "Challenger",
+          "role": "Conservative Nominee & Business Leader",
+          "keyPriorities": "Curbing federal spending, cutting energy taxes, supporting law enforcement, and border security.",
+          "localImpact": "Advocating for lower federal taxes and reduced federal regulation on suburban homeowners."
+        }
+      ]
+    },
+    "passaicCountyCommissionersFull": {
+      "office": "Bergen County Board of County Commissioners",
+      "term": "3-Year Term",
+      "voteRule": "Vote for up to 3",
+      "importance": "Oversees Bergen County's $580M+ budget, county roads (Maple Ave, Lincoln Ave), Bergen County Park System (Van Saun Park, Saddle River County Park), Bergen New Bridge Medical Center, and Bergen County Police/Sheriff services.",
+      "candidates": [
+        {
+          "party": "Democrat",
+          "status": "Incumbents",
+          "slate": "Bergen County Democratic Committee",
+          "candidates": [
+            "Thomas J. Sullivan (Incumbent)",
+            "Mary J. Amoroso (Incumbent)",
+            "Germaine M. Ortiz (Incumbent)"
+          ],
+          "keyPriorities": "Maintaining Bergen County's AAA bond rating, expanding Saddle River County Park bike paths, open space preservation, and vocational education at Bergen Technical Schools."
+        },
+        {
+          "party": "Republican",
+          "status": "Challengers",
+          "slate": "Bergen County Republican Organization",
+          "candidates": [
+            "Challenger Slate (County Commissioners)"
+          ],
+          "keyPriorities": "Auditing county government expenditures, lowering county property tax assessments, and increasing transparency in county vendor contracts."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Estimates & Bergen County 2026 Certified Rolls",
+    "year": 2026
+  },
+  "cityOverview": {
+    "totalPopulation": 12250,
+    "totalHousingUnits": 4200,
+    "medianHouseholdIncome": 198500,
+    "perCapitaIncome": 88400,
+    "medianAge": 41.2,
+    "povertyRate": 2.1,
+    "ownerOccupiedRate": 89.4,
+    "renterOccupiedRate": 10.6,
+    "foreignBornPercentage": 16.5,
+    "nonEnglishAtHomePercent": 21.4
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07452",
+      "areaName": "Borough of Glen Rock (All Residential Districts)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Rock Road Center, Central, Byrd, Coleman & Hamilton Districts",
+      "medianIncome": 198500,
+      "avgAssessment": 591156,
+      "avgAnnualTax": 20138
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Central Glen Rock & Rock Road Downtown",
+      "zip": "07452",
+      "description": "Historic downtown village center surrounding the Glen Rock Main Line and Boro Hall NJ Transit rail stations.",
+      "avgHomeValue": 785000,
+      "avgAssessment": 561000
+    },
+    {
+      "name": "Richard E. Byrd & Highwood District",
+      "zip": "07452",
+      "description": "Established residential northern section surrounding Byrd Elementary School and Ridgewood border.",
+      "avgHomeValue": 895000,
+      "avgAssessment": 639000
+    },
+    {
+      "name": "Alexander Hamilton & Coleman District",
+      "zip": "07452",
+      "description": "Spacious suburban neighborhood surrounding Hamilton Ave campus, middle school, and high school.",
+      "avgHomeValue": 845000,
+      "avgAssessment": 604000
+    },
+    {
+      "name": "Radburn Border & East Glen Rock",
+      "zip": "07452",
+      "description": "Eastern residential zone adjoining Fair Lawn Radburn border, featuring classic mid-century colonials and split-levels.",
+      "avgHomeValue": 765000,
+      "avgAssessment": 547000
+    },
+    {
+      "name": "Doremus Park & South Glen Rock",
+      "zip": "07452",
+      "description": "Parkside community surrounding Doremus Avenue, municipal arboretum, and Diamond Brook pathways.",
+      "avgHomeValue": 815000,
+      "avgAssessment": 582000
+    }
+  ],
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithKids": 52.4,
+      "totalStudents": 2580
+    },
+    "schools": [
+      {
+        "name": "Richard E. Byrd Elementary School",
+        "type": "Elementary",
+        "grades": "K–5",
+        "enrollment": 310
+      },
+      {
+        "name": "Central Elementary School",
+        "type": "Elementary",
+        "grades": "K–5",
+        "enrollment": 320
+      },
+      {
+        "name": "Clara E. Coleman Elementary School",
+        "type": "Elementary",
+        "grades": "K–5",
+        "enrollment": 340
+      },
+      {
+        "name": "Alexander Hamilton Elementary School",
+        "type": "Elementary",
+        "grades": "K–5",
+        "enrollment": 330
+      },
+      {
+        "name": "Glen Rock Middle School",
+        "type": "Middle School",
+        "grades": "6–8",
+        "enrollment": 620
+      },
+      {
+        "name": "Glen Rock High School",
+        "type": "High School",
+        "grades": "9–12",
+        "enrollment": 780
+      }
+    ]
+  },
+  "equityAnalysis": {
+    "summary": "Glen Rock maintains exceptionally consistent residential ratables across all four elementary school feeder zones, resulting in balanced per-pupil local tax effort throughout the borough."
+  }
+}

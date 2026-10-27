@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "source": "Borough of Glen Rock & Glen Rock BOE Approved Bill Lists (CY 2025–2026)",
+    "year": 2026
+  },
+  "vendors": [
+    {
+      "name": "Bergen Municipal Employee Benefits Fund (BMED)",
+      "category": "Health & Prescription Insurance",
+      "entity": "Borough of Glen Rock & Schools",
+      "totalPaid": 12850000,
+      "description": "Comprehensive medical and prescription drug coverage for unionized public employees after exiting SHBP to curb double-digit premium increases."
+    },
+    {
+      "name": "South Bergen Jointure Commission",
+      "category": "Specialized Education Services",
+      "entity": "Glen Rock Public Schools",
+      "totalPaid": 4250000,
+      "description": "Specialized tuition, behaviorist therapies, and coordinated out-of-district student transportation for special needs learners."
+    },
+    {
+      "name": "Public Service Electric & Gas (PSE&G)",
+      "category": "Gas & Electric Utilities",
+      "entity": "Combined Municipal & Schools",
+      "totalPaid": 1680000,
+      "description": "Electricity and natural gas supply, high school athletic field illumination, and town hall heating."
+    },
+    {
+      "name": "Lerch, Vinci & Bliss, LLP",
+      "category": "Municipal & School Auditing",
+      "entity": "Combined Municipal & Schools",
+      "totalPaid": 245000,
+      "description": "Annual independent statutory municipal financial audit and Comprehensive Annual Financial Report (CAFR) preparation."
+    },
+    {
+      "name": "Fogarty & Hara, Esqs.",
+      "category": "Legal Counsel (Education & Labor)",
+      "entity": "Glen Rock Public Schools",
+      "totalPaid": 320000,
+      "description": "Board of Education legal representation for collective bargaining negotiations, special education IEP litigation, and state policy compliance."
+    },
+    {
+      "name": "Boswell Engineering",
+      "category": "Civil & Municipal Engineering",
+      "entity": "Borough of Glen Rock",
+      "totalPaid": 485000,
+      "description": "Design and inspection of annual municipal road resurfacing, stormwater culverts, and Diamond Brook flood mitigation."
+    },
+    {
+      "name": "Downes Tree Service Inc.",
+      "category": "Tree Care & Emergency Forestry",
+      "entity": "Borough of Glen Rock DPW",
+      "totalPaid": 265000,
+      "description": "Hazardous shade tree pruning, emerald ash borer tree removals, and emergency storm branch clearance."
+    }
+  ]
+}

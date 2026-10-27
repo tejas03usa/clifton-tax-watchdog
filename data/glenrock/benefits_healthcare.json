@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "source": "Glen Rock Borough Council & Glen Rock BOE Collective Bargaining Agreements",
+    "year": 2026
+  },
+  "overview": {
+    "totalBenefitsSpend": 16800000,
+    "percentOfCombinedBudget": 18.82,
+    "averageFamilyPremium": 36400,
+    "taxpayerShare": 76.5
+  },
+  "healthcarePlans": {
+    "primaryPlans": [
+      {
+        "planName": "Bergen Municipal JIF Direct Access (BMED)",
+        "type": "Private Municipal Insurance Pool",
+        "description": "In-network copay model replacing state SHBP coverage with predictable negotiated dental and prescription formularies."
+      },
+      {
+        "planName": "Educators Health Plan (EHP - Chapter 44)",
+        "type": "State Mandated Education Plan",
+        "description": "Lower-cost plan option for certified educators capping employee contributions to an income-indexed percentage."
+      }
+    ]
+  },
+  "costSharing": {
+    "rules": [
+      {
+        "tier": "Tier 4 (Chapter 78 / Chapter 44 Framework)",
+        "employeeContribution": "12% to 35% of Total Premium (Indexed by Salary)",
+        "taxpayerContribution": "65% to 88% of Total Premium",
+        "note": "Average Glen Rock municipal employee pays ~$4,800 to $9,200 annually toward family medical coverage, while taxpayers subsidize the remaining ~$27,200 to $31,600."
+      }
+    ]
+  },
+  "retirementAndLeaveBenefits": {
+    "pensionSystems": "PFRS (Police & Firemen's Retirement System) & TPAF/PERS (Teachers & Public Employees)",
+    "terminalLeaveCap": "$15,000 statutory sick leave payout cap enforced for non-aligned personnel under state reform statutes."
+  }
+}

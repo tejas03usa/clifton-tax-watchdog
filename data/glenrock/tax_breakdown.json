@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 71.5,
+    "effectiveTaxRateMarketValue": 2.436
+  },
+  "location": "Borough of Glen Rock, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.407,
+  "ratePerHundredDollars": 3.407,
+  "effectiveTaxRateMarketValue": 2.436,
+  "averageResidentialAssessment": 591156,
+  "averageTaxBill": 20138.68,
+  "breakdown": [
+    {
+      "entity": "Glen Rock Public Schools",
+      "purpose": "Local K-12 School District (6 Campuses, ~2,600 Students)",
+      "rate": 2.324,
+      "percentage": 68.21,
+      "annualAmountOnAverage": 13738.47,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Borough of Glen Rock",
+      "purpose": "Municipal Operations, Police (GRPD), DPW, Roads & Library",
+      "rate": 0.763,
+      "percentage": 22.39,
+      "annualAmountOnAverage": 4510.52,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Operations, Sheriff, County Roads & Open Space",
+      "rate": 0.32,
+      "percentage": 9.4,
+      "annualAmountOnAverage": 1889.69,
+      "color": "var(--color-county)"
+    }
+  ]
+}

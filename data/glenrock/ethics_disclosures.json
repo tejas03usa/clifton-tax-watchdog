@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "source": "NJ Local Finance Board & School Ethics Commission Financial Disclosure Statements (FDS)",
+    "year": 2026
+  },
+  "disclosures": [
+    {
+      "name": "Kristine Morieko",
+      "role": "Mayor",
+      "entity": "Borough of Glen Rock",
+      "incomeSources": [
+        "Private Corporate Management",
+        "Borough of Glen Rock (Mayoral Stipend)"
+      ],
+      "realEstateHoldings": [
+        "Primary Single-Family Residence, Glen Rock, NJ 07452"
+      ],
+      "outsideBusinessPositions": [
+        "None Disclosed"
+      ],
+      "conflictChecks": "Compliant with Chapter 271 Pay-to-Play limits; recuses on municipal contractor matters where personal acquaintance exists."
+    },
+    {
+      "name": "Teresa Gilbreath",
+      "role": "Borough Council President",
+      "entity": "Borough of Glen Rock",
+      "incomeSources": [
+        "Private Sector Legal & Financial Advisory"
+      ],
+      "realEstateHoldings": [
+        "Single-Family Residence, Glen Rock, NJ 07452"
+      ],
+      "outsideBusinessPositions": [
+        "Corporate Consulting LLC"
+      ],
+      "conflictChecks": "Filed annual FDS with NJ Department of Community Affairs; zero commercial conflicts with borough vendors."
+    },
+    {
+      "name": "Amy Martin",
+      "role": "Borough Council Member",
+      "entity": "Borough of Glen Rock",
+      "incomeSources": [
+        "Healthcare Administration / Non-Profit Management"
+      ],
+      "realEstateHoldings": [
+        "Single-Family Residence, Glen Rock, NJ 07452"
+      ],
+      "outsideBusinessPositions": [
+        "None Disclosed"
+      ],
+      "conflictChecks": "Verified compliant with NJ Local Government Ethics Law."
+    },
+    {
+      "name": "Damali Robinson",
+      "role": "Board of Education Trustee",
+      "entity": "Glen Rock Public Schools",
+      "incomeSources": [
+        "Higher Education / Corporate Strategy"
+      ],
+      "realEstateHoldings": [
+        "Primary Residence, Glen Rock, NJ 07452"
+      ],
+      "outsideBusinessPositions": [
+        "Educational Mentorship Advisory"
+      ],
+      "conflictChecks": "Filed School Ethics Commission (SEC) personal/relative disclosure; no immediate relatives employed by district."
+    },
+    {
+      "name": "Elizabeth Calvez",
+      "role": "Board of Education Trustee",
+      "entity": "Glen Rock Public Schools",
+      "incomeSources": [
+        "Finance & Marketing Consulting"
+      ],
+      "realEstateHoldings": [
+        "Primary Residence, Glen Rock, NJ 07452"
+      ],
+      "outsideBusinessPositions": [
+        "Private Marketing LLC"
+      ],
+      "conflictChecks": "Certified compliance with state school ethics statutes; no vendor contracts with district."
+    }
+  ]
+}

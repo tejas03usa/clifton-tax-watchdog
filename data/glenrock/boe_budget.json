@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "source": "Glen Rock Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "1760",
+    "county": "Bergen County"
+  },
+  "entity": "Glen Rock Public Schools",
+  "county": "Bergen County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 61845000,
+  "enrollment": 2580,
+  "perPupilSpending": 23970,
+  "schoolsCount": 6,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 54820000,
+      "percentage": 88.64
+    },
+    {
+      "source": "State Categorical & Special Education Aid",
+      "amount": 3680000,
+      "percentage": 5.95
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserve Drawdown",
+      "amount": 1950000,
+      "percentage": 3.15
+    },
+    {
+      "source": "Federal Grants (IDEA & Title Programs)",
+      "amount": 895000,
+      "percentage": 1.45
+    },
+    {
+      "source": "Tuition, Miscellaneous & Community Programs",
+      "amount": 500000,
+      "percentage": 0.81
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Regular Instruction & Classroom Programs",
+      "amount": 26850000,
+      "percentage": 43.41,
+      "details": "Salaries for 230+ certified classroom teachers, reading specialists, and STEM educators across 4 elementary schools, Glen Rock Middle School, and Glen Rock High School."
+    },
+    {
+      "category": "Employee Health & Pension Benefits",
+      "amount": 12850000,
+      "percentage": 20.78,
+      "details": "Medical, prescription, dental insurance, and state pension contributions for active and retired educators."
+    },
+    {
+      "category": "Special Education & Out-of-District Placements",
+      "amount": 9450000,
+      "percentage": 15.28,
+      "details": "In-district resource rooms, speech/occupational therapies, and specialized regional tuition via South Bergen Jointure Commission."
+    },
+    {
+      "category": "Operations, Maintenance & Facilities Upgrades",
+      "amount": 5120000,
+      "percentage": 8.28,
+      "details": "Custodial staffing, HVAC ventilation, school security vestibules, and energy efficiency upgrades across 6 district campuses."
+    },
+    {
+      "category": "Student Support Services & Guidance Counselors",
+      "amount": 3840000,
+      "percentage": 6.21,
+      "details": "School psychologists, social workers, student assistance counselors (SAC), and college guidance departments."
+    },
+    {
+      "category": "School District Administration & Board Office",
+      "amount": 2235000,
+      "percentage": 3.61,
+      "details": "Superintendent of Schools, Business Administrator, curriculum directors, and legal/auditing fees."
+    },
+    {
+      "category": "Student Transportation & Busing",
+      "amount": 1500000,
+      "percentage": 2.43,
+      "details": "Mandated special education transportation, sports team travel, and contracted bus routes."
+    }
+  ]
+}

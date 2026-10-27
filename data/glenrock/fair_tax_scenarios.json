@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "source": "Certified 2026 Glen Rock Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Borough of Glen Rock",
+      "totalTaxLevy": 82545000,
+      "residentialLevyTotal": 74703225,
+      "commercialLevyTotal": 7841775,
+      "totalResidentialParcels": 4180,
+      "equalizationRatio": 0.715,
+      "certifiedTaxRateAssessed": 3.407,
+      "certifiedTaxRateMarket": 2.436,
+      "averageResidentialAssessment": 591156,
+      "averageResidentialMarketValue": 826791,
+      "annualPilotRevenueCollected": 0,
+      "commercialLevySharePct": 9.5
+    }
+  },
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "issue": "Low State School Aid Disparity",
+        "severity": "High",
+        "description": "Glen Rock receives only $3.7M in state education funding on a $61.8M budget, requiring local homeowners to shoulder 88.6% of school costs."
+      },
+      {
+        "issue": "Residential Ratable Concentration",
+        "severity": "Medium",
+        "description": "With 90.5% of the tax burden on homeowners, any unexpected infrastructure cost immediately impacts residential tax bills."
+      }
+    ]
+  },
+  "presetScenarios": [
+    {
+      "id": "scenario-state-aid",
+      "name": "State Education Foundation Aid Reform",
+      "description": "Lobbying Trenton for equitable student transportation and special education reimbursement to lower local school levy by $4.2M.",
+      "residentialSavings": 1004
+    },
+    {
+      "id": "scenario-shared-services",
+      "name": "Regional Shared Services & Equipment Pooling",
+      "description": "Consolidating specialized DPW equipment and 911 dispatch with Bergen County to reduce municipal operating expenses.",
+      "residentialSavings": 480
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07452",
+      "name": "Central Glen Rock",
+      "medianHouseholdIncome": 188000,
+      "currentTaxBill": 19100,
+      "currentTaxEffortPct": 10.15
+    },
+    {
+      "zip": "07452",
+      "name": "Byrd & Highwood District",
+      "medianHouseholdIncome": 215000,
+      "currentTaxBill": 21760,
+      "currentTaxEffortPct": 10.12
+    },
+    {
+      "zip": "07452",
+      "name": "Hamilton & Coleman District",
+      "medianHouseholdIncome": 202000,
+      "currentTaxBill": 20570,
+      "currentTaxEffortPct": 10.18
+    },
+    {
+      "zip": "07452",
+      "name": "Radburn Border",
+      "medianHouseholdIncome": 178000,
+      "currentTaxBill": 18630,
+      "currentTaxEffortPct": 10.46
+    },
+    {
+      "zip": "07452",
+      "name": "Doremus Parkside",
+      "medianHouseholdIncome": 195000,
+      "currentTaxBill": 19820,
+      "currentTaxEffortPct": 10.16
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Colonial",
+      "assessment": 485000,
+      "tax": 16523
+    },
+    {
+      "type": "Average Borough Home",
+      "assessment": 591156,
+      "tax": 20138
+    },
+    {
+      "type": "Expanded Custom Residence",
+      "assessment": 775000,
+      "tax": 26404
+    }
+  ],
+  "policyRoadmap": [
+    "Maintain strict adherence to the statutory 2% property tax levy cap.",
+    "Pursue competitive state and federal clean water infrastructure grants for Diamond Brook flood mitigation."
+  ]
+}

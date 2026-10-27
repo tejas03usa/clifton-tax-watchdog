@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "source": "Bergen & Passaic County Boards of Taxation 2026 Certified Rates",
+    "year": 2026
+  },
+  "summaryAnalysis": {
+    "glenRockEffectiveRate": 2.436,
+    "regionalContext": "Glen Rock's certified composite tax rate (3.407%) sits in the middle of Bergen County commuter towns, offering top-tier schools with competitive effective millage rates."
+  },
+  "towns": [
+    {
+      "name": "Glen Rock",
+      "county": "Bergen",
+      "certifiedRate": 3.407,
+      "ratio": 71.5,
+      "effectiveRate": 2.436,
+      "avgTaxBill": 20138,
+      "schoolShare": "68.2%"
+    },
+    {
+      "name": "Ridgewood",
+      "county": "Bergen",
+      "certifiedRate": 2.684,
+      "ratio": 83.2,
+      "effectiveRate": 2.233,
+      "avgTaxBill": 21850,
+      "schoolShare": "66.5%"
+    },
+    {
+      "name": "Fair Lawn",
+      "county": "Bergen",
+      "certifiedRate": 3.652,
+      "ratio": 70.1,
+      "effectiveRate": 2.56,
+      "avgTaxBill": 14220,
+      "schoolShare": "63.8%"
+    },
+    {
+      "name": "Midland Park",
+      "county": "Bergen",
+      "certifiedRate": 3.215,
+      "ratio": 75.4,
+      "effectiveRate": 2.424,
+      "avgTaxBill": 13950,
+      "schoolShare": "67.1%"
+    },
+    {
+      "name": "Paramus",
+      "county": "Bergen",
+      "certifiedRate": 1.745,
+      "ratio": 92.1,
+      "effectiveRate": 1.607,
+      "avgTaxBill": 12480,
+      "schoolShare": "58.2%"
+    },
+    {
+      "name": "Hawthorne",
+      "county": "Passaic",
+      "certifiedRate": 3.518,
+      "ratio": 72.8,
+      "effectiveRate": 2.561,
+      "avgTaxBill": 12890,
+      "schoolShare": "54.6%"
+    },
+    {
+      "name": "Wyckoff",
+      "county": "Bergen",
+      "certifiedRate": 1.942,
+      "ratio": 89.5,
+      "effectiveRate": 1.738,
+      "avgTaxBill": 15420,
+      "schoolShare": "65.4%"
+    }
+  ],
+  "comparativeKeyFindings": [
+    {
+      "title": "Commercial Ratable Comparison (Paramus vs. Glen Rock)",
+      "detail": "Paramus enjoys massive commercial revenue from 4 major shopping malls, subsidizing its tax rate to 1.745%. In contrast, Glen Rock's tree-lined residential community must fund 90%+ of services from homeowner property taxes."
+    },
+    {
+      "title": "Bergen County Commuter Value",
+      "detail": "With two direct NJ Transit rail stations (Main Line & Bergen County Line), Glen Rock provides premier commuter access while maintaining lower average tax bills than neighboring Ridgewood."
+    }
+  ]
+}

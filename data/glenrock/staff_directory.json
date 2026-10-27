@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "source": "Borough of Glen Rock & Glen Rock Public Schools Public Payroll Records (N.J.S.A. 47:1A-1)",
+    "year": 2026
+  },
+  "staff": [
+    {
+      "name": "Dr. Brett Charleston",
+      "title": "Superintendent of Schools",
+      "entity": "Glen Rock Public Schools",
+      "department": "District Central Administration",
+      "baseSalary": 228500,
+      "totalCompensation": 242000,
+      "status": "Active Full-Time Contract",
+      "hireDate": "2019-07-01",
+      "pensionPlan": "TPAF",
+      "notes": "Chief executive officer overseeing all 6 district campuses (~2,580 students)."
+    },
+    {
+      "name": "Michael Rinderknecht",
+      "title": "Business Administrator / Board Secretary",
+      "entity": "Glen Rock Public Schools",
+      "department": "Business Office & Fiscal Operations",
+      "baseSalary": 189500,
+      "totalCompensation": 198000,
+      "status": "Active Full-Time Contract",
+      "hireDate": "2008-07-01",
+      "pensionPlan": "TPAF",
+      "notes": "Oversees the $61.8M school budget, vendor contracting, and facilities maintenance."
+    },
+    {
+      "name": "Dean Ackermann",
+      "title": "Chief of Police",
+      "entity": "Borough of Glen Rock",
+      "department": "Glen Rock Police Department (GRPD)",
+      "baseSalary": 214500,
+      "totalCompensation": 226000,
+      "status": "Active Full-Time Civil Service",
+      "hireDate": "1994-01-01",
+      "pensionPlan": "PFRS",
+      "notes": "Commands sworn patrol officers, detective bureau, and traffic detail administration."
+    },
+    {
+      "name": "Michael Parent",
+      "title": "Principal - Glen Rock High School",
+      "entity": "Glen Rock Public Schools",
+      "department": "Secondary Education (Grades 9–12)",
+      "baseSalary": 168000,
+      "totalCompensation": 174000,
+      "status": "Active Full-Time",
+      "hireDate": "2020-08-01",
+      "pensionPlan": "TPAF",
+      "notes": "Directs academic curriculum, athletics, and college placements for ~780 high schoolers."
+    },
+    {
+      "name": "Jennifer Wirt",
+      "title": "Principal - Glen Rock Middle School",
+      "entity": "Glen Rock Public Schools",
+      "department": "Middle School (Grades 6–8)",
+      "baseSalary": 156500,
+      "totalCompensation": 162000,
+      "status": "Active Full-Time",
+      "hireDate": "2018-07-01",
+      "pensionPlan": "TPAF",
+      "notes": "Leads middle school academic and emotional counseling programs for ~620 students."
+    },
+    {
+      "name": "Lenora Benjamin",
+      "title": "Borough Administrator",
+      "entity": "Borough of Glen Rock",
+      "department": "Executive Management",
+      "baseSalary": 164000,
+      "totalCompensation": 171500,
+      "status": "Active Full-Time Appointed",
+      "hireDate": "2019-03-01",
+      "pensionPlan": "PERS",
+      "notes": "Chief operating officer supervising all municipal departments, capital projects, and labor relations."
+    },
+    {
+      "name": "Jacqueline Scalia",
+      "title": "Borough Clerk / Elections Official",
+      "entity": "Borough of Glen Rock",
+      "department": "Office of the Borough Clerk",
+      "baseSalary": 112000,
+      "totalCompensation": 118000,
+      "status": "Active Full-Time Certified RMC",
+      "hireDate": "2016-04-01",
+      "pensionPlan": "PERS",
+      "notes": "Custodian of municipal public records, OPRA coordinator, and local election administrator."
+    },
+    {
+      "name": "Robert V. Van Dien",
+      "title": "Director of Public Works (DPW)",
+      "entity": "Borough of Glen Rock",
+      "department": "Department of Public Works",
+      "baseSalary": 148000,
+      "totalCompensation": 156000,
+      "status": "Active Full-Time CPWM",
+      "hireDate": "2005-09-01",
+      "pensionPlan": "PERS",
+      "notes": "Manages road paving crews, stormwater infrastructure, sanitation, and vehicle fleet."
+    },
+    {
+      "name": "Krista Voth",
+      "title": "Principal - Central Elementary School",
+      "entity": "Glen Rock Public Schools",
+      "department": "Primary Education",
+      "baseSalary": 144500,
+      "totalCompensation": 149000,
+      "status": "Active Full-Time",
+      "hireDate": "2015-09-01",
+      "pensionPlan": "TPAF",
+      "notes": "Administers Central Elementary School serving ~320 neighborhood children."
+    },
+    {
+      "name": "Linda Weber",
+      "title": "Principal - Richard E. Byrd Elementary",
+      "entity": "Glen Rock Public Schools",
+      "department": "Primary Education",
+      "baseSalary": 143000,
+      "totalCompensation": 147500,
+      "status": "Active Full-Time",
+      "hireDate": "2014-07-01",
+      "pensionPlan": "TPAF",
+      "notes": "Administers Byrd Elementary School serving ~310 neighborhood children."
+    },
+    {
+      "name": "Edward Thompson",
+      "title": "Principal - Clara E. Coleman Elementary",
+      "entity": "Glen Rock Public Schools",
+      "department": "Primary Education",
+      "baseSalary": 142500,
+      "totalCompensation": 147000,
+      "status": "Active Full-Time",
+      "hireDate": "2016-08-01",
+      "pensionPlan": "TPAF",
+      "notes": "Administers Coleman Elementary School serving ~340 neighborhood children."
+    },
+    {
+      "name": "Irene Kelly",
+      "title": "Principal - Alexander Hamilton Elementary",
+      "entity": "Glen Rock Public Schools",
+      "department": "Primary Education",
+      "baseSalary": 141000,
+      "totalCompensation": 145500,
+      "status": "Active Full-Time",
+      "hireDate": "2017-07-01",
+      "pensionPlan": "TPAF",
+      "notes": "Administers Hamilton Elementary School serving ~330 neighborhood children."
+    },
+    {
+      "name": "Patricia Volpe",
+      "title": "Chief Financial Officer (CFO) / Tax Collector",
+      "entity": "Borough of Glen Rock",
+      "department": "Finance & Revenue",
+      "baseSalary": 136000,
+      "totalCompensation": 142000,
+      "status": "Active Full-Time CMFO / CTC",
+      "hireDate": "2017-01-01",
+      "pensionPlan": "PERS",
+      "notes": "Manages municipal general ledger, tax billing, quarterly audits, and bank reconciliations."
+    },
+    {
+      "name": "William Yirce",
+      "title": "Tax Assessor",
+      "entity": "Borough of Glen Rock",
+      "department": "Assessment Office",
+      "baseSalary": 84500,
+      "totalCompensation": 88000,
+      "status": "Part-Time Certified Tax Assessor (CTA)",
+      "hireDate": "2018-05-01",
+      "pensionPlan": "PERS",
+      "notes": "Defends municipal assessments before Bergen County Tax Board and maintains 71.5% ratio."
+    },
+    {
+      "name": "Ellen O'Keefe",
+      "title": "Director - Glen Rock Public Library",
+      "entity": "Borough of Glen Rock",
+      "department": "Public Library",
+      "baseSalary": 108000,
+      "totalCompensation": 114000,
+      "status": "Active Full-Time",
+      "hireDate": "2015-11-01",
+      "pensionPlan": "PERS",
+      "notes": "Directs library acquisitions, digital database licensing, and community educational events."
+    }
+  ]
+}

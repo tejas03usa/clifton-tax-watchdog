@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "source": "Borough of Glen Rock Assessor Records & MOD-IV Filings",
+    "year": 2026
+  },
+  "ratableShift": {
+    "residentialShare": 90.5,
+    "commercialShare": 9.5,
+    "historicalTrend": [
+      {
+        "year": 1995,
+        "residential": 86.2,
+        "commercial": 13.8
+      },
+      {
+        "year": 2005,
+        "residential": 88.4,
+        "commercial": 11.6
+      },
+      {
+        "year": 2015,
+        "residential": 89.8,
+        "commercial": 10.2
+      },
+      {
+        "year": 2026,
+        "residential": 90.5,
+        "commercial": 9.5
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 0,
+    "summary": "Glen Rock utilizes virtually zero long-term PILOT abatements, ensuring that all downtown commercial storefronts and professional offices along Rock Road contribute standard property taxes directly to the Glen Rock Public Schools and Bergen County."
+  },
+  "taxAppeals": {
+    "annualCountyAppeals": 28,
+    "lossMitigation": "Proactive assessment defenses maintained by Certified Tax Assessor William Yirce."
+  },
+  "taxpayerSolutions": [
+    "Expanding downtown outdoor dining and retail ratables along Rock Road.",
+    "Shared service interlocal agreements with Ridgewood and Bergen County for specialized equipment."
+  ]
+}
