@@ -7230,16 +7230,17 @@ function renderBoeCandidates() {
 
   boeList.forEach(b => {
     const isInc = b.status.toLowerCase().includes('incumbent');
+    const isFormer = b.status.toLowerCase().includes('former');
     const isUnexpired = b.seatType && b.seatType.toLowerCase().includes('unexpired');
     html += `
       <div class="boe-card ${isUnexpired ? 'boe-card-unexpired' : ''}">
         <div class="boe-card-header">
           <div class="boe-badge-row">
-            <span class="boe-school-badge">🏫 Board of Education</span>
+            <span class="boe-school-badge">${isUnexpired ? '🏫 BOE • 1-Yr Unexpired' : '🏫 BOE • 3-Yr Full Term'}</span>
             <div class="boe-badges-right" style="display: flex; align-items: center; gap: 5px;">
               ${b.ballotNumber ? `<span class="ballot-num">Ballot #${b.ballotNumber}</span>` : ''}
               <span class="candidate-status-tag ${isInc ? 'status-incumbent' : 'status-challenger'}">
-                ${isInc ? '🏛️ Incumbent Trustee' : '⚡ Challenger'}
+                ${isInc ? '🏛️ Incumbent Trustee' : (isFormer ? '🏛️ Former BOE Trustee' : '⚡ Challenger')}
               </span>
             </div>
           </div>
@@ -7281,7 +7282,7 @@ function renderBoeCandidates() {
             <div class="boe-priority-box" style="background: #f0fdf4; border-left: 3px solid #16a34a; margin-top: 10px;">
               <div class="boe-priority-header" style="color: #15803d;">🎙️ Interview & Public Forum Stance:</div>
               ${b.interviewStances.keyInterviewQuote ? `<p style="font-style: italic; font-size: 0.82rem; margin: 4px 0 6px; color: #166534; line-height: 1.45;">“${escapeHtml(b.interviewStances.keyInterviewQuote)}”</p>` : ''}
-              <p class="boe-priority-text" style="font-size: 0.78rem; color: #14532d; line-height: 1.4;">${escapeHtml(b.interviewStances.taxesAndSpending || b.interviewStances.governanceAndDecorum || '')}</p>
+              <p class="boe-priority-text" style="font-size: 0.78rem; color: #14532d; line-height: 1.4;">${escapeHtml(b.interviewStances.keyPriorities || b.interviewStances.facilitiesAndBudget || '')}</p>
             </div>
           ` : ''}
         </div>
