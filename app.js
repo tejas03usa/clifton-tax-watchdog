@@ -6478,7 +6478,9 @@ function filterAndRenderCandidates() {
       const searchableText = [
         c.name,
         `ballot ${c.ballotNumber}`,
+        `ballot ${c.ballotNumber}e`,
         `#${c.ballotNumber}`,
+        `${c.ballotNumber}e`,
         c.status,
         c.role,
         c.experience,
@@ -6654,7 +6656,7 @@ function renderCandidateCard(c, catMap) {
   return `
     <article class="candidate-card ${isIncumbent ? 'is-incumbent' : 'is-challenger'} ${hasControversy ? 'has-controversies' : 'is-clean-record'}" id="candidate-card-${c.id}">
       <div class="candidate-card-header-bar">
-        <span class="ballot-num">Ballot #${c.ballotNumber}</span>
+        <span class="ballot-num">Ballot #${c.ballotNumber}E</span>
         <span class="candidate-status-tag ${isIncumbent ? 'status-incumbent' : 'status-challenger'}">
           ${isIncumbent ? '🏛️ Incumbent' : '⚡ Challenger'}
         </span>

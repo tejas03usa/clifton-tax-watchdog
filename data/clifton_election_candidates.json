@@ -11,24 +11,19 @@
   "certifiedTaxRateContext": "6.527% Total Certified Tax Rate (2026). Upcoming Citywide Revaluation by Appraisal Systems, Inc. (ASI).",
   "unanimousHealthBenefitPledge": "All 19 candidates have formally committed to declining taxpayer-funded municipal health insurance benefits, protecting taxpayers from tens of thousands in annual fringe benefit costs.",
   "votingResources": {
-    "earlyVotingPeriod": "Late October \u2013 Early November 2026 (Mon-Sat 10 AM-8 PM, Sun 10 AM-6 PM)",
-    "earlyVotingLocation": "Clifton Arts Center / Community Recreation Center, 900 Clifton Ave, Clifton, NJ 07013",
+    "earlyVotingPeriod": "Saturday, Oct 24 \u2013 Sunday, Nov 1, 2026 (Mon\u2013Sat 10 AM\u20138 PM, Sun 10 AM\u20136 PM; closed Mon, Nov 2)",
+    "earlyVotingLocation": "Clifton Public Library (Main Branch \u2013 Side Door), 292 Piaget Ave, Clifton, NJ 07011 (Early Voting ONLY; not an Election Day polling site)",
     "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
     "mailInDropboxes": [
       {
-        "name": "Clifton City Hall (Main Entrance)",
+        "name": "Clifton City Hall (Front Entrance)",
         "address": "900 Clifton Ave, Clifton, NJ 07013",
-        "notes": "24/7 Monitored Secure Drop Box"
+        "notes": "Located at front entrance next to Tax Drop Box \u2022 Open 24/7 until 8:00 PM Election Night"
       },
       {
-        "name": "Clifton Public Library (Main Branch)",
-        "address": "292 Piaget Ave, Clifton, NJ 07011",
-        "notes": "Drive-up accessible secure box"
-      },
-      {
-        "name": "Allwood Branch Library",
-        "address": "44 Lyall Rd, Clifton, NJ 07012",
-        "notes": "Walk-up secure drop box"
+        "name": "Clifton Community Recreation Center",
+        "address": "1232 Main Ave, Clifton, NJ 07011",
+        "notes": "Located on sidewalk in front of building \u2022 Open 24/7 until 8:00 PM Election Night"
       }
     ],
     "municipalClerk": {
@@ -39,9 +34,9 @@
       "email": "cityclerk@cliftonnj.org"
     },
     "passaicCountyElections": {
-      "superintendent": "Passaic County Superintendent of Elections",
+      "superintendent": "Passaic County Clerk Elections Division: (973) 881-4127 \u2022 Board of Elections: (973) 881-4780 \u2022 Superintendent of Elections",
       "phone": "(973) 881-4515",
-      "website": "https://www.passaiccountynj.org/government/county-clerk/elections",
+      "website": "https://www.passaiccountynj.org/residents/election-and-voting-information/sample-ballots",
       "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
     }
   },
@@ -2979,7 +2974,7 @@
   "boeCandidates": [
     {
       "name": "Joseph \"Joe\" R. Canova",
-      "ballotNumber": 1,
+      "ballotNumber": "1F",
       "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Incumbent Trustee",
       "ballotSlogan": "Independent Oversight & Taxpayer Watchdog",
@@ -3002,7 +2997,7 @@
     },
     {
       "name": "Tanya Suarez",
-      "ballotNumber": 2,
+      "ballotNumber": "2F",
       "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Incumbent Trustee",
       "ballotSlogan": "Education For All",
@@ -3025,7 +3020,7 @@
     },
     {
       "name": "Evelyn \"Eve\" Estrict-Barnes",
-      "ballotNumber": 3,
+      "ballotNumber": "3F",
       "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Incumbent / Appointed Trustee",
       "ballotSlogan": "Mom. Taxpayer. Advocate",
@@ -3048,7 +3043,7 @@
     },
     {
       "name": "Joseph Siano",
-      "ballotNumber": 4,
+      "ballotNumber": "4F",
       "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Incumbent Trustee",
       "ballotSlogan": "Striving For Excellence",
@@ -3071,7 +3066,7 @@
     },
     {
       "name": "Elvia \"Melissa\" Lemus",
-      "ballotNumber": 1,
+      "ballotNumber": "5F",
       "seatType": "1-Year Unexpired Term (2027)",
       "status": "Challenger",
       "ballotSlogan": "Community Advocate & Clifton Parent",
@@ -3094,7 +3089,7 @@
     },
     {
       "name": "Frank Kasper",
-      "ballotNumber": 2,
+      "ballotNumber": "6F",
       "seatType": "1-Year Unexpired Term (2027)",
       "status": "Former BOE Trustee / Challenger",
       "ballotSlogan": "Experienced Educator & Former BOE Trustee",
@@ -3191,12 +3186,12 @@
         "office": "United States Senate (New Jersey, Class II)",
         "level": "Federal (Statewide New Jersey)",
         "seatsAvailable": 1,
-        "candidatesRunning": 3,
+        "candidatesRunning": 4,
         "voteRule": "Vote for ONE (1)",
         "termLength": "6 Years (2027 \u2013 2033)",
         "ballotType": "Partisan Statewide",
         "taxShare": "Federal Taxation & Grants (SALT Deduction Relief)",
-        "description": "Represents all New Jerseyans in the U.S. Senate. Confirms federal judges, votes on federal legislation, and advocates for federal infrastructure grants and restoring full SALT deductions.",
+        "description": "Represents all New Jerseyans in the U.S. Senate. Four candidates appear on the Clifton ballot: Justin Murphy (R - 1A), Cory Booker (D - 1B), Veronica Fernandez (End The Corruption! - 1C), and Joanne Kuniansky (Socialist Workers Party - 1D).",
         "badgeColor": "#1d4ed8"
       },
       {
@@ -3204,12 +3199,12 @@
         "office": "U.S. House of Representatives (NJ-09)",
         "level": "Federal (Congressional District 9)",
         "seatsAvailable": 1,
-        "candidatesRunning": 2,
+        "candidatesRunning": 3,
         "voteRule": "Vote for ONE (1)",
         "termLength": "2 Years (2027 \u2013 2029)",
         "ballotType": "Partisan Congressional District",
         "taxShare": "Federal Earmarks & Community Project Funding",
-        "description": "Represents Clifton, Passaic, Paterson, and Bergen/Hudson portions in Congress. Focuses on Passaic River flood control, Route 3/Route 46 corridor funding, and federal public safety grants.",
+        "description": "Represents Clifton, Passaic, Paterson, and Bergen/Hudson portions in Congress. Three candidates appear on the Clifton ballot: Rosie Pino (R - 2A), Nelida Pou (D - 2B), and Terrisa Bukovinac (Save Our Babies - 2C).",
         "badgeColor": "#059669"
       }
     ]
@@ -3222,27 +3217,34 @@
       "importance": "Represents 9.3M New Jerseyans in Washington D.C. Key powers include confirming federal judges, voting on federal budgets, and fighting for New Jersey's fair share of federal tax returns and SALT deductions.",
       "candidates": [
         {
-          "name": "Cory Booker",
-          "party": "Democrat",
-          "status": "Incumbent U.S. Senator",
-          "role": "U.S. Senator from New Jersey (in office since 2013); former Mayor of Newark.",
-          "keyPriorities": "Restoring full federal State and Local Tax (SALT) deduction (K cap repeal); funding Gateway Tunnel & NJ Transit; securing federal clean water grants for Passaic Valley Water Commission (PVWC); prescription drug cost caps.",
-          "localImpact": "Secured federal appropriations for Passaic River flood mitigation and lead water pipe replacement projects directly serving Clifton residents."
-        },
-        {
-          "name": "Justin Murphy",
+          "name": "Justin Murphy (Ballot 1A)",
           "party": "Republican",
           "status": "Republican Nominee",
-          "role": "GOP Nominee for U.S. Senate; attorney, former Tabernacle Deputy Mayor and township committeeman. Won the June 2, 2026 Republican primary.",
+          "role": "GOP Nominee for U.S. Senate; attorney, former Tabernacle Deputy Mayor and township committeeman.",
           "keyPriorities": "Federal fiscal restraint to curb inflation; national border security; lowering federal middle-class and small-business income tax brackets; full federal SALT relief for suburban homeowners; domestic energy independence.",
           "localImpact": "Pledging to eliminate federal regulatory hurdles delaying North Jersey flood wall infrastructure projects and lower federal cost burdens on New Jersey taxpayers."
         },
         {
-          "name": "Third-Party & Independent Contenders",
-          "party": "Libertarian / Green / Independent",
-          "status": "Challengers",
-          "role": "Independent & alternative party nominees.",
-          "keyPriorities": "Ranked-choice voting, federal term limits, non-interventionist foreign policy, environmental justice, and ending federal corporate subsidies."
+          "name": "Cory Booker (Ballot 1B)",
+          "party": "Democrat",
+          "status": "Incumbent U.S. Senator",
+          "role": "U.S. Senator from New Jersey (in office since 2013); former Mayor of Newark.",
+          "keyPriorities": "Restoring full federal State and Local Tax (SALT) deduction ($10K cap repeal); funding Gateway Tunnel & NJ Transit; securing federal clean water grants for Passaic Valley Water Commission (PVWC); prescription drug cost caps.",
+          "localImpact": "Secured federal appropriations for Passaic River flood mitigation and lead water pipe replacement projects directly serving Clifton residents."
+        },
+        {
+          "name": "Veronica Fernandez (Ballot 1C)",
+          "party": "Nomination by Petition (End The Corruption!)",
+          "status": "Independent Challenger",
+          "role": "Independent U.S. Senate candidate running on the 'End The Corruption!' ballot line.",
+          "keyPriorities": "Anti-corruption campaign finance reform, federal government accountability, term limits, and reducing cost-of-living burdens on working families."
+        },
+        {
+          "name": "Joanne Kuniansky (Ballot 1D)",
+          "party": "Nomination by Petition (Socialist Workers Party)",
+          "status": "Third-Party Challenger",
+          "role": "U.S. Senate candidate running on the 'Socialist Workers Party' ballot line.",
+          "keyPriorities": "Trade union solidarity, cost-of-living wage protections, universal healthcare, and working-class labor advocacy."
         }
       ]
     },
@@ -3253,7 +3255,15 @@
       "importance": "Clifton is located entirely within New Jersey's 9th Congressional District. The district encompasses Passaic County (Clifton, Passaic, Paterson), southern Bergen County (Hackensack, Fort Lee, Teaneck, Englewood), and Secaucus in Hudson County.",
       "candidates": [
         {
-          "name": "Nellie Pou",
+          "name": "Rosie Pino (Ballot 2A)",
+          "party": "Republican",
+          "status": "Republican Nominee",
+          "role": "GOP Nominee for NJ-09; current Clifton City Councilwoman (first elected 2018) and former Clifton Board of Education Commissioner (2013\u20132018). Born to immigrant parents, former U.S. Treasury bank examiner, finance professional. Note: Running concurrently for Congress (2A) and for re-election to Clifton City Council (19E).",
+          "keyPriorities": "Cutting federal spending and regulatory red tape; small business tax relief; revitalizing commercial and industrial corridors along Route 3 and Route 46; supporting local law enforcement with federal Byrne JAG grants; parent choice in education.",
+          "localImpact": "Lifelong advocate for Clifton homeowners on municipal tax relief, flood basin maintenance, and opposing regional congestion pricing models."
+        },
+        {
+          "name": "Nelida (Nellie) Pou (Ballot 2B)",
           "party": "Democrat",
           "status": "Incumbent Representative",
           "role": "U.S. Representative (NJ-09). Longtime NJ State Senator (District 35) and former Assemblywoman; succeeded late Congressman Bill Pascrell Jr. in 2024.",
@@ -3261,12 +3271,11 @@
           "localImpact": "Spearheaded state and federal funding for Route 46 and Route 3 highway bottleneck improvements in Clifton and Passaic County."
         },
         {
-          "name": "Rosemary \"Rosie\" Pino",
-          "party": "Republican",
-          "status": "Republican Nominee",
-          "role": "GOP Nominee for NJ-09; current Clifton City Councilwoman (first elected 2018) and former Clifton Board of Education Commissioner (2013\u20132018). Born to immigrant parents, former U.S. Treasury bank examiner, finance professional. Note: Running concurrently for Congress and for re-election to Clifton City Council.",
-          "keyPriorities": "Cutting federal spending and regulatory red tape; small business tax relief; revitalizing commercial and industrial corridors along Route 3 and Route 46; supporting local law enforcement with federal Byrne JAG grants; parent choice in education.",
-          "localImpact": "Lifelong advocate for Clifton homeowners on municipal tax relief, flood basin maintenance, and opposing regional congestion pricing models."
+          "name": "Terrisa Bukovinac (Ballot 2C)",
+          "party": "Nomination by Petition (Save Our Babies)",
+          "status": "Independent Challenger",
+          "role": "Independent NJ-09 congressional candidate running on the 'Save Our Babies' ballot line.",
+          "keyPriorities": "Anti-abortion advocacy, human rights campaigns, and independent grassroots activism."
         }
       ]
     },
