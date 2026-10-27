@@ -385,7 +385,7 @@ const CITY_REGISTRY = {
     controversyHighlight: 'OSC audits, PILOT shifts, ASI Reval & budget cliffs',
     title: 'Clifton Taxpayer Watchdog',
     pageTitle: 'Clifton NJ Taxpayer Watchdog | Where Does Your Money Go?',
-    subtitle: 'Real-time public investigation into where your Clifton property taxes go, the ~$293M school budget, public employee healthcare benefits, outside staff businesses, and official state audits.',
+    subtitle: 'Independent data on Clifton property taxes, the $293M school budget, municipal spending, and 2026 elections.',
     basePath: 'data',
     sliderLabelsHtml: `<span>$50k</span><span>$182.5k (Avg)</span><span>$350k</span><span>$600k+</span>`,
     quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
@@ -6581,7 +6581,7 @@ function renderCandidateCard(c, catMap) {
   const dossier = c.investigativeDossier || { outsideBusinesses: [], notableControversies: [] };
   const hasControversy = dossier.hasDocumentedControversies;
 
-  const categoryBadgesHtml = (c.categories || []).map(catId => {
+  const categoryBadgesHtml = (c.categories || []).slice(0, 2).map(catId => {
     const cat = catMap[catId];
     if (!cat) return '';
     return `<span class="cand-cat-tag"><span>${cat.icon}</span> ${cat.name}</span>`;
@@ -6654,13 +6654,10 @@ function renderCandidateCard(c, catMap) {
   return `
     <article class="candidate-card ${isIncumbent ? 'is-incumbent' : 'is-challenger'} ${hasControversy ? 'has-controversies' : 'is-clean-record'}" id="candidate-card-${c.id}">
       <div class="candidate-card-header-bar">
-        <span class="card-council-badge">🏛️ City Council (Vote 7)</span>
-        <div class="candidate-ballot-badge">
-          <span class="ballot-num">Ballot #${c.ballotNumber}</span>
-          <span class="candidate-status-tag ${isIncumbent ? 'status-incumbent' : 'status-challenger'}">
-            ${isIncumbent ? '🏛️ Incumbent' : '⚡ Challenger'}
-          </span>
-        </div>
+        <span class="ballot-num">Ballot #${c.ballotNumber}</span>
+        <span class="candidate-status-tag ${isIncumbent ? 'status-incumbent' : 'status-challenger'}">
+          ${isIncumbent ? '🏛️ Incumbent' : '⚡ Challenger'}
+        </span>
       </div>
 
       <div class="candidate-card-top">
@@ -6684,9 +6681,6 @@ function renderCandidateCard(c, catMap) {
       </div>
 
       <div class="candidate-badges-bar">
-        <span class="badge-pledge" title="Formally signed pledge declining taxpayer-funded municipal healthcare insurance">
-          🌿 No Benefits
-        </span>
         ${hasControversy ? `
           <span class="badge-controversy-alert" title="Documented municipal censures, lawsuits, or public controversies on file">
             ⚠️ Scrutiny (${dossier.notableControversies.length})
