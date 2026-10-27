@@ -2632,7 +2632,9 @@ function renderDemographics() {
 // Render Family Child Demographics & School Feeder Network
 function renderFamilyAndSchools() {
   if (!demographicsData || !demographicsData.familyChildDemographics) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const isParsippany = currentCity === 'parsippany';
+  const isClifton = currentCity === 'clifton';
 
   const fData = demographicsData.familyChildDemographics;
 
@@ -2668,7 +2670,7 @@ function renderFamilyAndSchools() {
           <span class="f-stat-sub">Supplies 490 students (6.9%) • Pays 10.2% levy</span>
         </div>
       `;
-    } else {
+    } else if (isClifton) {
       ribbon.innerHTML = `
         <div class="family-stat-box highlight-stat">
           <span class="f-stat-label">Families With Children</span>
@@ -2694,6 +2696,34 @@ function renderFamilyAndSchools() {
           <span class="f-stat-label">Delawanna (07014) Ratio</span>
           <span class="f-stat-val font-mono" style="color: #d97706;">1.03x</span>
           <span class="f-stat-sub">Supplies 650 students (6.1%) • Pays 5.9% levy</span>
+        </div>
+      `;
+    } else {
+      ribbon.innerHTML = `
+        <div class="family-stat-box highlight-stat">
+          <span class="f-stat-label">Families With Children</span>
+          <span class="f-stat-val">${c.householdsWithChildrenPercent}%</span>
+          <span class="f-stat-sub">${c.householdsWithChildrenUnder18.toLocaleString()} of ${c.totalHouseholds.toLocaleString()} ${meta.name} households</span>
+        </div>
+        <div class="family-stat-box">
+          <span class="f-stat-label">Public School Students</span>
+          <span class="f-stat-val font-mono" style="color: var(--color-school);">${c.enrolledPublicSchools.toLocaleString()}</span>
+          <span class="f-stat-sub">${c.enrolledPublicPercent}% of all ${c.totalSchoolAgeChildren.toLocaleString()} school-age kids</span>
+        </div>
+        <div class="family-stat-box">
+          <span class="f-stat-label">School Budget Share</span>
+          <span class="f-stat-val" style="color: #2563eb;">${meta.schoolsShare}</span>
+          <span class="f-stat-sub">${meta.schoolDistrictShort} annual local tax contribution</span>
+        </div>
+        <div class="family-stat-box">
+          <span class="f-stat-label">Equalization Ratio</span>
+          <span class="f-stat-val" style="color: #166534;">${meta.equalizationRatio}%</span>
+          <span class="f-stat-sub">State equalized valuation ratio (${meta.countyShort})</span>
+        </div>
+        <div class="family-stat-box">
+          <span class="f-stat-label">Average Annual Bill</span>
+          <span class="f-stat-val font-mono" style="color: #d97706;">${meta.avgTaxBill}</span>
+          <span class="f-stat-sub">Avg assessment: ${meta.avgAssessed}</span>
         </div>
       `;
     }
@@ -2788,8 +2818,16 @@ function renderFamilyAndSchools() {
             <span class="feeder-label">Feeder Pathway:</span>
             <div class="feeder-path">
               <span>${s.name}</span>
-              ${!s.feederMiddle.startsWith('N/A') && !s.feederMiddle.startsWith('Receives') ? `➔ <span>${s.feederMiddle}</span>` : ''}
-              ${s.type === 'Elementary' && !isParsippany ? `➔ <span>Clifton High School (CHS)</span>` : ''}
+              ${s.feederMiddle && !s.feederMiddle.startsWith('N/A') && !s.feederMiddle.startsWith('Receives') ? `➔ <span>${s.feederMiddle}</span>` : ''}
+              ${s.type === 'Elementary' ? `➔ <span>${
+                meta.id === 'clifton' ? 'Clifton High School (CHS)'
+                : meta.id === 'parsippany' ? 'Parsippany High / Hills High'
+                : meta.id === 'wayne' ? 'Wayne Valley / Wayne Hills HS'
+                : meta.id === 'montclair' ? 'Montclair High School (MHS)'
+                : meta.id === 'morristown' ? 'Morristown High School (MHS)'
+                : meta.id === 'montville' ? 'Montville Township High School (MTHS)'
+                : 'Glen Rock High School (GRHS)'
+              }</span>` : ''}
             </div>
           </div>
 
@@ -3531,12 +3569,12 @@ function renderSurroundingTowns() {
           <div class="card-action-bar-jumps" style="margin-top: 14px;">
             ${isFull ? `
               <button class="btn-jump-action" data-switch-city="${t.id}" style="${isCurrent ? 'background: #059669;' : ''}">
-                <span>${t.id === 'clifton' ? '🏛️' : t.id === 'parsippany' ? '🌲' : t.id === 'wayne' ? '🌳' : t.id === 'montclair' ? '🏡' : t.id === 'morristown' ? '📜' : '🏞️'}</span>
+                <span>${(CITY_REGISTRY[t.id] && CITY_REGISTRY[t.id].icon) || '🏛️'}</span>
                 ${isCurrent ? `Currently Exploring ${t.name} Watchdog` : `Switch Watchdog Platform to ${t.name} ➔`}
               </button>
             ` : `
               <button class="btn-jump-action secondary" data-jump-tab="tab-calculator">
-                <span>🧮</span> Calculate Clifton & Parsippany Tax Details ➔
+                <span>🧮</span> Calculate ${meta.name} Tax Details ➔
               </button>
             `}
           </div>
@@ -4257,12 +4295,14 @@ function renderIntelligenceReports() {
     // Dynamic Takeaways
     const takeawaysList = document.getElementById('receipt-takeaways');
     if (takeawaysList) {
-      const teacherCost = (assessed / 100) * (isParsippany ? 0.9108 : 1.1822);
-      const combinedBen = (assessed / 100) * (isParsippany ? (0.4554 + 0.2338) : (0.6844 + 0.3840));
-      const policeCost = (assessed / 100) * (isParsippany ? 0.2525 : 0.5184);
+      const schoolRate = taxData?.breakdown?.find(b => b.entity?.toLowerCase().includes('school'))?.rate || (meta.rateNum * 0.6);
+      const muniRate = taxData?.breakdown?.find(b => b.entity?.toLowerCase().includes('muni') || b.entity?.toLowerCase().includes('city') || b.entity?.toLowerCase().includes('town') || b.entity?.toLowerCase().includes('borough'))?.rate || (meta.rateNum * 0.25);
+      const teacherCost = (assessed / 100) * (schoolRate * 0.55);
+      const combinedBen = (assessed / 100) * (meta.rateNum * 0.16);
+      const policeCost = (assessed / 100) * (muniRate * 0.35);
       takeawaysList.innerHTML = `
-        <li><strong>Classroom Instruction:</strong> You pay <strong>${formatUSD(teacherCost)}/year</strong> (${formatUSD(teacherCost/12)}/mo) directly to ${isParsippany ? 'PTHSD' : 'district'} teachers and educational materials.</li>
-        <li><strong>Health & Pensions:</strong> Public employee benefits across schools and ${isParsippany ? 'Township' : 'City'} Hall cost you <strong>${formatUSD(combinedBen)}/year</strong> (${formatUSD(combinedBen/12)}/mo).</li>
+        <li><strong>Classroom Instruction:</strong> You pay <strong>${formatUSD(teacherCost)}/year</strong> (${formatUSD(teacherCost/12)}/mo) directly to ${meta.schoolDistrictShort} teachers and educational materials.</li>
+        <li><strong>Health & Pensions:</strong> Public employee benefits across schools and local government cost you <strong>${formatUSD(combinedBen)}/year</strong> (${formatUSD(combinedBen/12)}/mo).</li>
         <li><strong>Police & Public Safety:</strong> ${meta.name} public safety accounts for <strong>${formatUSD(policeCost)}/year</strong> (${formatUSD(policeCost/12)}/mo).</li>
         <li><strong>Daily Rate:</strong> Living in ${meta.fullName} costs <strong>${formatUSD(dailyTax)} per 24 hours</strong> in municipal, school, and county taxes.</li>
       `;
@@ -4291,13 +4331,12 @@ function renderIntelligenceReports() {
 
   if (copyReceiptBtn) {
     copyReceiptBtn.onclick = () => {
-      const assessed = parseFloat(receiptInput?.value) || (isParsippany ? 348500 : 214000);
-      const rateUsed = isParsippany ? 3.550 : 6.527;
+      const defaultAssessed = meta.sliderDefault || (taxData?.averageAssessment) || 200000;
+      const assessed = parseFloat(receiptInput?.value) || defaultAssessed;
+      const rateUsed = meta.rateNum || taxData?.certifiedTotalRate || 3.0;
       const totalTax = (assessed / 100) * rateUsed;
       let text = `========================================\n`;
-      text += isParsippany
-        ? `  PARSIPPANY-TROY HILLS & PTHSD RECEIPT\n`
-        : `    CITY OF CLIFTON & BOE TAX RECEIPT\n`;
+      text += `    ${meta.fullName.toUpperCase()} TAX RECEIPT\n`;
       text += `========================================\n`;
       text += `ASSESSMENT: ${formatUSD(assessed)}\n`;
       text += `2026 CERTIFIED RATE: ${rateUsed.toFixed(3)}%\n`;
@@ -4311,7 +4350,7 @@ function renderIntelligenceReports() {
       text += `MONTHLY ESCROW:   ${formatUSD(totalTax / 12)} / mo\n`;
       text += `DAILY COST:       ${formatUSD(totalTax / 365)} / day\n`;
       text += `========================================\n`;
-      text += `Source: clifton-tax-watchdog.github.io\n`;
+      text += `Source: https://www.mytownlens.com/?city=${currentCity}\n`;
 
       navigator.clipboard.writeText(text).then(() => {
         const orig = copyReceiptBtn.innerHTML;
@@ -6203,12 +6242,12 @@ function renderFairTaxEngine() {
       const income = inputIncome?.value || defaultIncome;
       const commShare = leverCommercial?.value || '32.0';
       const pilotShare = leverPilot?.value || '50';
-      const cityLabelUpper = isParsippany ? 'PARSIPPANY-TROY HILLS' : 'CLIFTON';
-      const schoolName = isParsippany ? 'Parsippany-Troy Hills School District (PTHSD)' : 'Clifton Public Schools (BOE)';
+      const cityLabelUpper = meta.fullName.toUpperCase();
+      const schoolName = meta.schoolDistrictName;
 
       const summaryText = `${cityLabelUpper} CITIZEN FAIR TAX REFORM SUMMARY
 Date: October 2026
-Source: NJ Municipal Tax Watchdog Project (https://tejas03usa.github.io/clifton-tax-watchdog/?city=${currentCity})
+Source: MyTownLens Citizen Watchdog Project (https://www.mytownlens.com/?city=${currentCity})
 
 HOUSEHOLD PROFILE:
 • Home Market Value: $${Number(marketVal).toLocaleString()}
@@ -7512,13 +7551,29 @@ function renderBallotOverview() {
       office: 'United States Senate (New Jersey)',
       level: 'Federal (Statewide New Jersey)',
       seatsAvailable: 1,
-      candidatesRunning: 2,
+      candidatesRunning: cliftonElectionData.njCandidates?.usSenate?.candidates?.length || 2,
       voteRule: 'Vote for 1',
       termLength: '6 Years (2027–2033)',
       taxShare: 'Federal Grants & Tax Policy (SALT Deduction)',
       description: 'Represents all New Jersey residents in the U.S. Senate in Washington, D.C.',
       badgeColor: '#1d4ed8'
     });
+
+    if (cliftonElectionData.njCandidates?.usHouse) {
+      const house = cliftonElectionData.njCandidates.usHouse;
+      offices.push({
+        id: 'us-house-fed',
+        office: house.office || 'U.S. House of Representatives',
+        level: house.badge || 'Federal (U.S. House)',
+        seatsAvailable: 1,
+        candidatesRunning: house.candidates ? house.candidates.length : 2,
+        voteRule: house.voteRule || 'Vote for 1',
+        termLength: house.term || '2 Years (2027–2029)',
+        taxShare: 'Federal Appropriations & Flood Mitigation',
+        description: house.importance || `Represents ${m} and North Jersey in the U.S. House of Representatives.`,
+        badgeColor: '#2563eb'
+      });
+    }
   }
 
   let html = '';
@@ -7890,7 +7945,7 @@ function renderVotingGuide() {
           </div>
           <div class="voting-fact-item">
             <span class="v-label">Early Voting Site:</span>
-            <span class="v-val"><strong>${escapeHtml(res.earlyVotingLocation || 'Clifton Arts Center / Wellmont Reserve')}</strong></span>
+            <span class="v-val"><strong>${escapeHtml(res.earlyVotingLocation || `${cliftonElectionData.municipality || 'Municipal'} Community / Municipal Center`)}</strong></span>
           </div>
           <div class="voting-link-row" style="margin-top: 14px;">
             <a href="${escapeHtml(res.passaicCountyElections.voterRegistrationLookup)}" target="_blank" rel="noopener" class="external-pill-link">
@@ -7906,7 +7961,7 @@ function renderVotingGuide() {
           <span class="voting-card-icon">📫</span>
           <div>
             <h4>Official 24/7 Mail-In Drop Boxes</h4>
-            <span class="voting-sub">Passaic County Board of Elections</span>
+            <span class="voting-sub">${escapeHtml(cliftonElectionData.county || 'County')} Board of Elections</span>
           </div>
         </div>
         <div class="voting-card-body">
@@ -7947,7 +8002,7 @@ function renderVotingGuide() {
           </div>
           <div class="voting-links-flex" style="margin-top: 16px;">
             <a href="${escapeHtml(res.passaicCountyElections.website)}" target="_blank" rel="noopener" class="external-pill-link">
-              Passaic County Clerk Elections Portal ↗
+              ${escapeHtml(cliftonElectionData.county || 'County')} Clerk Elections Portal ↗
             </a>
             <a href="mailto:${escapeHtml(res.municipalClerk.email)}" class="external-pill-link">
               Contact ${escapeHtml(res.municipalClerk.name)} (${escapeHtml(cliftonElectionData.municipality || 'Municipal')} Clerk) ↗

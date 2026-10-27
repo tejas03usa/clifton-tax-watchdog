@@ -347,26 +347,40 @@
   ],
   "njCandidates": {
     "usSenate": {
-      "office": "United States Senate (New Jersey)",
-      "term": "6-Year Term",
-      "voteRule": "Vote for 1",
+      "office": "United States Senate (New Jersey, Class II)",
+      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "voteRule": "Vote for ONE (1)",
       "importance": "Represents all 9.3 million New Jersey residents in Washington, D.C., voting on federal judicial nominations, infrastructure packages, education grants, and tax policy.",
       "candidates": [
         {
-          "name": "Andy Kim",
+          "name": "Cory Booker",
           "party": "Democrat",
-          "status": "Democratic Nominee",
-          "role": "U.S. Representative (NJ-03) / Former National Security Advisor",
-          "keyPriorities": "Restoring the federal SALT deduction, ethics reform, combating corporate price gouging, and defending public education funding.",
-          "localImpact": "Securing federal clean transit funding for Bergen County commuter rail corridors."
+          "status": "Incumbent U.S. Senator",
+          "role": "U.S. Senator from New Jersey (in office since 2013); former Mayor of Newark.",
+          "keyPriorities": "Full repeal of the $10,000 SALT cap, federal funding for Gateway Tunnel and NJ Transit rail infrastructure, and clean water appropriations.",
+          "localImpact": "Securing federal appropriations and infrastructure investments directly serving North Jersey communities."
         },
         {
-          "name": "Curtis Bashaw",
+          "name": "Justin Murphy",
           "party": "Republican",
           "status": "Republican Nominee",
-          "role": "Small Business Owner & Historic Preservationist",
-          "keyPriorities": "Fiscal restraint, curbing federal spending to control inflation, restoring SALT deductions, and small business regulatory relief.",
-          "localImpact": "Cutting federal regulatory compliance burdens on Bergen County small businesses."
+          "role": "Attorney & Former Municipal Official",
+          "keyPriorities": "Federal fiscal discipline to curb inflation, full SALT deduction restoration, border security, and energy independence.",
+          "localImpact": "Advocating for lower federal regulatory compliance burdens on New Jersey homeowners and small businesses."
+        },
+        {
+          "name": "Veronica Fernandez",
+          "party": "Nomination by Petition (End The Corruption!)",
+          "status": "Independent Challenger",
+          "role": "Civic activist running on anti-corruption platform.",
+          "keyPriorities": "Term limits, campaign finance reform, and working-class tax relief."
+        },
+        {
+          "name": "Joanne Kuniansky",
+          "party": "Nomination by Petition (Socialist Workers Party)",
+          "status": "Third-Party Challenger",
+          "role": "Labor organizer and working-class advocate.",
+          "keyPriorities": "Trade union solidarity, universal healthcare, and wage protections."
         }
       ]
     },

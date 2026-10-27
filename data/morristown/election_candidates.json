@@ -516,51 +516,79 @@
   ],
   "njCandidates": {
     "usSenate": {
-      "office": "United States Senate (New Jersey)",
-      "term": "6-Year Term",
-      "voteRule": "Vote for 1",
-      "importance": "Represents all 9.3 million New Jersey residents in the U.S. Senate, voting on federal judges, infrastructure packages, education grants, and tax policy.",
+      "office": "United States Senate (New Jersey, Class II)",
+      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "voteRule": "Vote for ONE (1)",
+      "importance": "Represents all 9.3 million New Jersey residents in Washington, D.C., voting on federal judicial nominations, infrastructure packages, education grants, and tax policy.",
       "candidates": [
         {
-          "name": "Andy Kim",
+          "name": "Cory Booker",
           "party": "Democrat",
-          "status": "Democratic Nominee",
-          "role": "U.S. Representative (NJ-03) / Former National Security Advisor",
-          "keyPriorities": "Restoring the federal SALT deduction, ethics reform, combating corporate price gouging, and funding public education.",
-          "localImpact": "Securing federal funding for North Jersey commuter rail and Morris County infrastructure."
+          "status": "Incumbent U.S. Senator",
+          "role": "U.S. Senator from New Jersey (in office since 2013); former Mayor of Newark.",
+          "keyPriorities": "Full repeal of the $10,000 SALT cap, federal funding for Gateway Tunnel and NJ Transit rail infrastructure, and clean water appropriations.",
+          "localImpact": "Securing federal appropriations and infrastructure investments directly serving North Jersey communities."
         },
         {
-          "name": "Curtis Bashaw",
+          "name": "Justin Murphy",
           "party": "Republican",
           "status": "Republican Nominee",
-          "role": "Small Business Owner & Historic Preservationist",
-          "keyPriorities": "Fiscal restraint, curbing federal spending to control inflation, restoring SALT deductions, and regulatory relief.",
-          "localImpact": "Cutting federal red tape on suburban small businesses and downtown development."
+          "role": "Attorney & Former Municipal Official",
+          "keyPriorities": "Federal fiscal discipline to curb inflation, full SALT deduction restoration, border security, and energy independence.",
+          "localImpact": "Advocating for lower federal regulatory compliance burdens on New Jersey homeowners and small businesses."
+        },
+        {
+          "name": "Veronica Fernandez",
+          "party": "Nomination by Petition (End The Corruption!)",
+          "status": "Independent Challenger",
+          "role": "Civic activist running on anti-corruption platform.",
+          "keyPriorities": "Term limits, campaign finance reform, and working-class tax relief."
+        },
+        {
+          "name": "Joanne Kuniansky",
+          "party": "Nomination by Petition (Socialist Workers Party)",
+          "status": "Third-Party Challenger",
+          "role": "Labor organizer and working-class advocate.",
+          "keyPriorities": "Trade union solidarity, universal healthcare, and wage protections."
         }
       ]
     },
     "usHouse": {
-      "office": "United States House of Representatives (NJ-11)",
-      "term": "2-Year Term",
-      "voteRule": "Vote for 1",
+      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District — NJ-11)",
+      "term": "2-Year Term (January 3, 2027 – January 3, 2029)",
+      "voteRule": "Vote for ONE (1)",
       "badge": "U.S. Congressional District 11",
-      "importance": "Represents Morristown and Morris County in the U.S. House, shaping transportation grants, healthcare, and federal tax reform.",
+      "importance": "NJ-11 encompasses suburban Morris, Passaic, and Essex County communities, shaping federal transportation grants, school aid, and environmental appropriations.",
       "candidates": [
         {
-          "name": "Mikie Sherrill",
+          "name": "Analilia Mejia",
           "party": "Democrat",
-          "status": "Incumbent",
-          "role": "U.S. Representative (NJ-11) / Former Navy Pilot & Federal Prosecutor",
-          "keyPriorities": "Securing federal grants for Route 24 and I-287 corridors, defending public school funding, and restoring the SALT deduction.",
-          "localImpact": "Delivering direct federal community grants for Morristown infrastructure and green spaces."
+          "status": "Incumbent Representative",
+          "role": "U.S. Representative (NJ-11); veteran grassroots organizer and policy advisor.",
+          "keyPriorities": "Full federal SALT tax deduction restoration, expanding child tax credits, protecting public school funding, and federal flood control grants.",
+          "localImpact": "Advocates for federal infrastructure funds to support North Jersey transit corridors and environmental resilience."
         },
         {
-          "name": "Joseph Belnome",
+          "name": "Joe Hathaway",
           "party": "Republican",
-          "status": "Challenger",
-          "role": "Building Inspector & Conservative Nominee",
-          "keyPriorities": "Controlling federal spending, cutting energy taxes, and supporting law enforcement.",
-          "localImpact": "Advocating for reduced federal spending to lower mortgage rates and suburban cost of living."
+          "status": "Republican Nominee",
+          "role": "Randolph Councilman and former Mayor; small business owner and community leader.",
+          "keyPriorities": "Federal fiscal restraint, curbing inflation, full SALT relief for suburban homeowners, support for law enforcement, and business tax cuts.",
+          "localImpact": "Pledges to cut federal red tape on highway and municipal infrastructure projects."
+        },
+        {
+          "name": "Alan Bond",
+          "party": "Nomination by Petition (Hope for Tomorrow)",
+          "status": "Independent Challenger",
+          "role": "Independent reform candidate.",
+          "keyPriorities": "Bipartisan consensus, federal budget balancing, and government accountability."
+        },
+        {
+          "name": "Vincent Matrisciano",
+          "party": "Nomination by Petition (Unaffiliated)",
+          "status": "Independent Challenger",
+          "role": "Independent civic candidate.",
+          "keyPriorities": "Middle-class tax relief and economic accountability."
         }
       ]
     },
