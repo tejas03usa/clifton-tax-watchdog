@@ -4,21 +4,21 @@
   "state": "New Jersey",
   "electionDate": "Tuesday, November 3, 2026",
   "electionType": "Glen Rock Borough Council & Board of Education General Election",
-  "votingHours": "6:00 AM – 8:00 PM EST",
+  "votingHours": "6:00 AM \u2013 8:00 PM EST",
   "councilStructure": "Borough of Glen Rock operates under the Borough form of government. 6 Borough Council members are elected at-large for staggered 3-year terms (2 elected each year), with a Mayor elected quadrennially. In 2026, Glen Rock voters elect 2 Borough Council members, alongside 3 School Board trustees.",
   "totalCouncilCandidates": 4,
   "totalCouncilSeats": 2,
   "certifiedTaxRateContext": "3.407% Total Certified Tax Rate (2026). Equalization Ratio 71.50%.",
   "unanimousHealthBenefitPledge": "Borough Council and BOE trustees adhere to state Chapter 78 healthcare contribution statutes and strict Local Government Ethics disclosures.",
   "votingResources": {
-    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingPeriod": "Saturday, Oct 24 \u2013 Sunday, Nov 1, 2026 (Mon\u2013Sat 10 AM\u20138 PM, Sun 10 AM\u20136 PM; closed Mon, Nov 2)",
     "earlyVotingLocation": "Anne Zusy Youth Center / Glen Rock Municipal Building, 1 Harding Plaza, Glen Rock, NJ 07452",
-    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
     "mailInDropboxes": [
       {
         "name": "Glen Rock Borough Hall",
         "address": "1 Harding Plaza, Glen Rock, NJ 07452",
-        "notes": "Located near main entrance adjacent to campus walkway • Open 24/7 until 8:00 PM Election Night"
+        "notes": "Located near main entrance adjacent to campus walkway \u2022 Open 24/7 until 8:00 PM Election Night"
       }
     ],
     "municipalClerk": {
@@ -29,7 +29,7 @@
       "email": "clerk@glenrocknj.net"
     },
     "passaicCountyElections": {
-      "superintendent": "Bergen County Clerk Elections Division: (201) 336-7020 • Bergen County Board of Elections: (201) 336-6230",
+      "superintendent": "Bergen County Clerk Elections Division: (201) 336-7020 \u2022 Bergen County Board of Elections: (201) 336-6230",
       "phone": "(201) 336-7020",
       "website": "https://www.bergencountyclerk.gov/Services/2",
       "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
@@ -39,37 +39,37 @@
     {
       "id": "taxes",
       "name": "Property Taxes & Cap Discipline",
-      "icon": "💰",
+      "icon": "\ud83d\udcb0",
       "shortDesc": "Managing the 2% state cap, self-sustaining municipal utilities, and debt amortization"
     },
     {
       "id": "infrastructure",
       "name": "Stormwater & Diamond Brook",
-      "icon": "🏗️",
+      "icon": "\ud83c\udfd7\ufe0f",
       "shortDesc": "Diamond Brook flood resilience, road resurfacing program, and park modernizations"
     },
     {
       "id": "governance",
       "name": "Civic Transparency & Ethics",
-      "icon": "⚖️",
+      "icon": "\u2696\ufe0f",
       "shortDesc": "Open public comment, competitive professional contracting, and public committee reports"
     },
     {
       "id": "housing",
       "name": "Downtown Rock Road Zoning",
-      "icon": "🏡",
+      "icon": "\ud83c\udfe1",
       "shortDesc": "Preserving suburban small-town character while enhancing downtown commuter walkability"
     },
     {
       "id": "safety",
       "name": "Pedestrian Safety & GRPD",
-      "icon": "🚓",
+      "icon": "\ud83d\ude93",
       "shortDesc": "Safe routes to school, rail crossing alerts, and police school resource officer coverage"
     },
     {
       "id": "education",
       "name": "Top-Ranked School System",
-      "icon": "🏫",
+      "icon": "\ud83c\udfeb",
       "shortDesc": "Glen Rock Public Schools ($61.8M budget), small elementary class sizes, and STEM labs"
     }
   ],
@@ -78,9 +78,9 @@
       "ballotNumber": 1,
       "id": "teresa-gilbreath",
       "name": "Teresa Gilbreath",
-      "status": "Incumbent",
-      "role": "Borough Council President & Finance Committee Chair",
-      "experience": "Incumbent Council President with extensive corporate legal background; led municipal budget reviews and shared services negotiations.",
+      "status": "Honored Public Servant (In Memoriam 1959\u20132026)",
+      "role": "Former Borough Council President (Served 2019\u20132026)",
+      "experience": "Served two terms with distinction on the Glen Rock Borough Council from 2019 until her passing in April 2026; served as Council President, Finance Committee Chair, and co-founder of the Glen Rock Neighborhood Network.",
       "initials": "TG",
       "party": "Democratic",
       "tagline": "Fiscally responsible borough administration, downtown revitalizations, and proactive stormwater investment.",
@@ -118,15 +118,27 @@
           "housingEnforcement": "corridor_grants",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Borough of Glen Rock Municipal Clerk Council Records & Memorial Resolution",
+          "doc": "Official resolution and borough archives documenting 6 years of service (2019\u20132026) and Council Presidency",
+          "url": "https://www.glenrocknj.net"
+        },
+        {
+          "title": "Bergen County Clerk Certified Election Archives (2018 & 2021 General Elections)",
+          "doc": "Certified Bergen County canvass sheets and election return certificates",
+          "url": "https://www.bergencountyclerk.gov"
+        }
+      ]
     },
     {
       "ballotNumber": 2,
       "id": "amy-martin",
       "name": "Amy Martin",
       "status": "Incumbent",
-      "role": "Borough Councilwoman & Public Safety Liaison",
-      "experience": "Incumbent Borough Councilwoman; elected in November 2023 for a 3-year term (January 2024 – December 2026); healthcare administrator and active liaison to Glen Rock Police and Volunteer Fire.",
+      "role": "Borough Council President & Public Works Chair",
+      "experience": "Incumbent Borough Council President; elected in November 2023 for a 3-year term (January 2024 \u2013 December 2026); healthcare administrator and active liaison to Glen Rock DPW, Police, and Volunteer Fire.",
       "initials": "AM",
       "party": "Democratic",
       "tagline": "Pedestrian crosswalk safety, volunteer emergency services support, and sustainable green community programs.",
@@ -164,15 +176,27 @@
           "housingEnforcement": "corridor_grants",
           "sharedServices": "classroom_focus"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Borough of Glen Rock Official Governing Body Directory",
+          "doc": "Glen Rock Borough Council Roster, Reorganization Minutes, and Council Presidency Certification",
+          "url": "https://www.glenrocknj.net"
+        },
+        {
+          "title": "Bergen County Clerk Certified Election Returns (November 2023 General Election)",
+          "doc": "Certified municipal election returns for 3-year term ending December 31, 2026",
+          "url": "https://www.bergencountyclerk.gov"
+        }
+      ]
     },
     {
       "ballotNumber": 3,
       "id": "robert-saydah",
       "name": "Robert E. Saydah",
       "status": "Challenger",
-      "role": "Corporate Financial Executive & Civic Volunteer",
-      "experience": "Longtime Glen Rock resident with senior corporate executive and capital budgeting credentials.",
+      "role": "Accounting Executive & Civic Leader",
+      "experience": "Managing Partner at Malesardi, Quackenbush, Swift & Co.; past President of the Ridgewood AM Rotary Club; longtime Glen Rock volunteer and municipal budget watchdog.",
       "initials": "RS",
       "party": "Republican",
       "tagline": "Line-item fiscal auditing, tax relief for homeowners, and defending suburban zoning.",
@@ -210,7 +234,19 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Bergen County Clerk Certified Candidate Filings (Glen Rock Borough)",
+          "doc": "Official nominating petitions and certified candidate lists",
+          "url": "https://www.bergencountyclerk.gov"
+        },
+        {
+          "title": "Ridgewood AM Rotary & Professional Executive Profile",
+          "doc": "Managing partner Malesardi Quackenbush Swift & Co. and Rotary club presidency records",
+          "url": "https://ridgewoodamrotary.org"
+        }
+      ]
     },
     {
       "ballotNumber": 4,
@@ -255,7 +291,19 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Bergen County Clerk Certified Candidate Filings (Glen Rock Borough)",
+          "doc": "Official nominating petitions and certified candidate lists",
+          "url": "https://www.bergencountyclerk.gov"
+        },
+        {
+          "title": "State of New Jersey ELEC Campaign Financial Disclosures",
+          "doc": "New Jersey Election Law Enforcement Commission filings",
+          "url": "https://www.elec.nj.gov"
+        }
+      ]
     }
   ],
   "boeCandidates": [
@@ -265,8 +313,8 @@
       "seatType": "Full Term",
       "status": "Incumbent Trustee",
       "ballotSlogan": "Glen Rock United for Education",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Incumbent BOE Trustee; elected November 2023 for a 3-year term (January 2024 – December 2026); corporate strategist and active parent volunteer.",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
+      "experience": "Incumbent BOE Trustee; elected November 2023 for a 3-year term (January 2024 \u2013 December 2026); corporate strategist and active parent volunteer.",
       "keyFocus": "Academic excellence, STEM curriculum integration, and student mental wellness support.",
       "fiscalStance": "Prudent stewardship of the $61.8M school budget; ensuring dollars go directly into classroom teachers and technology.",
       "infrastructureStance": "Continuing facility modernizations, HVAC improvements, and campus security enhancements across all 6 schools.",
@@ -282,8 +330,8 @@
       "seatType": "Full Term",
       "status": "Incumbent Trustee",
       "ballotSlogan": "Glen Rock United for Education",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Incumbent BOE Trustee; elected November 2023 for a 3-year term (January 2024 – December 2026); marketing executive and former Home & School Association (HSA) leader.",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
+      "experience": "Incumbent BOE Trustee; elected November 2023 for a 3-year term (January 2024 \u2013 December 2026); marketing executive and former Home & School Association (HSA) leader.",
       "keyFocus": "Special education advocacy, early reading literacy, and transparent board-community communication.",
       "fiscalStance": "Advocating for state education funding reform while protecting instructional programs under the 2% cap.",
       "infrastructureStance": "Supporting sustainable school retrofits, clean indoor air quality, and athletic facility upkeep.",
@@ -299,7 +347,7 @@
       "seatType": "Full Term",
       "status": "Challenger / Education Leader",
       "ballotSlogan": "Glen Rock United for Education",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
       "experience": "Veteran educator, university administrator, long-time Glen Rock community mentor.",
       "keyFocus": "College and career readiness, teacher retention, and Advanced Placement (AP) course expansion.",
       "fiscalStance": "Focusing budget allocations on competitive educator compensation and classroom learning tools.",
@@ -316,7 +364,7 @@
       "seatType": "Full Term",
       "status": "Challenger",
       "ballotSlogan": "Excellence & Taxpayer Accountability",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
       "experience": "Finance professional, certified public accountant, Glen Rock parent.",
       "keyFocus": "Line-item fiscal analysis, zero-waste budgeting, and expanding math enrichment.",
       "fiscalStance": "Demands independent audit reviews of administrative software and outside legal/consulting fees.",
@@ -333,7 +381,7 @@
       "seatType": "Full Term",
       "status": "Challenger",
       "ballotSlogan": "Students First Glen Rock",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
       "experience": "Technology director, robotics mentor, parent advocate.",
       "keyFocus": "AI literacy, computer science electives, and robotics programs across middle and high schools.",
       "fiscalStance": "Streamlining district IT infrastructure to eliminate recurring legacy software costs.",
@@ -348,7 +396,7 @@
   "njCandidates": {
     "usSenate": {
       "office": "United States Senate (New Jersey, Class II)",
-      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "term": "6-Year Term (January 3, 2027 \u2013 January 3, 2033)",
       "voteRule": "Vote for ONE (1)",
       "importance": "Represents all 9.3 million New Jersey residents in Washington, D.C., voting on federal judicial nominations, infrastructure packages, education grants, and tax policy.",
       "candidates": [
@@ -437,5 +485,22 @@
         }
       ]
     }
-  }
+  },
+  "verifiedSources": [
+    {
+      "title": "Bergen County Clerk Official Candidate Certifications & Election Results",
+      "doc": "Certified Election Results & Candidate Filings for Glen Rock Borough",
+      "url": "https://www.bergencountyclerk.gov"
+    },
+    {
+      "title": "Borough of Glen Rock Official Mayor & Council Directory",
+      "doc": "Borough of Glen Rock Governing Body Roster, Committee Assignments, and Official Minutes",
+      "url": "https://www.glenrocknj.net"
+    },
+    {
+      "title": "Glen Rock Public Schools Board of Education Official Directory",
+      "doc": "Glen Rock Board of Education Trustee Profiles and Committee Assignments",
+      "url": "https://www.glenrocknj.org"
+    }
+  ]
 }

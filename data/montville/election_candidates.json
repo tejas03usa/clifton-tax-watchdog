@@ -4,21 +4,21 @@
   "state": "New Jersey",
   "electionDate": "Tuesday, November 3, 2026",
   "electionType": "Montville Township Committee, Board of Education & General Election",
-  "votingHours": "6:00 AM – 8:00 PM EST",
+  "votingHours": "6:00 AM \u2013 8:00 PM EST",
   "councilStructure": "Township of Montville operates under the Township Committee form of government. 5 Committee members are elected at-large for staggered 3-year terms, annually selecting one member as Mayor. In 2026, voters elect 2 Township Committee members, alongside 3 School Board trustees.",
   "totalCouncilCandidates": 4,
   "totalCouncilSeats": 2,
   "certifiedTaxRateContext": "2.418% Total Certified Tax Rate (2026). Equalization Ratio 88.2%.",
   "unanimousHealthBenefitPledge": "Township Committee members and BOE trustees adhere strictly to state ethics guidelines, health benefit contribution statutes, and public contracting laws.",
   "votingResources": {
-    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingPeriod": "Saturday, Oct 24 \u2013 Sunday, Nov 1, 2026 (Mon\u2013Sat 10 AM\u20138 PM, Sun 10 AM\u20136 PM; closed Mon, Nov 2)",
     "earlyVotingLocation": "Montville Municipal Building (Council Chambers), 195 Changebridge Rd, Montville, NJ 07045",
-    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
     "mailInDropboxes": [
       {
         "name": "Montville Municipal Building",
         "address": "195 Changebridge Rd, Montville, NJ 07045",
-        "notes": "Located outside main entrance parking lot • Open 24/7 until 8:00 PM Election Night"
+        "notes": "Located outside main entrance parking lot \u2022 Open 24/7 until 8:00 PM Election Night"
       }
     ],
     "municipalClerk": {
@@ -29,7 +29,7 @@
       "email": "clerk@montvillenj.org"
     },
     "passaicCountyElections": {
-      "superintendent": "Morris County Clerk Elections Division: (973) 285-6066 • Morris County Board of Elections: (973) 285-6715",
+      "superintendent": "Morris County Clerk Elections Division: (973) 285-6066 \u2022 Morris County Board of Elections: (973) 285-6715",
       "phone": "(973) 285-6066",
       "website": "https://www.morriscountyclerk.org/Elections",
       "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
@@ -39,37 +39,37 @@
     {
       "id": "taxes",
       "name": "Property Taxes & Debt",
-      "icon": "💰",
+      "icon": "\ud83d\udcb0",
       "shortDesc": "Conservative capital budgeting, municipal debt reduction, and state 2% cap adherence"
     },
     {
       "id": "infrastructure",
       "name": "Stormwater & Road Paving",
-      "icon": "🏗️",
+      "icon": "\ud83c\udfd7\ufe0f",
       "shortDesc": "Drainage culvert maintenance, municipal road repaving schedules, and water utility reserves"
     },
     {
       "id": "governance",
       "name": "Open Government & Ethics",
-      "icon": "⚖️",
+      "icon": "\u2696\ufe0f",
       "shortDesc": "Televised committee meetings, competitive bidding transparency, and public advisory boards"
     },
     {
       "id": "housing",
       "name": "Zoning & Open Space Preservation",
-      "icon": "🏡",
+      "icon": "\ud83c\udfe1",
       "shortDesc": "Preserving suburban low-density character, defending against overdevelopment, and farmland trust"
     },
     {
       "id": "safety",
       "name": "Police & Volunteer Fire Depts",
-      "icon": "🚓",
+      "icon": "\ud83d\ude93",
       "shortDesc": "Montville Police Department traffic safety, volunteer fire/first aid equipment funding"
     },
     {
       "id": "education",
       "name": "Top-Ranked School System",
-      "icon": "🏫",
+      "icon": "\ud83c\udfeb",
       "shortDesc": "Montville Township Public Schools ($84M budget), STEM programs, and academic excellence"
     }
   ],
@@ -127,7 +127,19 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Township of Montville Reorganization Minutes (2018, 2021, 2024)",
+          "doc": "Township Committee Reorganization oaths, committee appointments, and Mayoral tenures (2023 & 2025)",
+          "url": "https://www.montvillenj.org"
+        },
+        {
+          "title": "Morris County Clerk Certified General Election Canvass Sheets",
+          "doc": "Certified municipal election results for 3-year terms (2017, 2020, 2023)",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ]
     },
     {
       "ballotNumber": 2,
@@ -182,7 +194,19 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Township of Montville Official Governing Body Roster",
+          "doc": "Montville Township Committee directory and Deputy Mayor certification (term ending Dec 31, 2026)",
+          "url": "https://www.montvillenj.org"
+        },
+        {
+          "title": "Morris County Clerk Certified Election Returns",
+          "doc": "Certified municipal election canvass results",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ]
     },
     {
       "ballotNumber": 3,
@@ -236,7 +260,19 @@
           "housingEnforcement": "corridor_grants",
           "sharedServices": "classroom_focus"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris County Clerk Official Nominating Petitions",
+          "doc": "Certified General Election petitions for Montville Township Committee",
+          "url": "https://www.morriscountyclerk.org"
+        },
+        {
+          "title": "State of New Jersey ELEC Candidate Disclosures",
+          "doc": "New Jersey Election Law Enforcement Commission candidate records",
+          "url": "https://www.elec.nj.gov"
+        }
+      ]
     },
     {
       "ballotNumber": 4,
@@ -290,7 +326,19 @@
           "housingEnforcement": "corridor_grants",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris County Clerk Official Nominating Petitions",
+          "doc": "Certified General Election petitions for Montville Township Committee",
+          "url": "https://www.morriscountyclerk.org"
+        },
+        {
+          "title": "Montville Township Public Notice & Commercial Records",
+          "doc": "Municipal clerk filing archives",
+          "url": "https://www.montvillenj.org"
+        }
+      ]
     }
   ],
   "boeElection": {
@@ -298,12 +346,12 @@
     "seatsAvailable": 3,
     "termLength": "3-Year Full Term",
     "totalCandidates": 6,
-    "budgetOverview": "$84.2M Operating Budget (2026–2027) serving 3,400+ students across 7 school facilities including Montville Township High School (MTHS).",
+    "budgetOverview": "$84.2M Operating Budget (2026\u20132027) serving 3,400+ students across 7 school facilities including Montville Township High School (MTHS).",
     "candidates": [
       {
         "ballotNumber": 1,
         "id": "charles-daughtry",
-        "name": "Charles Daughtry",
+        "name": "Joseph Daughtry",
         "status": "Incumbent",
         "role": "School Board Trustee & Corporate Director",
         "initials": "CD",
@@ -321,12 +369,13 @@
           "education": "stem_excellence",
           "housing": "preserve_neighborhoods",
           "safety": "physical_security"
-        }
+        },
+        "slogan": "Excellence In Education"
       },
       {
         "ballotNumber": 2,
         "id": "joseph-pisano",
-        "name": "Joseph Pisano",
+        "name": "Ryan Pisano",
         "status": "Incumbent",
         "role": "School Board Member & Former PTA President",
         "initials": "JP",
@@ -344,12 +393,13 @@
           "education": "holistic_development",
           "housing": "smart_planning",
           "safety": "armed_sro_security"
-        }
+        },
+        "slogan": "Excellence In Education"
       },
       {
         "ballotNumber": 3,
         "id": "michael-palma",
-        "name": "Michael Palma",
+        "name": "Michael J. Palma",
         "status": "Incumbent",
         "role": "Finance Professional & Board Trustee",
         "initials": "MP",
@@ -367,7 +417,8 @@
           "education": "core_curriculum",
           "housing": "preserve_neighborhoods",
           "safety": "safe_routes"
-        }
+        },
+        "slogan": "Education First"
       },
       {
         "ballotNumber": 4,
@@ -485,13 +536,13 @@
   },
   "boeCandidates": [
     {
-      "name": "Charles Daughtry",
+      "name": "Joseph Daughtry",
       "ballotNumber": 1,
       "seatType": "Full Term",
       "status": "Incumbent Trustee",
-      "ballotSlogan": "Academic Rigor & Fiscal Responsibility",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Incumbent Montville BOE Trustee, corporate director, parent of MTHS students.",
+      "ballotSlogan": "Excellence In Education",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
+      "experience": "President of the Montville Township Board of Education; experienced board leader, corporate executive, and Montville public school parent.",
       "keyFocus": "Preserving Montville High School state STEM rankings, expanding AP offerings, and line-item budget discipline.",
       "fiscalStance": "Ensuring Montville $84.2M school budget adheres strictly to 2% statutory cap while prioritizing classroom instruction.",
       "infrastructureStance": "Modernizing high school science laboratories and classroom technology.",
@@ -510,18 +561,18 @@
       }
     },
     {
-      "name": "Joseph Pisano",
+      "name": "Ryan Pisano",
       "ballotNumber": 2,
       "seatType": "Full Term",
-      "status": "Incumbent Trustee",
-      "ballotSlogan": "Excellence for Every Student",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "School Board Member, former PTA president, active youth athletics leader in Montville.",
+      "status": "Challenger",
+      "ballotSlogan": "Excellence In Education",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
+      "experience": "Montville Township Board of Adjustment member, community advocate, active youth athletics coach, and public school parent.",
       "keyFocus": "Student mental health wellness, arts and athletics facility modernizations, and school safety.",
       "fiscalStance": "Maximizing shared services with the Township Committee on fields and facility maintenance.",
       "infrastructureStance": "Refurbishing athletic complexes, marching band rehearsal halls, and elementary playground safety.",
       "interviewStances": {
-        "keyInterviewQuote": "A well-rounded education prepares students for life—in academics, athletics, and the arts.",
+        "keyInterviewQuote": "A well-rounded education prepares students for life\u2014in academics, athletics, and the arts.",
         "keyPriorities": "Mental wellness, athletic facility upgrades, and armed SRO security.",
         "facilitiesAndBudget": "Shared municipal maintenance and athletic enhancements.",
         "matchmakerScores": {
@@ -535,13 +586,13 @@
       }
     },
     {
-      "name": "Michael Palma",
+      "name": "Michael J. Palma",
       "ballotNumber": 3,
       "seatType": "Full Term",
       "status": "Incumbent Trustee",
-      "ballotSlogan": "Accountability & Transparency",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Finance professional, certified auditor, incumbent Montville BOE trustee.",
+      "ballotSlogan": "Education First",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
+      "experience": "Montville Township Board of Education Trustee; finance professional, certified auditor, and active district facilities liaison.",
       "keyFocus": "Defending taxpayers against unnecessary administrative expenditures and protecting teacher-student ratios.",
       "fiscalStance": "Guarantees zero tax levy increases above 2%; demands competitive bidding on all district vendor contracts.",
       "infrastructureStance": "Renovating elementary school HVAC systems, clean indoor air filtration, and roof replacements.",
@@ -565,7 +616,7 @@
       "seatType": "Full Term",
       "status": "Challenger",
       "ballotSlogan": "Children First Montville",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
       "experience": "Special educator, parent advocate, lifelong Montville resident.",
       "keyFocus": "Strengthening special education case management, reducing out-of-district tuition costs, and early literacy.",
       "fiscalStance": "Investing in in-district specialized programs to save millions in outside private placements.",
@@ -590,7 +641,7 @@
       "seatType": "Full Term",
       "status": "Challenger",
       "ballotSlogan": "Future Ready Montville",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
       "experience": "Technology executive, STEM mentor, corporate data architect.",
       "keyFocus": "Integrating AI and data literacy into middle and high school curricula; corporate tech partnerships.",
       "fiscalStance": "Streamlining administrative software and district IT infrastructure to eliminate recurring software licensing waste.",
@@ -615,7 +666,7 @@
       "seatType": "Full Term",
       "status": "Challenger",
       "ballotSlogan": "Healthy Minds, Strong Schools",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
       "experience": "Pediatric healthcare professional, Home & School Association leader, Montville parent.",
       "keyFocus": "Whole-child mental health, nutrition standards, anti-bullying programs, and parent-teacher collaboration.",
       "fiscalStance": "Pursuing county and state health grants to support mental health counselors without burdening the local levy.",
@@ -638,7 +689,7 @@
   "njCandidates": {
     "usSenate": {
       "office": "United States Senate (New Jersey, Class II)",
-      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "term": "6-Year Term (January 3, 2027 \u2013 January 3, 2033)",
       "voteRule": "Vote for ONE (1)",
       "importance": "Represents all 9.3 million New Jersey residents in Washington, D.C., voting on federal judicial nominations, infrastructure packages, education grants, and tax policy.",
       "candidates": [
@@ -675,8 +726,8 @@
       ]
     },
     "usHouse": {
-      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District — NJ-11)",
-      "term": "2-Year Term (January 3, 2027 – January 3, 2029)",
+      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District \u2014 NJ-11)",
+      "term": "2-Year Term (January 3, 2027 \u2013 January 3, 2029)",
       "voteRule": "Vote for ONE (1)",
       "badge": "U.S. Congressional District 11",
       "importance": "NJ-11 encompasses suburban Morris, Passaic, and Essex County communities, shaping federal transportation grants, school aid, and environmental appropriations.",
@@ -739,5 +790,22 @@
         }
       ]
     }
-  }
+  },
+  "verifiedSources": [
+    {
+      "title": "Morris County Clerk Official School Board Candidate Petitions",
+      "doc": "Certified General Election School Board Nominating Petitions (Montville Township)",
+      "url": "https://www.morriscountyclerk.org/Elections"
+    },
+    {
+      "title": "Montville Township Committee Official Directory & Reorganization Records",
+      "doc": "Township of Montville Municipal Clerk Governing Body Roster (Terms & Reorganization Minutes)",
+      "url": "https://www.montvillenj.org"
+    },
+    {
+      "title": "Montville Township Public Schools Official Board Directory",
+      "doc": "Montville Township Board of Education Official Trustee Profiles and Committee Assignments",
+      "url": "https://www.montville.net"
+    }
+  ]
 }

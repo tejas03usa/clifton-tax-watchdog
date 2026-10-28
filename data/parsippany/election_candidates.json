@@ -4,26 +4,26 @@
   "state": "New Jersey",
   "electionDate": "Tuesday, November 3, 2026",
   "electionType": "Parsippany-Troy Hills Board of Education & Morris County General Election",
-  "votingHours": "6:00 AM – 8:00 PM EST",
+  "votingHours": "6:00 AM \u2013 8:00 PM EST",
   "councilStructure": "Township of Parsippany-Troy Hills (Mayor-Council Faulkner Act). 5-member Township Council. In 2026, Parsippany voters elect 3 School Board Trustees (7 running) and Morris County Commissioner, alongside Congressional and U.S. Senate representation.",
   "totalCouncilCandidates": 7,
   "totalCouncilSeats": 3,
   "certifiedTaxRateContext": "3.550% Total Certified Tax Rate (2026). 6 Independent Fire Districts. 66.6% Equalization Ratio.",
   "unanimousHealthBenefitPledge": "All school board and local candidates pledge transparent oversight over the $187.5M school budget and 30-year Route 10 PILOT tax shifts.",
   "votingResources": {
-    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingPeriod": "Saturday, Oct 24 \u2013 Sunday, Nov 1, 2026 (Mon\u2013Sat 10 AM\u20138 PM, Sun 10 AM\u20136 PM; closed Mon, Nov 2)",
     "earlyVotingLocation": "Parsippany-Troy Hills Municipal Building, 1001 Parsippany Blvd, Parsippany, NJ 07054 (Council Chambers)",
-    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
     "mailInDropboxes": [
       {
         "name": "Parsippany Municipal Building",
         "address": "1001 Parsippany Blvd, Parsippany, NJ 07054",
-        "notes": "Located outside Police / Municipal entrance • Open 24/7 until 8:00 PM Election Night"
+        "notes": "Located outside Police / Municipal entrance \u2022 Open 24/7 until 8:00 PM Election Night"
       },
       {
         "name": "Parsippany Main Public Library",
         "address": "449 Halsey Rd, Parsippany, NJ 07054",
-        "notes": "Located near front entrance parking lot • Open 24/7 until 8:00 PM Election Night"
+        "notes": "Located near front entrance parking lot \u2022 Open 24/7 until 8:00 PM Election Night"
       }
     ],
     "municipalClerk": {
@@ -34,7 +34,7 @@
       "email": "kmadin@parsippany.net"
     },
     "passaicCountyElections": {
-      "superintendent": "Morris County Clerk Elections Division: (973) 285-6066 • Morris County Board of Elections: (973) 285-6715",
+      "superintendent": "Morris County Clerk Elections Division: (973) 285-6066 \u2022 Morris County Board of Elections: (973) 285-6715",
       "phone": "(973) 285-6066",
       "website": "https://www.morriscountyclerk.org/Elections",
       "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
@@ -44,37 +44,37 @@
     {
       "id": "taxes",
       "name": "Property Taxes & PILOTs",
-      "icon": "💰",
+      "icon": "\ud83d\udcb0",
       "shortDesc": "Route 10 PILOT revenue sharing for schools, corporate office tax appeal defense, and budget caps"
     },
     {
       "id": "infrastructure",
       "name": "PFAS Water & Facilities",
-      "icon": "💧",
+      "icon": "\ud83d\udca7",
       "shortDesc": "Township municipal water PFAS filtration, HVAC upgrades across 14 schools, and stormwater drainage"
     },
     {
       "id": "governance",
       "name": "Transparency & Decorum",
-      "icon": "⚖️",
+      "icon": "\u2696\ufe0f",
       "shortDesc": "Board decorum, televised committee work sessions, and independent legal billing oversight"
     },
     {
       "id": "housing",
       "name": "Zoning & Corporate Office Parks",
-      "icon": "🏢",
+      "icon": "\ud83c\udfe2",
       "shortDesc": "Campus Drive & Lanidex multi-family conversions, traffic congestion, and protecting single-family zoning"
     },
     {
       "id": "safety",
       "name": "Public Safety & Traffic",
-      "icon": "🚓",
+      "icon": "\ud83d\ude93",
       "shortDesc": "Parsippany Police patrol staffing, school resource officers (Class III), and Beverwyck Road safety"
     },
     {
       "id": "education",
       "name": "Classroom Education & Special Ed",
-      "icon": "🏫",
+      "icon": "\ud83c\udfeb",
       "shortDesc": "7,120 PTHSD students ($187.5M budget), special education funding, and academic proficiency"
     }
   ],
@@ -122,7 +122,7 @@
         "disclosuresAndFDS": "Annual School Ethics Commission (SEC) financial disclosure filing; no private commercial conflicts.",
         "hasDocumentedControversies": false,
         "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Public Record — No ethics sanctions, lawsuits, or regulatory violations on record.",
+        "cleanRecordVerification": "Verified Clean Public Record \u2014 No ethics sanctions, lawsuits, or regulatory violations on record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Maintains statutory recusals on teacher collective bargaining agreements where applicable under NJ School Ethics Act."
       },
@@ -131,6 +131,11 @@
           "title": "Morris County Clerk Certified Candidate Filings",
           "doc": "Official 2026 Parsippany School Board Candidate List",
           "url": "https://www.morriscountyclerk.org"
+        },
+        {
+          "title": "Parsippany-Troy Hills School District Official Board of Education Directory",
+          "doc": "PTHSD Board of Education Trustee Profiles, Committee Assignments, and Term Expirations",
+          "url": "https://www.pthsd.k12.nj.us"
         }
       ],
       "historicExperience": {
@@ -138,7 +143,7 @@
         "yearsInPublicService": "10+ Years",
         "careerTimeline": [
           {
-            "period": "2024–Present",
+            "period": "2024\u2013Present",
             "role": "School Board Trustee",
             "organization": "Parsippany-Troy Hills BOE",
             "details": "Elected in November 2023, took office January 2024. Oversees curriculum, policy, and budget committees for the .5M district."
@@ -147,7 +152,7 @@
         "publicOfficesHeld": [
           {
             "office": "Parsippany-Troy Hills Board of Education",
-            "tenure": "2024–Present (Serving Term 2024–2026)",
+            "tenure": "2024\u2013Present (Serving Term 2024\u20132026)",
             "role": "Elected Trustee"
           }
         ],
@@ -223,7 +228,7 @@
         "disclosuresAndFDS": "Filed required NJ School Ethics Commission disclosures.",
         "hasDocumentedControversies": false,
         "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Public Record — No legal judgments or ethics citations on file.",
+        "cleanRecordVerification": "Verified Clean Public Record \u2014 No legal judgments or ethics citations on file.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Standard educational ethics compliance."
       },
@@ -232,6 +237,11 @@
           "title": "Morris County Clerk Candidate Certification",
           "doc": "Parsippany-Troy Hills School Board Filings",
           "url": "https://www.morriscountyclerk.org"
+        },
+        {
+          "title": "Parsippany-Troy Hills School District Official Board of Education Directory",
+          "doc": "PTHSD Board of Education Trustee Profiles, Committee Assignments, and Term Expirations",
+          "url": "https://www.pthsd.k12.nj.us"
         }
       ],
       "historicExperience": {
@@ -239,7 +249,7 @@
         "yearsInPublicService": "5+ Years",
         "careerTimeline": [
           {
-            "period": "2025–Present",
+            "period": "2025\u2013Present",
             "role": "Trustee",
             "organization": "Parsippany-Troy Hills BOE",
             "details": "Appointed August 2025 to fill board vacancy through 2026; serves on policy, student services, and personnel committees."
@@ -248,7 +258,7 @@
         "publicOfficesHeld": [
           {
             "office": "Parsippany-Troy Hills Board of Education",
-            "tenure": "2025–Present (Appointed Vacancy)",
+            "tenure": "2025\u2013Present (Appointed Vacancy)",
             "role": "Trustee"
           }
         ],
@@ -324,7 +334,7 @@
         "disclosuresAndFDS": "Discloses technology corporate employment; clean regulatory and ethics filings.",
         "hasDocumentedControversies": false,
         "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Public Record — No legal findings or SEC citations on record.",
+        "cleanRecordVerification": "Verified Clean Public Record \u2014 No legal findings or SEC citations on record.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Firewall on technology procurement contracts."
       },
@@ -333,6 +343,11 @@
           "title": "Morris County Clerk Election Certification",
           "doc": "Parsippany-Troy Hills BOE Ballot Petitions",
           "url": "https://www.morriscountyclerk.org"
+        },
+        {
+          "title": "Parsippany-Troy Hills School District Official Board of Education Directory",
+          "doc": "PTHSD Board of Education Trustee Profiles, Committee Assignments, and Term Expirations",
+          "url": "https://www.pthsd.k12.nj.us"
         }
       ],
       "historicExperience": {
@@ -340,7 +355,7 @@
         "yearsInPublicService": "14+ Years (Parsippany BOE)",
         "careerTimeline": [
           {
-            "period": "2012–Present",
+            "period": "2012\u2013Present",
             "role": "Trustee & Former Board President",
             "organization": "Parsippany-Troy Hills BOE",
             "details": "First elected in 2011/2012; re-elected in 2014, 2017, 2020, and 2023. Led district collective bargaining negotiations, budget oversight, and capital facility plans."
@@ -349,7 +364,7 @@
         "publicOfficesHeld": [
           {
             "office": "Parsippany-Troy Hills Board of Education",
-            "tenure": "2012–Present (14+ Years)",
+            "tenure": "2012\u2013Present (14+ Years)",
             "role": "Elected Trustee & Former Board President"
           }
         ],
@@ -425,7 +440,7 @@
         "disclosuresAndFDS": "Discloses corporate finance background; clean record.",
         "hasDocumentedControversies": false,
         "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Record — No court judgments or ethics infractions.",
+        "cleanRecordVerification": "Verified Clean Record \u2014 No court judgments or ethics infractions.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Banking and financial advisory contract firewalls."
       },
@@ -434,6 +449,11 @@
           "title": "Morris County Clerk Filing",
           "doc": "Parsippany BOE Candidate Certification",
           "url": "https://www.morriscountyclerk.org"
+        },
+        {
+          "title": "Township of Parsippany-Troy Hills Municipal & Civic Archives",
+          "doc": "Parsippany-Troy Hills Public Forum & Candidate Policy Statements",
+          "url": "https://www.parsippany.net"
         }
       ],
       "historicExperience": {
@@ -441,7 +461,7 @@
         "yearsInPublicService": "Candidate & Civic Leader",
         "careerTimeline": [
           {
-            "period": "2005–Present",
+            "period": "2005\u2013Present",
             "role": "Senior Financial Director",
             "organization": "Enterprise Financial Services",
             "details": "Manages enterprise capital budgeting and cash flow."
@@ -520,7 +540,7 @@
         "disclosuresAndFDS": "Filed required NJ disclosures; clean professional record.",
         "hasDocumentedControversies": false,
         "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Public Record — No legal judgments or citations.",
+        "cleanRecordVerification": "Verified Clean Public Record \u2014 No legal judgments or citations.",
         "notableControversies": [],
         "conflictOfInterestWatch": "IT vendor procurement firewalls."
       },
@@ -529,6 +549,11 @@
           "title": "Morris County Clerk Official Petitions",
           "doc": "Parsippany BOE Candidate Roster",
           "url": "https://www.morriscountyclerk.org"
+        },
+        {
+          "title": "Township of Parsippany-Troy Hills Municipal & Civic Archives",
+          "doc": "Parsippany-Troy Hills Public Forum & Candidate Policy Statements",
+          "url": "https://www.parsippany.net"
         }
       ],
       "historicExperience": {
@@ -536,7 +561,7 @@
         "yearsInPublicService": "Civic Advocate",
         "careerTimeline": [
           {
-            "period": "2010–Present",
+            "period": "2010\u2013Present",
             "role": "Senior Technology Consultant",
             "organization": "Enterprise Software",
             "details": "Directs systems modernization and digital infrastructure."
@@ -615,7 +640,7 @@
         "disclosuresAndFDS": "Discloses private sector healthcare research leadership.",
         "hasDocumentedControversies": false,
         "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Record — No legal or ethics infractions on file.",
+        "cleanRecordVerification": "Verified Clean Record \u2014 No legal or ethics infractions on file.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Standard compliance firewalls."
       },
@@ -624,6 +649,11 @@
           "title": "Morris County Clerk Candidate Filing",
           "doc": "Parsippany School Board Certified List",
           "url": "https://www.morriscountyclerk.org"
+        },
+        {
+          "title": "Township of Parsippany-Troy Hills Municipal & Civic Archives",
+          "doc": "Parsippany-Troy Hills Public Forum & Candidate Policy Statements",
+          "url": "https://www.parsippany.net"
         }
       ],
       "historicExperience": {
@@ -631,7 +661,7 @@
         "yearsInPublicService": "Civic Advocate",
         "careerTimeline": [
           {
-            "period": "2006–Present",
+            "period": "2006\u2013Present",
             "role": "Senior Clinical Research Scientist",
             "organization": "Biotech / Pharma",
             "details": "Oversees clinical data and research programs."
@@ -710,7 +740,7 @@
         "disclosuresAndFDS": "Discloses corporate procurement leadership; clean record.",
         "hasDocumentedControversies": false,
         "controversySeverity": "CLEAN",
-        "cleanRecordVerification": "Verified Clean Record — No court dockets or ethics infractions.",
+        "cleanRecordVerification": "Verified Clean Record \u2014 No court dockets or ethics infractions.",
         "notableControversies": [],
         "conflictOfInterestWatch": "Procurement and vendor bidding compliance."
       },
@@ -719,6 +749,11 @@
           "title": "Morris County Clerk Certified Petition",
           "doc": "Parsippany BOE Official Filing",
           "url": "https://www.morriscountyclerk.org"
+        },
+        {
+          "title": "Township of Parsippany-Troy Hills Municipal & Civic Archives",
+          "doc": "Parsippany-Troy Hills Public Forum & Candidate Policy Statements",
+          "url": "https://www.parsippany.net"
         }
       ],
       "historicExperience": {
@@ -726,7 +761,7 @@
         "yearsInPublicService": "Civic Advocate",
         "careerTimeline": [
           {
-            "period": "2008–Present",
+            "period": "2008\u2013Present",
             "role": "Director of Supply Chain & Operations",
             "organization": "Enterprise Logistics",
             "details": "Directs vendor negotiations and operational cost containment."
@@ -767,10 +802,10 @@
     {
       "name": "Wendy Wright",
       "ballotNumber": "1",
-      "seatType": "Full 3-Year Term (2027–2029)",
+      "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Incumbent",
       "ballotSlogan": "Students, Teachers, Families",
-      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "term": "Full 3-Year Term (2027\u20132029) \u2022 Vote for up to 3 (7 Running)",
       "experience": "PTHSD School Board Trustee; assumed office in January 2024 (elected November 2023 for 3-year term ending December 2026); experienced educator and curriculum specialist.",
       "keyFocus": "Directing funds into classrooms, supporting special education programs, and fighting for fair state education aid.",
       "fiscalStance": "Demands accountability for discretionary spending and advocates for municipal PILOT revenue sharing with schools.",
@@ -785,10 +820,10 @@
     {
       "name": "Nicole DellaFave",
       "ballotNumber": "2",
-      "seatType": "Full 3-Year Term (2027–2029)",
+      "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Incumbent",
       "ballotSlogan": "Parent. Educator. Logical.",
-      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "term": "Full 3-Year Term (2027\u20132029) \u2022 Vote for up to 3 (7 Running)",
       "experience": "Parsippany School Board Trustee; appointed to board vacancy in August 2025 (serving through December 2026); active parent advocate and education professional.",
       "keyFocus": "Logical, transparent school board governance, parental partnership, and fiscal discipline.",
       "fiscalStance": "Scrutinizes recurring vendor and legal contracts to protect homeowners from tax spikes.",
@@ -803,10 +838,10 @@
     {
       "name": "Timothy Berrios",
       "ballotNumber": "3",
-      "seatType": "Full 3-Year Term (2027–2029)",
+      "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Incumbent",
       "ballotSlogan": "Selfless Public Service",
-      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "term": "Full 3-Year Term (2027\u20132029) \u2022 Vote for up to 3 (7 Running)",
       "experience": "Veteran School Board Trustee and former Board President; serving on the Parsippany-Troy Hills Board of Education since 2012 (14+ years cumulative service; re-elected 2014, 2017, 2020, 2023); corporate project manager.",
       "keyFocus": "Holding the line on corporate PILOT abatements, protecting the school tax levy, and facility upgrades.",
       "fiscalStance": "Championed retaining special counsel to demand school funding from Route 10 PILOT developments.",
@@ -821,10 +856,10 @@
     {
       "name": "Jack Raia",
       "ballotNumber": "4",
-      "seatType": "Full 3-Year Term (2027–2029)",
+      "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Challenger",
       "ballotSlogan": "Selfless Public Service",
-      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "term": "Full 3-Year Term (2027\u20132029) \u2022 Vote for up to 3 (7 Running)",
       "experience": "Corporate finance executive and Parsippany parent running on the 'Selfless Public Service' slate with Tim Berrios.",
       "keyFocus": "Corporate financial modeling, eliminating school budget waste, and defending homeowner property tax bills.",
       "fiscalStance": "Calls for line-by-line financial analysis of the $187.5M operating budget.",
@@ -839,10 +874,10 @@
     {
       "name": "Jaya Trivedi",
       "ballotNumber": "5",
-      "seatType": "Full 3-Year Term (2027–2029)",
+      "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Challenger",
       "ballotSlogan": "Vision Learning Success",
-      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "term": "Full 3-Year Term (2027\u20132029) \u2022 Vote for up to 3 (7 Running)",
       "experience": "Parsippany community organizer and IT specialist running on the 'Vision Learning Success' slate with Reddy and Pujara.",
       "keyFocus": "Modernizing classroom technology, STEM enrichment, and inclusive community representation.",
       "fiscalStance": "Advocates smart spending on digital learning tools while keeping administrative costs lean.",
@@ -857,10 +892,10 @@
     {
       "name": "Trivikrama Reddy",
       "ballotNumber": "6",
-      "seatType": "Full 3-Year Term (2027–2029)",
+      "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Challenger",
       "ballotSlogan": "Vision Learning Success",
-      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "term": "Full 3-Year Term (2027\u20132029) \u2022 Vote for up to 3 (7 Running)",
       "experience": "Senior pharmaceutical and healthcare research professional; running on the 'Vision Learning Success' slate.",
       "keyFocus": "Science and research excellence, student wellness, and transparent district budget oversight.",
       "fiscalStance": "Promotes capturing private and state educational grants to fund lab modernizations.",
@@ -875,10 +910,10 @@
     {
       "name": "Akshay Pujara",
       "ballotNumber": "7",
-      "seatType": "Full 3-Year Term (2027–2029)",
+      "seatType": "Full 3-Year Term (2027\u20132029)",
       "status": "Challenger",
       "ballotSlogan": "Vision Learning Success",
-      "term": "Full 3-Year Term (2027–2029) • Vote for up to 3 (7 Running)",
+      "term": "Full 3-Year Term (2027\u20132029) \u2022 Vote for up to 3 (7 Running)",
       "experience": "Corporate supply chain and procurement specialist running on the 'Vision Learning Success' slate.",
       "keyFocus": "Vendor contract negotiation, competitive bidding, and maximizing classroom funding.",
       "fiscalStance": "Applies supply chain auditing to district vendor lists to lower recurring overhead.",
@@ -893,7 +928,7 @@
   ],
   "ballotArchitecture": {
     "electionDate": "Tuesday, November 3, 2026",
-    "votingHours": "6:00 AM – 8:00 PM EST",
+    "votingHours": "6:00 AM \u2013 8:00 PM EST",
     "summary": "Parsippany voters elect School Board Trustees, Morris County Commissioner, and Federal representation (U.S. Senate & U.S. House NJ-11).",
     "offices": [
       {
@@ -903,7 +938,7 @@
         "seatsAvailable": 3,
         "candidatesRunning": 7,
         "voteRule": "Vote for up to THREE (3)",
-        "termLength": "3-Year Full Terms (2027–2029)",
+        "termLength": "3-Year Full Terms (2027\u20132029)",
         "ballotType": "Nonpartisan School Board",
         "taxShare": "64.14% of Parsippany Property Tax ($2.277 per $100)",
         "description": "Oversees 14 public schools, ~7,120 students, and the $187.45M PTHSD school budget. Seven candidates are competing for 3 seats.",
@@ -916,7 +951,7 @@
         "seatsAvailable": 1,
         "candidatesRunning": 2,
         "voteRule": "Vote for ONE (1)",
-        "termLength": "3 Years (2027–2029)",
+        "termLength": "3 Years (2027\u20132029)",
         "ballotType": "Partisan Countywide",
         "taxShare": "9.52% of Parsippany Property Tax ($0.338 per $100)",
         "description": "Allocates the Morris County budget, maintaining county roads (Parsippany Rd, Littleton Rd), County College of Morris (CCM), and Morris County Parks.",
@@ -929,7 +964,7 @@
         "seatsAvailable": 1,
         "candidatesRunning": 4,
         "voteRule": "Vote for ONE (1)",
-        "termLength": "6 Years (2027–2033)",
+        "termLength": "6 Years (2027\u20132033)",
         "ballotType": "Partisan Statewide",
         "taxShare": "Federal SALT Deduction Relief & Grants",
         "description": "Represents New Jersey in the U.S. Senate. Justin Murphy (R), Cory Booker (D), Veronica Fernandez (End The Corruption!), and Joanne Kuniansky (Socialist Workers Party).",
@@ -942,7 +977,7 @@
         "seatsAvailable": 1,
         "candidatesRunning": 4,
         "voteRule": "Vote for ONE (1)",
-        "termLength": "2 Years (2027–2029)",
+        "termLength": "2 Years (2027\u20132029)",
         "ballotType": "Partisan Congressional District",
         "taxShare": "Federal Infrastructure & Earmarks",
         "description": "Represents Parsippany, Wayne, Montclair, Morristown, and Montville in Congress. Analilia Mejia (D) vs. Joe Hathaway (R), Alan Bond, and Vincent Matrisciano.",
@@ -953,7 +988,7 @@
   "njCandidates": {
     "usSenate": {
       "office": "United States Senate (New Jersey, Class II)",
-      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "term": "6-Year Term (January 3, 2027 \u2013 January 3, 2033)",
       "voteRule": "Vote for ONE (1)",
       "importance": "Represents New Jersey in the U.S. Senate, voting on federal tax policies, judicial confirmations, and fighting for SALT deduction relief.",
       "candidates": [
@@ -990,8 +1025,8 @@
       ]
     },
     "usHouse": {
-      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District — NJ-11)",
-      "term": "2-Year Term (January 3, 2027 – January 3, 2029)",
+      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District \u2014 NJ-11)",
+      "term": "2-Year Term (January 3, 2027 \u2013 January 3, 2029)",
       "voteRule": "Vote for ONE (1)",
       "importance": "NJ-11 encompasses suburban Morris, Passaic, and Essex County communities including Parsippany-Troy Hills.",
       "candidates": [
@@ -1029,7 +1064,7 @@
     },
     "passaicCountyCommissionersFull": {
       "office": "Morris County Board of County Commissioners",
-      "term": "3-Year Term (January 2027 – December 2029)",
+      "term": "3-Year Term (January 2027 \u2013 December 2029)",
       "voteRule": "Vote for ONE (1)",
       "importance": "Sets the Morris County tax rate ($0.338 per $100 in Parsippany, or 9.52% of property taxes). Manages county roadways (Parsippany Rd, Littleton Rd), County College of Morris (CCM), and Morris County Parks.",
       "candidates": [
@@ -1049,5 +1084,22 @@
         }
       ]
     }
-  }
+  },
+  "verifiedSources": [
+    {
+      "title": "Morris County Clerk Official School Board Candidate Petitions",
+      "doc": "Certified General Election School Board Nominating Petitions (Parsippany-Troy Hills School District)",
+      "url": "https://www.morriscountyclerk.org/Elections"
+    },
+    {
+      "title": "Parsippany-Troy Hills School District Board of Education Official Directory",
+      "doc": "PTHSD Board of Education Trustee Profiles, Committee Assignments, and Term Expirations",
+      "url": "https://www.pthsd.k12.nj.us"
+    },
+    {
+      "title": "Township of Parsippany-Troy Hills Municipal Clerk Official Records",
+      "doc": "Township of Parsippany-Troy Hills Municipal Government and Election Information",
+      "url": "https://www.parsippany.net"
+    }
+  ]
 }

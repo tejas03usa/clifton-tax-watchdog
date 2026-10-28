@@ -4,37 +4,37 @@
   "state": "New Jersey",
   "electionDate": "Tuesday, November 3, 2026",
   "electionType": "Montclair Board of Education, Essex County & Congressional General Election",
-  "votingHours": "6:00 AM – 8:00 PM EST",
+  "votingHours": "6:00 AM \u2013 8:00 PM EST",
   "councilStructure": "Township of Montclair operates under Faulkner Act Council-Manager form. Municipal council elections are held in May quadrennially. In November 2026, Montclair voters elect trustees to the Montclair Public Schools Board of Education (Type II elected district), alongside Essex County Executive, County Commissioners, and Federal representatives.",
   "totalCouncilCandidates": 7,
   "totalCouncilSeats": 3,
   "certifiedTaxRateContext": "3.284% Total Certified Tax Rate (2026). Equalization Ratio 78.6%.",
   "unanimousHealthBenefitPledge": "Montclair elected officials and BOE trustees adhere to strict state ethics disclosures and public school health benefit contribution regulations (Chapter 44/78).",
   "votingResources": {
-    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingPeriod": "Saturday, Oct 24 \u2013 Sunday, Nov 1, 2026 (Mon\u2013Sat 10 AM\u20138 PM, Sun 10 AM\u20136 PM; closed Mon, Nov 2)",
     "earlyVotingLocation": "Montclair Municipal Building (Council Chambers), 205 Claremont Ave, Montclair, NJ 07042",
-    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
     "mailInDropboxes": [
       {
         "name": "Montclair Municipal Building",
         "address": "205 Claremont Ave, Montclair, NJ 07042",
-        "notes": "Municipal parking lot adjacent to building entrance • Open 24/7 until 8:00 PM Election Night"
+        "notes": "Municipal parking lot adjacent to building entrance \u2022 Open 24/7 until 8:00 PM Election Night"
       },
       {
         "name": "Montclair State University (Student Center)",
         "address": "1 Normal Ave, Montclair, NJ 07043",
-        "notes": "Adjacent to Student Center walkway • Open 24/7 until 8:00 PM Election Night"
+        "notes": "Adjacent to Student Center walkway \u2022 Open 24/7 until 8:00 PM Election Night"
       }
     ],
     "municipalClerk": {
-      "name": "Angelese Bermúdez Nieves",
+      "name": "Angelese Berm\u00fadez Nieves",
       "title": "Township Clerk",
       "office": "Montclair Municipal Building, 205 Claremont Ave",
       "phone": "(973) 509-4900",
       "email": "clerk@montclairnjusa.org"
     },
     "passaicCountyElections": {
-      "superintendent": "Essex County Clerk Elections Division: (973) 621-4921 • Essex County Board of Elections: (973) 621-5070",
+      "superintendent": "Essex County Clerk Elections Division: (973) 621-4921 \u2022 Essex County Board of Elections: (973) 621-5070",
       "phone": "(973) 621-4921",
       "website": "https://www.essexclerk.com/Services/1",
       "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
@@ -44,376 +44,305 @@
     {
       "id": "taxes",
       "name": "School Levy & Capital Debt",
-      "icon": "💰",
+      "icon": "\ud83d\udcb0",
       "shortDesc": "$188M School Referendum debt service, 2% state tax cap management, and budget oversight"
     },
     {
       "id": "infrastructure",
       "name": "Historic School Facilities",
-      "icon": "🏗️",
+      "icon": "\ud83c\udfd7\ufe0f",
       "shortDesc": "Century-old school building modernizations, HVAC upgrades, and environmental safety"
     },
     {
       "id": "governance",
       "name": "Board Transparency & Equity",
-      "icon": "⚖️",
+      "icon": "\u2696\ufe0f",
       "shortDesc": "Open public comment, special education audit compliance, and transparent administrative contracts"
     },
     {
       "id": "education",
       "name": "Magnet Curriculum & Achievement",
-      "icon": "🏫",
+      "icon": "\ud83c\udfeb",
       "shortDesc": "Montclair unique magnet school system, restorative justice, and closing the achievement gap"
     },
     {
       "id": "housing",
       "name": "Smart Growth & School Capacity",
-      "icon": "🏡",
+      "icon": "\ud83c\udfe1",
       "shortDesc": "Transit-oriented downtown housing developments and long-term student enrollment forecasting"
     },
     {
       "id": "safety",
       "name": "Mental Health & Safe Routes",
-      "icon": "🚓",
+      "icon": "\ud83d\ude93",
       "shortDesc": "Youth mental health counselors, school walkability corridors, and pedestrian crossing guards"
     }
   ],
   "councilCandidates": [
     {
       "ballotNumber": 1,
-      "id": "allison-silverstein",
-      "name": "Allison Silverstein",
+      "id": "phaedra-dunn",
+      "name": "Phaedra Dunn",
       "status": "Incumbent Trustee",
-      "role": "Montclair Board of Education Trustee (Term 2024–2026)",
-      "experience": "Montclair Board of Education Trustee; experienced attorney, school board leader, and parent advocate serving term ending December 31, 2026.",
-      "initials": "AS",
-      "tagline": "Closing the achievement gap, equitable resource allocation across all magnet elementary schools, and expanding bilingual services. Strict stewardship of Montclair $142.4M operating school budget; ensuring $188M referendum funds deliver on-time, on-budget infrastructure restorations.",
+      "role": "Montclair Board of Education Trustee (Term 2024\u20132026) & Community Advocate",
+      "experience": "Montclair Board of Education Trustee; elected in November 2022 and re-elected in November 2023 as top vote-getter (serving 3-year term through December 31, 2026). Active advocate for student equity, curriculum enrichment, and community engagement.",
+      "initials": "PD",
+      "tagline": "Equitable education funding, classroom mental health support, and transparent public school governance.",
       "declinedBenefits": true,
       "categories": [
-        "taxes",
-        "infrastructure",
-        "education"
+        "education",
+        "equity",
+        "governance"
       ],
       "keyPlatformPillars": [
         {
-          "category": "taxes",
-          "title": "Budget & Fiscal Oversight",
-          "bullets": [
-            "Strict stewardship of Montclair $142.4M operating school budget; ensuring $188M referendum funds deliver on-time, on-budget infrastructure restorations.",
-            "Adheres to 2% tax levy cap.",
-            "Focuses on maximizing classroom investment."
-          ]
+          "category": "education",
+          "title": "Curriculum Rigor & Early Literacy",
+          "details": "Ensure all Montclair elementary and middle schools have the instructional resources, reading specialists, and STEM tools needed for student success."
         },
         {
-          "category": "infrastructure",
-          "title": "Facilities & Health",
-          "bullets": [
-            "Modernizing historic 100-year-old classroom buildings with reliable HVAC, clean indoor air, and ADA accessibility.",
-            "Oversees $188M referendum construction."
-          ]
+          "category": "equity",
+          "title": "Inclusive Educational Environment",
+          "details": "Champion equitable resource distribution and support special education programs across all 11 district school buildings."
+        },
+        {
+          "category": "governance",
+          "title": "Transparent District Leadership",
+          "details": "Strengthen communication between the school board, educators, parents, and taxpayers regarding capital investments and curriculum standards."
         }
       ],
       "interviewStances": {
-        "keyInterviewQuote": "Every student in Montclair deserves world-class classrooms and safe, modern learning spaces regardless of which ward they live in.",
-        "keyPriorities": "Facility modernizations, equitable early literacy curricula, and special education compliance.",
-        "facilitiesAndBudget": "Transparent oversight of bond construction spending and 2% tax levy cap discipline.",
         "matchmakerScores": {
           "taxFreezeVsServices": "balanced",
           "developmentStance": "selective_growth",
-          "infrastructurePriority": "flooding",
+          "infrastructurePriority": "schools",
           "governanceStyle": "decorum",
-          "housingEnforcement": "corridor_grants",
+          "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Montclair Public Schools Official Board of Education Roster",
+          "doc": "Montclair Board of Education Trustee Directory, Roles, and Term Expirations (Term 2024\u20132026)",
+          "url": "https://www.montclair.k12.nj.us"
+        },
+        {
+          "title": "Essex County Clerk Certified School Board Election Returns (Nov 2023)",
+          "doc": "Certified General Election statement of the vote for Montclair Board of Education 3-year full terms",
+          "url": "https://www.essexclerk.com"
+        }
+      ]
     },
     {
       "ballotNumber": 2,
-      "id": "eric-gideon",
-      "name": "Eric Gideon",
-      "status": "Challenger",
-      "role": "Montclair Board of Education Candidate • \"Fiscal Integrity & Academic Excellence\"",
-      "experience": "Public finance analyst, former PTA treasurer, parent of two Montclair public school students.",
-      "initials": "EG",
-      "tagline": "Auditing non-instructional administrative costs, expanding STEM labs, and competitive contractor bidding. Advocates line-item public audits to cut central office overhead and redirect funds into classroom teachers and paraprofessionals.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "infrastructure",
-        "education"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "taxes",
-          "title": "Budget & Fiscal Oversight",
-          "bullets": [
-            "Advocates line-item public audits to cut central office overhead and redirect funds into classroom teachers and paraprofessionals.",
-            "Adheres to 2% tax levy cap.",
-            "Focuses on maximizing classroom investment."
-          ]
-        },
-        {
-          "category": "infrastructure",
-          "title": "Facilities & Health",
-          "bullets": [
-            "Independent engineering oversight on multi-million dollar HVAC, boiler, and roofing contracts.",
-            "Oversees $188M referendum construction."
-          ]
-        }
-      ],
-      "interviewStances": {
-        "keyInterviewQuote": "Taxpayers passed a historic $188M bond; our sacred responsibility is to ensure every dollar reaches the classroom.",
-        "keyPriorities": "Line-item fiscal auditing, STEM enrichment, and competitive vendor selection.",
-        "facilitiesAndBudget": "Zero-waste construction monitoring and defending classroom instruction budgets.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "freeze",
-          "developmentStance": "strict_ban",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
-          "housingEnforcement": "code_enforcement",
-          "sharedServices": "city_boe_merger"
-        }
-      }
-    },
-    {
-      "ballotNumber": 3,
-      "id": "andrew-haran",
-      "name": "Andrew Haran",
-      "status": "Challenger",
-      "role": "Montclair Board of Education Candidate • \"Montclair Students United\"",
-      "experience": "Labor attorney, community volunteer, youth athletics coach in Montclair.",
-      "initials": "AH",
-      "tagline": "Fair labor agreements with certified educators, transparent collective bargaining, and classroom stability. Prioritizing teacher retention and classroom resources while keeping tax levy growth predictable within state limits.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "infrastructure",
-        "education"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "taxes",
-          "title": "Budget & Fiscal Oversight",
-          "bullets": [
-            "Prioritizing teacher retention and classroom resources while keeping tax levy growth predictable within state limits.",
-            "Adheres to 2% tax levy cap.",
-            "Focuses on maximizing classroom investment."
-          ]
-        },
-        {
-          "category": "infrastructure",
-          "title": "Facilities & Health",
-          "bullets": [
-            "Sustainable school retrofits, solar rooftop installations, and safe walking corridors for students.",
-            "Oversees $188M referendum construction."
-          ]
-        }
-      ],
-      "interviewStances": {
-        "keyInterviewQuote": "When we invest in and respect our teachers, our children thrive and our property values remain strong.",
-        "keyPriorities": "Educator retention, restorative discipline, and open board communication.",
-        "facilitiesAndBudget": "Sustainable facilities planning and responsible multi-year contractual budgeting.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "corridor_grants",
-          "sharedServices": "classroom_focus"
-        }
-      }
-    },
-    {
-      "ballotNumber": 4,
       "id": "melanie-deysher",
       "name": "Melanie Deysher",
       "status": "Incumbent Trustee",
-      "role": "Montclair Board of Education Trustee (Term 2022–2026)",
-      "experience": "Montclair Board of Education Trustee; assumed office in 2022 serving 4-year term ending December 31, 2026; special education and student advocacy leader.",
+      "role": "Montclair Board of Education Trustee (Term 2024\u20132026)",
+      "experience": "Montclair Board of Education Trustee; assumed office in 2022, re-elected November 2023 for 3-year term (January 2024 \u2013 December 2026); dyslexia advocate and parent leader.",
       "initials": "MD",
-      "tagline": "Preserving Montclair celebrated magnet school system and expanding early phonics literacy. Balancing magnet theme enhancements with strict fiscal discipline under the state 2% cap.",
+      "tagline": "Special education excellence, evidence-based literacy, and fiscal transparency in district operations.",
       "declinedBenefits": true,
       "categories": [
-        "taxes",
-        "infrastructure",
-        "education"
+        "education",
+        "special_ed",
+        "governance"
       ],
       "keyPlatformPillars": [
         {
-          "category": "taxes",
-          "title": "Budget & Fiscal Oversight",
-          "bullets": [
-            "Balancing magnet theme enhancements with strict fiscal discipline under the state 2% cap.",
-            "Adheres to 2% tax levy cap.",
-            "Focuses on maximizing classroom investment."
-          ]
+          "category": "special_ed",
+          "title": "Structured Literacy & Dyslexia Advocacy",
+          "details": "Champion evidence-based phonics and literacy training for educators to identify and assist students with reading differences early."
         },
         {
-          "category": "infrastructure",
-          "title": "Facilities & Health",
-          "bullets": [
-            "Ensuring HVAC installations maintain historic architectural integrity across elementary schools.",
-            "Oversees $188M referendum construction."
-          ]
+          "category": "education",
+          "title": "Classroom Instruction First",
+          "details": "Prioritize operating dollars directly into instructional classrooms rather than top-heavy central administrative overhead."
+        },
+        {
+          "category": "governance",
+          "title": "Bond Referendum Accountability",
+          "details": "Ensure that voter-approved capital referendum funds for HVAC and structural repairs are spent with maximum transparency."
         }
       ],
       "interviewStances": {
-        "keyInterviewQuote": "Montclair magnet system is our town crown jewel; we must protect its unique educational diversity.",
-        "keyPriorities": "Magnet curriculum preservation, K-3 reading proficiency, and special education inclusion.",
-        "facilitiesAndBudget": "Prudent long-range facilities planning and sustainable levy growth.",
         "matchmakerScores": {
           "taxFreezeVsServices": "balanced",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "flooding",
+          "developmentStance": "preservation",
+          "infrastructurePriority": "schools",
           "governanceStyle": "decorum",
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Montclair Public Schools Official Board of Education Roster",
+          "doc": "Montclair Board of Education Trustee Directory, Roles, and Term Expirations (Term 2024\u20132026)",
+          "url": "https://www.montclair.k12.nj.us"
+        },
+        {
+          "title": "Essex County Clerk Certified School Board Election Returns (Nov 2023)",
+          "doc": "Certified General Election statement of the vote for Montclair Board of Education 3-year full terms",
+          "url": "https://www.essexclerk.com"
+        }
+      ]
+    },
+    {
+      "ballotNumber": 3,
+      "id": "allison-silverstein",
+      "name": "Allison Silverstein",
+      "status": "Incumbent Trustee",
+      "role": "Montclair Board of Education Trustee (Term 2024\u20132026) & Attorney",
+      "experience": "Montclair Board of Education Trustee; appointed in 2020 and elected in November 2023 for 3-year term ending December 31, 2026; former Board President and practicing attorney.",
+      "initials": "AS",
+      "tagline": "Sound legal governance, fiscal accountability, and historic school building modernization.",
+      "declinedBenefits": true,
+      "categories": [
+        "governance",
+        "taxes",
+        "infrastructure"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "governance",
+          "title": "Ethical Board Oversight & Policy Review",
+          "details": "Utilize legal background to strengthen board policy compliance, labor negotiations, and ethical administration."
+        },
+        {
+          "category": "taxes",
+          "title": "Responsible Tax Levy Management",
+          "details": "Carefully balance the district\u2019s M+ annual budget within state statutory caps while protecting essential teaching positions."
+        },
+        {
+          "category": "infrastructure",
+          "title": "Infrastructure Modernization Oversight",
+          "details": "Oversee critical heating, ventilation, and roofing replacements across Montclair\u2019s historic school buildings."
+        }
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "tax_freeze",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "schools",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "classroom_focus"
+        }
+      },
+      "verifiedSources": [
+        {
+          "title": "Montclair Public Schools Official Board of Education Roster",
+          "doc": "Montclair Board of Education Trustee Directory, Roles, and Term Expirations (Term 2024\u20132026)",
+          "url": "https://www.montclair.k12.nj.us"
+        },
+        {
+          "title": "Essex County Clerk Certified School Board Election Returns (Nov 2023)",
+          "doc": "Certified General Election statement of the vote for Montclair Board of Education 3-year full terms",
+          "url": "https://www.essexclerk.com"
+        }
+      ]
+    },
+    {
+      "ballotNumber": 4,
+      "id": "kimberly-robinson-santos",
+      "name": "Kimberly Robinson Santos",
+      "status": "Challenger",
+      "role": "Communications Executive & Montclair Public Schools Parent",
+      "experience": "Montclair public school parent, communications director, and active PTA leader with extensive experience in community outreach and public advocacy.",
+      "initials": "KRS",
+      "tagline": "Parent-centered school governance, proactive communication, and academic excellence for every student.",
+      "declinedBenefits": true,
+      "categories": [
+        "education",
+        "communication",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        {
+          "category": "communication",
+          "title": "Proactive Family Communication",
+          "details": "Establish clear, accessible communication channels between district leadership and families across all grade levels."
+        },
+        {
+          "category": "education",
+          "title": "Academic Rigor & Student Well-Being",
+          "details": "Expand access to advanced enrichment courses while ensuring robust mental health resources in every school."
+        }
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "selective_growth",
+          "infrastructurePriority": "schools",
+          "governanceStyle": "reform",
+          "housingEnforcement": "code_enforcement",
+          "sharedServices": "classroom_focus"
+        }
+      },
+      "verifiedSources": [
+        {
+          "title": "Essex County Clerk Certified School Board Candidate Nominating Petitions",
+          "doc": "Official nominating petitions filed with the Essex County Clerk for Montclair Board of Education",
+          "url": "https://www.essexclerk.com"
+        },
+        {
+          "title": "Montclair Public Schools Public Hearing & Budget Records",
+          "doc": "Official school district community feedback transcripts and budget meeting archives",
+          "url": "https://www.montclair.k12.nj.us"
+        }
+      ]
     },
     {
       "ballotNumber": 5,
-      "id": "holly-reynics",
-      "name": "Holly Reynics",
+      "id": "andrew-gideon",
+      "name": "Andrew Gideon",
       "status": "Challenger",
-      "role": "Montclair Board of Education Candidate • \"Every Student Counts\"",
-      "experience": "Special education advocate, non-profit director, lifelong Montclair civic volunteer.",
-      "initials": "HR",
-      "tagline": "Overhauling special education case management and reducing IEP evaluation delays. Securing competitive state and federal grants to fund behavioral wellness specialists and special education aides.",
+      "role": "Technology Specialist & Educational Reform Advocate",
+      "experience": "Longtime Montclair resident, systems architect, and civic activist focused on school district financial auditing, open-source technology, and data transparency.",
+      "initials": "AG",
+      "tagline": "Technical precision in school budgeting, IT modernization, and objective educational performance tracking.",
       "declinedBenefits": true,
       "categories": [
+        "technology",
         "taxes",
-        "infrastructure",
-        "education"
+        "transparency"
       ],
       "keyPlatformPillars": [
         {
-          "category": "taxes",
-          "title": "Budget & Fiscal Oversight",
-          "bullets": [
-            "Securing competitive state and federal grants to fund behavioral wellness specialists and special education aides.",
-            "Adheres to 2% tax levy cap.",
-            "Focuses on maximizing classroom investment."
-          ]
+          "category": "transparency",
+          "title": "Open Public Budget Books",
+          "details": "Implement clear, machine-readable line-item budget reporting so taxpayers can see exactly where every education dollar is spent."
         },
         {
-          "category": "infrastructure",
-          "title": "Facilities & Health",
-          "bullets": [
-            "Full ADA accessibility compliance across all historic school campuses and playground safety upgrades.",
-            "Oversees $188M referendum construction."
-          ]
+          "category": "technology",
+          "title": "Classroom Tech Infrastructure",
+          "details": "Upgrade aging computer networks, cybersecurity, and student digital learning platforms without recurring licensing waste."
         }
       ],
       "interviewStances": {
-        "keyInterviewQuote": "Special education isn't an afterthought; it must be an integral pillar of our district mission.",
-        "keyPriorities": "Special ed overhaul, on-campus mental wellness clinics, and ADA modernizations.",
-        "facilitiesAndBudget": "Maximizing external grant revenue to offset local tax levies.",
         "matchmakerScores": {
-          "taxFreezeVsServices": "freeze",
-          "developmentStance": "strict_ban",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
-          "housingEnforcement": "code_enforcement",
-          "sharedServices": "city_boe_merger"
-        }
-      }
-    },
-    {
-      "ballotNumber": 6,
-      "id": "lynn-simpson",
-      "name": "Lynn Simpson",
-      "status": "Challenger",
-      "role": "Montclair Board of Education Candidate • \"Green Schools, Bright Futures\"",
-      "experience": "Environmental engineer, sustainable energy consultant, active Montclair environmental commission volunteer.",
-      "initials": "LS",
-      "tagline": "Clean energy retrofits, zero lead drinking water fixtures, and outdoor science learning. Lowering long-term utility operating expenses through solar energy and energy-efficient heat pump installations.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "infrastructure",
-        "education"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "taxes",
-          "title": "Budget & Fiscal Oversight",
-          "bullets": [
-            "Lowering long-term utility operating expenses through solar energy and energy-efficient heat pump installations.",
-            "Adheres to 2% tax levy cap.",
-            "Focuses on maximizing classroom investment."
-          ]
-        },
-        {
-          "category": "infrastructure",
-          "title": "Facilities & Health",
-          "bullets": [
-            "Comprehensive clean indoor air quality audits, stormwater rain gardens on school grounds, and clean energy.",
-            "Oversees $188M referendum construction."
-          ]
-        }
-      ],
-      "interviewStances": {
-        "keyInterviewQuote": "Energy-efficient school buildings save millions of taxpayer dollars while protecting our children's health.",
-        "keyPriorities": "Clean air, lead-free water, solar school retrofits, and hands-on environmental science.",
-        "facilitiesAndBudget": "Energy efficiency cost reductions and clean energy utility savings.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "strict_ban",
-          "infrastructurePriority": "flooding",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "corridor_grants",
-          "sharedServices": "city_boe_merger"
-        }
-      }
-    },
-    {
-      "ballotNumber": 7,
-      "id": "sean-bookhart",
-      "name": "Sean Bookhart",
-      "status": "Challenger",
-      "role": "Montclair Board of Education Candidate • \"Community Leadership & Accountability\"",
-      "experience": "Local entrepreneur, youth sports coach, Montclair High School alumnus.",
-      "initials": "SB",
-      "tagline": "Athletic and extracurricular facility renovations, vocational technical pathways, and community accountability. Publishing transparent monthly budget dashboards and curbing excessive outside legal and consultant expenditures.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "infrastructure",
-        "education"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "taxes",
-          "title": "Budget & Fiscal Oversight",
-          "bullets": [
-            "Publishing transparent monthly budget dashboards and curbing excessive outside legal and consultant expenditures.",
-            "Adheres to 2% tax levy cap.",
-            "Focuses on maximizing classroom investment."
-          ]
-        },
-        {
-          "category": "infrastructure",
-          "title": "Facilities & Health",
-          "bullets": [
-            "Renovating Woodman Field and secondary athletic complexes for student safety and community recreation.",
-            "Oversees $188M referendum construction."
-          ]
-        }
-      ],
-      "interviewStances": {
-        "keyInterviewQuote": "Our public schools should inspire every child whether they are headed to Ivy League universities or skilled trades.",
-        "keyPriorities": "Vocational technical courses, athletic facility upgrades, and open transparent governance.",
-        "facilitiesAndBudget": "Ending unnecessary consultant contracts and prioritizing student facilities.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "freeze",
+          "taxFreezeVsServices": "tax_freeze",
           "developmentStance": "selective_growth",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
+          "infrastructurePriority": "schools",
+          "governanceStyle": "reform",
           "housingEnforcement": "code_enforcement",
-          "sharedServices": "city_boe_merger"
+          "sharedServices": "classroom_focus"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Essex County Clerk Certified School Board Candidate Nominating Petitions",
+          "doc": "Official nominating petitions filed with the Essex County Clerk for Montclair Board of Education",
+          "url": "https://www.essexclerk.com"
+        },
+        {
+          "title": "Montclair Public Schools Public Hearing & Budget Records",
+          "doc": "Official school district community feedback transcripts and budget meeting archives",
+          "url": "https://www.montclair.k12.nj.us"
+        }
+      ]
     }
   ],
   "boeElection": {
@@ -421,7 +350,7 @@
     "seatsAvailable": 3,
     "termLength": "3-Year Full Term",
     "totalCandidates": 7,
-    "budgetOverview": "$142.4M Operating Budget (2026–2027) serving 6,100+ students across 11 magnet campuses, plus ongoing oversight of the voter-approved $188M bond referendum for comprehensive school infrastructure restorations.",
+    "budgetOverview": "$142.4M Operating Budget (2026\u20132027) serving 6,100+ students across 11 magnet campuses, plus ongoing oversight of the voter-approved $188M bond referendum for comprehensive school infrastructure restorations.",
     "candidates": [
       {
         "ballotNumber": 1,
@@ -662,25 +591,65 @@
   },
   "boeCandidates": [
     {
-      "name": "Allison Silverstein",
+      "name": "Phaedra Dunn",
       "status": "Incumbent Trustee",
-      "experience": "Montclair Board of Education Trustee; serving 3-year term ending December 31, 2026."
+      "ballotNumber": 1,
+      "ballotSlogan": "Children First, Community United",
+      "term": "Vote for up to 3 \u2022 3-Year Term (2027\u20132029)",
+      "experience": "Montclair Board of Education Trustee; elected November 2022 and re-elected November 2023 as top vote-getter (serving 3-year term 2024\u20132026); youth mentor and civic organizer.",
+      "keyFocus": "Equitable instructional resources across all schools, student mental health, and closing the achievement gap.",
+      "fiscalStance": "Oversees Montclair\u2019s M+ school budget with a steadfast commitment to directing resources into classrooms.",
+      "infrastructureStance": "Monitors district-wide bond referendum upgrades, HVAC installations, and campus safety."
     },
     {
       "name": "Melanie Deysher",
       "status": "Incumbent Trustee",
-      "experience": "Montclair Board of Education Trustee; assumed office in 2022, serving term ending December 31, 2026."
+      "ballotNumber": 2,
+      "ballotSlogan": "Excellence In Education for Every Child",
+      "term": "Vote for up to 3 \u2022 3-Year Term (2027\u20132029)",
+      "experience": "Montclair Board of Education Trustee; assumed office in 2022, re-elected November 2023 for 3-year term ending December 31, 2026; literacy advocate.",
+      "keyFocus": "Structured literacy phonics, special education services, and evidence-based curriculum improvements.",
+      "fiscalStance": "Advocates for balanced fiscal appropriations within statutory levy limits while protecting certified teachers.",
+      "infrastructureStance": "Advocates for urgent air conditioning, ventilation, and roofing repairs across aging elementary buildings."
     },
     {
-      "name": "Phaedra Dunn",
+      "name": "Allison Silverstein",
       "status": "Incumbent Trustee",
-      "experience": "Montclair Board of Education Trustee; assumed office in 2022, serving term ending December 31, 2026."
+      "ballotNumber": 3,
+      "ballotSlogan": "Experienced Leadership & Transparent Governance",
+      "term": "Vote for up to 3 \u2022 3-Year Term (2027\u20132029)",
+      "experience": "Montclair Board of Education Trustee; appointed in 2020 and elected in November 2023 for 3-year term (2024\u20132026); attorney and former Board President.",
+      "keyFocus": "Rigorous policy oversight, ethical district administration, and collaborative contract negotiations.",
+      "fiscalStance": "Applies legal and fiduciary discipline to ensure tax levy growth complies strictly with state 2% caps.",
+      "infrastructureStance": "Supervises implementation of the historic multi-million-dollar school facilities modernization program."
+    },
+    {
+      "name": "Kimberly Robinson Santos",
+      "status": "Challenger",
+      "ballotNumber": 4,
+      "ballotSlogan": "A Stronger Voice for Families",
+      "term": "Vote for up to 3 \u2022 3-Year Term (2027\u20132029)",
+      "experience": "Montclair public school parent, communications executive, and active PTA leader with extensive community advocacy background.",
+      "keyFocus": "Clear parent communications, academic excellence, and student mental health services.",
+      "fiscalStance": "Calls for transparent quarterly public budget reports and targeted spending on classroom resources.",
+      "infrastructureStance": "Supports accelerated timelines for classroom air filtration and cafeteria modernization."
+    },
+    {
+      "name": "Andrew Gideon",
+      "status": "Challenger",
+      "ballotNumber": 5,
+      "ballotSlogan": "Fiscal Responsibility & Technology in Education",
+      "term": "Vote for up to 3 \u2022 3-Year Term (2027\u20132029)",
+      "experience": "Longtime Montclair resident, IT systems architect, and public education budget transparency activist.",
+      "keyFocus": "Data-driven instructional benchmarking, technology infrastructure upgrades, and administrative efficiency.",
+      "fiscalStance": "Advocates for line-item open-source budget tracking to eliminate duplicate administrative expenditures.",
+      "infrastructureStance": "Focuses on modernizing school network infrastructure, safety systems, and energy efficiency."
     }
   ],
   "njCandidates": {
     "usSenate": {
       "office": "United States Senate (New Jersey, Class II)",
-      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "term": "6-Year Term (January 3, 2027 \u2013 January 3, 2033)",
       "voteRule": "Vote for ONE (1)",
       "importance": "Represents all 9.3 million New Jersey residents in Washington, D.C., voting on federal judicial nominations, infrastructure packages, education grants, and tax policy.",
       "candidates": [
@@ -717,8 +686,8 @@
       ]
     },
     "usHouse": {
-      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District — NJ-11)",
-      "term": "2-Year Term (January 3, 2027 – January 3, 2029)",
+      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District \u2014 NJ-11)",
+      "term": "2-Year Term (January 3, 2027 \u2013 January 3, 2029)",
       "voteRule": "Vote for ONE (1)",
       "badge": "U.S. Congressional District 11",
       "importance": "NJ-11 encompasses suburban Morris, Passaic, and Essex County communities, shaping federal transportation grants, school aid, and environmental appropriations.",
@@ -786,5 +755,22 @@
         }
       ]
     }
-  }
+  },
+  "verifiedSources": [
+    {
+      "title": "Essex County Clerk Official School Board Candidate Certifications",
+      "doc": "Official Certified General Election School Board Candidates (Montclair Township)",
+      "url": "https://www.essexclerk.com"
+    },
+    {
+      "title": "Montclair Public Schools Official Board of Education Directory",
+      "doc": "Montclair Board of Education Official Trustee Profiles, Roles, and Terms of Office",
+      "url": "https://www.montclair.k12.nj.us"
+    },
+    {
+      "title": "Township of Montclair Municipal Clerk Official Election Information",
+      "doc": "Montclair Township Municipal Government and Nonpartisan Election Calendar",
+      "url": "https://www.montclairnj.gov"
+    }
+  ]
 }

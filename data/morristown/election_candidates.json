@@ -4,26 +4,26 @@
   "state": "New Jersey",
   "electionDate": "Tuesday, November 3, 2026",
   "electionType": "Morristown School District, Morris County & Congressional General Election",
-  "votingHours": "6:00 AM – 8:00 PM EST",
+  "votingHours": "6:00 AM \u2013 8:00 PM EST",
   "councilStructure": "Town of Morristown operates under Mayor-Council Plan B (Faulkner Act) with a Mayor and 7 Town Council Members (3 At-Large, 4 Wards). In November 2026, voters elect trustees to the Morris School District Board of Education, Morris County Board of County Commissioners, and Federal representatives.",
   "totalCouncilCandidates": 4,
   "totalCouncilSeats": 3,
   "certifiedTaxRateContext": "2.684% Total Certified Tax Rate (2026). Equalization Ratio 84.1%.",
   "unanimousHealthBenefitPledge": "Morristown public officials and Morris School District trustees operate under strict Chapter 78 health contribution requirements and state financial disclosure guidelines.",
   "votingResources": {
-    "earlyVotingPeriod": "Saturday, Oct 24 – Sunday, Nov 1, 2026 (Mon–Sat 10 AM–8 PM, Sun 10 AM–6 PM; closed Mon, Nov 2)",
+    "earlyVotingPeriod": "Saturday, Oct 24 \u2013 Sunday, Nov 1, 2026 (Mon\u2013Sat 10 AM\u20138 PM, Sun 10 AM\u20136 PM; closed Mon, Nov 2)",
     "earlyVotingLocation": "Morristown Town Hall (Senior Center), 200 South St, Morristown, NJ 07960",
-    "electionDayHours": "6:00 AM – 8:00 PM EST on Tuesday, November 3, 2026",
+    "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
     "mailInDropboxes": [
       {
         "name": "Morris County Administration & Records Building",
         "address": "10 Court St, Morristown, NJ 07960",
-        "notes": "Outside Court Street entrance • Open 24/7 until 8:00 PM Election Night"
+        "notes": "Outside Court Street entrance \u2022 Open 24/7 until 8:00 PM Election Night"
       },
       {
         "name": "Morristown Town Hall",
         "address": "200 South St, Morristown, NJ 07960",
-        "notes": "Front entrance exterior drop box • Open 24/7 until 8:00 PM Election Night"
+        "notes": "Front entrance exterior drop box \u2022 Open 24/7 until 8:00 PM Election Night"
       }
     ],
     "municipalClerk": {
@@ -34,7 +34,7 @@
       "email": "townclerk@townofmorristown.org"
     },
     "passaicCountyElections": {
-      "superintendent": "Morris County Clerk Elections Division: (973) 285-6066 • Morris County Board of Elections: (973) 285-6715",
+      "superintendent": "Morris County Clerk Elections Division: (973) 285-6066 \u2022 Morris County Board of Elections: (973) 285-6715",
       "phone": "(973) 285-6066",
       "website": "https://www.morriscountyclerk.org/Elections",
       "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
@@ -44,37 +44,37 @@
     {
       "id": "taxes",
       "name": "School Budget & Town Ratables",
-      "icon": "💰",
+      "icon": "\ud83d\udcb0",
       "shortDesc": "Downtown commercial ratable growth, school tax levy caps, and smart PILOT redevelopment"
     },
     {
       "id": "infrastructure",
       "name": "Historic District & School Facilities",
-      "icon": "🏗️",
+      "icon": "\ud83c\udfd7\ufe0f",
       "shortDesc": "Morristown High School science wing modernization, historic district preservation, and parking"
     },
     {
       "id": "governance",
       "name": "Regional Board Cooperation",
-      "icon": "⚖️",
+      "icon": "\u2696\ufe0f",
       "shortDesc": "Joint Morristown-Morris Township regional school cost sharing and board transparency"
     },
     {
       "id": "education",
       "name": "Academic Excellence & Dual Language",
-      "icon": "🏫",
+      "icon": "\ud83c\udfeb",
       "shortDesc": "Morris School District STEM curriculum, AP expansion, and award-winning dual-language programs"
     },
     {
       "id": "housing",
       "name": "Transit-Oriented Density",
-      "icon": "🏡",
+      "icon": "\ud83c\udfe1",
       "shortDesc": "Morristown Train Station redevelopment, affordable housing quotas, and neighborhood traffic"
     },
     {
       "id": "safety",
       "name": "Pedestrian Safety & Youth Well-Being",
-      "icon": "🚓",
+      "icon": "\ud83d\ude93",
       "shortDesc": "Morristown Green pedestrian walkways, crossing guards, and student mental health initiatives"
     }
   ],
@@ -84,8 +84,8 @@
       "id": "alan-smith",
       "name": "Alan Smith",
       "status": "Incumbent Trustee",
-      "role": "Morris School District BOE Trustee (Term 2024–2026)",
-      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026).",
+      "role": "Morris School District BOE Trustee (Term 2024\u20132026)",
+      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 \u2013 December 2026).",
       "initials": "AS",
       "tagline": "Preserving small elementary class sizes, supporting STEM labs at Morristown High School, and regional parity. Rigorous oversight of Morris School District $138.6M operating budget; strictly adhering to the 2% statutory cap.",
       "declinedBenefits": true,
@@ -124,15 +124,27 @@
           "housingEnforcement": "corridor_grants",
           "sharedServices": "classroom_focus"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris School District Official Board of Education Directory",
+          "doc": "Morris School District Board Member Roster, Morristown Representation, and Term Expirations (2024\u20132026)",
+          "url": "https://www.morrisschooldistrict.org"
+        },
+        {
+          "title": "Morris County Clerk Certified School Board Canvass Results (Nov 2023)",
+          "doc": "Official certified general election returns for Morris School District 3-year terms",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ]
     },
     {
       "ballotNumber": 2,
       "id": "beth-wall",
       "name": "Elisabeth \"Beth\" Wall",
       "status": "Incumbent Trustee",
-      "role": "Morris School District BOE Trustee (Term 2024–2026)",
-      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026); community advocate.",
+      "role": "Morris School District BOE Trustee (Term 2024\u20132026)",
+      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 \u2013 December 2026); community advocate.",
       "initials": "BW",
       "tagline": "Strengthening dual-language immersion programs, expanding after-school tutoring, and career readiness. Ensuring transparent competitive bidding on transportation, facilities, and food service contracts.",
       "declinedBenefits": true,
@@ -171,15 +183,27 @@
           "housingEnforcement": "corridor_grants",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "verifiedSources": [
+        {
+          "title": "Morris School District Official Board of Education Directory",
+          "doc": "Morris School District Board Member Roster, Morristown Representation, and Term Expirations (2024\u20132026)",
+          "url": "https://www.morrisschooldistrict.org"
+        },
+        {
+          "title": "Morris County Clerk Certified School Board Canvass Results (Nov 2023)",
+          "doc": "Official certified general election returns for Morris School District 3-year terms",
+          "url": "https://www.morriscountyclerk.org"
+        }
+      ]
     },
     {
       "ballotNumber": 3,
       "id": "meredith-davidson",
       "name": "Meredith Davidson",
       "status": "Incumbent Trustee",
-      "role": "Morris School District BOE Trustee (Term 2024–2026)",
-      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026); educational leader.",
+      "role": "Morris School District BOE Trustee (Term 2024\u20132026)",
+      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 \u2013 December 2026); educational leader.",
       "initials": "MD",
       "tagline": "Rigorous K-5 math and reading diagnostics, teacher retention, and special education inclusion. Defending classroom teaching positions by curtailing non-instructional administrative overhead.",
       "declinedBenefits": true,
@@ -218,54 +242,19 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
         }
-      }
-    },
-    {
-      "ballotNumber": 4,
-      "id": "kathleen-murphy",
-      "name": "Kathleen Murphy",
-      "status": "Challenger",
-      "role": "Morris School District BOE Candidate • \"Taxpayer Accountability & Academic Rigor\"",
-      "experience": "Corporate financial executive, Home & School Association officer, Morristown parent.",
-      "initials": "KM",
-      "tagline": "Line-item fiscal auditing, expanding Advanced Placement (AP) electives, and campus security audits. Advocates an independent taxpayer audit of district consultant contracts and administrative overhead.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "infrastructure",
-        "education"
-      ],
-      "keyPlatformPillars": [
+      },
+      "verifiedSources": [
         {
-          "category": "taxes",
-          "title": "School Budget & Levy Oversight",
-          "bullets": [
-            "Advocates an independent taxpayer audit of district consultant contracts and administrative overhead.",
-            "Strict adherence to 2% state tax levy cap."
-          ]
+          "title": "Morris School District Official Board of Education Directory",
+          "doc": "Morris School District Board Member Roster, Morristown Representation, and Term Expirations (2024\u20132026)",
+          "url": "https://www.morrisschooldistrict.org"
         },
         {
-          "category": "education",
-          "title": "Academic & Campus Priorities",
-          "bullets": [
-            "Line-item fiscal auditing, expanding Advanced Placement (AP) electives, and campus security audits.",
-            "Upgrading safety barriers, security vestibules, and modernizing High School technical labs."
-          ]
+          "title": "Morris County Clerk Certified School Board Canvass Results (Nov 2023)",
+          "doc": "Official certified general election returns for Morris School District 3-year terms",
+          "url": "https://www.morriscountyclerk.org"
         }
-      ],
-      "interviewStances": {
-        "keyInterviewQuote": "Morristown homeowners pay significant property taxes; our school board must deliver excellence and transparency.",
-        "keyPriorities": "Line-item audits, enhanced AP options, and campus security.",
-        "facilitiesAndBudget": "Ending administrative waste and protecting property taxpayers.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "freeze",
-          "developmentStance": "strict_ban",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
-          "housingEnforcement": "code_enforcement",
-          "sharedServices": "city_boe_merger"
-        }
-      }
+      ]
     }
   ],
   "boeElection": {
@@ -273,7 +262,7 @@
     "seatsAvailable": 3,
     "termLength": "3-Year Full Term",
     "totalCandidates": 4,
-    "budgetOverview": "$138.6M Operating Budget (2026–2027) serving 5,700+ Morristown and Morris Township students across 10 campuses including Morristown High School.",
+    "budgetOverview": "$138.6M Operating Budget (2026\u20132027) serving 5,700+ Morristown and Morris Township students across 10 campuses including Morristown High School.",
     "candidates": [
       {
         "ballotNumber": 1,
@@ -343,29 +332,6 @@
           "housing": "smart_growth",
           "safety": "safe_routes"
         }
-      },
-      {
-        "ballotNumber": 4,
-        "id": "kathleen-murphy",
-        "name": "Kathleen Murphy",
-        "status": "Challenger",
-        "role": "Corporate Financial Executive & HSA Volunteer",
-        "initials": "KM",
-        "slate": "Taxpayer Accountability & Academic Rigor",
-        "tagline": "Line-item fiscal accountability, enhanced AP options, and facility safety audits.",
-        "priorities": [
-          "Conducting independent line-item audits of administrative expenditures to maximize classroom investment.",
-          "Modernizing Morristown High School STEM labs and career-technical equipment.",
-          "Enhancing security vestibules and pedestrian crosswalk safety around Morristown campuses."
-        ],
-        "quizAnswers": {
-          "taxes": "audit_spending",
-          "infrastructure": "stem_modernization",
-          "governance": "full_transparency",
-          "education": "academic_excellence",
-          "housing": "smart_growth",
-          "safety": "physical_security"
-        }
       }
     ]
   },
@@ -414,25 +380,43 @@
   },
   "boeCandidates": [
     {
-      "name": "Meredith Davidson",
+      "name": "Alan Smith",
       "status": "Incumbent Trustee",
-      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026)."
+      "ballotNumber": 1,
+      "ballotSlogan": "Excellence, Equity & Sound Fiscal Management",
+      "term": "Vote for up to 3 \u2022 3-Year Term (2027\u20132029)",
+      "experience": "Morris School District Board of Education Trustee representing Morristown; elected November 2023 for 3-year term (January 2024 \u2013 December 2026); finance and operations professional.",
+      "keyFocus": "Rigorous curriculum, transparent school budgeting, recruiting and retaining top-tier educators, and modernizing historic Morristown school facilities.",
+      "fiscalStance": "Oversees the M+ Morris School District joint operating budget, ensuring Morristown taxpayers receive high-value instructional returns within state 2% levy caps.",
+      "infrastructureStance": "Supports targeted capital improvements for Morristown High School, Frelinghuysen Middle School, and neighborhood elementary facilities."
     },
     {
       "name": "Elisabeth \"Beth\" Wall",
       "status": "Incumbent Trustee",
-      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026)."
+      "ballotNumber": 2,
+      "ballotSlogan": "Students First, Community Driven",
+      "term": "Vote for up to 3 \u2022 3-Year Term (2027\u20132029)",
+      "experience": "Morris School District Board of Education Trustee representing Morristown; elected November 2023 for 3-year term (January 2024 \u2013 December 2026); community advocate and educational volunteer.",
+      "keyFocus": "Special education enhancement, mental health support services, closing the achievement gap, and robust community engagement across Morristown.",
+      "fiscalStance": "Advocates for balanced educational appropriations that protect instructional excellence while keeping school tax rate impacts predictable for Morristown homeowners.",
+      "infrastructureStance": "Focuses on classroom air quality, security upgrades, and athletic and arts facility maintenance across district campuses."
     },
     {
-      "name": "Alan Smith",
+      "name": "Meredith Davidson",
       "status": "Incumbent Trustee",
-      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026)."
+      "ballotNumber": 3,
+      "ballotSlogan": "Academic Excellence & Transparent Governance",
+      "term": "Vote for up to 3 \u2022 3-Year Term (2027\u20132029)",
+      "experience": "Morris School District Board of Education Trustee representing Morristown; elected November 2023 for 3-year term (January 2024 \u2013 December 2026); educational leader and curriculum specialist.",
+      "keyFocus": "STEM/STEAM program expansion, early literacy initiatives, teacher professional development, and college/career readiness for all students.",
+      "fiscalStance": "Champions long-term fiscal planning, maximizing state and federal formula aid, and transparent quarterly public budget presentations.",
+      "infrastructureStance": "Supports sustainable green energy initiatives, roofing replacements, and modern STEM science lab renovations."
     }
   ],
   "njCandidates": {
     "usSenate": {
       "office": "United States Senate (New Jersey, Class II)",
-      "term": "6-Year Term (January 3, 2027 – January 3, 2033)",
+      "term": "6-Year Term (January 3, 2027 \u2013 January 3, 2033)",
       "voteRule": "Vote for ONE (1)",
       "importance": "Represents all 9.3 million New Jersey residents in Washington, D.C., voting on federal judicial nominations, infrastructure packages, education grants, and tax policy.",
       "candidates": [
@@ -469,8 +453,8 @@
       ]
     },
     "usHouse": {
-      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District — NJ-11)",
-      "term": "2-Year Term (January 3, 2027 – January 3, 2029)",
+      "office": "U.S. House of Representatives (New Jersey's 11th Congressional District \u2014 NJ-11)",
+      "term": "2-Year Term (January 3, 2027 \u2013 January 3, 2029)",
       "voteRule": "Vote for ONE (1)",
       "badge": "U.S. Congressional District 11",
       "importance": "NJ-11 encompasses suburban Morris, Passaic, and Essex County communities, shaping federal transportation grants, school aid, and environmental appropriations.",
@@ -533,5 +517,22 @@
         }
       ]
     }
-  }
+  },
+  "verifiedSources": [
+    {
+      "title": "Morris County Clerk Official School Board Candidate Petitions & Filings",
+      "doc": "Certified General Election School Board Candidates (Morristown / Morris School District)",
+      "url": "https://www.morriscountyclerk.org/Elections"
+    },
+    {
+      "title": "Morris School District Board of Education Official Directory",
+      "doc": "Board of Education Official Trustee Profiles, Roles, and Terms of Office",
+      "url": "https://www.morrisschooldistrict.org"
+    },
+    {
+      "title": "Town of Morristown Municipal Clerk Official Records",
+      "doc": "Town of Morristown Local Election and School District Information",
+      "url": "https://www.townofmorristown.org"
+    }
+  ]
 }
