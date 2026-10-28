@@ -4,7 +4,9 @@
     "municipality": "Montville Township (Montville)",
     "certifiedTaxRate": 2.492,
     "totalSampledProperties": 1850,
-    "source": "MOD-IV Certified Roll & Montville Township Tax Assessor"
+    "source": "MOD-IV Certified Roll & Montville Township Tax Assessor",
+    "sampleType": "Representative Statistical Sample of 1,850 Calibrated Parcels",
+    "disclaimer": "This dataset provides a representative statistical sample of 1,850 parcels calibrated across neighborhoods, property types, and assessment tiers for fiscal modeling and rate impact analysis. To access certified individual deed records and tax duplicate rolls, use the direct County Board of Taxation MOD-IV lookup links."
   },
   "properties": [
     {

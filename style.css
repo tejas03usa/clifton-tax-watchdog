@@ -10128,6 +10128,51 @@ input:checked + .slider.round:before {
   line-height: 1.45;
 }
 
+.candidate-platform-focus-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #2563eb;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-top: 10px;
+}
+
+.candidate-platform-focus-box .focus-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1e40af;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.candidate-platform-focus-box .focus-summary {
+  font-size: 0.82rem;
+  color: #334155;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.memorial-tribute-wrapper {
+  background: #fafaf9;
+  border: 1px solid #e7e5e4;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 24px;
+}
+
+.memorial-card {
+  margin-top: 12px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e7e5e4;
+  border-left: 4px solid #78716c;
+  border-radius: 8px;
+}
+
 .quote-mark {
   position: absolute;
   top: 6px;

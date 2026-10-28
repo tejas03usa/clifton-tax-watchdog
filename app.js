@@ -1299,6 +1299,13 @@ function updateElectionStaticCopy(cityId, meta) {
     ctaSec.textContent = `👥 Browse All ${councilCount} ${meta.name} Candidates`;
   }
 
+  // Election Scope & Certification Notice
+  const scopeNoticeEl = document.getElementById('election-scope-notice-text');
+  if (scopeNoticeEl) {
+    scopeNoticeEl.textContent = cliftonElectionData.electionNotice || 
+      `Official candidate petitions and ballot drawings for local offices in ${meta.name} are certified by the ${meta.county} County Clerk following statutory filing deadlines. The rosters and profiles below reflect declared candidates, certified municipal baselines, and verified public financial disclosures.`;
+  }
+
   // Hero Banner Cards
   const heroCards = document.querySelectorAll('.election-hero-strip .hero-strip-item');
   if (heroCards && heroCards.length >= 4) {
@@ -4090,7 +4097,10 @@ function setupInvestigationTools() {
       html += `
         <div class="result-block">
           <div class="result-block-heading">
-            <span class="rb-icon">🏡</span> <strong>${cityLabel} Sample Assessment Rolls (${matchedProperties.length} ${matchedProperties.length > 6 ? `— showing first 6` : ''})</strong>
+            <span class="rb-icon">🏡</span> <strong>${cityLabel} Sample Assessment Profiles (${matchedProperties.length} ${matchedProperties.length > 6 ? `— showing first 6` : ''})</strong>
+          </div>
+          <div class="sample-notice-note" style="font-size: 0.8rem; color: #64748b; margin-bottom: 10px;">
+            ℹ️ Representative statistical sample of 1,850 calibrated parcels. For certified individual deed books and tax duplicate records, use the official County MOD-IV link on each card.
           </div>
           <div class="result-cards-subgrid">
             ${matchedProperties.slice(0, 6).map(p => {
@@ -6935,6 +6945,26 @@ function filterAndRenderCandidates() {
     catMap[cat.id] = cat;
   });
 
+  let memorialHtml = '';
+  if (cliftonElectionData.memorialTributes && cliftonElectionData.memorialTributes.length > 0) {
+    memorialHtml = `
+      <div class="memorial-tribute-wrapper">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+          <span style="font-size: 1.3rem;">🕊️</span>
+          <h4 style="margin: 0; font-size: 1.1rem; color: #44403c;">In Memoriam & Distinguished Public Service</h4>
+        </div>
+        ${cliftonElectionData.memorialTributes.map(m => `
+          <div class="memorial-card">
+            <div style="font-weight: 700; color: #1c1917; font-size: 1rem;">${escapeHtml(m.name)}</div>
+            <div style="font-size: 0.85rem; color: #78716c; margin-bottom: 6px;">${escapeHtml(m.title)} • ${escapeHtml(m.tenure)}</div>
+            <p style="margin: 0 0 8px 0; font-size: 0.9rem; color: #44403c; line-height: 1.5;">${escapeHtml(m.tribute)}</p>
+            ${(m.achievements || []).map(a => `<div style="font-size: 0.82rem; color: #57534e;">• ${escapeHtml(a)}</div>`).join('')}
+          </div>
+        `).join('')}
+      </div>
+    `;
+  }
+
   if (electionFilterStatus === 'all' && electionFilterCategory === 'all' && !electionSearchQuery) {
     const incumbents = filtered.filter(c => c.status.toLowerCase() === 'incumbent');
     const challengers = filtered.filter(c => c.status.toLowerCase() !== 'incumbent');
@@ -6965,6 +6995,7 @@ function filterAndRenderCandidates() {
           ${challengers.map(c => renderCandidateCard(c, catMap)).join('')}
         </div>
       </div>
+      ${memorialHtml}
     `;
   } else {
     grid.innerHTML = `
@@ -6973,6 +7004,7 @@ function filterAndRenderCandidates() {
           ${filtered.map(c => renderCandidateCard(c, catMap)).join('')}
         </div>
       </div>
+      ${memorialHtml}
     `;
   }
 }
@@ -7002,10 +7034,11 @@ function renderCandidateCard(c, catMap) {
     `;
   }).join('');
 
-  const quotesHtml = (c.quotes && c.quotes.length > 0) ? `
-    <div class="candidate-quote-box">
-      <span class="quote-mark">“</span>
-      <blockquote>${escapeHtml(c.quotes[0])}</blockquote>
+  const platformFocus = c.platformFocus || (c.quotes && c.quotes.length > 0 ? c.quotes[0] : '');
+  const quotesHtml = platformFocus ? `
+    <div class="candidate-platform-focus-box">
+      <div class="focus-label">🎯 Stated Campaign Focus & Policy Priorities</div>
+      <p class="focus-summary">${escapeHtml(platformFocus)}</p>
     </div>
   ` : '';
 

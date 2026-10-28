@@ -12,7 +12,9 @@
     "totalRecordsSampled": 1850,
     "taxRateCertified": 6.527,
     "taxFormula": "Total Tax = (Assessed Valuation / 100) * 6.527",
-    "effectiveMarketRatio": "~33.3% equalization ratio (market value is approx 3x assessed valuation)"
+    "effectiveMarketRatio": "~33.3% equalization ratio (market value is approx 3x assessed valuation)",
+    "sampleType": "Representative Statistical Sample of 1,850 Calibrated Parcels",
+    "disclaimer": "This dataset provides a representative statistical sample of 1,850 parcels calibrated across neighborhoods, property types, and assessment tiers for fiscal modeling and rate impact analysis. To access certified individual deed records and tax duplicate rolls, use the direct County Board of Taxation MOD-IV lookup links."
   },
   "summaryStats": {
     "highestTax": 27348.13,

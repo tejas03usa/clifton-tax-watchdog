@@ -112,7 +112,7 @@
         }
       ],
       "quotes": [
-        "Wayne homeowners deserve professional municipal expertise. We must manage every dollar with zero-based discipline, protect our ratable base, and defend our neighborhoods from devastating floods."
+        "Focuses on professional municipal administration, zero-based expenditure management, ratable base defense, and flood mitigation in the 5th Ward."
       ],
       "civicBackground": "Lifelong Passaic County public administrator, Wayne 5th Ward civic organizer, and municipal finance specialist.",
       "investigativeDossier": {
@@ -195,7 +195,8 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "platformFocus": "Focuses on professional municipal administration, zero-based expenditure management, ratable base defense, and flood mitigation in the 5th Ward."
     },
     {
       "ballotNumber": 2,
@@ -230,7 +231,7 @@
         }
       ],
       "quotes": [
-        "Wayne residents need an independent watchdog on the council who will scrutinize every vendor invoice and fight for 5th Ward neighborhoods."
+        "Emphasizes independent council oversight of municipal vendor contracts, fiscal transparency, and constituent advocacy for 5th Ward neighborhoods."
       ],
       "civicBackground": "Wayne resident for over 25 years; active youth sports booster and civic association volunteer.",
       "investigativeDossier": {
@@ -295,7 +296,8 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
         }
-      }
+      },
+      "platformFocus": "Emphasizes independent council oversight of municipal vendor contracts, fiscal transparency, and constituent advocacy for 5th Ward neighborhoods."
     }
   ],
   "boeCandidates": [
@@ -659,5 +661,6 @@
       "doc": "Township of Wayne Municipal Council Ward Roster and Election Information",
       "url": "https://www.waynetownship.com"
     }
-  ]
+  ],
+  "electionNotice": "Wayne Township Council and School Board candidate petitions and official ballot drawings are certified by the Passaic County Clerk following statutory filing deadlines. Profiles reflect certified municipal baselines and official public filings."
 }

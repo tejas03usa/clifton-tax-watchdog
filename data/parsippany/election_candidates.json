@@ -112,7 +112,7 @@
         }
       ],
       "quotes": [
-        "Our public schools are the heart of Parsippany. We must protect our classrooms, support our teachers, and demand that new corporate redevelopments pay their fair share to educate incoming students."
+        "Focuses on public school classroom investments, educator retention, and ensuring commercial PILOT redevelopments contribute fair educational revenues."
       ],
       "civicBackground": "Longtime Parsippany homeowner, active PTO volunteer, and credentialed New Jersey educator.",
       "investigativeDossier": {
@@ -183,7 +183,8 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
         }
-      }
+      },
+      "platformFocus": "Focuses on public school classroom investments, educator retention, and ensuring commercial PILOT redevelopments contribute fair educational revenues."
     },
     {
       "ballotNumber": 2,
@@ -218,7 +219,7 @@
         }
       ],
       "quotes": [
-        "Parents, educators, and taxpayers all want the same thing: high-quality schools that prepare our children for the future while remaining fiscally responsible."
+        "Emphasizes high-quality academic standards, parental engagement, and balanced fiscal stewardship for the district."
       ],
       "civicBackground": "Parsippany resident, mother of district students, and active community volunteer.",
       "investigativeDossier": {
@@ -289,7 +290,8 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "platformFocus": "Emphasizes high-quality academic standards, parental engagement, and balanced fiscal stewardship for the district."
     },
     {
       "ballotNumber": 3,
@@ -324,7 +326,7 @@
         }
       ],
       "quotes": [
-        "When corporate developers receive 30-year PILOT tax breaks, single-family homeowners end up footing the bill to educate incoming children. We must demand fiscal fairness for Parsippany taxpayers."
+        "Advocates for tax equity between corporate redevelopers and single-family homeowners, challenging long-term PILOT tax abatements."
       ],
       "civicBackground": "Over 10 years on the Parsippany School Board; lifelong community booster and youth mentor.",
       "investigativeDossier": {
@@ -395,7 +397,8 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
         }
-      }
+      },
+      "platformFocus": "Advocates for tax equity between corporate redevelopers and single-family homeowners, challenging long-term PILOT tax abatements."
     },
     {
       "ballotNumber": 4,
@@ -430,7 +433,7 @@
         }
       ],
       "quotes": [
-        "A $187 million school budget requires rigorous corporate financial modeling. We can improve our educational standards while keeping taxes affordable for seniors and working families."
+        "Brings corporate financial modeling background to school district budgeting, prioritizing educational quality alongside tax relief for seniors."
       ],
       "civicBackground": "Parsippany resident, youth athletic coach, and financial management professional.",
       "investigativeDossier": {
@@ -495,7 +498,8 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "platformFocus": "Brings corporate financial modeling background to school district budgeting, prioritizing educational quality alongside tax relief for seniors."
     },
     {
       "ballotNumber": 5,
@@ -530,7 +534,7 @@
         }
       ],
       "quotes": [
-        "Parsippany is a vibrant, diverse community. We need forward-looking leadership that modernizes our curriculum and equips every student for tomorrow's technology careers."
+        "Focuses on educational curriculum modernization, STEM initiatives, and community representation across Parsippany."
       ],
       "civicBackground": "Parsippany resident, cultural community leader, and STEM youth mentor.",
       "investigativeDossier": {
@@ -595,7 +599,8 @@
           "housingEnforcement": "corridor_grants",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "platformFocus": "Focuses on educational curriculum modernization, STEM initiatives, and community representation across Parsippany."
     },
     {
       "ballotNumber": 6,
@@ -630,7 +635,7 @@
         }
       ],
       "quotes": [
-        "Morris County is the pharmaceutical and biotech capital of the nation. Parsippany students deserve world-class science labs and hands-on research opportunities."
+        "Prioritizes science, healthcare, and biotech laboratory partnerships to enhance student STEM opportunities."
       ],
       "civicBackground": "Parsippany resident, parent of district students, and healthcare research mentor.",
       "investigativeDossier": {
@@ -695,7 +700,8 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "platformFocus": "Prioritizes science, healthcare, and biotech laboratory partnerships to enhance student STEM opportunities."
     },
     {
       "ballotNumber": 7,
@@ -730,7 +736,7 @@
         }
       ],
       "quotes": [
-        "As a supply chain professional, I know how to cut vendor costs without cutting services. We must ensure every dollar spent by the district delivers maximum educational value."
+        "Focuses on supply chain and vendor procurement optimization to reduce overhead while safeguarding educational services."
       ],
       "civicBackground": "Parsippany homeowner, active civic booster, and corporate operations specialist.",
       "investigativeDossier": {
@@ -795,7 +801,8 @@
           "housingEnforcement": "code_enforcement",
           "sharedServices": "city_boe_merger"
         }
-      }
+      },
+      "platformFocus": "Focuses on supply chain and vendor procurement optimization to reduce overhead while safeguarding educational services."
     }
   ],
   "boeCandidates": [
@@ -1101,5 +1108,6 @@
       "doc": "Township of Parsippany-Troy Hills Municipal Government and Election Information",
       "url": "https://www.parsippany.net"
     }
-  ]
+  ],
+  "electionNotice": "Parsippany-Troy Hills School Board candidate petitions and official ballot drawings are certified by the Morris County Clerk following statutory filing deadlines. Profiles reflect certified school board baselines and official public filings."
 }

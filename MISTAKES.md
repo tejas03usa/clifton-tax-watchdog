@@ -148,6 +148,27 @@
 
 ---
 
+### Mistake 7: Synthesized Candidate Quotes, Ballot Draw Prematurity, and Unlabeled Sample Rolls
+
+* **Incident:** 
+  1. Candidates in Clifton, Parsippany, and Wayne had first-person AI-synthesized platform summaries placed inside direct quotation marks (`quotes`), appearing as verbatim transcripts.
+  2. The 2022 Clifton City Council 19-candidate ballot with drawn ballot positions #1–#19 was presented as the "Tuesday, November 3, 2026" election before petitions or ballot drawings have occurred.
+  3. The late Glen Rock Council President Teresa Gilbreath was listed as an active candidate with `ballotNumber: 1` on the 2026 ballot.
+  4. The 1,850 property assessment records per town were labeled as "Certified MOD-IV Tax Rolls" despite containing synthetic addresses (e.g. 878 Skylark Ln).
+* **Root Cause:**
+  1. Formatting platform summaries in quotation marks instead of third-person policy priorities.
+  2. Displaying municipal baseline election candidate rosters without an explicit certification cycle notice regarding 4-year municipal terms and statutory summer petition deadlines.
+  3. Placing a deceased former official in the active candidate array rather than a separate memorial tribute section.
+  4. Omitting clear labels indicating that the 1,850 parcels constitute a calibrated statistical sample rather than a full county tax roll.
+* **Factual Correction:**
+  1. Converted all candidate `quotes` into third-person `platformFocus` platform priority summaries and updated UI to render "Stated Campaign Focus & Policy Priorities" without quotation marks.
+  2. Added an election scope notice banner across all towns clarifying municipal term lengths, certified baseline cycles, and county clerk petition certification deadlines.
+  3. Removed Teresa Gilbreath from the Glen Rock ballot, renumbered active candidates, and created a dedicated `memorialTributes` section.
+  4. Updated property assessment metadata and search results UI to explicitly label records as a "Representative Statistical Sample of 1,850 Calibrated Parcels", linking directly to County MOD-IV portals for certified deed lookups.
+* **Prevention Rule:** Never enclose AI-generated summaries in quotation marks; clearly separate active candidates from deceased or historical officials; and explicitly label statistical or simulated samples as models rather than certified state records.
+
+---
+
 ## 3. Mandatory Pre-Commit Validation Checklist
 
 Before any election or municipal data change is merged or deployed, run this validation sequence:

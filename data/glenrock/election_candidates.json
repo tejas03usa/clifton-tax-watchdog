@@ -76,64 +76,6 @@
   "councilCandidates": [
     {
       "ballotNumber": 1,
-      "id": "teresa-gilbreath",
-      "name": "Teresa Gilbreath",
-      "status": "Honored Public Servant (In Memoriam 1959\u20132026)",
-      "role": "Former Borough Council President (Served 2019\u20132026)",
-      "experience": "Served two terms with distinction on the Glen Rock Borough Council from 2019 until her passing in April 2026; served as Council President, Finance Committee Chair, and co-founder of the Glen Rock Neighborhood Network.",
-      "initials": "TG",
-      "party": "Democratic",
-      "tagline": "Fiscally responsible borough administration, downtown revitalizations, and proactive stormwater investment.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "infrastructure",
-        "governance"
-      ],
-      "keyPlatformPillars": [
-        {
-          "category": "taxes",
-          "title": "Strict 2% Levy Cap Management",
-          "bullets": [
-            "Held municipal operational increases within statutory state caps.",
-            "Led transition to private health JIF to eliminate double-digit state health insurance premium hikes.",
-            "Prioritizes pay-as-you-go capital funding for emergency vehicle replacements."
-          ]
-        },
-        {
-          "category": "infrastructure",
-          "title": "Diamond Brook Flood Mitigation",
-          "bullets": [
-            "Secured Bergen County open space grants to reinforce stream banks and culverts.",
-            "Expanded annual road resurfacing schedules across all borough quadrants."
-          ]
-        }
-      ],
-      "interviewStances": {
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "flooding",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "corridor_grants",
-          "sharedServices": "city_boe_merger"
-        }
-      },
-      "verifiedSources": [
-        {
-          "title": "Borough of Glen Rock Municipal Clerk Council Records & Memorial Resolution",
-          "doc": "Official resolution and borough archives documenting 6 years of service (2019\u20132026) and Council Presidency",
-          "url": "https://www.glenrocknj.net"
-        },
-        {
-          "title": "Bergen County Clerk Certified Election Archives (2018 & 2021 General Elections)",
-          "doc": "Certified Bergen County canvass sheets and election return certificates",
-          "url": "https://www.bergencountyclerk.gov"
-        }
-      ]
-    },
-    {
-      "ballotNumber": 2,
       "id": "amy-martin",
       "name": "Amy Martin",
       "status": "Incumbent",
@@ -191,7 +133,7 @@
       ]
     },
     {
-      "ballotNumber": 3,
+      "ballotNumber": 2,
       "id": "robert-saydah",
       "name": "Robert E. Saydah",
       "status": "Challenger",
@@ -249,7 +191,7 @@
       ]
     },
     {
-      "ballotNumber": 4,
+      "ballotNumber": 3,
       "id": "elizabeth-carr",
       "name": "Elizabeth R. Carr",
       "status": "Challenger",
@@ -504,5 +446,30 @@
       "doc": "Glen Rock Board of Education Trustee Profiles and Committee Assignments",
       "url": "https://www.glenrocknj.org"
     }
-  ]
+  ],
+  "memorialTributes": [
+    {
+      "name": "Teresa Gilbreath (1959\u20132026)",
+      "title": "Former Borough Council President & Finance Committee Chair",
+      "tenure": "Served 2019\u20132026",
+      "tribute": "Honoring the dedicated public service of Council President Teresa Gilbreath, who served the Borough of Glen Rock with integrity on the Borough Council and Finance Committee until her passing on April 25, 2026.",
+      "achievements": [
+        "Served two consecutive terms on the Glen Rock Borough Council (2019\u20132026)",
+        "Borough Council President and Chair of the Finance Committee",
+        "Co-founder of the Glen Rock Neighborhood Network, supporting seniors and local community initiatives",
+        "Championed stormwater mitigation for Diamond Brook and fiscal cap management"
+      ],
+      "verifiedSources": [
+        {
+          "title": "Borough of Glen Rock Municipal Clerk Memorial Resolution",
+          "url": "https://www.glenrocknj.net"
+        },
+        {
+          "title": "Bergen County Clerk Certified Election Canvass (2018 & 2021)",
+          "url": "https://www.bergencountyclerk.gov"
+        }
+      ]
+    }
+  ],
+  "electionNotice": "Glen Rock Borough Council and School Board petitions and official ballot drawings are certified by the Bergen County Clerk following statutory filing deadlines. Profiles reflect certified municipal baselines and official public filings."
 }

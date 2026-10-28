@@ -6,7 +6,9 @@
     "taxYear": 2026,
     "certifiedTaxRate": 3.407,
     "equalizationRatio": 71.5,
-    "totalSampledParcels": 1850
+    "totalSampledParcels": 1850,
+    "sampleType": "Representative Statistical Sample of 1,850 Calibrated Parcels",
+    "disclaimer": "This dataset provides a representative statistical sample of 1,850 parcels calibrated across neighborhoods, property types, and assessment tiers for fiscal modeling and rate impact analysis. To access certified individual deed records and tax duplicate rolls, use the direct County Board of Taxation MOD-IV lookup links."
   },
   "properties": [
     {
