@@ -448,12 +448,12 @@
           "localImpact": "Delivering direct federal assistance for Glen Rock flood mitigation and emergency services equipment."
         },
         {
-          "name": "Mary Jo-Ann",
+          "name": "Mary Jo Guinchard",
           "party": "Republican",
           "status": "Challenger",
-          "role": "Conservative Nominee & Business Leader",
-          "keyPriorities": "Curbing federal spending, cutting energy taxes, supporting law enforcement, and border security.",
-          "localImpact": "Advocating for lower federal taxes and reduced federal regulation on suburban homeowners."
+          "role": "Republican Nominee & Former Municipal Mayor",
+          "keyPriorities": "Curbing federal spending, repealing the SALT deduction cap, supporting local law enforcement, and border security.",
+          "localImpact": "Advocating for lower federal taxes and regulatory relief for suburban homeowners in Glen Rock."
         }
       ]
     },
@@ -476,12 +476,14 @@
         },
         {
           "party": "Republican",
-          "status": "Challengers",
+          "status": "Republican Nominees",
           "slate": "Bergen County Republican Organization",
           "candidates": [
-            "Challenger Slate (County Commissioners)"
+            "Jay Costa",
+            "John Dinice",
+            "Andrea Slowikowski"
           ],
-          "keyPriorities": "Auditing county government expenditures, lowering county property tax assessments, and increasing transparency in county vendor contracts."
+          "keyPriorities": "Enacting a county property tax freeze, auditing county vendor contracts, and repaving county infrastructure."
         }
       ]
     }

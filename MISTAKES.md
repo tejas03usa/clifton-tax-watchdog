@@ -82,6 +82,16 @@
 
 ### Mistake 3: Scrambled, Inaccurate, or Synthetic Candidate Names
 
+* **Incident:** Glen Rock U.S. House (NJ-05) candidate truncated as 'Mary Jo-Ann'.
+  * **Root Cause:** Incomplete text truncation during data harmonization.
+  * **Factual Correction:** Full verified name is **Mary Jo Guinchard** (former municipal mayor and Republican nominee for NJ-05).
+  * **Prevention Rule:** Verify full legal candidate names on certified Division of Elections candidate filing certificates.
+
+* **Incident:** Bergen County & Essex County Commissioner generic 'Challenger Slate' placeholders.
+  * **Root Cause:** Using slate placeholders instead of verified nominated candidate names.
+  * **Factual Correction:** Bergen County Republican challengers populated as **Jay Costa**, **John Dinice**, and **Andrea Slowikowski**; Essex County populated with **Maritza Mathews** (County Executive) and **Adam Kraemer** (District 4).
+  * **Prevention Rule:** Never deploy generic 'Challenger Slate' strings when certified county party nominations are on the public record.
+
 * **Incident:** Montville Township Board of Education candidates were listed as "Charles Daughtry" and "Joseph Pisano".
   * **Root Cause:** Synthetic names generated without checking certified county clerk petitions.
   * **Factual Correction:** The certified candidates from the Morris County Clerk are **Joseph Daughtry** (current President of Montville BOE, slogan: "Excellence In Education") and **Ryan Pisano** (Board of Adjustment member and BOE candidate, slogan: "Excellence In Education"), alongside **Michael J. Palma** (slogan: "Education First").

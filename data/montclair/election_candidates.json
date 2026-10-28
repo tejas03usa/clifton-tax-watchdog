@@ -745,11 +745,11 @@
         },
         {
           "party": "Republican",
-          "status": "Challenger",
+          "status": "Republican Nominees",
           "slate": "Essex County Republican Organization",
           "candidates": [
-            "Adam Kraemer (County Executive)",
-            "Challenger Slate (County Commissioners)"
+            "Maritza Mathews (County Executive Nominee)",
+            "Adam Kraemer (District 4 Commissioner Nominee)"
           ],
           "keyPriorities": "Conducting line-item audits of county expenditures, lowering county tax levies, and increasing transparency in county contracts."
         }
