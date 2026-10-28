@@ -81,12 +81,12 @@
   "councilCandidates": [
     {
       "ballotNumber": 1,
-      "id": "melissa-rowan",
-      "name": "Melissa Rowan",
+      "id": "alan-smith",
+      "name": "Alan Smith",
       "status": "Incumbent Trustee",
-      "role": "Morris School District BOE Candidate • \"Excellence, Equity & Inclusion\"",
-      "experience": "Incumbent Morris School District Trustee, community volunteer, parent of Morristown High School students.",
-      "initials": "MR",
+      "role": "Morris School District BOE Trustee (Term 2024–2026)",
+      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026).",
+      "initials": "AS",
       "tagline": "Preserving small elementary class sizes, supporting STEM labs at Morristown High School, and regional parity. Rigorous oversight of Morris School District $138.6M operating budget; strictly adhering to the 2% statutory cap.",
       "declinedBenefits": true,
       "categories": [
@@ -128,12 +128,12 @@
     },
     {
       "ballotNumber": 2,
-      "id": "meredith-wall",
-      "name": "Meredith Wall",
+      "id": "beth-wall",
+      "name": "Elisabeth \"Beth\" Wall",
       "status": "Incumbent Trustee",
-      "role": "Morris School District BOE Candidate • \"Students First Morristown\"",
-      "experience": "Morris School District Board Member, non-profit director, bilingual community advocate.",
-      "initials": "MW",
+      "role": "Morris School District BOE Trustee (Term 2024–2026)",
+      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026); community advocate.",
+      "initials": "BW",
       "tagline": "Strengthening dual-language immersion programs, expanding after-school tutoring, and career readiness. Ensuring transparent competitive bidding on transportation, facilities, and food service contracts.",
       "declinedBenefits": true,
       "categories": [
@@ -175,12 +175,12 @@
     },
     {
       "ballotNumber": 3,
-      "id": "caryleen-davidson",
-      "name": "Caryleen Davidson",
+      "id": "meredith-davidson",
+      "name": "Meredith Davidson",
       "status": "Incumbent Trustee",
-      "role": "Morris School District BOE Candidate • \"Proven Educational Leadership\"",
-      "experience": "Veteran educator, curriculum specialist, longtime Morristown civic volunteer.",
-      "initials": "CD",
+      "role": "Morris School District BOE Trustee (Term 2024–2026)",
+      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026); educational leader.",
+      "initials": "MD",
       "tagline": "Rigorous K-5 math and reading diagnostics, teacher retention, and special education inclusion. Defending classroom teaching positions by curtailing non-instructional administrative overhead.",
       "declinedBenefits": true,
       "categories": [
@@ -414,104 +414,19 @@
   },
   "boeCandidates": [
     {
-      "name": "Melissa Rowan",
-      "ballotNumber": 1,
-      "seatType": "Full Term",
+      "name": "Meredith Davidson",
       "status": "Incumbent Trustee",
-      "ballotSlogan": "Excellence, Equity & Inclusion",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Incumbent Morris School District Trustee, community volunteer, parent of Morristown High School students.",
-      "keyFocus": "Preserving small elementary class sizes, supporting STEM labs at Morristown High School, and regional parity.",
-      "fiscalStance": "Rigorous oversight of Morris School District $138.6M operating budget; strictly adhering to the 2% statutory cap.",
-      "infrastructureStance": "Modernizing science wings, athletic fields, and energy-efficient building heating systems.",
-      "interviewStances": {
-        "keyInterviewQuote": "Our regional school district is a model of diversity and academic achievement; we must protect it with smart budgeting.",
-        "keyPriorities": "Classroom investment, STEM lab expansions, and equitable student achievement.",
-        "facilitiesAndBudget": "Prudent multi-year capital planning and 2% levy cap enforcement.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "corridor_grants",
-          "sharedServices": "classroom_focus"
-        }
-      }
+      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026)."
     },
     {
-      "name": "Meredith Wall",
-      "ballotNumber": 2,
-      "seatType": "Full Term",
+      "name": "Elisabeth \"Beth\" Wall",
       "status": "Incumbent Trustee",
-      "ballotSlogan": "Students First Morristown",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Morris School District Board Member, non-profit director, bilingual community advocate.",
-      "keyFocus": "Strengthening dual-language immersion programs, expanding after-school tutoring, and career readiness.",
-      "fiscalStance": "Ensuring transparent competitive bidding on transportation, facilities, and food service contracts.",
-      "infrastructureStance": "Sustainable school facilities, solar retrofits, and pedestrian crossing safety along Morristown campuses.",
-      "interviewStances": {
-        "keyInterviewQuote": "Every child in Morristown should have the linguistic, technical, and academic tools to excel anywhere in the world.",
-        "keyPriorities": "Dual-language immersion, student mental wellness, and contract transparency.",
-        "facilitiesAndBudget": "Competitive bidding and fiscal accountability.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "corridor_grants",
-          "sharedServices": "city_boe_merger"
-        }
-      }
+      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026)."
     },
     {
-      "name": "Caryleen Davidson",
-      "ballotNumber": 3,
-      "seatType": "Full Term",
+      "name": "Alan Smith",
       "status": "Incumbent Trustee",
-      "ballotSlogan": "Proven Educational Leadership",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Veteran educator, curriculum specialist, longtime Morristown civic volunteer.",
-      "keyFocus": "Rigorous K-5 math and reading diagnostics, teacher retention, and special education inclusion.",
-      "fiscalStance": "Defending classroom teaching positions by curtailing non-instructional administrative overhead.",
-      "infrastructureStance": "Classroom technology upgrades, modern library media centers, and enhanced security vestibules.",
-      "interviewStances": {
-        "keyInterviewQuote": "Strong foundational reading and math skills in early grades are the bedrock of lifelong academic success.",
-        "keyPriorities": "Early literacy benchmarks, retaining top educators, and special education support.",
-        "facilitiesAndBudget": "Directing maximum revenue into classrooms and frontline educators.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "code_enforcement",
-          "sharedServices": "classroom_focus"
-        }
-      }
-    },
-    {
-      "name": "Kathleen Murphy",
-      "ballotNumber": 4,
-      "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Taxpayer Accountability & Academic Rigor",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Corporate financial executive, Home & School Association officer, Morristown parent.",
-      "keyFocus": "Line-item fiscal auditing, expanding Advanced Placement (AP) electives, and campus security audits.",
-      "fiscalStance": "Advocates an independent taxpayer audit of district consultant contracts and administrative overhead.",
-      "infrastructureStance": "Upgrading safety barriers, security vestibules, and modernizing High School technical labs.",
-      "interviewStances": {
-        "keyInterviewQuote": "Morristown homeowners pay significant property taxes; our school board must deliver excellence and transparency.",
-        "keyPriorities": "Line-item audits, enhanced AP options, and campus security.",
-        "facilitiesAndBudget": "Ending administrative waste and protecting property taxpayers.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "freeze",
-          "developmentStance": "strict_ban",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
-          "housingEnforcement": "code_enforcement",
-          "sharedServices": "city_boe_merger"
-        }
-      }
+      "experience": "Morris School District Board Member representing Morristown; elected November 2023 for 3-year term (January 2024 – December 2026)."
     }
   ],
   "njCandidates": {

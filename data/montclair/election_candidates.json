@@ -81,12 +81,12 @@
   "councilCandidates": [
     {
       "ballotNumber": 1,
-      "id": "jada-roman",
-      "name": "Jada Roman",
+      "id": "allison-silverstein",
+      "name": "Allison Silverstein",
       "status": "Incumbent Trustee",
-      "role": "Montclair Board of Education Candidate • \"Children First, Community United\"",
-      "experience": "Incumbent Montclair BOE Trustee, parent advocate, academic program coordinator.",
-      "initials": "JR",
+      "role": "Montclair Board of Education Trustee (Term 2024–2026)",
+      "experience": "Montclair Board of Education Trustee; experienced attorney, school board leader, and parent advocate serving term ending December 31, 2026.",
+      "initials": "AS",
       "tagline": "Closing the achievement gap, equitable resource allocation across all magnet elementary schools, and expanding bilingual services. Strict stewardship of Montclair $142.4M operating school budget; ensuring $188M referendum funds deliver on-time, on-budget infrastructure restorations.",
       "declinedBenefits": true,
       "categories": [
@@ -225,12 +225,12 @@
     },
     {
       "ballotNumber": 4,
-      "id": "margo-pierson",
-      "name": "Margo Pierson",
+      "id": "melanie-deysher",
+      "name": "Melanie Deysher",
       "status": "Incumbent Trustee",
-      "role": "Montclair Board of Education Candidate • \"Children First, Community United\"",
-      "experience": "Incumbent BOE Trustee, veteran educator with over 20 years of public school curriculum leadership.",
-      "initials": "MP",
+      "role": "Montclair Board of Education Trustee (Term 2022–2026)",
+      "experience": "Montclair Board of Education Trustee; assumed office in 2022 serving 4-year term ending December 31, 2026; special education and student advocacy leader.",
+      "initials": "MD",
       "tagline": "Preserving Montclair celebrated magnet school system and expanding early phonics literacy. Balancing magnet theme enhancements with strict fiscal discipline under the state 2% cap.",
       "declinedBenefits": true,
       "categories": [
@@ -662,179 +662,19 @@
   },
   "boeCandidates": [
     {
-      "name": "Jada Roman",
-      "ballotNumber": 1,
-      "seatType": "Full Term",
+      "name": "Allison Silverstein",
       "status": "Incumbent Trustee",
-      "ballotSlogan": "Children First, Community United",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Incumbent Montclair BOE Trustee, parent advocate, academic program coordinator.",
-      "keyFocus": "Closing the achievement gap, equitable resource allocation across all magnet elementary schools, and expanding bilingual services.",
-      "fiscalStance": "Strict stewardship of Montclair $142.4M operating school budget; ensuring $188M referendum funds deliver on-time, on-budget infrastructure restorations.",
-      "infrastructureStance": "Modernizing historic 100-year-old classroom buildings with reliable HVAC, clean indoor air, and ADA accessibility.",
-      "interviewStances": {
-        "keyInterviewQuote": "Every student in Montclair deserves world-class classrooms and safe, modern learning spaces regardless of which ward they live in.",
-        "keyPriorities": "Facility modernizations, equitable early literacy curricula, and special education compliance.",
-        "facilitiesAndBudget": "Transparent oversight of bond construction spending and 2% tax levy cap discipline.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "flooding",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "corridor_grants",
-          "sharedServices": "classroom_focus"
-        }
-      }
+      "experience": "Montclair Board of Education Trustee; serving 3-year term ending December 31, 2026."
     },
     {
-      "name": "Eric Gideon",
-      "ballotNumber": 2,
-      "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Fiscal Integrity & Academic Excellence",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Public finance analyst, former PTA treasurer, parent of two Montclair public school students.",
-      "keyFocus": "Auditing non-instructional administrative costs, expanding STEM labs, and competitive contractor bidding.",
-      "fiscalStance": "Advocates line-item public audits to cut central office overhead and redirect funds into classroom teachers and paraprofessionals.",
-      "infrastructureStance": "Independent engineering oversight on multi-million dollar HVAC, boiler, and roofing contracts.",
-      "interviewStances": {
-        "keyInterviewQuote": "Taxpayers passed a historic $188M bond; our sacred responsibility is to ensure every dollar reaches the classroom.",
-        "keyPriorities": "Line-item fiscal auditing, STEM enrichment, and competitive vendor selection.",
-        "facilitiesAndBudget": "Zero-waste construction monitoring and defending classroom instruction budgets.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "freeze",
-          "developmentStance": "strict_ban",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
-          "housingEnforcement": "code_enforcement",
-          "sharedServices": "city_boe_merger"
-        }
-      }
-    },
-    {
-      "name": "Andrew Haran",
-      "ballotNumber": 3,
-      "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Montclair Students United",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Labor attorney, community volunteer, youth athletics coach in Montclair.",
-      "keyFocus": "Fair labor agreements with certified educators, transparent collective bargaining, and classroom stability.",
-      "fiscalStance": "Prioritizing teacher retention and classroom resources while keeping tax levy growth predictable within state limits.",
-      "infrastructureStance": "Sustainable school retrofits, solar rooftop installations, and safe walking corridors for students.",
-      "interviewStances": {
-        "keyInterviewQuote": "When we invest in and respect our teachers, our children thrive and our property values remain strong.",
-        "keyPriorities": "Educator retention, restorative discipline, and open board communication.",
-        "facilitiesAndBudget": "Sustainable facilities planning and responsible multi-year contractual budgeting.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "corridor_grants",
-          "sharedServices": "classroom_focus"
-        }
-      }
-    },
-    {
-      "name": "Margo Pierson",
-      "ballotNumber": 4,
-      "seatType": "Full Term",
+      "name": "Melanie Deysher",
       "status": "Incumbent Trustee",
-      "ballotSlogan": "Children First, Community United",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Incumbent BOE Trustee, veteran educator with over 20 years of public school curriculum leadership.",
-      "keyFocus": "Preserving Montclair celebrated magnet school system and expanding early phonics literacy.",
-      "fiscalStance": "Balancing magnet theme enhancements with strict fiscal discipline under the state 2% cap.",
-      "infrastructureStance": "Ensuring HVAC installations maintain historic architectural integrity across elementary schools.",
-      "interviewStances": {
-        "keyInterviewQuote": "Montclair magnet system is our town crown jewel; we must protect its unique educational diversity.",
-        "keyPriorities": "Magnet curriculum preservation, K-3 reading proficiency, and special education inclusion.",
-        "facilitiesAndBudget": "Prudent long-range facilities planning and sustainable levy growth.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "flooding",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "code_enforcement",
-          "sharedServices": "classroom_focus"
-        }
-      }
+      "experience": "Montclair Board of Education Trustee; assumed office in 2022, serving term ending December 31, 2026."
     },
     {
-      "name": "Holly Reynics",
-      "ballotNumber": 5,
-      "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Every Student Counts",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Special education advocate, non-profit director, lifelong Montclair civic volunteer.",
-      "keyFocus": "Overhauling special education case management and reducing IEP evaluation delays.",
-      "fiscalStance": "Securing competitive state and federal grants to fund behavioral wellness specialists and special education aides.",
-      "infrastructureStance": "Full ADA accessibility compliance across all historic school campuses and playground safety upgrades.",
-      "interviewStances": {
-        "keyInterviewQuote": "Special education isn't an afterthought; it must be an integral pillar of our district mission.",
-        "keyPriorities": "Special ed overhaul, on-campus mental wellness clinics, and ADA modernizations.",
-        "facilitiesAndBudget": "Maximizing external grant revenue to offset local tax levies.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "freeze",
-          "developmentStance": "strict_ban",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
-          "housingEnforcement": "code_enforcement",
-          "sharedServices": "city_boe_merger"
-        }
-      }
-    },
-    {
-      "name": "Lynn Simpson",
-      "ballotNumber": 6,
-      "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Green Schools, Bright Futures",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Environmental engineer, sustainable energy consultant, active Montclair environmental commission volunteer.",
-      "keyFocus": "Clean energy retrofits, zero lead drinking water fixtures, and outdoor science learning.",
-      "fiscalStance": "Lowering long-term utility operating expenses through solar energy and energy-efficient heat pump installations.",
-      "infrastructureStance": "Comprehensive clean indoor air quality audits, stormwater rain gardens on school grounds, and clean energy.",
-      "interviewStances": {
-        "keyInterviewQuote": "Energy-efficient school buildings save millions of taxpayer dollars while protecting our children's health.",
-        "keyPriorities": "Clean air, lead-free water, solar school retrofits, and hands-on environmental science.",
-        "facilitiesAndBudget": "Energy efficiency cost reductions and clean energy utility savings.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "balanced",
-          "developmentStance": "strict_ban",
-          "infrastructurePriority": "flooding",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "corridor_grants",
-          "sharedServices": "city_boe_merger"
-        }
-      }
-    },
-    {
-      "name": "Sean Bookhart",
-      "ballotNumber": 7,
-      "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Community Leadership & Accountability",
-      "term": "Vote for up to 3 • 3-Year Full Term (2027–2029)",
-      "experience": "Local entrepreneur, youth sports coach, Montclair High School alumnus.",
-      "keyFocus": "Athletic and extracurricular facility renovations, vocational technical pathways, and community accountability.",
-      "fiscalStance": "Publishing transparent monthly budget dashboards and curbing excessive outside legal and consultant expenditures.",
-      "infrastructureStance": "Renovating Woodman Field and secondary athletic complexes for student safety and community recreation.",
-      "interviewStances": {
-        "keyInterviewQuote": "Our public schools should inspire every child whether they are headed to Ivy League universities or skilled trades.",
-        "keyPriorities": "Vocational technical courses, athletic facility upgrades, and open transparent governance.",
-        "facilitiesAndBudget": "Ending unnecessary consultant contracts and prioritizing student facilities.",
-        "matchmakerScores": {
-          "taxFreezeVsServices": "freeze",
-          "developmentStance": "selective_growth",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
-          "housingEnforcement": "code_enforcement",
-          "sharedServices": "city_boe_merger"
-        }
-      }
+      "name": "Phaedra Dunn",
+      "status": "Incumbent Trustee",
+      "experience": "Montclair Board of Education Trustee; assumed office in 2022, serving term ending December 31, 2026."
     }
   ],
   "njCandidates": {

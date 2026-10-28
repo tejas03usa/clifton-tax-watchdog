@@ -83,9 +83,9 @@
       "ballotNumber": 1,
       "id": "matthew-cavallo",
       "name": "Matthew Cavallo",
-      "status": "Incumbent",
-      "role": "Wayne 5th Ward Councilman & Municipal Administrator",
-      "experience": "Appointed/Elected Wayne 5th Ward Councilman; seasoned credentialed New Jersey Municipal Administrator (QPA/CMFO) with decades of local government budgeting expertise.",
+      "status": "Challenger",
+      "role": "5th Ward Council Candidate & Credentialed Municipal Administrator",
+      "experience": "Former Verona Township Manager (2015–2021); seasoned credentialed New Jersey Municipal Administrator (QPA/CMFO) with decades of local government budgeting expertise; 2023 Wayne 5th Ward candidate.",
       "initials": "MC",
       "tagline": "Professional municipal fiscal management, rigorous capital budgeting, and aggressive Pompton River flood basin mitigation.",
       "declinedBenefits": true,
@@ -140,26 +140,32 @@
       ],
       "historicExperience": {
         "summary": "Over 15 years in municipal governance and public administration across northern New Jersey.",
-        "yearsInPublicService": "15+ Years",
+        "yearsInPublicService": "15+ Years (Municipal Management & Public Policy)",
         "careerTimeline": [
           {
-            "period": "2020–Present",
-            "role": "5th Ward Councilman",
-            "organization": "Township of Wayne",
-            "details": "Represents 5th Ward neighborhoods focusing on infrastructure and municipal services."
+            "period": "2015–2021",
+            "role": "Township Manager",
+            "organization": "Township of Verona (Essex County, NJ)",
+            "details": "Managed municipal operating budget, capital improvement bonding, and municipal staff operations as chief executive officer."
           },
           {
-            "period": "2010–Present",
-            "role": "Credentialed Municipal Administrator",
+            "period": "2021–Present",
+            "role": "Credentialed Municipal Administrator & Fiscal Consultant",
             "organization": "Local Government Services",
             "details": "Directs municipal procurement, capital bonding, and municipal budgeting."
+          },
+          {
+            "period": "2023 & 2026",
+            "role": "5th Ward Council Candidate",
+            "organization": "Township of Wayne",
+            "details": "Candidate for Wayne 5th Ward Council seat focusing on flood mitigation, tax stability, and municipal efficiency."
           }
         ],
         "publicOfficesHeld": [
           {
-            "office": "Wayne Township Council",
-            "tenure": "5th Ward",
-            "role": "Councilman"
+            "office": "Township of Verona",
+            "tenure": "2015–2021",
+            "role": "Township Manager / Chief Administrative Officer"
           }
         ],
         "educationAndCredentials": [
