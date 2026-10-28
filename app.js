@@ -818,8 +818,13 @@ async function switchCity(cityId, updateUrl = true) {
     renderStaffTable('all', document.getElementById('staff-search-input')?.value || '');
     setupStaffFilters();
   }
-  if (document.getElementById('ethics-cards-grid')) renderEthicsCards();
-  if (document.getElementById('vendors-cards-grid')) renderVendorsCards();
+  if (document.getElementById('ethics-cards-container') || document.getElementById('ethics-cards-grid')) {
+    renderEthicsCards('all');
+    setupEthicsFilters();
+  }
+  if (document.getElementById('vendors-cards-container') || document.getElementById('vendors-cards-grid')) {
+    renderVendorsCards();
+  }
   if (document.getElementById('intel-reports-list')) {
     setupInvestigationTools();
     renderIntelligenceReports();
@@ -1751,12 +1756,29 @@ function applyCityStaticCopy(cityId) {
     staffSearchEl.placeholder = `Search ${meta.name} staff by name, title, department...`;
   }
 
-  const staffCountSchool = staffData ? staffData.filter(s => /school|board of education|boe|pthsd|msd/i.test(s.entity)).length : 10;
-  const staffCountMuni = staffData ? staffData.filter(s => !/school|board of education|boe|pthsd|msd/i.test(s.entity)).length : 15;
+  const staffCountSchool = staffData ? staffData.filter(s => /school|board of education|boe|pthsd|msd/i.test(s.entity || '')).length : 0;
+  const staffCountMuni = staffData ? staffData.filter(s => !/school|board of education|boe|pthsd|msd/i.test(s.entity || '')).length : 0;
   setElHtml('#tab-staff .filter-buttons',
-    `<button class="filter-btn active" data-filter="all">All Positions (${(staffData ? staffData.length : 25)})</button>
+    `<button class="filter-btn active" data-filter="all">All Positions (${(staffData ? staffData.length : 0)})</button>
      <button class="filter-btn" data-filter="school">${meta.schoolDistrictShort} (${staffCountSchool})</button>
      <button class="filter-btn" data-filter="city">${meta.name} Municipal (${staffCountMuni})</button>`);
+  setupStaffFilters();
+
+  // Tab 9: Ethics & Outside Businesses
+  setElHtml('#tab-ethics .section-intro',
+    `<div class="section-badge-bar">
+       <span class="section-date-badge">Filing Basis: N.J.S.A. 40A:9-22.1 (LGO) & N.J.S.A. 18A:12-21 (SEC)</span>
+     </div>
+     <h2>${meta.name} Outside Businesses, Real Estate & Financial Disclosures</h2>
+     <p>Under the <strong>New Jersey Local Government Ethics Law (N.J.S.A. 40A:9-22.1)</strong> and the <strong>School Ethics Act (N.J.S.A. 18A:12-21)</strong>, elected officials and key administrators in ${meta.name} must file annual Financial Disclosure Statements (FDS) disclosing outside businesses, secondary earned income, and real estate properties held in New Jersey.</p>`);
+
+  const ethicsCountSchool = ethicsData ? ethicsData.filter(e => /school|board of education|boe|pthsd|msd|superintendent|principal/i.test(e.publicTitle || e.mandatoryFiling || '')).length : 0;
+  const ethicsCountMuni = ethicsData ? ethicsData.filter(e => !/school|board of education|boe|pthsd|msd|superintendent|principal/i.test(e.publicTitle || e.mandatoryFiling || '')).length : 0;
+  setElHtml('#tab-ethics .ethics-filter-buttons',
+    `<button class="filter-btn active" data-ethics-filter="all">All Disclosures (${(ethicsData ? ethicsData.length : 0)})</button>
+     <button class="filter-btn" data-ethics-filter="city">${meta.name} Municipal (${ethicsCountMuni})</button>
+     <button class="filter-btn" data-ethics-filter="school">${meta.schoolDistrictShort} (${ethicsCountSchool})</button>`);
+  setupEthicsFilters();
 
   // 11. Tab 9: Ethics & Tab 10: Vendors
   setElHtml('#tab-vendors .section-intro',
@@ -3717,20 +3739,33 @@ function renderStaffTable(filterEntity = 'all', searchQuery = '') {
   if (!staffData) return;
 
   const tbody = document.getElementById('staff-table-body');
+  if (!tbody) return;
+
   const q = searchQuery.toLowerCase().trim();
 
   const filtered = staffData.filter(s => {
-    const matchesEntity = filterEntity === 'all' || s.entity === filterEntity;
+    let matchesEntity = true;
+    const isSchool = /school|board of education|boe|pthsd|msd/i.test(s.entity || '');
+    if (filterEntity === 'all') {
+      matchesEntity = true;
+    } else if (filterEntity === 'school' || /school|board of education|boe/i.test(filterEntity)) {
+      matchesEntity = isSchool;
+    } else if (filterEntity === 'city' || filterEntity === 'municipal' || /city|town|township|borough|municipal/i.test(filterEntity)) {
+      matchesEntity = !isSchool;
+    } else {
+      matchesEntity = s.entity === filterEntity;
+    }
+
     const matchesSearch = !q || 
-      s.name.toLowerCase().includes(q) || 
-      s.title.toLowerCase().includes(q) || 
-      s.department.toLowerCase().includes(q) ||
+      (s.name && s.name.toLowerCase().includes(q)) || 
+      (s.title && s.title.toLowerCase().includes(q)) || 
+      (s.department && s.department.toLowerCase().includes(q)) ||
       (s.notes && s.notes.toLowerCase().includes(q));
     return matchesEntity && matchesSearch;
   });
 
   // Sort by reported salary descending
-  filtered.sort((a, b) => b.salaryReported - a.salaryReported);
+  filtered.sort((a, b) => ((b.salaryReported || b.baseSalary || 0) - (a.salaryReported || a.baseSalary || 0)));
 
   if (filtered.length === 0) {
     tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 24px; color: var(--text-subtle);">No matching positions found.</td></tr>`;
@@ -3738,11 +3773,16 @@ function renderStaffTable(filterEntity = 'all', searchQuery = '') {
   }
 
   tbody.innerHTML = filtered.map(s => {
-    const isSchool = /school|board of education|boe|pthsd|msd/i.test(s.entity);
+    const isSchool = /school|board of education|boe|pthsd|msd/i.test(s.entity || '');
     const pillClass = isSchool ? 'pill-school' : 'pill-city';
-    const salaryDisplay = s.salaryReported > 0 ? formatUSDWhole(s.salaryReported) : '$0 (Unpaid Public Service)';
+    const sal = s.salaryReported || s.baseSalary || 0;
+    const salaryDisplay = sal > 0 ? formatUSDWhole(sal) : '$0 (Unpaid Public Service)';
 
-    const hasEthics = (ethicsData || []).some(e => e.officialName.toLowerCase().includes(s.name.toLowerCase()) || s.name.toLowerCase().includes(e.officialName.toLowerCase()));
+    const hasEthics = (ethicsData || []).some(e => {
+      const eName = (e.officialName || e.name || '').toLowerCase();
+      const sName = (s.name || '').toLowerCase();
+      return eName && sName && (eName.includes(sName) || sName.includes(eName));
+    });
 
     return `
       <tr>
@@ -3756,14 +3796,14 @@ function renderStaffTable(filterEntity = 'all', searchQuery = '') {
         </td>
         <td>
           <span class="entity-pill ${pillClass}">${s.entity}</span>
-          <div style="font-size: 0.8rem; margin-top: 4px; color: var(--text-muted);">${s.department}</div>
+          <div style="font-size: 0.8rem; margin-top: 4px; color: var(--text-muted);">${s.department || ''}</div>
         </td>
-        <td><small style="font-weight: 500;">${s.type}</small></td>
+        <td><small style="font-weight: 500;">${s.type || ''}</small></td>
         <td class="text-right">
           <span class="salary-tag">${salaryDisplay}</span>
         </td>
-        <td><small style="font-family: var(--font-mono);">${s.salaryRange}</small></td>
-        <td style="max-width: 320px;"><small style="color: var(--text-muted);">${s.notes}</small></td>
+        <td><small style="font-family: var(--font-mono);">${s.salaryRange || ''}</small></td>
+        <td style="max-width: 320px;"><small style="color: var(--text-muted);">${s.notes || ''}</small></td>
       </tr>
     `;
   }).join('');
@@ -3772,10 +3812,11 @@ function renderStaffTable(filterEntity = 'all', searchQuery = '') {
 function setupStaffFilters() {
   const searchInput = document.getElementById('staff-search-input');
   const filterBtns = document.querySelectorAll('#tab-staff .filter-btn');
-  let currentFilter = 'all';
 
   if (searchInput) {
     searchInput.oninput = () => {
+      const activeBtn = document.querySelector('#tab-staff .filter-btn.active');
+      const currentFilter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
       renderStaffTable(currentFilter, searchInput.value);
     };
   }
@@ -3784,57 +3825,79 @@ function setupStaffFilters() {
     btn.onclick = () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      currentFilter = btn.getAttribute('data-filter');
+      const currentFilter = btn.getAttribute('data-filter');
       renderStaffTable(currentFilter, searchInput ? searchInput.value : '');
     };
   });
 }
 
 // TAB 4: ETHICS & ASSETS
-function renderEthicsCards() {
+function renderEthicsCards(filterEntity = 'all') {
   if (!ethicsData) return;
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const districtCode = meta.districtCode;
   const countyLabel = meta.county;
 
   const container = document.getElementById('ethics-cards-container');
-  container.innerHTML = ethicsData.map(d => {
-    const businessesHtml = d.disclosedBusinesses.map(b => `
+  if (!container) return;
+
+  const filtered = ethicsData.filter(d => {
+    const isSchool = /school|board of education|boe|pthsd|msd|superintendent|principal/i.test(d.publicTitle || d.mandatoryFiling || '');
+    if (filterEntity === 'all') return true;
+    if (filterEntity === 'school' || /school|board of education|boe/i.test(filterEntity)) return isSchool;
+    if (filterEntity === 'city' || filterEntity === 'municipal' || /city|town|township|borough|municipal/i.test(filterEntity)) return !isSchool;
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-subtle);">No matching ethics disclosures found for this filter.</div>`;
+    return;
+  }
+
+  container.innerHTML = filtered.map(d => {
+    const isSchool = /school|board of education|boe|pthsd|msd|superintendent|principal/i.test(d.publicTitle || d.mandatoryFiling || '');
+    const pillClass = isSchool ? 'pill-school' : 'pill-city';
+    const pillLabel = isSchool ? meta.schoolDistrictShort : meta.name + ' Municipal';
+
+    const businessesHtml = (d.disclosedBusinesses || []).map(b => `
       <div class="business-item">
         <div class="business-name">${b.businessName}</div>
         <div class="business-detail"><strong>Role:</strong> ${b.ownership} | <strong>Type:</strong> ${b.nature} (${b.location})</div>
       </div>
     `).join('');
 
-    const propertiesHtml = d.realEstateHoldings.map(p => `
+    const propertiesHtml = (d.realEstateHoldings || []).map(p => `
       <div class="property-item">
         <div class="business-name">${p.description}</div>
         <div class="business-detail"><strong>Location:</strong> ${p.municipality} | <strong>Lookup:</strong> ${p.taxRecordLookup}</div>
       </div>
     `).join('');
 
-    const incomeHtml = d.earnedIncomeSources.map(i => `<li style="font-size: 0.8rem; margin-bottom: 2px;">${i}</li>`).join('');
+    const incomeHtml = (d.earnedIncomeSources || []).map(i => `<li style="font-size: 0.8rem; margin-bottom: 2px;">${i}</li>`).join('');
 
-    const encodedName = encodeURIComponent(d.officialName.split(' ').pop());
+    const encodedName = encodeURIComponent((d.officialName || '').split(' ').pop());
     const propUrl = `https://tax1.co.monmouth.nj.us/cgi-bin/m4.cgi?district=${districtCode}&owner=${encodedName}`;
 
     return `
       <div class="ethics-card">
         <div class="ethics-header">
-          <h3>${d.officialName}</h3>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px;">
+            <h3 style="margin: 0;">${d.officialName}</h3>
+            <span class="entity-pill ${pillClass}">${pillLabel}</span>
+          </div>
           <div class="ethics-title">${d.publicTitle}</div>
           <div class="ethics-filing-type">${d.mandatoryFiling}</div>
         </div>
 
         <div class="section-label">Declared Businesses & Entities</div>
-        ${businessesHtml}
+        ${businessesHtml || '<div class="business-item"><div class="business-detail">None Disclosed</div></div>'}
 
         <div class="section-label">Real Estate & Property Assets</div>
-        ${propertiesHtml}
+        ${propertiesHtml || '<div class="property-item"><div class="business-detail">None Disclosed</div></div>'}
 
         <div class="section-label">Earned Income Sources (> $2,000)</div>
         <ul style="padding-left: 18px; color: var(--text-muted); margin-bottom: 10px;">
-          ${incomeHtml}
+          ${incomeHtml || '<li style="font-size: 0.8rem;">None Disclosed</li>'}
         </ul>
 
         <div class="conflict-notice">
@@ -3849,6 +3912,18 @@ function renderEthicsCards() {
       </div>
     `;
   }).join('');
+}
+
+function setupEthicsFilters() {
+  const filterBtns = document.querySelectorAll('#tab-ethics .filter-btn');
+  filterBtns.forEach(btn => {
+    btn.onclick = () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-ethics-filter');
+      renderEthicsCards(filter);
+    };
+  });
 }
 
 // TAB 5: VENDORS
@@ -4366,12 +4441,13 @@ function renderIntelligenceReports() {
   // REPORT 2: HOMES TO FUND SALARIES EQUIVALENCY
   // ----------------------------------------------------
   const homesTableBody = document.getElementById('homes-table-body');
-  const homesEntityBtns = document.querySelectorAll('#homes-entity-filters .filter-pill-btn');
   const homesSortSelect = document.getElementById('homes-sort-select');
 
-  const benchAssessed = meta.sliderDefault;
-  const benchSchoolTax = (benchAssessed / 100) * (taxData?.certifiedSchoolRate || (meta.rateNum * (parseFloat(meta.schoolsShare)/100)));
-  const benchCityTax = (benchAssessed / 100) * (taxData?.certifiedMunicipalRate || (meta.rateNum * (parseFloat(meta.muniShare)/100)));
+  const benchAssessed = meta.sliderDefault || (taxData?.averageAssessment) || 200000;
+  const schoolRate = taxData?.certifiedSchoolRate || (meta.rateNum * (parseFloat(meta.schoolsShare || 50)/100));
+  const muniRate = taxData?.certifiedMunicipalRate || (meta.rateNum * (parseFloat(meta.muniShare || 35)/100));
+  const benchSchoolTax = (benchAssessed / 100) * schoolRate;
+  const benchCityTax = (benchAssessed / 100) * muniRate;
 
   function renderHomesTable() {
     if (!homesTableBody || !staffData) return;
@@ -4379,18 +4455,28 @@ function renderIntelligenceReports() {
     const entityFilter = activeEntityBtn ? activeEntityBtn.getAttribute('data-entity') : 'all';
     const sortVal = homesSortSelect ? homesSortSelect.value : 'homes-desc';
 
-    let list = (staffData.staff ? staffData.staff : staffData).filter(s => (s.salaryReported || 0) > 0);
+    let rawList = staffData.staff ? staffData.staff : staffData;
+    const getSalary = s => (s.salaryReported || s.baseSalary || 0);
+    let list = rawList.filter(s => getSalary(s) > 0);
 
     if (entityFilter !== 'all') {
-      list = list.filter(s => s.entity === entityFilter);
+      if (entityFilter === 'BOE' || entityFilter === 'school' || /school|board of education|boe/i.test(entityFilter)) {
+        list = list.filter(s => /school|board of education|boe|pthsd|msd/i.test(s.entity || ''));
+      } else if (entityFilter === 'MUNI' || entityFilter === 'city' || /city|town|township|borough|municipal/i.test(entityFilter)) {
+        list = list.filter(s => !/school|board of education|boe|pthsd|msd/i.test(s.entity || ''));
+      } else {
+        list = list.filter(s => s.entity === entityFilter);
+      }
     }
 
     list = list.map(s => {
-      const isSchool = s.entity && s.entity.includes('Board of Education');
+      const isSchool = /school|board of education|boe|pthsd|msd/i.test(s.entity || '');
       const annualTaxPerHome = isSchool ? benchSchoolTax : benchCityTax;
-      const homesRequired = s.salaryReported / annualTaxPerHome;
+      const salary = getSalary(s);
+      const homesRequired = annualTaxPerHome > 0 ? (salary / annualTaxPerHome) : 0;
       return {
         ...s,
+        salary,
         isSchool,
         annualTaxPerHome,
         homesRequired
@@ -4400,17 +4486,22 @@ function renderIntelligenceReports() {
     if (sortVal === 'homes-desc') {
       list.sort((a, b) => b.homesRequired - a.homesRequired);
     } else if (sortVal === 'salary-desc') {
-      list.sort((a, b) => b.salaryReported - a.salaryReported);
+      list.sort((a, b) => b.salary - a.salary);
     } else if (sortVal === 'name-asc') {
       list.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
     }
 
+    if (list.length === 0) {
+      homesTableBody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 24px; color: var(--text-subtle);">No matching positions found for this filter.</td></tr>`;
+      return;
+    }
+
     homesTableBody.innerHTML = list.map(s => {
       const entityClass = s.isSchool ? 'badge-school' : 'badge-city';
-      const entityTaxRate = isParsippany
-        ? (s.isSchool ? '2.277% ($7,935/home)' : '0.935% ($3,258/home)')
-        : (s.isSchool ? '3.111% ($6,658/home)' : '1.920% ($4,109/home)');
-      const entityLabel = s.isSchool ? 'School Tax' : meta.name + ' Municipal Tax';
+      const entityTaxRate = s.isSchool
+        ? `${schoolRate.toFixed(3)}% (${formatUSDWhole(benchSchoolTax)}/home)`
+        : `${muniRate.toFixed(3)}% (${formatUSDWhole(benchCityTax)}/home)`;
+      const entityLabel = s.isSchool ? `${meta.schoolDistrictShort || 'School'} Tax` : `${meta.name} Municipal Tax`;
       const homesCountFormatted = s.homesRequired.toFixed(1);
 
       return `
@@ -4423,7 +4514,7 @@ function renderIntelligenceReports() {
             <span class="status-badge ${entityClass}">${s.entity}</span>
           </td>
           <td>
-            <span class="salary-highlight">${formatUSDWhole(s.salaryReported)}</span>
+            <span class="salary-highlight">${formatUSDWhole(s.salary)}</span>
             <div class="table-subtext">${s.type || 'Annual Salary'}</div>
           </td>
           <td>
@@ -4448,13 +4539,16 @@ function renderIntelligenceReports() {
     }).join('');
   }
 
-  homesEntityBtns.forEach(btn => {
-    btn.onclick = () => {
-      homesEntityBtns.forEach(b => b.classList.remove('active'));
+  const homesFilterContainer = document.getElementById('homes-entity-filters');
+  if (homesFilterContainer) {
+    homesFilterContainer.onclick = (e) => {
+      const btn = e.target.closest('.filter-pill-btn');
+      if (!btn) return;
+      homesFilterContainer.querySelectorAll('.filter-pill-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       renderHomesTable();
     };
-  });
+  }
 
   if (homesSortSelect) {
     homesSortSelect.onchange = renderHomesTable;

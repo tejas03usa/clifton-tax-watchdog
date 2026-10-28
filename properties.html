@@ -678,10 +678,10 @@
           <span class="search-icon">🔎</span>
           <input type="text" id="staff-search-input" placeholder="Search by name, title, department (e.g., 'Robertozzi', 'Police', 'Fire', 'Principal')..." class="styled-input-search">
         </div>
-        <div class="filter-buttons">
+        <div class="filter-buttons staff-filter-buttons">
           <button class="filter-btn active" data-filter="all">All Positions</button>
-          <button class="filter-btn" data-filter="Clifton Board of Education">School District (BOE)</button>
-          <button class="filter-btn" data-filter="City of Clifton">City Government (Municipal)</button>
+          <button class="filter-btn" data-filter="school">School District (BOE)</button>
+          <button class="filter-btn" data-filter="city">City Government (Municipal)</button>
         </div>
       </div>
 
@@ -744,6 +744,14 @@
         </div>
         <h2>Outside Businesses, Real Estate & Financial Disclosures</h2>
         <p>Under the <strong>New Jersey Local Government Ethics Law (N.J.S.A. 40A:9-22.1)</strong> and the <strong>School Ethics Act (N.J.S.A. 18A:12-21)</strong>, elected officials and key administrators must file annual Financial Disclosure Statements (FDS) disclosing outside businesses, secondary earned income, and real estate properties held in New Jersey.</p>
+      </div>
+
+      <div class="filter-controls" style="margin-bottom: 24px;">
+        <div class="filter-buttons ethics-filter-buttons">
+          <button class="filter-btn active" data-ethics-filter="all">All Disclosures</button>
+          <button class="filter-btn" data-ethics-filter="city">City Government (Municipal)</button>
+          <button class="filter-btn" data-ethics-filter="school">School District (BOE)</button>
+        </div>
       </div>
 
       <div class="ethics-official-grid" id="ethics-cards-container">
@@ -962,8 +970,8 @@
             <label>Filter by Entity / Department:</label>
             <div class="filter-pills" id="homes-entity-filters">
               <button class="filter-pill-btn active" data-entity="all">All Personnel</button>
-              <button class="filter-pill-btn" data-entity="City of Clifton">City Municipal Only</button>
-              <button class="filter-pill-btn" data-entity="Clifton Board of Education">Clifton BOE Only</button>
+              <button class="filter-pill-btn" data-entity="MUNI">City Municipal Only</button>
+              <button class="filter-pill-btn" data-entity="BOE">School District (BOE) Only</button>
             </div>
           </div>
           <div class="intel-filter-group">

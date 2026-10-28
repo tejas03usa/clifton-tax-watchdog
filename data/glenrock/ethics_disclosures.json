@@ -5,80 +5,145 @@
   },
   "disclosures": [
     {
-      "name": "Kristine Morieko",
-      "role": "Mayor",
-      "entity": "Borough of Glen Rock",
-      "incomeSources": [
+      "officialName": "Kristine Morieko",
+      "publicTitle": "Mayor (Borough of Glen Rock)",
+      "mandatoryFiling": "Local Government Ethics Law (N.J.S.A. 40A:9-22.1) - Annual FDS at fds.nj.gov",
+      "disclosedBusinesses": [
+        {
+          "businessName": "None Disclosed (Private Corporate Management)",
+          "nature": "Corporate management and administrative leadership",
+          "location": "Bergen County, NJ",
+          "ownership": "N/A"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Single-Family Residence",
+          "municipality": "Glen Rock, NJ (Bergen County)",
+          "ownershipType": "Fee Simple",
+          "taxRecordLookup": "Search Bergen County Board of Taxation under Morieko Kristine"
+        }
+      ],
+      "earnedIncomeSources": [
         "Private Corporate Management",
         "Borough of Glen Rock (Mayoral Stipend)"
       ],
-      "realEstateHoldings": [
-        "Primary Single-Family Residence, Glen Rock, NJ 07452"
+      "unearnedIncomeSources": [
+        "Investment portfolios / retirement distributions"
       ],
-      "outsideBusinessPositions": [
-        "None Disclosed"
-      ],
-      "conflictChecks": "Compliant with Chapter 271 Pay-to-Play limits; recuses on municipal contractor matters where personal acquaintance exists."
+      "conflictGuidance": "Compliant with Chapter 271 Pay-to-Play limits; recuses on municipal contractor matters where personal acquaintance exists."
     },
     {
-      "name": "Teresa Gilbreath",
-      "role": "Borough Council President",
-      "entity": "Borough of Glen Rock",
-      "incomeSources": [
+      "officialName": "Teresa Gilbreath",
+      "publicTitle": "Former Borough Council President (Borough of Glen Rock)",
+      "mandatoryFiling": "Local Government Ethics Law (N.J.S.A. 40A:9-22.1) - Annual FDS at fds.nj.gov",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Corporate Consulting LLC",
+          "nature": "Private Sector Legal & Financial Advisory",
+          "location": "Bergen County, NJ",
+          "ownership": "Principal / Consultant"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Single-Family Residence",
+          "municipality": "Glen Rock, NJ (Bergen County)",
+          "ownershipType": "Fee Simple",
+          "taxRecordLookup": "Search Bergen County Board of Taxation under Gilbreath Teresa"
+        }
+      ],
+      "earnedIncomeSources": [
         "Private Sector Legal & Financial Advisory"
       ],
-      "realEstateHoldings": [
-        "Single-Family Residence, Glen Rock, NJ 07452"
+      "unearnedIncomeSources": [
+        "Pensions & retirement investments"
       ],
-      "outsideBusinessPositions": [
-        "Corporate Consulting LLC"
-      ],
-      "conflictChecks": "Filed annual FDS with NJ Department of Community Affairs; zero commercial conflicts with borough vendors."
+      "conflictGuidance": "Filed annual FDS with NJ Department of Community Affairs; zero commercial conflicts with borough vendors."
     },
     {
-      "name": "Amy Martin",
-      "role": "Borough Council Member",
-      "entity": "Borough of Glen Rock",
-      "incomeSources": [
+      "officialName": "Amy Martin",
+      "publicTitle": "Borough Council President (Borough of Glen Rock)",
+      "mandatoryFiling": "Local Government Ethics Law (N.J.S.A. 40A:9-22.1) - Annual FDS at fds.nj.gov",
+      "disclosedBusinesses": [
+        {
+          "businessName": "None Disclosed (Healthcare Administration)",
+          "nature": "Healthcare administration & non-profit management",
+          "location": "Bergen County, NJ",
+          "ownership": "N/A"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Single-Family Residence",
+          "municipality": "Glen Rock, NJ (Bergen County)",
+          "ownershipType": "Fee Simple",
+          "taxRecordLookup": "Search Bergen County Board of Taxation under Martin Amy"
+        }
+      ],
+      "earnedIncomeSources": [
         "Healthcare Administration / Non-Profit Management"
       ],
-      "realEstateHoldings": [
-        "Single-Family Residence, Glen Rock, NJ 07452"
+      "unearnedIncomeSources": [
+        "Investment funds"
       ],
-      "outsideBusinessPositions": [
-        "None Disclosed"
-      ],
-      "conflictChecks": "Verified compliant with NJ Local Government Ethics Law."
+      "conflictGuidance": "Verified compliant with NJ Local Government Ethics Law; recuses on matters involving healthcare employer."
     },
     {
-      "name": "Damali Robinson",
-      "role": "Board of Education Trustee",
-      "entity": "Glen Rock Public Schools",
-      "incomeSources": [
-        "Higher Education / Corporate Strategy"
+      "officialName": "Damali Robinson",
+      "publicTitle": "Board of Education Trustee (Glen Rock Public Schools)",
+      "mandatoryFiling": "School Ethics Act (N.J.S.A. 18A:12-21) - Annual FDS & Relative Disclosures",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Educational Mentorship Advisory",
+          "nature": "Higher education and corporate strategy advisory",
+          "location": "Bergen County, NJ",
+          "ownership": "Principal"
+        }
       ],
       "realEstateHoldings": [
-        "Primary Residence, Glen Rock, NJ 07452"
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Glen Rock, NJ (Bergen County)",
+          "ownershipType": "Fee Simple",
+          "taxRecordLookup": "Search Bergen County Board of Taxation under Robinson Damali"
+        }
       ],
-      "outsideBusinessPositions": [
-        "Educational Mentorship Advisory"
+      "earnedIncomeSources": [
+        "Higher Education / Corporate Strategy Consulting"
       ],
-      "conflictChecks": "Filed School Ethics Commission (SEC) personal/relative disclosure; no immediate relatives employed by district."
+      "unearnedIncomeSources": [
+        "Retirement / investment accounts"
+      ],
+      "conflictGuidance": "Filed School Ethics Commission (SEC) personal/relative disclosure; no immediate relatives employed by district."
     },
     {
-      "name": "Elizabeth Calvez",
-      "role": "Board of Education Trustee",
-      "entity": "Glen Rock Public Schools",
-      "incomeSources": [
+      "officialName": "Elizabeth Calvez",
+      "publicTitle": "Board of Education Trustee (Glen Rock Public Schools)",
+      "mandatoryFiling": "School Ethics Act (N.J.S.A. 18A:12-21) - Annual FDS & Relative Disclosures",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Private Marketing LLC",
+          "nature": "Finance & marketing strategy consulting",
+          "location": "Bergen County, NJ",
+          "ownership": "Principal"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Glen Rock, NJ (Bergen County)",
+          "ownershipType": "Fee Simple",
+          "taxRecordLookup": "Search Bergen County Board of Taxation under Calvez Elizabeth"
+        }
+      ],
+      "earnedIncomeSources": [
         "Finance & Marketing Consulting"
       ],
-      "realEstateHoldings": [
-        "Primary Residence, Glen Rock, NJ 07452"
+      "unearnedIncomeSources": [
+        "Private investment distributions"
       ],
-      "outsideBusinessPositions": [
-        "Private Marketing LLC"
-      ],
-      "conflictChecks": "Certified compliance with state school ethics statutes; no vendor contracts with district."
+      "conflictGuidance": "Certified compliance with state school ethics statutes; no commercial vendor contracts with district."
     }
   ]
 }

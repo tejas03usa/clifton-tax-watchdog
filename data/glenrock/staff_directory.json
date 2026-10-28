@@ -14,7 +14,10 @@
       "status": "Active Full-Time Contract",
       "hireDate": "2019-07-01",
       "pensionPlan": "TPAF",
-      "notes": "Chief executive officer overseeing all 6 district campuses (~2,580 students)."
+      "notes": "Chief executive officer overseeing all 6 district campuses (~2,580 students).",
+      "salaryReported": 228500,
+      "type": "Active Full-Time Contract",
+      "salaryRange": "$228,500 Base ($242,000 Total)"
     },
     {
       "name": "Michael Rinderknecht",
@@ -26,7 +29,10 @@
       "status": "Active Full-Time Contract",
       "hireDate": "2008-07-01",
       "pensionPlan": "TPAF",
-      "notes": "Oversees the $61.8M school budget, vendor contracting, and facilities maintenance."
+      "notes": "Oversees the $61.8M school budget, vendor contracting, and facilities maintenance.",
+      "salaryReported": 189500,
+      "type": "Active Full-Time Contract",
+      "salaryRange": "$189,500 Base ($198,000 Total)"
     },
     {
       "name": "Dean Ackermann",
@@ -38,31 +44,40 @@
       "status": "Active Full-Time Civil Service",
       "hireDate": "1994-01-01",
       "pensionPlan": "PFRS",
-      "notes": "Commands sworn patrol officers, detective bureau, and traffic detail administration."
+      "notes": "Commands sworn patrol officers, detective bureau, and traffic detail administration.",
+      "salaryReported": 214500,
+      "type": "Active Full-Time Civil Service",
+      "salaryRange": "$214,500 Base ($226,000 Total)"
     },
     {
       "name": "Michael Parent",
       "title": "Principal - Glen Rock High School",
       "entity": "Glen Rock Public Schools",
-      "department": "Secondary Education (Grades 9–12)",
+      "department": "Secondary Education (Grades 9\u201312)",
       "baseSalary": 168000,
       "totalCompensation": 174000,
       "status": "Active Full-Time",
       "hireDate": "2020-08-01",
       "pensionPlan": "TPAF",
-      "notes": "Directs academic curriculum, athletics, and college placements for ~780 high schoolers."
+      "notes": "Directs academic curriculum, athletics, and college placements for ~780 high schoolers.",
+      "salaryReported": 168000,
+      "type": "Active Full-Time",
+      "salaryRange": "$168,000 Base ($174,000 Total)"
     },
     {
       "name": "Jennifer Wirt",
       "title": "Principal - Glen Rock Middle School",
       "entity": "Glen Rock Public Schools",
-      "department": "Middle School (Grades 6–8)",
+      "department": "Middle School (Grades 6\u20138)",
       "baseSalary": 156500,
       "totalCompensation": 162000,
       "status": "Active Full-Time",
       "hireDate": "2018-07-01",
       "pensionPlan": "TPAF",
-      "notes": "Leads middle school academic and emotional counseling programs for ~620 students."
+      "notes": "Leads middle school academic and emotional counseling programs for ~620 students.",
+      "salaryReported": 156500,
+      "type": "Active Full-Time",
+      "salaryRange": "$156,500 Base ($162,000 Total)"
     },
     {
       "name": "Lenora Benjamin",
@@ -74,7 +89,10 @@
       "status": "Active Full-Time Appointed",
       "hireDate": "2019-03-01",
       "pensionPlan": "PERS",
-      "notes": "Chief operating officer supervising all municipal departments, capital projects, and labor relations."
+      "notes": "Chief operating officer supervising all municipal departments, capital projects, and labor relations.",
+      "salaryReported": 164000,
+      "type": "Active Full-Time Appointed",
+      "salaryRange": "$164,000 Base ($171,500 Total)"
     },
     {
       "name": "Jacqueline Scalia",
@@ -86,7 +104,10 @@
       "status": "Active Full-Time Certified RMC",
       "hireDate": "2016-04-01",
       "pensionPlan": "PERS",
-      "notes": "Custodian of municipal public records, OPRA coordinator, and local election administrator."
+      "notes": "Custodian of municipal public records, OPRA coordinator, and local election administrator.",
+      "salaryReported": 112000,
+      "type": "Active Full-Time Certified RMC",
+      "salaryRange": "$112,000 Base ($118,000 Total)"
     },
     {
       "name": "Robert V. Van Dien",
@@ -98,7 +119,10 @@
       "status": "Active Full-Time CPWM",
       "hireDate": "2005-09-01",
       "pensionPlan": "PERS",
-      "notes": "Manages road paving crews, stormwater infrastructure, sanitation, and vehicle fleet."
+      "notes": "Manages road paving crews, stormwater infrastructure, sanitation, and vehicle fleet.",
+      "salaryReported": 148000,
+      "type": "Active Full-Time CPWM",
+      "salaryRange": "$148,000 Base ($156,000 Total)"
     },
     {
       "name": "Krista Voth",
@@ -110,7 +134,10 @@
       "status": "Active Full-Time",
       "hireDate": "2015-09-01",
       "pensionPlan": "TPAF",
-      "notes": "Administers Central Elementary School serving ~320 neighborhood children."
+      "notes": "Administers Central Elementary School serving ~320 neighborhood children.",
+      "salaryReported": 144500,
+      "type": "Active Full-Time",
+      "salaryRange": "$144,500 Base ($149,000 Total)"
     },
     {
       "name": "Linda Weber",
@@ -122,7 +149,10 @@
       "status": "Active Full-Time",
       "hireDate": "2014-07-01",
       "pensionPlan": "TPAF",
-      "notes": "Administers Byrd Elementary School serving ~310 neighborhood children."
+      "notes": "Administers Byrd Elementary School serving ~310 neighborhood children.",
+      "salaryReported": 143000,
+      "type": "Active Full-Time",
+      "salaryRange": "$143,000 Base ($147,500 Total)"
     },
     {
       "name": "Edward Thompson",
@@ -134,7 +164,10 @@
       "status": "Active Full-Time",
       "hireDate": "2016-08-01",
       "pensionPlan": "TPAF",
-      "notes": "Administers Coleman Elementary School serving ~340 neighborhood children."
+      "notes": "Administers Coleman Elementary School serving ~340 neighborhood children.",
+      "salaryReported": 142500,
+      "type": "Active Full-Time",
+      "salaryRange": "$142,500 Base ($147,000 Total)"
     },
     {
       "name": "Irene Kelly",
@@ -146,7 +179,10 @@
       "status": "Active Full-Time",
       "hireDate": "2017-07-01",
       "pensionPlan": "TPAF",
-      "notes": "Administers Hamilton Elementary School serving ~330 neighborhood children."
+      "notes": "Administers Hamilton Elementary School serving ~330 neighborhood children.",
+      "salaryReported": 141000,
+      "type": "Active Full-Time",
+      "salaryRange": "$141,000 Base ($145,500 Total)"
     },
     {
       "name": "Patricia Volpe",
@@ -158,7 +194,10 @@
       "status": "Active Full-Time CMFO / CTC",
       "hireDate": "2017-01-01",
       "pensionPlan": "PERS",
-      "notes": "Manages municipal general ledger, tax billing, quarterly audits, and bank reconciliations."
+      "notes": "Manages municipal general ledger, tax billing, quarterly audits, and bank reconciliations.",
+      "salaryReported": 136000,
+      "type": "Active Full-Time CMFO / CTC",
+      "salaryRange": "$136,000 Base ($142,000 Total)"
     },
     {
       "name": "William Yirce",
@@ -170,7 +209,10 @@
       "status": "Part-Time Certified Tax Assessor (CTA)",
       "hireDate": "2018-05-01",
       "pensionPlan": "PERS",
-      "notes": "Defends municipal assessments before Bergen County Tax Board and maintains 71.5% ratio."
+      "notes": "Defends municipal assessments before Bergen County Tax Board and maintains 71.5% ratio.",
+      "salaryReported": 84500,
+      "type": "Part-Time Certified Tax Assessor (CTA)",
+      "salaryRange": "$84,500 Base ($88,000 Total)"
     },
     {
       "name": "Ellen O'Keefe",
@@ -182,7 +224,10 @@
       "status": "Active Full-Time",
       "hireDate": "2015-11-01",
       "pensionPlan": "PERS",
-      "notes": "Directs library acquisitions, digital database licensing, and community educational events."
+      "notes": "Directs library acquisitions, digital database licensing, and community educational events.",
+      "salaryReported": 108000,
+      "type": "Active Full-Time",
+      "salaryRange": "$108,000 Base ($114,000 Total)"
     }
   ]
 }

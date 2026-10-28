@@ -132,6 +132,22 @@
 
 ---
 
+### Mistake 6: Entity Filtering Disconnect across Staff Payroll, Outside Businesses, and Homes-to-Fund
+
+* **Incident:** Filtering by "School District (BOE)" or "City Government (Municipal)" showed 0 rows / "No matching positions found" in the Staff Directory, Outside Businesses tab, and Homes-to-Fund index across non-Clifton towns.
+  * **Root Cause:**
+    1. `renderStaffTable` performed strict equality `s.entity === filterEntity` (comparing `'school'` or `'city'` directly against full names like `'Wayne Township Public Schools'`).
+    2. Glen Rock's `ethics_disclosures.json` used custom keys (`role`, `outsideBusinessPositions`, `incomeSources`) instead of the standardized schema (`publicTitle`, `disclosedBusinesses`, `earnedIncomeSources`), causing runtime TypeErrors.
+    3. Container ID checks in `switchCity` looked for `ethics-cards-grid` and `vendors-cards-grid` instead of `-container`, skipping re-render.
+    4. Homes-to-Fund index checked only `s.entity.includes('Board of Education')` and had hardcoded tax rate labels for only Clifton and Parsippany, with button click listeners destroyed upon dynamic HTML replacement.
+  * **Factual Correction:**
+    1. Implemented robust regex entity classification (`/school|board of education|boe|pthsd|msd/i.test(entity)`) across Staff, Ethics, and Homes-to-Fund views.
+    2. Standardized Glen Rock ethics schema and added dynamic filter pills for all 7 towns.
+    3. Parameterized Homes-to-Fund rates and tax burdens dynamically from active town metadata and attached persistent delegated click handlers.
+  * **Prevention Rule:** Use normalized entity matcher functions and event delegation for dynamic UI controls; validate all new town JSON files against canonical schema definitions before merging.
+
+---
+
 ## 3. Mandatory Pre-Commit Validation Checklist
 
 Before any election or municipal data change is merged or deployed, run this validation sequence:
