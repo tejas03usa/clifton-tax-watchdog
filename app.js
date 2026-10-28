@@ -1441,7 +1441,7 @@ function updateElectionStaticCopy(cityId, meta) {
 
   // Footer
   const footerBrandTitle = document.querySelector('.app-footer .footer-brand h4');
-  if (footerBrandTitle) footerBrandTitle.textContent = `${meta.name} NJ Taxpayer Watchdog Project`;
+  if (footerBrandTitle) footerBrandTitle.textContent = `MyTownLens — ${meta.name} Taxpayer Watchdog Project`;
   const footerBrandDesc = document.querySelector('.app-footer .footer-brand p');
   if (footerBrandDesc) {
     footerBrandDesc.textContent = `Independent civic transparency, property assessment, and public records analysis for ${meta.name}, New Jersey residents.`;
@@ -1882,7 +1882,7 @@ function applyCityStaticCopy(cityId) {
 
   // 15. Page Footer
   setElHtml('.app-footer .footer-brand',
-    `<h4>${meta.name} NJ Taxpayer Watchdog Project</h4>
+    `<h4>MyTownLens — ${meta.name} Taxpayer Watchdog Project</h4>
      <p>Independent civic transparency, property assessment, and public records analysis for ${meta.name}, New Jersey residents.</p>`);
   setElHtml('.app-footer .footer-sources',
     `All figures, tax rates, salaries, and assessments verified against certified records from: ${meta.county} Board of Taxation, ${meta.fullName} Assessor & Collector, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), and ${meta.schoolDistrictShort} User-Friendly Budgets.`);
