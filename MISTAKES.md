@@ -167,6 +167,18 @@
   4. Updated property assessment metadata and search results UI to explicitly label records as a "Representative Statistical Sample of 1,850 Calibrated Parcels", linking directly to County MOD-IV portals for certified deed lookups.
 * **Prevention Rule:** Never enclose AI-generated summaries in quotation marks; clearly separate active candidates from deceased or historical officials; and explicitly label statistical or simulated samples as models rather than certified state records.
 
+### Mistake #9: Sampled Property Assessments with Interpolated Interior Attributes & Mismatched Revaluation Scales (Wayne, Morristown, Montville)
+* **Date Identified:** October 2026
+* **Affected Files:** `data/**/property_assessments.json`, `data/wayne/tax_breakdown.json`, `data/morristown/tax_breakdown.json`, `data/montville/tax_breakdown.json`, `properties.html`, `app.js`
+* **What Went Wrong:**
+  1. Earlier `property_assessments.json` files contained only 1,850 sampled parcels per town and included interpolated interior attributes (`bedrooms`, `bathrooms`, `squareFeet`, `garage`, `basement`, `cooling`, `heating`) that are not published in the public NJ MOD-IV statewide tax roll.
+  2. Wayne (`1614`), Morristown (`1424`), and Montville (`1421`) had `tax_breakdown.json` / `CITY_REGISTRY` tax rates and average assessments that did not match the actual MOD-IV revaluation status (e.g., Wayne has not revalued since 1995 and has a $233,345 average assessment at a 5.946% rate / 35.8% equalization ratio, whereas Morristown completed a revaluation with a $643,408 average assessment at a 1.575% rate / 95.0% equalization ratio).
+* **Factual Correction:**
+  1. Replaced all 7 `property_assessments.json` files with **all 75,916 official Class 2 residential properties** extracted directly from the State of New Jersey Office of GIS (NJOGIS) / Division of Taxation MOD-IV Composite Parcel Roll (`Parcels_Composite_NJ_WM/FeatureServer/0`): Clifton (`21,300`), Wayne (`16,174`), Parsippany (`14,360`), Montclair (`9,588`), Montville (`7,141`), Glen Rock (`3,872`), and Morristown (`3,481`).
+  2. Removed all fabricated interior fields (`bedrooms`, `bathrooms`, `squareFeet`, `garage`, `basement`, `cooling`, `heating`) from the JSON datasets, HTML templates, and JS renderers, displaying strictly authentic MOD-IV fields (`PAMS_PIN`, `Block`, `Lot`, `Qualifier`, `Address`, `Postal Zone / Tax Section`, `ZIP`, `Property Class / Building Description`, `Assessed Land`, `Assessed Building`, `Assessed Total`, `Annual Tax`, `MOD-IV Prior Tax`, `Year Built`, `Lot Size`, and `Deed Book/Page/Date/Sale Price`).
+  3. Synchronized `tax_breakdown.json` and `CITY_REGISTRY` for Wayne, Morristown, and Montville so that loading any MOD-IV property into the Tax Calculator produces the exact same tax bill shown on the property card.
+* **Prevention Rule:** Never include unverified interior home attributes not present in official municipal/state MOD-IV rolls, and always verify a municipality's equalization ratio and revaluation basis against the actual MOD-IV parcel roll before setting calculator tax rates.
+
 ---
 
 ## 3. Mandatory Pre-Commit Validation Checklist

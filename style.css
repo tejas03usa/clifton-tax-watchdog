@@ -3691,6 +3691,14 @@ div[id] {
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 340px auto 440px;
+}
+
+@supports not (content-visibility: auto) {
+  .property-card {
+    contain: layout style paint;
+  }
 }
 
 .property-card:hover {
@@ -3922,6 +3930,9 @@ div[id] {
   overflow-x: auto;
   box-shadow: var(--shadow-sm);
   margin-bottom: 30px;
+  container-type: inline-size;
+  max-height: 75vh;
+  overflow-y: auto;
 }
 
 .properties-data-table {
@@ -3932,6 +3943,9 @@ div[id] {
 }
 
 .properties-data-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background: var(--bg-subtle);
   padding: 12px 14px;
   font-weight: 700;
@@ -3943,14 +3957,28 @@ div[id] {
   white-space: nowrap;
 }
 
-.properties-data-table tbody td {
+.properties-data-table thead th:first-child {
+  left: 0;
+  z-index: 3;
+}
+
+.properties-data-table tbody td,
+.properties-data-table tbody th[scope="row"] {
   padding: 12px 14px;
   border-bottom: 1px solid var(--border-light);
   color: var(--text-main);
   white-space: nowrap;
 }
 
-.properties-data-table tbody tr:hover {
+.properties-data-table tbody th[scope="row"] {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--bg-surface);
+}
+
+.properties-data-table tbody tr:hover,
+.properties-data-table tbody tr:hover th[scope="row"] {
   background: #f8fafc;
 }
 

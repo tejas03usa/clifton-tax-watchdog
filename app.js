@@ -415,11 +415,12 @@ const CITY_REGISTRY = {
     schoolBudgetDisplay: '$293.2M',
     muniBudgetDisplay: '$105.4M',
     benefitsSpendDisplay: '$87.2M',
-    avgAssessed: '$182.5k',
+    totalHomes: 21300,
+    avgAssessed: '$180.5k',
     typicalMarket: 550000,
     sliderMin: 50000,
     sliderMax: 600000,
-    sliderDefault: 182500,
+    sliderDefault: 180500,
     zipCodesDisplay: '07011, 07012, 07013 & 07014',
     controversyHighlight: 'OSC audits, PILOT shifts, ASI Reval & budget cliffs',
     title: 'Clifton Taxpayer Watchdog',
@@ -456,11 +457,12 @@ const CITY_REGISTRY = {
     schoolBudgetDisplay: '$187.5M',
     muniBudgetDisplay: '$92.8M',
     benefitsSpendDisplay: '$61.1M',
-    avgAssessed: '$348.5k',
+    totalHomes: 14360,
+    avgAssessed: '$314.4k',
     typicalMarket: 603000,
     sliderMin: 100000,
     sliderMax: 900000,
-    sliderDefault: 348500,
+    sliderDefault: 314400,
     zipCodesDisplay: '07054, 07034, 07878 & 07950',
     controversyHighlight: 'Route 10 PILOTs, BOE funding disputes & utility funds',
     title: 'Parsippany Taxpayer Watchdog',
@@ -485,10 +487,10 @@ const CITY_REGISTRY = {
     countyShort: 'Passaic County',
     districtCode: '1614',
     auditBadge: 'PASSAIC COUNTY AUDIT • 2026',
-    certifiedTaxRate: '2.748%',
-    rateNum: 2.748,
-    equalizationRatio: 80.4,
-    avgTaxBill: '$13,245 / yr',
+    certifiedTaxRate: '5.946%',
+    rateNum: 5.946,
+    equalizationRatio: 35.8,
+    avgTaxBill: '$13,875 / yr',
     schoolsShare: '58.40%',
     muniShare: '26.20%',
     countyShare: '15.40%',
@@ -497,24 +499,25 @@ const CITY_REGISTRY = {
     schoolBudgetDisplay: '$186.2M',
     muniBudgetDisplay: '$83.5M',
     benefitsSpendDisplay: '$57.4M',
-    avgAssessed: '$482.0k',
-    typicalMarket: 599500,
-    sliderMin: 150000,
-    sliderMax: 1200000,
-    sliderDefault: 482000,
-    zipCodesDisplay: '07470 & 07474',
+    totalHomes: 16174,
+    avgAssessed: '$233.3k',
+    typicalMarket: 650000,
+    sliderMin: 75000,
+    sliderMax: 750000,
+    sliderDefault: 233345,
+    zipCodesDisplay: '07470',
     controversyHighlight: 'Willowbrook Mall ratable appeals, Toys R Us HQ loss & flood bonds',
     title: 'Wayne Township Taxpayer Watchdog',
     pageTitle: 'Wayne Township NJ Taxpayer Watchdog | Where Does Your Money Go?',
     subtitle: 'Citizen audit of Wayne Township public spending ($83.5M), Wayne Board of Education school levy ($186.2M), Willowbrook Mall commercial ratable appeals, Packanack Lake & Pines Lake assessments, and Passaic County tax levies.',
     basePath: 'data/wayne',
-    sliderLabelsHtml: `<span>$150k</span><span>$482k (Avg)</span><span>$750k</span><span>$1.2M+</span>`,
+    sliderLabelsHtml: `<span>$75k</span><span>$233.3k (Avg)</span><span>$450k</span><span>$750k+</span>`,
     quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
-       <button class="preset-btn" data-val="325000">$325k (Preakness Starter)</button>
-       <button class="preset-btn" data-val="420000">$420k (Packanack Lake)</button>
-       <button class="preset-btn active" data-val="482000">Wayne Avg ($482k)</button>
-       <button class="preset-btn" data-val="650000">$650k (Pines Lake)</button>
-       <button class="preset-btn" data-val="850000">$850k (High Mountain)</button>`
+       <button class="preset-btn" data-val="165000">$165k (Starter / Condo)</button>
+       <button class="preset-btn" data-val="210000">$210k (Packanack Lake)</button>
+       <button class="preset-btn active" data-val="233345">Wayne Avg ($233.3k)</button>
+       <button class="preset-btn" data-val="350000">$350k (Pines Lake)</button>
+       <button class="preset-btn" data-val="500000">$500k (High Mountain)</button>`
   },
   montclair: {
     id: 'montclair',
@@ -529,7 +532,7 @@ const CITY_REGISTRY = {
     certifiedTaxRate: '3.766%',
     rateNum: 3.766,
     equalizationRatio: 68.5,
-    avgTaxBill: '$23,217 / yr',
+    avgTaxBill: '$24,098 / yr',
     schoolsShare: '57.20%',
     muniShare: '26.50%',
     countyShare: '16.30%',
@@ -538,22 +541,23 @@ const CITY_REGISTRY = {
     schoolBudgetDisplay: '$162.4M',
     muniBudgetDisplay: '$101.8M',
     benefitsSpendDisplay: '$64.2M',
-    avgAssessed: '$616.5k',
-    typicalMarket: 900000,
+    totalHomes: 9588,
+    avgAssessed: '$639.9k',
+    typicalMarket: 935000,
     sliderMin: 200000,
     sliderMax: 1800000,
-    sliderDefault: 616500,
+    sliderDefault: 639900,
     zipCodesDisplay: '07042 & 07043 (Upper Montclair)',
     controversyHighlight: 'Highest tax bills in region, school bond debt & Lackawanna PILOTs',
     title: 'Montclair Taxpayer Watchdog',
     pageTitle: 'Montclair Township NJ Taxpayer Watchdog | Where Does Your Money Go?',
-    subtitle: 'Citizen audit of Montclair Township\'s highest-in-region property taxes ($23,217 avg bill), $162.4M public school budget, municipal bond debt service, Seymour Street & Lackawanna Plaza PILOT exemptions, and Essex County rates.',
+    subtitle: 'Citizen audit of Montclair Township\'s highest-in-region property taxes ($24,098 avg bill), $162.4M public school budget, municipal bond debt service, Seymour Street & Lackawanna Plaza PILOT exemptions, and Essex County rates.',
     basePath: 'data/montclair',
-    sliderLabelsHtml: `<span>$200k</span><span>$616.5k (Avg)</span><span>$1.0M</span><span>$1.8M+</span>`,
+    sliderLabelsHtml: `<span>$200k</span><span>$639.9k (Avg)</span><span>$1.0M</span><span>$1.8M+</span>`,
     quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
        <button class="preset-btn" data-val="420000">$420k (South End)</button>
        <button class="preset-btn" data-val="550000">$550k (Walnut St)</button>
-       <button class="preset-btn active" data-val="616500">Montclair Avg ($616.5k)</button>
+       <button class="preset-btn active" data-val="639900">Montclair Avg ($639.9k)</button>
        <button class="preset-btn" data-val="875000">$875k (Watchung)</button>
        <button class="preset-btn" data-val="1250000">$1.25M (Upper Montclair)</button>`
   },
@@ -567,10 +571,10 @@ const CITY_REGISTRY = {
     countyShort: 'Morris County',
     districtCode: '1424',
     auditBadge: 'MORRIS COUNTY SEAT AUDIT • 2026',
-    certifiedTaxRate: '2.285%',
-    rateNum: 2.285,
-    equalizationRatio: 85.1,
-    avgTaxBill: '$13,223 / yr',
+    certifiedTaxRate: '1.575%',
+    rateNum: 1.575,
+    equalizationRatio: 95.0,
+    avgTaxBill: '$10,134 / yr',
     schoolsShare: '54.80%',
     muniShare: '33.90%',
     countyShare: '11.30%',
@@ -579,24 +583,25 @@ const CITY_REGISTRY = {
     schoolBudgetDisplay: '$136.5M',
     muniBudgetDisplay: '$48.2M',
     benefitsSpendDisplay: '$33.8M',
-    avgAssessed: '$578.7k',
+    totalHomes: 3481,
+    avgAssessed: '$643.4k',
     typicalMarket: 680000,
     sliderMin: 150000,
-    sliderMax: 1200000,
-    sliderDefault: 578700,
+    sliderMax: 1500000,
+    sliderDefault: 643400,
     zipCodesDisplay: '07960 (Historic Green, Speedwell & Washington)',
     controversyHighlight: 'HQ Plaza & M Station PILOT deals, joint school district cost sharing',
     title: 'Morristown Taxpayer Watchdog',
     pageTitle: 'Town of Morristown NJ Taxpayer Watchdog | Where Does Your Money Go?',
     subtitle: 'Citizen audit of the Morris County seat: $48.2M Town operating budget, Morris School District joint funding with Morris Township ($136.5M), HQ Plaza & M Station PILOT abatements, and Morris County tax distribution.',
     basePath: 'data/morristown',
-    sliderLabelsHtml: `<span>$150k</span><span>$578.7k (Avg)</span><span>$750k</span><span>$1.2M+</span>`,
+    sliderLabelsHtml: `<span>$150k</span><span>$643.4k (Avg)</span><span>$950k</span><span>$1.5M+</span>`,
     quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
-       <button class="preset-btn" data-val="280000">$280k (Speedwell Ave)</button>
-       <button class="preset-btn" data-val="360000">$360k (Historic District)</button>
-       <button class="preset-btn active" data-val="578700">Morristown Avg ($578.7k)</button>
-       <button class="preset-btn" data-val="680000">$680k (Morristown Green)</button>
-       <button class="preset-btn" data-val="880000">$880k (Washington Valley)</button>`
+       <button class="preset-btn" data-val="360000">$360k (Condo / Townhouse)</button>
+       <button class="preset-btn" data-val="520000">$520k (Speedwell / Central)</button>
+       <button class="preset-btn active" data-val="643400">Morristown Avg ($643.4k)</button>
+       <button class="preset-btn" data-val="850000">$850k (Historic District)</button>
+       <button class="preset-btn" data-val="1200000">$1.2M (Miller Rd / Washington)</button>`
   },
   montville: {
     id: 'montville',
@@ -608,10 +613,10 @@ const CITY_REGISTRY = {
     countyShort: 'Morris County',
     districtCode: '1421',
     auditBadge: 'MORRIS COUNTY AUDIT • 2026',
-    certifiedTaxRate: '2.492%',
-    rateNum: 2.492,
-    equalizationRatio: 82.8,
-    avgTaxBill: '$16,198 / yr',
+    certifiedTaxRate: '2.661%',
+    rateNum: 2.661,
+    equalizationRatio: 75.2,
+    avgTaxBill: '$14,351 / yr',
     schoolsShare: '66.20%',
     muniShare: '22.90%',
     countyShare: '10.90%',
@@ -620,24 +625,25 @@ const CITY_REGISTRY = {
     schoolBudgetDisplay: '$98.4M',
     muniBudgetDisplay: '$31.2M',
     benefitsSpendDisplay: '$28.6M',
-    avgAssessed: '$650.0k',
-    typicalMarket: 785000,
+    totalHomes: 7141,
+    avgAssessed: '$539.3k',
+    typicalMarket: 720000,
     sliderMin: 200000,
     sliderMax: 1500000,
-    sliderDefault: 650000,
+    sliderDefault: 539300,
     zipCodesDisplay: '07045 (Montville), 07058 (Pine Brook), 07082 (Towaco)',
     controversyHighlight: '66.2% school levy share due to State Aid cliff, low 10.9% county tax',
     title: 'Montville Taxpayer Watchdog',
     pageTitle: 'Montville Township NJ Taxpayer Watchdog | Where Does Your Money Go?',
     subtitle: 'Citizen investigation into Montville Township taxes: high 66.2% local school levy share caused by state aid cuts, low 10.9% Morris County burden, Pine Brook commercial strip ratables, and Towaco residential tax bills.',
     basePath: 'data/montville',
-    sliderLabelsHtml: `<span>$200k</span><span>$650k (Avg)</span><span>$950k</span><span>$1.5M+</span>`,
+    sliderLabelsHtml: `<span>$200k</span><span>$539.3k (Avg)</span><span>$950k</span><span>$1.5M+</span>`,
     quickPresetsHtml: `<span class="preset-label">Quick Presets:</span>
-       <button class="preset-btn" data-val="380000">$380k (Pine Brook Condo)</button>
-       <button class="preset-btn" data-val="495000">$495k (Towaco Station)</button>
-       <button class="preset-btn active" data-val="650000">Montville Avg ($650k)</button>
-       <button class="preset-btn" data-val="850000">$850k (Changebridge Rd)</button>
-       <button class="preset-btn" data-val="1150000">$1.15M (Taylortown Estates)</button>`
+       <button class="preset-btn" data-val="320000">$320k (Pine Brook Condo)</button>
+       <button class="preset-btn" data-val="450000">$450k (Towaco Station)</button>
+       <button class="preset-btn active" data-val="539300">Montville Avg ($539.3k)</button>
+       <button class="preset-btn" data-val="750000">$750k (Changebridge Rd)</button>
+       <button class="preset-btn" data-val="1100000">$1.1M (Custom Estate)</button>`
   },
   glenrock: {
     id: 'glenrock',
@@ -652,7 +658,7 @@ const CITY_REGISTRY = {
     certifiedTaxRate: '3.407%',
     rateNum: 3.407,
     equalizationRatio: 71.5,
-    avgTaxBill: '$20,138 / yr',
+    avgTaxBill: '$20,148 / yr',
     schoolsShare: '68.21%',
     muniShare: '22.39%',
     countyShare: '9.40%',
@@ -661,11 +667,12 @@ const CITY_REGISTRY = {
     schoolBudgetDisplay: '$61.8M',
     muniBudgetDisplay: '$27.4M',
     benefitsSpendDisplay: '$16.8M',
-    avgAssessed: '$591.2k',
+    totalHomes: 3872,
+    avgAssessed: '$591.4k',
     typicalMarket: 826000,
     sliderMin: 200000,
     sliderMax: 1800000,
-    sliderDefault: 591156,
+    sliderDefault: 591371,
     zipCodesDisplay: '07452',
     controversyHighlight: '68% school tax burden, SHBP healthcare exit to JIF & rail crossing infrastructure',
     title: 'Glen Rock Taxpayer Watchdog',
@@ -1251,9 +1258,9 @@ function populatePropertyFilters(meta) {
       if (p.neighborhood) neighCounts[p.neighborhood] = (neighCounts[p.neighborhood] || 0) + 1;
     });
     const sortedNeighs = Object.keys(neighCounts).sort();
-    let nHtml = `<option value="ALL">All Neighborhoods (${escapeHtml(meta.name)}-wide - ${props.length.toLocaleString()} Properties)</option>`;
+    let nHtml = `<option value="ALL">All Postal Zones / Tax Sections (${escapeHtml(meta.name)}-wide - ${props.length.toLocaleString()} Homes)</option>`;
     sortedNeighs.forEach(n => {
-      nHtml += `<option value="${escapeHtml(n)}">${escapeHtml(n)} (${neighCounts[n]} homes)</option>`;
+      nHtml += `<option value="${escapeHtml(n)}">${escapeHtml(n)} (${neighCounts[n].toLocaleString()} homes)</option>`;
     });
     neighSelect.innerHTML = nHtml;
   }
@@ -1266,7 +1273,7 @@ function populatePropertyFilters(meta) {
     const sortedZips = Object.keys(zipCounts).sort();
     let zHtml = `<option value="ALL">All ZIP Codes (${sortedZips.join(', ')})</option>`;
     sortedZips.forEach(z => {
-      zHtml += `<option value="${escapeHtml(z)}">ZIP ${escapeHtml(z)} (${zipCounts[z]} homes)</option>`;
+      zHtml += `<option value="${escapeHtml(z)}">ZIP ${escapeHtml(z)} (${zipCounts[z].toLocaleString()} homes)</option>`;
     });
     zipSelect.innerHTML = zHtml;
   }
@@ -1486,9 +1493,15 @@ function applyCityStaticCopy(cityId) {
   setElText('hdr-stat2-num', meta.schoolsShare);
   setElText('hdr-stat2-sub', 'Explore ' + meta.schoolBudgetDisplay + ' budget');
 
-  setElText('hdr-stat3-label', 'Sampled Assessments ↗');
-  setElText('hdr-stat3-num', '1,850 Homes');
+  const totalRollCount = propertyAssessmentsData?.properties?.length || meta.totalHomes || 21300;
+  setElText('hdr-stat3-label', 'Official MOD-IV Roll ↗');
+  setElText('hdr-stat3-num', `${totalRollCount.toLocaleString()} Homes`);
   setElText('hdr-stat3-sub', 'Avg Assessed: ' + meta.avgAssessed);
+  setElText('nav-prop-count', totalRollCount.toLocaleString());
+  const subnavPropBtn = document.getElementById('subnav-btn-properties');
+  if (subnavPropBtn) {
+    subnavPropBtn.textContent = `🏡 Property Search (${totalRollCount.toLocaleString()} Homes)`;
+  }
 
   // 2. Sticky Nav Brand & Dropdown Subtitles
   setElText('nav-brand-icon', meta.icon);
@@ -1560,7 +1573,7 @@ function applyCityStaticCopy(cityId) {
     `<strong>Assessment vs. Market Value:</strong> In ${meta.name}, homes are assessed at an Equalization Ratio of <strong>${meta.equalizationRatio.toFixed(1)}%</strong> of true market value. A home selling on the market for $${(meta.typicalMarket/1000).toFixed(0)}k typically has an assessed tax value of ~$${(meta.sliderDefault/1000).toFixed(0)}k.
      <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
        <button class="btn-jump-action" data-jump-tab="tab-properties">
-         <span>🏡</span> Who Pays More? Explore 1,850 ${meta.name} Homes & Assessments ➔
+         <span>🏡</span> Search Your Home: Explore All ${totalRollCount.toLocaleString()} ${meta.name} Homes & Assessments ➔
        </button>
        <button class="btn-jump-action secondary" data-jump-tab="tab-fair-tax">
          <span>⚖️</span> What If Taxes Were Fair? Test Scenarios in What-If Simulator ➔
@@ -1675,17 +1688,18 @@ function applyCityStaticCopy(cityId) {
   // 7. Tab 4: Property Assessments & Filters
   setElHtml('#tab-properties .section-intro',
     `<div class="section-badge-bar">
-       <span class="section-date-badge">Certified Roll: Tax Year 2026 • ${meta.county} Board of Taxation (District ${meta.districtCode}) & Local Assessor</span>
+       <span class="section-date-badge">Official NJ MOD-IV Roll: Tax Year 2026 • ${meta.county} Board of Taxation (District ${meta.districtCode}) & Local Assessor</span>
      </div>
-     <h2>Who Is Paying More Taxes? ${meta.name} Property Values & Assessments</h2>
-     <p>In ${meta.name}, property taxes are calculated on your <strong>Assessed Value</strong> using the certified tax rate: <code>(Assessment ÷ 100) × ${meta.rateNum.toFixed(3)}%</code>. Explore 1,850 sampled residential assessment rolls across ${meta.name} neighborhoods, compare bedrooms, bathrooms, square footage, and see who shoulders the highest tax bills.</p>`);
+     <h2>Search Your Home: All ${totalRollCount.toLocaleString()} ${meta.name} Residential Properties & Assessments</h2>
+     <p>In ${meta.name}, property taxes are calculated on your <strong>Assessed Value</strong> using the certified tax rate: <code>(Assessment ÷ 100) × ${meta.rateNum.toFixed(3)}%</code>. Search all <strong>${totalRollCount.toLocaleString()} official Class 2 residential properties</strong> from the State of New Jersey MOD-IV Tax Roll across ${meta.name} by street address, Block/Lot, or ZIP code to verify land assessments, building improvements, deed sales, and exact tax breakdowns.</p>`);
 
   const propRibbonBoxes = document.querySelectorAll('#prop-metrics-ribbon .prop-metric-box');
   if (propRibbonBoxes.length >= 4) {
-    propRibbonBoxes[0].querySelector('.p-met-sub').textContent = `${meta.name} custom residential estate`;
-    propRibbonBoxes[1].querySelector('.p-met-label').textContent = `${meta.name} Sample Avg Tax`;
-    propRibbonBoxes[1].querySelector('.p-met-sub').textContent = `Assessed @ ${meta.avgAssessed}`;
-    propRibbonBoxes[2].querySelector('.p-met-sub').textContent = `${meta.name} starter home & condo`;
+    propRibbonBoxes[0].querySelector('.p-met-sub').textContent = `Highest residential tax in ${meta.name}`;
+    propRibbonBoxes[1].querySelector('.p-met-label').textContent = `${meta.name} Roll Average Tax`;
+    propRibbonBoxes[1].querySelector('.p-met-sub').textContent = `Assessed @ ${meta.avgAssessed} (${totalRollCount.toLocaleString()} homes)`;
+    propRibbonBoxes[2].querySelector('.p-met-label').textContent = `${meta.name} Median Tax Bill`;
+    propRibbonBoxes[2].querySelector('.p-met-sub').textContent = `50th percentile residential parcel`;
     propRibbonBoxes[3].querySelector('.p-met-label').textContent = `${meta.name} Equalization Ratio`;
     propRibbonBoxes[3].querySelector('.p-met-val').textContent = `${meta.equalizationRatio.toFixed(1)}%`;
     propRibbonBoxes[3].querySelector('.p-met-sub').textContent = `Market Value ≈ ${(100 / meta.equalizationRatio).toFixed(1)}× Assessed Value`;
@@ -1693,14 +1707,14 @@ function applyCityStaticCopy(cityId) {
 
   const propSearchInput = document.getElementById('prop-search-input');
   if (propSearchInput) {
-    propSearchInput.placeholder = `Search by street, neighborhood, or ZIP in ${meta.name}...`;
+    propSearchInput.placeholder = `Search all ${totalRollCount.toLocaleString()} ${meta.name} homes by street address (e.g., 125 Main), Block/Lot, or ZIP...`;
   }
 
   // Populate neighborhood and zip filter dropdowns from actual property assessment data
   populatePropertyFilters(meta);
 
   setElHtml('#properties-table thead tr',
-    `<th>Address / Area</th><th>ZIP</th><th>Property Type</th><th>Beds</th><th>Baths</th><th>Sq Ft</th><th>Year</th><th>Assessed Value</th><th>Est. Market Value</th><th>Annual Tax (${meta.certifiedTaxRate})</th><th>School Share (${meta.schoolsShare})</th><th>Tax Tier</th><th>Action</th>`);
+    `<th scope="col">Address / Postal Zone</th><th scope="col">Block / Lot</th><th scope="col">ZIP</th><th scope="col">Class / Structure</th><th scope="col">Lot Size</th><th scope="col">Year Built</th><th scope="col">Land Assessed</th><th scope="col">Bldg Assessed</th><th scope="col">Total Assessed</th><th scope="col">Est. Market Value</th><th scope="col">Annual Tax (${meta.certifiedTaxRate})</th><th scope="col">School Share (${meta.schoolsShare})</th><th scope="col">Action</th>`);
 
   setElHtml('#tab-properties .assessment-explainer-card .explainer-content',
     `<h4>Why is your assessed value different from what your house sells for in ${meta.name}?</h4>
@@ -1950,7 +1964,18 @@ function switchTab(targetId, options = {}) {
     if (options.neighborhood && targetId === 'tab-properties') {
       const neighSelect = document.getElementById('prop-neighborhood-filter');
       if (neighSelect) {
-        neighSelect.value = options.neighborhood;
+        const hasExact = Array.from(neighSelect.options).some(opt => opt.value === options.neighborhood);
+        if (hasExact) {
+          neighSelect.value = options.neighborhood;
+        } else {
+          const matchedOpt = Array.from(neighSelect.options).find(opt =>
+            opt.value !== 'ALL' && (
+              opt.value.toLowerCase().includes(options.neighborhood.toLowerCase()) ||
+              options.neighborhood.toLowerCase().includes(opt.value.toLowerCase())
+            )
+          );
+          neighSelect.value = matchedOpt ? matchedOpt.value : 'ALL';
+        }
         if (typeof applyPropertyFilters === 'function') {
           applyPropertyFilters();
         }
@@ -2261,6 +2286,7 @@ async function loadAllData(cityId = currentCity) {
     controversiesData = await contRes.json();
     demographicsData = await demoRes.json();
     propertyAssessmentsData = await propRes.json();
+    hydratePropertyAssessments(propertyAssessmentsData, meta, taxData);
     surroundingTownsData = await surrRes.json();
     commercialPilotData = await pilotRes.json();
     fairTaxData = await fairRes.json();
@@ -2269,6 +2295,50 @@ async function loadAllData(cityId = currentCity) {
 
   } catch (err) {
     console.error("Data load issue:", err);
+  }
+}
+
+// Hydrate MOD-IV property records with computed market values, tax splits, and municipality-calibrated tax tiers
+function hydratePropertyAssessments(dataObj, meta, taxBreakdown) {
+  if (!dataObj || !Array.isArray(dataObj.properties)) return;
+  const props = dataObj.properties;
+  const eqRatio = (dataObj.equalizationRatio || meta.equalizationRatio || 100) / 100;
+  const rateNum = dataObj.certifiedRate || taxBreakdown?.certifiedTotalRate || meta.rateNum || 3.0;
+  const schoolSharePct = parseFloat((meta.schoolsShare || '50%').replace('%', '')) / 100 || 0.5;
+  const muniSharePct = parseFloat((meta.muniShare || '33%').replace('%', '')) / 100 || 0.33;
+  const countySharePct = Math.max(0, 1 - schoolSharePct - muniSharePct);
+
+  // Compute assessment distribution percentiles for accurate municipality-specific tier badges
+  const sortedAssess = props.map(p => p.assessedTotal || 0).sort((a, b) => a - b);
+  const n = sortedAssess.length;
+  const p90 = n > 0 ? sortedAssess[Math.floor(n * 0.90)] : 500000;
+  const p75 = n > 0 ? sortedAssess[Math.floor(n * 0.75)] : 350000;
+  const p25 = n > 0 ? sortedAssess[Math.floor(n * 0.25)] : 150000;
+
+  for (let i = 0; i < props.length; i++) {
+    const p = props[i];
+    const assessed = p.assessedTotal || 0;
+    if (!p.annualTax) {
+      p.annualTax = +((assessed / 100.0) * rateNum).toFixed(2);
+    }
+    p.estimatedMarketValue = eqRatio > 0 ? Math.round(assessed / eqRatio) : assessed;
+    p.schoolTax = Math.round(p.annualTax * schoolSharePct);
+    p.municipalTax = Math.round(p.annualTax * muniSharePct);
+    p.countyTax = Math.round(p.annualTax * countySharePct);
+
+    if (assessed >= p90) {
+      p.taxTier = 'Top 10% Tax Tier';
+      p.tierClass = 'tier-highest';
+    } else if (assessed >= p75) {
+      p.taxTier = 'Above Average Tier';
+      p.tierClass = 'tier-high';
+    } else if (assessed >= p25) {
+      p.taxTier = 'Median Range Tier';
+      p.tierClass = 'tier-median';
+    } else {
+      p.taxTier = 'Moderate / Starter Tier';
+      p.tierClass = 'tier-mod';
+    }
   }
 }
 
@@ -2990,7 +3060,6 @@ function renderPaginationControls(totalProps, currentPage, totalPages) {
 function renderProperties(propsToRender, page) {
   if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
-  const isParsippany = currentCity === 'parsippany';
 
   const list = propsToRender || propertyAssessmentsData.properties;
   currentFilteredProperties = list;
@@ -3007,7 +3076,7 @@ function renderProperties(propsToRender, page) {
   const endIndex = Math.min(startIndex + propPageSize, totalProps);
   const pageItems = list.slice(startIndex, endIndex);
 
-  // Update summary ribbon stats
+  // Update summary ribbon stats safely without spread operator stack overflow
   const metHighest = document.getElementById('met-highest-tax');
   const metLowest = document.getElementById('met-lowest-tax');
   const metAvg = document.getElementById('met-avg-tax');
@@ -3015,23 +3084,36 @@ function renderProperties(propsToRender, page) {
   const navBadge = document.getElementById('nav-prop-count');
 
   if (list.length > 0) {
-    const highestTax = Math.max(...list.map(p => p.annualTax));
-    const lowestTax = Math.min(...list.map(p => p.annualTax));
-    const avgTax = list.reduce((acc, p) => acc + p.annualTax, 0) / list.length;
+    let highestTax = -Infinity;
+    let sumTax = 0;
+    const taxesForMedian = new Array(list.length);
+    for (let i = 0; i < list.length; i++) {
+      const t = list[i].annualTax || 0;
+      if (t > highestTax) highestTax = t;
+      sumTax += t;
+      taxesForMedian[i] = t;
+    }
+    taxesForMedian.sort((a, b) => a - b);
+    const medianTax = taxesForMedian[Math.floor(taxesForMedian.length / 2)] || 0;
+    const avgTax = sumTax / list.length;
     if (metHighest) metHighest.textContent = `${formatUSD(highestTax)} / yr`;
-    if (metLowest) metLowest.textContent = `${formatUSD(lowestTax)} / yr`;
+    if (metLowest) metLowest.textContent = `${formatUSD(medianTax)} / yr`;
     if (metAvg) metAvg.textContent = `${formatUSD(avgTax)} / yr`;
+  } else {
+    if (metHighest) metHighest.textContent = `$0.00 / yr`;
+    if (metLowest) metLowest.textContent = `$0.00 / yr`;
+    if (metAvg) metAvg.textContent = `$0.00 / yr`;
   }
 
   if (countBadge) {
     if (totalProps === 0) {
       countBadge.textContent = `0 of ${propertyAssessmentsData.properties.length.toLocaleString()} Properties`;
     } else {
-      countBadge.textContent = `Showing ${startIndex + 1}–${endIndex} of ${totalProps.toLocaleString()} Properties (Page ${propCurrentPage} of ${totalPages})`;
+      countBadge.textContent = `Showing ${(startIndex + 1).toLocaleString()}–${endIndex.toLocaleString()} of ${totalProps.toLocaleString()} Properties (Page ${propCurrentPage.toLocaleString()} of ${totalPages.toLocaleString()})`;
     }
   }
   if (navBadge) {
-    navBadge.textContent = totalProps.toLocaleString();
+    navBadge.textContent = propertyAssessmentsData.properties.length.toLocaleString();
   }
 
   // Render Cards Grid (Paginated)
@@ -3041,78 +3123,84 @@ function renderProperties(propsToRender, page) {
       cardsContainer.innerHTML = `
         <div class="no-properties-msg">
           <div style="font-size: 2rem; margin-bottom: 8px;">🔍</div>
-          <h4>No properties match your filter criteria</h4>
-          <p>Try resetting filters or expanding bedroom, bathroom, or neighborhood selections.</p>
+          <h4>No properties match your search or filter criteria</h4>
+          <p>Try searching by street number & name (e.g., "125 Main"), Block/Lot, or resetting filters.</p>
         </div>
       `;
     } else {
-      cardsContainer.innerHTML = pageItems.map(p => `
-        <div class="property-card" data-id="${p.id}">
+      cardsContainer.innerHTML = pageItems.map(p => {
+        const yearDisplay = p.yearBuilt && p.yearBuilt > 0 ? p.yearBuilt : 'Not Recorded';
+        const qualBadge = p.qual ? `, Qual ${escapeHtml(p.qual)}` : '';
+        const bldgDescTag = p.bldgDesc ? ` <span style="color: var(--text-subtle); font-weight: 500;">(${escapeHtml(p.bldgDesc)})</span>` : '';
+        const deedInfo = p.salePrice && p.salePrice > 100
+          ? `${formatUSDWhole(p.salePrice)}${p.deedDate ? ` (${escapeHtml(p.deedDate)})` : ''}${p.deedBook ? ` • Book ${escapeHtml(p.deedBook)}/${escapeHtml(p.deedPage)}` : ''}`
+          : (p.deedBook ? `Book ${escapeHtml(p.deedBook)}, Page ${escapeHtml(p.deedPage)}${p.deedDate ? ` (${escapeHtml(p.deedDate)})` : ''}` : 'Prior to Digital Roll / N/A');
+        const mod4VerifyUrl = `https://tax1.co.monmouth.nj.us/cgi-bin/m4.cgi?district=${encodeURIComponent(meta.districtCode)}&block=${encodeURIComponent(p.block)}&lot=${encodeURIComponent(p.lot)}`;
+
+        return `
+        <div class="property-card" data-id="${escapeHtml(p.id)}">
           <div class="prop-card-header">
             <div>
-              <div class="prop-address">${p.address}</div>
-              <div class="prop-neighborhood">📍 ${p.neighborhood} • ZIP ${p.zip}</div>
+              <div class="prop-address">${escapeHtml(p.address)}</div>
+              <div class="prop-neighborhood">📍 ${escapeHtml(p.neighborhood)} • ZIP ${escapeHtml(p.zip)}</div>
             </div>
-            <span class="prop-tier-badge ${p.tierClass}">${p.taxTier}</span>
+            <span class="prop-tier-badge ${p.tierClass}">${escapeHtml(p.taxTier)}</span>
           </div>
 
           <div class="prop-main-tax-banner">
-            <div class="prop-tax-label">2026 Annual Property Tax</div>
+            <div class="prop-tax-label">2026 Annual Property Tax (${meta.certifiedTaxRate})</div>
             <div class="prop-tax-amount">${formatUSD(p.annualTax)} <span class="tax-period">/ yr</span></div>
             <div class="prop-tax-splits">
               <span class="tax-split-item school-split">🏫 Schools: ${formatUSDWhole(p.schoolTax)}</span>
-              <span class="tax-split-item city-split">🏛️ ${meta.name}: ${formatUSDWhole(p.municipalTax)}</span>
+              <span class="tax-split-item city-split">🏛️ ${escapeHtml(meta.name)}: ${formatUSDWhole(p.municipalTax)}</span>
               <span class="tax-split-item county-split">🌳 County: ${formatUSDWhole(p.countyTax)}</span>
             </div>
           </div>
 
           <div class="prop-specs-grid">
             <div class="spec-item">
-              <span class="spec-label">Bedrooms</span>
-              <span class="spec-val">🛏️ ${p.bedrooms} Beds</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Bathrooms</span>
-              <span class="spec-val">🚿 ${p.bathrooms} Baths</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Finished Sq Ft</span>
-              <span class="spec-val">📐 ${p.squareFeet.toLocaleString()} sq ft</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Year Built</span>
-              <span class="spec-val">🗓️ ${p.yearBuilt}</span>
-            </div>
-            <div class="spec-item">
-              <span class="spec-label">Assessed Value</span>
+              <span class="spec-label">Total Assessed</span>
               <span class="spec-val highlight-assess">🏷️ ${formatUSDWhole(p.assessedTotal)}</span>
             </div>
             <div class="spec-item">
               <span class="spec-label">Est. Market Value</span>
               <span class="spec-val">💎 ${formatUSDWhole(p.estimatedMarketValue)}</span>
             </div>
+            <div class="spec-item">
+              <span class="spec-label">Land Assessment</span>
+              <span class="spec-val">🌱 ${formatUSDWhole(p.assessedLand || 0)}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Building Value</span>
+              <span class="spec-val">🏗️ ${formatUSDWhole(p.assessedBuilding || 0)}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Year Built (MOD-IV)</span>
+              <span class="spec-val">🗓️ ${yearDisplay}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Lot Size / Dimensions</span>
+              <span class="spec-val">📐 ${escapeHtml(p.lotSize || 'Standard Parcel')}</span>
+            </div>
           </div>
 
           <div class="prop-extra-details">
             <div class="extra-detail-row">
-              <span class="ed-label">Type:</span>
-              <span class="ed-val">${p.propertyType}</span>
+              <span class="ed-label">MOD-IV Class:</span>
+              <span class="ed-val">Class 2 — ${escapeHtml(p.propertyType)}${bldgDescTag}</span>
             </div>
             <div class="extra-detail-row">
-              <span class="ed-label">Lot Size:</span>
-              <span class="ed-val">${p.lotSize}</span>
+              <span class="ed-label">Parcel ID (PAMS):</span>
+              <span class="ed-val font-mono">Block ${escapeHtml(p.block)}, Lot ${escapeHtml(p.lot)}${qualBadge} (${escapeHtml(p.id)})</span>
             </div>
+            ${p.mod4Tax && p.mod4Tax > 0 ? `
             <div class="extra-detail-row">
-              <span class="ed-label">Garage & Basement:</span>
-              <span class="ed-val">${p.garage} • ${p.basement}</span>
-            </div>
+              <span class="ed-label">MOD-IV Prior Tax:</span>
+              <span class="ed-val font-mono">${formatUSD(p.mod4Tax)} / yr</span>
+            </div>` : ''}
             <div class="extra-detail-row">
-              <span class="ed-label">Climate Control:</span>
-              <span class="ed-val">${p.cooling} • ${p.heating}</span>
-            </div>
-            <div class="extra-detail-row">
-              <span class="ed-label">Assessment ID:</span>
-              <span class="ed-val font-mono">Block ${p.block}, Lot ${p.lot} (ID: ${p.id})</span>
+              <span class="ed-label">Last Recorded Deed:</span>
+              <span class="ed-val">${deedInfo}</span>
             </div>
           </div>
 
@@ -3123,12 +3211,13 @@ function renderProperties(propsToRender, page) {
             <button class="btn-jump-prop-toolkit" data-jump-tab="tab-intelligence" onclick="if(document.getElementById('receipt-assessed-input')){document.getElementById('receipt-assessed-input').value=${p.assessedTotal};document.getElementById('receipt-assessed-input').dispatchEvent(new Event('input'));document.querySelector('.intel-nav-btn[data-report=\\'receipt\\']')?.click();}">
               <span>🧾</span> Itemized Tax Grocery Receipt ➔
             </button>
-            <button class="btn-jump-prop-area" data-jump-tab="tab-demographics">
-              <span>📍</span> View ${p.neighborhood} Demographics ➔
-            </button>
+            <a href="${mod4VerifyUrl}" target="_blank" rel="noopener" class="btn-jump-prop-area" style="text-decoration: none; text-align: center;">
+              <span>🏛️</span> Verify Block ${escapeHtml(p.block)} / Lot ${escapeHtml(p.lot)} on County MOD-IV ↗
+            </a>
           </div>
         </div>
-      `).join('');
+      `;
+      }).join('');
     }
   }
 
@@ -3138,30 +3227,34 @@ function renderProperties(propsToRender, page) {
     if (totalProps === 0) {
       tableBody.innerHTML = `<tr><td colspan="13" style="text-align: center; padding: 24px; color: var(--text-muted);">No properties match your filter criteria</td></tr>`;
     } else {
-      tableBody.innerHTML = pageItems.map(p => `
+      tableBody.innerHTML = pageItems.map(p => {
+        const yearDisplay = p.yearBuilt && p.yearBuilt > 0 ? p.yearBuilt : '—';
+        const qualSuffix = p.qual ? ` (${escapeHtml(p.qual)})` : '';
+        return `
         <tr>
-          <td>
-            <strong>${p.address}</strong><br>
-            <small style="color: var(--text-subtle);">${p.neighborhood}</small>
-          </td>
-          <td><span class="badge-zip">${p.zip}</span></td>
-          <td>${p.propertyType}</td>
-          <td><strong>${p.bedrooms}</strong></td>
-          <td><strong>${p.bathrooms}</strong></td>
-          <td>${p.squareFeet.toLocaleString()}</td>
-          <td>${p.yearBuilt}</td>
+          <th scope="row" style="text-align: left; font-weight: 600;">
+            <strong>${escapeHtml(p.address)}</strong><br>
+            <small style="color: var(--text-subtle); font-weight: 400;">${escapeHtml(p.neighborhood)}</small>
+          </th>
+          <td style="font-family: var(--font-mono); font-size: 0.82rem;">B:${escapeHtml(p.block)} L:${escapeHtml(p.lot)}${qualSuffix}</td>
+          <td><span class="badge-zip">${escapeHtml(p.zip)}</span></td>
+          <td>${escapeHtml(p.propertyType)}${p.bldgDesc ? `<br><small style="color: var(--text-subtle);">${escapeHtml(p.bldgDesc)}</small>` : ''}</td>
+          <td>${escapeHtml(p.lotSize || '—')}</td>
+          <td><strong>${yearDisplay}</strong></td>
+          <td style="font-family: var(--font-mono);">${formatUSDWhole(p.assessedLand || 0)}</td>
+          <td style="font-family: var(--font-mono);">${formatUSDWhole(p.assessedBuilding || 0)}</td>
           <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-school);">${formatUSDWhole(p.assessedTotal)}</td>
           <td style="font-family: var(--font-mono);">${formatUSDWhole(p.estimatedMarketValue)}</td>
           <td style="font-family: var(--font-mono); font-weight: 800; color: #dc2626;">${formatUSD(p.annualTax)}</td>
           <td style="font-family: var(--font-mono); color: var(--color-school);">${formatUSDWhole(p.schoolTax)}</td>
-          <td><span class="prop-tier-badge ${p.tierClass}" style="font-size: 0.72rem; padding: 2px 6px;">${p.taxTier}</span></td>
           <td>
             <button class="btn-table-action" onclick="loadPropertyToCalculator(${p.assessedTotal})">
               Analyze
             </button>
           </td>
         </tr>
-      `).join('');
+      `;
+      }).join('');
     }
   }
 
@@ -3189,8 +3282,7 @@ function setupPropertyFilters() {
   const neighSelect = document.getElementById('prop-neighborhood-filter');
   const zipSelect = document.getElementById('prop-zip-filter');
   const typeSelect = document.getElementById('prop-type-filter');
-  const bedsSelect = document.getElementById('prop-beds-filter');
-  const bathsSelect = document.getElementById('prop-baths-filter');
+  const eraSelect = document.getElementById('prop-era-filter');
   const tierSelect = document.getElementById('prop-tier-filter');
   const sortSelect = document.getElementById('prop-sort-by');
   const resetBtn = document.getElementById('btn-reset-prop-filters');
@@ -3220,22 +3312,22 @@ function setupPropertyFilters() {
   function applyFilters() {
     if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
 
-    let filtered = [...propertyAssessmentsData.properties];
+    let filtered = propertyAssessmentsData.properties.slice();
 
-    // Search query
-    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
-    if (query) {
-      filtered = filtered.filter(p => 
-        p.address.toLowerCase().includes(query) ||
-        p.neighborhood.toLowerCase().includes(query) ||
-        p.zip.includes(query) ||
-        p.id.toLowerCase().includes(query) ||
-        `block ${p.block}`.includes(query) ||
-        `lot ${p.lot}`.includes(query)
-      );
+    // Search query (supports street address, Block/Lot, PAMS_PIN, neighborhood, ZIP, structure code)
+    const rawQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    if (rawQuery) {
+      const tokens = rawQuery.split(/\s+/).filter(Boolean);
+      filtered = filtered.filter(p => {
+        const hay = `${p.address} ${p.neighborhood} ${p.zip} ${p.id} block ${p.block} lot ${p.lot} ${p.block}/${p.lot} ${p.bldgDesc || ''} ${p.propertyType || ''}`.toLowerCase();
+        for (let i = 0; i < tokens.length; i++) {
+          if (!hay.includes(tokens[i])) return false;
+        }
+        return true;
+      });
     }
 
-    // Neighborhood
+    // Neighborhood / Postal Zone
     if (neighSelect && neighSelect.value !== 'ALL') {
       filtered = filtered.filter(p => p.neighborhood === neighSelect.value);
     }
@@ -3254,21 +3346,26 @@ function setupPropertyFilters() {
         filtered = filtered.filter(p => p.propertyType.includes('Two-Family'));
       } else if (tVal === 'Three-Family') {
         filtered = filtered.filter(p => p.propertyType.includes('Three-Family'));
+      } else if (tVal === 'Four-Family') {
+        filtered = filtered.filter(p => p.propertyType.includes('Four-Family'));
       } else if (tVal === 'Condo') {
         filtered = filtered.filter(p => p.propertyType.includes('Condo') || p.propertyType.includes('Townhouse'));
       }
     }
 
-    // Min Bedrooms
-    if (bedsSelect && parseInt(bedsSelect.value, 10) > 0) {
-      const minBeds = parseInt(bedsSelect.value, 10);
-      filtered = filtered.filter(p => p.bedrooms >= minBeds);
-    }
-
-    // Min Bathrooms
-    if (bathsSelect && parseFloat(bathsSelect.value) > 0) {
-      const minBaths = parseFloat(bathsSelect.value);
-      filtered = filtered.filter(p => p.bathrooms >= minBaths);
+    // Construction Era (MOD-IV)
+    if (eraSelect && eraSelect.value !== 'ALL') {
+      const eraVal = eraSelect.value;
+      filtered = filtered.filter(p => {
+        const yr = p.yearBuilt || 0;
+        if (yr <= 0) return false;
+        if (eraVal === 'Pre-1940') return yr < 1940;
+        if (eraVal === '1940-1959') return yr >= 1940 && yr < 1960;
+        if (eraVal === '1960-1979') return yr >= 1960 && yr < 1980;
+        if (eraVal === '1980-1999') return yr >= 1980 && yr < 2000;
+        if (eraVal === '2000+') return yr >= 2000;
+        return true;
+      });
     }
 
     // Tax Tier
@@ -3280,17 +3377,25 @@ function setupPropertyFilters() {
     if (sortSelect) {
       const sortVal = sortSelect.value;
       if (sortVal === 'tax-desc') {
-        filtered.sort((a, b) => b.annualTax - a.annualTax);
+        filtered.sort((a, b) => (b.annualTax || 0) - (a.annualTax || 0));
       } else if (sortVal === 'tax-asc') {
-        filtered.sort((a, b) => a.annualTax - b.annualTax);
+        filtered.sort((a, b) => (a.annualTax || 0) - (b.annualTax || 0));
       } else if (sortVal === 'assess-desc') {
-        filtered.sort((a, b) => b.assessedTotal - a.assessedTotal);
-      } else if (sortVal === 'sqft-desc') {
-        filtered.sort((a, b) => b.squareFeet - a.squareFeet);
-      } else if (sortVal === 'beds-desc') {
-        filtered.sort((a, b) => b.bedrooms - a.bedrooms);
+        filtered.sort((a, b) => (b.assessedTotal || 0) - (a.assessedTotal || 0));
+      } else if (sortVal === 'land-desc') {
+        filtered.sort((a, b) => (b.assessedLand || 0) - (a.assessedLand || 0));
+      } else if (sortVal === 'sale-desc') {
+        filtered.sort((a, b) => (b.salePrice || 0) - (a.salePrice || 0));
       } else if (sortVal === 'year-desc') {
-        filtered.sort((a, b) => b.yearBuilt - a.yearBuilt);
+        filtered.sort((a, b) => (b.yearBuilt || 0) - (a.yearBuilt || 0));
+      } else if (sortVal === 'year-asc') {
+        filtered.sort((a, b) => {
+          const ya = a.yearBuilt && a.yearBuilt > 0 ? a.yearBuilt : 9999;
+          const yb = b.yearBuilt && b.yearBuilt > 0 ? b.yearBuilt : 9999;
+          return ya - yb;
+        });
+      } else if (sortVal === 'addr-asc') {
+        filtered.sort((a, b) => (a.address || '').localeCompare(b.address || '', undefined, { numeric: true }));
       }
     }
 
@@ -3300,13 +3405,18 @@ function setupPropertyFilters() {
 
   applyPropertyFilters = applyFilters;
 
-  // Attach idempotent event handlers
-  if (searchInput) searchInput.oninput = applyFilters;
+  // Debounce search input slightly (150ms) for smooth typing across 21,300 records
+  let searchDebounceTimer = null;
+  if (searchInput) {
+    searchInput.oninput = () => {
+      if (searchDebounceTimer) clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(applyFilters, 150);
+    };
+  }
   if (neighSelect) neighSelect.onchange = applyFilters;
   if (zipSelect) zipSelect.onchange = applyFilters;
   if (typeSelect) typeSelect.onchange = applyFilters;
-  if (bedsSelect) bedsSelect.onchange = applyFilters;
-  if (bathsSelect) bathsSelect.onchange = applyFilters;
+  if (eraSelect) eraSelect.onchange = applyFilters;
   if (tierSelect) tierSelect.onchange = applyFilters;
   if (sortSelect) sortSelect.onchange = applyFilters;
 
@@ -3317,8 +3427,7 @@ function setupPropertyFilters() {
       if (neighSelect) neighSelect.value = 'ALL';
       if (zipSelect) zipSelect.value = 'ALL';
       if (typeSelect) typeSelect.value = 'ALL';
-      if (bedsSelect) bedsSelect.value = '0';
-      if (bathsSelect) bathsSelect.value = '0';
+      if (eraSelect) eraSelect.value = 'ALL';
       if (tierSelect) tierSelect.value = 'ALL';
       if (sortSelect) sortSelect.value = 'tax-desc';
       propCurrentPage = 1;
@@ -4022,7 +4131,7 @@ function setupInvestigationTools() {
             <strong>Cross-Reference Results for "${rawVal}":</strong>
             <span class="count-pill staff-pill">${matchedStaff.length} Staff Matches</span>
             <span class="count-pill ethics-pill">${matchedEthics.length} Ethics Filings</span>
-            <span class="count-pill prop-pill">${matchedProperties.length} Sample Properties</span>
+            <span class="count-pill prop-pill">${matchedProperties.length.toLocaleString()} MOD-IV Properties</span>
           </div>
           <div class="search-portal-quicklinks">
             <span class="portal-quick-label">Direct External Searches:</span>
@@ -4097,31 +4206,30 @@ function setupInvestigationTools() {
       html += `
         <div class="result-block">
           <div class="result-block-heading">
-            <span class="rb-icon">🏡</span> <strong>${cityLabel} Sample Assessment Profiles (${matchedProperties.length} ${matchedProperties.length > 6 ? `— showing first 6` : ''})</strong>
+            <span class="rb-icon">🏡</span> <strong>${cityLabel} Official MOD-IV Property Assessments (${matchedProperties.length.toLocaleString()} ${matchedProperties.length > 6 ? `— showing first 6` : ''})</strong>
           </div>
           <div class="sample-notice-note" style="font-size: 0.8rem; color: #64748b; margin-bottom: 10px;">
-            ℹ️ Representative statistical sample of 1,850 calibrated parcels. For certified individual deed books and tax duplicate records, use the official County MOD-IV link on each card.
+            ℹ️ Official State of New Jersey MOD-IV Class 2 residential parcels. For certified individual deed books and tax duplicate records, use the official County MOD-IV link on each card.
           </div>
           <div class="result-cards-subgrid">
             ${matchedProperties.slice(0, 6).map(p => {
-              const streetWords = p.address.split(' ');
-              const streetPart = streetWords.length > 1 ? streetWords.slice(1).join(' ') : p.address;
+              const yearStr = p.yearBuilt && p.yearBuilt > 0 ? p.yearBuilt : 'Not Recorded';
               return `
               <div class="result-mini-card prop-matched-card">
                 <div class="rmc-header">
-                  <strong>${p.address}</strong>
+                  <strong>${escapeHtml(p.address)}</strong>
                   <span class="rmc-tax">${formatUSD(p.annualTax)} / yr</span>
                 </div>
-                <div class="rmc-sub">📍 ${p.neighborhood} • ZIP ${p.zip}</div>
+                <div class="rmc-sub">📍 ${escapeHtml(p.neighborhood)} • ZIP ${escapeHtml(p.zip)} • Block ${escapeHtml(p.block)}, Lot ${escapeHtml(p.lot)}</div>
                 <div class="rmc-specs">
-                  <span>🛏️ ${p.bedrooms} Beds</span>
-                  <span>🚿 ${p.bathrooms} Baths</span>
-                  <span>📐 ${p.squareFeet.toLocaleString()} sq ft</span>
                   <span>🏷️ Assessed: ${formatUSDWhole(p.assessedTotal)}</span>
+                  <span>🌱 Land: ${formatUSDWhole(p.assessedLand || 0)}</span>
+                  <span>🏗️ Bldg: ${formatUSDWhole(p.assessedBuilding || 0)}</span>
+                  <span>🗓️ Built: ${yearStr}</span>
                 </div>
                 <div class="rmc-actions">
-                  <a href="https://tax1.co.monmouth.nj.us/cgi-bin/m4.cgi?district=${districtCode}&owner=${encodeURIComponent(streetPart)}" target="_blank" rel="noopener" class="rmc-link">
-                    Open ${countyShort} MOD-IV Roll for "${streetPart}" ↗
+                  <a href="https://tax1.co.monmouth.nj.us/cgi-bin/m4.cgi?district=${districtCode}&block=${encodeURIComponent(p.block)}&lot=${encodeURIComponent(p.lot)}" target="_blank" rel="noopener" class="rmc-link">
+                    Verify Block ${escapeHtml(p.block)} / Lot ${escapeHtml(p.lot)} on ${countyShort} MOD-IV Roll ↗
                   </a>
                 </div>
               </div>
@@ -4663,7 +4771,7 @@ function renderIntelligenceReports() {
   renderBalanceSheet();
 
   // ----------------------------------------------------
-  // REPORT 4: TAX PER SQ FT & HOUSING VINTAGE DISPARITY
+  // REPORT 4: HOUSING VINTAGE & ASSESSMENT COMPOSITION
   // ----------------------------------------------------
   const vintageCardsContainer = document.getElementById('vintage-summary-cards');
   const vintageTableBody = document.getElementById('vintage-table-body');
@@ -4673,36 +4781,39 @@ function renderIntelligenceReports() {
     if (!vintageCardsContainer || !propertyAssessmentsData?.properties) return;
     const props = propertyAssessmentsData.properties;
 
-    // Categorize into 5 vintages
+    // Categorize into 5 vintages based on recorded MOD-IV YR_CONSTR
     const eraDefinitions = [
-      { key: 'Pre-1940', title: isParsippany ? 'Pre-1940 (Mount Tabor & Lake Cottages)' : 'Pre-1940 (Historic Industrial)', filter: p => p.yearBuilt < 1940 },
+      { key: 'Pre-1940', title: isParsippany ? 'Pre-1940 (Mount Tabor & Lake Cottages)' : 'Pre-1940 (Historic Pre-War Stock)', filter: p => p.yearBuilt > 0 && p.yearBuilt < 1940 },
       { key: '1940-1959', title: '1940–1959 (Post-War Expansion)', filter: p => p.yearBuilt >= 1940 && p.yearBuilt < 1960 },
       { key: '1960-1979', title: '1960–1979 (Mid-Century Suburbia)', filter: p => p.yearBuilt >= 1960 && p.yearBuilt < 1980 },
       { key: '1980-1999', title: '1980–1999 (Modern Subdivisions)', filter: p => p.yearBuilt >= 1980 && p.yearBuilt < 2000 },
-      { key: '2000+', title: '2000+ (Recent Construction & Luxury)', filter: p => p.yearBuilt >= 2000 }
+      { key: '2000+', title: '2000+ (Recent Construction & Rebuilds)', filter: p => p.yearBuilt >= 2000 }
     ];
 
     const stats = eraDefinitions.map(era => {
       const eraProps = props.filter(era.filter);
       const count = eraProps.length;
       const totalAssessed = eraProps.reduce((sum, p) => sum + (p.assessedTotal || 0), 0);
+      const totalLand = eraProps.reduce((sum, p) => sum + (p.assessedLand || 0), 0);
+      const totalBldg = eraProps.reduce((sum, p) => sum + (p.assessedBuilding || 0), 0);
       const totalTax = eraProps.reduce((sum, p) => sum + (p.annualTax || 0), 0);
-      const totalSqFt = eraProps.reduce((sum, p) => sum + (p.squareFeet || 1500), 0);
       const totalMarket = eraProps.reduce((sum, p) => sum + (p.estimatedMarketValue || 0), 0);
 
       const avgAssessed = count ? Math.round(totalAssessed / count) : 0;
+      const avgLand = count ? Math.round(totalLand / count) : 0;
+      const avgBldg = count ? Math.round(totalBldg / count) : 0;
       const avgTax = count ? Math.round(totalTax / count) : 0;
-      const avgSqFt = count ? Math.round(totalSqFt / count) : 0;
-      const taxPerSqFt = totalSqFt ? +(totalTax / totalSqFt).toFixed(2) : 0;
-      const effectiveRate = totalMarket ? +((totalTax / totalMarket) * 100).toFixed(2) : 0;
+      const landSharePct = totalAssessed > 0 ? +((totalLand / totalAssessed) * 100).toFixed(1) : 0;
+      const effectiveRate = totalMarket > 0 ? +((totalTax / totalMarket) * 100).toFixed(2) : 0;
 
       return {
         ...era,
         count,
         avgAssessed,
+        avgLand,
+        avgBldg,
         avgTax,
-        avgSqFt,
-        taxPerSqFt,
+        landSharePct,
         effectiveRate
       };
     });
@@ -4712,27 +4823,27 @@ function renderIntelligenceReports() {
         <div class="vintage-card">
           <div class="vc-top">
             <span class="vc-tag">${s.key}</span>
-            <span class="vc-count">${s.count} Properties</span>
+            <span class="vc-count">${s.count.toLocaleString()} Homes</span>
           </div>
           <h4 class="vc-title">${s.title}</h4>
           
           <div class="vc-metric-highlight">
-            <span class="vc-big-val">$${s.taxPerSqFt.toFixed(2)}</span>
-            <span class="vc-big-lbl">Tax per Square Foot</span>
+            <span class="vc-big-val">${formatUSDWhole(s.avgTax)}</span>
+            <span class="vc-big-lbl">Average Annual Property Tax</span>
           </div>
 
           <div class="vc-stats-list">
             <div class="vc-row">
-              <span>Avg Annual Tax:</span>
-              <strong>${formatUSDWhole(s.avgTax)}</strong>
-            </div>
-            <div class="vc-row">
-              <span>Avg Home Size:</span>
-              <strong>${s.avgSqFt.toLocaleString()} sq ft</strong>
-            </div>
-            <div class="vc-row">
-              <span>Avg Assessed Value:</span>
+              <span>Avg Total Assessed:</span>
               <strong>${formatUSDWhole(s.avgAssessed)}</strong>
+            </div>
+            <div class="vc-row">
+              <span>Avg Land Assessment:</span>
+              <strong>${formatUSDWhole(s.avgLand)} (${s.landSharePct}%)</strong>
+            </div>
+            <div class="vc-row">
+              <span>Avg Building Value:</span>
+              <strong>${formatUSDWhole(s.avgBldg)}</strong>
             </div>
             <div class="vc-row">
               <span>Effective Market Tax Rate:</span>
@@ -4746,32 +4857,31 @@ function renderIntelligenceReports() {
     // Render sample properties table
     function renderVintageTable(filterKey) {
       if (!vintageTableBody) return;
-      let sampleList = props;
+      let sampleList = props.filter(p => p.yearBuilt > 0);
       if (filterKey !== 'all') {
         const era = eraDefinitions.find(e => e.key === filterKey);
         if (era) sampleList = props.filter(era.filter);
       }
 
-      // Display 25 representative properties across the selection
+      // Display 25 properties across the selection
       const displayProps = sampleList.slice(0, 25);
 
       vintageTableBody.innerHTML = displayProps.map(p => {
-        const sqft = p.squareFeet || 1500;
-        const taxSqFt = (p.annualTax / sqft).toFixed(2);
+        const landShare = p.assessedTotal > 0 ? ((p.assessedLand || 0) / p.assessedTotal * 100).toFixed(1) : '0.0';
         return `
           <tr>
             <td>
-              <strong>${p.address}</strong>
-              <div class="table-subtext">Block ${p.block}, Lot ${p.lot}</div>
+              <strong>${escapeHtml(p.address)}</strong>
+              <div class="table-subtext">Block ${escapeHtml(p.block)}, Lot ${escapeHtml(p.lot)}</div>
             </td>
-            <td>${p.neighborhood}</td>
-            <td><strong>${p.yearBuilt}</strong></td>
-            <td>${sqft.toLocaleString()} sq ft</td>
+            <td>${escapeHtml(p.neighborhood)}</td>
+            <td><strong>${p.yearBuilt > 0 ? p.yearBuilt : '—'}</strong></td>
+            <td>${formatUSDWhole(p.assessedLand || 0)}</td>
+            <td>${formatUSDWhole(p.assessedBuilding || 0)}</td>
             <td>${formatUSDWhole(p.assessedTotal)}</td>
-            <td>${formatUSDWhole(p.estimatedMarketValue)}</td>
             <td><strong>${formatUSD(p.annualTax)}</strong></td>
             <td>
-              <span class="tax-sqft-badge">$${taxSqFt} / sq ft</span>
+              <span class="tax-sqft-badge">${landShare}% Land</span>
             </td>
             <td>
               <button class="action-btn-sm" data-jump-tab="tab-calculator" onclick="loadPropertyToCalculator(${p.assessedTotal});">
