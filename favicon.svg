@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+
+    <!-- Sapphire Blue Accent Gradient -->
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+
+    <!-- Gold Accent Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+
+    <!-- Lens Glass Reflection Gradient -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="40%" stop-color="#38bdf8" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <!-- Outer Glow Shadow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- 1. Squircle Shield Outer Base -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)" stroke="#334155" stroke-width="4"/>
+  <rect x="24" y="24" width="464" height="464" rx="100" fill="none" stroke="url(#blueGrad)" stroke-width="2.5" stroke-opacity="0.6"/>
+
+  <!-- 2. Optical Watchdog Lens Outer Ring -->
+  <circle cx="256" cy="240" r="168" fill="none" stroke="url(#blueGrad)" stroke-width="14" filter="url(#glow)"/>
+  <circle cx="256" cy="240" r="150" fill="#0b1329" stroke="#1e3a8a" stroke-width="3" stroke-dasharray="6 6"/>
+  <circle cx="256" cy="240" r="142" fill="url(#glassGrad)"/>
+
+  <!-- 3. Civic Dome & Home Architecture (Town Hall + Residential Roofline) -->
+  <!-- Civic Pediment Triangle / Roof -->
+  <path d="M 148 244 L 256 148 L 364 244 Z" fill="url(#blueGrad)"/>
+  <path d="M 172 242 L 256 168 L 340 242 Z" fill="#ffffff" fill-opacity="0.95"/>
+
+  <!-- Civic Cupola / Lantern Dome on Top -->
+  <path d="M 238 148 L 274 148 L 270 120 L 256 104 L 242 120 Z" fill="url(#goldGrad)"/>
+  <!-- Spire Finial -->
+  <line x1="256" y1="104" x2="256" y2="84" stroke="#fde047" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="256" cy="80" r="6" fill="#fde047"/>
+
+  <!-- 4. Four Columns of Governance & Civic Pillars -->
+  <!-- Base Plinth -->
+  <rect x="160" y="304" width="192" height="16" rx="4" fill="#94a3b8"/>
+  <rect x="148" y="320" width="216" height="14" rx="3" fill="#64748b"/>
+
+  <!-- Architrave Beam -->
+  <rect x="166" y="242" width="180" height="10" rx="2" fill="#cbd5e1"/>
+
+  <!-- Pillars (4 Classic Columns) -->
+  <rect x="180" y="252" width="14" height="52" rx="2" fill="#ffffff"/>
+  <rect x="222" y="252" width="14" height="52" rx="2" fill="#ffffff"/>
+  <rect x="276" y="252" width="14" height="52" rx="2" fill="#ffffff"/>
+  <rect x="318" y="252" width="14" height="52" rx="2" fill="#ffffff"/>
+
+  <!-- Central Doorway / Citizen Gateway -->
+  <path d="M 246 304 L 246 270 Q 256 264 266 270 L 266 304 Z" fill="url(#blueGrad)"/>
+
+  <!-- 5. Optical Watchdog Lens Handle / Scrutiny Monocle Angle -->
+  <path d="M 374 358 L 442 426" stroke="url(#blueGrad)" stroke-width="28" stroke-linecap="round"/>
+  <path d="M 374 358 L 442 426" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-opacity="0.65"/>
+  <circle cx="446" cy="430" r="14" fill="url(#goldGrad)"/>
+
+  <!-- 6. Precision Reticle & Tax Balance Crosshairs -->
+  <line x1="88" y1="240" x2="106" y2="240" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+  <line x1="406" y1="240" x2="424" y2="240" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+  <line x1="256" y1="72" x2="256" y2="90" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+  <line x1="256" y1="390" x2="256" y2="408" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- 7. Optical Lens Flare Glint -->
+  <ellipse cx="194" cy="180" rx="48" ry="16" transform="rotate(-40 194 180)" fill="#ffffff" fill-opacity="0.22"/>
+</svg>

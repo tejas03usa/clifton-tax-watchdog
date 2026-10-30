@@ -331,6 +331,13 @@ p, blockquote, .section-subtitle-desc {
   line-height: 1;
 }
 
+.nav-brand-img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
 .nav-brand-text {
   display: flex;
   flex-direction: column;
