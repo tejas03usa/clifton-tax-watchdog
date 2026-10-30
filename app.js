@@ -3695,6 +3695,12 @@ function renderAppealEvidenceText() {
   const assessDiffPct = activeAppealDiffPct || 0;
   const specs = activeAppealSpecs;
 
+  const corridorLower = +(eqRatio * 0.85).toFixed(1);
+  const corridorUpper = +(eqRatio * 1.15).toFixed(1);
+  const hasRecentSale = target.salePrice > 50000;
+  const saleRatio = hasRecentSale ? (target.assessedTotal / target.salePrice) * 100 : 0;
+  const isCh123OverAssessed = hasRecentSale && saleRatio > corridorUpper;
+
   // Format Condition & Legal Grounds
   let conditionText = 'Standard / Maintained (Street Typical)';
   let groundsText = '';
@@ -3717,6 +3723,14 @@ function renderAppealEvidenceText() {
     ? `• Petitioner Estimated Living Area: ${sqftVal.toLocaleString()} sq ft ($${(((target.assessedBuilding || target.assessedTotal)) / sqftVal).toFixed(2)} bldg assess / sq ft)\n`
     : '';
 
+  const ch123Text = isCh123OverAssessed
+    ? `• CHAPTER 123 STATUTORY REMEDY: Subject assessment-to-sale ratio is ${saleRatio.toFixed(1)}%, exceeding the ${corridorUpper}% statutory ceiling. Mandated relief under N.J.S.A. 54:51A-6 requires reduction to common level ratio (${eqRatio.toFixed(1)}%).\n`
+    : '';
+
+  const reliefSought = assessDiff > 0
+    ? `Reduce net assessment to prevailing street baseline of $${compMedianAssess.toLocaleString()} (Estimated Tax Reduction: $${((assessDiff / 100) * rate).toFixed(2)} / year)`
+    : `Net assessment aligns with or falls below street median ($${compMedianAssess.toLocaleString()}). Relief sought under N.J.A.C. 18:12 based on physical condition / obsolescence: adjust building assessment ($${(target.assessedBuilding || 0).toLocaleString()}) reflecting documented interior condition defects.`;
+
   return `================================================================================
 PETITION OF APPEAL EVIDENCE TABLE (NJ FORM A-1)
 County Board of Taxation Assessment Appeal
@@ -3725,12 +3739,12 @@ MUNICIPALITY: ${meta.name.toUpperCase()} (DISTRICT ${meta.districtCode}) | TAX Y
 SUBJECT PROPERTY: ${target.address.toUpperCase()} | BLOCK ${target.block}, LOT ${target.lot}${target.qual ? ', QUAL ' + target.qual : ''}
 TOTAL NET ASSESSMENT: $${target.assessedTotal.toLocaleString()} (LAND: $${(target.assessedLand || 0).toLocaleString()} | BLDG: $${(target.assessedBuilding || 0).toLocaleString()})
 ANNUAL PROPERTY TAX: $${target.annualTax.toFixed(2)} | CERTIFIED TAX RATE: ${rate.toFixed(3)}%
-MUNICIPAL EQUALIZATION RATIO: ${eqRatio.toFixed(1)}% | COMMON LEVEL RANGE: ${(eqRatio * 0.85).toFixed(1)}% TO ${(eqRatio * 1.15).toFixed(1)}%
+MUNICIPAL EQUALIZATION RATIO: ${eqRatio.toFixed(1)}% | COMMON LEVEL RANGE: ${corridorLower}% TO ${corridorUpper}%
 
 PETITIONER'S PROPERTY SPECIFICATIONS & INTERIOR DISCLOSURE:
 • Assessor Exterior Code (MOD-IV): ${target.bldgDesc || 'Class 2'} | Built: ${target.yearBuilt > 0 ? target.yearBuilt : 'N/A'} | Lot: ${target.lotSize || (target.acres ? target.acres + ' AC' : 'Standard')}
 • Verified Room Count: ${specs.bedrooms} Bedrooms | ${specs.bathrooms} Bathrooms
-${sqftLine}• Interior Condition & Obsolescence: ${conditionText}
+${sqftLine}${ch123Text}• Interior Condition & Obsolescence: ${conditionText}
 
 GROUNDS FOR APPEAL (N.J.S.A. 54:3-21 & N.J.A.C. 18:12-1.1):
 ${groundsText}
@@ -3740,7 +3754,7 @@ ${topComps.map((c, i) => `Comp #${i+1}: ${c.address.toUpperCase()} | Block ${c.b
 
 BENCHMARK STREET MEDIAN ASSESSMENT: $${compMedianAssess.toLocaleString()}
 ESTIMATED ASSESSMENT VARIANCE: ${assessDiff >= 0 ? '+' : ''}$${assessDiff.toLocaleString()} (${assessDiffPct.toFixed(1)}%)
-INDICATED RELIEF SOUGHT: Reduce net assessment to prevailing street baseline of $${compMedianAssess.toLocaleString()} (Estimated Tax Reduction: $${(assessDiff > 0 ? (assessDiff / 100) * rate : 0).toFixed(2)} / year)
+INDICATED RELIEF SOUGHT: ${reliefSought}
 ================================================================================`;
 }
 
@@ -3839,18 +3853,29 @@ function openAppealAnalyzer(propId) {
     );
   }
 
-  // Sort comps by similarity to target's assessment
-  streetComps.sort((a, b) => Math.abs(a.assessedTotal - target.assessedTotal) - Math.abs(b.assessedTotal - target.assessedTotal));
-
-  // Pick top 5 representative comps
-  const topComps = streetComps.slice(0, 5);
-
-  // Calculate median assessment among comps
+  // Calculate median assessment among comps (exact statistical median)
   let compMedianAssess = target.assessedTotal;
   if (streetComps.length > 0) {
     const assessList = streetComps.map(c => c.assessedTotal).sort((a, b) => a - b);
-    compMedianAssess = assessList[Math.floor(assessList.length / 2)];
+    const mid = Math.floor(assessList.length / 2);
+    compMedianAssess = assessList.length % 2 !== 0
+      ? assessList[mid]
+      : Math.round((assessList[mid - 1] + assessList[mid]) / 2);
   }
+
+  // Sort comps by how well they represent the prevailing street baseline:
+  // 1. Closeness to the street median assessment
+  // 2. Bonus for verified deed sales
+  streetComps.sort((a, b) => {
+    const distA = Math.abs(a.assessedTotal - compMedianAssess);
+    const distB = Math.abs(b.assessedTotal - compMedianAssess);
+    const scoreA = distA * (a.salePrice > 50000 ? 0.85 : 1.0);
+    const scoreB = distB * (b.salePrice > 50000 ? 0.85 : 1.0);
+    return scoreA - scoreB;
+  });
+
+  // Pick top 5 representative comps
+  const topComps = streetComps.slice(0, 5);
 
   const assessDiff = target.assessedTotal - compMedianAssess;
   const assessDiffPct = compMedianAssess > 0 ? (assessDiff / compMedianAssess) * 100 : 0;
@@ -3861,13 +3886,23 @@ function openAppealAnalyzer(propId) {
   activeAppealDiff = assessDiff;
   activeAppealDiffPct = assessDiffPct;
 
+  // Chapter 123 Sale Ratio Check
+  const hasRecentSale = target.salePrice > 50000;
+  const saleRatio = hasRecentSale ? (target.assessedTotal / target.salePrice) * 100 : 0;
+  const isCh123OverAssessed = hasRecentSale && saleRatio > corridorUpper;
+
   // Verdict Determination
   let verdictClass = 'verdict-moderate';
   let verdictBadge = 'Moderate / Fairly Assessed';
   let verdictIcon = '⚖️';
   let verdictDesc = '';
 
-  if (assessDiffPct >= 8.0) {
+  if (isCh123OverAssessed) {
+    verdictClass = 'verdict-strong';
+    verdictBadge = 'Statutory Over-Assessment (NJ Ch. 123)';
+    verdictIcon = '🚨';
+    verdictDesc = `Your assessment-to-sale ratio is <strong>${saleRatio.toFixed(1)}%</strong>, which exceeds the statutory upper corridor (${corridorUpper}%). Under N.J.S.A. 54:51A-6, the County Tax Board is statutorily mandated to reduce your assessment to the common level ratio (${eqRatio.toFixed(1)}%). Your potential tax reduction is up to <strong>${formatUSD(potentialSavings)} / year</strong>.`;
+  } else if (assessDiffPct >= 8.0) {
     verdictClass = 'verdict-strong';
     verdictBadge = 'High Likelihood of Appeal Success';
     verdictIcon = '🚨';
@@ -3892,13 +3927,17 @@ function openAppealAnalyzer(propId) {
   if (titleEl) titleEl.innerHTML = `<span>${verdictIcon}</span> Tax Appeal Analysis: ${escapeHtml(target.address)}`;
   if (subEl) subEl.textContent = `Block ${target.block}, Lot ${target.lot} • ${meta.name} (District ${meta.districtCode}) • Certified Tax Rate: ${meta.certifiedTaxRate}`;
 
+  const savingsDisplay = potentialSavings > 0
+    ? `<strong style="font-size: 1.15rem; color: #dc2626;">${formatUSD(potentialSavings)} / yr</strong>`
+    : `<strong style="font-size: 0.95rem; color: #16a34a;">None (Favorable Assessment)</strong>`;
+
   if (contentEl) {
     contentEl.innerHTML = `
       <!-- Verdict Card -->
       <div class="appeal-verdict-card ${verdictClass}">
         <div class="verdict-top-bar">
           <span class="verdict-badge">${verdictIcon} ${verdictBadge}</span>
-          <span style="font-weight: 700; font-size: 0.9rem;">Potential Tax Reduction: <strong style="font-size: 1.15rem; color: #dc2626;">${formatUSD(potentialSavings)} / yr</strong></span>
+          <span style="font-weight: 700; font-size: 0.9rem;">Potential Tax Reduction: ${savingsDisplay}</span>
         </div>
         <p style="margin: 0; font-size: 0.92rem; line-height: 1.55;">${verdictDesc}</p>
         <div class="verdict-stat-grid">
