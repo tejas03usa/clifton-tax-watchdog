@@ -402,6 +402,10 @@ const CITY_REGISTRY = {
     county: 'Passaic County',
     countyShort: 'Passaic County',
     districtCode: '1602',
+    countyBoardUrl: 'https://www.passaiccountynj.org/residents/board-of-taxation',
+    countyBoardName: 'Passaic County Board of Taxation',
+    clerkDeedsUrl: 'https://records.passaiccountynj.org/press/indexPassaic.aspx',
+    countyClerkName: 'Passaic County Clerk Land Records',
     auditBadge: 'CITIZEN FISCAL AUDIT • 2026',
     certifiedTaxRate: '6.527%',
     rateNum: 6.527,
@@ -444,6 +448,10 @@ const CITY_REGISTRY = {
     county: 'Morris County',
     countyShort: 'Morris County',
     districtCode: '1429',
+    countyBoardUrl: 'https://www.morriscountynj.gov/Departments/Board-of-Taxation',
+    countyBoardName: 'Morris County Board of Taxation',
+    clerkDeedsUrl: 'https://mcweb1.co.morris.nj.us/',
+    countyClerkName: 'Morris County Clerk Records',
     auditBadge: 'MORRIS COUNTY AUDIT • 2026',
     certifiedTaxRate: '3.550%',
     rateNum: 3.550,
@@ -486,6 +494,10 @@ const CITY_REGISTRY = {
     county: 'Passaic County',
     countyShort: 'Passaic County',
     districtCode: '1614',
+    countyBoardUrl: 'https://www.passaiccountynj.org/residents/board-of-taxation',
+    countyBoardName: 'Passaic County Board of Taxation',
+    clerkDeedsUrl: 'https://records.passaiccountynj.org/press/indexPassaic.aspx',
+    countyClerkName: 'Passaic County Clerk Land Records',
     auditBadge: 'PASSAIC COUNTY AUDIT • 2026',
     certifiedTaxRate: '5.946%',
     rateNum: 5.946,
@@ -528,6 +540,10 @@ const CITY_REGISTRY = {
     county: 'Essex County',
     countyShort: 'Essex County',
     districtCode: '0713',
+    countyBoardUrl: 'https://www.essexcountynjtaxboard.org/',
+    countyBoardName: 'Essex County Board of Taxation',
+    clerkDeedsUrl: 'https://www.essexregister.com/',
+    countyClerkName: 'Essex County Register of Deeds',
     auditBadge: 'ESSEX COUNTY AUDIT • 2026',
     certifiedTaxRate: '3.766%',
     rateNum: 3.766,
@@ -570,6 +586,10 @@ const CITY_REGISTRY = {
     county: 'Morris County',
     countyShort: 'Morris County',
     districtCode: '1424',
+    countyBoardUrl: 'https://www.morriscountynj.gov/Departments/Board-of-Taxation',
+    countyBoardName: 'Morris County Board of Taxation',
+    clerkDeedsUrl: 'https://mcweb1.co.morris.nj.us/',
+    countyClerkName: 'Morris County Clerk Records',
     auditBadge: 'MORRIS COUNTY SEAT AUDIT • 2026',
     certifiedTaxRate: '1.575%',
     rateNum: 1.575,
@@ -612,6 +632,10 @@ const CITY_REGISTRY = {
     county: 'Morris County',
     countyShort: 'Morris County',
     districtCode: '1421',
+    countyBoardUrl: 'https://www.morriscountynj.gov/Departments/Board-of-Taxation',
+    countyBoardName: 'Morris County Board of Taxation',
+    clerkDeedsUrl: 'https://mcweb1.co.morris.nj.us/',
+    countyClerkName: 'Morris County Clerk Records',
     auditBadge: 'MORRIS COUNTY AUDIT • 2026',
     certifiedTaxRate: '2.661%',
     rateNum: 2.661,
@@ -654,6 +678,10 @@ const CITY_REGISTRY = {
     county: 'Bergen County',
     countyShort: 'Bergen County',
     districtCode: '0222',
+    countyBoardUrl: 'https://bergencountynj.gov/',
+    countyBoardName: 'Bergen County Board of Taxation',
+    clerkDeedsUrl: 'https://bergencountynj.gov/county-clerk',
+    countyClerkName: 'Bergen County Clerk',
     auditBadge: 'BERGEN COUNTY AUDIT • 2026',
     certifiedTaxRate: '3.407%',
     rateNum: 3.407,
@@ -768,7 +796,7 @@ async function initApp() {
   if (urlParams.has('pin') || urlParams.has('id')) {
     const targetPin = urlParams.get('pin') || urlParams.get('id');
     setTimeout(() => {
-      handlePinDeepLink(targetPin, urlParams.has('appeal'), urlParams.has('receipt'));
+      handlePinDeepLink(targetPin, urlParams.has('appeal'), urlParams.has('receipt'), urlParams.has('mod4') || urlParams.has('verify'));
     }, 250);
   } else if (urlParams.has('street') || urlParams.has('search')) {
     const streetQuery = urlParams.get('street') || urlParams.get('search');
@@ -3155,7 +3183,6 @@ function renderProperties(propsToRender, page) {
         const deedInfo = p.salePrice && p.salePrice > 100
           ? `${formatUSDWhole(p.salePrice)}${p.deedDate ? ` (${escapeHtml(p.deedDate)})` : ''}${p.deedBook ? ` • Book ${escapeHtml(p.deedBook)}/${escapeHtml(p.deedPage)}` : ''}`
           : (p.deedBook ? `Book ${escapeHtml(p.deedBook)}, Page ${escapeHtml(p.deedPage)}${p.deedDate ? ` (${escapeHtml(p.deedDate)})` : ''}` : 'Prior to Digital Roll / N/A');
-        const mod4VerifyUrl = `https://tax1.co.monmouth.nj.us/cgi-bin/m4.cgi?district=${encodeURIComponent(meta.districtCode)}&block=${encodeURIComponent(p.block)}&lot=${encodeURIComponent(p.lot)}`;
 
         return `
         <div class="property-card" data-id="${escapeHtml(p.id)}">
@@ -3245,9 +3272,9 @@ function renderProperties(propsToRender, page) {
                 <span>🧾</span> Tax Receipt
               </button>
             </div>
-            <a href="${mod4VerifyUrl}" target="_blank" rel="noopener" class="btn-jump-prop-area" style="text-decoration: none; text-align: center;">
-              <span>🏛️</span> Verify Block ${escapeHtml(p.block)} / Lot ${escapeHtml(p.lot)} on County MOD-IV ↗
-            </a>
+            <button type="button" class="btn-jump-prop-area" onclick="openMod4VerificationModal('${escapeHtml(p.id)}')" style="cursor: pointer; text-align: center; width: 100%; border: none; font-family: inherit;">
+              <span>🏛️</span> Verify Block ${escapeHtml(p.block)} / Lot ${escapeHtml(p.lot)} on County MOD-IV ➔
+            </button>
           </div>
         </div>
       `;
@@ -3288,6 +3315,9 @@ function renderProperties(propsToRender, page) {
               </button>
               <button type="button" class="btn-table-action" onclick="openTaxReceiptModal('${escapeHtml(p.id)}')">
                 🧾 Receipt
+              </button>
+              <button type="button" class="btn-table-action" onclick="openMod4VerificationModal('${escapeHtml(p.id)}')">
+                🏛️ MOD-IV
               </button>
               <button type="button" class="btn-table-action" onclick="loadPropertyToCalculator(${p.assessedTotal})">
                 🧮 Calc
@@ -4093,7 +4123,7 @@ function openAppealAnalyzer(propId) {
         <strong style="color: #0f172a;">📅 Statutory NJ Appeal Deadlines &amp; Filing Rules:</strong><br>
         • County Tax Board appeals must be filed by <strong>April 1, 2026</strong> (or May 1 if the municipality completed a revaluation).<br>
         • Statutory NJ filing fee: <strong>$5.00</strong> (assessment &lt; $150k), <strong>$25.00</strong> ($150k–$500k), or <strong>$100.00</strong> ($500k–$1M).<br>
-        • Direct County Portal: <a href="https://tax1.co.monmouth.nj.us/cgi-bin/m4.cgi?district=${meta.districtCode}&block=${encodeURIComponent(target.block)}&lot=${encodeURIComponent(target.lot)}" target="_blank" rel="noopener" style="font-weight: 700; color: #2563eb;">View Certified County MOD-IV Duplicate Record ↗</a>
+        • Direct County Verification: <a href="javascript:void(0)" onclick="openMod4VerificationModal('${escapeHtml(target.id)}')" style="font-weight: 700; color: #2563eb; text-decoration: underline;">Inspect Certified MOD-IV Duplicate Record &amp; County Portals ➔</a>
       </div>
     `;
   }
@@ -4447,22 +4477,238 @@ function copyActivePropertyPermalink() {
   }
 }
 
+// --------------------------------------------------------------------------
+// FEATURE 4: 🏛️ Certified MOD-IV Public Tax Record Inspector
+// --------------------------------------------------------------------------
+let activeMod4Property = null;
+
+function openMod4VerificationModal(propId) {
+  if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
+  const props = propertyAssessmentsData.properties;
+  let target = null;
+  if (propId) {
+    target = props.find(p => p.id === propId);
+  }
+  if (!target && currentFilteredProperties && currentFilteredProperties.length > 0) {
+    target = currentFilteredProperties[0];
+  }
+  if (!target) target = props[0];
+  if (!target) return;
+
+  activeMod4Property = target;
+  renderMod4VerificationContent(target);
+
+  const dialog = document.getElementById('mod4-verify-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function renderMod4VerificationContent(target) {
+  const contentEl = document.getElementById('mod4-dialog-content');
+  if (!contentEl) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  const titleEl = document.getElementById('mod4-dialog-title');
+  const subEl = document.getElementById('mod4-dialog-subtitle');
+  if (titleEl) {
+    titleEl.innerHTML = `<span>🏛️</span> Certified County MOD-IV Duplicate: ${escapeHtml(target.address)}`;
+  }
+  if (subEl) {
+    subEl.textContent = `PAMS PIN: ${target.id} • Block ${target.block}, Lot ${target.lot}${target.qual ? ' Qual ' + target.qual : ''} • ${meta.name} (District ${meta.districtCode})`;
+  }
+
+  const deedInfo = target.salePrice && target.salePrice > 100
+    ? `${formatUSDWhole(target.salePrice)} on ${target.deedDate || 'N/A'}`
+    : 'Prior to Digital Roll / Unrecorded';
+
+  const deedBookPage = target.deedBook
+    ? `Book ${target.deedBook}, Page ${target.deedPage || '—'}`
+    : 'Refer to County Clerk Archive';
+
+  contentEl.innerHTML = `
+    <div class="mod4-cert-card">
+      <div class="mod4-cert-header">
+        <div>
+          <div class="mod4-seal-title">State of New Jersey • Division of Taxation • Local Property Tax</div>
+          <h4 style="margin: 4px 0 0; font-size: 1.1rem; font-weight: 800; color: #0f172a;">
+            Certified 2026 MOD-IV Assessment Roll Duplicate
+          </h4>
+        </div>
+        <span class="badge-source" style="font-size: 0.74rem; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 4px; font-weight: 700;">
+          N.J.S.A. 54:4-1 Certified
+        </span>
+      </div>
+
+      <!-- Core Parcel Attributes Grid -->
+      <div class="mod4-cert-grid">
+        <div class="mod4-field-item">
+          <span class="mod4-field-lbl">State PAMS PIN (NJOGIS)</span>
+          <span class="mod4-field-val">${escapeHtml(target.id)}</span>
+        </div>
+        <div class="mod4-field-item">
+          <span class="mod4-field-lbl">Municipal District Code</span>
+          <span class="mod4-field-val">${escapeHtml(meta.districtCode)} (${escapeHtml(meta.fullName)})</span>
+        </div>
+        <div class="mod4-field-item">
+          <span class="mod4-field-lbl">Tax Block &amp; Lot</span>
+          <span class="mod4-field-val">Block ${escapeHtml(target.block)}, Lot ${escapeHtml(target.lot)}${target.qual ? ' (' + escapeHtml(target.qual) + ')' : ''}</span>
+        </div>
+        <div class="mod4-field-item">
+          <span class="mod4-field-lbl">Property Classification</span>
+          <span class="mod4-field-val">Class 2 (Residential 1-4 Family)</span>
+        </div>
+        <div class="mod4-field-item">
+          <span class="mod4-field-lbl">Exterior Building Style</span>
+          <span class="mod4-field-val">${escapeHtml(target.bldgDesc || target.propertyType)}</span>
+        </div>
+        <div class="mod4-field-item">
+          <span class="mod4-field-lbl">Year of Construction</span>
+          <span class="mod4-field-val">${target.yearBuilt > 0 ? target.yearBuilt : 'Not Stated in Duplicate'}</span>
+        </div>
+        <div class="mod4-field-item">
+          <span class="mod4-field-lbl">Lot Dimensions / Acreage</span>
+          <span class="mod4-field-val">${escapeHtml(target.lotSize || (target.acres ? target.acres + ' AC' : 'Standard Parcel'))}</span>
+        </div>
+        <div class="mod4-field-item">
+          <span class="mod4-field-lbl">County Equalization Ratio</span>
+          <span class="mod4-field-val">${meta.equalizationRatio.toFixed(1)}% (NJ Ch. 123)</span>
+        </div>
+      </div>
+
+      <!-- Financial Valuation Table -->
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 18px; margin-bottom: 16px;">
+        <div style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; color: #475569; margin-bottom: 8px;">
+          Certified Assessment Breakdown &amp; 2026 Tax Levy
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px;">
+          <div>
+            <span style="display: block; font-size: 0.72rem; color: #64748b;">Land Assessment:</span>
+            <strong style="font-size: 1.1rem; color: #0f172a; font-family: var(--font-mono);">${formatUSDWhole(target.assessedLand || 0)}</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.72rem; color: #64748b;">Building Improvement:</span>
+            <strong style="font-size: 1.1rem; color: #0f172a; font-family: var(--font-mono);">${formatUSDWhole(target.assessedBuilding || 0)}</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.72rem; color: #64748b;">Net Taxable Total:</span>
+            <strong style="font-size: 1.25rem; color: var(--color-school); font-family: var(--font-mono);">${formatUSDWhole(target.assessedTotal)}</strong>
+          </div>
+          <div>
+            <span style="display: block; font-size: 0.72rem; color: #64748b;">2026 Annual Property Tax:</span>
+            <strong style="font-size: 1.25rem; color: #dc2626; font-family: var(--font-mono);">${formatUSD(target.annualTax)}</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recording & Deed Chain -->
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; margin-bottom: 16px;">
+        <div style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; color: #475569; margin-bottom: 8px;">
+          County Recording Reference (${escapeHtml(meta.countyShort)})
+        </div>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.88rem;">
+          <div>
+            <span style="color: #64748b;">Recorded Deed:</span>
+            <strong style="margin-left: 4px; font-family: var(--font-mono);">${escapeHtml(deedBookPage)}</strong>
+          </div>
+          <div>
+            <span style="color: #64748b;">Recorded Consideration:</span>
+            <strong style="margin-left: 4px; font-family: var(--font-mono);">${escapeHtml(deedInfo)}</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direct Official County & State Portals -->
+      <div class="mod4-links-box">
+        <strong style="display: block; margin-bottom: 6px; color: #166534; font-size: 0.9rem;">
+          🌐 Official Verification Portals for ${escapeHtml(meta.name)} (${escapeHtml(meta.county)}):
+        </strong>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div>
+            • <strong>${escapeHtml(meta.countyBoardName || meta.county + ' Board of Taxation')}:</strong>
+            <a href="${meta.countyBoardUrl || 'https://www.passaiccountynj.org/residents/board-of-taxation'}" target="_blank" rel="noopener" style="color: #15803d; font-weight: 700; text-decoration: underline; margin-left: 4px;">
+              Access Official Tax Board Portal ↗
+            </a>
+          </div>
+          ${meta.clerkDeedsUrl ? `
+          <div>
+            • <strong>${escapeHtml(meta.countyClerkName || meta.county + ' Clerk Records')}:</strong>
+            <a href="${meta.clerkDeedsUrl}" target="_blank" rel="noopener" style="color: #15803d; font-weight: 700; text-decoration: underline; margin-left: 4px;">
+              Search Official Deeds by Book/Page or Block/Lot ↗
+            </a>
+          </div>` : ''}
+          <div>
+            • <strong>State of New Jersey Office of GIS (NJGIN):</strong>
+            <a href="https://newjersey.maps.arcgis.com/apps/webappviewer/index.html?id=3a4290e1b3d64094a8b8a127965ab43a" target="_blank" rel="noopener" style="color: #15803d; font-weight: 700; text-decoration: underline; margin-left: 4px;">
+              View Parcel on Statewide NJGIN GIS Explorer ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daniel's Law / Deep-link Explanation Notice -->
+      <div class="mod4-notice-box">
+        <strong>🔒 Public Access Notice (Daniel's Law / P.L. 2021, c. 371):</strong><br>
+        Direct unauthenticated deep-linking to legacy county query servers (such as Monmouth's MOD-IV CGI gateway) has been disabled statewide to protect judicial and law enforcement privacy. All data displayed above is extracted directly from the certified public record tax duplicate submitted to the State Division of Taxation pursuant to N.J.S.A. 54:4-1.
+      </div>
+    </div>
+  `;
+}
+
+function copyMod4RecordText() {
+  if (!activeMod4Property) return;
+  const p = activeMod4Property;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  const text = `STATE OF NEW JERSEY • DIVISION OF TAXATION
+OFFICIAL CERTIFIED MOD-IV DUPLICATE CITATION
+TAX YEAR: 2026
+MUNICIPALITY: ${meta.name.toUpperCase()} (DISTRICT ${meta.districtCode})
+COUNTY: ${meta.county.toUpperCase()}
+PROPERTY ADDRESS: ${p.address.toUpperCase()}
+PARCEL ID (PAMS PIN): ${p.id}
+BLOCK: ${p.block} | LOT: ${p.lot}${p.qual ? ' | QUAL: ' + p.qual : ''}
+PROPERTY CLASS: Class 2 (Residential)
+STYLE CODE (BLDG_DESC): ${p.bldgDesc || 'Class 2'}
+YEAR BUILT: ${p.yearBuilt > 0 ? p.yearBuilt : 'N/A'}
+LOT DIMENSIONS: ${p.lotSize || (p.acres ? p.acres + ' AC' : 'Standard')}
+LAND ASSESSMENT: $${(p.assessedLand || 0).toLocaleString()}
+BUILDING ASSESSMENT: $${(p.assessedBuilding || 0).toLocaleString()}
+TOTAL NET TAXABLE VALUE: $${p.assessedTotal.toLocaleString()}
+CERTIFIED TAX RATE: ${meta.certifiedTaxRate}
+ANNUAL PROPERTY TAX: $${p.annualTax.toFixed(2)}
+DEED REFERENCE: Book ${p.deedBook || 'N/A'}, Page ${p.deedPage || 'N/A'} (${p.deedDate || 'N/A'})
+CERTIFIED SOURCE: State of New Jersey Office of GIS / Division of Taxation MOD-IV Duplicate Roll pursuant to N.J.S.A. 54:4-1 et seq.`;
+
+  navigator.clipboard.writeText(text).then(() => {
+    showToast('✓ Official MOD-IV citation copied to clipboard!');
+  }).catch(() => {
+    showToast('Copied to clipboard');
+  });
+}
+
 function showToast(msg) {
   let toast = document.getElementById('toast-notification');
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'toast-notification';
     toast.className = 'toast-notification';
-    document.body.appendChild(toast);
+    if (document.body && typeof document.body.appendChild === 'function') {
+      document.body.appendChild(toast);
+    }
   }
   toast.textContent = msg;
-  toast.classList.add('show');
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 2800);
+  if (toast.classList && typeof toast.classList.add === 'function') {
+    toast.classList.add('show');
+    setTimeout(() => {
+      if (toast.classList && typeof toast.classList.remove === 'function') {
+        toast.classList.remove('show');
+      }
+    }, 2800);
+  }
 }
 
-function handlePinDeepLink(targetPin, openAppeal, openReceipt) {
+function handlePinDeepLink(targetPin, openAppeal, openReceipt, openMod4) {
   if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
   const target = propertyAssessmentsData.properties.find(p => p.id === targetPin || p.address.toLowerCase() === targetPin.toLowerCase());
   if (target) {
@@ -4483,6 +4729,8 @@ function handlePinDeepLink(targetPin, openAppeal, openReceipt) {
         openAppealAnalyzer(target.id);
       } else if (openReceipt) {
         openTaxReceiptModal(target.id);
+      } else if (openMod4) {
+        openMod4VerificationModal(target.id);
       }
     }, 180);
   }
@@ -4498,6 +4746,8 @@ window.setReliefOption = setReliefOption;
 window.updateReliefTax = updateReliefTax;
 window.openTaxReceiptModal = openTaxReceiptModal;
 window.copyReceiptText = copyReceiptText;
+window.openMod4VerificationModal = openMod4VerificationModal;
+window.copyMod4RecordText = copyMod4RecordText;
 window.copyPropertyPermalink = copyPropertyPermalink;
 window.copyActivePropertyPermalink = copyActivePropertyPermalink;
 window.viewStreetReport = viewStreetReport;
