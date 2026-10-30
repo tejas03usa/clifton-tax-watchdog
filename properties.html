@@ -238,6 +238,16 @@
         </div>
       </div>
 
+      <!-- Quick Citizen Actions Strip: Appeal Check & State Tax Relief -->
+      <div class="prop-quick-action-strip" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+        <button type="button" class="btn-jump-action" style="flex: 1; min-width: 250px; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="openAppealAnalyzer()">
+          <span>⚖️</span> Am I Over-Assessed? Tax Appeal & Comps Analyzer ➔
+        </button>
+        <button type="button" class="btn-jump-action" style="flex: 1; min-width: 250px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 10px 16px; border-radius: 8px; font-weight: 700; cursor: pointer;" onclick="openReliefCalculator()">
+          <span>🧓</span> State Tax Relief Calculator: ANCHOR, StayNJ & Senior Freeze ➔
+        </button>
+      </div>
+
       <!-- Interactive Filter Controls Panel -->
       <div class="prop-filter-panel">
         <div class="filter-header-bar">
@@ -341,6 +351,9 @@
           <span>💡 <strong>Click any property</strong> to load its exact MOD-IV assessment into the Tax Calculator for a line-item breakdown.</span>
         </div>
       </div>
+
+      <!-- Dynamic Street & Block Report Card Banner (Triggered by Street/Block Search) -->
+      <div id="street-report-card-container" class="street-report-card-container" style="display: none;"></div>
 
       <!-- Top Pagination Bar -->
       <div class="properties-pagination-wrapper" id="properties-pagination-top"></div>
@@ -1483,6 +1496,72 @@
       </div>
     </div>
   </footer>
+
+  <!-- Modal Dialog 1: ⚖️ Tax Appeal Analyzer & Comparable Finder -->
+  <dialog id="appeal-analyzer-dialog" class="modern-modal-dialog" aria-labelledby="appeal-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="appeal-dialog-title"><span>⚖️</span> NJ Tax Appeal Analyzer &amp; Street Comps</h3>
+          <div class="modern-dialog-subtitle" id="appeal-dialog-subtitle">Evaluating assessment fairness against official MOD-IV comparables &amp; NJ Chapter 123</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="appeal-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" onclick="printAppealEvidence()"><span>🖨️</span> Print Form A-1 Packet</button>
+        <button type="button" class="btn-street-action" onclick="copyAppealEvidence()"><span>📋</span> Copy Evidence Table</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 2: 🧓 State Property Tax Relief Calculator (ANCHOR + StayNJ + Senior Freeze) -->
+  <dialog id="relief-calc-dialog" class="modern-modal-dialog" aria-labelledby="relief-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="relief-dialog-title"><span>🧓</span> NJ State Property Tax Relief Calculator</h3>
+          <div class="modern-dialog-subtitle">Calculate your net after-rebate tax bill with ANCHOR ($1,500–$1,750), StayNJ (50% cut up to $6,500), &amp; Senior Freeze</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="relief-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <a href="https://www.state.nj.us/treasury/taxation/anchor/" target="_blank" rel="noopener" class="btn-street-action" style="text-decoration: none;"><span>🏛️</span> File on Official NJ PAS-1 Portal ↗</a>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 3: 🧾 Official 2026 Property Tax Receipt -->
+  <dialog id="tax-receipt-dialog" class="modern-modal-dialog" aria-labelledby="receipt-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="receipt-dialog-title"><span>🧾</span> Official 2026 Property Tax Receipt</h3>
+          <div class="modern-dialog-subtitle" id="receipt-dialog-subtitle">Itemized school, municipal, and county tax contributions</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="receipt-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" onclick="window.print()"><span>🖨️</span> Print Receipt</button>
+        <button type="button" class="btn-street-action" onclick="copyReceiptText()"><span>📋</span> Copy Text</button>
+        <button type="button" class="btn-street-action" onclick="copyActivePropertyPermalink()"><span>🔗</span> Copy Direct Link</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Accessible Toast Notification for Link Copying -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
 </body>

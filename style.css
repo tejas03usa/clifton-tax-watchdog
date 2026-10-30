@@ -13411,3 +13411,744 @@ details.collapsible-section[open] > .collapsible-section-body {
   gap: 6px !important;
 }
 
+/* ==========================================================================
+   MODERN WEB GUIDANCE: Native <dialog> Modal Component & Overscroll Trapping
+   ========================================================================== */
+dialog:modal {
+  /* Prevent scroll gestures inside the modal from chaining to the underlying page */
+  overscroll-behavior: contain;
+  margin: auto;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  background: var(--bg-surface);
+  color: var(--text-main);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  max-width: 860px;
+  width: 94vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+dialog::backdrop {
+  /* ::backdrop defaults to overflow: visible. Setting overflow: hidden makes it a
+     non-scrollable scroll container honoring overscroll-behavior to trap backdrop scroll */
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.modern-dialog-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.modern-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.modern-dialog-title-block h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modern-dialog-subtitle {
+  font-size: 0.84rem;
+  color: var(--text-subtle);
+  font-weight: 500;
+}
+
+.btn-dialog-close {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.btn-dialog-close:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fca5a5;
+  transform: rotate(90deg);
+}
+
+.modern-dialog-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modern-dialog-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-subtle);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   FEATURE 1: ⚖️ Tax Appeal Analyzer & Comparable Evidence Styles
+   ========================================================================== */
+.appeal-verdict-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appeal-verdict-card.verdict-strong {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.appeal-verdict-card.verdict-moderate {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e40af;
+}
+
+.appeal-verdict-card.verdict-low {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.verdict-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.verdict-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.verdict-strong .verdict-badge {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.verdict-moderate .verdict-badge {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.verdict-low .verdict-badge {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.verdict-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.verdict-stat-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.verdict-stat-lbl {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-subtle);
+}
+
+.verdict-stat-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+.verdict-stat-sub {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.appeal-comps-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  margin-top: 6px;
+}
+
+.appeal-comps-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  text-align: left;
+}
+
+.appeal-comps-table th {
+  background: var(--bg-subtle);
+  padding: 10px 12px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-light);
+  white-space: nowrap;
+}
+
+.appeal-comps-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-light);
+  white-space: nowrap;
+}
+
+.appeal-comps-table tr:last-child td {
+  border-bottom: none;
+}
+
+.appeal-comps-table tr.subject-property-row {
+  background: #fef3c7;
+  font-weight: 600;
+}
+
+.form-a1-evidence-box {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.form-a1-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-a1-header h4 {
+  margin: 0;
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.form-a1-text {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  white-space: pre-wrap;
+  color: #334155;
+  line-height: 1.5;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+/* ==========================================================================
+   FEATURE 2: 🧓 State Property Tax Relief Calculator (ANCHOR & StayNJ)
+   ========================================================================== */
+.relief-calc-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.relief-calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.relief-title-block h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.relief-title-block p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--text-subtle);
+}
+
+.relief-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.relief-control-item label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 6px;
+}
+
+.toggle-pill-group {
+  display: flex;
+  background: #f1f5f9;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #e2e8f0;
+}
+
+.toggle-pill-btn {
+  flex: 1;
+  padding: 7px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.toggle-pill-btn.active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.relief-summary-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.2);
+}
+
+.relief-summary-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.relief-summary-box .rs-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+}
+
+.relief-summary-box .rs-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: #38bdf8;
+  margin-top: 4px;
+}
+
+.relief-summary-box .rs-value.relief-green {
+  color: #4ade80;
+}
+
+.relief-summary-box .rs-sub {
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  margin-top: 4px;
+}
+
+.relief-breakdown-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+}
+
+.relief-pill-tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   FEATURE 3: 📈 Street & Block Report Card Banner
+   ========================================================================== */
+.street-report-banner {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-left: 6px solid #2563eb;
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeIn 0.25s ease;
+}
+
+.street-report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.street-report-title h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.street-report-meta {
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+  margin-top: 2px;
+}
+
+.street-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.street-metric-item {
+  background: var(--bg-subtle);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.street-metric-lbl {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.street-metric-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--text-main);
+  margin-top: 2px;
+}
+
+.street-metric-sub {
+  font-size: 0.74rem;
+  margin-top: 2px;
+}
+
+.street-metric-sub.higher {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.street-metric-sub.lower {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.street-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.btn-street-action {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-street-action:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* ==========================================================================
+   FEATURE 3: 🧾 Official Tax Receipt Modal & Permalink Sharing
+   ========================================================================== */
+.receipt-paper-card {
+  background: #ffffff;
+  border: 2px dashed #94a3b8;
+  border-radius: var(--radius-md);
+  padding: 28px;
+  max-width: 580px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  font-family: var(--font-mono);
+}
+
+.receipt-header-row {
+  text-align: center;
+  border-bottom: 2px solid #0f172a;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+}
+
+.receipt-header-row h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.receipt-sub {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.receipt-line-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  font-size: 0.86rem;
+  border-bottom: 1px dotted #e2e8f0;
+}
+
+.receipt-line-item.bold-row {
+  font-weight: 800;
+  font-size: 0.95rem;
+  border-top: 2px solid #0f172a;
+  border-bottom: 2px solid #0f172a;
+  padding: 10px 0;
+  margin-top: 10px;
+  color: #b91c1c;
+}
+
+.receipt-barcode {
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: 0.25em;
+  font-size: 1.2rem;
+  color: #475569;
+}
+
+/* Property Card Action Enhancements */
+.btn-appeal-check {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-appeal-check:hover {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+.btn-relief-check {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-relief-check:hover {
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #16a34a;
+}
+
+.card-util-bar {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.btn-card-util {
+  flex: 1;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.btn-card-util:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Floating Toast Notification */
+.toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.86rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Highlight Animation for Deep-Linked Property */
+.card-highlight-pulse {
+  animation: pulseCard 2.5s ease-out;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25) !important;
+}
+
+@keyframes pulseCard {
+  0% { transform: scale(1.02); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+
+/* Print Styles for Appeal Evidence Sheet and Tax Receipt */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  dialog[open], dialog[open] * {
+    visibility: visible;
+  }
+  dialog[open] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+  .modern-dialog-header button,
+  .modern-dialog-footer,
+  .btn-dialog-close {
+    display: none !important;
+  }
+}
+
+

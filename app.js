@@ -752,7 +752,7 @@ async function initApp() {
 
   await switchCity(currentCity, false);
 
-  // Check for ?calc= param to preload calculator from property links
+  // Check for URL parameters to preload calculator or deep-link to properties, appeals, or relief calculator
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.has('calc')) {
     const val = parseInt(urlParams.get('calc'), 10);
@@ -763,6 +763,26 @@ async function initApp() {
       if (slider) slider.value = val;
       input.dispatchEvent(new Event('input'));
     }
+  }
+
+  if (urlParams.has('pin') || urlParams.has('id')) {
+    const targetPin = urlParams.get('pin') || urlParams.get('id');
+    setTimeout(() => {
+      handlePinDeepLink(targetPin, urlParams.has('appeal'), urlParams.has('receipt'));
+    }, 250);
+  } else if (urlParams.has('street') || urlParams.has('search')) {
+    const streetQuery = urlParams.get('street') || urlParams.get('search');
+    const searchInput = document.getElementById('prop-search-input');
+    if (searchInput) {
+      searchInput.value = streetQuery;
+      if (typeof applyPropertyFilters === 'function') {
+        applyPropertyFilters();
+      }
+    }
+  } else if (urlParams.has('rebate') || urlParams.has('relief')) {
+    setTimeout(() => {
+      openReliefCalculator();
+    }, 250);
   }
 }
 
@@ -3205,12 +3225,26 @@ function renderProperties(propsToRender, page) {
           </div>
 
           <div class="prop-card-actions">
-            <button class="btn-load-calculator" onclick="loadPropertyToCalculator(${p.assessedTotal})">
-              <span>🧮</span> Load in Tax Calculator & Line Items
+            <button type="button" class="btn-appeal-check" onclick="openAppealAnalyzer('${escapeHtml(p.id)}')">
+              <span>⚖️</span> Am I Over-Assessed? Tax Appeal &amp; Comps ➔
             </button>
-            <button class="btn-jump-prop-toolkit" data-jump-tab="tab-intelligence" onclick="if(document.getElementById('receipt-assessed-input')){document.getElementById('receipt-assessed-input').value=${p.assessedTotal};document.getElementById('receipt-assessed-input').dispatchEvent(new Event('input'));document.querySelector('.intel-nav-btn[data-report=\\'receipt\\']')?.click();}">
-              <span>🧾</span> Itemized Tax Grocery Receipt ➔
+            <button type="button" class="btn-relief-check" onclick="openReliefCalculator(${p.annualTax}, ${p.assessedTotal}, '${escapeHtml(p.address)}')">
+              <span>🧓</span> State Tax Relief: ANCHOR &amp; StayNJ Rebates ➔
             </button>
+            <button type="button" class="btn-load-calculator" onclick="loadPropertyToCalculator(${p.assessedTotal})">
+              <span>🧮</span> Load in Tax Calculator &amp; Line Items
+            </button>
+            <div class="card-util-bar">
+              <button type="button" class="btn-card-util" onclick="copyPropertyPermalink('${escapeHtml(p.id)}', '${escapeHtml(p.address)}')">
+                <span>🔗</span> Copy Link
+              </button>
+              <button type="button" class="btn-card-util" onclick="viewStreetReport('${escapeHtml(p.address)}')">
+                <span>📈</span> Street Report
+              </button>
+              <button type="button" class="btn-card-util" onclick="openTaxReceiptModal('${escapeHtml(p.id)}')">
+                <span>🧾</span> Tax Receipt
+              </button>
+            </div>
             <a href="${mod4VerifyUrl}" target="_blank" rel="noopener" class="btn-jump-prop-area" style="text-decoration: none; text-align: center;">
               <span>🏛️</span> Verify Block ${escapeHtml(p.block)} / Lot ${escapeHtml(p.lot)} on County MOD-IV ↗
             </a>
@@ -3248,14 +3282,28 @@ function renderProperties(propsToRender, page) {
           <td style="font-family: var(--font-mono); font-weight: 800; color: #dc2626;">${formatUSD(p.annualTax)}</td>
           <td style="font-family: var(--font-mono); color: var(--color-school);">${formatUSDWhole(p.schoolTax)}</td>
           <td>
-            <button class="btn-table-action" onclick="loadPropertyToCalculator(${p.assessedTotal})">
-              Analyze
-            </button>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <button type="button" class="btn-table-action" onclick="openAppealAnalyzer('${escapeHtml(p.id)}')">
+                ⚖️ Appeal
+              </button>
+              <button type="button" class="btn-table-action" onclick="openTaxReceiptModal('${escapeHtml(p.id)}')">
+                🧾 Receipt
+              </button>
+              <button type="button" class="btn-table-action" onclick="loadPropertyToCalculator(${p.assessedTotal})">
+                🧮 Calc
+              </button>
+            </div>
           </td>
         </tr>
       `;
       }).join('');
     }
+  }
+
+  // Update Street Report Card based on current search and filtered items
+  const activeSearchInput = document.getElementById('prop-search-input');
+  if (typeof updateStreetReportCard === 'function') {
+    updateStreetReportCard(list, activeSearchInput ? activeSearchInput.value : '');
   }
 
   // Render Top & Bottom Pagination Controls
@@ -3430,11 +3478,815 @@ function setupPropertyFilters() {
       if (eraSelect) eraSelect.value = 'ALL';
       if (tierSelect) tierSelect.value = 'ALL';
       if (sortSelect) sortSelect.value = 'tax-desc';
+      const container = document.getElementById('street-report-card-container');
+      if (container) container.style.display = 'none';
       propCurrentPage = 1;
       applyFilters();
     };
   }
 }
+
+// ==========================================================================
+// FEATURE 1, 2 & 3: CITIZEN VALUE ENHANCEMENTS
+// (Tax Appeal Analyzer, State Relief Calculator & Street Report / Permalinks)
+// ==========================================================================
+
+let activeAppealProperty = null;
+let activeReceiptProperty = null;
+let activeReliefState = {
+  taxBill: 11782.70,
+  assessedValue: 180523,
+  address: 'Sample Home',
+  isHomeowner: true,
+  age65Plus: false,
+  incomeBracket: 'under_150k',
+  meetsFreezeTenure: false
+};
+
+// Helper: Extract Street Name from Address (e.g. "352 Grove St" -> "Grove St")
+function extractStreetName(addr) {
+  if (!addr) return '';
+  return addr.replace(/^[0-9]+[A-Za-z0-9\-\/]*\s+/, '').trim();
+}
+
+// --------------------------------------------------------------------------
+// FEATURE 3: Street & Block Report Card
+// --------------------------------------------------------------------------
+function updateStreetReportCard(filteredList, rawQuery) {
+  const container = document.getElementById('street-report-card-container');
+  if (!container) return;
+  if (!filteredList || filteredList.length < 3 || !propertyAssessmentsData?.properties) {
+    container.style.display = 'none';
+    return;
+  }
+
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const townAvgAssessed = propertyAssessmentsData.summaryStats?.averageAssessed || meta.sliderDefault || 180523;
+
+  // Check if filtered list represents a street or block
+  let detectedStreet = '';
+  let detectedBlock = '';
+
+  const q = (rawQuery || '').trim().toLowerCase();
+  if (q.startsWith('block ') || q.startsWith('b:')) {
+    detectedBlock = q.replace(/^block\s+/i, '').replace(/^b:\s*/i, '').trim();
+  }
+
+  // Count streets in the filtered subset
+  const streetCounts = {};
+  for (let i = 0; i < filteredList.length; i++) {
+    const st = extractStreetName(filteredList[i].address);
+    if (st) streetCounts[st] = (streetCounts[st] || 0) + 1;
+  }
+
+  const sortedStreets = Object.entries(streetCounts).sort((a, b) => b[1] - a[1]);
+  if (sortedStreets.length > 0 && (sortedStreets[0][1] >= 3) && (sortedStreets[0][1] / filteredList.length >= 0.35 || q.length > 2)) {
+    detectedStreet = sortedStreets[0][0];
+  }
+
+  if (!detectedStreet && !detectedBlock) {
+    container.style.display = 'none';
+    return;
+  }
+
+  // Calculate statistics for this street/block subset
+  const streetProps = detectedStreet
+    ? filteredList.filter(p => extractStreetName(p.address).toLowerCase() === detectedStreet.toLowerCase())
+    : filteredList;
+
+  if (streetProps.length < 3) {
+    container.style.display = 'none';
+    return;
+  }
+
+  let totalAssessed = 0;
+  let totalLand = 0;
+  let totalBldg = 0;
+  let totalTax = 0;
+  let totalSchool = 0;
+  let minTax = Infinity;
+  let maxTax = -Infinity;
+
+  for (let i = 0; i < streetProps.length; i++) {
+    const p = streetProps[i];
+    const a = p.assessedTotal || 0;
+    const t = p.annualTax || 0;
+    totalAssessed += a;
+    totalLand += (p.assessedLand || 0);
+    totalBldg += (p.assessedBuilding || 0);
+    totalTax += t;
+    totalSchool += (p.schoolTax || (t * 0.5));
+    if (t < minTax) minTax = t;
+    if (t > maxTax) maxTax = t;
+  }
+
+  const count = streetProps.length;
+  const avgAssessed = Math.round(totalAssessed / count);
+  const avgTax = totalTax / count;
+  const diffPct = ((avgAssessed - townAvgAssessed) / townAvgAssessed) * 100;
+  const diffSign = diffPct >= 0 ? '+' : '';
+  const diffClass = diffPct > 0 ? 'higher' : 'lower';
+  const landSharePct = totalAssessed > 0 ? Math.round((totalLand / totalAssessed) * 100) : 35;
+  const bldgSharePct = 100 - landSharePct;
+
+  const targetName = detectedStreet ? `${detectedStreet}` : `Block ${detectedBlock}`;
+
+  container.innerHTML = `
+    <div class="street-report-banner">
+      <div class="street-report-header">
+        <div class="street-report-title">
+          <h3><span>📍</span> ${escapeHtml(targetName)} Report Card (${escapeHtml(meta.name)}, ${escapeHtml(meta.countyShort)})</h3>
+          <div class="street-report-meta">Aggregated real-time metrics across ${count.toLocaleString()} official MOD-IV residential parcels</div>
+        </div>
+        <span class="pill-tag" style="background: #2563eb; color: #fff; font-weight: 700;">${count} Homes on Roll</span>
+      </div>
+
+      <div class="street-metrics-grid">
+        <div class="street-metric-item">
+          <span class="street-metric-lbl">Street Avg Assessment</span>
+          <span class="street-metric-val">${formatUSDWhole(avgAssessed)}</span>
+          <span class="street-metric-sub ${diffClass}">${diffSign}${diffPct.toFixed(1)}% vs. town avg (${formatUSDWhole(townAvgAssessed)})</span>
+        </div>
+        <div class="street-metric-item">
+          <span class="street-metric-lbl">Street Avg Annual Tax</span>
+          <span class="street-metric-val">${formatUSD(avgTax)}</span>
+          <span class="street-metric-sub">Range: ${formatUSDWhole(minTax)} – ${formatUSDWhole(maxTax)}</span>
+        </div>
+        <div class="street-metric-item">
+          <span class="street-metric-lbl">Total Tax Contributed</span>
+          <span class="street-metric-val">${formatUSDWhole(totalTax)}</span>
+          <span class="street-metric-sub">Annual property tax levy from this street</span>
+        </div>
+        <div class="street-metric-item">
+          <span class="street-metric-lbl">${escapeHtml(meta.schoolDistrictShort)} Share</span>
+          <span class="street-metric-val" style="color: var(--color-school);">${formatUSDWhole(totalSchool)}</span>
+          <span class="street-metric-sub">Funds local classrooms &amp; teachers</span>
+        </div>
+        <div class="street-metric-item">
+          <span class="street-metric-lbl">Land vs. Building Split</span>
+          <span class="street-metric-val" style="font-size: 1.05rem;">${landSharePct}% / ${bldgSharePct}%</span>
+          <span class="street-metric-sub">Land: ${formatUSDWhole(Math.round(totalLand/count))} • Bldg: ${formatUSDWhole(Math.round(totalBldg/count))}</span>
+        </div>
+      </div>
+
+      <div class="street-actions-row">
+        <button type="button" class="btn-street-action" onclick="openAppealAnalyzer('${streetProps[0].id}')">
+          <span>⚖️</span> Check Appeal Comps for Homes on ${escapeHtml(targetName)}
+        </button>
+        <button type="button" class="btn-street-action" onclick="openReliefCalculator(${avgTax}, ${avgAssessed}, '${escapeHtml(targetName)} (Average)')">
+          <span>🧓</span> Calculate State Rebates for ${escapeHtml(targetName)} Avg
+        </button>
+        <button type="button" class="btn-street-action" onclick="resetStreetSearch()">
+          <span>✕</span> Show All ${escapeHtml(meta.name)} Homes
+        </button>
+      </div>
+    </div>
+  `;
+  container.style.display = 'block';
+}
+
+function viewStreetReport(addr) {
+  const st = extractStreetName(addr);
+  const searchInput = document.getElementById('prop-search-input');
+  if (searchInput && st) {
+    searchInput.value = st;
+    if (typeof applyPropertyFilters === 'function') {
+      applyPropertyFilters();
+    }
+    const container = document.getElementById('street-report-card-container');
+    if (container) {
+      container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+}
+
+function resetStreetSearch() {
+  const searchInput = document.getElementById('prop-search-input');
+  if (searchInput) {
+    searchInput.value = '';
+    if (typeof applyPropertyFilters === 'function') {
+      applyPropertyFilters();
+    }
+  }
+}
+
+// --------------------------------------------------------------------------
+// FEATURE 1: ⚖️ Tax Appeal Analyzer & Comparable Finder
+// --------------------------------------------------------------------------
+function openAppealAnalyzer(propId) {
+  if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
+  const props = propertyAssessmentsData.properties;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  let target = null;
+  if (propId) {
+    target = props.find(p => p.id === propId);
+  }
+  if (!target) {
+    target = (currentFilteredProperties && currentFilteredProperties.length > 0)
+      ? currentFilteredProperties[0]
+      : props[0];
+  }
+  if (!target) return;
+
+  activeAppealProperty = target;
+  const st = extractStreetName(target.address);
+  const rate = meta.rateNum || 6.527;
+  const eqRatio = meta.equalizationRatio || 33.3;
+
+  // Chapter 123 Corridor (NJ Standard: ±15% of equalization ratio)
+  const corridorLower = +(eqRatio * 0.85).toFixed(1);
+  const corridorUpper = +(eqRatio * 1.15).toFixed(1);
+
+  // Find comparables: Prioritize same street and same propertyType
+  let streetComps = props.filter(p =>
+    p.id !== target.id &&
+    extractStreetName(p.address).toLowerCase() === st.toLowerCase() &&
+    p.propertyType === target.propertyType
+  );
+
+  // If fewer than 3, widen to same street any type, then to same neighborhood and same type
+  if (streetComps.length < 3) {
+    streetComps = props.filter(p =>
+      p.id !== target.id &&
+      extractStreetName(p.address).toLowerCase() === st.toLowerCase()
+    );
+  }
+  if (streetComps.length < 3) {
+    streetComps = props.filter(p =>
+      p.id !== target.id &&
+      p.neighborhood === target.neighborhood &&
+      p.propertyType === target.propertyType
+    );
+  }
+
+  // Sort comps by similarity to target's assessment
+  streetComps.sort((a, b) => Math.abs(a.assessedTotal - target.assessedTotal) - Math.abs(b.assessedTotal - target.assessedTotal));
+
+  // Pick top 5 representative comps
+  const topComps = streetComps.slice(0, 5);
+
+  // Calculate median assessment among comps
+  let compMedianAssess = target.assessedTotal;
+  if (streetComps.length > 0) {
+    const assessList = streetComps.map(c => c.assessedTotal).sort((a, b) => a - b);
+    compMedianAssess = assessList[Math.floor(assessList.length / 2)];
+  }
+
+  const assessDiff = target.assessedTotal - compMedianAssess;
+  const assessDiffPct = compMedianAssess > 0 ? (assessDiff / compMedianAssess) * 100 : 0;
+  const potentialSavings = assessDiff > 0 ? (assessDiff / 100) * rate : 0;
+
+  // Verdict Determination
+  let verdictClass = 'verdict-moderate';
+  let verdictBadge = 'Moderate / Fairly Assessed';
+  let verdictIcon = '⚖️';
+  let verdictDesc = '';
+
+  if (assessDiffPct >= 8.0) {
+    verdictClass = 'verdict-strong';
+    verdictBadge = 'High Likelihood of Appeal Success';
+    verdictIcon = '🚨';
+    verdictDesc = `Your assessment of ${formatUSDWhole(target.assessedTotal)} is <strong>${assessDiffPct.toFixed(1)}% higher</strong> than the prevailing median of comparable homes on ${escapeHtml(st)} (${formatUSDWhole(compMedianAssess)}). If successfully equalized to the street benchmark, your annual property tax could decrease by up to <strong>${formatUSD(potentialSavings)} / year</strong>.`;
+  } else if (assessDiffPct <= -5.0) {
+    verdictClass = 'verdict-low';
+    verdictBadge = 'Favorable Assessment (Appeal Not Recommended)';
+    verdictIcon = '🛡️';
+    verdictDesc = `Your assessment of ${formatUSDWhole(target.assessedTotal)} is <strong>${Math.abs(assessDiffPct).toFixed(1)}% below</strong> the street comparable median (${formatUSDWhole(compMedianAssess)}). Filing an appeal carries a risk of counter-examination by the municipal tax assessor.`;
+  } else {
+    verdictClass = 'verdict-moderate';
+    verdictBadge = 'Market Aligned / Borderline';
+    verdictIcon = '✓';
+    verdictDesc = `Your assessment of ${formatUSDWhole(target.assessedTotal)} closely aligns (within ${assessDiffPct.toFixed(1)}%) with street comparables (${formatUSDWhole(compMedianAssess)}). An appeal may succeed if your home has documented condition defects or obsolescence.`;
+  }
+
+  const dialog = document.getElementById('appeal-analyzer-dialog');
+  const titleEl = document.getElementById('appeal-dialog-title');
+  const subEl = document.getElementById('appeal-dialog-subtitle');
+  const contentEl = document.getElementById('appeal-dialog-content');
+
+  if (titleEl) titleEl.innerHTML = `<span>${verdictIcon}</span> Tax Appeal Analysis: ${escapeHtml(target.address)}`;
+  if (subEl) subEl.textContent = `Block ${target.block}, Lot ${target.lot} • ${meta.name} (District ${meta.districtCode}) • Certified Tax Rate: ${meta.certifiedTaxRate}`;
+
+  if (contentEl) {
+    contentEl.innerHTML = `
+      <!-- Verdict Card -->
+      <div class="appeal-verdict-card ${verdictClass}">
+        <div class="verdict-top-bar">
+          <span class="verdict-badge">${verdictIcon} ${verdictBadge}</span>
+          <span style="font-weight: 700; font-size: 0.9rem;">Potential Tax Reduction: <strong style="font-size: 1.15rem; color: #dc2626;">${formatUSD(potentialSavings)} / yr</strong></span>
+        </div>
+        <p style="margin: 0; font-size: 0.92rem; line-height: 1.55;">${verdictDesc}</p>
+        <div class="verdict-stat-grid">
+          <div class="verdict-stat-item">
+            <span class="verdict-stat-lbl">Your Total Assessment</span>
+            <span class="verdict-stat-val">${formatUSDWhole(target.assessedTotal)}</span>
+            <span class="verdict-stat-sub">Land: ${formatUSDWhole(target.assessedLand || 0)} • Bldg: ${formatUSDWhole(target.assessedBuilding || 0)}</span>
+          </div>
+          <div class="verdict-stat-item">
+            <span class="verdict-stat-lbl">Street Comps Median</span>
+            <span class="verdict-stat-val">${formatUSDWhole(compMedianAssess)}</span>
+            <span class="verdict-stat-sub">Based on ${streetComps.length} similar ${escapeHtml(target.propertyType)} homes</span>
+          </div>
+          <div class="verdict-stat-item">
+            <span class="verdict-stat-lbl">Implied Market Value</span>
+            <span class="verdict-stat-val">${formatUSDWhole(target.estimatedMarketValue)}</span>
+            <span class="verdict-stat-sub">At ${eqRatio.toFixed(1)}% Equalization Ratio</span>
+          </div>
+          <div class="verdict-stat-item">
+            <span class="verdict-stat-lbl">NJ Ch. 123 Statutory Ratio</span>
+            <span class="verdict-stat-val">${eqRatio.toFixed(1)}%</span>
+            <span class="verdict-stat-sub">Corridor: ${corridorLower}% to ${corridorUpper}%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Street Comparables Table -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+          <h4 style="margin: 0; font-size: 1rem; font-weight: 800; color: #0f172a;">Official MOD-IV Street Comparables (${escapeHtml(st)})</h4>
+          <span style="font-size: 0.78rem; color: var(--text-subtle);">Official ${escapeHtml(meta.countyShort)} District ${meta.districtCode} Roll</span>
+        </div>
+        <div class="appeal-comps-table-wrapper">
+          <table class="appeal-comps-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Block / Lot</th>
+                <th>Type</th>
+                <th>Year</th>
+                <th>Land Val</th>
+                <th>Bldg Val</th>
+                <th>Net Assessed</th>
+                <th>2026 Annual Tax</th>
+                <th>Deed Sale Record</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="subject-property-row">
+                <td><strong>★ ${escapeHtml(target.address)} (Subject)</strong></td>
+                <td>B:${escapeHtml(target.block)} L:${escapeHtml(target.lot)}</td>
+                <td>${escapeHtml(target.propertyType)}</td>
+                <td>${target.yearBuilt > 0 ? target.yearBuilt : '—'}</td>
+                <td>${formatUSDWhole(target.assessedLand || 0)}</td>
+                <td>${formatUSDWhole(target.assessedBuilding || 0)}</td>
+                <td><strong>${formatUSDWhole(target.assessedTotal)}</strong></td>
+                <td style="color: #dc2626; font-weight: 800;">${formatUSD(target.annualTax)}</td>
+                <td>${target.salePrice > 100 ? `${formatUSDWhole(target.salePrice)} (${target.deedDate || ''})` : '—'}</td>
+              </tr>
+              ${topComps.map(c => `
+                <tr>
+                  <td><strong>${escapeHtml(c.address)}</strong></td>
+                  <td>B:${escapeHtml(c.block)} L:${escapeHtml(c.lot)}</td>
+                  <td>${escapeHtml(c.propertyType)}</td>
+                  <td>${c.yearBuilt > 0 ? c.yearBuilt : '—'}</td>
+                  <td>${formatUSDWhole(c.assessedLand || 0)}</td>
+                  <td>${formatUSDWhole(c.assessedBuilding || 0)}</td>
+                  <td><strong>${formatUSDWhole(c.assessedTotal)}</strong></td>
+                  <td>${formatUSD(c.annualTax)}</td>
+                  <td>${c.salePrice > 100 ? `${formatUSDWhole(c.salePrice)} (${c.deedDate || ''})` : '—'}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Form A-1 Evidence Format -->
+      <div class="form-a1-evidence-box">
+        <div class="form-a1-header">
+          <h4>📋 Formatted Comparable Evidence for NJ Form A-1 (County Tax Board Appeal)</h4>
+          <span style="font-size: 0.76rem; color: #475569;">Ready to attach to your petition</span>
+        </div>
+        <div class="form-a1-text" id="form-a1-text-block">PETITION OF APPEAL EVIDENCE TABLE
+MUNICIPALITY: ${meta.name.toUpperCase()} (DISTRICT ${meta.districtCode})
+TAX YEAR: 2026
+SUBJECT PROPERTY: ${target.address.toUpperCase()} | BLOCK ${target.block}, LOT ${target.lot}${target.qual ? ', QUAL ' + target.qual : ''}
+SUBJECT NET ASSESSMENT: $${target.assessedTotal.toLocaleString()} (ANNUAL TAX: $${target.annualTax.toFixed(2)})
+MUNICIPAL EQUALIZATION RATIO: ${eqRatio.toFixed(1)}% | CERTIFIED TAX RATE: ${rate.toFixed(3)}%
+
+OFFICIAL COMPARABLE ASSESSMENTS / SALES ON SAME STREET / SECTION:
+${topComps.map((c, i) => `Comp #${i+1}: ${c.address.toUpperCase()} | Block ${c.block}, Lot ${c.lot} | Assessed: $${c.assessedTotal.toLocaleString()} | Tax: $${c.annualTax.toFixed(2)} | Built: ${c.yearBuilt || 'N/A'}${c.salePrice > 100 ? ` | Deed Sale: $${c.salePrice.toLocaleString()} (${c.deedDate || 'N/A'})` : ''}`).join('\n')}
+
+BENCHMARK STREET MEDIAN: $${compMedianAssess.toLocaleString()}
+ESTIMATED ASSESSMENT VARIANCE: ${assessDiff >= 0 ? '+' : ''}$${assessDiff.toLocaleString()} (${assessDiffPct.toFixed(1)}%)
+INDICATED RELIEF SOUGHT: Reduce net assessment to prevailing street baseline of $${compMedianAssess.toLocaleString()}</div>
+      </div>
+
+      <!-- Filing Guidance & Deadlines -->
+      <div style="background: #f1f5f9; border-radius: 8px; padding: 14px 18px; font-size: 0.84rem; color: #334155; line-height: 1.5;">
+        <strong style="color: #0f172a;">📅 Statutory NJ Appeal Deadlines &amp; Filing Rules:</strong><br>
+        • County Tax Board appeals must be filed by <strong>April 1, 2026</strong> (or May 1 if the municipality completed a revaluation).<br>
+        • Statutory NJ filing fee: <strong>$5.00</strong> (assessment &lt; $150k), <strong>$25.00</strong> ($150k–$500k), or <strong>$100.00</strong> ($500k–$1M).<br>
+        • Direct County Portal: <a href="https://tax1.co.monmouth.nj.us/cgi-bin/m4.cgi?district=${meta.districtCode}&block=${encodeURIComponent(target.block)}&lot=${encodeURIComponent(target.lot)}" target="_blank" rel="noopener" style="font-weight: 700; color: #2563eb;">View Certified County MOD-IV Duplicate Record ↗</a>
+      </div>
+    `;
+  }
+
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function copyAppealEvidence() {
+  const el = document.getElementById('form-a1-text-block');
+  if (el) {
+    navigator.clipboard.writeText(el.textContent).then(() => {
+      showToast('✓ Form A-1 evidence table copied to clipboard!');
+    }).catch(() => {
+      showToast('Copied to clipboard');
+    });
+  }
+}
+
+function printAppealEvidence() {
+  window.print();
+}
+
+// --------------------------------------------------------------------------
+// FEATURE 2: 🧓 State Property Tax Relief Calculator (ANCHOR & StayNJ)
+// --------------------------------------------------------------------------
+function openReliefCalculator(taxAmount, assessedValue, address) {
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const defaultTax = (typeof taxAmount === 'number' && taxAmount > 0)
+    ? taxAmount
+    : (propertyAssessmentsData?.summaryStats?.averageTax || 11782.70);
+  const defaultAssess = (typeof assessedValue === 'number' && assessedValue > 0)
+    ? assessedValue
+    : (propertyAssessmentsData?.summaryStats?.averageAssessed || 180523);
+  const defaultAddr = address || `${meta.name} Residential Baseline`;
+
+  activeReliefState.taxBill = defaultTax;
+  activeReliefState.assessedValue = defaultAssess;
+  activeReliefState.address = defaultAddr;
+
+  renderReliefCalculatorContent();
+
+  const dialog = document.getElementById('relief-calc-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function renderReliefCalculatorContent() {
+  const contentEl = document.getElementById('relief-dialog-content');
+  if (!contentEl) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  const { taxBill, isHomeowner, age65Plus, incomeBracket, meetsFreezeTenure, address } = activeReliefState;
+
+  // Compute Relief
+  let anchor = 0;
+  let stayNJ = 0;
+  let seniorFreeze = 0;
+
+  // 1. ANCHOR
+  if (isHomeowner) {
+    if (incomeBracket === 'under_150k') {
+      anchor = age65Plus ? 1750 : 1500;
+    } else if (incomeBracket === '150k_250k') {
+      anchor = age65Plus ? 1250 : 1000;
+    }
+  } else {
+    // Renter
+    if (incomeBracket === 'under_150k') {
+      anchor = age65Plus ? 700 : 450;
+    }
+  }
+
+  // 2. StayNJ (50% Property Tax Cut for Seniors 65+ up to $6,500)
+  if (isHomeowner && age65Plus && (incomeBracket === 'under_150k' || incomeBracket === '150k_250k' || incomeBracket === '250k_500k')) {
+    const stayGross = Math.min(taxBill * 0.50, 6500.0);
+    // StayNJ is offset by ANCHOR per NJ statute
+    stayNJ = Math.max(0, stayGross - anchor);
+  }
+
+  // 3. Senior Freeze (PTR-1/PTR-2)
+  if (isHomeowner && age65Plus && incomeBracket === 'under_150k' && meetsFreezeTenure) {
+    seniorFreeze = Math.round(taxBill * 0.08);
+  }
+
+  const totalRelief = Math.min(taxBill, anchor + stayNJ + seniorFreeze);
+  const netTax = Math.max(0, taxBill - totalRelief);
+  const savedPct = taxBill > 0 ? (totalRelief / taxBill) * 100 : 0;
+
+  contentEl.innerHTML = `
+    <!-- Top Configuration Bar -->
+    <div style="background: var(--bg-subtle); padding: 14px 18px; border-radius: 8px; border: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div>
+        <strong style="color: #0f172a; font-size: 0.95rem;">Property: ${escapeHtml(address)}</strong>
+        <div style="font-size: 0.8rem; color: var(--text-subtle);">Certified 2026 Tax Roll in ${escapeHtml(meta.name)} (${meta.certifiedTaxRate})</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <label for="relief-tax-input" style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--text-subtle);">Annual Tax:</label>
+        <div style="display: flex; align-items: center; background: #fff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px 8px;">
+          <span style="font-weight: 700; color: #64748b; margin-right: 4px;">$</span>
+          <input type="number" id="relief-tax-input" value="${taxBill.toFixed(2)}" step="100" min="500" max="100000" style="width: 100px; border: none; outline: none; font-weight: 700; font-family: var(--font-mono);" onchange="updateReliefTax(this.value)">
+        </div>
+      </div>
+    </div>
+
+    <!-- Eligibility Questionnaire Grid -->
+    <div class="relief-controls-grid">
+      <div class="relief-control-item">
+        <label>1. Housing Status</label>
+        <div class="toggle-pill-group">
+          <button type="button" class="toggle-pill-btn ${isHomeowner ? 'active' : ''}" onclick="setReliefOption('isHomeowner', true)">Homeowner</button>
+          <button type="button" class="toggle-pill-btn ${!isHomeowner ? 'active' : ''}" onclick="setReliefOption('isHomeowner', false)">Tenant / Renter</button>
+        </div>
+      </div>
+
+      <div class="relief-control-item">
+        <label>2. Age / Senior Status</label>
+        <div class="toggle-pill-group">
+          <button type="button" class="toggle-pill-btn ${!age65Plus ? 'active' : ''}" onclick="setReliefOption('age65Plus', false)">Under 65</button>
+          <button type="button" class="toggle-pill-btn ${age65Plus ? 'active' : ''}" onclick="setReliefOption('age65Plus', true)">65 or Older / Disabled</button>
+        </div>
+      </div>
+
+      <div class="relief-control-item" style="grid-column: 1 / -1;">
+        <label>3. Gross Household Income Bracket (NJ Gross Income)</label>
+        <div class="toggle-pill-group" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));">
+          <button type="button" class="toggle-pill-btn ${incomeBracket === 'under_150k' ? 'active' : ''}" onclick="setReliefOption('incomeBracket', 'under_150k')">≤ $150,000</button>
+          <button type="button" class="toggle-pill-btn ${incomeBracket === '150k_250k' ? 'active' : ''}" onclick="setReliefOption('incomeBracket', '150k_250k')">$150,001 – $250k</button>
+          <button type="button" class="toggle-pill-btn ${incomeBracket === '250k_500k' ? 'active' : ''}" onclick="setReliefOption('incomeBracket', '250k_500k')">$250,001 – $500k</button>
+          <button type="button" class="toggle-pill-btn ${incomeBracket === 'over_500k' ? 'active' : ''}" onclick="setReliefOption('incomeBracket', 'over_500k')">Over $500k</button>
+        </div>
+      </div>
+
+      ${age65Plus && isHomeowner ? `
+      <div class="relief-control-item" style="grid-column: 1 / -1;">
+        <label>4. Senior Freeze Tenure (10+ Yrs in NJ &amp; 3+ Yrs in Current Home)</label>
+        <div class="toggle-pill-group" style="max-width: 320px;">
+          <button type="button" class="toggle-pill-btn ${meetsFreezeTenure ? 'active' : ''}" onclick="setReliefOption('meetsFreezeTenure', true)">Yes (Meets Tenure)</button>
+          <button type="button" class="toggle-pill-btn ${!meetsFreezeTenure ? 'active' : ''}" onclick="setReliefOption('meetsFreezeTenure', false)">No / Recent Move</button>
+        </div>
+      </div>` : ''}
+    </div>
+
+    <!-- Results Banner -->
+    <div class="relief-summary-banner">
+      <div class="relief-summary-box">
+        <span class="rs-label">Original 2026 Tax Bill</span>
+        <span class="rs-value" style="color: #cbd5e1;">${formatUSD(taxBill)}</span>
+        <span class="rs-sub">Certified municipal levy</span>
+      </div>
+      <div class="relief-summary-box">
+        <span class="rs-label">Total NJ State Relief</span>
+        <span class="rs-value relief-green">- ${formatUSD(totalRelief)}</span>
+        <span class="rs-sub">Rebates &amp; credits combined</span>
+      </div>
+      <div class="relief-summary-box">
+        <span class="rs-label">Your Net Out-of-Pocket Tax</span>
+        <span class="rs-value" style="color: #38bdf8;">${formatUSD(netTax)}</span>
+        <span class="rs-sub">Effective tax after relief</span>
+      </div>
+      <div class="relief-summary-box">
+        <span class="rs-label">State Coverage</span>
+        <span class="rs-value" style="color: #facc15;">${savedPct.toFixed(1)}%</span>
+        <span class="rs-sub">Portion funded by NJ State</span>
+      </div>
+    </div>
+
+    <!-- Itemized Program Badges -->
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-top: -6px;">
+      <h4 style="margin: 0 0 10px 0; font-size: 0.92rem; color: #0f172a;">Itemized Breakdown by Relief Program:</h4>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #e2e8f0;">
+          <div>
+            <strong>1. ANCHOR Rebate (Form PAS-1):</strong>
+            <span style="font-size: 0.8rem; color: #64748b;"> Direct state payment deposited to your bank account</span>
+          </div>
+          <strong style="color: #15803d; font-family: var(--font-mono); font-size: 1rem;">${anchor > 0 ? '+ ' + formatUSD(anchor) : '$0.00 (Income / Status ineligible)'}</strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #e2e8f0;">
+          <div>
+            <strong>2. StayNJ Senior Property Tax Relief Act:</strong>
+            <span style="font-size: 0.8rem; color: #64748b;"> 50% property tax cut up to $6,500/year (P.L. 2023, c.75)</span>
+          </div>
+          <strong style="color: #15803d; font-family: var(--font-mono); font-size: 1rem;">${stayNJ > 0 ? '+ ' + formatUSD(stayNJ) : (age65Plus ? '$0.00 (Offset by ANCHOR or income limit)' : '$0.00 (Requires Age 65+)')}</strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
+          <div>
+            <strong>3. Senior Freeze (PTR-1 / PTR-2):</strong>
+            <span style="font-size: 0.8rem; color: #64748b;"> State reimbursement freezing taxes at base year level</span>
+          </div>
+          <strong style="color: #15803d; font-family: var(--font-mono); font-size: 1rem;">${seniorFreeze > 0 ? '~+ ' + formatUSD(seniorFreeze) + ' (Est)' : (age65Plus ? '$0.00 (Requires 10yr NJ tenure)' : '$0.00 (Requires Age 65+)')}</strong>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function setReliefOption(key, val) {
+  activeReliefState[key] = val;
+  renderReliefCalculatorContent();
+}
+
+function updateReliefTax(val) {
+  const num = parseFloat(val);
+  if (!isNaN(num) && num > 0) {
+    activeReliefState.taxBill = num;
+    renderReliefCalculatorContent();
+  }
+}
+
+// --------------------------------------------------------------------------
+// FEATURE 3: 🧾 Official Tax Receipt Modal & Permalinks
+// --------------------------------------------------------------------------
+function openTaxReceiptModal(propId) {
+  if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
+  const props = propertyAssessmentsData.properties;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  const p = props.find(x => x.id === propId) || props[0];
+  if (!p) return;
+
+  activeReceiptProperty = p;
+  const dialog = document.getElementById('tax-receipt-dialog');
+  const contentEl = document.getElementById('receipt-dialog-content');
+  const subEl = document.getElementById('receipt-dialog-subtitle');
+
+  if (subEl) {
+    subEl.textContent = `Official Tax Duplicate Record • ${escapeHtml(meta.countyShort)} District ${meta.districtCode}`;
+  }
+
+  const schoolSharePct = meta.schoolsShare || '50.3%';
+  const muniSharePct = meta.muniShare || '33.8%';
+  const countySharePct = meta.countyShare || '15.9%';
+
+  if (contentEl) {
+    contentEl.innerHTML = `
+      <div class="receipt-paper-card">
+        <div class="receipt-header-row">
+          <h4>${escapeHtml(meta.fullName.toUpperCase())}</h4>
+          <div class="receipt-sub">OFFICIAL 2026 CERTIFIED PROPERTY TAX RECEIPT &amp; ALLOCATION</div>
+          <div class="receipt-sub" style="margin-top: 4px; font-weight: 700;">COUNTY TAX DISTRICT ${escapeHtml(meta.districtCode)} • NEW JERSEY DIVISION OF TAXATION</div>
+        </div>
+
+        <div class="receipt-line-item">
+          <span>PROPERTY ADDRESS:</span>
+          <strong>${escapeHtml(p.address)}</strong>
+        </div>
+        <div class="receipt-line-item">
+          <span>PARCEL ID (PAMS PIN):</span>
+          <strong class="font-mono">${escapeHtml(p.id)}</strong>
+        </div>
+        <div class="receipt-line-item">
+          <span>BLOCK / LOT / QUAL:</span>
+          <strong>BLOCK ${escapeHtml(p.block)}, LOT ${escapeHtml(p.lot)}${p.qual ? ' (' + escapeHtml(p.qual) + ')' : ''}</strong>
+        </div>
+        <div class="receipt-line-item">
+          <span>TAX SECTION / POSTAL:</span>
+          <span>${escapeHtml(p.neighborhood)} • ZIP ${escapeHtml(p.zip)}</span>
+        </div>
+        <div class="receipt-line-item">
+          <span>PROPERTY CLASSIFICATION:</span>
+          <span>Class 2 (${escapeHtml(p.propertyType)})</span>
+        </div>
+        <div class="receipt-line-item">
+          <span>LAND ASSESSMENT:</span>
+          <strong>${formatUSDWhole(p.assessedLand || 0)}</strong>
+        </div>
+        <div class="receipt-line-item">
+          <span>BUILDING / IMPROVEMENT:</span>
+          <strong>${formatUSDWhole(p.assessedBuilding || 0)}</strong>
+        </div>
+        <div class="receipt-line-item" style="border-top: 1px solid #0f172a; padding-top: 8px;">
+          <span>TOTAL NET TAXABLE VALUE:</span>
+          <strong style="color: var(--color-school); font-size: 1.05rem;">${formatUSDWhole(p.assessedTotal)}</strong>
+        </div>
+        <div class="receipt-line-item">
+          <span>EQUALIZATION RATIO / MKT:</span>
+          <span>${(meta.equalizationRatio || 33.3).toFixed(1)}% (Est. Market: ${formatUSDWhole(p.estimatedMarketValue)})</span>
+        </div>
+
+        <div style="margin-top: 16px; border-top: 1px dashed #94a3b8; padding-top: 12px;">
+          <div style="font-weight: 800; font-size: 0.82rem; text-transform: uppercase; margin-bottom: 6px;">Tax Allocation Breakdown (${meta.certifiedTaxRate}):</div>
+          <div class="receipt-line-item">
+            <span>🏫 ${escapeHtml(meta.schoolDistrictShort)} (${schoolSharePct}):</span>
+            <strong>${formatUSD(p.schoolTax)}</strong>
+          </div>
+          <div class="receipt-line-item">
+            <span>🏛️ Municipal Operations (${muniSharePct}):</span>
+            <strong>${formatUSD(p.municipalTax)}</strong>
+          </div>
+          <div class="receipt-line-item">
+            <span>🌳 ${escapeHtml(meta.countyShort)} Government (${countySharePct}):</span>
+            <strong>${formatUSD(p.countyTax)}</strong>
+          </div>
+        </div>
+
+        <div class="receipt-line-item bold-row">
+          <span>TOTAL 2026 ANNUAL PROPERTY TAX:</span>
+          <span style="font-size: 1.25rem;">${formatUSD(p.annualTax)}</span>
+        </div>
+
+        <div class="receipt-barcode">
+          ||| | ||||| || |||||| ||| |||| |
+          <div style="font-size: 0.72rem; letter-spacing: normal; color: #64748b; margin-top: 4px;">STATE MOD-IV VERIFICATION ID: ${escapeHtml(p.id)}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function copyReceiptText() {
+  if (!activeReceiptProperty) return;
+  const p = activeReceiptProperty;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const text = `2026 PROPERTY TAX RECEIPT - ${meta.fullName.toUpperCase()}
+PROPERTY: ${p.address} (Block ${p.block}, Lot ${p.lot})
+TOTAL NET ASSESSMENT: $${p.assessedTotal.toLocaleString()}
+TOTAL CERTIFIED ANNUAL TAX: $${p.annualTax.toFixed(2)}
+• Schools (${meta.schoolsShare}): $${p.schoolTax.toFixed(2)}
+• Municipal (${meta.muniShare}): $${p.municipalTax.toFixed(2)}
+• County (${meta.countyShare}): $${p.countyTax.toFixed(2)}
+Verified via MyTownLens Public Records Watchdog: https://www.mytownlens.com/properties.html?pin=${encodeURIComponent(p.id)}`;
+
+  navigator.clipboard.writeText(text).then(() => {
+    showToast('✓ Receipt text copied to clipboard!');
+  }).catch(() => {
+    showToast('Copied to clipboard');
+  });
+}
+
+function copyPropertyPermalink(propId, address) {
+  const cleanUrl = `${window.location.origin}${window.location.pathname.replace(/\/+$/, '')}?pin=${encodeURIComponent(propId)}`;
+  navigator.clipboard.writeText(cleanUrl).then(() => {
+    showToast(`✓ Link to ${address || 'property'} copied to clipboard!`);
+  }).catch(() => {
+    showToast('Link copied to clipboard');
+  });
+}
+
+function copyActivePropertyPermalink() {
+  if (activeReceiptProperty) {
+    copyPropertyPermalink(activeReceiptProperty.id, activeReceiptProperty.address);
+  }
+}
+
+function showToast(msg) {
+  let toast = document.getElementById('toast-notification');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast-notification';
+    toast.className = 'toast-notification';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2800);
+}
+
+function handlePinDeepLink(targetPin, openAppeal, openReceipt) {
+  if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
+  const target = propertyAssessmentsData.properties.find(p => p.id === targetPin || p.address.toLowerCase() === targetPin.toLowerCase());
+  if (target) {
+    const searchInput = document.getElementById('prop-search-input');
+    if (searchInput) {
+      searchInput.value = target.address;
+      if (typeof applyPropertyFilters === 'function') {
+        applyPropertyFilters();
+      }
+    }
+    setTimeout(() => {
+      const card = document.querySelector(`.property-card[data-id="${target.id}"]`);
+      if (card) {
+        card.classList.add('card-highlight-pulse');
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if (openAppeal) {
+        openAppealAnalyzer(target.id);
+      } else if (openReceipt) {
+        openTaxReceiptModal(target.id);
+      }
+    }, 180);
+  }
+}
+
+// Attach globally to window for button onclick handlers
+window.openAppealAnalyzer = openAppealAnalyzer;
+window.copyAppealEvidence = copyAppealEvidence;
+window.printAppealEvidence = printAppealEvidence;
+window.openReliefCalculator = openReliefCalculator;
+window.setReliefOption = setReliefOption;
+window.updateReliefTax = updateReliefTax;
+window.openTaxReceiptModal = openTaxReceiptModal;
+window.copyReceiptText = copyReceiptText;
+window.copyPropertyPermalink = copyPropertyPermalink;
+window.copyActivePropertyPermalink = copyActivePropertyPermalink;
+window.viewStreetReport = viewStreetReport;
+window.resetStreetSearch = resetStreetSearch;
+
 
 // TAB: SURROUNDING TOWNS / CROSS-TOWN COMPARISON HUB
 let crossTownState = {
