@@ -13696,8 +13696,89 @@ dialog::backdrop {
   white-space: pre-wrap;
   color: #334155;
   line-height: 1.5;
-  max-height: 180px;
+  max-height: 220px;
   overflow-y: auto;
+}
+
+/* Appeal Analyzer: Home Details & Interior Specs Refinement */
+.appeal-refine-box {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appeal-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.appeal-spec-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.appeal-spec-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.appeal-spec-select,
+.appeal-spec-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  font-size: 0.85rem;
+  color: #1e293b;
+  font-weight: 500;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.appeal-spec-select:focus,
+.appeal-spec-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.appeal-spec-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.spec-metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.76rem;
+  font-weight: 700;
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.spec-metric-pill.highlight {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
 }
 
 /* ==========================================================================

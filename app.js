@@ -3492,6 +3492,16 @@ function setupPropertyFilters() {
 // ==========================================================================
 
 let activeAppealProperty = null;
+let activeAppealComps = [];
+let activeAppealMedian = 0;
+let activeAppealDiff = 0;
+let activeAppealDiffPct = 0;
+let activeAppealSpecs = {
+  bedrooms: '3',
+  bathrooms: '2',
+  sqft: '',
+  condition: 'average'
+};
 let activeReceiptProperty = null;
 let activeReliefState = {
   taxBill: 11782.70,
@@ -3673,6 +3683,106 @@ function resetStreetSearch() {
 // --------------------------------------------------------------------------
 // FEATURE 1: ⚖️ Tax Appeal Analyzer & Comparable Finder
 // --------------------------------------------------------------------------
+function renderAppealEvidenceText() {
+  if (!activeAppealProperty) return '';
+  const target = activeAppealProperty;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const eqRatio = meta.equalizationRatio || 33.3;
+  const rate = meta.rateNum || 6.527;
+  const topComps = activeAppealComps || [];
+  const compMedianAssess = activeAppealMedian || target.assessedTotal;
+  const assessDiff = activeAppealDiff || 0;
+  const assessDiffPct = activeAppealDiffPct || 0;
+  const specs = activeAppealSpecs;
+
+  // Format Condition & Legal Grounds
+  let conditionText = 'Standard / Maintained (Street Typical)';
+  let groundsText = '';
+  if (specs.condition === 'dated') {
+    conditionText = 'Unrenovated / Original (Dated Kitchen & Bathrooms, Deferred Interior Updating)';
+    groundsText = `Subject building improvement assessment ($${(target.assessedBuilding || 0).toLocaleString()}) reflects updated/modern improvements under Class 2, but subject dwelling features ${specs.bedrooms} bedrooms and ${specs.bathrooms} baths in largely original/unrenovated interior condition. A negative physical obsolescence adjustment is warranted under N.J.A.C. 18:12 to align with modernized street comparables.`;
+  } else if (specs.condition === 'deferred') {
+    conditionText = 'Substantial Deferred Maintenance / Structural Repairs Required';
+    groundsText = `Subject dwelling requires substantial structural / mechanical repairs and major deferred maintenance. The current building assessment does not account for necessary capital depreciation under N.J.S.A. 54:3-21, creating an inequitable assessment relative to neighboring properties.`;
+  } else if (specs.condition === 'renovated') {
+    conditionText = 'Recently Modernized / Renovated';
+    groundsText = `Subject assessment of $${target.assessedTotal.toLocaleString()} exceeds the statutory common level corridor (Chapter 123) when measured against certified arms-length street deed sales and comparable neighborhood parcels.`;
+  } else {
+    conditionText = 'Standard / Maintained (Comparable to Street Norm)';
+    groundsText = `Subject dwelling features ${specs.bedrooms} bedrooms and ${specs.bathrooms} baths. The subject's total assessment of $${target.assessedTotal.toLocaleString()} exceeds the prevailing street median of $${compMedianAssess.toLocaleString()} (${assessDiffPct > 0 ? '+' : ''}${assessDiffPct.toFixed(1)}%), warranting an equalization reduction under N.J.A.C. 18:12.`;
+  }
+
+  const sqftVal = parseInt(specs.sqft, 10);
+  const sqftLine = (sqftVal && sqftVal > 100)
+    ? `• Petitioner Estimated Living Area: ${sqftVal.toLocaleString()} sq ft ($${(((target.assessedBuilding || target.assessedTotal)) / sqftVal).toFixed(2)} bldg assess / sq ft)\n`
+    : '';
+
+  return `================================================================================
+PETITION OF APPEAL EVIDENCE TABLE (NJ FORM A-1)
+County Board of Taxation Assessment Appeal
+================================================================================
+MUNICIPALITY: ${meta.name.toUpperCase()} (DISTRICT ${meta.districtCode}) | TAX YEAR: 2026
+SUBJECT PROPERTY: ${target.address.toUpperCase()} | BLOCK ${target.block}, LOT ${target.lot}${target.qual ? ', QUAL ' + target.qual : ''}
+TOTAL NET ASSESSMENT: $${target.assessedTotal.toLocaleString()} (LAND: $${(target.assessedLand || 0).toLocaleString()} | BLDG: $${(target.assessedBuilding || 0).toLocaleString()})
+ANNUAL PROPERTY TAX: $${target.annualTax.toFixed(2)} | CERTIFIED TAX RATE: ${rate.toFixed(3)}%
+MUNICIPAL EQUALIZATION RATIO: ${eqRatio.toFixed(1)}% | COMMON LEVEL RANGE: ${(eqRatio * 0.85).toFixed(1)}% TO ${(eqRatio * 1.15).toFixed(1)}%
+
+PETITIONER'S PROPERTY SPECIFICATIONS & INTERIOR DISCLOSURE:
+• Assessor Exterior Code (MOD-IV): ${target.bldgDesc || 'Class 2'} | Built: ${target.yearBuilt > 0 ? target.yearBuilt : 'N/A'} | Lot: ${target.lotSize || (target.acres ? target.acres + ' AC' : 'Standard')}
+• Verified Room Count: ${specs.bedrooms} Bedrooms | ${specs.bathrooms} Bathrooms
+${sqftLine}• Interior Condition & Obsolescence: ${conditionText}
+
+GROUNDS FOR APPEAL (N.J.S.A. 54:3-21 & N.J.A.C. 18:12-1.1):
+${groundsText}
+
+OFFICIAL MOD-IV COMPARABLE ASSESSMENTS ON SAME STREET / SECTION:
+${topComps.map((c, i) => `Comp #${i+1}: ${c.address.toUpperCase()} | Block ${c.block}, Lot ${c.lot} | Assessed: $${c.assessedTotal.toLocaleString()} | Tax: $${c.annualTax.toFixed(2)} | Built: ${c.yearBuilt || 'N/A'}${c.salePrice > 100 ? ` | Deed Sale: $${c.salePrice.toLocaleString()} (${c.deedDate || 'N/A'})` : ''}`).join('\n')}
+
+BENCHMARK STREET MEDIAN ASSESSMENT: $${compMedianAssess.toLocaleString()}
+ESTIMATED ASSESSMENT VARIANCE: ${assessDiff >= 0 ? '+' : ''}$${assessDiff.toLocaleString()} (${assessDiffPct.toFixed(1)}%)
+INDICATED RELIEF SOUGHT: Reduce net assessment to prevailing street baseline of $${compMedianAssess.toLocaleString()} (Estimated Tax Reduction: $${(assessDiff > 0 ? (assessDiff / 100) * rate : 0).toFixed(2)} / year)
+================================================================================`;
+}
+
+function updateAppealInteriorSpecs() {
+  const bedsEl = document.getElementById('appeal-spec-beds');
+  const bathsEl = document.getElementById('appeal-spec-baths');
+  const sqftEl = document.getElementById('appeal-spec-sqft');
+  const condEl = document.getElementById('appeal-spec-condition');
+
+  if (bedsEl) activeAppealSpecs.bedrooms = bedsEl.value;
+  if (bathsEl) activeAppealSpecs.bathrooms = bathsEl.value;
+  if (sqftEl) activeAppealSpecs.sqft = sqftEl.value.trim();
+  if (condEl) activeAppealSpecs.condition = condEl.value;
+
+  // Update Form A-1 text box
+  const textEl = document.getElementById('form-a1-text-block');
+  if (textEl) {
+    textEl.textContent = renderAppealEvidenceText();
+  }
+
+  // Update dynamic metric pills
+  if (activeAppealProperty) {
+    const bldgVal = activeAppealProperty.assessedBuilding || activeAppealProperty.assessedTotal;
+    const numBeds = parseInt(activeAppealSpecs.bedrooms, 10) || 1;
+    const bedPill = document.getElementById('appeal-metric-per-bed');
+    if (bedPill) {
+      bedPill.textContent = `Bldg Assess / Bed: $${Math.round(bldgVal / numBeds).toLocaleString()}`;
+    }
+
+    const sqftPill = document.getElementById('appeal-metric-per-sqft');
+    if (sqftPill) {
+      const sqftVal = parseInt(activeAppealSpecs.sqft, 10);
+      if (sqftVal && sqftVal > 100) {
+        sqftPill.textContent = `Bldg / Sq Ft: $${(bldgVal / sqftVal).toFixed(2)}`;
+        sqftPill.style.display = 'inline-flex';
+      } else {
+        sqftPill.style.display = 'none';
+      }
+    }
+  }
+}
+
 function openAppealAnalyzer(propId) {
   if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
   const props = propertyAssessmentsData.properties;
@@ -3693,6 +3803,15 @@ function openAppealAnalyzer(propId) {
   const st = extractStreetName(target.address);
   const rate = meta.rateNum || 6.527;
   const eqRatio = meta.equalizationRatio || 33.3;
+
+  // Default interior specs based on property type
+  if (target.propertyType === 'Two Family') {
+    activeAppealSpecs = { bedrooms: '4', bathrooms: '2', sqft: '', condition: 'average' };
+  } else if (target.propertyType === 'Three Family') {
+    activeAppealSpecs = { bedrooms: '6', bathrooms: '3', sqft: '', condition: 'average' };
+  } else {
+    activeAppealSpecs = { bedrooms: '3', bathrooms: '2', sqft: '', condition: 'average' };
+  }
 
   // Chapter 123 Corridor (NJ Standard: ±15% of equalization ratio)
   const corridorLower = +(eqRatio * 0.85).toFixed(1);
@@ -3736,6 +3855,11 @@ function openAppealAnalyzer(propId) {
   const assessDiff = target.assessedTotal - compMedianAssess;
   const assessDiffPct = compMedianAssess > 0 ? (assessDiff / compMedianAssess) * 100 : 0;
   const potentialSavings = assessDiff > 0 ? (assessDiff / 100) * rate : 0;
+
+  activeAppealComps = topComps;
+  activeAppealMedian = compMedianAssess;
+  activeAppealDiff = assessDiff;
+  activeAppealDiffPct = assessDiffPct;
 
   // Verdict Determination
   let verdictClass = 'verdict-moderate';
@@ -3801,6 +3925,70 @@ function openAppealAnalyzer(propId) {
         </div>
       </div>
 
+      <!-- Home Details & Interior Specs (Form A-1 Refinement) -->
+      <div class="appeal-refine-box">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap;">
+          <div>
+            <h4 style="margin: 0 0 4px; font-size: 0.96rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 6px;">
+              <span>🏡</span> Home Details &amp; Interior Specifications (Form A-1 Refinement)
+            </h4>
+            <p style="margin: 0; font-size: 0.8rem; color: #64748b; line-height: 1.45;">
+              Public MOD-IV tax records hold exterior data (Style: <strong>${escapeHtml(target.bldgDesc || target.propertyType)}</strong>, Lot: <strong>${escapeHtml(target.lotSize || (target.acres ? target.acres + ' AC' : 'Standard'))}</strong>, Built: <strong>${target.yearBuilt > 0 ? target.yearBuilt : '—'}</strong>). Select your home's verified interior details to generate room-level arguments for County Tax Commissioners.
+            </p>
+          </div>
+          <span class="spec-metric-pill highlight">NJ Form A-1 Section VI</span>
+        </div>
+
+        <div class="appeal-spec-grid">
+          <div class="appeal-spec-field">
+            <label class="appeal-spec-label" for="appeal-spec-beds">Bedrooms</label>
+            <select id="appeal-spec-beds" class="appeal-spec-select" onchange="updateAppealInteriorSpecs()">
+              <option value="1" ${activeAppealSpecs.bedrooms === '1' ? 'selected' : ''}>1 Bedroom</option>
+              <option value="2" ${activeAppealSpecs.bedrooms === '2' ? 'selected' : ''}>2 Bedrooms</option>
+              <option value="3" ${activeAppealSpecs.bedrooms === '3' ? 'selected' : ''}>3 Bedrooms</option>
+              <option value="4" ${activeAppealSpecs.bedrooms === '4' ? 'selected' : ''}>4 Bedrooms</option>
+              <option value="5" ${activeAppealSpecs.bedrooms === '5' ? 'selected' : ''}>5 Bedrooms</option>
+              <option value="6+" ${activeAppealSpecs.bedrooms === '6+' ? 'selected' : ''}>6+ Bedrooms</option>
+            </select>
+          </div>
+
+          <div class="appeal-spec-field">
+            <label class="appeal-spec-label" for="appeal-spec-baths">Bathrooms</label>
+            <select id="appeal-spec-baths" class="appeal-spec-select" onchange="updateAppealInteriorSpecs()">
+              <option value="1" ${activeAppealSpecs.bathrooms === '1' ? 'selected' : ''}>1.0 Bath</option>
+              <option value="1.5" ${activeAppealSpecs.bathrooms === '1.5' ? 'selected' : ''}>1.5 Baths</option>
+              <option value="2" ${activeAppealSpecs.bathrooms === '2' ? 'selected' : ''}>2.0 Baths</option>
+              <option value="2.5" ${activeAppealSpecs.bathrooms === '2.5' ? 'selected' : ''}>2.5 Baths</option>
+              <option value="3" ${activeAppealSpecs.bathrooms === '3' ? 'selected' : ''}>3.0 Baths</option>
+              <option value="3.5" ${activeAppealSpecs.bathrooms === '3.5' ? 'selected' : ''}>3.5 Baths</option>
+              <option value="4+" ${activeAppealSpecs.bathrooms === '4+' ? 'selected' : ''}>4.0+ Baths</option>
+            </select>
+          </div>
+
+          <div class="appeal-spec-field">
+            <label class="appeal-spec-label" for="appeal-spec-sqft">Est. Finished Sq Ft</label>
+            <input type="number" id="appeal-spec-sqft" class="appeal-spec-input" placeholder="e.g. 1650" min="300" max="25000" value="${escapeHtml(activeAppealSpecs.sqft || '')}" oninput="updateAppealInteriorSpecs()">
+          </div>
+
+          <div class="appeal-spec-field" style="grid-column: span 2;">
+            <label class="appeal-spec-label" for="appeal-spec-condition">Condition / Physical Obsolescence</label>
+            <select id="appeal-spec-condition" class="appeal-spec-select" onchange="updateAppealInteriorSpecs()">
+              <option value="average" ${activeAppealSpecs.condition === 'average' ? 'selected' : ''}>Standard / Maintained (Comparable to Street)</option>
+              <option value="dated" ${activeAppealSpecs.condition === 'dated' ? 'selected' : ''}>Unrenovated / Original (Dated Kitchen/Baths)</option>
+              <option value="deferred" ${activeAppealSpecs.condition === 'deferred' ? 'selected' : ''}>Deferred Maintenance / Major Structural Repairs</option>
+              <option value="renovated" ${activeAppealSpecs.condition === 'renovated' ? 'selected' : ''}>Recently Renovated / Modernized</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="appeal-spec-metrics">
+          <span class="spec-metric-pill" id="appeal-metric-per-bed">Bldg Assess / Bed: $${Math.round((target.assessedBuilding || target.assessedTotal) / (parseInt(activeAppealSpecs.bedrooms, 10) || 1)).toLocaleString()}</span>
+          <span class="spec-metric-pill" id="appeal-metric-per-sqft" style="display: ${activeAppealSpecs.sqft ? 'inline-flex' : 'none'};">Bldg / Sq Ft: $${activeAppealSpecs.sqft ? ((target.assessedBuilding || target.assessedTotal) / parseInt(activeAppealSpecs.sqft, 10)).toFixed(2) : ''}</span>
+          <span class="spec-metric-pill">MOD-IV Style: ${escapeHtml(target.bldgDesc || 'Class 2')}</span>
+          <span class="spec-metric-pill">Built: ${target.yearBuilt > 0 ? target.yearBuilt : 'N/A'}</span>
+        </div>
+      </div>
+
       <!-- Street Comparables Table -->
       <div>
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
@@ -3858,19 +4046,7 @@ function openAppealAnalyzer(propId) {
           <h4>📋 Formatted Comparable Evidence for NJ Form A-1 (County Tax Board Appeal)</h4>
           <span style="font-size: 0.76rem; color: #475569;">Ready to attach to your petition</span>
         </div>
-        <div class="form-a1-text" id="form-a1-text-block">PETITION OF APPEAL EVIDENCE TABLE
-MUNICIPALITY: ${meta.name.toUpperCase()} (DISTRICT ${meta.districtCode})
-TAX YEAR: 2026
-SUBJECT PROPERTY: ${target.address.toUpperCase()} | BLOCK ${target.block}, LOT ${target.lot}${target.qual ? ', QUAL ' + target.qual : ''}
-SUBJECT NET ASSESSMENT: $${target.assessedTotal.toLocaleString()} (ANNUAL TAX: $${target.annualTax.toFixed(2)})
-MUNICIPAL EQUALIZATION RATIO: ${eqRatio.toFixed(1)}% | CERTIFIED TAX RATE: ${rate.toFixed(3)}%
-
-OFFICIAL COMPARABLE ASSESSMENTS / SALES ON SAME STREET / SECTION:
-${topComps.map((c, i) => `Comp #${i+1}: ${c.address.toUpperCase()} | Block ${c.block}, Lot ${c.lot} | Assessed: $${c.assessedTotal.toLocaleString()} | Tax: $${c.annualTax.toFixed(2)} | Built: ${c.yearBuilt || 'N/A'}${c.salePrice > 100 ? ` | Deed Sale: $${c.salePrice.toLocaleString()} (${c.deedDate || 'N/A'})` : ''}`).join('\n')}
-
-BENCHMARK STREET MEDIAN: $${compMedianAssess.toLocaleString()}
-ESTIMATED ASSESSMENT VARIANCE: ${assessDiff >= 0 ? '+' : ''}$${assessDiff.toLocaleString()} (${assessDiffPct.toFixed(1)}%)
-INDICATED RELIEF SOUGHT: Reduce net assessment to prevailing street baseline of $${compMedianAssess.toLocaleString()}</div>
+        <div class="form-a1-text" id="form-a1-text-block">${escapeHtml(renderAppealEvidenceText())}</div>
       </div>
 
       <!-- Filing Guidance & Deadlines -->
@@ -4275,6 +4451,7 @@ function handlePinDeepLink(targetPin, openAppeal, openReceipt) {
 
 // Attach globally to window for button onclick handlers
 window.openAppealAnalyzer = openAppealAnalyzer;
+window.updateAppealInteriorSpecs = updateAppealInteriorSpecs;
 window.copyAppealEvidence = copyAppealEvidence;
 window.printAppealEvidence = printAppealEvidence;
 window.openReliefCalculator = openReliefCalculator;
