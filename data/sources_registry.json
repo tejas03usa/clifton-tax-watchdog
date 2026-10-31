@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "metadata": {
+    "title": "NJ Municipal Taxpayer Watchdog - Data Sources & Provenance Registry",
+    "version": "1.0.0",
+    "lastUpdated": "2026-10-31",
+    "complianceStandard": "Zero-tolerance for synthetic or estimated data (MISTAKES.md)",
+    "repository": "tejas03usa/clifton-tax-watchdog",
+    "portalUrl": "https://mytownlens.com"
+  },
+  "municipalities": [
+    {
+      "id": "clifton",
+      "name": "City of Clifton",
+      "county": "Passaic County",
+      "muniCode": "1602",
+      "governmentType": "1923 Municipal Manager (7 At-Large Council)",
+      "schoolDistrict": "Clifton Public Schools",
+      "schoolDistrictType": "PreK-12",
+      "municipalUrl": "https://www.cliftonnj.org",
+      "schoolDistrictUrl": "https://www.clifton.k12.nj.us",
+      "countyTaxBoardUrl": "https://www.passaiccountynj.org/residents/board-of-taxation",
+      "countyMod4Url": "https://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?menu=index&ms_conn=passaic",
+      "dataDirectory": "data"
+    },
+    {
+      "id": "parsippany",
+      "name": "Township of Parsippany-Troy Hills",
+      "county": "Morris County",
+      "muniCode": "1429",
+      "governmentType": "Faulkner Act Mayor-Council",
+      "schoolDistrict": "Parsippany-Troy Hills School District",
+      "schoolDistrictType": "PreK-12",
+      "municipalUrl": "https://www.parsippany.net",
+      "schoolDistrictUrl": "https://www.pthsd.k12.nj.us",
+      "countyTaxBoardUrl": "https://www.morriscountynj.gov/Departments/Taxation",
+      "countyMod4Url": "https://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?menu=index&ms_conn=morris",
+      "dataDirectory": "data/parsippany"
+    },
+    {
+      "id": "wayne",
+      "name": "Township of Wayne",
+      "county": "Passaic County",
+      "muniCode": "1614",
+      "governmentType": "Faulkner Act Mayor-Council",
+      "schoolDistrict": "Wayne Township Public Schools",
+      "schoolDistrictType": "PreK-12",
+      "municipalUrl": "https://www.waynetownship.com",
+      "schoolDistrictUrl": "https://www.wayneschools.com",
+      "countyTaxBoardUrl": "https://www.passaiccountynj.org/residents/board-of-taxation",
+      "countyMod4Url": "https://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?menu=index&ms_conn=passaic",
+      "dataDirectory": "data/wayne"
+    },
+    {
+      "id": "montclair",
+      "name": "Township of Montclair",
+      "county": "Essex County",
+      "muniCode": "0713",
+      "governmentType": "Faulkner Act Council-Manager",
+      "schoolDistrict": "Montclair Public Schools",
+      "schoolDistrictType": "PreK-12",
+      "municipalUrl": "https://www.montclairnjusa.org",
+      "schoolDistrictUrl": "https://www.montclair.k12.nj.us",
+      "countyTaxBoardUrl": "https://www.essexcountynj.org/board-of-taxation/",
+      "countyMod4Url": "https://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?menu=index&ms_conn=essex",
+      "dataDirectory": "data/montclair"
+    },
+    {
+      "id": "morristown",
+      "name": "Town of Morristown",
+      "county": "Morris County",
+      "muniCode": "1424",
+      "governmentType": "Faulkner Act Mayor-Council",
+      "schoolDistrict": "Morris School District (Regional)",
+      "schoolDistrictType": "PreK-12 Regional",
+      "municipalUrl": "https://www.townofmorristown.org",
+      "schoolDistrictUrl": "https://www.morrisschooldistrict.org",
+      "countyTaxBoardUrl": "https://www.morriscountynj.gov/Departments/Taxation",
+      "countyMod4Url": "https://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?menu=index&ms_conn=morris",
+      "dataDirectory": "data/morristown"
+    },
+    {
+      "id": "montville",
+      "name": "Township of Montville",
+      "county": "Morris County",
+      "muniCode": "1421",
+      "governmentType": "Township Committee (5 Members)",
+      "schoolDistrict": "Montville Township Public Schools",
+      "schoolDistrictType": "PreK-12",
+      "municipalUrl": "https://www.montvillenj.org",
+      "schoolDistrictUrl": "https://www.montville.net",
+      "countyTaxBoardUrl": "https://www.morriscountynj.gov/Departments/Taxation",
+      "countyMod4Url": "https://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?menu=index&ms_conn=morris",
+      "dataDirectory": "data/montville"
+    },
+    {
+      "id": "glenrock",
+      "name": "Borough of Glen Rock",
+      "county": "Bergen County",
+      "muniCode": "0222",
+      "governmentType": "Borough Form (Mayor & 6 Council)",
+      "schoolDistrict": "Glen Rock Public Schools",
+      "schoolDistrictType": "PreK-12",
+      "municipalUrl": "https://www.glenrocknj.net",
+      "schoolDistrictUrl": "https://www.glenrocknj.org",
+      "countyTaxBoardUrl": "https://www.co.bergen.nj.us/board-of-taxation",
+      "countyMod4Url": "https://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?menu=index&ms_conn=bergen",
+      "dataDirectory": "data/glenrock"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "property_assessments",
+      "fileName": "property_assessments.json",
+      "name": "Real Property Assessment Rolls (Class 2 Residential)",
+      "sourceAgency": "State of New Jersey Office of GIS (NJOGIS) & NJ Division of Taxation",
+      "serviceEndpoint": "https://maps.nj.gov/arcgis/rest/services/Basemap/Parcels_Composite_NJ_WM/FeatureServer/0",
+      "legalAuthority": "NJ MOD-IV Property Tax System (N.J.A.C. 18:12-1.1 et seq.)",
+      "refreshCadence": "Annual (January 10 certification)",
+      "verificationCheck": "Check for zero forbidden interior fields (no bedrooms, bathrooms, squareFeet, garage). Must match MOD-IV roll count."
+    },
+    {
+      "id": "tax_breakdown",
+      "fileName": "tax_breakdown.json",
+      "name": "Certified Property Tax Rate Breakdown & Equalization",
+      "sourceAgency": "County Boards of Taxation (Passaic, Morris, Essex, Bergen)",
+      "primaryDocument": "Abstract of Ratables (Form SR-3A) & Table of Equalized Valuations",
+      "legalAuthority": "N.J.S.A. 54:1-35.1 et seq. & N.J.S.A. 54:4-52",
+      "refreshCadence": "Annual (May-July certification)",
+      "verificationCheck": "schoolRate + municipalRate + countyRate == generalTaxRate"
+    },
+    {
+      "id": "municipal_budget",
+      "fileName": "municipal_budget.json",
+      "name": "Adopted Municipal Budget & Appropriations",
+      "sourceAgency": "NJ Department of Community Affairs (DCA), Division of Local Government Services (DLGS)",
+      "portalUrl": "https://www.nj.gov/dca/dlgs/programs/lfb_budgets.html",
+      "legalAuthority": "Local Budget Law (N.J.S.A. 40A:4-1 et seq.) & User-Friendly Budget Rules (N.J.A.C. 5:30-3.8)",
+      "refreshCadence": "Annual (CY April/May adoption, SFY August/September adoption)",
+      "verificationCheck": "Sum of major appropriations and revenues reconciles to totalBudget."
+    },
+    {
+      "id": "boe_budget",
+      "fileName": "boe_budget.json",
+      "name": "Adopted School District User-Friendly Budget",
+      "sourceAgency": "NJ Department of Education (NJDOE), Office of School Finance",
+      "portalUrl": "https://www.nj.gov/education/finance/fp/ufb/",
+      "legalAuthority": "Public School Education Act (N.J.S.A. 18A:7F-1 et seq.) & N.J.S.A. 18A:22-8",
+      "refreshCadence": "Annual (April/May adoption)",
+      "verificationCheck": "Instructional + Administrative + Transportation + Benefits sum to totalBudget."
+    },
+    {
+      "id": "benefits_healthcare",
+      "fileName": "benefits_healthcare.json",
+      "name": "Employee Health Plans, Premium Cost Sharing & Pensions",
+      "sourceAgency": "NJ Division of Pensions and Benefits (NJDPB), SHBP/SEHBP, BMED JIF & Collective Bargaining Agreements",
+      "portalUrl": "https://www.nj.gov/treasury/pensions/",
+      "legalAuthority": "Chapter 78 (P.L. 2011, c. 78), Chapter 44 (P.L. 2020, c. 44), N.J.S.A. 43:16A (PFRS), N.J.S.A. 43:15A (PERS), N.J.S.A. 40A:10-23 (Retiree Health)",
+      "refreshCadence": "Annual (Plan year January 1)",
+      "verificationCheck": "annualTaxpayerCostCity + annualTaxpayerCostBOE == combinedTaxpayerBenefitsCost; annualTaxpayerCostCity == muni health + muni pension appropriations."
+    },
+    {
+      "id": "staff_directory",
+      "fileName": "staff_directory.json",
+      "name": "Public Employee Salaries, Overtime & Top Earners",
+      "sourceAgency": "Municipal Salary Ordinances, School Board Personnel Agendas & APP DataUniverse",
+      "portalUrl": "https://data.app.com/datauniverse/payroll/",
+      "legalAuthority": "Open Public Records Act (N.J.S.A. 47:1A-1 et seq.) & Annual Salary Ordinances",
+      "refreshCadence": "Annual (Post-CY close)",
+      "verificationCheck": "Ensure baseSalary + overtime == totalCompensation."
+    },
+    {
+      "id": "vendors_spending",
+      "fileName": "vendors_spending.json",
+      "name": "Vendor Spending, Major Contractors & Pay-to-Play Disclosures",
+      "sourceAgency": "Municipal & School District Annual Audit Reports (ACFR), Council Bill Lists & NJ ELEC",
+      "portalUrl": "https://www.elec.nj.gov",
+      "legalAuthority": "Local Public Contracts Law (N.J.S.A. 40A:11-1 et seq.) & Pay-to-Play Law (N.J.S.A. 19:44A-20.4 et seq.)",
+      "refreshCadence": "Bi-annual",
+      "verificationCheck": "Top vendor amounts match audited statements and approved claims lists."
+    },
+    {
+      "id": "ethics_disclosures",
+      "fileName": "ethics_disclosures.json",
+      "name": "Local Government & School Ethics Financial Disclosures",
+      "sourceAgency": "Local Finance Board (DCA) & NJ School Ethics Commission (SEC)",
+      "portalUrl": "https://www.nj.gov/dca/divisions/dlgs/programs/fds.html",
+      "legalAuthority": "Local Government Ethics Law (N.J.S.A. 40A:9-22.1 et seq.) & School Ethics Act (N.J.S.A. 18A:12-21 et seq.)",
+      "refreshCadence": "Annual (April 30 filing deadline)",
+      "verificationCheck": "Cross-reference against elected official rosters for current governing bodies."
+    },
+    {
+      "id": "ethics_controversies",
+      "fileName": "ethics_controversies.json",
+      "name": "Watchdog Alerts, State Comptroller Audits & Litigation",
+      "sourceAgency": "NJ Office of the State Comptroller (OSC), State Commission of Investigation (SCI) & NJ Superior Court",
+      "portalUrl": "https://www.nj.gov/comptroller/reports/",
+      "legalAuthority": "N.J.S.A. 52:15C-1 et seq. (State Comptroller Powers)",
+      "refreshCadence": "Ongoing / quarterly",
+      "verificationCheck": "Every alert must include a docket number, audit publication date, or court case citation."
+    },
+    {
+      "id": "commercial_pilot_shift",
+      "fileName": "commercial_pilot_shift.json",
+      "name": "Commercial PILOT Abatements & Tax Burden Shift",
+      "sourceAgency": "Municipal Financial Agreements & Long Term Tax Exemption Law Filings",
+      "portalUrl": "https://www.nj.gov/dca/dlgs/programs/lfb_budgets.html",
+      "legalAuthority": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+      "refreshCadence": "Annual",
+      "verificationCheck": "Statutory split: 95% Municipal, 5% County, 0% School District."
+    },
+    {
+      "id": "demographics_taxes",
+      "fileName": "demographics_taxes.json",
+      "name": "Demographic, Income & Spatial Tax Equity Analysis",
+      "sourceAgency": "U.S. Census Bureau, American Community Survey (ACS) 5-Year Data Profiles",
+      "portalUrl": "https://api.census.gov/data/2022/acs/acs5/profile",
+      "legalAuthority": "Title 13, U.S. Code (Census Act)",
+      "refreshCadence": "Annual (December release of 5-year estimates)",
+      "verificationCheck": "Crosswalk Census Tracts and ZCTAs to municipal boundary population."
+    },
+    {
+      "id": "surrounding_towns_comparison",
+      "fileName": "surrounding_towns_comparison.json",
+      "name": "Regional Surrounding Towns Comparison (14 Benchmark Municipalities)",
+      "sourceAgency": "Passaic, Morris, Essex, and Bergen County Boards of Taxation",
+      "primaryDocument": "Abstract of Ratables & Table of Equalized Valuations",
+      "legalAuthority": "N.J.S.A. 54:1-35.1",
+      "refreshCadence": "Annual (May-July)",
+      "verificationCheck": "Effective tax rate = General tax rate * Equalization ratio across all 14 benchmark towns."
+    },
+    {
+      "id": "fair_tax_scenarios",
+      "fileName": "fair_tax_scenarios.json",
+      "name": "What-If Fair Tax Fiscal Simulation Scenarios",
+      "sourceAgency": "Actuarial and fiscal modeling anchored in certified municipal & school budgets",
+      "legalAuthority": "Local Budget Law & 2% Property Tax Levy Cap (N.J.S.A. 40A:4-45.45)",
+      "refreshCadence": "Annual",
+      "verificationCheck": "Models must preserve fiscal revenue neutrality or explicitly define statutory expenditure cuts."
+    },
+    {
+      "id": "election_candidates",
+      "fileName": "election_candidates.json",
+      "name": "Certified Municipal & School Board Candidate Profiles & Ballots",
+      "sourceAgency": "County Clerk Election Divisions (Passaic, Morris, Essex, Bergen) & Municipal Clerks",
+      "portalUrl": "https://www.passaiccountynj.org/government/county-clerk/elections",
+      "legalAuthority": "Title 19 (Elections), N.J.S.A. 19:1-1 et seq. & Campaign Contributions and Expenditures Reporting Act",
+      "refreshCadence": "Bi-annual (Primary June, General November)",
+      "verificationCheck": "Every candidate must possess verifiedSources >= 2 from certified election filings."
+    }
+  ]
+}

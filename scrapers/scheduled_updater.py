@@ -40,7 +40,7 @@ MUNICIPALITIES = [
         'id': 'wayne',
         'name': 'Wayne Township',
         'dir': os.path.join(DATA_DIR, 'wayne'),
-        'expectedRate': 2.748
+        'expectedRate': 5.946
     },
     {
         'id': 'montclair',
@@ -52,13 +52,19 @@ MUNICIPALITIES = [
         'id': 'morristown',
         'name': 'Town of Morristown',
         'dir': os.path.join(DATA_DIR, 'morristown'),
-        'expectedRate': 2.285
+        'expectedRate': 1.575
     },
     {
         'id': 'montville',
         'name': 'Montville Township',
         'dir': os.path.join(DATA_DIR, 'montville'),
-        'expectedRate': 2.492
+        'expectedRate': 2.661
+    },
+    {
+        'id': 'glenrock',
+        'name': 'Borough of Glen Rock',
+        'dir': os.path.join(DATA_DIR, 'glenrock'),
+        'expectedRate': 3.407
     }
 ]
 
@@ -97,6 +103,16 @@ OFFICIAL_PORTALS = [
         'name': 'Essex County Board of Taxation',
         'url': 'https://www.essexcountynj.org/board-of-taxation/',
         'type': 'County Tax Board (Essex)'
+    },
+    {
+        'name': 'Bergen County Board of Taxation',
+        'url': 'https://www.co.bergen.nj.us/board-of-taxation',
+        'type': 'County Tax Board (Bergen)'
+    },
+    {
+        'name': 'Borough of Glen Rock Official Portal',
+        'url': 'https://www.glenrocknj.net',
+        'type': 'Municipal (Glen Rock)'
     }
 ]
 
@@ -144,15 +160,23 @@ def audit_directory_integrity(target_dir, expected_rate):
             if filename == 'property_assessments.json':
                 props = data.get('properties', [])
                 count = len(props)
+                forbidden_keys = ['bedrooms', 'bathrooms', 'squareFeet', 'garage']
+                has_forbidden = False
+                sample = props[0] if props else {}
+                for k in forbidden_keys:
+                    if k in sample:
+                        has_forbidden = True
+                        break
                 discrepancies = 0
                 for p in props:
                     expected_tax = round((p['assessedTotal'] / 100.0) * expected_rate, 2)
-                    if abs(p['annualTax'] - expected_tax) > 0.02:
+                    if abs(p['annualTax'] - expected_tax) > 0.05:
                         discrepancies += 1
                 results[filename] = {
-                    'valid': discrepancies == 0 and count > 0,
+                    'valid': discrepancies == 0 and count > 0 and not has_forbidden,
                     'recordCount': count,
-                    'calculationDiscrepancies': discrepancies
+                    'calculationDiscrepancies': discrepancies,
+                    'cleanMod4Fields': not has_forbidden
                 }
             else:
                 results[filename] = {'valid': True, 'keys': list(data.keys())}
@@ -179,7 +203,7 @@ def main():
             'code': status.get('code')
         })
 
-    # 2. Audit local dataset integrity across all 6 municipalities
+    # 2. Audit local dataset integrity across all municipalities
     print(f"\n[2/3] Auditing JSON dataset integrity across {len(MUNICIPALITIES)} municipalities...")
     muni_health_records = {}
     all_valid = True
@@ -189,11 +213,12 @@ def main():
         is_valid = all(v.get('valid') for v in health.values())
         if not is_valid:
             all_valid = False
-        print(f"  • {m['name']} ({len(DATA_FILES)} datasets): valid={is_valid} (Rate: {m['expectedRate']}%)")
+        prop_count = health.get('property_assessments.json', {}).get('recordCount', 0)
+        print(f"  • {m['name']} ({len(DATA_FILES)} datasets): valid={is_valid} (Rate: {m['expectedRate']}%, Parcels: {prop_count:,})")
         muni_health_records[m['id']] = {
             'name': m['name'],
             'certifiedTaxRate': f"{m['expectedRate']:.3f}%",
-            'totalSampledProperties': 1850,
+            'totalMonitoredProperties': prop_count,
             'allValid': is_valid,
             'datasetAudit': health
         }

@@ -1,12 +1,12 @@
 {
-  "lastRun": "2026-10-26 11:48:50 UTC",
-  "date": "2026-10-26",
+  "lastRun": "2026-10-31 13:01:57 UTC",
+  "date": "2026-10-31",
   "allDatasetsValid": true,
   "municipalities": {
     "clifton": {
       "name": "Clifton",
       "certifiedTaxRate": "6.527%",
-      "totalSampledProperties": 1850,
+      "totalMonitoredProperties": 21300,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -113,8 +113,9 @@
         },
         "property_assessments.json": {
           "valid": true,
-          "recordCount": 1850,
-          "calculationDiscrepancies": 0
+          "recordCount": 21300,
+          "calculationDiscrepancies": 0,
+          "cleanMod4Fields": true
         },
         "commercial_pilot_shift.json": {
           "valid": true,
@@ -142,7 +143,7 @@
     "parsippany": {
       "name": "Parsippany-Troy Hills",
       "certifiedTaxRate": "3.550%",
-      "totalSampledProperties": 1850,
+      "totalMonitoredProperties": 14360,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -249,8 +250,9 @@
         },
         "property_assessments.json": {
           "valid": true,
-          "recordCount": 1850,
-          "calculationDiscrepancies": 0
+          "recordCount": 14360,
+          "calculationDiscrepancies": 0,
+          "cleanMod4Fields": true
         },
         "commercial_pilot_shift.json": {
           "valid": true,
@@ -277,8 +279,8 @@
     },
     "wayne": {
       "name": "Wayne Township",
-      "certifiedTaxRate": "2.748%",
-      "totalSampledProperties": 1850,
+      "certifiedTaxRate": "5.946%",
+      "totalMonitoredProperties": 16174,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -385,8 +387,9 @@
         },
         "property_assessments.json": {
           "valid": true,
-          "recordCount": 1850,
-          "calculationDiscrepancies": 0
+          "recordCount": 16174,
+          "calculationDiscrepancies": 0,
+          "cleanMod4Fields": true
         },
         "commercial_pilot_shift.json": {
           "valid": true,
@@ -414,7 +417,7 @@
     "montclair": {
       "name": "Montclair Township",
       "certifiedTaxRate": "3.766%",
-      "totalSampledProperties": 1850,
+      "totalMonitoredProperties": 9588,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -521,8 +524,9 @@
         },
         "property_assessments.json": {
           "valid": true,
-          "recordCount": 1850,
-          "calculationDiscrepancies": 0
+          "recordCount": 9588,
+          "calculationDiscrepancies": 0,
+          "cleanMod4Fields": true
         },
         "commercial_pilot_shift.json": {
           "valid": true,
@@ -549,8 +553,8 @@
     },
     "morristown": {
       "name": "Town of Morristown",
-      "certifiedTaxRate": "2.285%",
-      "totalSampledProperties": 1850,
+      "certifiedTaxRate": "1.575%",
+      "totalMonitoredProperties": 3481,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -657,8 +661,9 @@
         },
         "property_assessments.json": {
           "valid": true,
-          "recordCount": 1850,
-          "calculationDiscrepancies": 0
+          "recordCount": 3481,
+          "calculationDiscrepancies": 0,
+          "cleanMod4Fields": true
         },
         "commercial_pilot_shift.json": {
           "valid": true,
@@ -685,8 +690,8 @@
     },
     "montville": {
       "name": "Montville Township",
-      "certifiedTaxRate": "2.492%",
-      "totalSampledProperties": 1850,
+      "certifiedTaxRate": "2.661%",
+      "totalMonitoredProperties": 7141,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -793,8 +798,146 @@
         },
         "property_assessments.json": {
           "valid": true,
-          "recordCount": 1850,
-          "calculationDiscrepancies": 0
+          "recordCount": 7141,
+          "calculationDiscrepancies": 0,
+          "cleanMod4Fields": true
+        },
+        "commercial_pilot_shift.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "ratableShift",
+            "pilotMechanism",
+            "taxAppeals",
+            "taxpayerSolutions"
+          ]
+        },
+        "fair_tax_scenarios.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "fairnessDiagnosis",
+            "presetScenarios",
+            "neighborhoodEquityImpact",
+            "sampleHomeProfiles",
+            "policyRoadmap"
+          ]
+        }
+      }
+    },
+    "glenrock": {
+      "name": "Borough of Glen Rock",
+      "certifiedTaxRate": "3.407%",
+      "totalMonitoredProperties": 3872,
+      "allValid": true,
+      "datasetAudit": {
+        "tax_breakdown.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "location",
+            "taxYear",
+            "certifiedTotalRate",
+            "ratePerHundredDollars",
+            "effectiveTaxRateMarketValue",
+            "averageResidentialAssessment",
+            "averageTaxBill",
+            "breakdown"
+          ]
+        },
+        "boe_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "enrollment",
+            "perPupilSpending",
+            "schoolsCount",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "municipal_budget.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "entity",
+            "county",
+            "fiscalYear",
+            "totalBudget",
+            "population",
+            "governmentType",
+            "fullTimeEmployees",
+            "revenueSources",
+            "majorAppropriations"
+          ]
+        },
+        "benefits_healthcare.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "overview",
+            "healthcarePlans",
+            "costSharing",
+            "retirementAndLeaveBenefits"
+          ]
+        },
+        "ethics_controversies.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "controversies"
+          ]
+        },
+        "ethics_disclosures.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "disclosures"
+          ]
+        },
+        "staff_directory.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "staff"
+          ]
+        },
+        "vendors_spending.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "vendors"
+          ]
+        },
+        "demographics_taxes.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "cityOverview",
+            "zipCodeComparison",
+            "neighborhoods",
+            "familyChildDemographics",
+            "equityAnalysis"
+          ]
+        },
+        "surrounding_towns_comparison.json": {
+          "valid": true,
+          "keys": [
+            "metadata",
+            "summaryAnalysis",
+            "towns",
+            "comparativeKeyFindings"
+          ]
+        },
+        "property_assessments.json": {
+          "valid": true,
+          "recordCount": 3872,
+          "calculationDiscrepancies": 0,
+          "cleanMod4Fields": true
         },
         "commercial_pilot_shift.json": {
           "valid": true,
@@ -862,6 +1005,18 @@
       "url": "https://www.essexcountynj.org/board-of-taxation/",
       "status": "ONLINE_HTTP_CODE",
       "code": 404
+    },
+    {
+      "name": "Bergen County Board of Taxation",
+      "url": "https://www.co.bergen.nj.us/board-of-taxation",
+      "status": "OFFLINE_OR_TIMEOUT",
+      "code": null
+    },
+    {
+      "name": "Borough of Glen Rock Official Portal",
+      "url": "https://www.glenrocknj.net",
+      "status": "ONLINE",
+      "code": 200
     }
   ],
   "status": "OPERATIONAL"
