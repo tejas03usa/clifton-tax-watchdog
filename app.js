@@ -8131,7 +8131,7 @@ function setupVoterCompass() {
         selective_growth: 'Favors selective commercial ratables to expand the tax base'
       },
       infrastructurePriority: {
-        flooding: 'Prioritizes stormwater retention & PVWC water oversight',
+        flooding: currentCity === 'clifton' ? 'Prioritizes stormwater retention & PVWC water oversight' : 'Prioritizes stormwater retention & flood mitigation',
         paving: 'Prioritizes neighborhood road repaving & pedestrian safety'
       },
       governanceStyle: {
@@ -8712,7 +8712,7 @@ function renderCandidateCard(c, catMap) {
                       <div class="stance-item">
                         <div class="stance-item-header">
                           <span>💧</span>
-                          <strong>Flooding & Water Commission (PVWC):</strong>
+                          <strong>${currentCity === 'clifton' ? 'Flooding & Water Commission (PVWC)' : 'Flooding & Infrastructure'}:</strong>
                         </div>
                         <p>${escapeHtml(c.interviewStances.floodingAndWater)}</p>
                       </div>
@@ -9038,13 +9038,15 @@ function renderPlatformMatrix() {
 
   const candidates = cliftonElectionData.councilCandidates || [];
 
+  const infraHeader = currentCity === 'clifton' ? '🏗️ Flooding & PVWC Water' : '🏗️ Flooding & Infrastructure';
+
   let thead = `
     <thead>
       <tr>
         <th scope="col" style="min-width: 170px;">Candidate & Ballot #</th>
         <th scope="col" style="min-width: 110px;">Status</th>
         <th scope="col" style="min-width: 190px;">💰 Taxes & Spending Stance</th>
-        <th scope="col" style="min-width: 190px;">🏗️ Flooding & PVWC Water</th>
+        <th scope="col" style="min-width: 190px;">${infraHeader}</th>
         <th scope="col" style="min-width: 190px;">🏡 Zoning & Data Centers</th>
         <th scope="col" style="min-width: 180px;">⚖️ Dais Decorum</th>
         <th scope="col" style="min-width: 120px;">🌿 Health Waiver</th>
@@ -9062,7 +9064,7 @@ function renderPlatformMatrix() {
     const govPillar = (c.keyPlatformPillars || []).find(p => p.category === 'governance');
 
     const taxSummary = taxPillar ? taxPillar.title : 'Fiscal constraint & budget review';
-    const floodSummary = floodPillar ? floodPillar.title : 'PVWC water main upgrades & Third River desilting';
+    const floodSummary = floodPillar ? floodPillar.title : (currentCity === 'clifton' ? 'PVWC water main upgrades & Third River desilting' : 'Stormwater infrastructure & flood mitigation');
     const houseSummary = housePillar ? housePillar.title : 'Protect suburban zoning; anti-data center sprawl';
     const govSummary = govPillar ? govPillar.title : 'Restoring civility & administrative stability';
 
