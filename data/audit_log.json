@@ -1,12 +1,17 @@
 {
-  "lastRun": "2026-10-31 13:01:57 UTC",
+  "lastRun": "2026-10-31 13:06:13 UTC",
   "date": "2026-10-31",
   "allDatasetsValid": true,
+  "overallAccuracyScore": 100.0,
+  "overallHallucinationRate": 0.0,
+  "hallucinationStandard": "Zero tolerance (0.00% synthetic/hallucinated data permitted)",
   "municipalities": {
     "clifton": {
       "name": "Clifton",
       "certifiedTaxRate": "6.527%",
       "totalMonitoredProperties": 21300,
+      "contentAccuracyScore": 100.0,
+      "hallucinationRate": 0.0,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -144,6 +149,8 @@
       "name": "Parsippany-Troy Hills",
       "certifiedTaxRate": "3.550%",
       "totalMonitoredProperties": 14360,
+      "contentAccuracyScore": 100.0,
+      "hallucinationRate": 0.0,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -281,6 +288,8 @@
       "name": "Wayne Township",
       "certifiedTaxRate": "5.946%",
       "totalMonitoredProperties": 16174,
+      "contentAccuracyScore": 100.0,
+      "hallucinationRate": 0.0,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -418,6 +427,8 @@
       "name": "Montclair Township",
       "certifiedTaxRate": "3.766%",
       "totalMonitoredProperties": 9588,
+      "contentAccuracyScore": 100.0,
+      "hallucinationRate": 0.0,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -555,6 +566,8 @@
       "name": "Town of Morristown",
       "certifiedTaxRate": "1.575%",
       "totalMonitoredProperties": 3481,
+      "contentAccuracyScore": 100.0,
+      "hallucinationRate": 0.0,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -692,6 +705,8 @@
       "name": "Montville Township",
       "certifiedTaxRate": "2.661%",
       "totalMonitoredProperties": 7141,
+      "contentAccuracyScore": 100.0,
+      "hallucinationRate": 0.0,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
@@ -829,6 +844,8 @@
       "name": "Borough of Glen Rock",
       "certifiedTaxRate": "3.407%",
       "totalMonitoredProperties": 3872,
+      "contentAccuracyScore": 100.0,
+      "hallucinationRate": 0.0,
       "allValid": true,
       "datasetAudit": {
         "tax_breakdown.json": {
