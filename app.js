@@ -860,33 +860,33 @@ async function switchCity(cityId, updateUrl = true) {
 
   // Render sections conditionally based on DOM elements present on the active page
   if (document.getElementById('calc-assessment-input')) setupCalculator();
-  if (document.getElementById('boe-line-items')) renderBudgets();
-  if (document.getElementById('demo-population') || document.getElementById('demo-median-income-07013')) renderDemographics();
-  if (document.getElementById('properties-table-body') || document.getElementById('properties-cards-grid')) {
+  if (document.getElementById('boe-line-items') || document.getElementById('tab-budgets')) renderBudgets();
+  if (document.getElementById('demo-citywide-banner') || document.getElementById('tab-demographics') || document.getElementById('demo-population')) renderDemographics();
+  if (document.getElementById('properties-table-body') || document.getElementById('properties-cards-grid') || document.getElementById('tab-properties')) {
     renderProperties();
     setupPropertyFilters();
   }
-  if (document.getElementById('surrounding-towns-grid')) renderSurroundingTowns();
-  if (document.getElementById('benefits-costs-grid')) renderBenefits();
-  if (document.getElementById('controversies-timeline')) renderControversies();
+  if (document.getElementById('surrounding-table-body') || document.getElementById('surrounding-cards-container') || document.getElementById('tab-surrounding')) renderSurroundingTowns();
+  if (document.getElementById('benefits-plans-container') || document.getElementById('tab-benefits')) renderBenefits();
+  if (document.getElementById('controversies-cards-container') || document.getElementById('tab-controversies')) renderControversies();
   if (document.getElementById('staff-table-body')) {
     renderStaffTable('all', document.getElementById('staff-search-input')?.value || '');
     setupStaffFilters();
   }
-  if (document.getElementById('ethics-cards-container') || document.getElementById('ethics-cards-grid')) {
+  if (document.getElementById('ethics-cards-container') || document.getElementById('ethics-cards-grid') || document.getElementById('tab-ethics')) {
     renderEthicsCards('all');
     setupEthicsFilters();
   }
-  if (document.getElementById('vendors-cards-container') || document.getElementById('vendors-cards-grid')) {
+  if (document.getElementById('vendors-cards-container') || document.getElementById('vendors-cards-grid') || document.getElementById('tab-vendors')) {
     renderVendorsCards();
   }
-  if (document.getElementById('intel-reports-list')) {
+  if (document.getElementById('intel-report-receipt') || document.getElementById('tab-intelligence')) {
     setupInvestigationTools();
     renderIntelligenceReports();
   }
-  if (document.getElementById('pilot-projects-grid')) renderCommercialPilot();
-  if (document.getElementById('fair-tax-engine-container') || document.getElementById('ft-scenarios-pills')) renderFairTaxEngine();
-  if (document.getElementById('election-candidates-grid') || document.getElementById('election-ballot-overview-grid')) {
+  if (document.getElementById('pilot-comparison-container') || document.getElementById('tab-commercial-pilot')) renderCommercialPilot();
+  if (document.getElementById('tax-flow-diagram') || document.getElementById('tab-fair-tax')) renderFairTaxEngine();
+  if (document.getElementById('election-candidates-grid') || document.getElementById('election-ballot-overview-grid') || document.getElementById('tab-election')) {
     renderElectionHub();
     setupElectionControls();
   }
@@ -2067,6 +2067,25 @@ function switchTab(targetId, options = {}) {
           }, 40);
         });
       }
+    } else if (targetId === 'tab-benefits') {
+      renderBenefits();
+    } else if (targetId === 'tab-controversies') {
+      renderControversies();
+    } else if (targetId === 'tab-demographics') {
+      renderDemographics();
+    } else if (targetId === 'tab-surrounding') {
+      renderSurroundingTowns();
+    } else if (targetId === 'tab-commercial-pilot') {
+      renderCommercialPilot();
+    } else if (targetId === 'tab-fair-tax') {
+      renderFairTaxEngine();
+    } else if (targetId === 'tab-intelligence') {
+      setupInvestigationTools();
+      renderIntelligenceReports();
+    } else if (targetId === 'tab-budgets') {
+      renderBudgets();
+    } else if (targetId === 'tab-vendors') {
+      renderVendorsCards();
     }
 
     // Scroll handling
@@ -5065,47 +5084,103 @@ function renderSurroundingTowns() {
 function renderBenefits() {
   if (!benefitsData) return;
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
-  const isParsippany = currentCity === 'parsippany';
 
+  // 1. Update Subtitles & Intro Description for Active Town
+  const plansSub = document.querySelector('#tab-benefits .benefits-card:first-child .benefits-card-sub');
+  if (plansSub) {
+    if (currentCity === 'glenrock') {
+      plansSub.textContent = `${meta.name} municipal staff participate in the Bergen Municipal JIF (BMED), while school educators participate in the School Employees' Health Benefits Program (SEHBP):`;
+    } else {
+      plansSub.textContent = `${meta.name} employees participate in the State Health Benefits Program (SHBP) or School Employees' Health Benefits Program (SEHBP):`;
+    }
+  }
+
+  const costSub = document.querySelector('#tab-benefits .benefits-card:nth-child(2) .benefits-card-sub');
+  if (costSub) {
+    costSub.textContent = `State statutes (Chapter 78 & Chapter 44) govern ${meta.name} employee premium contributions vs taxpayer subsidies:`;
+  }
+
+  // Update Summary Banner
+  const banner = document.querySelector('#tab-benefits .benefits-summary-banner');
+  if (banner && benefitsData.overview) {
+    const ov = benefitsData.overview;
+    const combinedSpend = meta.benefitsSpendDisplay || (ov.combinedTaxpayerBenefitsCost ? `$${(ov.combinedTaxpayerBenefitsCost / 1e6).toFixed(1)}M` : '$87.2M');
+    const cityCost = ov.annualTaxpayerCostCity ? `$${(ov.annualTaxpayerCostCity / 1e6).toFixed(1)}M` : '';
+    const boeCost = ov.annualTaxpayerCostBOE ? `$${(ov.annualTaxpayerCostBOE / 1e6).toFixed(1)}M` : '';
+    const costSplit = (cityCost && boeCost)
+      ? `${meta.name} Muni: ${cityCost} • ${meta.schoolDistrictShort}: ${boeCost}`
+      : `Combined ${meta.schoolDistrictShort} & municipal budgets`;
+
+    banner.innerHTML = `
+      <div class="b-stat">
+        <span class="stat-title">Combined Benefits Spending</span>
+        <span class="stat-num">${combinedSpend} / year</span>
+        <span class="stat-detail">${costSplit}</span>
+      </div>
+      <div class="b-stat">
+        <span class="stat-title">Average Family Health Premium</span>
+        <span class="stat-num">~$32,000 - $42,000</span>
+        <span class="stat-detail">Annual cost per enrolled employee family</span>
+      </div>
+      <div class="b-stat">
+        <span class="stat-title">Taxpayer Premium Share</span>
+        <span class="stat-num">65% to 92%</span>
+        <span class="stat-detail">Taxpayers cover the vast majority of premiums</span>
+      </div>
+    `;
+  }
+
+  // #1. Medical & Health Insurance Plans Provided
   const plansContainer = document.getElementById('benefits-plans-container');
-  if (plansContainer && benefitsData.healthcarePlans) {
+  if (plansContainer && benefitsData.healthcarePlans && Array.isArray(benefitsData.healthcarePlans.primaryPlans)) {
     plansContainer.innerHTML = benefitsData.healthcarePlans.primaryPlans.map(p => `
       <div class="plan-item-box">
-        <div class="plan-title">${p.planName}</div>
-        <div class="plan-type-badge">${p.type}</div>
-        <div class="plan-desc">${p.description}</div>
+        <div class="plan-title">${escapeHtml(p.planName)}</div>
+        <div class="plan-type-badge">${escapeHtml(p.type)}</div>
+        <div class="plan-desc">${escapeHtml(p.description)}</div>
       </div>
     `).join('');
   }
 
+  // #2. Premium Cost Sharing: Who Pays What?
   const costContainer = document.getElementById('benefits-cost-share-container');
-  if (costContainer && benefitsData.costSharing) {
+  if (costContainer && benefitsData.costSharing && Array.isArray(benefitsData.costSharing.rules)) {
     costContainer.innerHTML = benefitsData.costSharing.rules.map(r => `
       <div class="cost-share-item">
-        <div class="cost-share-header">${r.tier}</div>
+        <div class="cost-share-header">${escapeHtml(r.tier)}</div>
         <div class="cost-stat-row">
           <span>Employee Out-of-Pocket:</span>
-          <strong>${r.employeeContribution}</strong>
+          <strong>${escapeHtml(r.employeeContribution)}</strong>
         </div>
         <div class="cost-stat-row">
-          <span>${meta.name} Taxpayer Subsidy:</span>
-          <strong style="color: var(--color-city);">${r.taxpayerContribution}</strong>
+          <span>${escapeHtml(meta.name)} Taxpayer Subsidy:</span>
+          <strong style="color: var(--color-city);">${escapeHtml(r.taxpayerContribution)}</strong>
         </div>
-        <div class="cost-example">${r.note}</div>
+        <div class="cost-example">${escapeHtml(r.note)}</div>
       </div>
     `).join('');
   }
 
+  // #3. Lifetime Retiree Healthcare, Pensions & Leave Buyouts
   const retContainer = document.getElementById('benefits-retirement-container');
   if (retContainer && benefitsData.retirementAndLeaveBenefits) {
-    retContainer.innerHTML = benefitsData.retirementAndLeaveBenefits.map(b => `
+    const retList = Array.isArray(benefitsData.retirementAndLeaveBenefits)
+      ? benefitsData.retirementAndLeaveBenefits
+      : Object.entries(benefitsData.retirementAndLeaveBenefits).map(([k, v]) => ({
+          benefitName: k.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
+          taxpayerImpact: 'Statutory public expenditure',
+          legalAuthority: 'NJ Statutes & Collective Bargaining',
+          details: v
+        }));
+
+    retContainer.innerHTML = retList.map(b => `
       <div class="retiree-benefit-card">
         <div class="retiree-title-row">
-          <div class="retiree-name">${b.benefitName}</div>
-          <div class="retiree-impact-tag">${b.taxpayerImpact}</div>
+          <div class="retiree-name">${escapeHtml(b.benefitName)}</div>
+          <div class="retiree-impact-tag">${escapeHtml(b.taxpayerImpact)}</div>
         </div>
-        <div class="retiree-authority">Legal Basis: ${b.legalAuthority}</div>
-        <div class="retiree-details">${b.details}</div>
+        <div class="retiree-authority">Legal Basis: ${escapeHtml(b.legalAuthority)}</div>
+        <div class="retiree-details">${escapeHtml(b.details)}</div>
         <div class="card-action-bar-jumps">
           <button class="btn-jump-alert" data-jump-tab="tab-controversies">
             <span>🚨</span> View Audit & Leave Analyses ➔

@@ -33,6 +33,11 @@
         "planName": "Prescription Drug Card Formulary",
         "type": "Prescription Plan",
         "description": "Comprehensive drug formulary covering retail, mail-order, and specialty biologics with taxpayers subsidizing over 85% of costs."
+      },
+      {
+        "planName": "Delta Dental & Optical Coverage",
+        "type": "Dental & Vision Plan",
+        "description": "Preventive, restorative, and orthodontic dental coverage plus annual optical care benefits for eligible township and school personnel."
       }
     ]
   },
@@ -59,6 +64,12 @@
       "legalAuthority": "N.J.S.A. 40A:10-23 & Union Contracts",
       "taxpayerImpact": "Multi-million dollar ongoing retiree health expenditure",
       "details": "Employees retiring with 25+ years of pensionable service receive employer-paid health benefits in retirement."
+    },
+    {
+      "benefitName": "Statutory Pension Systems (PFRS, PERS, TPAF)",
+      "legalAuthority": "NJ Division of Pensions and Benefits (N.J.S.A. 43:16A & 43:15A)",
+      "taxpayerImpact": "Township pays ~$3.74M annually into PFRS/PERS",
+      "details": "Mandatory employer contributions to Police & Firemen's Retirement System (PFRS) for Montville Township Police officers and Public Employees' Retirement System (PERS) for civilian municipal personnel. Montville School District educators belong to TPAF."
     },
     {
       "benefitName": "Unused Sick & Vacation Leave Retirement Payouts",

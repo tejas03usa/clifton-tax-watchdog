@@ -1,40 +1,81 @@
 {
   "metadata": {
-    "source": "Glen Rock Borough Council & Glen Rock BOE Collective Bargaining Agreements",
-    "year": 2026
+    "lastUpdated": "2026-10-23",
+    "fiscalCycle": "FY 2025-2026",
+    "dataVintage": "Certified 2026 Plan Year",
+    "sourceAgencies": [
+      "Glen Rock Borough Council & Glen Rock BOE Collective Bargaining Agreements",
+      "Bergen Municipal Employee Benefits Fund (BMED / JIF)",
+      "NJ Division of Pensions and Benefits (SHBP / SEHBP)"
+    ],
+    "freshnessStatus": "Current"
   },
   "overview": {
-    "totalBenefitsSpend": 16800000,
-    "percentOfCombinedBudget": 18.82,
-    "averageFamilyPremium": 36400,
-    "taxpayerShare": 76.5
+    "annualTaxpayerCostCity": 3950000,
+    "annualTaxpayerCostBOE": 12850000,
+    "combinedTaxpayerBenefitsCost": 16800000,
+    "percentageOfCombinedBudgets": "18.8% of all public spending in Glen Rock Borough goes directly to employee health insurance and pensions"
   },
   "healthcarePlans": {
+    "providers": "Bergen Municipal JIF Direct Access (BMED) & School Employees' Health Benefits Program (SEHBP)",
     "primaryPlans": [
       {
         "planName": "Bergen Municipal JIF Direct Access (BMED)",
         "type": "Private Municipal Insurance Pool",
-        "description": "In-network copay model replacing state SHBP coverage with predictable negotiated dental and prescription formularies."
+        "description": "In-network copay model replacing state SHBP coverage with predictable negotiated dental and prescription formularies to protect borough taxpayers from state premium spikes."
       },
       {
-        "planName": "Educators Health Plan (EHP - Chapter 44)",
-        "type": "State Mandated Education Plan",
-        "description": "Lower-cost plan option for certified educators capping employee contributions to an income-indexed percentage."
+        "planName": "NJ Educators Health Plan (NJEHP / Chapter 44) & Garden State Plan",
+        "type": "State Mandated Education Plan (SEHBP)",
+        "description": "School district plan option for certified teachers and school staff, capping employee contributions to a salary-indexed percentage (1.7% to 7.2%)."
+      },
+      {
+        "planName": "Prescription Drug Card (BMED / Express Scripts Formulary)",
+        "type": "Prescription Plan",
+        "description": "Retail, mail-order, and specialty biologics with taxpayers subsidizing over 85% of total pharmacy costs."
+      },
+      {
+        "planName": "Delta Dental & Optical Coverage",
+        "type": "Dental & Vision Plan",
+        "description": "Preventive, restorative, and orthodontic dental coverage plus optical exams for eligible municipal and school staff."
       }
     ]
   },
   "costSharing": {
+    "statutoryFramework": "Chapter 78 (P.L. 2011, c. 78) & Chapter 44 (P.L. 2020, c. 44)",
     "rules": [
       {
-        "tier": "Tier 4 (Chapter 78 / Chapter 44 Framework)",
-        "employeeContribution": "12% to 35% of Total Premium (Indexed by Salary)",
-        "taxpayerContribution": "65% to 88% of Total Premium",
-        "note": "Average Glen Rock municipal employee pays ~$4,800 to $9,200 annually toward family medical coverage, while taxpayers subsidize the remaining ~$27,200 to $31,600."
+        "tier": "Borough Municipal Staff & Police (Chapter 78 Tier 4 Grid)",
+        "employeeContribution": "10% to 35% of premium based on salary tier",
+        "taxpayerContribution": "65% to 90% of total family premium ($24,000 - $31,000/yr subsidy)",
+        "note": "For a police officer or DPW worker with a $35,000 family health plan, Glen Rock taxpayers subsidize ~$24,500+ every year."
+      },
+      {
+        "tier": "Glen Rock BOE Teachers & School Staff (Chapter 44 NJEHP)",
+        "employeeContribution": "1.7% to 7.2% of base salary",
+        "taxpayerContribution": "80% to 92% of total family premium",
+        "note": "Because employee contributions are tied to salary rather than premium cost, annual health insurance rate hikes fall directly on the Glen Rock school property tax levy."
       }
     ]
   },
-  "retirementAndLeaveBenefits": {
-    "pensionSystems": "PFRS (Police & Firemen's Retirement System) & TPAF/PERS (Teachers & Public Employees)",
-    "terminalLeaveCap": "$15,000 statutory sick leave payout cap enforced for non-aligned personnel under state reform statutes."
-  }
+  "retirementAndLeaveBenefits": [
+    {
+      "benefitName": "Post-Retirement Medical Coverage (25-Year Service Rule)",
+      "legalAuthority": "N.J.S.A. 40A:10-23 & Union Contracts",
+      "taxpayerImpact": "Multi-million dollar ongoing retiree health expenditure",
+      "details": "Employees retiring with 25+ years of credited pensionable service receive employer-paid health coverage until Medicare eligibility, plus Medicare Part B reimbursement."
+    },
+    {
+      "benefitName": "Statutory Pension Systems (PFRS, PERS, TPAF)",
+      "legalAuthority": "NJ Division of Pensions and Benefits (N.J.S.A. 43:16A & 43:15A)",
+      "taxpayerImpact": "Borough pays ~$1.85M annually into PFRS/PERS",
+      "details": "Mandatory employer contributions to Police & Firemen's Retirement System (PFRS) for Glen Rock police officers and Public Employees' Retirement System (PERS) for civilian borough employees. School district educators participate in Teachers' Pension and Annuity Fund (TPAF)."
+    },
+    {
+      "benefitName": "Accumulated Sick Leave & Terminal Leave Payouts",
+      "legalAuthority": "P.L. 2010, c. 3 (N.J.S.A. 11A:6-19.2) & Union Contracts",
+      "taxpayerImpact": "Capped at $15,000 for post-2010 hires; legacy liabilities for veteran staff",
+      "details": "Under N.J.S.A. 11A:6-19.2, terminal sick payouts are capped at $15,000 for personnel hired after May 2010. Grandfathered veteran staff retain contractually accumulated bank time cash-outs."
+    }
+  ]
 }

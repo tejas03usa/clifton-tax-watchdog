@@ -6,7 +6,7 @@
     "sourceAgencies": [
       "NJ Division of Pensions and Benefits (SHBP / SEHBP)",
       "Town of Morristown Adopted Budget",
-      "Morris School District (Regional K-12) User-Friendly Budget"
+      "Morris School District User-Friendly Budget"
     ],
     "freshnessStatus": "Current"
   },
@@ -33,6 +33,11 @@
         "planName": "Prescription Drug Card Formulary",
         "type": "Prescription Plan",
         "description": "Comprehensive drug formulary covering retail, mail-order, and specialty biologics with taxpayers subsidizing over 85% of costs."
+      },
+      {
+        "planName": "Delta Dental & Optical Coverage",
+        "type": "Dental & Vision Plan",
+        "description": "Preventive, restorative, and orthodontic dental coverage plus vision hardware stipends for eligible Town and school personnel."
       }
     ]
   },
@@ -43,7 +48,7 @@
         "tier": "Municipal Staff & Police (Chapter 78 Tier 4 Grid)",
         "employeeContribution": "10% to 35% of premium based on salary",
         "taxpayerContribution": "65% to 90% of total family premium ($24,000 - $32,000/yr subsidy)",
-        "note": "For an employee with a $35,000 family health plan, Town of Morristown taxpayers subsidize ~$24,500+ every year."
+        "note": "For an employee with a $35,000 family health plan, Morristown taxpayers subsidize ~$24,500+ every year."
       },
       {
         "tier": "School District Faculty & Staff (Chapter 44 NJEHP)",
@@ -59,6 +64,12 @@
       "legalAuthority": "N.J.S.A. 40A:10-23 & Union Contracts",
       "taxpayerImpact": "Multi-million dollar ongoing retiree health expenditure",
       "details": "Employees retiring with 25+ years of pensionable service receive employer-paid health benefits in retirement."
+    },
+    {
+      "benefitName": "Statutory Pension Systems (PFRS, PERS, TPAF)",
+      "legalAuthority": "NJ Division of Pensions and Benefits (N.J.S.A. 43:16A & 43:15A)",
+      "taxpayerImpact": "Town pays ~$5.78M annually into PFRS/PERS",
+      "details": "Mandatory annual employer contributions to Police & Firemen's Retirement System (PFRS) for Morristown Bureau of Police and Fire personnel and Public Employees' Retirement System (PERS) for Town municipal employees. School teachers in Morris School District belong to TPAF."
     },
     {
       "benefitName": "Unused Sick & Vacation Leave Retirement Payouts",
