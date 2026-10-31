@@ -1,14 +1,16 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-12",
+    "lastUpdated": "2026-10-31",
     "dataSources": [
+      "City of Clifton Official 2025 Audit Report (Note 17 Tax Abatements & Note 18 Deferred Charges) - RMA Jerry Conaty (Item 202)",
       "Passaic County Board of Taxation Abstract of Ratables",
       "NJ Department of Community Affairs (DLGS) Municipal User-Friendly Budget",
       "City of Clifton Financial Statements & Tax Appeal Disclosures",
       "NJ State Comptroller (OSC) Municipal Tax Abatement Studies"
     ],
     "certifiedYear": 2026,
-    "freshnessStatus": "Current & Certified"
+    "freshnessStatus": "Current & Certified",
+    "auditDocumentUrl": "https://www.cliftonnj.org/ArchiveCenter/ViewFile/Item/202"
   },
   "ratableShift": {
     "totalNetValuationTaxable": 5732400000,
@@ -58,7 +60,7 @@
       "countyShare": 5.0,
       "schoolBoardShare": 0.0
     },
-    "pilotExplanation": "Under New Jersey PILOT agreements, developers pay an annual Service Charge based on gross revenue instead of ad valorem property taxes. City Hall keeps 95% of this revenue and Passaic County receives 5%. The Clifton Board of Education receives exactly 0%—even though new residential developments introduce schoolchildren into district classrooms.",
+    "pilotExplanation": "Under New Jersey PILOT agreements, developers pay an annual Service Charge based on gross revenue instead of ad valorem property taxes. City Hall keeps 95% of this revenue and Passaic County receives 5%. The Clifton Board of Education receives exactly 0%\u2014even though new residential developments introduce schoolchildren into district classrooms.",
     "sampleProjects": [
       {
         "id": "transit-village-250",
@@ -219,5 +221,130 @@
       "proposal": "Execute a modern, certified citywide revaluation to reset equalized ratios to 100% of market value across commercial, industrial, and residential classes.",
       "benefit": "Eliminates decades of assessment distortion where newer commercial ratables pay lower effective market tax rates than older working-class homes."
     }
-  ]
+  ],
+  "certifiedPilotSummary": {
+    "auditYear": 2025,
+    "source": "City of Clifton 2025 Audited Financial Statements, Note 17 (Tax Abatements)",
+    "governingStatute": "NJ Housing and Mortgage Financing Act Law of 1983 (N.J.S.A. 55:14K-1 et seq.) & Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "totalPropertyTaxesAbated": 8180736.0,
+    "totalPilotBillingsCollected": 2056384.0,
+    "netTaxShiftToHomeowners": 6124352.0,
+    "abatementRatio": "Developers pay 25.14% of full ad valorem taxes; 74.86% is shifted to taxpayers",
+    "schoolShareReceived": 0.0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "revaluationReserveStatus": {
+      "totalRevaluationAuthorization": 3300000.0,
+      "taxMapAuthorization": 100000.0,
+      "appropriatedIn2026Budget": 680000.0,
+      "deferredToSucceedingBudgets": 2720000.0,
+      "statutoryAuthority": "N.J.S.A. 40A:4-48 (Special Emergency Authorizations)"
+    },
+    "activeAgreements": [
+      {
+        "recipient": "Kingsland St. Urban Renewal (Phase 1)",
+        "purpose": "Commercial / Multi-Family Redevelopment",
+        "amountAbated": 1989536.0,
+        "pilotBillings": 800499.0,
+        "netShift": 1189037.0,
+        "effectiveSavingsRate": "59.76% tax reduction"
+      },
+      {
+        "recipient": "Isabella Street Urban Renewal",
+        "purpose": "Affordable & Senior Housing Infill",
+        "amountAbated": 2476992.0,
+        "pilotBillings": 634620.0,
+        "netShift": 1842372.0,
+        "effectiveSavingsRate": "74.38% tax reduction"
+      },
+      {
+        "recipient": "Kingsland St. Urban Renewal (Phase 2)",
+        "purpose": "Commercial / Multi-Family Redevelopment",
+        "amountAbated": 697920.0,
+        "pilotBillings": 118707.0,
+        "netShift": 579213.0,
+        "effectiveSavingsRate": "82.99% tax reduction"
+      },
+      {
+        "recipient": "Clifton Sr. Citizen Housing",
+        "purpose": "Affordable Senior Housing",
+        "amountAbated": 664019.0,
+        "pilotBillings": 162385.0,
+        "netShift": 501634.0,
+        "effectiveSavingsRate": "75.55% tax reduction"
+      },
+      {
+        "recipient": "Senior Housing Regan",
+        "purpose": "Affordable Senior Housing",
+        "amountAbated": 607123.0,
+        "pilotBillings": 55167.0,
+        "netShift": 551956.0,
+        "effectiveSavingsRate": "90.91% tax reduction"
+      },
+      {
+        "recipient": "Horizon II",
+        "purpose": "Affordable Housing",
+        "amountAbated": 509722.0,
+        "pilotBillings": 37488.0,
+        "netShift": 472234.0,
+        "effectiveSavingsRate": "92.65% tax reduction"
+      },
+      {
+        "recipient": "Horizon III",
+        "purpose": "Affordable Housing",
+        "amountAbated": 494746.0,
+        "pilotBillings": 37486.0,
+        "netShift": 457260.0,
+        "effectiveSavingsRate": "92.42% tax reduction"
+      },
+      {
+        "recipient": "Sr. Housing of Hazel Street",
+        "purpose": "Affordable Senior Housing",
+        "amountAbated": 338406.0,
+        "pilotBillings": 84000.0,
+        "netShift": 254406.0,
+        "effectiveSavingsRate": "75.18% tax reduction"
+      },
+      {
+        "recipient": "Clifton Main Mews",
+        "purpose": "Affordable Housing",
+        "amountAbated": 223174.0,
+        "pilotBillings": 30162.0,
+        "netShift": 193012.0,
+        "effectiveSavingsRate": "86.49% tax reduction"
+      },
+      {
+        "recipient": "Serv Properties",
+        "purpose": "Special Needs Supportive Housing",
+        "amountAbated": 109056.0,
+        "pilotBillings": 29581.0,
+        "netShift": 79475.0,
+        "effectiveSavingsRate": "72.88% tax reduction"
+      },
+      {
+        "recipient": "Clifton Main Mews II",
+        "purpose": "Affordable Housing",
+        "amountAbated": 28186.0,
+        "pilotBillings": 59547.0,
+        "netShift": -31361.0,
+        "effectiveSavingsRate": "Adjusted contract billing"
+      },
+      {
+        "recipient": "Jersey City Two",
+        "purpose": "Affordable Housing",
+        "amountAbated": 31821.0,
+        "pilotBillings": 4222.0,
+        "netShift": 27599.0,
+        "effectiveSavingsRate": "86.73% tax reduction"
+      },
+      {
+        "recipient": "Community Options",
+        "purpose": "Special Needs Supportive Housing",
+        "amountAbated": 10035.0,
+        "pilotBillings": 2520.0,
+        "netShift": 7515.0,
+        "effectiveSavingsRate": "74.89% tax reduction"
+      }
+    ]
+  }
 }

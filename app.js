@@ -17,6 +17,9 @@ let propertyAssessmentsData = null;
 let surroundingTownsData = null;
 let commercialPilotData = null;
 let fairTaxData = null;
+let cityDocumentsData = null;
+let cityDocsActiveCategory = 'all';
+let cityDocsSearchQuery = '';
 let cliftonElectionData = null;
 let loadedElectionCity = null;
 let electionFilterStatus = 'all';
@@ -885,6 +888,7 @@ async function switchCity(cityId, updateUrl = true) {
     renderIntelligenceReports();
   }
   if (document.getElementById('pilot-comparison-container') || document.getElementById('tab-commercial-pilot')) renderCommercialPilot();
+  if (document.getElementById('city-docs-tbody') || document.getElementById('tab-city-docs')) renderCityDocumentsArchive();
   if (document.getElementById('tax-flow-diagram') || document.getElementById('tab-fair-tax')) renderFairTaxEngine();
   if (document.getElementById('election-candidates-grid') || document.getElementById('election-ballot-overview-grid') || document.getElementById('tab-election')) {
     renderElectionHub();
@@ -2086,6 +2090,8 @@ function switchTab(targetId, options = {}) {
       renderBudgets();
     } else if (targetId === 'tab-vendors') {
       renderVendorsCards();
+    } else if (targetId === 'tab-city-docs') {
+      renderCityDocumentsArchive();
     }
 
     // Scroll handling
@@ -2357,6 +2363,15 @@ async function loadAllData(cityId = currentCity) {
     surroundingTownsData = await surrRes.json();
     commercialPilotData = await pilotRes.json();
     fairTaxData = await fairRes.json();
+
+    try {
+      const cityDocsRes = await fetch('data/clifton_city_documents.json');
+      if (cityDocsRes.ok) {
+        cityDocumentsData = await cityDocsRes.json();
+      }
+    } catch (docErr) {
+      console.warn("Could not load city documents catalog:", docErr);
+    }
 
     await loadElectionData(cityId);
 
@@ -6464,6 +6479,25 @@ function renderCommercialPilot() {
     }).join('');
   }
 
+  // 3B. Certified Audited PILOT Schedule (Note 17)
+  const certPilotTbody = document.getElementById('certified-pilot-tbody');
+  const certAgreements = commercialPilotData.certifiedPilotSummary?.activeAgreements || [];
+  if (certPilotTbody && certAgreements.length) {
+    certPilotTbody.innerHTML = certAgreements.map(a => {
+      const shiftColor = a.netShift >= 0 ? '#b91c1c' : '#059669';
+      return `
+        <tr>
+          <td><strong>${a.recipient}</strong></td>
+          <td><span class="pill-tag" style="background:#f1f5f9;color:#475569;font-size:0.75rem;">${a.purpose}</span></td>
+          <td style="text-align: right; font-family: monospace; font-weight: 600;">${formatUSDWhole(a.amountAbated)}</td>
+          <td style="text-align: right; font-family: monospace; color: #059669; font-weight: 600;">${formatUSDWhole(a.pilotBillings)}</td>
+          <td style="text-align: right; font-family: monospace; color: ${shiftColor}; font-weight: 700;">+${formatUSDWhole(a.netShift)}</td>
+          <td style="text-align: right;"><span class="badge" style="background:#fee2e2;color:#991b1b;font-size:0.75rem;padding:2px 8px;border-radius:4px;">${a.effectiveSavingsRate}</span></td>
+        </tr>
+      `;
+    }).join('');
+  }
+
   // 4. Taxpayer Policy Solutions
   const solutionsContainer = document.getElementById('pilot-solutions-container');
   const solutions = commercialPilotData.taxpayerSolutions || [];
@@ -9652,3 +9686,133 @@ window.resetElectionFilters = resetElectionFilters;
 // Launch
 document.addEventListener('DOMContentLoaded', initApp);
 
+
+// ==========================================================================
+// TAB 7 / CITY DOCUMENTS: OFFICIAL CLIFTON MUNICIPAL ARCHIVE EXPLORER
+// ==========================================================================
+function renderCityDocumentsArchive() {
+  const tbody = document.getElementById('city-docs-tbody');
+  if (!tbody || !cityDocumentsData) return;
+
+  // Flatten all documents from categories and additional policies
+  let allDocs = [];
+  if (cityDocumentsData.categories) {
+    cityDocumentsData.categories.forEach(cat => {
+      cat.documents.forEach(doc => {
+        allDocs.push({
+          ...doc,
+          categoryName: cat.name
+        });
+      });
+    });
+  }
+  if (cityDocumentsData.additionalPolicies) {
+    cityDocumentsData.additionalPolicies.forEach(pol => {
+      allDocs.push({
+        id: pol.id,
+        title: pol.title,
+        year: 2025,
+        downloadUrl: pol.downloadUrl,
+        category: pol.category,
+        categoryName: pol.category
+      });
+    });
+  }
+
+  // Bind controls once
+  const searchInput = document.getElementById('city-docs-search-input');
+  if (searchInput && !searchInput.dataset.bound) {
+    searchInput.dataset.bound = 'true';
+    searchInput.addEventListener('input', (e) => {
+      cityDocsSearchQuery = e.target.value;
+      renderCityDocumentsArchive();
+    });
+  }
+
+  const catBtns = document.querySelectorAll('.doc-filter-btn');
+  catBtns.forEach(btn => {
+    if (!btn.dataset.bound) {
+      btn.dataset.bound = 'true';
+      btn.addEventListener('click', () => {
+        catBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        cityDocsActiveCategory = btn.getAttribute('data-cat') || 'all';
+        renderCityDocumentsArchive();
+      });
+    }
+  });
+
+  // Filter
+  const q = cityDocsSearchQuery.toLowerCase().trim();
+  const filtered = allDocs.filter(d => {
+    const matchesCat = (cityDocsActiveCategory === 'all') || (d.categoryName === cityDocsActiveCategory);
+    if (!matchesCat) return false;
+    if (!q) return true;
+    const titleMatch = d.title && d.title.toLowerCase().includes(q);
+    const catMatch = d.categoryName && d.categoryName.toLowerCase().includes(q);
+    const yearMatch = d.year && d.year.toString().includes(q);
+    const idMatch = d.id && d.id.toString().includes(q);
+    return titleMatch || catMatch || yearMatch || idMatch;
+  });
+
+  // Sort descending by year then id
+  filtered.sort((a, b) => (b.year || 0) - (a.year || 0) || (b.id - a.id));
+
+  const totalCountEl = document.getElementById('city-docs-total-count');
+  if (totalCountEl) totalCountEl.textContent = `${filtered.length} of ${allDocs.length}`;
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="5" style="text-align: center; padding: 36px; color: #64748b;">
+          No official documents match the search query "<strong>${cityDocsSearchQuery.replace(/</g, '&lt;')}</strong>".
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(d => {
+    let catBadgeColor = '#2563eb';
+    let catBg = '#eff6ff';
+    if (d.categoryName.includes('Audit') || d.categoryName.includes('Forensic')) {
+      catBadgeColor = '#059669';
+      catBg = '#ecfdf5';
+    } else if (d.categoryName.includes('Debt') || d.categoryName.includes('Financial')) {
+      catBadgeColor = '#7c3aed';
+      catBg = '#f5f3ff';
+    } else if (d.categoryName.includes('Rating')) {
+      catBadgeColor = '#d97706';
+      catBg = '#fffbeb';
+    } else if (d.categoryName.includes('Tax Rate')) {
+      catBadgeColor = '#b91c1c';
+      catBg = '#fef2f2';
+    }
+
+    const isKeyAuditDoc = [201, 202, 196, 199, 203, 204, 198].includes(d.id);
+
+    return `
+      <tr style="${isKeyAuditDoc ? 'background: #f8fafc;' : ''}">
+        <td><strong style="color: #64748b; font-family: monospace;">#${d.id}</strong></td>
+        <td><span style="font-weight: 600; color: #334155;">${d.year || '—'}</span></td>
+        <td>
+          <div style="font-weight: 600; color: #0f172a; margin-bottom: 2px;">
+            ${d.title}
+            ${isKeyAuditDoc ? '<span style="margin-left: 6px; font-size: 0.7rem; background: #dbeafe; color: #1e40af; padding: 2px 6px; border-radius: 4px; font-weight: bold;">KEY AUDIT DOC</span>' : ''}
+          </div>
+          <small style="color: #64748b;">Official public record filed under City of Clifton CivicPlus ArchiveCenter</small>
+        </td>
+        <td>
+          <span style="font-size: 0.78rem; font-weight: 600; color: ${catBadgeColor}; background: ${catBg}; padding: 3px 8px; border-radius: 4px; display: inline-block;">
+            ${d.categoryName}
+          </span>
+        </td>
+        <td style="text-align: center;">
+          <a href="${d.downloadUrl}" target="_blank" rel="noopener" class="btn btn-sm" style="display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; font-size: 0.8rem; text-decoration: none; border: 1px solid #cbd5e1; border-radius: 4px; color: #1e293b; background: #fff;">
+            <span>📥 View / PDF</span>
+          </a>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}

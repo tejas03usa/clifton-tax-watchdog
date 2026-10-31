@@ -122,7 +122,7 @@
       "details": "Municipal risk management, comprehensive general liability coverage ($3.5M), and Self-Insurance Trust Fund ($1.3M)."
     },
     {
-      "category": "Statutory Reserve for Uncollected Taxes (RUT — N.J.S.A. 40A:4-40)",
+      "category": "Statutory Reserve for Uncollected Taxes (RUT \u2014 N.J.S.A. 40A:4-40)",
       "amount": 4500000,
       "percentage": 3.14,
       "details": "Under NJ cash-basis budgeting statutes, Clifton must guarantee and remit 100% of certified school and county tax levies, requiring a mandatory $4.50M cash overlay reserve based on a 98.70% collection rate."
@@ -163,5 +163,48 @@
       "percentage": 9.96,
       "details": "Self-liquidating utility enterprise billed separately based on metered water consumption. Appropriates $9,500,000 for Passaic Valley Sewerage Commission (PVSC) regional sewage treatment, $1.76M for local sewer operations, and $2.27M in utility debt service."
     }
-  ]
+  ],
+  "auditedSurplusAndReserves": {
+    "auditDate": "December 31, 2025",
+    "sourceDocument": "2025 Annual Financial Statement (Sheet 21) & 2025 Audit Report",
+    "documentUrl": "https://www.cliftonnj.org/ArchiveCenter/ViewFile/Item/203",
+    "beginningSurplus2025": 15017850.81,
+    "operationsExcess2025": 7039453.56,
+    "surplusUtilizedIn2025": 10260000.0,
+    "auditedEndingSurplus2025": 11797304.37,
+    "surplusAppropriated2026Budget": 7250000.0,
+    "remainingSurplusCushion": 4547304.37,
+    "reserveForUncollectedTaxes2026": 4500000.0,
+    "reserveForTaxAppealsEnding2025": 1859526.84
+  },
+  "certifiedMunicipalDebt": {
+    "certifiedDate": "December 31, 2025",
+    "sourceDocument": "2025 Annual Debt Statement (ADS) - CFO Certified",
+    "documentUrl": "https://www.cliftonnj.org/ArchiveCenter/ViewFile/Item/204",
+    "grossDebt": 275454184.0,
+    "deductions": {
+      "schoolPurposeDebt": 150530735.0,
+      "sewerUtilityDebt": 37132795.0,
+      "totalAllowableDeductions": 187663530.0
+    },
+    "netMunicipalDebt": 87790654.0,
+    "equalizedValuationThreeYearAvg": 15228613767.67,
+    "statutoryNetDebtRatio": 0.576,
+    "statutoryDebtLimitRatio": 3.5,
+    "remainingStatutoryBorrowingMargin": 445210827.87,
+    "notes": "Clifton maintains a low statutory debt ratio of 0.576%, using only 16.5% of its statutory borrowing capacity under N.J.S.A. 40A:2-6."
+  },
+  "taxCollectionPerformance": {
+    "year2025ActualAudit": {
+      "totalLevy": 329654681.48,
+      "cashCollections": 326286664.84,
+      "percentage": 98.97,
+      "source": "2025 AFS Sheet 22 & Audit Report Note 3"
+    },
+    "year2026BudgetEstimate": {
+      "projectedCollectionRate": 98.7,
+      "statutoryRUTReserve": 4500000.0,
+      "source": "2026 Adopted Municipal Budget Sheet 3"
+    }
+  }
 }

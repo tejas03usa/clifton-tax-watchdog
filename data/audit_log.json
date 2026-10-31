@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-31 22:55:03 UTC",
+  "lastRun": "2026-10-31 23:09:34 UTC",
   "date": "2026-10-31",
   "allDatasetsValid": true,
   "overallAccuracyScore": 100.0,
@@ -25,7 +25,8 @@
             "effectiveTaxRateMarketValue",
             "averageResidentialAssessment",
             "averageTaxBill",
-            "breakdown"
+            "breakdown",
+            "certifiedHistoricalTaxRates"
           ]
         },
         "boe_budget.json": {
@@ -57,7 +58,10 @@
             "governingBody",
             "keyOfficials",
             "revenueSources",
-            "majorAppropriations"
+            "majorAppropriations",
+            "auditedSurplusAndReserves",
+            "certifiedMunicipalDebt",
+            "taxCollectionPerformance"
           ]
         },
         "benefits_healthcare.json": {
@@ -131,7 +135,8 @@
             "ratableShift",
             "pilotMechanism",
             "taxAppeals",
-            "taxpayerSolutions"
+            "taxpayerSolutions",
+            "certifiedPilotSummary"
           ]
         },
         "fair_tax_scenarios.json": {
@@ -986,6 +991,12 @@
     {
       "name": "City of Clifton Official Portal",
       "url": "https://www.cliftonnj.org",
+      "status": "ONLINE",
+      "code": 200
+    },
+    {
+      "name": "City of Clifton Official Documents Portal",
+      "url": "https://www.cliftonnj.org/157/City-Documents",
       "status": "ONLINE",
       "code": 200
     },

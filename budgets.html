@@ -206,6 +206,9 @@
       <button type="button" class="hub-subnav-btn tab-btn" data-tab="tab-surrounding">
         <span>🗺️</span> Compare Towns
       </button>
+      <button type="button" class="hub-subnav-btn tab-btn" data-tab="tab-city-docs">
+        <span>📂</span> City Documents Archive
+      </button>
     </div>
   </div>
 
@@ -279,6 +282,30 @@
           <div class="line-items-list" id="city-line-items">
             <!-- Rendered by JS -->
           </div>
+        </div>
+      </div>
+
+      <!-- Certified Audited Stability, Surplus & Debt Performance (2025 Audit & ADS) -->
+      <div class="pilot-metrics-ribbon" style="margin-top: 24px; margin-bottom: 24px;">
+        <div class="pm-box">
+          <span class="pm-lbl">Audited Unreserved Surplus</span>
+          <span class="pm-val font-mono" style="color: #059669;">$11.80M</span>
+          <span class="pm-sub">$7.25M utilized in 2026 budget • $4.55M cushion remains (2025 AFS Sheet 21)</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Certified Net Municipal Debt</span>
+          <span class="pm-val font-mono" style="color: #2563eb;">$87.79M</span>
+          <span class="pm-sub">0.576% of equalized valuation ($15.23B) • Cap is 3.50% (ADS Item 204)</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Certified Tax Collection Rate</span>
+          <span class="pm-val font-mono" style="color: #059669;">98.97%</span>
+          <span class="pm-sub">$326.29M collected in cash • Beats 98.70% budget estimate (AFS Sheet 22)</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Sewer Utility Operating Enterprise</span>
+          <span class="pm-val font-mono" style="color: #475569;">$14.28M</span>
+          <span class="pm-sub">Separate utility budget • $9.50M PVSC sewage treatment fees</span>
         </div>
       </div>
 
@@ -450,6 +477,67 @@
           <!-- School Impact Callout -->
           <div class="pilot-school-impact-banner" id="pilot-school-impact-banner">
             <!-- Rendered by JS -->
+          </div>
+        </div>
+      </details>
+
+      <!-- SECTION 2B: CERTIFIED AUDITED PILOT ROLL (NOTE 17 AUDIT REPORT) -->
+      <details class="collapsible-section pilot-content-card highlight-card" id="pilot-audited-roll" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">2B. Certified Tax Abatements (PILOT) Schedule • 2025 Official Audit Report</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag" style="background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca;">Certified Audit Note 17</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 18px;">
+            <p style="margin: 0 0 10px 0; font-size: 0.94rem; line-height: 1.5; color: #334155;">
+              <strong>Official Audit Disclosure (RMA Jerry W. Conaty, Holman Frenia Allison, P.C.):</strong> Under N.J.S.A. 55:14K-1 (HMFA Law) and N.J.S.A. 40A:20-1 (Long Term Tax Exemption Law), the City of Clifton abated <strong>$8,180,736</strong> in real property taxes for calendar year 2025, receiving only <strong>$2,056,384</strong> in PILOT service charge billings. This created an annual net tax shift of <strong>$6,124,352</strong> absorbed by residential single-family and two-family homeowners.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.88rem;">
+              <span style="background: #fee2e2; color: #991b1b; padding: 4px 10px; border-radius: 6px; font-weight: 600;">Full Ad Valorem Taxes Abated: $8,180,736</span>
+              <span style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 6px; font-weight: 600;">PILOT Billings Collected: $2,056,384</span>
+              <span style="background: #fef3c7; color: #92400e; padding: 4px 10px; border-radius: 6px; font-weight: 600;">Net Shift to Homeowners: +$6,124,352/yr</span>
+              <span style="background: #f1f5f9; color: #475569; padding: 4px 10px; border-radius: 6px;">School District Share: $0.00 (0.0%)</span>
+            </div>
+          </div>
+
+          <div class="table-container intel-table-container">
+            <table class="data-table intel-table" id="certified-pilot-table">
+              <thead>
+                <tr>
+                  <th>Recipient / Redevelopment Project</th>
+                  <th>Project Purpose / Category</th>
+                  <th style="text-align: right;">Standard Taxes Abated</th>
+                  <th style="text-align: right;">PILOT Billings Paid</th>
+                  <th style="text-align: right;">Net Tax Shift to Homeowners</th>
+                  <th style="text-align: right;">Tax Reduction Rate</th>
+                </tr>
+              </thead>
+              <tbody id="certified-pilot-tbody">
+                <!-- Rendered by JS from commercial_pilot_shift.json -->
+              </tbody>
+              <tfoot>
+                <tr style="background: #f8fafc; font-weight: bold; border-top: 2px solid #cbd5e1;">
+                  <td colspan="2">TOTAL CERTIFIED PILOT EXEMPTIONS (Note 17)</td>
+                  <td style="text-align: right; color: #b91c1c;">$8,180,736</td>
+                  <td style="text-align: right; color: #059669;">$2,056,384</td>
+                  <td style="text-align: right; color: #b91c1c;">+$6,124,352</td>
+                  <td style="text-align: right; color: #3b82f6;">74.86% Shift</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <div style="margin-top: 14px; padding: 12px 16px; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px; font-size: 0.88rem; color: #475569;">
+            <strong>Note 18 Special Emergency Authorizations (N.J.S.A. 40A:4-48):</strong> The City carries a <strong>$3,300,000</strong> special emergency appropriation for the Citywide Property Revaluation ($660,000 in 2026 budget; $2,640,000 to succeeding budgets) and <strong>$100,000</strong> for updating municipal tax maps ($20,000 in 2026 budget; $80,000 to succeeding budgets).
           </div>
         </div>
       </details>
@@ -1401,6 +1489,118 @@
           </ul>
         </div>
       </details>
+    </section>
+      <!-- TAB 7: OFFICIAL CITY DOCUMENTS & FINANCIAL ARCHIVE (127 RECORDS) -->
+    <section id="tab-city-docs" class="tab-pane" role="tabpanel">
+      <div class="section-intro">
+        <div class="section-badge-bar">
+          <span class="section-date-badge">City of Clifton Official Public Records Portal (cliftonnj.org/157/City-Documents)</span>
+        </div>
+        <h2>Official City Documents & Financial Archives</h2>
+        <p>Complete repository of certified municipal budgets, independent audits, Annual Debt Statements (ADS), Annual Financial Statements (AFS), credit ratings, and forensic investigations scraped directly from the official City of Clifton document portal.</p>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="pilot-metrics-ribbon">
+        <div class="pm-box">
+          <span class="pm-lbl">Total Documents Scraped</span>
+          <span class="pm-val font-mono" id="city-docs-total-count" style="color: var(--color-primary);">127</span>
+          <span class="pm-sub">100% verified against City of Clifton CivicPlus ArchiveCenter</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Audit & Forensic Reports</span>
+          <span class="pm-val font-mono" style="color: #059669;">18 Records</span>
+          <span class="pm-sub">2011–2025 Audits, Forensic 2019/2023 & Corrective Action Plans</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Financial & Debt Statements</span>
+          <span class="pm-val font-mono" style="color: #2563eb;">34 Records</span>
+          <span class="pm-sub">Annual Debt Statements (ADS) & Financial Statements (AFS) 2006–2025</span>
+        </div>
+        <div class="pm-box">
+          <span class="pm-lbl">Adopted & Introduced Budgets</span>
+          <span class="pm-val font-mono" style="color: #d97706;">46 Records</span>
+          <span class="pm-sub">Adopted (2007–2026) & User-Friendly Introduced Budgets</span>
+        </div>
+      </div>
+
+      <!-- Key Certified Findings & Watchdog Audit Corrections -->
+      <div class="collapsible-section pilot-content-card highlight-card" style="margin-bottom: 24px;">
+        <div class="collapsible-section-body" style="padding: 18px;">
+          <h3 style="margin-top: 0; margin-bottom: 10px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+            <span>🔍</span> Official Document Audit Findings & Corrections
+          </h3>
+          <p style="margin-bottom: 14px; font-size: 0.92rem; color: #475569; line-height: 1.5;">
+            Direct ingestion and auditing of the City Documents portal enabled the Watchdog Project to identify and correct several critical data discrepancies:
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
+              <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Municipal Budget Certified at $143.3M</strong>
+              <span style="font-size: 0.86rem; color: #64748b;">Corrected prior $105.4M placeholder to certified <strong>$143,306,263.98</strong> total CY 2026 appropriations and <strong>$97.64M</strong> municipal tax levy (Item 201).</span>
+            </div>
+            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
+              <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Health Benefits & Pensions Reconciled ($103.4M)</strong>
+              <span style="font-size: 0.86rem; color: #64748b;">Municipal benefits reconciled to <strong>$40,559,358</strong> ($25.7M health + $14.85M pensions), bringing total public benefits to <strong>$103.4M</strong> (23.7% of public funds).</span>
+            </div>
+            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
+              <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Certified PILOT Abatements Uncovered ($8.18M)</strong>
+              <span style="font-size: 0.86rem; color: #64748b;">Replaced sample models with real Note 17 audit data: <strong>$8,180,736</strong> abated, <strong>$2,056,384</strong> paid, creating an annual <strong>$6,124,352</strong> shift to homeowners (Item 202).</span>
+            </div>
+            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
+              <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Independent Forensic Audit Vulnerabilities Exposed</strong>
+              <span style="font-size: 0.86rem; color: #64748b;">Forensic audit (Items 196 & 199) documented missing Not-To-Exceed vendor caps, health deduction errors in payroll, and $141,017 in excess BANs.</span>
+            </div>
+            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
+              <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Municipal Surplus & Debt Verified</strong>
+              <span style="font-size: 0.86rem; color: #64748b;">Ending unreserved surplus verified at <strong>$11,797,304.37</strong> ($7.25M used in 2026) and statutory net debt at <strong>$87,790,654.00</strong> (0.576% ratio vs 3.50% ceiling) (Items 203 & 204).</span>
+            </div>
+            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
+              <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Real Tax Cash Collection Rate: 98.97%</strong>
+              <span style="font-size: 0.86rem; color: #64748b;">Actual certified collection exceeded 98.70% budget projection by +0.27%, realizing <strong>$326,286,664.84</strong> in cash on $329.65M total tax duplicate (AFS Sheet 22).</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Filter Toolbar -->
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <div style="flex: 1; min-width: 280px;">
+          <input type="text" id="city-docs-search-input" placeholder="🔍 Search official documents by title, year (e.g. 2026, 2025), or keyword..." class="styled-input" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem;">
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;" id="city-docs-category-filters">
+          <button type="button" class="btn btn-sm btn-secondary active doc-filter-btn" data-cat="all">All (127)</button>
+          <button type="button" class="btn btn-sm btn-secondary doc-filter-btn" data-cat="Adopted Budgets">Adopted Budgets (21)</button>
+          <button type="button" class="btn btn-sm btn-secondary doc-filter-btn" data-cat="Audit Reports & Forensics">Audits & Forensics (18)</button>
+          <button type="button" class="btn btn-sm btn-secondary doc-filter-btn" data-cat="Financial Statements & Debt">Financial & Debt (34)</button>
+          <button type="button" class="btn btn-sm btn-secondary doc-filter-btn" data-cat="Introduced & User-Friendly Budgets">Introduced & UFB (25)</button>
+          <button type="button" class="btn btn-sm btn-secondary doc-filter-btn" data-cat="Tax Rate Certifications">Tax Certifications (15)</button>
+          <button type="button" class="btn btn-sm btn-secondary doc-filter-btn" data-cat="Credit Rating Reports">Bond Ratings (11)</button>
+        </div>
+      </div>
+
+      <!-- Documents Archive Table Container -->
+      <div class="table-container intel-table-container">
+        <table class="data-table intel-table" id="city-docs-table">
+          <thead>
+            <tr>
+              <th style="width: 90px;">Item ID</th>
+              <th style="width: 80px;">Year</th>
+              <th>Document Title & Description</th>
+              <th>Category</th>
+              <th style="text-align: center; width: 150px;">Direct Link</th>
+            </tr>
+          </thead>
+          <tbody id="city-docs-tbody">
+            <!-- Rendered by JS from clifton_city_documents.json -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Verification Footer -->
+      <div style="margin-top: 20px; padding: 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.88rem; color: #64748b; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <span>Official Source: <a href="https://www.cliftonnj.org/157/City-Documents" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: 600;">City of Clifton Official Documents Portal (cliftonnj.org/157/City-Documents) ↗</a></span>
+        <span>Hosted via CivicPlus CMS ArchiveCenter • All links verified</span>
+      </div>
     </section>
   </main>
 

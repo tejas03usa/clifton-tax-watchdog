@@ -75,6 +75,11 @@ OFFICIAL_PORTALS = [
         'type': 'Municipal (Clifton)'
     },
     {
+        'name': 'City of Clifton Official Documents Portal',
+        'url': 'https://www.cliftonnj.org/157/City-Documents',
+        'type': 'City Documents (Clifton)'
+    },
+    {
         'name': 'Clifton Public Schools (BOE)',
         'url': 'https://www.clifton.k12.nj.us',
         'type': 'School District (Clifton)'

@@ -1,10 +1,11 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-10",
+    "lastUpdated": "2026-10-31",
     "certifiedDate": "Certified for Tax Year 2026 by Passaic County Board of Taxation",
     "dataVintage": "2026 Certified Rates",
     "sourceAgency": "Passaic County Board of Taxation & City of Clifton Tax Collector",
-    "freshnessStatus": "Current & Certified"
+    "freshnessStatus": "Current & Certified",
+    "auditComparisonSource": "City of Clifton Official 2025 Audit Report (Note 3 Property Taxes Comparison Schedule) - Item 202"
   },
   "location": "City of Clifton, Passaic County, New Jersey",
   "taxYear": 2026,
@@ -24,37 +25,105 @@
       "annualBudgetEst": 293200000,
       "color": "#2563eb",
       "components": [
-        {"name": "Regular Instruction & Classrooms", "shareOfSchool": 0.38, "description": "Teacher salaries, classroom supplies, textbooks, educational tech"},
-        {"name": "Employee Health & Pension Benefits", "shareOfSchool": 0.22, "description": "State medical/dental benefits, employer statutory pensions, FICA"},
-        {"name": "Special Education & Out-of-District Tuition", "shareOfSchool": 0.16, "description": "Mandated specialized instruction, therapy, and out-of-district placements"},
-        {"name": "Operations, Facilities & Plant Maintenance", "shareOfSchool": 0.10, "description": "Building upkeep, custodial staff, heating, utilities, repairs"},
-        {"name": "Student Transportation", "shareOfSchool": 0.05, "description": "District busing, contracted transportation routes, fuel"},
-        {"name": "School & District Administration", "shareOfSchool": 0.06, "description": "Superintendent, business office, principals, supervisors, legal, audit"},
-        {"name": "Student Support Services & Extracurriculars", "shareOfSchool": 0.03, "description": "Guidance counselors, social workers, nurses, athletics"}
+        {
+          "name": "Regular Instruction & Classrooms",
+          "shareOfSchool": 0.38,
+          "description": "Teacher salaries, classroom supplies, textbooks, educational tech"
+        },
+        {
+          "name": "Employee Health & Pension Benefits",
+          "shareOfSchool": 0.22,
+          "description": "State medical/dental benefits, employer statutory pensions, FICA"
+        },
+        {
+          "name": "Special Education & Out-of-District Tuition",
+          "shareOfSchool": 0.16,
+          "description": "Mandated specialized instruction, therapy, and out-of-district placements"
+        },
+        {
+          "name": "Operations, Facilities & Plant Maintenance",
+          "shareOfSchool": 0.1,
+          "description": "Building upkeep, custodial staff, heating, utilities, repairs"
+        },
+        {
+          "name": "Student Transportation",
+          "shareOfSchool": 0.05,
+          "description": "District busing, contracted transportation routes, fuel"
+        },
+        {
+          "name": "School & District Administration",
+          "shareOfSchool": 0.06,
+          "description": "Superintendent, business office, principals, supervisors, legal, audit"
+        },
+        {
+          "name": "Student Support Services & Extracurriculars",
+          "shareOfSchool": 0.03,
+          "description": "Guidance counselors, social workers, nurses, athletics"
+        }
       ]
     },
     {
       "id": "municipal",
       "entity": "City of Clifton (Municipal Government)",
-      "rate": 1.920,
+      "rate": 1.92,
       "percentage": 29.41,
       "subtotalShare": 0.294163,
-      "description": "Funds local municipal operations including police, fire, public works, sanitation, municipal court, health services, and the public library.",
-      "annualBudgetEst": 105400000,
+      "description": "Funds local municipal operations including police, fire, public works, sanitation, municipal court, health services, and the public library ($143.3M total CY 2026 adopted budget).",
+      "annualBudgetEst": 143306264,
       "color": "#059669",
       "subcategories": [
-        {"name": "Local Municipal Purposes", "rate": 1.806, "percentage": 27.67},
-        {"name": "Municipal Library Tax", "rate": 0.104, "percentage": 1.59},
-        {"name": "Municipal Open Space Tax", "rate": 0.010, "percentage": 0.15}
+        {
+          "name": "Local Municipal Purposes",
+          "rate": 1.806,
+          "percentage": 27.67
+        },
+        {
+          "name": "Municipal Library Tax",
+          "rate": 0.104,
+          "percentage": 1.59
+        },
+        {
+          "name": "Municipal Open Space Tax",
+          "rate": 0.01,
+          "percentage": 0.15
+        }
       ],
       "components": [
-        {"name": "Police Department & Public Safety", "shareOfMuni": 0.27, "description": "Patrol, detectives, emergency dispatch, equipment, vehicles"},
-        {"name": "Fire Department & Emergency Medical Services", "shareOfMuni": 0.19, "description": "Firefighters, fire prevention, apparatus, EMS response"},
-        {"name": "Statutory Pensions & Employee Benefits", "shareOfMuni": 0.20, "description": "Police & Firemen's Retirement System (PFRS), PERS, health insurance"},
-        {"name": "Department of Public Works (DPW)", "shareOfMuni": 0.14, "description": "Road maintenance, trash/recycling, snow removal, tree trimming, parks"},
-        {"name": "Municipal Debt Service & Capital Improvements", "shareOfMuni": 0.09, "description": "Bond repayments, interest, infrastructure bond funds"},
-        {"name": "General Administration, Legal & Finance", "shareOfMuni": 0.06, "description": "City Manager, Clerk, Tax Assessor, Tax Collector, City Attorney, IT"},
-        {"name": "Health, Human Services & Public Library", "shareOfMuni": 0.05, "description": "Health inspections, senior center, clinic, Clifton Public Library"}
+        {
+          "name": "Police Department & Public Safety",
+          "shareOfMuni": 0.27,
+          "description": "Patrol, detectives, emergency dispatch, equipment, vehicles"
+        },
+        {
+          "name": "Fire Department & Emergency Medical Services",
+          "shareOfMuni": 0.19,
+          "description": "Firefighters, fire prevention, apparatus, EMS response"
+        },
+        {
+          "name": "Statutory Pensions & Employee Benefits",
+          "shareOfMuni": 0.2,
+          "description": "Police & Firemen's Retirement System (PFRS), PERS, health insurance"
+        },
+        {
+          "name": "Department of Public Works (DPW)",
+          "shareOfMuni": 0.14,
+          "description": "Road maintenance, trash/recycling, snow removal, tree trimming, parks"
+        },
+        {
+          "name": "Municipal Debt Service & Capital Improvements",
+          "shareOfMuni": 0.09,
+          "description": "Bond repayments, interest, infrastructure bond funds"
+        },
+        {
+          "name": "General Administration, Legal & Finance",
+          "shareOfMuni": 0.06,
+          "description": "City Manager, Clerk, Tax Assessor, Tax Collector, City Attorney, IT"
+        },
+        {
+          "name": "Health, Human Services & Public Library",
+          "shareOfMuni": 0.05,
+          "description": "Health inspections, senior center, clinic, Clifton Public Library"
+        }
       ]
     },
     {
@@ -67,17 +136,95 @@
       "annualBudgetEst": 520000000,
       "color": "#d97706",
       "subcategories": [
-        {"name": "County Taxes (General Purpose)", "rate": 1.464, "percentage": 22.43},
-        {"name": "County Open Space Preservation", "rate": 0.032, "percentage": 0.49}
+        {
+          "name": "County Taxes (General Purpose)",
+          "rate": 1.464,
+          "percentage": 22.43
+        },
+        {
+          "name": "County Open Space Preservation",
+          "rate": 0.032,
+          "percentage": 0.49
+        }
       ],
       "components": [
-        {"name": "Passaic County Sheriff & Corrections", "shareOfCounty": 0.28, "description": "County jail operations, courthouse security, sheriff patrols"},
-        {"name": "Passaic County Road & Bridge Infrastructure", "shareOfCounty": 0.20, "description": "County roads (e.g. Clifton Ave, Paulison Ave, Van Houten), traffic signals"},
-        {"name": "County Health, Social Services & Welfare", "shareOfCounty": 0.22, "description": "Board of Social Services, youth shelter, senior services"},
-        {"name": "County Judiciary & Constitutional Officers", "shareOfCounty": 0.14, "description": "Superior Court operations, County Clerk, Surrogate, Prosecutor's Office"},
-        {"name": "County Parks & Open Space", "shareOfCounty": 0.08, "description": "Garret Mountain Reservation, Weasel Brook Park, recreation"},
-        {"name": "Higher Education Support (PCCC)", "shareOfCounty": 0.08, "description": "Passaic County Community College operating & capital share"}
+        {
+          "name": "Passaic County Sheriff & Corrections",
+          "shareOfCounty": 0.28,
+          "description": "County jail operations, courthouse security, sheriff patrols"
+        },
+        {
+          "name": "Passaic County Road & Bridge Infrastructure",
+          "shareOfCounty": 0.2,
+          "description": "County roads (e.g. Clifton Ave, Paulison Ave, Van Houten), traffic signals"
+        },
+        {
+          "name": "County Health, Social Services & Welfare",
+          "shareOfCounty": 0.22,
+          "description": "Board of Social Services, youth shelter, senior services"
+        },
+        {
+          "name": "County Judiciary & Constitutional Officers",
+          "shareOfCounty": 0.14,
+          "description": "Superior Court operations, County Clerk, Surrogate, Prosecutor's Office"
+        },
+        {
+          "name": "County Parks & Open Space",
+          "shareOfCounty": 0.08,
+          "description": "Garret Mountain Reservation, Weasel Brook Park, recreation"
+        },
+        {
+          "name": "Higher Education Support (PCCC)",
+          "shareOfCounty": 0.08,
+          "description": "Passaic County Community College operating & capital share"
+        }
       ]
+    }
+  ],
+  "certifiedHistoricalTaxRates": [
+    {
+      "year": 2023,
+      "totalRate": 5.794,
+      "municipal": 1.623,
+      "municipalOpenSpace": 0.0,
+      "library": 0.079,
+      "county": 1.31,
+      "countyOpenSpace": 0.026,
+      "localSchool": 2.756,
+      "source": "City of Clifton 2025 Audit Report, Note 3"
+    },
+    {
+      "year": 2024,
+      "totalRate": 5.936,
+      "municipal": 1.669,
+      "municipalOpenSpace": 0.01,
+      "library": 0.086,
+      "county": 1.3,
+      "countyOpenSpace": 0.026,
+      "localSchool": 2.845,
+      "source": "City of Clifton 2025 Audit Report, Note 3"
+    },
+    {
+      "year": 2025,
+      "totalRate": 6.129,
+      "municipal": 1.736,
+      "municipalOpenSpace": 0.01,
+      "library": 0.092,
+      "county": 1.316,
+      "countyOpenSpace": 0.028,
+      "localSchool": 2.947,
+      "source": "City of Clifton 2025 Audit Report, Note 3"
+    },
+    {
+      "year": 2026,
+      "totalRate": 6.527,
+      "municipal": 1.806,
+      "municipalOpenSpace": 0.01,
+      "library": 0.104,
+      "county": 1.464,
+      "countyOpenSpace": 0.032,
+      "localSchool": 3.111,
+      "source": "Passaic County Board of Taxation & CY 2026 Adopted Municipal Budget"
     }
   ]
 }

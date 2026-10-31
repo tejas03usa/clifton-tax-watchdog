@@ -1,8 +1,9 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-10",
+    "lastUpdated": "2026-10-31",
     "reportVintage": "October 2026 Comprehensive Watchdog Analysis",
     "sources": [
+      "City of Clifton Official Forensic Audit 2019 & 2023 (Archive Items 196 & 199)",
       "New Jersey Office of the State Comptroller (OSC)",
       "New Jersey School Ethics Commission (SEC)",
       "New Jersey Local Finance Board (LFB)",
@@ -12,6 +13,28 @@
     "freshnessStatus": "Current"
   },
   "controversies": [
+    {
+      "id": "forensic-audit-procurement-payroll",
+      "severity": "High",
+      "category": "Financial Management & Procurement Integrity",
+      "title": "Independent Forensic Audit Uncovers Missing Vendor Caps, Payroll Errors & Bond Irregularities",
+      "entityInvolved": "Clifton City Administration, Finance Department & City Council",
+      "lastUpdated": "2026-10-31",
+      "summary": "An independent forensic audit commissioned by the Mayor and City Council (published in the official City Documents portal) uncovered widespread internal control vulnerabilities, including awarding professional service contracts without mandatory 'Not-To-Exceed' spending caps, inaccurate employee health benefit payroll withholding, and carrying ,017 in excess Bond Anticipation Notes (BANs).",
+      "investigationDetails": "Presented to the governing body on September 16, 2025 (Item 196 & Item 199 on cliftonnj.org), the forensic examination tested ten years of analytical trends and transaction tracing for 2019, 2023, and 2024. Auditors documented: (1) Procurement failures where professional service appointments omitted Not-To-Exceed dollar limits; (2) Inaccurate health benefit deduction calculations across municipal payroll; (3) The City carrying ,017 in excess Bond Anticipation Notes (BANs) beyond authorized ordinance balances; (4) Maintaining active municipal trust accounts without required formal state approvals; (5) Utility-related debt improperly comingled within General Capital bonds; and (6) Delayed property revaluations exacerbating tax base inequities.",
+      "taxpayerImpact": "Procurement without Not-To-Exceed caps creates open-ended financial liability for taxpayers on legal, engineering, and consulting contracts. Inaccurate health deductions distort projected municipal benefits spending, while unmonitored capital ordinance balances leave public funds idle rather than retiring debt or improving infrastructure.",
+      "status": "Active Watchdog Alert & Corrective Implementation",
+      "officialDocumentSources": [
+        {
+          "title": "Forensic Report - Final (PDF)",
+          "url": "https://www.cliftonnj.org/ArchiveCenter/ViewFile/Item/196"
+        },
+        {
+          "title": "Forensic Audit 2019 & 2023 Presentation (PDF)",
+          "url": "https://www.cliftonnj.org/ArchiveCenter/ViewFile/Item/199"
+        }
+      ]
+    },
     {
       "id": "osc-sick-leave",
       "severity": "HIGH",
@@ -100,7 +123,7 @@
       "id": "asi-revaluation-1990-delay",
       "severity": "HIGH",
       "category": "Tax Assessment Equity & County Mandate",
-      "title": "36-Year Revaluation Delay (1990–2026) & Mandatory $3.2M ASI Revaluation",
+      "title": "36-Year Revaluation Delay (1990\u20132026) & Mandatory $3.2M ASI Revaluation",
       "entityInvolved": "City of Clifton Tax Assessor, City Council & Passaic County Board of Taxation",
       "lastUpdated": "October 2026 (Valuation Date Oct 1, 2026; Effective Tax Year 2027)",
       "summary": "Clifton failed to conduct a citywide property revaluation since 1990, resulting in a Passaic County Tax Board order and a $3.2M contract with Appraisal Systems, Inc. (ASI).",
@@ -116,7 +139,7 @@
       "entityInvolved": "Clifton City Council & Clifton Board of Education",
       "lastUpdated": "2025-2026 Budget Cycles",
       "summary": "Both municipal and school budgets relied on heavy surplus drawdowns, emergency trust sweeps, and above-cap tax increases to plug structural deficits.",
-      "investigationDetails": "In municipal budget deliberations, the City Council avoided deeper immediate cuts only by drawing down municipal surplus reserves, trimming capital improvement funds, and stripping the storm recovery trust—moves fiscal watchdogs warned would push structural deficits into 2026-2027. Simultaneously, the Clifton Board of Education approved a 6% local school tax levy increase (above the standard 2% statutory cap via banked cap/health care adjustments) driven by a nearly $14 million surge in state health benefit costs and $3.85 million in mandatory charter school transfers—warning that a standard 2% levy would have eliminated 49 school positions.",
+      "investigationDetails": "In municipal budget deliberations, the City Council avoided deeper immediate cuts only by drawing down municipal surplus reserves, trimming capital improvement funds, and stripping the storm recovery trust\u2014moves fiscal watchdogs warned would push structural deficits into 2026-2027. Simultaneously, the Clifton Board of Education approved a 6% local school tax levy increase (above the standard 2% statutory cap via banked cap/health care adjustments) driven by a nearly $14 million surge in state health benefit costs and $3.85 million in mandatory charter school transfers\u2014warning that a standard 2% levy would have eliminated 49 school positions.",
       "taxpayerImpact": "Combined municipal, school, and tiered sewer utility increases compounding annual household tax strain.",
       "status": "Active fiscal monitoring required ahead of 2027 budget adoption."
     }
