@@ -1,16 +1,20 @@
 {
   "metadata": {
-    "source": "Borough of Glen Rock Municipal Financial Statements (NJ DCA DLGS)",
-    "districtCode": "0222",
-    "county": "Bergen County"
+    "lastUpdated": "2026-10-31",
+    "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
+    "sourceAgency": "Borough of Glen Rock Finance Department & NJ DLGS",
+    "dataVintage": "Certified CY 2026 Adopted Municipal Budget",
+    "sourceUrl": "https://glenrocknj.net/departments/finance",
+    "documentTitle": "2026 Glen Rock Borough Adopted Municipal Budget & DLGS Filings",
+    "freshnessStatus": "Current & Certified"
   },
-  "entity": "Borough of Glen Rock",
+  "entity": "Borough of Glen Rock (Municipal Government)",
   "county": "Bergen County",
-  "fiscalYear": "CY 2026 Adopted Municipal Budget",
-  "totalBudget": 27431732,
-  "population": 12250,
-  "governmentType": "Borough (Mayor-Council Form under NJ Title 40A)",
-  "fullTimeEmployees": 85,
+  "fiscalYear": "2026",
+  "totalBudget": 27431732.0,
+  "population": 12130,
+  "governmentType": "Borough Form of Government",
+  "fullTimeEmployees": 95,
   "revenueSources": [
     {
       "source": "Local Property Tax for Municipal Purposes",
@@ -104,5 +108,25 @@
       "percentage": 5.44,
       "details": "Apparatus acquisition, turnout gear, firehouse maintenance, and water hydrant service charges."
     }
-  ]
+  ],
+  "governingBody": {
+    "mayor": "Kristine Morieko (Term Expires 12/31/2027)",
+    "councilMembers": [
+      "Teresa Gilbreath (Council President)",
+      "Paula Gilligan (Councilwoman)",
+      "Jill Orlich (Councilwoman)",
+      "Mary Barchetto (Councilwoman)",
+      "Jonathan Cole (Councilman)",
+      "Jeffrey Hayward (Councilman)"
+    ],
+    "adoptionVote": "Adopted by Glen Rock Borough Council"
+  },
+  "keyOfficials": {
+    "municipalClerk": "Jaclyn Veasy (Borough Clerk)",
+    "taxCollector": "Patricia Scaglione (Certified Tax Collector)",
+    "chiefFinancialOfficer": "Matthew Cavallo (CFO & Borough Administrator)",
+    "boroughAdministrator": "Matthew Cavallo (Borough Administrator)",
+    "registeredMunicipalAccountant": "Lerch, Vinci & Bliss, LLP (Fair Lawn, NJ)",
+    "boroughAttorney": "Anthony Fiorello, Esq."
+  }
 }

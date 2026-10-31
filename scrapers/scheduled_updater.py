@@ -85,14 +85,14 @@ OFFICIAL_PORTALS = [
         'type': 'School District (Clifton)'
     },
     {
-        'name': 'Passaic County Board of Taxation',
-        'url': 'https://www.passaiccountynj.org/residents/board-of-taxation',
-        'type': 'County Tax Board (Passaic)'
-    },
-    {
         'name': 'Township of Parsippany-Troy Hills Official Portal',
         'url': 'https://www.parsippany.net',
         'type': 'Municipal (Parsippany)'
+    },
+    {
+        'name': 'Parsippany-Troy Hills Finance Portal',
+        'url': 'https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=',
+        'type': 'City Documents (Parsippany)'
     },
     {
         'name': 'Parsippany-Troy Hills School District (PTHSD)',
@@ -100,24 +100,54 @@ OFFICIAL_PORTALS = [
         'type': 'School District (Parsippany)'
     },
     {
-        'name': 'Morris County Board of Taxation',
-        'url': 'https://www.morriscountynj.gov/Departments/Taxation',
-        'type': 'County Tax Board (Morris)'
+        'name': 'Township of Wayne Official Portal',
+        'url': 'https://waynetownship.com',
+        'type': 'Municipal (Wayne)'
     },
     {
-        'name': 'Essex County Board of Taxation',
-        'url': 'https://www.essexcountynj.org/board-of-taxation/',
-        'type': 'County Tax Board (Essex)'
+        'name': 'Township of Wayne Budget & Finance Portal',
+        'url': 'https://waynetownship.com/finance-budget/',
+        'type': 'City Documents (Wayne)'
     },
     {
-        'name': 'Bergen County Board of Taxation',
-        'url': 'https://www.co.bergen.nj.us/board-of-taxation',
-        'type': 'County Tax Board (Bergen)'
+        'name': 'Town of Morristown Official Portal',
+        'url': 'https://www.townofmorristown.org',
+        'type': 'Municipal (Morristown)'
+    },
+    {
+        'name': 'Town of Morristown Budget & Financial Portal',
+        'url': 'https://www.townofmorristown.org/budget',
+        'type': 'City Documents (Morristown)'
+    },
+    {
+        'name': 'Township of Montville Official Portal',
+        'url': 'https://www.montvillenj.org',
+        'type': 'Municipal (Montville)'
+    },
+    {
+        'name': 'Township of Montville Finance Department',
+        'url': 'https://www.montvillenj.org/150/Finance',
+        'type': 'City Documents (Montville)'
+    },
+    {
+        'name': 'Township of Montclair Official Portal',
+        'url': 'https://www.montclairnjusa.org',
+        'type': 'Municipal (Montclair)'
     },
     {
         'name': 'Borough of Glen Rock Official Portal',
-        'url': 'https://www.glenrocknj.net',
+        'url': 'https://glenrocknj.net',
         'type': 'Municipal (Glen Rock)'
+    },
+    {
+        'name': 'Passaic County Board of Taxation',
+        'url': 'https://www.passaiccountynj.org/residents/board-of-taxation',
+        'type': 'County Tax Board (Passaic)'
+    },
+    {
+        'name': 'Morris County Board of Taxation',
+        'url': 'https://www.morriscountynj.gov/Departments/Board-of-Taxation',
+        'type': 'County Tax Board (Morris)'
     }
 ]
 

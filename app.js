@@ -399,6 +399,8 @@ const CITY_REGISTRY = {
   clifton: {
     id: 'clifton',
     name: 'Clifton',
+    officialTownPortal: 'https://www.cliftonnj.org',
+    officialDocsUrl: 'https://www.cliftonnj.org/157/City-Documents',
     fullName: 'City of Clifton',
     badgeText: 'CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG',
     icon: '🏛️',
@@ -445,6 +447,8 @@ const CITY_REGISTRY = {
   parsippany: {
     id: 'parsippany',
     name: 'Parsippany',
+    officialTownPortal: 'https://www.parsippany.net',
+    officialDocsUrl: 'https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=',
     fullName: 'Township of Parsippany-Troy Hills',
     badgeText: 'TOWNSHIP OF PARSIPPANY-TROY HILLS • CITIZEN FISCAL WATCHDOG',
     icon: '🌲',
@@ -491,6 +495,8 @@ const CITY_REGISTRY = {
   wayne: {
     id: 'wayne',
     name: 'Wayne',
+    officialTownPortal: 'https://waynetownship.com',
+    officialDocsUrl: 'https://waynetownship.com/finance-budget/',
     fullName: 'Township of Wayne',
     badgeText: 'TOWNSHIP OF WAYNE • CITIZEN FISCAL WATCHDOG',
     icon: '🌳',
@@ -537,6 +543,8 @@ const CITY_REGISTRY = {
   montclair: {
     id: 'montclair',
     name: 'Montclair',
+    officialTownPortal: 'https://www.montclairnjusa.org',
+    officialDocsUrl: 'https://www.montclairnjusa.org/government/departments/finance',
     fullName: 'Township of Montclair',
     badgeText: 'TOWNSHIP OF MONTCLAIR • CITIZEN FISCAL WATCHDOG',
     icon: '🏡',
@@ -583,6 +591,8 @@ const CITY_REGISTRY = {
   morristown: {
     id: 'morristown',
     name: 'Morristown',
+    officialTownPortal: 'https://www.townofmorristown.org',
+    officialDocsUrl: 'https://www.townofmorristown.org/budget',
     fullName: 'Town of Morristown',
     badgeText: 'TOWN OF MORRISTOWN • CITIZEN FISCAL WATCHDOG',
     icon: '📜',
@@ -629,6 +639,8 @@ const CITY_REGISTRY = {
   montville: {
     id: 'montville',
     name: 'Montville',
+    officialTownPortal: 'https://www.montvillenj.org',
+    officialDocsUrl: 'https://www.montvillenj.org/150/Finance',
     fullName: 'Township of Montville',
     badgeText: 'TOWNSHIP OF MONTVILLE • CITIZEN FISCAL WATCHDOG',
     icon: '🏞️',
@@ -675,6 +687,8 @@ const CITY_REGISTRY = {
   glenrock: {
     id: 'glenrock',
     name: 'Glen Rock',
+    officialTownPortal: 'https://glenrocknj.net',
+    officialDocsUrl: 'https://glenrocknj.net/departments/finance',
     fullName: 'Borough of Glen Rock',
     badgeText: 'BOROUGH OF GLEN ROCK • CITIZEN FISCAL WATCHDOG',
     icon: '🪨',
@@ -2365,12 +2379,16 @@ async function loadAllData(cityId = currentCity) {
     fairTaxData = await fairRes.json();
 
     try {
-      const cityDocsRes = await fetch('data/clifton_city_documents.json');
+      const docsFile = cityId === 'clifton' ? 'data/clifton_city_documents.json' : `${basePath}/${cityId}_city_documents.json`;
+      const cityDocsRes = await fetch(docsFile);
       if (cityDocsRes.ok) {
         cityDocumentsData = await cityDocsRes.json();
+      } else {
+        cityDocumentsData = null;
       }
     } catch (docErr) {
       console.warn("Could not load city documents catalog:", docErr);
+      cityDocumentsData = null;
     }
 
     await loadElectionData(cityId);
@@ -9688,24 +9706,46 @@ document.addEventListener('DOMContentLoaded', initApp);
 
 
 // ==========================================================================
-// TAB 7 / CITY DOCUMENTS: OFFICIAL CLIFTON MUNICIPAL ARCHIVE EXPLORER
+// TAB 7 / CITY DOCUMENTS: OFFICIAL MUNICIPAL ARCHIVE EXPLORER (ALL TOWNS)
 // ==========================================================================
 function renderCityDocumentsArchive() {
   const tbody = document.getElementById('city-docs-tbody');
   if (!tbody || !cityDocumentsData) return;
 
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  // Dynamically update headers and links for the selected municipality
+  const headerBadge = document.getElementById('city-docs-header-badge');
+  if (headerBadge) headerBadge.textContent = `${meta.fullName} Official Public Records Portal`;
+
+  const headerTitle = document.getElementById('city-docs-header-title');
+  if (headerTitle) headerTitle.textContent = `${meta.name} Official Documents & Financial Archive`;
+
+  const headerDesc = document.getElementById('city-docs-header-desc');
+  if (headerDesc) headerDesc.textContent = `Complete repository of certified municipal budgets, independent audits, Annual Debt Statements (ADS), Annual Financial Statements (AFS), and statutory filings scraped directly from the official ${meta.fullName} document portal.`;
+
+  const footerLink = document.getElementById('city-docs-footer-link');
+  if (footerLink) {
+    const docsUrl = meta.officialDocsUrl || meta.officialTownPortal || '#';
+    footerLink.href = docsUrl;
+    footerLink.textContent = `${meta.fullName} Official Portal (${docsUrl.replace(/^https?:\/\//, '')}) ↗`;
+  }
+
   // Flatten all documents from categories and additional policies
   let allDocs = [];
   if (cityDocumentsData.categories) {
     cityDocumentsData.categories.forEach(cat => {
-      cat.documents.forEach(doc => {
+      (cat.documents || []).forEach(doc => {
         allDocs.push({
           ...doc,
           categoryName: cat.name
         });
       });
     });
+  } else if (Array.isArray(cityDocumentsData.documents)) {
+    allDocs = cityDocumentsData.documents.map(d => ({ ...d, categoryName: d.category || 'General' }));
   }
+
   if (cityDocumentsData.additionalPolicies) {
     cityDocumentsData.additionalPolicies.forEach(pol => {
       allDocs.push({
@@ -9719,7 +9759,28 @@ function renderCityDocumentsArchive() {
     });
   }
 
-  // Bind controls once
+  // Update dynamic category filter buttons
+  const filtersContainer = document.getElementById('city-docs-category-filters');
+  if (filtersContainer && cityDocumentsData.categories) {
+    const catHtml = [`<button type="button" class="btn btn-sm btn-secondary ${cityDocsActiveCategory === 'all' ? 'active' : ''} doc-filter-btn" data-cat="all">All (${allDocs.length})</button>`];
+    cityDocumentsData.categories.forEach(c => {
+      const isAct = cityDocsActiveCategory === c.name;
+      catHtml.push(`<button type="button" class="btn btn-sm btn-secondary ${isAct ? 'active' : ''} doc-filter-btn" data-cat="${c.name}">${c.name} (${c.count || (c.documents ? c.documents.length : 0)})</button>`);
+    });
+    filtersContainer.innerHTML = catHtml.join('');
+
+    // Re-bind click events
+    filtersContainer.querySelectorAll('.doc-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        filtersContainer.querySelectorAll('.doc-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        cityDocsActiveCategory = btn.getAttribute('data-cat') || 'all';
+        renderCityDocumentsArchive();
+      });
+    });
+  }
+
+  // Bind search once
   const searchInput = document.getElementById('city-docs-search-input');
   if (searchInput && !searchInput.dataset.bound) {
     searchInput.dataset.bound = 'true';
@@ -9728,19 +9789,6 @@ function renderCityDocumentsArchive() {
       renderCityDocumentsArchive();
     });
   }
-
-  const catBtns = document.querySelectorAll('.doc-filter-btn');
-  catBtns.forEach(btn => {
-    if (!btn.dataset.bound) {
-      btn.dataset.bound = 'true';
-      btn.addEventListener('click', () => {
-        catBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        cityDocsActiveCategory = btn.getAttribute('data-cat') || 'all';
-        renderCityDocumentsArchive();
-      });
-    }
-  });
 
   // Filter
   const q = cityDocsSearchQuery.toLowerCase().trim();
@@ -9789,7 +9837,7 @@ function renderCityDocumentsArchive() {
       catBg = '#fef2f2';
     }
 
-    const isKeyAuditDoc = [201, 202, 196, 199, 203, 204, 198].includes(d.id);
+    const isKeyAuditDoc = [201, 202, 196, 199, 203, 204, 198, 142401, 142901, 161401, 142101, 71301, 22201].includes(d.id);
 
     return `
       <tr style="${isKeyAuditDoc ? 'background: #f8fafc;' : ''}">
@@ -9800,7 +9848,7 @@ function renderCityDocumentsArchive() {
             ${d.title}
             ${isKeyAuditDoc ? '<span style="margin-left: 6px; font-size: 0.7rem; background: #dbeafe; color: #1e40af; padding: 2px 6px; border-radius: 4px; font-weight: bold;">KEY AUDIT DOC</span>' : ''}
           </div>
-          <small style="color: #64748b;">Official public record filed under City of Clifton CivicPlus ArchiveCenter</small>
+          <small style="color: #64748b;">${d.description || `Official public record filed under ${meta.fullName}`}</small>
         </td>
         <td>
           <span style="font-size: 0.78rem; font-weight: 600; color: ${catBadgeColor}; background: ${catBg}; padding: 3px 8px; border-radius: 4px; display: inline-block;">

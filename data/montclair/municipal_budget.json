@@ -1,18 +1,20 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-23",
+    "lastUpdated": "2026-10-31",
     "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
-    "sourceAgency": "NJ Department of Community Affairs (DLGS) & Montclair Township Finance Department",
+    "sourceAgency": "Township of Montclair Finance Department & NJ DLGS",
     "dataVintage": "Certified CY 2026 Municipal Budget",
-    "freshnessStatus": "Current"
+    "sourceUrl": "https://www.montclairnjusa.org/government/departments/finance",
+    "documentTitle": "2026 Montclair Township Municipal Budget & DLGS Filings",
+    "freshnessStatus": "Current & Certified"
   },
   "entity": "Township of Montclair (Municipal Government)",
   "county": "Essex County",
   "fiscalYear": "2026",
-  "totalBudget": 101800000,
-  "population": 40900,
-  "governmentType": "Council-Manager Act",
-  "fullTimeEmployees": 410,
+  "totalBudget": 101800000.0,
+  "population": 40921,
+  "governmentType": "Council-Manager Plan (OMCL 1950)",
+  "fullTimeEmployees": 415,
   "revenueSources": [
     {
       "source": "Local Property Tax for Municipal Purposes",
@@ -82,5 +84,25 @@
       "percentage": 7.0,
       "details": "Public library operations, senior citizen services, and municipal recreation."
     }
-  ]
+  ],
+  "governingBody": {
+    "mayor": "Dr. Renee E. Baskerville (Term Expires 12/31/2028)",
+    "councilMembers": [
+      "Carmine Fiore (Councilman at Large)",
+      "Eileen Birmingham (Councilwoman at Large)",
+      "Rahum Williams (First Ward Councilor)",
+      "Shivaun Jones (Second Ward Councilor)",
+      "Aminah Toler (Third Ward Councilor)",
+      "Roddy Gomez (Fourth Ward Councilor)"
+    ],
+    "adoptionVote": "Adopted by Montclair Township Council"
+  },
+  "keyOfficials": {
+    "municipalClerk": "Angelese Berm\u00fadez Nieves (Township Clerk)",
+    "taxCollector": "Lidia Leszczynski (Certified Tax Collector)",
+    "chiefFinancialOfficer": "Padmaja Rao (Chief Financial Officer & Director of Finance)",
+    "townshipManager": "Michael Lapolla (Township Manager)",
+    "registeredMunicipalAccountant": "PKF O'Connor Davies, LLP (Cranford, NJ)",
+    "townshipAttorney": "Paul Burr, Esq."
+  }
 }

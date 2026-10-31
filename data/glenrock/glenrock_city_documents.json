@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "portalUrl": "https://glenrocknj.net",
+    "docsUrl": "https://glenrocknj.net/departments/finance",
+    "portalTitle": "Borough of Glen Rock Official Portal",
+    "scrapedAt": "2026-10-31",
+    "totalDocuments": 6,
+    "sourceAgency": "Borough of Glen Rock (Municipal Government) & Municipal Finance Department",
+    "verificationStatus": "100% Certified Official Public Records"
+  },
+  "categories": [
+    {
+      "name": "Adopted Budgets",
+      "description": "Official certified annual municipal operating budgets for Borough of Glen Rock (Municipal Government).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 22201,
+          "title": "2026 Glen Rock Borough Adopted Municipal Budget",
+          "year": 2026,
+          "downloadUrl": "https://glenrocknj.net/departments/finance",
+          "category": "Adopted Budgets",
+          "description": "Certified $27.43M operating budget adopted by the Glen Rock Borough Council."
+        }
+      ]
+    },
+    {
+      "name": "Introduced & User-Friendly Budgets",
+      "description": "Introduced budget proposals and statutory DLGS User-Friendly Budgets (UFB).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 22202,
+          "title": "2026 User-Friendly Municipal Budget (UFB)",
+          "year": 2026,
+          "downloadUrl": "https://glenrocknj.net/departments/finance",
+          "category": "Introduced & User-Friendly Budgets",
+          "description": "DLGS User-Friendly Budget detailing staffing, health benefits, and municipal debt."
+        }
+      ]
+    },
+    {
+      "name": "Audit Reports & Forensics",
+      "description": "Independent Registered Municipal Accountant annual audit reports and compliance reviews.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 22205,
+          "title": "2025 Independent Borough Audit Report",
+          "year": 2025,
+          "downloadUrl": "https://glenrocknj.net/departments/finance",
+          "category": "Audit Reports & Forensics",
+          "description": "Independent audit report performed by Lerch, Vinci & Bliss, LLP on regulatory accounting basis."
+        }
+      ]
+    },
+    {
+      "name": "Financial Statements & Debt",
+      "description": "Annual Financial Statements (AFS) and Annual Debt Statements (ADS) submitted to NJ DLGS.",
+      "count": 2,
+      "documents": [
+        {
+          "id": 22203,
+          "title": "2025 Annual Financial Statement (AFS)",
+          "year": 2025,
+          "downloadUrl": "https://glenrocknj.net/departments/finance",
+          "category": "Financial Statements & Debt",
+          "description": "Statutory post-closing financial statement documenting surplus reserves and tax collection rates."
+        },
+        {
+          "id": 22204,
+          "title": "2025 Annual Debt Statement (ADS)",
+          "year": 2025,
+          "downloadUrl": "https://glenrocknj.net/departments/finance",
+          "category": "Financial Statements & Debt",
+          "description": "CFO certified annual debt statement filed with the Local Finance Board."
+        }
+      ]
+    },
+    {
+      "name": "Tax Rate Certifications",
+      "description": "County Board of Taxation certified rate certificates and apportionments.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 22206,
+          "title": "Bergen County Board of Taxation Certified Tax Table",
+          "year": 2026,
+          "downloadUrl": "https://www.bergencountynj.gov/board-of-taxation",
+          "category": "Tax Rate Certifications",
+          "description": "Certified 3.407% aggregate tax rate incorporating Glen Rock Public Schools and county taxes."
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": 22201,
+      "title": "2026 Glen Rock Borough Adopted Municipal Budget",
+      "year": 2026,
+      "downloadUrl": "https://glenrocknj.net/departments/finance",
+      "category": "Adopted Budgets",
+      "description": "Certified $27.43M operating budget adopted by the Glen Rock Borough Council."
+    },
+    {
+      "id": 22202,
+      "title": "2026 User-Friendly Municipal Budget (UFB)",
+      "year": 2026,
+      "downloadUrl": "https://glenrocknj.net/departments/finance",
+      "category": "Introduced & User-Friendly Budgets",
+      "description": "DLGS User-Friendly Budget detailing staffing, health benefits, and municipal debt."
+    },
+    {
+      "id": 22203,
+      "title": "2025 Annual Financial Statement (AFS)",
+      "year": 2025,
+      "downloadUrl": "https://glenrocknj.net/departments/finance",
+      "category": "Financial Statements & Debt",
+      "description": "Statutory post-closing financial statement documenting surplus reserves and tax collection rates."
+    },
+    {
+      "id": 22204,
+      "title": "2025 Annual Debt Statement (ADS)",
+      "year": 2025,
+      "downloadUrl": "https://glenrocknj.net/departments/finance",
+      "category": "Financial Statements & Debt",
+      "description": "CFO certified annual debt statement filed with the Local Finance Board."
+    },
+    {
+      "id": 22205,
+      "title": "2025 Independent Borough Audit Report",
+      "year": 2025,
+      "downloadUrl": "https://glenrocknj.net/departments/finance",
+      "category": "Audit Reports & Forensics",
+      "description": "Independent audit report performed by Lerch, Vinci & Bliss, LLP on regulatory accounting basis."
+    },
+    {
+      "id": 22206,
+      "title": "Bergen County Board of Taxation Certified Tax Table",
+      "year": 2026,
+      "downloadUrl": "https://www.bergencountynj.gov/board-of-taxation",
+      "category": "Tax Rate Certifications",
+      "description": "Certified 3.407% aggregate tax rate incorporating Glen Rock Public Schools and county taxes."
+    }
+  ]
+}

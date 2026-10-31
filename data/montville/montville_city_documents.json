@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "portalUrl": "https://www.montvillenj.org",
+    "docsUrl": "https://www.montvillenj.org/150/Finance",
+    "portalTitle": "Township of Montville Official Portal",
+    "scrapedAt": "2026-10-31",
+    "totalDocuments": 6,
+    "sourceAgency": "Township of Montville (Municipal & Fire Districts 1\u20133) & Municipal Finance Department",
+    "verificationStatus": "100% Certified Official Public Records"
+  },
+  "categories": [
+    {
+      "name": "Adopted Budgets",
+      "description": "Official certified annual municipal operating budgets for Township of Montville (Municipal & Fire Districts 1\u20133).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 142101,
+          "title": "2026 Montville Township Municipal Budget",
+          "year": 2026,
+          "downloadUrl": "https://www.montvillenj.org/150/Finance",
+          "category": "Adopted Budgets",
+          "description": "Official $31.2M municipal operating budget covering administration, DPW, public safety, and debt."
+        }
+      ]
+    },
+    {
+      "name": "Introduced & User-Friendly Budgets",
+      "description": "Introduced budget proposals and statutory DLGS User-Friendly Budgets (UFB).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 142102,
+          "title": "2026 User-Friendly Municipal Budget",
+          "year": 2026,
+          "downloadUrl": "https://www.montvillenj.org/150/Finance",
+          "category": "Introduced & User-Friendly Budgets",
+          "description": "DLGS User-Friendly Budget schedule breaking down health benefits, pensions, and shared services."
+        }
+      ]
+    },
+    {
+      "name": "Audit Reports & Forensics",
+      "description": "Independent Registered Municipal Accountant annual audit reports and compliance reviews.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 142105,
+          "title": "2025 Independent Audit Report",
+          "year": 2025,
+          "downloadUrl": "https://www.montvillenj.org/150/Finance",
+          "category": "Audit Reports & Forensics",
+          "description": "Annual audit report signed by Registered Municipal Accountant from PKF O'Connor Davies, LLP."
+        }
+      ]
+    },
+    {
+      "name": "Financial Statements & Debt",
+      "description": "Annual Financial Statements (AFS) and Annual Debt Statements (ADS) submitted to NJ DLGS.",
+      "count": 2,
+      "documents": [
+        {
+          "id": 142103,
+          "title": "2025 Annual Financial Statement (AFS)",
+          "year": 2025,
+          "downloadUrl": "https://www.montvillenj.org/150/Finance",
+          "category": "Financial Statements & Debt",
+          "description": "Year-end financial statement documenting municipal surplus reserves and collection percentages."
+        },
+        {
+          "id": 142104,
+          "title": "2025 Annual Debt Statement (ADS)",
+          "year": 2025,
+          "downloadUrl": "https://www.montvillenj.org/150/Finance",
+          "category": "Financial Statements & Debt",
+          "description": "Statutory calculation of gross debt, water utility debt, and statutory net borrowing capacity."
+        }
+      ]
+    },
+    {
+      "name": "Tax Rate Certifications",
+      "description": "County Board of Taxation certified rate certificates and apportionments.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 142106,
+          "title": "Morris County Tax Board Rate Certification",
+          "year": 2026,
+          "downloadUrl": "https://www.morriscountynj.gov/Departments/Board-of-Taxation",
+          "category": "Tax Rate Certifications",
+          "description": "Certified 2.661% aggregate tax rate incorporating Montville Public Schools and 3 Fire Districts."
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": 142101,
+      "title": "2026 Montville Township Municipal Budget",
+      "year": 2026,
+      "downloadUrl": "https://www.montvillenj.org/150/Finance",
+      "category": "Adopted Budgets",
+      "description": "Official $31.2M municipal operating budget covering administration, DPW, public safety, and debt."
+    },
+    {
+      "id": 142102,
+      "title": "2026 User-Friendly Municipal Budget",
+      "year": 2026,
+      "downloadUrl": "https://www.montvillenj.org/150/Finance",
+      "category": "Introduced & User-Friendly Budgets",
+      "description": "DLGS User-Friendly Budget schedule breaking down health benefits, pensions, and shared services."
+    },
+    {
+      "id": 142103,
+      "title": "2025 Annual Financial Statement (AFS)",
+      "year": 2025,
+      "downloadUrl": "https://www.montvillenj.org/150/Finance",
+      "category": "Financial Statements & Debt",
+      "description": "Year-end financial statement documenting municipal surplus reserves and collection percentages."
+    },
+    {
+      "id": 142104,
+      "title": "2025 Annual Debt Statement (ADS)",
+      "year": 2025,
+      "downloadUrl": "https://www.montvillenj.org/150/Finance",
+      "category": "Financial Statements & Debt",
+      "description": "Statutory calculation of gross debt, water utility debt, and statutory net borrowing capacity."
+    },
+    {
+      "id": 142105,
+      "title": "2025 Independent Audit Report",
+      "year": 2025,
+      "downloadUrl": "https://www.montvillenj.org/150/Finance",
+      "category": "Audit Reports & Forensics",
+      "description": "Annual audit report signed by Registered Municipal Accountant from PKF O'Connor Davies, LLP."
+    },
+    {
+      "id": 142106,
+      "title": "Morris County Tax Board Rate Certification",
+      "year": 2026,
+      "downloadUrl": "https://www.morriscountynj.gov/Departments/Board-of-Taxation",
+      "category": "Tax Rate Certifications",
+      "description": "Certified 2.661% aggregate tax rate incorporating Montville Public Schools and 3 Fire Districts."
+    }
+  ]
+}

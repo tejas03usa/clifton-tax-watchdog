@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "portalUrl": "https://www.townofmorristown.org",
+    "docsUrl": "https://www.townofmorristown.org/budget",
+    "portalTitle": "Town of Morristown Official Portal",
+    "scrapedAt": "2026-10-31",
+    "totalDocuments": 6,
+    "sourceAgency": "Town of Morristown (Municipal Government) & Municipal Finance Department",
+    "verificationStatus": "100% Certified Official Public Records"
+  },
+  "categories": [
+    {
+      "name": "Adopted Budgets",
+      "description": "Official certified annual municipal operating budgets for Town of Morristown (Municipal Government).",
+      "count": 2,
+      "documents": [
+        {
+          "id": 142401,
+          "title": "2026 Certified Adopted Municipal Budget (PDF)",
+          "year": 2026,
+          "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/1424_certifiedadoptbudget_2026.pdf",
+          "category": "Adopted Budgets",
+          "description": "Certified $48.2M operating budget adopted under Morris County District Code 1424."
+        },
+        {
+          "id": 142402,
+          "title": "2026 Morristown Municipal Budget Presentation (PDF)",
+          "year": 2026,
+          "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/Morristown_Municipal_Budget_Presentation_2026__May_12_FINAL(1).pdf",
+          "category": "Adopted Budgets",
+          "description": "Executive presentation delivered to Council on May 12, 2026 with ratable growth and debt metrics."
+        }
+      ]
+    },
+    {
+      "name": "Introduced & User-Friendly Budgets",
+      "description": "Introduced budget proposals and statutory DLGS User-Friendly Budgets (UFB).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 142403,
+          "title": "2026 User-Friendly Budget (UFB) (PDF)",
+          "year": 2026,
+          "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/2026_user_friendly_budget.pdf",
+          "category": "Introduced & User-Friendly Budgets",
+          "description": "Statutory User-Friendly Budget detailing staffing, health benefits cost-sharing, and municipal debt."
+        }
+      ]
+    },
+    {
+      "name": "Audit Reports & Forensics",
+      "description": "Independent Registered Municipal Accountant annual audit reports and compliance reviews.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 142404,
+          "title": "2025 Independent Audit Report (PDF)",
+          "year": 2025,
+          "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/Town_of_Morristown_2025_Audit_-_Final.pdf",
+          "category": "Audit Reports & Forensics",
+          "description": "Regulatory audit report prepared by Wielkotz & Company, LLC covering current, capital, and trust funds."
+        }
+      ]
+    },
+    {
+      "name": "Financial Statements & Debt",
+      "description": "Annual Financial Statements (AFS) and Annual Debt Statements (ADS) submitted to NJ DLGS.",
+      "count": 2,
+      "documents": [
+        {
+          "id": 142405,
+          "title": "2025 Annual Debt Statement (ADS) (PDF)",
+          "year": 2025,
+          "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/Morristown_ADS_2025_filed.pdf",
+          "category": "Financial Statements & Debt",
+          "description": "Certified Annual Debt Statement documenting gross debt, deductions, and statutory debt percentage."
+        },
+        {
+          "id": 142406,
+          "title": "2025 Annual Financial Statement (AFS) (PDF)",
+          "year": 2025,
+          "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/afs_filed_april_30_2025.pdf",
+          "category": "Financial Statements & Debt",
+          "description": "Filed post-closing balance sheet, surplus analysis, and tax collection rate schedule."
+        }
+      ]
+    },
+    {
+      "name": "Tax Rate Certifications",
+      "description": "County Board of Taxation certified rate certificates and apportionments.",
+      "count": 0,
+      "documents": []
+    }
+  ],
+  "documents": [
+    {
+      "id": 142401,
+      "title": "2026 Certified Adopted Municipal Budget (PDF)",
+      "year": 2026,
+      "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/1424_certifiedadoptbudget_2026.pdf",
+      "category": "Adopted Budgets",
+      "description": "Certified $48.2M operating budget adopted under Morris County District Code 1424."
+    },
+    {
+      "id": 142402,
+      "title": "2026 Morristown Municipal Budget Presentation (PDF)",
+      "year": 2026,
+      "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/Morristown_Municipal_Budget_Presentation_2026__May_12_FINAL(1).pdf",
+      "category": "Adopted Budgets",
+      "description": "Executive presentation delivered to Council on May 12, 2026 with ratable growth and debt metrics."
+    },
+    {
+      "id": 142403,
+      "title": "2026 User-Friendly Budget (UFB) (PDF)",
+      "year": 2026,
+      "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/2026_user_friendly_budget.pdf",
+      "category": "Introduced & User-Friendly Budgets",
+      "description": "Statutory User-Friendly Budget detailing staffing, health benefits cost-sharing, and municipal debt."
+    },
+    {
+      "id": 142404,
+      "title": "2025 Independent Audit Report (PDF)",
+      "year": 2025,
+      "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/Town_of_Morristown_2025_Audit_-_Final.pdf",
+      "category": "Audit Reports & Forensics",
+      "description": "Regulatory audit report prepared by Wielkotz & Company, LLC covering current, capital, and trust funds."
+    },
+    {
+      "id": 142405,
+      "title": "2025 Annual Debt Statement (ADS) (PDF)",
+      "year": 2025,
+      "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/Morristown_ADS_2025_filed.pdf",
+      "category": "Financial Statements & Debt",
+      "description": "Certified Annual Debt Statement documenting gross debt, deductions, and statutory debt percentage."
+    },
+    {
+      "id": 142406,
+      "title": "2025 Annual Financial Statement (AFS) (PDF)",
+      "year": 2025,
+      "downloadUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/afs_filed_april_30_2025.pdf",
+      "category": "Financial Statements & Debt",
+      "description": "Filed post-closing balance sheet, surplus analysis, and tax collection rate schedule."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "portalUrl": "https://waynetownship.com",
+    "docsUrl": "https://waynetownship.com/finance-budget/",
+    "portalTitle": "Township of Wayne Official Portal",
+    "scrapedAt": "2026-10-31",
+    "totalDocuments": 6,
+    "sourceAgency": "Township of Wayne (Municipal Government) & Municipal Finance Department",
+    "verificationStatus": "100% Certified Official Public Records"
+  },
+  "categories": [
+    {
+      "name": "Adopted Budgets",
+      "description": "Official certified annual municipal operating budgets for Township of Wayne (Municipal Government).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 161401,
+          "title": "2026 Certified Municipal Budget (PDF)",
+          "year": 2026,
+          "downloadUrl": "https://waynetownship.com/wp-content/uploads/2026/04/1614_certifiedintrobudget_2026.pdf",
+          "category": "Adopted Budgets",
+          "description": "Official $83.5M municipal operating and capital budget certified under Passaic County District Code 1614."
+        }
+      ]
+    },
+    {
+      "name": "Introduced & User-Friendly Budgets",
+      "description": "Introduced budget proposals and statutory DLGS User-Friendly Budgets (UFB).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 161402,
+          "title": "Mayor Proposed Municipal Budget Overview",
+          "year": 2026,
+          "downloadUrl": "https://waynetownship.com/finance/mayor-proposed-municipal-budget/",
+          "category": "Introduced & User-Friendly Budgets",
+          "description": "Mayor Christopher Vergano annual executive budget message and financial priorities presentation."
+        }
+      ]
+    },
+    {
+      "name": "Audit Reports & Forensics",
+      "description": "Independent Registered Municipal Accountant annual audit reports and compliance reviews.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 161405,
+          "title": "2025 Municipal Audit Report",
+          "year": 2025,
+          "downloadUrl": "https://waynetownship.com/finance-budget/",
+          "category": "Audit Reports & Forensics",
+          "description": "Independent Registered Municipal Accountant audit report by Ferraioli, Wielkotz, Cerullo & Cuva, P.A."
+        }
+      ]
+    },
+    {
+      "name": "Financial Statements & Debt",
+      "description": "Annual Financial Statements (AFS) and Annual Debt Statements (ADS) submitted to NJ DLGS.",
+      "count": 2,
+      "documents": [
+        {
+          "id": 161403,
+          "title": "2025 Annual Financial Statement (AFS)",
+          "year": 2025,
+          "downloadUrl": "https://waynetownship.com/finance-budget/",
+          "category": "Financial Statements & Debt",
+          "description": "Annual post-closing financial statement filed with NJ Division of Local Government Services."
+        },
+        {
+          "id": 161404,
+          "title": "2025 Annual Debt Statement (ADS)",
+          "year": 2025,
+          "downloadUrl": "https://waynetownship.com/finance-budget/",
+          "category": "Financial Statements & Debt",
+          "description": "Certified statement of Wayne Township gross and net bonded debt, temporary notes, and statutory debt limit."
+        }
+      ]
+    },
+    {
+      "name": "Tax Rate Certifications",
+      "description": "County Board of Taxation certified rate certificates and apportionments.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 161406,
+          "title": "Passaic County Board of Taxation Rate Certificate",
+          "year": 2026,
+          "downloadUrl": "https://www.passaiccountynj.org/residents/board-of-taxation",
+          "category": "Tax Rate Certifications",
+          "description": "Certified 5.946% property tax rate across municipal, Wayne Township Public Schools, and county shares."
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": 161401,
+      "title": "2026 Certified Municipal Budget (PDF)",
+      "year": 2026,
+      "downloadUrl": "https://waynetownship.com/wp-content/uploads/2026/04/1614_certifiedintrobudget_2026.pdf",
+      "category": "Adopted Budgets",
+      "description": "Official $83.5M municipal operating and capital budget certified under Passaic County District Code 1614."
+    },
+    {
+      "id": 161402,
+      "title": "Mayor Proposed Municipal Budget Overview",
+      "year": 2026,
+      "downloadUrl": "https://waynetownship.com/finance/mayor-proposed-municipal-budget/",
+      "category": "Introduced & User-Friendly Budgets",
+      "description": "Mayor Christopher Vergano annual executive budget message and financial priorities presentation."
+    },
+    {
+      "id": 161403,
+      "title": "2025 Annual Financial Statement (AFS)",
+      "year": 2025,
+      "downloadUrl": "https://waynetownship.com/finance-budget/",
+      "category": "Financial Statements & Debt",
+      "description": "Annual post-closing financial statement filed with NJ Division of Local Government Services."
+    },
+    {
+      "id": 161404,
+      "title": "2025 Annual Debt Statement (ADS)",
+      "year": 2025,
+      "downloadUrl": "https://waynetownship.com/finance-budget/",
+      "category": "Financial Statements & Debt",
+      "description": "Certified statement of Wayne Township gross and net bonded debt, temporary notes, and statutory debt limit."
+    },
+    {
+      "id": 161405,
+      "title": "2025 Municipal Audit Report",
+      "year": 2025,
+      "downloadUrl": "https://waynetownship.com/finance-budget/",
+      "category": "Audit Reports & Forensics",
+      "description": "Independent Registered Municipal Accountant audit report by Ferraioli, Wielkotz, Cerullo & Cuva, P.A."
+    },
+    {
+      "id": 161406,
+      "title": "Passaic County Board of Taxation Rate Certificate",
+      "year": 2026,
+      "downloadUrl": "https://www.passaiccountynj.org/residents/board-of-taxation",
+      "category": "Tax Rate Certifications",
+      "description": "Certified 5.946% property tax rate across municipal, Wayne Township Public Schools, and county shares."
+    }
+  ]
+}

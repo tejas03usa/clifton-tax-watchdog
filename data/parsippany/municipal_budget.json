@@ -1,18 +1,20 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-18",
+    "lastUpdated": "2026-10-31",
     "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
-    "sourceAgency": "NJ Department of Community Affairs (DLGS) & Township of Parsippany-Troy Hills Finance Department",
-    "dataVintage": "Certified CY 2026 Municipal Budget",
-    "freshnessStatus": "Current"
+    "sourceAgency": "Township of Parsippany-Troy Hills Finance Department & NJ DLGS",
+    "dataVintage": "Certified CY 2026 Municipal Budget & 2025 Municipal Budget Snapshot",
+    "sourceUrl": "https://www.parsippany.net/View/ViewFile?fileId=ac3cdba671b6e52392b19f899d6220ab&fileName=2025-Municipal-Budget-Snapshot.pdf",
+    "documentTitle": "2025/2026 Municipal Budget Presentation & DLGS Budget Filings",
+    "freshnessStatus": "Current & Certified"
   },
   "entity": "Township of Parsippany-Troy Hills (Municipal Government)",
   "county": "Morris County",
-  "fiscalYear": "2025 / 2026",
-  "totalBudget": 92800000,
+  "fiscalYear": "2026",
+  "totalBudget": 92800000.0,
   "population": 56162,
-  "governmentType": "Faulkner Act Mayor-Council Plan",
-  "fullTimeEmployees": 385,
+  "governmentType": "Mayor-Council Plan (OMCL 1950)",
+  "fullTimeEmployees": 390,
   "revenueSources": [
     {
       "source": "Local Property Tax for Municipal & Library Purposes",
@@ -100,5 +102,24 @@
       "percentage": 38.6,
       "details": "Billed separately from property taxes: Parsippany Water Utility (~$14.2M), Sewer Utility (~$18.5M), and Knoll Country Club Golf Utility (~$3.1M)."
     }
-  ]
+  ],
+  "governingBody": {
+    "mayor": "James R. Barberio (Term Expires 12/31/2026)",
+    "councilMembers": [
+      "Paul Carifi Jr. (Council President)",
+      "Michael J. dePierro (Council Vice President)",
+      "Loretta Gragnani (Councilwoman)",
+      "Frank Neglia (Councilman)",
+      "Justin Musella (Councilman)"
+    ],
+    "adoptionVote": "Adopted by Township Council (5-Member Governing Body)"
+  },
+  "keyOfficials": {
+    "municipalClerk": "Khaled Madin, Esq. (Township Clerk)",
+    "taxCollector": "Patricia V. Moran (Certified Tax Collector)",
+    "chiefFinancialOfficer": "Juan Uribe (Chief Financial Officer & Treasurer)",
+    "businessAdministrator": "Jamie Cryan (Business Administrator)",
+    "registeredMunicipalAccountant": "Nisivoccia LLP (Mount Arlington, NJ)",
+    "townshipAttorney": "Michael A. Cifelli, Esq."
+  }
 }

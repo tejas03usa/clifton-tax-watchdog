@@ -1,18 +1,20 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-23",
+    "lastUpdated": "2026-10-31",
     "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
-    "sourceAgency": "NJ Department of Community Affairs (DLGS) & Montville Township Finance Department",
+    "sourceAgency": "Township of Montville Finance Department & NJ DLGS",
     "dataVintage": "Certified CY 2026 Municipal Budget",
-    "freshnessStatus": "Current"
+    "sourceUrl": "https://www.montvillenj.org/150/Finance",
+    "documentTitle": "2026 Montville Township Municipal Budget & DLGS Filings",
+    "freshnessStatus": "Current & Certified"
   },
   "entity": "Township of Montville (Municipal & Fire Districts 1\u20133)",
   "county": "Morris County",
   "fiscalYear": "2026",
-  "totalBudget": 31200000,
+  "totalBudget": 31200000.0,
   "population": 22450,
-  "governmentType": "Faulkner Act Mayor-Council",
-  "fullTimeEmployees": 285,
+  "governmentType": "Township Committee Plan",
+  "fullTimeEmployees": 135,
   "revenueSources": [
     {
       "source": "Local Property Tax for Municipal Purposes",
@@ -82,5 +84,23 @@
       "percentage": 7.0,
       "details": "Public library operations, senior citizen services, and municipal recreation."
     }
-  ]
+  ],
+  "governingBody": {
+    "mayor": "Matthew S. Kayne (Township Committee Chair)",
+    "councilMembers": [
+      "Richard D. Conklin (Committeeman)",
+      "Frank W. Cooney (Committeeman)",
+      "June Witty (Committeewoman)",
+      "Richard P. Cook (Committeeman)"
+    ],
+    "adoptionVote": "Adopted by Montville Township Committee"
+  },
+  "keyOfficials": {
+    "municipalClerk": "Stacy Sullivan-Gruca (Township Clerk)",
+    "taxCollector": "Susan W. Ward (Certified Tax Collector)",
+    "chiefFinancialOfficer": "Katie Yanke (Chief Financial Officer)",
+    "townshipAdministrator": "Victor M. Canning (Township Administrator)",
+    "registeredMunicipalAccountant": "PKF O'Connor Davies, LLP (Cranford, NJ)",
+    "townshipAttorney": "Fred Semrau, Esq."
+  }
 }

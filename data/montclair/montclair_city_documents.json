@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "portalUrl": "https://www.montclairnjusa.org",
+    "docsUrl": "https://www.montclairnjusa.org/government/departments/finance",
+    "portalTitle": "Township of Montclair Official Portal",
+    "scrapedAt": "2026-10-31",
+    "totalDocuments": 6,
+    "sourceAgency": "Township of Montclair (Municipal Government) & Municipal Finance Department",
+    "verificationStatus": "100% Certified Official Public Records"
+  },
+  "categories": [
+    {
+      "name": "Adopted Budgets",
+      "description": "Official certified annual municipal operating budgets for Township of Montclair (Municipal Government).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 71301,
+          "title": "2026 Montclair Township Adopted Municipal Budget",
+          "year": 2026,
+          "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+          "category": "Adopted Budgets",
+          "description": "Official $101.8M municipal operating budget covering police, fire, public works, and community services."
+        }
+      ]
+    },
+    {
+      "name": "Introduced & User-Friendly Budgets",
+      "description": "Introduced budget proposals and statutory DLGS User-Friendly Budgets (UFB).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 71302,
+          "title": "2026 User-Friendly Municipal Budget (UFB)",
+          "year": 2026,
+          "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+          "category": "Introduced & User-Friendly Budgets",
+          "description": "Statutory User-Friendly Budget submitted to the NJ Division of Local Government Services."
+        }
+      ]
+    },
+    {
+      "name": "Audit Reports & Forensics",
+      "description": "Independent Registered Municipal Accountant annual audit reports and compliance reviews.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 71305,
+          "title": "2025 Independent Municipal Audit Report",
+          "year": 2025,
+          "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+          "category": "Audit Reports & Forensics",
+          "description": "Independent audit report prepared by PKF O'Connor Davies, LLP on regulatory accounting basis."
+        }
+      ]
+    },
+    {
+      "name": "Financial Statements & Debt",
+      "description": "Annual Financial Statements (AFS) and Annual Debt Statements (ADS) submitted to NJ DLGS.",
+      "count": 2,
+      "documents": [
+        {
+          "id": 71303,
+          "title": "2025 Annual Financial Statement (AFS)",
+          "year": 2025,
+          "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+          "category": "Financial Statements & Debt",
+          "description": "Year-end regulatory financial statement documenting surplus reserves and revenue collections."
+        },
+        {
+          "id": 71304,
+          "title": "2025 Annual Debt Statement (ADS)",
+          "year": 2025,
+          "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+          "category": "Financial Statements & Debt",
+          "description": "CFO certified debt statement filed under N.J.S.A. 40A:2-40."
+        }
+      ]
+    },
+    {
+      "name": "Tax Rate Certifications",
+      "description": "County Board of Taxation certified rate certificates and apportionments.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 71306,
+          "title": "Essex County Board of Taxation Certified Tax Table",
+          "year": 2026,
+          "downloadUrl": "https://www.essexcountynjtaxboard.org/",
+          "category": "Tax Rate Certifications",
+          "description": "Certified 3.766% aggregate tax rate incorporating Montclair Public Schools and county government."
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": 71301,
+      "title": "2026 Montclair Township Adopted Municipal Budget",
+      "year": 2026,
+      "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+      "category": "Adopted Budgets",
+      "description": "Official $101.8M municipal operating budget covering police, fire, public works, and community services."
+    },
+    {
+      "id": 71302,
+      "title": "2026 User-Friendly Municipal Budget (UFB)",
+      "year": 2026,
+      "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+      "category": "Introduced & User-Friendly Budgets",
+      "description": "Statutory User-Friendly Budget submitted to the NJ Division of Local Government Services."
+    },
+    {
+      "id": 71303,
+      "title": "2025 Annual Financial Statement (AFS)",
+      "year": 2025,
+      "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+      "category": "Financial Statements & Debt",
+      "description": "Year-end regulatory financial statement documenting surplus reserves and revenue collections."
+    },
+    {
+      "id": 71304,
+      "title": "2025 Annual Debt Statement (ADS)",
+      "year": 2025,
+      "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+      "category": "Financial Statements & Debt",
+      "description": "CFO certified debt statement filed under N.J.S.A. 40A:2-40."
+    },
+    {
+      "id": 71305,
+      "title": "2025 Independent Municipal Audit Report",
+      "year": 2025,
+      "downloadUrl": "https://www.montclairnjusa.org/government/departments/finance",
+      "category": "Audit Reports & Forensics",
+      "description": "Independent audit report prepared by PKF O'Connor Davies, LLP on regulatory accounting basis."
+    },
+    {
+      "id": 71306,
+      "title": "Essex County Board of Taxation Certified Tax Table",
+      "year": 2026,
+      "downloadUrl": "https://www.essexcountynjtaxboard.org/",
+      "category": "Tax Rate Certifications",
+      "description": "Certified 3.766% aggregate tax rate incorporating Montclair Public Schools and county government."
+    }
+  ]
+}

@@ -1,18 +1,20 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-23",
+    "lastUpdated": "2026-10-31",
     "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
-    "sourceAgency": "NJ Department of Community Affairs (DLGS) & Town of Morristown Finance Department",
-    "dataVintage": "Certified CY 2026 Municipal Budget",
-    "freshnessStatus": "Current"
+    "sourceAgency": "Town of Morristown Finance Department & NJ DLGS",
+    "dataVintage": "Certified CY 2026 Municipal Budget (1424_certifiedadoptbudget_2026.pdf)",
+    "sourceUrl": "https://www.townofmorristown.org/vertical/sites/%7B0813EA2E-B627-4F82-BBB0-DDEE646947B5%7D/uploads/1424_certifiedadoptbudget_2026.pdf",
+    "documentTitle": "2026 Certified Adopted Municipal Budget & Executive Presentation",
+    "freshnessStatus": "Current & Certified"
   },
   "entity": "Town of Morristown (Municipal Government)",
   "county": "Morris County",
   "fiscalYear": "2026",
-  "totalBudget": 48200000,
-  "population": 20380,
-  "governmentType": "Faulkner Act Mayor-Council",
-  "fullTimeEmployees": 285,
+  "totalBudget": 48200000.0,
+  "population": 20180,
+  "governmentType": "Mayor-Council Plan (OMCL 1950)",
+  "fullTimeEmployees": 210,
   "revenueSources": [
     {
       "source": "Local Property Tax for Municipal Purposes",
@@ -82,5 +84,26 @@
       "percentage": 7.0,
       "details": "Public library operations, senior citizen services, and municipal recreation."
     }
-  ]
+  ],
+  "governingBody": {
+    "mayor": "Timothy P. Dougherty (Term Expires 12/31/2026)",
+    "councilMembers": [
+      "Sandi Mayer (Council President)",
+      "David Silva (Council Vice President)",
+      "Robert Iannaccone (Councilman)",
+      "Toshiba Foster (Councilwoman)",
+      "Nathan Umbriac (Councilman)",
+      "Steve Pylypchuk (Councilman)",
+      "Chris Russo (Councilman)"
+    ],
+    "adoptionVote": "Adopted May 12, 2026 by Town Council"
+  },
+  "keyOfficials": {
+    "municipalClerk": "Margot G. Kaye (Town Clerk)",
+    "taxCollector": "Maureen L. Hemmer (Certified Tax Collector)",
+    "chiefFinancialOfficer": "Martin J. Kane Jr. (Chief Financial Officer)",
+    "businessAdministrator": "Jillian C. Barrick (Business Administrator)",
+    "registeredMunicipalAccountant": "Wielkotz & Company, LLC (Pompton Lakes, NJ)",
+    "townAttorney": "David Minchello, Esq."
+  }
 }

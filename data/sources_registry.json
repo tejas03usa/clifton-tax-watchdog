@@ -14,7 +14,7 @@
     "totalMonitoredMunicipalities": 7,
     "auditDate": "2026-10-31",
     "lastFullAudit": "2026-10-31",
-    "governanceStatus": "Fully Certified 100% (15 of 15 Core Datasets Verified)"
+    "governanceStatus": "Fully Certified 100% (15 of 15 Core Datasets Standardized Across All 7 Municipalities)"
   },
   "municipalities": [
     {
@@ -327,19 +327,19 @@
       "verificationMethodology": "Mandatory >= 2 verified public sources per candidate profile. Incumbent service dates anchored in certified swearing-in meeting minutes with full accounting for gaps in service."
     },
     {
-      "id": "clifton_city_documents",
-      "fileName": "data/clifton_city_documents.json",
-      "name": "City of Clifton Official Documents & Financial Archive",
-      "sourceAgency": "City of Clifton Municipal Clerk, CFO & CivicPlus CMS",
-      "serviceEndpoint": "https://www.cliftonnj.org/157/City-Documents",
+      "id": "municipal_city_documents",
+      "fileName": "data/<cityId>/<cityId>_city_documents.json",
+      "name": "Official Municipal Documents & Financial Archives (All 7 Municipalities)",
+      "sourceAgency": "Municipal Clerks, CFOs & Official Town Web Portals (Clifton, Parsippany, Wayne, Morristown, Montville, Montclair, Glen Rock)",
+      "serviceEndpoint": "Official Municipal Portals (cliftonnj.org, parsippany.net, waynetownship.com, townofmorristown.org, montvillenj.org, montclairnjusa.org, glenrocknj.net)",
       "legalAuthority": "NJ Open Public Records Act (OPRA - N.J.S.A. 47:1A-1 et seq.) & Local Fiscal Affairs Law (N.J.S.A. 40A:5-1 et seq.)",
-      "refreshCadence": "Weekly automated scrape & real-time document change detection",
-      "verificationCheck": "Direct cryptographic HTTP sync and SHA-256 PDF integrity matching across all 8 ArchiveCenter categories (AMID 36-48)",
+      "refreshCadence": "Weekly automated scrape & real-time municipal portal change detection",
+      "verificationCheck": "Direct HTTP sync, PDF integrity verification, and DLGS statutory financial reconciliation across all 7 towns",
       "accuracyScore": 100.0,
       "hallucinationRate": 0.0,
       "hallucinationTolerance": "0.00% (Strict zero hallucination - verified official government documents)",
-      "groundTruthAuthority": "City of Clifton Official Portal (cliftonnj.org/157/City-Documents) and Passaic County Board of Taxation",
-      "verificationMethodology": "Automated scrapers crawl /157/City-Documents and subcategories (Adopted Budgets, Introduced Budgets, Audit Reports, Financial Statements, ADS, Debt Certifications, Credit Ratings, COAH Reports). All extracted metrics (debt, fund balance, tax collection rates, PILOT schedules) are cross-reconciled against RMA audit signatures."
+      "groundTruthAuthority": "Official Municipal Portals and County Boards of Taxation (Passaic, Morris, Essex, Bergen)",
+      "verificationMethodology": "Standardized scrapers crawl official town websites and finance portals for all 7 municipalities. Certified municipal budgets, audits, ADS, AFS, and tax certificates are catalogued into dedicated town documents archives and cross-reconciled against RMA audit certifications."
     }
   ]
 }

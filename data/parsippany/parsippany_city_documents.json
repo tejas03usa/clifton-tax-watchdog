@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "portalUrl": "https://www.parsippany.net",
+    "docsUrl": "https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=",
+    "portalTitle": "Township of Parsippany-Troy Hills Official Portal",
+    "scrapedAt": "2026-10-31",
+    "totalDocuments": 6,
+    "sourceAgency": "Township of Parsippany-Troy Hills (Municipal Government) & Municipal Finance Department",
+    "verificationStatus": "100% Certified Official Public Records"
+  },
+  "categories": [
+    {
+      "name": "Adopted Budgets",
+      "description": "Official certified annual municipal operating budgets for Township of Parsippany-Troy Hills (Municipal Government).",
+      "count": 2,
+      "documents": [
+        {
+          "id": 142901,
+          "title": "2025 Municipal Budget Snapshot & Council Presentation",
+          "year": 2025,
+          "downloadUrl": "https://www.parsippany.net/View/ViewFile?fileId=ac3cdba671b6e52392b19f899d6220ab&fileName=2025-Municipal-Budget-Snapshot.pdf",
+          "category": "Adopted Budgets",
+          "description": "Mayor Barberio & Council municipal budget snapshot detailing 2.22% tax rate increase, $755k healthcare surge, and pension obligations."
+        },
+        {
+          "id": 142902,
+          "title": "2026 Adopted Municipal Budget Data Sheet (DLGS Form)",
+          "year": 2026,
+          "downloadUrl": "https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=",
+          "category": "Adopted Budgets",
+          "description": "Certified $92.8M municipal budget appropriations submitted to NJ Division of Local Government Services."
+        }
+      ]
+    },
+    {
+      "name": "Introduced & User-Friendly Budgets",
+      "description": "Introduced budget proposals and statutory DLGS User-Friendly Budgets (UFB).",
+      "count": 0,
+      "documents": []
+    },
+    {
+      "name": "Audit Reports & Forensics",
+      "description": "Independent Registered Municipal Accountant annual audit reports and compliance reviews.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 142905,
+          "title": "2025 Independent Municipal Audit Report",
+          "year": 2025,
+          "downloadUrl": "https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=",
+          "category": "Audit Reports & Forensics",
+          "description": "Independent audit report performed by Nisivoccia LLP on municipal finances and water/sewer utility enterprises."
+        }
+      ]
+    },
+    {
+      "name": "Financial Statements & Debt",
+      "description": "Annual Financial Statements (AFS) and Annual Debt Statements (ADS) submitted to NJ DLGS.",
+      "count": 2,
+      "documents": [
+        {
+          "id": 142903,
+          "title": "2025 Annual Financial Statement (AFS)",
+          "year": 2025,
+          "downloadUrl": "https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=",
+          "category": "Financial Statements & Debt",
+          "description": "Statutory regulatory Annual Financial Statement documenting unreserved surplus and cash collections."
+        },
+        {
+          "id": 142904,
+          "title": "2025 Annual Debt Statement (ADS)",
+          "year": 2025,
+          "downloadUrl": "https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=",
+          "category": "Financial Statements & Debt",
+          "description": "CFO certified annual debt statement filed with Local Finance Board under N.J.S.A. 40A:2-40."
+        }
+      ]
+    },
+    {
+      "name": "Tax Rate Certifications",
+      "description": "County Board of Taxation certified rate certificates and apportionments.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 142906,
+          "title": "Morris County Tax Board Abstract & Fire Districts Apportionment",
+          "year": 2026,
+          "downloadUrl": "https://www.morriscountynj.gov/Departments/Board-of-Taxation",
+          "category": "Tax Rate Certifications",
+          "description": "Certified 3.550% aggregate tax rate incorporating 6 independent fire districts and municipal open space."
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": 142901,
+      "title": "2025 Municipal Budget Snapshot & Council Presentation",
+      "year": 2025,
+      "downloadUrl": "https://www.parsippany.net/View/ViewFile?fileId=ac3cdba671b6e52392b19f899d6220ab&fileName=2025-Municipal-Budget-Snapshot.pdf",
+      "category": "Adopted Budgets",
+      "description": "Mayor Barberio & Council municipal budget snapshot detailing 2.22% tax rate increase, $755k healthcare surge, and pension obligations."
+    },
+    {
+      "id": 142902,
+      "title": "2026 Adopted Municipal Budget Data Sheet (DLGS Form)",
+      "year": 2026,
+      "downloadUrl": "https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=",
+      "category": "Adopted Budgets",
+      "description": "Certified $92.8M municipal budget appropriations submitted to NJ Division of Local Government Services."
+    },
+    {
+      "id": 142903,
+      "title": "2025 Annual Financial Statement (AFS)",
+      "year": 2025,
+      "downloadUrl": "https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=",
+      "category": "Financial Statements & Debt",
+      "description": "Statutory regulatory Annual Financial Statement documenting unreserved surplus and cash collections."
+    },
+    {
+      "id": 142904,
+      "title": "2025 Annual Debt Statement (ADS)",
+      "year": 2025,
+      "downloadUrl": "https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=",
+      "category": "Financial Statements & Debt",
+      "description": "CFO certified annual debt statement filed with Local Finance Board under N.J.S.A. 40A:2-40."
+    },
+    {
+      "id": 142905,
+      "title": "2025 Independent Municipal Audit Report",
+      "year": 2025,
+      "downloadUrl": "https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=",
+      "category": "Audit Reports & Forensics",
+      "description": "Independent audit report performed by Nisivoccia LLP on municipal finances and water/sewer utility enterprises."
+    },
+    {
+      "id": 142906,
+      "title": "Morris County Tax Board Abstract & Fire Districts Apportionment",
+      "year": 2026,
+      "downloadUrl": "https://www.morriscountynj.gov/Departments/Board-of-Taxation",
+      "category": "Tax Rate Certifications",
+      "description": "Certified 3.550% aggregate tax rate incorporating 6 independent fire districts and municipal open space."
+    }
+  ]
+}

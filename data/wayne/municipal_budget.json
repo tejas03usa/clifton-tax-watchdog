@@ -1,18 +1,20 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-23",
+    "lastUpdated": "2026-10-31",
     "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
-    "sourceAgency": "NJ Department of Community Affairs (DLGS) & Wayne Township Finance Department",
+    "sourceAgency": "Township of Wayne Finance Department & NJ DLGS",
     "dataVintage": "Certified CY 2026 Municipal Budget",
-    "freshnessStatus": "Current"
+    "sourceUrl": "https://waynetownship.com/wp-content/uploads/2026/04/1614_certifiedintrobudget_2026.pdf",
+    "documentTitle": "2026 Certified Municipal Budget (1614_certifiedintrobudget_2026.pdf)",
+    "freshnessStatus": "Current & Certified"
   },
   "entity": "Township of Wayne (Municipal Government)",
   "county": "Passaic County",
   "fiscalYear": "2026",
-  "totalBudget": 83500000,
-  "population": 54800,
-  "governmentType": "Faulkner Act Mayor-Council",
-  "fullTimeEmployees": 410,
+  "totalBudget": 83500000.0,
+  "population": 54838,
+  "governmentType": "Mayor-Council Plan (OMCL 1950)",
+  "fullTimeEmployees": 345,
   "revenueSources": [
     {
       "source": "Local Property Tax for Municipal Purposes",
@@ -82,5 +84,25 @@
       "percentage": 7.0,
       "details": "Public library operations, senior citizen services, and municipal recreation."
     }
-  ]
+  ],
+  "governingBody": {
+    "mayor": "Christopher P. Vergano (Term Expires 12/31/2026)",
+    "councilMembers": [
+      "Jason DeStefano (Council President)",
+      "Francine Ferrara (Council Vice President)",
+      "Richard J. Jasterzbski (Councilman)",
+      "David S. Varano (Councilman)",
+      "Jonathan Ettman (Councilman)",
+      "Joseph Scuralli (Councilman)",
+      "Al Sadowski (Councilman)"
+    ],
+    "adoptionVote": "Adopted by Wayne Township Council"
+  },
+  "keyOfficials": {
+    "municipalClerk": "Paul V. Margiotta (Township Clerk)",
+    "taxCollector": "Kelly L. Miller (Certified Tax Collector)",
+    "chiefFinancialOfficer": "Heather McNamara (CFO & Comptroller)",
+    "registeredMunicipalAccountant": "Ferraioli, Wielkotz, Cerullo & Cuva, P.A. (Pompton Lakes, NJ)",
+    "townshipAttorney": "Matthew J. Giacobbe, Esq."
+  }
 }
