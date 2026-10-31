@@ -1,21 +1,21 @@
 {
   "metadata": {
-    "lastUpdated": "2026-10-10",
+    "lastUpdated": "2026-10-31",
     "fiscalCycle": "FY 2025-2026 / CY 2026",
-    "dataVintage": "Certified 2026 Plan Year & State Comptroller Review",
+    "dataVintage": "Certified 2026 Plan Year & CY 2026 Adopted Municipal Budget",
     "sourceAgencies": [
       "NJ Division of Pensions and Benefits (SHBP / SEHBP)",
-      "City of Clifton Annual Financial Statement & Collective Bargaining Agreements",
+      "City of Clifton 2026 Adopted Municipal Budget (Sheet 3b(2) & Sheet 19)",
       "Clifton Board of Education User-Friendly Budget",
       "NJ Office of the State Comptroller (OSC)"
     ],
     "freshnessStatus": "Current"
   },
   "overview": {
-    "annualTaxpayerCostCity": 24400000,
+    "annualTaxpayerCostCity": 40559358,
     "annualTaxpayerCostBOE": 62800000,
-    "combinedTaxpayerBenefitsCost": 87200000,
-    "percentageOfCombinedBudgets": "21.9% of all Clifton tax dollars go directly to employee benefits, healthcare, and pensions"
+    "combinedTaxpayerBenefitsCost": 103359358,
+    "percentageOfCombinedBudgets": "23.7% of all Clifton municipal and school spending ($103.4M of $436.5M) goes directly to employee health insurance, pensions, and retirement benefits"
   },
   "healthcarePlans": {
     "providers": "State Health Benefits Program (SHBP) for Municipal & School Employees' Health Benefits Program (SEHBP) for Board of Ed",
@@ -73,9 +73,9 @@
     },
     {
       "benefitName": "Statutory Pension Systems (PFRS, PERS, TPAF)",
-      "legalAuthority": "NJ Division of Pensions and Benefits",
-      "taxpayerImpact": "City pays ~$12.8M annually into PFRS/PERS",
-      "details": "Police and Firemen's Retirement System (PFRS) allows retirement after 20-25 years with pension payments up to 65%-70% of final compensation. Civilian workers belong to PERS. School teachers belong to TPAF (funded via State appropriation)."
+      "legalAuthority": "NJ Division of Pensions and Benefits (N.J.S.A. 43:16A & 43:15A)",
+      "taxpayerImpact": "City pays $14.85M annually into PFRS ($12.11M) and PERS ($2.74M)",
+      "details": "Mandatory employer pension billings certified by the NJ Division of Pensions and Benefits: $12,111,760 for Clifton Police & Firemen's Retirement System (PFRS) and $2,742,598 for Public Employees' Retirement System (PERS). School educators participate in TPAF (funded via State direct appropriation)."
     },
     {
       "benefitName": "Accumulated Sick Leave & Terminal Leave Payouts",
@@ -86,8 +86,8 @@
     {
       "benefitName": "Health Insurance Opt-Out Waiver Payments",
       "legalAuthority": "N.J.S.A. 40A:10-17.1",
-      "taxpayerImpact": "Direct cash stipends of up to $5,000/year",
-      "details": "Employees who are covered under a spouse's health plan can opt out of Clifton's coverage and receive a cash incentive payment of 25% of the premium saved, capped at $5,000 annually."
+      "taxpayerImpact": "Direct cash payments of $450,000 budgeted in 2026",
+      "details": "Official 2026 Adopted Budget Sheet 3b(2) documents 116 municipal employees electing health benefits waiver opt-out cash stipends totaling $450,000 annually under N.J.S.A. 40A:10-17.1."
     },
     {
       "benefitName": "Contractual Longevity Pay",

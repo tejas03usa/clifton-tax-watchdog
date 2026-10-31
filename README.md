@@ -14,8 +14,8 @@ This project visualizes where Clifton property tax dollars go, documents public 
 | **Property Values & Assessments** | October 11, 2026 | **2026 Certified Assessment Rolls (1,850 Properties)** | Passaic County Board of Taxation & City Assessor Records |
 | **Surrounding Towns Comparison** | October 11, 2026 | **2026 Abstracts of Ratables (8 Towns)** | Passaic & Essex County Boards of Taxation |
 | **Clifton BOE Budget (~$293M)** | October 10, 2026 | **Certified FY 2025-2026 Budget** | NJ Department of Education & Clifton Public Schools |
-| **City Municipal Budget (~$105M)** | October 10, 2026 | **Certified CY 2026 Adopted Budget** | NJ Department of Community Affairs (DLGS) & Clifton CFO |
-| **Healthcare & Benefits ($87.2M)** | October 10, 2026 | **Certified 2026 Plan Year & State Review** | NJ Division of Pensions and Benefits (SHBP / SEHBP) |
+| **City Municipal Budget (~$143.3M)** | October 31, 2026 | **Certified CY 2026 Adopted Budget** | City of Clifton Clerk / CFO & NJ DLGS |
+| **Healthcare & Benefits ($103.4M)** | October 31, 2026 | **Certified 2026 Plan Year & CY 2026 Budget** | NJ Division of Pensions and Benefits (SHBP / SEHBP) |
 | **Demographics & Spatial Equity** | October 11, 2026 | **Census ACS 5-Yr & Passaic County 2026** | US Census Bureau & Passaic County Board of Taxation |
 | **Ethics & Audit Watchdog Alerts** | October 10, 2026 | **Active State Filings & Reports** | NJ Office of the State Comptroller (OSC) & NJ SEC |
 | **Staff & Payroll Directory** | October 10, 2026 | **2025-2026 Contracts & Guides** | City Salary Ordinances, BOE UFB, APP DataUniverse |
@@ -79,9 +79,9 @@ Clifton has a population of **89,379** residents across **32,840 housing units**
 
 ---
 
-## 2. Healthcare, Pensions & Employee Benefits ($87.2M Annual Cost)
+## 2. Healthcare, Pensions & Employee Benefits ($103.4M Annual Cost)
 
-Employee benefits account for **21.9% of all public funds** spent by City Hall and the Board of Education:
+Employee benefits account for **23.7% of all public funds** spent by City Hall and the Board of Education:
 1. **Medical Plans (SHBP / SEHBP)**: 
    * **NJ DIRECT 10 / NJ DIRECT 15** (Horizon Blue Cross Blue Shield PPO)
    * **NJ Educators Health Plan (NJEHP / Chapter 44)** for teachers and school staff

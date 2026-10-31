@@ -1,5 +1,5 @@
 {
-  "lastRun": "2026-10-31 13:06:13 UTC",
+  "lastRun": "2026-10-31 22:55:03 UTC",
   "date": "2026-10-31",
   "allDatasetsValid": true,
   "overallAccuracyScore": 100.0,
@@ -54,6 +54,8 @@
             "population",
             "governmentType",
             "fullTimeEmployees",
+            "governingBody",
+            "keyOfficials",
             "revenueSources",
             "majorAppropriations"
           ]
