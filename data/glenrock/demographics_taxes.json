@@ -4,7 +4,7 @@
     "year": 2026
   },
   "cityOverview": {
-    "totalPopulation": 12250,
+    "totalPopulation": 12133,
     "totalHousingUnits": 4200,
     "medianHouseholdIncome": 198500,
     "perCapitaIncome": 88400,
@@ -72,37 +72,37 @@
       {
         "name": "Richard E. Byrd Elementary School",
         "type": "Elementary",
-        "grades": "K–5",
+        "grades": "K\u20135",
         "enrollment": 310
       },
       {
         "name": "Central Elementary School",
         "type": "Elementary",
-        "grades": "K–5",
+        "grades": "K\u20135",
         "enrollment": 320
       },
       {
         "name": "Clara E. Coleman Elementary School",
         "type": "Elementary",
-        "grades": "K–5",
+        "grades": "K\u20135",
         "enrollment": 340
       },
       {
         "name": "Alexander Hamilton Elementary School",
         "type": "Elementary",
-        "grades": "K–5",
+        "grades": "K\u20135",
         "enrollment": 330
       },
       {
         "name": "Glen Rock Middle School",
         "type": "Middle School",
-        "grades": "6–8",
+        "grades": "6\u20138",
         "enrollment": 620
       },
       {
         "name": "Glen Rock High School",
         "type": "High School",
-        "grades": "9–12",
+        "grades": "9\u201312",
         "enrollment": 780
       }
     ]

@@ -11,7 +11,7 @@
     "freshnessStatus": "Current"
   },
   "cityOverview": {
-    "totalPopulation": 89379,
+    "totalPopulation": 90284,
     "totalHousingUnits": 32840,
     "medianAge": 41.6,
     "medianHouseholdIncome": 98237,
@@ -111,7 +111,7 @@
       "povertyRate": 12.8,
       "averageAssessedValue": 170665,
       "averageMarketHomeValue": 526219,
-      "averageAnnualTaxBill": 11139.30,
+      "averageAnnualTaxBill": 11139.3,
       "monthlyTaxBill": 928.28,
       "taxBurdenPercentOfIncome": 15.01,
       "totalResidentialLevyContribution": 59450000,
@@ -191,7 +191,7 @@
       "ownerOccupied": 81.4,
       "avgAssessedValue": 220000,
       "avgMarketValue": 660000,
-      "avgTaxBill": 14359.40,
+      "avgTaxBill": 14359.4,
       "taxBurdenPercentIncome": 12.12,
       "description": "Historic suburban neighborhoods centered around Allwood Road, Styertowne Shopping Center, and Route 3. Stable middle-to-upper-middle-class enclave.",
       "taxDynamic": "High proportion of long-time senior homeowners on fixed incomes who feel intense pressure when annual school budgets and county tax levies rise."
@@ -323,7 +323,7 @@
         "residentialTaxSharePaid": 13.8,
         "ratioStudentsToTaxes": 0.66,
         "subsidyStatus": "Subsidizes School District Levy",
-        "avgFamilySize": 3.10,
+        "avgFamilySize": 3.1,
         "primaryFeeder": "Christopher Columbus Middle School (CCMS)",
         "keyDriver": "High homeownership (81.4%), planned suburban lots, School #11 zone, and $15.4k average tax bill."
       },

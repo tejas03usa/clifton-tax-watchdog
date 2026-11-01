@@ -36,7 +36,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 992.65,
         "medianHouseholdIncome": 98400,
         "taxBurdenPercentOfIncome": 12.11,
-        "population": 89800,
+        "population": 90284,
         "taxSplit": {
             "schoolsPercent": 47.66,
             "municipalPercent": 29.42,
@@ -102,7 +102,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 1103.78,
         "medianHouseholdIncome": 138600,
         "taxBurdenPercentOfIncome": 9.56,
-        "population": 54800,
+        "population": 54838,
         "taxSplit": {
             "schoolsPercent": 58.40,
             "municipalPercent": 26.20,
@@ -135,7 +135,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 1934.78,
         "medianHouseholdIncome": 154800,
         "taxBurdenPercentOfIncome": 15.00,
-        "population": 40900,
+        "population": 40921,
         "taxSplit": {
             "schoolsPercent": 57.20,
             "municipalPercent": 26.50,
@@ -168,7 +168,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 1101.90,
         "medianHouseholdIncome": 119500,
         "taxBurdenPercentOfIncome": 11.07,
-        "population": 20380,
+        "population": 20180,
         "taxSplit": {
             "schoolsPercent": 54.80,
             "municipalPercent": 33.90,
@@ -234,7 +234,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 1040.53,
         "medianHouseholdIncome": 115200,
         "taxBurdenPercentOfIncome": 10.84,
-        "population": 30100,
+        "population": 30143,
         "taxSplit": {
             "schoolsPercent": 52.80,
             "municipalPercent": 31.40,
@@ -267,7 +267,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 1012.63,
         "medianHouseholdIncome": 118400,
         "taxBurdenPercentOfIncome": 10.26,
-        "population": 14500,
+        "population": 13360,
         "taxSplit": {
             "schoolsPercent": 53.60,
             "municipalPercent": 29.80,
@@ -300,7 +300,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 994.52,
         "medianHouseholdIncome": 114800,
         "taxBurdenPercentOfIncome": 10.40,
-        "population": 11050,
+        "population": 11065,
         "taxSplit": {
             "schoolsPercent": 48.20,
             "municipalPercent": 34.60,
@@ -333,7 +333,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 998.75,
         "medianHouseholdIncome": 54200,
         "taxBurdenPercentOfIncome": 22.11,
-        "population": 70500,
+        "population": 70537,
         "taxSplit": {
             "schoolsPercent": 41.20,
             "municipalPercent": 42.50,
@@ -366,7 +366,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 1039.41,
         "medianHouseholdIncome": 49800,
         "taxBurdenPercentOfIncome": 25.05,
-        "population": 159800,
+        "population": 159732,
         "taxSplit": {
             "schoolsPercent": 36.80,
             "municipalPercent": 46.20,
@@ -399,7 +399,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 1200.35,
         "medianHouseholdIncome": 156800,
         "taxBurdenPercentOfIncome": 9.19,
-        "population": 17120,
+        "population": 17107,
         "taxSplit": {
             "schoolsPercent": 63.80,
             "municipalPercent": 25.40,
@@ -432,7 +432,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 863.58,
         "medianHouseholdIncome": 148500,
         "taxBurdenPercentOfIncome": 6.98,
-        "population": 14680,
+        "population": 14677,
         "taxSplit": {
             "schoolsPercent": 59.40,
             "municipalPercent": 26.80,
@@ -465,7 +465,7 @@ ALL_14_TOWNS = [
         "monthlyTaxBill": 2380.58,
         "medianHouseholdIncome": 245000,
         "taxBurdenPercentOfIncome": 11.66,
-        "population": 4480,
+        "population": 4472,
         "taxSplit": {
             "schoolsPercent": 68.50,
             "municipalPercent": 22.10,

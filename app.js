@@ -40,6 +40,7 @@ const TAB_PAGE_MAP = {
   'tab-benefits': 'budgets.html#tab-benefits',
   'tab-vendors': 'budgets.html#tab-vendors',
   'tab-surrounding': 'budgets.html#tab-surrounding',
+  'tab-city-docs': 'budgets.html#tab-city-docs',
   'tab-properties': 'properties.html#tab-properties',
   'tab-demographics': 'properties.html#tab-demographics',
   'tab-staff': 'properties.html#tab-staff',
@@ -48,6 +49,26 @@ const TAB_PAGE_MAP = {
   'tab-controversies': 'properties.html#tab-controversies',
   'tab-investigate': 'properties.html#tab-investigate'
 };
+
+// Cross-Hub Section Prefix to Page Map
+function resolvePageForSection(sectionId) {
+  if (!sectionId) return null;
+  const s = sectionId.toLowerCase();
+  if (TAB_PAGE_MAP[s]) return TAB_PAGE_MAP[s].split('#')[0];
+  if (s.startsWith('pilot-') || s.startsWith('budgets-') || s.startsWith('fair-') || s.startsWith('benefits-') || s.startsWith('vendors-') || s.startsWith('surrounding-') || s.startsWith('city-docs') || s.startsWith('boe-line') || s.startsWith('city-line')) {
+    return 'budgets.html';
+  }
+  if (s.startsWith('prop-') || s.startsWith('properties-') || s.startsWith('demo-') || s.startsWith('staff-') || s.startsWith('ethics-') || s.startsWith('intel-') || s.startsWith('controversies-') || s.startsWith('investigate-') || s === 'table-properties') {
+    return 'properties.html';
+  }
+  if (s.startsWith('election-') || s.startsWith('candidate-') || s.startsWith('voter-') || s === 'election') {
+    return 'election.html';
+  }
+  if (s.startsWith('calc-') || s === 'tax-calculator') {
+    return 'index.html';
+  }
+  return null;
+}
 
 // City-Specific OPRA Templates & Metadata
 const cityOpraConfig = {
@@ -783,7 +804,6 @@ async function initApp() {
   setupTabs();
   setupCollapsibleSections();
   setupCitySwitcher();
-  handleUrlHash();
 
   // Ensure the current page has an active tab pane
   if (!document.querySelector('.tab-pane.active')) {
@@ -796,6 +816,10 @@ async function initApp() {
   }
 
   await switchCity(currentCity, false);
+
+  // Initialize section share buttons and process deep links
+  initSectionShareButtons();
+  handleUrlHash();
 
   // Check for URL parameters to preload calculator or deep-link to properties, appeals, or relief calculator
   const urlParams = new URLSearchParams(window.location.search);
@@ -2108,12 +2132,21 @@ function switchTab(targetId, options = {}) {
       renderCityDocumentsArchive();
     }
 
+    // Sync browser URL hash with active tab (unless preserveHash option is active)
+    if (options.updateUrl !== false && window.history && window.history.replaceState) {
+      const currentUrl = new URL(window.location.href);
+      if (!options.preserveHash) {
+        currentUrl.hash = '#' + targetId;
+      }
+      window.history.replaceState(null, '', currentUrl.toString());
+    }
+
     // Scroll handling
     if (options.scrollToElement && targetId !== 'tab-election') {
       setTimeout(() => {
         const el = document.querySelector(options.scrollToElement);
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          navigateToElement(el, options.scrollToElement.replace(/^#/, ''));
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -2124,66 +2157,209 @@ function switchTab(targetId, options = {}) {
   }
 }
 
-// URL Hash Routing & Deep-Linking System
+// URL Hash & Section Deep-Linking System
 function handleUrlHash() {
+  const urlParams = new URLSearchParams(window.location.search);
   const rawHash = (window.location.hash || '').replace(/^#/, '').trim();
-  if (!rawHash) return;
+  const targetId = rawHash || urlParams.get('section') || urlParams.get('tab') || urlParams.get('target');
+  if (!targetId) return;
 
   const currentFile = window.location.pathname.split('/').pop() || 'index.html';
 
   // If hash points to election and we are on another page, navigate to election.html
-  if ((rawHash === 'election' || rawHash.startsWith('election-')) && currentFile !== 'election.html') {
-    window.location.href = 'election.html#' + rawHash;
+  if ((targetId === 'election' || targetId.startsWith('election-')) && currentFile !== 'election.html') {
+    const cityParam = currentCity && currentCity !== 'clifton' ? `?city=${encodeURIComponent(currentCity)}` : '';
+    window.location.href = `election.html${cityParam}#${targetId}`;
     return;
   }
 
-  // Cross-page redirect if hash points to a tab on another page
-  if (TAB_PAGE_MAP[rawHash]) {
-    const targetUrl = TAB_PAGE_MAP[rawHash];
-    const targetFile = targetUrl.split('#')[0];
-    if (currentFile !== targetFile) {
-      window.location.href = targetUrl;
-      return;
-    }
+  // Cross-page redirect if target points to a tab or section on another page
+  const resolvedTargetPage = resolvePageForSection(targetId);
+  if (resolvedTargetPage && currentFile !== resolvedTargetPage) {
+    const cityParam = currentCity && currentCity !== 'clifton' ? `?city=${encodeURIComponent(currentCity)}` : '';
+    window.location.href = `${resolvedTargetPage}${cityParam}#${targetId}`;
+    return;
   }
 
-  const targetEl = document.getElementById(rawHash);
-  const activePane = document.querySelector('.tab-pane.active');
-
-  // Auto-expand collapsible section if target is inside one
+  const targetEl = document.getElementById(targetId);
   if (targetEl) {
-    const parentSection = targetEl.classList.contains('collapsible-section') ? targetEl : targetEl.closest('details.collapsible-section');
-    if (parentSection) {
-      parentSection.open = true;
-    }
-  }
-
-  // 1. If target element is already inside the active tab, simply scroll to it cleanly
-  if (targetEl && activePane && activePane.contains(targetEl)) {
-    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    navigateToElement(targetEl, targetId);
     return;
   }
 
-  // 2. If target element is inside an inactive tab pane, activate that tab and scroll to element
+  // Retry briefly for dynamically loaded elements
+  setTimeout(() => {
+    const delayedEl = document.getElementById(targetId);
+    if (delayedEl) {
+      navigateToElement(delayedEl, targetId);
+    }
+  }, 250);
+}
+
+// Navigate to specific element, expanding tabs/collapsibles and pulsing highlight
+function navigateToElement(targetEl, targetId) {
+  if (!targetEl) return;
+
+  // 1. If target is inside an inactive tab pane, activate that tab first
+  const parentPane = targetEl.closest('.tab-pane');
+  if (parentPane && !parentPane.classList.contains('active')) {
+    switchTab(parentPane.id, { doNotScroll: true, preserveHash: true, updateUrl: false });
+  } else if (targetEl.classList.contains('tab-pane') && !targetEl.classList.contains('active')) {
+    switchTab(targetEl.id, { doNotScroll: true, preserveHash: true, updateUrl: false });
+  }
+
+  // 2. Expand all ancestor details/collapsible sections
+  let curr = targetEl;
+  while (curr && curr !== document.body) {
+    if (curr.tagName === 'DETAILS') {
+      curr.open = true;
+    }
+    curr = curr.parentElement;
+  }
+  if (targetEl.tagName === 'DETAILS') {
+    targetEl.open = true;
+  }
+
+  // 3. Smooth scroll with top offset accounting for sticky navbar
+  setTimeout(() => {
+    const navBar = document.getElementById('main-nav') || document.querySelector('.sticky-nav');
+    const navOffset = navBar ? navBar.getBoundingClientRect().height + 24 : 95;
+    const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = Math.max(0, elementPosition - navOffset);
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+
+    // 4. Apply deep highlight pulse animation
+    targetEl.classList.remove('section-deep-highlight');
+    void targetEl.offsetWidth; // Trigger reflow
+    targetEl.classList.add('section-deep-highlight');
+
+    setTimeout(() => {
+      targetEl.classList.remove('section-deep-highlight');
+    }, 3200);
+  }, 120);
+}
+
+// Copy canonical share link to clipboard and trigger pulse
+function copySectionLink(elementId, btnEl) {
+  const url = new URL(window.location.href);
+  if (currentCity && currentCity !== 'clifton') {
+    url.searchParams.set('city', currentCity);
+  } else {
+    url.searchParams.delete('city');
+  }
+  url.searchParams.delete('section');
+  url.searchParams.delete('tab');
+  url.searchParams.delete('target');
+  url.hash = '#' + elementId;
+
+  const fullUrl = url.toString();
+
+  // Clipboard copy with fallback
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(fullUrl).catch(() => {
+      fallbackCopyText(fullUrl);
+    });
+  } else {
+    fallbackCopyText(fullUrl);
+  }
+
+  // Update address bar seamlessly
+  if (window.history && window.history.replaceState) {
+    window.history.replaceState(null, '', fullUrl);
+  }
+
+  // Toast feedback
+  showToast('🔗 Direct section link copied! Anyone opening this link navigates straight to this section.');
+
+  // Button visual state feedback
+  if (btnEl) {
+    const originalText = btnEl.innerHTML;
+    btnEl.classList.add('is-copied');
+    btnEl.innerHTML = '<span class="share-icon">✓</span> Copied!';
+    setTimeout(() => {
+      btnEl.classList.remove('is-copied');
+      btnEl.innerHTML = originalText;
+    }, 2000);
+  }
+
+  // Pulse target element
+  const targetEl = document.getElementById(elementId);
   if (targetEl) {
-    const parentPane = targetEl.closest('.tab-pane');
-    if (parentPane && parentPane.id) {
-      switchTab(parentPane.id, { scrollToElement: '#' + rawHash });
-      return;
+    targetEl.classList.remove('section-deep-highlight');
+    void targetEl.offsetWidth;
+    targetEl.classList.add('section-deep-highlight');
+    setTimeout(() => {
+      targetEl.classList.remove('section-deep-highlight');
+    }, 3200);
+  }
+}
+
+function fallbackCopyText(text) {
+  try {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+  } catch (err) {
+    // fallback error ignored
+  }
+}
+
+// Automatically add or bind Share buttons to all collapsible sections & key modules
+function initSectionShareButtons() {
+  document.querySelectorAll('details.collapsible-section[id]').forEach(section => {
+    const sectionId = section.id;
+    if (!sectionId) return;
+
+    const summary = section.querySelector('summary.section-collapse-summary');
+    if (!summary) return;
+
+    const rightContainer = summary.querySelector('.section-summary-right');
+    if (!rightContainer) return;
+
+    if (rightContainer.querySelector('.btn-share-section')) return;
+
+    const shareBtn = document.createElement('button');
+    shareBtn.type = 'button';
+    shareBtn.className = 'btn-share-section';
+    shareBtn.setAttribute('title', 'Copy link directly to this section');
+    shareBtn.setAttribute('aria-label', `Copy link to ${sectionId}`);
+    shareBtn.innerHTML = '<span class="share-icon">🔗</span> Share';
+
+    shareBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      copySectionLink(sectionId, shareBtn);
+    });
+
+    const badge = rightContainer.querySelector('.section-toggle-badge');
+    if (badge) {
+      rightContainer.insertBefore(shareBtn, badge);
+    } else {
+      rightContainer.appendChild(shareBtn);
     }
-  }
+  });
 
-  // 3. If hash is directly a tab pane ID
-  const directTab = document.getElementById(rawHash);
-  if (directTab && directTab.classList.contains('tab-pane')) {
-    switchTab(rawHash);
-    return;
-  }
-
-  // 4. Aliases for common election deep links
-  if (rawHash === 'election' || rawHash.startsWith('election-')) {
-    switchTab('tab-election', { scrollToElement: targetEl ? '#' + rawHash : '#election-search-anchor' });
-  }
+  // Also bind to any explicit .btn-share-section in the markup with data-target
+  document.querySelectorAll('.btn-share-section[data-target]').forEach(btn => {
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = 'true';
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const targetId = btn.getAttribute('data-target');
+      if (targetId) copySectionLink(targetId, btn);
+    });
+  });
 }
 
 // Tab Switching & Dropdown Navigation System
@@ -8110,27 +8286,20 @@ function setupCollapsibleSections() {
       const targetId = href.substring(1);
       const targetEl = document.getElementById(targetId);
       if (targetEl) {
-        const parentSection = targetEl.classList.contains('collapsible-section') ? targetEl : targetEl.closest('details.collapsible-section');
-        if (parentSection) {
-          parentSection.open = true;
-          setTimeout(() => {
-            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 50);
+        e.preventDefault();
+        navigateToElement(targetEl, targetId);
+        if (window.history && window.history.replaceState) {
+          const currentUrl = new URL(window.location.href);
+          currentUrl.hash = '#' + targetId;
+          window.history.replaceState(null, '', currentUrl.toString());
         }
       }
     });
+  }
 
-    // Check hash on load
-    const hash = (window.location.hash || '').replace(/^#/, '');
-    if (hash) {
-      const targetEl = document.getElementById(hash);
-      if (targetEl) {
-        const parentSection = targetEl.classList.contains('collapsible-section') ? targetEl : targetEl.closest('details.collapsible-section');
-        if (parentSection) {
-          parentSection.open = true;
-        }
-      }
-    }
+  // Bind/refresh section share buttons
+  if (typeof initSectionShareButtons === 'function') {
+    initSectionShareButtons();
   }
 }
 

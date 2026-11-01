@@ -42,7 +42,7 @@ A dedicated investigation tool with **1,850 sampled residential properties** acr
 
 ## 1. Demographics & Spatial Property Tax Analysis (07013 vs 07011)
 
-Clifton has a population of **89,379** residents across **32,840 housing units**. Merging U.S. Census Bureau demographic files with Passaic County property assessment records reveals deep economic and tax divisions across the city's two main postal zones:
+Clifton has a population of **90,284** residents across **32,840 housing units** (certified 2020 U.S. Decennial Census). Merging U.S. Census Bureau demographic files with Passaic County property assessment records reveals deep economic and tax divisions across the city's two main postal zones:
 
 ### ZIP Code Comparison: 07013 vs. 07011
 | Metric | ZIP Code 07013 (South & West) | ZIP Code 07011 (North & East) |

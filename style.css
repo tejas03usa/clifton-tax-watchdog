@@ -14321,4 +14321,93 @@ dialog::backdrop {
   }
 }
 
+/* ==========================================================================
+   Deep-Linking, URL Section Pointing & Sharing System
+   ========================================================================== */
+.collapsible-section,
+.tab-pane,
+.pilot-content-card,
+.stat-card,
+.calculator-card,
+.property-card,
+.collapsible-section-body {
+  scroll-margin-top: 110px;
+}
+
+/* Deep-Linked Section Highlight Pulse */
+.section-deep-highlight {
+  position: relative;
+  scroll-margin-top: 110px;
+  animation: sectionHighlightPulse 3s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes sectionHighlightPulse {
+  0% {
+    outline: 3px solid #2563eb;
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.35), 0 8px 32px rgba(37, 99, 235, 0.22);
+    transform: scale(1.008);
+  }
+  30% {
+    outline: 3px solid #2563eb;
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0.25), 0 8px 28px rgba(37, 99, 235, 0.18);
+    transform: scale(1.004);
+  }
+  70% {
+    outline: 2px solid rgba(37, 99, 235, 0.6);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    transform: scale(1);
+  }
+  100% {
+    outline: 2px solid transparent;
+    box-shadow: none;
+    transform: scale(1);
+  }
+}
+
+/* Section Share / Copy Link Button */
+.btn-share-section {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  line-height: 1.3;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.btn-share-section:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.28);
+}
+
+.btn-share-section:active {
+  transform: translateY(0);
+}
+
+.btn-share-section.is-copied {
+  background: #059669 !important;
+  border-color: #059669 !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 8px rgba(5, 150, 105, 0.35) !important;
+}
+
+.btn-share-section .share-icon {
+  font-size: 0.78rem;
+  line-height: 1;
+  display: inline-block;
+}
+
+
 
