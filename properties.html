@@ -631,6 +631,17 @@
           <div class="takeaways-grid" id="equity-takeaways-container">
             <!-- Rendered by JS -->
           </div>
+
+          <!-- Dedicated Regional Town-vs-Town Tax Comparison Callout -->
+          <div style="margin-top: 1.25rem; padding: 1.1rem 1.25rem; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+            <div style="max-width: 720px;">
+              <strong style="color: #0f172a; font-size: 0.95rem; display: block; margin-bottom: 2px;">🗺️ Looking for Cross-Town Property Tax Comparisons?</strong>
+              <span style="color: #475569; font-size: 0.85rem; line-height: 1.45;">Compare Clifton's average property tax bill ($11,142), municipal budget, and school spending directly against Montclair, Wayne, Passaic, Bloomfield, Little Falls, and 9 other regional Passaic/Essex/Bergen towns.</span>
+            </div>
+            <a href="budgets.html#tab-surrounding" class="btn-jump-action secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-weight: 600;">
+              <span>🗺️</span> Regional 14-Town Comparison ➔
+            </a>
+          </div>
         </div>
       </details>
 
@@ -1595,6 +1606,26 @@
         <button type="button" class="btn-street-action" onclick="copyMod4RecordText()"><span>📋</span> Copy Official Citation</button>
         <button type="button" class="btn-street-action" onclick="window.print()"><span>🖨️</span> Print Certified Record</button>
         <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 5: 🏢 Renter Property Tax Impact & Rebate Calculator -->
+  <dialog id="renter-tax-dialog" class="modern-modal-dialog" aria-labelledby="renter-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 680px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="renter-dialog-title"><span>🏢</span> NJ Renter Property Tax Impact Calculator</h3>
+          <div class="modern-dialog-subtitle">Calculate how much of your monthly rent goes to municipal taxes, schools &amp; your ANCHOR rebate</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="renter-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" onclick="openReliefCalculator(null, null, 'Clifton Renter')"><span>🧓</span> Claim $450 NJ ANCHOR Rebate ↗</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
       </div>
     </div>
   </dialog>

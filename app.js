@@ -3048,20 +3048,65 @@ function renderDemographics() {
     `).join('');
   }
 
-  // Equity Takeaways Grid
+  // Equity Takeaways Grid with Context-Aware Actions
   const takeContainer = document.getElementById('equity-takeaways-container');
   if (takeContainer && demographicsData.equityAnalysis) {
-    takeContainer.innerHTML = demographicsData.equityAnalysis.keyTakeaways.map(t => `
-      <div class="takeaway-card">
-        <h4>${t.title}</h4>
-        <p>${t.detail}</p>
-        <div style="margin-top: 12px;">
-          <button class="btn-jump-action secondary" data-jump-tab="tab-surrounding">
-            <span>🗺️</span> Compare Tax Disparities with Neighbor Towns ➔
+    takeContainer.innerHTML = demographicsData.equityAnalysis.keyTakeaways.map((t) => {
+      let actionButtons = '';
+      const titleLower = (t.title || '').toLowerCase();
+
+      if (titleLower.includes('renter')) {
+        // Card: The Hidden Renter Burden
+        actionButtons = `
+          <button type="button" class="btn-jump-action" onclick="openRenterCalculator(1800);">
+            <span>🏢</span> Calculate Renter Tax Share (Monthly Breakdown) ➔
           </button>
+          <button type="button" class="btn-jump-action secondary" data-jump-tab="tab-properties" data-jump-neighborhood="Botany Village" style="margin-top: 6px;">
+            <span>🏡</span> Explore 07011 Multi-Family Properties ➔
+          </button>
+        `;
+      } else if (titleLower.includes('income gap') || titleLower.includes('divide') || titleLower.includes('zip')) {
+        // Card: The Income Gap Between ZIP Codes
+        actionButtons = `
+          <a href="#demo-zip-divide-section" class="btn-jump-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <span>📊</span> View ZIP Code Side-by-Side Comparison ➔
+          </a>
+        `;
+      } else if (titleLower.includes('burden') || titleLower.includes('effort') || titleLower.includes('ability')) {
+        // Card: The Inverted Tax Burden
+        actionButtons = `
+          <button type="button" class="btn-jump-action" onclick="openReliefCalculator();">
+            <span>🧓</span> Check Tax Relief Eligibility (ANCHOR & StayNJ) ➔
+          </button>
+          <a href="#demo-zip-divide-section" class="btn-jump-action secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-top: 6px;">
+            <span>📊</span> Compare Tax-to-Income Percentages ➔
+          </a>
+        `;
+      } else if (titleLower.includes('school') || titleLower.includes('subsidy')) {
+        // Card: The Inter-Neighborhood School Subsidy
+        actionButtons = `
+          <a href="#demo-family-schools-section" class="btn-jump-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <span>🏫</span> View School Feeder Enrollment Network ➔
+          </a>
+        `;
+      } else {
+        actionButtons = `
+          <a href="#demo-neighborhoods-section" class="btn-jump-action secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <span>🏘️</span> View Neighborhood Profiles ➔
+          </a>
+        `;
+      }
+
+      return `
+        <div class="takeaway-card">
+          <h4>${escapeHtml(t.title)}</h4>
+          <p>${escapeHtml(t.detail)}</p>
+          <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 6px;">
+            ${actionButtons}
+          </div>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
   // Render Family & School Enrollment Demographics
@@ -4628,6 +4673,147 @@ function updateReliefTax(val) {
     activeReliefState.taxBill = num;
     renderReliefCalculatorContent();
   }
+}
+
+// --------------------------------------------------------------------------
+// FEATURE 2B: 🏢 Renter Property Tax Impact Calculator
+// --------------------------------------------------------------------------
+let activeRenterState = {
+  monthlyRent: 1800,
+  taxSharePct: 20.0
+};
+
+function openRenterCalculator(rent) {
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  if (typeof rent === 'number' && rent > 0) {
+    activeRenterState.monthlyRent = rent;
+  }
+  renderRenterCalculatorContent();
+  const dialog = document.getElementById('renter-tax-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function renderRenterCalculatorContent() {
+  const contentEl = document.getElementById('renter-dialog-content');
+  if (!contentEl) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const monthlyRent = activeRenterState.monthlyRent || 1800;
+  const annualRent = monthlyRent * 12;
+  const taxSharePct = activeRenterState.taxSharePct || 20.0;
+
+  const monthlyTaxPaid = monthlyRent * (taxSharePct / 100);
+  const annualTaxPaid = annualRent * (taxSharePct / 100);
+
+  const schoolSharePct = parseFloat(meta.schoolsShare) || 47.66;
+  const muniSharePct = parseFloat(meta.muniShare) || 29.41;
+  const countySharePct = parseFloat(meta.countyShare) || 22.92;
+
+  const schoolMonthly = monthlyTaxPaid * (schoolSharePct / 100);
+  const muniMonthly = monthlyTaxPaid * (muniSharePct / 100);
+  const countyMonthly = monthlyTaxPaid * (countySharePct / 100);
+
+  contentEl.innerHTML = `
+    <div style="background: var(--bg-subtle, #f8fafc); padding: 16px 18px; border-radius: 8px; border: 1px solid var(--border-light, #e2e8f0); margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <label for="renter-rent-input" style="font-size: 0.88rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;">Enter Your Monthly Rent in ${escapeHtml(meta.name)}:</label>
+          <div style="font-size: 0.78rem; color: #64748b;">Under NJ Tenant Property Tax Rebate Act (N.J.S.A. 54:4-6.2), ~20% of rent pays landlord property taxes.</div>
+        </div>
+        <div style="display: flex; align-items: center; background: #fff; border: 2px solid #2563eb; border-radius: 8px; padding: 6px 12px;">
+          <span style="font-weight: 800; font-size: 1.1rem; color: #2563eb; margin-right: 4px;">$</span>
+          <input type="number" id="renter-rent-input" value="${monthlyRent}" min="400" max="15000" step="50" style="width: 100px; border: none; font-size: 1.15rem; font-weight: 800; color: #0f172a; outline: none;">
+          <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">/ mo</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; align-items: center;">
+        <span style="font-size: 0.78rem; font-weight: 600; color: #64748b;">Quick Presets:</span>
+        <button type="button" class="preset-btn renter-preset-btn" data-rent="1400" style="padding: 3px 9px; font-size: 0.76rem;">$1,400 (1-Bed)</button>
+        <button type="button" class="preset-btn renter-preset-btn" data-rent="1800" style="padding: 3px 9px; font-size: 0.76rem;">$1,800 (2-Bed Avg)</button>
+        <button type="button" class="preset-btn renter-preset-btn" data-rent="2200" style="padding: 3px 9px; font-size: 0.76rem;">$2,200 (Multi-Family)</button>
+        <button type="button" class="preset-btn renter-preset-btn" data-rent="2800" style="padding: 3px 9px; font-size: 0.76rem;">$2,800 (Single-Family)</button>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 20px;">
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 14px; text-align: center;">
+        <span style="font-size: 0.72rem; font-weight: 700; color: #1e40af; text-transform: uppercase;">Taxes Paid in Rent</span>
+        <div style="font-size: 1.45rem; font-weight: 800; color: #1e3a8a; margin: 4px 0;">${formatUSD(monthlyTaxPaid)} <span style="font-size: 0.75rem; font-weight: 600;">/ mo</span></div>
+        <div style="font-size: 0.72rem; color: #3b82f6;">${formatUSD(annualTaxPaid)} / year (~20% share)</div>
+      </div>
+
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 14px; text-align: center;">
+        <span style="font-size: 0.72rem; font-weight: 700; color: #166534; text-transform: uppercase;">Direct NJ ANCHOR Check</span>
+        <div style="font-size: 1.45rem; font-weight: 800; color: #15803d; margin: 4px 0;">+$450.00 <span style="font-size: 0.75rem; font-weight: 600;">cash</span></div>
+        <div style="font-size: 0.72rem; color: #16a34a;">For renters earning &lt;$150k ($700 if 65+)</div>
+      </div>
+
+      <div style="background: #fefce8; border: 1px solid #fef08a; border-radius: 8px; padding: 12px 14px; text-align: center;">
+        <span style="font-size: 0.72rem; font-weight: 700; color: #854d0e; text-transform: uppercase;">Net Tax Burden</span>
+        <div style="font-size: 1.45rem; font-weight: 800; color: #a16207; margin: 4px 0;">${formatUSD(Math.max(0, annualTaxPaid - 450))} <span style="font-size: 0.75rem; font-weight: 600;">/ yr</span></div>
+        <div style="font-size: 0.72rem; color: #ca8a04;">After ANCHOR rebate check</div>
+      </div>
+    </div>
+
+    <div style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; margin-bottom: 18px;">
+      <div style="background: #f8fafc; padding: 10px 14px; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem; font-weight: 700; color: #0f172a;">
+        Where Does Your Landlord Send Your Rent Tax Money?
+      </div>
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.84rem;">
+        <tbody>
+          <tr style="border-bottom: 1px solid #f1f5f9;">
+            <td style="padding: 9px 14px; font-weight: 600; color: #0f172a;">🏫 ${escapeHtml(meta.schoolDistrictShort || meta.schoolDistrictName)}</td>
+            <td style="padding: 9px 14px; color: #64748b;">${schoolSharePct.toFixed(1)}%</td>
+            <td style="padding: 9px 14px; text-align: right; font-weight: 700; color: #15803d;">${formatUSD(schoolMonthly)} / mo</td>
+            <td style="padding: 9px 14px; text-align: right; color: #64748b;">(${formatUSD(schoolMonthly * 12)} / yr)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f1f5f9;">
+            <td style="padding: 9px 14px; font-weight: 600; color: #0f172a;">🏛️ ${escapeHtml(meta.fullName || meta.name + ' Municipal')}</td>
+            <td style="padding: 9px 14px; color: #64748b;">${muniSharePct.toFixed(1)}%</td>
+            <td style="padding: 9px 14px; text-align: right; font-weight: 700; color: #2563eb;">${formatUSD(muniMonthly)} / mo</td>
+            <td style="padding: 9px 14px; text-align: right; color: #64748b;">(${formatUSD(muniMonthly * 12)} / yr)</td>
+          </tr>
+          <tr>
+            <td style="padding: 9px 14px; font-weight: 600; color: #0f172a;">🌲 ${escapeHtml(meta.county || 'County')} Government</td>
+            <td style="padding: 9px 14px; color: #64748b;">${countySharePct.toFixed(1)}%</td>
+            <td style="padding: 9px 14px; text-align: right; font-weight: 700; color: #d97706;">${formatUSD(countyMonthly)} / mo</td>
+            <td style="padding: 9px 14px; text-align: right; color: #64748b;">(${formatUSD(countyMonthly * 12)} / yr)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 16px; font-size: 0.82rem; color: #1e40af; line-height: 1.5;">
+      <strong>💡 Taxpayer Fact for Renters:</strong> You do NOT need to own a home to be burdened by property taxes or to receive state relief. Landlords factor 100% of municipal and school tax increases into lease renewals. New Jersey provides the <strong>ANCHOR Renter Benefit ($450–$700)</strong> specifically to reimburse tenants for this burden.
+    </div>
+  `;
+
+  const rentInput = document.getElementById('renter-rent-input');
+  if (rentInput) {
+    rentInput.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value);
+      if (!isNaN(val) && val > 0) {
+        activeRenterState.monthlyRent = val;
+        renderRenterCalculatorContent();
+        const updatedInput = document.getElementById('renter-rent-input');
+        if (updatedInput) {
+          updatedInput.focus();
+          updatedInput.setSelectionRange(updatedInput.value.length, updatedInput.value.length);
+        }
+      }
+    });
+  }
+
+  contentEl.querySelectorAll('.renter-preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const r = parseFloat(btn.getAttribute('data-rent'));
+      if (r) {
+        activeRenterState.monthlyRent = r;
+        renderRenterCalculatorContent();
+      }
+    });
+  });
 }
 
 // --------------------------------------------------------------------------

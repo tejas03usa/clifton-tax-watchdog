@@ -543,6 +543,26 @@
     </div>
   </dialog>
 
+  <!-- Modal Dialog 4: 🏢 Renter Property Tax Impact & Rebate Calculator -->
+  <dialog id="renter-tax-dialog" class="modern-modal-dialog" aria-labelledby="renter-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 680px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="renter-dialog-title"><span>🏢</span> NJ Renter Property Tax Impact Calculator</h3>
+          <div class="modern-dialog-subtitle">Calculate how much of your monthly rent goes to municipal taxes, schools &amp; your ANCHOR rebate</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="renter-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" onclick="openReliefCalculator(null, null, 'Clifton Renter')"><span>🧓</span> Claim $450 NJ ANCHOR Rebate ↗</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Accessible Toast Notification for Link Copying -->
   <div id="toast-notification" class="toast-notification" role="status" aria-live="polite"></div>
 
