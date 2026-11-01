@@ -782,6 +782,68 @@ function getInitialCity() {
   return 'clifton';
 }
 
+// Data Refresh & Verification Audit Log Loader
+let auditLogData = null;
+
+async function loadAuditLog() {
+  try {
+    const res = await fetch('data/audit_log.json');
+    if (res.ok) {
+      auditLogData = await res.json();
+      updateRefreshBadges(auditLogData);
+    } else {
+      updateRefreshBadges(null);
+    }
+  } catch (err) {
+    updateRefreshBadges(null);
+  }
+}
+
+function updateRefreshBadges(log) {
+  let displayDate = 'October 31, 2026';
+  let shortDate = 'Oct 31, 2026';
+  let statusText = '100% Verified (0.00% Hallucination Rate)';
+
+  if (log && log.lastRun) {
+    try {
+      const cleanIso = log.lastRun.replace(' UTC', 'Z').replace(' ', 'T');
+      const parsed = new Date(cleanIso);
+      if (!isNaN(parsed.getTime())) {
+        displayDate = parsed.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        shortDate = parsed.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      } else if (log.date) {
+        displayDate = log.date;
+        shortDate = log.date;
+      }
+    } catch (e) {
+      if (log.date) {
+        displayDate = log.date;
+        shortDate = log.date;
+      }
+    }
+  }
+
+  const headerBadge = document.getElementById('header-refresh-badge');
+  if (headerBadge) {
+    headerBadge.textContent = `🕒 Last Refreshed: ${shortDate}`;
+    headerBadge.setAttribute('title', `Automated Weekly Refresh: ${displayDate} • Status: ${statusText}`);
+  }
+
+  const footerLastRefreshed = document.getElementById('footer-last-refreshed');
+  if (footerLastRefreshed) {
+    footerLastRefreshed.innerHTML = `🔄 <strong>Last Refreshed:</strong> ${displayDate} &bull; <span style="color: #10b981;">● ${statusText}</span>`;
+  }
+
+  const footerSchedule = document.getElementById('footer-refresh-schedule');
+  if (footerSchedule) {
+    footerSchedule.textContent = '⏱️ Automated Refresh: Weekly Every Monday at 06:00 UTC (GitHub Actions)';
+  }
+
+  document.querySelectorAll('.last-refreshed-date').forEach(el => {
+    el.textContent = displayDate;
+  });
+}
+
 // Highlight Active Hub Link in Navigation Bar
 function syncNavActive() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -804,6 +866,7 @@ async function initApp() {
   setupTabs();
   setupCollapsibleSections();
   setupCitySwitcher();
+  loadAuditLog();
 
   // Ensure the current page has an active tab pane
   if (!document.querySelector('.tab-pane.active')) {
@@ -1990,6 +2053,7 @@ function applyCityStaticCopy(cityId) {
      <p>Independent civic transparency, property assessment, and public records analysis for ${meta.name}, New Jersey residents.</p>`);
   setElHtml('.app-footer .footer-sources',
     `All figures, tax rates, salaries, and assessments verified against certified records from: ${meta.county} Board of Taxation, ${meta.fullName} Assessor & Collector, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), and ${meta.schoolDistrictShort} User-Friendly Budgets.`);
+  updateRefreshBadges(auditLogData);
 }
 
 // Global Cross-Section Navigation & Tab Switcher

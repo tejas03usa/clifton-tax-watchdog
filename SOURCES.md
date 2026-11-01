@@ -383,4 +383,23 @@ node -c app.js
 ```
 
 ---
+
+## 5. Refresh Frequency & Automated Verification Schedule
+
+| Refresh Type | Cadence / Trigger | Automated Tooling | Target Data Updated | Verification Standard |
+|---|---|---|---|---|
+| **Scheduled Automated Refresh** | **Weekly Every Monday at 06:00 UTC (02:00 AM EDT)** | GitHub Actions (`refresh-data.yml`) & `scrapers/scheduled_updater.py` | Primary portal availability, link integrity, dataset checksums, and `data/audit_log.json` | 100% calculation validation, zero-tolerance check for forbidden estimated fields. |
+| **Annual County Tax Rate Certification** | **Annually (June–October)** upon Board of Taxation certification | Scraper & table parser (`scrapers/generate_all_nearby_cities.py`) | `tax_breakdown.json`, `surrounding_towns_comparison.json`, header stats | Abstract of Ratables Form SR-3A; School + Muni + County = General Tax Rate. |
+| **Municipal Adopted Budget Cycle** | **Annually (May–August)** upon Council adoption | DLGS scraper & PDF extractor | `municipal_budget.json`, `benefits_healthcare.json` | Adopted User-Friendly Budget (UFB) filed with NJ DCA Division of Local Government Services. |
+| **School District Adopted Budget Cycle** | **Annually (April–June)** upon BOE public hearing | NJDOE User-Friendly Budget portal | `boe_budget.json`, `benefits_healthcare.json` | Certified User-Friendly Budget (UFB) submitted to NJ Department of Education. |
+| **State MOD-IV Property Roll Ingestion** | **Annually (January–March)** upon Division of Taxation release | NJOGIS MOD-IV pipeline (`scrapers/generate_properties.py`) | `property_assessments.json` (75,916 parcels) | Complete parcel match against certified county assessment duplicates. |
+| **Local Election & Candidate Filings** | **Biennially (June primary / November general)** | County Clerk petitions & ELEC reports | `election_candidates.json` | Certified candidate filings with Passaic County Clerk; min 2 verified primary sources. |
+
+### Public Visibility of Last Refreshed Date
+The site dynamically fetches `data/audit_log.json` upon initial page load and when switching municipalities:
+1. **Header Top Utility Bar:** Displays `🕒 Last Refreshed: [Date]` with a live status tooltip.
+2. **Footer Badges:** Displays `🔄 Last Refreshed: [Full Date] • 100% Verified (0.00% Hallucination Rate)` alongside the weekly recurring GitHub Actions schedule.
+3. **Audit Log:** Recorded permanently in version control at [`data/audit_log.json`](file:///Users/tejas/apps/clifton_tax_watchdog/data/audit_log.json).
+
+---
 *This document is maintained as the authoritative data provenance record for the NJ Municipal Taxpayer Watchdog project. Any new data additions, portal migrations, or statutory rule updates must be recorded here.*

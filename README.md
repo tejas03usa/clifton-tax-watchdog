@@ -151,11 +151,14 @@ python3 scrapers/investigation_toolkit.py vendors
 
 ## Automated Data Refresh & Health Check Workflow
 
-The repository is equipped with an automated GitHub Actions workflow (`.github/workflows/refresh-data.yml`):
-* **Execution Schedule:** Runs automatically every Monday at 06:00 UTC (02:00 AM EDT) and can be triggered on demand via the **Actions** tab (`workflow_dispatch`).
+The repository is equipped with an automated GitHub Actions verification and refresh pipeline (`.github/workflows/refresh-data.yml`):
+* **Execution Schedule:** Runs automatically **every Monday at 06:00 UTC (02:00 AM EDT / 01:00 AM EST)** and can be triggered on demand via the **Actions** tab (`workflow_dispatch`).
 * **Tasks Executed:**
-  1. Pings official portals (City of Clifton, Clifton BOE, Passaic County Tax Board, Cit-e Tax Collector).
-  2. Runs mathematical verification across all 1,850 property assessments ensuring zero calculation discrepancies.
-  3. Records audit results in `data/audit_log.json`.
-  4. Automatically commits changes and triggers a GitHub Pages deployment if updates are found.
+  1. Pings official government portals (Clifton, Parsippany-Troy Hills, Wayne, Montclair, Morristown, Montville, Glen Rock, and County Boards of Taxation).
+  2. Runs mathematical verification across all 75,916 property assessments ensuring 0 calculation discrepancies and 0 forbidden estimated fields.
+  3. Records audit results and timestamps in [`data/audit_log.json`](file:///Users/tejas/apps/clifton_tax_watchdog/data/audit_log.json).
+  4. Automatically commits changes and updates the live "Last Refreshed" badge on the website.
+* **On-Site Freshness Indicators:**
+  * **Header Top Utility Bar:** Displays `🕒 Last Refreshed: [Date]` with live health tooltip.
+  * **Footer Metadata Row:** Displays `🔄 Last Refreshed: [Date] • 100% Verified (0.00% Hallucination Rate)` alongside the recurring weekly refresh schedule.
 
