@@ -14515,3 +14515,267 @@ dialog::backdrop {
 
 
 
+
+/* ==========================================================================
+   FEATURE: 🌊 INTERACTIVE SANKEY "WHERE EVERY $1 GOES" TAX FLOW VISUALIZER
+   ========================================================================== */
+.sankey-section-card {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.sankey-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.sankey-title-block h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main, #0f172a);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sankey-title-block p {
+  margin: 0.25rem 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted, #64748b);
+}
+
+.sankey-controls-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.sankey-svg-viewport {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border: 1px solid #edf2f7;
+  position: relative;
+  scroll-axis-lock: none;
+  overscroll-behavior: contain;
+}
+
+.sankey-svg {
+  display: block;
+  width: 100%;
+  min-width: 860px;
+  height: auto;
+  user-select: none;
+}
+
+.sankey-node rect {
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
+  rx: 4px;
+}
+
+.sankey-node:hover rect {
+  filter: brightness(1.08) drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+}
+
+.sankey-link {
+  fill-opacity: 0.45;
+  transition: fill-opacity 0.2s ease, stroke-width 0.2s ease;
+  cursor: pointer;
+}
+
+.sankey-link:hover {
+  fill-opacity: 0.85 !important;
+  filter: drop-shadow(0 2px 6px rgba(37,99,235,0.25));
+}
+
+.sankey-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  max-width: 280px;
+  z-index: 999;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  transition: opacity 0.15s ease;
+}
+
+.sankey-tooltip.visible {
+  opacity: 1;
+}
+
+.sankey-inspector-box {
+  margin-top: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* ==========================================================================
+   FEATURE: 🗺️ INTERACTIVE CLIFTON SPATIAL GIS & NEIGHBORHOOD MAP
+   ========================================================================== */
+.spatial-map-card {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.spatial-layer-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.spatial-layer-pill {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.18s ease;
+}
+
+.spatial-layer-pill:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.spatial-layer-pill.active {
+  background: #1e3a8a;
+  border-color: #1e3a8a;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+}
+
+.spatial-main-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .spatial-main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spatial-map-viewport {
+  width: 100%;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: auto;
+  scroll-axis-lock: none;
+  overscroll-behavior: contain;
+}
+
+.spatial-map-viewport:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.spatial-svg {
+  display: block;
+  width: 100%;
+  min-width: 580px;
+  height: auto;
+  user-select: none;
+}
+
+.spatial-nh-poly {
+  cursor: pointer;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  transition: fill 0.25s ease, stroke 0.2s ease, filter 0.2s ease;
+}
+
+.spatial-nh-poly:hover {
+  filter: brightness(1.12) drop-shadow(0 4px 10px rgba(0,0,0,0.18));
+  stroke: #0f172a;
+  stroke-width: 3.5;
+}
+
+.spatial-nh-poly.selected {
+  stroke: #2563eb !important;
+  stroke-width: 4 !important;
+  filter: drop-shadow(0 0 10px rgba(37,99,235,0.4)) !important;
+}
+
+.spatial-waterway {
+  fill: none;
+  stroke: #0284c7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+.spatial-waterway:hover {
+  stroke: #0369a1;
+  stroke-width: 6 !important;
+}
+
+.spatial-inspector-panel {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 340px auto 420px;
+}
+
+.spatial-legend-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  margin-top: 10px;
+}
+
+.spatial-legend-gradient {
+  height: 8px;
+  flex: 1;
+  border-radius: 999px;
+  margin: 0 8px;
+}

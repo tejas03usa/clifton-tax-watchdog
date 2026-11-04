@@ -2836,6 +2836,11 @@ function setupCalculator() {
       `;
       container.appendChild(card);
     });
+
+    // Render Interactive Sankey Flow Diagram
+    if (typeof renderSankeyDiagram === 'function') {
+      renderSankeyDiagram(totalAnnual);
+    }
   }
 
   const slider = document.getElementById('calc-assessment-slider');
@@ -2865,6 +2870,403 @@ function setupCalculator() {
   });
 
   updateCalc();
+}
+
+// ==========================================================================
+// FEATURE: 🌊 INTERACTIVE SANKEY "WHERE EVERY $1 GOES" TAX FLOW VISUALIZER
+// ==========================================================================
+let currentSankeyView = 'flow'; // 'flow' or 'table'
+
+function toggleSankeyView(mode) {
+  currentSankeyView = mode;
+  const viewport = document.getElementById('sankey-viewport');
+  const tableContainer = document.getElementById('sankey-table-container');
+  const btnFlow = document.getElementById('sankey-btn-flow-view');
+  const btnTable = document.getElementById('sankey-btn-table-view');
+
+  if (mode === 'flow') {
+    if (viewport) viewport.style.display = 'block';
+    if (tableContainer) tableContainer.style.display = 'none';
+    if (btnFlow) btnFlow.classList.add('active');
+    if (btnTable) btnTable.classList.remove('active');
+  } else {
+    if (viewport) viewport.style.display = 'none';
+    if (tableContainer) tableContainer.style.display = 'block';
+    if (btnTable) btnTable.classList.add('active');
+    if (btnFlow) btnFlow.classList.remove('active');
+  }
+}
+
+function renderSankeyDiagram(annualTax) {
+  const svg = document.getElementById('sankey-svg');
+  if (!svg || !taxData || !taxData.breakdown) return;
+
+  const totalBill = annualTax > 0 ? annualTax : 11911.78;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  // Level 1: Jurisdictions
+  const breakdown = taxData.breakdown;
+  const schoolsEntity = breakdown.find(b => b.id === 'schools') || breakdown[0];
+  const muniEntity = breakdown.find(b => b.id === 'municipal') || breakdown[1];
+  const countyEntity = breakdown.find(b => b.id === 'county') || breakdown[2];
+
+  const amtSchools = totalBill * (schoolsEntity.subtotalShare || (schoolsEntity.percentage / 100));
+  const amtMuni = totalBill * (muniEntity.subtotalShare || (muniEntity.percentage / 100));
+  const amtCounty = totalBill * (countyEntity.subtotalShare || (countyEntity.percentage / 100));
+
+  // Geometry dimensions for viewBox="0 0 1000 660"
+  const col1X = 30;
+  const col1W = 150;
+  const col1Y = 75;
+  const col1H = 510;
+
+  const col2X = 380;
+  const col2W = 170;
+  const col2Gap = 18;
+
+  // Heights for Level 2 nodes based on percentage of total
+  const schoolsH = Math.max(80, Math.round(col1H * (schoolsEntity.percentage / 100) - col2Gap));
+  const muniH = Math.max(70, Math.round(col1H * (muniEntity.percentage / 100) - col2Gap));
+  const countyH = Math.max(60, Math.round(col1H * (countyEntity.percentage / 100) - col2Gap));
+
+  const schoolsY = col1Y;
+  const muniY = schoolsY + schoolsH + col2Gap;
+  const countyY = muniY + muniH + col2Gap;
+
+  const col3X = 740;
+  const col3W = 230;
+
+  // Calculate Level 3 components
+  const schoolComps = schoolsEntity.components || [];
+  const muniComps = muniEntity.components || [];
+  const countyComps = countyEntity.components || [];
+
+  function layoutComponents(comps, parentY, parentH, parentAmt, sharePrefix) {
+    const compGap = 4;
+    const totalGap = (comps.length - 1) * compGap;
+    const usableH = Math.max(parentH, comps.length * 24);
+    let currY = parentY;
+
+    return comps.map((c) => {
+      const shareKey = Object.keys(c).find(k => k.startsWith(sharePrefix)) || 'shareOfSchool';
+      const share = c[shareKey] || (1 / comps.length);
+      const compH = Math.max(20, Math.round((usableH - totalGap) * share));
+      const compAmt = parentAmt * share;
+      const node = {
+        name: c.name,
+        desc: c.description || '',
+        share,
+        amt: compAmt,
+        y: currY,
+        h: compH,
+        pctOfTotal: (compAmt / totalBill) * 100
+      };
+      currY += compH + compGap;
+      return node;
+    });
+  }
+
+  const schoolNodes = layoutComponents(schoolComps, schoolsY, schoolsH, amtSchools, 'shareOfSchool');
+  const muniNodes = layoutComponents(muniComps, muniY, muniH, amtMuni, 'shareOfMuni');
+  const countyNodes = layoutComponents(countyComps, countyY, countyH, amtCounty, 'shareOfCounty');
+
+  // Helper to build smooth ribbon path
+  function buildRibbonPath(x0, y0, h0, x1, y1, h1) {
+    const xmid = (x0 + x1) / 2;
+    return `M ${x0} ${y0} C ${xmid} ${y0}, ${xmid} ${y1}, ${x1} ${y1} L ${x1} ${y1 + h1} C ${xmid} ${y1 + h1}, ${xmid} ${y0 + h0}, ${x0} ${y0 + h0} Z`;
+  }
+
+  // Level 1 -> Level 2 Links
+  const seg1SchoolsH = col1H * (schoolsEntity.percentage / 100);
+  const seg1MuniH = col1H * (muniEntity.percentage / 100);
+  const seg1CountyH = col1H * (countyEntity.percentage / 100);
+
+  const seg1SchoolsY = col1Y;
+  const seg1MuniY = seg1SchoolsY + seg1SchoolsH;
+  const seg1CountyY = seg1MuniY + seg1MuniH;
+
+  const ribbon1 = buildRibbonPath(col1X + col1W, seg1SchoolsY, seg1SchoolsH, col2X, schoolsY, schoolsH);
+  const ribbon2 = buildRibbonPath(col1X + col1W, seg1MuniY, seg1MuniH, col2X, muniY, muniH);
+  const ribbon3 = buildRibbonPath(col1X + col1W, seg1CountyY, seg1CountyH, col2X, countyY, countyH);
+
+  // Level 2 -> Level 3 Links
+  function generateSubRibbons(parentX, parentY, parentH, targetNodes, colorClass, gradientPrefix) {
+    let parentSegmentY = parentY;
+    return targetNodes.map((target, idx) => {
+      const segH = Math.max(4, parentH * target.share);
+      const pathD = buildRibbonPath(parentX + col2W, parentSegmentY, segH, col3X, target.y, target.h);
+      parentSegmentY += segH;
+      return `
+        <path class="sankey-link ${colorClass}-link" d="${pathD}" fill="url(#${gradientPrefix}-${idx})"
+              data-name="${escapeHtml(target.name)}"
+              data-amt="${formatUSD(target.amt)}"
+              data-monthly="${formatUSD(target.amt / 12)}"
+              data-pct="${target.pctOfTotal.toFixed(1)}%"
+              data-desc="${escapeHtml(target.desc)}" />
+      `;
+    }).join('');
+  }
+
+  const schoolRibbonsHtml = generateSubRibbons(col2X, schoolsY, schoolsH, schoolNodes, 'school', 'grad-school');
+  const muniRibbonsHtml = generateSubRibbons(col2X, muniY, muniH, muniNodes, 'muni', 'grad-muni');
+  const countyRibbonsHtml = generateSubRibbons(col2X, countyY, countyH, countyNodes, 'county', 'grad-county');
+
+  // Gradients for SVG defs
+  let defsHtml = `
+    <defs>
+      <linearGradient id="grad-tot-schools" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#2563eb" stop-opacity="0.8"/>
+      </linearGradient>
+      <linearGradient id="grad-tot-muni" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#10b981" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#059669" stop-opacity="0.8"/>
+      </linearGradient>
+      <linearGradient id="grad-tot-county" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#d97706" stop-opacity="0.8"/>
+      </linearGradient>
+  `;
+
+  schoolNodes.forEach((n, i) => {
+    defsHtml += `
+      <linearGradient id="grad-school-${i}" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#2563eb" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.75"/>
+      </linearGradient>
+    `;
+  });
+  muniNodes.forEach((n, i) => {
+    defsHtml += `
+      <linearGradient id="grad-muni-${i}" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#059669" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#34d399" stop-opacity="0.75"/>
+      </linearGradient>
+    `;
+  });
+  countyNodes.forEach((n, i) => {
+    defsHtml += `
+      <linearGradient id="grad-county-${i}" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#d97706" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.75"/>
+      </linearGradient>
+    `;
+  });
+  defsHtml += `</defs>`;
+
+  // Render SVG nodes
+  let nodesHtml = `
+    <!-- Column 1: Total Property Tax Check -->
+    <g class="sankey-node" data-name="Total Property Tax Bill" data-amt="${formatUSD(totalBill)}" data-desc="Certified Annual General Property Tax Bill">
+      <rect x="${col1X}" y="${col1Y}" width="${col1W}" height="${col1H}" fill="#1e293b" />
+      <text x="${col1X + 14}" y="${col1Y + 36}" fill="#94a3b8" font-size="12" font-weight="700" letter-spacing="1">ANNUAL TAX LEVY</text>
+      <text x="${col1X + 14}" y="${col1Y + 68}" fill="#ffffff" font-size="20" font-weight="900">${formatUSD(totalBill)}</text>
+      <text x="${col1X + 14}" y="${col1Y + 92}" fill="#38bdf8" font-size="12" font-weight="600">${formatUSD(totalBill / 12)} / month</text>
+      <text x="${col1X + 14}" y="${col1Y + 120}" fill="#cbd5e1" font-size="11" font-weight="500">100% Tax Check</text>
+      <text x="${col1X + 14}" y="${col1Y + 138}" fill="#94a3b8" font-size="10">Rates: ${taxData.certifiedTotalRate}%</text>
+    </g>
+
+    <!-- Column 2: Jurisdictions -->
+    <!-- Schools -->
+    <g class="sankey-node" data-name="${escapeHtml(schoolsEntity.entity)}" data-amt="${formatUSD(amtSchools)}" data-desc="${escapeHtml(schoolsEntity.description)}">
+      <rect x="${col2X}" y="${schoolsY}" width="${col2W}" height="${schoolsH}" fill="#1e40af" />
+      <text x="${col2X + 12}" y="${schoolsY + 28}" fill="#bfdbfe" font-size="11" font-weight="700">PUBLIC SCHOOLS (BOE)</text>
+      <text x="${col2X + 12}" y="${schoolsY + 54}" fill="#ffffff" font-size="17" font-weight="800">${formatUSD(amtSchools)}</text>
+      <text x="${col2X + 12}" y="${schoolsY + 74}" fill="#93c5fd" font-size="11">${schoolsEntity.percentage}% • ${formatUSD(amtSchools / 12)}/mo</text>
+    </g>
+
+    <!-- Municipal -->
+    <g class="sankey-node" data-name="${escapeHtml(muniEntity.entity)}" data-amt="${formatUSD(amtMuni)}" data-desc="${escapeHtml(muniEntity.description)}">
+      <rect x="${col2X}" y="${muniY}" width="${col2W}" height="${muniH}" fill="#065f46" />
+      <text x="${col2X + 12}" y="${muniY + 28}" fill="#a7f3d0" font-size="11" font-weight="700">CITY HALL / SERVICES</text>
+      <text x="${col2X + 12}" y="${muniY + 54}" fill="#ffffff" font-size="17" font-weight="800">${formatUSD(amtMuni)}</text>
+      <text x="${col2X + 12}" y="${muniY + 74}" fill="#6ee7b7" font-size="11">${muniEntity.percentage}% • ${formatUSD(amtMuni / 12)}/mo</text>
+    </g>
+
+    <!-- County -->
+    <g class="sankey-node" data-name="${escapeHtml(countyEntity.entity)}" data-amt="${formatUSD(amtCounty)}" data-desc="${escapeHtml(countyEntity.description)}">
+      <rect x="${col2X}" y="${countyY}" width="${col2W}" height="${countyH}" fill="#92400e" />
+      <text x="${col2X + 12}" y="${countyY + 26}" fill="#fde68a" font-size="11" font-weight="700">COUNTY GOVERNMENT</text>
+      <text x="${col2X + 12}" y="${countyY + 50}" fill="#ffffff" font-size="16" font-weight="800">${formatUSD(amtCounty)}</text>
+      <text x="${col2X + 12}" y="${countyY + 70}" fill="#fcd34d" font-size="11">${countyEntity.percentage}% • ${formatUSD(amtCounty / 12)}/mo</text>
+    </g>
+  `;
+
+  // Column 3 Components
+  function renderComponentNodes(nodes, fillColor) {
+    return nodes.map(n => `
+      <g class="sankey-node sankey-comp-node"
+         data-name="${escapeHtml(n.name)}"
+         data-amt="${formatUSD(n.amt)}"
+         data-monthly="${formatUSD(n.amt / 12)}"
+         data-pct="${n.pctOfTotal.toFixed(1)}%"
+         data-desc="${escapeHtml(n.desc)}">
+        <rect x="${col3X}" y="${n.y}" width="${col3W}" height="${n.h}" fill="${fillColor}" />
+        <text x="${col3X + 10}" y="${n.y + Math.min(n.h - 4, 15)}" fill="#ffffff" font-size="11" font-weight="700">${escapeHtml(n.name.length > 28 ? n.name.slice(0, 26) + '…' : n.name)}</text>
+        ${n.h >= 28 ? `<text x="${col3X + 10}" y="${n.y + n.h - 5}" fill="rgba(255,255,255,0.85)" font-size="10">${formatUSD(n.amt)} (${n.pctOfTotal.toFixed(1)}%)</text>` : ''}
+      </g>
+    `).join('');
+  }
+
+  nodesHtml += renderComponentNodes(schoolNodes, '#1d4ed8');
+  nodesHtml += renderComponentNodes(muniNodes, '#047857');
+  nodesHtml += renderComponentNodes(countyNodes, '#b45309');
+
+  // Assemble SVG
+  svg.innerHTML = `
+    ${defsHtml}
+    <!-- Level 1 Ribbons -->
+    <path class="sankey-link tot-school-link" d="${ribbon1}" fill="url(#grad-tot-schools)" data-name="${escapeHtml(schoolsEntity.entity)} Share" data-amt="${formatUSD(amtSchools)}" data-pct="${schoolsEntity.percentage}%" data-desc="${schoolsEntity.percentage}% of property taxes fund local public school operations." />
+    <path class="sankey-link tot-muni-link" d="${ribbon2}" fill="url(#grad-tot-muni)" data-name="${escapeHtml(muniEntity.entity)} Share" data-amt="${formatUSD(amtMuni)}" data-pct="${muniEntity.percentage}%" data-desc="${muniEntity.percentage}% of property taxes fund municipal police, fire, DPW, library, and City Hall." />
+    <path class="sankey-link tot-county-link" d="${ribbon3}" fill="url(#grad-tot-county)" data-name="${escapeHtml(countyEntity.entity)} Share" data-amt="${formatUSD(amtCounty)}" data-pct="${countyEntity.percentage}%" data-desc="${countyEntity.percentage}% of property taxes fund Passaic County operations, roads, and sheriff." />
+
+    <!-- Level 2 Sub-Ribbons -->
+    ${schoolRibbonsHtml}
+    ${muniRibbonsHtml}
+    ${countyRibbonsHtml}
+
+    <!-- Nodes -->
+    ${nodesHtml}
+  `;
+
+  // Attach hover & click listeners to sankey elements
+  const tooltip = document.getElementById('sankey-tooltip');
+  const viewport = document.getElementById('sankey-viewport');
+
+  svg.querySelectorAll('.sankey-link, .sankey-node').forEach(el => {
+    el.addEventListener('mouseenter', (e) => {
+      if (!tooltip || !viewport) return;
+      const name = el.getAttribute('data-name');
+      const amt = el.getAttribute('data-amt');
+      const monthly = el.getAttribute('data-monthly');
+      const pct = el.getAttribute('data-pct');
+      const desc = el.getAttribute('data-desc');
+
+      if (!name) return;
+
+      tooltip.innerHTML = `
+        <div style="font-weight: 800; font-size: 0.9rem; margin-bottom: 2px;">${name}</div>
+        <div style="color: #38bdf8; font-weight: 700; margin-bottom: 4px;">${amt} ${monthly ? `• ${monthly}/mo` : ''} ${pct ? `(${pct})` : ''}</div>
+        ${desc ? `<div style="font-size: 0.78rem; color: #cbd5e1; line-height: 1.35;">${desc}</div>` : ''}
+      `;
+      tooltip.classList.add('visible');
+
+      const rect = viewport.getBoundingClientRect();
+      const x = e.clientX - rect.left + viewport.scrollLeft;
+      const y = e.clientY - rect.top + viewport.scrollTop;
+      tooltip.style.left = `${x}px`;
+      tooltip.style.top = `${y - 12}px`;
+    });
+
+    el.addEventListener('mousemove', (e) => {
+      if (!tooltip || !viewport) return;
+      const rect = viewport.getBoundingClientRect();
+      const x = e.clientX - rect.left + viewport.scrollLeft;
+      const y = e.clientY - rect.top + viewport.scrollTop;
+      tooltip.style.left = `${x}px`;
+      tooltip.style.top = `${y - 12}px`;
+    });
+
+    el.addEventListener('mouseleave', () => {
+      if (tooltip) tooltip.classList.remove('visible');
+    });
+
+    el.addEventListener('click', () => {
+      const name = el.getAttribute('data-name');
+      const amt = el.getAttribute('data-amt');
+      const desc = el.getAttribute('data-desc');
+      const pct = el.getAttribute('data-pct');
+      inspectSankeyNode({ name, amt, desc, pct, totalBill });
+    });
+  });
+
+  // Render Accessible Table Fallback
+  renderSankeyTableFallback(totalBill, [
+    { entity: schoolsEntity.entity, color: '#1e40af', amt: amtSchools, pct: schoolsEntity.percentage, comps: schoolNodes },
+    { entity: muniEntity.entity, color: '#065f46', amt: amtMuni, pct: muniEntity.percentage, comps: muniNodes },
+    { entity: countyEntity.entity, color: '#92400e', amt: amtCounty, pct: countyEntity.percentage, comps: countyNodes }
+  ]);
+}
+
+function renderSankeyTableFallback(totalBill, groups) {
+  const container = document.getElementById('sankey-table-container');
+  if (!container) return;
+
+  container.innerHTML = `
+    <div style="overflow-x: auto;">
+      <table class="data-table" style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+        <thead>
+          <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1; text-align: left;">
+            <th style="padding: 10px;">Jurisdiction &amp; Department</th>
+            <th style="padding: 10px;">Share of Levy</th>
+            <th style="padding: 10px; text-align: right;">Annual Cost</th>
+            <th style="padding: 10px; text-align: right;">Monthly Cost</th>
+            <th style="padding: 10px;">Services Funded</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${groups.map(g => `
+            <tr style="background: #f8fafc; font-weight: 800; border-top: 1px solid #cbd5e1;">
+              <td style="padding: 10px; color: ${g.color};">🏛️ ${escapeHtml(g.entity)}</td>
+              <td style="padding: 10px;">${g.pct}%</td>
+              <td style="padding: 10px; text-align: right; color: #0f172a;">${formatUSD(g.amt)}</td>
+              <td style="padding: 10px; text-align: right; color: #64748b;">${formatUSD(g.amt / 12)} / mo</td>
+              <td style="padding: 10px; font-weight: 400; color: #475569;">Direct tax levy allocation</td>
+            </tr>
+            ${g.comps.map(c => `
+              <tr style="border-bottom: 1px solid #e2e8f0;">
+                <td style="padding: 8px 10px 8px 28px;">• ${escapeHtml(c.name)}</td>
+                <td style="padding: 8px 10px; color: #64748b;">${c.pctOfTotal.toFixed(1)}%</td>
+                <td style="padding: 8px 10px; text-align: right; font-weight: 600;">${formatUSD(c.amt)}</td>
+                <td style="padding: 8px 10px; text-align: right; color: #64748b;">${formatUSD(c.amt / 12)}</td>
+                <td style="padding: 8px 10px; color: #64748b; font-size: 0.82rem;">${escapeHtml(c.desc)}</td>
+              </tr>
+            `).join('')}
+          `).join('')}
+          <tr style="background: #0f172a; color: #ffffff; font-weight: 800;">
+            <td style="padding: 12px 10px;">TOTAL GENERAL PROPERTY TAX</td>
+            <td style="padding: 12px 10px;">100.0%</td>
+            <td style="padding: 12px 10px; text-align: right; color: #38bdf8;">${formatUSD(totalBill)}</td>
+            <td style="padding: 12px 10px; text-align: right; color: #94a3b8;">${formatUSD(totalBill / 12)} / mo</td>
+            <td style="padding: 12px 10px; font-weight: 400; color: #cbd5e1;">Certified 2026 general tax levy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function inspectSankeyNode(info) {
+  const inspector = document.getElementById('sankey-inspector');
+  if (!inspector || !info || !info.name) return;
+
+  inspector.style.display = 'block';
+  inspector.innerHTML = `
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span style="font-size: 1.25rem;">🔍</span>
+          <h4 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #0f172a;">${escapeHtml(info.name)}</h4>
+          <span class="badge-tag" style="background: #2563eb; color: #fff;">${info.amt} / yr</span>
+        </div>
+        <p style="margin: 4px 0 8px; font-size: 0.88rem; color: #475569; max-width: 650px;">
+          ${info.desc || 'Public service funded through your local property tax check.'}
+        </p>
+        <div style="font-size: 0.82rem; color: #64748b;">
+          <strong>Monthly Tax Impact:</strong> ${formatUSD((parseFloat(info.amt.replace(/[^0-9.-]+/g,"")) || 0) / 12)}/month ${info.pct ? `• Represents <strong>${info.pct}</strong> of your entire property tax check.` : ''}
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <button type="button" class="btn-jump-action" data-jump-tab="tab-budgets" style="white-space: nowrap;">
+          <span>🏛️</span> Inspect Certified Budget Lines ➔
+        </button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; background: #fff; cursor: pointer; font-size: 0.8rem; font-weight: 600;" onclick="document.getElementById('sankey-inspector').style.display='none';">
+          Close Inspector ✕
+        </button>
+      </div>
+    </div>
+  `;
+  inspector.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 // TAB 2: BUDGETS
@@ -3077,6 +3479,11 @@ function renderDemographics() {
     `).join('');
   }
 
+  // Render Interactive Spatial GIS Map
+  if (typeof renderSpatialMap === 'function') {
+    renderSpatialMap();
+  }
+
   // Equity Takeaways Grid with Context-Aware Actions
   const takeContainer = document.getElementById('equity-takeaways-container');
   if (takeContainer && demographicsData.equityAnalysis) {
@@ -3140,6 +3547,306 @@ function renderDemographics() {
 
   // Render Family & School Enrollment Demographics
   renderFamilyAndSchools();
+}
+
+// ==========================================================================
+// FEATURE: 🗺️ INTERACTIVE CLIFTON SPATIAL GIS & NEIGHBORHOOD MAP
+// ==========================================================================
+let currentSpatialLayer = 'taxes'; // 'taxes', 'floods', 'zip', 'schools'
+let activeSpatialNeighborhood = 'montclair-heights';
+
+function switchSpatialLayer(layerKey) {
+  currentSpatialLayer = layerKey;
+  document.querySelectorAll('.spatial-layer-pill').forEach(btn => {
+    btn.classList.toggle('active', btn.id === `layer-btn-${layerKey}`);
+  });
+  renderSpatialMap();
+}
+
+function renderSpatialMap() {
+  const svg = document.getElementById('spatial-map-svg');
+  if (!svg || !demographicsData || !demographicsData.neighborhoods) return;
+
+  const nhs = demographicsData.neighborhoods;
+  const legend = document.getElementById('spatial-legend');
+  const tooltip = document.getElementById('spatial-map-tooltip');
+  const viewport = document.getElementById('spatial-viewport');
+
+  // Define spatial polygons for Clifton's 6 neighborhood zones
+  const nhGeom = {
+    'montclair-heights': {
+      path: 'M 70,60 L 270,45 L 340,165 L 230,245 L 75,185 Z',
+      labelX: 180, labelY: 130
+    },
+    'allwood-richfield': {
+      path: 'M 75,185 L 230,245 L 310,345 L 195,445 L 85,365 Z',
+      labelX: 175, labelY: 310
+    },
+    'athenia': {
+      path: 'M 230,245 L 430,185 L 490,325 L 310,345 Z',
+      labelX: 360, labelY: 275
+    },
+    'lakeview-dutch-hill': {
+      path: 'M 340,165 L 590,95 L 670,205 L 480,255 L 430,185 Z',
+      labelX: 520, labelY: 175
+    },
+    'botany-village': {
+      path: 'M 480,255 L 670,205 L 770,285 L 710,425 L 530,385 L 490,325 Z',
+      labelX: 620, labelY: 325
+    },
+    'delawanna': {
+      path: 'M 195,445 L 310,345 L 490,325 L 530,385 L 710,425 L 660,565 L 410,585 L 230,545 Z',
+      labelX: 430, labelY: 485
+    }
+  };
+
+  // Color functions based on active layer
+  function getNeighborhoodColor(nh) {
+    if (currentSpatialLayer === 'taxes') {
+      const bill = nh.avgTaxBill || 12000;
+      if (bill >= 16000) return '#dc2626'; // Red - highest
+      if (bill >= 13500) return '#ea580c'; // Orange
+      if (bill >= 11500) return '#d97706'; // Amber
+      if (bill >= 10500) return '#059669'; // Emerald
+      if (bill >= 9800)  return '#0d9488'; // Teal
+      return '#0284c7'; // Cyan - lowest
+    } else if (currentSpatialLayer === 'floods') {
+      if (nh.id === 'botany-village' || nh.id === 'athenia') return '#38bdf8'; // High basin risk
+      if (nh.id === 'delawanna' || nh.id === 'lakeview-dutch-hill') return '#93c5fd'; // Moderate risk
+      return '#e0f2fe'; // Low / High elevation
+    } else if (currentSpatialLayer === 'zip') {
+      const z = (nh.zip || '').slice(0, 5);
+      if (z === '07013') return '#2563eb'; // Blue
+      if (z === '07011') return '#f59e0b'; // Amber
+      if (z === '07012') return '#8b5cf6'; // Purple
+      return '#10b981'; // Green (07014)
+    } else if (currentSpatialLayer === 'schools') {
+      if (nh.id === 'montclair-heights' || nh.id === 'allwood-richfield' || nh.id === 'athenia') {
+        return '#3b82f6'; // WWMS Feeder
+      }
+      return '#ec4899'; // CCMS Feeder
+    }
+    return '#64748b';
+  }
+
+  // Update Legend text
+  if (legend) {
+    if (currentSpatialLayer === 'taxes') {
+      legend.innerHTML = `
+        <span style="font-weight: 700;">Lower Taxes ($9,464/yr)</span>
+        <div class="spatial-legend-gradient" style="background: linear-gradient(90deg, #0284c7 0%, #0d9488 25%, #059669 50%, #d97706 75%, #dc2626 100%);"></div>
+        <span style="font-weight: 700;">Higher Taxes ($17,949/yr)</span>
+      `;
+    } else if (currentSpatialLayer === 'floods') {
+      legend.innerHTML = `
+        <span style="font-weight: 700;">🟢 Low Elevation Surge Risk</span>
+        <div class="spatial-legend-gradient" style="background: linear-gradient(90deg, #e0f2fe 0%, #93c5fd 50%, #38bdf8 100%);"></div>
+        <span style="font-weight: 700;">🌊 High Basin Inundation Risk (Weasel Brook &amp; Third River)</span>
+      `;
+    } else if (currentSpatialLayer === 'zip') {
+      legend.innerHTML = `
+        <span><strong style="color: #2563eb;">■ 07013:</strong> $116k Med. Inc. (73.6% Own)</span>
+        <span><strong style="color: #f59e0b;">■ 07011:</strong> $74k Med. Inc. (52.2% Rent)</span>
+        <span><strong style="color: #8b5cf6;">■ 07012:</strong> Allwood Sta.</span>
+        <span><strong style="color: #10b981;">■ 07014:</strong> Delawanna</span>
+      `;
+    } else if (currentSpatialLayer === 'schools') {
+      legend.innerHTML = `
+        <span><strong style="color: #3b82f6;">■ Woodrow Wilson Middle School Feeder:</strong> (07013 &amp; West)</span>
+        <span><strong style="color: #ec4899;">■ Christopher Columbus Middle School Feeder:</strong> (07011 &amp; East)</span>
+      `;
+    }
+  }
+
+  // Render Polygons
+  let polygonsHtml = nhs.map(nh => {
+    const g = nhGeom[nh.id];
+    if (!g) return '';
+    const fillColor = getNeighborhoodColor(nh);
+    const isSelected = nh.id === activeSpatialNeighborhood;
+    return `
+      <g class="spatial-nh-group" data-id="${nh.id}">
+        <path class="spatial-nh-poly ${isSelected ? 'selected' : ''}" id="poly-${nh.id}" d="${g.path}" fill="${fillColor}" />
+        <text x="${g.labelX}" y="${g.labelY}" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800" style="pointer-events: none; text-shadow: 0 1px 4px rgba(0,0,0,0.7);">${escapeHtml(nh.name)}</text>
+        <text x="${g.labelX}" y="${g.labelY + 16}" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="10" font-weight="600" style="pointer-events: none; text-shadow: 0 1px 3px rgba(0,0,0,0.7);">${formatUSDWhole(nh.avgTaxBill)}/yr</text>
+      </g>
+    `;
+  }).join('');
+
+  // Waterways & Corridors
+  const waterwaysHtml = `
+    <!-- Third River Corridor -->
+    <path class="spatial-waterway" id="waterway-third-river" d="M 140,50 Q 200,160 250,220 T 360,320 T 480,410 T 630,540" stroke-width="4.5" />
+    <!-- Weasel Brook Corridor -->
+    <path class="spatial-waterway" id="waterway-weasel-brook" d="M 530,100 Q 580,180 610,240 T 670,330 T 720,400" stroke-width="4" stroke-dasharray="6,3" />
+    <!-- Passaic River Boundary -->
+    <path class="spatial-waterway" id="waterway-passaic-river" d="M 590,70 Q 730,150 790,250 T 730,430 T 670,580" stroke-width="7" />
+
+    <!-- Water Labels -->
+    <text x="320" y="300" fill="#0284c7" font-size="10" font-weight="700" transform="rotate(35 320,300)" style="pointer-events: none;">Third River ➔</text>
+    <text x="640" y="270" fill="#0284c7" font-size="10" font-weight="700" transform="rotate(45 640,270)" style="pointer-events: none;">Weasel Brook ➔</text>
+    <text x="760" y="380" fill="#0369a1" font-size="11" font-weight="800" transform="rotate(-65 760,380)" style="pointer-events: none;">Passaic River Border</text>
+  `;
+
+  // Landmarks
+  const landmarksHtml = `
+    <!-- Clifton High School -->
+    <g class="spatial-landmark" transform="translate(440, 260)" style="pointer-events: none;">
+      <circle r="7" fill="#ef4444" stroke="#ffffff" stroke-width="2" />
+      <text x="10" y="4" fill="#0f172a" font-size="10" font-weight="800">Clifton HS</text>
+    </g>
+    <!-- Clifton City Hall / Complex -->
+    <g class="spatial-landmark" transform="translate(380, 290)" style="pointer-events: none;">
+      <circle r="7" fill="#1e3a8a" stroke="#ffffff" stroke-width="2" />
+      <text x="10" y="4" fill="#0f172a" font-size="10" font-weight="800">City Hall</text>
+    </g>
+    <!-- Christopher Columbus MS -->
+    <g class="spatial-landmark" transform="translate(530, 210)" style="pointer-events: none;">
+      <circle r="6" fill="#ec4899" stroke="#ffffff" stroke-width="1.5" />
+      <text x="9" y="4" fill="#0f172a" font-size="9" font-weight="700">CCMS</text>
+    </g>
+    <!-- Woodrow Wilson MS -->
+    <g class="spatial-landmark" transform="translate(170, 310)" style="pointer-events: none;">
+      <circle r="6" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5" />
+      <text x="9" y="4" fill="#0f172a" font-size="9" font-weight="700">WWMS</text>
+    </g>
+  `;
+
+  svg.innerHTML = `
+    <rect width="880" height="640" fill="#f8fafc" />
+    ${polygonsHtml}
+    ${waterwaysHtml}
+    ${landmarksHtml}
+  `;
+
+  // Attach interactive listeners to map polygons
+  svg.querySelectorAll('.spatial-nh-group').forEach(group => {
+    const id = group.getAttribute('data-id');
+    const nh = nhs.find(n => n.id === id);
+    if (!nh) return;
+
+    group.addEventListener('mouseenter', (e) => {
+      if (!tooltip || !viewport) return;
+      tooltip.innerHTML = `
+        <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 2px;">${escapeHtml(nh.name)} (${nh.zip})</div>
+        <div style="color: #38bdf8; font-weight: 700;">Avg Tax: ${formatUSDWhole(nh.avgTaxBill)}/yr (${formatUSDWhole(nh.avgTaxBill / 12)}/mo)</div>
+        <div style="font-size: 0.78rem; color: #cbd5e1; margin-top: 4px;">Median Income: ${formatUSDWhole(nh.medianIncome)} • ${nh.ownerOccupied}% Owners</div>
+        <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 2px;">Click to inspect full neighborhood profile</div>
+      `;
+      tooltip.classList.add('visible');
+      const rect = viewport.getBoundingClientRect();
+      const x = e.clientX - rect.left + viewport.scrollLeft;
+      const y = e.clientY - rect.top + viewport.scrollTop;
+      tooltip.style.left = `${x}px`;
+      tooltip.style.top = `${y - 12}px`;
+    });
+
+    group.addEventListener('mousemove', (e) => {
+      if (!tooltip || !viewport) return;
+      const rect = viewport.getBoundingClientRect();
+      const x = e.clientX - rect.left + viewport.scrollLeft;
+      const y = e.clientY - rect.top + viewport.scrollTop;
+      tooltip.style.left = `${x}px`;
+      tooltip.style.top = `${y - 12}px`;
+    });
+
+    group.addEventListener('mouseleave', () => {
+      if (tooltip) tooltip.classList.remove('visible');
+    });
+
+    group.addEventListener('click', () => {
+      activeSpatialNeighborhood = id;
+      svg.querySelectorAll('.spatial-nh-poly').forEach(p => p.classList.remove('selected'));
+      const activePoly = document.getElementById(`poly-${id}`);
+      if (activePoly) activePoly.classList.add('selected');
+      inspectSpatialNeighborhood(nh);
+    });
+  });
+
+  // Initial inspection of active neighborhood
+  const initialNh = nhs.find(n => n.id === activeSpatialNeighborhood) || nhs[0];
+  if (initialNh) inspectSpatialNeighborhood(initialNh);
+}
+
+function inspectSpatialNeighborhood(nh) {
+  const panel = document.getElementById('spatial-inspector');
+  if (!panel || !nh) return;
+
+  const floodInfo = {
+    'montclair-heights': { risk: 'Low (High Elevation)', basin: 'Third River Upper Headwaters', mitigation: 'Storm runoff management along Grove St & Valley Rd.' },
+    'allwood-richfield': { risk: 'Moderate', basin: 'Third River Tributary Corridor', mitigation: 'Catch basin clearing & permeable pavement retrofits.' },
+    'athenia': { risk: 'Elevated / High', basin: 'Third River Central Flood Basin', mitigation: 'Weasel Brook & Third River culvert widening partnerships.' },
+    'delawanna': { risk: 'Moderate / Surge', basin: 'Passaic River Confluence', mitigation: 'Tidal gate monitoring & River Rd drainage upgrades.' },
+    'botany-village': { risk: 'High Vulnerability', basin: 'Weasel Brook Canal Drainage Area', mitigation: '$15M Weasel Brook retention basin & sediment desilting.' },
+    'lakeview-dutch-hill': { risk: 'Moderate / Street Ponding', basin: 'Weasel Brook Upper Reach', mitigation: 'Lexington Ave trunk storm sewer relining.' }
+  }[nh.id] || { risk: 'Moderate', basin: 'Passaic River Valley', mitigation: 'Municipal stormwater maintenance.' };
+
+  panel.innerHTML = `
+    <div style="border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 12px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+        <span class="badge-tag" style="background: #2563eb; color: #fff;">ZIP ${nh.zip}</span>
+        <span style="font-size: 0.78rem; color: #64748b; font-weight: 600;">Spatial Profile</span>
+      </div>
+      <h3 style="margin: 6px 0 2px; font-size: 1.25rem; font-weight: 800; color: #0f172a;">${escapeHtml(nh.name)}</h3>
+      <div style="font-size: 0.82rem; color: #64748b;">${escapeHtml(nh.character)}</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
+        <div style="font-size: 0.72rem; color: #64748b; font-weight: 700;">AVERAGE TAX BILL</div>
+        <div style="font-size: 1.1rem; font-weight: 800; color: #2563eb;">${formatUSDWhole(nh.avgTaxBill)}</div>
+        <div style="font-size: 0.7rem; color: #64748b;">${formatUSDWhole(nh.avgTaxBill / 12)} / mo</div>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
+        <div style="font-size: 0.72rem; color: #64748b; font-weight: 700;">AVG ASSESSED VALUE</div>
+        <div style="font-size: 1.1rem; font-weight: 800; color: #0f172a;">${formatUSDWhole(nh.avgAssessedValue)}</div>
+        <div style="font-size: 0.7rem; color: #64748b;">Market: ${formatUSDWhole(nh.avgMarketValue)}</div>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
+        <div style="font-size: 0.72rem; color: #64748b; font-weight: 700;">MEDIAN INCOME</div>
+        <div style="font-size: 1.05rem; font-weight: 800; color: #059669;">${formatUSDWhole(nh.medianIncome)}</div>
+        <div style="font-size: 0.7rem; color: #64748b;">Effort: ${nh.taxBurdenPercentIncome}%</div>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
+        <div style="font-size: 0.72rem; color: #64748b; font-weight: 700;">HOUSING TENURE</div>
+        <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a;">${nh.ownerOccupied}% Own</div>
+        <div style="font-size: 0.7rem; color: #64748b;">${(100 - nh.ownerOccupied).toFixed(1)}% Renters</div>
+      </div>
+    </div>
+
+    <!-- Flood & Infrastructure Notes -->
+    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 10px; margin-bottom: 14px; font-size: 0.82rem; line-height: 1.4;">
+      <div style="font-weight: 800; color: #1e40af; margin-bottom: 2px;">🌊 Drainage &amp; Flood Risk: ${floodInfo.risk}</div>
+      <div style="color: #334155;"><strong>Basin:</strong> ${floodInfo.basin}</div>
+      <div style="color: #475569; margin-top: 2px;"><strong>Mitigation:</strong> ${floodInfo.mitigation}</div>
+    </div>
+
+    <p style="font-size: 0.82rem; color: #475569; line-height: 1.45; margin-bottom: 14px;">
+      ${escapeHtml(nh.description)}
+    </p>
+
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <button type="button" class="btn-jump-action" data-jump-tab="tab-properties" data-jump-neighborhood="${escapeHtml(nh.name)}">
+        <span>🏡</span> Search ${escapeHtml(nh.name)} MOD-IV Properties ➔
+      </button>
+      <button type="button" class="btn-jump-action secondary" onclick="loadNeighborhoodInCalc(${nh.avgAssessedValue})">
+        <span>💰</span> Calculate Taxes on ${formatUSDWhole(nh.avgAssessedValue)} Baseline ➔
+      </button>
+    </div>
+  `;
+}
+
+function loadNeighborhoodInCalc(assessedValue) {
+  if (typeof switchTab === 'function') {
+    switchTab('tab-calculator');
+  }
+  const input = document.getElementById('calc-assessment-input');
+  const slider = document.getElementById('calc-assessment-slider');
+  if (input) {
+    input.value = assessedValue;
+    if (slider) slider.value = assessedValue;
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+  }
 }
 
 // Render Family Child Demographics & School Feeder Network

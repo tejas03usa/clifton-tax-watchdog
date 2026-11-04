@@ -262,6 +262,9 @@
                 <button class="btn-jump-action secondary" data-jump-tab="tab-fair-tax">
                   <span>⚖️</span> What If Taxes Were Fair? Test Scenarios in What-If Simulator ➔
                 </button>
+                <a href="#calc-sankey-section" class="btn-jump-action secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                  <span>🌊</span> Explore Interactive Tax Flow (Sankey Diagram) ➔
+                </a>
               </div>
             </div>
           </div>
@@ -289,6 +292,54 @@
           </div>
         </div>
       </div>
+
+      <!-- Interactive Sankey "Where Every $1 Goes" Full-Width Flow Section -->
+      <details class="collapsible-section" id="calc-sankey-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">🌊 Interactive Tax Flow: Where Every Dollar Goes (Sankey Diagram)</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;">Live Animated Flow</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <div class="sankey-header-row">
+            <div class="sankey-title-block">
+              <h3 id="sankey-flow-title">Your Property Tax Flow to Frontline Services</h3>
+              <p id="sankey-flow-subtitle">Tracing how your annual tax check divides into Clifton Public Schools (47.7%), Municipal Operations (29.4%), and Passaic County (22.9%), down to classroom instruction, police patrols, and healthcare.</p>
+            </div>
+            <div class="sankey-controls-bar">
+              <button type="button" class="btn-preset-pill active" id="sankey-btn-flow-view" onclick="toggleSankeyView('flow')">🌊 Interactive Flow</button>
+              <button type="button" class="btn-preset-pill" id="sankey-btn-table-view" onclick="toggleSankeyView('table')">📋 Accessible Table</button>
+            </div>
+          </div>
+
+          <!-- Sankey SVG Diagram Container -->
+          <div class="sankey-svg-viewport" id="sankey-viewport" tabindex="0" role="region" aria-label="Interactive Tax Flow Sankey Diagram">
+            <svg id="sankey-svg" class="sankey-svg" viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="sankey-svg-title">
+              <title id="sankey-svg-title">Visual Tax Dollar Flow Chart from Assessment to Municipal and School Line Items</title>
+              <!-- Rendered dynamically by JS -->
+            </svg>
+            <div id="sankey-tooltip" class="sankey-tooltip" role="tooltip"></div>
+          </div>
+
+          <!-- Accessible Table Fallback View (Hidden by default, toggled via button or assistive tech) -->
+          <div id="sankey-table-container" style="display: none; margin-top: 1rem;">
+            <!-- Rendered dynamically by JS -->
+          </div>
+
+          <!-- Interactive Node Inspector Box (Populated on click) -->
+          <div id="sankey-inspector" class="sankey-inspector-box" style="display: none;">
+            <!-- Rendered dynamically by JS -->
+          </div>
+        </div>
+      </details>
 
       <!-- Critical 2026-2027 Taxpayer Intelligence: ASI Revaluation, State Relief & Separate Sewer Billing -->
       <details class="collapsible-section" id="calc-critical-intel-section">

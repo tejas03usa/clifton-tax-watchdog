@@ -480,7 +480,7 @@
       <div class="sections-global-controls" role="region" aria-label="Page Sections Controls">
         <div class="sections-controls-left">
           <span class="sections-controls-icon">📑</span>
-          <span class="sections-status-text"><strong>5 Sections</strong> • Default collapsed • Click any header or Expand All</span>
+          <span class="sections-status-text"><strong>6 Sections</strong> • Default collapsed • Click any header or Expand All</span>
         </div>
         <div class="sections-btn-group">
           <button type="button" class="btn-sections-toggle btn-expand-all-sections" title="Expand all sections in this tab">
@@ -491,6 +491,63 @@
           </button>
         </div>
       </div>
+
+      <!-- Interactive Spatial GIS & Neighborhood Map Section -->
+      <details class="collapsible-section" id="demo-spatial-map-section" open>
+        <summary class="section-collapse-summary">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true">▾</span>
+            <h3 class="section-collapse-title">🗺️ Interactive Spatial GIS: Neighborhoods, Taxes & Flood Corridors</h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag" style="background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0;">Vector GIS Map</span>
+            <span class="section-toggle-badge" aria-hidden="true">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body">
+          <p class="section-subtitle-desc" style="margin-top: 0; margin-bottom: 14px;">
+            Explore Clifton's spatial geography, elevation contours, flood vulnerability basins, and neighborhood tax burdens. Toggle layers above the map, hover over any zone for quick stats, or click to open the deep-dive Inspector Panel.
+          </p>
+
+          <div class="spatial-layer-toolbar" role="toolbar" aria-label="Spatial GIS Map Layers">
+            <span style="font-weight: 700; font-size: 0.84rem; color: #475569;">Active Layer:</span>
+            <button type="button" class="spatial-layer-pill active" id="layer-btn-taxes" onclick="switchSpatialLayer('taxes')">
+              <span>🏡</span> Avg Tax Bill Heatmap
+            </button>
+            <button type="button" class="spatial-layer-pill" id="layer-btn-floods" onclick="switchSpatialLayer('floods')">
+              <span>🌊</span> Flood Hazard Corridors (Third River &amp; Weasel Brook)
+            </button>
+            <button type="button" class="spatial-layer-pill" id="layer-btn-zip" onclick="switchSpatialLayer('zip')">
+              <span>📮</span> 07013 vs 07011 ZIP Divide
+            </button>
+            <button type="button" class="spatial-layer-pill" id="layer-btn-schools" onclick="switchSpatialLayer('schools')">
+              <span>🏫</span> Public School Feeder Network
+            </button>
+          </div>
+
+          <div class="spatial-main-layout">
+            <div class="spatial-map-viewport" id="spatial-viewport" tabindex="0" role="region" aria-label="Interactive Clifton Spatial GIS Map Viewport">
+              <svg id="spatial-map-svg" class="spatial-svg" viewBox="0 0 880 640" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="spatial-map-title">
+                <title id="spatial-map-title">Vector Geographic Map of Clifton Neighborhoods, Waterways, and Tax Disparities</title>
+                <!-- Rendered dynamically by JS -->
+              </svg>
+              <div id="spatial-map-tooltip" class="sankey-tooltip" role="tooltip"></div>
+              
+              <div class="spatial-legend-box" id="spatial-legend">
+                <!-- Rendered dynamically by JS -->
+              </div>
+            </div>
+
+            <!-- Spatial Neighborhood & Corridor Inspector Panel -->
+            <div class="spatial-inspector-panel" id="spatial-inspector">
+              <!-- Rendered dynamically by JS -->
+            </div>
+          </div>
+        </div>
+      </details>
 
       <!-- Zip Code Comparison: 07011, 07012, 07013 & 07014 -->
       <details class="collapsible-section" id="demo-zip-divide-section">
