@@ -150,6 +150,13 @@
           <span class="badge-tag" id="nav-prop-count" style="background: #059669; color: #fff; margin-left: 4px; padding: 2px 7px; font-size: 0.72rem; border-radius: 999px;">21,300</span>
         </a>
       </div>
+
+      <!-- Quick Omnibox Trigger (Option A) -->
+      <button type="button" class="nav-omnibox-trigger" onclick="openOmnibox()" aria-label="Quick Teleport Search (Cmd+K)">
+        <span class="omnibox-trigger-icon">🔍</span>
+        <span class="omnibox-trigger-text">Teleport</span>
+        <kbd class="omnibox-trigger-kbd">⌘K</kbd>
+      </button>
     </div>
   </nav>
 
@@ -1763,6 +1770,136 @@
       </div>
     </div>
   </dialog>
+
+  <!-- Modal Dialog: ⚖️ Tax Appeal Analyzer & Comparable Finder -->
+  <dialog id="appeal-analyzer-dialog" class="modern-modal-dialog" aria-labelledby="appeal-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="appeal-dialog-title"><span>⚖️</span> NJ Tax Appeal Analyzer &amp; Street Comps</h3>
+          <div class="modern-dialog-subtitle" id="appeal-dialog-subtitle">Evaluating assessment fairness against official MOD-IV comparables &amp; NJ Chapter 123</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="appeal-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" onclick="printAppealEvidence()"><span>🖨️</span> Print Form A-1 Packet</button>
+        <button type="button" class="btn-street-action" onclick="copyAppealEvidence()"><span>📋</span> Copy Evidence Table</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog: 🧾 Official 2026 Property Tax Receipt -->
+  <dialog id="tax-receipt-dialog" class="modern-modal-dialog" aria-labelledby="receipt-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="receipt-dialog-title"><span>🧾</span> Official 2026 Property Tax Receipt</h3>
+          <div class="modern-dialog-subtitle" id="receipt-dialog-subtitle">Itemized school, municipal, and county tax contributions</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="receipt-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" onclick="window.print()"><span>🖨️</span> Print Receipt</button>
+        <button type="button" class="btn-street-action" onclick="copyReceiptText()"><span>📋</span> Copy Text</button>
+        <button type="button" class="btn-street-action" onclick="copyActivePropertyPermalink()"><span>🔗</span> Copy Direct Link</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog: 🖨️ 1-Page Printable Pocket Ballot Cheat Sheet -->
+  <dialog id="pocket-ballot-dialog" class="modern-modal-dialog" aria-labelledby="pocket-ballot-title">
+    <div class="modern-dialog-wrapper" style="max-width: 900px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="pocket-ballot-title"><span>🖨️</span> 1-Page Printable Pocket Ballot Cheat Sheet</h3>
+          <div class="modern-dialog-subtitle">Official voting booth reference card &bull; Permitted in voting booth pursuant to N.J.S.A. 19:34-7</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="pocket-ballot-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" style="background: #0f172a; color: #fff;" onclick="printPocketBallot()"><span>🖨️</span> Print 1-Page Pocket Ballot</button>
+        <button type="button" id="btn-copy-pocket-ballot" class="btn-street-action" onclick="copyPocketBallotText()"><span>📋</span> Copy Cheat Sheet Text</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog: 🔍 Universal Teleport Omnibox (Cmd+K) -->
+  <dialog id="omnibox-dialog" class="omnibox-dialog" aria-labelledby="omnibox-search-input">
+    <div class="omnibox-wrapper">
+      <div class="omnibox-header">
+        <span class="omnibox-search-icon" aria-hidden="true">🔍</span>
+        <input type="text" id="omnibox-search-input" class="omnibox-input" placeholder="Type to teleport: 'Reval', 'OPRA', 'Sankey', candidate, or address..." autocomplete="off" spellcheck="false" aria-label="Search all tools, ledgers, candidates, and properties">
+        <kbd class="omnibox-esc-badge" onclick="closeOmnibox()">ESC</kbd>
+        <button type="button" class="btn-omnibox-close" onclick="closeOmnibox()" aria-label="Close search">✕</button>
+      </div>
+
+      <div class="omnibox-filter-bar" role="tablist" aria-label="Filter Omnibox Categories">
+        <button type="button" class="omnibox-chip active" data-category="all" onclick="filterOmniboxCategory('all')">All</button>
+        <button type="button" class="omnibox-chip" data-category="tools" onclick="filterOmniboxCategory('tools')">⚡ Tools</button>
+        <button type="button" class="omnibox-chip" data-category="properties" onclick="filterOmniboxCategory('properties')">🏡 Properties</button>
+        <button type="button" class="omnibox-chip" data-category="budgets" onclick="filterOmniboxCategory('budgets')">📊 Budgets</button>
+        <button type="button" class="omnibox-chip" data-category="election" onclick="filterOmniboxCategory('election')">🗳️ Election</button>
+      </div>
+
+      <div class="omnibox-results" id="omnibox-results-list" role="listbox" aria-label="Search Results">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="omnibox-footer">
+        <div class="omnibox-footer-shortcuts">
+          <span class="omnibox-shortcut"><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+          <span class="omnibox-shortcut"><kbd>↵</kbd> Select</span>
+          <span class="omnibox-shortcut"><kbd>ESC</kbd> Close</span>
+        </div>
+        <div class="omnibox-footer-info">
+          <span>21,300 Parcels &bull; 25 Candidates &bull; $436M Audits</span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ⚓ Floating Citizen Action Dock (Option A) -->
+  <aside class="floating-citizen-dock" id="floating-citizen-dock" aria-label="Citizen Action Quick Dock">
+    <div class="floating-dock-inner">
+      <button type="button" class="dock-pill-btn dock-btn-search" onclick="openOmnibox()" title="Fast Teleport Search (Cmd+K)" aria-label="Teleport Search">
+        <span class="dock-icon">🔍</span>
+        <span class="dock-text">Teleport</span>
+        <kbd class="dock-kbd">⌘K</kbd>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openReliefCalculator()" title="State Property Tax Relief (Form PAS-1)" aria-label="Tax Relief">
+        <span class="dock-icon">🛡️</span>
+        <span class="dock-text">Tax Relief</span>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openRevalForecaster()" title="2027 ASI Revaluation Forecaster" aria-label="2027 Reval">
+        <span class="dock-icon">🔮</span>
+        <span class="dock-text">2027 Reval</span>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openPocketBallot()" title="1-Page Printable Pocket Ballot Cheat Sheet" aria-label="Pocket Ballot">
+        <span class="dock-icon">🗳️</span>
+        <span class="dock-text">Pocket Ballot</span>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openOpraModal()" title="1-Click OPRA Public Records Request Generator" aria-label="OPRA Request">
+        <span class="dock-icon">📋</span>
+        <span class="dock-text">OPRA</span>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openSpeechBuilder()" title="3-Minute Public Comment Speech Builder" aria-label="3-Min Speech">
+        <span class="dock-icon">🎙️</span>
+        <span class="dock-text">Speech</span>
+      </button>
+    </div>
+  </aside>
 
   <!-- Accessible Toast Notification for Link Copying -->
   <div id="toast-notification" class="toast-notification" role="status" aria-live="polite"></div>

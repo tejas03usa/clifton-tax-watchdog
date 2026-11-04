@@ -150,6 +150,13 @@
           <span class="badge-tag" id="nav-prop-count" style="background: #059669; color: #fff; margin-left: 4px; padding: 2px 7px; font-size: 0.72rem; border-radius: 999px;">21,300</span>
         </a>
       </div>
+
+      <!-- Quick Omnibox Trigger (Option A) -->
+      <button type="button" class="nav-omnibox-trigger" onclick="openOmnibox()" aria-label="Quick Teleport Search (Cmd+K)">
+        <span class="omnibox-trigger-icon">🔍</span>
+        <span class="omnibox-trigger-text">Teleport</span>
+        <kbd class="omnibox-trigger-kbd">⌘K</kbd>
+      </button>
     </div>
   </nav>
 
@@ -188,6 +195,173 @@
 
   <!-- Main Application Content Area -->
   <main class="main-content container">
+
+    <!-- 🏛️ CIVIC COMMAND CENTER (Option A Bento Grid Launcher) -->
+    <section class="civic-bento-hero" id="civic-command-center" aria-labelledby="civic-bento-title">
+      <div class="bento-header-banner">
+        <div class="bento-header-text">
+          <div class="bento-kicker">
+            <span class="live-dot-pulse"></span>
+            <span>CLIFTON CITIZEN DIRECTORY • 2026 FISCAL &amp; CIVIC AUDIT</span>
+          </div>
+          <h2 id="civic-bento-title">Civic Command Center</h2>
+          <p class="bento-subtitle">Direct access to 21,300 property records, $436M in certified school &amp; municipal budgets, 25 candidate dossiers, and 6 citizen accountability tools.</p>
+        </div>
+        <div class="bento-header-actions">
+          <button type="button" class="btn-bento-omnibox-open" onclick="openOmnibox()" aria-label="Open fast teleport search">
+            <span class="btn-icon">🔍</span>
+            <span class="btn-text">Fast Teleport Search</span>
+            <kbd class="bento-kbd">⌘K</kbd>
+          </button>
+        </div>
+      </div>
+
+      <div class="civic-bento-grid">
+        <!-- Quadrant 1: 🏡 My Home & Property Taxes -->
+        <article class="bento-card bento-card-home" aria-labelledby="bento-q1-title">
+          <div class="bento-card-top">
+            <span class="bento-badge badge-emerald">MOD-IV Roll • 21,300 Parcels</span>
+            <span class="bento-icon">🏡</span>
+          </div>
+          <h3 id="bento-q1-title">My Home &amp; Taxes</h3>
+          <p class="bento-card-desc">Look up any Clifton address, analyze tax appeal feasibility under Chapter 123, model the 2027 citywide revaluation, or claim state relief.</p>
+          
+          <div class="bento-search-box">
+            <input type="text" id="bento-home-search" class="bento-search-input" placeholder="Search address (e.g. 900 Clifton Ave, Van Houten...)" onkeydown="if(event.key==='Enter' &amp;&amp; !event.isComposing &amp;&amp; event.keyCode !== 229){ event.preventDefault(); openOmnibox(this.value); }">
+            <button type="button" class="bento-search-submit" onclick="openOmnibox(document.getElementById('bento-home-search').value)" aria-label="Search address">Find ↗</button>
+          </div>
+
+          <div class="bento-action-pills">
+            <button type="button" class="bento-pill-btn highlight" onclick="openRevalForecaster()">
+              <span>🔮</span> 2027 Reval Forecaster
+            </button>
+            <button type="button" class="bento-pill-btn" onclick="openAppealAnalyzer()">
+              <span>⚖️</span> Appeal Feasibility (Form A-1)
+            </button>
+            <button type="button" class="bento-pill-btn" onclick="openReliefCalculator()">
+              <span>🛡️</span> Form PAS-1 Relief Wizard
+            </button>
+            <button type="button" class="bento-pill-btn" onclick="openRenterCalculator()">
+              <span>🏢</span> Renter Tax Impact ($300-$450/mo)
+            </button>
+            <a href="#tab-calculator" class="bento-pill-link">
+              <span>💰</span> 2026 Tax Calculator (6.527%) ↓
+            </a>
+          </div>
+        </article>
+
+        <!-- Quadrant 2: 📊 Where Does Public Money Go? -->
+        <article class="bento-card bento-card-budgets" aria-labelledby="bento-q2-title">
+          <div class="bento-card-top">
+            <span class="bento-badge badge-blue">Certified 2026 Audits</span>
+            <span class="bento-icon">📊</span>
+          </div>
+          <h3 id="bento-q2-title">Where Does the Money Go?</h3>
+          <p class="bento-card-desc">Real-time oversight into Clifton's $143.3M municipal budget, $293.2M public school district, police overtime, and commercial PILOT exemptions.</p>
+
+          <div class="bento-stat-strip">
+            <div class="bento-stat-item">
+              <span class="stat-number">$293.2M</span>
+              <span class="stat-name">Schools (47.7%)</span>
+            </div>
+            <div class="bento-stat-item">
+              <span class="stat-number">$143.3M</span>
+              <span class="stat-name">City Muni (29.4%)</span>
+            </div>
+            <div class="bento-stat-item">
+              <span class="stat-number">$4.1M</span>
+              <span class="stat-name">Police OT</span>
+            </div>
+            <div class="bento-stat-item">
+              <span class="stat-number">$8.18M</span>
+              <span class="stat-name">PILOT Shift</span>
+            </div>
+            <div class="bento-stat-item">
+              <span class="stat-number">$103.4M</span>
+              <span class="stat-name">Note 17 Benefits</span>
+            </div>
+          </div>
+
+          <div class="bento-action-pills">
+            <a href="budgets.html#tab-sankey" class="bento-pill-link highlight">
+              <span>🌊</span> Tax Flow Sankey Diagram ↗
+            </a>
+            <a href="budgets.html#tab-vendors" class="bento-pill-link">
+              <span>🤝</span> Vendor Contracts &amp; Pay-to-Play ↗
+            </a>
+            <a href="budgets.html#tab-surrounding" class="bento-pill-link">
+              <span>🏘️</span> Compare vs Wayne &amp; Montclair ↗
+            </a>
+            <a href="budgets.html#tab-documents" class="bento-pill-link">
+              <span>📑</span> Certified Audits &amp; DCA Filings ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Quadrant 3: 🗳️ November 2026 Election -->
+        <article class="bento-card bento-card-election" aria-labelledby="bento-q3-title">
+          <div class="bento-card-top">
+            <span class="bento-badge badge-purple">19 Council • 6 BOE Candidates</span>
+            <span class="bento-icon">🗳️</span>
+          </div>
+          <h3 id="bento-q3-title">November 2026 Election</h3>
+          <p class="bento-card-desc">7 City Council seats &amp; 3 Board of Education seats. Compare candidate platforms, take the matchmaker quiz, and print your voting booth cheat sheet.</p>
+
+          <div class="bento-key-takeaways">
+            <div class="takeaway-pill">🎯 7 Open City Council Seats (#1–#19)</div>
+            <div class="takeaway-pill">✅ 100% Unanimous Health Benefit Opt-Out Pledge</div>
+            <div class="takeaway-pill">📬 24/7 Secure Drop Boxes (Town Hall &amp; Community Ctr)</div>
+          </div>
+
+          <div class="bento-action-pills">
+            <a href="election.html#matchmaker" class="bento-pill-link highlight">
+              <span>🧭</span> 60-Second Matchmaker Quiz ↗
+            </a>
+            <button type="button" class="bento-pill-btn highlight" onclick="openPocketBallot()">
+              <span>🖨️</span> 1-Page Pocket Ballot Cheat Sheet
+            </button>
+            <a href="election.html#council" class="bento-pill-link">
+              <span>👥</span> 19 Council Candidate Dossiers ↗
+            </a>
+            <a href="election.html#boe" class="bento-pill-link">
+              <span>🎓</span> 6 School Board Candidates ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Quadrant 4: ⚡ Citizen Action & Accountability -->
+        <article class="bento-card bento-card-action" aria-labelledby="bento-q4-title">
+          <div class="bento-card-top">
+            <span class="bento-badge badge-amber">NJ Sunshine Laws &amp; Oversight</span>
+            <span class="bento-icon">⚡</span>
+          </div>
+          <h3 id="bento-q4-title">Citizen Action Toolkit</h3>
+          <p class="bento-card-desc">Hold city hall accountable with legally binding public records demands, council testimony builder with rehearsal timer, and official county tax appeals.</p>
+
+          <div class="bento-key-takeaways">
+            <div class="takeaway-pill">⚖️ N.J.S.A. 47:1A-1 (OPRA 7-Day Deadline)</div>
+            <div class="takeaway-pill">🎙️ 350-Word Council Public Comment Pacer</div>
+            <div class="takeaway-pill">📑 Passaic County Board of Taxation Form A-1</div>
+          </div>
+
+          <div class="bento-action-pills">
+            <button type="button" class="bento-pill-btn highlight" onclick="openOpraModal()">
+              <span>📋</span> 1-Click OPRA Request Generator
+            </button>
+            <button type="button" class="bento-pill-btn highlight" onclick="openSpeechBuilder()">
+              <span>🎙️</span> 3-Minute Council Speech Builder
+            </button>
+            <button type="button" class="bento-pill-btn" onclick="openAppealAnalyzer()">
+              <span>📑</span> County Form A-1 Evidence Checklist
+            </button>
+            <a href="properties.html#mod4-duplicates" class="bento-pill-link">
+              <span>🔍</span> MOD-IV Duplicate Parcel Inspector ↗
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section id="tab-calculator" class="tab-pane active" role="tabpanel">
       <div class="section-intro">
         <div class="section-badge-bar">
@@ -685,6 +859,93 @@
       </div>
     </div>
   </dialog>
+
+  <!-- Modal Dialog 8: 🖨️ 1-Page Printable Pocket Ballot Cheat Sheet -->
+  <dialog id="pocket-ballot-dialog" class="modern-modal-dialog" aria-labelledby="pocket-ballot-title">
+    <div class="modern-dialog-wrapper" style="max-width: 900px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="pocket-ballot-title"><span>🖨️</span> 1-Page Printable Pocket Ballot Cheat Sheet</h3>
+          <div class="modern-dialog-subtitle">Official voting booth reference card &bull; Permitted in voting booth pursuant to N.J.S.A. 19:34-7</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="pocket-ballot-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" style="background: #0f172a; color: #fff;" onclick="printPocketBallot()"><span>🖨️</span> Print 1-Page Pocket Ballot</button>
+        <button type="button" id="btn-copy-pocket-ballot" class="btn-street-action" onclick="copyPocketBallotText()"><span>📋</span> Copy Cheat Sheet Text</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 9: 🔍 Universal Teleport Omnibox (Cmd+K) -->
+  <dialog id="omnibox-dialog" class="omnibox-dialog" aria-labelledby="omnibox-search-input">
+    <div class="omnibox-wrapper">
+      <div class="omnibox-header">
+        <span class="omnibox-search-icon" aria-hidden="true">🔍</span>
+        <input type="text" id="omnibox-search-input" class="omnibox-input" placeholder="Type to teleport: 'Reval', 'OPRA', 'Sankey', candidate, or address..." autocomplete="off" spellcheck="false" aria-label="Search all tools, ledgers, candidates, and properties">
+        <kbd class="omnibox-esc-badge" onclick="closeOmnibox()">ESC</kbd>
+        <button type="button" class="btn-omnibox-close" onclick="closeOmnibox()" aria-label="Close search">✕</button>
+      </div>
+
+      <div class="omnibox-filter-bar" role="tablist" aria-label="Filter Omnibox Categories">
+        <button type="button" class="omnibox-chip active" data-category="all" onclick="filterOmniboxCategory('all')">All</button>
+        <button type="button" class="omnibox-chip" data-category="tools" onclick="filterOmniboxCategory('tools')">⚡ Tools</button>
+        <button type="button" class="omnibox-chip" data-category="properties" onclick="filterOmniboxCategory('properties')">🏡 Properties</button>
+        <button type="button" class="omnibox-chip" data-category="budgets" onclick="filterOmniboxCategory('budgets')">📊 Budgets</button>
+        <button type="button" class="omnibox-chip" data-category="election" onclick="filterOmniboxCategory('election')">🗳️ Election</button>
+      </div>
+
+      <div class="omnibox-results" id="omnibox-results-list" role="listbox" aria-label="Search Results">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="omnibox-footer">
+        <div class="omnibox-footer-shortcuts">
+          <span class="omnibox-shortcut"><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+          <span class="omnibox-shortcut"><kbd>↵</kbd> Select</span>
+          <span class="omnibox-shortcut"><kbd>ESC</kbd> Close</span>
+        </div>
+        <div class="omnibox-footer-info">
+          <span>21,300 Parcels &bull; 25 Candidates &bull; $436M Audits</span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ⚓ Floating Citizen Action Dock (Option A) -->
+  <aside class="floating-citizen-dock" id="floating-citizen-dock" aria-label="Citizen Action Quick Dock">
+    <div class="floating-dock-inner">
+      <button type="button" class="dock-pill-btn dock-btn-search" onclick="openOmnibox()" title="Fast Teleport Search (Cmd+K)" aria-label="Teleport Search">
+        <span class="dock-icon">🔍</span>
+        <span class="dock-text">Teleport</span>
+        <kbd class="dock-kbd">⌘K</kbd>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openReliefCalculator()" title="State Property Tax Relief (Form PAS-1)" aria-label="Tax Relief">
+        <span class="dock-icon">🛡️</span>
+        <span class="dock-text">Tax Relief</span>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openRevalForecaster()" title="2027 ASI Revaluation Forecaster" aria-label="2027 Reval">
+        <span class="dock-icon">🔮</span>
+        <span class="dock-text">2027 Reval</span>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openPocketBallot()" title="1-Page Printable Pocket Ballot Cheat Sheet" aria-label="Pocket Ballot">
+        <span class="dock-icon">🗳️</span>
+        <span class="dock-text">Pocket Ballot</span>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openOpraModal()" title="1-Click OPRA Public Records Request Generator" aria-label="OPRA Request">
+        <span class="dock-icon">📋</span>
+        <span class="dock-text">OPRA</span>
+      </button>
+      <button type="button" class="dock-pill-btn" onclick="openSpeechBuilder()" title="3-Minute Public Comment Speech Builder" aria-label="3-Min Speech">
+        <span class="dock-icon">🎙️</span>
+        <span class="dock-text">Speech</span>
+      </button>
+    </div>
+  </aside>
 
   <!-- Accessible Toast Notification for Link Copying -->
   <div id="toast-notification" class="toast-notification" role="status" aria-live="polite"></div>

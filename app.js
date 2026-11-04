@@ -880,8 +880,9 @@ async function initApp() {
 
   await switchCity(currentCity, false);
 
-  // Initialize section share buttons and process deep links
+  // Initialize section share buttons, omnibox fast teleport, and process deep links
   initSectionShareButtons();
+  setupOmnibox();
   handleUrlHash();
 
   // Check for URL parameters to preload calculator or deep-link to properties, appeals, or relief calculator
@@ -4907,7 +4908,19 @@ function updateAppealInteriorSpecs() {
   }
 }
 
-function openAppealAnalyzer(propId) {
+async function openAppealAnalyzer(propId) {
+  if (!propertyAssessmentsData || !propertyAssessmentsData.properties) {
+    if (typeof loadAllData === 'function') {
+      try {
+        await loadAllData(currentCity);
+      } catch (e) {}
+    }
+  }
+  const dialog = document.getElementById('appeal-analyzer-dialog');
+  if (!dialog) {
+    window.location.href = propId ? `properties.html#property-${propId}` : 'properties.html';
+    return;
+  }
   if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
   const props = propertyAssessmentsData.properties;
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
@@ -5029,7 +5042,6 @@ function openAppealAnalyzer(propId) {
     verdictDesc = `Your assessment of ${formatUSDWhole(target.assessedTotal)} closely aligns (within ${assessDiffPct.toFixed(1)}%) with street comparables (${formatUSDWhole(compMedianAssess)}). An appeal may succeed if your home has documented condition defects or obsolescence.`;
   }
 
-  const dialog = document.getElementById('appeal-analyzer-dialog');
   const titleEl = document.getElementById('appeal-dialog-title');
   const subEl = document.getElementById('appeal-dialog-subtitle');
   const contentEl = document.getElementById('appeal-dialog-content');
@@ -11193,7 +11205,14 @@ let pocketBallotState = {
   initialized: false
 };
 
-function openPocketBallot() {
+async function openPocketBallot() {
+  if (!cliftonElectionData && typeof loadElectionData === 'function') {
+    try {
+      await loadElectionData(currentCity);
+    } catch (e) {
+      console.warn('Election data loading failed', e);
+    }
+  }
   const council = (cliftonElectionData && cliftonElectionData.councilCandidates) || [];
   const boe = (cliftonElectionData && cliftonElectionData.boeCandidates) || [];
   const maxCouncil = cliftonElectionData?.totalCouncilSeats || (currentCity === 'clifton' ? 7 : 3);
@@ -12048,3 +12067,609 @@ window.pauseSpeechTimer = pauseSpeechTimer;
 window.resetSpeechTimer = resetSpeechTimer;
 window.copySpeechTranscript = copySpeechTranscript;
 window.printSpeechTranscript = printSpeechTranscript;
+
+// ==========================================================================
+// OPTION A: UNIVERSAL TELEPORT OMNIBOX (Cmd+K) & CIVIC COMMAND ENGINE
+// ==========================================================================
+
+const STATIC_CIVIC_TOOLS = [
+  // Interactive Tools & Wizards
+  {
+    id: 'tool-reval',
+    category: 'tools',
+    icon: '🔮',
+    title: '2027 ASI Revaluation Forecaster',
+    subtitle: 'Model the shift to 100% fair market assessment ($3.2M ASI contract & Rule of Thirds)',
+    actionType: 'modal',
+    actionTarget: 'reval',
+    keywords: ['revaluation', 'reval', 'asi', 'appraisal systems', 'market value', 'rule of thirds', '2027', 'assessment']
+  },
+  {
+    id: 'tool-relief',
+    category: 'tools',
+    icon: '🛡️',
+    title: 'NJ Property Tax Relief Wizard (Form PAS-1)',
+    subtitle: 'Stay NJ (50% up to $6.5k), ANCHOR ($1,750), Senior Freeze, Veteran $250 / 100% disability',
+    actionType: 'modal',
+    actionTarget: 'relief',
+    keywords: ['relief', 'pas-1', 'anchor', 'stay nj', 'senior freeze', 'veteran', 'disabled', 'deduction', 'rebate']
+  },
+  {
+    id: 'tool-appeal',
+    category: 'tools',
+    icon: '⚖️',
+    title: 'Tax Appeal Feasibility Analyzer & Form A-1',
+    subtitle: 'Passaic County Tax Board checklist, 33.3% ratio corridor, & comparable sales',
+    actionType: 'modal',
+    actionTarget: 'appeal',
+    keywords: ['appeal', 'tax appeal', 'form a-1', 'passaic county', 'chapter 123', 'overassessed', 'corridor']
+  },
+  {
+    id: 'tool-opra',
+    category: 'tools',
+    icon: '📋',
+    title: '1-Click OPRA Public Records Generator',
+    subtitle: 'N.J.S.A. 47:1A-1 pre-filled request for Police OT, PILOT agreements, vendor invoices, & legal billing',
+    actionType: 'modal',
+    actionTarget: 'opra',
+    keywords: ['opra', 'public records', 'sunshine law', 'clerk', 'records request', 'overtime records', 'freedom of information']
+  },
+  {
+    id: 'tool-speech',
+    category: 'tools',
+    icon: '🎙️',
+    title: '3-Minute Public Comment Speech Builder',
+    subtitle: 'Fact-checked 350-word script & rehearsal countdown timer for City Council and School Board (BOE)',
+    actionType: 'modal',
+    actionTarget: 'speech',
+    keywords: ['speech', 'public comment', 'council comment', 'boe speech', 'timer', 'words per minute', 'rehearse']
+  },
+  {
+    id: 'tool-pocket-ballot',
+    category: 'tools',
+    icon: '🖨️',
+    title: '1-Page Printable Pocket Ballot Cheat Sheet',
+    subtitle: 'Permitted in voting booth (N.J.S.A. 19:34-7) for 19 Council candidates & 6 BOE candidates',
+    actionType: 'modal',
+    actionTarget: 'pocket-ballot',
+    keywords: ['ballot', 'pocket ballot', 'cheat sheet', 'voting booth', 'print ballot', 'candidates', 'endorsements']
+  },
+  {
+    id: 'tool-matchmaker',
+    category: 'tools',
+    icon: '🧭',
+    title: '60-Second Candidate Matchmaker Quiz',
+    subtitle: 'Answer 5 key civic questions to see which City Council candidates align with your values',
+    actionType: 'url',
+    actionTarget: 'election.html#matchmaker',
+    keywords: ['quiz', 'matchmaker', 'vote match', 'candidate quiz', 'which candidate', 'endorse', 'policy align']
+  },
+  {
+    id: 'tool-renter',
+    category: 'tools',
+    icon: '🏢',
+    title: 'Renter Property Tax Impact Calculator',
+    subtitle: 'Calculate how much of your monthly rent ($300–$450/mo) funds municipal and school property taxes',
+    actionType: 'modal',
+    actionTarget: 'renter',
+    keywords: ['renter', 'tenant', 'rent tax', 'hidden tax', 'monthly rent', 'landlord', 'apartment']
+  },
+  {
+    id: 'tool-calc',
+    category: 'tools',
+    icon: '💰',
+    title: 'Interactive Clifton Property Tax Calculator',
+    subtitle: 'Calculate exact 2026 tax bill based on the certified 6.527% general rate across City, Schools, and County',
+    actionType: 'url',
+    actionTarget: 'index.html#tab-calculator',
+    keywords: ['calculator', 'tax bill', 'tax rate', '6.527%', 'how much tax', 'assessed value']
+  },
+
+  // Budgets & Fiscal Ledgers
+  {
+    id: 'budget-sankey',
+    category: 'budgets',
+    icon: '🌊',
+    title: 'Tax Flow Sankey Diagram',
+    subtitle: 'Visual interactive flow from tax bill collections to Municipal, Schools, County, and Library funds',
+    actionType: 'url',
+    actionTarget: 'budgets.html#tab-sankey',
+    keywords: ['sankey', 'tax flow', 'money flow', 'diagram', 'visualize taxes', 'where money goes']
+  },
+  {
+    id: 'budget-schools',
+    category: 'budgets',
+    icon: '🏫',
+    title: 'Clifton Public Schools Budget ($293.2M)',
+    subtitle: '47.66% of total taxes: breakdown of 17 school buildings, teacher salaries, and State Aid shortfall',
+    actionType: 'url',
+    actionTarget: 'budgets.html#tab-schools',
+    keywords: ['schools', 'boe', 'board of education', 'teachers', 'education budget', 'state aid', 's2']
+  },
+  {
+    id: 'budget-municipal',
+    category: 'budgets',
+    icon: '🏛️',
+    title: 'Municipal Operating Budget ($143.3M)',
+    subtitle: '29.41% of taxes: DPW roads, Police, Fire, Recreation, and Health department operations',
+    actionType: 'url',
+    actionTarget: 'budgets.html#tab-city',
+    keywords: ['municipal', 'city budget', 'dpw', 'fire', 'police', 'city operating', 'tax levy']
+  },
+  {
+    id: 'budget-overtime',
+    category: 'budgets',
+    icon: '👮',
+    title: 'Police & Municipal Overtime Audit ($4.1M)',
+    subtitle: 'Year-over-year overtime analysis, staffing vacancies, and department breakdown',
+    actionType: 'url',
+    actionTarget: 'budgets.html#tab-overtime',
+    keywords: ['overtime', 'police overtime', 'ot', '4.1m', 'police budget', 'patrol']
+  },
+  {
+    id: 'budget-pilot',
+    category: 'budgets',
+    icon: '📦',
+    title: 'PILOT Tax Exemptions & Commercial Shift ($8.18M)',
+    subtitle: 'Payments in Lieu of Taxes shifting revenue from schools to municipal coffers and homeowner tax burdens',
+    actionType: 'url',
+    actionTarget: 'budgets.html#tab-pilot',
+    keywords: ['pilot', 'tax abatement', 'commercial shift', 'warehouse', 'payment in lieu', 'tax exemption']
+  },
+  {
+    id: 'budget-benefits',
+    category: 'budgets',
+    icon: '🏥',
+    title: 'Employee Healthcare & OPEB Audit ($103.4M)',
+    subtitle: 'Note 17 municipal audit: retiree healthcare liabilities, Chapter 78 contributions, and self-insurance reserves',
+    actionType: 'url',
+    actionTarget: 'budgets.html#tab-benefits',
+    keywords: ['benefits', 'health insurance', 'note 17', 'pension', 'opeb', 'chapter 78', 'retiree health']
+  },
+  {
+    id: 'budget-vendors',
+    category: 'budgets',
+    icon: '🤝',
+    title: 'City Vendor Contracts & Pay-to-Play Filings',
+    subtitle: 'Explore major vendors, legal defense bills, engineering consultants, and campaign contribution disclosures',
+    actionType: 'url',
+    actionTarget: 'budgets.html#tab-vendors',
+    keywords: ['vendors', 'contracts', 'pay-to-play', 'legal fees', 'engineers', 'procurement', 'consultants']
+  },
+  {
+    id: 'budget-surrounding',
+    category: 'budgets',
+    icon: '🏘️',
+    title: 'Compare Clifton Taxes vs Surrounding Towns',
+    subtitle: 'Side-by-side tax rate, assessment ratio, and average tax bill comparison with Wayne, Montclair, Parsippany & more',
+    actionType: 'url',
+    actionTarget: 'budgets.html#tab-surrounding',
+    keywords: ['compare', 'surrounding', 'neighbor', 'wayne', 'montclair', 'parsippany', 'passaic county', 'tax disparity']
+  },
+  {
+    id: 'budget-documents',
+    category: 'budgets',
+    icon: '📑',
+    title: 'Official Documents & DCA Filings Archive',
+    subtitle: 'Download certified Financial Statements, Annual Debt Statements, and DCA User-Friendly Budgets',
+    actionType: 'url',
+    actionTarget: 'budgets.html#tab-documents',
+    keywords: ['documents', 'audits', 'dca', 'user friendly budget', 'annual debt', 'pdf', 'financial statement']
+  },
+
+  // Properties & Tax Roll
+  {
+    id: 'prop-roll',
+    category: 'properties',
+    icon: '🔍',
+    title: 'Official Clifton MOD-IV Property Roll (21,300 Parcels)',
+    subtitle: 'Search every residential, commercial, and exempt property in Clifton with tax history and assessment cards',
+    actionType: 'url',
+    actionTarget: 'properties.html',
+    keywords: ['mod-iv', 'property search', 'parcels', 'assessments', 'property roll', 'tax roll', 'find home']
+  },
+  {
+    id: 'prop-duplicates',
+    category: 'properties',
+    icon: '🧬',
+    title: 'MOD-IV Duplicate Parcel & Split Lot Audit',
+    subtitle: 'Identify properties with duplicate parcel entries, split tax bills, or anomalous assessments',
+    actionType: 'url',
+    actionTarget: 'properties.html#mod4-duplicates',
+    keywords: ['duplicate', 'split lot', 'mod-iv audit', 'dual bill', 'anomalous', 'parcel audit']
+  },
+
+  // Election & Candidates
+  {
+    id: 'election-hub',
+    category: 'election',
+    icon: '🗳️',
+    title: 'November 2026 Municipal Election Hub',
+    subtitle: '7 City Council seats & 3 Board of Education seats: full voter guide, polling places, & deadlines',
+    actionType: 'url',
+    actionTarget: 'election.html',
+    keywords: ['election', 'vote', 'candidates', 'city council', 'board of education', 'boe', 'polling place']
+  },
+  {
+    id: 'election-council',
+    category: 'election',
+    icon: '👥',
+    title: '19 City Council Candidates & Platforms',
+    subtitle: 'In-depth dossiers on all 19 candidates running for Clifton City Council (#1 through #19)',
+    actionType: 'url',
+    actionTarget: 'election.html#council',
+    keywords: ['council', '19 candidates', 'city council', 'platforms', 'dossier', 'ballot number']
+  },
+  {
+    id: 'election-boe',
+    category: 'election',
+    icon: '🎓',
+    title: '6 Board of Education (BOE) Candidates',
+    subtitle: 'School district governance, curriculum, budget oversight, and superintendent accountability',
+    actionType: 'url',
+    actionTarget: 'election.html#boe',
+    keywords: ['boe', 'school board', '6 candidates', 'education candidates', 'school board candidates']
+  },
+  {
+    id: 'election-dropboxes',
+    category: 'election',
+    icon: '📬',
+    title: '24/7 Secure Ballot Drop Boxes & Polling Places',
+    subtitle: 'Clifton Town Hall, Community Center, and polling locations with hours and directions',
+    actionType: 'url',
+    actionTarget: 'election.html#voting-resources',
+    keywords: ['drop box', 'ballot drop', 'mail-in ballot', 'where to vote', 'town hall drop box', 'polling hours']
+  }
+];
+
+let omniboxState = {
+  isOpen: false,
+  activeCategory: 'all',
+  query: '',
+  selectedIndex: 0,
+  currentResults: []
+};
+
+function openOmnibox(initialQuery = '') {
+  const dialog = document.getElementById('omnibox-dialog');
+  if (!dialog) return;
+
+  omniboxState.isOpen = true;
+  omniboxState.query = initialQuery;
+  omniboxState.selectedIndex = 0;
+
+  if (typeof dialog.showModal === 'function' && !dialog.open) {
+    dialog.showModal();
+  }
+
+  const input = document.getElementById('omnibox-search-input');
+  if (input) {
+    input.value = initialQuery;
+    setTimeout(() => {
+      input.focus();
+      if (initialQuery) {
+        input.select();
+      }
+    }, 50);
+  }
+
+  renderOmniboxResults();
+}
+
+function closeOmnibox() {
+  const dialog = document.getElementById('omnibox-dialog');
+  if (dialog && dialog.open) {
+    dialog.close();
+  }
+  omniboxState.isOpen = false;
+}
+
+function filterOmniboxCategory(category) {
+  omniboxState.activeCategory = category;
+  omniboxState.selectedIndex = 0;
+
+  const chips = document.querySelectorAll('.omnibox-chip');
+  chips.forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('data-category') === category);
+  });
+
+  renderOmniboxResults();
+}
+
+function getOmniboxMatches(query, category) {
+  const q = (query || '').trim().toLowerCase();
+  let matches = [];
+
+  // 1. Search Static Civic Tools & Ledgers
+  STATIC_CIVIC_TOOLS.forEach(tool => {
+    if (category !== 'all' && tool.category !== category) return;
+    if (!q) {
+      matches.push(tool);
+      return;
+    }
+    const matchScore = 
+      (tool.title.toLowerCase().includes(q) ? 10 : 0) +
+      (tool.subtitle.toLowerCase().includes(q) ? 5 : 0) +
+      (tool.keywords.some(k => k.includes(q)) ? 8 : 0);
+    
+    if (matchScore > 0) {
+      matches.push({ ...tool, _score: matchScore });
+    }
+  });
+
+  if (q) {
+    matches.sort((a, b) => (b._score || 0) - (a._score || 0));
+  }
+
+  // 2. Search Candidates if relevant
+  const electionSource = cliftonElectionData || window.cliftonElectionData;
+  if ((category === 'all' || category === 'election') && q.length >= 2 && electionSource) {
+    const council = electionSource.councilCandidates || [];
+    council.forEach(cand => {
+      const name = (cand.name || '').toLowerCase();
+      const num = String(cand.ballotNumber || '');
+      const platform = (cand.platform || cand.platformFocus || cand.tagline || cand.role || cand.bio || '').toLowerCase();
+      if (name.includes(q) || num === q || platform.includes(q)) {
+        matches.push({
+          id: `cand-${cand.id || cand.ballotNumber}`,
+          category: 'election',
+          icon: '🗳️',
+          title: `${cand.name} (#${cand.ballotNumber})`,
+          subtitle: `City Council Candidate • ${cand.role || cand.profession || 'Public Service'} • ${cand.tagline || cand.priority || 'Council 2026'}`,
+          actionType: 'url',
+          actionTarget: `election.html#council-candidate-${cand.id || cand.ballotNumber}`
+        });
+      }
+    });
+
+    const boe = electionSource.boeCandidates || [];
+    boe.forEach(b => {
+      const name = (b.name || '').toLowerCase();
+      const num = String(b.ballotNumber || '');
+      const blurb = (b.tagline || b.slate || b.focus || b.bio || '').toLowerCase();
+      if (name.includes(q) || num === q || blurb.includes(q)) {
+        matches.push({
+          id: `boe-${b.ballotNumber || b.name}`,
+          category: 'election',
+          icon: '🎓',
+          title: `${b.name} (${b.ballotNumber || 'BOE'})`,
+          subtitle: `Board of Education Candidate • ${b.slate || 'Independent'} • ${b.tagline || b.focus || 'School District'}`,
+          actionType: 'url',
+          actionTarget: `election.html#boe`
+        });
+      }
+    });
+  }
+
+  // 3. Search Properties if relevant
+  const propSource = propertyAssessmentsData || window.propertyAssessmentsData;
+  if ((category === 'all' || category === 'properties') && q.length >= 2 && propSource?.properties) {
+    const props = propSource.properties;
+    let propMatches = 0;
+    for (let i = 0; i < props.length && propMatches < 5; i++) {
+      const p = props[i];
+      const addr = (p.address || '').toLowerCase();
+      const blk = String(p.block || '').toLowerCase();
+      const lot = String(p.lot || '').toLowerCase();
+      const neigh = (p.neighborhood || '').toLowerCase();
+      if (addr.includes(q) || (blk && blk === q) || (lot && lot === q) || neigh.includes(q)) {
+        propMatches++;
+        const assessed = p.assessedTotal || p.assessedValue || 0;
+        matches.push({
+          id: `prop-${p.id}`,
+          category: 'properties',
+          icon: '🏡',
+          title: p.address,
+          subtitle: `Assessed: $${assessed.toLocaleString()} • Tax: $${Math.round(p.annualTax || 0).toLocaleString()} • Blk ${p.block}, Lot ${p.lot} (${p.propertyType})`,
+          actionType: 'property',
+          actionTarget: p.id,
+          propertyData: p
+        });
+      }
+    }
+  }
+
+  return matches;
+}
+
+function renderOmniboxResults() {
+  const container = document.getElementById('omnibox-results-list');
+  if (!container) return;
+
+  const results = getOmniboxMatches(omniboxState.query, omniboxState.activeCategory);
+  omniboxState.currentResults = results;
+
+  if (omniboxState.selectedIndex >= results.length) {
+    omniboxState.selectedIndex = Math.max(0, results.length - 1);
+  }
+
+  if (results.length === 0) {
+    container.innerHTML = `
+      <div class="omnibox-empty-state">
+        <span class="omnibox-empty-icon">🔎</span>
+        <div class="omnibox-empty-title">No matching tools or records found</div>
+        <div class="omnibox-empty-desc">Try searching for "Reval", "OPRA", "Sankey", an address, or a candidate name.</div>
+      </div>
+    `;
+    return;
+  }
+
+  const isQueryEmpty = !omniboxState.query.trim();
+  const headerHtml = isQueryEmpty
+    ? `<div class="omnibox-group-header">✨ Quick Suggestions &amp; Tools (${results.length})</div>`
+    : `<div class="omnibox-group-header">🎯 Matching Records (${results.length})</div>`;
+
+  const itemsHtml = results.map((item, idx) => {
+    const isSelected = idx === omniboxState.selectedIndex;
+    const catBadge = getCategoryBadgeLabel(item.category);
+    return `
+      <div class="omnibox-result-item ${isSelected ? 'is-selected' : ''}" 
+           role="option" 
+           aria-selected="${isSelected}"
+           data-index="${idx}"
+           onclick="executeOmniboxItem(${idx})">
+        <div class="omnibox-item-icon">${item.icon || '📄'}</div>
+        <div class="omnibox-item-content">
+          <div class="omnibox-item-top">
+            <span class="omnibox-item-title">${escapeHtml(item.title)}</span>
+            <span class="omnibox-item-category-tag tag-${item.category}">${catBadge}</span>
+          </div>
+          <div class="omnibox-item-subtitle">${escapeHtml(item.subtitle)}</div>
+        </div>
+        <div class="omnibox-item-enter-hint">
+          <kbd>↵</kbd>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.innerHTML = headerHtml + itemsHtml;
+
+  const selectedEl = container.querySelector('.omnibox-result-item.is-selected');
+  if (selectedEl) {
+    selectedEl.scrollIntoView({ block: 'nearest' });
+  }
+}
+
+function getCategoryBadgeLabel(category) {
+  switch (category) {
+    case 'tools': return 'Tool';
+    case 'properties': return 'Property';
+    case 'budgets': return 'Budget';
+    case 'election': return 'Election';
+    default: return 'Civic';
+  }
+}
+
+async function executeOmniboxItem(index) {
+  const item = omniboxState.currentResults[index];
+  if (!item) return;
+
+  closeOmnibox();
+
+  if (item.actionType === 'modal') {
+    switch (item.actionTarget) {
+      case 'reval':
+        openRevalForecaster();
+        break;
+      case 'relief':
+        openReliefCalculator();
+        break;
+      case 'appeal':
+        await openAppealAnalyzer();
+        break;
+      case 'opra':
+        openOpraModal();
+        break;
+      case 'speech':
+        openSpeechBuilder();
+        break;
+      case 'pocket-ballot':
+        await openPocketBallot();
+        break;
+      case 'renter':
+        openRenterCalculator();
+        break;
+      default:
+        console.warn('Unknown modal target', item.actionTarget);
+    }
+  } else if (item.actionType === 'property') {
+    if (window.location.pathname.endsWith('properties.html')) {
+      const searchInput = document.getElementById('prop-search-input');
+      if (searchInput && item.propertyData) {
+        searchInput.value = item.propertyData.address;
+        searchInput.dispatchEvent(new Event('input'));
+      }
+      openAppealAnalyzer(item.actionTarget);
+    } else {
+      window.location.href = `properties.html?q=${encodeURIComponent(item.propertyData?.address || '')}#property-${item.actionTarget}`;
+    }
+  } else if (item.actionType === 'url') {
+    const [targetPage, targetAnchor] = item.actionTarget.split('#');
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    if (!targetPage || targetPage === currentPage) {
+      if (targetAnchor) {
+        const el = document.getElementById(targetAnchor) || document.querySelector(`[data-target="${targetAnchor}"]`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (typeof switchTab === 'function') {
+          switchTab(targetAnchor);
+        }
+      }
+    } else {
+      window.location.href = item.actionTarget;
+    }
+  }
+}
+
+function setupOmnibox() {
+  // Global Shortcut: Cmd+K / Ctrl+K opens omnibox
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      const dialog = document.getElementById('omnibox-dialog');
+      if (dialog && dialog.open) {
+        closeOmnibox();
+      } else {
+        openOmnibox();
+      }
+    }
+  });
+
+  const input = document.getElementById('omnibox-search-input');
+  if (input) {
+    input.addEventListener('input', (e) => {
+      omniboxState.query = e.target.value;
+      omniboxState.selectedIndex = 0;
+      renderOmniboxResults();
+    });
+
+    // MODERN WEB GUIDANCE: ime-safe-enter-submit
+    // Pairing event.isComposing with event.keyCode === 229 reliably catches Safari's out-of-order confirming Enter keydown
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        if (omniboxState.currentResults.length > 0) {
+          omniboxState.selectedIndex = (omniboxState.selectedIndex + 1) % omniboxState.currentResults.length;
+          renderOmniboxResults();
+        }
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (omniboxState.currentResults.length > 0) {
+          omniboxState.selectedIndex = (omniboxState.selectedIndex - 1 + omniboxState.currentResults.length) % omniboxState.currentResults.length;
+          renderOmniboxResults();
+        }
+      } else if (event.key === 'Enter') {
+        if (event.isComposing || event.keyCode === 229) {
+          return;
+        }
+        event.preventDefault();
+        executeOmniboxItem(omniboxState.selectedIndex);
+      } else if (event.key === 'Escape') {
+        closeOmnibox();
+      }
+    });
+  }
+
+  const dialog = document.getElementById('omnibox-dialog');
+  if (dialog) {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) {
+        closeOmnibox();
+      }
+    });
+  }
+}
+
+// Global window attachments for Option A features
+window.STATIC_CIVIC_TOOLS = STATIC_CIVIC_TOOLS;
+window.getOmniboxMatches = getOmniboxMatches;
+window.openOmnibox = openOmnibox;
+window.closeOmnibox = closeOmnibox;
+window.filterOmniboxCategory = filterOmniboxCategory;
+window.executeOmniboxItem = executeOmniboxItem;
+window.openPocketBallot = openPocketBallot;
+window.openAppealAnalyzer = openAppealAnalyzer;
+window.openReliefCalculator = openReliefCalculator;
+window.openOpraModal = openOpraModal;
+window.openRenterCalculator = openRenterCalculator;
