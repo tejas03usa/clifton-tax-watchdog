@@ -1493,16 +1493,45 @@ function updateElectionStaticCopy(cityId, meta) {
     }
   }
 
-  // Quiz Intro
+  // Quiz Intro & Dynamic Seat Limits
+  const seatCount = cliftonElectionData.totalCouncilSeats || (currentCity === 'clifton' ? 7 : (candidates.length <= 3 ? candidates.length : 3));
   const quizTitle = document.getElementById('matchmaker-title');
   if (quizTitle) quizTitle.textContent = `Take the 60-Second ${meta.name} Candidate Match Quiz`;
+
+  const quizSummaryTitle = document.querySelector('#election-matchmaker-section .section-collapse-title');
+  if (quizSummaryTitle) {
+    quizSummaryTitle.textContent = seatCount > 1 
+      ? `🧭 Candidate Match Quiz: Find Your Top ${seatCount} Matches` 
+      : `🧭 Candidate Match Quiz: Find Your Top Candidate Match`;
+  }
+
   const quizDesc = document.querySelector('.matchmaker-intro-text p');
   if (quizDesc) {
-    quizDesc.innerHTML = `${escapeHtml(meta.name)} voters participate in the November 3, 2026 General Election. Answer these quick policy questions—based on candidate stances and public records—to discover which candidates match your priorities.`;
+    quizDesc.innerHTML = `${escapeHtml(meta.name)} voters elect up to <strong>${seatCount} candidate${seatCount > 1 ? 's' : ''}</strong>. Answer these 6 quick policy questions—based on candidate interviews and voting records—to find out which candidates agree with your priorities and discover your ballot matches.`;
   }
+
+  const calcBtn = document.getElementById('btn-calc-compass');
+  if (calcBtn) {
+    calcBtn.textContent = seatCount > 1 
+      ? `🧭 Find My Top ${seatCount} Candidate Matches` 
+      : `🧭 Find My Top Candidate Match`;
+  }
+
   const quizStatusSub = document.querySelector('#matchmaker-results-box p');
   if (quizStatusSub) {
-    quizStatusSub.textContent = `Candidates ranked by agreement with your answers for ${meta.name}.`;
+    quizStatusSub.innerHTML = `Candidates ranked by agreement with your answers. In ${escapeHtml(meta.name)}, you can vote for up to <strong>${seatCount} candidate${seatCount > 1 ? 's' : ''}</strong>.`;
+  }
+
+  const showTopBtn = document.getElementById('btn-show-top7');
+  if (showTopBtn) {
+    showTopBtn.textContent = seatCount > 1 
+      ? `Top ${seatCount} Matches (Your Ballot Limit)` 
+      : `Top Match (Ballot Limit)`;
+  }
+
+  const showAllBtn = document.getElementById('btn-show-all-matches');
+  if (showAllBtn) {
+    showAllBtn.textContent = `Show All ${councilCount} Candidates`;
   }
 
   // Candidate section heading & status toggle buttons
@@ -8564,11 +8593,16 @@ function setupVoterCompass() {
   const showTop7Btn = document.getElementById('btn-show-top7');
   const showAllBtn = document.getElementById('btn-show-all-matches');
   const statusEl = document.getElementById('compass-answers-status');
+  const presetWatchdog = document.getElementById('preset-watchdog');
+  const presetBalanced = document.getElementById('preset-balanced');
 
   if (!form || !resultsBox || !resultsGrid) return;
 
   function calculateMatches() {
     if (!cliftonElectionData || !cliftonElectionData.councilCandidates) return;
+
+    const seatCount = cliftonElectionData.totalCouncilSeats || (currentCity === 'clifton' ? 7 : (cliftonElectionData.councilCandidates.length <= 3 ? cliftonElectionData.councilCandidates.length : 3));
+    const councilCount = cliftonElectionData.councilCandidates.length;
 
     let answers = {};
     try {
@@ -8583,13 +8617,19 @@ function setupVoterCompass() {
     const totalAnswered = answeredKeys.length;
 
     if (totalAnswered === 0) {
-      if (statusEl) statusEl.textContent = 'Select your views above to see which candidates match your priorities.';
+      if (statusEl) {
+        statusEl.innerHTML = '<span style="color: #64748b;">Select your priorities above or click an instant preset to see which candidates match your ballot.</span>';
+      }
       resultsBox.style.display = 'none';
       return;
     }
 
     if (statusEl) {
-      statusEl.textContent = `Your match scores based on ${totalAnswered} of 6 answered questions:`;
+      if (totalAnswered === 6) {
+        statusEl.innerHTML = `<span style="color: #15803d; font-weight: 700;">✓ All 6 questions answered (100% complete) • Full ballot ranking calculated below:</span>`;
+      } else {
+        statusEl.innerHTML = `<span style="color: #15803d; font-weight: 700;">✓ Live match scores based on ${totalAnswered} of 6 answered questions (preview below):</span>`;
+      }
     }
 
     const reasonMap = {
@@ -8652,27 +8692,57 @@ function setupVoterCompass() {
       return (a.candidate.ballotNumber || 0) - (b.candidate.ballotNumber || 0);
     });
 
+    // Calculate competitive ranks and detect ties
+    let currentRank = 1;
+    for (let i = 0; i < candidates.length; i++) {
+      if (i > 0 && candidates[i].matchPercent < candidates[i - 1].matchPercent) {
+        currentRank = i + 1;
+      }
+      candidates[i].calculatedRank = currentRank;
+      candidates[i].isTied = (i > 0 && candidates[i].matchPercent === candidates[i - 1].matchPercent) ||
+                             (i < candidates.length - 1 && candidates[i].matchPercent === candidates[i + 1].matchPercent);
+    }
+
     resultsBox.style.display = 'block';
 
-    const displayedCandidates = voterCompassViewMode === 'top7' ? candidates.slice(0, 7) : candidates;
+    const displayedCandidates = voterCompassViewMode === 'top7' 
+      ? candidates.slice(0, Math.min(seatCount, candidates.length)) 
+      : candidates;
 
-    resultsGrid.innerHTML = displayedCandidates.map((item, idx) => {
+    // Check if multiple candidates share the score at the cutoff boundary
+    const cutoffScore = (candidates[seatCount - 1] && candidates[seatCount - 1].matchPercent) || 0;
+    const candidatesWithCutoffScore = candidates.filter(c => c.matchPercent === cutoffScore).length;
+    const hasTieCutoff = voterCompassViewMode === 'top7' && candidates.length > seatCount && candidatesWithCutoffScore > 1 && candidates[seatCount] && candidates[seatCount].matchPercent === cutoffScore;
+
+    let tieBannerHtml = '';
+    if (hasTieCutoff) {
+      tieBannerHtml = `
+        <div class="match-tie-notice" style="grid-column: 1 / -1;">
+          <span style="font-size: 1.1rem;">ℹ️</span>
+          <div>
+            <strong>Ballot Tie Notice:</strong> Multiple candidates share a ${cutoffScore}% match score around your municipality's ${seatCount}-seat limit. Click <strong>"Show All ${councilCount} Candidates"</strong> to compare all aligned candidates, or answer additional questions above to break ties.
+          </div>
+        </div>
+      `;
+    }
+
+    resultsGrid.innerHTML = tieBannerHtml + displayedCandidates.map((item) => {
       const c = item.candidate;
-      const rank = idx + 1;
-      const isTop7 = voterCompassViewMode === 'top7' || rank <= 7;
+      const rank = item.calculatedRank;
+      const isTopSeat = rank <= seatCount;
       const pct = item.matchPercent;
       const gaugeClass = pct >= 80 ? 'gauge-high' : (pct >= 50 ? 'gauge-mid' : 'gauge-mod');
 
       return `
-        <article class="match-card ${isTop7 ? 'is-top7' : ''}" data-rank="${rank}">
-          ${isTop7 ? `
+        <article class="match-card ${isTopSeat ? 'is-top7' : ''}" data-rank="${rank}">
+          ${isTopSeat ? `
             <div class="match-top7-badge">
               <span>★</span>
-              <span>Top Match #${rank} (Ballot Recommendation)</span>
+              <span>Top Match #${rank}${item.isTied ? ' (Tied)' : ''} (Ballot Recommendation)</span>
             </div>
           ` : `
             <div class="match-meta" style="margin-bottom: 8px;">
-              <span>Rank #${rank} of 19 Candidates</span>
+              <span>Rank #${rank}${item.isTied ? ' (Tied)' : ''} of ${councilCount} Candidates</span>
             </div>
           `}
 
@@ -8688,7 +8758,7 @@ function setupVoterCompass() {
               <div class="match-meta">
                 <span>Ballot #${c.ballotNumber}</span>
                 <span>•</span>
-                <span>${c.status.toLowerCase() === 'incumbent' ? '🏛️ Incumbent' : '⚡ Challenger'}</span>
+                <span>${c.status.toLowerCase().includes('incumbent') ? '🏛️ Incumbent' : '⚡ Challenger'}</span>
               </div>
             </div>
           </div>
@@ -8748,23 +8818,74 @@ function setupVoterCompass() {
     });
   }
 
-  // Listeners
+  // Presets Wiring
+  if (presetWatchdog && !presetWatchdog.dataset.bound) {
+    presetWatchdog.dataset.bound = 'true';
+    presetWatchdog.addEventListener('click', () => {
+      const q1 = document.getElementById('q1-freeze'); if (q1) q1.checked = true;
+      const q2 = document.getElementById('q2-ban'); if (q2) q2.checked = true;
+      const q3 = document.getElementById('q3-flooding'); if (q3) q3.checked = true;
+      const q4 = document.getElementById('q4-watchdog'); if (q4) q4.checked = true;
+      const q5 = document.getElementById('q5-code'); if (q5) q5.checked = true;
+      const q6 = document.getElementById('q6-classroom'); if (q6) q6.checked = true;
+      const firstFieldset = form.querySelector('.compass-fieldset');
+      if (firstFieldset) firstFieldset.classList.remove('fieldset-attention-pulse');
+      calculateMatches();
+      resultsBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  if (presetBalanced && !presetBalanced.dataset.bound) {
+    presetBalanced.dataset.bound = 'true';
+    presetBalanced.addEventListener('click', () => {
+      const q1 = document.getElementById('q1-balanced'); if (q1) q1.checked = true;
+      const q2 = document.getElementById('q2-growth'); if (q2) q2.checked = true;
+      const q3 = document.getElementById('q3-paving'); if (q3) q3.checked = true;
+      const q4 = document.getElementById('q4-decorum'); if (q4) q4.checked = true;
+      const q5 = document.getElementById('q5-corridor'); if (q5) q5.checked = true;
+      const q6 = document.getElementById('q6-merger'); if (q6) q6.checked = true;
+      const firstFieldset = form.querySelector('.compass-fieldset');
+      if (firstFieldset) firstFieldset.classList.remove('fieldset-attention-pulse');
+      calculateMatches();
+      resultsBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  // Form Submission & Change Listeners
   if (!voterCompassInitialized) {
     voterCompassInitialized = true;
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      const answered = form.querySelectorAll('input[type="radio"]:checked').length;
+      if (answered === 0) {
+        const firstFieldset = form.querySelector('.compass-fieldset');
+        if (firstFieldset) {
+          firstFieldset.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstFieldset.classList.remove('fieldset-attention-pulse');
+          void firstFieldset.offsetWidth;
+          firstFieldset.classList.add('fieldset-attention-pulse');
+        }
+        if (statusEl) {
+          statusEl.innerHTML = '<span style="color: #dc2626; font-weight: 700;">⚠️ Please select your preference for at least Question 1 above (or click an instant preset) to view your matches.</span>';
+        }
+        return;
+      }
       calculateMatches();
       resultsBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     form.addEventListener('change', () => {
+      const firstFieldset = form.querySelector('.compass-fieldset');
+      if (firstFieldset) firstFieldset.classList.remove('fieldset-attention-pulse');
       calculateMatches();
     });
 
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
         form.reset();
+        const firstFieldset = form.querySelector('.compass-fieldset');
+        if (firstFieldset) firstFieldset.classList.remove('fieldset-attention-pulse');
         calculateMatches();
       });
     }

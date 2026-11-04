@@ -115,7 +115,7 @@
         "matchmakerScores": {
           "taxFreezeVsServices": "balanced",
           "developmentStance": "selective_growth",
-          "infrastructurePriority": "schools",
+          "infrastructurePriority": "paving",
           "governanceStyle": "decorum",
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
@@ -169,8 +169,8 @@
       "interviewStances": {
         "matchmakerScores": {
           "taxFreezeVsServices": "balanced",
-          "developmentStance": "preservation",
-          "infrastructurePriority": "schools",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "flooding",
           "governanceStyle": "decorum",
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
@@ -223,9 +223,9 @@
       ],
       "interviewStances": {
         "matchmakerScores": {
-          "taxFreezeVsServices": "tax_freeze",
+          "taxFreezeVsServices": "freeze",
           "developmentStance": "selective_growth",
-          "infrastructurePriority": "schools",
+          "infrastructurePriority": "paving",
           "governanceStyle": "decorum",
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
@@ -275,8 +275,8 @@
         "matchmakerScores": {
           "taxFreezeVsServices": "balanced",
           "developmentStance": "selective_growth",
-          "infrastructurePriority": "schools",
-          "governanceStyle": "reform",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
         }
@@ -323,10 +323,10 @@
       ],
       "interviewStances": {
         "matchmakerScores": {
-          "taxFreezeVsServices": "tax_freeze",
+          "taxFreezeVsServices": "freeze",
           "developmentStance": "selective_growth",
-          "infrastructurePriority": "schools",
-          "governanceStyle": "reform",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
           "housingEnforcement": "code_enforcement",
           "sharedServices": "classroom_focus"
         }
