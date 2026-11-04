@@ -15865,84 +15865,200 @@ dialog.omnibox-dialog::backdrop {
   font-size: 0.7rem;
 }
 
-/* Floating Citizen Action Dock (Single Slim Horizontal Bar) */
-.floating-citizen-dock {
-  position: fixed;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 995;
-  pointer-events: auto;
-}
-
-.floating-dock-inner {
+/* Nav Actions Group (Quick Tools Dropdown + Omnibox Teleport) */
+.nav-actions-group {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(15, 23, 42, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 6px 10px;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  max-width: 95vw;
-  overflow-x: auto;
-  scrollbar-width: none;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
-.floating-dock-inner::-webkit-scrollbar {
-  display: none;
+.nav-tools-menu-wrap {
+  position: relative;
+  display: inline-block;
 }
 
-.dock-pill-btn {
+.nav-tools-trigger {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: transparent;
-  border: 1px solid transparent;
-  color: #f1f5f9;
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 6px 12px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
   border-radius: 9999px;
+  padding: 6px 13px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
   cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.dock-pill-btn:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: #ffffff;
-  transform: translateY(-1px);
+.nav-tools-trigger:hover,
+.nav-tools-trigger:focus-visible,
+.nav-tools-menu-wrap.is-open .nav-tools-trigger {
+  background: #ffffff;
+  border-color: #f59e0b;
+  color: #b45309;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
 }
 
-.dock-btn-search {
-  background: #2563eb;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
-}
-
-.dock-btn-search:hover {
-  background: #1d4ed8;
-  color: #ffffff;
-}
-
-.dock-icon {
+.nav-tools-icon {
   font-size: 0.95rem;
   line-height: 1;
 }
 
-.dock-kbd {
-  font-size: 0.64rem;
-  padding: 1px 4px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 3px;
-  font-family: monospace;
+.nav-tools-text {
   font-weight: 700;
-  color: #ffffff;
+}
+
+.nav-caret {
+  font-size: 0.72rem;
+  color: #64748b;
+  transition: transform 0.2s ease;
   margin-left: 2px;
+}
+
+.nav-tools-menu-wrap.is-open .nav-caret {
+  transform: rotate(180deg);
+  color: #b45309;
+}
+
+/* Nav Tools Dropdown Menu */
+.nav-tools-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 330px;
+  max-width: 390px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  padding: 8px 6px;
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.98);
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s;
+  pointer-events: none;
+}
+
+.nav-tools-menu-wrap.is-open .nav-tools-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.nav-dropdown-header {
+  padding: 6px 10px 8px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 4px;
+}
+
+.nav-tool-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+  color: #0f172a;
+}
+
+.nav-tool-item:hover,
+.nav-tool-item:focus-visible {
+  background: #f1f5f9;
+  outline: none;
+  transform: translateX(2px);
+}
+
+.nav-tool-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 26px;
+  text-align: center;
+}
+
+.nav-tool-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.nav-tool-meta strong {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.nav-tool-meta span {
+  font-size: 0.72rem;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Footer Toolkit Strip Across All 4 Pages */
+.footer-toolkit-strip {
+  margin: 16px 0 18px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-toolkit-title {
+  font-size: 0.82rem;
+  color: #f8fafc;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-toolkit-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.footer-tool-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #e2e8f0;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.footer-tool-btn:hover,
+.footer-tool-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 /* Responsive adjustments */
@@ -15960,39 +16076,21 @@ dialog.omnibox-dialog::backdrop {
     display: none;
   }
 
-  .floating-dock-inner {
-    padding: 5px 8px;
-    gap: 4px;
-  }
-
-  .dock-pill-btn {
-    padding: 5px 8px;
-    font-size: 0.72rem;
-  }
-
-  .dock-kbd {
+  .nav-tools-trigger .nav-tools-text {
     display: none;
   }
 }
 
 @media (max-width: 580px) {
-  .floating-citizen-dock {
-    bottom: 12px;
-    width: 96vw;
+  .nav-tools-dropdown {
+    min-width: 290px;
+    max-width: 92vw;
+    right: -10px;
   }
 
-  .floating-dock-inner {
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  .dock-pill-btn .dock-text {
-    display: none;
-  }
-
-  .dock-pill-btn {
-    padding: 8px 10px;
-    font-size: 1.05rem;
+  .footer-toolkit-strip {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

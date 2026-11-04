@@ -883,9 +883,10 @@ async function initApp() {
 
   await switchCity(currentCity, false);
 
-  // Initialize section share buttons, omnibox fast teleport, and process deep links
+  // Initialize section share buttons, omnibox fast teleport, nav tools menu, and process deep links
   initSectionShareButtons();
   setupOmnibox();
+  setupNavToolsMenu();
   handleUrlHash();
 
   // Check for URL parameters to preload calculator or deep-link to properties, appeals, or relief calculator
@@ -9352,12 +9353,25 @@ async function loadElectionResults(cityId = currentCity, force = false) {
 function updateElectionRibbonsAndPreviews() {
   if (!electionResultsData) return;
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const countComplete = isElectionCountingComplete();
 
   // 1. Update Top Alert Ribbon Text
   const ribbonText = document.getElementById('ribbon-election-text');
   if (ribbonText) {
     const mayorText = electionResultsData.councilRace?.mayorProjected ? `${electionResultsData.councilRace.mayorProjected} leads council tally for Mayor; ` : '';
     ribbonText.innerHTML = `<strong>${electionResultsData.reportingStatus || '100% Reporting (43/43 Districts)'}:</strong> ${mayorText}${electionResultsData.councilRace?.seatsAvailable || 7} Council &amp; ${electionResultsData.boeRace?.seatsAvailable || 3} BOE seats decided.`;
+  }
+
+  const ribbonPill = document.getElementById('ribbon-refresh-pill');
+  if (ribbonPill) {
+    if (countComplete) {
+      ribbonPill.innerHTML = `✅ Counting Complete (100% Counted)`;
+      ribbonPill.style.background = 'rgba(16, 185, 129, 0.25)';
+      ribbonPill.style.color = '#10b981';
+      ribbonPill.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+    } else {
+      ribbonPill.innerHTML = `Auto-refreshes every 3m (<span id="ribbon-countdown">${formatRefreshCountdown(electionResultsCountdown)}</span>)`;
+    }
   }
 
   // 2. Update Bento Preview on index.html
@@ -9399,6 +9413,7 @@ function renderElectionResults() {
   const boe = d.boeRace || {};
   const candidates = council.candidates || [];
   const seats = council.seatsAvailable || 7;
+  const isCountComplete = isElectionCountingComplete();
 
   // Filter candidates based on activeElectionResultsFilter & search
   let filteredCands = candidates.slice();
@@ -9427,16 +9442,25 @@ function renderElectionResults() {
         </span>
         <span>${escapeHtml(d.sources?.[0]?.name || 'Passaic County Board of Elections')}</span>
         <span>•</span>
-        <span>Districts: <strong>${d.precinctsReporting} of ${d.totalPrecincts} (100%)</strong></span>
+        <span>Districts: <strong>${d.precinctsReporting} of ${d.totalPrecincts} (${d.percentReporting || 100}%)</strong></span>
         <span>•</span>
         <span>Last synced: <span id="election-last-synced-time">${d.lastUpdatedFormatted || 'Just now'}</span></span>
       </div>
       <div class="refresh-status-right">
-        <span style="font-size: 0.76rem; color: #64748b;">Next auto-refresh in:</span>
-        <span class="refresh-countdown-pill" id="election-refresh-countdown-display">${formatRefreshCountdown(electionResultsCountdown)}</span>
-        <button type="button" class="btn-election-refresh" id="btn-manual-election-refresh" onclick="manualRefreshElectionResults()">
-          <span>🔄</span> Refresh Now
-        </button>
+        ${isCountComplete ? `
+          <span class="refresh-countdown-pill complete" id="election-refresh-countdown-display" style="background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; font-weight: 700; padding: 4px 10px; border-radius: 999px; font-size: 0.76rem;">
+            ✅ Counting Complete (100% of Districts Counted) &bull; Auto-Refresh Halted
+          </span>
+          <button type="button" class="btn-election-refresh" id="btn-manual-election-refresh" onclick="manualRefreshElectionResults()" title="Check for final state certification audit updates">
+            <span>🔄</span> Refresh Now
+          </button>
+        ` : `
+          <span style="font-size: 0.76rem; color: #64748b;">Next auto-refresh in:</span>
+          <span class="refresh-countdown-pill" id="election-refresh-countdown-display">${formatRefreshCountdown(electionResultsCountdown)}</span>
+          <button type="button" class="btn-election-refresh" id="btn-manual-election-refresh" onclick="manualRefreshElectionResults()">
+            <span>🔄</span> Refresh Now
+          </button>
+        `}
       </div>
     </div>
 
@@ -9669,10 +9693,34 @@ function handleElectionResultsSearch(query) {
   renderElectionResults();
 }
 
+function isElectionCountingComplete() {
+  if (!electionResultsData) return false;
+  return Boolean(
+    electionResultsData.isCountComplete ||
+    electionResultsData.isFinal ||
+    (electionResultsData.precinctsReporting === electionResultsData.totalPrecincts && (electionResultsData.percentReporting || 0) >= 100)
+  );
+}
+
 function startElectionAutoRefresh() {
   if (electionCountdownInterval) {
     clearInterval(electionCountdownInterval);
+    electionCountdownInterval = null;
   }
+
+  // If all districts are reported / count is complete, do not run polling timer
+  if (isElectionCountingComplete()) {
+    const timerDisplay = document.getElementById('election-refresh-countdown-display');
+    if (timerDisplay) {
+      timerDisplay.innerHTML = '✅ Counting Complete (100% of Districts Counted) &bull; Auto-Refresh Halted';
+    }
+    const ribbonCountdown = document.getElementById('ribbon-countdown');
+    if (ribbonCountdown) {
+      ribbonCountdown.textContent = 'Counting Complete';
+    }
+    return;
+  }
+
   electionResultsCountdown = 180; // 3 minutes
 
   electionCountdownInterval = setInterval(() => {
@@ -9693,6 +9741,11 @@ function startElectionAutoRefresh() {
       loadElectionResults(currentCity, true).then(() => {
         renderElectionResults();
         flashResultsRefreshed();
+        // If results just became complete, halt the interval
+        if (isElectionCountingComplete() && electionCountdownInterval) {
+          clearInterval(electionCountdownInterval);
+          electionCountdownInterval = null;
+        }
       });
     }
   }, 1000);
@@ -9710,14 +9763,21 @@ async function manualRefreshElectionResults() {
   renderElectionResults();
   flashResultsRefreshed();
 
-  const timerDisplay = document.getElementById('election-refresh-countdown-display');
-  if (timerDisplay) {
-    timerDisplay.textContent = formatRefreshCountdown(electionResultsCountdown);
-  }
+  if (isElectionCountingComplete()) {
+    if (electionCountdownInterval) {
+      clearInterval(electionCountdownInterval);
+      electionCountdownInterval = null;
+    }
+  } else {
+    const timerDisplay = document.getElementById('election-refresh-countdown-display');
+    if (timerDisplay) {
+      timerDisplay.textContent = formatRefreshCountdown(electionResultsCountdown);
+    }
 
-  const ribbonCountdown = document.getElementById('ribbon-countdown');
-  if (ribbonCountdown) {
-    ribbonCountdown.textContent = formatRefreshCountdown(electionResultsCountdown);
+    const ribbonCountdown = document.getElementById('ribbon-countdown');
+    if (ribbonCountdown) {
+      ribbonCountdown.textContent = formatRefreshCountdown(electionResultsCountdown);
+    }
   }
 
   if (btn) {
@@ -13164,6 +13224,53 @@ async function executeOmniboxItem(index) {
   }
 }
 
+let navToolsInitialized = false;
+
+function toggleNavToolsMenu(event) {
+  if (event) {
+    if (typeof event.stopPropagation === 'function') event.stopPropagation();
+  }
+  const wrap = document.getElementById('nav-tools-menu-wrap');
+  const trigger = document.getElementById('nav-tools-trigger');
+  if (!wrap) return;
+
+  const isOpen = wrap.classList.toggle('is-open');
+  if (trigger) {
+    trigger.setAttribute('aria-expanded', String(isOpen));
+  }
+}
+
+function closeNavToolsMenu() {
+  const wrap = document.getElementById('nav-tools-menu-wrap');
+  const trigger = document.getElementById('nav-tools-trigger');
+  if (wrap && wrap.classList.contains('is-open')) {
+    wrap.classList.remove('is-open');
+    if (trigger) {
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  }
+}
+
+function setupNavToolsMenu() {
+  if (navToolsInitialized) return;
+  navToolsInitialized = true;
+
+  document.addEventListener('click', (event) => {
+    const wrap = document.getElementById('nav-tools-menu-wrap');
+    if (wrap && wrap.classList.contains('is-open')) {
+      if (!wrap.contains(event.target)) {
+        closeNavToolsMenu();
+      }
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeNavToolsMenu();
+    }
+  });
+}
+
 let omniboxInitialized = false;
 
 function setupOmnibox() {
@@ -13252,6 +13359,10 @@ window.setElectionResultsFilter = setElectionResultsFilter;
 window.handleElectionResultsSearch = handleElectionResultsSearch;
 window.manualRefreshElectionResults = manualRefreshElectionResults;
 window.startElectionAutoRefresh = startElectionAutoRefresh;
+window.isElectionCountingComplete = isElectionCountingComplete;
+window.toggleNavToolsMenu = toggleNavToolsMenu;
+window.closeNavToolsMenu = closeNavToolsMenu;
+window.setupNavToolsMenu = setupNavToolsMenu;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },

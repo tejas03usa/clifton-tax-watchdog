@@ -151,12 +151,71 @@
         </a>
       </div>
 
-      <!-- Quick Omnibox Trigger (Option A) -->
-      <button type="button" class="nav-omnibox-trigger" onclick="openOmnibox()" aria-label="Quick Teleport Search (Cmd+K)">
-        <span class="omnibox-trigger-icon">🔍</span>
-        <span class="omnibox-trigger-text">Teleport</span>
-        <kbd class="omnibox-trigger-kbd">⌘K</kbd>
-      </button>
+      <!-- Nav Actions: Quick Citizen Tools & Omnibox Teleport -->
+      <div class="nav-actions-group">
+        <!-- Citizen Toolkit Dropdown Menu -->
+        <div class="nav-tools-menu-wrap" id="nav-tools-menu-wrap">
+          <button type="button" class="nav-tools-trigger" id="nav-tools-trigger" onclick="toggleNavToolsMenu(event)" aria-expanded="false" aria-haspopup="true" aria-label="Open Citizen Tools Menu">
+            <span class="nav-tools-icon">⚡</span>
+            <span class="nav-tools-text">Quick Tools</span>
+            <span class="nav-caret" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-tools-dropdown" id="nav-tools-dropdown" role="menu" aria-label="Citizen Action Tools">
+            <div class="nav-dropdown-header">
+              <span>🛠️ Citizen Action Toolkit</span>
+            </div>
+            <button type="button" class="nav-tool-item" onclick="openReliefCalculator(); closeNavToolsMenu();" role="menuitem">
+              <span class="nav-tool-icon">🛡️</span>
+              <div class="nav-tool-meta">
+                <strong>Tax Relief Wizard (PAS-1)</strong>
+                <span>Stay NJ (50%), ANCHOR ($1,750), Senior Freeze</span>
+              </div>
+            </button>
+            <button type="button" class="nav-tool-item" onclick="openRevalForecaster(); closeNavToolsMenu();" role="menuitem">
+              <span class="nav-tool-icon">🔮</span>
+              <div class="nav-tool-meta">
+                <strong>2027 Reval Forecaster</strong>
+                <span>Model shift to 100% fair market assessment</span>
+              </div>
+            </button>
+            <button type="button" class="nav-tool-item" onclick="openPocketBallot(); closeNavToolsMenu();" role="menuitem">
+              <span class="nav-tool-icon">🗳️</span>
+              <div class="nav-tool-meta">
+                <strong>Pocket Ballot Cheat Sheet</strong>
+                <span>1-page printable voter guide (N.J.S.A. 19:34-7)</span>
+              </div>
+            </button>
+            <button type="button" class="nav-tool-item" onclick="openOpraModal(); closeNavToolsMenu();" role="menuitem">
+              <span class="nav-tool-icon">📋</span>
+              <div class="nav-tool-meta">
+                <strong>1-Click OPRA Request</strong>
+                <span>Statutory N.J.S.A. 47:1A-1 records demand</span>
+              </div>
+            </button>
+            <button type="button" class="nav-tool-item" onclick="openSpeechBuilder(); closeNavToolsMenu();" role="menuitem">
+              <span class="nav-tool-icon">🎙️</span>
+              <div class="nav-tool-meta">
+                <strong>3-Min Speech Builder</strong>
+                <span>Council &amp; BOE comments with podium timer</span>
+              </div>
+            </button>
+            <button type="button" class="nav-tool-item" onclick="openAppealAnalyzer(); closeNavToolsMenu();" role="menuitem">
+              <span class="nav-tool-icon">⚖️</span>
+              <div class="nav-tool-meta">
+                <strong>Tax Appeal Analyzer</strong>
+                <span>Passaic County comps &amp; Ch. 123 corridor</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Omnibox Trigger -->
+        <button type="button" class="nav-omnibox-trigger" onclick="openOmnibox()" aria-label="Quick Teleport Search (Cmd+K)">
+          <span class="omnibox-trigger-icon">🔍</span>
+          <span class="omnibox-trigger-text">Teleport</span>
+          <kbd class="omnibox-trigger-kbd">⌘K</kbd>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -1657,6 +1716,17 @@
           <h4>Clifton NJ Taxpayer Watchdog Project</h4>
           <p>Independent civic transparency, property assessment, and public records analysis for Clifton, New Jersey residents.</p>
         </div>
+        <div class="footer-toolkit-strip">
+          <span class="footer-toolkit-title">⚡ <strong>Citizen Action Toolkit:</strong></span>
+          <div class="footer-toolkit-links">
+            <button type="button" class="footer-tool-btn" onclick="openReliefCalculator()">🛡️ Tax Relief Wizard (PAS-1)</button>
+            <button type="button" class="footer-tool-btn" onclick="openRevalForecaster()">🔮 2027 Reval Forecaster</button>
+            <button type="button" class="footer-tool-btn" onclick="openPocketBallot()">🗳️ Pocket Ballot</button>
+            <button type="button" class="footer-tool-btn" onclick="openOpraModal()">📋 OPRA Request</button>
+            <button type="button" class="footer-tool-btn" onclick="openSpeechBuilder()">🎙️ 3-Min Speech Builder</button>
+            <button type="button" class="footer-tool-btn" onclick="openAppealAnalyzer()">⚖️ Tax Appeal Analyzer</button>
+          </div>
+        </div>
         <div class="footer-meta">
           <div class="footer-refresh-row">
             <span class="footer-badge" id="footer-last-refreshed">🔄 <strong>Last Refreshed:</strong> October 31, 2026 &bull; <span style="color: #10b981;">● 100% Verified (0.00% Hallucination Rate)</span></span>
@@ -1869,37 +1939,6 @@
       </div>
     </div>
   </dialog>
-
-  <!-- ⚓ Floating Citizen Action Dock (Option A) -->
-  <aside class="floating-citizen-dock" id="floating-citizen-dock" aria-label="Citizen Action Quick Dock">
-    <div class="floating-dock-inner">
-      <button type="button" class="dock-pill-btn dock-btn-search" onclick="openOmnibox()" title="Fast Teleport Search (Cmd+K)" aria-label="Teleport Search">
-        <span class="dock-icon">🔍</span>
-        <span class="dock-text">Teleport</span>
-        <kbd class="dock-kbd">⌘K</kbd>
-      </button>
-      <button type="button" class="dock-pill-btn" onclick="openReliefCalculator()" title="State Property Tax Relief (Form PAS-1)" aria-label="Tax Relief">
-        <span class="dock-icon">🛡️</span>
-        <span class="dock-text">Tax Relief</span>
-      </button>
-      <button type="button" class="dock-pill-btn" onclick="openRevalForecaster()" title="2027 ASI Revaluation Forecaster" aria-label="2027 Reval">
-        <span class="dock-icon">🔮</span>
-        <span class="dock-text">2027 Reval</span>
-      </button>
-      <button type="button" class="dock-pill-btn" onclick="openPocketBallot()" title="1-Page Printable Pocket Ballot Cheat Sheet" aria-label="Pocket Ballot">
-        <span class="dock-icon">🗳️</span>
-        <span class="dock-text">Pocket Ballot</span>
-      </button>
-      <button type="button" class="dock-pill-btn" onclick="openOpraModal()" title="1-Click OPRA Public Records Request Generator" aria-label="OPRA Request">
-        <span class="dock-icon">📋</span>
-        <span class="dock-text">OPRA</span>
-      </button>
-      <button type="button" class="dock-pill-btn" onclick="openSpeechBuilder()" title="3-Minute Public Comment Speech Builder" aria-label="3-Min Speech">
-        <span class="dock-icon">🎙️</span>
-        <span class="dock-text">Speech</span>
-      </button>
-    </div>
-  </aside>
 
   <!-- Accessible Toast Notification for Link Copying -->
   <div id="toast-notification" class="toast-notification" role="status" aria-live="polite"></div>
