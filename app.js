@@ -33,6 +33,7 @@ let applyPropertyFilters = null;
 // Cross-Hub Page & Tab Routing Map
 const TAB_PAGE_MAP = {
   'tab-calculator': 'index.html',
+  'tab-sankey': 'index.html#calc-sankey-section',
   'tab-election': 'election.html',
   'tab-budgets': 'budgets.html#tab-budgets',
   'tab-commercial-pilot': 'budgets.html#tab-commercial-pilot',
@@ -6119,6 +6120,7 @@ function renderSurroundingTowns() {
   if (!surroundingTownsData || !surroundingTownsData.towns) return;
   setupSurroundingComparatorEvents();
 
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const homeVal = crossTownState.homeValue;
   const income = crossTownState.income;
   const countyFilter = crossTownState.county;
@@ -11904,6 +11906,101 @@ let speechBuilderState = {
   timerInterval: null
 };
 
+function renderSpeechBuilderModal() {
+  const contentEl = document.getElementById('speech-dialog-content');
+  if (!contentEl) return;
+
+  const { forum, topic, persona, speakerName, neighborhood } = speechBuilderState;
+  const speechText = generatePublicCommentSpeech();
+  const wordCount = speechText.trim().split(/\s+/).length;
+  const estimatedWpm = Math.round(wordCount / 3);
+
+  contentEl.innerHTML = `
+    <!-- Top Configuration Controls -->
+    <div class="speech-config-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px; background: #f8fafc; padding: 14px; border-radius: 10px; border: 1px solid #e2e8f0;">
+      <div class="speech-config-field">
+        <label for="speech-forum-select" style="display: block; font-size: 0.78rem; font-weight: 700; color: #475569; margin-bottom: 4px;">1. Public Forum:</label>
+        <select id="speech-forum-select" class="styled-select" style="width: 100%; padding: 6px 10px; font-size: 0.84rem; border-radius: 6px; border: 1px solid #cbd5e1;" onchange="handleSpeechConfigChange('forum', this.value)">
+          <option value="council" ${forum === 'council' ? 'selected' : ''}>🏛️ Clifton City Council (3 Min Limit)</option>
+          <option value="boe" ${forum === 'boe' ? 'selected' : ''}>🏫 Clifton Board of Education (3 Min Limit)</option>
+        </select>
+      </div>
+
+      <div class="speech-config-field">
+        <label for="speech-topic-select" style="display: block; font-size: 0.78rem; font-weight: 700; color: #475569; margin-bottom: 4px;">2. Speaking Topic:</label>
+        <select id="speech-topic-select" class="styled-select" style="width: 100%; padding: 6px 10px; font-size: 0.84rem; border-radius: 6px; border: 1px solid #cbd5e1;" onchange="handleSpeechConfigChange('topic', this.value)">
+          <option value="taxes" ${topic === 'taxes' ? 'selected' : ''}>💰 6.527% Tax Rate &amp; $143.3M Budget</option>
+          <option value="overtime" ${topic === 'overtime' ? 'selected' : ''}>👮 $4.1M Municipal &amp; Police Overtime</option>
+          <option value="schools" ${topic === 'schools' ? 'selected' : ''}>🏫 $293.2M School Budget &amp; PILOT Sharing</option>
+          <option value="infrastructure" ${topic === 'infrastructure' ? 'selected' : ''}>🌊 Flooding, Stormwater &amp; Lead Pipes</option>
+          <option value="vendors" ${topic === 'vendors' ? 'selected' : ''}>🤝 No-Bid Vendor Contracts &amp; Pay-to-Play</option>
+          <option value="renters" ${topic === 'renters' ? 'selected' : ''}>🏢 Renter Property Tax Burden</option>
+        </select>
+      </div>
+
+      <div class="speech-config-field">
+        <label for="speech-persona-select" style="display: block; font-size: 0.78rem; font-weight: 700; color: #475569; margin-bottom: 4px;">3. Speaker Persona:</label>
+        <select id="speech-persona-select" class="styled-select" style="width: 100%; padding: 6px 10px; font-size: 0.84rem; border-radius: 6px; border: 1px solid #cbd5e1;" onchange="handleSpeechConfigChange('persona', this.value)">
+          <option value="taxpayer" ${persona === 'taxpayer' ? 'selected' : ''}>🏡 Homeowner / Fiscal Watchdog</option>
+          <option value="senior" ${persona === 'senior' ? 'selected' : ''}>🧓 Senior Citizen (Fixed Income)</option>
+          <option value="parent" ${persona === 'parent' ? 'selected' : ''}>🎒 Parent of School District Children</option>
+          <option value="renter" ${persona === 'renter' ? 'selected' : ''}>🏢 Working Tenant / Apartment Renter</option>
+        </select>
+      </div>
+
+      <div class="speech-config-field">
+        <label for="speech-name-input" style="display: block; font-size: 0.78rem; font-weight: 700; color: #475569; margin-bottom: 4px;">4. Your Name:</label>
+        <input type="text" id="speech-name-input" class="styled-input" style="width: 100%; padding: 6px 10px; font-size: 0.84rem; border-radius: 6px; border: 1px solid #cbd5e1;" value="${escapeHtml(speakerName)}" oninput="handleSpeechConfigChange('speakerName', this.value)">
+      </div>
+
+      <div class="speech-config-field">
+        <label for="speech-neighborhood-input" style="display: block; font-size: 0.78rem; font-weight: 700; color: #475569; margin-bottom: 4px;">5. Neighborhood / Street:</label>
+        <input type="text" id="speech-neighborhood-input" class="styled-input" style="width: 100%; padding: 6px 10px; font-size: 0.84rem; border-radius: 6px; border: 1px solid #cbd5e1;" value="${escapeHtml(neighborhood)}" oninput="handleSpeechConfigChange('neighborhood', this.value)">
+      </div>
+    </div>
+
+    <!-- Interactive Rehearsal Countdown Timer Bar -->
+    <div class="speech-timer-banner" style="display: flex; justify-content: space-between; align-items: center; background: #0f172a; color: #fff; padding: 12px 18px; border-radius: 8px; margin-bottom: 14px; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 1.3rem;">⏱️</span>
+        <div>
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8;">Podium Countdown</div>
+          <div id="speech-timer-clock" style="font-size: 1.4rem; font-family: 'JetBrains Mono', monospace; font-weight: 800; color: #22c55e;">3:00</div>
+        </div>
+      </div>
+
+      <div style="flex: 1; max-width: 280px;">
+        <div style="height: 6px; background: rgba(255,255,255,0.2); border-radius: 999px; overflow: hidden; margin-bottom: 4px;">
+          <div id="speech-timer-progress-bar" style="height: 100%; width: 100%; background: #16a34a; transition: width 0.3s ease;"></div>
+        </div>
+        <div style="font-size: 0.7rem; color: #94a3b8; text-align: right;" id="speech-timer-stats">${wordCount} words • ~${estimatedWpm} WPM (Pace)</div>
+      </div>
+
+      <div style="display: flex; gap: 6px;">
+        <button type="button" id="btn-speech-timer-start" class="btn-street-action" style="background: #2563eb; color: #fff; padding: 6px 14px; font-size: 0.82rem;" onclick="if(speechBuilderState.timerRunning){pauseSpeechTimer();}else{startSpeechTimer();}">
+          ${speechBuilderState.timerRunning ? '⏸ Pause' : (speechBuilderState.timerSecondsRemaining < 180 ? '▶ Resume' : '▶ Start Rehearsal')}
+        </button>
+        <button type="button" id="btn-speech-timer-reset" class="btn-street-action secondary" style="background: #334155; color: #f8fafc; border: none; padding: 6px 10px; font-size: 0.82rem;" onclick="resetSpeechTimer()">
+          ↺ Reset
+        </button>
+      </div>
+    </div>
+
+    <!-- Speech Transcript Area -->
+    <div class="speech-box-wrapper">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <label for="speech-transcript-box" style="font-size: 0.82rem; font-weight: 700; color: #0f172a; text-transform: uppercase;">
+          Fact-Checked Speaking Transcript (Fully Editable):
+        </label>
+        <span style="font-size: 0.74rem; color: #64748b;">Read directly or print on 5x7 note card</span>
+      </div>
+      <textarea id="speech-transcript-box" rows="12" class="styled-textarea font-serif" style="width: 100%; font-size: 0.95rem; line-height: 1.6; padding: 14px; border: 1px solid #cbd5e1; border-radius: 8px; color: #0f172a; background: #ffffff;">${escapeHtml(speechText)}</textarea>
+    </div>
+  `;
+
+  updateTimerDisplay();
+}
+
 function openSpeechBuilder(initialTopic) {
   if (initialTopic) speechBuilderState.topic = initialTopic;
   try {
@@ -12002,6 +12099,7 @@ function startSpeechTimer() {
 function pauseSpeechTimer() {
   speechBuilderState.timerRunning = false;
   clearInterval(speechBuilderState.timerInterval);
+  speechBuilderState.timerInterval = null;
   const startBtn = document.getElementById('btn-speech-timer-start');
   if (startBtn) startBtn.textContent = '▶ Resume';
 }
@@ -12173,7 +12271,7 @@ const STATIC_CIVIC_TOOLS = [
     title: 'Tax Flow Sankey Diagram',
     subtitle: 'Visual interactive flow from tax bill collections to Municipal, Schools, County, and Library funds',
     actionType: 'url',
-    actionTarget: 'budgets.html#tab-sankey',
+    actionTarget: 'index.html#calc-sankey-section',
     keywords: ['sankey', 'tax flow', 'money flow', 'diagram', 'visualize taxes', 'where money goes']
   },
   {
@@ -12183,7 +12281,7 @@ const STATIC_CIVIC_TOOLS = [
     title: 'Clifton Public Schools Budget ($293.2M)',
     subtitle: '47.66% of total taxes: breakdown of 17 school buildings, teacher salaries, and State Aid shortfall',
     actionType: 'url',
-    actionTarget: 'budgets.html#tab-schools',
+    actionTarget: 'budgets.html#tab-budgets',
     keywords: ['schools', 'boe', 'board of education', 'teachers', 'education budget', 'state aid', 's2']
   },
   {
@@ -12193,7 +12291,7 @@ const STATIC_CIVIC_TOOLS = [
     title: 'Municipal Operating Budget ($143.3M)',
     subtitle: '29.41% of taxes: DPW roads, Police, Fire, Recreation, and Health department operations',
     actionType: 'url',
-    actionTarget: 'budgets.html#tab-city',
+    actionTarget: 'budgets.html#tab-budgets',
     keywords: ['municipal', 'city budget', 'dpw', 'fire', 'police', 'city operating', 'tax levy']
   },
   {
@@ -12203,7 +12301,7 @@ const STATIC_CIVIC_TOOLS = [
     title: 'Police & Municipal Overtime Audit ($4.1M)',
     subtitle: 'Year-over-year overtime analysis, staffing vacancies, and department breakdown',
     actionType: 'url',
-    actionTarget: 'budgets.html#tab-overtime',
+    actionTarget: 'budgets.html#tab-budgets',
     keywords: ['overtime', 'police overtime', 'ot', '4.1m', 'police budget', 'patrol']
   },
   {
@@ -12213,7 +12311,7 @@ const STATIC_CIVIC_TOOLS = [
     title: 'PILOT Tax Exemptions & Commercial Shift ($8.18M)',
     subtitle: 'Payments in Lieu of Taxes shifting revenue from schools to municipal coffers and homeowner tax burdens',
     actionType: 'url',
-    actionTarget: 'budgets.html#tab-pilot',
+    actionTarget: 'budgets.html#tab-commercial-pilot',
     keywords: ['pilot', 'tax abatement', 'commercial shift', 'warehouse', 'payment in lieu', 'tax exemption']
   },
   {
@@ -12253,7 +12351,7 @@ const STATIC_CIVIC_TOOLS = [
     title: 'Official Documents & DCA Filings Archive',
     subtitle: 'Download certified Financial Statements, Annual Debt Statements, and DCA User-Friendly Budgets',
     actionType: 'url',
-    actionTarget: 'budgets.html#tab-documents',
+    actionTarget: 'budgets.html#tab-city-docs',
     keywords: ['documents', 'audits', 'dca', 'user friendly budget', 'annual debt', 'pdf', 'financial statement']
   },
 
@@ -12526,7 +12624,7 @@ function renderOmniboxResults() {
   container.innerHTML = headerHtml + itemsHtml;
 
   const selectedEl = container.querySelector('.omnibox-result-item.is-selected');
-  if (selectedEl) {
+  if (selectedEl && typeof selectedEl.scrollIntoView === 'function') {
     selectedEl.scrollIntoView({ block: 'nearest' });
   }
 }
@@ -12591,7 +12689,9 @@ async function executeOmniboxItem(index) {
       if (targetAnchor) {
         const el = document.getElementById(targetAnchor) || document.querySelector(`[data-target="${targetAnchor}"]`);
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (typeof el.scrollIntoView === 'function') {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         } else if (typeof switchTab === 'function') {
           switchTab(targetAnchor);
         }
@@ -12602,7 +12702,12 @@ async function executeOmniboxItem(index) {
   }
 }
 
+let omniboxInitialized = false;
+
 function setupOmnibox() {
+  if (omniboxInitialized) return;
+  omniboxInitialized = true;
+
   // Global Shortcut: Cmd+K / Ctrl+K opens omnibox
   window.addEventListener('keydown', (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
@@ -12673,3 +12778,9 @@ window.openAppealAnalyzer = openAppealAnalyzer;
 window.openReliefCalculator = openReliefCalculator;
 window.openOpraModal = openOpraModal;
 window.openRenterCalculator = openRenterCalculator;
+window.speechBuilderState = speechBuilderState;
+window.revalForecasterState = revalForecasterState;
+window.activeReliefState = activeReliefState;
+window.activeOpraModalState = activeOpraModalState;
+window.activeRenterState = activeRenterState;
+window.omniboxState = omniboxState;
