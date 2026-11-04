@@ -15183,3 +15183,51 @@ dialog::backdrop {
     color: #000000 !important;
   }
 }
+
+/* ==========================================================================
+   PHASE 2: 🔮 2027 Revaluation Forecaster & 🎙️ Speech Builder Styles
+   ========================================================================== */
+
+/* Reval Impact Badges */
+.rule-decrease {
+  background: #f0fdf4 !important;
+  border-color: #16a34a !important;
+  color: #166534 !important;
+}
+
+.rule-neutral {
+  background: #fefce8 !important;
+  border-color: #ca8a04 !important;
+  color: #854d0e !important;
+}
+
+.rule-increase {
+  background: #fef2f2 !important;
+  border-color: #dc2626 !important;
+  color: #991b1b !important;
+}
+
+/* Print Styles for Speech Note Card & Reval Sheet */
+@media print {
+  /* Format speech note card for podium reading */
+  #speech-builder-dialog #speech-transcript-box {
+    border: none !important;
+    font-size: 1.1rem !important;
+    line-height: 1.8 !important;
+    font-family: Georgia, serif !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #speech-builder-dialog .modern-dialog-header button,
+  #speech-builder-dialog .modern-dialog-footer,
+  #speech-builder-dialog #speech-timer-clock,
+  #speech-builder-dialog #speech-timer-progress-bar,
+  #speech-builder-dialog .btn-jump-action {
+    display: none !important;
+  }
+}

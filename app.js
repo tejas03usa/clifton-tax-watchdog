@@ -4331,6 +4331,9 @@ function renderProperties(propsToRender, page) {
             <button type="button" class="btn-relief-check" onclick="openReliefCalculator(${p.annualTax}, ${p.assessedTotal}, '${escapeHtml(p.address)}')">
               <span>🧓</span> State Tax Relief: ANCHOR &amp; StayNJ Rebates ➔
             </button>
+            <button type="button" class="btn-street-action" style="width: 100%; justify-content: center; background: #eff6ff; border-color: #bfdbfe; color: #1e40af; font-weight: 700; margin-top: 4px;" onclick="openRevalForecaster(${p.assessedTotal}, ${p.estimatedMarketValue}, '${escapeHtml(p.address)}')">
+              <span>🔮</span> 2027 ASI Citywide Reval Forecaster ➔
+            </button>
             <button type="button" class="btn-load-calculator" onclick="loadPropertyToCalculator(${p.assessedTotal})">
               <span>🧮</span> Load in Tax Calculator &amp; Line Items
             </button>
@@ -4340,6 +4343,9 @@ function renderProperties(propsToRender, page) {
               </button>
               <button type="button" class="btn-card-util" onclick="viewStreetReport('${escapeHtml(p.address)}')">
                 <span>📈</span> Street Report
+              </button>
+              <button type="button" class="btn-card-util" onclick="openSpeechBuilder('taxes')">
+                <span>🎙️</span> 3-Min Speech
               </button>
               <button type="button" class="btn-card-util" onclick="openTaxReceiptModal('${escapeHtml(p.id)}')">
                 <span>🧾</span> Tax Receipt
@@ -5193,11 +5199,19 @@ function openAppealAnalyzer(propId) {
       </div>
 
       <!-- Filing Guidance & Deadlines -->
-      <div style="background: #f1f5f9; border-radius: 8px; padding: 14px 18px; font-size: 0.84rem; color: #334155; line-height: 1.5;">
-        <strong style="color: #0f172a;">📅 Statutory NJ Appeal Deadlines &amp; Filing Rules:</strong><br>
-        • County Tax Board appeals must be filed by <strong>April 1, 2026</strong> (or May 1 if the municipality completed a revaluation).<br>
-        • Statutory NJ filing fee: <strong>$5.00</strong> (assessment &lt; $150k), <strong>$25.00</strong> ($150k–$500k), or <strong>$100.00</strong> ($500k–$1M).<br>
-        • Direct County Verification: <a href="javascript:void(0)" onclick="openMod4VerificationModal('${escapeHtml(target.id)}')" style="font-weight: 700; color: #2563eb; text-decoration: underline;">Inspect Certified MOD-IV Duplicate Record &amp; County Portals ➔</a>
+      <div style="background: #f1f5f9; border-radius: 8px; padding: 14px 18px; font-size: 0.84rem; color: #334155; line-height: 1.55;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+          <strong style="color: #0f172a; font-size: 0.92rem;">📅 Passaic County Board of Taxation Form A-1 Appeal Checklist:</strong>
+          <a href="https://www.state.nj.us/treasury/taxation/pdf/other_forms/lpt/ptappeal.pdf" target="_blank" rel="noopener" class="btn-jump-action" style="padding: 4px 10px; font-size: 0.78rem; background: #2563eb; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 700;">
+            <span>📥</span> Download Official Form A-1 (PDF) ↗
+          </a>
+        </div>
+        • <strong>Filing Office:</strong> Passaic County Board of Taxation, 401 Grand St, Room 113, Paterson, NJ 07505 (Phone: 973-720-7399).<br>
+        • <strong>Statutory Deadlines:</strong> Annually on or before <strong>April 1</strong> (extended to <strong>May 1</strong> in citywide revaluation years under N.J.S.A. 54:3-21).<br>
+        • <strong>Filing Fees:</strong> $5.00 (&lt;$150k assessment), $25.00 ($150k–$500k), $100.00 ($500k–$1M), $150.00 (&gt;$1M), payable to Passaic County Tax Administrator.<br>
+        • <strong>Service Requirement:</strong> 1 copy must be served on County Tax Board, 1 copy on Clifton Tax Assessor (900 Clifton Ave), and 1 copy on Clifton City Clerk.<br>
+        • <strong>Current Taxes Paid:</strong> Under N.J.S.A. 54:3-27, all municipal taxes and sewer charges must be paid current to have an appeal heard.<br>
+        • <strong>Direct County Verification:</strong> <a href="javascript:void(0)" onclick="openMod4VerificationModal('${escapeHtml(target.id)}')" style="font-weight: 700; color: #2563eb; text-decoration: underline;">Inspect Certified MOD-IV Duplicate Record &amp; County Portals ➔</a>
       </div>
     `;
   }
@@ -11691,3 +11705,346 @@ window.handleOpraFieldChange = handleOpraFieldChange;
 window.handleOpraTopicChange = handleOpraTopicChange;
 window.copyOpraModalText = copyOpraModalText;
 window.printOpraRequest = printOpraRequest;
+
+// ==========================================================================
+// PHASE 2: 🔮 2027 ASI Citywide Revaluation Impact Forecaster
+// ==========================================================================
+let revalForecasterState = {
+  currentAssessed: 180523,
+  marketValue: 542000,
+  propertyClass: 'residential_1f',
+  equalizedRate: 2.176, // % on 100% true market value
+  currentRate: 6.527,    // % on ~33.3% equalization ratio
+  address: 'Clifton Residential Benchmark'
+};
+
+function openRevalForecaster(assessed, market, address) {
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const defAssessed = (typeof assessed === 'number' && assessed > 0)
+    ? assessed
+    : (propertyAssessmentsData?.summaryStats?.averageAssessed || 180523);
+  const defMarket = (typeof market === 'number' && market > 0)
+    ? market
+    : Math.round(defAssessed / 0.333);
+
+  revalForecasterState.currentAssessed = defAssessed;
+  revalForecasterState.marketValue = defMarket;
+  revalForecasterState.address = address || `${meta.name} Residential Benchmark`;
+  revalForecasterState.currentRate = meta.rateNum || 6.527;
+  revalForecasterState.equalizedRate = +(revalForecasterState.currentRate * ((meta.equalizationRatio || 33.3) / 100)).toFixed(3);
+
+  renderRevalForecasterModal();
+
+  const dialog = document.getElementById('reval-forecaster-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function handleRevalInput(field, val) {
+  const num = parseFloat(val);
+  if (!isNaN(num) && num > 0) {
+    if (field === 'currentAssessed') {
+      revalForecasterState.currentAssessed = num;
+      // Auto-update market value if it was linked
+      revalForecasterState.marketValue = Math.round(num / 0.333);
+    } else if (field === 'marketValue') {
+      revalForecasterState.marketValue = num;
+    }
+    renderRevalForecasterModal();
+  }
+}
+
+function renderRevalForecasterModal() {
+  const contentEl = document.getElementById('reval-dialog-content');
+  if (!contentEl) return;
+
+  const { currentAssessed, marketValue, equalizedRate, currentRate, address } = revalForecasterState;
+
+  const currentAnnualTax = (currentAssessed / 100) * currentRate;
+  const projectedRevalTax = (marketValue / 100) * equalizedRate;
+  const taxDiff = projectedRevalTax - currentAnnualTax;
+  const taxDiffMonthly = taxDiff / 12;
+  const pctChange = currentAnnualTax > 0 ? (taxDiff / currentAnnualTax) * 100 : 0;
+
+  // Rule of Thirds Classification
+  let ruleClass = 'rule-neutral';
+  let ruleBadge = '⚖️ Rule of Thirds: Neutral (<±5%)';
+  let ruleDesc = 'Your home value appreciation closely tracks the Clifton citywide average. Under the Rule of Thirds, your annual tax bill is projected to remain roughly unchanged.';
+  let ruleColor = '#d97706';
+  let ruleBg = '#fffbeb';
+
+  if (pctChange < -5.0) {
+    ruleClass = 'rule-decrease';
+    ruleBadge = '🟢 Rule of Thirds: Tax Reduction Projected';
+    ruleDesc = 'Your property has appreciated slower than the citywide average or was historically over-assessed relative to the 33.3% equalization ratio. Your net tax bill is projected to decrease under the 2027 revaluation.';
+    ruleColor = '#15803d';
+    ruleBg = '#f0fdf4';
+  } else if (pctChange > 5.0) {
+    ruleClass = 'rule-increase';
+    ruleBadge = '🔴 Rule of Thirds: Tax Increase Projected';
+    ruleDesc = 'Your home has appreciated faster than the historical baseline (common for renovated, expanded homes, or high-demand pockets). Your tax share will increase to reflect true market value.';
+    ruleColor = '#b91c1c';
+    ruleBg = '#fef2f2';
+  }
+
+  contentEl.innerHTML = `
+    <!-- Top ASI Contract Context Banner -->
+    <div style="background: var(--bg-subtle, #f8fafc); border: 1px solid var(--border-light, #e2e8f0); border-radius: 8px; padding: 14px 18px; margin-bottom: 18px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <span style="font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 4px;">
+            CLIFTON CITY COUNCIL CONTRACT • APPRAISAL SYSTEMS INC. (ASI)
+          </span>
+          <h4 style="margin: 4px 0 2px 0; font-size: 1.05rem; font-weight: 800; color: #0f172a;">2027 Citywide Revaluation Impact Forecaster</h4>
+          <div style="font-size: 0.8rem; color: #64748b;">
+            First municipal revaluation since 1990 (37 years). Property: <strong>${escapeHtml(address)}</strong>
+          </div>
+        </div>
+        <div style="font-size: 0.78rem; text-align: right; color: #475569;">
+          <div>Contract Cost: <strong>$3.2 Million</strong></div>
+          <div>Effective Tax Year: <strong>2027 Roll</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inputs Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-bottom: 20px;">
+      <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px;">
+        <label for="reval-assessed-input" style="font-size: 0.82rem; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;">
+          1. Current 2026 Certified Assessment:
+        </label>
+        <div style="font-size: 0.74rem; color: #64748b; margin-bottom: 8px;">Based on 1990 base year (~33.3% of market value)</div>
+        <div style="display: flex; align-items: center; background: #f8fafc; border: 1.5px solid #94a3b8; border-radius: 6px; padding: 6px 10px;">
+          <span style="font-weight: 700; color: #64748b; margin-right: 6px;">$</span>
+          <input type="number" id="reval-assessed-input" value="${currentAssessed}" step="1000" min="20000" max="5000000" style="width: 100%; border: none; background: transparent; font-size: 1.05rem; font-weight: 800; font-family: var(--font-mono); outline: none;" onchange="handleRevalInput('currentAssessed', this.value)">
+        </div>
+        <div style="font-size: 0.75rem; color: #475569; margin-top: 6px;">Current 2026 Tax: <strong>${formatUSD(currentAnnualTax)} / yr</strong> (@ ${currentRate.toFixed(3)}%)</div>
+      </div>
+
+      <div style="background: #ffffff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px;">
+        <label for="reval-market-input" style="font-size: 0.82rem; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">
+          2. Estimated True Market Value (100% ASI Assessment):
+        </label>
+        <div style="font-size: 0.74rem; color: #64748b; margin-bottom: 8px;">What your property would appraise / sell for today</div>
+        <div style="display: flex; align-items: center; background: #eff6ff; border: 1.5px solid #2563eb; border-radius: 6px; padding: 6px 10px;">
+          <span style="font-weight: 800; color: #2563eb; margin-right: 6px;">$</span>
+          <input type="number" id="reval-market-input" value="${marketValue}" step="5000" min="50000" max="15000000" style="width: 100%; border: none; background: transparent; font-size: 1.05rem; font-weight: 800; font-family: var(--font-mono); color: #1e3a8a; outline: none;" oninput="handleRevalInput('marketValue', this.value)">
+        </div>
+        <div style="font-size: 0.75rem; color: #2563eb; margin-top: 6px;">Projected 2027 Tax: <strong>${formatUSD(projectedRevalTax)} / yr</strong> (@ ~${equalizedRate.toFixed(3)}%)</div>
+      </div>
+    </div>
+
+    <!-- Projected Impact Verdict Banner -->
+    <div style="background: ${ruleBg}; border: 1.5px solid ${ruleColor}; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 8px;">
+        <span style="font-weight: 800; font-size: 0.94rem; color: ${ruleColor};">${ruleBadge}</span>
+        <div style="font-size: 1.25rem; font-weight: 900; font-family: var(--font-mono); color: ${ruleColor};">
+          ${taxDiff >= 0 ? '+' : ''}${formatUSD(taxDiff)} <span style="font-size: 0.8rem; font-weight: 600;">/ yr</span>
+          <span style="font-size: 0.85rem; font-weight: 700;">(${taxDiff >= 0 ? '+' : ''}${pctChange.toFixed(1)}%)</span>
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 0.88rem; color: #1e293b; line-height: 1.5;">${ruleDesc}</p>
+      <div style="font-size: 0.78rem; font-weight: 600; color: #64748b; margin-top: 6px;">
+        Monthly Impact: <strong>${taxDiffMonthly >= 0 ? '+' : ''}${formatUSD(taxDiffMonthly)} / month</strong>
+      </div>
+    </div>
+
+    <!-- The 3 Pillars of Revaluation Fact Box -->
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+      <h4 style="margin: 0 0 10px 0; font-size: 0.92rem; color: #0f172a;">Critical Taxpayer Protections Under NJ Revaluation Law:</h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; font-size: 0.82rem; color: #475569; line-height: 1.45;">
+        <div style="background: #ffffff; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a; display: block; margin-bottom: 3px;">1. Revenue Neutrality</strong>
+          State law mandates that the revaluation itself does NOT create new tax dollars for City Hall. The total municipal levy remains identical; only individual shares adjust.
+        </div>
+        <div style="background: #ffffff; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a; display: block; margin-bottom: 3px;">2. Tax Rate Drops 67%</strong>
+          Because assessments triple to 100% of market value, the certified tax rate will drop proportionally from ~6.53% down to ~2.18%.
+        </div>
+        <div style="background: #ffffff; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0;">
+          <strong style="color: #0f172a; display: block; margin-bottom: 3px;">3. Informal ASI Review</strong>
+          In late 2026, ASI will mail preliminary valuations. Homeowners have the legal right to an informal 1-on-1 review with ASI to correct data errors before certified rolls lock.
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ==========================================================================
+// PHASE 2: 🎙️ 3-Minute Public Comment Speech Builder & Rehearsal Timer
+// ==========================================================================
+let speechBuilderState = {
+  forum: 'council',
+  topic: 'taxes',
+  persona: 'watchdog',
+  speakerName: 'Clifton Resident',
+  neighborhood: 'Allwood',
+  timerSecondsRemaining: 180,
+  timerRunning: false,
+  timerInterval: null
+};
+
+function openSpeechBuilder(initialTopic) {
+  if (initialTopic) speechBuilderState.topic = initialTopic;
+  try {
+    speechBuilderState.speakerName = localStorage.getItem('civic_speech_name') || 'Clifton Resident';
+    speechBuilderState.neighborhood = localStorage.getItem('civic_speech_neighborhood') || 'Allwood';
+  } catch (e) {}
+
+  renderSpeechBuilderModal();
+
+  const dialog = document.getElementById('speech-builder-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function handleSpeechConfigChange(field, val) {
+  speechBuilderState[field] = val;
+  try {
+    if (field === 'speakerName') localStorage.setItem('civic_speech_name', val);
+    if (field === 'neighborhood') localStorage.setItem('civic_speech_neighborhood', val);
+  } catch (e) {}
+  renderSpeechBuilderModal();
+}
+
+function generatePublicCommentSpeech() {
+  const { forum, topic, persona, speakerName, neighborhood } = speechBuilderState;
+  const isCouncil = forum === 'council';
+  const salutation = isCouncil
+    ? 'Good evening Mayor and members of the Clifton City Council.'
+    : 'Good evening President and members of the Clifton Board of Education.';
+
+  let personaIntro = '';
+  if (persona === 'senior') {
+    personaIntro = `My name is ${speakerName}. I am a senior citizen living on a fixed retirement income in ${neighborhood}, and I have proudly called Clifton my home for decades.`;
+  } else if (persona === 'parent') {
+    personaIntro = `My name is ${speakerName}, residing in ${neighborhood}, and I am a parent of children attending Clifton public schools.`;
+  } else if (persona === 'renter') {
+    personaIntro = `My name is ${speakerName}, and I am a working tenant living in ${neighborhood}. Like more than 50% of the households in our zip code, I pay for local property taxes through my monthly lease.`;
+  } else {
+    personaIntro = `My name is ${speakerName}, a taxpayer living in ${neighborhood}, and I am speaking tonight as an independent civic watchdog dedicated to local fiscal transparency.`;
+  }
+
+  let bodyArgument = '';
+  let demand = '';
+
+  if (topic === 'taxes') {
+    bodyArgument = `Our municipal tax rate now stands at 6.527%, among the highest in North Jersey, funding a certified municipal budget of $143.3 million alongside our $293.2 million school budget. Between public health benefits exceeding $103.4 million across city and school payrolls, and certified debt of $87.8 million, homeowners cannot continue absorbing annual 3% to 4% levy hikes while wage growth remains flat. We are funding municipal services at the expense of our working families' ability to remain in their homes.`;
+    demand = `I respectfully urge this governing body to enforce a rigid 2% budget cap, eliminate redundant executive stipends, and conduct a thorough line-item forensic review of all discretionary accounts before introducing the next budget.`;
+  } else if (topic === 'overtime') {
+    bodyArgument = `Certified municipal payroll records reveal over $4.1 million in municipal and police overtime, with several departmental employees taking home tens of thousands above their base salaries. While we deeply respect our first responders and the difficult job they perform, taxpayers need accountability. Furthermore, the lack of centralized public accounting for outside secondary employment details leaves taxpayers questioning whether municipal equipment and overhead are being subsidized.`;
+    demand = `I demand that this administration implement strict monthly overtime audit caps, publish detailed quarterly overtime reports by department online, and ensure that commercial contractors fully reimburse the city for all administrative overhead tied to private traffic details.`;
+  } else if (topic === 'infrastructure') {
+    bodyArgument = `For years, families in Botany Village, Lakeview, and neighborhoods along the Third River basin have watched their basements flood and their belongings destroyed during severe rainfall. Meanwhile, our drinking water rates continue to rise under Passaic Valley Water Commission oversight while hundreds of lead service lines remain in the ground. Public safety is the foundational duty of local government.`;
+    demand = `I call on the Council to immediately prioritize Third River desilting, aggressively pursue federal FEMA and DCA stormwater mitigation grants, and establish an active City Council oversight liaison to hold the PVWC accountable for clean, lead-free tap water.`;
+  } else if (topic === 'vendors') {
+    bodyArgument = `Public records and annual bill lists confirm that millions of dollars are awarded each year in professional services contracts for legal, engineering, auditing, and consulting services without firm Not-To-Exceed caps. Independent forensic audits documented missing contract ceilings and health deduction errors. Pay-to-play disclosures show vendors receiving substantial municipal fees while contributing to political campaigns.`;
+    demand = `I urge this governing body to adopt mandatory competitive bidding for all professional service agreements above $17,500, require hard Not-To-Exceed caps on every contract resolution, and prohibit mid-year contract amendments without formal public justification.`;
+  } else if (topic === 'schools') {
+    bodyArgument = `The Clifton Board of Education operates an essential $293.2 million school district educating over 11,000 children. Yet classroom teachers are paying out of pocket for classroom supplies while the district faces persistent state aid funding cliffs. At the same time, multimillion-dollar PILOT abatements in our city redirect commercial ratables away from our schools, leaving residential homeowners to carry 47.66% of local school taxes.`;
+    demand = `We demand that City Hall negotiate a mandatory 50% PILOT revenue sharing agreement with the Board of Education to directly fund our classrooms, and that both entities consolidate administrative purchasing to stop wasteful duplication.`;
+  } else {
+    // Renters / General
+    bodyArgument = `Over 52% of households in our eastern neighborhoods are renters. Under the New Jersey Tenant Property Tax Rebate Act, an estimated 20% of every rent check goes directly toward municipal and school property taxes. Working renters bear the brunt of tax increases through immediate rent hikes, yet are rarely included in municipal budget hearings or relief outreach.`;
+    demand = `I ask this council to actively promote the NJ ANCHOR Renter Benefit ($450 to $700 cash rebates) through municipal newsletters, and remember that when you vote on budget appropriations, you are voting on the rent of working-class Clifton families.`;
+  }
+
+  const closing = `Thank you for your time, your dedication to our city, and for listening to the residents who make Clifton strong.`;
+
+  return `${salutation}\n\n${personaIntro}\n\n${bodyArgument}\n\n${demand}\n\n${closing}`;
+}
+
+function startSpeechTimer() {
+  if (speechBuilderState.timerRunning) return;
+  speechBuilderState.timerRunning = true;
+
+  const timerDisplay = document.getElementById('speech-timer-clock');
+  const timerBar = document.getElementById('speech-timer-progress-bar');
+  const startBtn = document.getElementById('btn-speech-timer-start');
+
+  if (startBtn) startBtn.textContent = '⏸ Pause';
+
+  speechBuilderState.timerInterval = setInterval(() => {
+    if (speechBuilderState.timerSecondsRemaining > 0) {
+      speechBuilderState.timerSecondsRemaining--;
+      updateTimerDisplay();
+    } else {
+      pauseSpeechTimer();
+      if (timerDisplay) {
+        timerDisplay.style.color = '#dc2626';
+        timerDisplay.textContent = '0:00 (TIME EXPIRED)';
+      }
+    }
+  }, 1000);
+}
+
+function pauseSpeechTimer() {
+  speechBuilderState.timerRunning = false;
+  clearInterval(speechBuilderState.timerInterval);
+  const startBtn = document.getElementById('btn-speech-timer-start');
+  if (startBtn) startBtn.textContent = '▶ Resume';
+}
+
+function resetSpeechTimer() {
+  pauseSpeechTimer();
+  speechBuilderState.timerSecondsRemaining = 180;
+  const startBtn = document.getElementById('btn-speech-timer-start');
+  if (startBtn) startBtn.textContent = '▶ Start Rehearsal';
+  updateTimerDisplay();
+}
+
+function updateTimerDisplay() {
+  const timerDisplay = document.getElementById('speech-timer-clock');
+  const timerBar = document.getElementById('speech-timer-progress-bar');
+  if (!timerDisplay) return;
+
+  const secs = speechBuilderState.timerSecondsRemaining;
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  timerDisplay.textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+
+  const pct = (secs / 180) * 100;
+  if (timerBar) {
+    timerBar.style.width = `${pct}%`;
+    if (secs > 60) {
+      timerBar.style.background = '#16a34a';
+      timerDisplay.style.color = '#15803d';
+    } else if (secs > 30) {
+      timerBar.style.background = '#eab308';
+      timerDisplay.style.color = '#a16207';
+    } else {
+      timerBar.style.background = '#dc2626';
+      timerDisplay.style.color = '#b91c1c';
+    }
+  }
+}
+
+function copySpeechTranscript() {
+  const textEl = document.getElementById('speech-transcript-box');
+  if (!textEl) return;
+  navigator.clipboard.writeText(textEl.value).then(() => {
+    const copyBtn = document.getElementById('btn-copy-speech');
+    if (copyBtn) {
+      const orig = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<span>✅</span> Copied Speech to Clipboard!';
+      setTimeout(() => { copyBtn.innerHTML = orig; }, 2000);
+    }
+  });
+}
+
+function printSpeechTranscript() {
+  window.print();
+}
+
+// Global window attachments for Phase 2 features
+window.openRevalForecaster = openRevalForecaster;
+window.handleRevalInput = handleRevalInput;
+window.openSpeechBuilder = openSpeechBuilder;
+window.handleSpeechConfigChange = handleSpeechConfigChange;
+window.startSpeechTimer = startSpeechTimer;
+window.pauseSpeechTimer = pauseSpeechTimer;
+window.resetSpeechTimer = resetSpeechTimer;
+window.copySpeechTranscript = copySpeechTranscript;
+window.printSpeechTranscript = printSpeechTranscript;

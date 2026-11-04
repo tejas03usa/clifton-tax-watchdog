@@ -201,7 +201,8 @@
         <div class="election-primary-cta-bar">
           <a href="#election-matchmaker-section" class="btn-election-cta-primary">🧭 Take 60-Second Match Quiz</a>
           <a href="#election-candidates-heading" class="btn-election-cta-secondary">👥 Browse All 19 Council Candidates</a>
-          <button type="button" class="btn-election-cta-primary" style="background: #0f172a; border-color: #0f172a;" onclick="openPocketBallot()">🖨️ Print Pocket Ballot Cheat Sheet</button>
+          <button type="button" class="btn-election-cta-primary" style="background: #0f172a; border-color: #0f172a;" onclick="openPocketBallot()">🖨️ Print Pocket Ballot</button>
+          <button type="button" class="btn-election-cta-secondary" onclick="openSpeechBuilder('taxes')">🎙️ 3-Min Council Speech</button>
         </div>
         <div class="election-scope-notice-banner" id="election-scope-banner" style="margin-top: 18px; background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #2563eb; padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; color: #1e3a8a; line-height: 1.5; text-align: left;">
           <strong>ℹ️ Election Baseline & Candidate Certification Notice:</strong>
@@ -745,6 +746,27 @@
       <div class="modern-dialog-footer">
         <button type="button" class="btn-street-action" style="background: #0f172a; color: #fff;" onclick="printPocketBallot()"><span>🖨️</span> Print 1-Page Pocket Ballot</button>
         <button type="button" id="btn-copy-pocket-ballot" class="btn-street-action" onclick="copyPocketBallotText()"><span>📋</span> Copy Cheat Sheet Text</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 2: 🎙️ 3-Minute Public Comment Speech Builder -->
+  <dialog id="speech-builder-dialog" class="modern-modal-dialog" aria-labelledby="speech-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 860px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="speech-dialog-title"><span>🎙️</span> 3-Minute Public Comment Speech Builder</h3>
+          <div class="modern-dialog-subtitle">Fact-checked 350-word speaking script &amp; rehearsal timer for Clifton City Council &amp; BOE meetings</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="speech-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" id="btn-copy-speech" class="btn-street-action" onclick="copySpeechTranscript()"><span>📋</span> Copy Speaking Script</button>
+        <button type="button" class="btn-street-action secondary" onclick="printSpeechTranscript()"><span>🖨️</span> Print Speech Note Card</button>
         <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
       </div>
     </div>

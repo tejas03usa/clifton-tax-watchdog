@@ -254,10 +254,19 @@
                   <span>🏡</span> Search Your Home: Explore All 21,300 Clifton MOD-IV Assessments ➔
                 </button>
                 <button class="btn-jump-action secondary" onclick="openReliefCalculator()">
-                  <span>🧓</span> How Much Will NJ Pay? Calculate ANCHOR, StayNJ &amp; Senior Freeze ➔
+                  <span>🧓</span> How Much Will NJ Pay? Calculate Form PAS-1, ANCHOR &amp; StayNJ ➔
+                </button>
+                <button class="btn-jump-action secondary" onclick="openRevalForecaster()">
+                  <span>🔮</span> 2027 ASI Revaluation Forecaster: Will My Taxes Go Up or Down? ➔
                 </button>
                 <button class="btn-jump-action secondary" onclick="openAppealAnalyzer()">
                   <span>⚖️</span> Am I Over-Assessed? Tax Appeal &amp; Street Comps Analyzer ➔
+                </button>
+                <button class="btn-jump-action secondary" onclick="openSpeechBuilder('taxes')">
+                  <span>🎙️</span> 3-Minute Council Speech Builder: Create Your Speaking Script ➔
+                </button>
+                <button class="btn-jump-action secondary" onclick="openOpraModal('vendors')">
+                  <span>📑</span> 1-Click OPRA Generator: Request Vendor Contracts &amp; Overtime ➔
                 </button>
                 <button class="btn-jump-action secondary" data-jump-tab="tab-fair-tax">
                   <span>⚖️</span> What If Taxes Were Fair? Test Scenarios in What-If Simulator ➔
@@ -632,6 +641,47 @@
         <a id="opra-modal-mailto-btn" href="#" class="btn-street-action" style="text-decoration: none; background: #2563eb; color: #fff;"><span>✉️</span> Open in Email App</a>
         <button type="button" class="btn-street-action secondary" onclick="printOpraRequest()"><span>🖨️</span> Print Letter</button>
         <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 6: 🔮 2027 ASI Citywide Revaluation Impact Forecaster -->
+  <dialog id="reval-forecaster-dialog" class="modern-modal-dialog" aria-labelledby="reval-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 860px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="reval-dialog-title"><span>🔮</span> 2027 ASI Citywide Revaluation Impact Forecaster</h3>
+          <div class="modern-dialog-subtitle">Modeling the shift to 100% fair market assessment under Clifton's $3.2M Appraisal Systems Inc. contract</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="reval-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" onclick="window.print()"><span>🖨️</span> Print Impact Summary</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 7: 🎙️ 3-Minute Public Comment Speech Builder -->
+  <dialog id="speech-builder-dialog" class="modern-modal-dialog" aria-labelledby="speech-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 860px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="speech-dialog-title"><span>🎙️</span> 3-Minute Public Comment Speech Builder</h3>
+          <div class="modern-dialog-subtitle">Fact-checked 350-word speaking script &amp; rehearsal timer for Clifton City Council &amp; BOE meetings</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="speech-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" id="btn-copy-speech" class="btn-street-action" onclick="copySpeechTranscript()"><span>📋</span> Copy Speaking Script</button>
+        <button type="button" class="btn-street-action secondary" onclick="printSpeechTranscript()"><span>🖨️</span> Print Speech Note Card</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
       </div>
     </div>
   </dialog>
