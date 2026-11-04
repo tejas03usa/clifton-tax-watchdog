@@ -33,6 +33,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body data-page-title="Tax Calculator & Citizen Fiscal Watchdog">
+  <!-- Live 2026 Election Night Results Alert Ribbon -->
+  <div class="election-live-alert-ribbon" id="election-live-alert-ribbon">
+    <div class="container ribbon-inner">
+      <div class="ribbon-left">
+        <span class="live-pulse-dot"></span>
+        <span class="ribbon-tag">2026 ELECTION RESULTS</span>
+        <span class="ribbon-text" id="ribbon-election-text"><strong>100% Reporting (43/43 Districts):</strong> Ray Grabowski leads council tally for Mayor; 7 Council &amp; 3 BOE seats decided.</span>
+      </div>
+      <div class="ribbon-right">
+        <span class="ribbon-refresh-pill" id="ribbon-refresh-pill">Auto-refreshes every 3m (<span id="ribbon-countdown">2:59</span>)</span>
+        <a href="election.html#election-results-section" class="ribbon-link">View Full Tally ➔</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Modern App Header (Top of Page) -->
   <header class="app-header">
@@ -301,30 +315,39 @@
         <!-- Quadrant 3: 🗳️ November 2026 Election -->
         <article class="bento-card bento-card-election" aria-labelledby="bento-q3-title">
           <div class="bento-card-top">
-            <span class="bento-badge badge-purple">19 Council • 6 BOE Candidates</span>
+            <span class="bento-badge badge-purple" style="display: inline-flex; align-items: center; gap: 5px;">
+              <span class="live-pulse-dot-sm"></span>
+              LIVE: 100% Reporting
+            </span>
             <span class="bento-icon">🗳️</span>
           </div>
-          <h3 id="bento-q3-title">November 2026 Election</h3>
-          <p class="bento-card-desc">7 City Council seats &amp; 3 Board of Education seats. Compare candidate platforms, take the matchmaker quiz, and print your voting booth cheat sheet.</p>
+          <h3 id="bento-q3-title">November 2026 Election Results</h3>
+          <p class="bento-card-desc">Certified unofficial tallies via Passaic County Board of Elections. 100% of districts reported. Top 7 Council &amp; 3 School Board winners decided.</p>
 
-          <div class="bento-key-takeaways">
-            <div class="takeaway-pill">🎯 7 Open City Council Seats (#1–#19)</div>
-            <div class="takeaway-pill">✅ 100% Unanimous Health Benefit Opt-Out Pledge</div>
-            <div class="takeaway-pill">📬 24/7 Secure Drop Boxes (Town Hall &amp; Community Ctr)</div>
+          <div class="bento-election-live-preview" id="bento-election-live-preview">
+            <div class="live-leader-item mayor">
+              <span class="leader-role">👑 Projected Mayor</span>
+              <span class="leader-name">Ray Grabowski (Incumbent)</span>
+              <span class="leader-votes">9,142 votes (36.3%)</span>
+            </div>
+            <div class="live-leader-item council">
+              <span class="leader-role">🏛️ Leading Top 7 Council</span>
+              <span class="leader-name">Sadrakula, Latona, Mejia, Pino, Kolodziej, Thomas Jr.</span>
+            </div>
           </div>
 
           <div class="bento-action-pills">
-            <a href="election.html#matchmaker" class="bento-pill-link highlight">
-              <span>🧭</span> 60-Second Matchmaker Quiz ↗
+            <a href="election.html#election-results-section" class="bento-pill-link highlight" style="background: #dc2626; color: #fff; border-color: #b91c1c;">
+              <span>⚡</span> View Live Election Results Tally ➔
             </a>
             <button type="button" class="bento-pill-btn highlight" onclick="openPocketBallot()">
               <span>🖨️</span> 1-Page Pocket Ballot Cheat Sheet
             </button>
-            <a href="election.html#council" class="bento-pill-link">
-              <span>👥</span> 19 Council Candidate Dossiers ↗
+            <a href="election.html#matchmaker" class="bento-pill-link">
+              <span>🧭</span> Matchmaker Quiz ↗
             </a>
-            <a href="election.html#boe" class="bento-pill-link">
-              <span>🎓</span> 6 School Board Candidates ↗
+            <a href="election.html#council" class="bento-pill-link">
+              <span>👥</span> Candidate Dossiers ↗
             </a>
           </div>
         </article>

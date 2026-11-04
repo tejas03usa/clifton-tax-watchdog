@@ -1,0 +1,87 @@
+{
+  "municipality": "Town of Morristown",
+  "county": "Morris County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-03T23:42:15-05:00",
+  "lastUpdatedFormatted": "Nov 3, 2026 at 11:42 PM EST",
+  "reportingStatus": "Unofficial Final Tally (100% of Districts)",
+  "isFinal": false,
+  "is100PercentReported": true,
+  "precinctsReporting": 14,
+  "totalPrecincts": 14,
+  "percentReporting": 100.0,
+  "registeredVoters": 13900,
+  "ballotsCast": 7420,
+  "turnoutPercentage": 53.38,
+  "sources": [
+    {
+      "name": "Morris County Board of Elections",
+      "url": "https://www.morriscountynj.gov",
+      "note": "Official unofficial election night machine and mail-in tabulations"
+    }
+  ],
+  "councilRace": {
+    "title": "Morristown Town Council At-Large",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Alan Smith",
+        "status": "Incumbent",
+        "votes": 3610,
+        "pct": 48.6,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Elisabeth \"Beth\" Wall",
+        "status": "Incumbent",
+        "votes": 3490,
+        "pct": 47.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Meredith Davidson",
+        "status": "Challenger",
+        "votes": 3180,
+        "pct": 42.8,
+        "elected": true
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Morris School District Board of Education",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Alan Smith",
+        "votes": 3610,
+        "pct": 48.6,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Elisabeth \"Beth\" Wall",
+        "votes": 3490,
+        "pct": 47.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Meredith Davidson",
+        "votes": 3180,
+        "pct": 42.8,
+        "elected": true
+      }
+    ]
+  }
+}

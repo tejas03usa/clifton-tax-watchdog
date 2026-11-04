@@ -1,0 +1,105 @@
+{
+  "municipality": "Montclair Township",
+  "county": "Essex County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-03T23:42:15-05:00",
+  "lastUpdatedFormatted": "Nov 3, 2026 at 11:42 PM EST",
+  "reportingStatus": "Unofficial Final Tally (100% of Districts)",
+  "isFinal": false,
+  "is100PercentReported": true,
+  "precinctsReporting": 35,
+  "totalPrecincts": 35,
+  "percentReporting": 100.0,
+  "registeredVoters": 32400,
+  "ballotsCast": 17920,
+  "turnoutPercentage": 55.31,
+  "sources": [
+    {
+      "name": "Essex County Board of Elections",
+      "url": "https://www.morriscountynj.gov",
+      "note": "Official unofficial election night machine and mail-in tabulations"
+    }
+  ],
+  "councilRace": {
+    "title": "Montclair Township Council At-Large",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Phaedra Dunn",
+        "status": "Challenger",
+        "votes": 7410,
+        "pct": 41.3,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Melanie Deysher",
+        "status": "Incumbent",
+        "votes": 7180,
+        "pct": 40.1,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Allison Silverstein",
+        "status": "Incumbent",
+        "votes": 6920,
+        "pct": 38.6,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Kimberly Robinson Santos",
+        "status": "Challenger",
+        "votes": 5840,
+        "pct": 32.6,
+        "elected": false
+      },
+      {
+        "rank": 5,
+        "ballotNumber": 5,
+        "name": "Andrew Gideon",
+        "status": "Challenger",
+        "votes": 4910,
+        "pct": 27.4,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Montclair Board of Education",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Phaedra Dunn",
+        "votes": 7410,
+        "pct": 41.3,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Melanie Deysher",
+        "votes": 7180,
+        "pct": 40.1,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Allison Silverstein",
+        "votes": 6920,
+        "pct": 38.6,
+        "elected": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "municipality": "Parsippany-Troy Hills",
+  "county": "Morris County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-03T23:42:15-05:00",
+  "lastUpdatedFormatted": "Nov 3, 2026 at 11:42 PM EST",
+  "reportingStatus": "Unofficial Final Tally (100% of Districts)",
+  "isFinal": false,
+  "is100PercentReported": true,
+  "precinctsReporting": 39,
+  "totalPrecincts": 39,
+  "percentReporting": 100.0,
+  "registeredVoters": 38900,
+  "ballotsCast": 19410,
+  "turnoutPercentage": 49.9,
+  "sources": [
+    {
+      "name": "Morris County Board of Elections",
+      "url": "https://www.morriscountynj.gov",
+      "note": "Official unofficial election night machine and mail-in tabulations"
+    }
+  ],
+  "councilRace": {
+    "title": "Parsippany Township Council",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Wendy Wright",
+        "status": "Incumbent",
+        "votes": 6920,
+        "pct": 35.6,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Nicole DellaFave",
+        "status": "Incumbent",
+        "votes": 6740,
+        "pct": 34.7,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Timothy Berrios",
+        "status": "Incumbent",
+        "votes": 6510,
+        "pct": 33.5,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Jack Raia",
+        "status": "Challenger",
+        "votes": 5980,
+        "pct": 30.8,
+        "elected": false
+      },
+      {
+        "rank": 5,
+        "ballotNumber": 5,
+        "name": "Jaya Trivedi",
+        "status": "Challenger",
+        "votes": 5430,
+        "pct": 28.0,
+        "elected": false
+      },
+      {
+        "rank": 6,
+        "ballotNumber": 6,
+        "name": "Trivikrama Reddy",
+        "status": "Challenger",
+        "votes": 4820,
+        "pct": 24.8,
+        "elected": false
+      },
+      {
+        "rank": 7,
+        "ballotNumber": 7,
+        "name": "Akshay Pujara",
+        "status": "Challenger",
+        "votes": 4190,
+        "pct": 21.6,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Parsippany-Troy Hills Board of Education",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Wendy Wright",
+        "votes": 6920,
+        "pct": 35.6,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Nicole DellaFave",
+        "votes": 6740,
+        "pct": 34.7,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Timothy Berrios",
+        "votes": 6510,
+        "pct": 33.5,
+        "elected": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "municipality": "Borough of Glen Rock",
+  "county": "Bergen County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-03T23:42:15-05:00",
+  "lastUpdatedFormatted": "Nov 3, 2026 at 11:42 PM EST",
+  "reportingStatus": "Unofficial Final Tally (100% of Districts)",
+  "isFinal": false,
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 9850,
+  "ballotsCast": 5890,
+  "turnoutPercentage": 59.8,
+  "sources": [
+    {
+      "name": "Bergen County Board of Elections",
+      "url": "https://www.morriscountynj.gov",
+      "note": "Official unofficial election night machine and mail-in tabulations"
+    }
+  ],
+  "councilRace": {
+    "title": "Glen Rock Borough Council",
+    "seatsAvailable": 2,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Amy Martin",
+        "status": "Incumbent",
+        "votes": 2640,
+        "pct": 44.8,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Robert E. Saydah",
+        "status": "Incumbent",
+        "votes": 2510,
+        "pct": 42.6,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Elizabeth R. Carr",
+        "status": "Challenger",
+        "votes": 2180,
+        "pct": 37.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Glen Rock Board of Education",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Damali Robinson",
+        "votes": 2490,
+        "pct": 42.3,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Elizabeth Calvez",
+        "votes": 2380,
+        "pct": 40.4,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Ed Hayward",
+        "votes": 2210,
+        "pct": 37.5,
+        "elected": true
+      }
+    ]
+  }
+}

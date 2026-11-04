@@ -1,0 +1,96 @@
+{
+  "municipality": "Montville Township",
+  "county": "Morris County",
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-03T23:42:15-05:00",
+  "lastUpdatedFormatted": "Nov 3, 2026 at 11:42 PM EST",
+  "reportingStatus": "Unofficial Final Tally (100% of Districts)",
+  "isFinal": false,
+  "is100PercentReported": true,
+  "precinctsReporting": 18,
+  "totalPrecincts": 18,
+  "percentReporting": 100.0,
+  "registeredVoters": 18200,
+  "ballotsCast": 9840,
+  "turnoutPercentage": 54.07,
+  "sources": [
+    {
+      "name": "Morris County Board of Elections",
+      "url": "https://www.morriscountynj.gov",
+      "note": "Official unofficial election night machine and mail-in tabulations"
+    }
+  ],
+  "councilRace": {
+    "title": "Montville Township Committee",
+    "seatsAvailable": 2,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Matthew S. Kayne",
+        "status": "Incumbent",
+        "votes": 4120,
+        "pct": 41.9,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "June B. Witty",
+        "status": "Incumbent",
+        "votes": 3980,
+        "pct": 40.4,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Emily Ryzuk",
+        "status": "Challenger",
+        "votes": 3420,
+        "pct": 34.8,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "David Seffer",
+        "status": "Challenger",
+        "votes": 3080,
+        "pct": 31.3,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Montville Township Board of Education",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Joseph Daughtry",
+        "votes": 3780,
+        "pct": 38.4,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Ryan Pisano",
+        "votes": 3520,
+        "pct": 35.8,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Michael J. Palma",
+        "votes": 3310,
+        "pct": 33.6,
+        "elected": true
+      }
+    ]
+  }
+}

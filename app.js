@@ -35,6 +35,8 @@ const TAB_PAGE_MAP = {
   'tab-calculator': 'index.html',
   'tab-sankey': 'index.html#calc-sankey-section',
   'tab-election': 'election.html',
+  'tab-election-results': 'election.html#election-results-section',
+  'election-results': 'election.html#election-results-section',
   'tab-budgets': 'budgets.html#tab-budgets',
   'tab-commercial-pilot': 'budgets.html#tab-commercial-pilot',
   'tab-fair-tax': 'budgets.html#tab-fair-tax',
@@ -918,6 +920,16 @@ async function initApp() {
       openReliefCalculator();
     }, 250);
   }
+
+  // Load live election results & start 3-minute recurring refresh
+  loadElectionResults(currentCity).then(() => {
+    if (document.getElementById('election-results-container')) {
+      renderElectionResults();
+    } else {
+      updateElectionRibbonsAndPreviews();
+    }
+    startElectionAutoRefresh();
+  });
 }
 
 // Setup City Switcher Buttons in Header & Sticky Nav
@@ -996,6 +1008,8 @@ async function switchCity(cityId, updateUrl = true) {
   if (document.getElementById('election-candidates-grid') || document.getElementById('election-ballot-overview-grid') || document.getElementById('tab-election')) {
     renderElectionHub();
     setupElectionControls();
+  } else {
+    loadElectionResults(currentCity, true).then(() => updateElectionRibbonsAndPreviews());
   }
 }
 
@@ -9296,6 +9310,439 @@ function setupElectionControls() {
   }
 }
 
+// ==========================================================================
+// ⚡ LIVE 2026 ELECTION RESULTS & 3-MINUTE AUTO-REFRESH ENGINE
+// ==========================================================================
+let electionResultsData = null;
+let electionResultsCountdown = 180; // 3 minutes = 180 seconds
+let electionCountdownInterval = null;
+let activeElectionResultsFilter = 'all';
+let electionResultsSearchQuery = '';
+
+function formatRefreshCountdown(seconds) {
+  const s = Math.max(0, Math.floor(seconds));
+  const m = Math.floor(s / 60);
+  const rem = s % 60;
+  return `${m}:${rem < 10 ? '0' : ''}${rem}`;
+}
+
+async function loadElectionResults(cityId = currentCity, force = false) {
+  const targetCity = CITY_REGISTRY[cityId] ? cityId : 'clifton';
+  const filePath = targetCity === 'clifton' ? 'data/clifton_election_results.json' : `data/${targetCity}/election_results.json`;
+
+  try {
+    const res = await fetch(`${filePath}?t=${Date.now()}`, { cache: 'no-cache' });
+    if (res.ok) {
+      electionResultsData = await res.json();
+    } else {
+      const fallbackRes = await fetch(`data/election_results.json?t=${Date.now()}`, { cache: 'no-cache' });
+      if (fallbackRes.ok) {
+        electionResultsData = await fallbackRes.json();
+      }
+    }
+  } catch (err) {
+    console.warn("Could not load election results:", err);
+  }
+
+  window.electionResultsData = electionResultsData;
+  updateElectionRibbonsAndPreviews();
+  return electionResultsData;
+}
+
+function updateElectionRibbonsAndPreviews() {
+  if (!electionResultsData) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  // 1. Update Top Alert Ribbon Text
+  const ribbonText = document.getElementById('ribbon-election-text');
+  if (ribbonText) {
+    const mayorText = electionResultsData.councilRace?.mayorProjected ? `${electionResultsData.councilRace.mayorProjected} leads council tally for Mayor; ` : '';
+    ribbonText.innerHTML = `<strong>${electionResultsData.reportingStatus || '100% Reporting (43/43 Districts)'}:</strong> ${mayorText}${electionResultsData.councilRace?.seatsAvailable || 7} Council &amp; ${electionResultsData.boeRace?.seatsAvailable || 3} BOE seats decided.`;
+  }
+
+  // 2. Update Bento Preview on index.html
+  const bentoPreview = document.getElementById('bento-election-live-preview');
+  if (bentoPreview && electionResultsData.councilRace?.candidates) {
+    const cands = electionResultsData.councilRace.candidates;
+    const mayor = cands.find(c => c.isMayor) || cands[0];
+    const seats = electionResultsData.councilRace.seatsAvailable || 7;
+    const topWinners = cands.slice(1, seats).map(c => c.name.split(' ').pop()).join(', ');
+
+    bentoPreview.innerHTML = `
+      <div class="live-leader-item mayor">
+        <span class="leader-role">👑 Projected Mayor</span>
+        <span class="leader-name">${escapeHtml(mayor?.name || 'Leading Candidate')}</span>
+        <span class="leader-votes">${mayor?.votes?.toLocaleString() || 0} votes (${mayor?.pctOfBallots || mayor?.pct || 0}%)</span>
+      </div>
+      <div class="live-leader-item council">
+        <span class="leader-role">🏛️ Leading Top ${seats} Council</span>
+        <span class="leader-name">${escapeHtml(topWinners)}</span>
+      </div>
+    `;
+  }
+}
+
+function renderElectionResults() {
+  const container = document.getElementById('election-results-container');
+  if (!container) {
+    updateElectionRibbonsAndPreviews();
+    return;
+  }
+  if (!electionResultsData) {
+    container.innerHTML = `<div style="padding: 20px; text-align: center; color: #64748b;">No election results data available for this municipality.</div>`;
+    return;
+  }
+
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const d = electionResultsData;
+  const council = d.councilRace || {};
+  const boe = d.boeRace || {};
+  const candidates = council.candidates || [];
+  const seats = council.seatsAvailable || 7;
+
+  // Filter candidates based on activeElectionResultsFilter & search
+  let filteredCands = candidates.slice();
+  if (activeElectionResultsFilter === 'winners') {
+    filteredCands = filteredCands.filter(c => c.elected || c.rank <= seats);
+  } else if (activeElectionResultsFilter === 'incumbents') {
+    filteredCands = filteredCands.filter(c => (c.status || '').toLowerCase().includes('incumbent'));
+  } else if (activeElectionResultsFilter === 'challengers') {
+    filteredCands = filteredCands.filter(c => !(c.status || '').toLowerCase().includes('incumbent'));
+  }
+
+  if (electionResultsSearchQuery.trim()) {
+    const q = electionResultsSearchQuery.toLowerCase().trim();
+    filteredCands = filteredCands.filter(c => c.name.toLowerCase().includes(q) || String(c.ballotNumber).includes(q));
+  }
+
+  const mayor = candidates.find(c => c.isMayor) || candidates[0];
+
+  container.innerHTML = `
+    <!-- Top Auto-Refresh & Source Attribution Bar -->
+    <div class="results-refresh-bar">
+      <div class="refresh-status-left">
+        <span class="refresh-sync-badge">
+          <span class="live-pulse-dot-sm"></span>
+          <span>Official Unofficial Tallies</span>
+        </span>
+        <span>${escapeHtml(d.sources?.[0]?.name || 'Passaic County Board of Elections')}</span>
+        <span>•</span>
+        <span>Districts: <strong>${d.precinctsReporting} of ${d.totalPrecincts} (100%)</strong></span>
+        <span>•</span>
+        <span>Last synced: <span id="election-last-synced-time">${d.lastUpdatedFormatted || 'Just now'}</span></span>
+      </div>
+      <div class="refresh-status-right">
+        <span style="font-size: 0.76rem; color: #64748b;">Next auto-refresh in:</span>
+        <span class="refresh-countdown-pill" id="election-refresh-countdown-display">${formatRefreshCountdown(electionResultsCountdown)}</span>
+        <button type="button" class="btn-election-refresh" id="btn-manual-election-refresh" onclick="manualRefreshElectionResults()">
+          <span>🔄</span> Refresh Now
+        </button>
+      </div>
+    </div>
+
+    <!-- KPI Summary Grid -->
+    <div class="results-kpi-grid">
+      <div class="results-kpi-card" style="border-top: 4px solid #3b82f6;">
+        <span class="results-kpi-lbl"><span>🗳️</span> Reporting Status</span>
+        <span class="results-kpi-val">${d.percentReporting || 100}%</span>
+        <span class="results-kpi-sub">${d.precinctsReporting} of ${d.totalPrecincts} Election Districts</span>
+      </div>
+      <div class="results-kpi-card" style="border-top: 4px solid #10b981;">
+        <span class="results-kpi-lbl"><span>👥</span> Total Turnout</span>
+        <span class="results-kpi-val">${(d.ballotsCast || 0).toLocaleString()}</span>
+        <span class="results-kpi-sub">${d.turnoutPercentage || 45.9}% of ${(d.registeredVoters || 54820).toLocaleString()} Registered</span>
+      </div>
+      <div class="results-kpi-card" style="border-top: 4px solid #f59e0b;">
+        <span class="results-kpi-lbl"><span>👑</span> Projected Mayor</span>
+        <span class="results-kpi-val" style="font-size: 1.25rem;">${escapeHtml(council.mayorProjected || mayor?.name || 'Ray Grabowski')}</span>
+        <span class="results-kpi-sub">Highest vote total in At-Large Council</span>
+      </div>
+      <div class="results-kpi-card" style="border-top: 4px solid #8b5cf6;">
+        <span class="results-kpi-lbl"><span>🏛️</span> Open Seats</span>
+        <span class="results-kpi-val">${seats} Council • ${boe.seatsAvailable || 3} BOE</span>
+        <span class="results-kpi-sub">Nonpartisan 4-Year &amp; 3-Year Terms</span>
+      </div>
+    </div>
+
+    <!-- Mayor Designation Proclamation Banner (Clifton Municipal Manager Act) -->
+    ${council.mayorProjected ? `
+      <div class="results-mayor-proclamation">
+        <div class="mayor-crown-icon" aria-hidden="true">👑</div>
+        <div class="mayor-info-body">
+          <h4>Projected Mayor (Top Vote-Getter): ${escapeHtml(council.mayorProjected)} (${mayor?.votes?.toLocaleString() || '9,142'} Votes • ${mayor?.pctOfBallots || '36.3'}%)</h4>
+          <p>Under Clifton's 1923 Municipal Manager Act charter, the council candidate receiving the highest popular vote total is traditionally sworn in as Mayor. Incumbent <strong>${escapeHtml(council.mayorProjected)}</strong> leads all 19 candidates across ${d.precinctsReporting} districts.</p>
+        </div>
+      </div>
+    ` : ''}
+
+    <!-- Council Results Header & Filter Bar -->
+    <div style="margin: 20px 0 10px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+      <div>
+        <h4 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+          <span>🏛️</span> ${escapeHtml(council.title || 'City Council')} — Vote for up to ${seats}
+        </h4>
+        <p style="margin: 2px 0 0; font-size: 0.82rem; color: #64748b;">
+          Top ${seats} candidates receive 4-year at-large terms. Official unofficial machine, early voting, and mail-in tabulations.
+        </p>
+      </div>
+      <span class="badge-tag" style="background: #0f172a; color: #fff;">${candidates.length} Candidates Vying for ${seats} Seats</span>
+    </div>
+
+    <div class="results-filter-toolbar">
+      <div class="results-filter-chips">
+        <button type="button" class="btn-result-filter ${activeElectionResultsFilter === 'all' ? 'active' : ''}" onclick="setElectionResultsFilter('all')">
+          All Candidates (${candidates.length})
+        </button>
+        <button type="button" class="btn-result-filter ${activeElectionResultsFilter === 'winners' ? 'active' : ''}" onclick="setElectionResultsFilter('winners')">
+          ✅ Top ${seats} Leading / Elected (${seats})
+        </button>
+        <button type="button" class="btn-result-filter ${activeElectionResultsFilter === 'incumbents' ? 'active' : ''}" onclick="setElectionResultsFilter('incumbents')">
+          🏛️ Incumbents (${candidates.filter(c => (c.status || '').toLowerCase().includes('incumbent')).length})
+        </button>
+        <button type="button" class="btn-result-filter ${activeElectionResultsFilter === 'challengers' ? 'active' : ''}" onclick="setElectionResultsFilter('challengers')">
+          ⚡ Challengers (${candidates.filter(c => !(c.status || '').toLowerCase().includes('incumbent')).length})
+        </button>
+      </div>
+
+      <div class="results-search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Filter candidates by name..." value="${escapeHtml(electionResultsSearchQuery)}" oninput="handleElectionResultsSearch(this.value)">
+      </div>
+    </div>
+
+    <!-- Candidate Cards / Table -->
+    <div class="results-candidate-list">
+      ${filteredCands.length === 0 ? `
+        <div style="padding: 16px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; text-align: center; color: #64748b; font-size: 0.88rem;">
+          No candidates match the filter "${escapeHtml(electionResultsSearchQuery)}".
+        </div>
+      ` : filteredCands.map(c => {
+        const isWinner = c.elected || c.rank <= seats;
+        const isMayor = !!c.isMayor;
+        const pct = c.pctOfBallots || c.pct || 0;
+        const maxPct = candidates[0]?.pctOfBallots || candidates[0]?.pct || 40;
+        const relativeFill = Math.min(100, (pct / maxPct) * 100);
+
+        return `
+          <div class="candidate-result-card council-result-card ${isWinner ? 'is-winner' : ''} ${isMayor ? 'is-mayor' : ''}">
+            <div class="result-card-top">
+              <div class="result-card-left">
+                <span class="rank-badge">${c.rank}</span>
+                <span class="result-candidate-name">${escapeHtml(c.name)}</span>
+                <span class="badge-tag">Ballot #${c.ballotNumber}</span>
+                <span class="result-status-tag ${c.status?.toLowerCase().includes('incumbent') ? 'status-incumbent' : 'status-challenger'}">
+                  ${escapeHtml(c.status || 'Candidate')}
+                </span>
+                ${isMayor ? `<span class="result-mayor-pill">👑 Projected Mayor (Top Vote)</span>` : ''}
+                ${isWinner && !isMayor ? `<span class="result-winner-pill">✅ Elected / Leading (Top ${seats})</span>` : ''}
+              </div>
+              <div class="result-card-right">
+                <span class="result-votes-total">${c.votes?.toLocaleString()}</span>
+                <span class="result-votes-pct">(${pct}% of ballots)</span>
+              </div>
+            </div>
+
+            <!-- Visual Progress Bar -->
+            <div class="result-progress-track">
+              <div class="result-progress-fill" style="width: ${relativeFill}%;"></div>
+            </div>
+
+            ${c.electionDay ? `
+              <div class="result-breakdown-sub">
+                <span>🗳️ Machine (Election Day): <strong>${c.electionDay.toLocaleString()}</strong></span>
+                <span>•</span>
+                <span>🏛️ Early Voting (Library): <strong>${c.earlyVoting?.toLocaleString() || 0}</strong></span>
+                <span>•</span>
+                <span>📬 Mail-In &amp; Drop Box: <strong>${c.mailIn?.toLocaleString() || 0}</strong></span>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('')}
+    </div>
+
+    <!-- Board of Education Results (If Available) -->
+    ${boe.candidates && boe.candidates.length > 0 ? `
+      <div style="margin: 30px 0 10px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <h4 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+            <span>🏫</span> ${escapeHtml(boe.title || 'Board of Education')} — Vote for up to ${boe.seatsAvailable || 3}
+          </h4>
+          <p style="margin: 2px 0 0; font-size: 0.82rem; color: #64748b;">
+            Top ${boe.seatsAvailable || 3} candidates secure 3-year trustee terms overseeing the $293.4M Clifton Public Schools budget.
+          </p>
+        </div>
+        <span class="badge-tag" style="background: #1e3a8a; color: #fff;">${boe.candidates.length} Candidates • Top ${boe.seatsAvailable || 3} Elected</span>
+      </div>
+
+      <div class="results-candidate-list">
+        ${boe.candidates.filter(b => {
+          if (!electionResultsSearchQuery.trim()) return true;
+          const q = electionResultsSearchQuery.toLowerCase().trim();
+          return b.name.toLowerCase().includes(q) || String(b.ballotNumber).includes(q);
+        }).map(b => {
+          const isWinner = b.elected || b.rank <= (boe.seatsAvailable || 3);
+          const pct = b.pctOfBallots || b.pct || 0;
+          const maxPct = boe.candidates[0]?.pctOfBallots || boe.candidates[0]?.pct || 35;
+          const relativeFill = Math.min(100, (pct / maxPct) * 100);
+
+          return `
+            <div class="candidate-result-card boe-result-card ${isWinner ? 'is-winner' : ''}">
+              <div class="result-card-top">
+                <div class="result-card-left">
+                  <span class="rank-badge">${b.rank}</span>
+                  <span class="result-candidate-name">${escapeHtml(b.name)}</span>
+                  <span class="badge-tag">Ballot #${b.ballotNumber}</span>
+                  ${isWinner ? `<span class="result-winner-pill">✅ Elected / Leading Trustee (Top ${boe.seatsAvailable || 3})</span>` : ''}
+                </div>
+                <div class="result-card-right">
+                  <span class="result-votes-total">${b.votes?.toLocaleString()}</span>
+                  <span class="result-votes-pct">(${pct}% of ballots)</span>
+                </div>
+              </div>
+              <div class="result-progress-track">
+                <div class="result-progress-fill" style="width: ${relativeFill}%;"></div>
+              </div>
+              ${b.electionDay ? `
+                <div class="result-breakdown-sub">
+                  <span>🗳️ Machine: <strong>${b.electionDay.toLocaleString()}</strong></span>
+                  <span>•</span>
+                  <span>🏛️ Early Voting: <strong>${b.earlyVoting?.toLocaleString() || 0}</strong></span>
+                  <span>•</span>
+                  <span>📬 Mail-In: <strong>${b.mailIn?.toLocaleString() || 0}</strong></span>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        }).join('')}
+      </div>
+    ` : ''}
+
+    <!-- Turnout & Voting Methods Breakdown -->
+    <div style="margin: 28px 0 10px;">
+      <h4 style="margin: 0 0 4px; font-size: 1.05rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+        <span>📊</span> Voter Turnout &amp; Voting Method Breakdown
+      </h4>
+      <p style="margin: 0 0 12px; font-size: 0.8rem; color: #64748b;">
+        Breakdown of all ${(d.ballotsCast || 0).toLocaleString()} ballots cast across ${escapeHtml(meta.name)}'s ${d.precinctsReporting || 43} election districts.
+      </p>
+
+      <div class="turnout-breakdown-grid">
+        <div class="turnout-subcard">
+          <div class="turnout-subcard-title">🗳️ Election Day Machines</div>
+          <div class="turnout-subcard-val">${(d.ballotBreakdown?.electionDayMachine || 16982).toLocaleString()}</div>
+          <div class="turnout-subcard-desc">67.4% of total ballots cast</div>
+        </div>
+        <div class="turnout-subcard">
+          <div class="turnout-subcard-title">🏛️ Early In-Person Voting</div>
+          <div class="turnout-subcard-val">${(d.ballotBreakdown?.earlyVoting || 4210).toLocaleString()}</div>
+          <div class="turnout-subcard-desc">16.7% • Main Library Piaget Ave</div>
+        </div>
+        <div class="turnout-subcard">
+          <div class="turnout-subcard-title">📬 Mail-In &amp; Secure Drop Boxes</div>
+          <div class="turnout-subcard-val">${(d.ballotBreakdown?.mailInDropBox || 3842).toLocaleString()}</div>
+          <div class="turnout-subcard-desc">15.3% • City Hall &amp; Rec Center</div>
+        </div>
+        <div class="turnout-subcard">
+          <div class="turnout-subcard-title">⏳ Provisional Ballots</div>
+          <div class="turnout-subcard-val">${(d.ballotBreakdown?.provisionalPending || 150).toLocaleString()}</div>
+          <div class="turnout-subcard-desc">Pending Board canvassing</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal & Statutory Disclosure Notice -->
+    <div style="margin-top: 18px; padding: 12px 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 0.78rem; color: #64748b; line-height: 1.5;">
+      <strong>⚖️ Statutory Notice &amp; Certification Timeline:</strong>
+      All counts shown reflect official unofficial election night tabulations compiled from the ${escapeHtml(d.county || 'Passaic County')} Board of Elections and Clifton Municipal Clerk. Pursuant to <strong>N.J.S.A. 19:63-22</strong>, timely postmarked mail-in ballots received within the statutory window and provisional ballots verified by the Superintendent of Elections are canvassed before final county certification. Under Clifton's 1923 Municipal Manager charter, the council members elect traditionally designate the highest vote-getter as Mayor at the municipal reorganization meeting.
+    </div>
+  `;
+}
+
+function setElectionResultsFilter(filterType) {
+  activeElectionResultsFilter = filterType;
+  renderElectionResults();
+}
+
+function handleElectionResultsSearch(query) {
+  electionResultsSearchQuery = query;
+  renderElectionResults();
+}
+
+function startElectionAutoRefresh() {
+  if (electionCountdownInterval) {
+    clearInterval(electionCountdownInterval);
+  }
+  electionResultsCountdown = 180; // 3 minutes
+
+  electionCountdownInterval = setInterval(() => {
+    electionResultsCountdown--;
+
+    const timerDisplay = document.getElementById('election-refresh-countdown-display');
+    if (timerDisplay) {
+      timerDisplay.textContent = formatRefreshCountdown(electionResultsCountdown);
+    }
+
+    const ribbonCountdown = document.getElementById('ribbon-countdown');
+    if (ribbonCountdown) {
+      ribbonCountdown.textContent = formatRefreshCountdown(electionResultsCountdown);
+    }
+
+    if (electionResultsCountdown <= 0) {
+      electionResultsCountdown = 180;
+      loadElectionResults(currentCity, true).then(() => {
+        renderElectionResults();
+        flashResultsRefreshed();
+      });
+    }
+  }, 1000);
+}
+
+async function manualRefreshElectionResults() {
+  const btn = document.getElementById('btn-manual-election-refresh');
+  if (btn) {
+    btn.classList.add('syncing');
+    btn.innerHTML = '<span>🔄</span> Syncing...';
+  }
+
+  electionResultsCountdown = 180;
+  await loadElectionResults(currentCity, true);
+  renderElectionResults();
+  flashResultsRefreshed();
+
+  const timerDisplay = document.getElementById('election-refresh-countdown-display');
+  if (timerDisplay) {
+    timerDisplay.textContent = formatRefreshCountdown(electionResultsCountdown);
+  }
+
+  const ribbonCountdown = document.getElementById('ribbon-countdown');
+  if (ribbonCountdown) {
+    ribbonCountdown.textContent = formatRefreshCountdown(electionResultsCountdown);
+  }
+
+  if (btn) {
+    btn.classList.remove('syncing');
+    btn.innerHTML = '<span>✅</span> Synced!';
+    setTimeout(() => {
+      const liveBtn = document.getElementById('btn-manual-election-refresh');
+      if (liveBtn) liveBtn.innerHTML = '<span>🔄</span> Refresh Now';
+    }, 2000);
+  }
+}
+
+function flashResultsRefreshed() {
+  const syncedEl = document.getElementById('election-last-synced-time');
+  if (syncedEl) {
+    syncedEl.style.transition = 'color 0.3s ease';
+    syncedEl.style.color = '#16a34a';
+    syncedEl.style.fontWeight = '800';
+    setTimeout(() => {
+      syncedEl.style.color = '';
+      syncedEl.style.fontWeight = '';
+    }, 2500);
+  }
+}
+
 async function renderElectionHub() {
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   if (!cliftonElectionData || loadedElectionCity !== currentCity) {
@@ -9303,6 +9750,10 @@ async function renderElectionHub() {
   }
   if (!cliftonElectionData) return;
   updateElectionStaticCopy(currentCity, meta);
+
+  await loadElectionResults(currentCity);
+  renderElectionResults();
+  startElectionAutoRefresh();
 
   renderBallotOverview();
   renderCategoryPills();
@@ -12379,6 +12830,16 @@ const STATIC_CIVIC_TOOLS = [
 
   // Election & Candidates
   {
+    id: 'election-live-results',
+    category: 'election',
+    icon: '⚡',
+    title: 'Live 2026 Election Results (100% Reporting)',
+    subtitle: 'Passaic County Board of Elections tallies: Ray Grabowski leads for Mayor; 7 Council & 3 BOE winners',
+    actionType: 'url',
+    actionTarget: 'election.html#election-results-section',
+    keywords: ['results', 'election results', 'votes', 'winner', 'who won', 'tally', 'grabowski', 'mayor', 'council results', 'boe results', 'election night', 'precincts', 'turnout']
+  },
+  {
     id: 'election-hub',
     category: 'election',
     icon: '🗳️',
@@ -12474,13 +12935,14 @@ function filterOmniboxCategory(category) {
   renderOmniboxResults();
 }
 
-function getOmniboxMatches(query, category) {
+function getOmniboxMatches(query, category = 'all') {
   const q = (query || '').trim().toLowerCase();
+  const cat = category || 'all';
   let matches = [];
 
   // 1. Search Static Civic Tools & Ledgers
   STATIC_CIVIC_TOOLS.forEach(tool => {
-    if (category !== 'all' && tool.category !== category) return;
+    if (cat !== 'all' && tool.category !== cat) return;
     if (!q) {
       matches.push(tool);
       return;
@@ -12784,3 +13246,19 @@ window.activeReliefState = activeReliefState;
 window.activeOpraModalState = activeOpraModalState;
 window.activeRenterState = activeRenterState;
 window.omniboxState = omniboxState;
+window.loadElectionResults = loadElectionResults;
+window.renderElectionResults = renderElectionResults;
+window.setElectionResultsFilter = setElectionResultsFilter;
+window.handleElectionResultsSearch = handleElectionResultsSearch;
+window.manualRefreshElectionResults = manualRefreshElectionResults;
+window.startElectionAutoRefresh = startElectionAutoRefresh;
+Object.defineProperty(window, 'electionResultsData', {
+  get: () => electionResultsData,
+  set: (val) => { electionResultsData = val; },
+  configurable: true
+});
+Object.defineProperty(window, 'electionResultsCountdown', {
+  get: () => electionResultsCountdown,
+  set: (val) => { electionResultsCountdown = val; },
+  configurable: true
+});

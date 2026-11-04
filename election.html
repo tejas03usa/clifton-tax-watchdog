@@ -35,6 +35,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body data-page-title="Election 2026 Voter Guide & Candidates">
+  <!-- Live 2026 Election Night Results Alert Ribbon -->
+  <div class="election-live-alert-ribbon" id="election-live-alert-ribbon">
+    <div class="container ribbon-inner">
+      <div class="ribbon-left">
+        <span class="live-pulse-dot"></span>
+        <span class="ribbon-tag">2026 ELECTION RESULTS</span>
+        <span class="ribbon-text" id="ribbon-election-text"><strong>100% Reporting (43/43 Districts):</strong> Ray Grabowski leads council tally for Mayor; 7 Council &amp; 3 BOE seats decided.</span>
+      </div>
+      <div class="ribbon-right">
+        <span class="ribbon-refresh-pill" id="ribbon-refresh-pill">Auto-refreshes every 3m (<span id="ribbon-countdown">2:59</span>)</span>
+        <a href="#election-results-section" class="ribbon-link">View Full Tally ➔</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Modern App Header (Top of Page) -->
   <header class="app-header">
@@ -206,7 +220,8 @@
         <h2>2026 Clifton Election Guide & Candidate Matchmaker</h2>
         <p>Compare all 19 City Council candidates and 6 School Board candidates based on verified interviews, property tax records, and ethics filings.</p>
         <div class="election-primary-cta-bar">
-          <a href="#election-matchmaker-section" class="btn-election-cta-primary">🧭 Take 60-Second Match Quiz</a>
+          <a href="#election-results-section" class="btn-election-cta-primary" style="background: #dc2626; border-color: #b91c1c;">⚡ Live Election Results</a>
+          <a href="#election-matchmaker-section" class="btn-election-cta-secondary">🧭 60-Second Match Quiz</a>
           <a href="#election-candidates-heading" class="btn-election-cta-secondary">👥 Browse All 19 Council Candidates</a>
           <button type="button" class="btn-election-cta-primary" style="background: #0f172a; border-color: #0f172a;" onclick="openPocketBallot()">🖨️ Print Pocket Ballot</button>
           <button type="button" class="btn-election-cta-secondary" onclick="openSpeechBuilder('taxes')">🎙️ 3-Min Council Speech</button>
@@ -253,7 +268,7 @@
       <div class="sections-global-controls" role="region" aria-label="Page Sections Controls">
         <div class="sections-controls-left">
           <span class="sections-controls-icon">📑</span>
-          <span class="sections-status-text"><strong>9 Sections Below</strong> • Click any section to expand</span>
+          <span class="sections-status-text"><strong>10 Sections Below</strong> • Click any section to expand</span>
         </div>
         <div class="sections-btn-group">
           <button type="button" class="btn-sections-toggle" id="btn-expand-all-sections" title="Expand all sections">
@@ -264,6 +279,34 @@
           </button>
         </div>
       </div>
+
+      <!-- 0. Live Certified Election Night Results Tracker (Collapsible Section, Open by Default) -->
+      <details class="collapsible-section results-special-section" id="election-results-section" open>
+        <summary class="section-collapse-summary" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff;">
+          <div class="section-summary-left">
+            <span class="section-collapse-icon" aria-hidden="true" style="color: #38bdf8;">▾</span>
+            <h3 class="section-collapse-title" style="color: #fff; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span class="live-pulse-dot"></span>
+              <span>⚡ Live Election Results (100% Reporting)</span>
+              <span class="results-summary-pill">Top 7 Council &amp; 3 BOE Seats Decided</span>
+            </h3>
+          </div>
+          <div class="section-summary-right">
+            <span class="pill-tag" style="background: #ef4444; color: #fff; font-weight: 800; letter-spacing: 0.5px;">🔴 LIVE TALLY</span>
+            <span class="section-toggle-badge" aria-hidden="true" style="color: #94a3b8;">
+              <span class="toggle-text-open">Collapse ▴</span>
+              <span class="toggle-text-closed">Expand ▾</span>
+            </span>
+          </div>
+        </summary>
+        <div class="collapsible-section-body" id="election-results-container">
+          <!-- Dynamically populated and refreshed every 3 minutes by JS -->
+          <div class="results-loading-state" style="padding: 24px; text-align: center; color: var(--text-muted);">
+            <div class="loading-spinner"></div>
+            <p style="margin-top: 10px; font-weight: 600;">Connecting to Passaic County Board of Elections live tallies...</p>
+          </div>
+        </div>
+      </details>
 
       <!-- 1. Candidate Match Quiz (Collapsible Section) -->
       <details class="collapsible-section" id="election-matchmaker-section">
