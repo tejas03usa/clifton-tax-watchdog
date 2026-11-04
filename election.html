@@ -201,6 +201,7 @@
         <div class="election-primary-cta-bar">
           <a href="#election-matchmaker-section" class="btn-election-cta-primary">🧭 Take 60-Second Match Quiz</a>
           <a href="#election-candidates-heading" class="btn-election-cta-secondary">👥 Browse All 19 Council Candidates</a>
+          <button type="button" class="btn-election-cta-primary" style="background: #0f172a; border-color: #0f172a;" onclick="openPocketBallot()">🖨️ Print Pocket Ballot Cheat Sheet</button>
         </div>
         <div class="election-scope-notice-banner" id="election-scope-banner" style="margin-top: 18px; background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #2563eb; padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; color: #1e3a8a; line-height: 1.5; text-align: left;">
           <strong>ℹ️ Election Baseline & Candidate Certification Notice:</strong>
@@ -437,6 +438,7 @@
               <div class="results-toggle-group" role="group" aria-label="Toggle results view">
                 <button type="button" class="results-toggle-btn active" id="btn-show-top7">Top 7 Matches (Your Ballot Limit)</button>
                 <button type="button" class="results-toggle-btn" id="btn-show-all-matches">Show All 19 Candidates</button>
+                <button type="button" class="results-toggle-btn" style="background: #0f172a; color: #fff; font-weight: 700; border-color: #0f172a;" onclick="openPocketBallot()">🖨️ Print Pocket Cheat Sheet</button>
               </div>
             </div>
             <div id="matchmaker-results-grid" class="match-cards-grid">
@@ -726,6 +728,30 @@
       </div>
     </div>
   </footer>
+
+  <!-- Modal Dialog: 🖨️ 1-Page Printable Pocket Ballot Cheat Sheet -->
+  <dialog id="pocket-ballot-dialog" class="modern-modal-dialog" aria-labelledby="pocket-ballot-title">
+    <div class="modern-dialog-wrapper" style="max-width: 900px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="pocket-ballot-title"><span>🖨️</span> 1-Page Printable Pocket Ballot Cheat Sheet</h3>
+          <div class="modern-dialog-subtitle">Official voting booth reference card &bull; Permitted in voting booth pursuant to N.J.S.A. 19:34-7</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="pocket-ballot-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" style="background: #0f172a; color: #fff;" onclick="printPocketBallot()"><span>🖨️</span> Print 1-Page Pocket Ballot</button>
+        <button type="button" id="btn-copy-pocket-ballot" class="btn-street-action" onclick="copyPocketBallotText()"><span>📋</span> Copy Cheat Sheet Text</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Accessible Toast Notification for Link Copying -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
 </body>

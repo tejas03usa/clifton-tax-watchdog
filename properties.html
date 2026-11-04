@@ -1618,7 +1618,7 @@
         <!-- Rendered by JS -->
       </div>
       <div class="modern-dialog-footer">
-        <a href="https://www.state.nj.us/treasury/taxation/anchor/" target="_blank" rel="noopener" class="btn-street-action" style="text-decoration: none;"><span>🏛️</span> File on Official NJ PAS-1 Portal ↗</a>
+        <a href="https://propertytaxrelief.nj.gov" target="_blank" rel="noopener" class="btn-street-action" style="text-decoration: none; background: #16a34a; color: #fff;"><span>🏛️</span> File on Official NJ PAS-1 Portal ↗</a>
         <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
       </div>
     </div>
@@ -1683,6 +1683,28 @@
       <div class="modern-dialog-footer">
         <button type="button" class="btn-street-action" onclick="openReliefCalculator(null, null, 'Clifton Renter')"><span>🧓</span> Claim $450 NJ ANCHOR Rebate ↗</button>
         <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 6: 📑 1-Click OPRA Public Records Request Generator -->
+  <dialog id="opra-request-dialog" class="modern-modal-dialog" aria-labelledby="opra-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="opra-dialog-title"><span>📑</span> 1-Click OPRA Public Records Request Generator</h3>
+          <div class="modern-dialog-subtitle">Formal records demand pursuant to New Jersey Open Public Records Act (N.J.S.A. 47:1A-1 et seq.)</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="opra-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" id="opra-modal-copy-btn" class="btn-street-action" onclick="copyOpraModalText()"><span>📋</span> Copy Request to Clipboard</button>
+        <a id="opra-modal-mailto-btn" href="#" class="btn-street-action" style="text-decoration: none; background: #2563eb; color: #fff;"><span>✉️</span> Open in Email App</a>
+        <button type="button" class="btn-street-action secondary" onclick="printOpraRequest()"><span>🖨️</span> Print Letter</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Close</button>
       </div>
     </div>
   </dialog>

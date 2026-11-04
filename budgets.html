@@ -223,6 +223,17 @@
         </div>
         <h2>Clifton Public Spending: The Two Mega-Budgets</h2>
         <p>Clifton taxpayers fund two separate local government entities: the <strong>Clifton Board of Education (~$293.2M)</strong> and the <strong>City of Clifton Municipal Government (~$143.3M)</strong>, alongside county taxes.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; margin-bottom: 6px;">
+          <button type="button" class="btn-jump-action" style="background: #16a34a; color: #fff; font-weight: 700;" onclick="openReliefCalculator()">
+            <span>💰</span> Check State Property Tax Relief (Form PAS-1)
+          </button>
+          <button type="button" class="btn-jump-action secondary" onclick="openRenterCalculator()">
+            <span>🏢</span> Renter Tax &amp; ANCHOR Calculator
+          </button>
+          <button type="button" class="btn-jump-action secondary" onclick="openOpraModal('vendors')">
+            <span>📑</span> 1-Click OPRA Records Generator
+          </button>
+        </div>
       </div>
 
       <div class="budget-comparison-grid">
@@ -1550,13 +1561,27 @@
               <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Health Benefits & Pensions Reconciled ($103.4M)</strong>
               <span style="font-size: 0.86rem; color: #64748b;">Municipal benefits reconciled to <strong>$40,559,358</strong> ($25.7M health + $14.85M pensions), bringing total public benefits to <strong>$103.4M</strong> (23.7% of public funds).</span>
             </div>
-            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
-              <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Certified PILOT Abatements Uncovered ($8.18M)</strong>
-              <span style="font-size: 0.86rem; color: #64748b;">Replaced sample models with real Note 17 audit data: <strong>$8,180,736</strong> abated, <strong>$2,056,384</strong> paid, creating an annual <strong>$6,124,352</strong> shift to homeowners (Item 202).</span>
+            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Certified PILOT Abatements Uncovered ($8.18M)</strong>
+                <span style="font-size: 0.86rem; color: #64748b;">Replaced sample models with real Note 17 audit data: <strong>$8,180,736</strong> abated, <strong>$2,056,384</strong> paid, creating an annual <strong>$6,124,352</strong> shift to homeowners (Item 202).</span>
+              </div>
+              <div style="margin-top: 10px;">
+                <button type="button" class="btn-jump-action" style="padding: 4px 10px; font-size: 0.78rem;" onclick="openOpraModal('pilot', { ref: 'Clifton PILOT Financial Agreements & Note 17 Audits' })">
+                  <span>📑</span> File OPRA for PILOT Agreements
+                </button>
+              </div>
             </div>
-            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
-              <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Independent Forensic Audit Vulnerabilities Exposed</strong>
-              <span style="font-size: 0.86rem; color: #64748b;">Forensic audit (Items 196 & 199) documented missing Not-To-Exceed vendor caps, health deduction errors in payroll, and $141,017 in excess BANs.</span>
+            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Independent Forensic Audit Vulnerabilities Exposed</strong>
+                <span style="font-size: 0.86rem; color: #64748b;">Forensic audit (Items 196 & 199) documented missing Not-To-Exceed vendor caps, health deduction errors in payroll, and $141,017 in excess BANs.</span>
+              </div>
+              <div style="margin-top: 10px;">
+                <button type="button" class="btn-jump-action" style="padding: 4px 10px; font-size: 0.78rem;" onclick="openOpraModal('contracts', { ref: 'City Forensic Audit Items 196 & 199 - Missing Vendor Caps & Payroll Errors' })">
+                  <span>📑</span> File OPRA for Audit Records
+                </button>
+              </div>
             </div>
             <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px;">
               <strong style="color: #059669; display: block; margin-bottom: 4px;">✓ Municipal Surplus & Debt Verified</strong>
@@ -1629,6 +1654,71 @@
       </div>
     </div>
   </footer>
+
+  <!-- Modal Dialog 1: 🧓 State Property Tax Relief Calculator (ANCHOR + StayNJ + Senior Freeze) -->
+  <dialog id="relief-calc-dialog" class="modern-modal-dialog" aria-labelledby="relief-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="relief-dialog-title"><span>🧓</span> NJ State Property Tax Relief Calculator</h3>
+          <div class="modern-dialog-subtitle">Calculate your net after-rebate tax bill with ANCHOR ($1,500–$1,750), StayNJ (50% cut up to $6,500), &amp; Senior Freeze</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="relief-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <a href="https://propertytaxrelief.nj.gov" target="_blank" rel="noopener" class="btn-street-action" style="text-decoration: none; background: #16a34a; color: #fff;"><span>🏛️</span> File on Official NJ PAS-1 Portal ↗</a>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 2: 🏢 Renter Property Tax Impact & Rebate Calculator -->
+  <dialog id="renter-tax-dialog" class="modern-modal-dialog" aria-labelledby="renter-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 680px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="renter-dialog-title"><span>🏢</span> NJ Renter Property Tax Impact Calculator</h3>
+          <div class="modern-dialog-subtitle">Calculate how much of your monthly rent goes to municipal taxes, schools &amp; your ANCHOR rebate</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="renter-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" onclick="openReliefCalculator(null, null, 'Clifton Renter')"><span>🧓</span> Claim $450 NJ ANCHOR Rebate ↗</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 3: 📑 1-Click OPRA Public Records Request Generator -->
+  <dialog id="opra-request-dialog" class="modern-modal-dialog" aria-labelledby="opra-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="opra-dialog-title"><span>📑</span> 1-Click OPRA Public Records Request Generator</h3>
+          <div class="modern-dialog-subtitle">Formal records demand pursuant to New Jersey Open Public Records Act (N.J.S.A. 47:1A-1 et seq.)</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="opra-dialog-content">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" id="opra-modal-copy-btn" class="btn-street-action" onclick="copyOpraModalText()"><span>📋</span> Copy Request to Clipboard</button>
+        <a id="opra-modal-mailto-btn" href="#" class="btn-street-action" style="text-decoration: none; background: #2563eb; color: #fff;"><span>✉️</span> Open in Email App</a>
+        <button type="button" class="btn-street-action secondary" onclick="printOpraRequest()"><span>🖨️</span> Print Letter</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Accessible Toast Notification for Link Copying -->
+  <div id="toast-notification" class="toast-notification" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
 </body>

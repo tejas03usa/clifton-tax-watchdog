@@ -4613,7 +4613,8 @@ let activeReliefState = {
   isHomeowner: true,
   age65Plus: false,
   incomeBracket: 'under_150k',
-  meetsFreezeTenure: false
+  meetsFreezeTenure: false,
+  veteranStatus: 'none'
 };
 
 // Helper: Extract Street Name from Address (e.g. "352 Grove St" -> "Grove St")
@@ -5251,12 +5252,14 @@ function renderReliefCalculatorContent() {
   if (!contentEl) return;
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
 
-  const { taxBill, isHomeowner, age65Plus, incomeBracket, meetsFreezeTenure, address } = activeReliefState;
+  const { taxBill, isHomeowner, age65Plus, incomeBracket, meetsFreezeTenure, veteranStatus = 'none', address } = activeReliefState;
 
   // Compute Relief
   let anchor = 0;
   let stayNJ = 0;
   let seniorFreeze = 0;
+  let veteranRelief = 0;
+  let isFullExempt = false;
 
   // 1. ANCHOR
   if (isHomeowner) {
@@ -5281,10 +5284,20 @@ function renderReliefCalculatorContent() {
 
   // 3. Senior Freeze (PTR-1/PTR-2)
   if (isHomeowner && age65Plus && incomeBracket === 'under_150k' && meetsFreezeTenure) {
-    seniorFreeze = Math.round(taxBill * 0.08);
+    seniorFreeze = Math.round(taxBill * 0.08); // average annual senior freeze reimbursement in Passaic County
   }
 
-  const totalRelief = Math.min(taxBill, anchor + stayNJ + seniorFreeze);
+  // 4. Veteran Benefit (N.J.S.A. 54:4-8.10 or N.J.S.A. 54:4-3.30)
+  if (isHomeowner) {
+    if (veteranStatus === 'disabled_exempt') {
+      veteranRelief = taxBill; // 100% full tax exemption
+      isFullExempt = true;
+    } else if (veteranStatus === 'veteran_250') {
+      veteranRelief = 250; // $250 annual tax deduction
+    }
+  }
+
+  const totalRelief = isFullExempt ? taxBill : Math.min(taxBill, anchor + stayNJ + seniorFreeze + veteranRelief);
   const netTax = Math.max(0, taxBill - totalRelief);
   const savedPct = taxBill > 0 ? (totalRelief / taxBill) * 100 : 0;
 
@@ -5340,6 +5353,16 @@ function renderReliefCalculatorContent() {
           <button type="button" class="toggle-pill-btn ${!meetsFreezeTenure ? 'active' : ''}" onclick="setReliefOption('meetsFreezeTenure', false)">No / Recent Move</button>
         </div>
       </div>` : ''}
+
+      ${isHomeowner ? `
+      <div class="relief-control-item" style="grid-column: 1 / -1;">
+        <label>5. Veteran / Wartime Service Status (N.J.S.A. 54:4-8.10 &amp; 54:4-3.30)</label>
+        <div class="toggle-pill-group" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+          <button type="button" class="toggle-pill-btn ${veteranStatus === 'none' ? 'active' : ''}" onclick="setReliefOption('veteranStatus', 'none')">None / Non-Veteran ($0)</button>
+          <button type="button" class="toggle-pill-btn ${veteranStatus === 'veteran_250' ? 'active' : ''}" onclick="setReliefOption('veteranStatus', 'veteran_250')">🎖️ Honorably Discharged (-$250/yr)</button>
+          <button type="button" class="toggle-pill-btn ${veteranStatus === 'disabled_exempt' ? 'active' : ''}" onclick="setReliefOption('veteranStatus', 'disabled_exempt')">⭐ 100% Disabled Wartime (100% Tax Free)</button>
+        </div>
+      </div>` : ''}
     </div>
 
     <!-- Results Banner -->
@@ -5352,7 +5375,7 @@ function renderReliefCalculatorContent() {
       <div class="relief-summary-box">
         <span class="rs-label">Total NJ State Relief</span>
         <span class="rs-value relief-green">- ${formatUSD(totalRelief)}</span>
-        <span class="rs-sub">Rebates &amp; credits combined</span>
+        <span class="rs-sub">Rebates, credits &amp; exemptions</span>
       </div>
       <div class="relief-summary-box">
         <span class="rs-label">Your Net Out-of-Pocket Tax</span>
@@ -5386,12 +5409,42 @@ function renderReliefCalculatorContent() {
           <strong style="color: #15803d; font-family: var(--font-mono); font-size: 1rem;">${stayNJ > 0 ? '+ ' + formatUSD(stayNJ) : (age65Plus ? '$0.00 (Offset by ANCHOR or income limit)' : '$0.00 (Requires Age 65+)')}</strong>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #e2e8f0;">
           <div>
             <strong>3. Senior Freeze (PTR-1 / PTR-2):</strong>
             <span style="font-size: 0.8rem; color: #64748b;"> State reimbursement freezing taxes at base year level</span>
           </div>
           <strong style="color: #15803d; font-family: var(--font-mono); font-size: 1rem;">${seniorFreeze > 0 ? '~+ ' + formatUSD(seniorFreeze) + ' (Est)' : (age65Plus ? '$0.00 (Requires 10yr NJ tenure)' : '$0.00 (Requires Age 65+)')}</strong>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0;">
+          <div>
+            <strong>4. Veteran Tax Relief (Deduction / Exemption):</strong>
+            <span style="font-size: 0.8rem; color: #64748b;"> ${isFullExempt ? '100% Full Local Tax Exemption for service-connected wartime disability (N.J.S.A. 54:4-3.30)' : (veteranStatus === 'veteran_250' ? '$250 Annual property tax deduction on certified tax duplicate (N.J.S.A. 54:4-8.10)' : 'Deduction for honorably discharged or disabled veterans')}</span>
+          </div>
+          <strong style="color: #15803d; font-family: var(--font-mono); font-size: 1rem;">${isFullExempt ? '100% FULL EXEMPTION (-' + formatUSD(taxBill) + ')' : (veteranRelief > 0 ? '+ ' + formatUSD(veteranRelief) : '$0.00')}</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Unified Form PAS-1 Portal Deep Link & Information -->
+    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px 16px; margin-top: 12px;">
+      <div style="display: flex; align-items: flex-start; gap: 10px;">
+        <span style="font-size: 1.35rem;">🏛️</span>
+        <div style="flex: 1;">
+          <strong style="color: #166534; font-size: 0.92rem;">State of New Jersey Unified Form PAS-1 Application Portal</strong>
+          <p style="margin: 4px 0 8px; font-size: 0.82rem; color: #15803d; line-height: 1.45;">
+            The State of New Jersey has streamlined senior and homeowner property tax relief under <strong>Form PAS-1</strong>, combining ANCHOR, Stay NJ, and Senior Freeze into one filing. The filing deadline is <strong>November 2, 2026</strong>.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+            <a href="https://propertytaxrelief.nj.gov" target="_blank" rel="noopener" class="btn-jump-action" style="padding: 5px 12px; font-size: 0.82rem; background: #16a34a; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 700;">
+              <span>🌐</span> File Online at propertytaxrelief.nj.gov ↗
+            </a>
+            <a href="tel:18776582972" class="btn-jump-action secondary" style="padding: 5px 12px; font-size: 0.82rem; text-decoration: none; border-radius: 6px;">
+              <span>📞</span> Automated Phone Filing: 1-877-658-2972
+            </a>
+            <span style="font-size: 0.78rem; color: #475569;">Hotline: 1-888-238-1233 &bull; Veterans submit Form V.S.S. or D.V.S.S.E. to Municipal Tax Assessor (900 Clifton Ave)</span>
+          </div>
         </div>
       </div>
     </div>
@@ -6647,6 +6700,9 @@ function renderVendorsCards() {
         <a href="https://www.google.com/search?q=${encodeURIComponent(v.vendorName + ' ' + citySearchLabel)}" target="_blank" rel="noopener" class="btn-jump-action secondary">
           <span>🔍</span> Search Contract Awards ↗
         </a>
+        <button type="button" class="btn-jump-action" onclick="openOpraModal('vendors', { vendorName: '${escapeHtml(v.vendorName)}', category: '${escapeHtml(v.category)}' })">
+          <span>📑</span> File OPRA Request
+        </button>
       </div>
     </div>
   `).join('');
@@ -9410,6 +9466,8 @@ function setupVoterCompass() {
                              (i < candidates.length - 1 && candidates[i].matchPercent === candidates[i + 1].matchPercent);
     }
 
+    window.currentMatchmakerRankings = candidates;
+
     resultsBox.style.display = 'block';
 
     const displayedCandidates = voterCompassViewMode === 'top7' 
@@ -11111,3 +11169,525 @@ function renderCityDocumentsArchive() {
     `;
   }).join('');
 }
+
+// ==========================================================================
+// PHASE 1: 🖨️ 1-Page Printable Pocket Ballot Cheat Sheet (election.html)
+// ==========================================================================
+let pocketBallotState = {
+  selectedCouncilIds: [],
+  selectedBoeIds: [],
+  initialized: false
+};
+
+function openPocketBallot() {
+  const council = (cliftonElectionData && cliftonElectionData.councilCandidates) || [];
+  const boe = (cliftonElectionData && cliftonElectionData.boeCandidates) || [];
+  const maxCouncil = cliftonElectionData?.totalCouncilSeats || (currentCity === 'clifton' ? 7 : 3);
+  const maxBoe = 3;
+
+  if (!pocketBallotState.initialized || pocketBallotState.selectedCouncilIds.length === 0) {
+    if (window.currentMatchmakerRankings && window.currentMatchmakerRankings.length > 0) {
+      pocketBallotState.selectedCouncilIds = window.currentMatchmakerRankings
+        .slice(0, maxCouncil)
+        .map(x => String(x.candidate.id || x.candidate.ballotNumber));
+    } else {
+      pocketBallotState.selectedCouncilIds = council.slice(0, maxCouncil).map(c => String(c.id || c.ballotNumber));
+    }
+
+    if (pocketBallotState.selectedBoeIds.length === 0) {
+      pocketBallotState.selectedBoeIds = boe.slice(0, maxBoe).map(b => String(b.ballotNumber || b.name));
+    }
+    pocketBallotState.initialized = true;
+  }
+
+  renderPocketBallotModal();
+
+  const dialog = document.getElementById('pocket-ballot-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function togglePocketBallotCandidate(type, id) {
+  const strId = String(id);
+  const maxCouncil = cliftonElectionData?.totalCouncilSeats || (currentCity === 'clifton' ? 7 : 3);
+  const maxBoe = 3;
+
+  if (type === 'council') {
+    const idx = pocketBallotState.selectedCouncilIds.indexOf(strId);
+    if (idx >= 0) {
+      pocketBallotState.selectedCouncilIds.splice(idx, 1);
+    } else {
+      if (pocketBallotState.selectedCouncilIds.length >= maxCouncil) {
+        alert(`You can select up to ${maxCouncil} City Council candidates (your legal ballot limit). Please uncheck one before adding another.`);
+        return;
+      }
+      pocketBallotState.selectedCouncilIds.push(strId);
+    }
+  } else if (type === 'boe') {
+    const idx = pocketBallotState.selectedBoeIds.indexOf(strId);
+    if (idx >= 0) {
+      pocketBallotState.selectedBoeIds.splice(idx, 1);
+    } else {
+      if (pocketBallotState.selectedBoeIds.length >= maxBoe) {
+        alert(`You can select up to ${maxBoe} Board of Education candidates. Please uncheck one before adding another.`);
+        return;
+      }
+      pocketBallotState.selectedBoeIds.push(strId);
+    }
+  }
+
+  renderPocketBallotModal();
+}
+
+function applyPocketBallotPreset(preset) {
+  const council = (cliftonElectionData && cliftonElectionData.councilCandidates) || [];
+  const maxCouncil = cliftonElectionData?.totalCouncilSeats || (currentCity === 'clifton' ? 7 : 3);
+
+  if (preset === 'quiz') {
+    if (window.currentMatchmakerRankings && window.currentMatchmakerRankings.length > 0) {
+      pocketBallotState.selectedCouncilIds = window.currentMatchmakerRankings
+        .slice(0, maxCouncil)
+        .map(x => String(x.candidate.id || x.candidate.ballotNumber));
+    } else {
+      alert('Please take the 60-second candidate match quiz first to generate your personalized recommendations!');
+      return;
+    }
+  } else if (preset === 'incumbents') {
+    const incs = council.filter(c => (c.status || '').toLowerCase().includes('incumbent'));
+    pocketBallotState.selectedCouncilIds = incs.slice(0, maxCouncil).map(c => String(c.id || c.ballotNumber));
+  } else if (preset === 'challengers') {
+    const chals = council.filter(c => !(c.status || '').toLowerCase().includes('incumbent'));
+    pocketBallotState.selectedCouncilIds = chals.slice(0, maxCouncil).map(c => String(c.id || c.ballotNumber));
+  } else if (preset === 'clear') {
+    pocketBallotState.selectedCouncilIds = [];
+    pocketBallotState.selectedBoeIds = [];
+  }
+
+  renderPocketBallotModal();
+}
+
+function renderPocketBallotModal() {
+  const contentEl = document.getElementById('pocket-ballot-content');
+  if (!contentEl) return;
+
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const council = (cliftonElectionData && cliftonElectionData.councilCandidates) || [];
+  const boe = (cliftonElectionData && cliftonElectionData.boeCandidates) || [];
+  const maxCouncil = cliftonElectionData?.totalCouncilSeats || (currentCity === 'clifton' ? 7 : 3);
+  const maxBoe = 3;
+
+  const councilSelectedCount = pocketBallotState.selectedCouncilIds.length;
+  const boeSelectedCount = pocketBallotState.selectedBoeIds.length;
+
+  const hasQuizResults = window.currentMatchmakerRankings && window.currentMatchmakerRankings.length > 0;
+
+  contentEl.innerHTML = `
+    <!-- Config / Filter Toolbar -->
+    <div class="pocket-ballot-toolbar">
+      <div class="pocket-counters">
+        <span class="pocket-counter-badge ${councilSelectedCount === maxCouncil ? 'counter-full' : ''}">
+          🏛️ Council: <strong>${councilSelectedCount} of ${maxCouncil}</strong> Selected
+        </span>
+        <span class="pocket-counter-badge ${boeSelectedCount === maxBoe ? 'counter-full' : ''}">
+          🏫 School Board: <strong>${boeSelectedCount} of ${maxBoe}</strong> Selected
+        </span>
+      </div>
+      <div class="pocket-presets-row">
+        <span style="font-size: 0.76rem; font-weight: 700; color: #64748b;">Instant Presets:</span>
+        ${hasQuizResults ? `
+          <button type="button" class="preset-pill-btn active-quiz" onclick="applyPocketBallotPreset('quiz')">
+            🧭 Fill My Matchmaker Top ${maxCouncil}
+          </button>
+        ` : ''}
+        <button type="button" class="preset-pill-btn" onclick="applyPocketBallotPreset('incumbents')">
+          🏛️ Incumbents
+        </button>
+        <button type="button" class="preset-pill-btn" onclick="applyPocketBallotPreset('challengers')">
+          ⚡ Challengers
+        </button>
+        <button type="button" class="preset-pill-btn text-muted" onclick="applyPocketBallotPreset('clear')">
+          ✕ Clear All
+        </button>
+      </div>
+    </div>
+
+    <!-- Official Voting Booth Cheat Sheet Card -->
+    <div class="pocket-ballot-card-preview" id="printable-pocket-ballot">
+      <div class="pbc-header">
+        <div class="pbc-header-title">
+          <span class="pbc-stamp">OFFICIAL 2026 VOTER REFERENCE</span>
+          <h3>🗳️ ${escapeHtml(meta.name.toUpperCase())} GENERAL ELECTION CHEAT SHEET</h3>
+          <div class="pbc-sub">Tuesday, November 3, 2026 &bull; Polls Open 6:00 AM – 8:00 PM EST</div>
+        </div>
+        <div class="pbc-legal-booth-notice">
+          <strong>⚖️ N.J.S.A. 19:34-7 Notice:</strong> Voters are permitted by New Jersey election law to bring this printed reference card directly into the voting booth. (Smartphones & photography are prohibited in booths).
+        </div>
+      </div>
+
+      <div class="pbc-grid">
+        <!-- Left Column: City Council (Vote for up to 7) -->
+        <div class="pbc-col">
+          <div class="pbc-col-head">
+            <h4>1. Municipal Council (Vote for up to ${maxCouncil})</h4>
+            <span class="pbc-col-meta">Select exactly up to ${maxCouncil} candidates below:</span>
+          </div>
+
+          <div class="pbc-candidate-list">
+            ${council.map(c => {
+              const strId = String(c.id || c.ballotNumber);
+              const isChecked = pocketBallotState.selectedCouncilIds.includes(strId);
+              const isIncumbent = (c.status || '').toLowerCase().includes('incumbent');
+              let matchScore = null;
+              if (window.currentMatchmakerRankings) {
+                const found = window.currentMatchmakerRankings.find(x => String(x.candidate.id || x.candidate.ballotNumber) === strId);
+                if (found) matchScore = found.matchPercent;
+              }
+
+              return `
+                <div class="pbc-cand-row ${isChecked ? 'is-selected' : ''}" onclick="togglePocketBallotCandidate('council', '${escapeHtml(strId)}')">
+                  <div class="pbc-checkbox ${isChecked ? 'checked' : ''}">
+                    ${isChecked ? '✓' : ''}
+                  </div>
+                  <div class="pbc-cand-ballot-num font-mono">#${c.ballotNumber}</div>
+                  <div class="pbc-cand-info">
+                    <span class="pbc-cand-name">${escapeHtml(c.name)}</span>
+                    <span class="pbc-cand-badge ${isIncumbent ? 'badge-inc' : 'badge-chal'}">
+                      ${isIncumbent ? 'Incumbent' : 'Challenger'}
+                    </span>
+                    ${matchScore !== null ? `<span class="pbc-match-score">${matchScore}% Match</span>` : ''}
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        <!-- Right Column: Board of Education & Voting Logistics -->
+        <div class="pbc-col">
+          <div class="pbc-col-head">
+            <h4>2. Board of Education (Vote for up to ${maxBoe})</h4>
+            <span class="pbc-col-meta">Select up to ${maxBoe} school board trustees:</span>
+          </div>
+
+          <div class="pbc-candidate-list">
+            ${boe.map(b => {
+              const strId = String(b.ballotNumber || b.name);
+              const isChecked = pocketBallotState.selectedBoeIds.includes(strId);
+              return `
+                <div class="pbc-cand-row ${isChecked ? 'is-selected' : ''}" onclick="togglePocketBallotCandidate('boe', '${escapeHtml(strId)}')">
+                  <div class="pbc-checkbox ${isChecked ? 'checked' : ''}">
+                    ${isChecked ? '✓' : ''}
+                  </div>
+                  <div class="pbc-cand-ballot-num font-mono">#${b.ballotNumber || '—'}</div>
+                  <div class="pbc-cand-info">
+                    <span class="pbc-cand-name">${escapeHtml(b.name)}</span>
+                    <span class="pbc-slogan">${escapeHtml(b.ballotSlogan || b.status || 'Trustee Candidate')}</span>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- Official Polling & Drop Box Guide -->
+          <div class="pbc-logistics-box">
+            <h5 style="margin: 0 0 6px 0; font-size: 0.82rem; color: #0f172a; text-transform: uppercase; letter-spacing: 0.03em;">
+              📬 24/7 Secure Ballot Drop Boxes (${escapeHtml(meta.name)}):
+            </h5>
+            <ul style="margin: 0 0 10px 0; padding-left: 18px; font-size: 0.78rem; color: #334155; line-height: 1.45;">
+              <li><strong>Clifton City Hall:</strong> 900 Clifton Ave (Front entrance next to tax box) &bull; Open 24/7</li>
+              <li><strong>Clifton Community Rec Center:</strong> 1232 Main Ave (Sidewalk box) &bull; Open 24/7</li>
+            </ul>
+
+            <h5 style="margin: 0 0 6px 0; font-size: 0.82rem; color: #0f172a; text-transform: uppercase; letter-spacing: 0.03em;">
+              🏛️ Early Voting (Oct 24 &ndash; Nov 1):
+            </h5>
+            <p style="margin: 0 0 10px 0; font-size: 0.78rem; color: #334155; line-height: 1.4;">
+              <strong>Clifton Public Library (Main Branch - Side Door):</strong> 292 Piaget Ave (Mon&ndash;Sat 10AM&ndash;8PM, Sun 10AM&ndash;6PM).
+            </p>
+
+            <div style="font-size: 0.75rem; color: #64748b; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
+              Passaic County Board of Elections: <strong>(973) 881-4780</strong> &bull; Polls Open 6 AM &ndash; 8 PM on Tuesday, Nov 3, 2026.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function printPocketBallot() {
+  window.print();
+}
+
+function copyPocketBallotText() {
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const council = (cliftonElectionData && cliftonElectionData.councilCandidates) || [];
+  const boe = (cliftonElectionData && cliftonElectionData.boeCandidates) || [];
+
+  const selectedCouncil = council.filter(c => pocketBallotState.selectedCouncilIds.includes(String(c.id || c.ballotNumber)));
+  const selectedBoe = boe.filter(b => pocketBallotState.selectedBoeIds.includes(String(b.ballotNumber || b.name)));
+
+  let txt = `========================================================\n`;
+  txt += `🗳️ ${meta.name.toUpperCase()} 2026 GENERAL ELECTION POCKET BALLOT\n`;
+  txt += `Tuesday, November 3, 2026 • 6:00 AM – 8:00 PM EST\n`;
+  txt += `(Permitted in voting booth pursuant to N.J.S.A. 19:34-7)\n`;
+  txt += `========================================================\n\n`;
+
+  txt += `CITY COUNCIL PICKS (${selectedCouncil.length} of ${cliftonElectionData?.totalCouncilSeats || 7}):\n`;
+  if (selectedCouncil.length > 0) {
+    selectedCouncil.forEach(c => {
+      txt += ` [✓] Ballot #${c.ballotNumber}: ${c.name} (${c.status})\n`;
+    });
+  } else {
+    txt += ` (No candidates selected)\n`;
+  }
+
+  txt += `\nBOARD OF EDUCATION PICKS (${selectedBoe.length} of 3):\n`;
+  if (selectedBoe.length > 0) {
+    selectedBoe.forEach(b => {
+      txt += ` [✓] Ballot #${b.ballotNumber || '—'}: ${b.name}\n`;
+    });
+  } else {
+    txt += ` (No candidates selected)\n`;
+  }
+
+  txt += `\nCLIFTON 24/7 SECURE DROPBOXES (Open until 8:00 PM Nov 3):\n`;
+  txt += ` • Clifton City Hall: 900 Clifton Ave (Front entrance)\n`;
+  txt += ` • Community Rec Center: 1232 Main Ave\n\n`;
+  txt += `EARLY VOTING (Oct 24 - Nov 1): Clifton Main Library, 292 Piaget Ave\n`;
+  txt += `Passaic County Board of Elections: (973) 881-4780\n`;
+  txt += `Generated via Clifton NJ Tax Watchdog (mytownlens.com/election.html)\n`;
+
+  navigator.clipboard.writeText(txt).then(() => {
+    const copyBtn = document.getElementById('btn-copy-pocket-ballot');
+    if (copyBtn) {
+      const orig = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<span>✅</span> Copied Pocket Ballot!';
+      setTimeout(() => { copyBtn.innerHTML = orig; }, 2000);
+    }
+  });
+}
+
+// ==========================================================================
+// PHASE 1: 📑 1-Click OPRA Public Records Request Generator
+// ==========================================================================
+let activeOpraModalState = {
+  topic: 'vendors',
+  reference: '',
+  requesterName: '',
+  requesterEmail: '',
+  requesterPhone: '',
+  requesterAddress: ''
+};
+
+function openOpraModal(topicKey, customDetails) {
+  const activeOpra = cityOpraConfig[currentCity] || cityOpraConfig.clifton;
+  activeOpraModalState.topic = (topicKey && activeOpra.templates[topicKey]) ? topicKey : (topicKey === 'custom' ? 'custom' : 'vendors');
+
+  if (customDetails && typeof customDetails === 'object') {
+    if (customDetails.vendorName) {
+      activeOpraModalState.reference = `Vendor: ${customDetails.vendorName}${customDetails.category ? ' (' + customDetails.category + ')' : ''}`;
+    } else if (customDetails.ref) {
+      activeOpraModalState.reference = customDetails.ref;
+    }
+  } else if (typeof customDetails === 'string') {
+    activeOpraModalState.reference = customDetails;
+  } else {
+    activeOpraModalState.reference = '';
+  }
+
+  // Load persisted contact info if available
+  try {
+    activeOpraModalState.requesterName = localStorage.getItem('civic_opra_name') || '';
+    activeOpraModalState.requesterEmail = localStorage.getItem('civic_opra_email') || '';
+    activeOpraModalState.requesterPhone = localStorage.getItem('civic_opra_phone') || '';
+    activeOpraModalState.requesterAddress = localStorage.getItem('civic_opra_address') || '';
+  } catch (e) {}
+
+  renderOpraModal();
+
+  const dialog = document.getElementById('opra-request-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function handleOpraFieldChange(field, val) {
+  activeOpraModalState[field] = val;
+  try {
+    if (field === 'requesterName') localStorage.setItem('civic_opra_name', val);
+    if (field === 'requesterEmail') localStorage.setItem('civic_opra_email', val);
+    if (field === 'requesterPhone') localStorage.setItem('civic_opra_phone', val);
+    if (field === 'requesterAddress') localStorage.setItem('civic_opra_address', val);
+  } catch (e) {}
+  updateOpraModalPreview();
+}
+
+function handleOpraTopicChange(val) {
+  activeOpraModalState.topic = val;
+  renderOpraModal();
+}
+
+function generateOpraFullText() {
+  const activeOpra = cityOpraConfig[currentCity] || cityOpraConfig.clifton;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const topic = activeOpraModalState.topic || 'vendors';
+
+  let baseTemplate = activeOpra.templates[topic] || activeOpra.templates.vendors || '';
+  if (topic === 'custom') {
+    baseTemplate = `To the Custodian of Records, ${meta.fullName}:
+
+Pursuant to the New Jersey Open Public Records Act (N.J.S.A. 47:1A-1 et seq.) and the common law right to inspect public records, I hereby request copies of the following public records:
+1. ${activeOpraModalState.reference ? activeOpraModalState.reference : 'Any and all official contracts, resolutions, invoices, emails, and payment records concerning the referenced subject.'}
+2. Please provide these records electronically in searchable PDF or Excel format.`;
+  }
+
+  let finalTxt = baseTemplate;
+
+  // If specific reference exists and not custom, inject as priority item
+  if (activeOpraModalState.reference && topic !== 'custom') {
+    finalTxt = finalTxt.replace(/Pursuant to.*?I hereby request:?/i, (match) => {
+      return `${match}\n[SPECIFIC ITEM OF INTEREST: ${activeOpraModalState.reference}]\n`;
+    });
+  }
+
+  // Add statutory response requirements and requester signature block
+  finalTxt += `\n\nPursuant to N.J.S.A. 47:1A-5(i), government records custodians must grant access or deny access within seven (7) business days. If any record is redacted or denied, please cite the specific statutory exemption pursuant to N.J.S.A. 47:1A-5(g).\n\nRespectfully submitted,\n`;
+
+  const name = activeOpraModalState.requesterName.trim() || '[Requester Name]';
+  const email = activeOpraModalState.requesterEmail.trim() || '[Requester Email]';
+  const phone = activeOpraModalState.requesterPhone.trim();
+  const addr = activeOpraModalState.requesterAddress.trim();
+
+  finalTxt += `Requester: ${name}\n`;
+  finalTxt += `Email: ${email}\n`;
+  if (phone) finalTxt += `Phone: ${phone}\n`;
+  if (addr) finalTxt += `Address: ${addr}\n`;
+
+  return finalTxt;
+}
+
+function updateOpraModalPreview() {
+  const preview = document.getElementById('opra-modal-preview');
+  if (preview) {
+    preview.value = generateOpraFullText();
+  }
+
+  const mailtoBtn = document.getElementById('opra-modal-mailto-btn');
+  if (mailtoBtn) {
+    const activeOpra = cityOpraConfig[currentCity] || cityOpraConfig.clifton;
+    const topic = activeOpraModalState.topic || 'vendors';
+    const opraMeta = activeOpra.meta[topic] || {
+      recipientEmail: `clerk@${currentCity}.org`,
+      subject: 'OPRA Public Records Request'
+    };
+
+    let mailtoHref = `mailto:${opraMeta.recipientEmail}?subject=${encodeURIComponent(opraMeta.subject)}`;
+    if (opraMeta.cc) {
+      mailtoHref += `&cc=${encodeURIComponent(opraMeta.cc)}`;
+    }
+    mailtoHref += `&body=${encodeURIComponent(generateOpraFullText())}`;
+    mailtoBtn.href = mailtoHref;
+  }
+}
+
+function renderOpraModal() {
+  const contentEl = document.getElementById('opra-dialog-content');
+  if (!contentEl) return;
+
+  const activeOpra = cityOpraConfig[currentCity] || cityOpraConfig.clifton;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const topic = activeOpraModalState.topic || 'vendors';
+  const opraMeta = activeOpra.meta[topic] || {
+    recipientEmail: `clerk@${currentCity}.org`,
+    recipientDisplay: `${meta.fullName} Custodian of Records`,
+    subject: 'OPRA Public Records Request'
+  };
+
+  contentEl.innerHTML = `
+    <!-- Custodian Badge & Statutory Notice -->
+    <div class="opra-custodian-banner">
+      <div class="opra-cust-info">
+        <span class="opra-badge-pill">OFFICIAL RECORDS CUSTODIAN</span>
+        <div class="opra-cust-name">${escapeHtml(opraMeta.recipientDisplay)}</div>
+        <div class="opra-cust-email">Official Submission Email: <strong>${escapeHtml(opraMeta.recipientEmail)}</strong></div>
+      </div>
+      <div class="opra-statute-note">
+        <strong>⚖️ N.J.S.A. 47:1A-5(i):</strong> Mandatory <strong>7 business-day</strong> response deadline for electronic records delivery.
+      </div>
+    </div>
+
+    <!-- Controls Form -->
+    <div class="opra-form-grid">
+      <div class="opra-form-field">
+        <label for="opra-topic-select">1. Select Request Template Topic:</label>
+        <select id="opra-topic-select" class="styled-select" onchange="handleOpraTopicChange(this.value)">
+          <option value="vendors" ${topic === 'vendors' ? 'selected' : ''}>🏫 School Board Accounts Payable &amp; Vendor Bill Lists</option>
+          <option value="overtime" ${topic === 'overtime' ? 'selected' : ''}>👮 Municipal &amp; Police Overtime / Off-Duty Ledgers</option>
+          <option value="contracts" ${topic === 'contracts' ? 'selected' : ''}>📋 Administrator Employment Contracts &amp; Benefits</option>
+          <option value="sickleave" ${topic === 'sickleave' ? 'selected' : ''}>💼 Terminal Accumulated Sick &amp; Vacation Payouts</option>
+          <option value="pilot" ${topic === 'pilot' ? 'selected' : ''}>🏢 PILOT Long-Term Tax Exemption Agreements &amp; Audits</option>
+          <option value="custom" ${topic === 'custom' ? 'selected' : ''}>📝 Custom Public Records Request</option>
+        </select>
+      </div>
+
+      <div class="opra-form-field">
+        <label for="opra-ref-input">2. Specific PO / Vendor / Reference (Optional):</label>
+        <input type="text" id="opra-ref-input" class="styled-input" placeholder="e.g. Millennium Strategies, Contract #2024-88, or Officer Smith" value="${escapeHtml(activeOpraModalState.reference)}" oninput="handleOpraFieldChange('reference', this.value)">
+      </div>
+
+      <div class="opra-form-field">
+        <label for="opra-name-input">3. Requester Full Name:</label>
+        <input type="text" id="opra-name-input" class="styled-input" placeholder="Your Legal Name" value="${escapeHtml(activeOpraModalState.requesterName)}" oninput="handleOpraFieldChange('requesterName', this.value)">
+      </div>
+
+      <div class="opra-form-field">
+        <label for="opra-email-input">4. Requester Email Address:</label>
+        <input type="email" id="opra-email-input" class="styled-input" placeholder="your.email@example.com" value="${escapeHtml(activeOpraModalState.requesterEmail)}" oninput="handleOpraFieldChange('requesterEmail', this.value)">
+      </div>
+    </div>
+
+    <!-- Live Preview Box -->
+    <div class="opra-preview-wrapper">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <label for="opra-modal-preview" style="font-size: 0.82rem; font-weight: 700; color: #0f172a; text-transform: uppercase;">
+          Statutory OPRA Demand Text (Editable):
+        </label>
+        <span style="font-size: 0.75rem; color: #64748b;">Includes statutory citations &amp; signature</span>
+      </div>
+      <textarea id="opra-modal-preview" rows="11" class="styled-textarea font-mono" style="width: 100%; font-size: 0.82rem; line-height: 1.45; border-radius: 6px; padding: 10px; border: 1px solid #cbd5e1;">${escapeHtml(generateOpraFullText())}</textarea>
+    </div>
+  `;
+
+  updateOpraModalPreview();
+}
+
+function copyOpraModalText() {
+  const preview = document.getElementById('opra-modal-preview');
+  if (!preview) return;
+  navigator.clipboard.writeText(preview.value).then(() => {
+    const copyBtn = document.getElementById('opra-modal-copy-btn');
+    if (copyBtn) {
+      const orig = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<span>✅</span> Copied to Clipboard!';
+      setTimeout(() => { copyBtn.innerHTML = orig; }, 2000);
+    }
+  });
+}
+
+function printOpraRequest() {
+  window.print();
+}
+
+// Global window attachments for Phase 1 features
+window.openPocketBallot = openPocketBallot;
+window.togglePocketBallotCandidate = togglePocketBallotCandidate;
+window.applyPocketBallotPreset = applyPocketBallotPreset;
+window.printPocketBallot = printPocketBallot;
+window.copyPocketBallotText = copyPocketBallotText;
+window.openOpraModal = openOpraModal;
+window.handleOpraFieldChange = handleOpraFieldChange;
+window.handleOpraTopicChange = handleOpraTopicChange;
+window.copyOpraModalText = copyOpraModalText;
+window.printOpraRequest = printOpraRequest;
