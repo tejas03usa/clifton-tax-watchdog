@@ -3,8 +3,8 @@
   "county": "Passaic County",
   "state": "New Jersey",
   "electionDate": "Tuesday, November 3, 2026",
-  "lastUpdated": "2026-11-04T08:16:30-05:00",
-  "lastUpdatedFormatted": "Nov 4, 2026 at 8:16 AM EST",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
   "reportingStatus": "Certified Unofficial Final Tally (All Districts Counted)",
   "isFinal": true,
   "isCountComplete": true,
@@ -96,6 +96,102 @@
         "name": "James Fera",
         "votes": 4410,
         "pct": 21.1,
+        "elected": false
+      }
+    ]
+  },
+  "countyCommissionerRace": {
+    "title": "Passaic County Board of County Commissioners",
+    "seatsAvailable": 2,
+    "term": "3-Year Terms (At-Large Countywide)",
+    "totalVotesCast": 254447,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Orlando Cruz",
+        "party": "DEM",
+        "status": "Incumbent",
+        "votes": 82205,
+        "pct": 32.31,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Nicholas Veliky",
+        "party": "DEM",
+        "status": "Incumbent",
+        "votes": 81931,
+        "pct": 32.2,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "1B",
+        "name": "Edward \"Ed\" Leonard",
+        "party": "REP",
+        "status": "Challenger",
+        "votes": 45105,
+        "pct": 17.73,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "2B",
+        "name": "Bill J. Rodriguez",
+        "party": "REP",
+        "status": "Challenger",
+        "votes": 44945,
+        "pct": 17.66,
+        "elected": false
+      },
+      {
+        "rank": 5,
+        "ballotNumber": "W",
+        "name": "Personal Choice (Write-In)",
+        "party": "Write-In",
+        "status": "Write-In",
+        "votes": 261,
+        "pct": 0.1,
+        "elected": false
+      }
+    ]
+  },
+  "surrogateRace": {
+    "title": "Passaic County Surrogate",
+    "seatsAvailable": 1,
+    "term": "5-Year Term (Constitutional Officer)",
+    "totalVotesCast": 127908,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Zoila Cassanova",
+        "party": "DEM",
+        "status": "Incumbent",
+        "votes": 82660,
+        "pct": 64.62,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "1B",
+        "name": "Jessica Sprague",
+        "party": "REP",
+        "status": "Challenger",
+        "votes": 45120,
+        "pct": 35.28,
+        "elected": false
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "W",
+        "name": "Personal Choice (Write-In)",
+        "party": "Write-In",
+        "status": "Write-In",
+        "votes": 128,
+        "pct": 0.1,
         "elected": false
       }
     ]

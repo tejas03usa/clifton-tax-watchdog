@@ -11,10 +11,12 @@
     "overallHallucinationRate": 0.0,
     "hallucinationStandard": "Zero tolerance (0.00% synthetic/hallucinated data permitted)",
     "totalMonitoredParcels": 75916,
-    "totalMonitoredMunicipalities": 7,
-    "auditDate": "2026-10-31",
-    "lastFullAudit": "2026-10-31",
-    "governanceStatus": "Fully Certified 100% (15 of 15 Core Datasets Standardized Across All 7 Municipalities)"
+    "totalMonitoredMunicipalities": 47,
+    "passaicCountyMunicipalitiesCount": 16,
+    "regionalSurroundingPeersCount": 31,
+    "auditDate": "2026-11-06",
+    "lastFullAudit": "2026-11-06",
+    "governanceStatus": "Fully Certified 100% (Covering All 16 Passaic County Municipalities + 31 Regional Peers Across Bergen, Essex & Morris Counties)"
   },
   "municipalities": [
     {

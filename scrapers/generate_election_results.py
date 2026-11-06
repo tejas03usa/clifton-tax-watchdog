@@ -431,17 +431,44 @@ def generate_clifton_results():
                     "mailIn": 910
                 }
             ]
+        },
+        "countyCommissionerRace": {
+            "title": "Passaic County Board of County Commissioners",
+            "seatsAvailable": 2,
+            "term": "3-Year Terms (At-Large Countywide)",
+            "totalVotesCast": 254447,
+            "candidates": [
+                { "rank": 1, "ballotNumber": "1A", "name": "Orlando Cruz", "party": "DEM", "status": "Incumbent", "votes": 82205, "pct": 32.31, "elected": True },
+                { "rank": 2, "ballotNumber": "2A", "name": "Nicholas Veliky", "party": "DEM", "status": "Incumbent", "votes": 81931, "pct": 32.20, "elected": True },
+                { "rank": 3, "ballotNumber": "1B", "name": "Edward \"Ed\" Leonard", "party": "REP", "status": "Challenger", "votes": 45105, "pct": 17.73, "elected": False },
+                { "rank": 4, "ballotNumber": "2B", "name": "Bill J. Rodriguez", "party": "REP", "status": "Challenger", "votes": 44945, "pct": 17.66, "elected": False },
+                { "rank": 5, "ballotNumber": "W", "name": "Personal Choice (Write-In)", "party": "Write-In", "status": "Write-In", "votes": 261, "pct": 0.10, "elected": False }
+            ]
+        },
+        "surrogateRace": {
+            "title": "Passaic County Surrogate",
+            "seatsAvailable": 1,
+            "term": "5-Year Term (Constitutional Officer)",
+            "totalVotesCast": 127908,
+            "candidates": [
+                { "rank": 1, "ballotNumber": "1A", "name": "Zoila Cassanova", "party": "DEM", "status": "Incumbent", "votes": 82660, "pct": 64.62, "elected": True },
+                { "rank": 2, "ballotNumber": "1B", "name": "Jessica Sprague", "party": "REP", "status": "Challenger", "votes": 45120, "pct": 35.28, "elected": False },
+                { "rank": 3, "ballotNumber": "W", "name": "Personal Choice (Write-In)", "party": "Write-In", "status": "Write-In", "votes": 128, "pct": 0.10, "elected": False }
+            ]
         }
     }
 
-    # Save to data/clifton_election_results.json and data/election_results.json
+    # Save to data/clifton_election_results.json, data/election_results.json, and data/passaic_county_election_results.json
     p1 = os.path.join(DATA_DIR, 'clifton_election_results.json')
     p2 = os.path.join(DATA_DIR, 'election_results.json')
+    p3 = os.path.join(DATA_DIR, 'passaic_county_election_results.json')
     with open(p1, 'w') as f:
         json.dump(results, f, indent=2)
     with open(p2, 'w') as f:
         json.dump(results, f, indent=2)
-    print(f"Generated {p1} and {p2}")
+    with open(p3, 'w') as f:
+        json.dump(results, f, indent=2)
+    print(f"Generated {p1}, {p2}, and {p3}")
 
 def generate_other_town_results():
     now_iso = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S-05:00")
@@ -653,6 +680,31 @@ def generate_other_town_results():
                 "candidates": town["boe"]["candidates"]
             }
         }
+        if "Passaic" in town["county"]:
+            town_results["countyCommissionerRace"] = {
+                "title": "Passaic County Board of County Commissioners",
+                "seatsAvailable": 2,
+                "term": "3-Year Terms (At-Large Countywide)",
+                "totalVotesCast": 254447,
+                "candidates": [
+                    { "rank": 1, "ballotNumber": "1A", "name": "Orlando Cruz", "party": "DEM", "status": "Incumbent", "votes": 82205, "pct": 32.31, "elected": True },
+                    { "rank": 2, "ballotNumber": "2A", "name": "Nicholas Veliky", "party": "DEM", "status": "Incumbent", "votes": 81931, "pct": 32.20, "elected": True },
+                    { "rank": 3, "ballotNumber": "1B", "name": "Edward \"Ed\" Leonard", "party": "REP", "status": "Challenger", "votes": 45105, "pct": 17.73, "elected": False },
+                    { "rank": 4, "ballotNumber": "2B", "name": "Bill J. Rodriguez", "party": "REP", "status": "Challenger", "votes": 44945, "pct": 17.66, "elected": False },
+                    { "rank": 5, "ballotNumber": "W", "name": "Personal Choice (Write-In)", "party": "Write-In", "status": "Write-In", "votes": 261, "pct": 0.10, "elected": False }
+                ]
+            }
+            town_results["surrogateRace"] = {
+                "title": "Passaic County Surrogate",
+                "seatsAvailable": 1,
+                "term": "5-Year Term (Constitutional Officer)",
+                "totalVotesCast": 127908,
+                "candidates": [
+                    { "rank": 1, "ballotNumber": "1A", "name": "Zoila Cassanova", "party": "DEM", "status": "Incumbent", "votes": 82660, "pct": 64.62, "elected": True },
+                    { "rank": 2, "ballotNumber": "1B", "name": "Jessica Sprague", "party": "REP", "status": "Challenger", "votes": 45120, "pct": 35.28, "elected": False },
+                    { "rank": 3, "ballotNumber": "W", "name": "Personal Choice (Write-In)", "party": "Write-In", "status": "Write-In", "votes": 128, "pct": 0.10, "elected": False }
+                ]
+            }
         dest_file = os.path.join(out_dir, 'election_results.json')
         with open(dest_file, 'w') as f:
             json.dump(town_results, f, indent=2)

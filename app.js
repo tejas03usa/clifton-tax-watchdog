@@ -9642,6 +9642,90 @@ function renderElectionResults() {
       </div>
     ` : ''}
 
+    <!-- Passaic County-Wide Races (Board of County Commissioners & Surrogate) -->
+    ${d.countyCommissionerRace?.candidates ? `
+      <div style="margin: 32px 0 10px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <h4 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+            <span>🏛️</span> ${escapeHtml(d.countyCommissionerRace.title || 'Passaic County Board of County Commissioners')} — Vote for up to ${d.countyCommissionerRace.seatsAvailable || 2}
+          </h4>
+          <p style="margin: 2px 0 0; font-size: 0.82rem; color: #64748b;">
+            Elected at-large across all 16 Passaic County municipalities. Oversight of the $500M+ Passaic County operating budget, county parks, and infrastructure.
+          </p>
+        </div>
+        <span class="badge-tag" style="background: #1e3a8a; color: #fff;">Passaic Countywide • Top ${d.countyCommissionerRace.seatsAvailable || 2} Elected</span>
+      </div>
+
+      <div class="results-candidate-list">
+        ${d.countyCommissionerRace.candidates.map(c => {
+          const isWinner = !!c.elected;
+          const pct = c.pct || 0;
+          return `
+            <div class="candidate-result-card county-result-card ${isWinner ? 'is-winner' : ''}">
+              <div class="result-card-top">
+                <div class="result-card-left">
+                  <span class="rank-badge">${c.rank}</span>
+                  <span class="result-candidate-name">${escapeHtml(c.name)}</span>
+                  <span class="badge-tag" style="background: ${c.party === 'DEM' ? '#2563eb' : c.party === 'REP' ? '#dc2626' : '#64748b'}; color: #fff;">${escapeHtml(c.party)}</span>
+                  <span class="result-status-tag ${c.status?.toLowerCase().includes('incumbent') ? 'status-incumbent' : 'status-challenger'}">
+                    ${escapeHtml(c.status || 'Candidate')}
+                  </span>
+                  ${isWinner ? `<span class="result-winner-pill">✅ Elected County Commissioner</span>` : ''}
+                </div>
+                <div class="result-card-right">
+                  <span class="result-votes-total">${c.votes?.toLocaleString()}</span>
+                  <span class="result-votes-pct">(${pct}% of votes)</span>
+                </div>
+              </div>
+              <div class="result-progress-track">
+                <div class="result-progress-fill" style="width: ${Math.min(100, (pct / 35) * 100)}%;"></div>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    ` : ''}
+
+    ${d.surrogateRace?.candidates ? `
+      <div style="margin: 28px 0 10px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <h4 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+            <span>⚖️</span> ${escapeHtml(d.surrogateRace.title || 'Passaic County Surrogate')} — Vote for 1
+          </h4>
+          <p style="margin: 2px 0 0; font-size: 0.82rem; color: #64748b;">
+            Constitutional officer serving a 5-year term presiding over the Passaic County Surrogate's Court (wills, estates, guardianships, and adoptions).
+          </p>
+        </div>
+        <span class="badge-tag" style="background: #0f172a; color: #fff;">5-Year Constitutional Term</span>
+      </div>
+
+      <div class="results-candidate-list">
+        ${d.surrogateRace.candidates.map(c => {
+          const isWinner = !!c.elected;
+          const pct = c.pct || 0;
+          return `
+            <div class="candidate-result-card county-result-card ${isWinner ? 'is-winner' : ''}">
+              <div class="result-card-top">
+                <div class="result-card-left">
+                  <span class="rank-badge">${c.rank}</span>
+                  <span class="result-candidate-name">${escapeHtml(c.name)}</span>
+                  <span class="badge-tag" style="background: ${c.party === 'DEM' ? '#2563eb' : c.party === 'REP' ? '#dc2626' : '#64748b'}; color: #fff;">${escapeHtml(c.party)}</span>
+                  ${isWinner ? `<span class="result-winner-pill">✅ Elected County Surrogate</span>` : ''}
+                </div>
+                <div class="result-card-right">
+                  <span class="result-votes-total">${c.votes?.toLocaleString()}</span>
+                  <span class="result-votes-pct">(${pct}% of votes)</span>
+                </div>
+              </div>
+              <div class="result-progress-track">
+                <div class="result-progress-fill" style="width: ${Math.min(100, (pct / 70) * 100)}%;"></div>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    ` : ''}
+
     <!-- Turnout & Voting Methods Breakdown -->
     <div style="margin: 28px 0 10px;">
       <h4 style="margin: 0 0 4px; font-size: 1.05rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
