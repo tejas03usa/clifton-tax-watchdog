@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "Ringwood Borough Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "1611",
+    "county": "Passaic County"
+  },
+  "entity": "Ringwood Borough Public Schools",
+  "county": "Passaic County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 48200000,
+  "enrollment": 1638,
+  "perPupilSpending": 22600,
+  "schoolsCount": 2,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 40777200,
+      "percentage": 84.6
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 5976800,
+      "percentage": 12.4
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 1446000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 150000,
+      "percentage": 0.31
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 21208000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 10122000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 7230000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 3856000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 2892000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 1687000,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 1205000,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

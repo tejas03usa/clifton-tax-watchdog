@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Bloomfield Township",
+    "certifiedYear": 2026
+  },
+  "population": 53100,
+  "medianHouseholdIncome": 98200,
+  "medianHomeValue": 495000,
+  "medianAssessedValue": 322740,
+  "averageAnnualTaxBill": 12328.67,
+  "taxBurdenPercent": 12.55,
+  "county": "Essex County",
+  "residentialShare": 81.4,
+  "commercialShare": 18.6
+}

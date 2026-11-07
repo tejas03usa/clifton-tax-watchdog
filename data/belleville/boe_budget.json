@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "Belleville Township Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "0701",
+    "county": "Essex County"
+  },
+  "entity": "Belleville Township Public Schools",
+  "county": "Essex County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 94200000,
+  "enrollment": 5348,
+  "perPupilSpending": 22100,
+  "schoolsCount": 6,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 55201200,
+      "percentage": 58.6
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 35984400,
+      "percentage": 38.2
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 2826000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 188400,
+      "percentage": 0.2
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 41448000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 19782000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 14130000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 7536000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 5652000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 3297000,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 2355000,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

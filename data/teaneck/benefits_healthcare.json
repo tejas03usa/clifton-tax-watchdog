@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Teaneck Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 38400000,
+  "schoolBenefitsShare": 26112000,
+  "municipalBenefitsShare": 12288000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

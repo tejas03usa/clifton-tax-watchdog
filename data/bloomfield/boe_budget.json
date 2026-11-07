@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "Bloomfield Township Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "0702",
+    "county": "Essex County"
+  },
+  "entity": "Bloomfield Township Public Schools",
+  "county": "Essex County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 128500000,
+  "enrollment": 7434,
+  "perPupilSpending": 21800,
+  "schoolsCount": 8,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 93548000,
+      "percentage": 72.8
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 31482500,
+      "percentage": 24.5
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 3855000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 150000,
+      "percentage": 0.12
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 56540000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 26985000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 19275000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 10280000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 7710000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 4497500,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 3212500,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

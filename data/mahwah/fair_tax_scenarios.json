@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "source": "NJ Division of Taxation Equalization Analysis",
+    "certifiedYear": 2026
+  },
+  "certifiedTaxRate": 2.18,
+  "equalizationRatio": 82.1,
+  "effectiveTaxRateMarket": 1.79,
+  "scenarios": [
+    {
+      "name": "Current Certified Assessment Base",
+      "rate": 2.18,
+      "sampleHomeAssessed": 558280,
+      "sampleTax": 12170.5
+    },
+    {
+      "name": "100% Fair Market Revaluation Scenario",
+      "rate": 1.79,
+      "sampleHomeAssessed": 680000,
+      "sampleTax": 12172.0
+    }
+  ]
+}

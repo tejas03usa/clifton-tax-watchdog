@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Passaic City",
+    "certifiedYear": 2026
+  },
+  "population": 70537,
+  "medianHouseholdIncome": 54200,
+  "medianHomeValue": 425000,
+  "medianAssessedValue": 210885,
+  "averageAnnualTaxBill": 8979.48,
+  "taxBurdenPercent": 16.57,
+  "county": "Passaic County",
+  "residentialShare": 81.5,
+  "commercialShare": 18.5
+}

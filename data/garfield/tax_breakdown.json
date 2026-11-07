@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 69.8,
+    "effectiveTaxRateMarketValue": 2.384
+  },
+  "location": "Garfield City, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.415,
+  "ratePerHundredDollars": 3.415,
+  "effectiveTaxRateMarketValue": 2.384,
+  "averageResidentialAssessment": 331550,
+  "averageTaxBill": 11322.43,
+  "breakdown": [
+    {
+      "entity": "Garfield City Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.68,
+      "percentage": 49.2,
+      "annualAmountOnAverage": 5570.64,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Garfield City Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.318,
+      "percentage": 38.6,
+      "annualAmountOnAverage": 4370.46,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.417,
+      "percentage": 12.2,
+      "annualAmountOnAverage": 1381.34,
+      "color": "var(--color-county)"
+    }
+  ]
+}

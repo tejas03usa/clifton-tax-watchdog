@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Elmwood Park Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 17800000,
+  "schoolBenefitsShare": 12104000,
+  "municipalBenefitsShare": 5696000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

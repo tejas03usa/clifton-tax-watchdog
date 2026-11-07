@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 84.2,
+    "effectiveTaxRateMarketValue": 1.645
+  },
+  "location": "Paramus Borough, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 1.954,
+  "ratePerHundredDollars": 1.954,
+  "effectiveTaxRateMarketValue": 1.645,
+  "averageResidentialAssessment": 623080,
+  "averageTaxBill": 12175.0,
+  "breakdown": [
+    {
+      "entity": "Paramus Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.102,
+      "percentage": 56.4,
+      "annualAmountOnAverage": 6866.7,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Paramus Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.641,
+      "percentage": 32.8,
+      "annualAmountOnAverage": 3993.4,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.211,
+      "percentage": 10.8,
+      "annualAmountOnAverage": 1314.9,
+      "color": "var(--color-county)"
+    }
+  ]
+}

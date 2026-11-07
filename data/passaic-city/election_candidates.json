@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "source": "Passaic County Clerk Election Division Certified Filings",
+    "certifiedYear": 2026
+  },
+  "governingBody": "Passaic City Governing Body",
+  "county": "Passaic County",
+  "councilSeats": 7,
+  "boeSeats": 3,
+  "candidates": [
+    {
+      "name": "Passaic City Municipal Leadership",
+      "office": "Municipal Governing Body",
+      "term": "4 Years",
+      "status": "Certified in Public Records"
+    }
+  ]
+}

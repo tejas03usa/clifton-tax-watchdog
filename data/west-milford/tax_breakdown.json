@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 59.06,
+    "effectiveTaxRateMarketValue": 2.489
+  },
+  "location": "West Milford Township, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 4.214,
+  "ratePerHundredDollars": 4.214,
+  "effectiveTaxRateMarketValue": 2.489,
+  "averageResidentialAssessment": 259864,
+  "averageTaxBill": 10950.67,
+  "breakdown": [
+    {
+      "entity": "West Milford Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.364,
+      "percentage": 56.1,
+      "annualAmountOnAverage": 6143.33,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "West Milford Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.201,
+      "percentage": 28.5,
+      "annualAmountOnAverage": 3120.94,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.649,
+      "percentage": 15.4,
+      "annualAmountOnAverage": 1686.4,
+      "color": "var(--color-county)"
+    }
+  ]
+}

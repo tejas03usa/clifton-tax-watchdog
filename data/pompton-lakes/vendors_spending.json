@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "source": "Pompton Lakes Borough Bill Lists & Annual Audit",
+    "certifiedYear": 2026
+  },
+  "vendors": [
+    {
+      "vendor": "Public Employee Pension & Benefits Fund",
+      "service": "State Pension & Employee Health Benefits",
+      "annualSpend": 2548000
+    },
+    {
+      "vendor": "Public Works & Road Materials",
+      "service": "Asphalt, Road Paving, Snow Removal & Salt",
+      "annualSpend": 910000
+    },
+    {
+      "vendor": "Joint Insurance Fund (JIF)",
+      "service": "General Liability, Property & Workers Comp",
+      "annualSpend": 728000
+    },
+    {
+      "vendor": "Emergency Services & Utilities",
+      "service": "Electricity, Natural Gas, Water & Hydrant Rentals",
+      "annualSpend": 637000
+    }
+  ]
+}

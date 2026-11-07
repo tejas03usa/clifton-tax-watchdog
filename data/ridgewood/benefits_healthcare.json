@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Ridgewood Village Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 38500000,
+  "schoolBenefitsShare": 26180000,
+  "municipalBenefitsShare": 12320000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

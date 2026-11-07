@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Riverdale Borough",
+    "certifiedYear": 2026
+  },
+  "population": 4200,
+  "medianHouseholdIncome": 110500,
+  "medianHomeValue": 460000,
+  "medianAssessedValue": 379500,
+  "averageAnnualTaxBill": 10018.8,
+  "taxBurdenPercent": 9.07,
+  "county": "Morris County",
+  "residentialShare": 69.4,
+  "commercialShare": 30.6
+}

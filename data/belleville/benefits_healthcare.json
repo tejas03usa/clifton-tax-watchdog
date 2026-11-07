@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Belleville Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 36500000,
+  "schoolBenefitsShare": 24820000,
+  "municipalBenefitsShare": 11680000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Essex County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 69.4,
+    "effectiveTaxRateMarketValue": 2.922
+  },
+  "location": "West Orange Township, Essex County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 4.21,
+  "ratePerHundredDollars": 4.21,
+  "effectiveTaxRateMarketValue": 2.922,
+  "averageResidentialAssessment": 388640,
+  "averageTaxBill": 16361.74,
+  "breakdown": [
+    {
+      "entity": "West Orange Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.374,
+      "percentage": 56.4,
+      "annualAmountOnAverage": 9228.02,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "West Orange Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.145,
+      "percentage": 27.2,
+      "annualAmountOnAverage": 4450.39,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Essex County Government",
+      "purpose": "Essex County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.691,
+      "percentage": 16.4,
+      "annualAmountOnAverage": 2683.33,
+      "color": "var(--color-county)"
+    }
+  ]
+}

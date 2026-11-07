@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 67.5,
+    "effectiveTaxRateMarketValue": 2.356
+  },
+  "location": "Teaneck Township, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.49,
+  "ratePerHundredDollars": 3.49,
+  "effectiveTaxRateMarketValue": 2.356,
+  "averageResidentialAssessment": 378000,
+  "averageTaxBill": 13192.2,
+  "breakdown": [
+    {
+      "entity": "Teaneck Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.066,
+      "percentage": 59.2,
+      "annualAmountOnAverage": 7809.78,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Teaneck Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.04,
+      "percentage": 29.8,
+      "annualAmountOnAverage": 3931.28,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.384,
+      "percentage": 11.0,
+      "annualAmountOnAverage": 1451.14,
+      "color": "var(--color-county)"
+    }
+  ]
+}

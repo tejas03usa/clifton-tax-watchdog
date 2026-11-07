@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Pompton Lakes Borough",
+    "certifiedYear": 2026
+  },
+  "population": 11120,
+  "medianHouseholdIncome": 108400,
+  "medianHomeValue": 465000,
+  "medianAssessedValue": 285138,
+  "averageAnnualTaxBill": 11779.05,
+  "taxBurdenPercent": 10.87,
+  "county": "Passaic County",
+  "residentialShare": 85.1,
+  "commercialShare": 14.9
+}

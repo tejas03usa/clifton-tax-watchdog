@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Paramus Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 41200000,
+  "schoolBenefitsShare": 28016000,
+  "municipalBenefitsShare": 13184000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

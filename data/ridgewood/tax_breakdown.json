@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 76.5,
+    "effectiveTaxRateMarketValue": 2.128
+  },
+  "location": "Ridgewood Village, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.782,
+  "ratePerHundredDollars": 2.782,
+  "effectiveTaxRateMarketValue": 2.128,
+  "averageResidentialAssessment": 734400,
+  "averageTaxBill": 20431.01,
+  "breakdown": [
+    {
+      "entity": "Ridgewood Village Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.858,
+      "percentage": 66.8,
+      "annualAmountOnAverage": 13647.91,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Ridgewood Village Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.651,
+      "percentage": 23.4,
+      "annualAmountOnAverage": 4780.86,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.273,
+      "percentage": 9.8,
+      "annualAmountOnAverage": 2002.24,
+      "color": "var(--color-county)"
+    }
+  ]
+}

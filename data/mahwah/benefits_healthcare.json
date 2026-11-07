@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Mahwah Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 29400000,
+  "schoolBenefitsShare": 19992000,
+  "municipalBenefitsShare": 9408000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

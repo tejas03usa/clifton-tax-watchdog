@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Essex County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 65.2,
+    "effectiveTaxRateMarketValue": 2.491
+  },
+  "location": "Bloomfield Township, Essex County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.82,
+  "ratePerHundredDollars": 3.82,
+  "effectiveTaxRateMarketValue": 2.491,
+  "averageResidentialAssessment": 322740,
+  "averageTaxBill": 12328.67,
+  "breakdown": [
+    {
+      "entity": "Bloomfield Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.04,
+      "percentage": 53.4,
+      "annualAmountOnAverage": 6583.51,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Bloomfield Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.154,
+      "percentage": 30.2,
+      "annualAmountOnAverage": 3723.26,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Essex County Government",
+      "purpose": "Essex County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.626,
+      "percentage": 16.4,
+      "annualAmountOnAverage": 2021.9,
+      "color": "var(--color-county)"
+    }
+  ]
+}

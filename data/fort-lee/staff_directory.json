@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "source": "Fort Lee Borough Municipal Directory & School Board Rosters",
+    "certifiedYear": 2026
+  },
+  "staff": [
+    {
+      "name": "Fort Lee Borough Leadership",
+      "title": "Mayor / Governing Body Executive",
+      "department": "Executive / Mayor's Office",
+      "compensation": "Stipend / Statutory"
+    },
+    {
+      "name": "Municipal Administrator",
+      "title": "Borough / Township Administrator",
+      "department": "Administration",
+      "compensation": "Contractual"
+    },
+    {
+      "name": "Chief Financial Officer",
+      "title": "CFO & Treasurer",
+      "department": "Finance Department",
+      "compensation": "Contractual"
+    },
+    {
+      "name": "Municipal Clerk",
+      "title": "Registered Municipal Clerk",
+      "department": "Clerk's Office",
+      "compensation": "Contractual"
+    },
+    {
+      "name": "Tax Assessor",
+      "title": "Certified Tax Assessor (CTA)",
+      "department": "Assessment Office",
+      "compensation": "Contractual"
+    },
+    {
+      "name": "Superintendent of Schools",
+      "title": "District Superintendent",
+      "department": "Board of Education Administration",
+      "compensation": "Contractual"
+    },
+    {
+      "name": "School Business Administrator",
+      "title": "Board Secretary & SBA",
+      "department": "Board of Education Business Office",
+      "compensation": "Contractual"
+    }
+  ]
+}

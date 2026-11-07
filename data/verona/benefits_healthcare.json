@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Verona Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 14200000,
+  "schoolBenefitsShare": 9656000,
+  "municipalBenefitsShare": 4544000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Denville Township",
+    "certifiedYear": 2026
+  },
+  "population": 17200,
+  "medianHouseholdIncome": 156800,
+  "medianHomeValue": 670000,
+  "medianAssessedValue": 557440,
+  "averageAnnualTaxBill": 14404.25,
+  "taxBurdenPercent": 9.19,
+  "county": "Morris County",
+  "residentialShare": 81.4,
+  "commercialShare": 18.6
+}

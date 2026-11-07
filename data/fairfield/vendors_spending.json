@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "source": "Fairfield Township Bill Lists & Annual Audit",
+    "certifiedYear": 2026
+  },
+  "vendors": [
+    {
+      "vendor": "Public Employee Pension & Benefits Fund",
+      "service": "State Pension & Employee Health Benefits",
+      "annualSpend": 2730000
+    },
+    {
+      "vendor": "Public Works & Road Materials",
+      "service": "Asphalt, Road Paving, Snow Removal & Salt",
+      "annualSpend": 975000
+    },
+    {
+      "vendor": "Joint Insurance Fund (JIF)",
+      "service": "General Liability, Property & Workers Comp",
+      "annualSpend": 780000
+    },
+    {
+      "vendor": "Emergency Services & Utilities",
+      "service": "Electricity, Natural Gas, Water & Hydrant Rentals",
+      "annualSpend": 682500
+    }
+  ]
+}

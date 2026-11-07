@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Essex County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 84.1,
+    "effectiveTaxRateMarketValue": 2.069
+  },
+  "location": "Cedar Grove Township, Essex County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.46,
+  "ratePerHundredDollars": 2.46,
+  "effectiveTaxRateMarketValue": 2.069,
+  "averageResidentialAssessment": 538240,
+  "averageTaxBill": 13240.7,
+  "breakdown": [
+    {
+      "entity": "Cedar Grove Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.387,
+      "percentage": 56.4,
+      "annualAmountOnAverage": 7467.75,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Cedar Grove Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.674,
+      "percentage": 27.4,
+      "annualAmountOnAverage": 3627.95,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Essex County Government",
+      "purpose": "Essex County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.399,
+      "percentage": 16.2,
+      "annualAmountOnAverage": 2144.99,
+      "color": "var(--color-county)"
+    }
+  ]
+}

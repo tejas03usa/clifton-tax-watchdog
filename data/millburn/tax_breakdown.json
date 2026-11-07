@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Essex County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 88.5,
+    "effectiveTaxRateMarketValue": 1.633
+  },
+  "location": "Millburn Township (Short Hills), Essex County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 1.845,
+  "ratePerHundredDollars": 1.845,
+  "effectiveTaxRateMarketValue": 1.633,
+  "averageResidentialAssessment": 1283250,
+  "averageTaxBill": 23675.96,
+  "breakdown": [
+    {
+      "entity": "Millburn Township (Short Hills) Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.177,
+      "percentage": 63.8,
+      "annualAmountOnAverage": 15105.26,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Millburn Township (Short Hills) Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.376,
+      "percentage": 20.4,
+      "annualAmountOnAverage": 4829.9,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Essex County Government",
+      "purpose": "Essex County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.292,
+      "percentage": 15.8,
+      "annualAmountOnAverage": 3740.8,
+      "color": "var(--color-county)"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Woodland Park Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 13600000,
+  "schoolBenefitsShare": 9248000,
+  "municipalBenefitsShare": 4352000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

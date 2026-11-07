@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Ringwood Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 14500000,
+  "schoolBenefitsShare": 9860000,
+  "municipalBenefitsShare": 4640000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

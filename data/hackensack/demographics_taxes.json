@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Hackensack City",
+    "certifiedYear": 2026
+  },
+  "population": 45800,
+  "medianHouseholdIncome": 81400,
+  "medianHomeValue": 465000,
+  "medianAssessedValue": 304110,
+  "averageAnnualTaxBill": 11510.56,
+  "taxBurdenPercent": 14.14,
+  "county": "Bergen County",
+  "residentialShare": 68.2,
+  "commercialShare": 31.8
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Cedar Grove Township",
+    "certifiedYear": 2026
+  },
+  "population": 13200,
+  "medianHouseholdIncome": 132800,
+  "medianHomeValue": 640000,
+  "medianAssessedValue": 538240,
+  "averageAnnualTaxBill": 13240.7,
+  "taxBurdenPercent": 9.97,
+  "county": "Essex County",
+  "residentialShare": 85.6,
+  "commercialShare": 14.4
+}

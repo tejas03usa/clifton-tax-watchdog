@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 49.62,
+    "effectiveTaxRateMarketValue": 2.113
+  },
+  "location": "Passaic City, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 4.258,
+  "ratePerHundredDollars": 4.258,
+  "effectiveTaxRateMarketValue": 2.113,
+  "averageResidentialAssessment": 210885,
+  "averageTaxBill": 8979.48,
+  "breakdown": [
+    {
+      "entity": "Passaic City Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.754,
+      "percentage": 41.2,
+      "annualAmountOnAverage": 3699.55,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Passaic City Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.81,
+      "percentage": 42.5,
+      "annualAmountOnAverage": 3816.28,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.694,
+      "percentage": 16.3,
+      "annualAmountOnAverage": 1463.66,
+      "color": "var(--color-county)"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Teaneck Township",
+    "certifiedYear": 2026
+  },
+  "population": 41800,
+  "medianHouseholdIncome": 126400,
+  "medianHomeValue": 560000,
+  "medianAssessedValue": 378000,
+  "averageAnnualTaxBill": 13192.2,
+  "taxBurdenPercent": 10.44,
+  "county": "Bergen County",
+  "residentialShare": 84.2,
+  "commercialShare": 15.8
+}

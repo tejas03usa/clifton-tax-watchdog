@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 51.19,
+    "effectiveTaxRateMarketValue": 2.771
+  },
+  "location": "Haledon Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 5.428,
+  "ratePerHundredDollars": 5.428,
+  "effectiveTaxRateMarketValue": 2.771,
+  "averageResidentialAssessment": 209879,
+  "averageTaxBill": 11392.23,
+  "breakdown": [
+    {
+      "entity": "Haledon Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.779,
+      "percentage": 51.2,
+      "annualAmountOnAverage": 5832.82,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Haledon Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.759,
+      "percentage": 32.4,
+      "annualAmountOnAverage": 3691.08,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.89,
+      "percentage": 16.4,
+      "annualAmountOnAverage": 1868.33,
+      "color": "var(--color-county)"
+    }
+  ]
+}

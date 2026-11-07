@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Garfield City",
+    "certifiedYear": 2026
+  },
+  "population": 32800,
+  "medianHouseholdIncome": 72400,
+  "medianHomeValue": 475000,
+  "medianAssessedValue": 331550,
+  "averageAnnualTaxBill": 11322.43,
+  "taxBurdenPercent": 15.64,
+  "county": "Bergen County",
+  "residentialShare": 79.5,
+  "commercialShare": 20.5
+}

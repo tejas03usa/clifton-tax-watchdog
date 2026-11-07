@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Hawthorne Borough",
+    "certifiedYear": 2026
+  },
+  "population": 19450,
+  "medianHouseholdIncome": 116200,
+  "medianHomeValue": 515000,
+  "medianAssessedValue": 380637,
+  "averageAnnualTaxBill": 11967.23,
+  "taxBurdenPercent": 10.3,
+  "county": "Passaic County",
+  "residentialShare": 82.5,
+  "commercialShare": 17.5
+}

@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "West Milford Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 26800000,
+  "schoolBenefitsShare": 18224000,
+  "municipalBenefitsShare": 8576000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

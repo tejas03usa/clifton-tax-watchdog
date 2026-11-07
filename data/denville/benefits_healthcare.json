@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Denville Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 18200000,
+  "schoolBenefitsShare": 12376000,
+  "municipalBenefitsShare": 5824000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

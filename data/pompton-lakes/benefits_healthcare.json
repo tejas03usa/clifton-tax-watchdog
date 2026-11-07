@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Pompton Lakes Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 12400000,
+  "schoolBenefitsShare": 8432000,
+  "municipalBenefitsShare": 3968000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

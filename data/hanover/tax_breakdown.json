@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Morris County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 87.2,
+    "effectiveTaxRateMarketValue": 1.495
+  },
+  "location": "Hanover Township (Whippany), Morris County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 1.714,
+  "ratePerHundredDollars": 1.714,
+  "effectiveTaxRateMarketValue": 1.495,
+  "averageResidentialAssessment": 606040,
+  "averageTaxBill": 10387.53,
+  "breakdown": [
+    {
+      "entity": "Hanover Township (Whippany) Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.049,
+      "percentage": 61.2,
+      "annualAmountOnAverage": 6357.17,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Hanover Township (Whippany) Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.473,
+      "percentage": 27.6,
+      "annualAmountOnAverage": 2866.96,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Morris County Government",
+      "purpose": "Morris County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.192,
+      "percentage": 11.2,
+      "annualAmountOnAverage": 1163.4,
+      "color": "var(--color-county)"
+    }
+  ]
+}

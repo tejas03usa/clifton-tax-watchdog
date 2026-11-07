@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Mountain Lakes Borough",
+    "certifiedYear": 2026
+  },
+  "population": 4450,
+  "medianHouseholdIncome": 250000,
+  "medianHomeValue": 1050000,
+  "medianAssessedValue": 877800,
+  "averageAnnualTaxBill": 24227.28,
+  "taxBurdenPercent": 9.69,
+  "county": "Morris County",
+  "residentialShare": 94.2,
+  "commercialShare": 5.8
+}

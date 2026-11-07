@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Verona Township",
+    "certifiedYear": 2026
+  },
+  "population": 14500,
+  "medianHouseholdIncome": 136400,
+  "medianHomeValue": 625000,
+  "medianAssessedValue": 496875,
+  "averageAnnualTaxBill": 15502.5,
+  "taxBurdenPercent": 11.37,
+  "county": "Essex County",
+  "residentialShare": 88.2,
+  "commercialShare": 11.8
+}

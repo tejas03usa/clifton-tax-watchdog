@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 68.2,
+    "effectiveTaxRateMarketValue": 2.395
+  },
+  "location": "Fair Lawn Borough, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.512,
+  "ratePerHundredDollars": 3.512,
+  "effectiveTaxRateMarketValue": 2.395,
+  "averageResidentialAssessment": 416020,
+  "averageTaxBill": 14610.62,
+  "breakdown": [
+    {
+      "entity": "Fair Lawn Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.265,
+      "percentage": 64.5,
+      "annualAmountOnAverage": 9423.85,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Fair Lawn Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.882,
+      "percentage": 25.1,
+      "annualAmountOnAverage": 3667.27,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.365,
+      "percentage": 10.4,
+      "annualAmountOnAverage": 1519.5,
+      "color": "var(--color-county)"
+    }
+  ]
+}

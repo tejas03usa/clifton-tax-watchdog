@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Nutley Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 32100000,
+  "schoolBenefitsShare": 21828000,
+  "municipalBenefitsShare": 10272000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

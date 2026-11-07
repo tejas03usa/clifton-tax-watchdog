@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "West Orange Township",
+    "certifiedYear": 2026
+  },
+  "population": 48600,
+  "medianHouseholdIncome": 121400,
+  "medianHomeValue": 560000,
+  "medianAssessedValue": 388640,
+  "averageAnnualTaxBill": 16361.74,
+  "taxBurdenPercent": 13.48,
+  "county": "Essex County",
+  "residentialShare": 83.6,
+  "commercialShare": 16.4
+}

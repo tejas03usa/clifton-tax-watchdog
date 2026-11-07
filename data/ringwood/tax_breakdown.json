@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 61.68,
+    "effectiveTaxRateMarketValue": 2.627
+  },
+  "location": "Ringwood Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 4.259,
+  "ratePerHundredDollars": 4.259,
+  "effectiveTaxRateMarketValue": 2.627,
+  "averageResidentialAssessment": 320736,
+  "averageTaxBill": 13660.15,
+  "breakdown": [
+    {
+      "entity": "Ringwood Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.615,
+      "percentage": 61.4,
+      "annualAmountOnAverage": 8387.33,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Ringwood Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.014,
+      "percentage": 23.8,
+      "annualAmountOnAverage": 3251.12,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.63,
+      "percentage": 14.8,
+      "annualAmountOnAverage": 2021.7,
+      "color": "var(--color-county)"
+    }
+  ]
+}

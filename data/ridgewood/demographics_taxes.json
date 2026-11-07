@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Ridgewood Village",
+    "certifiedYear": 2026
+  },
+  "population": 26100,
+  "medianHouseholdIncome": 215000,
+  "medianHomeValue": 960000,
+  "medianAssessedValue": 734400,
+  "averageAnnualTaxBill": 20431.01,
+  "taxBurdenPercent": 9.5,
+  "county": "Bergen County",
+  "residentialShare": 88.4,
+  "commercialShare": 11.6
+}

@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Essex County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 79.5,
+    "effectiveTaxRateMarketValue": 2.48
+  },
+  "location": "Verona Township, Essex County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.12,
+  "ratePerHundredDollars": 3.12,
+  "effectiveTaxRateMarketValue": 2.48,
+  "averageResidentialAssessment": 496875,
+  "averageTaxBill": 15502.5,
+  "breakdown": [
+    {
+      "entity": "Verona Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.803,
+      "percentage": 57.8,
+      "annualAmountOnAverage": 8960.44,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Verona Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.817,
+      "percentage": 26.2,
+      "annualAmountOnAverage": 4061.66,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Essex County Government",
+      "purpose": "Essex County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.5,
+      "percentage": 16.0,
+      "annualAmountOnAverage": 2480.4,
+      "color": "var(--color-county)"
+    }
+  ]
+}

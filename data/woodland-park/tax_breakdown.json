@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 66.11,
+    "effectiveTaxRateMarketValue": 2.271
+  },
+  "location": "Woodland Park Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.435,
+  "ratePerHundredDollars": 3.435,
+  "effectiveTaxRateMarketValue": 2.271,
+  "averageResidentialAssessment": 337161,
+  "averageTaxBill": 11581.48,
+  "breakdown": [
+    {
+      "entity": "Woodland Park Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.8,
+      "percentage": 52.4,
+      "annualAmountOnAverage": 6068.7,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Woodland Park Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.092,
+      "percentage": 31.8,
+      "annualAmountOnAverage": 3682.91,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.543,
+      "percentage": 15.8,
+      "annualAmountOnAverage": 1829.87,
+      "color": "var(--color-county)"
+    }
+  ]
+}

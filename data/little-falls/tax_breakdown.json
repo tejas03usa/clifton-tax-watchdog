@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 62.24,
+    "effectiveTaxRateMarketValue": 2.17
+  },
+  "location": "Little Falls Township, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.496,
+  "ratePerHundredDollars": 3.496,
+  "effectiveTaxRateMarketValue": 2.17,
+  "averageResidentialAssessment": 336096,
+  "averageTaxBill": 11749.92,
+  "breakdown": [
+    {
+      "entity": "Little Falls Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.874,
+      "percentage": 53.6,
+      "annualAmountOnAverage": 6297.96,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Little Falls Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.042,
+      "percentage": 29.8,
+      "annualAmountOnAverage": 3501.48,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.58,
+      "percentage": 16.6,
+      "annualAmountOnAverage": 1950.49,
+      "color": "var(--color-county)"
+    }
+  ]
+}

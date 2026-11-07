@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 51.5,
+    "effectiveTaxRateMarketValue": 1.511
+  },
+  "location": "Totowa Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.934,
+  "ratePerHundredDollars": 2.934,
+  "effectiveTaxRateMarketValue": 1.511,
+  "averageResidentialAssessment": 290975,
+  "averageTaxBill": 8537.21,
+  "breakdown": [
+    {
+      "entity": "Totowa Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.414,
+      "percentage": 48.2,
+      "annualAmountOnAverage": 4114.94,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Totowa Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.015,
+      "percentage": 34.6,
+      "annualAmountOnAverage": 2953.87,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.505,
+      "percentage": 17.2,
+      "annualAmountOnAverage": 1468.4,
+      "color": "var(--color-county)"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Belleville Township",
+    "certifiedYear": 2026
+  },
+  "population": 38200,
+  "medianHouseholdIncome": 85600,
+  "medianHomeValue": 470000,
+  "medianAssessedValue": 310670,
+  "averageAnnualTaxBill": 12147.2,
+  "taxBurdenPercent": 14.19,
+  "county": "Essex County",
+  "residentialShare": 82.5,
+  "commercialShare": 17.5
+}

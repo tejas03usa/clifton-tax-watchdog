@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Fair Lawn Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 34500000,
+  "schoolBenefitsShare": 23460000,
+  "municipalBenefitsShare": 11040000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

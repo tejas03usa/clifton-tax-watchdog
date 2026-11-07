@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Morris County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 86.4,
+    "effectiveTaxRateMarketValue": 1.572
+  },
+  "location": "Florham Park Borough, Morris County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 1.82,
+  "ratePerHundredDollars": 1.82,
+  "effectiveTaxRateMarketValue": 1.572,
+  "averageResidentialAssessment": 656640,
+  "averageTaxBill": 11950.85,
+  "breakdown": [
+    {
+      "entity": "Florham Park Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.063,
+      "percentage": 58.4,
+      "annualAmountOnAverage": 6979.3,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Florham Park Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.579,
+      "percentage": 31.8,
+      "annualAmountOnAverage": 3800.37,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Morris County Government",
+      "purpose": "Morris County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.178,
+      "percentage": 9.8,
+      "annualAmountOnAverage": 1171.18,
+      "color": "var(--color-county)"
+    }
+  ]
+}

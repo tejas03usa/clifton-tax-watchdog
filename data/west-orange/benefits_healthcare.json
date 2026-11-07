@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "West Orange Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 54200000,
+  "schoolBenefitsShare": 36856000,
+  "municipalBenefitsShare": 17344000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

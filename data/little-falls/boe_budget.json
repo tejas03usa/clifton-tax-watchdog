@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "Little Falls Township Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "1605",
+    "county": "Passaic County"
+  },
+  "entity": "Little Falls Township Public Schools",
+  "county": "Passaic County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 42100000,
+  "enrollment": 1870,
+  "perPupilSpending": 21100,
+  "schoolsCount": 2,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 34185200,
+      "percentage": 81.2
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 6230800,
+      "percentage": 14.8
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 1263000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 421000,
+      "percentage": 1.0
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 18524000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 8841000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 6315000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 3368000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 2526000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 1473500,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 1052500,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

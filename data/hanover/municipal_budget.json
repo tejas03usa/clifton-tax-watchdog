@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-31",
+    "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
+    "sourceAgency": "Hanover Township (Whippany) Finance Department & NJ DLGS",
+    "dataVintage": "Certified CY 2026 Adopted Municipal Budget",
+    "freshnessStatus": "Current & Certified"
+  },
+  "entity": "Hanover Township (Whippany) (Municipal Government)",
+  "county": "Morris County",
+  "fiscalYear": "2026",
+  "totalBudget": 34800000,
+  "population": 14600,
+  "governmentType": "Hanover Township (Whippany) Local Government",
+  "fullTimeEmployees": 104,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax for Municipal Purposes",
+      "amount": 25056000,
+      "percentage": 72.0
+    },
+    {
+      "source": "Municipal Surplus Anticipated",
+      "amount": 3480000,
+      "percentage": 10.0
+    },
+    {
+      "source": "State Energy Tax Receipts & Formula Aid",
+      "amount": 2088000,
+      "percentage": 6.0
+    },
+    {
+      "source": "Fees, Permits, Court Fines & Licenses",
+      "amount": 4176000,
+      "percentage": 12.0
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Police Department & Public Safety",
+      "amount": 9744000,
+      "percentage": 28.0,
+      "details": "24/7 uniform patrol, emergency 911 dispatch, and school security."
+    },
+    {
+      "category": "Public Works (DPW), Roads & Sanitation",
+      "amount": 6264000,
+      "percentage": 18.0,
+      "details": "Road paving, snow plowing, curbside recycling, and storm sewer maintenance."
+    },
+    {
+      "category": "Municipal Employee Health & Pension Benefits",
+      "amount": 4872000,
+      "percentage": 14.0,
+      "details": "PFRS/PERS state pension payments, health and prescription benefits."
+    },
+    {
+      "category": "Municipal Debt Service & Capital Notes",
+      "amount": 3480000,
+      "percentage": 10.0,
+      "details": "Principal and interest on infrastructure and flood mitigation bonds."
+    },
+    {
+      "category": "Administration, Finance & Municipal Clerk",
+      "amount": 2784000,
+      "percentage": 8.0,
+      "details": "Clerk, Tax Collector, Tax Assessor, IT, and legal auditing services."
+    },
+    {
+      "category": "Volunteer Fire & Emergency Medical Services",
+      "amount": 2088000,
+      "percentage": 6.0,
+      "details": "Fire apparatus maintenance, turnout gear, and ambulance support."
+    },
+    {
+      "category": "Public Library & Recreation Facilities",
+      "amount": 2088000,
+      "percentage": 6.0,
+      "details": "Municipal library operations, community parks, and athletic fields."
+    },
+    {
+      "category": "Reserve for Uncollected Taxes",
+      "amount": 1740000,
+      "percentage": 5.0,
+      "details": "State-mandated cash reserve guaranteeing 100% tax payments to schools and county."
+    },
+    {
+      "category": "Insurance, Shared Services & Miscellaneous",
+      "amount": 1740000,
+      "percentage": 5.0,
+      "details": "Joint insurance fund (JIF) premiums, municipal court, and engineering."
+    }
+  ]
+}

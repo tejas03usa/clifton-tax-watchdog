@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Fort Lee Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 42100000,
+  "schoolBenefitsShare": 28628000,
+  "municipalBenefitsShare": 13472000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

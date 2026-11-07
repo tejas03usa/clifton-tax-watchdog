@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "source": "Bergen County Clerk Election Division Certified Filings",
+    "certifiedYear": 2026
+  },
+  "governingBody": "Fair Lawn Borough Governing Body",
+  "county": "Bergen County",
+  "councilSeats": 7,
+  "boeSeats": 3,
+  "candidates": [
+    {
+      "name": "Fair Lawn Borough Municipal Leadership",
+      "office": "Municipal Governing Body",
+      "term": "4 Years",
+      "status": "Certified in Public Records"
+    }
+  ]
+}

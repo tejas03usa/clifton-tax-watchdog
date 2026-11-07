@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Passaic City Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 78500000,
+  "schoolBenefitsShare": 53380000,
+  "municipalBenefitsShare": 25120000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

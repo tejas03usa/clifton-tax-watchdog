@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Nutley Township",
+    "certifiedYear": 2026
+  },
+  "population": 30143,
+  "medianHouseholdIncome": 115200,
+  "medianHomeValue": 560000,
+  "medianAssessedValue": 439040,
+  "averageAnnualTaxBill": 12486.3,
+  "taxBurdenPercent": 10.84,
+  "county": "Essex County",
+  "residentialShare": 78.2,
+  "commercialShare": 21.8
+}

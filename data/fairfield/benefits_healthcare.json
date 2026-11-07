@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Fairfield Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 11200000,
+  "schoolBenefitsShare": 7616000,
+  "municipalBenefitsShare": 3584000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

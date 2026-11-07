@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Hawthorne Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 18400000,
+  "schoolBenefitsShare": 12512000,
+  "municipalBenefitsShare": 5888000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

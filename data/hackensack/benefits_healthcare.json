@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Hackensack City Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 58200000,
+  "schoolBenefitsShare": 39576000,
+  "municipalBenefitsShare": 18624000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

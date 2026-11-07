@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Essex County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 87.2,
+    "effectiveTaxRateMarketValue": 1.648
+  },
+  "location": "Fairfield Township, Essex County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 1.89,
+  "ratePerHundredDollars": 1.89,
+  "effectiveTaxRateMarketValue": 1.648,
+  "averageResidentialAssessment": 549360,
+  "averageTaxBill": 10382.9,
+  "breakdown": [
+    {
+      "entity": "Fairfield Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 0.919,
+      "percentage": 48.6,
+      "annualAmountOnAverage": 5046.09,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Fairfield Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.665,
+      "percentage": 35.2,
+      "annualAmountOnAverage": 3654.78,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Essex County Government",
+      "purpose": "Essex County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.306,
+      "percentage": 16.2,
+      "annualAmountOnAverage": 1682.03,
+      "color": "var(--color-county)"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Ringwood Borough",
+    "certifiedYear": 2026
+  },
+  "population": 11700,
+  "medianHouseholdIncome": 134200,
+  "medianHomeValue": 520000,
+  "medianAssessedValue": 320736,
+  "averageAnnualTaxBill": 13660.15,
+  "taxBurdenPercent": 10.18,
+  "county": "Passaic County",
+  "residentialShare": 91.2,
+  "commercialShare": 8.8
+}

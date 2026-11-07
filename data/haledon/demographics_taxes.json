@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Haledon Borough",
+    "certifiedYear": 2026
+  },
+  "population": 9050,
+  "medianHouseholdIncome": 82400,
+  "medianHomeValue": 410000,
+  "medianAssessedValue": 209879,
+  "averageAnnualTaxBill": 11392.23,
+  "taxBurdenPercent": 13.83,
+  "county": "Passaic County",
+  "residentialShare": 83.4,
+  "commercialShare": 16.6
+}

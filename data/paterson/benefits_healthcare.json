@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Paterson City Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 165000000,
+  "schoolBenefitsShare": 112200000,
+  "municipalBenefitsShare": 52800000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

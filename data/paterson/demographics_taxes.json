@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Paterson City",
+    "certifiedYear": 2026
+  },
+  "population": 159732,
+  "medianHouseholdIncome": 49800,
+  "medianHomeValue": 385000,
+  "medianAssessedValue": 174700,
+  "averageAnnualTaxBill": 9320.25,
+  "taxBurdenPercent": 18.72,
+  "county": "Passaic County",
+  "residentialShare": 78.5,
+  "commercialShare": 21.5
+}

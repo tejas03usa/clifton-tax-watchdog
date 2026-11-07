@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "Millburn Township (Short Hills) Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "0712",
+    "county": "Essex County"
+  },
+  "entity": "Millburn Township (Short Hills) Public Schools",
+  "county": "Essex County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 124500000,
+  "enrollment": 3052,
+  "perPupilSpending": 24900,
+  "schoolsCount": 3,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 115038000,
+      "percentage": 92.4
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 6723000,
+      "percentage": 5.4
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 3735000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 150000,
+      "percentage": 0.12
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 54780000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 26145000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 18675000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 9960000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 7470000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 4357500,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 3112500,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

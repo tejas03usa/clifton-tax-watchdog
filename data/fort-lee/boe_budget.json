@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "Fort Lee Borough Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "0219",
+    "county": "Bergen County"
+  },
+  "entity": "Fort Lee Borough Public Schools",
+  "county": "Bergen County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 92400000,
+  "enrollment": 5768,
+  "perPupilSpending": 22900,
+  "schoolsCount": 6,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 81774000,
+      "percentage": 88.5
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 7484400,
+      "percentage": 8.1
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 2772000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 369600,
+      "percentage": 0.4
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 40656000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 19404000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 13860000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 7392000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 5544000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 3234000,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 2310000,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

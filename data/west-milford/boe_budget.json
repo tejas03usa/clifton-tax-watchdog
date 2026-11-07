@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "West Milford Township Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "1615",
+    "county": "Passaic County"
+  },
+  "entity": "West Milford Township Public Schools",
+  "county": "Passaic County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 82500000,
+  "enrollment": 3619,
+  "perPupilSpending": 22100,
+  "schoolsCount": 4,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 64680000,
+      "percentage": 78.4
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 15015000,
+      "percentage": 18.2
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 2475000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 330000,
+      "percentage": 0.4
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 36300000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 17325000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 12375000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 6600000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 4950000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 2887500,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 2062500,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

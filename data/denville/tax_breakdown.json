@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Morris County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 83.2,
+    "effectiveTaxRateMarketValue": 2.15
+  },
+  "location": "Denville Township, Morris County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.584,
+  "ratePerHundredDollars": 2.584,
+  "effectiveTaxRateMarketValue": 2.15,
+  "averageResidentialAssessment": 557440,
+  "averageTaxBill": 14404.25,
+  "breakdown": [
+    {
+      "entity": "Denville Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.69,
+      "percentage": 65.4,
+      "annualAmountOnAverage": 9420.38,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Denville Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.641,
+      "percentage": 24.8,
+      "annualAmountOnAverage": 3572.25,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Morris County Government",
+      "purpose": "Morris County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.253,
+      "percentage": 9.8,
+      "annualAmountOnAverage": 1411.62,
+      "color": "var(--color-county)"
+    }
+  ]
+}

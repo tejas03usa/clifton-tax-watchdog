@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Haledon Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 8900000,
+  "schoolBenefitsShare": 6052000,
+  "municipalBenefitsShare": 2848000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

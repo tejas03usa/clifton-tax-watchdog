@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 61.32,
+    "effectiveTaxRateMarketValue": 2.533
+  },
+  "location": "Pompton Lakes Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 4.131,
+  "ratePerHundredDollars": 4.131,
+  "effectiveTaxRateMarketValue": 2.533,
+  "averageResidentialAssessment": 285138,
+  "averageTaxBill": 11779.05,
+  "breakdown": [
+    {
+      "entity": "Pompton Lakes Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.359,
+      "percentage": 57.1,
+      "annualAmountOnAverage": 6725.84,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Pompton Lakes Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.132,
+      "percentage": 27.4,
+      "annualAmountOnAverage": 3227.46,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.64,
+      "percentage": 15.5,
+      "annualAmountOnAverage": 1825.75,
+      "color": "var(--color-county)"
+    }
+  ]
+}

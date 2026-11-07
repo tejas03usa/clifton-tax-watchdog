@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Millburn Township (Short Hills)",
+    "certifiedYear": 2026
+  },
+  "population": 21800,
+  "medianHouseholdIncome": 250000,
+  "medianHomeValue": 1450000,
+  "medianAssessedValue": 1283250,
+  "averageAnnualTaxBill": 23675.96,
+  "taxBurdenPercent": 9.47,
+  "county": "Essex County",
+  "residentialShare": 78.2,
+  "commercialShare": 21.8
+}

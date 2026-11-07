@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Fort Lee Borough",
+    "certifiedYear": 2026
+  },
+  "population": 41200,
+  "medianHouseholdIncome": 106800,
+  "medianHomeValue": 580000,
+  "medianAssessedValue": 430360,
+  "averageAnnualTaxBill": 10672.93,
+  "taxBurdenPercent": 10.0,
+  "county": "Bergen County",
+  "residentialShare": 64.2,
+  "commercialShare": 35.8
+}

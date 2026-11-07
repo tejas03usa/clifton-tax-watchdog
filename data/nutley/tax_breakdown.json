@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Essex County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 78.4,
+    "effectiveTaxRateMarketValue": 2.23
+  },
+  "location": "Nutley Township, Essex County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.844,
+  "ratePerHundredDollars": 2.844,
+  "effectiveTaxRateMarketValue": 2.23,
+  "averageResidentialAssessment": 439040,
+  "averageTaxBill": 12486.3,
+  "breakdown": [
+    {
+      "entity": "Nutley Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.502,
+      "percentage": 52.8,
+      "annualAmountOnAverage": 6592.77,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Nutley Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.893,
+      "percentage": 31.4,
+      "annualAmountOnAverage": 3920.7,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Essex County Government",
+      "purpose": "Essex County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.449,
+      "percentage": 15.8,
+      "annualAmountOnAverage": 1972.84,
+      "color": "var(--color-county)"
+    }
+  ]
+}

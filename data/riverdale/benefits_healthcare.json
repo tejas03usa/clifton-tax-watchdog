@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Riverdale Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 6400000,
+  "schoolBenefitsShare": 4352000,
+  "municipalBenefitsShare": 2048000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

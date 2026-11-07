@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Butler Borough",
+    "certifiedYear": 2026
+  },
+  "population": 8050,
+  "medianHouseholdIncome": 96400,
+  "medianHomeValue": 435000,
+  "medianAssessedValue": 309720,
+  "averageAnnualTaxBill": 10592.42,
+  "taxBurdenPercent": 10.99,
+  "county": "Morris County",
+  "residentialShare": 76.4,
+  "commercialShare": 23.6
+}

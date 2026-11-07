@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 45.38,
+    "effectiveTaxRateMarketValue": 2.421
+  },
+  "location": "Paterson City, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 5.335,
+  "ratePerHundredDollars": 5.335,
+  "effectiveTaxRateMarketValue": 2.421,
+  "averageResidentialAssessment": 174700,
+  "averageTaxBill": 9320.25,
+  "breakdown": [
+    {
+      "entity": "Paterson City Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.963,
+      "percentage": 36.8,
+      "annualAmountOnAverage": 3429.85,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Paterson City Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 2.465,
+      "percentage": 46.2,
+      "annualAmountOnAverage": 4305.96,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.907,
+      "percentage": 17.0,
+      "annualAmountOnAverage": 1584.44,
+      "color": "var(--color-county)"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "source": "Passaic County Clerk Election Division Certified Filings",
+    "certifiedYear": 2026
+  },
+  "governingBody": "North Haledon Borough Governing Body",
+  "county": "Passaic County",
+  "councilSeats": 7,
+  "boeSeats": 3,
+  "candidates": [
+    {
+      "name": "North Haledon Borough Municipal Leadership",
+      "office": "Municipal Governing Body",
+      "term": "4 Years",
+      "status": "Certified in Public Records"
+    }
+  ]
+}

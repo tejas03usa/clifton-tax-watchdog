@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "Hackensack City Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "0223",
+    "county": "Bergen County"
+  },
+  "entity": "Hackensack City Public Schools",
+  "county": "Bergen County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 134500000,
+  "enrollment": 6412,
+  "perPupilSpending": 24500,
+  "schoolsCount": 7,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 78279000,
+      "percentage": 58.2
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 51648000,
+      "percentage": 38.4
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 4035000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 538000,
+      "percentage": 0.4
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 59180000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 28245000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 20175000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 10760000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 8070000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 4707500,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 3362500,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

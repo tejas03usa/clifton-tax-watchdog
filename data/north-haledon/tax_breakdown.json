@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 64.15,
+    "effectiveTaxRateMarketValue": 2.045
+  },
+  "location": "North Haledon Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.187,
+  "ratePerHundredDollars": 3.187,
+  "effectiveTaxRateMarketValue": 2.045,
+  "averageResidentialAssessment": 400938,
+  "averageTaxBill": 12777.88,
+  "breakdown": [
+    {
+      "entity": "North Haledon Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.715,
+      "percentage": 53.8,
+      "annualAmountOnAverage": 6874.5,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "North Haledon Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.959,
+      "percentage": 30.1,
+      "annualAmountOnAverage": 3846.14,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.513,
+      "percentage": 16.1,
+      "annualAmountOnAverage": 2057.24,
+      "color": "var(--color-county)"
+    }
+  ]
+}

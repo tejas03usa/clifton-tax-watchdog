@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Pequannock Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 16400000,
+  "schoolBenefitsShare": 11152000,
+  "municipalBenefitsShare": 5248000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

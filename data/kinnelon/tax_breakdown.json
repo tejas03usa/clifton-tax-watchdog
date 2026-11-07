@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Morris County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 81.9,
+    "effectiveTaxRateMarketValue": 2.195
+  },
+  "location": "Kinnelon Borough, Morris County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.68,
+  "ratePerHundredDollars": 2.68,
+  "effectiveTaxRateMarketValue": 2.195,
+  "averageResidentialAssessment": 561015,
+  "averageTaxBill": 15035.2,
+  "breakdown": [
+    {
+      "entity": "Kinnelon Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.801,
+      "percentage": 67.2,
+      "annualAmountOnAverage": 10103.65,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Kinnelon Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.611,
+      "percentage": 22.8,
+      "annualAmountOnAverage": 3428.03,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Morris County Government",
+      "purpose": "Morris County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.268,
+      "percentage": 10.0,
+      "annualAmountOnAverage": 1503.52,
+      "color": "var(--color-county)"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Woodland Park Borough",
+    "certifiedYear": 2026
+  },
+  "population": 13100,
+  "medianHouseholdIncome": 105200,
+  "medianHomeValue": 510000,
+  "medianAssessedValue": 337161,
+  "averageAnnualTaxBill": 11581.48,
+  "taxBurdenPercent": 11.01,
+  "county": "Passaic County",
+  "residentialShare": 80.2,
+  "commercialShare": 19.8
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Paramus Borough",
+    "certifiedYear": 2026
+  },
+  "population": 27200,
+  "medianHouseholdIncome": 142500,
+  "medianHomeValue": 740000,
+  "medianAssessedValue": 623080,
+  "averageAnnualTaxBill": 12175.0,
+  "taxBurdenPercent": 8.54,
+  "county": "Bergen County",
+  "residentialShare": 52.4,
+  "commercialShare": 47.6
+}

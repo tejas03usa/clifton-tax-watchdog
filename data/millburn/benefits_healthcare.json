@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Millburn Township (Short Hills) Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 32800000,
+  "schoolBenefitsShare": 22304000,
+  "municipalBenefitsShare": 10496000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

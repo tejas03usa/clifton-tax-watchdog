@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Little Falls Township",
+    "certifiedYear": 2026
+  },
+  "population": 13360,
+  "medianHouseholdIncome": 118400,
+  "medianHomeValue": 540000,
+  "medianAssessedValue": 336096,
+  "averageAnnualTaxBill": 11749.92,
+  "taxBurdenPercent": 9.92,
+  "county": "Passaic County",
+  "residentialShare": 79.5,
+  "commercialShare": 20.5
+}

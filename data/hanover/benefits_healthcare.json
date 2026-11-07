@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Hanover Township (Whippany) Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 22400000,
+  "schoolBenefitsShare": 15232000,
+  "municipalBenefitsShare": 7168000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

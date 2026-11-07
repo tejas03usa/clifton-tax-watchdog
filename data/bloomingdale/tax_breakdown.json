@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 59.25,
+    "effectiveTaxRateMarketValue": 2.79
+  },
+  "location": "Bloomingdale Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 4.718,
+  "ratePerHundredDollars": 4.718,
+  "effectiveTaxRateMarketValue": 2.79,
+  "averageResidentialAssessment": 257738,
+  "averageTaxBill": 12160.08,
+  "breakdown": [
+    {
+      "entity": "Bloomingdale Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.779,
+      "percentage": 58.9,
+      "annualAmountOnAverage": 7162.29,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Bloomingdale Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.236,
+      "percentage": 26.2,
+      "annualAmountOnAverage": 3185.94,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.703,
+      "percentage": 14.9,
+      "annualAmountOnAverage": 1811.85,
+      "color": "var(--color-county)"
+    }
+  ]
+}

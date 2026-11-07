@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 65.4,
+    "effectiveTaxRateMarketValue": 2.475
+  },
+  "location": "Hackensack City, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.785,
+  "ratePerHundredDollars": 3.785,
+  "effectiveTaxRateMarketValue": 2.475,
+  "averageResidentialAssessment": 304110,
+  "averageTaxBill": 11510.56,
+  "breakdown": [
+    {
+      "entity": "Hackensack City Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.945,
+      "percentage": 51.4,
+      "annualAmountOnAverage": 5916.43,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Hackensack City Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.393,
+      "percentage": 36.8,
+      "annualAmountOnAverage": 4235.89,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.447,
+      "percentage": 11.8,
+      "annualAmountOnAverage": 1358.25,
+      "color": "var(--color-county)"
+    }
+  ]
+}

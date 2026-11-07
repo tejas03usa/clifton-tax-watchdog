@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Hanover Township (Whippany)",
+    "certifiedYear": 2026
+  },
+  "population": 14600,
+  "medianHouseholdIncome": 148500,
+  "medianHomeValue": 695000,
+  "medianAssessedValue": 606040,
+  "averageAnnualTaxBill": 10387.53,
+  "taxBurdenPercent": 7.0,
+  "county": "Morris County",
+  "residentialShare": 61.2,
+  "commercialShare": 38.8
+}

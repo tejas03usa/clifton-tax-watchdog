@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Prospect Park Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 7200000,
+  "schoolBenefitsShare": 4896000,
+  "municipalBenefitsShare": 2304000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

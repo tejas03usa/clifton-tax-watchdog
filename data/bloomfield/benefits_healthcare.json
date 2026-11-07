@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Bloomfield Township Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 48200000,
+  "schoolBenefitsShare": 32776000,
+  "municipalBenefitsShare": 15424000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "source": "Mountain Lakes Borough Audit Reports",
+    "certifiedYear": 2026
+  },
+  "totalBenefitsSpending": 12500000,
+  "schoolBenefitsShare": 8500000,
+  "municipalBenefitsShare": 4000000,
+  "healthPlans": [
+    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
+    "PFRS / PERS State Pension Obligations",
+    "Post-Retirement Medical Liabilities"
+  ]
+}

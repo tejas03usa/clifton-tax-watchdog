@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Fairfield Township",
+    "certifiedYear": 2026
+  },
+  "population": 7850,
+  "medianHouseholdIncome": 128400,
+  "medianHomeValue": 630000,
+  "medianAssessedValue": 549360,
+  "averageAnnualTaxBill": 10382.9,
+  "taxBurdenPercent": 8.09,
+  "county": "Essex County",
+  "residentialShare": 42.8,
+  "commercialShare": 57.2
+}

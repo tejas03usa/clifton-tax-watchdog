@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 73.91,
+    "effectiveTaxRateMarketValue": 2.316
+  },
+  "location": "Hawthorne Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.144,
+  "ratePerHundredDollars": 3.144,
+  "effectiveTaxRateMarketValue": 2.316,
+  "averageResidentialAssessment": 380637,
+  "averageTaxBill": 11967.23,
+  "breakdown": [
+    {
+      "entity": "Hawthorne Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.704,
+      "percentage": 54.2,
+      "annualAmountOnAverage": 6486.24,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Hawthorne Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.931,
+      "percentage": 29.6,
+      "annualAmountOnAverage": 3542.3,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.509,
+      "percentage": 16.2,
+      "annualAmountOnAverage": 1938.69,
+      "color": "var(--color-county)"
+    }
+  ]
+}

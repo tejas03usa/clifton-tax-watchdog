@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Morris County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 71.2,
+    "effectiveTaxRateMarketValue": 2.435
+  },
+  "location": "Butler Borough, Morris County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.42,
+  "ratePerHundredDollars": 3.42,
+  "effectiveTaxRateMarketValue": 2.435,
+  "averageResidentialAssessment": 309720,
+  "averageTaxBill": 10592.42,
+  "breakdown": [
+    {
+      "entity": "Butler Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.168,
+      "percentage": 63.4,
+      "annualAmountOnAverage": 6715.59,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Butler Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.91,
+      "percentage": 26.6,
+      "annualAmountOnAverage": 2817.58,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Morris County Government",
+      "purpose": "Morris County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.342,
+      "percentage": 10.0,
+      "annualAmountOnAverage": 1059.24,
+      "color": "var(--color-county)"
+    }
+  ]
+}

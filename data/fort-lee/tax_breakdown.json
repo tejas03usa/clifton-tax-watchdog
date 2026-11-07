@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 74.2,
+    "effectiveTaxRateMarketValue": 1.84
+  },
+  "location": "Fort Lee Borough, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.48,
+  "ratePerHundredDollars": 2.48,
+  "effectiveTaxRateMarketValue": 1.84,
+  "averageResidentialAssessment": 430360,
+  "averageTaxBill": 10672.93,
+  "breakdown": [
+    {
+      "entity": "Fort Lee Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.359,
+      "percentage": 54.8,
+      "annualAmountOnAverage": 5848.77,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Fort Lee Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.848,
+      "percentage": 34.2,
+      "annualAmountOnAverage": 3650.14,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.273,
+      "percentage": 11.0,
+      "annualAmountOnAverage": 1174.02,
+      "color": "var(--color-county)"
+    }
+  ]
+}

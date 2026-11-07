@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Prospect Park Borough",
+    "certifiedYear": 2026
+  },
+  "population": 6300,
+  "medianHouseholdIncome": 76800,
+  "medianHomeValue": 395000,
+  "medianAssessedValue": 184663,
+  "averageAnnualTaxBill": 11506.35,
+  "taxBurdenPercent": 14.98,
+  "county": "Passaic County",
+  "residentialShare": 89.2,
+  "commercialShare": 10.8
+}

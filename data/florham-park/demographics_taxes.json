@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Florham Park Borough",
+    "certifiedYear": 2026
+  },
+  "population": 12800,
+  "medianHouseholdIncome": 152400,
+  "medianHomeValue": 760000,
+  "medianAssessedValue": 656640,
+  "averageAnnualTaxBill": 11950.85,
+  "taxBurdenPercent": 7.84,
+  "county": "Morris County",
+  "residentialShare": 58.4,
+  "commercialShare": 41.6
+}

@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 58.18,
+    "effectiveTaxRateMarketValue": 2.642
+  },
+  "location": "Wanaque Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 4.541,
+  "ratePerHundredDollars": 4.541,
+  "effectiveTaxRateMarketValue": 2.642,
+  "averageResidentialAssessment": 276355,
+  "averageTaxBill": 12549.28,
+  "breakdown": [
+    {
+      "entity": "Wanaque Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.716,
+      "percentage": 59.8,
+      "annualAmountOnAverage": 7504.47,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Wanaque Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.14,
+      "percentage": 25.1,
+      "annualAmountOnAverage": 3149.87,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.685,
+      "percentage": 15.1,
+      "annualAmountOnAverage": 1894.94,
+      "color": "var(--color-county)"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Totowa Borough",
+    "certifiedYear": 2026
+  },
+  "population": 11065,
+  "medianHouseholdIncome": 114800,
+  "medianHomeValue": 565000,
+  "medianAssessedValue": 290975,
+  "averageAnnualTaxBill": 8537.21,
+  "taxBurdenPercent": 7.44,
+  "county": "Passaic County",
+  "residentialShare": 68.4,
+  "commercialShare": 31.6
+}

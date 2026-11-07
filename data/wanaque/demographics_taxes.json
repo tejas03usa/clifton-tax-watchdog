@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Wanaque Borough",
+    "certifiedYear": 2026
+  },
+  "population": 11350,
+  "medianHouseholdIncome": 104800,
+  "medianHomeValue": 475000,
+  "medianAssessedValue": 276355,
+  "averageAnnualTaxBill": 12549.28,
+  "taxBurdenPercent": 11.97,
+  "county": "Passaic County",
+  "residentialShare": 86.4,
+  "commercialShare": 13.6
+}

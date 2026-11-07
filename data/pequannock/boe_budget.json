@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "Pequannock Township Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "1431",
+    "county": "Morris County"
+  },
+  "entity": "Pequannock Township Public Schools",
+  "county": "Morris County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 51200000,
+  "enrollment": 2212,
+  "perPupilSpending": 22400,
+  "schoolsCount": 2,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 45158400,
+      "percentage": 88.2
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 4812800,
+      "percentage": 9.4
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 1536000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 150000,
+      "percentage": 0.29
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 22528000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 10752000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 7680000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 4096000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 3072000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 1792000,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 1280000,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

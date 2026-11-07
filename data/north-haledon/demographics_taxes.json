@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "North Haledon Borough",
+    "certifiedYear": 2026
+  },
+  "population": 8950,
+  "medianHouseholdIncome": 128500,
+  "medianHomeValue": 625000,
+  "medianAssessedValue": 400938,
+  "averageAnnualTaxBill": 12777.88,
+  "taxBurdenPercent": 9.94,
+  "county": "Passaic County",
+  "residentialShare": 88.5,
+  "commercialShare": 11.5
+}

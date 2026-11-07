@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Morris County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 81.4,
+    "effectiveTaxRateMarketValue": 2.1
+  },
+  "location": "Pequannock Township, Morris County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.58,
+  "ratePerHundredDollars": 2.58,
+  "effectiveTaxRateMarketValue": 2.1,
+  "averageResidentialAssessment": 476190,
+  "averageTaxBill": 12285.7,
+  "breakdown": [
+    {
+      "entity": "Pequannock Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.646,
+      "percentage": 63.8,
+      "annualAmountOnAverage": 7838.28,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Pequannock Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.681,
+      "percentage": 26.4,
+      "annualAmountOnAverage": 3243.42,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Morris County Government",
+      "purpose": "Morris County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.253,
+      "percentage": 9.8,
+      "annualAmountOnAverage": 1204.0,
+      "color": "var(--color-county)"
+    }
+  ]
+}

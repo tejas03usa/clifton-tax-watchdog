@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Livingston Township",
+    "certifiedYear": 2026
+  },
+  "population": 31200,
+  "medianHouseholdIncome": 192500,
+  "medianHomeValue": 890000,
+  "medianAssessedValue": 722680,
+  "averageAnnualTaxBill": 19151.02,
+  "taxBurdenPercent": 9.95,
+  "county": "Essex County",
+  "residentialShare": 84.8,
+  "commercialShare": 15.2
+}

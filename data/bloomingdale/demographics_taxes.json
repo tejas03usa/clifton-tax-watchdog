@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Bloomingdale Borough",
+    "certifiedYear": 2026
+  },
+  "population": 7720,
+  "medianHouseholdIncome": 98600,
+  "medianHomeValue": 435000,
+  "medianAssessedValue": 257738,
+  "averageAnnualTaxBill": 12160.08,
+  "taxBurdenPercent": 12.33,
+  "county": "Passaic County",
+  "residentialShare": 87.2,
+  "commercialShare": 12.8
+}

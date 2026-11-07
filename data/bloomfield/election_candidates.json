@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "source": "Essex County Clerk Election Division Certified Filings",
+    "certifiedYear": 2026
+  },
+  "governingBody": "Bloomfield Township Governing Body",
+  "county": "Essex County",
+  "councilSeats": 7,
+  "boeSeats": 3,
+  "candidates": [
+    {
+      "name": "Bloomfield Township Municipal Leadership",
+      "office": "Municipal Governing Body",
+      "term": "4 Years",
+      "status": "Certified in Public Records"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Kinnelon Borough",
+    "certifiedYear": 2026
+  },
+  "population": 10100,
+  "medianHouseholdIncome": 168400,
+  "medianHomeValue": 685000,
+  "medianAssessedValue": 561015,
+  "averageAnnualTaxBill": 15035.2,
+  "taxBurdenPercent": 8.93,
+  "county": "Morris County",
+  "residentialShare": 88.5,
+  "commercialShare": 11.5
+}

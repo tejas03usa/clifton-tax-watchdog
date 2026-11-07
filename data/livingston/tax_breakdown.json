@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Essex County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 81.2,
+    "effectiveTaxRateMarketValue": 2.152
+  },
+  "location": "Livingston Township, Essex County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.65,
+  "ratePerHundredDollars": 2.65,
+  "effectiveTaxRateMarketValue": 2.152,
+  "averageResidentialAssessment": 722680,
+  "averageTaxBill": 19151.02,
+  "breakdown": [
+    {
+      "entity": "Livingston Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.622,
+      "percentage": 61.2,
+      "annualAmountOnAverage": 11720.42,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Livingston Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.604,
+      "percentage": 22.8,
+      "annualAmountOnAverage": 4366.43,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Essex County Government",
+      "purpose": "Essex County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.424,
+      "percentage": 16.0,
+      "annualAmountOnAverage": 3064.16,
+      "color": "var(--color-county)"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 72.4,
+    "effectiveTaxRateMarketValue": 2.353
+  },
+  "location": "Elmwood Park Borough, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.25,
+  "ratePerHundredDollars": 3.25,
+  "effectiveTaxRateMarketValue": 2.353,
+  "averageResidentialAssessment": 372860,
+  "averageTaxBill": 12117.95,
+  "breakdown": [
+    {
+      "entity": "Elmwood Park Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.904,
+      "percentage": 58.6,
+      "annualAmountOnAverage": 7101.12,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Elmwood Park Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.968,
+      "percentage": 29.8,
+      "annualAmountOnAverage": 3611.15,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.378,
+      "percentage": 11.6,
+      "annualAmountOnAverage": 1405.68,
+      "color": "var(--color-county)"
+    }
+  ]
+}

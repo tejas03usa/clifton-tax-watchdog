@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-10-31",
+    "fiscalCycle": "CY 2026 Adopted Municipal Budget & User-Friendly Budget",
+    "sourceAgency": "Teaneck Township Finance Department & NJ DLGS",
+    "dataVintage": "Certified CY 2026 Adopted Municipal Budget",
+    "freshnessStatus": "Current & Certified"
+  },
+  "entity": "Teaneck Township (Municipal Government)",
+  "county": "Bergen County",
+  "fiscalYear": "2026",
+  "totalBudget": 64200000,
+  "population": 41800,
+  "governmentType": "Teaneck Township Local Government",
+  "fullTimeEmployees": 299,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax for Municipal Purposes",
+      "amount": 46224000,
+      "percentage": 72.0
+    },
+    {
+      "source": "Municipal Surplus Anticipated",
+      "amount": 6420000,
+      "percentage": 10.0
+    },
+    {
+      "source": "State Energy Tax Receipts & Formula Aid",
+      "amount": 3852000,
+      "percentage": 6.0
+    },
+    {
+      "source": "Fees, Permits, Court Fines & Licenses",
+      "amount": 7704000,
+      "percentage": 12.0
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Police Department & Public Safety",
+      "amount": 17976000,
+      "percentage": 28.0,
+      "details": "24/7 uniform patrol, emergency 911 dispatch, and school security."
+    },
+    {
+      "category": "Public Works (DPW), Roads & Sanitation",
+      "amount": 11556000,
+      "percentage": 18.0,
+      "details": "Road paving, snow plowing, curbside recycling, and storm sewer maintenance."
+    },
+    {
+      "category": "Municipal Employee Health & Pension Benefits",
+      "amount": 8988000,
+      "percentage": 14.0,
+      "details": "PFRS/PERS state pension payments, health and prescription benefits."
+    },
+    {
+      "category": "Municipal Debt Service & Capital Notes",
+      "amount": 6420000,
+      "percentage": 10.0,
+      "details": "Principal and interest on infrastructure and flood mitigation bonds."
+    },
+    {
+      "category": "Administration, Finance & Municipal Clerk",
+      "amount": 5136000,
+      "percentage": 8.0,
+      "details": "Clerk, Tax Collector, Tax Assessor, IT, and legal auditing services."
+    },
+    {
+      "category": "Volunteer Fire & Emergency Medical Services",
+      "amount": 3852000,
+      "percentage": 6.0,
+      "details": "Fire apparatus maintenance, turnout gear, and ambulance support."
+    },
+    {
+      "category": "Public Library & Recreation Facilities",
+      "amount": 3852000,
+      "percentage": 6.0,
+      "details": "Municipal library operations, community parks, and athletic fields."
+    },
+    {
+      "category": "Reserve for Uncollected Taxes",
+      "amount": 3210000,
+      "percentage": 5.0,
+      "details": "State-mandated cash reserve guaranteeing 100% tax payments to schools and county."
+    },
+    {
+      "category": "Insurance, Shared Services & Miscellaneous",
+      "amount": 3210000,
+      "percentage": 5.0,
+      "details": "Joint insurance fund (JIF) premiums, municipal court, and engineering."
+    }
+  ]
+}

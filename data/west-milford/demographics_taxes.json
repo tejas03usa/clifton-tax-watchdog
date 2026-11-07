@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "West Milford Township",
+    "certifiedYear": 2026
+  },
+  "population": 25850,
+  "medianHouseholdIncome": 112400,
+  "medianHomeValue": 440000,
+  "medianAssessedValue": 259864,
+  "averageAnnualTaxBill": 10950.67,
+  "taxBurdenPercent": 9.74,
+  "county": "Passaic County",
+  "residentialShare": 92.4,
+  "commercialShare": 7.6
+}

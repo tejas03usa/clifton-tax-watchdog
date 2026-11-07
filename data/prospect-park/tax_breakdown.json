@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Passaic County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 46.75,
+    "effectiveTaxRateMarketValue": 2.913
+  },
+  "location": "Prospect Park Borough, Passaic County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 6.231,
+  "ratePerHundredDollars": 6.231,
+  "effectiveTaxRateMarketValue": 2.913,
+  "averageResidentialAssessment": 184663,
+  "averageTaxBill": 11506.35,
+  "breakdown": [
+    {
+      "entity": "Prospect Park Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 3.29,
+      "percentage": 52.8,
+      "annualAmountOnAverage": 6075.35,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Prospect Park Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.988,
+      "percentage": 31.9,
+      "annualAmountOnAverage": 3670.53,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Passaic County Government",
+      "purpose": "Passaic County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.953,
+      "percentage": 15.3,
+      "annualAmountOnAverage": 1760.47,
+      "color": "var(--color-county)"
+    }
+  ]
+}

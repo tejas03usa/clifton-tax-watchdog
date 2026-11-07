@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "source": "Wanaque Borough Board of Education User-Friendly Budget (NJ DOE)",
+    "districtCode": "1613",
+    "county": "Passaic County"
+  },
+  "entity": "Wanaque Borough Public Schools",
+  "county": "Passaic County",
+  "fiscalYear": "2025-2026 / 2026-2027 Adopted Budget",
+  "totalBudget": 41200000,
+  "enrollment": 1589,
+  "perPupilSpending": 21900,
+  "schoolsCount": 2,
+  "revenueSources": [
+    {
+      "source": "Local Property Tax Levy",
+      "amount": 33166000,
+      "percentage": 80.5
+    },
+    {
+      "source": "State Formula & Special Education Aid",
+      "amount": 6674400,
+      "percentage": 16.2
+    },
+    {
+      "source": "Budgeted Fund Balance / Reserves",
+      "amount": 1236000,
+      "percentage": 3.0
+    },
+    {
+      "source": "Federal Grants & Other Revenue",
+      "amount": 150000,
+      "percentage": 0.36
+    }
+  ],
+  "majorAppropriations": [
+    {
+      "category": "Classroom Instruction & Teacher Salaries",
+      "amount": 18128000,
+      "percentage": 44.0,
+      "details": "Certified classroom teachers, STEM specialists, and classroom supplies."
+    },
+    {
+      "category": "Employee Health, Prescription & Pension Benefits",
+      "amount": 8652000,
+      "percentage": 21.0,
+      "details": "Medical, dental insurance, and state pension contributions."
+    },
+    {
+      "category": "Special Education & Specialized Student Services",
+      "amount": 6180000,
+      "percentage": 15.0,
+      "details": "Speech/occupational therapy, resource rooms, and regional placements."
+    },
+    {
+      "category": "Operations, Facilities Maintenance & Security",
+      "amount": 3296000,
+      "percentage": 8.0,
+      "details": "Custodial staffing, school safety vestibules, and HVAC maintenance."
+    },
+    {
+      "category": "Student Support, Counseling & Health Services",
+      "amount": 2472000,
+      "percentage": 6.0,
+      "details": "Guidance counselors, social workers, and school nurses."
+    },
+    {
+      "category": "District Administration & Legal Compliance",
+      "amount": 1442000,
+      "percentage": 3.5,
+      "details": "Superintendent, Business Administrator, and legal/audit fees."
+    },
+    {
+      "category": "Student Busing & Mandated Transportation",
+      "amount": 1030000,
+      "percentage": 2.5,
+      "details": "Mandated special ed and sports transportation."
+    }
+  ]
+}

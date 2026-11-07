@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Morris County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 82.5,
+    "effectiveTaxRateMarketValue": 2.178
+  },
+  "location": "Riverdale Borough, Morris County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.64,
+  "ratePerHundredDollars": 2.64,
+  "effectiveTaxRateMarketValue": 2.178,
+  "averageResidentialAssessment": 379500,
+  "averageTaxBill": 10018.8,
+  "breakdown": [
+    {
+      "entity": "Riverdale Borough Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.624,
+      "percentage": 61.5,
+      "annualAmountOnAverage": 6161.56,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Riverdale Borough Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.752,
+      "percentage": 28.5,
+      "annualAmountOnAverage": 2855.36,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Morris County Government",
+      "purpose": "Morris County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.264,
+      "percentage": 10.0,
+      "annualAmountOnAverage": 1001.88,
+      "color": "var(--color-county)"
+    }
+  ]
+}

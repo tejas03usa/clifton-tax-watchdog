@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Bergen County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 82.1,
+    "effectiveTaxRateMarketValue": 1.79
+  },
+  "location": "Mahwah Township, Bergen County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 2.18,
+  "ratePerHundredDollars": 2.18,
+  "effectiveTaxRateMarketValue": 1.79,
+  "averageResidentialAssessment": 558280,
+  "averageTaxBill": 12170.5,
+  "breakdown": [
+    {
+      "entity": "Mahwah Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 1.256,
+      "percentage": 57.6,
+      "annualAmountOnAverage": 7010.21,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Mahwah Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 0.685,
+      "percentage": 31.4,
+      "annualAmountOnAverage": 3821.54,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Bergen County Government",
+      "purpose": "Bergen County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.239,
+      "percentage": 11.0,
+      "annualAmountOnAverage": 1338.76,
+      "color": "var(--color-county)"
+    }
+  ]
+}

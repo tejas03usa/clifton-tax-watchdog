@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "municipality": "Mahwah Township",
+    "certifiedYear": 2026
+  },
+  "population": 26400,
+  "medianHouseholdIncome": 146800,
+  "medianHomeValue": 680000,
+  "medianAssessedValue": 558280,
+  "averageAnnualTaxBill": 12170.5,
+  "taxBurdenPercent": 8.29,
+  "county": "Bergen County",
+  "residentialShare": 68.2,
+  "commercialShare": 31.8
+}

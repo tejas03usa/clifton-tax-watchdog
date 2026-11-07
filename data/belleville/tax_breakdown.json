@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "source": "Essex County Board of Taxation & NJ Division of Taxation",
+    "certifiedYear": 2026,
+    "equalizationRatio": 66.1,
+    "effectiveTaxRateMarketValue": 2.584
+  },
+  "location": "Belleville Township, Essex County, NJ",
+  "taxYear": 2026,
+  "certifiedTotalRate": 3.91,
+  "ratePerHundredDollars": 3.91,
+  "effectiveTaxRateMarketValue": 2.584,
+  "averageResidentialAssessment": 310670,
+  "averageTaxBill": 12147.2,
+  "breakdown": [
+    {
+      "entity": "Belleville Township Public Schools",
+      "purpose": "Local School District Levy & Facilities",
+      "rate": 2.025,
+      "percentage": 51.8,
+      "annualAmountOnAverage": 6292.25,
+      "color": "var(--color-school)"
+    },
+    {
+      "entity": "Belleville Township Municipal Services",
+      "purpose": "Municipal Operations, Police, DPW, Emergency Services & Library",
+      "rate": 1.243,
+      "percentage": 31.8,
+      "annualAmountOnAverage": 3862.81,
+      "color": "var(--color-city)"
+    },
+    {
+      "entity": "Essex County Government",
+      "purpose": "Essex County Services, Roads, Sheriff, Open Space & Judiciary",
+      "rate": 0.642,
+      "percentage": 16.4,
+      "annualAmountOnAverage": 1992.14,
+      "color": "var(--color-county)"
+    }
+  ]
+}
