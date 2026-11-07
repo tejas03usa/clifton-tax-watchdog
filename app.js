@@ -947,54 +947,129 @@ async function initApp() {
   });
 }
 
-// Setup City Switcher Buttons in Header & Sticky Nav
-function setupCitySwitcher() {
-  document.querySelectorAll('.city-switch-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetCity = btn.getAttribute('data-city');
-      const targetCounty = btn.getAttribute('data-county');
-      if (CITY_REGISTRY[targetCity]) {
-        if (targetCity !== currentCity) {
-          switchCity(targetCity, true);
-        }
-      } else if (targetCity) {
-        navigateToTownComparison(targetCity, targetCounty);
+// Comprehensive 47-Municipality Directory for Cascading Filters
+const NORTH_JERSEY_TOWNS = [
+  // Passaic County (16)
+  { id: 'clifton', name: 'Clifton', county: 'Passaic County', icon: '🏛️', isHub: true, rate: '2.17%' },
+  { id: 'wayne', name: 'Wayne', county: 'Passaic County', icon: '🌳', isHub: true, rate: '2.21%' },
+  { id: 'paterson', name: 'Paterson', county: 'Passaic County', icon: '🏭', isHub: false, rate: '2.42%' },
+  { id: 'passaic-city', name: 'Passaic City', county: 'Passaic County', icon: '🏙️', isHub: false, rate: '2.11%' },
+  { id: 'totowa', name: 'Totowa', county: 'Passaic County', icon: '🛡️', isHub: false, rate: '1.51%' },
+  { id: 'little-falls', name: 'Little Falls', county: 'Passaic County', icon: '🌊', isHub: false, rate: '2.17%' },
+  { id: 'woodland-park', name: 'Woodland Park', county: 'Passaic County', icon: '🏞️', isHub: false, rate: '2.27%' },
+  { id: 'hawthorne', name: 'Hawthorne', county: 'Passaic County', icon: '🏡', isHub: false, rate: '2.32%' },
+  { id: 'pompton-lakes', name: 'Pompton Lakes', county: 'Passaic County', icon: '⛵', isHub: false, rate: '2.53%' },
+  { id: 'ringwood', name: 'Ringwood', county: 'Passaic County', icon: '⛰️', isHub: false, rate: '2.63%' },
+  { id: 'wanaque', name: 'Wanaque', county: 'Passaic County', icon: '🌊', isHub: false, rate: '2.64%' },
+  { id: 'bloomingdale', name: 'Bloomingdale', county: 'Passaic County', icon: '🌲', isHub: false, rate: '2.79%' },
+  { id: 'north-haledon', name: 'North Haledon', county: 'Passaic County', icon: '🌄', isHub: false, rate: '2.05%' },
+  { id: 'haledon', name: 'Haledon', county: 'Passaic County', icon: '🏘️', isHub: false, rate: '2.77%' },
+  { id: 'prospect-park', name: 'Prospect Park', county: 'Passaic County', icon: '🌳', isHub: false, rate: '2.91%' },
+  { id: 'west-milford', name: 'West Milford', county: 'Passaic County', icon: '🌲', isHub: false, rate: '2.49%' },
+
+  // Bergen County (10)
+  { id: 'glenrock', name: 'Glen Rock', county: 'Bergen County', icon: '🪨', isHub: true, rate: '2.44%' },
+  { id: 'fair-lawn', name: 'Fair Lawn', county: 'Bergen County', icon: '🏡', isHub: false, rate: '2.40%' },
+  { id: 'elmwood-park', name: 'Elmwood Park', county: 'Bergen County', icon: '🌳', isHub: false, rate: '2.35%' },
+  { id: 'garfield', name: 'Garfield', county: 'Bergen County', icon: '🏭', isHub: false, rate: '2.38%' },
+  { id: 'ridgewood', name: 'Ridgewood', county: 'Bergen County', icon: '🏛️', isHub: false, rate: '2.13%' },
+  { id: 'paramus', name: 'Paramus', county: 'Bergen County', icon: '🛍️', isHub: false, rate: '1.65%' },
+  { id: 'hackensack', name: 'Hackensack', county: 'Bergen County', icon: '⚖️', isHub: false, rate: '2.48%' },
+  { id: 'fort-lee', name: 'Fort Lee', county: 'Bergen County', icon: '🌉', isHub: false, rate: '1.84%' },
+  { id: 'teaneck', name: 'Teaneck', county: 'Bergen County', icon: '🎓', isHub: false, rate: '2.36%' },
+  { id: 'mahwah', name: 'Mahwah', county: 'Bergen County', icon: '🏔️', isHub: false, rate: '1.79%' },
+
+  // Essex County (10)
+  { id: 'montclair', name: 'Montclair', county: 'Essex County', icon: '🏡', isHub: true, rate: '2.58%' },
+  { id: 'nutley', name: 'Nutley', county: 'Essex County', icon: '🌳', isHub: false, rate: '2.23%' },
+  { id: 'bloomfield', name: 'Bloomfield', county: 'Essex County', icon: '🏘️', isHub: false, rate: '2.49%' },
+  { id: 'belleville', name: 'Belleville', county: 'Essex County', icon: '🌸', isHub: false, rate: '2.58%' },
+  { id: 'livingston', name: 'Livingston', county: 'Essex County', icon: '🏫', isHub: false, rate: '2.15%' },
+  { id: 'west-orange', name: 'West Orange', county: 'Essex County', icon: '🌄', isHub: false, rate: '2.92%' },
+  { id: 'millburn', name: 'Millburn', county: 'Essex County', icon: '💎', isHub: false, rate: '1.63%' },
+  { id: 'verona', name: 'Verona', county: 'Essex County', icon: '🏞️', isHub: false, rate: '2.48%' },
+  { id: 'cedar-grove', name: 'Cedar Grove', county: 'Essex County', icon: '🌲', isHub: false, rate: '2.07%' },
+  { id: 'fairfield', name: 'Fairfield', county: 'Essex County', icon: '✈️', isHub: false, rate: '1.65%' },
+
+  // Morris County (11)
+  { id: 'parsippany', name: 'Parsippany', county: 'Morris County', icon: '🌲', isHub: true, rate: '2.36%' },
+  { id: 'montville', name: 'Montville', county: 'Morris County', icon: '🏞️', isHub: true, rate: '2.06%' },
+  { id: 'morristown', name: 'Morristown', county: 'Morris County', icon: '📜', isHub: true, rate: '1.95%' },
+  { id: 'pequannock', name: 'Pequannock', county: 'Morris County', icon: '🌳', isHub: false, rate: '2.10%' },
+  { id: 'denville', name: 'Denville', county: 'Morris County', icon: '🌊', isHub: false, rate: '2.15%' },
+  { id: 'hanover', name: 'Hanover', county: 'Morris County', icon: '🏢', isHub: false, rate: '1.50%' },
+  { id: 'mountain-lakes', name: 'Mountain Lakes', county: 'Morris County', icon: '⛵', isHub: false, rate: '2.31%' },
+  { id: 'florham-park', name: 'Florham Park', county: 'Morris County', icon: '🌸', isHub: false, rate: '1.57%' },
+  { id: 'riverdale', name: 'Riverdale', county: 'Morris County', icon: '🌊', isHub: false, rate: '2.18%' },
+  { id: 'kinnelon', name: 'Kinnelon', county: 'Morris County', icon: '🌲', isHub: false, rate: '2.20%' },
+  { id: 'butler', name: 'Butler', county: 'Morris County', icon: '🏭', isHub: false, rate: '2.44%' }
+];
+
+function updateHeaderTownOptions(county, selectedTownId) {
+  const townSelect = document.getElementById('cascade-town-select');
+  if (!townSelect) return;
+
+  let towns = NORTH_JERSEY_TOWNS;
+  if (county && county !== 'all') {
+    towns = NORTH_JERSEY_TOWNS.filter(t => t.county.toLowerCase().includes(county.toLowerCase().replace(' county', '')));
+  }
+
+  if (county === 'all') {
+    const counties = ['Passaic County', 'Bergen County', 'Essex County', 'Morris County'];
+    let html = '';
+    for (const c of counties) {
+      const cTowns = towns.filter(t => t.county === c);
+      html += `<optgroup label="${c} (${cTowns.length})">`;
+      for (const t of cTowns) {
+        const isSel = t.id === selectedTownId ? 'selected' : '';
+        html += `<option value="${t.id}" data-county="${t.county}" ${isSel}>${t.icon} ${t.name} (${t.rate}) ${t.isHub ? '⭐' : ''}</option>`;
       }
-    });
-  });
+      html += `</optgroup>`;
+    }
+    townSelect.innerHTML = html;
+  } else {
+    let html = '';
+    for (const t of towns) {
+      const isSel = t.id === selectedTownId ? 'selected' : '';
+      html += `<option value="${t.id}" data-county="${t.county}" ${isSel}>${t.icon} ${t.name} (${t.rate}) ${t.isHub ? '⭐' : ''}</option>`;
+    }
+    townSelect.innerHTML = html;
+  }
 
-  // Header County Filter Tabs
-  document.querySelectorAll('.header-county-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const county = tab.getAttribute('data-header-county');
-      document.querySelectorAll('.header-county-tab').forEach(t => {
-        const isMatch = t === tab;
-        t.classList.toggle('active', isMatch);
-        t.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
-      });
-      document.querySelectorAll('.city-switcher-pills .city-switch-btn').forEach(btn => {
-        const btnCounty = btn.getAttribute('data-county');
-        if (county === 'all' || !county || btnCounty === county) {
-          btn.style.display = 'inline-flex';
-        } else {
-          btn.style.display = 'none';
+  if (selectedTownId) {
+    townSelect.value = selectedTownId;
+  }
+}
+
+// Setup Cascading Municipality Switcher in Header (County ➔ Town)
+function setupCitySwitcher() {
+  const countySelect = document.getElementById('cascade-county-select');
+  const townSelect = document.getElementById('cascade-town-select');
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  if (countySelect) {
+    countySelect.value = meta.county;
+    countySelect.addEventListener('change', (e) => {
+      const county = e.target.value;
+      updateHeaderTownOptions(county, currentCity);
+    });
+  }
+
+  updateHeaderTownOptions(meta.county, currentCity);
+
+  if (townSelect) {
+    townSelect.addEventListener('change', (e) => {
+      const townId = e.target.value;
+      if (!townId) return;
+      const opt = townSelect.options[townSelect.selectedIndex];
+      const county = opt ? opt.getAttribute('data-county') : '';
+
+      if (CITY_REGISTRY[townId]) {
+        if (townId !== currentCity) {
+          switchCity(townId, true);
         }
-      });
-    });
-  });
-
-  // Header Town Dropdown Selector
-  const headerSelect = document.getElementById('header-town-select');
-  if (headerSelect) {
-    headerSelect.addEventListener('change', (e) => {
-      const val = e.target.value;
-      if (!val) return;
-      if (CITY_REGISTRY[val]) {
-        switchCity(val, true);
       } else {
-        const opt = headerSelect.options[headerSelect.selectedIndex];
-        const county = opt ? opt.getAttribute('data-county') : '';
-        navigateToTownComparison(val, county);
+        navigateToTownComparison(townId, county);
       }
     });
   }
@@ -1015,6 +1090,7 @@ function navigateToTownComparison(townId, county) {
 // Switch Active Municipality across all 6 switchable cities
 async function switchCity(cityId, updateUrl = true) {
   currentCity = CITY_REGISTRY[cityId] ? cityId : 'clifton';
+  const meta = CITY_REGISTRY[currentCity];
 
   try {
     localStorage.setItem('watchdog_city', currentCity);
@@ -1031,18 +1107,24 @@ async function switchCity(cityId, updateUrl = true) {
     // ignore URL/storage restrictions
   }
 
-  // Update active state on all city switcher buttons
+  // Update cascading header selectors & active badge
+  const countySelect = document.getElementById('cascade-county-select');
+  if (countySelect) {
+    countySelect.value = meta.county;
+  }
+  updateHeaderTownOptions(meta.county, currentCity);
+
+  const activeBadgeName = document.getElementById('cascade-active-town-name');
+  if (activeBadgeName) {
+    activeBadgeName.textContent = `${meta.name} (${meta.countyShort.replace(' County', '')})`;
+  }
+
+  // Update legacy buttons if present
   document.querySelectorAll('.city-switch-btn').forEach(btn => {
     const isMatch = btn.getAttribute('data-city') === currentCity;
     btn.classList.toggle('active', isMatch);
     btn.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
   });
-
-  // Sync header town dropdown if exists
-  const headerSelect = document.getElementById('header-town-select');
-  if (headerSelect) {
-    headerSelect.value = currentCity;
-  }
 
   await loadAllData(currentCity);
   applyCityStaticCopy(currentCity);
@@ -6195,6 +6277,10 @@ function scrollToTownRow(townId) {
 function selectSpecificTownComparison(townId, county) {
   if (county) {
     crossTownState.county = county;
+    const compCountySelect = document.getElementById('comp-cascade-county');
+    if (compCountySelect) {
+      compCountySelect.value = county;
+    }
     document.querySelectorAll('.comp-county-btn').forEach(b => {
       const bCounty = (b.dataset.county || '').toLowerCase();
       b.classList.toggle('active', bCounty.includes((county || '').toLowerCase().replace(' county', '')) || (county === 'all' && bCounty === 'all'));
@@ -6215,6 +6301,9 @@ function setupSurroundingComparatorEvents() {
   const townSearchInput = document.getElementById('cross-town-search-input');
   const clearTownSearchBtn = document.getElementById('btn-clear-town-filter');
   const showAllTownsBtn = document.getElementById('btn-show-all-towns');
+  const compCascadeCounty = document.getElementById('comp-cascade-county');
+  const compCascadeTown = document.getElementById('comp-cascade-town');
+  const btnResetCascade = document.getElementById('btn-reset-cascade');
 
   if (homeInput) {
     homeInput.addEventListener('input', (e) => {
@@ -6256,11 +6345,40 @@ function setupSurroundingComparatorEvents() {
     });
   }
 
-  // County Filter Buttons
+  // Cascading County Dropdown in Comparator
+  if (compCascadeCounty) {
+    if (compCascadeCounty.value) {
+      crossTownState.county = compCascadeCounty.value;
+    }
+    compCascadeCounty.addEventListener('change', (e) => {
+      crossTownState.county = e.target.value;
+      crossTownState.selectedTown = null;
+      renderSurroundingTowns();
+    });
+  }
+
+  // Cascading Town Dropdown in Comparator
+  if (compCascadeTown) {
+    compCascadeTown.addEventListener('change', (e) => {
+      const val = e.target.value;
+      if (!val || val === 'all') {
+        crossTownState.selectedTown = null;
+      } else {
+        crossTownState.selectedTown = val;
+      }
+      renderSurroundingTowns();
+      if (crossTownState.selectedTown) {
+        scrollToTownRow(crossTownState.selectedTown);
+      }
+    });
+  }
+
+  // County Filter Buttons (legacy if present)
   document.querySelectorAll('.comp-county-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       crossTownState.county = btn.dataset.county;
       crossTownState.selectedTown = null;
+      if (compCascadeCounty) compCascadeCounty.value = btn.dataset.county;
       document.querySelectorAll('.comp-county-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       renderSurroundingTowns();
@@ -6287,19 +6405,27 @@ function setupSurroundingComparatorEvents() {
     });
   }
 
-  if (showAllTownsBtn) {
-    showAllTownsBtn.addEventListener('click', () => {
-      crossTownState.selectedTown = null;
-      crossTownState.county = 'all';
-      crossTownState.townSearch = '';
-      if (townSearchInput) townSearchInput.value = '';
-      if (clearTownSearchBtn) clearTownSearchBtn.style.display = 'none';
-      showAllTownsBtn.style.display = 'none';
-      document.querySelectorAll('.comp-county-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.county === 'all');
-      });
-      renderSurroundingTowns();
+  const resetAllFilters = () => {
+    crossTownState.selectedTown = null;
+    crossTownState.county = 'all';
+    crossTownState.townSearch = '';
+    if (townSearchInput) townSearchInput.value = '';
+    if (clearTownSearchBtn) clearTownSearchBtn.style.display = 'none';
+    if (compCascadeCounty) compCascadeCounty.value = 'all';
+    if (showAllTownsBtn) showAllTownsBtn.style.display = 'none';
+    if (btnResetCascade) btnResetCascade.style.display = 'none';
+    document.querySelectorAll('.comp-county-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.county === 'all');
     });
+    renderSurroundingTowns();
+  };
+
+  if (btnResetCascade) {
+    btnResetCascade.addEventListener('click', resetAllFilters);
+  }
+
+  if (showAllTownsBtn) {
+    showAllTownsBtn.addEventListener('click', resetAllFilters);
   }
 
   // Handle URL county & town pre-filter if present (e.g., ?county=Passaic or ?town=totowa)
@@ -6313,6 +6439,8 @@ function setupSurroundingComparatorEvents() {
       else if (q.includes('essex')) crossTownState.county = 'Essex County';
       else if (q.includes('morris')) crossTownState.county = 'Morris County';
       else if (q === 'all') crossTownState.county = 'all';
+
+      if (compCascadeCounty) compCascadeCounty.value = crossTownState.county;
 
       document.querySelectorAll('.comp-county-btn').forEach(b => {
         const bCounty = (b.dataset.county || '').toLowerCase();
@@ -6406,10 +6534,47 @@ function renderSurroundingTowns() {
     }
   });
 
-  // Render Interactive Town Filter Chips (All towns visible in current scope)
+  // Sync cascading county dropdown
+  const compCountySelect = document.getElementById('comp-cascade-county');
+  if (compCountySelect && compCountySelect.value !== countyFilter) {
+    compCountySelect.value = countyFilter;
+  }
+
+  // Sync cascading town dropdown options based on active county
+  const compTownSelect = document.getElementById('comp-cascade-town');
+  if (compTownSelect) {
+    let optsHtml = '';
+    if (countyFilter === 'all') {
+      optsHtml = `<option value="all">All 47 Municipalities</option>`;
+      const counties = ['Passaic County', 'Bergen County', 'Essex County', 'Morris County'];
+      for (const c of counties) {
+        const cTowns = surroundingTownsData.towns.filter(t => t.county === c);
+        optsHtml += `<optgroup label="${c} (${cTowns.length})">`;
+        for (const t of cTowns) {
+          const isSel = t.id === selectedTown ? 'selected' : '';
+          const eff = t.effectiveTaxRateMarket ? `${t.effectiveTaxRateMarket.toFixed(2)}%` : '';
+          optsHtml += `<option value="${t.id}" ${isSel}>${t.icon || '🏡'} ${t.name} (${eff}) ${t.hasFullWatchdogProfile ? '⭐' : ''}</option>`;
+        }
+        optsHtml += `</optgroup>`;
+      }
+    } else {
+      const cTowns = surroundingTownsData.towns.filter(t => t.county.toLowerCase().includes(countyFilter.toLowerCase().replace(' county', '')));
+      optsHtml = `<option value="all">All ${countyFilter} Municipalities (${cTowns.length})</option>`;
+      for (const t of cTowns) {
+        const isSel = t.id === selectedTown ? 'selected' : '';
+        const eff = t.effectiveTaxRateMarket ? `${t.effectiveTaxRateMarket.toFixed(2)}%` : '';
+        optsHtml += `<option value="${t.id}" ${isSel}>${t.icon || '🏡'} ${t.name} (${eff}) ${t.hasFullWatchdogProfile ? '⭐' : ''}</option>`;
+      }
+    }
+    compTownSelect.innerHTML = optsHtml;
+    compTownSelect.value = selectedTown || 'all';
+  }
+
+  // Render Interactive Town Filter Chips (Filtered by active cascading county)
   const chipsGrid = document.getElementById('comp-town-chips-grid');
-  const countBadge = document.getElementById('town-filter-count-badge');
+  const countBadge = document.getElementById('cascading-count-badge') || document.getElementById('town-filter-count-badge');
   const showAllBtn = document.getElementById('btn-show-all-towns');
+  const resetCascadeBtn = document.getElementById('btn-reset-cascade');
 
   if (chipsGrid) {
     const chipTowns = surroundingTownsData.towns.filter(t => {
@@ -6448,16 +6613,20 @@ function renderSurroundingTowns() {
   if (countBadge) {
     if (selectedTown) {
       const st = surroundingTownsData.towns.find(t => t.id === selectedTown);
-      countBadge.textContent = st ? `Focusing: ${st.name}` : `${enriched.length} Towns Visible`;
+      countBadge.textContent = st ? `Focusing: ${st.name} (${st.county})` : `${enriched.length} Towns Visible`;
     } else if (countyFilter !== 'all') {
-      countBadge.textContent = `${enriched.length} ${countyFilter} Towns Visible`;
+      countBadge.textContent = `Showing ${enriched.length} ${countyFilter} Municipalities`;
     } else {
-      countBadge.textContent = `${enriched.length} of 47 Towns Visible`;
+      countBadge.textContent = `Showing All ${enriched.length} North Jersey Municipalities`;
     }
   }
 
+  const isFiltered = (selectedTown || countyFilter !== 'all' || townSearch);
   if (showAllBtn) {
-    showAllBtn.style.display = (selectedTown || countyFilter !== 'all' || townSearch) ? 'inline-block' : 'none';
+    showAllBtn.style.display = isFiltered ? 'inline-block' : 'none';
+  }
+  if (resetCascadeBtn) {
+    resetCascadeBtn.style.display = isFiltered ? 'inline-flex' : 'none';
   }
 
   // Render Table Rows
