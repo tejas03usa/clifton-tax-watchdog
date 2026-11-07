@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Verona Township Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Verona Township Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Verona Township Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Verona Township",
+      "agency": "Verona Township Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Verona Township Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Verona Township Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Verona Township, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Bloomfield Ave)",
+          "municipality": "Verona Township, NJ",
+          "taxRecordLookup": "Essex County Board of Taxation District 0720"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Verona Township Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Verona Township Public Schools",
+      "agency": "Verona Township Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Essex County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Verona Township Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

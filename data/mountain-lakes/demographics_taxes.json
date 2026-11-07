@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Morris County 2026 Certified Rolls",
     "municipality": "Mountain Lakes Borough",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 9.69,
   "county": "Morris County",
   "residentialShare": 94.2,
-  "commercialShare": 5.8
+  "commercialShare": 5.8,
+  "cityOverview": {
+    "totalPopulation": 4450,
+    "totalHousingUnits": 1648,
+    "medianHouseholdIncome": 250000,
+    "perCapitaIncome": 120000,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 94,
+    "renterOccupiedRate": 6,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07046",
+      "areaName": "Mountain Lakes Borough (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Mountain Lakes Borough Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 250000,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 94,
+      "renterOccupiedPercent": 6,
+      "averageAnnualTaxBill": 24227.28,
+      "monthlyTaxBill": 2018.94,
+      "taxBurdenPercentOfIncome": 9.69,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 34866000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 2.76%, with an equalization ratio of 83.6%.",
+        "Public education represents 68.8% of property taxes, while municipal operations account for 21.4%.",
+        "Average residential assessment is $877,800, producing an average annual tax bill of $24,227.28."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Mountain Lakes Borough Center & Downtown",
+      "zip": "07046",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 250000,
+      "medianAge": 40.5,
+      "avgTaxBill": 24227.28,
+      "taxBurdenPercentIncome": 9.69,
+      "avgMarketValue": 1050000,
+      "ownerOccupied": 94,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Mountain Lakes Borough Residential Heights",
+      "zip": "07046",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 270000,
+      "medianAge": 42.2,
+      "avgTaxBill": 25681,
+      "taxBurdenPercentIncome": 9.69,
+      "avgMarketValue": 1134000,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Mountain Lakes Borough maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Mountain Lakes Borough, homeowners pay an average of $24,227.28 annually in property taxes, consuming approximately 9.69% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 83.6%, assessed values average ~83.6% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 68.8% of the total tax bill, municipal government absorbs 21.4%, and Morris County claims 9.8%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 534,
+      "totalHouseholds": 1648,
+      "enrolledPublicSchools": 623,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 690
+    },
+    "schools": [
+      {
+        "name": "Mountain Lakes Borough Elementary School",
+        "type": "Elementary",
+        "address": "100 Boulevard, Mountain Lakes Borough, NJ 07046",
+        "enrollment": 280,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Mountain Lakes Borough Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Mountain Lakes Borough Middle School",
+        "type": "Middle School",
+        "address": "200 Laurel Hill Rd, Mountain Lakes Borough, NJ 07046",
+        "enrollment": 240,
+        "grades": "6 to 8",
+        "neighborhood": "Mountain Lakes Borough Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Mountain Lakes Borough High School",
+        "type": "High School",
+        "address": "300 Briarcliff Rd, Mountain Lakes Borough, NJ 07046",
+        "enrollment": 350,
+        "grades": "9 to 12",
+        "neighborhood": "Mountain Lakes Borough Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

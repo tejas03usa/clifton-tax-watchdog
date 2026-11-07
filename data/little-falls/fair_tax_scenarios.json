@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Little Falls Township Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Little Falls Township",
+      "totalTaxLevy": 58866008,
+      "residentialLevyTotal": 46798476,
+      "commercialLevyTotal": 12067532,
+      "totalResidentialParcels": 4948,
+      "equalizationRatio": 0.622,
+      "certifiedTaxRateAssessed": 3.496,
+      "certifiedTaxRateMarket": 2.17,
+      "averageResidentialAssessment": 336096,
+      "averageResidentialMarketValue": 540000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 20.5
+    }
   },
-  "certifiedTaxRate": 3.496,
-  "equalizationRatio": 62.24,
-  "effectiveTaxRateMarket": 2.17,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 79.5% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Little Falls Township operates at an equalization ratio of 62.24%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 3.496,
-      "sampleHomeAssessed": 336096,
-      "sampleTax": 11749.92
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Little Falls Township residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.17,
-      "sampleHomeAssessed": 540000,
-      "sampleTax": 11718.0
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Little Falls Township municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 268877,
+      "tax": 9399.93
+    },
+    {
+      "type": "Average Little Falls Township Home",
+      "assessment": 336096,
+      "tax": 11749.92
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 453730,
+      "tax": 15862.39
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07424",
+      "name": "Little Falls Township Center & Downtown",
+      "medianHouseholdIncome": 118400,
+      "currentTaxBill": 11749.92,
+      "currentTaxEffortPct": 9.92
+    },
+    {
+      "zip": "07424",
+      "name": "Little Falls Township Residential Heights",
+      "medianHouseholdIncome": 127872,
+      "currentTaxBill": 12455,
+      "currentTaxEffortPct": 9.92
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Passaic County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Bergen County Board of Taxation Table of Aggregates",
+    "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 68.2,
-  "commercialShare": 31.8,
-  "pilotAgreementsCount": 18,
-  "analysis": "Hackensack City maintains a 31.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 68.2,
+    "commercialShare": 31.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 63.7,
+        "commercialIndustrialShare": 36.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 66.2,
+        "commercialIndustrialShare": 33.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 68.2,
+        "commercialIndustrialShare": 31.8,
+        "notes": "Current certified Bergen County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "hackensack-pilot-1",
+        "name": "Hackensack City Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 866250,
+        "standardSchoolShare": 445252,
+        "standardCityShare": 318780,
+        "standardCountyShare": 102218,
+        "pilotServiceCharge": 563062,
+        "pilotCityKeeps": 534909,
+        "pilotCountyGets": 28153,
+        "developerAnnualSavings": 303188,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 441000,
+        "homeownerBurdenAbsorbed": 441000
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Hackensack City Shopping Plaza / Corporate Center",
+        "location": "100 Main St",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 28287462,
+        "annualTaxPaid": 700225,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Hackensack City Professional Medical Arts Building",
+        "location": "250 State St",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 18960245,
+        "annualTaxPaid": 469340,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

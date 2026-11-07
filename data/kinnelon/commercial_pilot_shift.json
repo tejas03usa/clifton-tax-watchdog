@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Morris County Board of Taxation Table of Aggregates",
+    "source": "Morris County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 88.5,
-  "commercialShare": 11.5,
-  "pilotAgreementsCount": 1,
-  "analysis": "Kinnelon Borough maintains a 11.5% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 88.5,
+    "commercialShare": 11.5,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 84.0,
+        "commercialIndustrialShare": 16.0,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 86.5,
+        "commercialIndustrialShare": 13.5,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 88.5,
+        "commercialIndustrialShare": 11.5,
+        "notes": "Current certified Morris County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "kinnelon-pilot-1",
+        "name": "Kinnelon Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 768250,
+        "standardSchoolShare": 516264,
+        "standardCityShare": 175161,
+        "standardCountyShare": 76825,
+        "pilotServiceCharge": 499362,
+        "pilotCityKeeps": 474394,
+        "pilotCountyGets": 24968,
+        "developerAnnualSavings": 268888,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 421200,
+        "homeownerBurdenAbsorbed": 421200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Kinnelon Borough Shopping Plaza / Corporate Center",
+        "location": "100 Kinnelon Rd",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 22588523,
+        "annualTaxPaid": 495800,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Kinnelon Borough Professional Medical Arts Building",
+        "location": "250 Fayson Lakes Rd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 15140415,
+        "annualTaxPaid": 332320,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

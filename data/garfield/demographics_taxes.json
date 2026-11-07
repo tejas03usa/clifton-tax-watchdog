@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Bergen County 2026 Certified Rolls",
     "municipality": "Garfield City",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 15.64,
   "county": "Bergen County",
   "residentialShare": 79.5,
-  "commercialShare": 20.5
+  "commercialShare": 20.5,
+  "cityOverview": {
+    "totalPopulation": 32800,
+    "totalHousingUnits": 12148,
+    "medianHouseholdIncome": 72400,
+    "perCapitaIncome": 34752,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 80,
+    "renterOccupiedRate": 20,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07026",
+      "areaName": "Garfield City (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Garfield City Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 72400,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 80,
+      "renterOccupiedPercent": 20,
+      "averageAnnualTaxBill": 11322.43,
+      "monthlyTaxBill": 943.54,
+      "taxBurdenPercentOfIncome": 15.64,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 123024000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 3.415%, with an equalization ratio of 69.8%.",
+        "Public education represents 49.2% of property taxes, while municipal operations account for 38.6%.",
+        "Average residential assessment is $331,550, producing an average annual tax bill of $11,322.43."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Garfield City Center & Downtown",
+      "zip": "07026",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 72400,
+      "medianAge": 40.5,
+      "avgTaxBill": 11322.43,
+      "taxBurdenPercentIncome": 15.64,
+      "avgMarketValue": 475000,
+      "ownerOccupied": 80,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Garfield City Residential Heights",
+      "zip": "07026",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 78192,
+      "medianAge": 42.2,
+      "avgTaxBill": 12002,
+      "taxBurdenPercentIncome": 15.64,
+      "avgMarketValue": 513000,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Garfield City maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Garfield City, homeowners pay an average of $11,322.43 annually in property taxes, consuming approximately 15.64% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 69.8%, assessed values average ~69.8% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 49.2% of the total tax bill, municipal government absorbs 38.6%, and Bergen County claims 12.2%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 3936,
+      "totalHouseholds": 12148,
+      "enrolledPublicSchools": 4592,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 5084
+    },
+    "schools": [
+      {
+        "name": "Garfield City Elementary School",
+        "type": "Elementary",
+        "address": "100 River Dr, Garfield City, NJ 07026",
+        "enrollment": 1640,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Garfield City Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Garfield City Middle School",
+        "type": "Middle School",
+        "address": "200 Midland Ave, Garfield City, NJ 07026",
+        "enrollment": 1312,
+        "grades": "6 to 8",
+        "neighborhood": "Garfield City Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Garfield City High School",
+        "type": "High School",
+        "address": "300 Passaic St, Garfield City, NJ 07026",
+        "enrollment": 1640,
+        "grades": "9 to 12",
+        "neighborhood": "Garfield City Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

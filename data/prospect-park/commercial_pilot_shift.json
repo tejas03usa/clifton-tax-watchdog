@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 89.2,
-  "commercialShare": 10.8,
-  "pilotAgreementsCount": 2,
-  "analysis": "Prospect Park Borough maintains a 10.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 89.2,
+    "commercialShare": 10.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 84.7,
+        "commercialIndustrialShare": 15.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 87.2,
+        "commercialIndustrialShare": 12.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 89.2,
+        "commercialIndustrialShare": 10.8,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "prospect-park-pilot-1",
+        "name": "Prospect Park Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 1019550,
+        "standardSchoolShare": 538322,
+        "standardCityShare": 325236,
+        "standardCountyShare": 155991,
+        "pilotServiceCharge": 662708,
+        "pilotCityKeeps": 629572,
+        "pilotCountyGets": 33135,
+        "developerAnnualSavings": 356842,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 410400,
+        "homeownerBurdenAbsorbed": 410400
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Prospect Park Borough Shopping Plaza / Corporate Center",
+        "location": "100 Brown Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 39572193,
+        "annualTaxPaid": 1152735,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Prospect Park Borough Professional Medical Arts Building",
+        "location": "250 North 8th St",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 26524064,
+        "annualTaxPaid": 772644,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

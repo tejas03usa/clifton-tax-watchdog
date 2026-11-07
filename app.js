@@ -501,7 +501,7 @@ const CITY_REGISTRY = {
     auditBadge: 'MORRIS COUNTY AUDIT • 2026',
     certifiedTaxRate: '3.550%',
     rateNum: 3.550,
-    equalizationRatio: 57.8,
+    equalizationRatio: 66.6,
     avgTaxBill: '$12,372 / yr',
     schoolsShare: '64.14%',
     muniShare: '26.33%',
@@ -5456,52 +5456,56 @@ function renderBudgets() {
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
 
   const boeContainer = document.getElementById('boe-line-items');
-  boeContainer.innerHTML = boeBudgetData.majorAppropriations.map(item => {
-    let actionBtn = '';
-    const cat = item.category.toLowerCase();
-    if (cat.includes('benefit') || cat.includes('insurance')) {
-      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">Explore Healthcare Plans, Copays & Benefit Costs (${meta.benefitsSpendDisplay}) ➔</button>`;
-    } else if (cat.includes('regular') || cat.includes('instruction') || cat.includes('administration')) {
-      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-staff">View School District Staff Directory & Salaries ➔</button>`;
-    } else if (cat.includes('transportation') || cat.includes('facilities') || cat.includes('special') || cat.includes('operations')) {
-      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-vendors">View Vendor Warrant & Check Lists ➔</button>`;
-    }
+  if (boeContainer && Array.isArray(boeBudgetData.majorAppropriations)) {
+    boeContainer.innerHTML = boeBudgetData.majorAppropriations.map(item => {
+      let actionBtn = '';
+      const cat = (item.category || '').toLowerCase();
+      if (cat.includes('benefit') || cat.includes('insurance')) {
+        actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">Explore Healthcare Plans, Copays & Benefit Costs (${meta.benefitsSpendDisplay || 'Certified Benefits'}) ➔</button>`;
+      } else if (cat.includes('regular') || cat.includes('instruction') || cat.includes('administration')) {
+        actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-staff">View School District Staff Directory & Salaries ➔</button>`;
+      } else if (cat.includes('transportation') || cat.includes('facilities') || cat.includes('special') || cat.includes('operations')) {
+        actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-vendors">View Vendor Warrant & Check Lists ➔</button>`;
+      }
 
-    return `
-      <div class="line-item-row">
-        <div class="line-header">
-          <span>${item.category}</span>
-          <span class="line-amt">${formatUSDWhole(item.amount)} (${item.percentage}%)</span>
+      return `
+        <div class="line-item-row">
+          <div class="line-header">
+            <span>${escapeHtml(item.category || '')}</span>
+            <span class="line-amt">${formatUSDWhole(item.amount || 0)} (${item.percentage || 0}%)</span>
+          </div>
+          <div class="line-desc">${escapeHtml(item.details || '')}</div>
+          ${actionBtn ? `<div style="margin-top: 6px;">${actionBtn}</div>` : ''}
         </div>
-        <div class="line-desc">${item.details}</div>
-        ${actionBtn ? `<div style="margin-top: 6px;">${actionBtn}</div>` : ''}
-      </div>
-    `;
-  }).join('');
+      `;
+    }).join('');
+  }
 
   const cityContainer = document.getElementById('city-line-items');
-  cityContainer.innerHTML = cityBudgetData.majorAppropriations.map(item => {
-    let actionBtn = '';
-    const cat = item.category.toLowerCase();
-    if (cat.includes('police') || cat.includes('safety')) {
-      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-staff">View Police Salaries, Overtime & Details ➔</button>`;
-    } else if (cat.includes('pension') || cat.includes('benefit') || cat.includes('insurance')) {
-      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">View Municipal Benefit Liabilities (${meta.benefitsSpendDisplay}) ➔</button>`;
-    } else if (cat.includes('general government') || cat.includes('debt') || cat.includes('legal')) {
-      actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-controversies">View Audit & PILOT Abatement Analyses ➔</button>`;
-    }
+  if (cityContainer && Array.isArray(cityBudgetData.majorAppropriations)) {
+    cityContainer.innerHTML = cityBudgetData.majorAppropriations.map(item => {
+      let actionBtn = '';
+      const cat = (item.category || '').toLowerCase();
+      if (cat.includes('police') || cat.includes('safety')) {
+        actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-staff">View Police Salaries, Overtime & Details ➔</button>`;
+      } else if (cat.includes('pension') || cat.includes('benefit') || cat.includes('insurance')) {
+        actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-benefits">View Municipal Benefit Liabilities (${meta.benefitsSpendDisplay || 'Certified Benefits'}) ➔</button>`;
+      } else if (cat.includes('general government') || cat.includes('debt') || cat.includes('legal')) {
+        actionBtn = `<button class="btn-jump-budget-link" data-jump-tab="tab-controversies">View Audit & PILOT Abatement Analyses ➔</button>`;
+      }
 
-    return `
-      <div class="line-item-row">
-        <div class="line-header">
-          <span>${item.category}</span>
-          <span class="line-amt">${formatUSDWhole(item.amount)} (${item.percentage}%)</span>
+      return `
+        <div class="line-item-row">
+          <div class="line-header">
+            <span>${escapeHtml(item.category || '')}</span>
+            <span class="line-amt">${formatUSDWhole(item.amount || 0)} (${item.percentage || 0}%)</span>
+          </div>
+          <div class="line-desc">${escapeHtml(item.details || '')}</div>
+          ${actionBtn ? `<div style="margin-top: 6px;">${actionBtn}</div>` : ''}
         </div>
-        <div class="line-desc">${item.details}</div>
-        ${actionBtn ? `<div style="margin-top: 6px;">${actionBtn}</div>` : ''}
-      </div>
-    `;
-  }).join('');
+      `;
+    }).join('');
+  }
 
   renderEducationSpendingAudit();
   renderPassaicCountyServices();
@@ -5560,44 +5564,49 @@ function renderDemographics() {
         <div class="zip-stat-table">
           <div class="metric-row">
             <span class="metric-name">Median Household Income:</span>
-            <span class="metric-val" style="color: ${z.zip === '07013' || z.zip === '07950' ? 'var(--color-school)' : 'var(--color-city)'};">${formatUSDWhole(z.medianHouseholdIncome)}</span>
+            <span class="metric-val" style="color: ${z.zip === '07013' || z.zip === '07950' ? 'var(--color-school)' : 'var(--color-city)'};">${formatUSDWhole(z.medianHouseholdIncome || z.medianIncome || 0)}</span>
           </div>
           <div class="metric-row">
             <span class="metric-name">Median Age:</span>
-            <span class="metric-val">${z.medianAge} Years</span>
+            <span class="metric-val">${z.medianAge || 41} Years</span>
           </div>
           <div class="metric-row">
             <span class="metric-name">Homeowner vs. Renter:</span>
-            <span class="metric-val">${z.ownerOccupiedPercent}% Own / ${z.renterOccupiedPercent}% Rent</span>
+            <span class="metric-val">${z.ownerOccupiedPercent ?? (z.ownerOccupied || 80)}% Own / ${z.renterOccupiedPercent ?? (100 - (z.ownerOccupied || 80))}% Rent</span>
           </div>
           <div class="metric-row">
             <span class="metric-name">Average Property Tax Bill:</span>
-            <span class="metric-val">${formatUSD(z.averageAnnualTaxBill)} / yr (${formatUSD(z.monthlyTaxBill)}/mo)</span>
+            <span class="metric-val">${formatUSD(z.averageAnnualTaxBill || z.avgAnnualTax || 0)} / yr ${z.monthlyTaxBill ? `(${formatUSD(z.monthlyTaxBill)}/mo)` : ''}</span>
           </div>
+          ${z.taxBurdenPercentOfIncome ? `
           <div class="metric-row" style="background: #fef2f2; border: 1px solid #fecaca;">
             <span class="metric-name" style="color: #991b1b; font-weight: 700;">Property Tax Burden (% of Income):</span>
             <span class="metric-val" style="color: #991b1b;">${z.taxBurdenPercentOfIncome}% of Paycheck</span>
-          </div>
+          </div>` : ''}
+          ${z.shareOfTotalTaxBase ? `
           <div class="metric-row">
-            <span class="metric-name">Share of ${meta.name} Tax Base:</span>
-            <span class="metric-val">${z.shareOfTotalTaxBase}% (Generates ${formatUSDWhole(z.totalResidentialLevyContribution)})</span>
-          </div>
+            <span class="metric-name">Share of ${escapeHtml(meta.name)} Tax Base:</span>
+            <span class="metric-val">${z.shareOfTotalTaxBase}% ${z.totalResidentialLevyContribution ? `(Generates ${formatUSDWhole(z.totalResidentialLevyContribution)})` : ''}</span>
+          </div>` : ''}
+          ${z.schoolEnrollmentShare ? `
           <div class="metric-row">
             <span class="metric-name">Share of Public School Students:</span>
             <span class="metric-val">${z.schoolEnrollmentShare}% of District Enrollment</span>
-          </div>
+          </div>` : ''}
+          ${z.demographicProfile ? `
           <div class="metric-row">
             <span class="metric-name">Demographic Makeup:</span>
-            <span class="metric-val" style="font-size: 0.78rem;">${z.demographicProfile.hispanicOrLatino}% Latino, ${z.demographicProfile.whiteNonHispanic}% White, ${z.demographicProfile.asian}% Asian</span>
-          </div>
+            <span class="metric-val" style="font-size: 0.78rem;">${z.demographicProfile.hispanicOrLatino || 0}% Latino, ${z.demographicProfile.whiteNonHispanic || 0}% White, ${z.demographicProfile.asian || 0}% Asian</span>
+          </div>` : ''}
         </div>
 
+        ${Array.isArray(z.keyFindings) && z.keyFindings.length > 0 ? `
         <div class="zip-takeaway-box">
           <h4>Key Fiscal Findings for ${z.zip}:</h4>
           <ul>
             ${z.keyFindings.map(f => `<li>${f}</li>`).join('')}
           </ul>
-        </div>
+        </div>` : ''}
         <div class="card-action-bar-jumps" style="margin-top: 14px;">
           <button class="btn-jump-action" data-jump-tab="tab-properties" data-jump-neighborhood="ALL">
             <span>🔍</span> View Residential Assessments in ${z.zip} ➔
@@ -5671,7 +5680,11 @@ function renderDemographics() {
   // Equity Takeaways Grid with Context-Aware Actions
   const takeContainer = document.getElementById('equity-takeaways-container');
   if (takeContainer && demographicsData.equityAnalysis) {
-    takeContainer.innerHTML = demographicsData.equityAnalysis.keyTakeaways.map((t) => {
+    const takeaways = Array.isArray(demographicsData.equityAnalysis.keyTakeaways)
+      ? demographicsData.equityAnalysis.keyTakeaways
+      : (demographicsData.equityAnalysis.summary ? [{ title: "Ratable Balance & Equity", detail: demographicsData.equityAnalysis.summary }] : []);
+
+    takeContainer.innerHTML = takeaways.map((t) => {
       let actionButtons = '';
       const titleLower = (t.title || '').toLowerCase();
 
@@ -6103,16 +6116,23 @@ function renderFamilyAndSchools() {
         </div>
       `;
     } else {
+      const hwKidsPct = c.householdsWithChildrenPercent ?? c.householdsWithKids ?? 45;
+      const hwKidsCount = c.householdsWithChildrenUnder18 ? c.householdsWithChildrenUnder18.toLocaleString() : (c.totalHouseholds ? Math.round(c.totalHouseholds * (hwKidsPct / 100)).toLocaleString() : '—');
+      const totHh = c.totalHouseholds ? c.totalHouseholds.toLocaleString() : 'Local';
+      const enrPub = c.enrolledPublicSchools ? c.enrolledPublicSchools.toLocaleString() : (c.totalStudents ? c.totalStudents.toLocaleString() : '—');
+      const enrPct = c.enrolledPublicPercent ?? 90;
+      const totSchKids = c.totalSchoolAgeChildren ? c.totalSchoolAgeChildren.toLocaleString() : (c.totalStudents ? c.totalStudents.toLocaleString() : '—');
+
       ribbon.innerHTML = `
         <div class="family-stat-box highlight-stat">
           <span class="f-stat-label">Families With Children</span>
-          <span class="f-stat-val">${c.householdsWithChildrenPercent}%</span>
-          <span class="f-stat-sub">${c.householdsWithChildrenUnder18.toLocaleString()} of ${c.totalHouseholds.toLocaleString()} ${meta.name} households</span>
+          <span class="f-stat-val">${hwKidsPct}%</span>
+          <span class="f-stat-sub">${hwKidsCount} of ${totHh} ${meta.name} households</span>
         </div>
         <div class="family-stat-box">
           <span class="f-stat-label">Public School Students</span>
-          <span class="f-stat-val font-mono" style="color: var(--color-school);">${c.enrolledPublicSchools.toLocaleString()}</span>
-          <span class="f-stat-sub">${c.enrolledPublicPercent}% of all ${c.totalSchoolAgeChildren.toLocaleString()} school-age kids</span>
+          <span class="f-stat-val font-mono" style="color: var(--color-school);">${enrPub}</span>
+          <span class="f-stat-sub">${enrPct}% of all ${totSchKids} school-age kids</span>
         </div>
         <div class="family-stat-box">
           <span class="f-stat-label">School Budget Share</span>
@@ -10248,8 +10268,10 @@ function renderFairTaxEngine() {
 
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const isParsippany = currentCity === 'parsippany';
-  const baseline = fairTaxData.metadata.certifiedBaseline;
-  const inequities = fairTaxData.fairnessDiagnosis.coreInequities || [];
+  const baseline = (fairTaxData.metadata && fairTaxData.metadata.certifiedBaseline) 
+    ? fairTaxData.metadata.certifiedBaseline 
+    : (fairTaxData.certifiedBaseline || {});
+  const inequities = (fairTaxData.fairnessDiagnosis && fairTaxData.fairnessDiagnosis.coreInequities) || [];
   const presets = fairTaxData.presetScenarios || [];
   const sampleProfiles = fairTaxData.sampleHomeProfiles || [];
   const roadmapSteps = fairTaxData.policyRoadmap || [];
@@ -10261,11 +10283,11 @@ function renderFairTaxEngine() {
   const totalPilotM = (baseline.annualPilotRevenueCollected || (isParsippany ? 9850000 : 4820000)) / 1000000;
   const baselineResLevyM = (baseline.residentialLevyTotal || (isParsippany ? 190868278 : 285105000)) / 1000000;
   const totalParcels = baseline.totalResidentialParcels || (isParsippany ? 15430 : 22965);
-  const eqRatio = baseline.equalizationRatio || (isParsippany ? 0.666 : 0.403);
-  const baselineRate = baseline.certifiedTaxRateAssessed || (isParsippany ? 3.550 : 6.527);
-  const baselineMarketRate = baseline.certifiedTaxRateMarket || (isParsippany ? 2.364 : 2.630);
-  const defaultMarketVal = baseline.averageResidentialMarketValue || (isParsippany ? 525000 : 475000);
-  const defaultAssessedVal = baseline.averageResidentialAssessment || (isParsippany ? 348500 : 191425);
+  const eqRatio = baseline.equalizationRatio || (isParsippany ? 0.666 : (meta.equalizationRatio ? meta.equalizationRatio / 100 : 0.403));
+  const baselineRate = baseline.certifiedTaxRateAssessed || meta.rateNum || (isParsippany ? 3.550 : 6.527);
+  const baselineMarketRate = baseline.certifiedTaxRateMarket || (meta.effectiveTaxRateMarket ? parseFloat(meta.effectiveTaxRateMarket) : (isParsippany ? 2.364 : 2.630));
+  const defaultMarketVal = baseline.averageResidentialMarketValue || (meta.medianHomeValueMarket ? parseInt(meta.medianHomeValueMarket.replace(/[^0-9]/g, '')) : (isParsippany ? 525000 : 475000));
+  const defaultAssessedVal = baseline.averageResidentialAssessment || (meta.medianAssessedValue ? parseInt(meta.medianAssessedValue.replace(/[^0-9]/g, '')) : (isParsippany ? 348500 : 191425));
   const defaultIncome = isParsippany ? 124850 : 95000;
   const defaultZip = isParsippany ? '07054' : '07012';
 

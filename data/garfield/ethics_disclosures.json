@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Garfield City Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Garfield City Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Garfield City Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Garfield City",
+      "agency": "Garfield City Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Garfield City Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Garfield City Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Garfield City, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (River Dr)",
+          "municipality": "Garfield City, NJ",
+          "taxRecordLookup": "Bergen County Board of Taxation District 0221"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Garfield City Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Garfield City Public Schools",
+      "agency": "Garfield City Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Bergen County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Garfield City Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Passaic County 2026 Certified Rolls",
     "municipality": "Totowa Borough",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 7.44,
   "county": "Passaic County",
   "residentialShare": 68.4,
-  "commercialShare": 31.6
+  "commercialShare": 31.6,
+  "cityOverview": {
+    "totalPopulation": 11065,
+    "totalHousingUnits": 4098,
+    "medianHouseholdIncome": 114800,
+    "perCapitaIncome": 55104,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 68,
+    "renterOccupiedRate": 32,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07512",
+      "areaName": "Totowa Borough (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Totowa Borough Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 114800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 68,
+      "renterOccupiedPercent": 32,
+      "averageAnnualTaxBill": 8537.21,
+      "monthlyTaxBill": 711.43,
+      "taxBurdenPercentOfIncome": 7.44,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 39816000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 2.934%, with an equalization ratio of 51.5%.",
+        "Public education represents 48.2% of property taxes, while municipal operations account for 34.6%.",
+        "Average residential assessment is $290,975, producing an average annual tax bill of $8,537.21."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Totowa Borough Center & Downtown",
+      "zip": "07512",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 114800,
+      "medianAge": 40.5,
+      "avgTaxBill": 8537.21,
+      "taxBurdenPercentIncome": 7.44,
+      "avgMarketValue": 565000,
+      "ownerOccupied": 68,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Totowa Borough Residential Heights",
+      "zip": "07512",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 123984,
+      "medianAge": 42.2,
+      "avgTaxBill": 9049,
+      "taxBurdenPercentIncome": 7.44,
+      "avgMarketValue": 610200,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Totowa Borough maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Totowa Borough, homeowners pay an average of $8,537.21 annually in property taxes, consuming approximately 7.44% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 51.5%, assessed values average ~51.5% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 48.2% of the total tax bill, municipal government absorbs 34.6%, and Passaic County claims 17.2%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 1328,
+      "totalHouseholds": 4098,
+      "enrolledPublicSchools": 1549,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 1715
+    },
+    "schools": [
+      {
+        "name": "Totowa Borough Elementary School",
+        "type": "Elementary",
+        "address": "100 Union Blvd, Totowa Borough, NJ 07512",
+        "enrollment": 553,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Totowa Borough Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Totowa Borough Middle School",
+        "type": "Middle School",
+        "address": "200 Totowa Rd, Totowa Borough, NJ 07512",
+        "enrollment": 443,
+        "grades": "6 to 8",
+        "neighborhood": "Totowa Borough Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Totowa Borough High School",
+        "type": "High School",
+        "address": "300 Minnisink Rd, Totowa Borough, NJ 07512",
+        "enrollment": 553,
+        "grades": "9 to 12",
+        "neighborhood": "Totowa Borough Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

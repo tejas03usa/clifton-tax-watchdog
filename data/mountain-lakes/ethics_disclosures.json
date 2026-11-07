@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Mountain Lakes Borough Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Mountain Lakes Borough Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Mountain Lakes Borough Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Mountain Lakes Borough",
+      "agency": "Mountain Lakes Borough Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Mountain Lakes Borough Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Mountain Lakes Borough Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Mountain Lakes Borough, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Boulevard)",
+          "municipality": "Mountain Lakes Borough, NJ",
+          "taxRecordLookup": "Morris County Board of Taxation District 1425"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Mountain Lakes Borough Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Mountain Lakes Borough Public Schools",
+      "agency": "Mountain Lakes Borough Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Morris County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Mountain Lakes Borough Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 West Milford Township Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "West Milford Township",
+      "totalTaxLevy": 105668624,
+      "residentialLevyTotal": 97637809,
+      "commercialLevyTotal": 8030815,
+      "totalResidentialParcels": 9574,
+      "equalizationRatio": 0.591,
+      "certifiedTaxRateAssessed": 4.214,
+      "certifiedTaxRateMarket": 2.489,
+      "averageResidentialAssessment": 259864,
+      "averageResidentialMarketValue": 440000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 7.6
+    }
   },
-  "certifiedTaxRate": 4.214,
-  "equalizationRatio": 59.06,
-  "effectiveTaxRateMarket": 2.489,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 92.4% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "West Milford Township operates at an equalization ratio of 59.06%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 4.214,
-      "sampleHomeAssessed": 259864,
-      "sampleTax": 10950.67
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "West Milford Township residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.489,
-      "sampleHomeAssessed": 440000,
-      "sampleTax": 10951.6
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "West Milford Township municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 207891,
+      "tax": 8760.54
+    },
+    {
+      "type": "Average West Milford Township Home",
+      "assessment": 259864,
+      "tax": 10950.67
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 350816,
+      "tax": 14783.4
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07480",
+      "name": "West Milford Township Center & Downtown",
+      "medianHouseholdIncome": 112400,
+      "currentTaxBill": 10950.67,
+      "currentTaxEffortPct": 9.74
+    },
+    {
+      "zip": "07480",
+      "name": "West Milford Township Residential Heights",
+      "medianHouseholdIncome": 121392,
+      "currentTaxBill": 11608,
+      "currentTaxEffortPct": 9.74
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Passaic County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

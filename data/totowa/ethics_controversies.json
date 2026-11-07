@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Totowa Borough Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "totowa-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Totowa Borough)",
+      "entityInvolved": "Totowa Borough Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "Maintains the lowest effective tax rate in Passaic County (1.511%) due to massive corporate, distribution, and commercial complexes along Route 46 and Minnisink Road.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Passaic County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

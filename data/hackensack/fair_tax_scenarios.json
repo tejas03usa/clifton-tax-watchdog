@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Hackensack City Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Hackensack City",
+      "totalTaxLevy": 209162928,
+      "residentialLevyTotal": 142649117,
+      "commercialLevyTotal": 66513811,
+      "totalResidentialParcels": 16963,
+      "equalizationRatio": 0.654,
+      "certifiedTaxRateAssessed": 3.785,
+      "certifiedTaxRateMarket": 2.475,
+      "averageResidentialAssessment": 304110,
+      "averageResidentialMarketValue": 465000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 31.8
+    }
   },
-  "certifiedTaxRate": 3.785,
-  "equalizationRatio": 65.4,
-  "effectiveTaxRateMarket": 2.475,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 68.2% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Hackensack City operates at an equalization ratio of 65.4%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 3.785,
-      "sampleHomeAssessed": 304110,
-      "sampleTax": 11510.56
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Hackensack City residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.475,
-      "sampleHomeAssessed": 465000,
-      "sampleTax": 11508.75
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Hackensack City municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 243288,
+      "tax": 9208.45
+    },
+    {
+      "type": "Average Hackensack City Home",
+      "assessment": 304110,
+      "tax": 11510.56
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 410548,
+      "tax": 15539.26
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07601",
+      "name": "Hackensack City Center & Downtown",
+      "medianHouseholdIncome": 81400,
+      "currentTaxBill": 11510.56,
+      "currentTaxEffortPct": 14.14
+    },
+    {
+      "zip": "07601",
+      "name": "Hackensack City Residential Heights",
+      "medianHouseholdIncome": 87912,
+      "currentTaxBill": 12201,
+      "currentTaxEffortPct": 14.14
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Bergen County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

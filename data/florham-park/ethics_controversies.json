@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Florham Park Borough Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "florham-park-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Florham Park Borough)",
+      "entityInvolved": "Florham Park Borough Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "Major corporate campuses (BASF North American HQ, New York Jets Training Center) shoulder 41.6% of ratables, keeping effective tax rate at 1.572%.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Morris County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

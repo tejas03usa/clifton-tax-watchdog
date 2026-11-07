@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Bergen County Board of Taxation Table of Aggregates",
+    "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 81.2,
-  "commercialShare": 18.8,
-  "pilotAgreementsCount": 4,
-  "analysis": "Fair Lawn Borough maintains a 18.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 81.2,
+    "commercialShare": 18.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 76.7,
+        "commercialIndustrialShare": 23.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 79.2,
+        "commercialIndustrialShare": 20.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 81.2,
+        "commercialIndustrialShare": 18.8,
+        "notes": "Current certified Bergen County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "fair-lawn-pilot-1",
+        "name": "Fair Lawn Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 838250,
+        "standardSchoolShare": 540671,
+        "standardCityShare": 210401,
+        "standardCountyShare": 87178,
+        "pilotServiceCharge": 544862,
+        "pilotCityKeeps": 517619,
+        "pilotCountyGets": 27243,
+        "developerAnnualSavings": 293388,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 410400,
+        "homeownerBurdenAbsorbed": 410400
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Fair Lawn Borough Shopping Plaza / Corporate Center",
+        "location": "100 Fair Lawn Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 27126100,
+        "annualTaxPaid": 649720,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Fair Lawn Borough Professional Medical Arts Building",
+        "location": "250 River Rd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 18181818,
+        "annualTaxPaid": 435488,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

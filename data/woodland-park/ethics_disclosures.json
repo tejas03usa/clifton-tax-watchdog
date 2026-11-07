@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Woodland Park Borough Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Woodland Park Borough Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Woodland Park Borough Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Woodland Park Borough",
+      "agency": "Woodland Park Borough Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Woodland Park Borough Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Woodland Park Borough Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Woodland Park Borough, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (McBride Ave)",
+          "municipality": "Woodland Park Borough, NJ",
+          "taxRecordLookup": "Passaic County Board of Taxation District 1616"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Woodland Park Borough Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Woodland Park Borough Public Schools",
+      "agency": "Woodland Park Borough Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Passaic County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Woodland Park Borough Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

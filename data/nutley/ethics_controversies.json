@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Nutley Township Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "nutley-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Nutley Township)",
+      "entityInvolved": "Nutley Township Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "Commission government system. ON3 biomedical redevelopment (former Hoffmann-La Roche campus shared on Clifton border) provides substantial corporate ratable relief.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Essex County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

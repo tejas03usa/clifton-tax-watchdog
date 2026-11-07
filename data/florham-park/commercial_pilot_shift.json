@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Morris County Board of Taxation Table of Aggregates",
+    "source": "Morris County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 58.4,
-  "commercialShare": 41.6,
-  "pilotAgreementsCount": 8,
-  "analysis": "Florham Park Borough maintains a 41.6% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 58.4,
+    "commercialShare": 41.6,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 53.9,
+        "commercialIndustrialShare": 46.1,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 56.4,
+        "commercialIndustrialShare": 43.6,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 58.4,
+        "commercialIndustrialShare": 41.6,
+        "notes": "Current certified Morris County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "florham-park-pilot-1",
+        "name": "Florham Park Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 550200,
+        "standardSchoolShare": 321317,
+        "standardCityShare": 174964,
+        "standardCountyShare": 53920,
+        "pilotServiceCharge": 357630,
+        "pilotCityKeeps": 339748,
+        "pilotCountyGets": 17882,
+        "developerAnnualSavings": 192570,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 410400,
+        "homeownerBurdenAbsorbed": 410400
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Florham Park Borough Shopping Plaza / Corporate Center",
+        "location": "100 Columbia Turnpike",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 21412037,
+        "annualTaxPaid": 336700,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Florham Park Borough Professional Medical Arts Building",
+        "location": "250 Ridgedale Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 14351852,
+        "annualTaxPaid": 225680,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Essex County Board of Taxation Table of Aggregates",
+    "source": "Essex County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 82.5,
-  "commercialShare": 17.5,
-  "pilotAgreementsCount": 7,
-  "analysis": "Belleville Township maintains a 17.5% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 82.5,
+    "commercialShare": 17.5,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 78.0,
+        "commercialIndustrialShare": 22.0,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 80.5,
+        "commercialIndustrialShare": 19.5,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 82.5,
+        "commercialIndustrialShare": 17.5,
+        "notes": "Current certified Essex County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "belleville-pilot-1",
+        "name": "Belleville Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 904400,
+        "standardSchoolShare": 468479,
+        "standardCityShare": 287599,
+        "standardCountyShare": 148322,
+        "pilotServiceCharge": 587860,
+        "pilotCityKeeps": 558467,
+        "pilotCountyGets": 29393,
+        "developerAnnualSavings": 316540,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 397800,
+        "homeownerBurdenAbsorbed": 397800
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Belleville Township Shopping Plaza / Corporate Center",
+        "location": "100 Washington Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 27987897,
+        "annualTaxPaid": 723350,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Belleville Township Professional Medical Arts Building",
+        "location": "250 Joralemon St",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 18759455,
+        "annualTaxPaid": 484840,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

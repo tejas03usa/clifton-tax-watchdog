@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Bergen County 2026 Certified Rolls",
     "municipality": "Ridgewood Village",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 9.5,
   "county": "Bergen County",
   "residentialShare": 88.4,
-  "commercialShare": 11.6
+  "commercialShare": 11.6,
+  "cityOverview": {
+    "totalPopulation": 26100,
+    "totalHousingUnits": 9667,
+    "medianHouseholdIncome": 215000,
+    "perCapitaIncome": 103200,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 88,
+    "renterOccupiedRate": 12,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07450",
+      "areaName": "Ridgewood Village (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Ridgewood Village Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 215000,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 88,
+      "renterOccupiedPercent": 12,
+      "averageAnnualTaxBill": 20431.01,
+      "monthlyTaxBill": 1702.58,
+      "taxBurdenPercentOfIncome": 9.5,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 146643000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 2.782%, with an equalization ratio of 76.5%.",
+        "Public education represents 66.8% of property taxes, while municipal operations account for 23.4%.",
+        "Average residential assessment is $734,400, producing an average annual tax bill of $20,431.01."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Ridgewood Village Center & Downtown",
+      "zip": "07450",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 215000,
+      "medianAge": 40.5,
+      "avgTaxBill": 20431.01,
+      "taxBurdenPercentIncome": 9.5,
+      "avgMarketValue": 960000,
+      "ownerOccupied": 88,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Ridgewood Village Residential Heights",
+      "zip": "07450",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 232200,
+      "medianAge": 42.2,
+      "avgTaxBill": 21657,
+      "taxBurdenPercentIncome": 9.5,
+      "avgMarketValue": 1036800,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Ridgewood Village maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Ridgewood Village, homeowners pay an average of $20,431.01 annually in property taxes, consuming approximately 9.5% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 76.5%, assessed values average ~76.5% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 66.8% of the total tax bill, municipal government absorbs 23.4%, and Bergen County claims 9.8%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 3132,
+      "totalHouseholds": 9667,
+      "enrolledPublicSchools": 3654,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 4046
+    },
+    "schools": [
+      {
+        "name": "Ridgewood Village Elementary School",
+        "type": "Elementary",
+        "address": "100 East Ridgewood Ave, Ridgewood Village, NJ 07450",
+        "enrollment": 1305,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Ridgewood Village Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Ridgewood Village Middle School",
+        "type": "Middle School",
+        "address": "200 West Ridgewood Ave, Ridgewood Village, NJ 07450",
+        "enrollment": 1044,
+        "grades": "6 to 8",
+        "neighborhood": "Ridgewood Village Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Ridgewood Village High School",
+        "type": "High School",
+        "address": "300 Maple Ave, Ridgewood Village, NJ 07450",
+        "enrollment": 1305,
+        "grades": "9 to 12",
+        "neighborhood": "Ridgewood Village Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

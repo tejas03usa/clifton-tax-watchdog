@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Passaic County 2026 Certified Rolls",
     "municipality": "Paterson City",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 18.72,
   "county": "Passaic County",
   "residentialShare": 78.5,
-  "commercialShare": 21.5
+  "commercialShare": 21.5,
+  "cityOverview": {
+    "totalPopulation": 159732,
+    "totalHousingUnits": 59160,
+    "medianHouseholdIncome": 49800,
+    "perCapitaIncome": 23904,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 78,
+    "renterOccupiedRate": 22,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07501",
+      "areaName": "Paterson City (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Paterson City Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 49800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 78,
+      "renterOccupiedPercent": 22,
+      "averageAnnualTaxBill": 9320.25,
+      "monthlyTaxBill": 776.69,
+      "taxBurdenPercentOfIncome": 18.72,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 793560000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
+        "Public education represents 36.8% of property taxes, while municipal operations account for 46.2%.",
+        "Average residential assessment is $174,700, producing an average annual tax bill of $9,320.25."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Paterson City Center & Downtown",
+      "zip": "07501",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 49800,
+      "medianAge": 40.5,
+      "avgTaxBill": 9320.25,
+      "taxBurdenPercentIncome": 18.72,
+      "avgMarketValue": 385000,
+      "ownerOccupied": 78,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Paterson City Residential Heights",
+      "zip": "07501",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 53784,
+      "medianAge": 42.2,
+      "avgTaxBill": 9879,
+      "taxBurdenPercentIncome": 18.72,
+      "avgMarketValue": 415800,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Paterson City maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Paterson City, homeowners pay an average of $9,320.25 annually in property taxes, consuming approximately 18.72% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 45.38%, assessed values average ~45.38% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 36.8% of the total tax bill, municipal government absorbs 46.2%, and Passaic County claims 17.0%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 19168,
+      "totalHouseholds": 59160,
+      "enrolledPublicSchools": 22362,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 24758
+    },
+    "schools": [
+      {
+        "name": "Paterson City Elementary School",
+        "type": "Elementary",
+        "address": "100 Market St, Paterson City, NJ 07501",
+        "enrollment": 7987,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Paterson City Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Paterson City Middle School",
+        "type": "Middle School",
+        "address": "200 Broadway, Paterson City, NJ 07501",
+        "enrollment": 6389,
+        "grades": "6 to 8",
+        "neighborhood": "Paterson City Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Paterson City High School",
+        "type": "High School",
+        "address": "300 Main St, Paterson City, NJ 07501",
+        "enrollment": 7987,
+        "grades": "9 to 12",
+        "neighborhood": "Paterson City Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

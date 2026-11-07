@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Morris County Board of Taxation Table of Aggregates",
+    "source": "Morris County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 94.2,
-  "commercialShare": 5.8,
-  "pilotAgreementsCount": 1,
-  "analysis": "Mountain Lakes Borough maintains a 5.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 94.2,
+    "commercialShare": 5.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 89.7,
+        "commercialIndustrialShare": 10.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 92.2,
+        "commercialIndustrialShare": 7.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 94.2,
+        "commercialIndustrialShare": 5.8,
+        "notes": "Current certified Morris County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "mountain-lakes-pilot-1",
+        "name": "Mountain Lakes Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 807450,
+        "standardSchoolShare": 555526,
+        "standardCityShare": 172794,
+        "standardCountyShare": 79130,
+        "pilotServiceCharge": 524842,
+        "pilotCityKeeps": 498600,
+        "pilotCountyGets": 26242,
+        "developerAnnualSavings": 282608,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 464400,
+        "homeownerBurdenAbsorbed": 464400
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Mountain Lakes Borough Shopping Plaza / Corporate Center",
+        "location": "100 Boulevard",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 22129187,
+        "annualTaxPaid": 510600,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Mountain Lakes Borough Professional Medical Arts Building",
+        "location": "250 Laurel Hill Rd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 14832536,
+        "annualTaxPaid": 342240,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

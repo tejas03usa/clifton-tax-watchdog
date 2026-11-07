@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Bergen County 2026 Certified Rolls",
     "municipality": "Fair Lawn Borough",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 10.89,
   "county": "Bergen County",
   "residentialShare": 81.2,
-  "commercialShare": 18.8
+  "commercialShare": 18.8,
+  "cityOverview": {
+    "totalPopulation": 34950,
+    "totalHousingUnits": 12944,
+    "medianHouseholdIncome": 134200,
+    "perCapitaIncome": 64416,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 81,
+    "renterOccupiedRate": 19,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07410",
+      "areaName": "Fair Lawn Borough (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Fair Lawn Borough Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 134200,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 81,
+      "renterOccupiedPercent": 19,
+      "averageAnnualTaxBill": 14610.62,
+      "monthlyTaxBill": 1217.55,
+      "taxBurdenPercentOfIncome": 10.89,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 134271000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 3.512%, with an equalization ratio of 68.2%.",
+        "Public education represents 64.5% of property taxes, while municipal operations account for 25.1%.",
+        "Average residential assessment is $416,020, producing an average annual tax bill of $14,610.62."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Fair Lawn Borough Center & Downtown",
+      "zip": "07410",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 134200,
+      "medianAge": 40.5,
+      "avgTaxBill": 14610.62,
+      "taxBurdenPercentIncome": 10.89,
+      "avgMarketValue": 610000,
+      "ownerOccupied": 81,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Fair Lawn Borough Residential Heights",
+      "zip": "07410",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 144936,
+      "medianAge": 42.2,
+      "avgTaxBill": 15487,
+      "taxBurdenPercentIncome": 10.89,
+      "avgMarketValue": 658800,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Fair Lawn Borough maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Fair Lawn Borough, homeowners pay an average of $14,610.62 annually in property taxes, consuming approximately 10.89% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 68.2%, assessed values average ~68.2% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 64.5% of the total tax bill, municipal government absorbs 25.1%, and Bergen County claims 10.4%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 4194,
+      "totalHouseholds": 12944,
+      "enrolledPublicSchools": 4893,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 5417
+    },
+    "schools": [
+      {
+        "name": "Fair Lawn Borough Elementary School",
+        "type": "Elementary",
+        "address": "100 Fair Lawn Ave, Fair Lawn Borough, NJ 07410",
+        "enrollment": 1748,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Fair Lawn Borough Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Fair Lawn Borough Middle School",
+        "type": "Middle School",
+        "address": "200 River Rd, Fair Lawn Borough, NJ 07410",
+        "enrollment": 1398,
+        "grades": "6 to 8",
+        "neighborhood": "Fair Lawn Borough Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Fair Lawn Borough High School",
+        "type": "High School",
+        "address": "300 Plaza Rd, Fair Lawn Borough, NJ 07410",
+        "enrollment": 1748,
+        "grades": "9 to 12",
+        "neighborhood": "Fair Lawn Borough Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

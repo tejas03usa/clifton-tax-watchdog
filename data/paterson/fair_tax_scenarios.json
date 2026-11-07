@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Paterson City Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Paterson City",
+      "totalTaxLevy": 887295618,
+      "residentialLevyTotal": 696527060,
+      "commercialLevyTotal": 190768558,
+      "totalResidentialParcels": 59160,
+      "equalizationRatio": 0.454,
+      "certifiedTaxRateAssessed": 5.335,
+      "certifiedTaxRateMarket": 2.421,
+      "averageResidentialAssessment": 174700,
+      "averageResidentialMarketValue": 385000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 21.5
+    }
   },
-  "certifiedTaxRate": 5.335,
-  "equalizationRatio": 45.38,
-  "effectiveTaxRateMarket": 2.421,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 78.5% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Paterson City operates at an equalization ratio of 45.38%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 5.335,
-      "sampleHomeAssessed": 174700,
-      "sampleTax": 9320.25
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Paterson City residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.421,
-      "sampleHomeAssessed": 385000,
-      "sampleTax": 9320.85
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Paterson City municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 139760,
+      "tax": 7456.2
+    },
+    {
+      "type": "Average Paterson City Home",
+      "assessment": 174700,
+      "tax": 9320.25
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 235845,
+      "tax": 12582.33
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07501",
+      "name": "Paterson City Center & Downtown",
+      "medianHouseholdIncome": 49800,
+      "currentTaxBill": 9320.25,
+      "currentTaxEffortPct": 18.72
+    },
+    {
+      "zip": "07501",
+      "name": "Paterson City Residential Heights",
+      "medianHouseholdIncome": 53784,
+      "currentTaxBill": 9879,
+      "currentTaxEffortPct": 18.72
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Passaic County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

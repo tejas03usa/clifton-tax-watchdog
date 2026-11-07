@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Essex County 2026 Certified Rolls",
     "municipality": "Fairfield Township",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 8.09,
   "county": "Essex County",
   "residentialShare": 42.8,
-  "commercialShare": 57.2
+  "commercialShare": 57.2,
+  "cityOverview": {
+    "totalPopulation": 7850,
+    "totalHousingUnits": 2907,
+    "medianHouseholdIncome": 128400,
+    "perCapitaIncome": 61632,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 43,
+    "renterOccupiedRate": 57,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07004",
+      "areaName": "Fairfield Township (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Fairfield Township Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 128400,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 43,
+      "renterOccupiedPercent": 57,
+      "averageAnnualTaxBill": 10382.9,
+      "monthlyTaxBill": 865.24,
+      "taxBurdenPercentOfIncome": 8.09,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 27840000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 1.89%, with an equalization ratio of 87.2%.",
+        "Public education represents 48.6% of property taxes, while municipal operations account for 35.2%.",
+        "Average residential assessment is $549,360, producing an average annual tax bill of $10,382.9."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Fairfield Township Center & Downtown",
+      "zip": "07004",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 128400,
+      "medianAge": 40.5,
+      "avgTaxBill": 10382.9,
+      "taxBurdenPercentIncome": 8.09,
+      "avgMarketValue": 630000,
+      "ownerOccupied": 43,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Fairfield Township Residential Heights",
+      "zip": "07004",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 138672,
+      "medianAge": 42.2,
+      "avgTaxBill": 11006,
+      "taxBurdenPercentIncome": 8.09,
+      "avgMarketValue": 680400,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Fairfield Township maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Fairfield Township, homeowners pay an average of $10,382.9 annually in property taxes, consuming approximately 8.09% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 87.2%, assessed values average ~87.2% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 48.6% of the total tax bill, municipal government absorbs 35.2%, and Essex County claims 16.2%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 942,
+      "totalHouseholds": 2907,
+      "enrolledPublicSchools": 1099,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 1217
+    },
+    "schools": [
+      {
+        "name": "Fairfield Township Elementary School",
+        "type": "Elementary",
+        "address": "100 Route 46, Fairfield Township, NJ 07004",
+        "enrollment": 392,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Fairfield Township Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Fairfield Township Middle School",
+        "type": "Middle School",
+        "address": "200 Passaic Ave, Fairfield Township, NJ 07004",
+        "enrollment": 314,
+        "grades": "6 to 8",
+        "neighborhood": "Fairfield Township Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Fairfield Township High School",
+        "type": "High School",
+        "address": "300 Horseneck Rd, Fairfield Township, NJ 07004",
+        "enrollment": 392,
+        "grades": "9 to 12",
+        "neighborhood": "Fairfield Township Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

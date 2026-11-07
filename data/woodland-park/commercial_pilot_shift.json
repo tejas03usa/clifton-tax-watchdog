@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 80.2,
-  "commercialShare": 19.8,
-  "pilotAgreementsCount": 4,
-  "analysis": "Woodland Park Borough maintains a 19.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 80.2,
+    "commercialShare": 19.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 75.7,
+        "commercialIndustrialShare": 24.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 78.2,
+        "commercialIndustrialShare": 21.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 80.2,
+        "commercialIndustrialShare": 19.8,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "woodland-park-pilot-1",
+        "name": "Woodland Park Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 794850,
+        "standardSchoolShare": 416501,
+        "standardCityShare": 252762,
+        "standardCountyShare": 125586,
+        "pilotServiceCharge": 516652,
+        "pilotCityKeeps": 490820,
+        "pilotCountyGets": 25833,
+        "developerAnnualSavings": 278198,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 385200,
+        "homeownerBurdenAbsorbed": 385200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Woodland Park Borough Shopping Plaza / Corporate Center",
+        "location": "100 McBride Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 27983664,
+        "annualTaxPaid": 635475,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Woodland Park Borough Professional Medical Arts Building",
+        "location": "250 Rifle Camp Rd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 18756618,
+        "annualTaxPaid": 425940,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

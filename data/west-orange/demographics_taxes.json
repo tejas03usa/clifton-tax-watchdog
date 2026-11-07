@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Essex County 2026 Certified Rolls",
     "municipality": "West Orange Township",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 13.48,
   "county": "Essex County",
   "residentialShare": 83.6,
-  "commercialShare": 16.4
+  "commercialShare": 16.4,
+  "cityOverview": {
+    "totalPopulation": 48600,
+    "totalHousingUnits": 18000,
+    "medianHouseholdIncome": 121400,
+    "perCapitaIncome": 58272,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 84,
+    "renterOccupiedRate": 16,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07052",
+      "areaName": "West Orange Township (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "West Orange Township Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 121400,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 84,
+      "renterOccupiedPercent": 16,
+      "averageAnnualTaxBill": 16361.74,
+      "monthlyTaxBill": 1363.48,
+      "taxBurdenPercentOfIncome": 13.48,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 207648000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 4.21%, with an equalization ratio of 69.4%.",
+        "Public education represents 56.4% of property taxes, while municipal operations account for 27.2%.",
+        "Average residential assessment is $388,640, producing an average annual tax bill of $16,361.74."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "West Orange Township Center & Downtown",
+      "zip": "07052",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 121400,
+      "medianAge": 40.5,
+      "avgTaxBill": 16361.74,
+      "taxBurdenPercentIncome": 13.48,
+      "avgMarketValue": 560000,
+      "ownerOccupied": 84,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "West Orange Township Residential Heights",
+      "zip": "07052",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 131112,
+      "medianAge": 42.2,
+      "avgTaxBill": 17343,
+      "taxBurdenPercentIncome": 13.48,
+      "avgMarketValue": 604800,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "West Orange Township maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In West Orange Township, homeowners pay an average of $16,361.74 annually in property taxes, consuming approximately 13.48% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 69.4%, assessed values average ~69.4% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 56.4% of the total tax bill, municipal government absorbs 27.2%, and Essex County claims 16.4%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 5832,
+      "totalHouseholds": 18000,
+      "enrolledPublicSchools": 6804,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 7533
+    },
+    "schools": [
+      {
+        "name": "West Orange Township Elementary School",
+        "type": "Elementary",
+        "address": "100 Eagle Rock Ave, West Orange Township, NJ 07052",
+        "enrollment": 2430,
+        "grades": "Pre-K to 5",
+        "neighborhood": "West Orange Township Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "West Orange Township Middle School",
+        "type": "Middle School",
+        "address": "200 Northfield Ave, West Orange Township, NJ 07052",
+        "enrollment": 1944,
+        "grades": "6 to 8",
+        "neighborhood": "West Orange Township Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "West Orange Township High School",
+        "type": "High School",
+        "address": "300 Pleasant Valley Way, West Orange Township, NJ 07052",
+        "enrollment": 2430,
+        "grades": "9 to 12",
+        "neighborhood": "West Orange Township Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

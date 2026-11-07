@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Woodland Park Borough Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Woodland Park Borough",
+      "totalTaxLevy": 53326548,
+      "residentialLevyTotal": 42767891,
+      "commercialLevyTotal": 10558657,
+      "totalResidentialParcels": 4852,
+      "equalizationRatio": 0.661,
+      "certifiedTaxRateAssessed": 3.435,
+      "certifiedTaxRateMarket": 2.271,
+      "averageResidentialAssessment": 337161,
+      "averageResidentialMarketValue": 510000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 19.8
+    }
   },
-  "certifiedTaxRate": 3.435,
-  "equalizationRatio": 66.11,
-  "effectiveTaxRateMarket": 2.271,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 80.2% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Woodland Park Borough operates at an equalization ratio of 66.11%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 3.435,
-      "sampleHomeAssessed": 337161,
-      "sampleTax": 11581.48
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Woodland Park Borough residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.271,
-      "sampleHomeAssessed": 510000,
-      "sampleTax": 11582.1
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Woodland Park Borough municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 269729,
+      "tax": 9265.18
+    },
+    {
+      "type": "Average Woodland Park Borough Home",
+      "assessment": 337161,
+      "tax": 11581.48
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 455167,
+      "tax": 15635.0
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07424",
+      "name": "Woodland Park Borough Center & Downtown",
+      "medianHouseholdIncome": 105200,
+      "currentTaxBill": 11581.48,
+      "currentTaxEffortPct": 11.01
+    },
+    {
+      "zip": "07424",
+      "name": "Woodland Park Borough Residential Heights",
+      "medianHouseholdIncome": 113616,
+      "currentTaxBill": 12276,
+      "currentTaxEffortPct": 11.01
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Passaic County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

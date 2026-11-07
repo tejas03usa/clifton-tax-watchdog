@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 78.5,
-  "commercialShare": 21.5,
-  "pilotAgreementsCount": 24,
-  "analysis": "Paterson City maintains a 21.5% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 78.5,
+    "commercialShare": 21.5,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 74.0,
+        "commercialIndustrialShare": 26.0,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 76.5,
+        "commercialIndustrialShare": 23.5,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 78.5,
+        "commercialIndustrialShare": 21.5,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "paterson-pilot-1",
+        "name": "Paterson City Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 847350,
+        "standardSchoolShare": 311825,
+        "standardCityShare": 391476,
+        "standardCountyShare": 144050,
+        "pilotServiceCharge": 550778,
+        "pilotCityKeeps": 523239,
+        "pilotCountyGets": 27539,
+        "developerAnnualSavings": 296572,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 453600,
+        "homeownerBurdenAbsorbed": 453600
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Paterson City Shopping Plaza / Corporate Center",
+        "location": "100 Market St",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 40766858,
+        "annualTaxPaid": 986975,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Paterson City Professional Medical Arts Building",
+        "location": "250 Broadway",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 27324813,
+        "annualTaxPaid": 661540,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

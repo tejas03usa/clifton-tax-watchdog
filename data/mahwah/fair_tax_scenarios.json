@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Mahwah Township Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Mahwah Township",
+      "totalTaxLevy": 110944346,
+      "residentialLevyTotal": 75664044,
+      "commercialLevyTotal": 35280302,
+      "totalResidentialParcels": 9778,
+      "equalizationRatio": 0.821,
+      "certifiedTaxRateAssessed": 2.18,
+      "certifiedTaxRateMarket": 1.79,
+      "averageResidentialAssessment": 558280,
+      "averageResidentialMarketValue": 680000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 31.8
+    }
   },
-  "certifiedTaxRate": 2.18,
-  "equalizationRatio": 82.1,
-  "effectiveTaxRateMarket": 1.79,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 68.2% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Mahwah Township operates at an equalization ratio of 82.1%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 2.18,
-      "sampleHomeAssessed": 558280,
-      "sampleTax": 12170.5
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Mahwah Township residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 1.79,
-      "sampleHomeAssessed": 680000,
-      "sampleTax": 12172.0
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Mahwah Township municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 446624,
+      "tax": 9736.4
+    },
+    {
+      "type": "Average Mahwah Township Home",
+      "assessment": 558280,
+      "tax": 12170.5
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 753678,
+      "tax": 16430.18
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07430",
+      "name": "Mahwah Township Center & Downtown",
+      "medianHouseholdIncome": 146800,
+      "currentTaxBill": 12170.5,
+      "currentTaxEffortPct": 8.29
+    },
+    {
+      "zip": "07430",
+      "name": "Mahwah Township Residential Heights",
+      "medianHouseholdIncome": 158544,
+      "currentTaxBill": 12901,
+      "currentTaxEffortPct": 8.29
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Bergen County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Bergen County Board of Taxation Table of Aggregates",
+    "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 64.2,
-  "commercialShare": 35.8,
-  "pilotAgreementsCount": 12,
-  "analysis": "Fort Lee Borough maintains a 35.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 64.2,
+    "commercialShare": 35.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 59.7,
+        "commercialIndustrialShare": 40.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 62.2,
+        "commercialIndustrialShare": 37.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 64.2,
+        "commercialIndustrialShare": 35.8,
+        "notes": "Current certified Bergen County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "fort-lee-pilot-1",
+        "name": "Fort Lee Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 644000,
+        "standardSchoolShare": 352912,
+        "standardCityShare": 220248,
+        "standardCountyShare": 70840,
+        "pilotServiceCharge": 418600,
+        "pilotCityKeeps": 397670,
+        "pilotCountyGets": 20930,
+        "developerAnnualSavings": 225400,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 412200,
+        "homeownerBurdenAbsorbed": 412200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Fort Lee Borough Shopping Plaza / Corporate Center",
+        "location": "100 Main St",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 24932615,
+        "annualTaxPaid": 458800,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Fort Lee Borough Professional Medical Arts Building",
+        "location": "250 Lemoine Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 16711590,
+        "annualTaxPaid": 307520,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

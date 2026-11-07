@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Haledon Borough Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Haledon Borough",
+      "totalTaxLevy": 35014628,
+      "residentialLevyTotal": 29202200,
+      "commercialLevyTotal": 5812428,
+      "totalResidentialParcels": 3352,
+      "equalizationRatio": 0.512,
+      "certifiedTaxRateAssessed": 5.428,
+      "certifiedTaxRateMarket": 2.771,
+      "averageResidentialAssessment": 209879,
+      "averageResidentialMarketValue": 410000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 16.6
+    }
   },
-  "certifiedTaxRate": 5.428,
-  "equalizationRatio": 51.19,
-  "effectiveTaxRateMarket": 2.771,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 83.4% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Haledon Borough operates at an equalization ratio of 51.19%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 5.428,
-      "sampleHomeAssessed": 209879,
-      "sampleTax": 11392.23
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Haledon Borough residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.771,
-      "sampleHomeAssessed": 410000,
-      "sampleTax": 11361.1
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Haledon Borough municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 167903,
+      "tax": 9113.79
+    },
+    {
+      "type": "Average Haledon Borough Home",
+      "assessment": 209879,
+      "tax": 11392.23
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 283337,
+      "tax": 15379.51
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07508",
+      "name": "Haledon Borough Center & Downtown",
+      "medianHouseholdIncome": 82400,
+      "currentTaxBill": 11392.23,
+      "currentTaxEffortPct": 13.83
+    },
+    {
+      "zip": "07508",
+      "name": "Haledon Borough Residential Heights",
+      "medianHouseholdIncome": 88992,
+      "currentTaxBill": 12076,
+      "currentTaxEffortPct": 13.83
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Passaic County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

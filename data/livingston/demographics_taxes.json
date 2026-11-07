@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Essex County 2026 Certified Rolls",
     "municipality": "Livingston Township",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 9.95,
   "county": "Essex County",
   "residentialShare": 84.8,
-  "commercialShare": 15.2
+  "commercialShare": 15.2,
+  "cityOverview": {
+    "totalPopulation": 31200,
+    "totalHousingUnits": 11556,
+    "medianHouseholdIncome": 192500,
+    "perCapitaIncome": 92400,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 85,
+    "renterOccupiedRate": 15,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07039",
+      "areaName": "Livingston Township (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Livingston Township Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 192500,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 85,
+      "renterOccupiedPercent": 15,
+      "averageAnnualTaxBill": 19151.02,
+      "monthlyTaxBill": 1595.92,
+      "taxBurdenPercentOfIncome": 9.95,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 157590000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 2.65%, with an equalization ratio of 81.2%.",
+        "Public education represents 61.2% of property taxes, while municipal operations account for 22.8%.",
+        "Average residential assessment is $722,680, producing an average annual tax bill of $19,151.02."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Livingston Township Center & Downtown",
+      "zip": "07039",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 192500,
+      "medianAge": 40.5,
+      "avgTaxBill": 19151.02,
+      "taxBurdenPercentIncome": 9.95,
+      "avgMarketValue": 890000,
+      "ownerOccupied": 85,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Livingston Township Residential Heights",
+      "zip": "07039",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 207900,
+      "medianAge": 42.2,
+      "avgTaxBill": 20300,
+      "taxBurdenPercentIncome": 9.95,
+      "avgMarketValue": 961200,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Livingston Township maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Livingston Township, homeowners pay an average of $19,151.02 annually in property taxes, consuming approximately 9.95% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 81.2%, assessed values average ~81.2% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 61.2% of the total tax bill, municipal government absorbs 22.8%, and Essex County claims 16.0%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 3744,
+      "totalHouseholds": 11556,
+      "enrolledPublicSchools": 4368,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 4836
+    },
+    "schools": [
+      {
+        "name": "Livingston Township Elementary School",
+        "type": "Elementary",
+        "address": "100 Livingston Ave, Livingston Township, NJ 07039",
+        "enrollment": 1560,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Livingston Township Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Livingston Township Middle School",
+        "type": "Middle School",
+        "address": "200 Mt Pleasant Ave, Livingston Township, NJ 07039",
+        "enrollment": 1248,
+        "grades": "6 to 8",
+        "neighborhood": "Livingston Township Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Livingston Township High School",
+        "type": "High School",
+        "address": "300 Northfield Rd, Livingston Township, NJ 07039",
+        "enrollment": 1560,
+        "grades": "9 to 12",
+        "neighborhood": "Livingston Township Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

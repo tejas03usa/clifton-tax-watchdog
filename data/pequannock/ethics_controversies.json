@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Pequannock Township Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "pequannock-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Pequannock Township)",
+      "entityInvolved": "Pequannock Township Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "Route 23 commercial corridor and Chilton Medical Center support low effective tax rate (2.100%) on Wayne's western border.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Morris County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

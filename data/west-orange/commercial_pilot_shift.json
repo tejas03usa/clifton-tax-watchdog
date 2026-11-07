@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Essex County Board of Taxation Table of Aggregates",
+    "source": "Essex County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 83.6,
-  "commercialShare": 16.4,
-  "pilotAgreementsCount": 9,
-  "analysis": "West Orange Township maintains a 16.4% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 83.6,
+    "commercialShare": 16.4,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 79.1,
+        "commercialIndustrialShare": 20.9,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 81.6,
+        "commercialIndustrialShare": 18.4,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 83.6,
+        "commercialIndustrialShare": 16.4,
+        "notes": "Current certified Essex County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "west-orange-pilot-1",
+        "name": "West Orange Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 1022700,
+        "standardSchoolShare": 576803,
+        "standardCityShare": 278174,
+        "standardCountyShare": 167723,
+        "pilotServiceCharge": 664755,
+        "pilotCityKeeps": 631517,
+        "pilotCountyGets": 33238,
+        "developerAnnualSavings": 357945,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 430200,
+        "homeownerBurdenAbsorbed": 430200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "West Orange Township Shopping Plaza / Corporate Center",
+        "location": "100 Eagle Rock Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 26657061,
+        "annualTaxPaid": 778850,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "West Orange Township Professional Medical Arts Building",
+        "location": "250 Northfield Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 17867435,
+        "annualTaxPaid": 522040,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

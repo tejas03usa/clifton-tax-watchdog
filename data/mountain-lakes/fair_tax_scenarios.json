@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Mountain Lakes Borough Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Mountain Lakes Borough",
+      "totalTaxLevy": 38778803,
+      "residentialLevyTotal": 36529632,
+      "commercialLevyTotal": 2249171,
+      "totalResidentialParcels": 1648,
+      "equalizationRatio": 0.836,
+      "certifiedTaxRateAssessed": 2.76,
+      "certifiedTaxRateMarket": 2.307,
+      "averageResidentialAssessment": 877800,
+      "averageResidentialMarketValue": 1050000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 5.8
+    }
   },
-  "certifiedTaxRate": 2.76,
-  "equalizationRatio": 83.6,
-  "effectiveTaxRateMarket": 2.307,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 94.2% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Mountain Lakes Borough operates at an equalization ratio of 83.6%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 2.76,
-      "sampleHomeAssessed": 877800,
-      "sampleTax": 24227.28
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Mountain Lakes Borough residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.307,
-      "sampleHomeAssessed": 1050000,
-      "sampleTax": 24223.5
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Morris County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Mountain Lakes Borough municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 702240,
+      "tax": 19381.82
+    },
+    {
+      "type": "Average Mountain Lakes Borough Home",
+      "assessment": 877800,
+      "tax": 24227.28
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 1185030,
+      "tax": 32706.83
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07046",
+      "name": "Mountain Lakes Borough Center & Downtown",
+      "medianHouseholdIncome": 250000,
+      "currentTaxBill": 24227.28,
+      "currentTaxEffortPct": 9.69
+    },
+    {
+      "zip": "07046",
+      "name": "Mountain Lakes Borough Residential Heights",
+      "medianHouseholdIncome": 270000,
+      "currentTaxBill": 25681,
+      "currentTaxEffortPct": 9.69
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Morris County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

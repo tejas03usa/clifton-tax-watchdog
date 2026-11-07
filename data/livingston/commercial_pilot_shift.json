@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Essex County Board of Taxation Table of Aggregates",
+    "source": "Essex County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 84.8,
-  "commercialShare": 15.2,
-  "pilotAgreementsCount": 3,
-  "analysis": "Livingston Township maintains a 15.2% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 84.8,
+    "commercialShare": 15.2,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 80.3,
+        "commercialIndustrialShare": 19.7,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 82.8,
+        "commercialIndustrialShare": 17.2,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 84.8,
+        "commercialIndustrialShare": 15.2,
+        "notes": "Current certified Essex County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "livingston-pilot-1",
+        "name": "Livingston Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 753200,
+        "standardSchoolShare": 460958,
+        "standardCityShare": 171730,
+        "standardCountyShare": 120512,
+        "pilotServiceCharge": 489580,
+        "pilotCityKeeps": 465101,
+        "pilotCountyGets": 24479,
+        "developerAnnualSavings": 263620,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 421200,
+        "homeownerBurdenAbsorbed": 421200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Livingston Township Shopping Plaza / Corporate Center",
+        "location": "100 Livingston Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 22783251,
+        "annualTaxPaid": 490250,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Livingston Township Professional Medical Arts Building",
+        "location": "250 Mt Pleasant Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 15270936,
+        "annualTaxPaid": 328600,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

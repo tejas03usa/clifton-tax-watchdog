@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Passaic County 2026 Certified Rolls",
     "municipality": "Woodland Park Borough",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 11.01,
   "county": "Passaic County",
   "residentialShare": 80.2,
-  "commercialShare": 19.8
+  "commercialShare": 19.8,
+  "cityOverview": {
+    "totalPopulation": 13100,
+    "totalHousingUnits": 4852,
+    "medianHouseholdIncome": 105200,
+    "perCapitaIncome": 50496,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 80,
+    "renterOccupiedRate": 20,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07424",
+      "areaName": "Woodland Park Borough (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Woodland Park Borough Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 105200,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 80,
+      "renterOccupiedPercent": 20,
+      "averageAnnualTaxBill": 11581.48,
+      "monthlyTaxBill": 965.12,
+      "taxBurdenPercentOfIncome": 11.01,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 44448000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 3.435%, with an equalization ratio of 66.11%.",
+        "Public education represents 52.4% of property taxes, while municipal operations account for 31.8%.",
+        "Average residential assessment is $337,161, producing an average annual tax bill of $11,581.48."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Woodland Park Borough Center & Downtown",
+      "zip": "07424",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 105200,
+      "medianAge": 40.5,
+      "avgTaxBill": 11581.48,
+      "taxBurdenPercentIncome": 11.01,
+      "avgMarketValue": 510000,
+      "ownerOccupied": 80,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Woodland Park Borough Residential Heights",
+      "zip": "07424",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 113616,
+      "medianAge": 42.2,
+      "avgTaxBill": 12276,
+      "taxBurdenPercentIncome": 11.01,
+      "avgMarketValue": 550800,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Woodland Park Borough maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Woodland Park Borough, homeowners pay an average of $11,581.48 annually in property taxes, consuming approximately 11.01% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 66.11%, assessed values average ~66.11% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 52.4% of the total tax bill, municipal government absorbs 31.8%, and Passaic County claims 15.8%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 1572,
+      "totalHouseholds": 4852,
+      "enrolledPublicSchools": 1834,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 2030
+    },
+    "schools": [
+      {
+        "name": "Woodland Park Borough Elementary School",
+        "type": "Elementary",
+        "address": "100 McBride Ave, Woodland Park Borough, NJ 07424",
+        "enrollment": 655,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Woodland Park Borough Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Woodland Park Borough Middle School",
+        "type": "Middle School",
+        "address": "200 Rifle Camp Rd, Woodland Park Borough, NJ 07424",
+        "enrollment": 524,
+        "grades": "6 to 8",
+        "neighborhood": "Woodland Park Borough Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Woodland Park Borough High School",
+        "type": "High School",
+        "address": "300 Glover Ave, Woodland Park Borough, NJ 07424",
+        "enrollment": 655,
+        "grades": "9 to 12",
+        "neighborhood": "Woodland Park Borough Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

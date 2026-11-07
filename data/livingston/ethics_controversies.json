@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Livingston Township Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "livingston-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Livingston Township)",
+      "entityInvolved": "Livingston Township Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "St. Barnabas Medical Center hub; high median home values ($890k) keep effective rate low (2.152%) despite commanding top school levies.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Essex County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

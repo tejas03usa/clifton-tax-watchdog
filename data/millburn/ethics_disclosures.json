@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Millburn Township (Short Hills) Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Millburn Township (Short Hills) Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Millburn Township (Short Hills) Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Millburn Township (Short Hills)",
+      "agency": "Millburn Township (Short Hills) Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Millburn Township (Short Hills) Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Millburn Township (Short Hills) Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Millburn Township (Short Hills), NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Millburn Ave)",
+          "municipality": "Millburn Township (Short Hills), NJ",
+          "taxRecordLookup": "Essex County Board of Taxation District 0712"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Millburn Township (Short Hills) Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Millburn Township (Short Hills) Public Schools",
+      "agency": "Millburn Township (Short Hills) Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Essex County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Millburn Township (Short Hills) Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

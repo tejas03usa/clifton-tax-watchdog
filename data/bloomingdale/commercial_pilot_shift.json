@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 87.2,
-  "commercialShare": 12.8,
-  "pilotAgreementsCount": 2,
-  "analysis": "Bloomingdale Borough maintains a 12.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 87.2,
+    "commercialShare": 12.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 82.7,
+        "commercialIndustrialShare": 17.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 85.2,
+        "commercialIndustrialShare": 14.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 87.2,
+        "commercialIndustrialShare": 12.8,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "bloomingdale-pilot-1",
+        "name": "Bloomingdale Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 976500,
+        "standardSchoolShare": 575158,
+        "standardCityShare": 255843,
+        "standardCountyShare": 145498,
+        "pilotServiceCharge": 634725,
+        "pilotCityKeeps": 602989,
+        "pilotCountyGets": 31736,
+        "developerAnnualSavings": 341775,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 397800,
+        "homeownerBurdenAbsorbed": 397800
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Bloomingdale Borough Shopping Plaza / Corporate Center",
+        "location": "100 Main St",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 31223629,
+        "annualTaxPaid": 872830,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Bloomingdale Borough Professional Medical Arts Building",
+        "location": "250 Paterson-Hamburg Turnpike",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 20928270,
+        "annualTaxPaid": 585032,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

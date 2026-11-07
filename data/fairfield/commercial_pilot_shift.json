@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Essex County Board of Taxation Table of Aggregates",
+    "source": "Essex County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 42.8,
-  "commercialShare": 57.2,
-  "pilotAgreementsCount": 7,
-  "analysis": "Fairfield Township maintains a 57.2% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 42.8,
+    "commercialShare": 57.2,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 38.3,
+        "commercialIndustrialShare": 61.7,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 40.8,
+        "commercialIndustrialShare": 59.2,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 42.8,
+        "commercialIndustrialShare": 57.2,
+        "notes": "Current certified Essex County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "fairfield-pilot-1",
+        "name": "Fairfield Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 576800,
+        "standardSchoolShare": 280325,
+        "standardCityShare": 203034,
+        "standardCountyShare": 93442,
+        "pilotServiceCharge": 374920,
+        "pilotCityKeeps": 356174,
+        "pilotCountyGets": 18746,
+        "developerAnnualSavings": 201880,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 379800,
+        "homeownerBurdenAbsorbed": 379800
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Fairfield Township Shopping Plaza / Corporate Center",
+        "location": "100 Route 46",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 21215596,
+        "annualTaxPaid": 349650,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Fairfield Township Professional Medical Arts Building",
+        "location": "250 Passaic Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 14220183,
+        "annualTaxPaid": 234360,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Morris County Board of Taxation Table of Aggregates",
+    "source": "Morris County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 81.4,
-  "commercialShare": 18.6,
-  "pilotAgreementsCount": 4,
-  "analysis": "Denville Township maintains a 18.6% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 81.4,
+    "commercialShare": 18.6,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 76.9,
+        "commercialIndustrialShare": 23.1,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 79.4,
+        "commercialIndustrialShare": 20.6,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 81.4,
+        "commercialIndustrialShare": 18.6,
+        "notes": "Current certified Morris County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "denville-pilot-1",
+        "name": "Denville Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 752500,
+        "standardSchoolShare": 492135,
+        "standardCityShare": 186620,
+        "standardCountyShare": 73745,
+        "pilotServiceCharge": 489125,
+        "pilotCityKeeps": 464669,
+        "pilotCountyGets": 24456,
+        "developerAnnualSavings": 263375,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 403200,
+        "homeownerBurdenAbsorbed": 403200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Denville Township Shopping Plaza / Corporate Center",
+        "location": "100 East Main St",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 22235577,
+        "annualTaxPaid": 478040,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Denville Township Professional Medical Arts Building",
+        "location": "250 Diamond Spring Rd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 14903846,
+        "annualTaxPaid": 320416,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

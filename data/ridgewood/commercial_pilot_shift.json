@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Bergen County Board of Taxation Table of Aggregates",
+    "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 88.4,
-  "commercialShare": 11.6,
-  "pilotAgreementsCount": 2,
-  "analysis": "Ridgewood Village maintains a 11.6% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 88.4,
+    "commercialShare": 11.6,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 83.9,
+        "commercialIndustrialShare": 16.1,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 86.4,
+        "commercialIndustrialShare": 13.6,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 88.4,
+        "commercialIndustrialShare": 11.6,
+        "notes": "Current certified Bergen County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "ridgewood-pilot-1",
+        "name": "Ridgewood Village Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 744800,
+        "standardSchoolShare": 497526,
+        "standardCityShare": 174283,
+        "standardCountyShare": 72990,
+        "pilotServiceCharge": 484120,
+        "pilotCityKeeps": 459914,
+        "pilotCountyGets": 24206,
+        "developerAnnualSavings": 260680,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 435600,
+        "homeownerBurdenAbsorbed": 435600
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Ridgewood Village Shopping Plaza / Corporate Center",
+        "location": "100 East Ridgewood Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 24183007,
+        "annualTaxPaid": 514670,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Ridgewood Village Professional Medical Arts Building",
+        "location": "250 West Ridgewood Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 16209150,
+        "annualTaxPaid": 344968,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

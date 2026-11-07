@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Belleville Township Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Belleville Township",
+      "totalTaxLevy": 152474808,
+      "residentialLevyTotal": 125791717,
+      "commercialLevyTotal": 26683091,
+      "totalResidentialParcels": 14148,
+      "equalizationRatio": 0.661,
+      "certifiedTaxRateAssessed": 3.91,
+      "certifiedTaxRateMarket": 2.584,
+      "averageResidentialAssessment": 310670,
+      "averageResidentialMarketValue": 470000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 17.5
+    }
   },
-  "certifiedTaxRate": 3.91,
-  "equalizationRatio": 66.1,
-  "effectiveTaxRateMarket": 2.584,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 82.5% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Belleville Township operates at an equalization ratio of 66.1%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 3.91,
-      "sampleHomeAssessed": 310670,
-      "sampleTax": 12147.2
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Belleville Township residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.584,
-      "sampleHomeAssessed": 470000,
-      "sampleTax": 12144.8
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Essex County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Belleville Township municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 248536,
+      "tax": 9717.76
+    },
+    {
+      "type": "Average Belleville Township Home",
+      "assessment": 310670,
+      "tax": 12147.2
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 419404,
+      "tax": 16398.72
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07109",
+      "name": "Belleville Township Center & Downtown",
+      "medianHouseholdIncome": 85600,
+      "currentTaxBill": 12147.2,
+      "currentTaxEffortPct": 14.19
+    },
+    {
+      "zip": "07109",
+      "name": "Belleville Township Residential Heights",
+      "medianHouseholdIncome": 92448,
+      "currentTaxBill": 12876,
+      "currentTaxEffortPct": 14.19
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Essex County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

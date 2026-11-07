@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Passaic County 2026 Certified Rolls",
     "municipality": "North Haledon Borough",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 9.94,
   "county": "Passaic County",
   "residentialShare": 88.5,
-  "commercialShare": 11.5
+  "commercialShare": 11.5,
+  "cityOverview": {
+    "totalPopulation": 8950,
+    "totalHousingUnits": 3315,
+    "medianHouseholdIncome": 128500,
+    "perCapitaIncome": 61680,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 88,
+    "renterOccupiedRate": 12,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07508",
+      "areaName": "North Haledon Borough (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "North Haledon Borough Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 128500,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 88,
+      "renterOccupiedPercent": 12,
+      "averageAnnualTaxBill": 12777.88,
+      "monthlyTaxBill": 1064.82,
+      "taxBurdenPercentOfIncome": 9.94,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 35883000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 3.187%, with an equalization ratio of 64.15%.",
+        "Public education represents 53.8% of property taxes, while municipal operations account for 30.1%.",
+        "Average residential assessment is $400,938, producing an average annual tax bill of $12,777.88."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "North Haledon Borough Center & Downtown",
+      "zip": "07508",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 128500,
+      "medianAge": 40.5,
+      "avgTaxBill": 12777.88,
+      "taxBurdenPercentIncome": 9.94,
+      "avgMarketValue": 625000,
+      "ownerOccupied": 88,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "North Haledon Borough Residential Heights",
+      "zip": "07508",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 138780,
+      "medianAge": 42.2,
+      "avgTaxBill": 13545,
+      "taxBurdenPercentIncome": 9.94,
+      "avgMarketValue": 675000,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "North Haledon Borough maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In North Haledon Borough, homeowners pay an average of $12,777.88 annually in property taxes, consuming approximately 9.94% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 64.15%, assessed values average ~64.15% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 53.8% of the total tax bill, municipal government absorbs 30.1%, and Passaic County claims 16.1%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 1074,
+      "totalHouseholds": 3315,
+      "enrolledPublicSchools": 1253,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 1387
+    },
+    "schools": [
+      {
+        "name": "North Haledon Borough Elementary School",
+        "type": "Elementary",
+        "address": "100 High Mountain Rd, North Haledon Borough, NJ 07508",
+        "enrollment": 448,
+        "grades": "Pre-K to 5",
+        "neighborhood": "North Haledon Borough Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "North Haledon Borough Middle School",
+        "type": "Middle School",
+        "address": "200 Belmont Ave, North Haledon Borough, NJ 07508",
+        "enrollment": 358,
+        "grades": "6 to 8",
+        "neighborhood": "North Haledon Borough Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "North Haledon Borough High School",
+        "type": "High School",
+        "address": "300 Squaw Brook Rd, North Haledon Borough, NJ 07508",
+        "enrollment": 448,
+        "grades": "9 to 12",
+        "neighborhood": "North Haledon Borough Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

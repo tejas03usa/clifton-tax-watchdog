@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Bergen County Board of Taxation Table of Aggregates",
+    "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 68.2,
-  "commercialShare": 31.8,
-  "pilotAgreementsCount": 6,
-  "analysis": "Mahwah Township maintains a 31.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 68.2,
+    "commercialShare": 31.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 63.7,
+        "commercialIndustrialShare": 36.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 66.2,
+        "commercialIndustrialShare": 33.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 68.2,
+        "commercialIndustrialShare": 31.8,
+        "notes": "Current certified Bergen County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "mahwah-pilot-1",
+        "name": "Mahwah Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 626500,
+        "standardSchoolShare": 360864,
+        "standardCityShare": 196721,
+        "standardCountyShare": 68915,
+        "pilotServiceCharge": 407225,
+        "pilotCityKeeps": 386864,
+        "pilotCountyGets": 20361,
+        "developerAnnualSavings": 219275,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 421200,
+        "homeownerBurdenAbsorbed": 421200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Mahwah Township Shopping Plaza / Corporate Center",
+        "location": "100 Franklin Turnpike",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 22533496,
+        "annualTaxPaid": 403300,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Mahwah Township Professional Medical Arts Building",
+        "location": "250 MacArthur Blvd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 15103532,
+        "annualTaxPaid": 270320,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

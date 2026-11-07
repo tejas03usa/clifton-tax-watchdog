@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Ridgewood Village Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Ridgewood Village",
+      "totalTaxLevy": 165998644,
+      "residentialLevyTotal": 146742801,
+      "commercialLevyTotal": 19255843,
+      "totalResidentialParcels": 9667,
+      "equalizationRatio": 0.765,
+      "certifiedTaxRateAssessed": 2.782,
+      "certifiedTaxRateMarket": 2.128,
+      "averageResidentialAssessment": 734400,
+      "averageResidentialMarketValue": 960000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 11.6
+    }
   },
-  "certifiedTaxRate": 2.782,
-  "equalizationRatio": 76.5,
-  "effectiveTaxRateMarket": 2.128,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 88.4% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Ridgewood Village operates at an equalization ratio of 76.5%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 2.782,
-      "sampleHomeAssessed": 734400,
-      "sampleTax": 20431.01
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Ridgewood Village residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.128,
-      "sampleHomeAssessed": 960000,
-      "sampleTax": 20428.8
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Ridgewood Village municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 587520,
+      "tax": 16344.81
+    },
+    {
+      "type": "Average Ridgewood Village Home",
+      "assessment": 734400,
+      "tax": 20431.01
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 991440,
+      "tax": 27581.86
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07450",
+      "name": "Ridgewood Village Center & Downtown",
+      "medianHouseholdIncome": 215000,
+      "currentTaxBill": 20431.01,
+      "currentTaxEffortPct": 9.5
+    },
+    {
+      "zip": "07450",
+      "name": "Ridgewood Village Residential Heights",
+      "medianHouseholdIncome": 232200,
+      "currentTaxBill": 21657,
+      "currentTaxEffortPct": 9.5
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Bergen County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Essex County 2026 Certified Rolls",
     "municipality": "Verona Township",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 11.37,
   "county": "Essex County",
   "residentialShare": 88.2,
-  "commercialShare": 11.8
+  "commercialShare": 11.8,
+  "cityOverview": {
+    "totalPopulation": 14500,
+    "totalHousingUnits": 5370,
+    "medianHouseholdIncome": 136400,
+    "perCapitaIncome": 65472,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 88,
+    "renterOccupiedRate": 12,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07044",
+      "areaName": "Verona Township (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Verona Township Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 136400,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 88,
+      "renterOccupiedPercent": 12,
+      "averageAnnualTaxBill": 15502.5,
+      "monthlyTaxBill": 1291.88,
+      "taxBurdenPercentOfIncome": 11.37,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 55158000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 3.12%, with an equalization ratio of 79.5%.",
+        "Public education represents 57.8% of property taxes, while municipal operations account for 26.2%.",
+        "Average residential assessment is $496,875, producing an average annual tax bill of $15,502.5."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Verona Township Center & Downtown",
+      "zip": "07044",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 136400,
+      "medianAge": 40.5,
+      "avgTaxBill": 15502.5,
+      "taxBurdenPercentIncome": 11.37,
+      "avgMarketValue": 625000,
+      "ownerOccupied": 88,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Verona Township Residential Heights",
+      "zip": "07044",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 147312,
+      "medianAge": 42.2,
+      "avgTaxBill": 16433,
+      "taxBurdenPercentIncome": 11.37,
+      "avgMarketValue": 675000,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Verona Township maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Verona Township, homeowners pay an average of $15,502.5 annually in property taxes, consuming approximately 11.37% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 79.5%, assessed values average ~79.5% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 57.8% of the total tax bill, municipal government absorbs 26.2%, and Essex County claims 16.0%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 1740,
+      "totalHouseholds": 5370,
+      "enrolledPublicSchools": 2030,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 2248
+    },
+    "schools": [
+      {
+        "name": "Verona Township Elementary School",
+        "type": "Elementary",
+        "address": "100 Bloomfield Ave, Verona Township, NJ 07044",
+        "enrollment": 725,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Verona Township Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Verona Township Middle School",
+        "type": "Middle School",
+        "address": "200 Fairview Ave, Verona Township, NJ 07044",
+        "enrollment": 580,
+        "grades": "6 to 8",
+        "neighborhood": "Verona Township Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Verona Township High School",
+        "type": "High School",
+        "address": "300 Grove Ave, Verona Township, NJ 07044",
+        "enrollment": 725,
+        "grades": "9 to 12",
+        "neighborhood": "Verona Township Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

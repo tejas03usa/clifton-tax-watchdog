@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Ridgewood Village Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "ridgewood-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Ridgewood Village)",
+      "entityInvolved": "Ridgewood Village Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "Historic village core with prestigious schools. Low effective tax rate (2.128%) driven by high aggregate property wealth ($7.2B total equalized ratables).",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Bergen County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

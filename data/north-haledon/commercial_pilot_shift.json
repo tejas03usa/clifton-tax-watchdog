@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 88.5,
-  "commercialShare": 11.5,
-  "pilotAgreementsCount": 1,
-  "analysis": "North Haledon Borough maintains a 11.5% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 88.5,
+    "commercialShare": 11.5,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 84.0,
+        "commercialIndustrialShare": 16.0,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 86.5,
+        "commercialIndustrialShare": 13.5,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 88.5,
+        "commercialIndustrialShare": 11.5,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "north-haledon-pilot-1",
+        "name": "North Haledon Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 715750,
+        "standardSchoolShare": 385073,
+        "standardCityShare": 215441,
+        "standardCountyShare": 115236,
+        "pilotServiceCharge": 465238,
+        "pilotCityKeeps": 441976,
+        "pilotCountyGets": 23262,
+        "developerAnnualSavings": 250512,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 387000,
+        "homeownerBurdenAbsorbed": 387000
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "North Haledon Borough Shopping Plaza / Corporate Center",
+        "location": "100 High Mountain Rd",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 28838659,
+        "annualTaxPaid": 589595,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "North Haledon Borough Professional Medical Arts Building",
+        "location": "250 Belmont Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 19329696,
+        "annualTaxPaid": 395188,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

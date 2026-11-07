@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & West Orange Township Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "west-orange-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (West Orange Township)",
+      "entityInvolved": "West Orange Township Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "High effective tax rate (2.922%) driven by topography, extensive library/park municipal services, and Edison National Historic Site non-taxable acreage.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Essex County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

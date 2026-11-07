@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Pequannock Township Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Pequannock Township",
+      "totalTaxLevy": 63085800,
+      "residentialLevyTotal": 49522353,
+      "commercialLevyTotal": 13563447,
+      "totalResidentialParcels": 5852,
+      "equalizationRatio": 0.814,
+      "certifiedTaxRateAssessed": 2.58,
+      "certifiedTaxRateMarket": 2.1,
+      "averageResidentialAssessment": 476190,
+      "averageResidentialMarketValue": 585000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 21.5
+    }
   },
-  "certifiedTaxRate": 2.58,
-  "equalizationRatio": 81.4,
-  "effectiveTaxRateMarket": 2.1,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 78.5% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Pequannock Township operates at an equalization ratio of 81.4%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 2.58,
-      "sampleHomeAssessed": 476190,
-      "sampleTax": 12285.7
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Pequannock Township residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.1,
-      "sampleHomeAssessed": 585000,
-      "sampleTax": 12285.0
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Morris County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Pequannock Township municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 380952,
+      "tax": 9828.56
+    },
+    {
+      "type": "Average Pequannock Township Home",
+      "assessment": 476190,
+      "tax": 12285.7
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 642856,
+      "tax": 16585.7
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07440",
+      "name": "Pequannock Township Center & Downtown",
+      "medianHouseholdIncome": 131200,
+      "currentTaxBill": 12285.7,
+      "currentTaxEffortPct": 9.36
+    },
+    {
+      "zip": "07440",
+      "name": "Pequannock Township Residential Heights",
+      "medianHouseholdIncome": 141696,
+      "currentTaxBill": 13023,
+      "currentTaxEffortPct": 9.36
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Morris County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

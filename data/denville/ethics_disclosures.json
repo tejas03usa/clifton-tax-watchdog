@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Denville Township Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Denville Township Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Denville Township Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Denville Township",
+      "agency": "Denville Township Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Denville Township Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Denville Township Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Denville Township, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (East Main St)",
+          "municipality": "Denville Township, NJ",
+          "taxRecordLookup": "Morris County Board of Taxation District 1408"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Denville Township Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Denville Township Public Schools",
+      "agency": "Denville Township Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Morris County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Denville Township Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Bloomfield Township Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Bloomfield Township",
+      "totalTaxLevy": 202667744,
+      "residentialLevyTotal": 164971544,
+      "commercialLevyTotal": 37696200,
+      "totalResidentialParcels": 19667,
+      "equalizationRatio": 0.652,
+      "certifiedTaxRateAssessed": 3.82,
+      "certifiedTaxRateMarket": 2.491,
+      "averageResidentialAssessment": 322740,
+      "averageResidentialMarketValue": 495000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 18.6
+    }
   },
-  "certifiedTaxRate": 3.82,
-  "equalizationRatio": 65.2,
-  "effectiveTaxRateMarket": 2.491,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 81.4% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Bloomfield Township operates at an equalization ratio of 65.2%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 3.82,
-      "sampleHomeAssessed": 322740,
-      "sampleTax": 12328.67
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Bloomfield Township residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.491,
-      "sampleHomeAssessed": 495000,
-      "sampleTax": 12330.45
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Essex County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Bloomfield Township municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 258192,
+      "tax": 9862.93
+    },
+    {
+      "type": "Average Bloomfield Township Home",
+      "assessment": 322740,
+      "tax": 12328.67
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 435699,
+      "tax": 16643.7
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07003",
+      "name": "Bloomfield Township Center & Downtown",
+      "medianHouseholdIncome": 98200,
+      "currentTaxBill": 12328.67,
+      "currentTaxEffortPct": 12.55
+    },
+    {
+      "zip": "07003",
+      "name": "Bloomfield Township Residential Heights",
+      "medianHouseholdIncome": 106056,
+      "currentTaxBill": 13068,
+      "currentTaxEffortPct": 12.55
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Essex County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

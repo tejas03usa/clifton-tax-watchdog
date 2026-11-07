@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Bergen County Board of Taxation Table of Aggregates",
+    "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 52.4,
-  "commercialShare": 47.6,
-  "pilotAgreementsCount": 8,
-  "analysis": "Paramus Borough maintains a 47.6% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 52.4,
+    "commercialShare": 47.6,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 47.9,
+        "commercialIndustrialShare": 52.1,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 50.4,
+        "commercialIndustrialShare": 49.6,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 52.4,
+        "commercialIndustrialShare": 47.6,
+        "notes": "Current certified Bergen County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "paramus-pilot-1",
+        "name": "Paramus Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 575750,
+        "standardSchoolShare": 324723,
+        "standardCityShare": 188846,
+        "standardCountyShare": 62181,
+        "pilotServiceCharge": 374238,
+        "pilotCityKeeps": 355526,
+        "pilotCountyGets": 18712,
+        "developerAnnualSavings": 201512,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 415800,
+        "homeownerBurdenAbsorbed": 415800
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Paramus Borough Shopping Plaza / Corporate Center",
+        "location": "100 Paramus Rd",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 21971496,
+        "annualTaxPaid": 361490,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Paramus Borough Professional Medical Arts Building",
+        "location": "250 Forest Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 14726841,
+        "annualTaxPaid": 242296,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

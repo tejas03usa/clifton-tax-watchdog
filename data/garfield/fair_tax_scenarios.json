@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Garfield City Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Garfield City",
+      "totalTaxLevy": 139804475,
+      "residentialLevyTotal": 111144558,
+      "commercialLevyTotal": 28659917,
+      "totalResidentialParcels": 12148,
+      "equalizationRatio": 0.698,
+      "certifiedTaxRateAssessed": 3.415,
+      "certifiedTaxRateMarket": 2.384,
+      "averageResidentialAssessment": 331550,
+      "averageResidentialMarketValue": 475000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 20.5
+    }
   },
-  "certifiedTaxRate": 3.415,
-  "equalizationRatio": 69.8,
-  "effectiveTaxRateMarket": 2.384,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 79.5% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Garfield City operates at an equalization ratio of 69.8%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 3.415,
-      "sampleHomeAssessed": 331550,
-      "sampleTax": 11322.43
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Garfield City residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.384,
-      "sampleHomeAssessed": 475000,
-      "sampleTax": 11324.0
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Garfield City municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 265240,
+      "tax": 9057.95
+    },
+    {
+      "type": "Average Garfield City Home",
+      "assessment": 331550,
+      "tax": 11322.43
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 447593,
+      "tax": 15285.28
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07026",
+      "name": "Garfield City Center & Downtown",
+      "medianHouseholdIncome": 72400,
+      "currentTaxBill": 11322.43,
+      "currentTaxEffortPct": 15.64
+    },
+    {
+      "zip": "07026",
+      "name": "Garfield City Residential Heights",
+      "medianHouseholdIncome": 78192,
+      "currentTaxBill": 12002,
+      "currentTaxEffortPct": 15.64
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Bergen County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

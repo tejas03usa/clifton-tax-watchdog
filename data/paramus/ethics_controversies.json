@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Paramus Borough Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "paramus-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Paramus Borough)",
+      "entityInvolved": "Paramus Borough Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "New Jersey's premier retail mecca (Garden State Plaza, Paramus Park, Route 4 & 17 corridors). Commercial ratables (47.6%) drive effective tax rate down to an astonishing 1.645%.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Bergen County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

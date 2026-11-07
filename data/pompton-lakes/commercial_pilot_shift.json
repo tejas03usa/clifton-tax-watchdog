@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 85.1,
-  "commercialShare": 14.9,
-  "pilotAgreementsCount": 2,
-  "analysis": "Pompton Lakes Borough maintains a 14.9% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 85.1,
+    "commercialShare": 14.9,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 80.6,
+        "commercialIndustrialShare": 19.4,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 83.1,
+        "commercialIndustrialShare": 16.9,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 85.1,
+        "commercialIndustrialShare": 14.9,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "pompton-lakes-pilot-1",
+        "name": "Pompton Lakes Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 886550,
+        "standardSchoolShare": 506220,
+        "standardCityShare": 242915,
+        "standardCountyShare": 137415,
+        "pilotServiceCharge": 576258,
+        "pilotCityKeeps": 547445,
+        "pilotCountyGets": 28813,
+        "developerAnnualSavings": 310292,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 392400,
+        "homeownerBurdenAbsorbed": 392400
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Pompton Lakes Borough Shopping Plaza / Corporate Center",
+        "location": "100 Wanaque Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 30169602,
+        "annualTaxPaid": 764235,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Pompton Lakes Borough Professional Medical Arts Building",
+        "location": "250 Ringwood Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 20221787,
+        "annualTaxPaid": 512244,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

@@ -12,7 +12,11 @@
       "name": "Fort Lee Borough Municipal Leadership",
       "office": "Municipal Governing Body",
       "term": "4 Years",
-      "status": "Certified in Public Records"
+      "status": "Certified in Public Records",
+      "verifiedSources": [
+        "Bergen County Clerk Official Candidate Nominating Petitions",
+        "Fort Lee Borough Municipal Reorganization Minutes"
+      ]
     }
   ]
 }

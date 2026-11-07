@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Essex County 2026 Certified Rolls",
     "municipality": "Bloomfield Township",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 12.55,
   "county": "Essex County",
   "residentialShare": 81.4,
-  "commercialShare": 18.6
+  "commercialShare": 18.6,
+  "cityOverview": {
+    "totalPopulation": 53100,
+    "totalHousingUnits": 19667,
+    "medianHouseholdIncome": 98200,
+    "perCapitaIncome": 47136,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 81,
+    "renterOccupiedRate": 19,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07003",
+      "areaName": "Bloomfield Township (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Bloomfield Township Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 98200,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 81,
+      "renterOccupiedPercent": 19,
+      "averageAnnualTaxBill": 12328.67,
+      "monthlyTaxBill": 1027.39,
+      "taxBurdenPercentOfIncome": 12.55,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 162903000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 3.82%, with an equalization ratio of 65.2%.",
+        "Public education represents 53.4% of property taxes, while municipal operations account for 30.2%.",
+        "Average residential assessment is $322,740, producing an average annual tax bill of $12,328.67."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Bloomfield Township Center & Downtown",
+      "zip": "07003",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 98200,
+      "medianAge": 40.5,
+      "avgTaxBill": 12328.67,
+      "taxBurdenPercentIncome": 12.55,
+      "avgMarketValue": 495000,
+      "ownerOccupied": 81,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Bloomfield Township Residential Heights",
+      "zip": "07003",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 106056,
+      "medianAge": 42.2,
+      "avgTaxBill": 13068,
+      "taxBurdenPercentIncome": 12.55,
+      "avgMarketValue": 534600,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Bloomfield Township maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Bloomfield Township, homeowners pay an average of $12,328.67 annually in property taxes, consuming approximately 12.55% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 65.2%, assessed values average ~65.2% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 53.4% of the total tax bill, municipal government absorbs 30.2%, and Essex County claims 16.4%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 6372,
+      "totalHouseholds": 19667,
+      "enrolledPublicSchools": 7434,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 8230
+    },
+    "schools": [
+      {
+        "name": "Bloomfield Township Elementary School",
+        "type": "Elementary",
+        "address": "100 Broad St, Bloomfield Township, NJ 07003",
+        "enrollment": 2655,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Bloomfield Township Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Bloomfield Township Middle School",
+        "type": "Middle School",
+        "address": "200 Bloomfield Ave, Bloomfield Township, NJ 07003",
+        "enrollment": 2124,
+        "grades": "6 to 8",
+        "neighborhood": "Bloomfield Township Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Bloomfield Township High School",
+        "type": "High School",
+        "address": "300 Franklin St, Bloomfield Township, NJ 07003",
+        "enrollment": 2655,
+        "grades": "9 to 12",
+        "neighborhood": "Bloomfield Township Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Butler Borough Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "butler-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Butler Borough)",
+      "entityInvolved": "Butler Borough Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "Operates municipal electric utility serving Butler and neighboring Bloomingdale; Route 23 retail corridor.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Morris County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

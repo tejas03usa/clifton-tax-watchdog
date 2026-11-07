@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Essex County Board of Taxation Table of Aggregates",
+    "source": "Essex County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 78.2,
-  "commercialShare": 21.8,
-  "pilotAgreementsCount": 2,
-  "analysis": "Millburn Township (Short Hills) maintains a 21.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 78.2,
+    "commercialShare": 21.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 73.7,
+        "commercialIndustrialShare": 26.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 76.2,
+        "commercialIndustrialShare": 23.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 78.2,
+        "commercialIndustrialShare": 21.8,
+        "notes": "Current certified Essex County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "millburn-pilot-1",
+        "name": "Millburn Township (Short Hills) Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 571550,
+        "standardSchoolShare": 364649,
+        "standardCityShare": 116596,
+        "standardCountyShare": 90305,
+        "pilotServiceCharge": 371508,
+        "pilotCityKeeps": 352932,
+        "pilotCountyGets": 18575,
+        "developerAnnualSavings": 200042,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 448200,
+        "homeownerBurdenAbsorbed": 448200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Millburn Township (Short Hills) Shopping Plaza / Corporate Center",
+        "location": "100 Millburn Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 20903955,
+        "annualTaxPaid": 341325,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Millburn Township (Short Hills) Professional Medical Arts Building",
+        "location": "250 Essex St",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 14011299,
+        "annualTaxPaid": 228780,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

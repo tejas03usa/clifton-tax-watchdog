@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Millburn Township (Short Hills) Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Millburn Township (Short Hills)",
+      "totalTaxLevy": 155834233,
+      "residentialLevyTotal": 121862370,
+      "commercialLevyTotal": 33971863,
+      "totalResidentialParcels": 8074,
+      "equalizationRatio": 0.885,
+      "certifiedTaxRateAssessed": 1.845,
+      "certifiedTaxRateMarket": 1.633,
+      "averageResidentialAssessment": 1283250,
+      "averageResidentialMarketValue": 1450000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 21.8
+    }
   },
-  "certifiedTaxRate": 1.845,
-  "equalizationRatio": 88.5,
-  "effectiveTaxRateMarket": 1.633,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 78.2% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Millburn Township (Short Hills) operates at an equalization ratio of 88.5%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 1.845,
-      "sampleHomeAssessed": 1283250,
-      "sampleTax": 23675.96
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Millburn Township (Short Hills) residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 1.633,
-      "sampleHomeAssessed": 1450000,
-      "sampleTax": 23678.5
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Essex County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Millburn Township (Short Hills) municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 1026600,
+      "tax": 18940.77
+    },
+    {
+      "type": "Average Millburn Township (Short Hills) Home",
+      "assessment": 1283250,
+      "tax": 23675.96
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 1732388,
+      "tax": 31962.55
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07041",
+      "name": "Millburn Township (Short Hills) Center & Downtown",
+      "medianHouseholdIncome": 250000,
+      "currentTaxBill": 23675.96,
+      "currentTaxEffortPct": 9.47
+    },
+    {
+      "zip": "07041",
+      "name": "Millburn Township (Short Hills) Residential Heights",
+      "medianHouseholdIncome": 270000,
+      "currentTaxBill": 25097,
+      "currentTaxEffortPct": 9.47
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Essex County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

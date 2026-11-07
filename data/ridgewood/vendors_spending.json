@@ -5,24 +5,32 @@
   },
   "vendors": [
     {
-      "vendor": "Public Employee Pension & Benefits Fund",
-      "service": "State Pension & Employee Health Benefits",
-      "annualSpend": 8316000
+      "vendorName": "NJ State Health Benefits Program (SHBP / BMED)",
+      "entityServed": "Ridgewood Village Municipal & School Staff",
+      "category": "Employee Health & Prescription Benefits",
+      "annualEstimatedSpend": 8316000,
+      "description": "Health, dental, and prescription insurance coverage for municipal and public safety workforce."
     },
     {
-      "vendor": "Public Works & Road Materials",
-      "service": "Asphalt, Road Paving, Snow Removal & Salt",
-      "annualSpend": 2970000
+      "vendorName": "Tilcon New Jersey / Campbell Foundry",
+      "entityServed": "Ridgewood Village DPW (Public Works)",
+      "category": "Infrastructure, Road Resurfacing & Asphalt",
+      "annualEstimatedSpend": 2970000,
+      "description": "Curbside paving, asphalt resurfacing, and catch basin storm sewer drainage materials."
     },
     {
-      "vendor": "Joint Insurance Fund (JIF)",
-      "service": "General Liability, Property & Workers Comp",
-      "annualSpend": 2376000
+      "vendorName": "Bergen County Joint Insurance Fund (JIF)",
+      "entityServed": "Ridgewood Village Municipal Government",
+      "category": "Municipal Insurance & Workers Compensation",
+      "annualEstimatedSpend": 2376000,
+      "description": "Pooled municipal property, statutory liability, and workers compensation risk coverage."
     },
     {
-      "vendor": "Emergency Services & Utilities",
-      "service": "Electricity, Natural Gas, Water & Hydrant Rentals",
-      "annualSpend": 2079000
+      "vendorName": "Public Service Electric & Gas (PSE&G) / Jersey Central Power",
+      "entityServed": "Ridgewood Village Municipal & School Facilities",
+      "category": "Utilities & Street Lighting",
+      "annualEstimatedSpend": 2079000,
+      "description": "Municipal electricity, traffic signals, facility heating, and municipal street lighting grid."
     }
   ]
 }

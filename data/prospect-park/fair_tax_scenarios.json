@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Prospect Park Borough Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Prospect Park Borough",
+      "totalTaxLevy": 28728180,
+      "residentialLevyTotal": 25625537,
+      "commercialLevyTotal": 3102643,
+      "totalResidentialParcels": 2333,
+      "equalizationRatio": 0.468,
+      "certifiedTaxRateAssessed": 6.231,
+      "certifiedTaxRateMarket": 2.913,
+      "averageResidentialAssessment": 184663,
+      "averageResidentialMarketValue": 395000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 10.8
+    }
   },
-  "certifiedTaxRate": 6.231,
-  "equalizationRatio": 46.75,
-  "effectiveTaxRateMarket": 2.913,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 89.2% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Prospect Park Borough operates at an equalization ratio of 46.75%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 6.231,
-      "sampleHomeAssessed": 184663,
-      "sampleTax": 11506.35
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Prospect Park Borough residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.913,
-      "sampleHomeAssessed": 395000,
-      "sampleTax": 11506.35
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Prospect Park Borough municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 147730,
+      "tax": 9205.08
+    },
+    {
+      "type": "Average Prospect Park Borough Home",
+      "assessment": 184663,
+      "tax": 11506.35
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 249295,
+      "tax": 15533.57
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07508",
+      "name": "Prospect Park Borough Center & Downtown",
+      "medianHouseholdIncome": 76800,
+      "currentTaxBill": 11506.35,
+      "currentTaxEffortPct": 14.98
+    },
+    {
+      "zip": "07508",
+      "name": "Prospect Park Borough Residential Heights",
+      "medianHouseholdIncome": 82944,
+      "currentTaxBill": 12197,
+      "currentTaxEffortPct": 14.98
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Passaic County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

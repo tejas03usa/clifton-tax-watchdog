@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Fort Lee Borough Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Fort Lee Borough Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Fort Lee Borough Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Fort Lee Borough",
+      "agency": "Fort Lee Borough Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Fort Lee Borough Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Fort Lee Borough Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Fort Lee Borough, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Main St)",
+          "municipality": "Fort Lee Borough, NJ",
+          "taxRecordLookup": "Bergen County Board of Taxation District 0219"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Fort Lee Borough Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Fort Lee Borough Public Schools",
+      "agency": "Fort Lee Borough Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Bergen County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Fort Lee Borough Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

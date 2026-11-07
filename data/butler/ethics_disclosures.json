@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Butler Borough Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Butler Borough Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Butler Borough Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Butler Borough",
+      "agency": "Butler Borough Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Butler Borough Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Butler Borough Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Butler Borough, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Main St)",
+          "municipality": "Butler Borough, NJ",
+          "taxRecordLookup": "Morris County Board of Taxation District 1403"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Butler Borough Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Butler Borough Public Schools",
+      "agency": "Butler Borough Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Morris County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Butler Borough Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

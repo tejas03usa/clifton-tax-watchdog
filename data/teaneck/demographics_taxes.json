@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Bergen County 2026 Certified Rolls",
     "municipality": "Teaneck Township",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 10.44,
   "county": "Bergen County",
   "residentialShare": 84.2,
-  "commercialShare": 15.8
+  "commercialShare": 15.8,
+  "cityOverview": {
+    "totalPopulation": 41800,
+    "totalHousingUnits": 15481,
+    "medianHouseholdIncome": 126400,
+    "perCapitaIncome": 60672,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 84,
+    "renterOccupiedRate": 16,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07666",
+      "areaName": "Teaneck Township (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Teaneck Township Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 126400,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 84,
+      "renterOccupiedPercent": 16,
+      "averageAnnualTaxBill": 13192.2,
+      "monthlyTaxBill": 1099.35,
+      "taxBurdenPercentOfIncome": 10.44,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 134874000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 3.49%, with an equalization ratio of 67.5%.",
+        "Public education represents 59.2% of property taxes, while municipal operations account for 29.8%.",
+        "Average residential assessment is $378,000, producing an average annual tax bill of $13,192.2."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Teaneck Township Center & Downtown",
+      "zip": "07666",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 126400,
+      "medianAge": 40.5,
+      "avgTaxBill": 13192.2,
+      "taxBurdenPercentIncome": 10.44,
+      "avgMarketValue": 560000,
+      "ownerOccupied": 84,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Teaneck Township Residential Heights",
+      "zip": "07666",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 136512,
+      "medianAge": 42.2,
+      "avgTaxBill": 13984,
+      "taxBurdenPercentIncome": 10.44,
+      "avgMarketValue": 604800,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Teaneck Township maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Teaneck Township, homeowners pay an average of $13,192.2 annually in property taxes, consuming approximately 10.44% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 67.5%, assessed values average ~67.5% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 59.2% of the total tax bill, municipal government absorbs 29.8%, and Bergen County claims 11.0%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 5016,
+      "totalHouseholds": 15481,
+      "enrolledPublicSchools": 5852,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 6479
+    },
+    "schools": [
+      {
+        "name": "Teaneck Township Elementary School",
+        "type": "Elementary",
+        "address": "100 Cedar Ln, Teaneck Township, NJ 07666",
+        "enrollment": 2090,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Teaneck Township Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Teaneck Township Middle School",
+        "type": "Middle School",
+        "address": "200 Teaneck Rd, Teaneck Township, NJ 07666",
+        "enrollment": 1672,
+        "grades": "6 to 8",
+        "neighborhood": "Teaneck Township Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Teaneck Township High School",
+        "type": "High School",
+        "address": "300 Queen Anne Rd, Teaneck Township, NJ 07666",
+        "enrollment": 2090,
+        "grades": "9 to 12",
+        "neighborhood": "Teaneck Township Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

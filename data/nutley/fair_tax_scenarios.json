@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Nutley Township Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Nutley Township",
+      "totalTaxLevy": 129463734,
+      "residentialLevyTotal": 101240640,
+      "commercialLevyTotal": 28223094,
+      "totalResidentialParcels": 11164,
+      "equalizationRatio": 0.784,
+      "certifiedTaxRateAssessed": 2.844,
+      "certifiedTaxRateMarket": 2.23,
+      "averageResidentialAssessment": 439040,
+      "averageResidentialMarketValue": 560000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 21.8
+    }
   },
-  "certifiedTaxRate": 2.844,
-  "equalizationRatio": 78.4,
-  "effectiveTaxRateMarket": 2.23,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 78.2% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Nutley Township operates at an equalization ratio of 78.4%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 2.844,
-      "sampleHomeAssessed": 439040,
-      "sampleTax": 12486.3
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Nutley Township residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.23,
-      "sampleHomeAssessed": 560000,
-      "sampleTax": 12488.0
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Essex County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Nutley Township municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 351232,
+      "tax": 9989.04
+    },
+    {
+      "type": "Average Nutley Township Home",
+      "assessment": 439040,
+      "tax": 12486.3
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 592704,
+      "tax": 16856.5
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07110",
+      "name": "Nutley Township Center & Downtown",
+      "medianHouseholdIncome": 115200,
+      "currentTaxBill": 12486.3,
+      "currentTaxEffortPct": 10.84
+    },
+    {
+      "zip": "07110",
+      "name": "Nutley Township Residential Heights",
+      "medianHouseholdIncome": 124416,
+      "currentTaxBill": 13235,
+      "currentTaxEffortPct": 10.84
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Essex County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

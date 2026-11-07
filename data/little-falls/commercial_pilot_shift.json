@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 79.5,
-  "commercialShare": 20.5,
-  "pilotAgreementsCount": 5,
-  "analysis": "Little Falls Township maintains a 20.5% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 79.5,
+    "commercialShare": 20.5,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 75.0,
+        "commercialIndustrialShare": 25.0,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 77.5,
+        "commercialIndustrialShare": 22.5,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 79.5,
+        "commercialIndustrialShare": 20.5,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "little-falls-pilot-1",
+        "name": "Little Falls Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 759500,
+        "standardSchoolShare": 407092,
+        "standardCityShare": 226331,
+        "standardCountyShare": 126077,
+        "pilotServiceCharge": 493675,
+        "pilotCityKeeps": 468991,
+        "pilotCountyGets": 24684,
+        "developerAnnualSavings": 265825,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 379800,
+        "homeownerBurdenAbsorbed": 379800
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Little Falls Township Shopping Plaza / Corporate Center",
+        "location": "100 Main St",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 29723650,
+        "annualTaxPaid": 646760,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Little Falls Township Professional Medical Arts Building",
+        "location": "250 Paterson Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 19922879,
+        "annualTaxPaid": 433504,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

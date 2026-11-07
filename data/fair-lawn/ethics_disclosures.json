@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Fair Lawn Borough Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Fair Lawn Borough Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Fair Lawn Borough Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Fair Lawn Borough",
+      "agency": "Fair Lawn Borough Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Fair Lawn Borough Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Fair Lawn Borough Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Fair Lawn Borough, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Fair Lawn Ave)",
+          "municipality": "Fair Lawn Borough, NJ",
+          "taxRecordLookup": "Bergen County Board of Taxation District 0217"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Fair Lawn Borough Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Fair Lawn Borough Public Schools",
+      "agency": "Fair Lawn Borough Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Bergen County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Fair Lawn Borough Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

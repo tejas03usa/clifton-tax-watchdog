@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Totowa Borough Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Totowa Borough",
+      "totalTaxLevy": 45833504,
+      "residentialLevyTotal": 31350117,
+      "commercialLevyTotal": 14483387,
+      "totalResidentialParcels": 4098,
+      "equalizationRatio": 0.515,
+      "certifiedTaxRateAssessed": 2.934,
+      "certifiedTaxRateMarket": 1.511,
+      "averageResidentialAssessment": 290975,
+      "averageResidentialMarketValue": 565000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 31.6
+    }
   },
-  "certifiedTaxRate": 2.934,
-  "equalizationRatio": 51.5,
-  "effectiveTaxRateMarket": 1.511,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 68.4% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Totowa Borough operates at an equalization ratio of 51.5%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 2.934,
-      "sampleHomeAssessed": 290975,
-      "sampleTax": 8537.21
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Totowa Borough residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 1.511,
-      "sampleHomeAssessed": 565000,
-      "sampleTax": 8537.15
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Totowa Borough municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 232780,
+      "tax": 6829.77
+    },
+    {
+      "type": "Average Totowa Borough Home",
+      "assessment": 290975,
+      "tax": 8537.21
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 392816,
+      "tax": 11525.23
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07512",
+      "name": "Totowa Borough Center & Downtown",
+      "medianHouseholdIncome": 114800,
+      "currentTaxBill": 8537.21,
+      "currentTaxEffortPct": 7.44
+    },
+    {
+      "zip": "07512",
+      "name": "Totowa Borough Residential Heights",
+      "medianHouseholdIncome": 123984,
+      "currentTaxBill": 9049,
+      "currentTaxEffortPct": 7.44
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Passaic County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

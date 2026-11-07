@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 68.4,
-  "commercialShare": 31.6,
-  "pilotAgreementsCount": 7,
-  "analysis": "Totowa Borough maintains a 31.6% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 68.4,
+    "commercialShare": 31.6,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 63.9,
+        "commercialIndustrialShare": 36.1,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 66.4,
+        "commercialIndustrialShare": 33.6,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 68.4,
+        "commercialIndustrialShare": 31.6,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "totowa-pilot-1",
+        "name": "Totowa Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 528850,
+        "standardSchoolShare": 254906,
+        "standardCityShare": 182982,
+        "standardCountyShare": 90962,
+        "pilotServiceCharge": 343752,
+        "pilotCityKeeps": 326565,
+        "pilotCountyGets": 17188,
+        "developerAnnualSavings": 185098,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 374400,
+        "homeownerBurdenAbsorbed": 374400
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Totowa Borough Shopping Plaza / Corporate Center",
+        "location": "100 Union Blvd",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 35922330,
+        "annualTaxPaid": 542790,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Totowa Borough Professional Medical Arts Building",
+        "location": "250 Totowa Rd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 24077670,
+        "annualTaxPaid": 363816,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

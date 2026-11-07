@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 82.5,
-  "commercialShare": 17.5,
-  "pilotAgreementsCount": 3,
-  "analysis": "Hawthorne Borough maintains a 17.5% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 82.5,
+    "commercialShare": 17.5,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 78.0,
+        "commercialIndustrialShare": 22.0,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 80.5,
+        "commercialIndustrialShare": 19.5,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 82.5,
+        "commercialIndustrialShare": 17.5,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "hawthorne-pilot-1",
+        "name": "Hawthorne Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 810600,
+        "standardSchoolShare": 439345,
+        "standardCityShare": 239938,
+        "standardCountyShare": 131317,
+        "pilotServiceCharge": 526890,
+        "pilotCityKeeps": 500546,
+        "pilotCountyGets": 26344,
+        "developerAnnualSavings": 283710,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 381600,
+        "homeownerBurdenAbsorbed": 381600
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Hawthorne Borough Shopping Plaza / Corporate Center",
+        "location": "100 Lafayette Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 25030442,
+        "annualTaxPaid": 581640,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Hawthorne Borough Professional Medical Arts Building",
+        "location": "250 Diamond Bridge Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 16777161,
+        "annualTaxPaid": 389856,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

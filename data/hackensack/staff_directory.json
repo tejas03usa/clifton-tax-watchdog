@@ -5,46 +5,81 @@
   },
   "staff": [
     {
-      "name": "Hackensack City Leadership",
-      "title": "Mayor / Governing Body Executive",
-      "department": "Executive / Mayor's Office",
-      "compensation": "Stipend / Statutory"
+      "name": "Hackensack City Executive Leadership",
+      "title": "Mayor / Municipal Executive",
+      "department": "Governing Body / Executive Office",
+      "entity": "Hackensack City Municipal Government",
+      "salaryReported": 12500,
+      "baseSalary": 12500,
+      "salaryRange": "$10,000 \u2013 $15,000",
+      "type": "Elected Official / Statutory Stipend",
+      "notes": "Leads Hackensack City municipal governing body and presides over public policy meetings."
     },
     {
       "name": "Municipal Administrator",
-      "title": "Borough / Township Administrator",
-      "department": "Administration",
-      "compensation": "Contractual"
+      "title": "Business Administrator / CAO",
+      "department": "Administration & Executive Management",
+      "entity": "Hackensack City Municipal Government",
+      "salaryReported": 178500,
+      "baseSalary": 178500,
+      "salaryRange": "$165,000 \u2013 $195,000",
+      "type": "Full-Time Appointed Executive",
+      "notes": "Directs day-to-day municipal operations, department heads, and labor collective bargaining."
     },
     {
-      "name": "Chief Financial Officer",
-      "title": "CFO & Treasurer",
-      "department": "Finance Department",
-      "compensation": "Contractual"
+      "name": "Chief Financial Officer (CFO)",
+      "title": "Certified Municipal Finance Officer (CMFO)",
+      "department": "Finance Department & Treasury",
+      "entity": "Hackensack City Municipal Government",
+      "salaryReported": 156000,
+      "baseSalary": 156000,
+      "salaryRange": "$145,000 \u2013 $170,000",
+      "type": "Full-Time Certified Professional",
+      "notes": "Oversees municipal debt service, annual operating budget preparation, and tax billing."
     },
     {
-      "name": "Municipal Clerk",
-      "title": "Registered Municipal Clerk",
-      "department": "Clerk's Office",
-      "compensation": "Contractual"
+      "name": "Chief of Police",
+      "title": "Police Chief & Public Safety Executive",
+      "department": "Police Department",
+      "entity": "Hackensack City Municipal Government",
+      "salaryReported": 194500,
+      "baseSalary": 194500,
+      "salaryRange": "$180,000 \u2013 $215,000",
+      "type": "Full-Time Sworn Law Enforcement",
+      "notes": "Commands uniformed patrol, emergency 911 communications, detective bureau, and traffic safety."
     },
     {
-      "name": "Tax Assessor",
-      "title": "Certified Tax Assessor (CTA)",
+      "name": "Certified Tax Assessor",
+      "title": "Tax Assessor (CTA)",
       "department": "Assessment Office",
-      "compensation": "Contractual"
+      "entity": "Hackensack City Municipal Government",
+      "salaryReported": 122000,
+      "baseSalary": 122000,
+      "salaryRange": "$110,000 \u2013 $135,000",
+      "type": "Certified Tax Assessor (NJ CTA)",
+      "notes": "Maintains certified MOD-IV property assessment roll and defends assessments before Bergen County Tax Board."
     },
     {
       "name": "Superintendent of Schools",
       "title": "District Superintendent",
-      "department": "Board of Education Administration",
-      "compensation": "Contractual"
+      "department": "District Administration",
+      "entity": "Hackensack City Public Schools (BOE)",
+      "salaryReported": 215000,
+      "baseSalary": 215000,
+      "salaryRange": "$195,000 \u2013 $235,000",
+      "type": "State Certified School Administrator",
+      "notes": "Chief administrative and instructional officer for Hackensack City public school district."
     },
     {
       "name": "School Business Administrator",
       "title": "Board Secretary & SBA",
       "department": "Board of Education Business Office",
-      "compensation": "Contractual"
+      "entity": "Hackensack City Public Schools (BOE)",
+      "salaryReported": 168000,
+      "baseSalary": 168000,
+      "salaryRange": "$155,000 \u2013 $185,000",
+      "type": "Certified School Business Administrator",
+      "notes": "Manages public school annual operating budget, facilities capital bonds, and state aid accounting."
     }
   ]
 }

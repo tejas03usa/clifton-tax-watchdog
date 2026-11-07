@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Essex County Board of Taxation Table of Aggregates",
+    "source": "Essex County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 88.2,
-  "commercialShare": 11.8,
-  "pilotAgreementsCount": 2,
-  "analysis": "Verona Township maintains a 11.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 88.2,
+    "commercialShare": 11.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 83.7,
+        "commercialIndustrialShare": 16.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 86.2,
+        "commercialIndustrialShare": 13.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 88.2,
+        "commercialIndustrialShare": 11.8,
+        "notes": "Current certified Essex County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "verona-pilot-1",
+        "name": "Verona Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 868000,
+        "standardSchoolShare": 501704,
+        "standardCityShare": 227416,
+        "standardCountyShare": 138880,
+        "pilotServiceCharge": 564200,
+        "pilotCityKeeps": 535990,
+        "pilotCountyGets": 28210,
+        "developerAnnualSavings": 303800,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 403200,
+        "homeownerBurdenAbsorbed": 403200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Verona Township Shopping Plaza / Corporate Center",
+        "location": "100 Bloomfield Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 23270440,
+        "annualTaxPaid": 577200,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Verona Township Professional Medical Arts Building",
+        "location": "250 Fairview Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 15597484,
+        "annualTaxPaid": 386880,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

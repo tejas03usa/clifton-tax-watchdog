@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Little Falls Township Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "little-falls-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Little Falls Township)",
+      "entityInvolved": "Little Falls Township Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "Passaic Valley Regional High School district member; Route 46 commercial corridor and Singac transit station balance local ratables.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Passaic County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

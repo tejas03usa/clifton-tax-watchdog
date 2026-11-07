@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Bergen County 2026 Certified Rolls",
     "municipality": "Mahwah Township",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 8.29,
   "county": "Bergen County",
   "residentialShare": 68.2,
-  "commercialShare": 31.8
+  "commercialShare": 31.8,
+  "cityOverview": {
+    "totalPopulation": 26400,
+    "totalHousingUnits": 9778,
+    "medianHouseholdIncome": 146800,
+    "perCapitaIncome": 70464,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 68,
+    "renterOccupiedRate": 32,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07430",
+      "areaName": "Mahwah Township (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Mahwah Township Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 146800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 68,
+      "renterOccupiedPercent": 32,
+      "averageAnnualTaxBill": 12170.5,
+      "monthlyTaxBill": 1014.21,
+      "taxBurdenPercentOfIncome": 8.29,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 97854000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 2.18%, with an equalization ratio of 82.1%.",
+        "Public education represents 57.6% of property taxes, while municipal operations account for 31.4%.",
+        "Average residential assessment is $558,280, producing an average annual tax bill of $12,170.5."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Mahwah Township Center & Downtown",
+      "zip": "07430",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 146800,
+      "medianAge": 40.5,
+      "avgTaxBill": 12170.5,
+      "taxBurdenPercentIncome": 8.29,
+      "avgMarketValue": 680000,
+      "ownerOccupied": 68,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Mahwah Township Residential Heights",
+      "zip": "07430",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 158544,
+      "medianAge": 42.2,
+      "avgTaxBill": 12901,
+      "taxBurdenPercentIncome": 8.29,
+      "avgMarketValue": 734400,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Mahwah Township maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Mahwah Township, homeowners pay an average of $12,170.5 annually in property taxes, consuming approximately 8.29% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 82.1%, assessed values average ~82.1% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 57.6% of the total tax bill, municipal government absorbs 31.4%, and Bergen County claims 11.0%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 3168,
+      "totalHouseholds": 9778,
+      "enrolledPublicSchools": 3696,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 4092
+    },
+    "schools": [
+      {
+        "name": "Mahwah Township Elementary School",
+        "type": "Elementary",
+        "address": "100 Franklin Turnpike, Mahwah Township, NJ 07430",
+        "enrollment": 1320,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Mahwah Township Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Mahwah Township Middle School",
+        "type": "Middle School",
+        "address": "200 MacArthur Blvd, Mahwah Township, NJ 07430",
+        "enrollment": 1056,
+        "grades": "6 to 8",
+        "neighborhood": "Mahwah Township Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Mahwah Township High School",
+        "type": "High School",
+        "address": "300 Ramapo Valley Rd, Mahwah Township, NJ 07430",
+        "enrollment": 1320,
+        "grades": "9 to 12",
+        "neighborhood": "Mahwah Township Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

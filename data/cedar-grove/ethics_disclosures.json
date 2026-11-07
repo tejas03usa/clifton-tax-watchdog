@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Cedar Grove Township Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Cedar Grove Township Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Cedar Grove Township Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Cedar Grove Township",
+      "agency": "Cedar Grove Township Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Cedar Grove Township Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Cedar Grove Township Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Cedar Grove Township, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Pompton Ave)",
+          "municipality": "Cedar Grove Township, NJ",
+          "taxRecordLookup": "Essex County Board of Taxation District 0704"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Cedar Grove Township Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Cedar Grove Township Public Schools",
+      "agency": "Cedar Grove Township Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Essex County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Cedar Grove Township Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

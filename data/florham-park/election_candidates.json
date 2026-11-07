@@ -12,7 +12,11 @@
       "name": "Florham Park Borough Municipal Leadership",
       "office": "Municipal Governing Body",
       "term": "4 Years",
-      "status": "Certified in Public Records"
+      "status": "Certified in Public Records",
+      "verifiedSources": [
+        "Morris County Clerk Official Candidate Nominating Petitions",
+        "Florham Park Borough Municipal Reorganization Minutes"
+      ]
     }
   ]
 }

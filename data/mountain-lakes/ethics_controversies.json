@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Mountain Lakes Borough Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "mountain-lakes-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Mountain Lakes Borough)",
+      "entityInvolved": "Mountain Lakes Borough Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "Historic Craftsman estate community with $24,200+ average tax bill due to near-zero commercial ratables.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Morris County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

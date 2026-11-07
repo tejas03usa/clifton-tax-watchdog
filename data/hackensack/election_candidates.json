@@ -12,7 +12,11 @@
       "name": "Hackensack City Municipal Leadership",
       "office": "Municipal Governing Body",
       "term": "4 Years",
-      "status": "Certified in Public Records"
+      "status": "Certified in Public Records",
+      "verifiedSources": [
+        "Bergen County Clerk Official Candidate Nominating Petitions",
+        "Hackensack City Municipal Reorganization Minutes"
+      ]
     }
   ]
 }

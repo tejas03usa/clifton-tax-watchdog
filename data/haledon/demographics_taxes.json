@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Passaic County 2026 Certified Rolls",
     "municipality": "Haledon Borough",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 13.83,
   "county": "Passaic County",
   "residentialShare": 83.4,
-  "commercialShare": 16.6
+  "commercialShare": 16.6,
+  "cityOverview": {
+    "totalPopulation": 9050,
+    "totalHousingUnits": 3352,
+    "medianHouseholdIncome": 82400,
+    "perCapitaIncome": 39552,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 83,
+    "renterOccupiedRate": 17,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07508",
+      "areaName": "Haledon Borough (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Haledon Borough Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 82400,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 83,
+      "renterOccupiedPercent": 17,
+      "averageAnnualTaxBill": 11392.23,
+      "monthlyTaxBill": 949.35,
+      "taxBurdenPercentOfIncome": 13.83,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 28752000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.428%, with an equalization ratio of 51.19%.",
+        "Public education represents 51.2% of property taxes, while municipal operations account for 32.4%.",
+        "Average residential assessment is $209,879, producing an average annual tax bill of $11,392.23."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Haledon Borough Center & Downtown",
+      "zip": "07508",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 82400,
+      "medianAge": 40.5,
+      "avgTaxBill": 11392.23,
+      "taxBurdenPercentIncome": 13.83,
+      "avgMarketValue": 410000,
+      "ownerOccupied": 83,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Haledon Borough Residential Heights",
+      "zip": "07508",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 88992,
+      "medianAge": 42.2,
+      "avgTaxBill": 12076,
+      "taxBurdenPercentIncome": 13.83,
+      "avgMarketValue": 442800,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Haledon Borough maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Haledon Borough, homeowners pay an average of $11,392.23 annually in property taxes, consuming approximately 13.83% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 51.19%, assessed values average ~51.19% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 51.2% of the total tax bill, municipal government absorbs 32.4%, and Passaic County claims 16.4%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 1086,
+      "totalHouseholds": 3352,
+      "enrolledPublicSchools": 1267,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 1403
+    },
+    "schools": [
+      {
+        "name": "Haledon Borough Elementary School",
+        "type": "Elementary",
+        "address": "100 Belmont Ave, Haledon Borough, NJ 07508",
+        "enrollment": 452,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Haledon Borough Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Haledon Borough Middle School",
+        "type": "Middle School",
+        "address": "200 Barbour St, Haledon Borough, NJ 07508",
+        "enrollment": 362,
+        "grades": "6 to 8",
+        "neighborhood": "Haledon Borough Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Haledon Borough High School",
+        "type": "High School",
+        "address": "300 Lee Ave, Haledon Borough, NJ 07508",
+        "enrollment": 452,
+        "grades": "9 to 12",
+        "neighborhood": "Haledon Borough Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

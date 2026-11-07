@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Paramus Borough Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Paramus Borough",
+      "totalTaxLevy": 141202303,
+      "residentialLevyTotal": 73990007,
+      "commercialLevyTotal": 67212296,
+      "totalResidentialParcels": 10074,
+      "equalizationRatio": 0.842,
+      "certifiedTaxRateAssessed": 1.954,
+      "certifiedTaxRateMarket": 1.645,
+      "averageResidentialAssessment": 623080,
+      "averageResidentialMarketValue": 740000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 47.6
+    }
   },
-  "certifiedTaxRate": 1.954,
-  "equalizationRatio": 84.2,
-  "effectiveTaxRateMarket": 1.645,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 52.4% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Paramus Borough operates at an equalization ratio of 84.2%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 1.954,
-      "sampleHomeAssessed": 623080,
-      "sampleTax": 12175.0
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Paramus Borough residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 1.645,
-      "sampleHomeAssessed": 740000,
-      "sampleTax": 12173.0
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Paramus Borough municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 498464,
+      "tax": 9739.99
+    },
+    {
+      "type": "Average Paramus Borough Home",
+      "assessment": 623080,
+      "tax": 12175.0
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 841158,
+      "tax": 16436.23
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07652",
+      "name": "Paramus Borough Center & Downtown",
+      "medianHouseholdIncome": 142500,
+      "currentTaxBill": 12175.0,
+      "currentTaxEffortPct": 8.54
+    },
+    {
+      "zip": "07652",
+      "name": "Paramus Borough Residential Heights",
+      "medianHouseholdIncome": 153900,
+      "currentTaxBill": 12906,
+      "currentTaxEffortPct": 8.54
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Bergen County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }

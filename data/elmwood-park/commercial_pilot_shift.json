@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Bergen County Board of Taxation Table of Aggregates",
+    "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 78.4,
-  "commercialShare": 21.6,
-  "pilotAgreementsCount": 3,
-  "analysis": "Elmwood Park Borough maintains a 21.6% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 78.4,
+    "commercialShare": 21.6,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 73.9,
+        "commercialIndustrialShare": 26.1,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 76.4,
+        "commercialIndustrialShare": 23.6,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 78.4,
+        "commercialIndustrialShare": 21.6,
+        "notes": "Current certified Bergen County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "elmwood-park-pilot-1",
+        "name": "Elmwood Park Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 823550,
+        "standardSchoolShare": 482600,
+        "standardCityShare": 245418,
+        "standardCountyShare": 95532,
+        "pilotServiceCharge": 535308,
+        "pilotCityKeeps": 508542,
+        "pilotCountyGets": 26765,
+        "developerAnnualSavings": 288242,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 388800,
+        "homeownerBurdenAbsorbed": 388800
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Elmwood Park Borough Shopping Plaza / Corporate Center",
+        "location": "100 Boulevard",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 25552486,
+        "annualTaxPaid": 601250,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Elmwood Park Borough Professional Medical Arts Building",
+        "location": "250 Market St",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 17127072,
+        "annualTaxPaid": 403000,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

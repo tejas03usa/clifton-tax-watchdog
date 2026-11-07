@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Bergen County Board of Taxation Table of Aggregates",
+    "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 84.2,
-  "commercialShare": 15.8,
-  "pilotAgreementsCount": 5,
-  "analysis": "Teaneck Township maintains a 15.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 84.2,
+    "commercialShare": 15.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 79.7,
+        "commercialIndustrialShare": 20.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 82.2,
+        "commercialIndustrialShare": 17.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 84.2,
+        "commercialIndustrialShare": 15.8,
+        "notes": "Current certified Bergen County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "teaneck-pilot-1",
+        "name": "Teaneck Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 824600,
+        "standardSchoolShare": 488163,
+        "standardCityShare": 245731,
+        "standardCountyShare": 90706,
+        "pilotServiceCharge": 535990,
+        "pilotCityKeeps": 509190,
+        "pilotCountyGets": 26800,
+        "developerAnnualSavings": 288610,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 428400,
+        "homeownerBurdenAbsorbed": 428400
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Teaneck Township Shopping Plaza / Corporate Center",
+        "location": "100 Cedar Ln",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 27407407,
+        "annualTaxPaid": 645650,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Teaneck Township Professional Medical Arts Building",
+        "location": "250 Teaneck Rd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 18370370,
+        "annualTaxPaid": 432760,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

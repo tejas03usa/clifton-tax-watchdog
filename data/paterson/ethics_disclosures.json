@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Paterson City Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Paterson City Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Paterson City Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Paterson City",
+      "agency": "Paterson City Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Paterson City Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Paterson City Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Paterson City, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Market St)",
+          "municipality": "Paterson City, NJ",
+          "taxRecordLookup": "Passaic County Board of Taxation District 1608"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Paterson City Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Paterson City Public Schools",
+      "agency": "Paterson City Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Passaic County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Paterson City Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

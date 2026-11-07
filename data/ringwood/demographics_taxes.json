@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Passaic County 2026 Certified Rolls",
     "municipality": "Ringwood Borough",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 10.18,
   "county": "Passaic County",
   "residentialShare": 91.2,
-  "commercialShare": 8.8
+  "commercialShare": 8.8,
+  "cityOverview": {
+    "totalPopulation": 11700,
+    "totalHousingUnits": 4333,
+    "medianHouseholdIncome": 134200,
+    "perCapitaIncome": 64416,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 91,
+    "renterOccupiedRate": 9,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07456",
+      "areaName": "Ringwood Borough (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Ringwood Borough Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 134200,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 91,
+      "renterOccupiedPercent": 9,
+      "averageAnnualTaxBill": 13660.15,
+      "monthlyTaxBill": 1138.35,
+      "taxBurdenPercentOfIncome": 10.18,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 49470000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 4.259%, with an equalization ratio of 61.68%.",
+        "Public education represents 61.4% of property taxes, while municipal operations account for 23.8%.",
+        "Average residential assessment is $320,736, producing an average annual tax bill of $13,660.15."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Ringwood Borough Center & Downtown",
+      "zip": "07456",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 134200,
+      "medianAge": 40.5,
+      "avgTaxBill": 13660.15,
+      "taxBurdenPercentIncome": 10.18,
+      "avgMarketValue": 520000,
+      "ownerOccupied": 91,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Ringwood Borough Residential Heights",
+      "zip": "07456",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 144936,
+      "medianAge": 42.2,
+      "avgTaxBill": 14480,
+      "taxBurdenPercentIncome": 10.18,
+      "avgMarketValue": 561600,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Ringwood Borough maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Ringwood Borough, homeowners pay an average of $13,660.15 annually in property taxes, consuming approximately 10.18% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 61.68%, assessed values average ~61.68% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 61.4% of the total tax bill, municipal government absorbs 23.8%, and Passaic County claims 14.8%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 1404,
+      "totalHouseholds": 4333,
+      "enrolledPublicSchools": 1638,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 1814
+    },
+    "schools": [
+      {
+        "name": "Ringwood Borough Elementary School",
+        "type": "Elementary",
+        "address": "100 Sloatsburg Rd, Ringwood Borough, NJ 07456",
+        "enrollment": 585,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Ringwood Borough Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Ringwood Borough Middle School",
+        "type": "Middle School",
+        "address": "200 Skyline Dr, Ringwood Borough, NJ 07456",
+        "enrollment": 468,
+        "grades": "6 to 8",
+        "neighborhood": "Ringwood Borough Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Ringwood Borough High School",
+        "type": "High School",
+        "address": "300 Greenwood Lake Turnpike, Ringwood Borough, NJ 07456",
+        "enrollment": 585,
+        "grades": "9 to 12",
+        "neighborhood": "Ringwood Borough Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

@@ -1,8 +1,22 @@
 {
   "metadata": {
-    "source": "State of New Jersey Local Finance Board & Municipal Audits",
+    "source": "State of New Jersey Local Finance Board & Fort Lee Borough Audits",
     "certifiedYear": 2026
   },
+  "controversies": [
+    {
+      "id": "fort-lee-ctrl-1",
+      "severity": "Medium",
+      "category": "Fiscal Policy & Ratable Structure",
+      "title": "Ratable Base Balance & Budgetary Oversight (Fort Lee Borough)",
+      "entityInvolved": "Fort Lee Borough Municipal Administration & Tax Assessor",
+      "lastUpdated": "2026-10-31",
+      "summary": "High-rise luxury residential and commercial towers adjacent to Manhattan yield an effective rate of just 1.840%.",
+      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Bergen County Board of Taxation guidelines.",
+      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
+      "status": "Monitored Under NJ DLGS Guidelines"
+    }
+  ],
   "highlights": [
     {
       "title": "Fiscal & Ratable Structure Overview",

@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Morris County Board of Taxation Table of Aggregates",
+    "source": "Morris County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 69.4,
-  "commercialShare": 30.6,
-  "pilotAgreementsCount": 3,
-  "analysis": "Riverdale Borough maintains a 30.6% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 69.4,
+    "commercialShare": 30.6,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 64.9,
+        "commercialIndustrialShare": 35.1,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 67.4,
+        "commercialIndustrialShare": 32.6,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 69.4,
+        "commercialIndustrialShare": 30.6,
+        "notes": "Current certified Morris County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "riverdale-pilot-1",
+        "name": "Riverdale Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 762300,
+        "standardSchoolShare": 468814,
+        "standardCityShare": 217255,
+        "standardCountyShare": 76230,
+        "pilotServiceCharge": 495495,
+        "pilotCityKeeps": 470720,
+        "pilotCountyGets": 24775,
+        "developerAnnualSavings": 266805,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 392400,
+        "homeownerBurdenAbsorbed": 392400
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Riverdale Borough Shopping Plaza / Corporate Center",
+        "location": "100 Newark Pompton Turnpike",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 22424242,
+        "annualTaxPaid": 488400,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Riverdale Borough Professional Medical Arts Building",
+        "location": "250 Hamburg Turnpike",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 15030303,
+        "annualTaxPaid": 327360,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

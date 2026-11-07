@@ -21,9 +21,28 @@
       "areaName": "Borough of Glen Rock (All Residential Districts)",
       "populationShare": 100,
       "neighborhoodsIncluded": "Rock Road Center, Central, Byrd, Coleman & Hamilton Districts",
-      "medianIncome": 198500,
-      "avgAssessment": 591156,
-      "avgAnnualTax": 20138
+      "medianHouseholdIncome": 198500,
+      "medianAge": 41.2,
+      "ownerOccupiedPercent": 89.4,
+      "renterOccupiedPercent": 10.6,
+      "averageAnnualTaxBill": 20138,
+      "monthlyTaxBill": 1678.17,
+      "taxBurdenPercentOfIncome": 10.14,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 74703225,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 74.2,
+        "hispanicOrLatino": 7.8,
+        "asian": 14.5,
+        "blackOrAfricanAmerican": 1.5,
+        "otherOrMultiracial": 2.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 3.407% with an equalization ratio of 71.5%.",
+        "Glen Rock Public Schools represent 74.86% of the local property tax levy.",
+        "Homeowners fund 90.5% of the total municipal ratable base."
+      ]
     }
   ],
   "neighborhoods": [

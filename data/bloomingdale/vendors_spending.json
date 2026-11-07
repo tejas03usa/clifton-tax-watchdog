@@ -5,24 +5,32 @@
   },
   "vendors": [
     {
-      "vendor": "Public Employee Pension & Benefits Fund",
-      "service": "State Pension & Employee Health Benefits",
-      "annualSpend": 1848000
+      "vendorName": "NJ State Health Benefits Program (SHBP / BMED)",
+      "entityServed": "Bloomingdale Borough Municipal & School Staff",
+      "category": "Employee Health & Prescription Benefits",
+      "annualEstimatedSpend": 1848000,
+      "description": "Health, dental, and prescription insurance coverage for municipal and public safety workforce."
     },
     {
-      "vendor": "Public Works & Road Materials",
-      "service": "Asphalt, Road Paving, Snow Removal & Salt",
-      "annualSpend": 660000
+      "vendorName": "Tilcon New Jersey / Campbell Foundry",
+      "entityServed": "Bloomingdale Borough DPW (Public Works)",
+      "category": "Infrastructure, Road Resurfacing & Asphalt",
+      "annualEstimatedSpend": 660000,
+      "description": "Curbside paving, asphalt resurfacing, and catch basin storm sewer drainage materials."
     },
     {
-      "vendor": "Joint Insurance Fund (JIF)",
-      "service": "General Liability, Property & Workers Comp",
-      "annualSpend": 528000
+      "vendorName": "Passaic County Joint Insurance Fund (JIF)",
+      "entityServed": "Bloomingdale Borough Municipal Government",
+      "category": "Municipal Insurance & Workers Compensation",
+      "annualEstimatedSpend": 528000,
+      "description": "Pooled municipal property, statutory liability, and workers compensation risk coverage."
     },
     {
-      "vendor": "Emergency Services & Utilities",
-      "service": "Electricity, Natural Gas, Water & Hydrant Rentals",
-      "annualSpend": 462000
+      "vendorName": "Public Service Electric & Gas (PSE&G) / Jersey Central Power",
+      "entityServed": "Bloomingdale Borough Municipal & School Facilities",
+      "category": "Utilities & Street Lighting",
+      "annualEstimatedSpend": 462000,
+      "description": "Municipal electricity, traffic signals, facility heating, and municipal street lighting grid."
     }
   ]
 }

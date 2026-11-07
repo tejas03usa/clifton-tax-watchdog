@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 91.2,
-  "commercialShare": 8.8,
-  "pilotAgreementsCount": 1,
-  "analysis": "Ringwood Borough maintains a 8.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 91.2,
+    "commercialShare": 8.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 86.7,
+        "commercialIndustrialShare": 13.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 89.2,
+        "commercialIndustrialShare": 10.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 91.2,
+        "commercialIndustrialShare": 8.8,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "ringwood-pilot-1",
+        "name": "Ringwood Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 919450,
+        "standardSchoolShare": 564542,
+        "standardCityShare": 218829,
+        "standardCountyShare": 136079,
+        "pilotServiceCharge": 597642,
+        "pilotCityKeeps": 567760,
+        "pilotCountyGets": 29882,
+        "developerAnnualSavings": 321807,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 406800,
+        "homeownerBurdenAbsorbed": 406800
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Ringwood Borough Shopping Plaza / Corporate Center",
+        "location": "100 Sloatsburg Rd",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 29993515,
+        "annualTaxPaid": 787915,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Ringwood Borough Professional Medical Arts Building",
+        "location": "250 Skyline Dr",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 20103761,
+        "annualTaxPaid": 528116,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

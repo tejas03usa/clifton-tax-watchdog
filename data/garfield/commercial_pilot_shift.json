@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Bergen County Board of Taxation Table of Aggregates",
+    "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 79.5,
-  "commercialShare": 20.5,
-  "pilotAgreementsCount": 6,
-  "analysis": "Garfield City maintains a 20.5% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 79.5,
+    "commercialShare": 20.5,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 75.0,
+        "commercialIndustrialShare": 25.0,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 77.5,
+        "commercialIndustrialShare": 22.5,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 79.5,
+        "commercialIndustrialShare": 20.5,
+        "notes": "Current certified Bergen County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "garfield-pilot-1",
+        "name": "Garfield City Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 834400,
+        "standardSchoolShare": 410525,
+        "standardCityShare": 322078,
+        "standardCountyShare": 101797,
+        "pilotServiceCharge": 542360,
+        "pilotCityKeeps": 515242,
+        "pilotCountyGets": 27118,
+        "developerAnnualSavings": 292040,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 421200,
+        "homeownerBurdenAbsorbed": 421200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Garfield City Shopping Plaza / Corporate Center",
+        "location": "100 River Dr",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 26504298,
+        "annualTaxPaid": 631775,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Garfield City Professional Medical Arts Building",
+        "location": "250 Midland Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 17765043,
+        "annualTaxPaid": 423460,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

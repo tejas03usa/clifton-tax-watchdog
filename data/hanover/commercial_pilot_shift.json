@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Morris County Board of Taxation Table of Aggregates",
+    "source": "Morris County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 61.2,
-  "commercialShare": 38.8,
-  "pilotAgreementsCount": 6,
-  "analysis": "Hanover Township (Whippany) maintains a 38.8% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 61.2,
+    "commercialShare": 38.8,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 56.7,
+        "commercialIndustrialShare": 43.3,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 59.2,
+        "commercialIndustrialShare": 40.8,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 61.2,
+        "commercialIndustrialShare": 38.8,
+        "notes": "Current certified Morris County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "hanover-pilot-1",
+        "name": "Hanover Township (Whippany) Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 523250,
+        "standardSchoolShare": 320229,
+        "standardCityShare": 144417,
+        "standardCountyShare": 58604,
+        "pilotServiceCharge": 340113,
+        "pilotCityKeeps": 323107,
+        "pilotCountyGets": 17006,
+        "developerAnnualSavings": 183138,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 412200,
+        "homeownerBurdenAbsorbed": 412200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Hanover Township (Whippany) Shopping Plaza / Corporate Center",
+        "location": "100 Route 10",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 21215596,
+        "annualTaxPaid": 317090,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Hanover Township (Whippany) Professional Medical Arts Building",
+        "location": "250 Mt Pleasant Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 14220183,
+        "annualTaxPaid": 212536,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

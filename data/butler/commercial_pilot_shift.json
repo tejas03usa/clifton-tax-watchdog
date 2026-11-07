@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Morris County Board of Taxation Table of Aggregates",
+    "source": "Morris County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 76.4,
-  "commercialShare": 23.6,
-  "pilotAgreementsCount": 2,
-  "analysis": "Butler Borough maintains a 23.6% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 76.4,
+    "commercialShare": 23.6,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 71.9,
+        "commercialIndustrialShare": 28.1,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 74.4,
+        "commercialIndustrialShare": 25.6,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 76.4,
+        "commercialIndustrialShare": 23.6,
+        "notes": "Current certified Morris County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "butler-pilot-1",
+        "name": "Butler Borough Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 852250,
+        "standardSchoolShare": 540326,
+        "standardCityShare": 226698,
+        "standardCountyShare": 85225,
+        "pilotServiceCharge": 553962,
+        "pilotCityKeeps": 526264,
+        "pilotCountyGets": 27698,
+        "developerAnnualSavings": 298288,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 403200,
+        "homeownerBurdenAbsorbed": 403200
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Butler Borough Shopping Plaza / Corporate Center",
+        "location": "100 Main St",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 25983146,
+        "annualTaxPaid": 632700,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Butler Borough Professional Medical Arts Building",
+        "location": "250 Boonton Ave",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 17415730,
+        "annualTaxPaid": 424080,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

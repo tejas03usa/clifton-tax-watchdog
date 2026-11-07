@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Passaic County 2026 Certified Rolls",
     "municipality": "Prospect Park Borough",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 14.98,
   "county": "Passaic County",
   "residentialShare": 89.2,
-  "commercialShare": 10.8
+  "commercialShare": 10.8,
+  "cityOverview": {
+    "totalPopulation": 6300,
+    "totalHousingUnits": 2333,
+    "medianHouseholdIncome": 76800,
+    "perCapitaIncome": 36864,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 89,
+    "renterOccupiedRate": 11,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07508",
+      "areaName": "Prospect Park Borough (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Prospect Park Borough Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 76800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 89,
+      "renterOccupiedPercent": 11,
+      "averageAnnualTaxBill": 11506.35,
+      "monthlyTaxBill": 958.86,
+      "taxBurdenPercentOfIncome": 14.98,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 24621000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 6.231%, with an equalization ratio of 46.75%.",
+        "Public education represents 52.8% of property taxes, while municipal operations account for 31.9%.",
+        "Average residential assessment is $184,663, producing an average annual tax bill of $11,506.35."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Prospect Park Borough Center & Downtown",
+      "zip": "07508",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 76800,
+      "medianAge": 40.5,
+      "avgTaxBill": 11506.35,
+      "taxBurdenPercentIncome": 14.98,
+      "avgMarketValue": 395000,
+      "ownerOccupied": 89,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Prospect Park Borough Residential Heights",
+      "zip": "07508",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 82944,
+      "medianAge": 42.2,
+      "avgTaxBill": 12197,
+      "taxBurdenPercentIncome": 14.98,
+      "avgMarketValue": 426600,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Prospect Park Borough maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Prospect Park Borough, homeowners pay an average of $11,506.35 annually in property taxes, consuming approximately 14.98% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 46.75%, assessed values average ~46.75% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 52.8% of the total tax bill, municipal government absorbs 31.9%, and Passaic County claims 15.3%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 756,
+      "totalHouseholds": 2333,
+      "enrolledPublicSchools": 882,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 976
+    },
+    "schools": [
+      {
+        "name": "Prospect Park Borough Elementary School",
+        "type": "Elementary",
+        "address": "100 Brown Ave, Prospect Park Borough, NJ 07508",
+        "enrollment": 315,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Prospect Park Borough Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Prospect Park Borough Middle School",
+        "type": "Middle School",
+        "address": "200 North 8th St, Prospect Park Borough, NJ 07508",
+        "enrollment": 252,
+        "grades": "6 to 8",
+        "neighborhood": "Prospect Park Borough Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Prospect Park Borough High School",
+        "type": "High School",
+        "address": "300 Planten Ave, Prospect Park Borough, NJ 07508",
+        "enrollment": 350,
+        "grades": "9 to 12",
+        "neighborhood": "Prospect Park Borough Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

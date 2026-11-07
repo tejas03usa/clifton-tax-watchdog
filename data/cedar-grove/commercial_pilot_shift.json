@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Essex County Board of Taxation Table of Aggregates",
+    "source": "Essex County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 85.6,
-  "commercialShare": 14.4,
-  "pilotAgreementsCount": 2,
-  "analysis": "Cedar Grove Township maintains a 14.4% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 85.6,
+    "commercialShare": 14.4,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 81.1,
+        "commercialIndustrialShare": 18.9,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 83.6,
+        "commercialIndustrialShare": 16.4,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 85.6,
+        "commercialIndustrialShare": 14.4,
+        "notes": "Current certified Essex County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "cedar-grove-pilot-1",
+        "name": "Cedar Grove Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 724150,
+        "standardSchoolShare": 408421,
+        "standardCityShare": 198417,
+        "standardCountyShare": 117312,
+        "pilotServiceCharge": 470698,
+        "pilotCityKeeps": 447163,
+        "pilotCountyGets": 23535,
+        "developerAnnualSavings": 253452,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 392400,
+        "homeownerBurdenAbsorbed": 392400
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "Cedar Grove Township Shopping Plaza / Corporate Center",
+        "location": "100 Pompton Ave",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 21997622,
+        "annualTaxPaid": 455100,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "Cedar Grove Township Professional Medical Arts Building",
+        "location": "250 Ridge Rd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 14744352,
+        "annualTaxPaid": 305040,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

@@ -1,14 +1,81 @@
 {
   "metadata": {
-    "source": "Belleville Township Audit Reports",
-    "certifiedYear": 2026
+    "lastUpdated": "2026-10-31",
+    "fiscalCycle": "FY 2025-2026 / 2026 Plan Year",
+    "dataVintage": "Certified 2026 Plan Year",
+    "sourceAgencies": [
+      "Belleville Township Governing Body & School District Collective Bargaining Agreements",
+      "Essex County Joint Insurance Fund (JIF) / Municipal Employee Benefits Fund",
+      "NJ Division of Pensions and Benefits (SHBP / SEHBP)"
+    ],
+    "freshnessStatus": "Current"
   },
-  "totalBenefitsSpending": 36500000,
-  "schoolBenefitsShare": 24820000,
-  "municipalBenefitsShare": 11680000,
-  "healthPlans": [
-    "State Health Benefits Program (SHBP) / Municipal JIF Pooled Coverage",
-    "PFRS / PERS State Pension Obligations",
-    "Post-Retirement Medical Liabilities"
+  "overview": {
+    "annualTaxpayerCostCity": 10430000,
+    "annualTaxpayerCostBOE": 19782000,
+    "combinedTaxpayerBenefitsCost": 30212000,
+    "percentageOfCombinedBudgets": "17.9% of all public spending in Belleville Township goes to employee healthcare and state pensions"
+  },
+  "healthcarePlans": {
+    "providers": "State Health Benefits Program (SHBP) / Municipal Joint Insurance Fund (JIF) & SEHBP",
+    "primaryPlans": [
+      {
+        "planName": "Belleville Township Municipal Direct Access / JIF Healthcare",
+        "type": "Municipal Medical Coverage",
+        "description": "Comprehensive network medical coverage for full-time municipal civil service employees, police, and DPW personnel."
+      },
+      {
+        "planName": "NJ Educators Health Plan (NJEHP / Chapter 44) & Garden State Plan",
+        "type": "State Mandated Education Plan (SEHBP)",
+        "description": "Mandated school district health plan for certified teachers and support educators in Belleville Township Public Schools."
+      },
+      {
+        "planName": "Prescription Drug Benefit & Pharmacy Formulary",
+        "type": "Prescription Plan",
+        "description": "Retail, mail-order, and maintenance prescription drug coverage with taxpayers subsidizing 80%+ of pharmacy expenses."
+      },
+      {
+        "planName": "Delta Dental & Preventive Optical Plan",
+        "type": "Dental & Vision Plan",
+        "description": "Preventive, restorative dental and vision benefits for eligible full-time municipal and school staff."
+      }
+    ]
+  },
+  "costSharing": {
+    "statutoryFramework": "Chapter 78 (P.L. 2011, c. 78) & Chapter 44 (P.L. 2020, c. 44)",
+    "rules": [
+      {
+        "tier": "Belleville Township Municipal Staff & Police (Chapter 78 Tier 4 Grid)",
+        "employeeContribution": "10% to 35% of premium based on salary tier",
+        "taxpayerContribution": "65% to 90% of total family premium ($22,000 - $32,000/yr subsidy)",
+        "note": "For an employee with family coverage, Belleville Township taxpayers subsidize ~$24,000+ per year."
+      },
+      {
+        "tier": "Belleville Township School Educators (Chapter 44 NJEHP)",
+        "employeeContribution": "1.7% to 7.2% of base salary",
+        "taxpayerContribution": "80% to 92% of total family premium",
+        "note": "Because educator contributions are capped by salary percentage, annual health insurance premium increases fall directly onto the local school property tax levy."
+      }
+    ]
+  },
+  "retirementAndLeaveBenefits": [
+    {
+      "benefitName": "Post-Retirement Medical Coverage (25-Year Service Rule)",
+      "legalAuthority": "N.J.S.A. 40A:10-23 & Collective Bargaining",
+      "taxpayerImpact": "Ongoing statutory retiree health expenditure",
+      "details": "Employees retiring with 25+ years of credited pensionable service receive employer-paid health coverage until Medicare eligibility, plus Medicare Part B reimbursement."
+    },
+    {
+      "benefitName": "Statutory Pension Systems (PFRS, PERS, TPAF)",
+      "legalAuthority": "NJ Division of Pensions and Benefits (N.J.S.A. 43:16A & 43:15A)",
+      "taxpayerImpact": "Township/Borough pays ~$6.71M annually into PFRS/PERS",
+      "details": "Mandatory municipal employer contributions to Police & Firemen's Retirement System (PFRS) and Public Employees' Retirement System (PERS). School district teachers participate in Teachers' Pension and Annuity Fund (TPAF)."
+    },
+    {
+      "benefitName": "Accumulated Sick Leave & Terminal Leave Payouts",
+      "legalAuthority": "P.L. 2010, c. 3 (N.J.S.A. 11A:6-19.2) & Union Contracts",
+      "taxpayerImpact": "Capped at $15,000 for post-2010 hires; legacy liabilities for veteran staff",
+      "details": "Under N.J.S.A. 11A:6-19.2, terminal sick leave payouts are capped at $15,000 for staff hired after May 2010. Legacy personnel retain contractually grandfathered bank hours."
+    }
   ]
 }

@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Little Falls Township Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Little Falls Township Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Little Falls Township Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Little Falls Township",
+      "agency": "Little Falls Township Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Little Falls Township Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Little Falls Township Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Little Falls Township, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Main St)",
+          "municipality": "Little Falls Township, NJ",
+          "taxRecordLookup": "Passaic County Board of Taxation District 1605"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Little Falls Township Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Little Falls Township Public Schools",
+      "agency": "Little Falls Township Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Passaic County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Little Falls Township Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

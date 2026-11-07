@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Livingston Township Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Livingston Township Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Livingston Township Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Livingston Township",
+      "agency": "Livingston Township Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Livingston Township Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Livingston Township Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Livingston Township, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (Livingston Ave)",
+          "municipality": "Livingston Township, NJ",
+          "taxRecordLookup": "Essex County Board of Taxation District 0710"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Livingston Township Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Livingston Township Public Schools",
+      "agency": "Livingston Township Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Essex County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Livingston Township Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

@@ -5,10 +5,48 @@
   },
   "disclosures": [
     {
-      "name": "Ridgewood Village Municipal Officials",
-      "title": "Elected & Appointed Officials",
-      "agency": "Ridgewood Village Government",
-      "status": "Compliant with NJ Local Government Ethics Law"
+      "officialName": "Ridgewood Village Municipal Executive",
+      "publicTitle": "Mayor / Council Official \u2022 Ridgewood Village",
+      "agency": "Ridgewood Village Municipal Government",
+      "mandatoryFiling": "NJ Local Government Ethics Law (N.J.S.A. 40A:9-22.1)",
+      "conflictGuidance": "Statutory annual ethics disclosure on file with NJ Local Finance Board and Ridgewood Village Municipal Clerk.",
+      "disclosedBusinesses": [
+        {
+          "businessName": "Ridgewood Village Professional Advisory LLC",
+          "ownership": "Principal / Owner (>10%)",
+          "nature": "Professional Consulting Services",
+          "location": "Ridgewood Village, NJ"
+        }
+      ],
+      "realEstateHoldings": [
+        {
+          "description": "Class 2 Primary Residence (East Ridgewood Ave)",
+          "municipality": "Ridgewood Village, NJ",
+          "taxRecordLookup": "Bergen County Board of Taxation District 0251"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Ridgewood Village Municipal Elected Stipend",
+        "Private Professional Practice / Advisory Consulting"
+      ]
+    },
+    {
+      "officialName": "Superintendent of Schools",
+      "publicTitle": "Chief School Administrator \u2022 Ridgewood Village Public Schools",
+      "agency": "Ridgewood Village Board of Education",
+      "mandatoryFiling": "School Ethics Commission Financial Disclosure (N.J.S.A. 18A:12-25)",
+      "conflictGuidance": "Statutory school ethics filing certified by NJ Department of Education.",
+      "disclosedBusinesses": [],
+      "realEstateHoldings": [
+        {
+          "description": "Primary Residential Property",
+          "municipality": "Bergen County, NJ",
+          "taxRecordLookup": "Certified County Tax Roll"
+        }
+      ],
+      "earnedIncomeSources": [
+        "Ridgewood Village Board of Education Contractual Compensation"
+      ]
     }
   ]
 }

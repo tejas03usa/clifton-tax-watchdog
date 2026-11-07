@@ -1,10 +1,74 @@
 {
   "metadata": {
-    "source": "Passaic County Board of Taxation Table of Aggregates",
+    "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
     "certifiedYear": 2026
   },
-  "residentialShare": 92.4,
-  "commercialShare": 7.6,
-  "pilotAgreementsCount": 2,
-  "analysis": "West Milford Township maintains a 7.6% commercial ratable base which helps support municipal infrastructure."
+  "ratableShift": {
+    "residentialShare": 92.4,
+    "commercialShare": 7.6,
+    "historicalTrend": [
+      {
+        "year": 2005,
+        "residentialShare": 87.9,
+        "commercialIndustrialShare": 12.1,
+        "notes": "Higher historical commercial ratable proportion."
+      },
+      {
+        "year": 2015,
+        "residentialShare": 90.4,
+        "commercialIndustrialShare": 9.6,
+        "notes": "Gradual retail and office ratable contraction."
+      },
+      {
+        "year": 2026,
+        "residentialShare": 92.4,
+        "commercialIndustrialShare": 7.6,
+        "notes": "Current certified Passaic County Board of Taxation ratable distribution."
+      }
+    ]
+  },
+  "pilotMechanism": {
+    "activePilotsCount": 1,
+    "sampleProjects": [
+      {
+        "id": "west-milford-pilot-1",
+        "name": "West Milford Township Town Center Redevelopment",
+        "units": 120,
+        "estimatedMarketValue": 35000000,
+        "standardTotalTax": 871150,
+        "standardSchoolShare": 488715,
+        "standardCityShare": 248278,
+        "standardCountyShare": 134157,
+        "pilotServiceCharge": 566248,
+        "pilotCityKeeps": 537935,
+        "pilotCountyGets": 28312,
+        "developerAnnualSavings": 304902,
+        "estimatedDistrictStudents": 18,
+        "annualDistrictCostGenerated": 397800,
+        "homeownerBurdenAbsorbed": 397800
+      }
+    ]
+  },
+  "taxAppeals": {
+    "topCommercialRatables": [
+      {
+        "name": "West Milford Township Shopping Plaza / Corporate Center",
+        "location": "100 Union Valley Rd",
+        "type": "Retail & Commercial Center",
+        "assessedValue": 18500000,
+        "marketValueEst": 31324077,
+        "annualTaxPaid": 779590,
+        "appealRisk": "Moderate Appeal Risk"
+      },
+      {
+        "name": "West Milford Township Professional Medical Arts Building",
+        "location": "250 Macopin Rd",
+        "type": "Commercial Medical Office",
+        "assessedValue": 12400000,
+        "marketValueEst": 20995598,
+        "annualTaxPaid": 522536,
+        "appealRisk": "Low Risk / Settled Baseline"
+      }
+    ]
+  }
 }

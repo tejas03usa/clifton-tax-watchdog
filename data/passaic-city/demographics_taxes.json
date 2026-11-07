@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Passaic County 2026 Certified Rolls",
     "municipality": "Passaic City",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 16.57,
   "county": "Passaic County",
   "residentialShare": 81.5,
-  "commercialShare": 18.5
+  "commercialShare": 18.5,
+  "cityOverview": {
+    "totalPopulation": 70537,
+    "totalHousingUnits": 26125,
+    "medianHouseholdIncome": 54200,
+    "perCapitaIncome": 26016,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 82,
+    "renterOccupiedRate": 18,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07055",
+      "areaName": "Passaic City (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Passaic City Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 54200,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 82,
+      "renterOccupiedPercent": 18,
+      "averageAnnualTaxBill": 8979.48,
+      "monthlyTaxBill": 748.29,
+      "taxBurdenPercentOfIncome": 16.57,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 379020000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 4.258%, with an equalization ratio of 49.62%.",
+        "Public education represents 41.2% of property taxes, while municipal operations account for 42.5%.",
+        "Average residential assessment is $210,885, producing an average annual tax bill of $8,979.48."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Passaic City Center & Downtown",
+      "zip": "07055",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 54200,
+      "medianAge": 40.5,
+      "avgTaxBill": 8979.48,
+      "taxBurdenPercentIncome": 16.57,
+      "avgMarketValue": 425000,
+      "ownerOccupied": 82,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Passaic City Residential Heights",
+      "zip": "07055",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 58536,
+      "medianAge": 42.2,
+      "avgTaxBill": 9518,
+      "taxBurdenPercentIncome": 16.57,
+      "avgMarketValue": 459000,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Passaic City maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Passaic City, homeowners pay an average of $8,979.48 annually in property taxes, consuming approximately 16.57% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 49.62%, assessed values average ~49.62% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 41.2% of the total tax bill, municipal government absorbs 42.5%, and Passaic County claims 16.3%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 8464,
+      "totalHouseholds": 26125,
+      "enrolledPublicSchools": 9875,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 10933
+    },
+    "schools": [
+      {
+        "name": "Passaic City Elementary School",
+        "type": "Elementary",
+        "address": "100 Main Ave, Passaic City, NJ 07055",
+        "enrollment": 3527,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Passaic City Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Passaic City Middle School",
+        "type": "Middle School",
+        "address": "200 Passaic Ave, Passaic City, NJ 07055",
+        "enrollment": 2821,
+        "grades": "6 to 8",
+        "neighborhood": "Passaic City Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Passaic City High School",
+        "type": "High School",
+        "address": "300 Broadway, Passaic City, NJ 07055",
+        "enrollment": 3527,
+        "grades": "9 to 12",
+        "neighborhood": "Passaic City Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

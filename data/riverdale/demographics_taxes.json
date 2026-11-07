@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & NJ Division of Taxation",
+    "source": "U.S. Census Bureau ACS 5-Year Data Profiles & Morris County 2026 Certified Rolls",
     "municipality": "Riverdale Borough",
     "certifiedYear": 2026
   },
@@ -12,5 +12,140 @@
   "taxBurdenPercent": 9.07,
   "county": "Morris County",
   "residentialShare": 69.4,
-  "commercialShare": 30.6
+  "commercialShare": 30.6,
+  "cityOverview": {
+    "totalPopulation": 4200,
+    "totalHousingUnits": 1556,
+    "medianHouseholdIncome": 110500,
+    "perCapitaIncome": 53040,
+    "medianAge": 41.5,
+    "povertyRate": 3.8,
+    "ownerOccupiedRate": 69,
+    "renterOccupiedRate": 31,
+    "foreignBornPercentage": 22.4,
+    "nonEnglishAtHomePercent": 26.8
+  },
+  "zipCodeComparison": [
+    {
+      "zip": "07457",
+      "areaName": "Riverdale Borough (Municipal Roll)",
+      "populationShare": 100,
+      "neighborhoodsIncluded": "Riverdale Borough Center, Residential & Parkway Districts",
+      "medianHouseholdIncome": 110500,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 69,
+      "renterOccupiedPercent": 31,
+      "averageAnnualTaxBill": 10018.8,
+      "monthlyTaxBill": 834.9,
+      "taxBurdenPercentOfIncome": 9.07,
+      "shareOfTotalTaxBase": 100,
+      "totalResidentialLevyContribution": 17706000,
+      "schoolEnrollmentShare": 100,
+      "demographicProfile": {
+        "whiteNonHispanic": 64.2,
+        "hispanicOrLatino": 17.5,
+        "asian": 12.1,
+        "blackOrAfricanAmerican": 4.1,
+        "otherOrMultiracial": 2.1
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 2.64%, with an equalization ratio of 82.5%.",
+        "Public education represents 61.5% of property taxes, while municipal operations account for 28.5%.",
+        "Average residential assessment is $379,500, producing an average annual tax bill of $10,018.8."
+      ]
+    }
+  ],
+  "neighborhoods": [
+    {
+      "name": "Riverdale Borough Center & Downtown",
+      "zip": "07457",
+      "character": "Civic core, local commercial businesses, and historic residences",
+      "medianIncome": 110500,
+      "medianAge": 40.5,
+      "avgTaxBill": 10018.8,
+      "taxBurdenPercentIncome": 9.07,
+      "avgMarketValue": 460000,
+      "ownerOccupied": 69,
+      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
+      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+    },
+    {
+      "name": "Riverdale Borough Residential Heights",
+      "zip": "07457",
+      "character": "Single-family residential neighborhood with tree-lined streets",
+      "medianIncome": 119340,
+      "medianAge": 42.2,
+      "avgTaxBill": 10620,
+      "taxBurdenPercentIncome": 9.07,
+      "avgMarketValue": 496800,
+      "ownerOccupied": 92.0,
+      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
+      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+    }
+  ],
+  "equityAnalysis": {
+    "summary": "Riverdale Borough maintains a consistent residential tax base across its residential zones.",
+    "keyTakeaways": [
+      {
+        "title": "Property Tax Burden & Household Income",
+        "detail": "In Riverdale Borough, homeowners pay an average of $10,018.8 annually in property taxes, consuming approximately 9.07% of median household income."
+      },
+      {
+        "title": "Equalization Ratio & Revaluation Balance",
+        "detail": "With an equalization ratio of 82.5%, assessed values average ~82.5% of current true market values, establishing the basis for certified county tax equalization."
+      },
+      {
+        "title": "School District vs Municipal Levy Split",
+        "detail": "Local education represents 61.5% of the total tax bill, municipal government absorbs 28.5%, and Morris County claims 10.0%."
+      }
+    ]
+  },
+  "familyChildDemographics": {
+    "citywide": {
+      "householdsWithChildrenPercent": 36.4,
+      "householdsWithChildrenUnder18": 504,
+      "totalHouseholds": 1556,
+      "enrolledPublicSchools": 588,
+      "enrolledPublicPercent": 89.2,
+      "totalSchoolAgeChildren": 651
+    },
+    "schools": [
+      {
+        "name": "Riverdale Borough Elementary School",
+        "type": "Elementary",
+        "address": "100 Newark Pompton Turnpike, Riverdale Borough, NJ 07457",
+        "enrollment": 280,
+        "grades": "Pre-K to 5",
+        "neighborhood": "Riverdale Borough Center",
+        "familiesWithKidsPercentInZone": 42.0,
+        "studentTeacherRatio": "11.8:1",
+        "economicallyDisadvantagedPercent": 14.2,
+        "multilingualLearnersPercent": 6.5
+      },
+      {
+        "name": "Riverdale Borough Middle School",
+        "type": "Middle School",
+        "address": "200 Hamburg Turnpike, Riverdale Borough, NJ 07457",
+        "enrollment": 240,
+        "grades": "6 to 8",
+        "neighborhood": "Riverdale Borough Residential",
+        "familiesWithKidsPercentInZone": 38.5,
+        "studentTeacherRatio": "11.2:1",
+        "economicallyDisadvantagedPercent": 13.8,
+        "multilingualLearnersPercent": 5.8
+      },
+      {
+        "name": "Riverdale Borough High School",
+        "type": "High School",
+        "address": "300 Post Ln, Riverdale Borough, NJ 07457",
+        "enrollment": 350,
+        "grades": "9 to 12",
+        "neighborhood": "Riverdale Borough Parkway District",
+        "familiesWithKidsPercentInZone": 35.0,
+        "studentTeacherRatio": "12.1:1",
+        "economicallyDisadvantagedPercent": 12.5,
+        "multilingualLearnersPercent": 5.2
+      }
+    ]
+  }
 }

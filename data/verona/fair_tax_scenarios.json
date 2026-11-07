@@ -1,23 +1,106 @@
 {
   "metadata": {
-    "source": "NJ Division of Taxation Equalization Analysis",
-    "certifiedYear": 2026
+    "source": "Certified 2026 Verona Township Fiscal Baseline & NJ Title 54",
+    "certifiedBaseline": {
+      "municipality": "Verona Township",
+      "totalTaxLevy": 68477748,
+      "residentialLevyTotal": 60397374,
+      "commercialLevyTotal": 8080374,
+      "totalResidentialParcels": 5370,
+      "equalizationRatio": 0.795,
+      "certifiedTaxRateAssessed": 3.12,
+      "certifiedTaxRateMarket": 2.48,
+      "averageResidentialAssessment": 496875,
+      "averageResidentialMarketValue": 625000,
+      "annualPilotRevenueCollected": 250000,
+      "commercialLevySharePct": 11.8
+    }
   },
-  "certifiedTaxRate": 3.12,
-  "equalizationRatio": 79.5,
-  "effectiveTaxRateMarket": 2.48,
-  "scenarios": [
+  "fairnessDiagnosis": {
+    "coreInequities": [
+      {
+        "metric": "Local Property Tax Burden",
+        "severity": "Medium",
+        "title": "High Residential Reliance",
+        "description": "With 88.2% of the property tax levy borne by homeowners, unforeseen municipal or school costs directly inflate residential bills.",
+        "remedy": "Expand commercial ratables and pursue shared services to mitigate residential exposure."
+      },
+      {
+        "metric": "Equalization Ratio Gap",
+        "severity": "Medium",
+        "title": "Assessment Base Calibration",
+        "description": "Verona Township operates at an equalization ratio of 79.5%, requiring state equalization adjustments for county tax apportionment.",
+        "remedy": "Continuous annual revaluation adjustments to maintain assessments at 100% true market value."
+      }
+    ]
+  },
+  "presetScenarios": [
     {
-      "name": "Current Certified Assessment Base",
-      "rate": 3.12,
-      "sampleHomeAssessed": 496875,
-      "sampleTax": 15502.5
+      "id": "unified_blueprint",
+      "name": "State Formula Aid & Ratable Equalization",
+      "badge": "RECOMMENDED",
+      "badgeClass": "badge-recommended",
+      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
+      "winners": "Verona Township residential homeowners and fixed-income seniors.",
+      "losers": "Statewide discretionary budget lines."
     },
     {
-      "name": "100% Fair Market Revaluation Scenario",
-      "rate": 2.48,
-      "sampleHomeAssessed": 625000,
-      "sampleTax": 15500.0
+      "id": "scenario_shared_services",
+      "name": "Countywide Shared Services & Joint Purchasing",
+      "badge": "EFFICIENCY",
+      "badgeClass": "badge-efficiency",
+      "summary": "Partnering with Essex County on joint dispatch, specialized public works equipment, and health benefit pooling.",
+      "winners": "Verona Township municipal taxpayers.",
+      "losers": "Redundant standalone administrative vendor contracts."
+    }
+  ],
+  "sampleHomeProfiles": [
+    {
+      "type": "Starter Residence",
+      "assessment": 397500,
+      "tax": 12402.0
+    },
+    {
+      "type": "Average Verona Township Home",
+      "assessment": 496875,
+      "tax": 15502.5
+    },
+    {
+      "type": "Executive Residence",
+      "assessment": 670781,
+      "tax": 20928.38
+    }
+  ],
+  "neighborhoodEquityImpact": [
+    {
+      "zip": "07044",
+      "name": "Verona Township Center & Downtown",
+      "medianHouseholdIncome": 136400,
+      "currentTaxBill": 15502.5,
+      "currentTaxEffortPct": 11.37
+    },
+    {
+      "zip": "07044",
+      "name": "Verona Township Residential Heights",
+      "medianHouseholdIncome": 147312,
+      "currentTaxBill": 16433,
+      "currentTaxEffortPct": 11.37
+    }
+  ],
+  "policyRoadmap": [
+    {
+      "step": 1,
+      "title": "Establish Municipal Shared Service Compact",
+      "timeline": "Months 1\u20136",
+      "description": "Formally join Essex County cooperative purchasing agreements for road resurfacing materials, salt, and emergency dispatch.",
+      "impact": "1\u20132% municipal tax levy reduction."
+    },
+    {
+      "step": 2,
+      "title": "MOD-IV Annual Assessment Roll Calibration",
+      "timeline": "Months 6\u201312",
+      "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
+      "impact": "Protects against sudden tax appeal refund spikes."
     }
   ]
 }
