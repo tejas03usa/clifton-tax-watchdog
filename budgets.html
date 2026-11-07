@@ -206,6 +206,20 @@
                 <span>Passaic County comps &amp; Ch. 123 corridor</span>
               </div>
             </button>
+            <button type="button" class="nav-tool-item" onclick="openWaterTracker(); closeNavToolsMenu();" role="menuitem">
+              <span class="nav-tool-icon">💧</span>
+              <div class="nav-tool-meta">
+                <strong>PVWC Lead Water Tracker</strong>
+                <span>1,580 Clifton lines replaced &amp; bill impact</span>
+              </div>
+            </button>
+            <button type="button" class="nav-tool-item" onclick="openFloodReliefModal(); closeNavToolsMenu();" role="menuitem">
+              <span class="nav-tool-icon">🌊</span>
+              <div class="nav-tool-meta">
+                <strong>Flood Risk &amp; Tax Stigma Relief</strong>
+                <span>FEMA zones &amp; Glen Wall appeal discount</span>
+              </div>
+            </button>
           </div>
         </div>
 
@@ -392,6 +406,16 @@
           <span class="pm-val font-mono" style="color: #475569;">$14.28M</span>
           <span class="pm-sub">Separate utility budget • $9.50M PVSC sewage treatment fees</span>
         </div>
+      </div>
+
+      <!-- SECTION: NJ DOE Taxpayers' Guide to Education Spending (TGES) School Efficiency Audit -->
+      <div id="boe-spending-efficiency-container" class="civic-feature-block" style="margin-top: 32px; margin-bottom: 32px;">
+        <!-- Rendered dynamically by JS from data/education_spending_tges.json -->
+      </div>
+
+      <!-- SECTION: Passaic County Services, Roadways & Budget Guide ($58.7M Levy) -->
+      <div id="passaic-county-services-container" class="civic-feature-block" style="margin-top: 32px; margin-bottom: 32px;">
+        <!-- Rendered dynamically by JS from data/passaic_county_services.json -->
       </div>
 
       <!-- Sources & Official Verification Links for Tab 2 -->
@@ -1726,6 +1750,8 @@
             <button type="button" class="footer-tool-btn" onclick="openOpraModal()">📋 OPRA Request</button>
             <button type="button" class="footer-tool-btn" onclick="openSpeechBuilder()">🎙️ 3-Min Speech Builder</button>
             <button type="button" class="footer-tool-btn" onclick="openAppealAnalyzer()">⚖️ Tax Appeal Analyzer</button>
+            <button type="button" class="footer-tool-btn" onclick="openWaterTracker()">💧 PVWC Lead Water Tracker</button>
+            <button type="button" class="footer-tool-btn" onclick="openFloodReliefModal()">🌊 Flood Risk &amp; Tax Stigma</button>
           </div>
         </div>
         <div class="footer-meta">
@@ -1901,6 +1927,48 @@
       <div class="modern-dialog-footer">
         <button type="button" class="btn-street-action" style="background: #0f172a; color: #fff;" onclick="printPocketBallot()"><span>🖨️</span> Print 1-Page Pocket Ballot</button>
         <button type="button" id="btn-copy-pocket-ballot" class="btn-street-action" onclick="copyPocketBallotText()"><span>📋</span> Copy Cheat Sheet Text</button>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 10: 💧 Passaic Valley Water Commission (PVWC) Lead Pipe & Utility Surcharge Tracker -->
+  <dialog id="pvwc-water-dialog" class="modern-modal-dialog" aria-labelledby="pvwc-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 860px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="pvwc-dialog-title"><span>💧</span> PVWC Lead Pipe &amp; Water Utility Burden Tracker</h3>
+          <div class="modern-dialog-subtitle">PWSID NJ1605002 &bull; 1,580 Lead Lines Replaced in Clifton &bull; $0 Cost to Homeowners (P.L. 2021, c.183)</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="pvwc-dialog-content">
+        <!-- Rendered dynamically by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <a href="https://www.pvwc.com" target="_blank" rel="noopener" class="btn-street-action" style="text-decoration: none; background: #0284c7; color: #fff;"><span>🌐</span> Official PVWC Portal ↗</a>
+        <a href="mailto:lead@pvwc.com?subject=Free%20Lead%20Water%20Testing%20Kit%20Request%20-%20Clifton%20Resident&body=Hello%20PVWC%20Customer%20Service,%0A%0AI%20am%20a%20Clifton%20resident%20requesting%20a%20free%20lead%20water%20testing%20kit%20sent%20to%20my%20address%20pursuant%20to%20NJDEP%20guidelines.%0A%0AName:%0AClifton%20Address:%0APhone%20Number:%0APVWC%20Account%20#%20(if%20known):%0A%0AThank%20you." class="btn-street-action" style="text-decoration: none; background: #16a34a; color: #fff;"><span>🧪</span> Request Free Lead Test Kit ↗</a>
+        <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog 11: 🌊 Passaic River Basin Flood Risk & Property Tax Appeal Relief -->
+  <dialog id="flood-relief-dialog" class="modern-modal-dialog" aria-labelledby="flood-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 860px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="flood-dialog-title"><span>🌊</span> Passaic River Basin Flood Risk &amp; Tax Stigma Relief</h3>
+          <div class="modern-dialog-subtitle">FEMA Zones, Risk Rating 2.0 &amp; Assessment Appeals under Glen Wall Associates v. Wall Twp</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="this.closest('dialog').close()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="flood-dialog-content">
+        <!-- Rendered dynamically by JS -->
+      </div>
+      <div class="modern-dialog-footer">
+        <a href="https://msc.fema.gov/portal/search" target="_blank" rel="noopener" class="btn-street-action" style="text-decoration: none; background: #0f172a; color: #fff;"><span>🗺️</span> View FEMA FIRMette Map ↗</a>
+        <button type="button" class="btn-street-action" style="background: #dc2626; color: #fff;" onclick="openAppealAnalyzer()"><span>⚖️</span> File Passaic County Tax Appeal</button>
         <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
       </div>
     </div>

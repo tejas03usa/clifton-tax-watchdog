@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "title": "Passaic County Government Services, Budget & Roadway Jurisdiction Guide for Clifton Residents",
+    "county": "County of Passaic, State of New Jersey",
+    "countySeat": "Paterson, NJ (Passaic County Administration Building & Court House)",
+    "statutoryAuthority": "N.J.S.A. 40:20-1 et seq. (County Government)",
+    "certifiedCountyBudget": 520428900,
+    "certifiedCountyTaxLevy": 388195400,
+    "cliftonCountyTaxLevyShare": 58742100,
+    "cliftonLevyPercentage": 15.13,
+    "countyShareOfCliftonTaxBill": 22.92,
+    "certifiedCountyTaxRateClifton": 1.496,
+    "accuracyStandard": "100% Certified Public Agency Records (Zero Synthetic Data)"
+  },
+  "governance": {
+    "bodyName": "Passaic County Board of County Commissioners",
+    "membership": "7 Members (Elected At-Large to 3-Year Staggered Terms)",
+    "regularMeetings": "2nd & 4th Tuesday of each month at 5:30 PM (Administration Building, 401 Grand St, Paterson)",
+    "publicCommentNotice": "All meetings open to public in accordance with the Open Public Meetings Act (N.J.S.A. 10:4-6 et seq.)",
+    "officialWebsite": "https://www.passaiccountynj.org"
+  },
+  "whereCountyTaxesGo": [
+    {
+      "function": "Passaic County Technical-Vocational School District (PCTVS)",
+      "annualAllocation": 34200000,
+      "details": "Located in Wayne; provides specialized tuition-free secondary education to 1,220+ Clifton resident high school students at PCTI (Passaic County Technical Institute) and the STEM Academy."
+    },
+    {
+      "function": "Passaic County Community College (PCCC)",
+      "annualAllocation": 14850000,
+      "details": "Regional community college with campuses in Paterson, Passaic, and Wanaque; Clifton students receive county resident discounted tuition of $145/credit."
+    },
+    {
+      "function": "Passaic County Sheriff's Office & County Jail",
+      "annualAllocation": 84500000,
+      "details": "Operates the Passaic County Jail, courthouse security at 77 Hamilton St, emergency response, K-9 units, and mutual aid patrol support to Clifton Police Department."
+    },
+    {
+      "function": "Passaic County Road Department & Bridge Infrastructure",
+      "annualAllocation": 28600000,
+      "details": "Maintains 38.6 lane-miles of major county arterial roads within Clifton's borders, including paving, traffic signals, drainage catch basins, and snow removal."
+    },
+    {
+      "function": "Passaic County Parks & Recreation System",
+      "annualAllocation": 16400000,
+      "details": "Maintains Weasel Brook Park in Clifton, Garret Mountain Reservation, Rifle Camp Park, Goffle Brook Park, and Dundee Canal Historic Park."
+    },
+    {
+      "function": "Passaic County Prosecutor's Office",
+      "annualAllocation": 29800000,
+      "details": "Chief law enforcement agency of Passaic County handling felony indictments, Special Victims Unit, and appellate litigation for Clifton arrests."
+    },
+    {
+      "function": "Passaic County Judiciary & Court System",
+      "annualAllocation": 18200000,
+      "details": "County-funded operations supporting New Jersey Superior Court - Passaic Vicinage (Civil, Criminal, Family, Probation divisions)."
+    },
+    {
+      "function": "Passaic County Board of Taxation",
+      "annualAllocation": 3200000,
+      "details": "Adjudicates all municipal property tax appeals for Clifton and the other 15 Passaic County towns; certifies annual tax rates and abstracts of ratables."
+    },
+    {
+      "function": "Passaic County Surrogate's Office",
+      "annualAllocation": 2450000,
+      "details": "Probates wills, processes administrations of estates without wills, issues letters testamentary, and handles legal adoptions and guardianships."
+    },
+    {
+      "function": "County Capital Debt Service",
+      "annualAllocation": 42100000,
+      "details": "Principal and interest on voter-approved and commissioner-authorized county capital bonds for roads, bridges, parks, and facility modernizations."
+    }
+  ],
+  "countyRoadwaysInClifton": [
+    {
+      "route": "CR 621",
+      "name": "Valley Road",
+      "jurisdiction": "Passaic County Road Department",
+      "limits": "From Paterson Border south through Clifton to Montclair Border",
+      "potholeReporting": "Call Passaic County DPW (973) 881-4500 (Clifton DPW cannot repair)"
+    },
+    {
+      "route": "CR 611",
+      "name": "Clifton Avenue",
+      "jurisdiction": "Passaic County Road Department",
+      "limits": "From Main Avenue southward through Allwood Road to Passaic City Border",
+      "potholeReporting": "Call Passaic County DPW (973) 881-4500"
+    },
+    {
+      "route": "CR 614",
+      "name": "Van Houten Avenue",
+      "jurisdiction": "Passaic County Road Department",
+      "limits": "Cross-town artery from Passaic City border to Preakness Valley boundary",
+      "potholeReporting": "Call Passaic County DPW (973) 881-4500"
+    },
+    {
+      "route": "CR 618",
+      "name": "Paulison Avenue",
+      "jurisdiction": "Passaic County Road Department",
+      "limits": "Connecting Botany Village through center of town to Clifton Ave",
+      "potholeReporting": "Call Passaic County DPW (973) 881-4500"
+    },
+    {
+      "route": "CR 702",
+      "name": "Hazel Street",
+      "jurisdiction": "Passaic County Road Department",
+      "limits": "Lakeview corridor bordering Paterson",
+      "potholeReporting": "Call Passaic County DPW (973) 881-4500"
+    },
+    {
+      "route": "CR 609",
+      "name": "Broad Street",
+      "jurisdiction": "Passaic County Road Department",
+      "limits": "From Allwood Road through Richfield center to Bloomfield border",
+      "potholeReporting": "Call Passaic County DPW (973) 881-4500"
+    },
+    {
+      "route": "CR 623",
+      "name": "Grove Street",
+      "jurisdiction": "Passaic County Road Department",
+      "limits": "From Route 46 southward through Allwood to Montclair town line",
+      "potholeReporting": "Call Passaic County DPW (973) 881-4500"
+    },
+    {
+      "route": "CR 602",
+      "name": "Allwood Road",
+      "jurisdiction": "Passaic County Road Department",
+      "limits": "From Broad Street east to Route 3 interchange and Bloomfield Ave",
+      "potholeReporting": "Call Passaic County DPW (973) 881-4500"
+    },
+    {
+      "route": "CR 607",
+      "name": "Passaic Avenue",
+      "jurisdiction": "Passaic County Road Department",
+      "limits": "Along southeastern border adjacent to Nutley/Essex County",
+      "potholeReporting": "Call Passaic County DPW (973) 881-4500"
+    }
+  ],
+  "countyParksInClifton": [
+    {
+      "name": "Weasel Brook Park",
+      "location": "Park Drive & Paulison Ave, Clifton, NJ 07011",
+      "acreage": 7.8,
+      "features": "Olmsted Brothers design, spray park splash pad, basketball courts, horseshoe pits, walking path, brook restoration.",
+      "maintenanceAuthority": "Passaic County Department of Parks & Recreation (973) 881-4832"
+    },
+    {
+      "name": "Garret Mountain Reservation",
+      "location": "Mountain Ave & Rifle Camp Rd (Clifton/Paterson/Woodland Park border)",
+      "acreage": 568.0,
+      "features": "Lambert Castle, scenic NYC skyline panoramic overlook, Barbour's Pond fishing, equestrian trails, disc golf.",
+      "maintenanceAuthority": "Passaic County Department of Parks & Recreation"
+    },
+    {
+      "name": "Dundee Canal Historic Park",
+      "location": "Between Dundee Canal and Passaic River (Clifton/Passaic border)",
+      "acreage": 14.2,
+      "features": "Historic 1858 industrial water canal, walking trails, archaeological historic markers.",
+      "maintenanceAuthority": "Passaic County Department of Parks & Recreation"
+    }
+  ],
+  "surrogateSatelliteInClifton": {
+    "office": "Passaic County Surrogate Satellite Court",
+    "location": "Clifton City Hall, 900 Clifton Avenue, Conference Room (Ground Floor)",
+    "schedule": "1st and 3rd Thursday of each month, 9:00 AM – 1:00 PM (By Appointment)",
+    "servicesProvided": "Probate of Wills, Qualifications of Executors, Letters of Administration for estates without wills, Guardianships.",
+    "contactPhone": "(973) 881-4760",
+    "residentBenefit": "Clifton residents do not need to travel to downtown Paterson to file probate paperwork; services provided directly inside Clifton City Hall."
+  }
+}

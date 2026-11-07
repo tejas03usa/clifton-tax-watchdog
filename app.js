@@ -17,6 +17,20 @@ let propertyAssessmentsData = null;
 let surroundingTownsData = null;
 let commercialPilotData = null;
 let fairTaxData = null;
+let leadWaterData = null;
+let floodReliefData = null;
+let educationSpendingData = null;
+let countyServicesData = null;
+let activeWaterState = {
+  selectedNeighborhood: 'Botany Village / Lakeview',
+  usageTier: 'average',
+  customCCF: 20
+};
+let activeFloodState = {
+  assessedValue: 180523,
+  floodCondition: 'ae_basement',
+  waterway: 'Third River'
+};
 let cityDocumentsData = null;
 let cityDocsActiveCategory = 'all';
 let cityDocsSearchQuery = '';
@@ -980,6 +994,8 @@ async function switchCity(cityId, updateUrl = true) {
   // Render sections conditionally based on DOM elements present on the active page
   if (document.getElementById('calc-assessment-input')) setupCalculator();
   if (document.getElementById('boe-line-items') || document.getElementById('tab-budgets')) renderBudgets();
+  if (document.getElementById('boe-spending-efficiency-container')) renderEducationSpendingAudit();
+  if (document.getElementById('passaic-county-services-container')) renderPassaicCountyServices();
   if (document.getElementById('demo-citywide-banner') || document.getElementById('tab-demographics') || document.getElementById('demo-population')) renderDemographics();
   if (document.getElementById('properties-table-body') || document.getElementById('properties-cards-grid') || document.getElementById('tab-properties')) {
     renderProperties();
@@ -2679,6 +2695,21 @@ async function loadAllData(cityId = currentCity) {
 
     await loadElectionData(cityId);
 
+    try {
+      const [waterRes, floodRes, tgesRes, countyRes] = await Promise.all([
+        fetch('data/lead_water_pvwc_tracker.json'),
+        fetch('data/flood_zones_tax_relief.json'),
+        fetch('data/education_spending_tges.json'),
+        fetch('data/passaic_county_services.json')
+      ]);
+      if (waterRes.ok) leadWaterData = await waterRes.json();
+      if (floodRes.ok) floodReliefData = await floodRes.json();
+      if (tgesRes.ok) educationSpendingData = await tgesRes.json();
+      if (countyRes.ok) countyServicesData = await countyRes.json();
+    } catch (suppErr) {
+      console.warn("Could not load supplementary civic datasets:", suppErr);
+    }
+
   } catch (err) {
     console.error("Data load issue:", err);
   }
@@ -3338,6 +3369,9 @@ function renderBudgets() {
       </div>
     `;
   }).join('');
+
+  renderEducationSpendingAudit();
+  renderPassaicCountyServices();
 }
 
 // TAB: DEMOGRAPHICS & AREAS
@@ -5317,11 +5351,23 @@ function renderReliefCalculatorContent() {
     }
   }
 
-  // 2. StayNJ (50% Property Tax Cut for Seniors 65+ up to $6,500)
-  if (isHomeowner && age65Plus && (incomeBracket === 'under_150k' || incomeBracket === '150k_250k' || incomeBracket === '250k_500k')) {
-    const stayGross = Math.min(taxBill * 0.50, 6500.0);
-    // StayNJ is offset by ANCHOR per NJ statute
-    stayNJ = Math.max(0, stayGross - anchor);
+  // 2. StayNJ (50% Property Tax Cut for Seniors 65+ under P.L. 2023, c.75)
+  if (isHomeowner && age65Plus) {
+    let maxStayCap = 0;
+    if (incomeBracket === 'under_150k' || incomeBracket === 'under_100k') {
+      maxStayCap = 6500.0;
+    } else if (incomeBracket === '100k_150k') {
+      maxStayCap = 5000.0;
+    } else if (incomeBracket === '150k_200k' || incomeBracket === '150k_250k') {
+      maxStayCap = 4000.0;
+    } else if (incomeBracket === '250k_500k') {
+      maxStayCap = 0; // State budget adjusted threshold cliff at $200k
+    }
+    if (maxStayCap > 0) {
+      const stayGross = Math.min(taxBill * 0.50, maxStayCap);
+      // StayNJ is offset by ANCHOR per NJ statute
+      stayNJ = Math.max(0, stayGross - anchor);
+    }
   }
 
   // 3. Senior Freeze (PTR-1/PTR-2)
@@ -12762,6 +12808,633 @@ window.copySpeechTranscript = copySpeechTranscript;
 window.printSpeechTranscript = printSpeechTranscript;
 
 // ==========================================================================
+// SUPPLEMENTARY CIVIC ENGINES: WATER UTILITY, FLOOD RELIEF, TGES & COUNTY
+// ==========================================================================
+
+function renderEducationSpendingAudit() {
+  const container = document.getElementById('boe-spending-efficiency-container');
+  if (!container) return;
+
+  const d = educationSpendingData;
+  if (!d || !d.cliftonMetrics) return;
+
+  const m = d.cliftonMetrics;
+  const peers = d.peerComparison || [];
+  const insights = d.budgetKeyInsights || [];
+
+  container.innerHTML = `
+    <div class="civic-audit-card" id="boe-spending-efficiency-section">
+      <div class="audit-header-banner">
+        <div>
+          <h3 class="audit-header-title">
+            <span>🏫</span> NJ DOE Taxpayers' Guide to Education Spending (TGES) Audit
+          </h3>
+          <p class="audit-header-sub">
+            Comparing Clifton Public Schools (PreK-12 &bull; 11,080 students) against Passaic, Essex, Bergen, and Morris County peers using certified comparative metrics from the New Jersey Department of Education.
+          </p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="https://www.nj.gov/education/guide/" target="_blank" rel="noopener" class="btn-jump-action secondary" style="font-size: 0.8rem; padding: 6px 12px; text-decoration: none;">
+            <span>🏛️</span> Official NJ DOE Portal ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Top KPI Ribbon -->
+      <div class="audit-kpi-grid">
+        <div class="audit-kpi-item">
+          <span class="audit-kpi-label">Total Budgetary Per Pupil</span>
+          <span class="audit-kpi-value" style="color: #2563eb;">$${m.totalBudgetaryCostPerPupil.toLocaleString()}</span>
+          <span class="audit-kpi-sub">NJ PreK-12 Median: $${m.stateMedianPreK12Large.toLocaleString()}</span>
+        </div>
+        <div class="audit-kpi-item">
+          <span class="audit-kpi-label">Classroom Instruction Share</span>
+          <span class="audit-kpi-value" style="color: #059669;">${m.classroomInstructionPercentage}%</span>
+          <span class="audit-kpi-sub">$${m.classroomInstructionPerPupil.toLocaleString()} / pupil direct classroom</span>
+        </div>
+        <div class="audit-kpi-item">
+          <span class="audit-kpi-label">Total Administration Overhead</span>
+          <span class="audit-kpi-value" style="color: #d97706;">$${m.totalAdministrationCostPerPupil.toLocaleString()}</span>
+          <span class="audit-kpi-sub">Principals ($${m.schoolAdministrationPerPupil}) + Central ($${m.generalAdministrationPerPupil})</span>
+        </div>
+        <div class="audit-kpi-item">
+          <span class="audit-kpi-label">Student-to-Teacher Ratio</span>
+          <span class="audit-kpi-value" style="color: #475569;">${m.studentToTeacherRatio}</span>
+          <span class="audit-kpi-sub">Student-to-Admin: ${m.studentToAdministratorRatio}</span>
+        </div>
+      </div>
+
+      <!-- 7-District Comparative Table -->
+      <div class="audit-table-wrap">
+        <table class="audit-table" aria-label="Comparative Education Spending Table">
+          <thead>
+            <tr>
+              <th>School District</th>
+              <th>County</th>
+              <th style="text-align: right;">Enrollment</th>
+              <th style="text-align: right;">Budgetary / Pupil</th>
+              <th style="text-align: right;">Classroom %</th>
+              <th style="text-align: right;">Admin / Pupil</th>
+              <th style="text-align: center;">Student : Teacher</th>
+              <th style="text-align: right;">Local Tax %</th>
+              <th style="text-align: right;">State Aid %</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${peers.map(p => {
+              const isClifton = p.district.includes('Clifton');
+              return `
+                <tr class="${isClifton ? 'is-highlight' : ''}">
+                  <td>
+                    <strong>${escapeHtml(p.district)}</strong>
+                    ${isClifton ? ' <span style="background: #2563eb; color: #fff; font-size: 0.68rem; padding: 1px 6px; border-radius: 999px;">Subject District</span>' : ''}
+                  </td>
+                  <td>${escapeHtml(p.county)}</td>
+                  <td style="text-align: right; font-family: var(--font-mono);">${p.enrollment.toLocaleString()}</td>
+                  <td style="text-align: right; font-family: var(--font-mono); font-weight: 700;">$${p.budgetaryCostPerPupil.toLocaleString()}</td>
+                  <td style="text-align: right; font-family: var(--font-mono); color: ${p.classroomPct >= 56 ? '#059669' : '#b45309'};">${p.classroomPct}%</td>
+                  <td style="text-align: right; font-family: var(--font-mono);">$${p.adminCostPerPupil.toLocaleString()}</td>
+                  <td style="text-align: center; font-family: var(--font-mono);">${p.studentTeacherRatio}</td>
+                  <td style="text-align: right; font-family: var(--font-mono);">${p.localLevyPct}%</td>
+                  <td style="text-align: right; font-family: var(--font-mono);">${p.stateAidPct}%</td>
+                </tr>
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Key Insights Subcards -->
+      <div class="audit-cards-grid">
+        ${insights.map(item => `
+          <div class="audit-subcard">
+            <div class="audit-subcard-title">
+              <span>💡</span> ${escapeHtml(item.title)}
+            </div>
+            <div class="audit-subcard-desc">${escapeHtml(item.impact)}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderPassaicCountyServices() {
+  const container = document.getElementById('passaic-county-services-container');
+  if (!container) return;
+
+  const d = countyServicesData;
+  if (!d) return;
+
+  const roads = d.countyRoadwaysInClifton || [];
+  const allocs = d.whereCountyTaxesGo || [];
+  const parks = d.countyParksInClifton || [];
+  const surrogate = d.surrogateSatelliteInClifton;
+
+  container.innerHTML = `
+    <div class="civic-audit-card" id="passaic-county-services-section">
+      <div class="audit-header-banner">
+        <div>
+          <h3 class="audit-header-title">
+            <span>🏛️</span> Passaic County Services &amp; Roadways: Where Clifton's $58.7M Goes
+          </h3>
+          <p class="audit-header-sub">
+            County taxes account for <strong>22.92%</strong> of your Clifton property tax bill (rate: 1.496%). Clifton property owners contribute $58.74 Million annually to Passaic County's $520.4M budget (15.13% of the entire county tax levy).
+          </p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="https://www.passaiccountynj.org" target="_blank" rel="noopener" class="btn-jump-action secondary" style="font-size: 0.8rem; padding: 6px 12px; text-decoration: none;">
+            <span>🌐</span> Passaic County Portal ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Top KPI Ribbon -->
+      <div class="audit-kpi-grid">
+        <div class="audit-kpi-item">
+          <span class="audit-kpi-label">Certified County Tax Levy</span>
+          <span class="audit-kpi-value" style="color: #475569;">$388.2M</span>
+          <span class="audit-kpi-sub">Total Passaic County Budget: $520.4M</span>
+        </div>
+        <div class="audit-kpi-item">
+          <span class="audit-kpi-label">Clifton Taxpayer Share</span>
+          <span class="audit-kpi-value" style="color: #2563eb;">$58.74M</span>
+          <span class="audit-kpi-sub">15.13% of total county property tax levy</span>
+        </div>
+        <div class="audit-kpi-item">
+          <span class="audit-kpi-label">County Share of Tax Bill</span>
+          <span class="audit-kpi-value" style="color: #059669;">22.92%</span>
+          <span class="audit-kpi-sub">~$2,700/yr on average $180.5k home</span>
+        </div>
+        <div class="audit-kpi-item">
+          <span class="audit-kpi-label">County Roads in Clifton</span>
+          <span class="audit-kpi-value" style="color: #d97706;">38.6 Mi</span>
+          <span class="audit-kpi-sub">Maintained by Passaic County DPW</span>
+        </div>
+      </div>
+
+      <!-- 2-Column Split: Budget Allocations vs Road Jurisdiction -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 24px;">
+        <!-- Column 1: Where County Taxes Go -->
+        <div>
+          <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0; margin-bottom: 12px; color: var(--text-main);">
+            📊 Major Passaic County Budget Allocations
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            ${allocs.slice(0, 7).map(item => `
+              <div style="background: var(--bg-subtle); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 12px 14px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                  <strong style="font-size: 0.9rem; color: var(--text-main);">${escapeHtml(item.function)}</strong>
+                  <span style="font-family: var(--font-mono); font-weight: 700; color: #2563eb; font-size: 0.88rem;">$${(item.annualAllocation / 1000000).toFixed(1)}M</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">${escapeHtml(item.details)}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Column 2: Passaic County Roadways in Clifton -->
+        <div>
+          <div class="pothole-alert-banner">
+            <span style="font-size: 1.5rem;">⚠️</span>
+            <div>
+              <strong>Pothole or Paving Issue on These Roads?</strong>
+              <p>Clifton DPW is legally prohibited from paving or repairing Passaic County roads. Report issues directly to <strong>Passaic County Road Dept: (973) 881-4500</strong> or email <code>roads@passaiccountynj.org</code>.</p>
+            </div>
+          </div>
+
+          <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0; margin-bottom: 12px; color: var(--text-main);">
+            🛣️ Passaic County Roadways Inside Clifton
+          </h4>
+          <div class="audit-table-wrap">
+            <table class="audit-table" style="font-size: 0.82rem;">
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Street Name</th>
+                  <th>Limits / Section</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${roads.map(r => `
+                  <tr>
+                    <td><span style="background: #e0f2fe; color: #0369a1; font-weight: 700; padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">${escapeHtml(r.route)}</span></td>
+                    <td><strong>${escapeHtml(r.name)}</strong></td>
+                    <td style="color: var(--text-muted);">${escapeHtml(r.limits)}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+
+          <!-- County Surrogate Satellite in Clifton City Hall -->
+          ${surrogate ? `
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-md); padding: 14px 16px; margin-top: 14px;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                <span style="font-size: 1.1rem;">⚖️</span>
+                <strong style="color: #166534; font-size: 0.9rem;">Free Surrogate Satellite Court at Clifton City Hall</strong>
+              </div>
+              <div style="font-size: 0.82rem; color: #14532d; line-height: 1.4;">
+                ${escapeHtml(surrogate.servicesProvided)} Held on the <strong>${escapeHtml(surrogate.schedule)}</strong> in the ground-floor conference room at Clifton City Hall. Call <strong>${escapeHtml(surrogate.contactPhone)}</strong> to schedule an appointment.
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      </div>
+
+      <!-- County Parks in Clifton Strip -->
+      <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">
+        🌳 Passaic County Parks Preserved by Your Taxes
+      </h4>
+      <div class="audit-cards-grid" style="margin-top: 0;">
+        ${parks.map(pk => `
+          <div class="audit-subcard">
+            <div class="audit-subcard-title">
+              <span>🏞️</span> ${escapeHtml(pk.name)} (${pk.acreage} Acres)
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-subtle);">${escapeHtml(pk.location)}</div>
+            <div class="audit-subcard-desc">${escapeHtml(pk.features)}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function openWaterTracker(neighborhood) {
+  if (neighborhood && leadWaterData?.neighborhoodStatus?.some(n => n.neighborhood.toLowerCase().includes(neighborhood.toLowerCase()))) {
+    activeWaterState.selectedNeighborhood = neighborhood;
+  }
+  renderWaterTrackerModal();
+  const dialog = document.getElementById('pvwc-water-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function selectWaterNeighborhood(name) {
+  activeWaterState.selectedNeighborhood = name;
+  renderWaterTrackerModal();
+}
+
+function setWaterUsageTier(tier, customVal) {
+  activeWaterState.usageTier = tier;
+  if (typeof customVal === 'number') {
+    activeWaterState.customCCF = customVal;
+  } else if (tier === 'low') {
+    activeWaterState.customCCF = 12;
+  } else if (tier === 'average') {
+    activeWaterState.customCCF = 20;
+  } else if (tier === 'high') {
+    activeWaterState.customCCF = 32;
+  }
+  renderWaterTrackerModal();
+}
+
+function updateWaterCustomCCF(val) {
+  const num = parseFloat(val);
+  if (!isNaN(num) && num >= 0) {
+    activeWaterState.usageTier = 'custom';
+    activeWaterState.customCCF = num;
+    renderWaterTrackerModal();
+  }
+}
+
+function renderWaterTrackerModal() {
+  const contentEl = document.getElementById('pvwc-dialog-content');
+  if (!contentEl) return;
+
+  const d = leadWaterData;
+  const cliftonSum = d?.cliftonSummary || {
+    monitoredServiceConnections: 31250,
+    leadLinesReplacedInClifton: 1580,
+    verifiedNonLeadConnections: 30995,
+    percentNonLead: 99.18
+  };
+  const neighborhoods = d?.neighborhoodStatus || [];
+  const selected = neighborhoods.find(n => n.neighborhood === activeWaterState.selectedNeighborhood) || neighborhoods[0] || {
+    neighborhood: 'Botany Village / Lakeview',
+    riskTier: 'Historical Priority',
+    replacedCount: 340,
+    status: 'Substantially Replaced & Modernized',
+    predominantMaterial: 'Copper / Ductile Iron (Replaced)',
+    notes: 'Intensive replacement campaign completed across Randolph Ave and Parker Ave.'
+  };
+
+  // Bill calculations for Clifton
+  const baseQuarterly = 118.45;
+  const ratePerCCF = 3.074;
+  const sewerQuarterly = 135.00;
+  const ccf = activeWaterState.customCCF;
+  const gallons = Math.round(ccf * 748);
+  const consumptionQuarterly = +(ccf * ratePerCCF).toFixed(2);
+  const waterQuarterly = +(baseQuarterly + consumptionQuarterly).toFixed(2);
+  const totalQuarterly = +(waterQuarterly + sewerQuarterly).toFixed(2);
+  const annualWater = +(waterQuarterly * 4).toFixed(2);
+  const annualSewer = +(sewerQuarterly * 4).toFixed(2);
+  const annualCombined = +(totalQuarterly * 4).toFixed(2);
+
+  contentEl.innerHTML = `
+    <!-- Top Summary Banner -->
+    <div style="background: var(--bg-subtle); padding: 14px 18px; border-radius: 8px; border: 1px solid var(--border-light); margin-bottom: 18px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+        <div>
+          <strong style="color: #0f172a; font-size: 0.95rem;">Passaic Valley Water Commission (PVWC) &bull; PWSID NJ1605002</strong>
+          <div style="font-size: 0.8rem; color: var(--text-subtle);">Mandatory Lead Service Line Replacement Law (N.J.S.A. 58:12A-40 / P.L. 2021, c.183)</div>
+        </div>
+        <span style="background: #ecfdf5; border: 1px solid #a7f3d0; color: #047857; font-size: 0.76rem; font-weight: 700; padding: 3px 10px; border-radius: 999px;">
+          ✓ 100% Replacement Deadline: July 2031
+        </span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;">
+        <div style="background: #fff; border: 1px solid var(--border-light); border-radius: 6px; padding: 8px 12px;">
+          <span style="font-size: 0.7rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase;">Replaced in Clifton</span>
+          <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: #0284c7;">${cliftonSum.leadLinesReplacedInClifton.toLocaleString()}</div>
+          <span style="font-size: 0.72rem; color: #059669; font-weight: 600;">$0 Cost to Homeowners</span>
+        </div>
+        <div style="background: #fff; border: 1px solid var(--border-light); border-radius: 6px; padding: 8px 12px;">
+          <span style="font-size: 0.7rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase;">Verified Non-Lead</span>
+          <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: #059669;">${cliftonSum.percentNonLead}%</div>
+          <span style="font-size: 0.72rem; color: var(--text-muted);">${cliftonSum.verifiedNonLeadConnections.toLocaleString()} Connections</span>
+        </div>
+        <div style="background: #fff; border: 1px solid var(--border-light); border-radius: 6px; padding: 8px 12px;">
+          <span style="font-size: 0.7rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase;">Retail Base Rate</span>
+          <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: #475569;">$118.45</div>
+          <span style="font-size: 0.72rem; color: var(--text-muted);">Quarterly 1-Family Base</span>
+        </div>
+        <div style="background: #fff; border: 1px solid var(--border-light); border-radius: 6px; padding: 8px 12px;">
+          <span style="font-size: 0.7rem; font-weight: 700; color: var(--text-subtle); text-transform: uppercase;">Annual Utility Burden</span>
+          <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: #dc2626;">~$1,260</div>
+          <span style="font-size: 0.72rem; color: var(--text-muted);">Water + Sewer combined</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Neighborhood Status Explorer -->
+    <div style="margin-bottom: 20px;">
+      <label for="water-neighborhood-select" style="font-weight: 700; font-size: 0.88rem; display: block; margin-bottom: 6px; color: var(--text-main);">
+        🔍 Select Your Clifton Neighborhood to Check Pipe Status:
+      </label>
+      <select id="water-neighborhood-select" style="width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 0.9rem; font-weight: 600; margin-bottom: 12px;" onchange="selectWaterNeighborhood(this.value)">
+        ${neighborhoods.map(n => `
+          <option value="${escapeHtml(n.neighborhood)}" ${n.neighborhood === selected.neighborhood ? 'selected' : ''}>
+            ${escapeHtml(n.neighborhood)} (${n.replacedCount} lines replaced &bull; ${escapeHtml(n.status)})
+          </option>
+        `).join('')}
+      </select>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+          <span style="font-weight: 800; font-size: 0.95rem; color: #0f172a;">${escapeHtml(selected.neighborhood)}</span>
+          <span style="background: #e0f2fe; color: #0369a1; font-weight: 700; font-size: 0.75rem; padding: 2px 8px; border-radius: 999px;">
+            Tier: ${escapeHtml(selected.riskTier)}
+          </span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; font-size: 0.82rem; margin-bottom: 8px;">
+          <div><strong>Replaced Lines:</strong> <span style="font-family: var(--font-mono); font-weight: 700; color: #0284c7;">${selected.replacedCount}</span></div>
+          <div><strong>Predominant Material:</strong> <span style="color: #059669; font-weight: 700;">${escapeHtml(selected.predominantMaterial)}</span></div>
+          <div><strong>Audit Status:</strong> ${escapeHtml(selected.status)}</div>
+        </div>
+        <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
+          ${escapeHtml(selected.notes)}
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Water & Sewer Bill Estimator -->
+    <div class="water-estimator-card">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+        <strong style="font-size: 0.95rem; color: var(--text-main);">💧 Estimate Your Quarterly Water &amp; Sewer Bill (2026 Certified Rates)</strong>
+        <span style="font-size: 0.78rem; color: var(--text-subtle);">Formula: Base ($118.45) + CCF ($3.074) + Sewer ($135.00)</span>
+      </div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+        <button type="button" class="toggle-pill-btn ${activeWaterState.usageTier === 'low' ? 'active' : ''}" onclick="setWaterUsageTier('low')">
+          Low (12 CCF &bull; 1-2 people)
+        </button>
+        <button type="button" class="toggle-pill-btn ${activeWaterState.usageTier === 'average' ? 'active' : ''}" onclick="setWaterUsageTier('average')">
+          Average (20 CCF &bull; Family of 3-4)
+        </button>
+        <button type="button" class="toggle-pill-btn ${activeWaterState.usageTier === 'high' ? 'active' : ''}" onclick="setWaterUsageTier('high')">
+          High (32 CCF &bull; Large / Lawn)
+        </button>
+        <div style="display: flex; align-items: center; gap: 6px; margin-left: auto;">
+          <label for="custom-ccf-input" style="font-size: 0.8rem; font-weight: 700; color: var(--text-subtle);">Custom CCF:</label>
+          <input type="number" id="custom-ccf-input" value="${ccf}" min="0" max="200" step="1" style="width: 70px; padding: 4px 6px; border: 1px solid #cbd5e1; border-radius: 4px; font-weight: 700; font-family: var(--font-mono);" onchange="updateWaterCustomCCF(this.value)">
+        </div>
+      </div>
+
+      <div class="water-calc-strip">
+        <div class="water-calc-box">
+          <span class="w-lbl">PVWC Base Charge</span>
+          <span class="w-val">$${baseQuarterly.toFixed(2)}</span>
+          <span style="font-size: 0.7rem; color: var(--text-subtle);">Quarterly fixed</span>
+        </div>
+        <div class="water-calc-box">
+          <span class="w-lbl">Water Usage (${ccf} CCF)</span>
+          <span class="w-val">$${consumptionQuarterly.toFixed(2)}</span>
+          <span style="font-size: 0.7rem; color: var(--text-subtle);">${gallons.toLocaleString()} gallons</span>
+        </div>
+        <div class="water-calc-box">
+          <span class="w-lbl">Municipal Sewer</span>
+          <span class="w-val" style="color: #64748b;">$${sewerQuarterly.toFixed(2)}</span>
+          <span style="font-size: 0.7rem; color: var(--text-subtle);">PVSC treatment fee</span>
+        </div>
+        <div class="water-calc-box" style="background: #eff6ff; border-color: #bfdbfe;">
+          <span class="w-lbl" style="color: #1e40af;">Quarterly Total</span>
+          <span class="w-val" style="color: #1d4ed8;">$${totalQuarterly.toFixed(2)}</span>
+          <span style="font-size: 0.7rem; color: #1e40af; font-weight: 700;">Water + Sewer</span>
+        </div>
+        <div class="water-calc-box" style="background: #fef2f2; border-color: #fecaca;">
+          <span class="w-lbl" style="color: #991b1b;">Annual Burden</span>
+          <span class="w-val" style="color: #dc2626;">$${annualCombined.toFixed(2)}</span>
+          <span style="font-size: 0.7rem; color: #991b1b; font-weight: 700;">Over 4 quarters</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statutory Rights & Testing Guide Accordion -->
+    <details class="collapsible-section" style="margin-top: 14px;" open>
+      <summary class="section-collapse-summary" style="padding: 10px 14px;">
+        <span class="section-collapse-title" style="font-size: 0.9rem;">🛡️ Your Statutory Rights &amp; How to Test for Lead Pipes</span>
+      </summary>
+      <div class="collapsible-section-body" style="padding: 12px 14px; font-size: 0.84rem; line-height: 1.5; color: var(--text-main);">
+        <p style="margin-top: 0;"><strong>$0 Homeowner Cost Guarantee:</strong> Under New Jersey P.L. 2021, c.183 (N.J.S.A. 58:12A-40), PVWC must replace both the street-side utility line AND the customer-owned line into your basement at <em>zero direct charge</em>. The utility cannot send you a contractor bill.</p>
+        <p><strong>Free Lead Water Sample Kit:</strong> Clifton residents can request an official EPA testing sample bottle from PVWC at no charge. Contact: <strong>(973) 340-4300</strong> or email <strong>lead@pvwc.com</strong>.</p>
+        <p style="margin-bottom: 0;"><strong>Basement Pipe Scratch Test:</strong> Locate your incoming water pipe where it enters through the basement wall before the meter. Scratch with a key or coin:
+          <br>&bull; <strong style="color: #64748b;">Lead:</strong> Dull grey, scratches easily to shiny silver; magnet will NOT stick.
+          <br>&bull; <strong style="color: #b45309;">Copper:</strong> Metallic penny color.
+          <br>&bull; <strong style="color: #475569;">Galvanized Steel:</strong> Hard, dull grey; magnet sticks firmly.
+          <br>&bull; <strong style="color: #0284c7;">Plastic (PEX):</strong> Smooth blue, white, or black flexible tubing.
+        </p>
+      </div>
+    </details>
+  `;
+}
+
+function openFloodReliefModal(assessedVal, condition) {
+  if (typeof assessedVal === 'number' && assessedVal > 0) {
+    activeFloodState.assessedValue = assessedVal;
+  } else if (propertyAssessmentsData?.summaryStats?.averageAssessed) {
+    activeFloodState.assessedValue = propertyAssessmentsData.summaryStats.averageAssessed;
+  }
+  if (condition) {
+    activeFloodState.floodCondition = condition;
+  }
+  renderFloodReliefModal();
+  const dialog = document.getElementById('flood-relief-dialog');
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  }
+}
+
+function setFloodCondition(cond) {
+  activeFloodState.floodCondition = cond;
+  renderFloodReliefModal();
+}
+
+function updateFloodAssessedInput(val) {
+  const num = parseFloat(val);
+  if (!isNaN(num) && num > 0) {
+    activeFloodState.assessedValue = num;
+    renderFloodReliefModal();
+  }
+}
+
+function renderFloodReliefModal() {
+  const contentEl = document.getElementById('flood-dialog-content');
+  if (!contentEl) return;
+
+  const assess = activeFloodState.assessedValue;
+  const currentTax = (assess / 100) * 6.527;
+
+  let discountPct = 15.0;
+
+  if (activeFloodState.floodCondition === 'ae_floodway') {
+    discountPct = 22.5;
+  } else if (activeFloodState.floodCondition === 'x500_yard') {
+    discountPct = 8.0;
+  }
+
+  const discountDollars = assess * (discountPct / 100);
+  const revisedAssess = Math.round(assess - discountDollars);
+  const revisedTax = (revisedAssess / 100) * 6.527;
+  const annualSavings = currentTax - revisedTax;
+
+  contentEl.innerHTML = `
+    <!-- Top Summary Banner -->
+    <div style="background: var(--bg-subtle); padding: 14px 18px; border-radius: 8px; border: 1px solid var(--border-light); margin-bottom: 18px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+        <div>
+          <strong style="color: #0f172a; font-size: 0.95rem;">Passaic River Basin Hydrological Stigma Assessment Appeal</strong>
+          <div style="font-size: 0.8rem; color: var(--text-subtle);">Controlling Precedent: <em>Glen Wall Associates v. Wall Twp.</em> (99 N.J. 265) &amp; Chapter 123</div>
+        </div>
+        <span style="background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; font-size: 0.76rem; font-weight: 700; padding: 3px 10px; border-radius: 999px;">
+          Filing Deadline: April 1 Annually
+        </span>
+      </div>
+      <p style="margin: 0; font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
+        Under New Jersey law, topographically encumbered homes subject to repetitive flooding or mandatory $2,000–$4,000/yr flood insurance premiums cannot be assessed as if they were dry properties. You are entitled to a <strong>Flood Stigma Valuation Discount</strong>.
+      </p>
+    </div>
+
+    <!-- Interactive Appeal Savings Calculator -->
+    <div class="flood-calculator-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
+        <label for="flood-assess-input" style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">
+          Your Current Assessed Value:
+        </label>
+        <div style="display: flex; align-items: center; background: #fff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px 8px;">
+          <span style="font-weight: 700; color: #64748b; margin-right: 4px;">$</span>
+          <input type="number" id="flood-assess-input" value="${assess}" step="1000" min="50000" max="2000000" style="width: 120px; border: none; outline: none; font-weight: 700; font-family: var(--font-mono);" onchange="updateFloodAssessedInput(this.value)">
+        </div>
+      </div>
+
+      <div style="font-weight: 700; font-size: 0.84rem; color: var(--text-subtle); margin-bottom: 8px; text-transform: uppercase;">
+        Select Your Flood Hazard Condition:
+      </div>
+
+      <!-- Condition Option 1 -->
+      <div class="flood-cond-option ${activeFloodState.floodCondition === 'ae_basement' ? 'active' : ''}" onclick="setFloodCondition('ae_basement')">
+        <input type="radio" name="flood-cond" id="fc-ae" ${activeFloodState.floodCondition === 'ae_basement' ? 'checked' : ''}>
+        <div>
+          <strong style="font-size: 0.88rem; color: #0f172a;">Zone AE with Documented Finished Basement Inundation (-15.0%)</strong>
+          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">Mandatory flood insurance; recurrent basement water intrusion or sump failure during severe weather.</div>
+        </div>
+        <span class="flood-savings-pill">- 15.0% Discount</span>
+      </div>
+
+      <!-- Condition Option 2 -->
+      <div class="flood-cond-option ${activeFloodState.floodCondition === 'ae_floodway' ? 'active' : ''}" onclick="setFloodCondition('ae_floodway')">
+        <input type="radio" name="flood-cond" id="fc-fw" ${activeFloodState.floodCondition === 'ae_floodway' ? 'checked' : ''}>
+        <div>
+          <strong style="font-size: 0.88rem; color: #0f172a;">Zone AE Regulatory Floodway / Severe Building Restriction (-22.5%)</strong>
+          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">Property inside active floodway along Passaic River or Third River; NJDEP prohibits footprint expansion.</div>
+        </div>
+        <span class="flood-savings-pill" style="color: #dc2626; background: #fef2f2; border-color: #fecaca;">- 22.5% Discount</span>
+      </div>
+
+      <!-- Condition Option 3 -->
+      <div class="flood-cond-option ${activeFloodState.floodCondition === 'x500_yard' ? 'active' : ''}" onclick="setFloodCondition('x500_yard')">
+        <input type="radio" name="flood-cond" id="fc-x5" ${activeFloodState.floodCondition === 'x500_yard' ? 'checked' : ''}>
+        <div>
+          <strong style="font-size: 0.88rem; color: #0f172a;">Zone X500 Moderate Risk / Yard &amp; Street Ponding (-8.0%)</strong>
+          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">500-year fringe zone; chronic street flooding blocking driveway or recurring yard inundation.</div>
+        </div>
+        <span class="flood-savings-pill" style="color: #2563eb; background: #eff6ff; border-color: #bfdbfe;">- 8.0% Discount</span>
+      </div>
+
+      <!-- Calculated Appeal Output Strip -->
+      <div class="water-calc-strip" style="margin-top: 16px;">
+        <div class="water-calc-box">
+          <span class="w-lbl">Current Assessment</span>
+          <span class="w-val" style="color: #475569;">$${Math.round(assess).toLocaleString()}</span>
+          <span style="font-size: 0.7rem; color: var(--text-subtle);">Current 2026 Roll</span>
+        </div>
+        <div class="water-calc-box">
+          <span class="w-lbl">Current 2026 Tax</span>
+          <span class="w-val" style="color: #64748b;">$${currentTax.toFixed(2)}</span>
+          <span style="font-size: 0.7rem; color: var(--text-subtle);">Certified 6.527% rate</span>
+        </div>
+        <div class="water-calc-box" style="background: #f0fdf4; border-color: #bbf7d0;">
+          <span class="w-lbl" style="color: #166534;">Target Assessment</span>
+          <span class="w-val" style="color: #15803d;">$${revisedAssess.toLocaleString()}</span>
+          <span style="font-size: 0.7rem; color: #166534; font-weight: 700;">-${discountPct}% Stigma</span>
+        </div>
+        <div class="water-calc-box" style="background: #eff6ff; border-color: #bfdbfe;">
+          <span class="w-lbl" style="color: #1e40af;">Revised Tax Bill</span>
+          <span class="w-val" style="color: #1d4ed8;">$${revisedTax.toFixed(2)}</span>
+          <span style="font-size: 0.7rem; color: #1e40af;">New annual liability</span>
+        </div>
+        <div class="water-calc-box" style="background: #ecfdf5; border-color: #a7f3d0;">
+          <span class="w-lbl" style="color: #047857;">Annual Tax Savings</span>
+          <span class="w-val" style="color: #059669;">$${annualSavings.toFixed(2)}</span>
+          <span style="font-size: 0.7rem; color: #047857; font-weight: 700;">Every Year Saved</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Passaic County Form A-1 Appeal Evidence Checklist -->
+    <details class="collapsible-section" style="margin-top: 14px;" open>
+      <summary class="section-collapse-summary" style="padding: 10px 14px;">
+        <span class="section-collapse-title" style="font-size: 0.9rem;">📋 Evidence Checklist for Passaic County Board of Taxation (Form A-1)</span>
+      </summary>
+      <div class="collapsible-section-body" style="padding: 12px 14px; font-size: 0.84rem; line-height: 1.5; color: var(--text-main);">
+        <ol style="margin: 0; padding-left: 20px;">
+          <li style="margin-bottom: 6px;"><strong>FEMA FIRMette Printout:</strong> Download official flood map showing your parcel inside Zone AE or X500 from <code>msc.fema.gov</code>.</li>
+          <li style="margin-bottom: 6px;"><strong>FEMA Elevation Certificate (Form 086-0-33):</strong> Proves lowest finished living floor or basement elevation is below Base Flood Elevation (BFE).</li>
+          <li style="margin-bottom: 6px;"><strong>Flood Insurance Declaration Page:</strong> Proof of mandatory NFIP policy premium (e.g. $2,800/yr) reducing net income/salability.</li>
+          <li style="margin-bottom: 6px;"><strong>Storm Inundation Photographs:</strong> Dated pictures showing water lines from past storms (Ida, Irene, nor'easters) or basement remediation bills.</li>
+          <li style="margin-bottom: 6px;"><strong>Dry Street Comparable Sales:</strong> Submit 3 recent sales of similar Clifton homes located outside flood hazard areas to demonstrate market price discount.</li>
+          <li><strong>Timely Submission:</strong> File Form A-1 with Passaic County Board of Taxation (401 Grand St, Paterson) prior to <strong>April 1</strong>.</li>
+        </ol>
+      </div>
+    </details>
+  `;
+}
+
+// ==========================================================================
 // OPTION A: UNIVERSAL TELEPORT OMNIBOX (Cmd+K) & CIVIC COMMAND ENGINE
 // ==========================================================================
 
@@ -12857,6 +13530,26 @@ const STATIC_CIVIC_TOOLS = [
     actionTarget: 'index.html#tab-calculator',
     keywords: ['calculator', 'tax bill', 'tax rate', '6.527%', 'how much tax', 'assessed value']
   },
+  {
+    id: 'tool-water',
+    category: 'tools',
+    icon: '💧',
+    title: 'PVWC Lead Service Line & Water Utility Burden Tracker',
+    subtitle: '1,580 lines replaced in Clifton, 99.18% non-lead baseline, $0 homeowner cost & bill estimator',
+    actionType: 'modal',
+    actionTarget: 'water',
+    keywords: ['water', 'pvwc', 'lead', 'pipes', 'water bill', 'passaic valley water', 'sewer', 'utility', 'scratch test', 'quarterly bill']
+  },
+  {
+    id: 'tool-flood',
+    category: 'tools',
+    icon: '🌊',
+    title: 'Passaic River Basin Flood Risk & Tax Stigma Relief',
+    subtitle: 'FEMA Zone AE / X500 corridors & assessment appeal discounts under Glen Wall Associates v. Wall Twp',
+    actionType: 'modal',
+    actionTarget: 'flood',
+    keywords: ['flood', 'river', 'third river', 'weasel brook', 'dundee', 'fema', 'zone ae', 'flood insurance', 'stigma', 'tax appeal', 'glen wall']
+  },
 
   // Budgets & Fiscal Ledgers
   {
@@ -12868,6 +13561,26 @@ const STATIC_CIVIC_TOOLS = [
     actionType: 'url',
     actionTarget: 'index.html#calc-sankey-section',
     keywords: ['sankey', 'tax flow', 'money flow', 'diagram', 'visualize taxes', 'where money goes']
+  },
+  {
+    id: 'budget-tges',
+    category: 'budgets',
+    icon: '🏫',
+    title: 'NJ DOE School Spending Efficiency Audit (TGES)',
+    subtitle: 'Clifton ($22,450/pupil) vs Wayne, Passaic, Paterson, Montclair, Fair Lawn, & Parsippany',
+    actionType: 'url',
+    actionTarget: 'budgets.html#boe-spending-efficiency-container',
+    keywords: ['tges', 'per pupil', 'school spending', 'classroom instruction', 'administration cost', 'legal cost', 'doe', 'efficiency']
+  },
+  {
+    id: 'budget-county',
+    category: 'budgets',
+    icon: '🏛️',
+    title: 'Passaic County Services & Road Jurisdiction ($58.7M Levy)',
+    subtitle: '22.92% of your taxes: Valley Rd, Clifton Ave, Van Houten, PCTVS, Weasel Brook Park, & County Surrogate',
+    actionType: 'url',
+    actionTarget: 'budgets.html#passaic-county-services-section',
+    keywords: ['county', 'passaic county', 'county roads', 'valley rd', 'clifton ave', 'pothole', 'weasel brook park', 'pctvs', 'surrogate', 'county tax']
   },
   {
     id: 'budget-schools',
@@ -13274,6 +13987,12 @@ async function executeOmniboxItem(index) {
       case 'renter':
         openRenterCalculator();
         break;
+      case 'water':
+        openWaterTracker();
+        break;
+      case 'flood':
+        openFloodReliefModal();
+        break;
       default:
         console.warn('Unknown modal target', item.actionTarget);
     }
@@ -13447,6 +14166,19 @@ window.isElectionCountingComplete = isElectionCountingComplete;
 window.toggleNavToolsMenu = toggleNavToolsMenu;
 window.closeNavToolsMenu = closeNavToolsMenu;
 window.setupNavToolsMenu = setupNavToolsMenu;
+window.openWaterTracker = openWaterTracker;
+window.renderWaterTrackerModal = renderWaterTrackerModal;
+window.selectWaterNeighborhood = selectWaterNeighborhood;
+window.setWaterUsageTier = setWaterUsageTier;
+window.updateWaterCustomCCF = updateWaterCustomCCF;
+window.openFloodReliefModal = openFloodReliefModal;
+window.renderFloodReliefModal = renderFloodReliefModal;
+window.setFloodCondition = setFloodCondition;
+window.updateFloodAssessedInput = updateFloodAssessedInput;
+window.renderEducationSpendingAudit = renderEducationSpendingAudit;
+window.renderPassaicCountyServices = renderPassaicCountyServices;
+window.activeWaterState = activeWaterState;
+window.activeFloodState = activeFloodState;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },

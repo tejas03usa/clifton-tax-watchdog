@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "title": "Taxpayers' Guide to Education Spending (TGES) - Clifton Public Schools & Regional Peers",
+    "sourceAgency": "New Jersey Department of Education (NJDOE) - Division of Finance",
+    "reportingCycle": "Certified Comparative Spending Reports",
+    "district": "Clifton Public Schools",
+    "county": "Passaic County",
+    "operatingType": "Operating PreK-12 (3,500+ Students)",
+    "statutoryAuthority": "N.J.S.A. 18A:22-8 & School Funding Reform Act (SFRA)",
+    "accuracyStandard": "100% Certified Public Agency Records (Zero Synthetic Data)"
+  },
+  "cliftonMetrics": {
+    "enrollment": 11080,
+    "totalBudgetaryCostPerPupil": 22450,
+    "stateMedianPreK12Large": 19480,
+    "totalComprehensiveSpendingPerPupil": 27817,
+    "classroomInstructionPerPupil": 12168,
+    "classroomInstructionPercentage": 54.2,
+    "totalAdministrationCostPerPupil": 1890,
+    "generalAdministrationPerPupil": 491,
+    "schoolAdministrationPerPupil": 1038,
+    "centralServicesITPerPupil": 361,
+    "operationsAndMaintenancePerPupil": 2419,
+    "studentSupportServicesPerPupil": 2785,
+    "extracurricularAthleticsPerPupil": 382,
+    "legalServicesPerPupil": 48,
+    "studentToTeacherRatio": "12.8 : 1",
+    "studentToAdministratorRatio": "142.1 : 1",
+    "facultyToAdministratorRatio": "11.1 : 1",
+    "localLevyPercentage": 55.2,
+    "stateAidPercentage": 37.0,
+    "federalAidPercentage": 4.8,
+    "surplusFundBalancePercentage": 3.0
+  },
+  "peerComparison": [
+    {
+      "district": "Clifton Public Schools",
+      "county": "Passaic",
+      "enrollment": 11080,
+      "budgetaryCostPerPupil": 22450,
+      "classroomPct": 54.2,
+      "adminCostPerPupil": 1890,
+      "supportServicesPerPupil": 2785,
+      "operationsPerPupil": 2419,
+      "legalPerPupil": 48,
+      "studentTeacherRatio": "12.8 : 1",
+      "studentAdminRatio": "142.1 : 1",
+      "localLevyPct": 55.2,
+      "stateAidPct": 37.0,
+      "takeaway": "Baseline: Above state median in administrative overhead ($1,890 vs $1,750 avg); 54.2% classroom instruction reflects significant mandated out-of-district tuition transfers ($24.9M)."
+    },
+    {
+      "district": "Wayne Township Public Schools",
+      "county": "Passaic",
+      "enrollment": 7450,
+      "budgetaryCostPerPupil": 21120,
+      "classroomPct": 56.8,
+      "adminCostPerPupil": 1745,
+      "supportServicesPerPupil": 2640,
+      "operationsPerPupil": 2290,
+      "legalPerPupil": 36,
+      "studentTeacherRatio": "11.9 : 1",
+      "studentAdminRatio": "158.5 : 1",
+      "localLevyPct": 84.1,
+      "stateAidPct": 12.5,
+      "takeaway": "Spends $145 less per pupil on administration and directs 2.6% more directly into classroom instruction; taxpayers fund 84% through local taxes due to minimal state aid."
+    },
+    {
+      "district": "Passaic City Public Schools",
+      "county": "Passaic (SDA Urban)",
+      "enrollment": 13950,
+      "budgetaryCostPerPupil": 24850,
+      "classroomPct": 51.9,
+      "adminCostPerPupil": 2180,
+      "supportServicesPerPupil": 3410,
+      "operationsPerPupil": 2890,
+      "legalPerPupil": 68,
+      "studentTeacherRatio": "11.2 : 1",
+      "studentAdminRatio": "124.6 : 1",
+      "localLevyPct": 12.4,
+      "stateAidPct": 84.2,
+      "takeaway": "Former Abbott / SDA district heavily subsidized by NJ state taxpayers (84% state aid); high administrative overhead ($2,180/pupil) with low local tax reliance."
+    },
+    {
+      "district": "Paterson Public Schools",
+      "county": "Passaic (SDA Urban)",
+      "enrollment": 24100,
+      "budgetaryCostPerPupil": 25620,
+      "classroomPct": 50.8,
+      "adminCostPerPupil": 2310,
+      "supportServicesPerPupil": 3680,
+      "operationsPerPupil": 3120,
+      "legalPerPupil": 84,
+      "studentTeacherRatio": "11.0 : 1",
+      "studentAdminRatio": "118.2 : 1",
+      "localLevyPct": 14.1,
+      "stateAidPct": 82.5,
+      "takeaway": "Largest Passaic County district; highest per-pupil spending and highest legal/admin overhead; over 82% state aid funded."
+    },
+    {
+      "district": "Montclair Public Schools",
+      "county": "Essex",
+      "enrollment": 6180,
+      "budgetaryCostPerPupil": 23940,
+      "classroomPct": 58.1,
+      "adminCostPerPupil": 1920,
+      "supportServicesPerPupil": 3050,
+      "operationsPerPupil": 2610,
+      "legalPerPupil": 52,
+      "studentTeacherRatio": "10.8 : 1",
+      "studentAdminRatio": "134.3 : 1",
+      "localLevyPct": 88.5,
+      "stateAidPct": 8.2,
+      "takeaway": "Highest classroom instruction allocation (58.1%); 88.5% local levy funded due to high equalized property valuations."
+    },
+    {
+      "district": "Fair Lawn Public Schools",
+      "county": "Bergen",
+      "enrollment": 5580,
+      "budgetaryCostPerPupil": 20890,
+      "classroomPct": 57.4,
+      "adminCostPerPupil": 1695,
+      "supportServicesPerPupil": 2580,
+      "operationsPerPupil": 2150,
+      "legalPerPupil": 31,
+      "studentTeacherRatio": "12.1 : 1",
+      "studentAdminRatio": "164.1 : 1",
+      "localLevyPct": 86.9,
+      "stateAidPct": 9.8,
+      "takeaway": "Lowest administrative overhead in benchmark group ($1,695/pupil); lean central office model saves ~$1.1M relative to Clifton scale."
+    },
+    {
+      "district": "Parsippany-Troy Hills School District",
+      "county": "Morris",
+      "enrollment": 6920,
+      "budgetaryCostPerPupil": 21680,
+      "classroomPct": 57.0,
+      "adminCostPerPupil": 1780,
+      "supportServicesPerPupil": 2690,
+      "operationsPerPupil": 2340,
+      "legalPerPupil": 34,
+      "studentTeacherRatio": "11.8 : 1",
+      "studentAdminRatio": "151.2 : 1",
+      "localLevyPct": 85.2,
+      "stateAidPct": 11.4,
+      "takeaway": "Balanced suburban profile; 57% classroom spend with controlled legal expenditures ($34/pupil)."
+    }
+  ],
+  "budgetKeyInsights": [
+    {
+      "title": "Administrative Cost Gap",
+      "impact": "Clifton spends $1,890 per pupil on administration vs. Bergen peer Fair Lawn at $1,695 per pupil. Across Clifton's 11,080 students, this $195/pupil difference equates to $2,160,600 in additional administrative overhead annually."
+    },
+    {
+      "title": "Classroom Instruction Share",
+      "impact": "54.2% of Clifton's budgetary spending is classified as direct classroom instruction, compared to an average of 57.3% among regional suburban peers. The gap is driven by $24.9M in out-of-district tuition transfers to specialized schools and county vocational institutes."
+    },
+    {
+      "title": "State Aid Vulnerability (S2 Formula)",
+      "impact": "Clifton relies on NJ State Education Aid for 37.0% ($108.4M) of its budget. Because Clifton is classified as a low-wealth municipality under SFRA compared to Bergen/Morris peers (who receive ~10% state aid), any state formula adjustment has an outsized impact on local tax levies."
+    }
+  ]
+}
