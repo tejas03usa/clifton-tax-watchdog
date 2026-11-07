@@ -43,58 +43,18 @@
         <span class="header-live-text" id="header-badge-text">Certified 2026 Fiscal Watchdog • Passaic County Board of Taxation & Audits</span>
         <span class="header-refresh-pill" id="header-refresh-badge">🕒 Last Refreshed: Oct 31, 2026</span>
       </div>
-      <div class="city-switcher-group cascading-switcher" role="group" aria-label="Cascading Town Selector">
-        <div class="cascade-controls">
-          <span class="city-switcher-label">📍 Town:</span>
-          
-          <!-- Step 1: County Select -->
-          <div class="cascade-select-wrap">
-            <span class="cascade-icon" aria-hidden="true">🏛️</span>
-            <select id="cascade-county-select" class="cascade-select" aria-label="Step 1: Select County">
-              <option value="Passaic County" selected>Passaic County (16)</option>
-              <option value="Bergen County">Bergen County (10)</option>
-              <option value="Essex County">Essex County (10)</option>
-              <option value="Morris County">Morris County (11)</option>
-              <option value="all">All Counties (47 Towns)</option>
-            </select>
-          </div>
-
-          <span class="cascade-arrow" aria-hidden="true">➔</span>
-
-          <!-- Step 2: Cascading Town Select -->
-          <div class="cascade-select-wrap">
-            <span class="cascade-icon" aria-hidden="true">🏡</span>
-            <select id="cascade-town-select" class="cascade-select" aria-label="Step 2: Select Municipality">
-              <option value="clifton" selected>Clifton (Active Focus)</option>
-              <option value="wayne">Wayne</option>
-              <option value="paterson">Paterson</option>
-              <option value="passaic-city">Passaic City</option>
-              <option value="west-milford">West Milford</option>
-              <option value="little-falls">Little Falls</option>
-              <option value="totowa">Totowa</option>
-              <option value="woodland-park">Woodland Park</option>
-              <option value="hawthorne">Hawthorne</option>
-              <option value="pompton-lakes">Pompton Lakes</option>
-              <option value="ringwood">Ringwood</option>
-              <option value="wanaque">Wanaque</option>
-              <option value="bloomingdale">Bloomingdale</option>
-              <option value="north-haledon">North Haledon</option>
-              <option value="haledon">Haledon</option>
-              <option value="prospect-park">Prospect Park</option>
-            </select>
-          </div>
-
-          <!-- Active Focus Pill Badge -->
-          <div class="cascade-active-badge" id="cascade-active-badge" title="Active Focus Municipality">
-            <span class="cascade-pulse-dot"></span>
-            <span class="badge-text" id="cascade-active-town-name">Clifton (Passaic)</span>
-          </div>
-
-          <!-- Direct Link to All 47 Towns Comparison -->
-          <a href="budgets.html#tab-surrounding" class="city-switch-all-btn" title="Compare all 47 municipalities across Passaic, Bergen, Essex &amp; Morris Counties">
-            <span>🗺️ All 47 Towns ➔</span>
-          </a>
-        </div>
+      <!-- Option A: Smart Location Pill & All 47 Towns Link -->
+      <div class="header-location-picker-wrap">
+        <button type="button" class="header-location-pill-btn" id="header-location-pill-btn" onclick="openLocationPickerModal()" aria-haspopup="dialog" aria-expanded="false" aria-label="Choose municipality">
+          <span class="loc-pill-pulse" aria-hidden="true"></span>
+          <span class="loc-pill-icon" aria-hidden="true">📍</span>
+          <span class="loc-pill-label" id="header-active-town-name">Clifton</span>
+          <span class="loc-pill-county" id="header-active-county-name">(Passaic Co.)</span>
+          <span class="loc-pill-caret" aria-hidden="true">▾</span>
+        </button>
+        <a href="budgets.html#tab-surrounding" class="city-switch-all-btn" title="Compare all 47 municipalities across Passaic, Bergen, Essex &amp; Morris Counties">
+          <span>🗺️ All 47 Towns ➔</span>
+        </a>
       </div>
     </div>
 
@@ -1444,117 +1404,120 @@
         <p><strong>The Equalization Illusion:</strong> Nominal certified rates can be highly deceiving. For example, Clifton's certified rate (<strong>6.527%</strong>) appears over double Wayne's (<strong>2.748%</strong>) or Montclair's (<strong>3.766%</strong>) because Clifton's property assessments are frozen at <strong>~33.3% of market value</strong>. When equalized to true 100% fair market value, Clifton's <strong>Effective Tax Rate is 2.173%</strong>—lower than Wayne (2.209%), Little Falls (2.246%), Montclair (3.111%), Passaic City (2.822%), and Paterson (3.242%).</p>
       </div>
 
-      <!-- Interactive Cross-Town Simulator & Control Hub -->
-      <div class="comparator-control-panel">
-        <div class="comparator-control-header">
+      <!-- Interactive Cross-Town Simulator & Unified Control Console -->
+      <div class="comparator-unified-console" id="comparator-cascading-filter-panel">
+        <div class="comp-console-header">
           <div class="cch-title-wrap">
             <span class="cch-icon">🧮</span>
             <div>
               <h3>"What Would My Home Pay in Each Town?" Simulator</h3>
-              <p>Enter any home value and household income to compare your exact tax bill and spending split side-by-side across all 47 municipalities.</p>
+              <p>Compare your exact tax bill and spending split side-by-side across all 47 municipalities.</p>
             </div>
           </div>
-        </div>
-
-        <div class="comparator-inputs-grid">
-          <div class="comp-input-group">
-            <label for="cross-home-val">Home Market Value ($)</label>
-            <div class="input-with-affix">
-              <span class="input-affix">$</span>
-              <input type="number" id="cross-home-val" value="600000" step="10000" min="50000" max="10000000" aria-label="Home Market Value">
-            </div>
-            <div class="comparator-presets" role="group" aria-label="Preset home values">
-              <button type="button" class="comp-preset-btn" data-val="450000">$450k Starter</button>
-              <button type="button" class="comp-preset-btn active" data-val="600000">$600k Typical</button>
-              <button type="button" class="comp-preset-btn" data-val="850000">$850k Suburban</button>
-              <button type="button" class="comp-preset-btn" data-val="1200000">$1.2M Luxury</button>
-            </div>
-          </div>
-
-          <div class="comp-input-group">
-            <label for="cross-income-val">Household Annual Income ($)</label>
-            <div class="input-with-affix">
-              <span class="input-affix">$</span>
-              <input type="number" id="cross-income-val" value="125000" step="5000" min="20000" max="2000000" aria-label="Household Annual Income">
-            </div>
-            <small class="comp-help-text">Used to calculate property tax burden as % of annual income.</small>
-          </div>
-
-          <div class="comp-input-group">
-            <label for="cross-sort-by">Sort Municipalities</label>
-            <select id="cross-sort-by" class="comp-select" aria-label="Sort comparison table">
-              <option value="tax-asc" selected>Tax Bill: Lowest to Highest</option>
-              <option value="tax-desc">Tax Bill: Highest to Lowest</option>
-              <option value="rate-asc">Effective Rate: Lowest to Highest</option>
-              <option value="school-desc">School Spending %: Highest First</option>
-              <option value="muni-desc">Municipal %: Highest First</option>
-              <option value="name-asc">Town Name: A to Z</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Unified Cascading County & Town Filter Panel -->
-        <div class="comparator-cascading-filter-panel" id="comparator-cascading-filter-panel">
-          <div class="cascading-filter-header">
-            <div class="cascade-header-left">
-              <span class="c-filter-label">Cascading Town Filter:</span>
-              <span class="cascading-count-badge" id="cascading-count-badge">Showing 16 Passaic County Municipalities</span>
-            </div>
+          <div class="comp-console-meta">
+            <span class="cascading-count-badge" id="cascading-count-badge">Showing 16 Passaic County Municipalities</span>
             <div class="comp-legend" aria-label="Spending breakdown color legend">
               <span class="legend-item"><span class="legend-color-box seg-school"></span> 🏫 Schools</span>
               <span class="legend-item"><span class="legend-color-box seg-muni"></span> 🚔 Municipal</span>
               <span class="legend-item"><span class="legend-color-box seg-county"></span> 🏛️ County</span>
             </div>
           </div>
+        </div>
 
-          <div class="cascading-filter-controls">
-            <!-- Step 1: County Selector -->
-            <div class="cascade-control-group">
-              <label for="comp-cascade-county" class="cascade-label">1. County</label>
-              <div class="cascade-input-wrap">
-                <span class="cascade-field-icon">🏛️</span>
-                <select id="comp-cascade-county" class="comp-cascade-select" aria-label="Step 1: Filter by County">
-                  <option value="Passaic County" selected>Passaic County (All 16)</option>
-                  <option value="Bergen County">Bergen County (10 Peers)</option>
-                  <option value="Essex County">Essex County (10 Peers)</option>
-                  <option value="Morris County">Morris County (11 Peers)</option>
-                  <option value="all">All Counties (47 Municipalities)</option>
-                </select>
-              </div>
+        <!-- Coordinated Single-Bar Unified Toolbar -->
+        <div class="comparator-unified-toolbar" id="comparator-unified-toolbar">
+          <!-- 1. County Selector -->
+          <div class="toolbar-cell">
+            <label for="comp-cascade-county" class="toolbar-label">1. County</label>
+            <div class="toolbar-input-box">
+              <span class="tb-icon">🏛️</span>
+              <select id="comp-cascade-county" class="comp-cascade-select" aria-label="Step 1: Filter by County">
+                <option value="Passaic County" selected>Passaic County (All 16)</option>
+                <option value="Bergen County">Bergen County (10 Peers)</option>
+                <option value="Essex County">Essex County (10 Peers)</option>
+                <option value="Morris County">Morris County (11 Peers)</option>
+                <option value="all">All Counties (47 Municipalities)</option>
+              </select>
             </div>
+          </div>
 
-            <span class="cascade-flow-arrow" aria-hidden="true">➔</span>
-
-            <!-- Step 2: Town Selector (Cascades with towns of the chosen county) -->
-            <div class="cascade-control-group">
-              <label for="comp-cascade-town" class="cascade-label">2. Town</label>
-              <div class="cascade-input-wrap">
-                <span class="cascade-field-icon">🏡</span>
-                <select id="comp-cascade-town" class="comp-cascade-select" aria-label="Step 2: Select Municipality">
-                  <option value="all">All Municipalities in County</option>
-                  <!-- Populated dynamically based on County -->
-                </select>
-              </div>
+          <!-- 2. Town Selector (Cascading) -->
+          <div class="toolbar-cell">
+            <label for="comp-cascade-town" class="toolbar-label">2. Focus Town</label>
+            <div class="toolbar-input-box">
+              <span class="tb-icon">🏡</span>
+              <select id="comp-cascade-town" class="comp-cascade-select" aria-label="Step 2: Select Municipality">
+                <option value="all">All Municipalities in County</option>
+              </select>
             </div>
+          </div>
 
-            <!-- Instant Search Input -->
-            <div class="cascade-control-group search-group">
-              <label for="cross-town-search-input" class="cascade-label">Quick Search / Jump</label>
-              <div class="cascade-input-wrap search-wrap">
-                <span class="search-icon">🔍</span>
-                <input type="text" id="cross-town-search-input" placeholder="Type town name..." aria-label="Quick search town">
-                <button type="button" id="btn-clear-town-filter" class="btn-clear-input" style="display: none;" title="Clear search">✕</button>
-              </div>
+          <!-- 3. Home Market Value -->
+          <div class="toolbar-cell home-val-cell">
+            <label for="cross-home-val" class="toolbar-label">3. Home Value</label>
+            <div class="toolbar-input-box">
+              <span class="tb-affix">$</span>
+              <input type="number" id="cross-home-val" value="600000" step="10000" min="50000" max="10000000" aria-label="Home Market Value">
             </div>
+          </div>
 
+          <!-- 4. Household Annual Income -->
+          <div class="toolbar-cell income-cell">
+            <label for="cross-income-val" class="toolbar-label">4. Annual Income</label>
+            <div class="toolbar-input-box">
+              <span class="tb-affix">$</span>
+              <input type="number" id="cross-income-val" value="125000" step="5000" min="20000" max="2000000" aria-label="Household Annual Income">
+            </div>
+          </div>
+
+          <!-- 5. Sort By -->
+          <div class="toolbar-cell sort-cell">
+            <label for="cross-sort-by" class="toolbar-label">5. Sort By</label>
+            <div class="toolbar-input-box">
+              <span class="tb-icon">📶</span>
+              <select id="cross-sort-by" class="comp-select" aria-label="Sort comparison table">
+                <option value="tax-asc" selected>Tax Bill: Lowest to Highest</option>
+                <option value="tax-desc">Tax Bill: Highest to Lowest</option>
+                <option value="rate-asc">Effective Rate: Lowest to Highest</option>
+                <option value="school-desc">School Spending %: Highest First</option>
+                <option value="muni-desc">Municipal %: Highest First</option>
+                <option value="name-asc">Town Name: A to Z</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 6. Instant Live Search -->
+          <div class="toolbar-cell search-cell">
+            <label for="cross-town-search-input" class="toolbar-label">Quick Search</label>
+            <div class="toolbar-input-box search-box">
+              <span class="tb-icon">🔍</span>
+              <input type="text" id="cross-town-search-input" placeholder="Type town name..." aria-label="Quick search town">
+              <button type="button" id="btn-clear-town-filter" class="btn-clear-input" style="display: none;" title="Clear search">✕</button>
+            </div>
+          </div>
+
+          <!-- Reset Button -->
+          <div class="toolbar-cell reset-cell">
+            <label class="toolbar-label">&nbsp;</label>
             <button type="button" class="btn-reset-cascade" id="btn-reset-cascade" style="display: none;" title="Reset filters to all towns">
               ↺ Show All 47
             </button>
           </div>
+        </div>
 
-          <!-- Cascading Town Quick-Chips (Only towns for the selected county appear here!) -->
+        <!-- Presets Strip + Cascading Pills -->
+        <div class="comp-console-presets-strip">
+          <div class="presets-row" role="group" aria-label="Preset home values">
+            <span class="presets-label">Home Presets:</span>
+            <button type="button" class="comp-preset-btn" data-val="450000">$450k Starter</button>
+            <button type="button" class="comp-preset-btn active" data-val="600000">$600k Typical</button>
+            <button type="button" class="comp-preset-btn" data-val="850000">$850k Suburban</button>
+            <button type="button" class="comp-preset-btn" data-val="1200000">$1.2M Luxury</button>
+          </div>
+
+          <!-- Cascading Town Quick-Chips -->
           <div class="cascading-pills-row" id="comp-town-chips-grid" role="group" aria-label="Quick pick town in selected county">
-            <!-- Rendered dynamically: Only the towns in the active county -->
+            <!-- Rendered dynamically -->
           </div>
         </div>
       </div>
@@ -2066,6 +2029,47 @@
         <div class="omnibox-footer-info">
           <span>21,300 Parcels &bull; 25 Candidates &bull; $436M Audits</span>
         </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog: 📍 Interactive Municipality Location Picker (All 47 North Jersey Towns) -->
+  <dialog id="location-picker-dialog" class="modern-modal-dialog location-picker-dialog" aria-labelledby="loc-dialog-title">
+    <div class="modern-dialog-wrapper loc-picker-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="loc-dialog-title"><span>📍</span> Choose Municipality</h3>
+          <div class="modern-dialog-subtitle">Select any of 47 North Jersey towns across Passaic, Bergen, Essex &amp; Morris Counties</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close location picker" onclick="closeLocationPickerModal()">✕</button>
+      </div>
+      <div class="modern-dialog-body loc-picker-body">
+        <!-- Live Quick Search -->
+        <div class="loc-search-wrap">
+          <span class="loc-search-icon">🔍</span>
+          <input type="text" id="loc-search-input" class="loc-search-input" placeholder="Type town name or county (e.g. Totowa, Wayne, Montclair, Paramus)..." aria-label="Search municipality">
+          <button type="button" id="btn-loc-clear" class="btn-loc-clear" style="display: none;" onclick="clearLocationSearch()" title="Clear search">✕</button>
+        </div>
+
+        <!-- County Filter Tabs -->
+        <div class="loc-county-tabs" role="tablist" aria-label="Filter towns by county">
+          <button type="button" class="loc-county-tab active" data-loc-county="Passaic County" role="tab" aria-selected="true">Passaic (16)</button>
+          <button type="button" class="loc-county-tab" data-loc-county="Bergen County" role="tab" aria-selected="false">Bergen (10)</button>
+          <button type="button" class="loc-county-tab" data-loc-county="Essex County" role="tab" aria-selected="false">Essex (10)</button>
+          <button type="button" class="loc-county-tab" data-loc-county="Morris County" role="tab" aria-selected="false">Morris (11)</button>
+          <button type="button" class="loc-county-tab" data-loc-county="all" role="tab" aria-selected="false">All 47 Towns</button>
+        </div>
+
+        <!-- Town Cards Grid -->
+        <div class="loc-towns-grid" id="loc-towns-grid" role="listbox" aria-label="North Jersey Towns">
+          <!-- Dynamically populated by JS from NORTH_JERSEY_TOWNS -->
+        </div>
+      </div>
+      <div class="modern-dialog-footer loc-picker-footer">
+        <a href="budgets.html#tab-surrounding" class="loc-footer-link" onclick="closeLocationPickerModal()">
+          <span>🗺️ Open Full Cross-Town Comparison Table (All 47 Municipalities) ➔</span>
+        </a>
+        <button type="button" class="btn-dialog-close-btn" onclick="closeLocationPickerModal()">Close</button>
       </div>
     </div>
   </dialog>

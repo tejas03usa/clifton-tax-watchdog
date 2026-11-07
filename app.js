@@ -1041,11 +1041,203 @@ function updateHeaderTownOptions(county, selectedTownId) {
   }
 }
 
-// Setup Cascading Municipality Switcher in Header (County ➔ Town)
+// ==========================================================================
+// OPTION A: INTERACTIVE LOCATION PICKER MODAL (ALL 47 TOWNS)
+// ==========================================================================
+let activeLocationPickerCounty = 'Passaic County';
+let activeLocationPickerSearch = '';
+let locationPickerEventsInitialized = false;
+
+function openLocationPickerModal() {
+  const modal = document.getElementById('location-picker-dialog');
+  if (!modal) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  activeLocationPickerCounty = meta.county || 'Passaic County';
+  activeLocationPickerSearch = '';
+
+  const searchInput = document.getElementById('loc-search-input');
+  if (searchInput) searchInput.value = '';
+  const clearBtn = document.getElementById('btn-loc-clear');
+  if (clearBtn) clearBtn.style.display = 'none';
+
+  // Sync active county tab
+  document.querySelectorAll('.loc-county-tab').forEach(tab => {
+    const isMatch = tab.dataset.locCounty === activeLocationPickerCounty;
+    tab.classList.toggle('active', isMatch);
+    tab.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+  });
+
+  renderLocationPickerGrid(activeLocationPickerCounty, '');
+
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', '');
+  }
+
+  if (searchInput) {
+    setTimeout(() => searchInput.focus(), 50);
+  }
+}
+
+function closeLocationPickerModal() {
+  const modal = document.getElementById('location-picker-dialog');
+  if (!modal) return;
+  if (typeof modal.close === 'function') {
+    modal.close();
+  } else {
+    modal.removeAttribute('open');
+  }
+}
+
+function clearLocationSearch() {
+  const searchInput = document.getElementById('loc-search-input');
+  if (searchInput) {
+    searchInput.value = '';
+    searchInput.focus();
+  }
+  const clearBtn = document.getElementById('btn-loc-clear');
+  if (clearBtn) clearBtn.style.display = 'none';
+  activeLocationPickerSearch = '';
+  renderLocationPickerGrid(activeLocationPickerCounty, '');
+}
+
+function renderLocationPickerGrid(countyFilter = null, searchTerm = '') {
+  const grid = document.getElementById('loc-towns-grid');
+  if (!grid) return;
+
+  const county = countyFilter || activeLocationPickerCounty || 'all';
+  const term = (searchTerm || '').trim().toLowerCase();
+
+  let towns = NORTH_JERSEY_TOWNS;
+  if (county && county !== 'all') {
+    towns = towns.filter(t => t.county.toLowerCase().includes(county.toLowerCase().replace(' county', '')));
+  }
+
+  if (term) {
+    towns = NORTH_JERSEY_TOWNS.filter(t => 
+      t.name.toLowerCase().includes(term) || 
+      t.county.toLowerCase().includes(term)
+    );
+  }
+
+  if (towns.length === 0) {
+    grid.innerHTML = `
+      <div style="grid-column: 1 / -1; padding: 24px; text-align: center; color: var(--text-muted);">
+        <p style="font-size: 1.1rem; margin-bottom: 4px;">🔍 No municipalities found for "${term}"</p>
+        <p style="font-size: 0.82rem;">Try searching for Clifton, Wayne, Montclair, Paramus, or Morristown.</p>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = towns.map(t => {
+    const isCurrent = t.id === currentCity;
+    return `
+      <button type="button" class="loc-town-card ${isCurrent ? 'active' : ''}" onclick="selectLocationTown('${t.id}', '${t.county}')" aria-label="Select ${t.name}">
+        <div class="loc-card-header">
+          <span class="loc-card-icon" aria-hidden="true">${t.icon || '🏘️'}</span>
+          <span class="loc-card-name">${t.name}</span>
+          ${t.isHub ? '<span class="loc-card-hub-badge">⭐ Full Hub</span>' : ''}
+          ${isCurrent ? '<span style="font-size: 0.65rem; background: #059669; color: #fff; padding: 1px 6px; border-radius: 999px; margin-left: 4px;">Active</span>' : ''}
+        </div>
+        <div class="loc-card-body">
+          <span class="loc-card-county">${t.county}</span>
+          <span class="loc-card-rate">Effective Rate: <strong>${t.rate}</strong></span>
+        </div>
+      </button>
+    `;
+  }).join('');
+}
+
+function selectLocationTown(townId, county) {
+  closeLocationPickerModal();
+  if (CITY_REGISTRY[townId]) {
+    if (townId !== currentCity) {
+      switchCity(townId, true);
+    }
+  } else {
+    navigateToTownComparison(townId, county);
+  }
+}
+
+function setupLocationPickerEvents() {
+  if (locationPickerEventsInitialized) return;
+  locationPickerEventsInitialized = true;
+
+  const searchInput = document.getElementById('loc-search-input');
+  const clearBtn = document.getElementById('btn-loc-clear');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const val = e.target.value || '';
+      activeLocationPickerSearch = val;
+      if (clearBtn) clearBtn.style.display = val ? 'inline-block' : 'none';
+      renderLocationPickerGrid(activeLocationPickerCounty, val);
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLocationPickerModal();
+      } else if (e.key === 'Enter') {
+        const firstCard = document.querySelector('#loc-towns-grid .loc-town-card');
+        if (firstCard) firstCard.click();
+      }
+    });
+  }
+
+  document.querySelectorAll('.loc-county-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const county = tab.dataset.locCounty;
+      activeLocationPickerCounty = county;
+      document.querySelectorAll('.loc-county-tab').forEach(t => {
+        const isMatch = t === tab;
+        t.classList.toggle('active', isMatch);
+        t.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+      });
+      if (searchInput) {
+        searchInput.value = '';
+        if (clearBtn) clearBtn.style.display = 'none';
+      }
+      activeLocationPickerSearch = '';
+      renderLocationPickerGrid(county, '');
+    });
+  });
+
+  const modal = document.getElementById('location-picker-dialog');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      const rect = modal.getBoundingClientRect();
+      const isInDialog = (
+        rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX && e.clientX <= rect.left + rect.width
+      );
+      if (!isInDialog) {
+        closeLocationPickerModal();
+      }
+    });
+  }
+}
+
+// Setup Smart Location Pill & Switchers in Header
 function setupCitySwitcher() {
+  setupLocationPickerEvents();
+
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  // Sync Option A Location Pill labels
+  const pillTown = document.getElementById('header-active-town-name');
+  if (pillTown) {
+    pillTown.textContent = meta.name;
+  }
+  const pillCounty = document.getElementById('header-active-county-name');
+  if (pillCounty) {
+    pillCounty.textContent = `(${meta.countyShort.replace(' County', '')} Co.)`;
+  }
+
+  // Backward compatible cascading selects if present
   const countySelect = document.getElementById('cascade-county-select');
   const townSelect = document.getElementById('cascade-town-select');
-  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
 
   if (countySelect) {
     countySelect.value = meta.county;
@@ -1107,7 +1299,17 @@ async function switchCity(cityId, updateUrl = true) {
     // ignore URL/storage restrictions
   }
 
-  // Update cascading header selectors & active badge
+  // Update Option A Location Pill labels
+  const pillTown = document.getElementById('header-active-town-name');
+  if (pillTown) {
+    pillTown.textContent = meta.name;
+  }
+  const pillCounty = document.getElementById('header-active-county-name');
+  if (pillCounty) {
+    pillCounty.textContent = `(${meta.countyShort.replace(' County', '')} Co.)`;
+  }
+
+  // Update cascading header selectors & active badge if present
   const countySelect = document.getElementById('cascade-county-select');
   if (countySelect) {
     countySelect.value = meta.county;
@@ -14606,6 +14808,11 @@ window.renderEducationSpendingAudit = renderEducationSpendingAudit;
 window.renderPassaicCountyServices = renderPassaicCountyServices;
 window.activeWaterState = activeWaterState;
 window.activeFloodState = activeFloodState;
+window.openLocationPickerModal = openLocationPickerModal;
+window.closeLocationPickerModal = closeLocationPickerModal;
+window.selectLocationTown = selectLocationTown;
+window.clearLocationSearch = clearLocationSearch;
+window.renderLocationPickerGrid = renderLocationPickerGrid;
 window.navigateToTownComparison = navigateToTownComparison;
 window.selectSpecificTownComparison = selectSpecificTownComparison;
 window.crossTownState = crossTownState;

@@ -4464,6 +4464,166 @@ div[id] {
 .legend-color-box.seg-muni { background: #2563eb; }
 .legend-color-box.seg-county { background: #d97706; }
 
+/* ==========================================================================
+   OPTION A: COMPARATOR UNIFIED CONSOLE & TOOLBAR
+   ========================================================================== */
+.comparator-unified-console {
+  background: #ffffff;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin-top: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.comp-console-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.comp-console-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.comparator-unified-toolbar {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.toolbar-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 150px;
+  flex: 1;
+}
+
+.toolbar-cell.home-val-cell,
+.toolbar-cell.income-cell {
+  min-width: 140px;
+  flex: 0.95;
+}
+
+.toolbar-cell.sort-cell {
+  min-width: 175px;
+  flex: 1.1;
+}
+
+.toolbar-cell.search-cell {
+  min-width: 190px;
+  flex: 1.25;
+}
+
+.toolbar-cell.reset-cell {
+  min-width: auto;
+  flex: 0;
+}
+
+.toolbar-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.toolbar-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-input-box .tb-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 0.82rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.toolbar-input-box .tb-affix {
+  position: absolute;
+  left: 10px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #64748b;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.toolbar-input-box input[type="number"] {
+  width: 100%;
+  padding: 8px 10px 8px 24px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.toolbar-input-box input[type="number"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.toolbar-input-box.search-box {
+  position: relative;
+}
+
+.toolbar-input-box.search-box input {
+  width: 100%;
+  padding: 8px 30px 8px 32px;
+  font-size: 0.84rem;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.toolbar-input-box.search-box input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.comp-console-presets-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-mid);
+}
+
+.presets-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.presets-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-right: 4px;
+}
+
 /* Unified Cascading County & Town Filter Panel on budgets.html */
 .comparator-cascading-filter-panel {
   margin-top: 16px;
@@ -9487,7 +9647,274 @@ input:checked + .slider.round:before {
   margin-bottom: 0;
 }
 
-/* Cascading Town Switcher in Header */
+/* ==========================================================================
+   OPTION A: SMART LOCATION PILL & MUNICIPALITY SELECTOR MODAL
+   ========================================================================== */
+.header-location-picker-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-location-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: #f8fafc;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.header-location-pill-btn:hover {
+  background: rgba(30, 41, 59, 0.98);
+  border-color: #60a5fa;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+}
+
+.header-location-pill-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+}
+
+.loc-pill-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  flex-shrink: 0;
+}
+
+.loc-pill-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.loc-pill-label {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.loc-pill-county {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.loc-pill-caret {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-left: 2px;
+}
+
+/* Location Picker Modal Dialog */
+.location-picker-dialog {
+  max-width: 860px;
+  width: 95%;
+  border-radius: var(--radius-xl);
+}
+
+.loc-picker-wrapper {
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.loc-picker-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  max-height: calc(85vh - 140px);
+}
+
+.loc-search-wrap {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.loc-search-wrap .loc-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.loc-search-input {
+  width: 100%;
+  padding: 10px 36px 10px 42px;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  font-size: 0.92rem;
+  font-family: var(--font-sans);
+  background: #f8fafc;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.loc-search-input:focus {
+  background: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.btn-loc-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.btn-loc-clear:hover {
+  color: #0f172a;
+}
+
+.loc-county-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+  -webkit-overflow-scrolling: touch;
+}
+
+.loc-county-tab {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.loc-county-tab:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.loc-county-tab.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.loc-towns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.loc-town-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.loc-town-card:hover {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+.loc-town-card.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.loc-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loc-card-icon {
+  font-size: 1.1rem;
+}
+
+.loc-card-name {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.loc-card-hub-badge {
+  margin-left: auto;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #1e40af;
+  background: #dbeafe;
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+}
+
+.loc-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: #64748b;
+}
+
+.loc-card-rate strong {
+  color: #059669;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.loc-picker-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-top: 1px solid var(--border-light);
+}
+
+.loc-footer-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.loc-footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Cascading Town Switcher in Header (Legacy fallback styles) */
 .city-switcher-group.cascading-switcher {
   display: inline-flex;
   flex-direction: row;

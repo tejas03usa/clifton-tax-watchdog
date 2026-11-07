@@ -45,58 +45,18 @@
         <span class="header-live-text" id="header-badge-text">Certified 2026 Fiscal Watchdog • Passaic County Board of Taxation & Audits</span>
         <span class="header-refresh-pill" id="header-refresh-badge">🕒 Last Refreshed: Oct 31, 2026</span>
       </div>
-      <div class="city-switcher-group cascading-switcher" role="group" aria-label="Cascading Town Selector">
-        <div class="cascade-controls">
-          <span class="city-switcher-label">📍 Town:</span>
-          
-          <!-- Step 1: County Select -->
-          <div class="cascade-select-wrap">
-            <span class="cascade-icon" aria-hidden="true">🏛️</span>
-            <select id="cascade-county-select" class="cascade-select" aria-label="Step 1: Select County">
-              <option value="Passaic County" selected>Passaic County (16)</option>
-              <option value="Bergen County">Bergen County (10)</option>
-              <option value="Essex County">Essex County (10)</option>
-              <option value="Morris County">Morris County (11)</option>
-              <option value="all">All Counties (47 Towns)</option>
-            </select>
-          </div>
-
-          <span class="cascade-arrow" aria-hidden="true">➔</span>
-
-          <!-- Step 2: Cascading Town Select -->
-          <div class="cascade-select-wrap">
-            <span class="cascade-icon" aria-hidden="true">🏡</span>
-            <select id="cascade-town-select" class="cascade-select" aria-label="Step 2: Select Municipality">
-              <option value="clifton" selected>Clifton (Active Focus)</option>
-              <option value="wayne">Wayne</option>
-              <option value="paterson">Paterson</option>
-              <option value="passaic-city">Passaic City</option>
-              <option value="west-milford">West Milford</option>
-              <option value="little-falls">Little Falls</option>
-              <option value="totowa">Totowa</option>
-              <option value="woodland-park">Woodland Park</option>
-              <option value="hawthorne">Hawthorne</option>
-              <option value="pompton-lakes">Pompton Lakes</option>
-              <option value="ringwood">Ringwood</option>
-              <option value="wanaque">Wanaque</option>
-              <option value="bloomingdale">Bloomingdale</option>
-              <option value="north-haledon">North Haledon</option>
-              <option value="haledon">Haledon</option>
-              <option value="prospect-park">Prospect Park</option>
-            </select>
-          </div>
-
-          <!-- Active Focus Pill Badge -->
-          <div class="cascade-active-badge" id="cascade-active-badge" title="Active Focus Municipality">
-            <span class="cascade-pulse-dot"></span>
-            <span class="badge-text" id="cascade-active-town-name">Clifton (Passaic)</span>
-          </div>
-
-          <!-- Direct Link to All 47 Towns Comparison -->
-          <a href="budgets.html#tab-surrounding" class="city-switch-all-btn" title="Compare all 47 municipalities across Passaic, Bergen, Essex &amp; Morris Counties">
-            <span>🗺️ All 47 Towns ➔</span>
-          </a>
-        </div>
+      <!-- Option A: Smart Location Pill & All 47 Towns Link -->
+      <div class="header-location-picker-wrap">
+        <button type="button" class="header-location-pill-btn" id="header-location-pill-btn" onclick="openLocationPickerModal()" aria-haspopup="dialog" aria-expanded="false" aria-label="Choose municipality">
+          <span class="loc-pill-pulse" aria-hidden="true"></span>
+          <span class="loc-pill-icon" aria-hidden="true">📍</span>
+          <span class="loc-pill-label" id="header-active-town-name">Clifton</span>
+          <span class="loc-pill-county" id="header-active-county-name">(Passaic Co.)</span>
+          <span class="loc-pill-caret" aria-hidden="true">▾</span>
+        </button>
+        <a href="budgets.html#tab-surrounding" class="city-switch-all-btn" title="Compare all 47 municipalities across Passaic, Bergen, Essex &amp; Morris Counties">
+          <span>🗺️ All 47 Towns ➔</span>
+        </a>
       </div>
     </div>
 
@@ -1956,6 +1916,47 @@
         <div class="omnibox-footer-info">
           <span>21,300 Parcels &bull; 25 Candidates &bull; $436M Audits</span>
         </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog: 📍 Interactive Municipality Location Picker (All 47 North Jersey Towns) -->
+  <dialog id="location-picker-dialog" class="modern-modal-dialog location-picker-dialog" aria-labelledby="loc-dialog-title">
+    <div class="modern-dialog-wrapper loc-picker-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="loc-dialog-title"><span>📍</span> Choose Municipality</h3>
+          <div class="modern-dialog-subtitle">Select any of 47 North Jersey towns across Passaic, Bergen, Essex &amp; Morris Counties</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close location picker" onclick="closeLocationPickerModal()">✕</button>
+      </div>
+      <div class="modern-dialog-body loc-picker-body">
+        <!-- Live Quick Search -->
+        <div class="loc-search-wrap">
+          <span class="loc-search-icon">🔍</span>
+          <input type="text" id="loc-search-input" class="loc-search-input" placeholder="Type town name or county (e.g. Totowa, Wayne, Montclair, Paramus)..." aria-label="Search municipality">
+          <button type="button" id="btn-loc-clear" class="btn-loc-clear" style="display: none;" onclick="clearLocationSearch()" title="Clear search">✕</button>
+        </div>
+
+        <!-- County Filter Tabs -->
+        <div class="loc-county-tabs" role="tablist" aria-label="Filter towns by county">
+          <button type="button" class="loc-county-tab active" data-loc-county="Passaic County" role="tab" aria-selected="true">Passaic (16)</button>
+          <button type="button" class="loc-county-tab" data-loc-county="Bergen County" role="tab" aria-selected="false">Bergen (10)</button>
+          <button type="button" class="loc-county-tab" data-loc-county="Essex County" role="tab" aria-selected="false">Essex (10)</button>
+          <button type="button" class="loc-county-tab" data-loc-county="Morris County" role="tab" aria-selected="false">Morris (11)</button>
+          <button type="button" class="loc-county-tab" data-loc-county="all" role="tab" aria-selected="false">All 47 Towns</button>
+        </div>
+
+        <!-- Town Cards Grid -->
+        <div class="loc-towns-grid" id="loc-towns-grid" role="listbox" aria-label="North Jersey Towns">
+          <!-- Dynamically populated by JS from NORTH_JERSEY_TOWNS -->
+        </div>
+      </div>
+      <div class="modern-dialog-footer loc-picker-footer">
+        <a href="budgets.html#tab-surrounding" class="loc-footer-link" onclick="closeLocationPickerModal()">
+          <span>🗺️ Open Full Cross-Town Comparison Table (All 47 Municipalities) ➔</span>
+        </a>
+        <button type="button" class="btn-dialog-close-btn" onclick="closeLocationPickerModal()">Close</button>
       </div>
     </div>
   </dialog>
