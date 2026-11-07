@@ -57,43 +57,310 @@
         <span class="header-live-text" id="header-badge-text">Certified 2026 Fiscal Watchdog • Passaic County Board of Taxation & Audits</span>
         <span class="header-refresh-pill" id="header-refresh-badge">🕒 Last Refreshed: Oct 31, 2026</span>
       </div>
-      <div class="city-switcher-group" role="group" aria-label="Select Municipality">
-        <span class="city-switcher-label">Switch Town:</span>
+      <div class="city-switcher-group" role="group" aria-label="Town Filter &amp; Municipality Selector">
+        <div class="city-switcher-controls">
+          <span class="city-switcher-label">Town Filter:</span>
+          <div class="header-county-filter-strip" role="group" aria-label="Filter switcher by county">
+            <button type="button" class="header-county-tab active" data-header-county="all">All (47)</button>
+            <button type="button" class="header-county-tab" data-header-county="Passaic County">Passaic (16)</button>
+            <button type="button" class="header-county-tab" data-header-county="Bergen County">Bergen (10)</button>
+            <button type="button" class="header-county-tab" data-header-county="Essex County">Essex (10)</button>
+            <button type="button" class="header-county-tab" data-header-county="Morris County">Morris (11)</button>
+          </div>
+          <select id="header-town-select" class="header-town-dropdown" aria-label="Quick jump to any town">
+            <option value="">⚡ Jump to any of 47 towns...</option>
+            <optgroup label="Passaic County (16)">
+              <option value="clifton" data-county="Passaic County">Clifton (2.17%)</option>
+              <option value="wayne" data-county="Passaic County">Wayne (2.21%)</option>
+              <option value="paterson" data-county="Passaic County">Paterson (2.42%)</option>
+              <option value="passaic-city" data-county="Passaic County">Passaic City (2.11%)</option>
+              <option value="west-milford" data-county="Passaic County">West Milford (2.49%)</option>
+              <option value="little-falls" data-county="Passaic County">Little Falls (2.17%)</option>
+              <option value="totowa" data-county="Passaic County">Totowa (1.51%)</option>
+              <option value="woodland-park" data-county="Passaic County">Woodland Park (2.27%)</option>
+              <option value="hawthorne" data-county="Passaic County">Hawthorne (2.32%)</option>
+              <option value="pompton-lakes" data-county="Passaic County">Pompton Lakes (2.53%)</option>
+              <option value="ringwood" data-county="Passaic County">Ringwood (2.63%)</option>
+              <option value="wanaque" data-county="Passaic County">Wanaque (2.64%)</option>
+              <option value="bloomingdale" data-county="Passaic County">Bloomingdale (2.79%)</option>
+              <option value="north-haledon" data-county="Passaic County">North Haledon (2.04%)</option>
+              <option value="haledon" data-county="Passaic County">Haledon (2.77%)</option>
+              <option value="prospect-park" data-county="Passaic County">Prospect Park (2.91%)</option>
+            </optgroup>
+            <optgroup label="Bergen County (10)">
+              <option value="glenrock" data-county="Bergen County">Glen Rock (2.44%)</option>
+              <option value="fair-lawn" data-county="Bergen County">Fair Lawn (2.40%)</option>
+              <option value="elmwood-park" data-county="Bergen County">Elmwood Park (2.35%)</option>
+              <option value="garfield" data-county="Bergen County">Garfield (2.38%)</option>
+              <option value="ridgewood" data-county="Bergen County">Ridgewood (2.13%)</option>
+              <option value="paramus" data-county="Bergen County">Paramus (1.65%)</option>
+              <option value="hackensack" data-county="Bergen County">Hackensack (2.48%)</option>
+              <option value="fort-lee" data-county="Bergen County">Fort Lee (1.84%)</option>
+              <option value="teaneck" data-county="Bergen County">Teaneck (2.36%)</option>
+              <option value="mahwah" data-county="Bergen County">Mahwah (1.79%)</option>
+            </optgroup>
+            <optgroup label="Essex County (10)">
+              <option value="montclair" data-county="Essex County">Montclair (2.58%)</option>
+              <option value="nutley" data-county="Essex County">Nutley (2.23%)</option>
+              <option value="bloomfield" data-county="Essex County">Bloomfield (2.49%)</option>
+              <option value="belleville" data-county="Essex County">Belleville (2.58%)</option>
+              <option value="livingston" data-county="Essex County">Livingston (2.15%)</option>
+              <option value="west-orange" data-county="Essex County">West Orange (2.92%)</option>
+              <option value="millburn" data-county="Essex County">Millburn (1.63%)</option>
+              <option value="verona" data-county="Essex County">Verona (2.48%)</option>
+              <option value="cedar-grove" data-county="Essex County">Cedar Grove (2.07%)</option>
+              <option value="fairfield" data-county="Essex County">Fairfield (1.65%)</option>
+            </optgroup>
+            <optgroup label="Morris County (11)">
+              <option value="parsippany" data-county="Morris County">Parsippany (2.36%)</option>
+              <option value="pequannock" data-county="Morris County">Pequannock (2.10%)</option>
+              <option value="montville" data-county="Morris County">Montville (2.06%)</option>
+              <option value="morristown" data-county="Morris County">Morristown (1.95%)</option>
+              <option value="denville" data-county="Morris County">Denville (2.15%)</option>
+              <option value="hanover" data-county="Morris County">Hanover (1.50%)</option>
+              <option value="mountain-lakes" data-county="Morris County">Mountain Lakes (2.31%)</option>
+              <option value="florham-park" data-county="Morris County">Florham Park (1.57%)</option>
+              <option value="riverdale" data-county="Morris County">Riverdale (2.18%)</option>
+              <option value="kinnelon" data-county="Morris County">Kinnelon (2.19%)</option>
+              <option value="butler" data-county="Morris County">Butler (2.44%)</option>
+            </optgroup>
+          </select>
+        </div>
         <div class="city-switcher-pills">
-          <button type="button" class="city-switch-btn active" data-city="clifton" aria-pressed="true">
+          <button type="button" class="city-switch-btn active" data-city="clifton" data-county="Passaic County" aria-pressed="true" title="Clifton (Passaic County) • Certified: 6.527% • Effective: 2.173%">
             <span class="city-btn-icon">🏛️</span>
             <span class="city-btn-name">Clifton</span>
             <span class="city-btn-county">Passaic</span>
           </button>
-          <button type="button" class="city-switch-btn" data-city="parsippany" aria-pressed="false">
-            <span class="city-btn-icon">🌲</span>
-            <span class="city-btn-name">Parsippany</span>
-            <span class="city-btn-county">Morris</span>
-          </button>
-          <button type="button" class="city-switch-btn" data-city="wayne" aria-pressed="false">
+          <button type="button" class="city-switch-btn " data-city="wayne" data-county="Passaic County" aria-pressed="false" title="Wayne Township (Passaic County) • Certified: 2.748% • Effective: 2.209%">
             <span class="city-btn-icon">🌳</span>
             <span class="city-btn-name">Wayne</span>
             <span class="city-btn-county">Passaic</span>
           </button>
-          <button type="button" class="city-switch-btn" data-city="montclair" aria-pressed="false">
+          <button type="button" class="city-switch-btn " data-city="paterson" data-county="Passaic County" aria-pressed="false" title="Paterson City (Passaic County) • Certified: 5.335% • Effective: 2.421%">
+            <span class="city-btn-icon">🏭</span>
+            <span class="city-btn-name">Paterson</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="passaic-city" data-county="Passaic County" aria-pressed="false" title="Passaic City (Passaic County) • Certified: 4.258% • Effective: 2.113%">
+            <span class="city-btn-icon">🏙️</span>
+            <span class="city-btn-name">Passaic City</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="west-milford" data-county="Passaic County" aria-pressed="false" title="West Milford Township (Passaic County) • Certified: 4.214% • Effective: 2.489%">
+            <span class="city-btn-icon">🌲</span>
+            <span class="city-btn-name">West Milford</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="little-falls" data-county="Passaic County" aria-pressed="false" title="Little Falls Township (Passaic County) • Certified: 3.496% • Effective: 2.170%">
+            <span class="city-btn-icon">🌊</span>
+            <span class="city-btn-name">Little Falls</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="totowa" data-county="Passaic County" aria-pressed="false" title="Totowa Borough (Passaic County) • Certified: 2.934% • Effective: 1.511%">
+            <span class="city-btn-icon">🛡️</span>
+            <span class="city-btn-name">Totowa</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="woodland-park" data-county="Passaic County" aria-pressed="false" title="Woodland Park Borough (Passaic County) • Certified: 3.435% • Effective: 2.271%">
+            <span class="city-btn-icon">🏞️</span>
+            <span class="city-btn-name">Woodland Park</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="hawthorne" data-county="Passaic County" aria-pressed="false" title="Hawthorne Borough (Passaic County) • Certified: 3.144% • Effective: 2.316%">
+            <span class="city-btn-icon">🏡</span>
+            <span class="city-btn-name">Hawthorne</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="pompton-lakes" data-county="Passaic County" aria-pressed="false" title="Pompton Lakes Borough (Passaic County) • Certified: 4.131% • Effective: 2.533%">
+            <span class="city-btn-icon">⛵</span>
+            <span class="city-btn-name">Pompton Lakes</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="ringwood" data-county="Passaic County" aria-pressed="false" title="Ringwood Borough (Passaic County) • Certified: 4.259% • Effective: 2.627%">
+            <span class="city-btn-icon">⛰️</span>
+            <span class="city-btn-name">Ringwood</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="wanaque" data-county="Passaic County" aria-pressed="false" title="Wanaque Borough (Passaic County) • Certified: 4.541% • Effective: 2.642%">
+            <span class="city-btn-icon">🌊</span>
+            <span class="city-btn-name">Wanaque</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="bloomingdale" data-county="Passaic County" aria-pressed="false" title="Bloomingdale Borough (Passaic County) • Certified: 4.718% • Effective: 2.790%">
+            <span class="city-btn-icon">🌲</span>
+            <span class="city-btn-name">Bloomingdale</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="north-haledon" data-county="Passaic County" aria-pressed="false" title="North Haledon Borough (Passaic County) • Certified: 3.187% • Effective: 2.045%">
+            <span class="city-btn-icon">🌄</span>
+            <span class="city-btn-name">North Haledon</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="haledon" data-county="Passaic County" aria-pressed="false" title="Haledon Borough (Passaic County) • Certified: 5.428% • Effective: 2.771%">
+            <span class="city-btn-icon">🏘️</span>
+            <span class="city-btn-name">Haledon</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="prospect-park" data-county="Passaic County" aria-pressed="false" title="Prospect Park Borough (Passaic County) • Certified: 6.231% • Effective: 2.913%">
+            <span class="city-btn-icon">🌳</span>
+            <span class="city-btn-name">Prospect Park</span>
+            <span class="city-btn-county">Passaic</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="glenrock" data-county="Bergen County" aria-pressed="false" title="Glen Rock Borough (Bergen County) • Certified: 3.407% • Effective: 2.436%">
+            <span class="city-btn-icon">🪨</span>
+            <span class="city-btn-name">Glen Rock</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="fair-lawn" data-county="Bergen County" aria-pressed="false" title="Fair Lawn Borough (Bergen County) • Certified: 3.512% • Effective: 2.395%">
+            <span class="city-btn-icon">🏡</span>
+            <span class="city-btn-name">Fair Lawn</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="elmwood-park" data-county="Bergen County" aria-pressed="false" title="Elmwood Park Borough (Bergen County) • Certified: 3.250% • Effective: 2.353%">
+            <span class="city-btn-icon">🌳</span>
+            <span class="city-btn-name">Elmwood Park</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="garfield" data-county="Bergen County" aria-pressed="false" title="Garfield City (Bergen County) • Certified: 3.415% • Effective: 2.384%">
+            <span class="city-btn-icon">🏭</span>
+            <span class="city-btn-name">Garfield</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="ridgewood" data-county="Bergen County" aria-pressed="false" title="Ridgewood Village (Bergen County) • Certified: 2.782% • Effective: 2.128%">
+            <span class="city-btn-icon">🏛️</span>
+            <span class="city-btn-name">Ridgewood</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="paramus" data-county="Bergen County" aria-pressed="false" title="Paramus Borough (Bergen County) • Certified: 1.954% • Effective: 1.645%">
+            <span class="city-btn-icon">🛍️</span>
+            <span class="city-btn-name">Paramus</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="hackensack" data-county="Bergen County" aria-pressed="false" title="Hackensack City (Bergen County) • Certified: 3.785% • Effective: 2.475%">
+            <span class="city-btn-icon">⚖️</span>
+            <span class="city-btn-name">Hackensack</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="fort-lee" data-county="Bergen County" aria-pressed="false" title="Fort Lee Borough (Bergen County) • Certified: 2.480% • Effective: 1.840%">
+            <span class="city-btn-icon">🌉</span>
+            <span class="city-btn-name">Fort Lee</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="teaneck" data-county="Bergen County" aria-pressed="false" title="Teaneck Township (Bergen County) • Certified: 3.490% • Effective: 2.356%">
+            <span class="city-btn-icon">🎓</span>
+            <span class="city-btn-name">Teaneck</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="mahwah" data-county="Bergen County" aria-pressed="false" title="Mahwah Township (Bergen County) • Certified: 2.180% • Effective: 1.790%">
+            <span class="city-btn-icon">🏔️</span>
+            <span class="city-btn-name">Mahwah</span>
+            <span class="city-btn-county">Bergen</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="montclair" data-county="Essex County" aria-pressed="false" title="Montclair Township (Essex County) • Certified: 3.766% • Effective: 2.580%">
             <span class="city-btn-icon">🏡</span>
             <span class="city-btn-name">Montclair</span>
             <span class="city-btn-county">Essex</span>
           </button>
-          <button type="button" class="city-switch-btn" data-city="morristown" aria-pressed="false">
-            <span class="city-btn-icon">📜</span>
-            <span class="city-btn-name">Morristown</span>
+          <button type="button" class="city-switch-btn " data-city="nutley" data-county="Essex County" aria-pressed="false" title="Nutley Township (Essex County) • Certified: 2.844% • Effective: 2.230%">
+            <span class="city-btn-icon">🌳</span>
+            <span class="city-btn-name">Nutley</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="bloomfield" data-county="Essex County" aria-pressed="false" title="Bloomfield Township (Essex County) • Certified: 3.820% • Effective: 2.491%">
+            <span class="city-btn-icon">🏘️</span>
+            <span class="city-btn-name">Bloomfield</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="belleville" data-county="Essex County" aria-pressed="false" title="Belleville Township (Essex County) • Certified: 3.910% • Effective: 2.584%">
+            <span class="city-btn-icon">🌸</span>
+            <span class="city-btn-name">Belleville</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="livingston" data-county="Essex County" aria-pressed="false" title="Livingston Township (Essex County) • Certified: 2.650% • Effective: 2.152%">
+            <span class="city-btn-icon">🏫</span>
+            <span class="city-btn-name">Livingston</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="west-orange" data-county="Essex County" aria-pressed="false" title="West Orange Township (Essex County) • Certified: 4.210% • Effective: 2.922%">
+            <span class="city-btn-icon">🌄</span>
+            <span class="city-btn-name">West Orange</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="millburn" data-county="Essex County" aria-pressed="false" title="Millburn Township (Short Hills) (Essex County) • Certified: 1.845% • Effective: 1.633%">
+            <span class="city-btn-icon">💎</span>
+            <span class="city-btn-name">Millburn</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="verona" data-county="Essex County" aria-pressed="false" title="Verona Township (Essex County) • Certified: 3.120% • Effective: 2.480%">
+            <span class="city-btn-icon">🏞️</span>
+            <span class="city-btn-name">Verona</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="cedar-grove" data-county="Essex County" aria-pressed="false" title="Cedar Grove Township (Essex County) • Certified: 2.460% • Effective: 2.069%">
+            <span class="city-btn-icon">🌲</span>
+            <span class="city-btn-name">Cedar Grove</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="fairfield" data-county="Essex County" aria-pressed="false" title="Fairfield Township (Essex County) • Certified: 1.890% • Effective: 1.648%">
+            <span class="city-btn-icon">✈️</span>
+            <span class="city-btn-name">Fairfield</span>
+            <span class="city-btn-county">Essex</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="parsippany" data-county="Morris County" aria-pressed="false" title="Parsippany-Troy Hills (Morris County) • Certified: 3.550% • Effective: 2.364%">
+            <span class="city-btn-icon">🌲</span>
+            <span class="city-btn-name">Parsippany</span>
             <span class="city-btn-county">Morris</span>
           </button>
-          <button type="button" class="city-switch-btn" data-city="montville" aria-pressed="false">
+          <button type="button" class="city-switch-btn " data-city="pequannock" data-county="Morris County" aria-pressed="false" title="Pequannock Township (Morris County) • Certified: 2.580% • Effective: 2.100%">
+            <span class="city-btn-icon">🌳</span>
+            <span class="city-btn-name">Pequannock</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="montville" data-county="Morris County" aria-pressed="false" title="Montville Township (Morris County) • Certified: 2.492% • Effective: 2.063%">
             <span class="city-btn-icon">🏞️</span>
             <span class="city-btn-name">Montville</span>
             <span class="city-btn-county">Morris</span>
           </button>
-          <button type="button" class="city-switch-btn" data-city="glenrock" aria-pressed="false">
-            <span class="city-btn-icon">🪨</span>
-            <span class="city-btn-name">Glen Rock</span>
-            <span class="city-btn-county">Bergen</span>
+          <button type="button" class="city-switch-btn " data-city="morristown" data-county="Morris County" aria-pressed="false" title="Morristown (Morris County) • Certified: 2.285% • Effective: 1.945%">
+            <span class="city-btn-icon">📜</span>
+            <span class="city-btn-name">Morristown</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="denville" data-county="Morris County" aria-pressed="false" title="Denville Township (Morris County) • Certified: 2.584% • Effective: 2.150%">
+            <span class="city-btn-icon">🌊</span>
+            <span class="city-btn-name">Denville</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="hanover" data-county="Morris County" aria-pressed="false" title="Hanover Township (Whippany) (Morris County) • Certified: 1.714% • Effective: 1.495%">
+            <span class="city-btn-icon">🏢</span>
+            <span class="city-btn-name">Hanover</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="mountain-lakes" data-county="Morris County" aria-pressed="false" title="Mountain Lakes Borough (Morris County) • Certified: 2.760% • Effective: 2.307%">
+            <span class="city-btn-icon">⛵</span>
+            <span class="city-btn-name">Mountain Lakes</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="florham-park" data-county="Morris County" aria-pressed="false" title="Florham Park Borough (Morris County) • Certified: 1.820% • Effective: 1.572%">
+            <span class="city-btn-icon">🌸</span>
+            <span class="city-btn-name">Florham Park</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="riverdale" data-county="Morris County" aria-pressed="false" title="Riverdale Borough (Morris County) • Certified: 2.640% • Effective: 2.178%">
+            <span class="city-btn-icon">🌊</span>
+            <span class="city-btn-name">Riverdale</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="kinnelon" data-county="Morris County" aria-pressed="false" title="Kinnelon Borough (Morris County) • Certified: 2.680% • Effective: 2.195%">
+            <span class="city-btn-icon">🌲</span>
+            <span class="city-btn-name">Kinnelon</span>
+            <span class="city-btn-county">Morris</span>
+          </button>
+          <button type="button" class="city-switch-btn " data-city="butler" data-county="Morris County" aria-pressed="false" title="Butler Borough (Morris County) • Certified: 3.420% • Effective: 2.435%">
+            <span class="city-btn-icon">🏭</span>
+            <span class="city-btn-name">Butler</span>
+            <span class="city-btn-county">Morris</span>
           </button>
           <a href="budgets.html#tab-surrounding" class="city-switch-all-btn" title="Compare all 47 municipalities across Passaic, Bergen, Essex &amp; Morris Counties">
             <span class="city-btn-icon">🗺️</span>

@@ -952,11 +952,64 @@ function setupCitySwitcher() {
   document.querySelectorAll('.city-switch-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const targetCity = btn.getAttribute('data-city');
-      if (targetCity && targetCity !== currentCity) {
-        switchCity(targetCity, true);
+      const targetCounty = btn.getAttribute('data-county');
+      if (CITY_REGISTRY[targetCity]) {
+        if (targetCity !== currentCity) {
+          switchCity(targetCity, true);
+        }
+      } else if (targetCity) {
+        navigateToTownComparison(targetCity, targetCounty);
       }
     });
   });
+
+  // Header County Filter Tabs
+  document.querySelectorAll('.header-county-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const county = tab.getAttribute('data-header-county');
+      document.querySelectorAll('.header-county-tab').forEach(t => {
+        const isMatch = t === tab;
+        t.classList.toggle('active', isMatch);
+        t.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+      });
+      document.querySelectorAll('.city-switcher-pills .city-switch-btn').forEach(btn => {
+        const btnCounty = btn.getAttribute('data-county');
+        if (county === 'all' || !county || btnCounty === county) {
+          btn.style.display = 'inline-flex';
+        } else {
+          btn.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Header Town Dropdown Selector
+  const headerSelect = document.getElementById('header-town-select');
+  if (headerSelect) {
+    headerSelect.addEventListener('change', (e) => {
+      const val = e.target.value;
+      if (!val) return;
+      if (CITY_REGISTRY[val]) {
+        switchCity(val, true);
+      } else {
+        const opt = headerSelect.options[headerSelect.selectedIndex];
+        const county = opt ? opt.getAttribute('data-county') : '';
+        navigateToTownComparison(val, county);
+      }
+    });
+  }
+}
+
+function navigateToTownComparison(townId, county) {
+  const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+  if (currentFile === 'budgets.html') {
+    if (typeof switchTab === 'function') {
+      switchTab('tab-surrounding');
+    }
+    selectSpecificTownComparison(townId, county);
+  } else {
+    window.location.href = `budgets.html?town=${encodeURIComponent(townId)}&county=${encodeURIComponent(county || '')}#tab-surrounding`;
+  }
 }
 
 // Switch Active Municipality across all 6 switchable cities
@@ -984,6 +1037,12 @@ async function switchCity(cityId, updateUrl = true) {
     btn.classList.toggle('active', isMatch);
     btn.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
   });
+
+  // Sync header town dropdown if exists
+  const headerSelect = document.getElementById('header-town-select');
+  if (headerSelect) {
+    headerSelect.value = currentCity;
+  }
 
   await loadAllData(currentCity);
   applyCityStaticCopy(currentCity);
@@ -6115,9 +6174,36 @@ let crossTownState = {
   homeValue: 600000,
   income: 125000,
   county: 'all',
-  sortBy: 'tax-asc'
+  sortBy: 'tax-asc',
+  townSearch: '',
+  selectedTown: null
 };
 let surroundingEventsInitialized = false;
+
+function scrollToTownRow(townId) {
+  setTimeout(() => {
+    const row = document.getElementById(`town-row-${townId}`);
+    if (row && typeof row.scrollIntoView === 'function') {
+      row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      row.classList.remove('section-deep-highlight');
+      void row.offsetWidth;
+      row.classList.add('section-deep-highlight');
+    }
+  }, 100);
+}
+
+function selectSpecificTownComparison(townId, county) {
+  if (county) {
+    crossTownState.county = county;
+    document.querySelectorAll('.comp-county-btn').forEach(b => {
+      const bCounty = (b.dataset.county || '').toLowerCase();
+      b.classList.toggle('active', bCounty.includes((county || '').toLowerCase().replace(' county', '')) || (county === 'all' && bCounty === 'all'));
+    });
+  }
+  crossTownState.selectedTown = townId;
+  renderSurroundingTowns();
+  scrollToTownRow(townId);
+}
 
 function setupSurroundingComparatorEvents() {
   if (surroundingEventsInitialized) return;
@@ -6126,6 +6212,9 @@ function setupSurroundingComparatorEvents() {
   const homeInput = document.getElementById('cross-home-val');
   const incomeInput = document.getElementById('cross-income-val');
   const sortSelect = document.getElementById('cross-sort-by');
+  const townSearchInput = document.getElementById('cross-town-search-input');
+  const clearTownSearchBtn = document.getElementById('btn-clear-town-filter');
+  const showAllTownsBtn = document.getElementById('btn-show-all-towns');
 
   if (homeInput) {
     homeInput.addEventListener('input', (e) => {
@@ -6171,13 +6260,49 @@ function setupSurroundingComparatorEvents() {
   document.querySelectorAll('.comp-county-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       crossTownState.county = btn.dataset.county;
+      crossTownState.selectedTown = null;
       document.querySelectorAll('.comp-county-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       renderSurroundingTowns();
     });
   });
 
-  // Handle URL county pre-filter if present (e.g., ?county=Passaic or ?county=Bergen)
+  // Town Live Search Input
+  if (townSearchInput) {
+    townSearchInput.addEventListener('input', (e) => {
+      crossTownState.townSearch = (e.target.value || '').trim().toLowerCase();
+      if (clearTownSearchBtn) {
+        clearTownSearchBtn.style.display = crossTownState.townSearch ? 'inline-block' : 'none';
+      }
+      renderSurroundingTowns();
+    });
+  }
+
+  if (clearTownSearchBtn) {
+    clearTownSearchBtn.addEventListener('click', () => {
+      if (townSearchInput) townSearchInput.value = '';
+      crossTownState.townSearch = '';
+      clearTownSearchBtn.style.display = 'none';
+      renderSurroundingTowns();
+    });
+  }
+
+  if (showAllTownsBtn) {
+    showAllTownsBtn.addEventListener('click', () => {
+      crossTownState.selectedTown = null;
+      crossTownState.county = 'all';
+      crossTownState.townSearch = '';
+      if (townSearchInput) townSearchInput.value = '';
+      if (clearTownSearchBtn) clearTownSearchBtn.style.display = 'none';
+      showAllTownsBtn.style.display = 'none';
+      document.querySelectorAll('.comp-county-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.county === 'all');
+      });
+      renderSurroundingTowns();
+    });
+  }
+
+  // Handle URL county & town pre-filter if present (e.g., ?county=Passaic or ?town=totowa)
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const countyParam = urlParams.get('county');
@@ -6194,6 +6319,15 @@ function setupSurroundingComparatorEvents() {
         b.classList.toggle('active', bCounty.includes(q.replace(' county', '')) || (crossTownState.county === 'all' && bCounty === 'all'));
       });
     }
+
+    const townParam = urlParams.get('town');
+    if (townParam && !window._hasScrolledToTownParam) {
+      window._hasScrolledToTownParam = true;
+      crossTownState.selectedTown = townParam;
+      setTimeout(() => {
+        scrollToTownRow(townParam);
+      }, 350);
+    }
   } catch (e) {
     // ignore
   }
@@ -6208,11 +6342,20 @@ function renderSurroundingTowns() {
   const income = crossTownState.income;
   const countyFilter = crossTownState.county;
   const sortBy = crossTownState.sortBy;
+  const townSearch = crossTownState.townSearch || '';
+  const selectedTown = crossTownState.selectedTown;
 
-  // Filter towns by county
+  // Filter towns by county & search
   let towns = surroundingTownsData.towns.filter(t => {
-    if (countyFilter === 'all') return true;
-    return t.county.toLowerCase().includes(countyFilter.toLowerCase().replace(' county', ''));
+    let matchCounty = true;
+    if (countyFilter !== 'all') {
+      matchCounty = t.county.toLowerCase().includes(countyFilter.toLowerCase().replace(' county', ''));
+    }
+    let matchSearch = true;
+    if (townSearch) {
+      matchSearch = t.name.toLowerCase().includes(townSearch) || t.county.toLowerCase().includes(townSearch);
+    }
+    return matchCounty && matchSearch;
   });
 
   // Calculate dynamic metrics for this specific home value
@@ -6263,15 +6406,70 @@ function renderSurroundingTowns() {
     }
   });
 
+  // Render Interactive Town Filter Chips (All towns visible in current scope)
+  const chipsGrid = document.getElementById('comp-town-chips-grid');
+  const countBadge = document.getElementById('town-filter-count-badge');
+  const showAllBtn = document.getElementById('btn-show-all-towns');
+
+  if (chipsGrid) {
+    const chipTowns = surroundingTownsData.towns.filter(t => {
+      if (countyFilter === 'all') return true;
+      return t.county.toLowerCase().includes(countyFilter.toLowerCase().replace(' county', ''));
+    });
+
+    chipsGrid.innerHTML = chipTowns.map(t => {
+      const isSelected = selectedTown === t.id;
+      const eff = t.effectiveTaxRateMarket ? `${t.effectiveTaxRateMarket.toFixed(2)}%` : '';
+      return `
+        <button type="button" class="comp-town-chip ${isSelected ? 'active' : ''}" data-town-chip="${t.id}" title="${t.name} (${t.county}) • Effective Rate: ${eff}">
+          <span>${t.icon || '🏘️'}</span>
+          <span>${t.name}</span>
+          <span class="chip-rate">${eff}</span>
+        </button>
+      `;
+    }).join('');
+
+    chipsGrid.querySelectorAll('[data-town-chip]').forEach(chipBtn => {
+      chipBtn.addEventListener('click', () => {
+        const chipId = chipBtn.getAttribute('data-town-chip');
+        if (crossTownState.selectedTown === chipId) {
+          crossTownState.selectedTown = null;
+        } else {
+          crossTownState.selectedTown = chipId;
+        }
+        renderSurroundingTowns();
+        if (crossTownState.selectedTown) {
+          scrollToTownRow(crossTownState.selectedTown);
+        }
+      });
+    });
+  }
+
+  if (countBadge) {
+    if (selectedTown) {
+      const st = surroundingTownsData.towns.find(t => t.id === selectedTown);
+      countBadge.textContent = st ? `Focusing: ${st.name}` : `${enriched.length} Towns Visible`;
+    } else if (countyFilter !== 'all') {
+      countBadge.textContent = `${enriched.length} ${countyFilter} Towns Visible`;
+    } else {
+      countBadge.textContent = `${enriched.length} of 47 Towns Visible`;
+    }
+  }
+
+  if (showAllBtn) {
+    showAllBtn.style.display = (selectedTown || countyFilter !== 'all' || townSearch) ? 'inline-block' : 'none';
+  }
+
   // Render Table Rows
   const tableBody = document.getElementById('surrounding-table-body');
   if (tableBody) {
     tableBody.innerHTML = enriched.map(t => {
       const isCurrent = t.id === currentCity;
+      const isSelected = crossTownState.selectedTown === t.id;
       const isFull = t.hasFullWatchdogProfile;
 
       return `
-        <tr class="${isCurrent ? 'highlight-focus-row' : ''}">
+        <tr id="town-row-${t.id}" data-town-id="${t.id}" class="${isCurrent ? 'highlight-focus-row' : ''} ${isSelected ? 'section-deep-highlight' : ''}">
           <th scope="row">
             <strong>${t.name}</strong> ${isCurrent ? '⭐ <span style="color: #2563eb; font-size: 0.72rem; font-weight: 800;">(Active Focus)</span>' : ''}<br>
             <small style="color: var(--text-subtle);">${t.county} • Pop. ${t.population.toLocaleString()}</small>
@@ -14239,6 +14437,9 @@ window.renderEducationSpendingAudit = renderEducationSpendingAudit;
 window.renderPassaicCountyServices = renderPassaicCountyServices;
 window.activeWaterState = activeWaterState;
 window.activeFloodState = activeFloodState;
+window.navigateToTownComparison = navigateToTownComparison;
+window.selectSpecificTownComparison = selectSpecificTownComparison;
+window.crossTownState = crossTownState;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },
