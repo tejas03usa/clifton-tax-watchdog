@@ -9343,6 +9343,39 @@ input:checked + .slider.round:before {
   border-radius: var(--radius-pill);
 }
 
+.city-switch-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  border: 1px solid #3b82f6;
+  color: #ffffff !important;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(29, 78, 216, 0.4);
+}
+
+.city-switch-all-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border-color: #93c5fd;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.5);
+}
+
+.city-switch-all-btn .city-btn-county {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
 /* Nav Bar City Switcher */
 .nav-top-row {
   display: flex;

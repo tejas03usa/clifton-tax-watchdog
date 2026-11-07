@@ -1742,7 +1742,7 @@ function applyCityStaticCopy(cityId) {
   setElHtml('.dropdown-item[data-tab="tab-demographics"] .d-item-text small',
     `${meta.zipCodesDisplay} disparities`);
   setElHtml('.dropdown-item[data-tab="tab-surrounding"] .d-item-text small',
-    `Compare surrounding towns (${meta.county})`);
+    `Compare all 47 towns (Passaic, Bergen, Essex, Morris)`);
   setElHtml('.dropdown-item[data-tab="tab-controversies"] .d-item-text small',
     meta.controversyHighlight);
 
@@ -1939,10 +1939,11 @@ function applyCityStaticCopy(cityId) {
   // 8. Tab 5: Surrounding Towns
   setElHtml('#tab-surrounding .section-intro',
     `<div class="section-badge-bar">
-       <span class="section-date-badge">Certified Comparative 2026 Tax Rates • ${meta.county} Board of Taxation</span>
+       <span class="section-date-badge">Certified Comparative 2026 Tax Rates • Passaic, Bergen, Morris &amp; Essex County Boards of Taxation</span>
+       <button type="button" class="btn-share-section" data-target="tab-surrounding" title="Copy direct link to Surrounding Towns Comparison" aria-label="Share Town Comparison"><span class="share-icon">🔗</span> Share Section</button>
      </div>
-     <h2>How Does ${meta.name} Compare to Surrounding Towns?</h2>
-     <p>Compare ${meta.name}'s certified tax rate, assessment equalization ratios, true effective tax rates, median tax bills, and school budget splits against neighboring municipalities across ${meta.county} and North Jersey.</p>`);
+     <h2 id="surrounding-heading">Cross-Town Tax &amp; Spending Comparison: ${meta.name} vs 47 Surrounding Towns</h2>
+     <p id="surrounding-desc">Compare <strong>47 North Jersey municipalities</strong> across Passaic County (all 16 municipalities), Bergen, Essex, and Morris Counties. Benchmark ${meta.name} against regional peers and surrounding towns, simulate what your exact home would pay in property taxes in each municipality, adjust for New Jersey's Equalization Ratios, and see the exact dollar and percentage breakdown of <strong>where your tax dollars go</strong> (Public Schools, Municipal Police/Fire/DPW, and County Government).</p>`);
 
   setElHtml('#tab-surrounding .comparative-insight-banner p',
     `<strong>Equalization & Tax Effort Across ${meta.county}:</strong> In ${meta.name}, the statutory rate of <strong>${meta.certifiedTaxRate}</strong> reflects an equalization ratio of <strong>${meta.equalizationRatio.toFixed(1)}%</strong>. True comparative tax effort is best understood through the <em>Effective Tax Rate</em>, which compares total taxes against 100% fair market value across regional peer municipalities.`);
@@ -6175,6 +6176,27 @@ function setupSurroundingComparatorEvents() {
       renderSurroundingTowns();
     });
   });
+
+  // Handle URL county pre-filter if present (e.g., ?county=Passaic or ?county=Bergen)
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const countyParam = urlParams.get('county');
+    if (countyParam) {
+      const q = countyParam.toLowerCase();
+      if (q.includes('passaic')) crossTownState.county = 'Passaic County';
+      else if (q.includes('bergen')) crossTownState.county = 'Bergen County';
+      else if (q.includes('essex')) crossTownState.county = 'Essex County';
+      else if (q.includes('morris')) crossTownState.county = 'Morris County';
+      else if (q === 'all') crossTownState.county = 'all';
+
+      document.querySelectorAll('.comp-county-btn').forEach(b => {
+        const bCounty = (b.dataset.county || '').toLowerCase();
+        b.classList.toggle('active', bCounty.includes(q.replace(' county', '')) || (crossTownState.county === 'all' && bCounty === 'all'));
+      });
+    }
+  } catch (e) {
+    // ignore
+  }
 }
 
 function renderSurroundingTowns() {
@@ -13645,12 +13667,12 @@ const STATIC_CIVIC_TOOLS = [
   {
     id: 'budget-surrounding',
     category: 'budgets',
-    icon: '🏘️',
-    title: 'Compare Clifton Taxes vs Surrounding Towns',
-    subtitle: 'Side-by-side tax rate, assessment ratio, and average tax bill comparison with Wayne, Montclair, Parsippany & more',
+    icon: '🗺️',
+    title: 'Compare All 47 Towns (Passaic, Bergen, Essex, Morris)',
+    subtitle: 'Interactive calculator & tax split across all 16 Passaic County towns plus Bergen, Essex, and Morris peers',
     actionType: 'url',
     actionTarget: 'budgets.html#tab-surrounding',
-    keywords: ['compare', 'surrounding', 'neighbor', 'wayne', 'montclair', 'parsippany', 'passaic county', 'tax disparity']
+    keywords: ['compare', 'surrounding', 'neighbor', 'towns', 'passaic county', 'all towns', 'county towns', 'other towns', 'tax disparity', 'wayne', 'montclair', 'parsippany', 'paterson', 'passaic', 'little falls', 'totowa', 'woodland park', 'hawthorne', 'nutley', 'paramus']
   },
   {
     id: 'budget-documents',
@@ -13880,10 +13902,48 @@ function getOmniboxMatches(query, category = 'all') {
           subtitle: `Assessed: $${assessed.toLocaleString()} • Tax: $${Math.round(p.annualTax || 0).toLocaleString()} • Blk ${p.block}, Lot ${p.lot} (${p.propertyType})`,
           actionType: 'property',
           actionTarget: p.id,
-          propertyData: p
+          propertyData: p,
+          _score: 10
         });
       }
     }
+  }
+
+  // 4. Search All 47 Surrounding Municipalities across Passaic, Bergen, Essex, Morris
+  const surrSource = surroundingTownsData || window.surroundingTownsData;
+  if ((category === 'all' || category === 'budgets') && q.length >= 2 && surrSource?.towns) {
+    let townMatches = 0;
+    for (let i = 0; i < surrSource.towns.length && townMatches < 6; i++) {
+      const t = surrSource.towns[i];
+      const name = (t.name || '').toLowerCase();
+      const county = (t.county || '').toLowerCase();
+
+      let matchScore = 0;
+      if (name === q) matchScore = 25;
+      else if (name.startsWith(q)) matchScore = 18;
+      else if (name.includes(q)) matchScore = 12;
+      else if (county.includes(q) && (q.includes('passaic') || q.includes('bergen') || q.includes('essex') || q.includes('morris') || q.includes('county'))) matchScore = 7;
+
+      if (matchScore > 0) {
+        townMatches++;
+        const effRate = t.effectiveTaxRateMarket ? t.effectiveTaxRateMarket.toFixed(3) : '';
+        const certRate = t.certifiedTaxRate ? t.certifiedTaxRate.toFixed(3) : '';
+        matches.push({
+          id: `town-${t.id || t.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
+          category: 'budgets',
+          icon: '🗺️',
+          title: `${t.name} (${t.county})`,
+          subtitle: `Effective Rate: ${effRate}% • Certified: ${certRate}% • Split: 🏫 ${t.taxSplit?.schoolsPercent || 0}% | 🚔 ${t.taxSplit?.municipalPercent || 0}% | 🏛️ ${t.taxSplit?.countyPercent || 0}%`,
+          actionType: 'url',
+          actionTarget: `budgets.html?county=${encodeURIComponent(t.county)}#tab-surrounding`,
+          _score: matchScore
+        });
+      }
+    }
+  }
+
+  if (q) {
+    matches.sort((a, b) => (b._score || 0) - (a._score || 0));
   }
 
   return matches;
