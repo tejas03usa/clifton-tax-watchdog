@@ -15,38 +15,38 @@
   "commercialShare": 31.6,
   "cityOverview": {
     "totalPopulation": 11065,
-    "totalHousingUnits": 4098,
+    "totalHousingUnits": 4100,
     "medianHouseholdIncome": 114800,
     "perCapitaIncome": 55104,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 68,
-    "renterOccupiedRate": 32,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 4.8,
+    "ownerOccupiedRate": 76.5,
+    "renterOccupiedRate": 23.5,
+    "foreignBornPercentage": 22.1,
+    "nonEnglishAtHomePercent": 29.8
   },
   "zipCodeComparison": [
     {
       "zip": "07512",
-      "areaName": "Totowa Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Totowa Borough Center, Residential & Parkway Districts",
+      "areaName": "Totowa Borough (ZIP 07512)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Union Blvd Commercial & Residential Corridor, Minnisink & Lincoln Heights",
       "medianHouseholdIncome": 114800,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 68,
-      "renterOccupiedPercent": 32,
+      "ownerOccupiedPercent": 76.5,
+      "renterOccupiedPercent": 23.5,
       "averageAnnualTaxBill": 8537.21,
       "monthlyTaxBill": 711.43,
       "taxBurdenPercentOfIncome": 7.44,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 39816000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 66.8,
+        "hispanicOrLatino": 14.4,
+        "asian": 9.9,
+        "blackOrAfricanAmerican": 8.8,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.934%, with an equalization ratio of 51.5%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Totowa Borough Center & Downtown",
+      "name": "Union Blvd Commercial & Residential Corridor",
       "zip": "07512",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Bustling municipal and retail corridor with tree-lined residential side streets and suburban cape cods",
       "medianIncome": 114800,
-      "medianAge": 40.5,
-      "avgTaxBill": 8537.21,
+      "medianAge": 41.5,
+      "avgTaxBill": 8537,
       "taxBurdenPercentIncome": 7.44,
       "avgMarketValue": 565000,
-      "ownerOccupied": 68,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 72.0,
+      "description": "Civic center surrounding municipal hall, library, and local restaurants convenient to Route 46 and I-80.",
+      "taxDynamic": "Major office parks and corporate retail along Route 46 and Riverview Drive keep municipal tax rates low (2.934% certified)."
     },
     {
-      "name": "Totowa Borough Residential Heights",
+      "name": "Minnisink & Lincoln Heights",
       "zip": "07512",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 123984,
-      "medianAge": 42.2,
-      "avgTaxBill": 9049,
-      "taxBurdenPercentIncome": 7.44,
-      "avgMarketValue": 610200,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Elevated residential section with scenic topography, custom ranches, split-levels, and quiet cul-de-sacs",
+      "medianIncome": 132020,
+      "medianAge": 41.5,
+      "avgTaxBill": 9562,
+      "taxBurdenPercentIncome": 7.24,
+      "avgMarketValue": 632800,
+      "ownerOccupied": 88.0,
+      "description": "Quiet suburban residential neighborhood overlooking the valley, convenient to Washington Park School and ballfields.",
+      "taxDynamic": "Solid middle-class residential tax roll with stable property appreciation."
     }
   ],
   "equityAnalysis": {
-    "summary": "Totowa Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Totowa Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,32 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 1328,
-      "totalHouseholds": 4098,
+      "totalHouseholds": 4100,
       "enrolledPublicSchools": 1549,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 1715
     },
     "schools": [
       {
-        "name": "Totowa Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Union Blvd, Totowa Borough, NJ 07512",
-        "enrollment": 553,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Totowa Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "100 E Main St, Little Falls, NJ 07424",
+        "enrollment": 1180,
+        "grades": "9-12",
+        "name": "Passaic Valley High School (Regional)",
+        "type": "High School"
       },
       {
-        "name": "Totowa Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Totowa Rd, Totowa Borough, NJ 07512",
-        "enrollment": 443,
-        "grades": "6 to 8",
-        "neighborhood": "Totowa Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "10 Crews St, Totowa, NJ 07512",
+        "enrollment": 640,
+        "grades": "3-8",
+        "name": "Washington Park School",
+        "type": "Elementary / Middle"
       },
       {
-        "name": "Totowa Borough High School",
-        "type": "High School",
-        "address": "300 Minnisink Rd, Totowa Borough, NJ 07512",
-        "enrollment": 553,
-        "grades": "9 to 12",
-        "neighborhood": "Totowa Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Totowa Rd, Totowa, NJ 07512",
+        "enrollment": 380,
+        "grades": "PreK-2",
+        "name": "Memorial School",
+        "type": "Elementary"
       }
     ]
   }

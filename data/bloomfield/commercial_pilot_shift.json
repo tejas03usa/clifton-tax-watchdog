@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Essex County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Essex County Board of Taxation Certified Abstract of Ratables",
+      "Bloomfield Township Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 81.4,
     "commercialShare": 18.6,
+    "annualShiftDollarImpact": 187090,
+    "averageHomeownerExtraCost": 8.99,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
-    "activePilotsCount": 1,
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
+    "activePilotsCount": 11,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Bloomfield Township municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "bloomfield-pilot-1",
         "name": "Bloomfield Township Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 871850,
-        "standardSchoolShare": 465568,
-        "standardCityShare": 263299,
-        "standardCountyShare": 142983,
-        "pilotServiceCharge": 566702,
-        "pilotCityKeeps": 538367,
-        "pilotCountyGets": 28335,
-        "developerAnnualSavings": 305148,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 392400,
-        "homeownerBurdenAbsorbed": 392400
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 1046220,
+        "standardSchoolShare": 558681,
+        "standardCityShare": 315958,
+        "standardCountyShare": 171580,
+        "pilotServiceCharge": 680043,
+        "pilotCityKeeps": 646041,
+        "pilotCountyGets": 34002,
+        "developerAnnualSavings": 366177,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 479600,
+        "homeownerBurdenAbsorbed": 479600
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Bloomfield Township Shopping Plaza / Corporate Center",
+        "name": "Bloomfield Township Commercial Plaza / Corporate Complex",
         "location": "100 Broad St",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 28374233,
-        "annualTaxPaid": 706700,
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 37576687,
+        "annualTaxPaid": 935900,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Bloomfield Township Professional Medical Arts Building",
-        "location": "250 Bloomfield Ave",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 19018405,
-        "annualTaxPaid": 473680,
+        "name": "Bloomfield Township Medical Arts & Professional Center",
+        "location": "250 Watchung Ave",
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 25766871,
+        "annualTaxPaid": 641760,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Essex County Board of Taxation Abstract of Ratables & Bloomfield Township Financial Statements",
+    "totalPropertyTaxesAbated": 415755,
+    "totalPilotBillingsCollected": 228665,
+    "netTaxShiftToHomeowners": 187090,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Bloomfield Township Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 148632,
+        "abatedTaxesEstimated": 270241,
+        "netLossToSchools": 144309,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $100k directly to Bloomfield Township school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Essex County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

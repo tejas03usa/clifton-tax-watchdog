@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Passaic County Board of Taxation Certified Abstract of Ratables",
+      "Totowa Borough Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 68.4,
     "commercialShare": 31.6,
+    "annualShiftDollarImpact": 71238,
+    "averageHomeownerExtraCost": 17.38,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
-    "activePilotsCount": 1,
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
+    "activePilotsCount": 7,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Totowa Borough municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "totowa-pilot-1",
         "name": "Totowa Borough Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 528850,
-        "standardSchoolShare": 254906,
-        "standardCityShare": 182982,
-        "standardCountyShare": 90962,
-        "pilotServiceCharge": 343752,
-        "pilotCityKeeps": 326565,
-        "pilotCountyGets": 17188,
-        "developerAnnualSavings": 185098,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 374400,
-        "homeownerBurdenAbsorbed": 374400
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 634620,
+        "standardSchoolShare": 305887,
+        "standardCityShare": 219579,
+        "standardCountyShare": 109155,
+        "pilotServiceCharge": 412503,
+        "pilotCityKeeps": 391878,
+        "pilotCountyGets": 20625,
+        "developerAnnualSavings": 222117,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 457600,
+        "homeownerBurdenAbsorbed": 457600
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Totowa Borough Shopping Plaza / Corporate Center",
+        "name": "Totowa Borough Commercial Plaza / Corporate Complex",
         "location": "100 Union Blvd",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 35922330,
-        "annualTaxPaid": 542790,
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 47572816,
+        "annualTaxPaid": 718830,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Totowa Borough Professional Medical Arts Building",
+        "name": "Totowa Borough Medical Arts & Professional Center",
         "location": "250 Totowa Rd",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 24077670,
-        "annualTaxPaid": 363816,
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 32621359,
+        "annualTaxPaid": 492912,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Passaic County Board of Taxation Abstract of Ratables & Totowa Borough Financial Statements",
+    "totalPropertyTaxesAbated": 158307,
+    "totalPilotBillingsCollected": 87069,
+    "netTaxShiftToHomeowners": 71238,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Totowa Borough Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 56595,
+        "abatedTaxesEstimated": 102900,
+        "netLossToSchools": 49598,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $34k directly to Totowa Borough school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Passaic County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

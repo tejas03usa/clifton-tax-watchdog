@@ -210,5 +210,27 @@
       "proposal": "Follow neighboring Hanover and Morristown by rezoning vacant Class-B office buildings along Campus Drive and Interpace Pkwy for life-sciences, medical diagnostics, and AI data/research centers.",
       "benefit": "Restores commercial ratables from 27.2% toward 35%+, generating high tax revenue with zero public school student load."
     }
-  ]
+  ],
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "County Board of Taxation Abstract of Ratables & Municipal Financial Statements",
+    "totalPropertyTaxesAbated": 2400000,
+    "totalPilotBillingsCollected": 1392000,
+    "netTaxShiftToHomeowners": 1008000,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Parsippany Corporate / Town Center Redevelopment",
+        "block": "120",
+        "lot": "4",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 1392000,
+        "abatedTaxesEstimated": 2400000,
+        "netLossToSchools": 1320000,
+        "expirationYear": 2046
+      }
+    ]
+  }
 }

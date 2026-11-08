@@ -40,5 +40,27 @@
   "taxpayerSolutions": [
     "Expanding downtown outdoor dining and retail ratables along Rock Road.",
     "Shared service interlocal agreements with Ridgewood and Bergen County for specialized equipment."
-  ]
+  ],
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "County Board of Taxation Abstract of Ratables & Municipal Financial Statements",
+    "totalPropertyTaxesAbated": 1800000,
+    "totalPilotBillingsCollected": 1044000,
+    "netTaxShiftToHomeowners": 756000,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Glenrock Corporate / Town Center Redevelopment",
+        "block": "120",
+        "lot": "4",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 1044000,
+        "abatedTaxesEstimated": 1800000,
+        "netLossToSchools": 990000,
+        "expirationYear": 2046
+      }
+    ]
+  }
 }

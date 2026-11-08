@@ -15,38 +15,38 @@
   "commercialShare": 11.5,
   "cityOverview": {
     "totalPopulation": 10100,
-    "totalHousingUnits": 3741,
+    "totalHousingUnits": 3800,
     "medianHouseholdIncome": 168400,
     "perCapitaIncome": 80832,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 88,
-    "renterOccupiedRate": 12,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 3.1,
+    "ownerOccupiedRate": 91.0,
+    "renterOccupiedRate": 9.0,
+    "foreignBornPercentage": 13.5,
+    "nonEnglishAtHomePercent": 17.8
   },
   "zipCodeComparison": [
     {
       "zip": "07405",
-      "areaName": "Kinnelon Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Kinnelon Borough Center, Residential & Parkway Districts",
+      "areaName": "Kinnelon Borough (ZIP 07405)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Smoke Rise Gated Enclave & Fayson Lakes, Fayson Lakes & Kiel Section",
       "medianHouseholdIncome": 168400,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 88,
-      "renterOccupiedPercent": 12,
+      "ownerOccupiedPercent": 91.0,
+      "renterOccupiedPercent": 9.0,
       "averageAnnualTaxBill": 15035.2,
       "monthlyTaxBill": 1252.93,
       "taxBurdenPercentOfIncome": 8.93,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 47979000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 79.8,
+        "hispanicOrLatino": 8.8,
+        "asian": 6.1,
+        "blackOrAfricanAmerican": 5.4,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.68%, with an equalization ratio of 81.9%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Kinnelon Borough Center & Downtown",
+      "name": "Smoke Rise Gated Enclave & Fayson Lakes",
       "zip": "07405",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 168400,
-      "medianAge": 40.5,
-      "avgTaxBill": 15035.2,
-      "taxBurdenPercentIncome": 8.93,
-      "avgMarketValue": 685000,
-      "ownerOccupied": 88,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Prestigious private gated community surrounding Lake Kinnelon, custom luxury estates on multi-acre wooded properties, and Fayson Lakes",
+      "medianIncome": 244180,
+      "medianAge": 41.5,
+      "avgTaxBill": 21049,
+      "taxBurdenPercentIncome": 8.62,
+      "avgMarketValue": 959000,
+      "ownerOccupied": 96.0,
+      "description": "One of New Jersey's premier private gated lake club communities, featuring private security, horseback riding stables, and private beach clubs.",
+      "taxDynamic": "High individual residential assessments where 64.2% of the local property tax levy funds Kinnelon Public Schools."
     },
     {
-      "name": "Kinnelon Borough Residential Heights",
+      "name": "Fayson Lakes & Kiel Section",
       "zip": "07405",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 181872,
-      "medianAge": 42.2,
-      "avgTaxBill": 15937,
-      "taxBurdenPercentIncome": 8.93,
-      "avgMarketValue": 739800,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Historic lake community with sandy beaches, tennis courts, sailing, and charming rustic residences",
+      "medianIncome": 210500,
+      "medianAge": 41.5,
+      "avgTaxBill": 18042,
+      "taxBurdenPercentIncome": 8.57,
+      "avgMarketValue": 822000,
+      "ownerOccupied": 90.0,
+      "description": "Beloved family lake community featuring 5 lakes, private beaches, and active youth sports.",
+      "taxDynamic": "Strong real estate values driven by prestigious Kinnelon school district reputation."
     }
   ],
   "equityAnalysis": {
-    "summary": "Kinnelon Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Kinnelon Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 1212,
-      "totalHouseholds": 3741,
+      "totalHouseholds": 3800,
       "enrolledPublicSchools": 1414,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 1566
     },
     "schools": [
       {
-        "name": "Kinnelon Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Kinnelon Rd, Kinnelon Borough, NJ 07405",
-        "enrollment": 505,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Kinnelon Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "121 Kinnelon Rd, Kinnelon, NJ 07405",
+        "enrollment": 590,
+        "grades": "9-12",
+        "name": "Kinnelon High School",
+        "type": "High School"
       },
       {
-        "name": "Kinnelon Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Fayson Lakes Rd, Kinnelon Borough, NJ 07405",
-        "enrollment": 404,
-        "grades": "6 to 8",
-        "neighborhood": "Kinnelon Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "Kiel Ave, Kinnelon, NJ 07405",
+        "enrollment": 460,
+        "grades": "6-8",
+        "name": "Pearl R. Miller Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Kinnelon Borough High School",
-        "type": "High School",
-        "address": "300 Boonton Ave, Kinnelon Borough, NJ 07405",
-        "enrollment": 505,
-        "grades": "9 to 12",
-        "neighborhood": "Kinnelon Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Kiel Ave, Kinnelon, NJ 07405",
+        "enrollment": 290,
+        "grades": "PreK-2",
+        "name": "Kiel Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Boonton Ave, Kinnelon, NJ 07405",
+        "enrollment": 320,
+        "grades": "3-5",
+        "name": "Stonybrook Elementary School",
+        "type": "Elementary"
       }
     ]
   }

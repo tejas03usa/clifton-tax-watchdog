@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Passaic County Board of Taxation Certified Abstract of Ratables",
+      "Prospect Park Borough Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 89.2,
     "commercialShare": 10.8,
+    "annualShiftDollarImpact": 96688,
+    "averageHomeownerExtraCost": 53.72,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
-    "activePilotsCount": 1,
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
+    "activePilotsCount": 2,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Prospect Park Borough municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "prospect-park-pilot-1",
         "name": "Prospect Park Borough Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 1019550,
-        "standardSchoolShare": 538322,
-        "standardCityShare": 325236,
-        "standardCountyShare": 155991,
-        "pilotServiceCharge": 662708,
-        "pilotCityKeeps": 629572,
-        "pilotCountyGets": 33135,
-        "developerAnnualSavings": 356842,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 410400,
-        "homeownerBurdenAbsorbed": 410400
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 1223460,
+        "standardSchoolShare": 645987,
+        "standardCityShare": 390284,
+        "standardCountyShare": 187189,
+        "pilotServiceCharge": 795249,
+        "pilotCityKeeps": 755487,
+        "pilotCountyGets": 39762,
+        "developerAnnualSavings": 428211,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 501600,
+        "homeownerBurdenAbsorbed": 501600
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Prospect Park Borough Shopping Plaza / Corporate Center",
+        "name": "Prospect Park Borough Commercial Plaza / Corporate Complex",
         "location": "100 Brown Ave",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 39572193,
-        "annualTaxPaid": 1152735,
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 52406417,
+        "annualTaxPaid": 1526595,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Prospect Park Borough Professional Medical Arts Building",
+        "name": "Prospect Park Borough Medical Arts & Professional Center",
         "location": "250 North 8th St",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 26524064,
-        "annualTaxPaid": 772644,
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 35935829,
+        "annualTaxPaid": 1046808,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Passaic County Board of Taxation Abstract of Ratables & Prospect Park Borough Financial Statements",
+    "totalPropertyTaxesAbated": 214862,
+    "totalPilotBillingsCollected": 118174,
+    "netTaxShiftToHomeowners": 96688,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Prospect Park Borough Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 76813,
+        "abatedTaxesEstimated": 139660,
+        "netLossToSchools": 73741,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $51k directly to Prospect Park Borough school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Passaic County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

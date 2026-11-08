@@ -15,38 +15,38 @@
   "commercialShare": 14.4,
   "cityOverview": {
     "totalPopulation": 13200,
-    "totalHousingUnits": 4889,
+    "totalHousingUnits": 4900,
     "medianHouseholdIncome": 132800,
     "perCapitaIncome": 63744,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 86,
-    "renterOccupiedRate": 14,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 3.5,
+    "ownerOccupiedRate": 81.5,
+    "renterOccupiedRate": 18.5,
+    "foreignBornPercentage": 17.2,
+    "nonEnglishAtHomePercent": 22.0
   },
   "zipCodeComparison": [
     {
       "zip": "07009",
-      "areaName": "Cedar Grove Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Cedar Grove Township Center, Residential & Parkway Districts",
+      "areaName": "Cedar Grove Township (ZIP 07009)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Bradford & Ridge Road Section, North End & Fairview Parkway",
       "medianHouseholdIncome": 132800,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 86,
-      "renterOccupiedPercent": 14,
+      "ownerOccupiedPercent": 81.5,
+      "renterOccupiedPercent": 18.5,
       "averageAnnualTaxBill": 13240.7,
       "monthlyTaxBill": 1103.39,
       "taxBurdenPercentOfIncome": 9.97,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 51024000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 74.2,
+        "hispanicOrLatino": 11.2,
+        "asian": 7.7,
+        "blackOrAfricanAmerican": 6.9,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.46%, with an equalization ratio of 84.1%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Cedar Grove Township Center & Downtown",
+      "name": "Bradford & Ridge Road Section",
       "zip": "07009",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 132800,
-      "medianAge": 40.5,
-      "avgTaxBill": 13240.7,
-      "taxBurdenPercentIncome": 9.97,
-      "avgMarketValue": 640000,
-      "ownerOccupied": 86,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Suburban parkway setting with custom split-levels, brick colonials, and large yards bordering Hilltop Reservation",
+      "medianIncome": 152720,
+      "medianAge": 41.5,
+      "avgTaxBill": 14830,
+      "taxBurdenPercentIncome": 9.71,
+      "avgMarketValue": 716800,
+      "ownerOccupied": 88.0,
+      "description": "Hilltop borough featuring Essex County Cedar Grove Park, excellent recreation, and Pompton Ave commercial corridor.",
+      "taxDynamic": "Stable ratables with low municipal debt service burden."
     },
     {
-      "name": "Cedar Grove Township Residential Heights",
+      "name": "North End & Fairview Parkway",
       "zip": "07009",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 143424,
-      "medianAge": 42.2,
-      "avgTaxBill": 14035,
-      "taxBurdenPercentIncome": 9.97,
+      "character": "Suburban single-family homes, ranches, and colonials near North End School and North Caldwell border",
+      "medianIncome": 146080,
+      "medianAge": 41.5,
+      "avgTaxBill": 14300,
+      "taxBurdenPercentIncome": 9.79,
       "avgMarketValue": 691200,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "ownerOccupied": 85.0,
+      "description": "Peaceful northern section featuring quiet tree-lined lanes and proximity to local parks.",
+      "taxDynamic": "Stable suburban ratable base supporting high municipal service standards."
     }
   ],
   "equityAnalysis": {
-    "summary": "Cedar Grove Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Cedar Grove Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 1584,
-      "totalHouseholds": 4889,
+      "totalHouseholds": 4900,
       "enrolledPublicSchools": 1848,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 2046
     },
     "schools": [
       {
-        "name": "Cedar Grove Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Pompton Ave, Cedar Grove Township, NJ 07009",
-        "enrollment": 660,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Cedar Grove Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "90 Rugby Rd, Cedar Grove, NJ 07009",
+        "enrollment": 520,
+        "grades": "9-12",
+        "name": "Cedar Grove High School",
+        "type": "High School"
       },
       {
-        "name": "Cedar Grove Township Middle School",
-        "type": "Middle School",
-        "address": "200 Ridge Rd, Cedar Grove Township, NJ 07009",
-        "enrollment": 528,
-        "grades": "6 to 8",
-        "neighborhood": "Cedar Grove Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "Ridge Rd, Cedar Grove, NJ 07009",
+        "enrollment": 490,
+        "grades": "5-8",
+        "name": "Memorial Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Cedar Grove Township High School",
-        "type": "High School",
-        "address": "300 Bradford Ave, Cedar Grove Township, NJ 07009",
-        "enrollment": 660,
-        "grades": "9 to 12",
-        "neighborhood": "Cedar Grove Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Stevens Ave, Cedar Grove, NJ 07009",
+        "enrollment": 310,
+        "grades": "K-4",
+        "name": "North End Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Harper Ter, Cedar Grove, NJ 07009",
+        "enrollment": 290,
+        "grades": "K-4",
+        "name": "South End Elementary School",
+        "type": "Elementary"
       }
     ]
   }

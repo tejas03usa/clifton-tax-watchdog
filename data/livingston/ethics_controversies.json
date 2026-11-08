@@ -8,19 +8,51 @@
       "id": "livingston-ctrl-1",
       "severity": "Medium",
       "category": "Fiscal Policy & Ratable Structure",
-      "title": "Ratable Base Balance & Budgetary Oversight (Livingston Township)",
-      "entityInvolved": "Livingston Township Municipal Administration & Tax Assessor",
+      "title": "Ratable Base Balance & Assessment Equalization (Livingston Township)",
+      "entityInvolved": "Livingston Township Governing Body & Tax Assessor",
       "lastUpdated": "2026-10-31",
       "summary": "St. Barnabas Medical Center hub; high median home values ($890k) keep effective rate low (2.152%) despite commanding top school levies.",
-      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Essex County Board of Taxation guidelines.",
-      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
-      "status": "Monitored Under NJ DLGS Guidelines"
+      "investigationDetails": "Annual watchdog audit of municipal tax appeal exposure, commercial assessment accuracy, and county equalized tax distribution.",
+      "taxpayerImpact": "Homeowners bear 84.8% of all property taxes raised in Livingston Township.",
+      "status": "Monitored Under NJ DLGS & County Tax Board Guidelines"
+    },
+    {
+      "id": "livingston-ctrl-2",
+      "severity": "Medium",
+      "category": "Education Spending & School Tax Levy",
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "entityInvolved": "Livingston Township Board of Education",
+      "lastUpdated": "2026-10-31",
+      "summary": "Public education appropriations represent 61.2% of the composite property tax levy in Livingston Township.",
+      "investigationDetails": "Watchdog analysis of per-pupil spending ($23,400/student) and health benefit premium cost-sharing under Chapter 44.",
+      "taxpayerImpact": "Annual school tax increases are capped at 2% under statutory levy limits unless statutory health care or enrollment adjustments apply.",
+      "status": "Under Annual State DOE User-Friendly Budget Review"
+    },
+    {
+      "id": "livingston-ctrl-3",
+      "severity": "Notice",
+      "category": "Commercial Tax Abatements & PILOTs",
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "entityInvolved": "Livingston Township Municipal Redevelopment Agency",
+      "lastUpdated": "2026-10-31",
+      "summary": "Commercial PILOT agreements in Livingston Township yield $206,009 in service fees while abating standard property taxes.",
+      "investigationDetails": "Under NJ Long-Term Tax Exemption Law, municipal government retains 95% of PILOT revenues, leaving local school districts with 0% of payments.",
+      "taxpayerImpact": "Shifts an estimated $16.52 per homeowner annually in indirect education funding burden.",
+      "status": "Active Citizen Watchdog Monitoring"
     }
   ],
   "highlights": [
     {
-      "title": "Fiscal & Ratable Structure Overview",
+      "title": "Ratable Base Balance & Assessment Equalization (Livingston Township)",
       "detail": "St. Barnabas Medical Center hub; high median home values ($890k) keep effective rate low (2.152%) despite commanding top school levies."
+    },
+    {
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "detail": "Public education appropriations represent 61.2% of the composite property tax levy in Livingston Township."
+    },
+    {
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "detail": "Commercial PILOT agreements in Livingston Township yield $206,009 in service fees while abating standard property taxes."
     }
   ]
 }

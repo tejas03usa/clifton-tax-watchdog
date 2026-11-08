@@ -15,38 +15,38 @@
   "commercialShare": 18.6,
   "cityOverview": {
     "totalPopulation": 17200,
-    "totalHousingUnits": 6370,
+    "totalHousingUnits": 6800,
     "medianHouseholdIncome": 156800,
     "perCapitaIncome": 75264,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 81,
-    "renterOccupiedRate": 19,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 3.5,
+    "ownerOccupiedRate": 82.5,
+    "renterOccupiedRate": 17.5,
+    "foreignBornPercentage": 14.5,
+    "nonEnglishAtHomePercent": 18.2
   },
   "zipCodeComparison": [
     {
       "zip": "07834",
-      "areaName": "Denville Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Denville Township Center, Residential & Parkway Districts",
+      "areaName": "Denville Township (ZIP 07834)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Indian Lake & Rock Ridge Section, Downtown Broadway Village Core",
       "medianHouseholdIncome": 156800,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 81,
-      "renterOccupiedPercent": 19,
+      "ownerOccupiedPercent": 82.5,
+      "renterOccupiedPercent": 17.5,
       "averageAnnualTaxBill": 14404.25,
       "monthlyTaxBill": 1200.35,
       "taxBurdenPercentOfIncome": 9.19,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 56823000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 78.2,
+        "hispanicOrLatino": 9.4,
+        "asian": 6.5,
+        "blackOrAfricanAmerican": 5.8,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.584%, with an equalization ratio of 83.2%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Denville Township Center & Downtown",
+      "name": "Indian Lake & Rock Ridge Section",
       "zip": "07834",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 156800,
-      "medianAge": 40.5,
-      "avgTaxBill": 14404.25,
-      "taxBurdenPercentIncome": 9.19,
-      "avgMarketValue": 670000,
-      "ownerOccupied": 81,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Famous 'Hub of Morris County' lake community with private beaches, community clubhouses, rustic ranches, and colonials",
+      "medianIncome": 180320,
+      "medianAge": 41.5,
+      "avgTaxBill": 16133,
+      "taxBurdenPercentIncome": 8.95,
+      "avgMarketValue": 750400,
+      "ownerOccupied": 90.0,
+      "description": "Idyllic lake community featuring 4 recreational lakes, scenic boat docks, and lake association summer events.",
+      "taxDynamic": "Lake maintenance assessments and municipal flood control bonding on the Rockaway River."
     },
     {
-      "name": "Denville Township Residential Heights",
+      "name": "Downtown Broadway Village Core",
       "zip": "07834",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 169344,
-      "medianAge": 42.2,
-      "avgTaxBill": 15269,
+      "character": "Vibrant pedestrian downtown with artisan bakeries, boutiques, Denville NJ Transit train station, and walk-to-town homes",
+      "medianIncome": 156800,
+      "medianAge": 41.5,
+      "avgTaxBill": 14404,
       "taxBurdenPercentIncome": 9.19,
-      "avgMarketValue": 723600,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "avgMarketValue": 670000,
+      "ownerOccupied": 72.0,
+      "description": "Charming town square featuring destination dining and direct commuter rail connections on the Morristown and Montclair-Boonton lines.",
+      "taxDynamic": "Commercial downtown ratables and Saint Clare's Hospital complex support municipal revenues."
     }
   ],
   "equityAnalysis": {
-    "summary": "Denville Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Denville Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 2064,
-      "totalHouseholds": 6370,
+      "totalHouseholds": 6800,
       "enrolledPublicSchools": 2408,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 2666
     },
     "schools": [
       {
-        "name": "Denville Township Elementary School",
-        "type": "Elementary",
-        "address": "100 East Main St, Denville Township, NJ 07834",
-        "enrollment": 860,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Denville Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "50 Knoll Dr, Rockaway, NJ 07866",
+        "enrollment": 1480,
+        "grades": "9-12",
+        "name": "Morris Knolls High School",
+        "type": "High School (Regional)"
       },
       {
-        "name": "Denville Township Middle School",
-        "type": "Middle School",
-        "address": "200 Diamond Spring Rd, Denville Township, NJ 07834",
-        "enrollment": 688,
-        "grades": "6 to 8",
-        "neighborhood": "Denville Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "320 Diamond Spring Rd, Denville, NJ 07834",
+        "enrollment": 590,
+        "grades": "6-8",
+        "name": "Valleyview Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Denville Township High School",
-        "type": "High School",
-        "address": "300 Bush Rd, Denville Township, NJ 07834",
-        "enrollment": 860,
-        "grades": "9 to 12",
-        "neighborhood": "Denville Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Collett Rd, Denville, NJ 07834",
+        "enrollment": 440,
+        "grades": "K-5",
+        "name": "Lakeview Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Denville, NJ 07834",
+        "enrollment": 380,
+        "grades": "K-5",
+        "name": "Riverview Elementary School",
+        "type": "Elementary"
       }
     ]
   }

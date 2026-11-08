@@ -15,38 +15,38 @@
   "commercialShare": 15.2,
   "cityOverview": {
     "totalPopulation": 31200,
-    "totalHousingUnits": 11556,
+    "totalHousingUnits": 10200,
     "medianHouseholdIncome": 192500,
     "perCapitaIncome": 92400,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 85,
-    "renterOccupiedRate": 15,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 2.9,
+    "ownerOccupiedRate": 88.0,
+    "renterOccupiedRate": 12.0,
+    "foreignBornPercentage": 26.8,
+    "nonEnglishAtHomePercent": 32.5
   },
   "zipCodeComparison": [
     {
       "zip": "07039",
-      "areaName": "Livingston Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Livingston Township Center, Residential & Parkway Districts",
+      "areaName": "Livingston Township (ZIP 07039)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Bel Air & Chestnut Hill, Collinsville & Coventry, Forest Park & Riker Hill",
       "medianHouseholdIncome": 192500,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 85,
-      "renterOccupiedPercent": 15,
+      "ownerOccupiedPercent": 88.0,
+      "renterOccupiedPercent": 12.0,
       "averageAnnualTaxBill": 19151.02,
       "monthlyTaxBill": 1595.92,
       "taxBurdenPercentOfIncome": 9.95,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 157590000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
+        "whiteNonHispanic": 59.8,
+        "hispanicOrLatino": 17.4,
         "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "blackOrAfricanAmerican": 10.7,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.65%, with an equalization ratio of 81.2%.",
@@ -57,34 +57,47 @@
   ],
   "neighborhoods": [
     {
-      "name": "Livingston Township Center & Downtown",
+      "name": "Bel Air & Chestnut Hill",
       "zip": "07039",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 192500,
-      "medianAge": 40.5,
-      "avgTaxBill": 19151.02,
-      "taxBurdenPercentIncome": 9.95,
-      "avgMarketValue": 890000,
-      "ownerOccupied": 85,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Luxury custom estates, grand colonials, and private cul-de-sacs with expansive manicured grounds",
+      "medianIncome": 279125,
+      "medianAge": 41.5,
+      "avgTaxBill": 26811,
+      "taxBurdenPercentIncome": 9.61,
+      "avgMarketValue": 1246000,
+      "ownerOccupied": 96.0,
+      "description": "Prestigious executive enclave featuring prominent architects, private swimming pools, and top-tier luxury living.",
+      "taxDynamic": "Top tax bracket generating average property tax bills over ,000 annually."
     },
     {
-      "name": "Livingston Township Residential Heights",
+      "name": "Collinsville & Coventry",
       "zip": "07039",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 207900,
-      "medianAge": 42.2,
-      "avgTaxBill": 20300,
-      "taxBurdenPercentIncome": 9.95,
+      "character": "Classic suburban family neighborhood with center-hall colonials, split-levels, and tree-lined sidewalks",
+      "medianIncome": 211750,
+      "medianAge": 41.5,
+      "avgTaxBill": 20683,
+      "taxBurdenPercentIncome": 9.77,
       "avgMarketValue": 961200,
       "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "description": "Sought-after suburban neighborhood with direct walking proximity to Collins School and town community oval.",
+      "taxDynamic": "Core residential base with education taking 55.4% of property tax revenues."
+    },
+    {
+      "name": "Forest Park & Riker Hill",
+      "zip": "07039",
+      "character": "Wooded residential section adjacent to Riker Hill Art Park (former Nike missile radar site) and geological preserve",
+      "medianIncome": 227150,
+      "medianAge": 41.5,
+      "avgTaxBill": 22024,
+      "taxBurdenPercentIncome": 9.7,
+      "avgMarketValue": 1023500,
+      "ownerOccupied": 94.0,
+      "description": "Scenic elevated district offering scenic wooded buffers, park access, and proximity to St. Barnabas Medical Center.",
+      "taxDynamic": "Corporate office and medical complex ratables on Eisenhower Parkway offset local homeowner tax burden."
     }
   ],
   "equityAnalysis": {
-    "summary": "Livingston Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Livingston Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +117,53 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 3744,
-      "totalHouseholds": 11556,
+      "totalHouseholds": 10200,
       "enrolledPublicSchools": 4368,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 4836
     },
     "schools": [
       {
-        "name": "Livingston Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Livingston Ave, Livingston Township, NJ 07039",
-        "enrollment": 1560,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Livingston Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "30 Robert H Harp Dr, Livingston, NJ 07039",
+        "enrollment": 1920,
+        "grades": "9-12",
+        "name": "Livingston High School",
+        "type": "High School"
       },
       {
-        "name": "Livingston Township Middle School",
-        "type": "Middle School",
-        "address": "200 Mt Pleasant Ave, Livingston Township, NJ 07039",
-        "enrollment": 1248,
-        "grades": "6 to 8",
-        "neighborhood": "Livingston Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "20 Foxcroft Dr, Livingston, NJ 07039",
+        "enrollment": 840,
+        "grades": "6-8",
+        "name": "Heritage Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Livingston Township High School",
-        "type": "High School",
-        "address": "300 Northfield Rd, Livingston Township, NJ 07039",
-        "enrollment": 1560,
-        "grades": "9 to 12",
-        "neighborhood": "Livingston Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "11 Broadlawn Dr, Livingston, NJ 07039",
+        "enrollment": 420,
+        "grades": "6",
+        "name": "Mt. Pleasant Middle School",
+        "type": "Middle School"
+      },
+      {
+        "address": "25 Byron Pl, Livingston, NJ 07039",
+        "enrollment": 410,
+        "grades": "K-5",
+        "name": "Burnet Hill Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "67 Martin Rd, Livingston, NJ 07039",
+        "enrollment": 390,
+        "grades": "K-5",
+        "name": "Collins Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "148 N Livingston Ave, Livingston, NJ 07039",
+        "enrollment": 430,
+        "grades": "K-5",
+        "name": "Harrison Elementary School",
+        "type": "Elementary"
       }
     ]
   }

@@ -3,16 +3,16 @@
     "source": "Certified 2026 Woodland Park Borough Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Woodland Park Borough",
-      "totalTaxLevy": 53326548,
-      "residentialLevyTotal": 42767891,
-      "commercialLevyTotal": 10558657,
-      "totalResidentialParcels": 4852,
+      "totalTaxLevy": 53231394,
+      "residentialLevyTotal": 42691578,
+      "commercialLevyTotal": 10539816,
+      "totalResidentialParcels": 4800,
       "equalizationRatio": 0.661,
       "certifiedTaxRateAssessed": 3.435,
       "certifiedTaxRateMarket": 2.271,
       "averageResidentialAssessment": 337161,
       "averageResidentialMarketValue": 510000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 142535,
       "commercialLevySharePct": 19.8
     }
   },
@@ -36,55 +36,146 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Woodland Park Borough residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 19.8,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.435,
+      "projectedTaxRateMarket": 2.271,
+      "avgResidentialTaxBill": 11581.48,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 80.2% of the levy, commercial ratables pay 19.8%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Woodland Park Borough public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Woodland Park Borough municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 24.3,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.229,
+      "projectedTaxRateMarket": 2.135,
+      "avgResidentialTaxBill": 10886.59,
+      "avgResidentialNetSavings": 694.89,
+      "avgMonthlySavings": 57.91,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 19.8,
+      "pilotSchoolSharePct": 52.4,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.315,
+      "projectedTaxRateMarket": 2.192,
+      "avgResidentialTaxBill": 11176.13,
+      "avgResidentialNetSavings": 405.35,
+      "avgMonthlySavings": 33.78,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Woodland Park Borough Public Schools eliminates residential tax shift for new students.",
+      "winners": "Woodland Park Borough Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 19.8,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.435,
+      "projectedTaxRateMarket": 2.271,
+      "avgResidentialTaxBill": 9831.48,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 24.8,
+      "pilotSchoolSharePct": 52.4,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 3.023,
+      "projectedTaxRateMarket": 1.998,
+      "avgResidentialTaxBill": 10191.7,
+      "avgResidentialNetSavings": 1389.78,
+      "avgMonthlySavings": 115.81,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Woodland Park Borough residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 269729,
-      "tax": 9265.18
+      "type": "Starter Residence / Condo",
+      "assessment": 252871,
+      "marketValue": 382500,
+      "currentTax": 8686.11,
+      "reformedTax": 7643.78,
+      "annualSavings": 1042.33
     },
     {
-      "type": "Average Woodland Park Borough Home",
+      "type": "Average Woodland Park Borough Single Family",
       "assessment": 337161,
-      "tax": 11581.48
+      "marketValue": 510000,
+      "currentTax": 11581.48,
+      "reformedTax": 10191.7,
+      "annualSavings": 1389.78
     },
     {
-      "type": "Executive Residence",
-      "assessment": 455167,
-      "tax": 15635.0
+      "type": "Executive / Estate Residence",
+      "assessment": 488883,
+      "marketValue": 739500,
+      "currentTax": 16793.15,
+      "reformedTax": 14777.97,
+      "annualSavings": 2015.18
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07424",
-      "name": "Woodland Park Borough Center & Downtown",
-      "medianHouseholdIncome": 105200,
-      "currentTaxBill": 11581.48,
-      "currentTaxEffortPct": 11.01
+      "name": "Rifle Camp & Garret Mountain Section",
+      "medianHouseholdIncome": 131500,
+      "currentTaxBill": 13898,
+      "currentTaxEffortPct": 10.57
     },
     {
       "zip": "07424",
-      "name": "Woodland Park Borough Residential Heights",
-      "medianHouseholdIncome": 113616,
-      "currentTaxBill": 12276,
-      "currentTaxEffortPct": 11.01
+      "name": "West Paterson Historic Core & McBride Corridor",
+      "medianHouseholdIncome": 99940,
+      "currentTaxBill": 11118,
+      "currentTaxEffortPct": 11.12
     }
   ],
   "policyRoadmap": [
@@ -101,6 +192,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

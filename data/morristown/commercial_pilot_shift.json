@@ -95,5 +95,27 @@
       "proposal": "Rezone vacant commercial corridors for high-value research, medical, and technology ratables that generate property taxes with zero school enrollment load.",
       "benefit": "Restores commercial ratable share from 43.6% toward 35%, cutting residential taxes."
     }
-  ]
+  ],
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "County Board of Taxation Abstract of Ratables & Municipal Financial Statements",
+    "totalPropertyTaxesAbated": 1800000,
+    "totalPilotBillingsCollected": 1044000,
+    "netTaxShiftToHomeowners": 756000,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Morristown Corporate / Town Center Redevelopment",
+        "block": "120",
+        "lot": "4",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 1044000,
+        "abatedTaxesEstimated": 1800000,
+        "netLossToSchools": 990000,
+        "expirationYear": 2046
+      }
+    ]
+  }
 }

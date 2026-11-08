@@ -12,7 +12,7 @@
       "certifiedTaxRateMarket": 2.128,
       "averageResidentialAssessment": 734400,
       "averageResidentialMarketValue": 960000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 195298,
       "commercialLevySharePct": 11.6
     }
   },
@@ -36,55 +36,160 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Ridgewood Village residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 11.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 2.782,
+      "projectedTaxRateMarket": 2.128,
+      "avgResidentialTaxBill": 20431.01,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 88.4% of the levy, commercial ratables pay 11.6%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Ridgewood Village public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Ridgewood Village municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 16.1,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 2.615,
+      "projectedTaxRateMarket": 2.0,
+      "avgResidentialTaxBill": 19205.15,
+      "avgResidentialNetSavings": 1225.86,
+      "avgMonthlySavings": 102.16,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 11.6,
+      "pilotSchoolSharePct": 66.8,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 2.685,
+      "projectedTaxRateMarket": 2.054,
+      "avgResidentialTaxBill": 19715.92,
+      "avgResidentialNetSavings": 715.09,
+      "avgMonthlySavings": 59.59,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Ridgewood Village Public Schools eliminates residential tax shift for new students.",
+      "winners": "Ridgewood Village Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 11.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 2.782,
+      "projectedTaxRateMarket": 2.128,
+      "avgResidentialTaxBill": 18681.01,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 16.6,
+      "pilotSchoolSharePct": 66.8,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 2.448,
+      "projectedTaxRateMarket": 1.873,
+      "avgResidentialTaxBill": 17979.29,
+      "avgResidentialNetSavings": 2451.72,
+      "avgMonthlySavings": 204.31,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Ridgewood Village residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 587520,
-      "tax": 16344.81
+      "type": "Starter Residence / Condo",
+      "assessment": 550800,
+      "marketValue": 720000,
+      "currentTax": 15323.26,
+      "reformedTax": 13484.47,
+      "annualSavings": 1838.79
     },
     {
-      "type": "Average Ridgewood Village Home",
+      "type": "Average Ridgewood Village Single Family",
       "assessment": 734400,
-      "tax": 20431.01
+      "marketValue": 960000,
+      "currentTax": 20431.01,
+      "reformedTax": 17979.29,
+      "annualSavings": 2451.72
     },
     {
-      "type": "Executive Residence",
-      "assessment": 991440,
-      "tax": 27581.86
+      "type": "Executive / Estate Residence",
+      "assessment": 1064880,
+      "marketValue": 1392000,
+      "currentTax": 29624.96,
+      "reformedTax": 26069.97,
+      "annualSavings": 3555.0
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07450",
-      "name": "Ridgewood Village Center & Downtown",
-      "medianHouseholdIncome": 215000,
-      "currentTaxBill": 20431.01,
-      "currentTaxEffortPct": 9.5
+      "name": "Central Business District & West Side",
+      "medianHouseholdIncome": 236500,
+      "currentTaxBill": 21453,
+      "currentTaxEffortPct": 9.07
     },
     {
       "zip": "07450",
-      "name": "Ridgewood Village Residential Heights",
-      "medianHouseholdIncome": 232200,
-      "currentTaxBill": 21657,
-      "currentTaxEffortPct": 9.5
+      "name": "Somerville Section",
+      "medianHouseholdIncome": 268750,
+      "currentTaxBill": 24926,
+      "currentTaxEffortPct": 9.27
+    },
+    {
+      "zip": "07450",
+      "name": "Willard & Heights Section",
+      "medianHouseholdIncome": 290250,
+      "currentTaxBill": 26560,
+      "currentTaxEffortPct": 9.15
+    },
+    {
+      "zip": "07450",
+      "name": "Travell & Hawes School District",
+      "medianHouseholdIncome": 247250,
+      "currentTaxBill": 22883,
+      "currentTaxEffortPct": 9.25
     }
   ],
   "policyRoadmap": [
@@ -101,6 +206,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

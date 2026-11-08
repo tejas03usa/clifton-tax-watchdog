@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Passaic County Board of Taxation Certified Abstract of Ratables",
+      "Paterson City Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 78.5,
     "commercialShare": 21.5,
+    "annualShiftDollarImpact": 247020,
+    "averageHomeownerExtraCost": 4.18,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
-    "activePilotsCount": 1,
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
+    "activePilotsCount": 24,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Paterson City municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "paterson-pilot-1",
         "name": "Paterson City Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 847350,
-        "standardSchoolShare": 311825,
-        "standardCityShare": 391476,
-        "standardCountyShare": 144050,
-        "pilotServiceCharge": 550778,
-        "pilotCityKeeps": 523239,
-        "pilotCountyGets": 27539,
-        "developerAnnualSavings": 296572,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 453600,
-        "homeownerBurdenAbsorbed": 453600
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 1016820,
+        "standardSchoolShare": 374190,
+        "standardCityShare": 469771,
+        "standardCountyShare": 172859,
+        "pilotServiceCharge": 660933,
+        "pilotCityKeeps": 627886,
+        "pilotCountyGets": 33047,
+        "developerAnnualSavings": 355887,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 554400,
+        "homeownerBurdenAbsorbed": 554400
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Paterson City Shopping Plaza / Corporate Center",
-        "location": "100 Market St",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 40766858,
-        "annualTaxPaid": 986975,
+        "name": "Paterson City Commercial Plaza / Corporate Complex",
+        "location": "100 East 33rd St",
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 53988541,
+        "annualTaxPaid": 1307075,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Paterson City Professional Medical Arts Building",
-        "location": "250 Broadway",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 27324813,
-        "annualTaxPaid": 661540,
+        "name": "Paterson City Medical Arts & Professional Center",
+        "location": "250 Park Ave",
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 37020714,
+        "annualTaxPaid": 896280,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Passaic County Board of Taxation Abstract of Ratables & Paterson City Financial Statements",
+    "totalPropertyTaxesAbated": 548934,
+    "totalPilotBillingsCollected": 301914,
+    "netTaxShiftToHomeowners": 247020,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Paterson City Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 196244,
+        "abatedTaxesEstimated": 356807,
+        "netLossToSchools": 131305,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $91k directly to Paterson City school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Passaic County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

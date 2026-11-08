@@ -15,38 +15,38 @@
   "commercialShare": 18.6,
   "cityOverview": {
     "totalPopulation": 53100,
-    "totalHousingUnits": 19667,
+    "totalHousingUnits": 20800,
     "medianHouseholdIncome": 98200,
     "perCapitaIncome": 47136,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 81,
-    "renterOccupiedRate": 19,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 8.5,
+    "ownerOccupiedRate": 51.2,
+    "renterOccupiedRate": 48.8,
+    "foreignBornPercentage": 31.4,
+    "nonEnglishAtHomePercent": 42.0
   },
   "zipCodeComparison": [
     {
       "zip": "07003",
-      "areaName": "Bloomfield Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Bloomfield Township Center, Residential & Parkway Districts",
+      "areaName": "Bloomfield Township (ZIP 07003)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Brookdale Section, Bloomfield Center & Watsessing Transit District, Fairview & Broughton Section, Oak View & Demarest District",
       "medianHouseholdIncome": 98200,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 81,
-      "renterOccupiedPercent": 19,
+      "ownerOccupiedPercent": 51.2,
+      "renterOccupiedPercent": 48.8,
       "averageAnnualTaxBill": 12328.67,
       "monthlyTaxBill": 1027.39,
       "taxBurdenPercentOfIncome": 12.55,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 162903000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 52.9,
+        "hispanicOrLatino": 20.4,
+        "asian": 14.1,
+        "blackOrAfricanAmerican": 12.6,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.82%, with an equalization ratio of 65.2%.",
@@ -57,34 +57,60 @@
   ],
   "neighborhoods": [
     {
-      "name": "Bloomfield Township Center & Downtown",
+      "name": "Brookdale Section",
       "zip": "07003",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 98200,
-      "medianAge": 40.5,
-      "avgTaxBill": 12328.67,
-      "taxBurdenPercentIncome": 12.55,
-      "avgMarketValue": 495000,
-      "ownerOccupied": 81,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Premier northern residential neighborhood with spacious single-family homes, colonials, and split-levels adjacent to Brookdale Park",
+      "medianIncome": 132570,
+      "medianAge": 41.5,
+      "avgTaxBill": 16027,
+      "taxBurdenPercentIncome": 12.09,
+      "avgMarketValue": 643500,
+      "ownerOccupied": 86.0,
+      "description": "Prestigious northern section bordering Montclair, anchored by the 121-acre Brookdale Park designed by the Olmsted Brothers firm.",
+      "taxDynamic": "Highest residential assessed values in Bloomfield, bearing substantial portion of the local school district levy."
     },
     {
-      "name": "Bloomfield Township Residential Heights",
+      "name": "Bloomfield Center & Watsessing Transit District",
       "zip": "07003",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 106056,
-      "medianAge": 42.2,
-      "avgTaxBill": 13068,
-      "taxBurdenPercentIncome": 12.55,
-      "avgMarketValue": 534600,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Urban downtown core surrounding Bloomfield Green, historic college campus, and transit-oriented luxury apartment mid-rises",
+      "medianIncome": 88380,
+      "medianAge": 41.5,
+      "avgTaxBill": 11712,
+      "taxBurdenPercentIncome": 13.25,
+      "avgMarketValue": 470250,
+      "ownerOccupied": 24.0,
+      "description": "Rapidly evolving downtown core surrounding Bloomfield NJ Transit train station, Bloomfield College of Montclair State University, and new mixed-use developments.",
+      "taxDynamic": "Multiple active 30-year PILOT agreements where developers pay service fees rather than standard school/muni taxes."
+    },
+    {
+      "name": "Fairview & Broughton Section",
+      "zip": "07003",
+      "character": "Established residential neighborhood featuring post-war cape cods, ranches, and traditional two-family homes",
+      "medianIncome": 100164,
+      "medianAge": 41.5,
+      "avgTaxBill": 12329,
+      "taxBurdenPercentIncome": 12.31,
+      "avgMarketValue": 495000,
+      "ownerOccupied": 62.0,
+      "description": "Family neighborhood convenient to local parks, community elementary schools, and Garden State Parkway exits.",
+      "taxDynamic": "Representative baseline of Bloomfield residential properties (~$370,000 average assessment)."
+    },
+    {
+      "name": "Oak View & Demarest District",
+      "zip": "07003",
+      "character": "Quiet suburban streets with attractive single-family residences, brick colonials, and landscaped yards bordering Glen Ridge",
+      "medianIncome": 115876,
+      "medianAge": 41.5,
+      "avgTaxBill": 14178,
+      "taxBurdenPercentIncome": 12.24,
+      "avgMarketValue": 569250,
+      "ownerOccupied": 78.0,
+      "description": "Desirable suburban residential enclave offering walkability to Oak View Elementary School and Glen Ridge commuter rail.",
+      "taxDynamic": "Stable ratable base with very low tax delinquency and high owner occupancy."
     }
   ],
   "equityAnalysis": {
-    "summary": "Bloomfield Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Bloomfield Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +130,53 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 6372,
-      "totalHouseholds": 19667,
+      "totalHouseholds": 20800,
       "enrolledPublicSchools": 7434,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 8230
     },
     "schools": [
       {
-        "name": "Bloomfield Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Broad St, Bloomfield Township, NJ 07003",
-        "enrollment": 2655,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Bloomfield Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "160 Broad St, Bloomfield, NJ 07003",
+        "enrollment": 2040,
+        "grades": "9-12",
+        "name": "Bloomfield High School",
+        "type": "High School"
       },
       {
-        "name": "Bloomfield Township Middle School",
-        "type": "Middle School",
-        "address": "200 Bloomfield Ave, Bloomfield Township, NJ 07003",
-        "enrollment": 2124,
-        "grades": "6 to 8",
-        "neighborhood": "Bloomfield Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "60 Huck Rd, Bloomfield, NJ 07003",
+        "enrollment": 1050,
+        "grades": "7-8",
+        "name": "Bloomfield Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Bloomfield Township High School",
-        "type": "High School",
-        "address": "300 Franklin St, Bloomfield Township, NJ 07003",
-        "enrollment": 2655,
-        "grades": "9 to 12",
-        "neighborhood": "Bloomfield Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "14 Bellevue Ave, Bloomfield, NJ 07003",
+        "enrollment": 480,
+        "grades": "K-6",
+        "name": "Brookdale Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "376 Berkeley Ave, Bloomfield, NJ 07003",
+        "enrollment": 520,
+        "grades": "K-6",
+        "name": "Fairview Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Oak View Ave, Bloomfield, NJ 07003",
+        "enrollment": 410,
+        "grades": "K-6",
+        "name": "Oak View Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "465 Broughton Ave, Bloomfield, NJ 07003",
+        "enrollment": 490,
+        "grades": "K-6",
+        "name": "Demarest Elementary School",
+        "type": "Elementary"
       }
     ]
   }

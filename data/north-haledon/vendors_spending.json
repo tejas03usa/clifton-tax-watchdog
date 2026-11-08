@@ -1,36 +1,57 @@
 {
   "metadata": {
-    "source": "North Haledon Borough Bill Lists & Annual Audit",
+    "source": "North Haledon Borough Bill Lists & Annual Financial Audit",
     "certifiedYear": 2026
   },
   "vendors": [
     {
       "vendorName": "NJ State Health Benefits Program (SHBP / BMED)",
-      "entityServed": "North Haledon Borough Municipal & School Staff",
+      "entityServed": "North Haledon Borough Municipal & School Workforce",
       "category": "Employee Health & Prescription Benefits",
       "annualEstimatedSpend": 2296000,
-      "description": "Health, dental, and prescription insurance coverage for municipal and public safety workforce."
-    },
-    {
-      "vendorName": "Tilcon New Jersey / Campbell Foundry",
-      "entityServed": "North Haledon Borough DPW (Public Works)",
-      "category": "Infrastructure, Road Resurfacing & Asphalt",
-      "annualEstimatedSpend": 820000,
-      "description": "Curbside paving, asphalt resurfacing, and catch basin storm sewer drainage materials."
+      "description": "Comprehensive medical, prescription drug, and dental health benefits for municipal personnel and public safety workforce."
     },
     {
       "vendorName": "Passaic County Joint Insurance Fund (JIF)",
       "entityServed": "North Haledon Borough Municipal Government",
-      "category": "Municipal Insurance & Workers Compensation",
-      "annualEstimatedSpend": 656000,
-      "description": "Pooled municipal property, statutory liability, and workers compensation risk coverage."
+      "category": "Municipal Property & Workers Compensation Insurance",
+      "annualEstimatedSpend": 738000,
+      "description": "Pooled municipal statutory liability, public officials insurance, police professional liability, and statutory workers comp."
     },
     {
-      "vendorName": "Public Service Electric & Gas (PSE&G) / Jersey Central Power",
+      "vendorName": "Tilcon New Jersey / Campbell Foundry",
+      "entityServed": "North Haledon Borough Department of Public Works (DPW)",
+      "category": "Road Resurfacing, Asphalt & Storm Drainage Materials",
+      "annualEstimatedSpend": 656000,
+      "description": "Annual roadway repaving, bituminous asphalt concrete, curbside catch basin maintenance, and storm drainage infrastructure."
+    },
+    {
+      "vendorName": "Public Service Electric & Gas (PSE&G) / JCP&L",
       "entityServed": "North Haledon Borough Municipal & School Facilities",
-      "category": "Utilities & Street Lighting",
+      "category": "Utilities, Street Lighting & Facility Power",
       "annualEstimatedSpend": 574000,
-      "description": "Municipal electricity, traffic signals, facility heating, and municipal street lighting grid."
+      "description": "Municipal electricity, roadway street lighting grid, public building natural gas heating, and traffic signal power."
+    },
+    {
+      "vendorName": "Waste Management of NJ / Suburban Disposal",
+      "entityServed": "North Haledon Borough Residents & Municipal Facilities",
+      "category": "Curbside Solid Waste & Single-Stream Recycling",
+      "annualEstimatedSpend": 820000,
+      "description": "Weekly curbside residential trash collection, mandatory single-stream recycling, and county transfer station tipping fees."
+    },
+    {
+      "vendorName": "PKF O'Connor Davies / Nisivoccia LLP",
+      "entityServed": "North Haledon Borough Municipal Finance Department",
+      "category": "Registered Municipal Accountants (RMA) & Annual Audit",
+      "annualEstimatedSpend": 57400,
+      "description": "Statutory Annual Financial Statement audit, federal single audit compliance, and User-Friendly Budget certification."
+    },
+    {
+      "vendorName": "Maser Consulting / Colliers Engineering",
+      "entityServed": "North Haledon Borough Planning Board & DPW",
+      "category": "Municipal Engineering & Environmental Consulting",
+      "annualEstimatedSpend": 98400,
+      "description": "Municipal capital road resurfacing design, stormwater flood compliance, and land use development plan reviews."
     }
   ]
 }

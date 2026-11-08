@@ -12,7 +12,7 @@
       "certifiedTaxRateMarket": 1.645,
       "averageResidentialAssessment": 623080,
       "averageResidentialMarketValue": 740000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 281509,
       "commercialLevySharePct": 47.6
     }
   },
@@ -36,55 +36,160 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Paramus Borough residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 47.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.954,
+      "projectedTaxRateMarket": 1.645,
+      "avgResidentialTaxBill": 12175.0,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 52.4% of the levy, commercial ratables pay 47.6%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Paramus Borough public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Paramus Borough municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 52.1,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.837,
+      "projectedTaxRateMarket": 1.546,
+      "avgResidentialTaxBill": 11444.5,
+      "avgResidentialNetSavings": 730.5,
+      "avgMonthlySavings": 60.88,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 47.6,
+      "pilotSchoolSharePct": 56.4,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.886,
+      "projectedTaxRateMarket": 1.587,
+      "avgResidentialTaxBill": 11748.88,
+      "avgResidentialNetSavings": 426.13,
+      "avgMonthlySavings": 35.51,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Paramus Borough Public Schools eliminates residential tax shift for new students.",
+      "winners": "Paramus Borough Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 47.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.954,
+      "projectedTaxRateMarket": 1.645,
+      "avgResidentialTaxBill": 10425.0,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 52.6,
+      "pilotSchoolSharePct": 56.4,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 1.72,
+      "projectedTaxRateMarket": 1.448,
+      "avgResidentialTaxBill": 10714.0,
+      "avgResidentialNetSavings": 1461.0,
+      "avgMonthlySavings": 121.75,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Paramus Borough residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 498464,
-      "tax": 9739.99
+      "type": "Starter Residence / Condo",
+      "assessment": 467310,
+      "marketValue": 555000,
+      "currentTax": 9131.24,
+      "reformedTax": 8035.49,
+      "annualSavings": 1095.75
     },
     {
-      "type": "Average Paramus Borough Home",
+      "type": "Average Paramus Borough Single Family",
       "assessment": 623080,
-      "tax": 12175.0
+      "marketValue": 740000,
+      "currentTax": 12175.0,
+      "reformedTax": 10714.0,
+      "annualSavings": 1461.0
     },
     {
-      "type": "Executive Residence",
-      "assessment": 841158,
-      "tax": 16436.23
+      "type": "Executive / Estate Residence",
+      "assessment": 903466,
+      "marketValue": 1073000,
+      "currentTax": 17653.73,
+      "reformedTax": 15535.28,
+      "annualSavings": 2118.45
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07652",
-      "name": "Paramus Borough Center & Downtown",
-      "medianHouseholdIncome": 142500,
-      "currentTaxBill": 12175.0,
-      "currentTaxEffortPct": 8.54
+      "name": "Farview & Arcola Section",
+      "medianHouseholdIncome": 185250,
+      "currentTaxBill": 15219,
+      "currentTaxEffortPct": 8.22
     },
     {
       "zip": "07652",
-      "name": "Paramus Borough Residential Heights",
-      "medianHouseholdIncome": 153900,
-      "currentTaxBill": 12906,
-      "currentTaxEffortPct": 8.54
+      "name": "Spring Valley & Century Section",
+      "medianHouseholdIncome": 149625,
+      "currentTaxBill": 12418,
+      "currentTaxEffortPct": 8.3
+    },
+    {
+      "zip": "07652",
+      "name": "West Paramus & Dunkerhook District",
+      "medianHouseholdIncome": 168150,
+      "currentTaxBill": 14001,
+      "currentTaxEffortPct": 8.33
+    },
+    {
+      "zip": "07652",
+      "name": "Route 4 & Garden State Retail Buffer Zone",
+      "medianHouseholdIncome": 135375,
+      "currentTaxBill": 11688,
+      "currentTaxEffortPct": 8.63
     }
   ],
   "policyRoadmap": [
@@ -101,6 +206,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

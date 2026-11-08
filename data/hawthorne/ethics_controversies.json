@@ -8,19 +8,51 @@
       "id": "hawthorne-ctrl-1",
       "severity": "Medium",
       "category": "Fiscal Policy & Ratable Structure",
-      "title": "Ratable Base Balance & Budgetary Oversight (Hawthorne Borough)",
-      "entityInvolved": "Hawthorne Borough Municipal Administration & Tax Assessor",
+      "title": "Ratable Base Balance & Assessment Equalization (Hawthorne Borough)",
+      "entityInvolved": "Hawthorne Borough Governing Body & Tax Assessor",
       "lastUpdated": "2026-10-31",
       "summary": "Direct Bergen County border (Glen Rock / Ridgewood); independent K-12 public school system with moderate local commercial tax contributions.",
-      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Passaic County Board of Taxation guidelines.",
-      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
-      "status": "Monitored Under NJ DLGS Guidelines"
+      "investigationDetails": "Annual watchdog audit of municipal tax appeal exposure, commercial assessment accuracy, and county equalized tax distribution.",
+      "taxpayerImpact": "Homeowners bear 82.5% of all property taxes raised in Hawthorne Borough.",
+      "status": "Monitored Under NJ DLGS & County Tax Board Guidelines"
+    },
+    {
+      "id": "hawthorne-ctrl-2",
+      "severity": "Medium",
+      "category": "Education Spending & School Tax Levy",
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "entityInvolved": "Hawthorne Borough Board of Education",
+      "lastUpdated": "2026-10-31",
+      "summary": "Public education appropriations represent 54.2% of the composite property tax levy in Hawthorne Borough.",
+      "investigationDetails": "Watchdog analysis of per-pupil spending ($21,200/student) and health benefit premium cost-sharing under Chapter 44.",
+      "taxpayerImpact": "Annual school tax increases are capped at 2% under statutory levy limits unless statutory health care or enrollment adjustments apply.",
+      "status": "Under Annual State DOE User-Friendly Budget Review"
+    },
+    {
+      "id": "hawthorne-ctrl-3",
+      "severity": "Notice",
+      "category": "Commercial Tax Abatements & PILOTs",
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "entityInvolved": "Hawthorne Borough Municipal Redevelopment Agency",
+      "lastUpdated": "2026-10-31",
+      "summary": "Commercial PILOT agreements in Hawthorne Borough yield $90,010 in service fees while abating standard property taxes.",
+      "investigationDetails": "Under NJ Long-Term Tax Exemption Law, municipal government retains 95% of PILOT revenues, leaving local school districts with 0% of payments.",
+      "taxpayerImpact": "Shifts an estimated $9.44 per homeowner annually in indirect education funding burden.",
+      "status": "Active Citizen Watchdog Monitoring"
     }
   ],
   "highlights": [
     {
-      "title": "Fiscal & Ratable Structure Overview",
+      "title": "Ratable Base Balance & Assessment Equalization (Hawthorne Borough)",
       "detail": "Direct Bergen County border (Glen Rock / Ridgewood); independent K-12 public school system with moderate local commercial tax contributions."
+    },
+    {
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "detail": "Public education appropriations represent 54.2% of the composite property tax levy in Hawthorne Borough."
+    },
+    {
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "detail": "Commercial PILOT agreements in Hawthorne Borough yield $90,010 in service fees while abating standard property taxes."
     }
   ]
 }

@@ -15,38 +15,38 @@
   "commercialShare": 18.8,
   "cityOverview": {
     "totalPopulation": 34950,
-    "totalHousingUnits": 12944,
+    "totalHousingUnits": 12500,
     "medianHouseholdIncome": 134200,
     "perCapitaIncome": 64416,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 81,
-    "renterOccupiedRate": 19,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 4.1,
+    "ownerOccupiedRate": 82.0,
+    "renterOccupiedRate": 18.0,
+    "foreignBornPercentage": 32.1,
+    "nonEnglishAtHomePercent": 41.5
   },
   "zipCodeComparison": [
     {
       "zip": "07410",
-      "areaName": "Fair Lawn Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Fair Lawn Borough Center, Residential & Parkway Districts",
+      "areaName": "Fair Lawn Borough (ZIP 07410)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Radburn Historic Planned Community, River Road & West District, Memorial Park & Berdan Grove, Warren Point & Eastern Border",
       "medianHouseholdIncome": 134200,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 81,
-      "renterOccupiedPercent": 19,
+      "ownerOccupiedPercent": 82.0,
+      "renterOccupiedPercent": 18.0,
       "averageAnnualTaxBill": 14610.62,
       "monthlyTaxBill": 1217.55,
       "taxBurdenPercentOfIncome": 10.89,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 134271000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 51.8,
+        "hispanicOrLatino": 20.9,
+        "asian": 14.4,
+        "blackOrAfricanAmerican": 12.8,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.512%, with an equalization ratio of 68.2%.",
@@ -57,34 +57,60 @@
   ],
   "neighborhoods": [
     {
-      "name": "Fair Lawn Borough Center & Downtown",
+      "name": "Radburn Historic Planned Community",
       "zip": "07410",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 134200,
-      "medianAge": 40.5,
-      "avgTaxBill": 14610.62,
-      "taxBurdenPercentIncome": 10.89,
-      "avgMarketValue": 610000,
-      "ownerOccupied": 81,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "World-famous 'Town for the Motor Age' with pedestrian park networks, interior walking paths, and historic colonial residences",
+      "medianIncome": 167750,
+      "medianAge": 41.5,
+      "avgTaxBill": 17825,
+      "taxBurdenPercentIncome": 10.63,
+      "avgMarketValue": 744200,
+      "ownerOccupied": 92.0,
+      "description": "National Historic Landmark community designed in 1929 by Clarence Stein and Henry Wright, separating foot traffic from roadways with extensive parklands.",
+      "taxDynamic": "Homeowners pay private Radburn Association dues in addition to standard Fair Lawn property taxes."
     },
     {
-      "name": "Fair Lawn Borough Residential Heights",
+      "name": "River Road & West District",
       "zip": "07410",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 144936,
-      "medianAge": 42.2,
-      "avgTaxBill": 15487,
+      "character": "Suburban single-family homes and cape cods adjacent to River Road commercial district and Passaic River parklands",
+      "medianIncome": 131516,
+      "medianAge": 41.5,
+      "avgTaxBill": 14318,
       "taxBurdenPercentIncome": 10.89,
-      "avgMarketValue": 658800,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "avgMarketValue": 597800,
+      "ownerOccupied": 84.0,
+      "description": "Core residential family neighborhood convenient to River Road shopping, Memorial Park, and NJ Transit Radburn rail station.",
+      "taxDynamic": "Benefited from Fair Lawn's commercial tax base (Nabisco site redevelopment and Route 208 corporate corridor)."
+    },
+    {
+      "name": "Memorial Park & Berdan Grove",
+      "zip": "07410",
+      "character": "Spacious suburban neighborhood featuring quiet residential streets, mature shade trees, and community ballfields",
+      "medianIncome": 144936,
+      "medianAge": 41.5,
+      "avgTaxBill": 15341,
+      "taxBurdenPercentIncome": 10.58,
+      "avgMarketValue": 640500,
+      "ownerOccupied": 88.0,
+      "description": "Established post-war suburban neighborhood offering access to Berdan Grove Park and Fair Lawn High School campus.",
+      "taxDynamic": "Predictable residential property assessment roll with stable effective tax rate (~2.28%)."
+    },
+    {
+      "name": "Warren Point & Eastern Border",
+      "zip": "07410",
+      "character": "Neighborhood bordering Elmwood Park and Saddle Brook, featuring well-maintained ranches, cape cods, and quiet streets",
+      "medianIncome": 136884,
+      "medianAge": 41.5,
+      "avgTaxBill": 14611,
+      "taxBurdenPercentIncome": 10.67,
+      "avgMarketValue": 610000,
+      "ownerOccupied": 82.0,
+      "description": "Accessible neighborhood convenient to Broadway bus lines, local parks, and Warren Point Elementary School.",
+      "taxDynamic": "Moderate assessment bracket providing an entry point for first-time North Jersey homebuyers."
     }
   ],
   "equityAnalysis": {
-    "summary": "Fair Lawn Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Fair Lawn Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +130,53 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 4194,
-      "totalHouseholds": 12944,
+      "totalHouseholds": 12500,
       "enrolledPublicSchools": 4893,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 5417
     },
     "schools": [
       {
-        "name": "Fair Lawn Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Fair Lawn Ave, Fair Lawn Borough, NJ 07410",
-        "enrollment": 1748,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Fair Lawn Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "14-00 Berdan Ave, Fair Lawn, NJ 07410",
+        "enrollment": 1540,
+        "grades": "9-12",
+        "name": "Fair Lawn High School",
+        "type": "High School"
       },
       {
-        "name": "Fair Lawn Borough Middle School",
-        "type": "Middle School",
-        "address": "200 River Rd, Fair Lawn Borough, NJ 07410",
-        "enrollment": 1398,
-        "grades": "6 to 8",
-        "neighborhood": "Fair Lawn Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "12-00 1st St, Fair Lawn, NJ 07410",
+        "enrollment": 680,
+        "grades": "5-8",
+        "name": "Memorial Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Fair Lawn Borough High School",
-        "type": "High School",
-        "address": "300 Plaza Rd, Fair Lawn Borough, NJ 07410",
-        "enrollment": 1748,
-        "grades": "9 to 12",
-        "neighborhood": "Fair Lawn Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "35-01 Morlot Ave, Fair Lawn, NJ 07410",
+        "enrollment": 640,
+        "grades": "5-8",
+        "name": "Thomas Jefferson Middle School",
+        "type": "Middle School"
+      },
+      {
+        "address": "18-00 Radburn Rd, Fair Lawn, NJ 07410",
+        "enrollment": 380,
+        "grades": "K-4",
+        "name": "Radburn Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "30-07 Broadway, Fair Lawn, NJ 07410",
+        "enrollment": 360,
+        "grades": "K-4",
+        "name": "Warren Point Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Philip St, Fair Lawn, NJ 07410",
+        "enrollment": 410,
+        "grades": "K-4",
+        "name": "Henry B. Milnes Elementary School",
+        "type": "Elementary"
       }
     ]
   }

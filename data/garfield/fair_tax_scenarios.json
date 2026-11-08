@@ -3,16 +3,16 @@
     "source": "Certified 2026 Garfield City Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Garfield City",
-      "totalTaxLevy": 139804475,
-      "residentialLevyTotal": 111144558,
-      "commercialLevyTotal": 28659917,
-      "totalResidentialParcels": 12148,
+      "totalTaxLevy": 139876305,
+      "residentialLevyTotal": 111201662,
+      "commercialLevyTotal": 28674643,
+      "totalResidentialParcels": 12200,
       "equalizationRatio": 0.698,
       "certifiedTaxRateAssessed": 3.415,
       "certifiedTaxRateMarket": 2.384,
       "averageResidentialAssessment": 331550,
       "averageResidentialMarketValue": 475000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 216591,
       "commercialLevySharePct": 20.5
     }
   },
@@ -36,55 +36,146 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Garfield City residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 20.5,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.415,
+      "projectedTaxRateMarket": 2.384,
+      "avgResidentialTaxBill": 11322.43,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 79.5% of the levy, commercial ratables pay 20.5%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Garfield City public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Garfield City municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 25.0,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.21,
+      "projectedTaxRateMarket": 2.241,
+      "avgResidentialTaxBill": 10643.08,
+      "avgResidentialNetSavings": 679.35,
+      "avgMonthlySavings": 56.61,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 20.5,
+      "pilotSchoolSharePct": 49.2,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.295,
+      "projectedTaxRateMarket": 2.301,
+      "avgResidentialTaxBill": 10926.14,
+      "avgResidentialNetSavings": 396.29,
+      "avgMonthlySavings": 33.02,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Garfield City Public Schools eliminates residential tax shift for new students.",
+      "winners": "Garfield City Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 20.5,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.415,
+      "projectedTaxRateMarket": 2.384,
+      "avgResidentialTaxBill": 9572.43,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 25.5,
+      "pilotSchoolSharePct": 49.2,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 3.005,
+      "projectedTaxRateMarket": 2.098,
+      "avgResidentialTaxBill": 9963.74,
+      "avgResidentialNetSavings": 1358.69,
+      "avgMonthlySavings": 113.22,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Garfield City residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 265240,
-      "tax": 9057.95
+      "type": "Starter Residence / Condo",
+      "assessment": 248662,
+      "marketValue": 356250,
+      "currentTax": 8491.82,
+      "reformedTax": 7472.81,
+      "annualSavings": 1019.02
     },
     {
-      "type": "Average Garfield City Home",
+      "type": "Average Garfield City Single Family",
       "assessment": 331550,
-      "tax": 11322.43
+      "marketValue": 475000,
+      "currentTax": 11322.43,
+      "reformedTax": 9963.74,
+      "annualSavings": 1358.69
     },
     {
-      "type": "Executive Residence",
-      "assessment": 447593,
-      "tax": 15285.28
+      "type": "Executive / Estate Residence",
+      "assessment": 480748,
+      "marketValue": 688750,
+      "currentTax": 16417.53,
+      "reformedTax": 14447.42,
+      "annualSavings": 1970.1
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07026",
-      "name": "Garfield City Center & Downtown",
+      "name": "Midland Ave & Passaic St Corridor",
       "medianHouseholdIncome": 72400,
-      "currentTaxBill": 11322.43,
+      "currentTaxBill": 11322,
       "currentTaxEffortPct": 15.64
     },
     {
       "zip": "07026",
-      "name": "Garfield City Residential Heights",
-      "medianHouseholdIncome": 78192,
-      "currentTaxBill": 12002,
-      "currentTaxEffortPct": 15.64
+      "name": "River Drive & Outwater Lane Waterfront",
+      "medianHouseholdIncome": 76020,
+      "currentTaxBill": 11549,
+      "currentTaxEffortPct": 15.19
     }
   ],
   "policyRoadmap": [
@@ -101,6 +192,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

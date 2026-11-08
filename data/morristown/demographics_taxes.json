@@ -62,18 +62,43 @@
   ],
   "neighborhoods": [
     {
-      "name": "Town of Morristown Central & Historic Core",
+      "name": "Morristown Green & Historic Downtown",
       "zip": "07960",
-      "character": "Suburban neighborhoods, parks, and downtown corridor",
-      "medianIncome": 119500,
-      "medianAge": 42.2,
-      "avgAssessment": 578680,
+      "character": "Historic revolutionary park square, luxury transit-oriented condominiums, destination restaurants, and Mayo Performing Arts Center",
+      "medianIncome": 115000,
+      "medianAge": 38.2,
+      "avgTaxBill": 10500.0,
+      "taxBurdenPercentIncome": 9.13,
       "avgMarketValue": 680000,
-      "avgTaxBill": 13222.84,
-      "taxBurdenPercentIncome": 11.07,
-      "ownerOccupied": 42.5,
-      "description": "Established residential neighborhoods across Town of Morristown with schools, parks, and community amenities.",
-      "taxDynamic": "Carries the primary residential tax base for the municipal government and Morris School District (Regional K-12)."
+      "ownerOccupied": 42.0,
+      "description": "Historic civic and commercial heart of Morris County, surrounding the central park square where George Washington camped.",
+      "taxDynamic": "Major corporate headquarters (Deloitte, HQ Plaza) and high-density luxury apartments bolster town ratables."
+    },
+    {
+      "name": "Cutler Park & Historic Speedwell",
+      "zip": "07960",
+      "character": "Residential neighborhood along Whippany River featuring cape cods, historic colonials, and Speedwell ironworks landmark",
+      "medianIncome": 98000,
+      "medianAge": 39.5,
+      "avgTaxBill": 9800.0,
+      "taxBurdenPercentIncome": 10.0,
+      "avgMarketValue": 610000,
+      "ownerOccupied": 62.0,
+      "description": "Birthplace of the telegraph (Historic Speedwell), offering convenient walking access to Morristown high school and parks.",
+      "taxDynamic": "Recent townwide revaluation calibrated property assessments to 95.0% of equalized market value."
+    },
+    {
+      "name": "Burnham Park & Washington Valley Border",
+      "zip": "07960",
+      "character": "Scenic residential setting surrounding Burnham Park ponds, historic estates, and single-family colonials",
+      "medianIncome": 138000,
+      "medianAge": 42.0,
+      "avgTaxBill": 11800.0,
+      "taxBurdenPercentIncome": 8.55,
+      "avgMarketValue": 750000,
+      "ownerOccupied": 82.0,
+      "description": "Peaceful residential district convenient to Morristown Memorial Hospital and Route 24 expressway.",
+      "taxDynamic": "Low composite tax rate (1.575% certified) due to 100% market revaluation baseline."
     }
   ],
   "familyChildDemographics": {

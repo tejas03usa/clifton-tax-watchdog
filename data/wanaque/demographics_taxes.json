@@ -15,38 +15,38 @@
   "commercialShare": 13.6,
   "cityOverview": {
     "totalPopulation": 11350,
-    "totalHousingUnits": 4204,
+    "totalHousingUnits": 4400,
     "medianHouseholdIncome": 104800,
     "perCapitaIncome": 50304,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 86,
-    "renterOccupiedRate": 14,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 5.8,
+    "ownerOccupiedRate": 77.0,
+    "renterOccupiedRate": 23.0,
+    "foreignBornPercentage": 16.4,
+    "nonEnglishAtHomePercent": 21.0
   },
   "zipCodeComparison": [
     {
       "zip": "07465",
-      "areaName": "Wanaque Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Wanaque Borough Center, Residential & Parkway Districts",
+      "areaName": "Wanaque Borough (ZIP 07465)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Haskell & Midvale Corridor, Midvale & Conklintown Reservoir Border",
       "medianHouseholdIncome": 104800,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 86,
-      "renterOccupiedPercent": 14,
+      "ownerOccupiedPercent": 77.0,
+      "renterOccupiedPercent": 23.0,
       "averageAnnualTaxBill": 12549.28,
       "monthlyTaxBill": 1045.77,
       "taxBurdenPercentOfIncome": 11.97,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 43068000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 75.4,
+        "hispanicOrLatino": 10.7,
+        "asian": 7.4,
+        "blackOrAfricanAmerican": 6.6,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 4.541%, with an equalization ratio of 58.18%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Wanaque Borough Center & Downtown",
+      "name": "Haskell & Midvale Corridor",
       "zip": "07465",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Suburban single-family homes, cape cods, and townhome communities bordering Wanaque Reservoir",
       "medianIncome": 104800,
-      "medianAge": 40.5,
-      "avgTaxBill": 12549.28,
+      "medianAge": 41.5,
+      "avgTaxBill": 12549,
       "taxBurdenPercentIncome": 11.97,
       "avgMarketValue": 475000,
-      "ownerOccupied": 86,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 78.0,
+      "description": "Township bordering the massive Wanaque Reservoir, featuring Lakeland Regional High School campus.",
+      "taxDynamic": "Receives state Payments in Lieu of Taxes (PILOT) for North Jersey District Water Supply Commission lands."
     },
     {
-      "name": "Wanaque Borough Residential Heights",
+      "name": "Midvale & Conklintown Reservoir Border",
       "zip": "07465",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 113184,
-      "medianAge": 42.2,
-      "avgTaxBill": 13302,
-      "taxBurdenPercentIncome": 11.97,
-      "avgMarketValue": 513000,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Suburban residences and ranches bordering Norvin Green forest and reservoir hillsides",
+      "medianIncome": 110040,
+      "medianAge": 41.5,
+      "avgTaxBill": 12800,
+      "taxBurdenPercentIncome": 11.63,
+      "avgMarketValue": 484500,
+      "ownerOccupied": 82.0,
+      "description": "Quiet residential neighborhood offering walking access to Wanaque Elementary School.",
+      "taxDynamic": "Predictable tax rates with shared regional school efficiencies."
     }
   ],
   "equityAnalysis": {
-    "summary": "Wanaque Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Wanaque Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,32 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 1362,
-      "totalHouseholds": 4204,
+      "totalHouseholds": 4400,
       "enrolledPublicSchools": 1589,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 1759
     },
     "schools": [
       {
-        "name": "Wanaque Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Ringwood Ave, Wanaque Borough, NJ 07465",
-        "enrollment": 568,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Wanaque Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "205 Conklintown Rd, Wanaque, NJ 07465",
+        "enrollment": 920,
+        "grades": "9-12",
+        "name": "Lakeland Regional High School",
+        "type": "High School (Regional)"
       },
       {
-        "name": "Wanaque Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Conklintown Rd, Wanaque Borough, NJ 07465",
-        "enrollment": 454,
-        "grades": "6 to 8",
-        "neighborhood": "Wanaque Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "First Ave, Wanaque, NJ 07465",
+        "enrollment": 490,
+        "grades": "K-8",
+        "name": "Wanaque Elementary School",
+        "type": "Elementary / Middle"
       },
       {
-        "name": "Wanaque Borough High School",
-        "type": "High School",
-        "address": "300 Fourth Ave, Wanaque Borough, NJ 07465",
-        "enrollment": 568,
-        "grades": "9 to 12",
-        "neighborhood": "Wanaque Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Ringwood Ave, Haskell, NJ 07420",
+        "enrollment": 460,
+        "grades": "K-8",
+        "name": "Haskell Elementary School",
+        "type": "Elementary / Middle"
       }
     ]
   }

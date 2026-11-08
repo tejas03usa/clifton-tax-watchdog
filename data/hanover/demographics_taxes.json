@@ -15,38 +15,66 @@
   "commercialShare": 38.8,
   "cityOverview": {
     "totalPopulation": 14600,
-    "totalHousingUnits": 5407,
+    "totalHousingUnits": 5400,
     "medianHouseholdIncome": 148500,
     "perCapitaIncome": 71280,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 61,
-    "renterOccupiedRate": 39,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 3.2,
+    "ownerOccupiedRate": 81.0,
+    "renterOccupiedRate": 19.0,
+    "foreignBornPercentage": 19.2,
+    "nonEnglishAtHomePercent": 25.0
   },
   "zipCodeComparison": [
     {
       "zip": "07981",
-      "areaName": "Hanover Township (Whippany) (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Hanover Township (Whippany) Center, Residential & Parkway Districts",
+      "areaName": "Hanover Township (Whippany) (ZIP 07981)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Whippany & Cedar Knolls District",
       "medianHouseholdIncome": 148500,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 61,
-      "renterOccupiedPercent": 39,
+      "ownerOccupiedPercent": 81.0,
+      "renterOccupiedPercent": 19.0,
       "averageAnnualTaxBill": 10387.53,
       "monthlyTaxBill": 865.63,
       "taxBurdenPercentOfIncome": 7.0,
-      "shareOfTotalTaxBase": 100,
-      "totalResidentialLevyContribution": 67356000,
-      "schoolEnrollmentShare": 100,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 33678000,
+      "schoolEnrollmentShare": 50.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 71.2,
+        "hispanicOrLatino": 12.5,
+        "asian": 8.6,
+        "blackOrAfricanAmerican": 7.7,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 1.714%, with an equalization ratio of 87.2%.",
+        "Public education represents 61.2% of property taxes, while municipal operations account for 27.6%.",
+        "Average residential assessment is $606,040, producing an average annual tax bill of $10,387.53."
+      ]
+    },
+    {
+      "zip": "07927",
+      "areaName": "Hanover Township (Whippany) (ZIP 07927)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Cedar Knolls & Troy Hills Section",
+      "medianHouseholdIncome": 148500,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 81.0,
+      "renterOccupiedPercent": 19.0,
+      "averageAnnualTaxBill": 10387.53,
+      "monthlyTaxBill": 865.63,
+      "taxBurdenPercentOfIncome": 7.0,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 33678000,
+      "schoolEnrollmentShare": 50.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 71.2,
+        "hispanicOrLatino": 12.5,
+        "asian": 8.6,
+        "blackOrAfricanAmerican": 7.7,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 1.714%, with an equalization ratio of 87.2%.",
@@ -57,34 +85,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Hanover Township (Whippany) Center & Downtown",
+      "name": "Whippany & Cedar Knolls District",
       "zip": "07981",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 148500,
-      "medianAge": 40.5,
-      "avgTaxBill": 10387.53,
-      "taxBurdenPercentIncome": 7.0,
-      "avgMarketValue": 695000,
-      "ownerOccupied": 61,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Suburban colonials and ranches on generous lots, surrounded by major Fortune 500 corporate headquarters (Bayer, Barclays, MetLife)",
+      "medianIncome": 170775,
+      "medianAge": 41.5,
+      "avgTaxBill": 11634,
+      "taxBurdenPercentIncome": 6.81,
+      "avgMarketValue": 778400,
+      "ownerOccupied": 86.0,
+      "description": "Township encompassing Whippany and Cedar Knolls, known for exceptionally low residential property tax rates due to corporate ratables.",
+      "taxDynamic": "Remarkably low certified tax rate (1.986%) with corporate office parks paying over 52% of the local property tax levy."
     },
     {
-      "name": "Hanover Township (Whippany) Residential Heights",
-      "zip": "07981",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 160380,
-      "medianAge": 42.2,
-      "avgTaxBill": 11011,
-      "taxBurdenPercentIncome": 7.0,
+      "name": "Cedar Knolls & Troy Hills Section",
+      "zip": "07927",
+      "character": "Suburban family neighborhood with ranches, split-levels, and community elementary schools",
+      "medianIncome": 163350,
+      "medianAge": 41.5,
+      "avgTaxBill": 11219,
+      "taxBurdenPercentIncome": 6.87,
       "avgMarketValue": 750600,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "ownerOccupied": 88.0,
+      "description": "Quiet suburban community with proximity to Hanover Community Center and town pool.",
+      "taxDynamic": "Corporate tax payments buffer homeowner taxes from municipal cost inflation."
     }
   ],
   "equityAnalysis": {
-    "summary": "Hanover Township (Whippany) maintains a consistent residential tax base across its residential zones.",
+    "summary": "Hanover Township (Whippany) maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +132,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 1752,
-      "totalHouseholds": 5407,
+      "totalHouseholds": 5400,
       "enrolledPublicSchools": 2044,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 2263
     },
     "schools": [
       {
-        "name": "Hanover Township (Whippany) Elementary School",
-        "type": "Elementary",
-        "address": "100 Route 10, Hanover Township (Whippany), NJ 07981",
-        "enrollment": 730,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Hanover Township (Whippany) Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "165 Whippany Rd, Whippany, NJ 07981",
+        "enrollment": 640,
+        "grades": "9-12",
+        "name": "Whippany Park High School",
+        "type": "High School (Regional)"
       },
       {
-        "name": "Hanover Township (Whippany) Middle School",
-        "type": "Middle School",
-        "address": "200 Mt Pleasant Ave, Hanover Township (Whippany), NJ 07981",
-        "enrollment": 584,
-        "grades": "6 to 8",
-        "neighborhood": "Hanover Township (Whippany) Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "Highland Ave, Whippany, NJ 07981",
+        "enrollment": 490,
+        "grades": "6-8",
+        "name": "Memorial Junior School",
+        "type": "Middle School"
       },
       {
-        "name": "Hanover Township (Whippany) High School",
-        "type": "High School",
-        "address": "300 Troy Hills Rd, Hanover Township (Whippany), NJ 07981",
-        "enrollment": 730,
-        "grades": "9 to 12",
-        "neighborhood": "Hanover Township (Whippany) Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Reynolds Ave, Whippany, NJ 07981",
+        "enrollment": 380,
+        "grades": "K-5",
+        "name": "Bee Meadow Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Cedar Knolls, NJ 07927",
+        "enrollment": 340,
+        "grades": "K-5",
+        "name": "Mountview Road Elementary School",
+        "type": "Elementary"
       }
     ]
   }

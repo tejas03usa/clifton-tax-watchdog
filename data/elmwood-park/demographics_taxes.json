@@ -15,38 +15,38 @@
   "commercialShare": 21.6,
   "cityOverview": {
     "totalPopulation": 21250,
-    "totalHousingUnits": 7870,
+    "totalHousingUnits": 7600,
     "medianHouseholdIncome": 98500,
     "perCapitaIncome": 47280,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 78,
-    "renterOccupiedRate": 22,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 7.2,
+    "ownerOccupiedRate": 62.0,
+    "renterOccupiedRate": 38.0,
+    "foreignBornPercentage": 36.5,
+    "nonEnglishAtHomePercent": 48.0
   },
   "zipCodeComparison": [
     {
       "zip": "07407",
-      "areaName": "Elmwood Park Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Elmwood Park Borough Center, Residential & Parkway Districts",
+      "areaName": "Elmwood Park Borough (ZIP 07407)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Boulevard Core & Cherry Hill Section, River Drive & Mola Boulevard District",
       "medianHouseholdIncome": 98500,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 78,
-      "renterOccupiedPercent": 22,
+      "ownerOccupiedPercent": 62.0,
+      "renterOccupiedPercent": 38.0,
       "averageAnnualTaxBill": 12117.95,
       "monthlyTaxBill": 1009.83,
       "taxBurdenPercentOfIncome": 12.3,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 65256000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 45.2,
+        "hispanicOrLatino": 23.7,
+        "asian": 16.4,
+        "blackOrAfricanAmerican": 14.6,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.25%, with an equalization ratio of 72.4%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Elmwood Park Borough Center & Downtown",
+      "name": "Boulevard Core & Cherry Hill Section",
       "zip": "07407",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Suburban borough grid along Boulevard retail corridor with cape cods, split-levels, and two-family homes",
       "medianIncome": 98500,
-      "medianAge": 40.5,
-      "avgTaxBill": 12117.95,
+      "medianAge": 41.5,
+      "avgTaxBill": 12118,
       "taxBurdenPercentIncome": 12.3,
       "avgMarketValue": 515000,
-      "ownerOccupied": 78,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 64.0,
+      "description": "Convenient suburban borough adjacent to Route 4 and Garden State Parkway, offering commuter bus access to NYC.",
+      "taxDynamic": "Certified tax rate of 2.946% supported by Boulevard commercial businesses and industrial park ratables."
     },
     {
-      "name": "Elmwood Park Borough Residential Heights",
+      "name": "River Drive & Mola Boulevard District",
       "zip": "07407",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 106380,
-      "medianAge": 42.2,
-      "avgTaxBill": 12845,
-      "taxBurdenPercentIncome": 12.3,
-      "avgMarketValue": 556200,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Residential area along Passaic River with well-kept cape cods, split-levels, and waterfront parklands",
+      "medianIncome": 103425,
+      "medianAge": 41.5,
+      "avgTaxBill": 12360,
+      "taxBurdenPercentIncome": 11.95,
+      "avgMarketValue": 525300,
+      "ownerOccupied": 70.0,
+      "description": "Family neighborhood featuring community walking paths along the Passaic River corridor.",
+      "taxDynamic": "Steady residential assessments with moderate effective tax rates."
     }
   ],
   "equityAnalysis": {
-    "summary": "Elmwood Park Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Elmwood Park Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 2550,
-      "totalHouseholds": 7870,
+      "totalHouseholds": 7600,
       "enrolledPublicSchools": 2975,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 3294
     },
     "schools": [
       {
-        "name": "Elmwood Park Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Boulevard, Elmwood Park Borough, NJ 07407",
-        "enrollment": 1062,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Elmwood Park Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "375 River Dr, Elmwood Park, NJ 07407",
+        "enrollment": 780,
+        "grades": "9-12",
+        "name": "Elmwood Park Memorial High School",
+        "type": "High School"
       },
       {
-        "name": "Elmwood Park Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Market St, Elmwood Park Borough, NJ 07407",
-        "enrollment": 850,
-        "grades": "6 to 8",
-        "neighborhood": "Elmwood Park Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "375 River Dr, Elmwood Park, NJ 07407",
+        "enrollment": 540,
+        "grades": "6-8",
+        "name": "Elmwood Park Memorial Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Elmwood Park Borough High School",
-        "type": "High School",
-        "address": "300 River Dr, Elmwood Park Borough, NJ 07407",
-        "enrollment": 1062,
-        "grades": "9 to 12",
-        "neighborhood": "Elmwood Park Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Gantner Ave, Elmwood Park, NJ 07407",
+        "enrollment": 380,
+        "grades": "K-5",
+        "name": "Gantner Avenue Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Gilbert Ave, Elmwood Park, NJ 07407",
+        "enrollment": 360,
+        "grades": "K-5",
+        "name": "Gilbert Avenue Elementary School",
+        "type": "Elementary"
       }
     ]
   }

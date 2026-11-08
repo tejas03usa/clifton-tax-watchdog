@@ -3,16 +3,16 @@
     "source": "Certified 2026 Little Falls Township Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Little Falls Township",
-      "totalTaxLevy": 58866008,
-      "residentialLevyTotal": 46798476,
-      "commercialLevyTotal": 12067532,
-      "totalResidentialParcels": 4948,
+      "totalTaxLevy": 59357531,
+      "residentialLevyTotal": 47189237,
+      "commercialLevyTotal": 12168294,
+      "totalResidentialParcels": 5200,
       "equalizationRatio": 0.622,
       "certifiedTaxRateAssessed": 3.496,
       "certifiedTaxRateMarket": 2.17,
       "averageResidentialAssessment": 336096,
       "averageResidentialMarketValue": 540000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 184562,
       "commercialLevySharePct": 20.5
     }
   },
@@ -36,55 +36,146 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Little Falls Township residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 20.5,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.496,
+      "projectedTaxRateMarket": 2.17,
+      "avgResidentialTaxBill": 11749.92,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 79.5% of the levy, commercial ratables pay 20.5%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Little Falls Township public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Little Falls Township municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 25.0,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.286,
+      "projectedTaxRateMarket": 2.04,
+      "avgResidentialTaxBill": 11044.92,
+      "avgResidentialNetSavings": 705.0,
+      "avgMonthlySavings": 58.75,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 20.5,
+      "pilotSchoolSharePct": 53.6,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.374,
+      "projectedTaxRateMarket": 2.094,
+      "avgResidentialTaxBill": 11338.67,
+      "avgResidentialNetSavings": 411.25,
+      "avgMonthlySavings": 34.27,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Little Falls Township Public Schools eliminates residential tax shift for new students.",
+      "winners": "Little Falls Township Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 20.5,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.496,
+      "projectedTaxRateMarket": 2.17,
+      "avgResidentialTaxBill": 9999.92,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 25.5,
+      "pilotSchoolSharePct": 53.6,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 3.076,
+      "projectedTaxRateMarket": 1.91,
+      "avgResidentialTaxBill": 10339.93,
+      "avgResidentialNetSavings": 1409.99,
+      "avgMonthlySavings": 117.5,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Little Falls Township residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 268877,
-      "tax": 9399.93
+      "type": "Starter Residence / Condo",
+      "assessment": 252072,
+      "marketValue": 405000,
+      "currentTax": 8812.44,
+      "reformedTax": 7754.94,
+      "annualSavings": 1057.49
     },
     {
-      "type": "Average Little Falls Township Home",
+      "type": "Average Little Falls Township Single Family",
       "assessment": 336096,
-      "tax": 11749.92
+      "marketValue": 540000,
+      "currentTax": 11749.92,
+      "reformedTax": 10339.93,
+      "annualSavings": 1409.99
     },
     {
-      "type": "Executive Residence",
-      "assessment": 453730,
-      "tax": 15862.39
+      "type": "Executive / Estate Residence",
+      "assessment": 487339,
+      "marketValue": 783000,
+      "currentTax": 17037.38,
+      "reformedTax": 14992.89,
+      "annualSavings": 2044.49
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07424",
-      "name": "Little Falls Township Center & Downtown",
+      "name": "Great Falls & Downtown Center",
       "medianHouseholdIncome": 118400,
-      "currentTaxBill": 11749.92,
+      "currentTaxBill": 11750,
       "currentTaxEffortPct": 9.92
     },
     {
       "zip": "07424",
-      "name": "Little Falls Township Residential Heights",
+      "name": "Singac & Route 46 Corridor",
       "medianHouseholdIncome": 127872,
-      "currentTaxBill": 12455,
-      "currentTaxEffortPct": 9.92
+      "currentTaxBill": 12337,
+      "currentTaxEffortPct": 9.65
     }
   ],
   "policyRoadmap": [
@@ -101,6 +192,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

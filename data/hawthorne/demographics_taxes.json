@@ -15,38 +15,38 @@
   "commercialShare": 17.5,
   "cityOverview": {
     "totalPopulation": 19450,
-    "totalHousingUnits": 7204,
+    "totalHousingUnits": 7800,
     "medianHouseholdIncome": 116200,
     "perCapitaIncome": 55776,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 82,
-    "renterOccupiedRate": 18,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 5.5,
+    "ownerOccupiedRate": 71.0,
+    "renterOccupiedRate": 29.0,
+    "foreignBornPercentage": 21.5,
+    "nonEnglishAtHomePercent": 28.0
   },
   "zipCodeComparison": [
     {
       "zip": "07506",
-      "areaName": "Hawthorne Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Hawthorne Borough Center, Residential & Parkway Districts",
+      "areaName": "Hawthorne Borough (ZIP 07506)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "North Hawthorne & Goffle Brook Section, Central Hawthorne & Lincoln Ave Corridor",
       "medianHouseholdIncome": 116200,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 82,
-      "renterOccupiedPercent": 18,
+      "ownerOccupiedPercent": 71.0,
+      "renterOccupiedPercent": 29.0,
       "averageAnnualTaxBill": 11967.23,
       "monthlyTaxBill": 997.27,
       "taxBurdenPercentOfIncome": 10.3,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 63756000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 67.8,
+        "hispanicOrLatino": 14.0,
+        "asian": 9.7,
+        "blackOrAfricanAmerican": 8.6,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.144%, with an equalization ratio of 73.91%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Hawthorne Borough Center & Downtown",
+      "name": "North Hawthorne & Goffle Brook Section",
       "zip": "07506",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 116200,
-      "medianAge": 40.5,
-      "avgTaxBill": 11967.23,
-      "taxBurdenPercentIncome": 10.3,
-      "avgMarketValue": 515000,
-      "ownerOccupied": 82,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Picturesque suburban streets bordering Goffle Brook Park with stately colonials, cape cods, and deep landscaped lots",
+      "medianIncome": 133630,
+      "medianAge": 41.5,
+      "avgTaxBill": 13403,
+      "taxBurdenPercentIncome": 10.03,
+      "avgMarketValue": 576800,
+      "ownerOccupied": 84.0,
+      "description": "Sought-after northern residential section bordering Ridgewood and Wyckoff, featuring charming parks and sports fields.",
+      "taxDynamic": "Stable residential assessment base with strong market resale values."
     },
     {
-      "name": "Hawthorne Borough Residential Heights",
+      "name": "Central Hawthorne & Lincoln Ave Corridor",
       "zip": "07506",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 125496,
-      "medianAge": 42.2,
-      "avgTaxBill": 12685,
-      "taxBurdenPercentIncome": 10.3,
-      "avgMarketValue": 556200,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Walkable town center surrounding Lincoln Avenue and Diamond Bridge retail, featuring two-family homes and commuter rail station",
+      "medianIncome": 110390,
+      "medianAge": 41.5,
+      "avgTaxBill": 11489,
+      "taxBurdenPercentIncome": 10.41,
+      "avgMarketValue": 494400,
+      "ownerOccupied": 62.0,
+      "description": "Community core centered around Hawthorne NJ Transit rail station and local dining along Lafayette and Lincoln avenues.",
+      "taxDynamic": "Mixed residential and light industrial ratables supporting municipal appropriations."
     }
   ],
   "equityAnalysis": {
-    "summary": "Hawthorne Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Hawthorne Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 2334,
-      "totalHouseholds": 7204,
+      "totalHouseholds": 7800,
       "enrolledPublicSchools": 2723,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 3015
     },
     "schools": [
       {
-        "name": "Hawthorne Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Lafayette Ave, Hawthorne Borough, NJ 07506",
-        "enrollment": 972,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Hawthorne Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "160 Parmelee Ave, Hawthorne, NJ 07506",
+        "enrollment": 640,
+        "grades": "9-12",
+        "name": "Hawthorne High School",
+        "type": "High School"
       },
       {
-        "name": "Hawthorne Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Diamond Bridge Ave, Hawthorne Borough, NJ 07506",
-        "enrollment": 778,
-        "grades": "6 to 8",
-        "neighborhood": "Hawthorne Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "Hawthorne Ave, Hawthorne, NJ 07506",
+        "enrollment": 520,
+        "grades": "6-8",
+        "name": "Lincoln Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Hawthorne Borough High School",
-        "type": "High School",
-        "address": "300 Lincoln Ave, Hawthorne Borough, NJ 07506",
-        "enrollment": 972,
-        "grades": "9 to 12",
-        "neighborhood": "Hawthorne Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "50 Roosevelt Ave, Hawthorne, NJ 07506",
+        "enrollment": 360,
+        "grades": "K-5",
+        "name": "Roosevelt Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Goffle Rd, Hawthorne, NJ 07506",
+        "enrollment": 340,
+        "grades": "K-5",
+        "name": "Jefferson Elementary School",
+        "type": "Elementary"
       }
     ]
   }

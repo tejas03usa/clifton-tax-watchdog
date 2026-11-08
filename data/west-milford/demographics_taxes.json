@@ -15,38 +15,38 @@
   "commercialShare": 7.6,
   "cityOverview": {
     "totalPopulation": 25850,
-    "totalHousingUnits": 9574,
+    "totalHousingUnits": 11000,
     "medianHouseholdIncome": 112400,
     "perCapitaIncome": 53952,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 92,
-    "renterOccupiedRate": 8,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 5.0,
+    "ownerOccupiedRate": 86.0,
+    "renterOccupiedRate": 14.0,
+    "foreignBornPercentage": 11.2,
+    "nonEnglishAtHomePercent": 15.0
   },
   "zipCodeComparison": [
     {
       "zip": "07480",
-      "areaName": "West Milford Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "West Milford Township Center, Residential & Parkway Districts",
+      "areaName": "West Milford Township (ZIP 07480)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Upper Greenwood Lake & Awosting, Macopin & Newfoundland Town Core",
       "medianHouseholdIncome": 112400,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 92,
-      "renterOccupiedPercent": 8,
+      "ownerOccupiedPercent": 86.0,
+      "renterOccupiedPercent": 14.0,
       "averageAnnualTaxBill": 10950.67,
       "monthlyTaxBill": 912.56,
       "taxBurdenPercentOfIncome": 9.74,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 89523000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 83.2,
+        "hispanicOrLatino": 7.3,
+        "asian": 5.0,
+        "blackOrAfricanAmerican": 4.5,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 4.214%, with an equalization ratio of 59.06%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "West Milford Township Center & Downtown",
+      "name": "Upper Greenwood Lake & Awosting",
       "zip": "07480",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 112400,
-      "medianAge": 40.5,
-      "avgTaxBill": 10950.67,
-      "taxBurdenPercentIncome": 9.74,
-      "avgMarketValue": 440000,
-      "ownerOccupied": 92,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Wooded mountain and lake community surrounding 8-mile Greenwood Lake, featuring rustic custom homes and lakefront docks",
+      "medianIncome": 125888,
+      "medianAge": 41.5,
+      "avgTaxBill": 12046,
+      "taxBurdenPercentIncome": 9.57,
+      "avgMarketValue": 484000,
+      "ownerOccupied": 90.0,
+      "description": "Boating and resort community in northern Passaic County spanning the New York state border.",
+      "taxDynamic": "Special lake association assessments and dam maintenance reserve funds."
     },
     {
-      "name": "West Milford Township Residential Heights",
+      "name": "Macopin & Newfoundland Town Core",
       "zip": "07480",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 121392,
-      "medianAge": 42.2,
-      "avgTaxBill": 11608,
+      "character": "Expansive township core with post-war ranches, colonials on 1-acre wooded lots, and municipal complex",
+      "medianIncome": 112400,
+      "medianAge": 41.5,
+      "avgTaxBill": 10951,
       "taxBurdenPercentIncome": 9.74,
-      "avgMarketValue": 475200,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "avgMarketValue": 440000,
+      "ownerOccupied": 84.0,
+      "description": "Largest geographic municipality in Passaic County (80 square miles), encompassing Newark Watershed lands.",
+      "taxDynamic": "Over 60% of township land is state/city watershed preserve (Highlands Act), constraining private ratables."
     }
   ],
   "equityAnalysis": {
-    "summary": "West Milford Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "West Milford Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 3102,
-      "totalHouseholds": 9574,
+      "totalHouseholds": 11000,
       "enrolledPublicSchools": 3619,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 4007
     },
     "schools": [
       {
-        "name": "West Milford Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Union Valley Rd, West Milford Township, NJ 07480",
-        "enrollment": 1292,
-        "grades": "Pre-K to 5",
-        "neighborhood": "West Milford Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "67 Highlander Dr, West Milford, NJ 07480",
+        "enrollment": 980,
+        "grades": "9-12",
+        "name": "West Milford High School",
+        "type": "High School"
       },
       {
-        "name": "West Milford Township Middle School",
-        "type": "Middle School",
-        "address": "200 Macopin Rd, West Milford Township, NJ 07480",
-        "enrollment": 1034,
-        "grades": "6 to 8",
-        "neighborhood": "West Milford Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "70 Highlander Dr, West Milford, NJ 07480",
+        "enrollment": 520,
+        "grades": "7-8",
+        "name": "Macopin Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "West Milford Township High School",
-        "type": "High School",
-        "address": "300 Warwick Turnpike, West Milford Township, NJ 07480",
-        "enrollment": 1292,
-        "grades": "9 to 12",
-        "neighborhood": "West Milford Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "140 High Crest Dr, West Milford, NJ 07480",
+        "enrollment": 340,
+        "grades": "K-6",
+        "name": "Apshawa Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Marshall Hill Rd, West Milford, NJ 07480",
+        "enrollment": 320,
+        "grades": "K-6",
+        "name": "Marshall Hill Elementary School",
+        "type": "Elementary"
       }
     ]
   }

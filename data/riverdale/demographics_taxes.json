@@ -15,38 +15,38 @@
   "commercialShare": 30.6,
   "cityOverview": {
     "totalPopulation": 4200,
-    "totalHousingUnits": 1556,
+    "totalHousingUnits": 1800,
     "medianHouseholdIncome": 110500,
     "perCapitaIncome": 53040,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 69,
-    "renterOccupiedRate": 31,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 4.5,
+    "ownerOccupiedRate": 68.0,
+    "renterOccupiedRate": 32.0,
+    "foreignBornPercentage": 15.8,
+    "nonEnglishAtHomePercent": 20.4
   },
   "zipCodeComparison": [
     {
       "zip": "07457",
-      "areaName": "Riverdale Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Riverdale Borough Center, Residential & Parkway Districts",
+      "areaName": "Riverdale Borough (ZIP 07457)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Newark Pompton & Riverdale Rd District, Hamburg Turnpike & Post Lane Hills",
       "medianHouseholdIncome": 110500,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 69,
-      "renterOccupiedPercent": 31,
+      "ownerOccupiedPercent": 68.0,
+      "renterOccupiedPercent": 32.0,
       "averageAnnualTaxBill": 10018.8,
       "monthlyTaxBill": 834.9,
       "taxBurdenPercentOfIncome": 9.07,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 17706000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 76.3,
+        "hispanicOrLatino": 10.3,
+        "asian": 7.1,
+        "blackOrAfricanAmerican": 6.3,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.64%, with an equalization ratio of 82.5%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Riverdale Borough Center & Downtown",
+      "name": "Newark Pompton & Riverdale Rd District",
       "zip": "07457",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Cozy single-family homes, modern townhome developments, and Route 23 retail corridor along Pequannock River",
       "medianIncome": 110500,
-      "medianAge": 40.5,
-      "avgTaxBill": 10018.8,
+      "medianAge": 41.5,
+      "avgTaxBill": 10019,
       "taxBurdenPercentIncome": 9.07,
       "avgMarketValue": 460000,
-      "ownerOccupied": 69,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 72.0,
+      "description": "Compact borough convenient to Route 23 shopping, Route 287, and commuter buses to NYC.",
+      "taxDynamic": "Major commercial shopping centers on Route 23 provide a substantial ratable cushion."
     },
     {
-      "name": "Riverdale Borough Residential Heights",
+      "name": "Hamburg Turnpike & Post Lane Hills",
       "zip": "07457",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 119340,
-      "medianAge": 42.2,
-      "avgTaxBill": 10620,
-      "taxBurdenPercentIncome": 9.07,
+      "character": "Elevated residential neighborhood near Pequannock border with custom single-family homes and modern townhouses",
+      "medianIncome": 121550,
+      "medianAge": 41.5,
+      "avgTaxBill": 10820,
+      "taxBurdenPercentIncome": 8.9,
       "avgMarketValue": 496800,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "ownerOccupied": 78.0,
+      "description": "Sought-after residential pocket convenient to Route 23 corridor and Pompton Lake.",
+      "taxDynamic": "Benefits from commercial ratable contributions along Route 23 retail zone."
     }
   ],
   "equityAnalysis": {
-    "summary": "Riverdale Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Riverdale Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,25 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 504,
-      "totalHouseholds": 1556,
+      "totalHouseholds": 1800,
       "enrolledPublicSchools": 588,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 651
     },
     "schools": [
       {
-        "name": "Riverdale Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Newark Pompton Turnpike, Riverdale Borough, NJ 07457",
-        "enrollment": 280,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Riverdale Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "44 Lakeside Ave, Pompton Lakes, NJ 07442",
+        "enrollment": 610,
+        "grades": "9-12",
+        "name": "Pompton Lakes High School (Send/Receive)",
+        "type": "High School"
       },
       {
-        "name": "Riverdale Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Hamburg Turnpike, Riverdale Borough, NJ 07457",
-        "enrollment": 240,
-        "grades": "6 to 8",
-        "neighborhood": "Riverdale Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
-      },
-      {
-        "name": "Riverdale Borough High School",
-        "type": "High School",
-        "address": "300 Post Ln, Riverdale Borough, NJ 07457",
-        "enrollment": 350,
-        "grades": "9 to 12",
-        "neighborhood": "Riverdale Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "52 Newark Pompton Turnpike, Riverdale, NJ 07457",
+        "enrollment": 380,
+        "grades": "PreK-8",
+        "name": "Riverdale Public School",
+        "type": "Elementary / Middle"
       }
     ]
   }

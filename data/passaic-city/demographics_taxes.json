@@ -15,38 +15,38 @@
   "commercialShare": 18.5,
   "cityOverview": {
     "totalPopulation": 70537,
-    "totalHousingUnits": 26125,
+    "totalHousingUnits": 22150,
     "medianHouseholdIncome": 54200,
     "perCapitaIncome": 26016,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 82,
-    "renterOccupiedRate": 18,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 26.1,
+    "ownerOccupiedRate": 27.8,
+    "renterOccupiedRate": 72.2,
+    "foreignBornPercentage": 42.1,
+    "nonEnglishAtHomePercent": 68.5
   },
   "zipCodeComparison": [
     {
       "zip": "07055",
-      "areaName": "Passaic City (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Passaic City Center, Residential & Parkway Districts",
+      "areaName": "Passaic City (ZIP 07055)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Passaic Park Historic District, Downtown Main Ave & Civic District, Eastside & Dundee Island District, Botany Border & South Passaic",
       "medianHouseholdIncome": 54200,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 82,
-      "renterOccupiedPercent": 18,
+      "ownerOccupiedPercent": 27.8,
+      "renterOccupiedPercent": 72.2,
       "averageAnnualTaxBill": 8979.48,
       "monthlyTaxBill": 748.29,
       "taxBurdenPercentOfIncome": 16.57,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 379020000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 36.8,
+        "hispanicOrLatino": 27.4,
+        "asian": 18.9,
+        "blackOrAfricanAmerican": 16.8,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 4.258%, with an equalization ratio of 49.62%.",
@@ -57,34 +57,60 @@
   ],
   "neighborhoods": [
     {
-      "name": "Passaic City Center & Downtown",
+      "name": "Passaic Park Historic District",
       "zip": "07055",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 54200,
-      "medianAge": 40.5,
-      "avgTaxBill": 8979.48,
-      "taxBurdenPercentIncome": 16.57,
-      "avgMarketValue": 425000,
-      "ownerOccupied": 82,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Prestigious enclave of Victorian and Tudor estates, center-hall colonials, and quiet park-like residential lanes",
+      "medianIncome": 84010,
+      "medianAge": 41.5,
+      "avgTaxBill": 12122,
+      "taxBurdenPercentIncome": 14.43,
+      "avgMarketValue": 573750,
+      "ownerOccupied": 58.0,
+      "description": "Historic residential enclave featuring architectural landmarks, Orthodox Jewish cultural institutions, and high-value single family properties.",
+      "taxDynamic": "Anchor residential ratable zone with individual property tax bills exceeding $16,000 annually."
     },
     {
-      "name": "Passaic City Residential Heights",
+      "name": "Downtown Main Ave & Civic District",
       "zip": "07055",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 58536,
-      "medianAge": 42.2,
-      "avgTaxBill": 9518,
-      "taxBurdenPercentIncome": 16.57,
-      "avgMarketValue": 459000,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Historic commercial corridor, City Hall, retail shops, and dense multi-family residential blocks",
+      "medianIncome": 47696,
+      "medianAge": 41.5,
+      "avgTaxBill": 8261,
+      "taxBurdenPercentIncome": 17.32,
+      "avgMarketValue": 391000,
+      "ownerOccupied": 14.0,
+      "description": "Dense urban core surrounding Main Avenue retail corridor, convenient to NJ Transit commuter rail and municipal offices.",
+      "taxDynamic": "Intensive reliance on state formula school aid to offset limited commercial ratable expansion."
+    },
+    {
+      "name": "Eastside & Dundee Island District",
+      "zip": "07055",
+      "character": "Waterfront parkway neighborhood along Passaic River with two-family homes and historic textile mill lofts",
+      "medianIncome": 46070,
+      "medianAge": 41.5,
+      "avgTaxBill": 7902,
+      "taxBurdenPercentIncome": 17.15,
+      "avgMarketValue": 374000,
+      "ownerOccupied": 22.0,
+      "description": "Textile canal-adjacent working-class neighborhood experiencing park revitalizations along Dundee Island Park.",
+      "taxDynamic": "High tenant density where municipal tax rates significantly affect cost of living."
+    },
+    {
+      "name": "Botany Border & South Passaic",
+      "zip": "07055",
+      "character": "Residential district bordering Clifton's Botany Village with cape cods and multi-family homes",
+      "medianIncome": 53116,
+      "medianAge": 41.5,
+      "avgTaxBill": 8620,
+      "taxBurdenPercentIncome": 16.23,
+      "avgMarketValue": 408000,
+      "ownerOccupied": 34.0,
+      "description": "Southern gateway connecting Passaic to Clifton, providing accessible entry-level homeownership.",
+      "taxDynamic": "Close integration with Clifton retail markets; benefits from shared infrastructure corridors."
     }
   ],
   "equityAnalysis": {
-    "summary": "Passaic City maintains a consistent residential tax base across its residential zones.",
+    "summary": "Passaic City maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +130,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 8464,
-      "totalHouseholds": 26125,
+      "totalHouseholds": 22150,
       "enrolledPublicSchools": 9875,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 10933
     },
     "schools": [
       {
-        "name": "Passaic City Elementary School",
-        "type": "Elementary",
-        "address": "100 Main Ave, Passaic City, NJ 07055",
-        "enrollment": 3527,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Passaic City Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "170 Paulison Ave, Passaic, NJ 07055",
+        "enrollment": 2750,
+        "grades": "9-12",
+        "name": "Passaic High School",
+        "type": "High School"
       },
       {
-        "name": "Passaic City Middle School",
-        "type": "Middle School",
-        "address": "200 Passaic Ave, Passaic City, NJ 07055",
-        "enrollment": 2821,
-        "grades": "6 to 8",
-        "neighborhood": "Passaic City Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "291 Lafayette Ave, Passaic, NJ 07055",
+        "enrollment": 820,
+        "grades": "6-12",
+        "name": "Passaic Academy for Science & Engineering",
+        "type": "High School (STEM Magnet)"
       },
       {
-        "name": "Passaic City High School",
-        "type": "High School",
-        "address": "300 Broadway, Passaic City, NJ 07055",
-        "enrollment": 3527,
-        "grades": "9 to 12",
-        "neighborhood": "Passaic City Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "198 Passaic Ave, Passaic, NJ 07055",
+        "enrollment": 780,
+        "grades": "6-12",
+        "name": "Passaic Preparatory Academy",
+        "type": "High School (Arts & Humanities)"
+      },
+      {
+        "address": "75 Paulison Ave, Passaic, NJ 07055",
+        "enrollment": 1350,
+        "grades": "7-8",
+        "name": "Lincoln Middle School",
+        "type": "Middle School"
       }
     ]
   }

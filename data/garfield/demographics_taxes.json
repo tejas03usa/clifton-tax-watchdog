@@ -15,38 +15,38 @@
   "commercialShare": 20.5,
   "cityOverview": {
     "totalPopulation": 32800,
-    "totalHousingUnits": 12148,
+    "totalHousingUnits": 12200,
     "medianHouseholdIncome": 72400,
     "perCapitaIncome": 34752,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 80,
-    "renterOccupiedRate": 20,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 15.6,
+    "ownerOccupiedRate": 38.0,
+    "renterOccupiedRate": 62.0,
+    "foreignBornPercentage": 44.2,
+    "nonEnglishAtHomePercent": 58.4
   },
   "zipCodeComparison": [
     {
       "zip": "07026",
-      "areaName": "Garfield City (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Garfield City Center, Residential & Parkway Districts",
+      "areaName": "Garfield City (ZIP 07026)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Midland Ave & Passaic St Corridor, River Drive & Outwater Lane Waterfront",
       "medianHouseholdIncome": 72400,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 80,
-      "renterOccupiedPercent": 20,
+      "ownerOccupiedPercent": 38.0,
+      "renterOccupiedPercent": 62.0,
       "averageAnnualTaxBill": 11322.43,
       "monthlyTaxBill": 943.54,
       "taxBurdenPercentOfIncome": 15.64,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 123024000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 33.7,
+        "hispanicOrLatino": 28.7,
+        "asian": 19.9,
+        "blackOrAfricanAmerican": 17.7,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.415%, with an equalization ratio of 69.8%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Garfield City Center & Downtown",
+      "name": "Midland Ave & Passaic St Corridor",
       "zip": "07026",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Dense urban-suburban community known as the 'City of Champions' with two-family homes, three-families, and retail",
       "medianIncome": 72400,
-      "medianAge": 40.5,
-      "avgTaxBill": 11322.43,
+      "medianAge": 41.5,
+      "avgTaxBill": 11322,
       "taxBurdenPercentIncome": 15.64,
       "avgMarketValue": 475000,
-      "ownerOccupied": 80,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 40.0,
+      "description": "Vibrant multicultural community along the Passaic River with rail transit at Garfield and Plauderville stations.",
+      "taxDynamic": "Abatement redevelopment along River Drive and high tenant density make property taxes a key pocketbook issue."
     },
     {
-      "name": "Garfield City Residential Heights",
+      "name": "River Drive & Outwater Lane Waterfront",
       "zip": "07026",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 78192,
-      "medianAge": 42.2,
-      "avgTaxBill": 12002,
-      "taxBurdenPercentIncome": 15.64,
-      "avgMarketValue": 513000,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Revitalized riverfront district with new residential developments, two-family homes, and community parks",
+      "medianIncome": 76020,
+      "medianAge": 41.5,
+      "avgTaxBill": 11549,
+      "taxBurdenPercentIncome": 15.19,
+      "avgMarketValue": 484500,
+      "ownerOccupied": 45.0,
+      "description": "Scenic riverfront corridor benefiting from recent parkland and walking path investments.",
+      "taxDynamic": "Transit-oriented redevelopment providing emerging ratable expansion."
     }
   ],
   "equityAnalysis": {
-    "summary": "Garfield City maintains a consistent residential tax base across its residential zones.",
+    "summary": "Garfield City maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,32 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 3936,
-      "totalHouseholds": 12148,
+      "totalHouseholds": 12200,
       "enrolledPublicSchools": 4592,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 5084
     },
     "schools": [
       {
-        "name": "Garfield City Elementary School",
-        "type": "Elementary",
-        "address": "100 River Dr, Garfield City, NJ 07026",
-        "enrollment": 1640,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Garfield City Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "500 Palisade Ave, Garfield, NJ 07026",
+        "enrollment": 1480,
+        "grades": "9-12",
+        "name": "Garfield High School",
+        "type": "High School"
       },
       {
-        "name": "Garfield City Middle School",
-        "type": "Middle School",
-        "address": "200 Midland Ave, Garfield City, NJ 07026",
-        "enrollment": 1312,
-        "grades": "6 to 8",
-        "neighborhood": "Garfield City Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "Passaic St, Garfield, NJ 07026",
+        "enrollment": 1050,
+        "grades": "6-8",
+        "name": "Garfield Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Garfield City High School",
-        "type": "High School",
-        "address": "300 Passaic St, Garfield City, NJ 07026",
-        "enrollment": 1640,
-        "grades": "9 to 12",
-        "neighborhood": "Garfield City Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Garfield, NJ 07026",
+        "enrollment": 490,
+        "grades": "K-5",
+        "name": "School No. 4 / No. 6",
+        "type": "Elementary"
       }
     ]
   }

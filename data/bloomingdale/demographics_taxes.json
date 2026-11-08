@@ -15,38 +15,38 @@
   "commercialShare": 12.8,
   "cityOverview": {
     "totalPopulation": 7720,
-    "totalHousingUnits": 2859,
+    "totalHousingUnits": 3200,
     "medianHouseholdIncome": 98600,
     "perCapitaIncome": 47328,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 87,
-    "renterOccupiedRate": 13,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 5.4,
+    "ownerOccupiedRate": 75.0,
+    "renterOccupiedRate": 25.0,
+    "foreignBornPercentage": 15.2,
+    "nonEnglishAtHomePercent": 19.5
   },
   "zipCodeComparison": [
     {
       "zip": "07403",
-      "areaName": "Bloomingdale Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Bloomingdale Borough Center, Residential & Parkway Districts",
+      "areaName": "Bloomingdale Borough (ZIP 07403)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Main St & Star Lake District, Morse Lakes & Glenwild Highlands",
       "medianHouseholdIncome": 98600,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 87,
-      "renterOccupiedPercent": 13,
+      "ownerOccupiedPercent": 75.0,
+      "renterOccupiedPercent": 25.0,
       "averageAnnualTaxBill": 12160.08,
       "monthlyTaxBill": 1013.34,
       "taxBurdenPercentOfIncome": 12.33,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 30354000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 77.2,
+        "hispanicOrLatino": 9.9,
+        "asian": 6.8,
+        "blackOrAfricanAmerican": 6.1,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 4.718%, with an equalization ratio of 59.25%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Bloomingdale Borough Center & Downtown",
+      "name": "Main St & Star Lake District",
       "zip": "07403",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Historic borough center along Pequannock River with cozy single-family ranches, cape cods, and Star Lake parklands",
       "medianIncome": 98600,
-      "medianAge": 40.5,
-      "avgTaxBill": 12160.08,
+      "medianAge": 41.5,
+      "avgTaxBill": 12160,
       "taxBurdenPercentIncome": 12.33,
       "avgMarketValue": 435000,
-      "ownerOccupied": 87,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 76.0,
+      "description": "Quiet Highlands borough featuring community hiking trails at Norvin Green State Forest and Star Lake.",
+      "taxDynamic": "Participates in shared educational sending agreement with Butler High School."
     },
     {
-      "name": "Bloomingdale Borough Residential Heights",
+      "name": "Morse Lakes & Glenwild Highlands",
       "zip": "07403",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 106488,
-      "medianAge": 42.2,
-      "avgTaxBill": 12890,
-      "taxBurdenPercentIncome": 12.33,
+      "character": "Wooded private lake enclave with lake club privileges, cozy cottages, ranches, and mountain views",
+      "medianIncome": 108460,
+      "medianAge": 41.5,
+      "avgTaxBill": 13133,
+      "taxBurdenPercentIncome": 12.11,
       "avgMarketValue": 469800,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "ownerOccupied": 85.0,
+      "description": "Private lake community featuring swimming beaches, clubhouse activities, and quiet forest roads.",
+      "taxDynamic": "Lake club dues complement standard borough property tax payments."
     }
   ],
   "equityAnalysis": {
-    "summary": "Bloomingdale Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Bloomingdale Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,32 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 926,
-      "totalHouseholds": 2859,
+      "totalHouseholds": 3200,
       "enrolledPublicSchools": 1081,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 1197
     },
     "schools": [
       {
-        "name": "Bloomingdale Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Main St, Bloomingdale Borough, NJ 07403",
-        "enrollment": 386,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Bloomingdale Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "38 Bartholdi Ave, Butler, NJ 07405",
+        "enrollment": 460,
+        "grades": "9-12",
+        "name": "Butler High School (Send/Receive)",
+        "type": "High School"
       },
       {
-        "name": "Bloomingdale Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Paterson-Hamburg Turnpike, Bloomingdale Borough, NJ 07403",
-        "enrollment": 309,
-        "grades": "6 to 8",
-        "neighborhood": "Bloomingdale Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "225 Glenwild Ave, Bloomingdale, NJ 07403",
+        "enrollment": 290,
+        "grades": "5-8",
+        "name": "Walter T. Bergen Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Bloomingdale Borough High School",
-        "type": "High School",
-        "address": "300 Glenwild Ave, Bloomingdale Borough, NJ 07403",
-        "enrollment": 386,
-        "grades": "9 to 12",
-        "neighborhood": "Bloomingdale Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Captolene Ave, Bloomingdale, NJ 07403",
+        "enrollment": 320,
+        "grades": "PreK-4",
+        "name": "Samuel R. Donald Elementary School",
+        "type": "Elementary"
       }
     ]
   }

@@ -15,38 +15,66 @@
   "commercialShare": 31.8,
   "cityOverview": {
     "totalPopulation": 26400,
-    "totalHousingUnits": 9778,
+    "totalHousingUnits": 10500,
     "medianHouseholdIncome": 146800,
     "perCapitaIncome": 70464,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 68,
-    "renterOccupiedRate": 32,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 4.2,
+    "ownerOccupiedRate": 73.0,
+    "renterOccupiedRate": 27.0,
+    "foreignBornPercentage": 19.8,
+    "nonEnglishAtHomePercent": 25.1
   },
   "zipCodeComparison": [
     {
       "zip": "07430",
-      "areaName": "Mahwah Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Mahwah Township Center, Residential & Parkway Districts",
+      "areaName": "Mahwah Township (ZIP 07430)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Cragmere Park & Fardale, Ramapo River Reserve & Darlington",
       "medianHouseholdIncome": 146800,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 68,
-      "renterOccupiedPercent": 32,
+      "ownerOccupiedPercent": 73.0,
+      "renterOccupiedPercent": 27.0,
       "averageAnnualTaxBill": 12170.5,
       "monthlyTaxBill": 1014.21,
       "taxBurdenPercentOfIncome": 8.29,
-      "shareOfTotalTaxBase": 100,
-      "totalResidentialLevyContribution": 97854000,
-      "schoolEnrollmentShare": 100,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 48927000,
+      "schoolEnrollmentShare": 50.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 70.3,
+        "hispanicOrLatino": 12.9,
+        "asian": 8.9,
+        "blackOrAfricanAmerican": 7.9,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 2.18%, with an equalization ratio of 82.1%.",
+        "Public education represents 57.6% of property taxes, while municipal operations account for 31.4%.",
+        "Average residential assessment is $558,280, producing an average annual tax bill of $12,170.5."
+      ]
+    },
+    {
+      "zip": "07495",
+      "areaName": "Mahwah Township (ZIP 07495)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Cragmere Park & Fardale, Ramapo River Reserve & Darlington",
+      "medianHouseholdIncome": 146800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 73.0,
+      "renterOccupiedPercent": 27.0,
+      "averageAnnualTaxBill": 12170.5,
+      "monthlyTaxBill": 1014.21,
+      "taxBurdenPercentOfIncome": 8.29,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 48927000,
+      "schoolEnrollmentShare": 50.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 70.3,
+        "hispanicOrLatino": 12.9,
+        "asian": 8.9,
+        "blackOrAfricanAmerican": 7.9,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.18%, with an equalization ratio of 82.1%.",
@@ -57,34 +85,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Mahwah Township Center & Downtown",
+      "name": "Cragmere Park & Fardale",
       "zip": "07430",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 146800,
-      "medianAge": 40.5,
-      "avgTaxBill": 12170.5,
-      "taxBurdenPercentIncome": 8.29,
-      "avgMarketValue": 680000,
-      "ownerOccupied": 68,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Custom luxury colonials, historic Victorians, and expansive 1-acre wooded lots near Ramapo College",
+      "medianIncome": 190840,
+      "medianAge": 41.5,
+      "avgTaxBill": 15213,
+      "taxBurdenPercentIncome": 7.97,
+      "avgMarketValue": 850000,
+      "ownerOccupied": 92.0,
+      "description": "Scenic township bordering Rockland County NY, known as the 'Gateway to New Jersey', offering Ramapo Valley views.",
+      "taxDynamic": "Major corporate campuses (UPS, Stryker, Jaguar Land Rover HQ) provide immense ratable base keeping tax rates modest (2.126% certified)."
     },
     {
-      "name": "Mahwah Township Residential Heights",
+      "name": "Ramapo River Reserve & Darlington",
       "zip": "07430",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 158544,
-      "medianAge": 42.2,
-      "avgTaxBill": 12901,
-      "taxBurdenPercentIncome": 8.29,
-      "avgMarketValue": 734400,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Scenic estates and luxury townhomes nestled against the Ramapo Mountains and Darlington County Park",
+      "medianIncome": 183500,
+      "medianAge": 41.5,
+      "avgTaxBill": 14848,
+      "taxBurdenPercentIncome": 8.09,
+      "avgMarketValue": 829600,
+      "ownerOccupied": 88.0,
+      "description": "Mountain-view residential corridor offering skiing at Campgaw Mountain and swimming at Darlington Lake.",
+      "taxDynamic": "Strong residential ratable base with robust market resale values."
     }
   ],
   "equityAnalysis": {
-    "summary": "Mahwah Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Mahwah Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +132,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 3168,
-      "totalHouseholds": 9778,
+      "totalHouseholds": 10500,
       "enrolledPublicSchools": 3696,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 4092
     },
     "schools": [
       {
-        "name": "Mahwah Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Franklin Turnpike, Mahwah Township, NJ 07430",
-        "enrollment": 1320,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Mahwah Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "50 Ridge Rd, Mahwah, NJ 07430",
+        "enrollment": 980,
+        "grades": "9-12",
+        "name": "Mahwah High School",
+        "type": "High School"
       },
       {
-        "name": "Mahwah Township Middle School",
-        "type": "Middle School",
-        "address": "200 MacArthur Blvd, Mahwah Township, NJ 07430",
-        "enrollment": 1056,
-        "grades": "6 to 8",
-        "neighborhood": "Mahwah Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "150 Ridge Rd, Mahwah, NJ 07430",
+        "enrollment": 710,
+        "grades": "6-8",
+        "name": "Ramapo Ridge Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Mahwah Township High School",
-        "type": "High School",
-        "address": "300 Ramapo Valley Rd, Mahwah Township, NJ 07430",
-        "enrollment": 1320,
-        "grades": "9 to 12",
-        "neighborhood": "Mahwah Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Mahwah, NJ 07430",
+        "enrollment": 290,
+        "grades": "K-3",
+        "name": "George Washington Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Mahwah, NJ 07430",
+        "enrollment": 280,
+        "grades": "K-3",
+        "name": "Betsy Ross Elementary School",
+        "type": "Elementary"
       }
     ]
   }

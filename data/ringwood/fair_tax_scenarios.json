@@ -3,16 +3,16 @@
     "source": "Certified 2026 Ringwood Borough Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Ringwood Borough",
-      "totalTaxLevy": 58230036,
-      "residentialLevyTotal": 53105793,
-      "commercialLevyTotal": 5124243,
-      "totalResidentialParcels": 4333,
+      "totalTaxLevy": 58769830,
+      "residentialLevyTotal": 53598085,
+      "commercialLevyTotal": 5171745,
+      "totalResidentialParcels": 4600,
       "equalizationRatio": 0.617,
       "certifiedTaxRateAssessed": 4.259,
       "certifiedTaxRateMarket": 2.627,
       "averageResidentialAssessment": 320736,
       "averageResidentialMarketValue": 520000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 79266,
       "commercialLevySharePct": 8.8
     }
   },
@@ -36,55 +36,146 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Ringwood Borough residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 8.8,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 4.259,
+      "projectedTaxRateMarket": 2.627,
+      "avgResidentialTaxBill": 13660.15,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 91.2% of the levy, commercial ratables pay 8.8%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Ringwood Borough public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Ringwood Borough municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 13.3,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 4.003,
+      "projectedTaxRateMarket": 2.469,
+      "avgResidentialTaxBill": 12840.54,
+      "avgResidentialNetSavings": 819.61,
+      "avgMonthlySavings": 68.3,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 8.8,
+      "pilotSchoolSharePct": 61.4,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 4.11,
+      "projectedTaxRateMarket": 2.535,
+      "avgResidentialTaxBill": 13182.04,
+      "avgResidentialNetSavings": 478.11,
+      "avgMonthlySavings": 39.84,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Ringwood Borough Public Schools eliminates residential tax shift for new students.",
+      "winners": "Ringwood Borough Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 8.8,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 4.259,
+      "projectedTaxRateMarket": 2.627,
+      "avgResidentialTaxBill": 11910.15,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 13.8,
+      "pilotSchoolSharePct": 61.4,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 3.748,
+      "projectedTaxRateMarket": 2.312,
+      "avgResidentialTaxBill": 12020.93,
+      "avgResidentialNetSavings": 1639.22,
+      "avgMonthlySavings": 136.6,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Ringwood Borough residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 256589,
-      "tax": 10928.12
+      "type": "Starter Residence / Condo",
+      "assessment": 240552,
+      "marketValue": 390000,
+      "currentTax": 10245.11,
+      "reformedTax": 9015.7,
+      "annualSavings": 1229.41
     },
     {
-      "type": "Average Ringwood Borough Home",
+      "type": "Average Ringwood Borough Single Family",
       "assessment": 320736,
-      "tax": 13660.15
+      "marketValue": 520000,
+      "currentTax": 13660.15,
+      "reformedTax": 12020.93,
+      "annualSavings": 1639.22
     },
     {
-      "type": "Executive Residence",
-      "assessment": 432994,
-      "tax": 18441.2
+      "type": "Executive / Estate Residence",
+      "assessment": 465067,
+      "marketValue": 754000,
+      "currentTax": 19807.21,
+      "reformedTax": 17430.35,
+      "annualSavings": 2376.87
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07456",
-      "name": "Ringwood Borough Center & Downtown",
-      "medianHouseholdIncome": 134200,
-      "currentTaxBill": 13660.15,
-      "currentTaxEffortPct": 10.18
+      "name": "Cupsaw Lake & Erskine Lakes Section",
+      "medianHouseholdIncome": 154330,
+      "currentTaxBill": 15299,
+      "currentTaxEffortPct": 9.91
     },
     {
       "zip": "07456",
-      "name": "Ringwood Borough Residential Heights",
-      "medianHouseholdIncome": 144936,
-      "currentTaxBill": 14480,
-      "currentTaxEffortPct": 10.18
+      "name": "Stonetown & Skyline Drive Enclave",
+      "medianHouseholdIncome": 158356,
+      "currentTaxBill": 15709,
+      "currentTaxEffortPct": 9.92
     }
   ],
   "policyRoadmap": [
@@ -101,6 +192,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

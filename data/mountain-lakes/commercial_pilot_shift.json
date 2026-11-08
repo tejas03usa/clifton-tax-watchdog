@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Morris County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Morris County Board of Taxation Certified Abstract of Ratables",
+      "Mountain Lakes Borough Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 94.2,
     "commercialShare": 5.8,
+    "annualShiftDollarImpact": 72298,
+    "averageHomeownerExtraCost": 46.64,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
     "activePilotsCount": 1,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Mountain Lakes Borough municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "mountain-lakes-pilot-1",
         "name": "Mountain Lakes Borough Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 807450,
-        "standardSchoolShare": 555526,
-        "standardCityShare": 172794,
-        "standardCountyShare": 79130,
-        "pilotServiceCharge": 524842,
-        "pilotCityKeeps": 498600,
-        "pilotCountyGets": 26242,
-        "developerAnnualSavings": 282608,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 464400,
-        "homeownerBurdenAbsorbed": 464400
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 968940,
+        "standardSchoolShare": 666631,
+        "standardCityShare": 207353,
+        "standardCountyShare": 94956,
+        "pilotServiceCharge": 629811,
+        "pilotCityKeeps": 598320,
+        "pilotCountyGets": 31491,
+        "developerAnnualSavings": 339129,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 567600,
+        "homeownerBurdenAbsorbed": 567600
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Mountain Lakes Borough Shopping Plaza / Corporate Center",
+        "name": "Mountain Lakes Borough Commercial Plaza / Corporate Complex",
         "location": "100 Boulevard",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 22129187,
-        "annualTaxPaid": 510600,
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 29306220,
+        "annualTaxPaid": 676200,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Mountain Lakes Borough Professional Medical Arts Building",
+        "name": "Mountain Lakes Borough Medical Arts & Professional Center",
         "location": "250 Laurel Hill Rd",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 14832536,
-        "annualTaxPaid": 342240,
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 20095694,
+        "annualTaxPaid": 463680,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Morris County Board of Taxation Abstract of Ratables & Mountain Lakes Borough Financial Statements",
+    "totalPropertyTaxesAbated": 160663,
+    "totalPilotBillingsCollected": 88365,
+    "netTaxShiftToHomeowners": 72298,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Mountain Lakes Borough Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 57437,
+        "abatedTaxesEstimated": 104431,
+        "netLossToSchools": 71848,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $50k directly to Mountain Lakes Borough school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Morris County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

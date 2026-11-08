@@ -62,18 +62,43 @@
   ],
   "neighborhoods": [
     {
-      "name": "Wayne Township Central & Historic Core",
+      "name": "Packanack Lake & Pines Lake District",
       "zip": "07470",
-      "character": "Suburban neighborhoods, parks, and downtown corridor",
-      "medianIncome": 138600,
-      "medianAge": 42.2,
-      "avgAssessment": 482000,
-      "avgMarketValue": 599500,
-      "avgTaxBill": 13245.36,
-      "taxBurdenPercentIncome": 9.56,
-      "ownerOccupied": 74.5,
-      "description": "Established residential neighborhoods across Wayne Township with schools, parks, and community amenities.",
-      "taxDynamic": "Carries the primary residential tax base for the municipal government and Wayne Township Public Schools."
+      "character": "Prestigious private lake communities with sandy swimming beaches, sailing clubhouses, ranches, and custom colonials",
+      "medianIncome": 145000,
+      "medianAge": 42.5,
+      "avgTaxBill": 14250.0,
+      "taxBurdenPercentIncome": 9.83,
+      "avgMarketValue": 680000,
+      "ownerOccupied": 94.0,
+      "description": "Historic private lake communities in eastern and northern Wayne offering active beach clubs and junior sailing.",
+      "taxDynamic": "Top tier residential ratable contribution to Wayne Public Schools levy."
+    },
+    {
+      "name": "Preakness & Point View Section",
+      "zip": "07470",
+      "character": "Suburban parkway setting with custom split-levels, brick colonials, and large 1/2-acre lots near Preakness Shopping Center",
+      "medianIncome": 138000,
+      "medianAge": 41.8,
+      "avgTaxBill": 13650.0,
+      "taxBurdenPercentIncome": 9.89,
+      "avgMarketValue": 645000,
+      "ownerOccupied": 90.0,
+      "description": "Historic agricultural crossroads transformed into suburban residences convenient to Route 23 and William Paterson University.",
+      "taxDynamic": "Commercial ratables at Preakness Shopping Center support municipal services."
+    },
+    {
+      "name": "Valley & Sheffield Section",
+      "zip": "07470",
+      "character": "Suburban single-family homes, cape cods, and colonials near Wayne Hills High School campus",
+      "medianIncome": 132000,
+      "medianAge": 40.5,
+      "avgTaxBill": 13100.0,
+      "taxBurdenPercentIncome": 9.92,
+      "avgMarketValue": 615000,
+      "ownerOccupied": 88.0,
+      "description": "Family-centric neighborhood convenient to Wayne Valley High School, Passaic County parks, and local sports fields.",
+      "taxDynamic": "Willowbrook Mall and Route 46 commercial corridors buffer township residential property tax bills."
     }
   ],
   "familyChildDemographics": {

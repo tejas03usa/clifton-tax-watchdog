@@ -15,38 +15,38 @@
   "commercialShare": 10.8,
   "cityOverview": {
     "totalPopulation": 6300,
-    "totalHousingUnits": 2333,
+    "totalHousingUnits": 1800,
     "medianHouseholdIncome": 76800,
     "perCapitaIncome": 36864,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 89,
-    "renterOccupiedRate": 11,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 16.8,
+    "ownerOccupiedRate": 42.0,
+    "renterOccupiedRate": 58.0,
+    "foreignBornPercentage": 32.4,
+    "nonEnglishAtHomePercent": 49.5
   },
   "zipCodeComparison": [
     {
       "zip": "07508",
-      "areaName": "Prospect Park Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Prospect Park Borough Center, Residential & Parkway Districts",
+      "areaName": "Prospect Park Borough (ZIP 07508)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Planten Park & Brown Ave District, North 8th & Fairview Heights",
       "medianHouseholdIncome": 76800,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 89,
-      "renterOccupiedPercent": 11,
+      "ownerOccupiedPercent": 42.0,
+      "renterOccupiedPercent": 58.0,
       "averageAnnualTaxBill": 11506.35,
       "monthlyTaxBill": 958.86,
       "taxBurdenPercentOfIncome": 14.98,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 24621000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 51.4,
+        "hispanicOrLatino": 21.1,
+        "asian": 14.6,
+        "blackOrAfricanAmerican": 13.0,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 6.231%, with an equalization ratio of 46.75%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Prospect Park Borough Center & Downtown",
+      "name": "Planten Park & Brown Ave District",
       "zip": "07508",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Compact residential borough bordering Planten Park and Paterson, with two-family frame homes and single-family dwellings",
       "medianIncome": 76800,
-      "medianAge": 40.5,
-      "avgTaxBill": 11506.35,
+      "medianAge": 41.5,
+      "avgTaxBill": 11506,
       "taxBurdenPercentIncome": 14.98,
       "avgMarketValue": 395000,
-      "ownerOccupied": 89,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 44.0,
+      "description": "Dense 0.48-square-mile borough offering close-knit neighborhood character adjacent to Planten Park recreation.",
+      "taxDynamic": "Certified tax rate of 5.122% reflects compact residential ratables with minimal commercial space."
     },
     {
-      "name": "Prospect Park Borough Residential Heights",
+      "name": "North 8th & Fairview Heights",
       "zip": "07508",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 82944,
-      "medianAge": 42.2,
-      "avgTaxBill": 12197,
-      "taxBurdenPercentIncome": 14.98,
-      "avgMarketValue": 426600,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Elevated residential section overlooking Passaic Valley with single-family homes, duplexes, and quiet streets",
+      "medianIncome": 80640,
+      "medianAge": 41.5,
+      "avgTaxBill": 11736,
+      "taxBurdenPercentIncome": 14.55,
+      "avgMarketValue": 402900,
+      "ownerOccupied": 50.0,
+      "description": "Family-oriented residential blocks convenient to School No. 1 and local neighborhood parks.",
+      "taxDynamic": "Compact tax base with close municipal expenditure controls."
     }
   ],
   "equityAnalysis": {
-    "summary": "Prospect Park Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Prospect Park Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,25 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 756,
-      "totalHouseholds": 2333,
+      "totalHouseholds": 1800,
       "enrolledPublicSchools": 882,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 976
     },
     "schools": [
       {
-        "name": "Prospect Park Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Brown Ave, Prospect Park Borough, NJ 07508",
-        "enrollment": 315,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Prospect Park Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "70 Church St, Haledon, NJ 07508",
+        "enrollment": 890,
+        "grades": "9-12",
+        "name": "Manchester Regional High School",
+        "type": "High School (Regional)"
       },
       {
-        "name": "Prospect Park Borough Middle School",
-        "type": "Middle School",
-        "address": "200 North 8th St, Prospect Park Borough, NJ 07508",
-        "enrollment": 252,
-        "grades": "6 to 8",
-        "neighborhood": "Prospect Park Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
-      },
-      {
-        "name": "Prospect Park Borough High School",
-        "type": "High School",
-        "address": "300 Planten Ave, Prospect Park Borough, NJ 07508",
-        "enrollment": 350,
-        "grades": "9 to 12",
-        "neighborhood": "Prospect Park Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "94 Brown Ave, Prospect Park, NJ 07508",
+        "enrollment": 860,
+        "grades": "PreK-8",
+        "name": "Prospect Park School No. 1",
+        "type": "Elementary / Middle"
       }
     ]
   }

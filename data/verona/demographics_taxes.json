@@ -15,38 +15,38 @@
   "commercialShare": 11.8,
   "cityOverview": {
     "totalPopulation": 14500,
-    "totalHousingUnits": 5370,
+    "totalHousingUnits": 6200,
     "medianHouseholdIncome": 136400,
     "perCapitaIncome": 65472,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 88,
-    "renterOccupiedRate": 12,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 4.0,
+    "ownerOccupiedRate": 74.0,
+    "renterOccupiedRate": 26.0,
+    "foreignBornPercentage": 14.8,
+    "nonEnglishAtHomePercent": 19.5
   },
   "zipCodeComparison": [
     {
       "zip": "07044",
-      "areaName": "Verona Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Verona Township Center, Residential & Parkway Districts",
+      "areaName": "Verona Township (ZIP 07044)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Verona Park & Lanning Section, Forest Avenue & Sunset Ridge",
       "medianHouseholdIncome": 136400,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 88,
-      "renterOccupiedPercent": 12,
+      "ownerOccupiedPercent": 74.0,
+      "renterOccupiedPercent": 26.0,
       "averageAnnualTaxBill": 15502.5,
       "monthlyTaxBill": 1291.88,
       "taxBurdenPercentOfIncome": 11.37,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 55158000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 77.8,
+        "hispanicOrLatino": 9.6,
+        "asian": 6.7,
+        "blackOrAfricanAmerican": 5.9,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.12%, with an equalization ratio of 79.5%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Verona Township Center & Downtown",
+      "name": "Verona Park & Lanning Section",
       "zip": "07044",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 136400,
-      "medianAge": 40.5,
-      "avgTaxBill": 15502.5,
-      "taxBurdenPercentIncome": 11.37,
-      "avgMarketValue": 625000,
-      "ownerOccupied": 88,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Picturesque suburban community surrounding 54-acre Verona Park lake, with tree-lined avenues, colonials, and walk-to-school streets",
+      "medianIncome": 156860,
+      "medianAge": 41.5,
+      "avgTaxBill": 17363,
+      "taxBurdenPercentIncome": 11.07,
+      "avgMarketValue": 700000,
+      "ownerOccupied": 82.0,
+      "description": "Charming residential borough between First and Second Watchung Mountains, prized for Verona Park boating and community sports.",
+      "taxDynamic": "High school levy proportion (57.8%) reflects high community prioritization of K-12 education."
     },
     {
-      "name": "Verona Township Residential Heights",
+      "name": "Forest Avenue & Sunset Ridge",
       "zip": "07044",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 147312,
-      "medianAge": 42.2,
-      "avgTaxBill": 16433,
-      "taxBurdenPercentIncome": 11.37,
+      "character": "Elevated residential streets with charming pre-war colonials, cape cods, and views of the Watchung Mountains",
+      "medianIncome": 150040,
+      "medianAge": 41.5,
+      "avgTaxBill": 16743,
+      "taxBurdenPercentIncome": 11.16,
       "avgMarketValue": 675000,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "ownerOccupied": 86.0,
+      "description": "Family-centric neighborhood convenient to F.N. Brown and Forest Avenue elementary schools.",
+      "taxDynamic": "Consistent assessment valuations with low tax appeal litigation."
     }
   ],
   "equityAnalysis": {
-    "summary": "Verona Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Verona Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 1740,
-      "totalHouseholds": 5370,
+      "totalHouseholds": 6200,
       "enrolledPublicSchools": 2030,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 2248
     },
     "schools": [
       {
-        "name": "Verona Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Bloomfield Ave, Verona Township, NJ 07044",
-        "enrollment": 725,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Verona Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "151 Fairview Ave, Verona, NJ 07044",
+        "enrollment": 690,
+        "grades": "9-12",
+        "name": "Verona High School",
+        "type": "High School"
       },
       {
-        "name": "Verona Township Middle School",
-        "type": "Middle School",
-        "address": "200 Fairview Ave, Verona Township, NJ 07044",
-        "enrollment": 580,
-        "grades": "6 to 8",
-        "neighborhood": "Verona Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "Gould St, Verona, NJ 07044",
+        "enrollment": 620,
+        "grades": "5-8",
+        "name": "H.B. Whitehorne Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Verona Township High School",
-        "type": "High School",
-        "address": "300 Grove Ave, Verona Township, NJ 07044",
-        "enrollment": 725,
-        "grades": "9 to 12",
-        "neighborhood": "Verona Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Brookdale Ave, Verona, NJ 07044",
+        "enrollment": 220,
+        "grades": "K-4",
+        "name": "Brookdale Avenue Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Grove Ave, Verona, NJ 07044",
+        "enrollment": 260,
+        "grades": "K-4",
+        "name": "F.N. Brown Elementary School",
+        "type": "Elementary"
       }
     ]
   }

@@ -15,38 +15,38 @@
   "commercialShare": 57.2,
   "cityOverview": {
     "totalPopulation": 7850,
-    "totalHousingUnits": 2907,
+    "totalHousingUnits": 2700,
     "medianHouseholdIncome": 128400,
     "perCapitaIncome": 61632,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 43,
-    "renterOccupiedRate": 57,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 3.2,
+    "ownerOccupiedRate": 85.0,
+    "renterOccupiedRate": 15.0,
+    "foreignBornPercentage": 18.0,
+    "nonEnglishAtHomePercent": 24.5
   },
   "zipCodeComparison": [
     {
       "zip": "07004",
-      "areaName": "Fairfield Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Fairfield Township Center, Residential & Parkway Districts",
+      "areaName": "Fairfield Township (ZIP 07004)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Horseneck & Passaic Valley District, Two Bridges & Passaic River District",
       "medianHouseholdIncome": 128400,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 43,
-      "renterOccupiedPercent": 57,
+      "ownerOccupiedPercent": 85.0,
+      "renterOccupiedPercent": 15.0,
       "averageAnnualTaxBill": 10382.9,
       "monthlyTaxBill": 865.24,
       "taxBurdenPercentOfIncome": 8.09,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 27840000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 73.0,
+        "hispanicOrLatino": 11.7,
+        "asian": 8.1,
+        "blackOrAfricanAmerican": 7.2,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 1.89%, with an equalization ratio of 87.2%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Fairfield Township Center & Downtown",
+      "name": "Horseneck & Passaic Valley District",
       "zip": "07004",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 128400,
-      "medianAge": 40.5,
-      "avgTaxBill": 10382.9,
-      "taxBurdenPercentIncome": 8.09,
-      "avgMarketValue": 630000,
-      "ownerOccupied": 43,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Expansive single-family ranches, split-levels, and colonials on large lots, surrounded by major corporate and industrial parks",
+      "medianIncome": 147660,
+      "medianAge": 41.5,
+      "avgTaxBill": 11421,
+      "taxBurdenPercentIncome": 7.73,
+      "avgMarketValue": 693000,
+      "ownerOccupied": 90.0,
+      "description": "Northwest Essex township known for low residential taxes due to massive industrial warehouse and Route 46 commercial corridors.",
+      "taxDynamic": "Enjoys lowest property tax rate in Essex County (1.854% certified) with commercial ratables footing over 58% of the levy."
     },
     {
-      "name": "Fairfield Township Residential Heights",
+      "name": "Two Bridges & Passaic River District",
       "zip": "07004",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 138672,
-      "medianAge": 42.2,
-      "avgTaxBill": 11006,
-      "taxBurdenPercentIncome": 8.09,
+      "character": "Suburban single-family residences and ranches on generous lots near Two Bridges confluence",
+      "medianIncome": 141240,
+      "medianAge": 41.5,
+      "avgTaxBill": 11214,
+      "taxBurdenPercentIncome": 7.94,
       "avgMarketValue": 680400,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "ownerOccupied": 88.0,
+      "description": "Quiet residential enclave with spacious properties and proximity to West Essex regional high school.",
+      "taxDynamic": "Enjoys extraordinary tax advantages from Fairfield's commercial and industrial ratables."
     }
   ],
   "equityAnalysis": {
-    "summary": "Fairfield Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Fairfield Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 942,
-      "totalHouseholds": 2907,
+      "totalHouseholds": 2700,
       "enrolledPublicSchools": 1099,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 1217
     },
     "schools": [
       {
-        "name": "Fairfield Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Route 46, Fairfield Township, NJ 07004",
-        "enrollment": 392,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Fairfield Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "65 Greenbrook Rd, North Caldwell, NJ 07006",
+        "enrollment": 1120,
+        "grades": "9-12",
+        "name": "West Essex Regional High School",
+        "type": "High School (Regional)"
       },
       {
-        "name": "Fairfield Township Middle School",
-        "type": "Middle School",
-        "address": "200 Passaic Ave, Fairfield Township, NJ 07004",
-        "enrollment": 314,
-        "grades": "6 to 8",
-        "neighborhood": "Fairfield Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "65 Greenbrook Rd, North Caldwell, NJ 07006",
+        "enrollment": 560,
+        "grades": "7-8",
+        "name": "West Essex Regional Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Fairfield Township High School",
-        "type": "High School",
-        "address": "300 Horseneck Rd, Fairfield Township, NJ 07004",
-        "enrollment": 392,
-        "grades": "9 to 12",
-        "neighborhood": "Fairfield Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "233 Fairfield Rd, Fairfield, NJ 07004",
+        "enrollment": 380,
+        "grades": "3-6",
+        "name": "Winston S. Churchill Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "15 Knoll Rd, Fairfield, NJ 07004",
+        "enrollment": 340,
+        "grades": "PreK-2",
+        "name": "Adlai E. Stevenson Elementary School",
+        "type": "Elementary"
       }
     ]
   }

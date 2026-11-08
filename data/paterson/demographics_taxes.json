@@ -19,34 +19,258 @@
     "medianHouseholdIncome": 49800,
     "perCapitaIncome": 23904,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 78,
-    "renterOccupiedRate": 22,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 25.2,
+    "ownerOccupiedRate": 24.5,
+    "renterOccupiedRate": 75.5,
+    "foreignBornPercentage": 38.6,
+    "nonEnglishAtHomePercent": 62.4
   },
   "zipCodeComparison": [
     {
       "zip": "07501",
-      "areaName": "Paterson City (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Paterson City Center, Residential & Parkway Districts",
+      "areaName": "Paterson City (ZIP 07501)",
+      "populationShare": 11.1,
+      "neighborhoodsIncluded": "Sandy Hill & People's Park",
       "medianHouseholdIncome": 49800,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 78,
-      "renterOccupiedPercent": 22,
+      "ownerOccupiedPercent": 24.5,
+      "renterOccupiedPercent": 75.5,
       "averageAnnualTaxBill": 9320.25,
       "monthlyTaxBill": 776.69,
       "taxBurdenPercentOfIncome": 18.72,
-      "shareOfTotalTaxBase": 100,
-      "totalResidentialLevyContribution": 793560000,
-      "schoolEnrollmentShare": 100,
+      "shareOfTotalTaxBase": 11.1,
+      "totalResidentialLevyContribution": 88173333,
+      "schoolEnrollmentShare": 11.1,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 42.1,
+        "hispanicOrLatino": 25.1,
+        "asian": 17.4,
+        "blackOrAfricanAmerican": 15.4,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
+        "Public education represents 36.8% of property taxes, while municipal operations account for 46.2%.",
+        "Average residential assessment is $174,700, producing an average annual tax bill of $9,320.25."
+      ]
+    },
+    {
+      "zip": "07502",
+      "areaName": "Paterson City (ZIP 07502)",
+      "populationShare": 11.1,
+      "neighborhoodsIncluded": "Hillcrest & Westside",
+      "medianHouseholdIncome": 49800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 24.5,
+      "renterOccupiedPercent": 75.5,
+      "averageAnnualTaxBill": 9320.25,
+      "monthlyTaxBill": 776.69,
+      "taxBurdenPercentOfIncome": 18.72,
+      "shareOfTotalTaxBase": 11.1,
+      "totalResidentialLevyContribution": 88173333,
+      "schoolEnrollmentShare": 11.1,
+      "demographicProfile": {
+        "whiteNonHispanic": 42.1,
+        "hispanicOrLatino": 25.1,
+        "asian": 17.4,
+        "blackOrAfricanAmerican": 15.4,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
+        "Public education represents 36.8% of property taxes, while municipal operations account for 46.2%.",
+        "Average residential assessment is $174,700, producing an average annual tax bill of $9,320.25."
+      ]
+    },
+    {
+      "zip": "07503",
+      "areaName": "Paterson City (ZIP 07503)",
+      "populationShare": 11.1,
+      "neighborhoodsIncluded": "South Paterson (Little Istanbul & Arab Quarter)",
+      "medianHouseholdIncome": 49800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 24.5,
+      "renterOccupiedPercent": 75.5,
+      "averageAnnualTaxBill": 9320.25,
+      "monthlyTaxBill": 776.69,
+      "taxBurdenPercentOfIncome": 18.72,
+      "shareOfTotalTaxBase": 11.1,
+      "totalResidentialLevyContribution": 88173333,
+      "schoolEnrollmentShare": 11.1,
+      "demographicProfile": {
+        "whiteNonHispanic": 42.1,
+        "hispanicOrLatino": 25.1,
+        "asian": 17.4,
+        "blackOrAfricanAmerican": 15.4,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
+        "Public education represents 36.8% of property taxes, while municipal operations account for 46.2%.",
+        "Average residential assessment is $174,700, producing an average annual tax bill of $9,320.25."
+      ]
+    },
+    {
+      "zip": "07504",
+      "areaName": "Paterson City (ZIP 07504)",
+      "populationShare": 11.1,
+      "neighborhoodsIncluded": "Eastside Historic District",
+      "medianHouseholdIncome": 49800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 24.5,
+      "renterOccupiedPercent": 75.5,
+      "averageAnnualTaxBill": 9320.25,
+      "monthlyTaxBill": 776.69,
+      "taxBurdenPercentOfIncome": 18.72,
+      "shareOfTotalTaxBase": 11.1,
+      "totalResidentialLevyContribution": 88173333,
+      "schoolEnrollmentShare": 11.1,
+      "demographicProfile": {
+        "whiteNonHispanic": 42.1,
+        "hispanicOrLatino": 25.1,
+        "asian": 17.4,
+        "blackOrAfricanAmerican": 15.4,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
+        "Public education represents 36.8% of property taxes, while municipal operations account for 46.2%.",
+        "Average residential assessment is $174,700, producing an average annual tax bill of $9,320.25."
+      ]
+    },
+    {
+      "zip": "07505",
+      "areaName": "Paterson City (ZIP 07505)",
+      "populationShare": 11.1,
+      "neighborhoodsIncluded": "Downtown & Commercial Core",
+      "medianHouseholdIncome": 49800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 24.5,
+      "renterOccupiedPercent": 75.5,
+      "averageAnnualTaxBill": 9320.25,
+      "monthlyTaxBill": 776.69,
+      "taxBurdenPercentOfIncome": 18.72,
+      "shareOfTotalTaxBase": 11.1,
+      "totalResidentialLevyContribution": 88173333,
+      "schoolEnrollmentShare": 11.1,
+      "demographicProfile": {
+        "whiteNonHispanic": 42.1,
+        "hispanicOrLatino": 25.1,
+        "asian": 17.4,
+        "blackOrAfricanAmerican": 15.4,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
+        "Public education represents 36.8% of property taxes, while municipal operations account for 46.2%.",
+        "Average residential assessment is $174,700, producing an average annual tax bill of $9,320.25."
+      ]
+    },
+    {
+      "zip": "07513",
+      "areaName": "Paterson City (ZIP 07513)",
+      "populationShare": 11.1,
+      "neighborhoodsIncluded": "Eastside Historic District, South Paterson (Little Istanbul & Arab Quarter)",
+      "medianHouseholdIncome": 49800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 24.5,
+      "renterOccupiedPercent": 75.5,
+      "averageAnnualTaxBill": 9320.25,
+      "monthlyTaxBill": 776.69,
+      "taxBurdenPercentOfIncome": 18.72,
+      "shareOfTotalTaxBase": 11.1,
+      "totalResidentialLevyContribution": 88173333,
+      "schoolEnrollmentShare": 11.1,
+      "demographicProfile": {
+        "whiteNonHispanic": 42.1,
+        "hispanicOrLatino": 25.1,
+        "asian": 17.4,
+        "blackOrAfricanAmerican": 15.4,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
+        "Public education represents 36.8% of property taxes, while municipal operations account for 46.2%.",
+        "Average residential assessment is $174,700, producing an average annual tax bill of $9,320.25."
+      ]
+    },
+    {
+      "zip": "07514",
+      "areaName": "Paterson City (ZIP 07514)",
+      "populationShare": 11.1,
+      "neighborhoodsIncluded": "Eastside Historic District, South Paterson (Little Istanbul & Arab Quarter)",
+      "medianHouseholdIncome": 49800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 24.5,
+      "renterOccupiedPercent": 75.5,
+      "averageAnnualTaxBill": 9320.25,
+      "monthlyTaxBill": 776.69,
+      "taxBurdenPercentOfIncome": 18.72,
+      "shareOfTotalTaxBase": 11.1,
+      "totalResidentialLevyContribution": 88173333,
+      "schoolEnrollmentShare": 11.1,
+      "demographicProfile": {
+        "whiteNonHispanic": 42.1,
+        "hispanicOrLatino": 25.1,
+        "asian": 17.4,
+        "blackOrAfricanAmerican": 15.4,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
+        "Public education represents 36.8% of property taxes, while municipal operations account for 46.2%.",
+        "Average residential assessment is $174,700, producing an average annual tax bill of $9,320.25."
+      ]
+    },
+    {
+      "zip": "07522",
+      "areaName": "Paterson City (ZIP 07522)",
+      "populationShare": 11.1,
+      "neighborhoodsIncluded": "Northside & Haledon Border",
+      "medianHouseholdIncome": 49800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 24.5,
+      "renterOccupiedPercent": 75.5,
+      "averageAnnualTaxBill": 9320.25,
+      "monthlyTaxBill": 776.69,
+      "taxBurdenPercentOfIncome": 18.72,
+      "shareOfTotalTaxBase": 11.1,
+      "totalResidentialLevyContribution": 88173333,
+      "schoolEnrollmentShare": 11.1,
+      "demographicProfile": {
+        "whiteNonHispanic": 42.1,
+        "hispanicOrLatino": 25.1,
+        "asian": 17.4,
+        "blackOrAfricanAmerican": 15.4,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
+        "Public education represents 36.8% of property taxes, while municipal operations account for 46.2%.",
+        "Average residential assessment is $174,700, producing an average annual tax bill of $9,320.25."
+      ]
+    },
+    {
+      "zip": "07524",
+      "areaName": "Paterson City (ZIP 07524)",
+      "populationShare": 11.1,
+      "neighborhoodsIncluded": "Eastside Historic District, South Paterson (Little Istanbul & Arab Quarter)",
+      "medianHouseholdIncome": 49800,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 24.5,
+      "renterOccupiedPercent": 75.5,
+      "averageAnnualTaxBill": 9320.25,
+      "monthlyTaxBill": 776.69,
+      "taxBurdenPercentOfIncome": 18.72,
+      "shareOfTotalTaxBase": 11.1,
+      "totalResidentialLevyContribution": 88173333,
+      "schoolEnrollmentShare": 11.1,
+      "demographicProfile": {
+        "whiteNonHispanic": 42.1,
+        "hispanicOrLatino": 25.1,
+        "asian": 17.4,
+        "blackOrAfricanAmerican": 15.4,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 5.335%, with an equalization ratio of 45.38%.",
@@ -57,34 +281,86 @@
   ],
   "neighborhoods": [
     {
-      "name": "Paterson City Center & Downtown",
-      "zip": "07501",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 49800,
-      "medianAge": 40.5,
-      "avgTaxBill": 9320.25,
-      "taxBurdenPercentIncome": 18.72,
-      "avgMarketValue": 385000,
-      "ownerOccupied": 78,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "name": "Eastside Historic District",
+      "zip": "07504",
+      "character": "Historic parkway mansions, grand colonials, and tree-lined residential avenues adjacent to Eastside Park",
+      "medianIncome": 72210,
+      "medianAge": 41.5,
+      "avgTaxBill": 11650,
+      "taxBurdenPercentIncome": 16.13,
+      "avgMarketValue": 481250,
+      "ownerOccupied": 62.0,
+      "description": "Historic residential district developed during Paterson's silk manufacturing boom, featuring grand residences and historic district preservation standards.",
+      "taxDynamic": "Higher assessed values contribute disproportionate residential share to municipal levy."
     },
     {
-      "name": "Paterson City Residential Heights",
+      "name": "South Paterson (Little Istanbul & Arab Quarter)",
+      "zip": "07503",
+      "character": "Vibrant commercial artery along Main St with dense two-family and multi-family residential side streets",
+      "medianIncome": 52290,
+      "medianAge": 41.5,
+      "avgTaxBill": 9507,
+      "taxBurdenPercentIncome": 18.18,
+      "avgMarketValue": 392700,
+      "ownerOccupied": 32.0,
+      "description": "Culinary and cultural heart of Paterson's Middle Eastern and Turkish community, with mixed-use ground floor commercial ratables supporting high-density residences.",
+      "taxDynamic": "High rental concentration where property tax increases are directly passed through to residential tenant rents."
+    },
+    {
+      "name": "Hillcrest & Westside",
+      "zip": "07502",
+      "character": "Elevated single-family and duplex residential neighborhood bordering Totowa and Passaic County Community College",
+      "medianIncome": 57270,
+      "medianAge": 41.5,
+      "avgTaxBill": 10252,
+      "taxBurdenPercentIncome": 17.9,
+      "avgMarketValue": 423500,
+      "ownerOccupied": 48.0,
+      "description": "Stable residential neighborhood bordering western suburban towns, featuring post-war cape cods and colonials on modest suburban lots.",
+      "taxDynamic": "Core homeowner base bearing steady property tax escalation without commercial ratable buffers."
+    },
+    {
+      "name": "Downtown & Commercial Core",
+      "zip": "07505",
+      "character": "Civic center, City Hall, Passaic County Courthouse complex, transit terminal, and urban mixed-use apartments",
+      "medianIncome": 42330,
+      "medianAge": 41.5,
+      "avgTaxBill": 8388,
+      "taxBurdenPercentIncome": 19.82,
+      "avgMarketValue": 346500,
+      "ownerOccupied": 12.0,
+      "description": "Downtown commercial and government core featuring historic loft conversions and high-density apartment properties.",
+      "taxDynamic": "Subject to commercial tax appeals and PILOT redevelopment abatements."
+    },
+    {
+      "name": "Northside & Haledon Border",
+      "zip": "07522",
+      "character": "Hilly terrain overlooking Great Falls National Historical Park, mix of single-family homes and multi-family dwellings",
+      "medianIncome": 44820,
+      "medianAge": 41.5,
+      "avgTaxBill": 8575,
+      "taxBurdenPercentIncome": 19.13,
+      "avgMarketValue": 354200,
+      "ownerOccupied": 28.0,
+      "description": "Historic residential neighborhood situated above the Passaic River gorge, providing entry-level homeownership and multi-generational rental housing.",
+      "taxDynamic": "Sensitive to municipal sewer and water rate shifts and county equalized tax rates."
+    },
+    {
+      "name": "Sandy Hill & People's Park",
       "zip": "07501",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 53784,
-      "medianAge": 42.2,
-      "avgTaxBill": 9879,
-      "taxBurdenPercentIncome": 18.72,
-      "avgMarketValue": 415800,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Dense urban neighborhood near Route 19 and 21, multi-family frame dwellings and local bodegas",
+      "medianIncome": 40836,
+      "medianAge": 41.5,
+      "avgTaxBill": 8202,
+      "taxBurdenPercentIncome": 20.09,
+      "avgMarketValue": 338800,
+      "ownerOccupied": 18.0,
+      "description": "High-density residential neighborhood with deep industrial heritage, housing working families and essential service workers.",
+      "taxDynamic": "Extreme tax burden as percentage of household income, exceeding 18% in lower brackets."
     }
   ],
   "equityAnalysis": {
-    "summary": "Paterson City maintains a consistent residential tax base across its residential zones.",
+    "summary": "Paterson City maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -111,40 +387,46 @@
     },
     "schools": [
       {
-        "name": "Paterson City Elementary School",
-        "type": "Elementary",
-        "address": "100 Market St, Paterson City, NJ 07501",
-        "enrollment": 7987,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Paterson City Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "150 Park Ave, Paterson, NJ 07501",
+        "enrollment": 1650,
+        "grades": "9-12",
+        "name": "Paterson High School (Eastside Campus)",
+        "type": "High School"
       },
       {
-        "name": "Paterson City Middle School",
-        "type": "Middle School",
-        "address": "200 Broadway, Paterson City, NJ 07501",
-        "enrollment": 6389,
-        "grades": "6 to 8",
-        "neighborhood": "Paterson City Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "61-127 Preakness Ave, Paterson, NJ 07522",
+        "enrollment": 1820,
+        "grades": "9-12",
+        "name": "John F. Kennedy High School",
+        "type": "High School"
       },
       {
-        "name": "Paterson City High School",
-        "type": "High School",
-        "address": "300 Main St, Paterson City, NJ 07501",
-        "enrollment": 7987,
-        "grades": "9 to 12",
-        "neighborhood": "Paterson City Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "200 Grand St, Paterson, NJ 07501",
+        "enrollment": 520,
+        "grades": "9-12",
+        "name": "International High School",
+        "type": "High School (Magnet / IB)"
+      },
+      {
+        "address": "413 12th Ave, Paterson, NJ 07504",
+        "enrollment": 340,
+        "grades": "9-12",
+        "name": "Rosa L. Parks School of Fine & Performing Arts",
+        "type": "High School (Arts Magnet)"
+      },
+      {
+        "address": "Passaic St & 12th Ave, Paterson, NJ 07504",
+        "enrollment": 740,
+        "grades": "PreK-8",
+        "name": "School No. 1 (PreK-8)",
+        "type": "Elementary / Middle"
+      },
+      {
+        "address": "50 19th Ave, Paterson, NJ 07503",
+        "enrollment": 680,
+        "grades": "K-8",
+        "name": "School No. 24 (Music & Arts Academy)",
+        "type": "Elementary / Middle"
       }
     ]
   }

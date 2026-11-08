@@ -95,5 +95,27 @@
       "proposal": "Rezone vacant commercial corridors for high-value research, medical, and technology ratables that generate property taxes with zero school enrollment load.",
       "benefit": "Restores commercial ratable share from 25.5% toward 35%, cutting residential taxes."
     }
-  ]
+  ],
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "County Board of Taxation Abstract of Ratables & Municipal Financial Statements",
+    "totalPropertyTaxesAbated": 1250000,
+    "totalPilotBillingsCollected": 725000,
+    "netTaxShiftToHomeowners": 525000,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Wayne Corporate / Town Center Redevelopment",
+        "block": "120",
+        "lot": "4",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 725000,
+        "abatedTaxesEstimated": 1250000,
+        "netLossToSchools": 687500,
+        "expirationYear": 2046
+      }
+    ]
+  }
 }

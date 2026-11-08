@@ -3,16 +3,16 @@
     "source": "Certified 2026 Hanover Township (Whippany) Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Hanover Township (Whippany)",
-      "totalTaxLevy": 73646522,
-      "residentialLevyTotal": 45071671,
-      "commercialLevyTotal": 28574851,
-      "totalResidentialParcels": 5407,
+      "totalTaxLevy": 73638378,
+      "residentialLevyTotal": 45066687,
+      "commercialLevyTotal": 28571691,
+      "totalResidentialParcels": 5400,
       "equalizationRatio": 0.872,
       "certifiedTaxRateAssessed": 1.714,
       "certifiedTaxRateMarket": 1.495,
       "averageResidentialAssessment": 606040,
       "averageResidentialMarketValue": 695000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 133918,
       "commercialLevySharePct": 38.8
     }
   },
@@ -36,55 +36,146 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Hanover Township (Whippany) residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 38.8,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.714,
+      "projectedTaxRateMarket": 1.495,
+      "avgResidentialTaxBill": 10387.53,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 61.2% of the levy, commercial ratables pay 38.8%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Hanover Township (Whippany) public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Morris County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Hanover Township (Whippany) municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 43.3,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.611,
+      "projectedTaxRateMarket": 1.405,
+      "avgResidentialTaxBill": 9764.28,
+      "avgResidentialNetSavings": 623.25,
+      "avgMonthlySavings": 51.94,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 38.8,
+      "pilotSchoolSharePct": 61.2,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.654,
+      "projectedTaxRateMarket": 1.443,
+      "avgResidentialTaxBill": 10023.97,
+      "avgResidentialNetSavings": 363.56,
+      "avgMonthlySavings": 30.3,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Hanover Township (Whippany) Public Schools eliminates residential tax shift for new students.",
+      "winners": "Hanover Township (Whippany) Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 38.8,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.714,
+      "projectedTaxRateMarket": 1.495,
+      "avgResidentialTaxBill": 8637.53,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 43.8,
+      "pilotSchoolSharePct": 61.2,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 1.508,
+      "projectedTaxRateMarket": 1.316,
+      "avgResidentialTaxBill": 9141.03,
+      "avgResidentialNetSavings": 1246.5,
+      "avgMonthlySavings": 103.88,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Hanover Township (Whippany) residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 484832,
-      "tax": 8310.02
+      "type": "Starter Residence / Condo",
+      "assessment": 454530,
+      "marketValue": 521250,
+      "currentTax": 7790.64,
+      "reformedTax": 6855.77,
+      "annualSavings": 934.88
     },
     {
-      "type": "Average Hanover Township (Whippany) Home",
+      "type": "Average Hanover Township (Whippany) Single Family",
       "assessment": 606040,
-      "tax": 10387.53
+      "marketValue": 695000,
+      "currentTax": 10387.53,
+      "reformedTax": 9141.03,
+      "annualSavings": 1246.5
     },
     {
-      "type": "Executive Residence",
-      "assessment": 818154,
-      "tax": 14023.16
+      "type": "Executive / Estate Residence",
+      "assessment": 878758,
+      "marketValue": 1007750,
+      "currentTax": 15061.91,
+      "reformedTax": 13254.48,
+      "annualSavings": 1807.43
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07981",
-      "name": "Hanover Township (Whippany) Center & Downtown",
-      "medianHouseholdIncome": 148500,
-      "currentTaxBill": 10387.53,
-      "currentTaxEffortPct": 7.0
+      "name": "Whippany & Cedar Knolls District",
+      "medianHouseholdIncome": 170775,
+      "currentTaxBill": 11634,
+      "currentTaxEffortPct": 6.81
     },
     {
-      "zip": "07981",
-      "name": "Hanover Township (Whippany) Residential Heights",
-      "medianHouseholdIncome": 160380,
-      "currentTaxBill": 11011,
-      "currentTaxEffortPct": 7.0
+      "zip": "07927",
+      "name": "Cedar Knolls & Troy Hills Section",
+      "medianHouseholdIncome": 163350,
+      "currentTaxBill": 11219,
+      "currentTaxEffortPct": 6.87
     }
   ],
   "policyRoadmap": [
@@ -101,6 +192,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

@@ -15,38 +15,66 @@
   "commercialShare": 21.8,
   "cityOverview": {
     "totalPopulation": 21800,
-    "totalHousingUnits": 8074,
+    "totalHousingUnits": 6800,
     "medianHouseholdIncome": 250000,
     "perCapitaIncome": 120000,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 78,
-    "renterOccupiedRate": 22,
+    "povertyRate": 2.8,
+    "ownerOccupiedRate": 87.5,
+    "renterOccupiedRate": 12.5,
     "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "nonEnglishAtHomePercent": 28.6
   },
   "zipCodeComparison": [
     {
       "zip": "07041",
-      "areaName": "Millburn Township (Short Hills) (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Millburn Township (Short Hills) Center, Residential & Parkway Districts",
+      "areaName": "Millburn Township (Short Hills) (ZIP 07041)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Wyoming Historic District, Millburn Center & Downtown",
       "medianHouseholdIncome": 250000,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 78,
-      "renterOccupiedPercent": 22,
+      "ownerOccupiedPercent": 87.5,
+      "renterOccupiedPercent": 12.5,
       "averageAnnualTaxBill": 23675.96,
       "monthlyTaxBill": 1973.0,
       "taxBurdenPercentOfIncome": 9.47,
-      "shareOfTotalTaxBase": 100,
-      "totalResidentialLevyContribution": 125631000,
-      "schoolEnrollmentShare": 100,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 62815500,
+      "schoolEnrollmentShare": 50.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 66.4,
+        "hispanicOrLatino": 14.6,
+        "asian": 10.1,
+        "blackOrAfricanAmerican": 9.0,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 1.845%, with an equalization ratio of 88.5%.",
+        "Public education represents 63.8% of property taxes, while municipal operations account for 20.4%.",
+        "Average residential assessment is $1,283,250, producing an average annual tax bill of $23,675.96."
+      ]
+    },
+    {
+      "zip": "07078",
+      "areaName": "Millburn Township (Short Hills) (ZIP 07078)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Short Hills & Deerfield",
+      "medianHouseholdIncome": 250000,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 87.5,
+      "renterOccupiedPercent": 12.5,
+      "averageAnnualTaxBill": 23675.96,
+      "monthlyTaxBill": 1973.0,
+      "taxBurdenPercentOfIncome": 9.47,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 62815500,
+      "schoolEnrollmentShare": 50.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 66.4,
+        "hispanicOrLatino": 14.6,
+        "asian": 10.1,
+        "blackOrAfricanAmerican": 9.0,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 1.845%, with an equalization ratio of 88.5%.",
@@ -57,34 +85,47 @@
   ],
   "neighborhoods": [
     {
-      "name": "Millburn Township (Short Hills) Center & Downtown",
-      "zip": "07041",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 250000,
-      "medianAge": 40.5,
-      "avgTaxBill": 23675.96,
-      "taxBurdenPercentIncome": 9.47,
-      "avgMarketValue": 1450000,
-      "ownerOccupied": 78,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "name": "Short Hills & Deerfield",
+      "zip": "07078",
+      "character": "World-renowned luxury enclave with sprawling estate properties, historic colonials, English Tudors, and country estates",
+      "medianIncome": 412500,
+      "medianAge": 41.5,
+      "avgTaxBill": 37882,
+      "taxBurdenPercentIncome": 9.18,
+      "avgMarketValue": 2320000,
+      "ownerOccupied": 96.0,
+      "description": "One of America's wealthiest residential communities, founded as a planned arboretum suburb with private country clubs and top-ranked public schools.",
+      "taxDynamic": "Highest average property tax bills in New Jersey, routinely exceeding ,000 to ,000+ per estate."
     },
     {
-      "name": "Millburn Township (Short Hills) Residential Heights",
+      "name": "Wyoming Historic District",
       "zip": "07041",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 270000,
-      "medianAge": 42.2,
-      "avgTaxBill": 25097,
+      "character": "Historic neighborhood nestled against South Mountain Reservation, featuring turn-of-the-century Victorians and classic colonials",
+      "medianIncome": 287500,
+      "medianAge": 41.5,
+      "avgTaxBill": 26517,
+      "taxBurdenPercentIncome": 9.22,
+      "avgMarketValue": 1624000,
+      "ownerOccupied": 89.0,
+      "description": "Historic enclave bordering the reservation, prized for historic gaslamps, architectural preservation, and jitney service to Millburn station.",
+      "taxDynamic": "Stable ratables with low appeal volatility and fierce community support for school funding."
+    },
+    {
+      "name": "Millburn Center & Downtown",
+      "zip": "07041",
+      "character": "Walkable village center with boutique shops, fine dining, Paper Mill Playhouse, and walk-to-train residences",
+      "medianIncome": 250000,
+      "medianAge": 41.5,
+      "avgTaxBill": 23676,
       "taxBurdenPercentIncome": 9.47,
-      "avgMarketValue": 1566000,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "avgMarketValue": 1450000,
+      "ownerOccupied": 68.0,
+      "description": "Cultural heart anchored by the State Theatre of New Jersey (Paper Mill Playhouse) and midtown direct train commuting.",
+      "taxDynamic": "Strong retail core bolstered by The Mall at Short Hills (one of the nation's premier luxury retail centers)."
     }
   ],
   "equityAnalysis": {
-    "summary": "Millburn Township (Short Hills) maintains a consistent residential tax base across its residential zones.",
+    "summary": "Millburn Township (Short Hills) maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +145,53 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 2616,
-      "totalHouseholds": 8074,
+      "totalHouseholds": 6800,
       "enrolledPublicSchools": 3052,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 3379
     },
     "schools": [
       {
-        "name": "Millburn Township (Short Hills) Elementary School",
-        "type": "Elementary",
-        "address": "100 Millburn Ave, Millburn Township (Short Hills), NJ 07041",
-        "enrollment": 1090,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Millburn Township (Short Hills) Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "462 Millburn Ave, Millburn, NJ 07041",
+        "enrollment": 1480,
+        "grades": "9-12",
+        "name": "Millburn High School",
+        "type": "High School"
       },
       {
-        "name": "Millburn Township (Short Hills) Middle School",
-        "type": "Middle School",
-        "address": "200 Essex St, Millburn Township (Short Hills), NJ 07041",
-        "enrollment": 872,
-        "grades": "6 to 8",
-        "neighborhood": "Millburn Township (Short Hills) Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "25 Old Short Hills Rd, Millburn, NJ 07041",
+        "enrollment": 1120,
+        "grades": "6-8",
+        "name": "Millburn Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Millburn Township (Short Hills) High School",
-        "type": "High School",
-        "address": "300 Main St, Millburn Township (Short Hills), NJ 07041",
-        "enrollment": 1090,
-        "grades": "9 to 12",
-        "neighborhood": "Millburn Township (Short Hills) Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "26 Deerfield Rd, Short Hills, NJ 07078",
+        "enrollment": 420,
+        "grades": "K-5",
+        "name": "Deerfield Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "325 Taylor Rd S, Short Hills, NJ 07078",
+        "enrollment": 390,
+        "grades": "K-5",
+        "name": "Glenwood Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "28 Knox Ter, Short Hills, NJ 07078",
+        "enrollment": 440,
+        "grades": "K-5",
+        "name": "Hartshorn Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "230 Wyoming Ave, Millburn, NJ 07041",
+        "enrollment": 360,
+        "grades": "K-5",
+        "name": "Wyoming Elementary School",
+        "type": "Elementary"
       }
     ]
   }

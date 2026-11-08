@@ -62,18 +62,43 @@
   ],
   "neighborhoods": [
     {
-      "name": "Montville Township Central & Historic Core",
+      "name": "Montville Historic Core & Changebridge",
       "zip": "07045",
-      "character": "Suburban neighborhoods, parks, and downtown corridor",
-      "medianIncome": 174500,
-      "medianAge": 42.2,
-      "avgAssessment": 649980,
-      "avgMarketValue": 785000,
-      "avgTaxBill": 16197.5,
-      "taxBurdenPercentIncome": 9.28,
-      "ownerOccupied": 74.5,
-      "description": "Established residential neighborhoods across Montville Township with schools, parks, and community amenities.",
-      "taxDynamic": "Carries the primary residential tax base for the municipal government and Montville Township Public Schools."
+      "character": "Stately center-hall colonials, custom estates, and rolling topography near Montville High School",
+      "medianIncome": 162000,
+      "medianAge": 43.1,
+      "avgTaxBill": 15400.0,
+      "taxBurdenPercentIncome": 9.51,
+      "avgMarketValue": 780000,
+      "ownerOccupied": 92.0,
+      "description": "Central suburban core offering spacious properties, excellent recreation fields, and community parks.",
+      "taxDynamic": "Strong residential ratable base funding top-ranked Montville Township school district."
+    },
+    {
+      "name": "Towaco & Boonton Border",
+      "zip": "07082",
+      "character": "Picturesque hamlet with historic train depot, custom split-levels, and mountain views near Camp Dawson",
+      "medianIncome": 155000,
+      "medianAge": 42.0,
+      "avgTaxBill": 14900.0,
+      "taxBurdenPercentIncome": 9.61,
+      "avgMarketValue": 740000,
+      "ownerOccupied": 89.0,
+      "description": "Historic rail hamlet along the Montclair-Boonton line featuring local dining and NJ Transit commuter access.",
+      "taxDynamic": "Stable suburban assessments with low appeal risk."
+    },
+    {
+      "name": "Pine Brook & Passaic River Valley",
+      "zip": "07058",
+      "character": "Suburban ranches, colonials, and corporate commercial parks along Route 46 corridor",
+      "medianIncome": 148000,
+      "medianAge": 41.5,
+      "avgTaxBill": 14200.0,
+      "taxBurdenPercentIncome": 9.59,
+      "avgMarketValue": 710000,
+      "ownerOccupied": 84.0,
+      "description": "Southern gateway featuring Route 46 commercial corridors, corporate centers, and suburban residential streets.",
+      "taxDynamic": "Commercial ratables along Route 46 provide vital non-residential tax payments."
     }
   ],
   "familyChildDemographics": {

@@ -15,38 +15,66 @@
   "commercialShare": 31.8,
   "cityOverview": {
     "totalPopulation": 45800,
-    "totalHousingUnits": 16963,
+    "totalHousingUnits": 20450,
     "medianHouseholdIncome": 81400,
     "perCapitaIncome": 39072,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 68,
-    "renterOccupiedRate": 32,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 11.4,
+    "ownerOccupiedRate": 34.2,
+    "renterOccupiedRate": 65.8,
+    "foreignBornPercentage": 37.4,
+    "nonEnglishAtHomePercent": 54.1
   },
   "zipCodeComparison": [
     {
       "zip": "07601",
-      "areaName": "Hackensack City (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Hackensack City Center, Residential & Parkway Districts",
+      "areaName": "Hackensack City (ZIP 07601)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Fairmount Section, Prospect Ave High-Rise Corridor, Central Main St & Courthouse District, First Ward & South Hackensack Border",
       "medianHouseholdIncome": 81400,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 68,
-      "renterOccupiedPercent": 32,
+      "ownerOccupiedPercent": 34.2,
+      "renterOccupiedPercent": 65.8,
       "averageAnnualTaxBill": 11510.56,
       "monthlyTaxBill": 959.21,
       "taxBurdenPercentOfIncome": 14.14,
-      "shareOfTotalTaxBase": 100,
-      "totalResidentialLevyContribution": 186123000,
-      "schoolEnrollmentShare": 100,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 93061500,
+      "schoolEnrollmentShare": 50.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 43.9,
+        "hispanicOrLatino": 24.3,
+        "asian": 16.8,
+        "blackOrAfricanAmerican": 15.0,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 3.785%, with an equalization ratio of 65.4%.",
+        "Public education represents 51.4% of property taxes, while municipal operations account for 36.8%.",
+        "Average residential assessment is $304,110, producing an average annual tax bill of $11,510.56."
+      ]
+    },
+    {
+      "zip": "07602",
+      "areaName": "Hackensack City (ZIP 07602)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Fairmount Section, Prospect Ave High-Rise Corridor",
+      "medianHouseholdIncome": 81400,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 34.2,
+      "renterOccupiedPercent": 65.8,
+      "averageAnnualTaxBill": 11510.56,
+      "monthlyTaxBill": 959.21,
+      "taxBurdenPercentOfIncome": 14.14,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 93061500,
+      "schoolEnrollmentShare": 50.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 43.9,
+        "hispanicOrLatino": 24.3,
+        "asian": 16.8,
+        "blackOrAfricanAmerican": 15.0,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.785%, with an equalization ratio of 65.4%.",
@@ -57,34 +85,60 @@
   ],
   "neighborhoods": [
     {
-      "name": "Hackensack City Center & Downtown",
+      "name": "Fairmount Section",
       "zip": "07601",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 81400,
-      "medianAge": 40.5,
-      "avgTaxBill": 11510.56,
-      "taxBurdenPercentIncome": 14.14,
-      "avgMarketValue": 465000,
-      "ownerOccupied": 68,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Historic residential neighborhood with stately colonials, Victorians, and tree-lined streets near Fairmount train station",
+      "medianIncome": 101750,
+      "medianAge": 41.5,
+      "avgTaxBill": 13813,
+      "taxBurdenPercentIncome": 13.58,
+      "avgMarketValue": 558000,
+      "ownerOccupied": 58.0,
+      "description": "Historic residential crown of Hackensack featuring architectural homes, direct commuter rail to Hoboken/NYC, and local parks.",
+      "taxDynamic": "Key residential ratable anchor supporting Bergen County seat municipal services."
     },
     {
-      "name": "Hackensack City Residential Heights",
+      "name": "Prospect Ave High-Rise Corridor",
       "zip": "07601",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 87912,
-      "medianAge": 42.2,
-      "avgTaxBill": 12201,
-      "taxBurdenPercentIncome": 14.14,
-      "avgMarketValue": 502200,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Prestigious luxury high-rise condominium and co-op corridor adjacent to Hackensack Meridian Health University Medical Center",
+      "medianIncome": 109890,
+      "medianAge": 41.5,
+      "avgTaxBill": 14388,
+      "taxBurdenPercentIncome": 13.09,
+      "avgMarketValue": 581250,
+      "ownerOccupied": 76.0,
+      "description": "Prominent luxury condo corridor offering doorman high-rises, Manhattan skyline views, and walkable access to NJ's top medical center.",
+      "taxDynamic": "High ratable density with minimal school-age child impact on Hackensack Public Schools."
+    },
+    {
+      "name": "Central Main St & Courthouse District",
+      "zip": "07601",
+      "character": "Bergen County government hub, historic courthouse, downtown redevelopment lofts, and commercial restaurants",
+      "medianIncome": 71632,
+      "medianAge": 41.5,
+      "avgTaxBill": 10360,
+      "taxBurdenPercentIncome": 14.46,
+      "avgMarketValue": 418500,
+      "ownerOccupied": 18.0,
+      "description": "Undergoing major transit-oriented mixed-use redevelopment with thousands of luxury apartments revitalizing Main Street.",
+      "taxDynamic": "Significant PILOT redevelopment projects shifting local infrastructure service burdens."
+    },
+    {
+      "name": "First Ward & South Hackensack Border",
+      "zip": "07601",
+      "character": "Working-class residential neighborhood with single-family cape cods, duplexes, and local community parks",
+      "medianIncome": 73260,
+      "medianAge": 41.5,
+      "avgTaxBill": 10590,
+      "taxBurdenPercentIncome": 14.46,
+      "avgMarketValue": 427800,
+      "ownerOccupied": 32.0,
+      "description": "Historic residential neighborhood convenient to Route 80, local transit buses, and Hackensack High School.",
+      "taxDynamic": "Sensitive to composite tax increases; relies heavily on state school aid formula funding."
     }
   ],
   "equityAnalysis": {
-    "summary": "Hackensack City maintains a consistent residential tax base across its residential zones.",
+    "summary": "Hackensack City maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +158,46 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 5496,
-      "totalHouseholds": 16963,
+      "totalHouseholds": 20450,
       "enrolledPublicSchools": 6412,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 7099
     },
     "schools": [
       {
-        "name": "Hackensack City Elementary School",
-        "type": "Elementary",
-        "address": "100 Main St, Hackensack City, NJ 07601",
-        "enrollment": 2290,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Hackensack City Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "135 1st St, Hackensack, NJ 07601",
+        "enrollment": 1850,
+        "grades": "9-12",
+        "name": "Hackensack High School",
+        "type": "High School"
       },
       {
-        "name": "Hackensack City Middle School",
-        "type": "Middle School",
-        "address": "200 State St, Hackensack City, NJ 07601",
-        "enrollment": 1832,
-        "grades": "6 to 8",
-        "neighborhood": "Hackensack City Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "360 Union St, Hackensack, NJ 07601",
+        "enrollment": 1420,
+        "grades": "5-8",
+        "name": "Hackensack Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Hackensack City High School",
-        "type": "High School",
-        "address": "300 Hackensack Ave, Hackensack City, NJ 07601",
-        "enrollment": 2290,
-        "grades": "9 to 12",
-        "neighborhood": "Hackensack City Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "840 Stelton St, Hackensack, NJ 07601",
+        "enrollment": 540,
+        "grades": "PreK-4",
+        "name": "Fairmount Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "421 Jackson Ave, Hackensack, NJ 07601",
+        "enrollment": 410,
+        "grades": "K-4",
+        "name": "Jackson Avenue Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Longview Ave, Hackensack, NJ 07601",
+        "enrollment": 490,
+        "grades": "PreK-4",
+        "name": "Fanny Meyer Hillers Elementary School",
+        "type": "Elementary"
       }
     ]
   }

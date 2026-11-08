@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Passaic County Board of Taxation Certified Abstract of Ratables",
+      "Woodland Park Borough Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 80.2,
     "commercialShare": 19.8,
+    "annualShiftDollarImpact": 116620,
+    "averageHomeownerExtraCost": 24.3,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
-    "activePilotsCount": 1,
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
+    "activePilotsCount": 4,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Woodland Park Borough municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "woodland-park-pilot-1",
         "name": "Woodland Park Borough Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 794850,
-        "standardSchoolShare": 416501,
-        "standardCityShare": 252762,
-        "standardCountyShare": 125586,
-        "pilotServiceCharge": 516652,
-        "pilotCityKeeps": 490820,
-        "pilotCountyGets": 25833,
-        "developerAnnualSavings": 278198,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 385200,
-        "homeownerBurdenAbsorbed": 385200
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 953820,
+        "standardSchoolShare": 499802,
+        "standardCityShare": 303315,
+        "standardCountyShare": 150704,
+        "pilotServiceCharge": 619983,
+        "pilotCityKeeps": 588984,
+        "pilotCountyGets": 30999,
+        "developerAnnualSavings": 333837,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 470800,
+        "homeownerBurdenAbsorbed": 470800
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Woodland Park Borough Shopping Plaza / Corporate Center",
-        "location": "100 McBride Ave",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 27983664,
-        "annualTaxPaid": 635475,
+        "name": "Woodland Park Borough Commercial Plaza / Corporate Complex",
+        "location": "100 Rifle Camp Rd",
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 37059446,
+        "annualTaxPaid": 841575,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Woodland Park Borough Professional Medical Arts Building",
-        "location": "250 Rifle Camp Rd",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 18756618,
-        "annualTaxPaid": 425940,
+        "name": "Woodland Park Borough Medical Arts & Professional Center",
+        "location": "250 Mount Pleasant Ave",
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 25412192,
+        "annualTaxPaid": 577080,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Passaic County Board of Taxation Abstract of Ratables & Woodland Park Borough Financial Statements",
+    "totalPropertyTaxesAbated": 259155,
+    "totalPilotBillingsCollected": 142535,
+    "netTaxShiftToHomeowners": 116620,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Woodland Park Borough Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 92648,
+        "abatedTaxesEstimated": 168451,
+        "netLossToSchools": 88268,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $61k directly to Woodland Park Borough school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Passaic County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

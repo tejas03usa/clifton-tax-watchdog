@@ -62,18 +62,43 @@
   ],
   "neighborhoods": [
     {
-      "name": "Montclair Township Central & Historic Core",
+      "name": "Upper Montclair & Bellevue Ave",
+      "zip": "07043",
+      "character": "Upscale shopping village, pedestrian bistros, Upper Montclair commuter rail station, grand Tudors, and colonials",
+      "medianIncome": 195000,
+      "medianAge": 41.2,
+      "avgTaxBill": 25800.0,
+      "taxBurdenPercentIncome": 13.23,
+      "avgMarketValue": 1050000,
+      "ownerOccupied": 86.0,
+      "description": "Northern village center anchored by Anderson Park, historic Iris Gardens, and charming boutiques along Bellevue Avenue.",
+      "taxDynamic": "Highest residential assessed values in Montclair, paying substantial share of township school taxes."
+    },
+    {
+      "name": "Watchung & Montclair Center",
       "zip": "07042",
-      "character": "Suburban neighborhoods, parks, and downtown corridor",
-      "medianIncome": 154800,
-      "medianAge": 42.2,
-      "avgAssessment": 616500,
-      "avgMarketValue": 900000,
-      "avgTaxBill": 23217.39,
-      "taxBurdenPercentIncome": 15.0,
-      "ownerOccupied": 74.5,
-      "description": "Established residential neighborhoods across Montclair Township with schools, parks, and community amenities.",
-      "taxDynamic": "Carries the primary residential tax base for the municipal government and Montclair Public Schools."
+      "character": "Arts and cultural center along Bloomfield Avenue, historic Wellmont Theater, diverse dining, lofts, and pre-war colonials",
+      "medianIncome": 135000,
+      "medianAge": 39.8,
+      "avgTaxBill": 22400.0,
+      "taxBurdenPercentIncome": 16.59,
+      "avgMarketValue": 880000,
+      "ownerOccupied": 64.0,
+      "description": "Vibrant downtown cultural corridor featuring the Montclair Art Museum, independent bookstores, and transit-oriented apartments.",
+      "taxDynamic": "Subject to active municipal PILOT redevelopment discussions at Lackawanna Plaza and Seymour Street."
+    },
+    {
+      "name": "South End & Nishuane Park",
+      "zip": "07042",
+      "character": "Historic multicultural neighborhood with Victorian frame homes, two-families, and community parks",
+      "medianIncome": 110000,
+      "medianAge": 38.5,
+      "avgTaxBill": 19800.0,
+      "taxBurdenPercentIncome": 18.0,
+      "avgMarketValue": 720000,
+      "ownerOccupied": 58.0,
+      "description": "Historic residential community surrounding Nishuane Park and Orange Road business district.",
+      "taxDynamic": "Higher effective tax burden relative to household income creates strong local demand for property tax stabilization."
     }
   ],
   "familyChildDemographics": {

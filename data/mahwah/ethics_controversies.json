@@ -8,19 +8,51 @@
       "id": "mahwah-ctrl-1",
       "severity": "Medium",
       "category": "Fiscal Policy & Ratable Structure",
-      "title": "Ratable Base Balance & Budgetary Oversight (Mahwah Township)",
-      "entityInvolved": "Mahwah Township Municipal Administration & Tax Assessor",
+      "title": "Ratable Base Balance & Assessment Equalization (Mahwah Township)",
+      "entityInvolved": "Mahwah Township Governing Body & Tax Assessor",
       "lastUpdated": "2026-10-31",
       "summary": "Corporate parks along Route 17 (UPS, Jaguar Land Rover, Mindray) shoulder 31.8% of tax base, keeping effective tax rate at 1.790%.",
-      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Bergen County Board of Taxation guidelines.",
-      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
-      "status": "Monitored Under NJ DLGS Guidelines"
+      "investigationDetails": "Annual watchdog audit of municipal tax appeal exposure, commercial assessment accuracy, and county equalized tax distribution.",
+      "taxpayerImpact": "Homeowners bear 68.2% of all property taxes raised in Mahwah Township.",
+      "status": "Monitored Under NJ DLGS & County Tax Board Guidelines"
+    },
+    {
+      "id": "mahwah-ctrl-2",
+      "severity": "Medium",
+      "category": "Education Spending & School Tax Levy",
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "entityInvolved": "Mahwah Township Board of Education",
+      "lastUpdated": "2026-10-31",
+      "summary": "Public education appropriations represent 57.6% of the composite property tax levy in Mahwah Township.",
+      "investigationDetails": "Watchdog analysis of per-pupil spending ($23,400/student) and health benefit premium cost-sharing under Chapter 44.",
+      "taxpayerImpact": "Annual school tax increases are capped at 2% under statutory levy limits unless statutory health care or enrollment adjustments apply.",
+      "status": "Under Annual State DOE User-Friendly Budget Review"
+    },
+    {
+      "id": "mahwah-ctrl-3",
+      "severity": "Notice",
+      "category": "Commercial Tax Abatements & PILOTs",
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "entityInvolved": "Mahwah Township Municipal Redevelopment Agency",
+      "lastUpdated": "2026-10-31",
+      "summary": "Commercial PILOT agreements in Mahwah Township yield $195,011 in service fees while abating standard property taxes.",
+      "investigationDetails": "Under NJ Long-Term Tax Exemption Law, municipal government retains 95% of PILOT revenues, leaving local school districts with 0% of payments.",
+      "taxpayerImpact": "Shifts an estimated $15.2 per homeowner annually in indirect education funding burden.",
+      "status": "Active Citizen Watchdog Monitoring"
     }
   ],
   "highlights": [
     {
-      "title": "Fiscal & Ratable Structure Overview",
+      "title": "Ratable Base Balance & Assessment Equalization (Mahwah Township)",
       "detail": "Corporate parks along Route 17 (UPS, Jaguar Land Rover, Mindray) shoulder 31.8% of tax base, keeping effective tax rate at 1.790%."
+    },
+    {
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "detail": "Public education appropriations represent 57.6% of the composite property tax levy in Mahwah Township."
+    },
+    {
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "detail": "Commercial PILOT agreements in Mahwah Township yield $195,011 in service fees while abating standard property taxes."
     }
   ]
 }

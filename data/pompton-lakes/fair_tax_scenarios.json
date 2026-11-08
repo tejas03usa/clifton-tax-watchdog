@@ -3,16 +3,16 @@
     "source": "Certified 2026 Pompton Lakes Borough Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Pompton Lakes Borough",
-      "totalTaxLevy": 50249276,
-      "residentialLevyTotal": 42762134,
-      "commercialLevyTotal": 7487142,
-      "totalResidentialParcels": 4119,
+      "totalTaxLevy": 50944887,
+      "residentialLevyTotal": 43354099,
+      "commercialLevyTotal": 7590788,
+      "totalResidentialParcels": 4500,
       "equalizationRatio": 0.613,
       "certifiedTaxRateAssessed": 4.131,
       "certifiedTaxRateMarket": 2.533,
       "averageResidentialAssessment": 285138,
       "averageResidentialMarketValue": 465000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 151551,
       "commercialLevySharePct": 14.9
     }
   },
@@ -36,54 +36,145 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Pompton Lakes Borough residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 14.9,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 4.131,
+      "projectedTaxRateMarket": 2.533,
+      "avgResidentialTaxBill": 11779.05,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 85.1% of the levy, commercial ratables pay 14.9%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Pompton Lakes Borough public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Pompton Lakes Borough municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 19.4,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.883,
+      "projectedTaxRateMarket": 2.381,
+      "avgResidentialTaxBill": 11072.31,
+      "avgResidentialNetSavings": 706.74,
+      "avgMonthlySavings": 58.9,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 14.9,
+      "pilotSchoolSharePct": 57.1,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.986,
+      "projectedTaxRateMarket": 2.444,
+      "avgResidentialTaxBill": 11366.78,
+      "avgResidentialNetSavings": 412.27,
+      "avgMonthlySavings": 34.36,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Pompton Lakes Borough Public Schools eliminates residential tax shift for new students.",
+      "winners": "Pompton Lakes Borough Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 14.9,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 4.131,
+      "projectedTaxRateMarket": 2.533,
+      "avgResidentialTaxBill": 10029.05,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 19.9,
+      "pilotSchoolSharePct": 57.1,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 3.635,
+      "projectedTaxRateMarket": 2.229,
+      "avgResidentialTaxBill": 10365.56,
+      "avgResidentialNetSavings": 1413.49,
+      "avgMonthlySavings": 117.79,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Pompton Lakes Borough residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 228110,
-      "tax": 9423.24
+      "type": "Starter Residence / Condo",
+      "assessment": 213854,
+      "marketValue": 348750,
+      "currentTax": 8834.29,
+      "reformedTax": 7774.17,
+      "annualSavings": 1060.11
     },
     {
-      "type": "Average Pompton Lakes Borough Home",
+      "type": "Average Pompton Lakes Borough Single Family",
       "assessment": 285138,
-      "tax": 11779.05
+      "marketValue": 465000,
+      "currentTax": 11779.05,
+      "reformedTax": 10365.56,
+      "annualSavings": 1413.49
     },
     {
-      "type": "Executive Residence",
-      "assessment": 384936,
-      "tax": 15901.72
+      "type": "Executive / Estate Residence",
+      "assessment": 413450,
+      "marketValue": 674250,
+      "currentTax": 17079.62,
+      "reformedTax": 15030.07,
+      "annualSavings": 2049.55
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07442",
-      "name": "Pompton Lakes Borough Center & Downtown",
-      "medianHouseholdIncome": 108400,
-      "currentTaxBill": 11779.05,
-      "currentTaxEffortPct": 10.87
+      "name": "Lakeside & Colfax Section",
+      "medianHouseholdIncome": 121408,
+      "currentTaxBill": 12957,
+      "currentTaxEffortPct": 10.67
     },
     {
       "zip": "07442",
-      "name": "Pompton Lakes Borough Residential Heights",
-      "medianHouseholdIncome": 117072,
-      "currentTaxBill": 12486,
+      "name": "Downtown Wanaque Ave & Cannonball District",
+      "medianHouseholdIncome": 102980,
+      "currentTaxBill": 11190,
       "currentTaxEffortPct": 10.87
     }
   ],
@@ -101,6 +192,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

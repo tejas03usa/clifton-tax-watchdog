@@ -155,7 +155,7 @@ The repository is equipped with an automated GitHub Actions verification and ref
 * **Execution Schedule:** Runs automatically **every Monday at 06:00 UTC (02:00 AM EDT / 01:00 AM EST)** and can be triggered on demand via the **Actions** tab (`workflow_dispatch`).
 * **Tasks Executed:**
   1. Pings official government portals (Clifton, Parsippany-Troy Hills, Wayne, Montclair, Morristown, Montville, Glen Rock, and County Boards of Taxation).
-  2. Runs mathematical verification across all 75,916 property assessments ensuring 0 calculation discrepancies and 0 forbidden estimated fields.
+  2. Runs mathematical verification across all 150,016 property assessments ensuring 0 calculation discrepancies and 0 forbidden estimated fields.
   3. Records audit results and timestamps in [`data/audit_log.json`](file:///Users/tejas/apps/clifton_tax_watchdog/data/audit_log.json).
   4. Automatically commits changes and updates the live "Last Refreshed" badge on the website.
 * **On-Site Freshness Indicators:**

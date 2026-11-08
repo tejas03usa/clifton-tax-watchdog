@@ -15,38 +15,38 @@
   "commercialShare": 23.6,
   "cityOverview": {
     "totalPopulation": 8050,
-    "totalHousingUnits": 2981,
+    "totalHousingUnits": 3100,
     "medianHouseholdIncome": 96400,
     "perCapitaIncome": 46272,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 76,
-    "renterOccupiedRate": 24,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 6.5,
+    "ownerOccupiedRate": 66.0,
+    "renterOccupiedRate": 34.0,
+    "foreignBornPercentage": 16.8,
+    "nonEnglishAtHomePercent": 22.5
   },
   "zipCodeComparison": [
     {
       "zip": "07405",
-      "areaName": "Butler Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Butler Borough Center, Residential & Parkway Districts",
+      "areaName": "Butler Borough (ZIP 07405)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Main St Historic Core & Bartholdi Section, Kiel Avenue & High Street Ridge",
       "medianHouseholdIncome": 96400,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 76,
-      "renterOccupiedPercent": 24,
+      "ownerOccupiedPercent": 66.0,
+      "renterOccupiedPercent": 34.0,
       "averageAnnualTaxBill": 10592.42,
       "monthlyTaxBill": 882.7,
       "taxBurdenPercentOfIncome": 10.99,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 34488000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 74.8,
+        "hispanicOrLatino": 10.9,
+        "asian": 7.6,
+        "blackOrAfricanAmerican": 6.7,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.42%, with an equalization ratio of 71.2%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Butler Borough Center & Downtown",
+      "name": "Main St Historic Core & Bartholdi Section",
       "zip": "07405",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Historic industrial rubber manufacturing borough (Pequannock Rubber Co) with classic single-family homes, ranches, and town electric utility",
       "medianIncome": 96400,
-      "medianAge": 40.5,
-      "avgTaxBill": 10592.42,
+      "medianAge": 41.5,
+      "avgTaxBill": 10592,
       "taxBurdenPercentIncome": 10.99,
       "avgMarketValue": 435000,
-      "ownerOccupied": 76,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 70.0,
+      "description": "Historic Morris County borough operating its own municipal electric utility (Butler Electric), serving multiple surrounding Highlands towns.",
+      "taxDynamic": "Municipal electric utility surplus offsets local municipal government tax levies."
     },
     {
-      "name": "Butler Borough Residential Heights",
+      "name": "Kiel Avenue & High Street Ridge",
       "zip": "07405",
-      "character": "Single-family residential neighborhood with tree-lined streets",
+      "character": "Elevated residential streets with single-family ranches, colonials, and wooded yards overlooking Pequannock valley",
       "medianIncome": 104112,
-      "medianAge": 42.2,
-      "avgTaxBill": 11228,
-      "taxBurdenPercentIncome": 10.99,
-      "avgMarketValue": 469800,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "medianAge": 41.5,
+      "avgTaxBill": 11122,
+      "taxBurdenPercentIncome": 10.68,
+      "avgMarketValue": 456750,
+      "ownerOccupied": 78.0,
+      "description": "Quiet hilltop residential section offering wooded views and convenient access to local parks.",
+      "taxDynamic": "Steady residential assessments with low municipal tax burden."
     }
   ],
   "equityAnalysis": {
-    "summary": "Butler Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Butler Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,32 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 966,
-      "totalHouseholds": 2981,
+      "totalHouseholds": 3100,
       "enrolledPublicSchools": 1127,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 1248
     },
     "schools": [
       {
-        "name": "Butler Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Main St, Butler Borough, NJ 07405",
-        "enrollment": 402,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Butler Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "38 Bartholdi Ave, Butler, NJ 07405",
+        "enrollment": 460,
+        "grades": "9-12",
+        "name": "Butler High School",
+        "type": "High School"
       },
       {
-        "name": "Butler Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Boonton Ave, Butler Borough, NJ 07405",
-        "enrollment": 322,
-        "grades": "6 to 8",
-        "neighborhood": "Butler Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "Pearl Rd, Butler, NJ 07405",
+        "enrollment": 340,
+        "grades": "5-8",
+        "name": "Richard Butler Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Butler Borough High School",
-        "type": "High School",
-        "address": "300 Bartholdi Ave, Butler Borough, NJ 07405",
-        "enrollment": 402,
-        "grades": "9 to 12",
-        "neighborhood": "Butler Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Decker Rd, Butler, NJ 07405",
+        "enrollment": 360,
+        "grades": "PreK-4",
+        "name": "Aaron Decker Elementary School",
+        "type": "Elementary"
       }
     ]
   }

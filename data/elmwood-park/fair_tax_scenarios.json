@@ -3,16 +3,16 @@
     "source": "Certified 2026 Elmwood Park Borough Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Elmwood Park Borough",
-      "totalTaxLevy": 76318719,
-      "residentialLevyTotal": 59833876,
-      "commercialLevyTotal": 16484843,
-      "totalResidentialParcels": 7870,
+      "totalTaxLevy": 75939185,
+      "residentialLevyTotal": 59536321,
+      "commercialLevyTotal": 16402864,
+      "totalResidentialParcels": 7600,
       "equalizationRatio": 0.724,
       "certifiedTaxRateAssessed": 3.25,
       "certifiedTaxRateMarket": 2.353,
       "averageResidentialAssessment": 372860,
       "averageResidentialMarketValue": 515000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 124702,
       "commercialLevySharePct": 21.6
     }
   },
@@ -36,55 +36,146 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Elmwood Park Borough residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 21.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.25,
+      "projectedTaxRateMarket": 2.353,
+      "avgResidentialTaxBill": 12117.95,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 78.4% of the levy, commercial ratables pay 21.6%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Elmwood Park Borough public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Elmwood Park Borough municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 26.1,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.055,
+      "projectedTaxRateMarket": 2.212,
+      "avgResidentialTaxBill": 11390.87,
+      "avgResidentialNetSavings": 727.08,
+      "avgMonthlySavings": 60.59,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 21.6,
+      "pilotSchoolSharePct": 58.6,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.136,
+      "projectedTaxRateMarket": 2.271,
+      "avgResidentialTaxBill": 11693.82,
+      "avgResidentialNetSavings": 424.13,
+      "avgMonthlySavings": 35.34,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Elmwood Park Borough Public Schools eliminates residential tax shift for new students.",
+      "winners": "Elmwood Park Borough Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 21.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.25,
+      "projectedTaxRateMarket": 2.353,
+      "avgResidentialTaxBill": 10367.95,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 26.6,
+      "pilotSchoolSharePct": 58.6,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 2.86,
+      "projectedTaxRateMarket": 2.071,
+      "avgResidentialTaxBill": 10663.8,
+      "avgResidentialNetSavings": 1454.15,
+      "avgMonthlySavings": 121.18,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Elmwood Park Borough residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 298288,
-      "tax": 9694.36
+      "type": "Starter Residence / Condo",
+      "assessment": 279645,
+      "marketValue": 386250,
+      "currentTax": 9088.46,
+      "reformedTax": 7997.85,
+      "annualSavings": 1090.62
     },
     {
-      "type": "Average Elmwood Park Borough Home",
+      "type": "Average Elmwood Park Borough Single Family",
       "assessment": 372860,
-      "tax": 12117.95
+      "marketValue": 515000,
+      "currentTax": 12117.95,
+      "reformedTax": 10663.8,
+      "annualSavings": 1454.15
     },
     {
-      "type": "Executive Residence",
-      "assessment": 503361,
-      "tax": 16359.23
+      "type": "Executive / Estate Residence",
+      "assessment": 540647,
+      "marketValue": 746750,
+      "currentTax": 17571.03,
+      "reformedTax": 15462.5,
+      "annualSavings": 2108.52
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07407",
-      "name": "Elmwood Park Borough Center & Downtown",
+      "name": "Boulevard Core & Cherry Hill Section",
       "medianHouseholdIncome": 98500,
-      "currentTaxBill": 12117.95,
+      "currentTaxBill": 12118,
       "currentTaxEffortPct": 12.3
     },
     {
       "zip": "07407",
-      "name": "Elmwood Park Borough Residential Heights",
-      "medianHouseholdIncome": 106380,
-      "currentTaxBill": 12845,
-      "currentTaxEffortPct": 12.3
+      "name": "River Drive & Mola Boulevard District",
+      "medianHouseholdIncome": 103425,
+      "currentTaxBill": 12360,
+      "currentTaxEffortPct": 11.95
     }
   ],
   "policyRoadmap": [
@@ -101,6 +192,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

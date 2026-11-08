@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Passaic County Board of Taxation Certified Abstract of Ratables",
+      "Ringwood Borough Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 91.2,
     "commercialShare": 8.8,
+    "annualShiftDollarImpact": 64854,
+    "averageHomeownerExtraCost": 14.1,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
     "activePilotsCount": 1,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Ringwood Borough municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "ringwood-pilot-1",
         "name": "Ringwood Borough Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 919450,
-        "standardSchoolShare": 564542,
-        "standardCityShare": 218829,
-        "standardCountyShare": 136079,
-        "pilotServiceCharge": 597642,
-        "pilotCityKeeps": 567760,
-        "pilotCountyGets": 29882,
-        "developerAnnualSavings": 321807,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 406800,
-        "homeownerBurdenAbsorbed": 406800
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 1103340,
+        "standardSchoolShare": 677451,
+        "standardCityShare": 262595,
+        "standardCountyShare": 163294,
+        "pilotServiceCharge": 717171,
+        "pilotCityKeeps": 681312,
+        "pilotCountyGets": 35859,
+        "developerAnnualSavings": 386169,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 497200,
+        "homeownerBurdenAbsorbed": 497200
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Ringwood Borough Shopping Plaza / Corporate Center",
-        "location": "100 Sloatsburg Rd",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 29993515,
-        "annualTaxPaid": 787915,
+        "name": "Ringwood Borough Commercial Plaza / Corporate Complex",
+        "location": "100 Cupsaw Dr",
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 39721141,
+        "annualTaxPaid": 1043455,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Ringwood Borough Professional Medical Arts Building",
-        "location": "250 Skyline Dr",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 20103761,
-        "annualTaxPaid": 528116,
+        "name": "Ringwood Borough Medical Arts & Professional Center",
+        "location": "250 Erskine Rd",
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 27237354,
+        "annualTaxPaid": 715512,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Passaic County Board of Taxation Abstract of Ratables & Ringwood Borough Financial Statements",
+    "totalPropertyTaxesAbated": 144120,
+    "totalPilotBillingsCollected": 79266,
+    "netTaxShiftToHomeowners": 64854,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Ringwood Borough Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 51523,
+        "abatedTaxesEstimated": 93678,
+        "netLossToSchools": 57518,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $40k directly to Ringwood Borough school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Passaic County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

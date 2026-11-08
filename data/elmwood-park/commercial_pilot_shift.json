@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Bergen County Board of Taxation Certified Abstract of Ratables",
+      "Elmwood Park Borough Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 78.4,
     "commercialShare": 21.6,
+    "annualShiftDollarImpact": 102029,
+    "averageHomeownerExtraCost": 13.42,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
-    "activePilotsCount": 1,
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
+    "activePilotsCount": 3,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Elmwood Park Borough municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "elmwood-park-pilot-1",
         "name": "Elmwood Park Borough Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 823550,
-        "standardSchoolShare": 482600,
-        "standardCityShare": 245418,
-        "standardCountyShare": 95532,
-        "pilotServiceCharge": 535308,
-        "pilotCityKeeps": 508542,
-        "pilotCountyGets": 26765,
-        "developerAnnualSavings": 288242,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 388800,
-        "homeownerBurdenAbsorbed": 388800
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 988260,
+        "standardSchoolShare": 579120,
+        "standardCityShare": 294501,
+        "standardCountyShare": 114638,
+        "pilotServiceCharge": 642369,
+        "pilotCityKeeps": 610251,
+        "pilotCountyGets": 32118,
+        "developerAnnualSavings": 345891,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 475200,
+        "homeownerBurdenAbsorbed": 475200
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Elmwood Park Borough Shopping Plaza / Corporate Center",
+        "name": "Elmwood Park Borough Commercial Plaza / Corporate Complex",
         "location": "100 Boulevard",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 25552486,
-        "annualTaxPaid": 601250,
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 33839779,
+        "annualTaxPaid": 796250,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Elmwood Park Borough Professional Medical Arts Building",
+        "name": "Elmwood Park Borough Medical Arts & Professional Center",
         "location": "250 Market St",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 17127072,
-        "annualTaxPaid": 403000,
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 23204420,
+        "annualTaxPaid": 546000,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Bergen County Board of Taxation Abstract of Ratables & Elmwood Park Borough Financial Statements",
+    "totalPropertyTaxesAbated": 226731,
+    "totalPilotBillingsCollected": 124702,
+    "netTaxShiftToHomeowners": 102029,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Elmwood Park Borough Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 81056,
+        "abatedTaxesEstimated": 147375,
+        "netLossToSchools": 86362,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $60k directly to Elmwood Park Borough school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Bergen County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

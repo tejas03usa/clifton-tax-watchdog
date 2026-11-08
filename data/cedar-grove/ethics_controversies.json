@@ -8,19 +8,51 @@
       "id": "cedar-grove-ctrl-1",
       "severity": "Medium",
       "category": "Fiscal Policy & Ratable Structure",
-      "title": "Ratable Base Balance & Budgetary Oversight (Cedar Grove Township)",
-      "entityInvolved": "Cedar Grove Township Municipal Administration & Tax Assessor",
+      "title": "Ratable Base Balance & Assessment Equalization (Cedar Grove Township)",
+      "entityInvolved": "Cedar Grove Township Governing Body & Tax Assessor",
       "lastUpdated": "2026-10-31",
       "summary": "Route 23 corridor neighbor to Little Falls; low effective tax rate (2.069%) supported by modern corporate and medical park developments on former hospital grounds.",
-      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Essex County Board of Taxation guidelines.",
-      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
-      "status": "Monitored Under NJ DLGS Guidelines"
+      "investigationDetails": "Annual watchdog audit of municipal tax appeal exposure, commercial assessment accuracy, and county equalized tax distribution.",
+      "taxpayerImpact": "Homeowners bear 85.6% of all property taxes raised in Cedar Grove Township.",
+      "status": "Monitored Under NJ DLGS & County Tax Board Guidelines"
+    },
+    {
+      "id": "cedar-grove-ctrl-2",
+      "severity": "Medium",
+      "category": "Education Spending & School Tax Levy",
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "entityInvolved": "Cedar Grove Township Board of Education",
+      "lastUpdated": "2026-10-31",
+      "summary": "Public education appropriations represent 56.4% of the composite property tax levy in Cedar Grove Township.",
+      "investigationDetails": "Watchdog analysis of per-pupil spending ($21,800/student) and health benefit premium cost-sharing under Chapter 44.",
+      "taxpayerImpact": "Annual school tax increases are capped at 2% under statutory levy limits unless statutory health care or enrollment adjustments apply.",
+      "status": "Under Annual State DOE User-Friendly Budget Review"
+    },
+    {
+      "id": "cedar-grove-ctrl-3",
+      "severity": "Notice",
+      "category": "Commercial Tax Abatements & PILOTs",
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "entityInvolved": "Cedar Grove Township Municipal Redevelopment Agency",
+      "lastUpdated": "2026-10-31",
+      "summary": "Commercial PILOT agreements in Cedar Grove Township yield $193,053 in service fees while abating standard property taxes.",
+      "investigationDetails": "Under NJ Long-Term Tax Exemption Law, municipal government retains 95% of PILOT revenues, leaving local school districts with 0% of payments.",
+      "taxpayerImpact": "Shifts an estimated $32.24 per homeowner annually in indirect education funding burden.",
+      "status": "Active Citizen Watchdog Monitoring"
     }
   ],
   "highlights": [
     {
-      "title": "Fiscal & Ratable Structure Overview",
+      "title": "Ratable Base Balance & Assessment Equalization (Cedar Grove Township)",
       "detail": "Route 23 corridor neighbor to Little Falls; low effective tax rate (2.069%) supported by modern corporate and medical park developments on former hospital grounds."
+    },
+    {
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "detail": "Public education appropriations represent 56.4% of the composite property tax levy in Cedar Grove Township."
+    },
+    {
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "detail": "Commercial PILOT agreements in Cedar Grove Township yield $193,053 in service fees while abating standard property taxes."
     }
   ]
 }

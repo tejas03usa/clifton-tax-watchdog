@@ -15,38 +15,38 @@
   "commercialShare": 14.9,
   "cityOverview": {
     "totalPopulation": 11120,
-    "totalHousingUnits": 4119,
+    "totalHousingUnits": 4500,
     "medianHouseholdIncome": 108400,
     "perCapitaIncome": 52032,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 85,
-    "renterOccupiedRate": 15,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 6.2,
+    "ownerOccupiedRate": 69.5,
+    "renterOccupiedRate": 30.5,
+    "foreignBornPercentage": 19.8,
+    "nonEnglishAtHomePercent": 26.2
   },
   "zipCodeComparison": [
     {
       "zip": "07442",
-      "areaName": "Pompton Lakes Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Pompton Lakes Borough Center, Residential & Parkway Districts",
+      "areaName": "Pompton Lakes Borough (ZIP 07442)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Lakeside & Colfax Section, Downtown Wanaque Ave & Cannonball District",
       "medianHouseholdIncome": 108400,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 85,
-      "renterOccupiedPercent": 15,
+      "ownerOccupiedPercent": 69.5,
+      "renterOccupiedPercent": 30.5,
       "averageAnnualTaxBill": 11779.05,
       "monthlyTaxBill": 981.59,
       "taxBurdenPercentOfIncome": 10.87,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 42729000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 70.3,
+        "hispanicOrLatino": 12.9,
+        "asian": 8.9,
+        "blackOrAfricanAmerican": 7.9,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 4.131%, with an equalization ratio of 61.32%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Pompton Lakes Borough Center & Downtown",
+      "name": "Lakeside & Colfax Section",
       "zip": "07442",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 108400,
-      "medianAge": 40.5,
-      "avgTaxBill": 11779.05,
-      "taxBurdenPercentIncome": 10.87,
-      "avgMarketValue": 465000,
-      "ownerOccupied": 85,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Scenic lakeside residences along Pompton Lake and Ramapo River, quiet suburban streets, ranches, and colonials",
+      "medianIncome": 121408,
+      "medianAge": 41.5,
+      "avgTaxBill": 12957,
+      "taxBurdenPercentIncome": 10.67,
+      "avgMarketValue": 511500,
+      "ownerOccupied": 82.0,
+      "description": "Picturesque lakeside community offering boating, lakefront trails, and community parks.",
+      "taxDynamic": "Subject to environmental cleanup oversight (DuPont site) and lake dredging capital reserves."
     },
     {
-      "name": "Pompton Lakes Borough Residential Heights",
+      "name": "Downtown Wanaque Ave & Cannonball District",
       "zip": "07442",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 117072,
-      "medianAge": 42.2,
-      "avgTaxBill": 12486,
+      "character": "Historic downtown shopping district with independent restaurants, turn-of-century colonials, and multi-family homes",
+      "medianIncome": 102980,
+      "medianAge": 41.5,
+      "avgTaxBill": 11190,
       "taxBurdenPercentIncome": 10.87,
-      "avgMarketValue": 502200,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "avgMarketValue": 441750,
+      "ownerOccupied": 60.0,
+      "description": "Walkable business district surrounding Wanaque Avenue commercial corridor.",
+      "taxDynamic": "High local school levy share (62.2%) requiring diligent budgetary scrutiny."
     }
   ],
   "equityAnalysis": {
-    "summary": "Pompton Lakes Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Pompton Lakes Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 1334,
-      "totalHouseholds": 4119,
+      "totalHouseholds": 4500,
       "enrolledPublicSchools": 1557,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 1724
     },
     "schools": [
       {
-        "name": "Pompton Lakes Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Wanaque Ave, Pompton Lakes Borough, NJ 07442",
-        "enrollment": 556,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Pompton Lakes Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "44 Lakeside Ave, Pompton Lakes, NJ 07442",
+        "enrollment": 610,
+        "grades": "9-12",
+        "name": "Pompton Lakes High School",
+        "type": "High School"
       },
       {
-        "name": "Pompton Lakes Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Ringwood Ave, Pompton Lakes Borough, NJ 07442",
-        "enrollment": 445,
-        "grades": "6 to 8",
-        "neighborhood": "Pompton Lakes Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "316 Lakeside Ave, Pompton Lakes, NJ 07442",
+        "enrollment": 440,
+        "grades": "6-8",
+        "name": "Lakeside Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Pompton Lakes Borough High School",
-        "type": "High School",
-        "address": "300 Colfax Ave, Pompton Lakes Borough, NJ 07442",
-        "enrollment": 556,
-        "grades": "9 to 12",
-        "neighborhood": "Pompton Lakes Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Lenox Ave, Pompton Lakes, NJ 07442",
+        "enrollment": 320,
+        "grades": "K-5",
+        "name": "Lenox Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Lincoln Ave, Pompton Lakes, NJ 07442",
+        "enrollment": 310,
+        "grades": "K-5",
+        "name": "Lincoln Elementary School",
+        "type": "Elementary"
       }
     ]
   }

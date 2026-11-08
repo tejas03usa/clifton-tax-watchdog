@@ -19,34 +19,62 @@
     "medianHouseholdIncome": 215000,
     "perCapitaIncome": 103200,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 88,
-    "renterOccupiedRate": 12,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 3.1,
+    "ownerOccupiedRate": 84.8,
+    "renterOccupiedRate": 15.2,
+    "foreignBornPercentage": 18.2,
+    "nonEnglishAtHomePercent": 22.4
   },
   "zipCodeComparison": [
     {
       "zip": "07450",
-      "areaName": "Ridgewood Village (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Ridgewood Village Center, Residential & Parkway Districts",
+      "areaName": "Ridgewood Village (ZIP 07450)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Central Business District & West Side, Somerville Section, Willard & Heights Section, Travell & Hawes School District",
       "medianHouseholdIncome": 215000,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 88,
-      "renterOccupiedPercent": 12,
+      "ownerOccupiedPercent": 84.8,
+      "renterOccupiedPercent": 15.2,
       "averageAnnualTaxBill": 20431.01,
       "monthlyTaxBill": 1702.58,
       "taxBurdenPercentOfIncome": 9.5,
-      "shareOfTotalTaxBase": 100,
-      "totalResidentialLevyContribution": 146643000,
-      "schoolEnrollmentShare": 100,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 73321500,
+      "schoolEnrollmentShare": 50.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 72.7,
+        "hispanicOrLatino": 11.8,
+        "asian": 8.2,
+        "blackOrAfricanAmerican": 7.3,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 2.782%, with an equalization ratio of 76.5%.",
+        "Public education represents 66.8% of property taxes, while municipal operations account for 23.4%.",
+        "Average residential assessment is $734,400, producing an average annual tax bill of $20,431.01."
+      ]
+    },
+    {
+      "zip": "07451",
+      "areaName": "Ridgewood Village (ZIP 07451)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Central Business District & West Side, Somerville Section",
+      "medianHouseholdIncome": 215000,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 84.8,
+      "renterOccupiedPercent": 15.2,
+      "averageAnnualTaxBill": 20431.01,
+      "monthlyTaxBill": 1702.58,
+      "taxBurdenPercentOfIncome": 9.5,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 73321500,
+      "schoolEnrollmentShare": 50.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 72.7,
+        "hispanicOrLatino": 11.8,
+        "asian": 8.2,
+        "blackOrAfricanAmerican": 7.3,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.782%, with an equalization ratio of 76.5%.",
@@ -57,34 +85,60 @@
   ],
   "neighborhoods": [
     {
-      "name": "Ridgewood Village Center & Downtown",
+      "name": "Central Business District & West Side",
       "zip": "07450",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 215000,
-      "medianAge": 40.5,
-      "avgTaxBill": 20431.01,
-      "taxBurdenPercentIncome": 9.5,
-      "avgMarketValue": 960000,
-      "ownerOccupied": 88,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Charming pedestrian downtown with upscale restaurants, historic train station, and walk-to-town colonials and townhomes",
+      "medianIncome": 236500,
+      "medianAge": 41.5,
+      "avgTaxBill": 21453,
+      "taxBurdenPercentIncome": 9.07,
+      "avgMarketValue": 1008000,
+      "ownerOccupied": 72.0,
+      "description": "Vibrant village center centered on East Ridgewood Avenue, famous for destination dining, boutique shopping, and direct commuter train access to NYC.",
+      "taxDynamic": "Strong commercial core provides substantial ratables mitigating residential municipal property tax rates."
     },
     {
-      "name": "Ridgewood Village Residential Heights",
+      "name": "Somerville Section",
       "zip": "07450",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 232200,
-      "medianAge": 42.2,
-      "avgTaxBill": 21657,
-      "taxBurdenPercentIncome": 9.5,
-      "avgMarketValue": 1036800,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Spacious tree-lined avenues with classic center-hall colonials and renovated custom estates adjacent to Somerville Elementary",
+      "medianIncome": 268750,
+      "medianAge": 41.5,
+      "avgTaxBill": 24926,
+      "taxBurdenPercentIncome": 9.27,
+      "avgMarketValue": 1171200,
+      "ownerOccupied": 94.0,
+      "description": "Premier suburban residential zone characterized by deep landscaped lots, exemplary elementary school proximity, and historic architectural integrity.",
+      "taxDynamic": "High assessed market valuations produce typical annual property tax bills between $19,000 and $28,000."
+    },
+    {
+      "name": "Willard & Heights Section",
+      "zip": "07450",
+      "character": "Elevated residential section with rolling topography, custom split-levels, modern architectural homes, and expansive properties",
+      "medianIncome": 290250,
+      "medianAge": 41.5,
+      "avgTaxBill": 26560,
+      "taxBurdenPercentIncome": 9.15,
+      "avgMarketValue": 1248000,
+      "ownerOccupied": 95.0,
+      "description": "Quiet hilltop neighborhood offering panoramic views and spacious suburban settings convenient to Willard School.",
+      "taxDynamic": "Top tier residential tax contributions with over 68% of the local property tax levy dedicated to Ridgewood Public Schools."
+    },
+    {
+      "name": "Travell & Hawes School District",
+      "zip": "07450",
+      "character": "Classic Ridgewood suburban neighborhood with manicured lawns, sidewalks, and proximity to Graydon Pool and Saddle River County Park",
+      "medianIncome": 247250,
+      "medianAge": 41.5,
+      "avgTaxBill": 22883,
+      "taxBurdenPercentIncome": 9.26,
+      "avgMarketValue": 1075200,
+      "ownerOccupied": 91.0,
+      "description": "Sought-after family neighborhood with direct pedestrian access to village parks, municipal swimming at Graydon Pool, and community recreation fields.",
+      "taxDynamic": "Stable ratables with low municipal tax appeal rates and consistent property appreciation."
     }
   ],
   "equityAnalysis": {
-    "summary": "Ridgewood Village maintains a consistent residential tax base across its residential zones.",
+    "summary": "Ridgewood Village maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -111,40 +165,53 @@
     },
     "schools": [
       {
-        "name": "Ridgewood Village Elementary School",
-        "type": "Elementary",
-        "address": "100 East Ridgewood Ave, Ridgewood Village, NJ 07450",
-        "enrollment": 1305,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Ridgewood Village Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "627 E Ridgewood Ave, Ridgewood, NJ 07450",
+        "enrollment": 1780,
+        "grades": "9-12",
+        "name": "Ridgewood High School",
+        "type": "High School"
       },
       {
-        "name": "Ridgewood Village Middle School",
-        "type": "Middle School",
-        "address": "200 West Ridgewood Ave, Ridgewood Village, NJ 07450",
-        "enrollment": 1044,
-        "grades": "6 to 8",
-        "neighborhood": "Ridgewood Village Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "335 N Van Dien Ave, Ridgewood, NJ 07450",
+        "enrollment": 710,
+        "grades": "6-8",
+        "name": "Benjamin Franklin Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Ridgewood Village High School",
-        "type": "High School",
-        "address": "300 Maple Ave, Ridgewood Village, NJ 07450",
-        "enrollment": 1305,
-        "grades": "9 to 12",
-        "neighborhood": "Ridgewood Village Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "155 Washington Pl, Ridgewood, NJ 07450",
+        "enrollment": 690,
+        "grades": "6-8",
+        "name": "George Washington Middle School",
+        "type": "Middle School"
+      },
+      {
+        "address": "45 S Pleasant Ave, Ridgewood, NJ 07450",
+        "enrollment": 440,
+        "grades": "K-5",
+        "name": "Somerville Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "601 Morningside Rd, Ridgewood, NJ 07450",
+        "enrollment": 460,
+        "grades": "K-5",
+        "name": "Willard Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "340 Bogert Ave, Ridgewood, NJ 07450",
+        "enrollment": 380,
+        "grades": "K-5",
+        "name": "Travell Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "531 Beverly Rd, Ridgewood, NJ 07450",
+        "enrollment": 410,
+        "grades": "K-5",
+        "name": "Hawes Elementary School",
+        "type": "Elementary"
       }
     ]
   }

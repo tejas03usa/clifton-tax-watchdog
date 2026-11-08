@@ -15,38 +15,38 @@
   "commercialShare": 21.8,
   "cityOverview": {
     "totalPopulation": 30143,
-    "totalHousingUnits": 11164,
+    "totalHousingUnits": 11500,
     "medianHouseholdIncome": 115200,
     "perCapitaIncome": 55296,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 78,
-    "renterOccupiedRate": 22,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 5.2,
+    "ownerOccupiedRate": 63.5,
+    "renterOccupiedRate": 36.5,
+    "foreignBornPercentage": 22.8,
+    "nonEnglishAtHomePercent": 31.4
   },
   "zipCodeComparison": [
     {
       "zip": "07110",
-      "areaName": "Nutley Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Nutley Township Center, Residential & Parkway Districts",
+      "areaName": "Nutley Township (ZIP 07110)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Radcliffe & Highfield Section, Yanticaw & Town Center Core, Spring Garden & Booth Section, Avondale & Passaic River Waterfront",
       "medianHouseholdIncome": 115200,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 78,
-      "renterOccupiedPercent": 22,
+      "ownerOccupiedPercent": 63.5,
+      "renterOccupiedPercent": 36.5,
       "averageAnnualTaxBill": 12486.3,
       "monthlyTaxBill": 1040.52,
       "taxBurdenPercentOfIncome": 10.84,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 107439000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 65.8,
+        "hispanicOrLatino": 14.8,
+        "asian": 10.3,
+        "blackOrAfricanAmerican": 9.1,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.844%, with an equalization ratio of 78.4%.",
@@ -57,34 +57,60 @@
   ],
   "neighborhoods": [
     {
-      "name": "Nutley Township Center & Downtown",
+      "name": "Radcliffe & Highfield Section",
       "zip": "07110",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 115200,
-      "medianAge": 40.5,
-      "avgTaxBill": 12486.3,
-      "taxBurdenPercentIncome": 10.84,
-      "avgMarketValue": 560000,
-      "ownerOccupied": 78,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Stately colonials, manicured lawns, and quiet residential lanes near Radcliffe School and Montclair border",
+      "medianIncome": 144000,
+      "medianAge": 41.5,
+      "avgTaxBill": 15233,
+      "taxBurdenPercentIncome": 10.58,
+      "avgMarketValue": 683200,
+      "ownerOccupied": 88.0,
+      "description": "Prestigious western residential section characterized by mature oaks, custom homes, and high property values.",
+      "taxDynamic": "High assessed residential values generating major share of municipal school levy."
     },
     {
-      "name": "Nutley Township Residential Heights",
+      "name": "Yanticaw & Town Center Core",
       "zip": "07110",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 124416,
-      "medianAge": 42.2,
-      "avgTaxBill": 13235,
+      "character": "Walkable town center surrounding Franklin Avenue shopping, Town Hall, and scenic 28-acre Yanticaw Park",
+      "medianIncome": 115200,
+      "medianAge": 41.5,
+      "avgTaxBill": 12486,
       "taxBurdenPercentIncome": 10.84,
-      "avgMarketValue": 604800,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "avgMarketValue": 560000,
+      "ownerOccupied": 65.0,
+      "description": "Civic heart of Nutley featuring Franklin Avenue dining, historic Carnegie Library, and Yanticaw Park pond.",
+      "taxDynamic": "Balanced mix of retail stores, medical offices, and traditional single-family residences."
+    },
+    {
+      "name": "Spring Garden & Booth Section",
+      "zip": "07110",
+      "character": "Suburban family neighborhood with well-maintained cape cods, ranches, and colonials near Spring Garden School",
+      "medianIncome": 120960,
+      "medianAge": 41.5,
+      "avgTaxBill": 12736,
+      "taxBurdenPercentIncome": 10.53,
+      "avgMarketValue": 571200,
+      "ownerOccupied": 78.0,
+      "description": "Popular family section bordering Clifton, offering excellent walkability to community elementary schools.",
+      "taxDynamic": "Stable property valuations with low tax appeal litigation."
+    },
+    {
+      "name": "Avondale & Passaic River Waterfront",
+      "zip": "07110",
+      "character": "Historic eastern residential section near the Passaic River, ON3 bioscience campus redevelopment corridor",
+      "medianIncome": 109440,
+      "medianAge": 41.5,
+      "avgTaxBill": 11987,
+      "taxBurdenPercentIncome": 10.95,
+      "avgMarketValue": 537600,
+      "ownerOccupied": 54.0,
+      "description": "Eastern gateway bordering ON3 (former Hoffmann-La Roche campus), experiencing major bioscience and medical school ratable expansion.",
+      "taxDynamic": "ON3 redevelopment PILOT payments provide crucial non-residential revenue to Nutley township."
     }
   ],
   "equityAnalysis": {
-    "summary": "Nutley Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Nutley Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +130,46 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 3617,
-      "totalHouseholds": 11164,
+      "totalHouseholds": 11500,
       "enrolledPublicSchools": 4220,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 4672
     },
     "schools": [
       {
-        "name": "Nutley Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Franklin Ave, Nutley Township, NJ 07110",
-        "enrollment": 1507,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Nutley Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "300 Franklin Ave, Nutley, NJ 07110",
+        "enrollment": 1240,
+        "grades": "9-12",
+        "name": "Nutley High School",
+        "type": "High School"
       },
       {
-        "name": "Nutley Township Middle School",
-        "type": "Middle School",
-        "address": "200 Centre St, Nutley Township, NJ 07110",
-        "enrollment": 1206,
-        "grades": "6 to 8",
-        "neighborhood": "Nutley Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "325 Franklin Ave, Nutley, NJ 07110",
+        "enrollment": 610,
+        "grades": "7-8",
+        "name": "John H. Walker Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Nutley Township High School",
-        "type": "High School",
-        "address": "300 Washington Ave, Nutley Township, NJ 07110",
-        "enrollment": 1507,
-        "grades": "9 to 12",
-        "neighborhood": "Nutley Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "379 Bloomfield Ave, Nutley, NJ 07110",
+        "enrollment": 320,
+        "grades": "K-6",
+        "name": "Radcliffe Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "59 S Spring Garden Ave, Nutley, NJ 07110",
+        "enrollment": 350,
+        "grades": "K-6",
+        "name": "Spring Garden Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "20 Yantacaw Pl, Nutley, NJ 07110",
+        "enrollment": 380,
+        "grades": "K-6",
+        "name": "Yantacaw Elementary School",
+        "type": "Elementary"
       }
     ]
   }

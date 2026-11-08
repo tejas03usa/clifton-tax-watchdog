@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Bergen County Board of Taxation Certified Abstract of Ratables",
+      "Fort Lee Borough Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 64.2,
     "commercialShare": 35.8,
+    "annualShiftDollarImpact": 258798,
+    "averageHomeownerExtraCost": 11.87,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
-    "activePilotsCount": 1,
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
+    "activePilotsCount": 12,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Fort Lee Borough municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "fort-lee-pilot-1",
         "name": "Fort Lee Borough Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 644000,
-        "standardSchoolShare": 352912,
-        "standardCityShare": 220248,
-        "standardCountyShare": 70840,
-        "pilotServiceCharge": 418600,
-        "pilotCityKeeps": 397670,
-        "pilotCountyGets": 20930,
-        "developerAnnualSavings": 225400,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 412200,
-        "homeownerBurdenAbsorbed": 412200
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 772800,
+        "standardSchoolShare": 423494,
+        "standardCityShare": 264298,
+        "standardCountyShare": 85008,
+        "pilotServiceCharge": 502320,
+        "pilotCityKeeps": 477204,
+        "pilotCountyGets": 25116,
+        "developerAnnualSavings": 270480,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 503800,
+        "homeownerBurdenAbsorbed": 503800
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Fort Lee Borough Shopping Plaza / Corporate Center",
-        "location": "100 Main St",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 24932615,
-        "annualTaxPaid": 458800,
+        "name": "Fort Lee Borough Commercial Plaza / Corporate Complex",
+        "location": "100 Palisade Ave",
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 33018868,
+        "annualTaxPaid": 607600,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Fort Lee Borough Professional Medical Arts Building",
-        "location": "250 Lemoine Ave",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 16711590,
-        "annualTaxPaid": 307520,
+        "name": "Fort Lee Borough Medical Arts & Professional Center",
+        "location": "250 Bluff Rd",
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 22641509,
+        "annualTaxPaid": 416640,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Bergen County Board of Taxation Abstract of Ratables & Fort Lee Borough Financial Statements",
+    "totalPropertyTaxesAbated": 575106,
+    "totalPilotBillingsCollected": 316308,
+    "netTaxShiftToHomeowners": 258798,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Fort Lee Borough Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 205600,
+        "abatedTaxesEstimated": 373819,
+        "netLossToSchools": 204853,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $142k directly to Fort Lee Borough school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Bergen County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

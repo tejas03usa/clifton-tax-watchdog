@@ -3,16 +3,16 @@
     "source": "Certified 2026 Florham Park Borough Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Florham Park Borough",
-      "totalTaxLevy": 58295580,
-      "residentialLevyTotal": 34044619,
-      "commercialLevyTotal": 24250961,
-      "totalResidentialParcels": 4741,
+      "totalTaxLevy": 58130443,
+      "residentialLevyTotal": 33948179,
+      "commercialLevyTotal": 24182264,
+      "totalResidentialParcels": 4600,
       "equalizationRatio": 0.864,
       "certifiedTaxRateAssessed": 1.82,
       "certifiedTaxRateMarket": 1.572,
       "averageResidentialAssessment": 656640,
       "averageResidentialMarketValue": 760000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 125160,
       "commercialLevySharePct": 41.6
     }
   },
@@ -36,55 +36,146 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Florham Park Borough residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 41.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.82,
+      "projectedTaxRateMarket": 1.572,
+      "avgResidentialTaxBill": 11950.85,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 58.4% of the levy, commercial ratables pay 41.6%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Florham Park Borough public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Morris County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Florham Park Borough municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 46.1,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.711,
+      "projectedTaxRateMarket": 1.478,
+      "avgResidentialTaxBill": 11233.8,
+      "avgResidentialNetSavings": 717.05,
+      "avgMonthlySavings": 59.75,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 41.6,
+      "pilotSchoolSharePct": 58.4,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.756,
+      "projectedTaxRateMarket": 1.517,
+      "avgResidentialTaxBill": 11532.57,
+      "avgResidentialNetSavings": 418.28,
+      "avgMonthlySavings": 34.86,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Florham Park Borough Public Schools eliminates residential tax shift for new students.",
+      "winners": "Florham Park Borough Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 41.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 1.82,
+      "projectedTaxRateMarket": 1.572,
+      "avgResidentialTaxBill": 10200.85,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 46.6,
+      "pilotSchoolSharePct": 58.4,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 1.602,
+      "projectedTaxRateMarket": 1.383,
+      "avgResidentialTaxBill": 10516.75,
+      "avgResidentialNetSavings": 1434.1,
+      "avgMonthlySavings": 119.51,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Florham Park Borough residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 525312,
-      "tax": 9560.68
+      "type": "Starter Residence / Condo",
+      "assessment": 492480,
+      "marketValue": 570000,
+      "currentTax": 8963.14,
+      "reformedTax": 7887.56,
+      "annualSavings": 1075.58
     },
     {
-      "type": "Average Florham Park Borough Home",
+      "type": "Average Florham Park Borough Single Family",
       "assessment": 656640,
-      "tax": 11950.85
+      "marketValue": 760000,
+      "currentTax": 11950.85,
+      "reformedTax": 10516.75,
+      "annualSavings": 1434.1
     },
     {
-      "type": "Executive Residence",
-      "assessment": 886464,
-      "tax": 16133.64
+      "type": "Executive / Estate Residence",
+      "assessment": 952128,
+      "marketValue": 1102000,
+      "currentTax": 17328.73,
+      "reformedTax": 15249.28,
+      "annualSavings": 2079.45
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07932",
-      "name": "Florham Park Borough Center & Downtown",
-      "medianHouseholdIncome": 152400,
-      "currentTaxBill": 11950.85,
-      "currentTaxEffortPct": 7.84
+      "name": "Brooklake & Ridgedale District",
+      "medianHouseholdIncome": 190500,
+      "currentTaxBill": 14341,
+      "currentTaxEffortPct": 7.53
     },
     {
       "zip": "07932",
-      "name": "Florham Park Borough Residential Heights",
-      "medianHouseholdIncome": 164592,
-      "currentTaxBill": 12668,
-      "currentTaxEffortPct": 7.84
+      "name": "Briarwood & Convent Station Border",
+      "medianHouseholdIncome": 198120,
+      "currentTaxBill": 14939,
+      "currentTaxEffortPct": 7.54
     }
   ],
   "policyRoadmap": [
@@ -101,6 +192,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

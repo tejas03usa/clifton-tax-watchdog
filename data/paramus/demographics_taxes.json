@@ -19,34 +19,62 @@
     "medianHouseholdIncome": 142500,
     "perCapitaIncome": 68400,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 52,
-    "renterOccupiedRate": 48,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 3.4,
+    "ownerOccupiedRate": 86.2,
+    "renterOccupiedRate": 13.8,
+    "foreignBornPercentage": 26.5,
+    "nonEnglishAtHomePercent": 34.8
   },
   "zipCodeComparison": [
     {
       "zip": "07652",
-      "areaName": "Paramus Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Paramus Borough Center, Residential & Parkway Districts",
+      "areaName": "Paramus Borough (ZIP 07652)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Farview & Arcola Section, Spring Valley & Century Section, West Paramus & Dunkerhook District, Route 4 & Garden State Retail Buffer Zone",
       "medianHouseholdIncome": 142500,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 52,
-      "renterOccupiedPercent": 48,
+      "ownerOccupiedPercent": 86.2,
+      "renterOccupiedPercent": 13.8,
       "averageAnnualTaxBill": 12175.0,
       "monthlyTaxBill": 1014.58,
       "taxBurdenPercentOfIncome": 8.54,
-      "shareOfTotalTaxBase": 100,
-      "totalResidentialLevyContribution": 127956000,
-      "schoolEnrollmentShare": 100,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 63978000,
+      "schoolEnrollmentShare": 50.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 60.2,
+        "hispanicOrLatino": 17.2,
+        "asian": 11.9,
+        "blackOrAfricanAmerican": 10.6,
+        "otherOrMultiracial": 3.0
+      },
+      "keyFindings": [
+        "Certified composite property tax rate is 1.954%, with an equalization ratio of 84.2%.",
+        "Public education represents 56.4% of property taxes, while municipal operations account for 32.8%.",
+        "Average residential assessment is $623,080, producing an average annual tax bill of $12,175.0."
+      ]
+    },
+    {
+      "zip": "07653",
+      "areaName": "Paramus Borough (ZIP 07653)",
+      "populationShare": 50.0,
+      "neighborhoodsIncluded": "Farview & Arcola Section, Spring Valley & Century Section",
+      "medianHouseholdIncome": 142500,
+      "medianAge": 41.5,
+      "ownerOccupiedPercent": 86.2,
+      "renterOccupiedPercent": 13.8,
+      "averageAnnualTaxBill": 12175.0,
+      "monthlyTaxBill": 1014.58,
+      "taxBurdenPercentOfIncome": 8.54,
+      "shareOfTotalTaxBase": 50.0,
+      "totalResidentialLevyContribution": 63978000,
+      "schoolEnrollmentShare": 50.0,
+      "demographicProfile": {
+        "whiteNonHispanic": 60.2,
+        "hispanicOrLatino": 17.2,
+        "asian": 11.9,
+        "blackOrAfricanAmerican": 10.6,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 1.954%, with an equalization ratio of 84.2%.",
@@ -57,34 +85,60 @@
   ],
   "neighborhoods": [
     {
-      "name": "Paramus Borough Center & Downtown",
+      "name": "Farview & Arcola Section",
       "zip": "07652",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 142500,
-      "medianAge": 40.5,
-      "avgTaxBill": 12175.0,
-      "taxBurdenPercentIncome": 8.54,
-      "avgMarketValue": 740000,
-      "ownerOccupied": 52,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Historic estate section with rolling hills, custom colonials, and large lots bordering historic Arcola Country Club",
+      "medianIncome": 185250,
+      "medianAge": 41.5,
+      "avgTaxBill": 15219,
+      "taxBurdenPercentIncome": 8.22,
+      "avgMarketValue": 925000,
+      "ownerOccupied": 94.0,
+      "description": "Historic residential neighborhood near the Saddle River, known for deep setbacks, mature trees, and prestigious residential architecture.",
+      "taxDynamic": "Enjoys ultra-low municipal tax rate (1.645% certified) due to Paramus's massive commercial retail tax base."
     },
     {
-      "name": "Paramus Borough Residential Heights",
+      "name": "Spring Valley & Century Section",
       "zip": "07652",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 153900,
-      "medianAge": 42.2,
-      "avgTaxBill": 12906,
-      "taxBurdenPercentIncome": 8.54,
-      "avgMarketValue": 799200,
+      "character": "Suburban post-war split-levels and expanded bi-levels on generous 1/3-acre lots with quiet cul-de-sacs",
+      "medianIncome": 149625,
+      "medianAge": 41.5,
+      "avgTaxBill": 12418,
+      "taxBurdenPercentIncome": 8.3,
+      "avgMarketValue": 754800,
+      "ownerOccupied": 91.0,
+      "description": "Family-centric neighborhood convenient to Paramus high-performing neighborhood elementary schools and community sports facilities.",
+      "taxDynamic": "Homeowners receive the 'Paramus Commercial Dividend'\u2014subsidized municipal services from Garden State Plaza and Paramus Park retail ratables."
+    },
+    {
+      "name": "West Paramus & Dunkerhook District",
+      "zip": "07652",
+      "character": "Wooded residential setting adjacent to Saddle River County Park, offering walking trails, bicycle paths, and quiet suburban roads",
+      "medianIncome": 168150,
+      "medianAge": 41.5,
+      "avgTaxBill": 14001,
+      "taxBurdenPercentIncome": 8.33,
+      "avgMarketValue": 851000,
       "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "description": "Scenic parkway-bordering neighborhood popular with outdoor enthusiasts, offering direct trail access into Ridgewood and Glen Rock.",
+      "taxDynamic": "Stable ratable base with robust market resale values."
+    },
+    {
+      "name": "Route 4 & Garden State Retail Buffer Zone",
+      "zip": "07652",
+      "character": "Suburban residences and modern condominiums buffered from major commercial corridors with excellent regional highway connectivity",
+      "medianIncome": 135375,
+      "medianAge": 41.5,
+      "avgTaxBill": 11688,
+      "taxBurdenPercentIncome": 8.63,
+      "avgMarketValue": 710400,
+      "ownerOccupied": 78.0,
+      "description": "Mixed residential district convenient to retail shopping, medical complexes, and rapid transit buses into Manhattan.",
+      "taxDynamic": "Commercial ratable appeals (e.g. retail anchor reassessments) are closely monitored by borough assessors."
     }
   ],
   "equityAnalysis": {
-    "summary": "Paramus Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Paramus Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -111,40 +165,46 @@
     },
     "schools": [
       {
-        "name": "Paramus Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Paramus Rd, Paramus Borough, NJ 07652",
-        "enrollment": 1360,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Paramus Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "99 E Century Rd, Paramus, NJ 07652",
+        "enrollment": 1340,
+        "grades": "9-12",
+        "name": "Paramus High School",
+        "type": "High School"
       },
       {
-        "name": "Paramus Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Forest Ave, Paramus Borough, NJ 07652",
-        "enrollment": 1088,
-        "grades": "6 to 8",
-        "neighborhood": "Paramus Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "561 Spring Valley Rd, Paramus, NJ 07652",
+        "enrollment": 610,
+        "grades": "5-8",
+        "name": "West Brook Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Paramus Borough High School",
-        "type": "High School",
-        "address": "300 Century Rd, Paramus Borough, NJ 07652",
-        "enrollment": 1360,
-        "grades": "9 to 12",
-        "neighborhood": "Paramus Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "190 Spring Valley Rd, Paramus, NJ 07652",
+        "enrollment": 580,
+        "grades": "5-8",
+        "name": "East Brook Middle School",
+        "type": "Middle School"
+      },
+      {
+        "address": "Forest Ave & Century Rd, Paramus, NJ 07652",
+        "enrollment": 320,
+        "grades": "K-4",
+        "name": "Memorial Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "W Midland Ave, Paramus, NJ 07652",
+        "enrollment": 290,
+        "grades": "K-4",
+        "name": "Midland Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "345 Pascack Rd, Paramus, NJ 07652",
+        "enrollment": 340,
+        "grades": "K-4",
+        "name": "Ridge Ranch Elementary School",
+        "type": "Elementary"
       }
     ]
   }

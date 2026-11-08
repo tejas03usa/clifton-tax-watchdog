@@ -15,38 +15,38 @@
   "commercialShare": 20.5,
   "cityOverview": {
     "totalPopulation": 13360,
-    "totalHousingUnits": 4948,
+    "totalHousingUnits": 5200,
     "medianHouseholdIncome": 118400,
     "perCapitaIncome": 56832,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 80,
-    "renterOccupiedRate": 20,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 5.1,
+    "ownerOccupiedRate": 69.0,
+    "renterOccupiedRate": 31.0,
+    "foreignBornPercentage": 20.8,
+    "nonEnglishAtHomePercent": 26.5
   },
   "zipCodeComparison": [
     {
       "zip": "07424",
-      "areaName": "Little Falls Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Little Falls Township Center, Residential & Parkway Districts",
+      "areaName": "Little Falls Township (ZIP 07424)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Great Falls & Downtown Center, Singac & Route 46 Corridor",
       "medianHouseholdIncome": 118400,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 80,
-      "renterOccupiedPercent": 20,
+      "ownerOccupiedPercent": 69.0,
+      "renterOccupiedPercent": 31.0,
       "averageAnnualTaxBill": 11749.92,
       "monthlyTaxBill": 979.16,
       "taxBurdenPercentOfIncome": 9.92,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 49215000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 68.8,
+        "hispanicOrLatino": 13.5,
+        "asian": 9.4,
+        "blackOrAfricanAmerican": 8.3,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.496%, with an equalization ratio of 62.24%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Little Falls Township Center & Downtown",
+      "name": "Great Falls & Downtown Center",
       "zip": "07424",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Historic town center near Passaic River with brick colonials, walkable restaurants, and Montclair State University border",
       "medianIncome": 118400,
-      "medianAge": 40.5,
-      "avgTaxBill": 11749.92,
+      "medianAge": 41.5,
+      "avgTaxBill": 11750,
       "taxBurdenPercentIncome": 9.92,
       "avgMarketValue": 540000,
-      "ownerOccupied": 80,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 64.0,
+      "description": "Walkable village core featuring Morris Canal historic park, local dining, and Little Falls train station commuting to NYC.",
+      "taxDynamic": "Balanced mix of retail shops and single-family homes with Passaic Valley regional high school sharing."
     },
     {
-      "name": "Little Falls Township Residential Heights",
+      "name": "Singac & Route 46 Corridor",
       "zip": "07424",
-      "character": "Single-family residential neighborhood with tree-lined streets",
+      "character": "Residential and commercial neighborhood along Passaic River with historic single-family homes and river parklands",
       "medianIncome": 127872,
-      "medianAge": 42.2,
-      "avgTaxBill": 12455,
-      "taxBurdenPercentIncome": 9.92,
-      "avgMarketValue": 583200,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "medianAge": 41.5,
+      "avgTaxBill": 12337,
+      "taxBurdenPercentIncome": 9.65,
+      "avgMarketValue": 567000,
+      "ownerOccupied": 78.0,
+      "description": "Residential area near Passaic Valley High School campus, experiencing active township flood mitigation and buyouts.",
+      "taxDynamic": "Subject to flood insurance adjustments and river basin capital infrastructure bonds."
     }
   ],
   "equityAnalysis": {
-    "summary": "Little Falls Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Little Falls Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,32 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 1603,
-      "totalHouseholds": 4948,
+      "totalHouseholds": 5200,
       "enrolledPublicSchools": 1870,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 2071
     },
     "schools": [
       {
-        "name": "Little Falls Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Main St, Little Falls Township, NJ 07424",
-        "enrollment": 668,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Little Falls Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "100 E Main St, Little Falls, NJ 07424",
+        "enrollment": 1180,
+        "grades": "9-12",
+        "name": "Passaic Valley High School",
+        "type": "High School (Regional)"
       },
       {
-        "name": "Little Falls Township Middle School",
-        "type": "Middle School",
-        "address": "200 Paterson Ave, Little Falls Township, NJ 07424",
-        "enrollment": 534,
-        "grades": "6 to 8",
-        "neighborhood": "Little Falls Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "32 Stevens Ave, Little Falls, NJ 07424",
+        "enrollment": 420,
+        "grades": "5-8",
+        "name": "School No. 1",
+        "type": "Middle School"
       },
       {
-        "name": "Little Falls Township High School",
-        "type": "High School",
-        "address": "300 Wilmore Rd, Little Falls Township, NJ 07424",
-        "enrollment": 668,
-        "grades": "9 to 12",
-        "neighborhood": "Little Falls Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Long Rock Rd, Little Falls, NJ 07424",
+        "enrollment": 510,
+        "grades": "PreK-4",
+        "name": "School No. 2 / No. 3",
+        "type": "Elementary"
       }
     ]
   }

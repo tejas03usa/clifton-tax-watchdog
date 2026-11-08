@@ -3,16 +3,16 @@
     "source": "Certified 2026 Haledon Borough Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Haledon Borough",
-      "totalTaxLevy": 35014628,
-      "residentialLevyTotal": 29202200,
-      "commercialLevyTotal": 5812428,
-      "totalResidentialParcels": 3352,
+      "totalTaxLevy": 33983312,
+      "residentialLevyTotal": 28342082,
+      "commercialLevyTotal": 5641230,
+      "totalResidentialParcels": 2800,
       "equalizationRatio": 0.512,
       "certifiedTaxRateAssessed": 5.428,
       "certifiedTaxRateMarket": 2.771,
       "averageResidentialAssessment": 209879,
       "averageResidentialMarketValue": 410000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 65804,
       "commercialLevySharePct": 16.6
     }
   },
@@ -36,55 +36,146 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Haledon Borough residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 16.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 5.428,
+      "projectedTaxRateMarket": 2.771,
+      "avgResidentialTaxBill": 11392.23,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 83.4% of the levy, commercial ratables pay 16.6%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Haledon Borough public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Passaic County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Haledon Borough municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 21.1,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 5.102,
+      "projectedTaxRateMarket": 2.605,
+      "avgResidentialTaxBill": 10708.7,
+      "avgResidentialNetSavings": 683.53,
+      "avgMonthlySavings": 56.96,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 16.6,
+      "pilotSchoolSharePct": 51.2,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 5.238,
+      "projectedTaxRateMarket": 2.674,
+      "avgResidentialTaxBill": 10993.5,
+      "avgResidentialNetSavings": 398.73,
+      "avgMonthlySavings": 33.23,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Haledon Borough Public Schools eliminates residential tax shift for new students.",
+      "winners": "Haledon Borough Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 16.6,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 5.428,
+      "projectedTaxRateMarket": 2.771,
+      "avgResidentialTaxBill": 9642.23,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 21.6,
+      "pilotSchoolSharePct": 51.2,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 4.777,
+      "projectedTaxRateMarket": 2.438,
+      "avgResidentialTaxBill": 10025.16,
+      "avgResidentialNetSavings": 1367.07,
+      "avgMonthlySavings": 113.92,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Haledon Borough residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 167903,
-      "tax": 9113.79
+      "type": "Starter Residence / Condo",
+      "assessment": 157409,
+      "marketValue": 307500,
+      "currentTax": 8544.17,
+      "reformedTax": 7518.87,
+      "annualSavings": 1025.3
     },
     {
-      "type": "Average Haledon Borough Home",
+      "type": "Average Haledon Borough Single Family",
       "assessment": 209879,
-      "tax": 11392.23
+      "marketValue": 410000,
+      "currentTax": 11392.23,
+      "reformedTax": 10025.16,
+      "annualSavings": 1367.07
     },
     {
-      "type": "Executive Residence",
-      "assessment": 283337,
-      "tax": 15379.51
+      "type": "Executive / Estate Residence",
+      "assessment": 304325,
+      "marketValue": 594500,
+      "currentTax": 16518.74,
+      "reformedTax": 14536.49,
+      "annualSavings": 1982.25
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07508",
-      "name": "Haledon Borough Center & Downtown",
+      "name": "Belmont Ave Core & Roe St Heights",
       "medianHouseholdIncome": 82400,
-      "currentTaxBill": 11392.23,
+      "currentTaxBill": 11392,
       "currentTaxEffortPct": 13.83
     },
     {
       "zip": "07508",
-      "name": "Haledon Borough Residential Heights",
-      "medianHouseholdIncome": 88992,
-      "currentTaxBill": 12076,
-      "currentTaxEffortPct": 13.83
+      "name": "Botto House & Church St Historic District",
+      "medianHouseholdIncome": 86520,
+      "currentTaxBill": 11620,
+      "currentTaxEffortPct": 13.43
     }
   ],
   "policyRoadmap": [
@@ -101,6 +192,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

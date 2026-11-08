@@ -15,38 +15,38 @@
   "commercialShare": 35.8,
   "cityOverview": {
     "totalPopulation": 41200,
-    "totalHousingUnits": 15259,
+    "totalHousingUnits": 21800,
     "medianHouseholdIncome": 106800,
     "perCapitaIncome": 51264,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 64,
-    "renterOccupiedRate": 36,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 7.8,
+    "ownerOccupiedRate": 46.5,
+    "renterOccupiedRate": 53.5,
+    "foreignBornPercentage": 49.8,
+    "nonEnglishAtHomePercent": 62.5
   },
   "zipCodeComparison": [
     {
       "zip": "07024",
-      "areaName": "Fort Lee Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Fort Lee Borough Center, Residential & Parkway Districts",
+      "areaName": "Fort Lee Borough (ZIP 07024)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Palisade & Bluff Section, High-Rise Luxury & Center Core, Coytesville Section, Abbott Boulevard & West Fort Lee",
       "medianHouseholdIncome": 106800,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 64,
-      "renterOccupiedPercent": 36,
+      "ownerOccupiedPercent": 46.5,
+      "renterOccupiedPercent": 53.5,
       "averageAnnualTaxBill": 10672.93,
       "monthlyTaxBill": 889.41,
       "taxBurdenPercentOfIncome": 10.0,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 121500000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 25.3,
+        "hispanicOrLatino": 32.4,
+        "asian": 22.4,
+        "blackOrAfricanAmerican": 19.9,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 2.48%, with an equalization ratio of 74.2%.",
@@ -57,34 +57,60 @@
   ],
   "neighborhoods": [
     {
-      "name": "Fort Lee Borough Center & Downtown",
+      "name": "Palisade & Bluff Section",
       "zip": "07024",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 106800,
-      "medianAge": 40.5,
-      "avgTaxBill": 10672.93,
-      "taxBurdenPercentIncome": 10.0,
-      "avgMarketValue": 580000,
-      "ownerOccupied": 64,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Spectacular cliffside mansions, luxury modern estates, and high-end residences overlooking the Hudson River and Manhattan skyline",
+      "medianIncome": 170880,
+      "medianAge": 41.5,
+      "avgTaxBill": 16543,
+      "taxBurdenPercentIncome": 9.68,
+      "avgMarketValue": 899000,
+      "ownerOccupied": 82.0,
+      "description": "Elite cliffside enclave perched high above the Hudson River with unobstructed skyline views of Manhattan, adjacent to Palisades Interstate Park.",
+      "taxDynamic": "Top assessed tier where individual luxury home assessments exceed $1.8M and tax bills average $32,000+."
     },
     {
-      "name": "Fort Lee Borough Residential Heights",
+      "name": "High-Rise Luxury & Center Core",
       "zip": "07024",
-      "character": "Single-family residential neighborhood with tree-lined streets",
+      "character": "World-famous high-rise residential towers (The Modern, Horizon House, Med South, Century Towers) offering resort amenities",
+      "medianIncome": 128160,
+      "medianAge": 41.5,
+      "avgTaxBill": 12274,
+      "taxBurdenPercentIncome": 9.58,
+      "avgMarketValue": 667000,
+      "ownerOccupied": 62.0,
+      "description": "Urban luxury center transformed by the George Washington Bridge redevelopment, featuring high-rise living with direct Manhattan commuter transit.",
+      "taxDynamic": "High ratable density provides enormous municipal property tax levy revenues."
+    },
+    {
+      "name": "Coytesville Section",
+      "zip": "07024",
+      "character": "Historic northern residential neighborhood with single-family colonials, duplexes, and quiet neighborhood streets near Englewood Cliffs",
       "medianIncome": 115344,
-      "medianAge": 42.2,
-      "avgTaxBill": 11313,
-      "taxBurdenPercentIncome": 10.0,
-      "avgMarketValue": 626400,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "medianAge": 41.5,
+      "avgTaxBill": 11207,
+      "taxBurdenPercentIncome": 9.72,
+      "avgMarketValue": 609000,
+      "ownerOccupied": 68.0,
+      "description": "Historic film pioneer neighborhood with traditional suburban residential character and direct access to Route 9W.",
+      "taxDynamic": "Solid middle-tier residential base with consistent assessment appreciation."
+    },
+    {
+      "name": "Abbott Boulevard & West Fort Lee",
+      "zip": "07024",
+      "character": "Quiet residential street grid with well-kept single-family homes, two-family side-by-sides, and walkability to local schools",
+      "medianIncome": 112140,
+      "medianAge": 41.5,
+      "avgTaxBill": 10886,
+      "taxBurdenPercentIncome": 9.71,
+      "avgMarketValue": 591600,
+      "ownerOccupied": 55.0,
+      "description": "Diverse family neighborhood convenient to Fort Lee Community Center, local Korean and Japanese dining corridors, and elementary schools.",
+      "taxDynamic": "Balanced ratables supporting local education without disproportionate municipal debt burden."
     }
   ],
   "equityAnalysis": {
-    "summary": "Fort Lee Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Fort Lee Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +130,53 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 4944,
-      "totalHouseholds": 15259,
+      "totalHouseholds": 21800,
       "enrolledPublicSchools": 5768,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 6386
     },
     "schools": [
       {
-        "name": "Fort Lee Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Main St, Fort Lee Borough, NJ 07024",
-        "enrollment": 2060,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Fort Lee Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "3000 Lemoine Ave, Fort Lee, NJ 07024",
+        "enrollment": 1220,
+        "grades": "9-12",
+        "name": "Fort Lee High School",
+        "type": "High School"
       },
       {
-        "name": "Fort Lee Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Lemoine Ave, Fort Lee Borough, NJ 07024",
-        "enrollment": 1648,
-        "grades": "6 to 8",
-        "neighborhood": "Fort Lee Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "467 Stillwell Ave, Fort Lee, NJ 07024",
+        "enrollment": 640,
+        "grades": "7-8",
+        "name": "Lewis F. Cole Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Fort Lee Borough High School",
-        "type": "High School",
-        "address": "300 Center Ave, Fort Lee Borough, NJ 07024",
-        "enrollment": 2060,
-        "grades": "9 to 12",
-        "neighborhood": "Fort Lee Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "250 Hoym St, Fort Lee, NJ 07024",
+        "enrollment": 520,
+        "grades": "K-6",
+        "name": "School No. 1",
+        "type": "Elementary"
+      },
+      {
+        "address": "2047 Jones Rd, Fort Lee, NJ 07024",
+        "enrollment": 490,
+        "grades": "K-6",
+        "name": "School No. 2",
+        "type": "Elementary"
+      },
+      {
+        "address": "2405 2nd St, Fort Lee, NJ 07024",
+        "enrollment": 470,
+        "grades": "K-6",
+        "name": "School No. 3",
+        "type": "Elementary"
+      },
+      {
+        "address": "1193 Anderson Ave, Fort Lee, NJ 07024",
+        "enrollment": 450,
+        "grades": "K-6",
+        "name": "School No. 4",
+        "type": "Elementary"
       }
     ]
   }

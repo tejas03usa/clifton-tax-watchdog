@@ -3,16 +3,16 @@
     "source": "Certified 2026 Fair Lawn Borough Fiscal Baseline & NJ Title 54",
     "certifiedBaseline": {
       "municipality": "Fair Lawn Borough",
-      "totalTaxLevy": 153939466,
-      "residentialLevyTotal": 124998846,
-      "commercialLevyTotal": 28940620,
-      "totalResidentialParcels": 12944,
+      "totalTaxLevy": 153264806,
+      "residentialLevyTotal": 124451022,
+      "commercialLevyTotal": 28813784,
+      "totalResidentialParcels": 12500,
       "equalizationRatio": 0.682,
       "certifiedTaxRateAssessed": 3.512,
       "certifiedTaxRateMarket": 2.395,
       "averageResidentialAssessment": 416020,
       "averageResidentialMarketValue": 610000,
-      "annualPilotRevenueCollected": 250000,
+      "annualPilotRevenueCollected": 213351,
       "commercialLevySharePct": 18.8
     }
   },
@@ -36,55 +36,160 @@
   },
   "presetScenarios": [
     {
-      "id": "unified_blueprint",
-      "name": "State Formula Aid & Ratable Equalization",
-      "badge": "RECOMMENDED",
-      "badgeClass": "badge-recommended",
-      "summary": "Achieving full state formula school aid and expanding commercial ratables reduces residential millage.",
-      "winners": "Fair Lawn Borough residential homeowners and fixed-income seniors.",
-      "losers": "Statewide discretionary budget lines."
+      "id": "status_quo",
+      "name": "Status Quo (Current Baseline 2026)",
+      "badge": "Current Law",
+      "badgeClass": "badge-danger",
+      "commercialSharePct": 18.8,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.512,
+      "projectedTaxRateMarket": 2.395,
+      "avgResidentialTaxBill": 14610.62,
+      "avgResidentialNetSavings": 0,
+      "avgMonthlySavings": 0,
+      "fairnessEquityScore": 42,
+      "summary": "Existing certified baseline for 2026. Homeowners shoulder 81.2% of the levy, commercial ratables pay 18.8%, and schools receive zero PILOT funds.",
+      "winners": "Commercial entities with long-term abatements and corporate tax appeal attorneys.",
+      "losers": "Single-family homeowners, fixed-income seniors, and Fair Lawn Borough public school students."
     },
     {
-      "id": "scenario_shared_services",
-      "name": "Countywide Shared Services & Joint Purchasing",
-      "badge": "EFFICIENCY",
-      "badgeClass": "badge-efficiency",
-      "summary": "Partnering with Bergen County on joint dispatch, specialized public works equipment, and health benefit pooling.",
-      "winners": "Fair Lawn Borough municipal taxpayers.",
-      "losers": "Redundant standalone administrative vendor contracts."
+      "id": "commercial_protection",
+      "name": "Commercial Ratable Protection & Reval Equity",
+      "badge": "RATABLE BALANCE",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 23.3,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.301,
+      "projectedTaxRateMarket": 2.251,
+      "avgResidentialTaxBill": 13733.98,
+      "avgResidentialNetSavings": 876.64,
+      "avgMonthlySavings": 73.05,
+      "fairnessEquityScore": 68,
+      "summary": "Full commercial reassessment ensures corporate properties pay on 100% fair market value, expanding commercial share and cutting homeowner millage.",
+      "winners": "Residential homeowners and small local merchants.",
+      "losers": "Under-assessed corporate office parks and strip center operators."
+    },
+    {
+      "id": "pilot_school_sharing",
+      "name": "State-Mandated PILOT School Sharing",
+      "badge": "SCHOOL EQUITY",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 18.8,
+      "pilotSchoolSharePct": 64.5,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 0.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.389,
+      "projectedTaxRateMarket": 2.311,
+      "avgResidentialTaxBill": 14099.25,
+      "avgResidentialNetSavings": 511.37,
+      "avgMonthlySavings": 42.61,
+      "fairnessEquityScore": 72,
+      "summary": "Statutory distribution of municipal PILOT service fees to Fair Lawn Borough Public Schools eliminates residential tax shift for new students.",
+      "winners": "Fair Lawn Borough Public Schools students and local residential taxpayers.",
+      "losers": "Municipal discretionary surplus accounts."
+    },
+    {
+      "id": "senior_freeze_anchor",
+      "name": "State Property Tax Relief Integration (ANCHOR + PTR)",
+      "badge": "SENIOR RELIEF",
+      "badgeClass": "badge-info",
+      "commercialSharePct": 18.8,
+      "pilotSchoolSharePct": 0.0,
+      "revaluationEnabled": false,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 0.0,
+      "projectedTaxRate": 3.512,
+      "projectedTaxRateMarket": 2.395,
+      "avgResidentialTaxBill": 12860.62,
+      "avgResidentialNetSavings": 1750.0,
+      "avgMonthlySavings": 145.83,
+      "fairnessEquityScore": 79,
+      "summary": "100% enrollment of eligible seniors and working-class families in ANCHOR ($1,500\u2013$1,750) and Senior Freeze (PTR) programs.",
+      "winners": "Fixed-income seniors (age 65+), disabled homeowners, and low-to-moderate income renters.",
+      "losers": "Bureaucratic state application friction."
+    },
+    {
+      "id": "reval_reform",
+      "name": "Comprehensive Tax Modernization Blueprint",
+      "badge": "COMPLETE REFORM",
+      "badgeClass": "badge-recommended",
+      "commercialSharePct": 23.8,
+      "pilotSchoolSharePct": 64.5,
+      "revaluationEnabled": true,
+      "circuitBreakerCapPct": 5.0,
+      "utilityUnbundlingM": 1.5,
+      "projectedTaxRate": 3.091,
+      "projectedTaxRateMarket": 2.108,
+      "avgResidentialTaxBill": 12857.35,
+      "avgResidentialNetSavings": 1753.27,
+      "avgMonthlySavings": 146.11,
+      "fairnessEquityScore": 94,
+      "summary": "All 4 major taxpayer reforms enacted: commercial reassessment, PILOT school sharing, maximum ANCHOR enrollment, and shared municipal dispatch.",
+      "winners": "All Fair Lawn Borough residential homeowners, school families, and local businesses.",
+      "losers": "Special-interest tax appeal lobbyists and unvetted PILOT developers."
     }
   ],
   "sampleHomeProfiles": [
     {
-      "type": "Starter Residence",
-      "assessment": 332816,
-      "tax": 11688.5
+      "type": "Starter Residence / Condo",
+      "assessment": 312015,
+      "marketValue": 457500,
+      "currentTax": 10957.97,
+      "reformedTax": 9643.01,
+      "annualSavings": 1314.96
     },
     {
-      "type": "Average Fair Lawn Borough Home",
+      "type": "Average Fair Lawn Borough Single Family",
       "assessment": 416020,
-      "tax": 14610.62
+      "marketValue": 610000,
+      "currentTax": 14610.62,
+      "reformedTax": 12857.35,
+      "annualSavings": 1753.27
     },
     {
-      "type": "Executive Residence",
-      "assessment": 561627,
-      "tax": 19724.34
+      "type": "Executive / Estate Residence",
+      "assessment": 603229,
+      "marketValue": 884500,
+      "currentTax": 21185.4,
+      "reformedTax": 18643.15,
+      "annualSavings": 2542.25
     }
   ],
   "neighborhoodEquityImpact": [
     {
       "zip": "07410",
-      "name": "Fair Lawn Borough Center & Downtown",
-      "medianHouseholdIncome": 134200,
-      "currentTaxBill": 14610.62,
+      "name": "Radburn Historic Planned Community",
+      "medianHouseholdIncome": 167750,
+      "currentTaxBill": 17825,
+      "currentTaxEffortPct": 10.63
+    },
+    {
+      "zip": "07410",
+      "name": "River Road & West District",
+      "medianHouseholdIncome": 131516,
+      "currentTaxBill": 14318,
       "currentTaxEffortPct": 10.89
     },
     {
       "zip": "07410",
-      "name": "Fair Lawn Borough Residential Heights",
+      "name": "Memorial Park & Berdan Grove",
       "medianHouseholdIncome": 144936,
-      "currentTaxBill": 15487,
-      "currentTaxEffortPct": 10.89
+      "currentTaxBill": 15341,
+      "currentTaxEffortPct": 10.58
+    },
+    {
+      "zip": "07410",
+      "name": "Warren Point & Eastern Border",
+      "medianHouseholdIncome": 136884,
+      "currentTaxBill": 14611,
+      "currentTaxEffortPct": 10.67
     }
   ],
   "policyRoadmap": [
@@ -101,6 +206,13 @@
       "timeline": "Months 6\u201312",
       "description": "Maintain certified assessments within 5% of equalized market value to eliminate county tax appeal exposure.",
       "impact": "Protects against sudden tax appeal refund spikes."
+    },
+    {
+      "step": 3,
+      "title": "Pass PILOT Accountability Ordinance",
+      "timeline": "Months 12\u201318",
+      "description": "Require all future long-term tax exemption agreements to allocate an education impact fee directly to public schools.",
+      "impact": "Safeguards residential homeowners from absorption of school funding burdens."
     }
   ]
 }

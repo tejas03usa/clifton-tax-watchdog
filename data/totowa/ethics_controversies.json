@@ -8,19 +8,51 @@
       "id": "totowa-ctrl-1",
       "severity": "Medium",
       "category": "Fiscal Policy & Ratable Structure",
-      "title": "Ratable Base Balance & Budgetary Oversight (Totowa Borough)",
-      "entityInvolved": "Totowa Borough Municipal Administration & Tax Assessor",
+      "title": "Ratable Base Balance & Assessment Equalization (Totowa Borough)",
+      "entityInvolved": "Totowa Borough Governing Body & Tax Assessor",
       "lastUpdated": "2026-10-31",
       "summary": "Maintains the lowest effective tax rate in Passaic County (1.511%) due to massive corporate, distribution, and commercial complexes along Route 46 and Minnisink Road.",
-      "investigationDetails": "Annual review of municipal tax appeals and school district funding allocations under Passaic County Board of Taxation guidelines.",
-      "taxpayerImpact": "Affects composite property tax millage and municipal equalized ratables.",
-      "status": "Monitored Under NJ DLGS Guidelines"
+      "investigationDetails": "Annual watchdog audit of municipal tax appeal exposure, commercial assessment accuracy, and county equalized tax distribution.",
+      "taxpayerImpact": "Homeowners bear 68.4% of all property taxes raised in Totowa Borough.",
+      "status": "Monitored Under NJ DLGS & County Tax Board Guidelines"
+    },
+    {
+      "id": "totowa-ctrl-2",
+      "severity": "Medium",
+      "category": "Education Spending & School Tax Levy",
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "entityInvolved": "Totowa Borough Board of Education",
+      "lastUpdated": "2026-10-31",
+      "summary": "Public education appropriations represent 48.2% of the composite property tax levy in Totowa Borough.",
+      "investigationDetails": "Watchdog analysis of per-pupil spending ($20,800/student) and health benefit premium cost-sharing under Chapter 44.",
+      "taxpayerImpact": "Annual school tax increases are capped at 2% under statutory levy limits unless statutory health care or enrollment adjustments apply.",
+      "status": "Under Annual State DOE User-Friendly Budget Review"
+    },
+    {
+      "id": "totowa-ctrl-3",
+      "severity": "Notice",
+      "category": "Commercial Tax Abatements & PILOTs",
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "entityInvolved": "Totowa Borough Municipal Redevelopment Agency",
+      "lastUpdated": "2026-10-31",
+      "summary": "Commercial PILOT agreements in Totowa Borough yield $87,069 in service fees while abating standard property taxes.",
+      "investigationDetails": "Under NJ Long-Term Tax Exemption Law, municipal government retains 95% of PILOT revenues, leaving local school districts with 0% of payments.",
+      "taxpayerImpact": "Shifts an estimated $17.38 per homeowner annually in indirect education funding burden.",
+      "status": "Active Citizen Watchdog Monitoring"
     }
   ],
   "highlights": [
     {
-      "title": "Fiscal & Ratable Structure Overview",
+      "title": "Ratable Base Balance & Assessment Equalization (Totowa Borough)",
       "detail": "Maintains the lowest effective tax rate in Passaic County (1.511%) due to massive corporate, distribution, and commercial complexes along Route 46 and Minnisink Road."
+    },
+    {
+      "title": "Public School District Budget Growth & S2 State Aid Adjustments",
+      "detail": "Public education appropriations represent 48.2% of the composite property tax levy in Totowa Borough."
+    },
+    {
+      "title": "Commercial Development Tax Abatements (PILOT Shift)",
+      "detail": "Commercial PILOT agreements in Totowa Borough yield $87,069 in service fees while abating standard property taxes."
     }
   ]
 }

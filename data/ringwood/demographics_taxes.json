@@ -15,38 +15,38 @@
   "commercialShare": 8.8,
   "cityOverview": {
     "totalPopulation": 11700,
-    "totalHousingUnits": 4333,
+    "totalHousingUnits": 4600,
     "medianHouseholdIncome": 134200,
     "perCapitaIncome": 64416,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 91,
-    "renterOccupiedRate": 9,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 4.0,
+    "ownerOccupiedRate": 89.0,
+    "renterOccupiedRate": 11.0,
+    "foreignBornPercentage": 12.5,
+    "nonEnglishAtHomePercent": 16.4
   },
   "zipCodeComparison": [
     {
       "zip": "07456",
-      "areaName": "Ringwood Borough (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Ringwood Borough Center, Residential & Parkway Districts",
+      "areaName": "Ringwood Borough (ZIP 07456)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Cupsaw Lake & Erskine Lakes Section, Stonetown & Skyline Drive Enclave",
       "medianHouseholdIncome": 134200,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 91,
-      "renterOccupiedPercent": 9,
+      "ownerOccupiedPercent": 89.0,
+      "renterOccupiedPercent": 11.0,
       "averageAnnualTaxBill": 13660.15,
       "monthlyTaxBill": 1138.35,
       "taxBurdenPercentOfIncome": 10.18,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 49470000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 81.2,
+        "hispanicOrLatino": 8.1,
+        "asian": 5.6,
+        "blackOrAfricanAmerican": 5.0,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 4.259%, with an equalization ratio of 61.68%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Ringwood Borough Center & Downtown",
+      "name": "Cupsaw Lake & Erskine Lakes Section",
       "zip": "07456",
-      "character": "Civic core, local commercial businesses, and historic residences",
-      "medianIncome": 134200,
-      "medianAge": 40.5,
-      "avgTaxBill": 13660.15,
-      "taxBurdenPercentIncome": 10.18,
-      "avgMarketValue": 520000,
-      "ownerOccupied": 91,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "character": "Wooded private lake community with private beaches, clubhouses, custom rustic ranches, and log-cabin style colonials",
+      "medianIncome": 154330,
+      "medianAge": 41.5,
+      "avgTaxBill": 15299,
+      "taxBurdenPercentIncome": 9.91,
+      "avgMarketValue": 582400,
+      "ownerOccupied": 94.0,
+      "description": "Scenic lakeside mountain community situated in the Ramapo Mountains adjacent to Ringwood State Park and Skylands Manor.",
+      "taxDynamic": "High reliance on residential ratables due to extensive state-owned parkland and watershed protection zones (Highlands Act)."
     },
     {
-      "name": "Ringwood Borough Residential Heights",
+      "name": "Stonetown & Skyline Drive Enclave",
       "zip": "07456",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 144936,
-      "medianAge": 42.2,
-      "avgTaxBill": 14480,
-      "taxBurdenPercentIncome": 10.18,
-      "avgMarketValue": 561600,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Rustic mountain retreats, custom log homes, and acreage properties nestled deep in Ramapo mountain passes",
+      "medianIncome": 158356,
+      "medianAge": 41.5,
+      "avgTaxBill": 15709,
+      "taxBurdenPercentIncome": 9.92,
+      "avgMarketValue": 598000,
+      "ownerOccupied": 95.0,
+      "description": "Secluded Highlands enclave offering mountain privacy, hiking trails, and horse properties.",
+      "taxDynamic": "Low service density with well water and private septic systems."
     }
   ],
   "equityAnalysis": {
-    "summary": "Ringwood Borough maintains a consistent residential tax base across its residential zones.",
+    "summary": "Ringwood Borough maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,39 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 1404,
-      "totalHouseholds": 4333,
+      "totalHouseholds": 4600,
       "enrolledPublicSchools": 1638,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 1814
     },
     "schools": [
       {
-        "name": "Ringwood Borough Elementary School",
-        "type": "Elementary",
-        "address": "100 Sloatsburg Rd, Ringwood Borough, NJ 07456",
-        "enrollment": 585,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Ringwood Borough Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "205 Conklintown Rd, Wanaque, NJ 07465",
+        "enrollment": 920,
+        "grades": "9-12",
+        "name": "Lakeland Regional High School",
+        "type": "High School (Regional)"
       },
       {
-        "name": "Ringwood Borough Middle School",
-        "type": "Middle School",
-        "address": "200 Skyline Dr, Ringwood Borough, NJ 07456",
-        "enrollment": 468,
-        "grades": "6 to 8",
-        "neighborhood": "Ringwood Borough Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "130 Valley Rd, Ringwood, NJ 07456",
+        "enrollment": 460,
+        "grades": "6-8",
+        "name": "Martin J. Ryerson Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Ringwood Borough High School",
-        "type": "High School",
-        "address": "300 Greenwood Lake Turnpike, Ringwood Borough, NJ 07456",
-        "enrollment": 585,
-        "grades": "9 to 12",
-        "neighborhood": "Ringwood Borough Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Ringwood, NJ 07456",
+        "enrollment": 280,
+        "grades": "K-5",
+        "name": "Peter Cooper Elementary School",
+        "type": "Elementary"
+      },
+      {
+        "address": "Erskine Rd, Ringwood, NJ 07456",
+        "enrollment": 290,
+        "grades": "K-5",
+        "name": "Robert Erskine Elementary School",
+        "type": "Elementary"
       }
     ]
   }

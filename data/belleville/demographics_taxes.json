@@ -15,38 +15,38 @@
   "commercialShare": 17.5,
   "cityOverview": {
     "totalPopulation": 38200,
-    "totalHousingUnits": 14148,
+    "totalHousingUnits": 14800,
     "medianHouseholdIncome": 85600,
     "perCapitaIncome": 41088,
     "medianAge": 41.5,
-    "povertyRate": 3.8,
-    "ownerOccupiedRate": 82,
-    "renterOccupiedRate": 18,
-    "foreignBornPercentage": 22.4,
-    "nonEnglishAtHomePercent": 26.8
+    "povertyRate": 11.2,
+    "ownerOccupiedRate": 45.0,
+    "renterOccupiedRate": 55.0,
+    "foreignBornPercentage": 39.5,
+    "nonEnglishAtHomePercent": 52.8
   },
   "zipCodeComparison": [
     {
       "zip": "07109",
-      "areaName": "Belleville Township (Municipal Roll)",
-      "populationShare": 100,
-      "neighborhoodsIncluded": "Belleville Township Center, Residential & Parkway Districts",
+      "areaName": "Belleville Township (ZIP 07109)",
+      "populationShare": 100.0,
+      "neighborhoodsIncluded": "Silver Lake & Belleville Heights, Valley & Washington Ave Commercial Core",
       "medianHouseholdIncome": 85600,
       "medianAge": 41.5,
-      "ownerOccupiedPercent": 82,
-      "renterOccupiedPercent": 18,
+      "ownerOccupiedPercent": 45.0,
+      "renterOccupiedPercent": 55.0,
       "averageAnnualTaxBill": 12147.2,
       "monthlyTaxBill": 1012.27,
       "taxBurdenPercentOfIncome": 14.19,
-      "shareOfTotalTaxBase": 100,
+      "shareOfTotalTaxBase": 100.0,
       "totalResidentialLevyContribution": 124290000,
-      "schoolEnrollmentShare": 100,
+      "schoolEnrollmentShare": 100.0,
       "demographicProfile": {
-        "whiteNonHispanic": 64.2,
-        "hispanicOrLatino": 17.5,
-        "asian": 12.1,
-        "blackOrAfricanAmerican": 4.1,
-        "otherOrMultiracial": 2.1
+        "whiteNonHispanic": 40.8,
+        "hispanicOrLatino": 25.7,
+        "asian": 17.8,
+        "blackOrAfricanAmerican": 15.8,
+        "otherOrMultiracial": 3.0
       },
       "keyFindings": [
         "Certified composite property tax rate is 3.91%, with an equalization ratio of 66.1%.",
@@ -57,34 +57,34 @@
   ],
   "neighborhoods": [
     {
-      "name": "Belleville Township Center & Downtown",
+      "name": "Silver Lake & Belleville Heights",
       "zip": "07109",
-      "character": "Civic core, local commercial businesses, and historic residences",
+      "character": "Historic 'Cherry Blossom Capital' bordering Branch Brook Park with traditional two-family homes, cape cods, and light rail access",
       "medianIncome": 85600,
-      "medianAge": 40.5,
-      "avgTaxBill": 12147.2,
+      "medianAge": 41.5,
+      "avgTaxBill": 12147,
       "taxBurdenPercentIncome": 14.19,
       "avgMarketValue": 470000,
-      "ownerOccupied": 82,
-      "description": "Historic town center surrounding municipal hall, library, and retail corridors.",
-      "taxDynamic": "Balanced residential and commercial ratables supporting general municipal levy."
+      "ownerOccupied": 48.0,
+      "description": "Township famous for the annual National Cherry Blossom Festival at Essex County Branch Brook Park.",
+      "taxDynamic": "Certified tax rate of 3.842% with major state formula aid supporting Belleville Public Schools."
     },
     {
-      "name": "Belleville Township Residential Heights",
+      "name": "Valley & Washington Ave Commercial Core",
       "zip": "07109",
-      "character": "Single-family residential neighborhood with tree-lined streets",
-      "medianIncome": 92448,
-      "medianAge": 42.2,
-      "avgTaxBill": 12876,
-      "taxBurdenPercentIncome": 14.19,
-      "avgMarketValue": 507600,
-      "ownerOccupied": 92.0,
-      "description": "Quiet suburban residential zone convenient to neighborhood public schools and community parks.",
-      "taxDynamic": "Primarily residential tax base with direct contribution to school district funding."
+      "character": "Dense town center with retail storefronts, two-family residences, and townhomes near Passaic River",
+      "medianIncome": 78752,
+      "medianAge": 41.5,
+      "avgTaxBill": 11540,
+      "taxBurdenPercentIncome": 14.65,
+      "avgMarketValue": 446500,
+      "ownerOccupied": 38.0,
+      "description": "Vibrant commercial and residential corridor with convenient bus connections to Newark and NYC.",
+      "taxDynamic": "Commercial retail ratables provide essential non-residential tax support."
     }
   ],
   "equityAnalysis": {
-    "summary": "Belleville Township maintains a consistent residential tax base across its residential zones.",
+    "summary": "Belleville Township maintains a certified residential tax roll across its neighborhoods.",
     "keyTakeaways": [
       {
         "title": "Property Tax Burden & Household Income",
@@ -104,47 +104,32 @@
     "citywide": {
       "householdsWithChildrenPercent": 36.4,
       "householdsWithChildrenUnder18": 4584,
-      "totalHouseholds": 14148,
+      "totalHouseholds": 14800,
       "enrolledPublicSchools": 5348,
       "enrolledPublicPercent": 89.2,
       "totalSchoolAgeChildren": 5921
     },
     "schools": [
       {
-        "name": "Belleville Township Elementary School",
-        "type": "Elementary",
-        "address": "100 Washington Ave, Belleville Township, NJ 07109",
-        "enrollment": 1910,
-        "grades": "Pre-K to 5",
-        "neighborhood": "Belleville Township Center",
-        "familiesWithKidsPercentInZone": 42.0,
-        "studentTeacherRatio": "11.8:1",
-        "economicallyDisadvantagedPercent": 14.2,
-        "multilingualLearnersPercent": 6.5
+        "address": "100 Passaic Ave, Belleville, NJ 07109",
+        "enrollment": 1420,
+        "grades": "9-12",
+        "name": "Belleville High School",
+        "type": "High School"
       },
       {
-        "name": "Belleville Township Middle School",
-        "type": "Middle School",
-        "address": "200 Joralemon St, Belleville Township, NJ 07109",
-        "enrollment": 1528,
-        "grades": "6 to 8",
-        "neighborhood": "Belleville Township Residential",
-        "familiesWithKidsPercentInZone": 38.5,
-        "studentTeacherRatio": "11.2:1",
-        "economicallyDisadvantagedPercent": 13.8,
-        "multilingualLearnersPercent": 5.8
+        "address": "Washington Ave, Belleville, NJ 07109",
+        "enrollment": 680,
+        "grades": "7-8",
+        "name": "Belleville Middle School",
+        "type": "Middle School"
       },
       {
-        "name": "Belleville Township High School",
-        "type": "High School",
-        "address": "300 Union Ave, Belleville Township, NJ 07109",
-        "enrollment": 1910,
-        "grades": "9 to 12",
-        "neighborhood": "Belleville Township Parkway District",
-        "familiesWithKidsPercentInZone": 35.0,
-        "studentTeacherRatio": "12.1:1",
-        "economicallyDisadvantagedPercent": 12.5,
-        "multilingualLearnersPercent": 5.2
+        "address": "Joralemon St, Belleville, NJ 07109",
+        "enrollment": 540,
+        "grades": "K-6",
+        "name": "School No. 3 / No. 4",
+        "type": "Elementary"
       }
     ]
   }

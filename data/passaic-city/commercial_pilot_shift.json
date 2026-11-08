@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Passaic County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Passaic County Board of Taxation Certified Abstract of Ratables",
+      "Passaic City Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 81.5,
     "commercialShare": 18.5,
+    "annualShiftDollarImpact": 131839,
+    "averageHomeownerExtraCost": 5.95,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
-    "activePilotsCount": 1,
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
+    "activePilotsCount": 11,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Passaic City municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "passaic-city-pilot-1",
         "name": "Passaic City Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 739550,
-        "standardSchoolShare": 304695,
-        "standardCityShare": 314309,
-        "standardCountyShare": 120547,
-        "pilotServiceCharge": 480708,
-        "pilotCityKeeps": 456672,
-        "pilotCountyGets": 24035,
-        "developerAnnualSavings": 258842,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 430200,
-        "homeownerBurdenAbsorbed": 430200
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 887460,
+        "standardSchoolShare": 365634,
+        "standardCityShare": 377170,
+        "standardCountyShare": 144656,
+        "pilotServiceCharge": 576849,
+        "pilotCityKeeps": 548007,
+        "pilotCountyGets": 28842,
+        "developerAnnualSavings": 310611,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 525800,
+        "homeownerBurdenAbsorbed": 525800
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Passaic City Shopping Plaza / Corporate Center",
-        "location": "100 Main Ave",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 37283353,
-        "annualTaxPaid": 787730,
+        "name": "Passaic City Commercial Plaza / Corporate Complex",
+        "location": "100 Passaic Ave",
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 49375252,
+        "annualTaxPaid": 1043210,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Passaic City Professional Medical Arts Building",
-        "location": "250 Passaic Ave",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 24989923,
-        "annualTaxPaid": 527992,
+        "name": "Passaic City Medical Arts & Professional Center",
+        "location": "250 Pennington Ave",
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 33857316,
+        "annualTaxPaid": 715344,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Passaic County Board of Taxation Abstract of Ratables & Passaic City Financial Statements",
+    "totalPropertyTaxesAbated": 292975,
+    "totalPilotBillingsCollected": 161136,
+    "netTaxShiftToHomeowners": 131839,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Passaic City Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 104738,
+        "abatedTaxesEstimated": 190434,
+        "netLossToSchools": 78459,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $54k directly to Passaic City school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Passaic County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }

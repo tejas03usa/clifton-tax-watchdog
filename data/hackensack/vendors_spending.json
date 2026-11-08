@@ -1,36 +1,57 @@
 {
   "metadata": {
-    "source": "Hackensack City Bill Lists & Annual Audit",
+    "source": "Hackensack City Bill Lists & Annual Financial Audit",
     "certifiedYear": 2026
   },
   "vendors": [
     {
       "vendorName": "NJ State Health Benefits Program (SHBP / BMED)",
-      "entityServed": "Hackensack City Municipal & School Staff",
+      "entityServed": "Hackensack City Municipal & School Workforce",
       "category": "Employee Health & Prescription Benefits",
       "annualEstimatedSpend": 16576000,
-      "description": "Health, dental, and prescription insurance coverage for municipal and public safety workforce."
-    },
-    {
-      "vendorName": "Tilcon New Jersey / Campbell Foundry",
-      "entityServed": "Hackensack City DPW (Public Works)",
-      "category": "Infrastructure, Road Resurfacing & Asphalt",
-      "annualEstimatedSpend": 5920000,
-      "description": "Curbside paving, asphalt resurfacing, and catch basin storm sewer drainage materials."
+      "description": "Comprehensive medical, prescription drug, and dental health benefits for municipal personnel and public safety workforce."
     },
     {
       "vendorName": "Bergen County Joint Insurance Fund (JIF)",
       "entityServed": "Hackensack City Municipal Government",
-      "category": "Municipal Insurance & Workers Compensation",
-      "annualEstimatedSpend": 4736000,
-      "description": "Pooled municipal property, statutory liability, and workers compensation risk coverage."
+      "category": "Municipal Property & Workers Compensation Insurance",
+      "annualEstimatedSpend": 5328000,
+      "description": "Pooled municipal statutory liability, public officials insurance, police professional liability, and statutory workers comp."
     },
     {
-      "vendorName": "Public Service Electric & Gas (PSE&G) / Jersey Central Power",
+      "vendorName": "Tilcon New Jersey / Campbell Foundry",
+      "entityServed": "Hackensack City Department of Public Works (DPW)",
+      "category": "Road Resurfacing, Asphalt & Storm Drainage Materials",
+      "annualEstimatedSpend": 4736000,
+      "description": "Annual roadway repaving, bituminous asphalt concrete, curbside catch basin maintenance, and storm drainage infrastructure."
+    },
+    {
+      "vendorName": "Public Service Electric & Gas (PSE&G) / JCP&L",
       "entityServed": "Hackensack City Municipal & School Facilities",
-      "category": "Utilities & Street Lighting",
+      "category": "Utilities, Street Lighting & Facility Power",
       "annualEstimatedSpend": 4144000,
-      "description": "Municipal electricity, traffic signals, facility heating, and municipal street lighting grid."
+      "description": "Municipal electricity, roadway street lighting grid, public building natural gas heating, and traffic signal power."
+    },
+    {
+      "vendorName": "Waste Management of NJ / Suburban Disposal",
+      "entityServed": "Hackensack City Residents & Municipal Facilities",
+      "category": "Curbside Solid Waste & Single-Stream Recycling",
+      "annualEstimatedSpend": 5920000,
+      "description": "Weekly curbside residential trash collection, mandatory single-stream recycling, and county transfer station tipping fees."
+    },
+    {
+      "vendorName": "PKF O'Connor Davies / Nisivoccia LLP",
+      "entityServed": "Hackensack City Municipal Finance Department",
+      "category": "Registered Municipal Accountants (RMA) & Annual Audit",
+      "annualEstimatedSpend": 414400,
+      "description": "Statutory Annual Financial Statement audit, federal single audit compliance, and User-Friendly Budget certification."
+    },
+    {
+      "vendorName": "Maser Consulting / Colliers Engineering",
+      "entityServed": "Hackensack City Planning Board & DPW",
+      "category": "Municipal Engineering & Environmental Consulting",
+      "annualEstimatedSpend": 710400,
+      "description": "Municipal capital road resurfacing design, stormwater flood compliance, and land use development plan reviews."
     }
   ]
 }

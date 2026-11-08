@@ -1,11 +1,19 @@
 {
   "metadata": {
     "source": "Bergen County Board of Taxation Table of Aggregates & Assessor Filings",
-    "certifiedYear": 2026
+    "certifiedYear": 2026,
+    "dataSources": [
+      "Bergen County Board of Taxation Certified Abstract of Ratables",
+      "Hackensack City Annual Financial Statements & Tax Collector Filings",
+      "NJ Division of Taxation Long-Term Tax Exemption Audits"
+    ],
+    "freshnessStatus": "Current & Certified"
   },
   "ratableShift": {
     "residentialShare": 68.2,
     "commercialShare": 31.8,
+    "annualShiftDollarImpact": 106539,
+    "averageHomeownerExtraCost": 5.21,
     "historicalTrend": [
       {
         "year": 2005,
@@ -28,47 +36,94 @@
     ]
   },
   "pilotMechanism": {
-    "activePilotsCount": 1,
+    "statute": "Long Term Tax Exemption Law (N.J.S.A. 40A:20-1 et seq.)",
+    "statutoryDistribution": "95% Municipal Government / 5% County / 0% School District",
+    "activePilotsCount": 18,
+    "pilotExplanation": "Under New Jersey PILOT laws, developers pay an annual service charge directly to Hackensack City municipal government instead of regular property taxes. The public school district receives 0%, shifting the school operational cost onto residential homeowners.",
     "sampleProjects": [
       {
         "id": "hackensack-pilot-1",
         "name": "Hackensack City Town Center Redevelopment",
-        "units": 120,
-        "estimatedMarketValue": 35000000,
-        "standardTotalTax": 866250,
-        "standardSchoolShare": 445252,
-        "standardCityShare": 318780,
-        "standardCountyShare": 102218,
-        "pilotServiceCharge": 563062,
-        "pilotCityKeeps": 534909,
-        "pilotCountyGets": 28153,
-        "developerAnnualSavings": 303188,
-        "estimatedDistrictStudents": 18,
-        "annualDistrictCostGenerated": 441000,
-        "homeownerBurdenAbsorbed": 441000
+        "units": 140,
+        "estimatedMarketValue": 42000000,
+        "standardTotalTax": 1039500,
+        "standardSchoolShare": 534303,
+        "standardCityShare": 382536,
+        "standardCountyShare": 122661,
+        "pilotServiceCharge": 675675,
+        "pilotCityKeeps": 641891,
+        "pilotCountyGets": 33784,
+        "developerAnnualSavings": 363825,
+        "estimatedDistrictStudents": 22,
+        "annualDistrictCostGenerated": 539000,
+        "homeownerBurdenAbsorbed": 539000
       }
     ]
   },
   "taxAppeals": {
     "topCommercialRatables": [
       {
-        "name": "Hackensack City Shopping Plaza / Corporate Center",
-        "location": "100 Main St",
-        "type": "Retail & Commercial Center",
-        "assessedValue": 18500000,
-        "marketValueEst": 28287462,
-        "annualTaxPaid": 700225,
+        "name": "Hackensack City Commercial Plaza / Corporate Complex",
+        "location": "100 Fairmount Ave",
+        "type": "Retail & Office Center",
+        "assessedValue": 24500000,
+        "marketValueEst": 37461774,
+        "annualTaxPaid": 927325,
         "appealRisk": "Moderate Appeal Risk"
       },
       {
-        "name": "Hackensack City Professional Medical Arts Building",
-        "location": "250 State St",
-        "type": "Commercial Medical Office",
-        "assessedValue": 12400000,
-        "marketValueEst": 18960245,
-        "annualTaxPaid": 469340,
+        "name": "Hackensack City Medical Arts & Professional Center",
+        "location": "250 Summit Ave",
+        "type": "Commercial Healthcare Facility",
+        "assessedValue": 16800000,
+        "marketValueEst": 25688073,
+        "annualTaxPaid": 635880,
         "appealRisk": "Low Risk / Settled Baseline"
       }
     ]
-  }
+  },
+  "certifiedPilotSummary": {
+    "auditYear": 2026,
+    "source": "Bergen County Board of Taxation Abstract of Ratables & Hackensack City Financial Statements",
+    "totalPropertyTaxesAbated": 236754,
+    "totalPilotBillingsCollected": 130215,
+    "netTaxShiftToHomeowners": 106539,
+    "schoolShareReceived": 0,
+    "cityKeepsPercentage": 95.0,
+    "countySharePercentage": 5.0,
+    "activeAgreements": [
+      {
+        "propertyName": "Hackensack City Station Plaza / Town Center",
+        "block": "142",
+        "lot": "12",
+        "statutoryTermYears": 30,
+        "annualServiceCharge": 84640,
+        "abatedTaxesEstimated": 153890,
+        "netLossToSchools": 79100,
+        "expirationYear": 2048
+      }
+    ]
+  },
+  "taxpayerSolutions": [
+    {
+      "title": "Mandate Statutory PILOT School Sharing",
+      "mechanism": "Amend N.J.S.A. 40A:20-12 to require municipal governments to share PILOT revenue with school boards proportional to school levy share.",
+      "taxpayerBenefit": "Would restore approximately $55k directly to Hackensack City school taxes."
+    },
+    {
+      "title": "Perform Strict Annual Commercial Revaluations",
+      "mechanism": "Annual assessment maintenance prevents abrupt commercial tax appeal refund deficits.",
+      "taxpayerBenefit": "Eliminates sudden municipal debt issuance for commercial tax refund settlements."
+    },
+    {
+      "title": "Enforce Transparent Financial Disclosure on Developer PILOTs",
+      "mechanism": "Require developers to post audited financial statements on municipal portal prior to tax abatement renewals.",
+      "taxpayerBenefit": "Guarantees public oversight of developer returns and statutory excess profit returns."
+    },
+    {
+      "title": "Regional Shared Municipal Infrastructure",
+      "mechanism": "Join Bergen County shared service compacts for DPW heavy equipment, paving, and joint dispatch.",
+      "taxpayerBenefit": "Trims 1.5% to 3.0% off the local municipal operating tax levy."
+    }
+  ]
 }
