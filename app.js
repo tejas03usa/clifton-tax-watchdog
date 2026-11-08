@@ -1,5 +1,5 @@
 /**
- * Clifton & Parsippany-Troy Hills NJ Taxpayer Watchdog - Core Client Application
+ * MyTownLens - Core Client Application
  * Updated: October 18, 2026
  */
 
@@ -433,7 +433,7 @@ Pursuant to N.J.S.A. 47:1A-1 et seq.:
   }
 };
 
-// Full Multi-City Registry for Watchdog Platforms
+// Full Multi-City Registry for MyTownLens Platform
 const CITY_REGISTRY = {
   clifton: {
     id: 'clifton',
@@ -441,7 +441,7 @@ const CITY_REGISTRY = {
     officialTownPortal: 'https://www.cliftonnj.org',
     officialDocsUrl: 'https://www.cliftonnj.org/157/City-Documents',
     fullName: 'City of Clifton',
-    badgeText: 'CITY OF CLIFTON • CITIZEN FISCAL WATCHDOG',
+    badgeText: 'CITY OF CLIFTON • CERTIFIED FISCAL AUDIT',
     icon: '🏛️',
     county: 'Passaic County',
     countyShort: 'Passaic County',
@@ -471,8 +471,8 @@ const CITY_REGISTRY = {
     sliderDefault: 180500,
     zipCodesDisplay: '07011, 07012, 07013 & 07014',
     controversyHighlight: 'OSC audits, PILOT shifts, ASI Reval & budget cliffs',
-    title: 'Clifton Taxpayer Watchdog',
-    pageTitle: 'Clifton NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    title: 'MyTownLens',
+    pageTitle: 'MyTownLens | Clifton NJ | Where Does Your Money Go?',
     subtitle: 'Independent data on Clifton property taxes, the $293M school budget, $143M municipal budget, and 2026 elections.',
     basePath: 'data',
     sliderLabelsHtml: `<span>$50k</span><span>$182.5k (Avg)</span><span>$350k</span><span>$600k+</span>`,
@@ -489,7 +489,7 @@ const CITY_REGISTRY = {
     officialTownPortal: 'https://www.parsippany.net',
     officialDocsUrl: 'https://www.parsippany.net/Department/Index?menuId=ySUwpLAL1ic=',
     fullName: 'Township of Parsippany-Troy Hills',
-    badgeText: 'TOWNSHIP OF PARSIPPANY-TROY HILLS • CITIZEN FISCAL WATCHDOG',
+    badgeText: 'TOWNSHIP OF PARSIPPANY-TROY HILLS • CERTIFIED FISCAL AUDIT',
     icon: '🌲',
     county: 'Morris County',
     countyShort: 'Morris County',
@@ -519,8 +519,8 @@ const CITY_REGISTRY = {
     sliderDefault: 314400,
     zipCodesDisplay: '07054, 07034, 07878 & 07950',
     controversyHighlight: 'Route 10 PILOTs, BOE funding disputes & utility funds',
-    title: 'Parsippany Taxpayer Watchdog',
-    pageTitle: 'Parsippany-Troy Hills NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    title: 'MyTownLens',
+    pageTitle: 'MyTownLens | Parsippany-Troy Hills NJ | Where Does Your Money Go?',
     subtitle: 'Real-time public investigation into where your Parsippany-Troy Hills property taxes go, the $187.5M PTHSD school budget, $92.8M Township budget, 6 independent Fire Districts, Route 10 & Campus Drive PILOT controversies, and Morris County tax records.',
     basePath: 'data/parsippany',
     sliderLabelsHtml: `<span>$100k</span><span>$348.5k (Avg)</span><span>$550k</span><span>$900k+</span>`,
@@ -537,7 +537,7 @@ const CITY_REGISTRY = {
     officialTownPortal: 'https://waynetownship.com',
     officialDocsUrl: 'https://waynetownship.com/finance-budget/',
     fullName: 'Township of Wayne',
-    badgeText: 'TOWNSHIP OF WAYNE • CITIZEN FISCAL WATCHDOG',
+    badgeText: 'TOWNSHIP OF WAYNE • CERTIFIED FISCAL AUDIT',
     icon: '🌳',
     county: 'Passaic County',
     countyShort: 'Passaic County',
@@ -567,8 +567,8 @@ const CITY_REGISTRY = {
     sliderDefault: 233345,
     zipCodesDisplay: '07470',
     controversyHighlight: 'Willowbrook Mall ratable appeals, Toys R Us HQ loss & flood bonds',
-    title: 'Wayne Township Taxpayer Watchdog',
-    pageTitle: 'Wayne Township NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    title: 'MyTownLens',
+    pageTitle: 'MyTownLens | Wayne Township NJ | Where Does Your Money Go?',
     subtitle: 'Citizen audit of Wayne Township public spending ($83.5M), Wayne Board of Education school levy ($186.2M), Willowbrook Mall commercial ratable appeals, Packanack Lake & Pines Lake assessments, and Passaic County tax levies.',
     basePath: 'data/wayne',
     sliderLabelsHtml: `<span>$75k</span><span>$233.3k (Avg)</span><span>$450k</span><span>$750k+</span>`,
@@ -585,7 +585,7 @@ const CITY_REGISTRY = {
     officialTownPortal: 'https://www.montclairnjusa.org',
     officialDocsUrl: 'https://www.montclairnjusa.org/government/departments/finance',
     fullName: 'Township of Montclair',
-    badgeText: 'TOWNSHIP OF MONTCLAIR • CITIZEN FISCAL WATCHDOG',
+    badgeText: 'TOWNSHIP OF MONTCLAIR • CERTIFIED FISCAL AUDIT',
     icon: '🏡',
     county: 'Essex County',
     countyShort: 'Essex County',
@@ -615,8 +615,8 @@ const CITY_REGISTRY = {
     sliderDefault: 639900,
     zipCodesDisplay: '07042 & 07043 (Upper Montclair)',
     controversyHighlight: 'Highest tax bills in region, school bond debt & Lackawanna PILOTs',
-    title: 'Montclair Taxpayer Watchdog',
-    pageTitle: 'Montclair Township NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    title: 'MyTownLens',
+    pageTitle: 'MyTownLens | Montclair Township NJ | Where Does Your Money Go?',
     subtitle: 'Citizen audit of Montclair Township\'s highest-in-region property taxes ($24,098 avg bill), $162.4M public school budget, municipal bond debt service, Seymour Street & Lackawanna Plaza PILOT exemptions, and Essex County rates.',
     basePath: 'data/montclair',
     sliderLabelsHtml: `<span>$200k</span><span>$639.9k (Avg)</span><span>$1.0M</span><span>$1.8M+</span>`,
@@ -633,7 +633,7 @@ const CITY_REGISTRY = {
     officialTownPortal: 'https://www.townofmorristown.org',
     officialDocsUrl: 'https://www.townofmorristown.org/budget',
     fullName: 'Town of Morristown',
-    badgeText: 'TOWN OF MORRISTOWN • CITIZEN FISCAL WATCHDOG',
+    badgeText: 'TOWN OF MORRISTOWN • CERTIFIED FISCAL AUDIT',
     icon: '📜',
     county: 'Morris County',
     countyShort: 'Morris County',
@@ -663,8 +663,8 @@ const CITY_REGISTRY = {
     sliderDefault: 643400,
     zipCodesDisplay: '07960 (Historic Green, Speedwell & Washington)',
     controversyHighlight: 'HQ Plaza & M Station PILOT deals, joint school district cost sharing',
-    title: 'Morristown Taxpayer Watchdog',
-    pageTitle: 'Town of Morristown NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    title: 'MyTownLens',
+    pageTitle: 'MyTownLens | Town of Morristown NJ | Where Does Your Money Go?',
     subtitle: 'Citizen audit of the Morris County seat: $48.2M Town operating budget, Morris School District joint funding with Morris Township ($136.5M), HQ Plaza & M Station PILOT abatements, and Morris County tax distribution.',
     basePath: 'data/morristown',
     sliderLabelsHtml: `<span>$150k</span><span>$643.4k (Avg)</span><span>$950k</span><span>$1.5M+</span>`,
@@ -681,7 +681,7 @@ const CITY_REGISTRY = {
     officialTownPortal: 'https://www.montvillenj.org',
     officialDocsUrl: 'https://www.montvillenj.org/150/Finance',
     fullName: 'Township of Montville',
-    badgeText: 'TOWNSHIP OF MONTVILLE • CITIZEN FISCAL WATCHDOG',
+    badgeText: 'TOWNSHIP OF MONTVILLE • CERTIFIED FISCAL AUDIT',
     icon: '🏞️',
     county: 'Morris County',
     countyShort: 'Morris County',
@@ -711,8 +711,8 @@ const CITY_REGISTRY = {
     sliderDefault: 539300,
     zipCodesDisplay: '07045 (Montville), 07058 (Pine Brook), 07082 (Towaco)',
     controversyHighlight: '66.2% school levy share due to State Aid cliff, low 10.9% county tax',
-    title: 'Montville Taxpayer Watchdog',
-    pageTitle: 'Montville Township NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    title: 'MyTownLens',
+    pageTitle: 'MyTownLens | Montville Township NJ | Where Does Your Money Go?',
     subtitle: 'Citizen investigation into Montville Township taxes: high 66.2% local school levy share caused by state aid cuts, low 10.9% Morris County burden, Pine Brook commercial strip ratables, and Towaco residential tax bills.',
     basePath: 'data/montville',
     sliderLabelsHtml: `<span>$200k</span><span>$539.3k (Avg)</span><span>$950k</span><span>$1.5M+</span>`,
@@ -729,7 +729,7 @@ const CITY_REGISTRY = {
     officialTownPortal: 'https://glenrocknj.net',
     officialDocsUrl: 'https://glenrocknj.net/departments/finance',
     fullName: 'Borough of Glen Rock',
-    badgeText: 'BOROUGH OF GLEN ROCK • CITIZEN FISCAL WATCHDOG',
+    badgeText: 'BOROUGH OF GLEN ROCK • CERTIFIED FISCAL AUDIT',
     icon: '🪨',
     county: 'Bergen County',
     countyShort: 'Bergen County',
@@ -759,8 +759,8 @@ const CITY_REGISTRY = {
     sliderDefault: 591371,
     zipCodesDisplay: '07452',
     controversyHighlight: '68% school tax burden, SHBP healthcare exit to JIF & rail crossing infrastructure',
-    title: 'Glen Rock Taxpayer Watchdog',
-    pageTitle: 'Borough of Glen Rock NJ Taxpayer Watchdog | Where Does Your Money Go?',
+    title: 'MyTownLens',
+    pageTitle: 'MyTownLens | Borough of Glen Rock NJ | Where Does Your Money Go?',
     subtitle: 'Citizen audit of Glen Rock\'s property taxes ($20,138 avg bill), $61.8M public school budget (68.2% share), Borough municipal operations ($27.4M), SHBP health insurance transition, and Bergen County tax levies.',
     basePath: 'data/glenrock',
     sliderLabelsHtml: `<span>$200k</span><span>$591.2k (Avg)</span><span>$1.0M</span><span>$1.8M+</span>`,
@@ -777,7 +777,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.paterson.org",
       "officialDocsUrl": "https://www.paterson.org/finance",
       "fullName": "Paterson City",
-      "badgeText": "PATERSON CITY \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "PATERSON CITY \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfed",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -807,8 +807,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 174700,
       "zipCodesDisplay": "07501",
       "controversyHighlight": "County seat with New Jersey's 3rd largest school district. Receives 84% State Aid under Ab...",
-      "title": "Paterson Taxpayer Watchdog",
-      "pageTitle": "Paterson City NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Paterson City NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Paterson City property taxes (5.335% rate), $724.0M school budget, $348.0M municipal budget, and Passaic County tax levies.",
       "basePath": "data/paterson",
       "sliderLabelsHtml": "<span>$60k</span><span>$174.7k (Avg)</span><span>$275k</span><span>$490k+</span>",
@@ -820,7 +820,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.passaic-city.org",
       "officialDocsUrl": "https://www.passaic-city.org/finance",
       "fullName": "Passaic City",
-      "badgeText": "PASSAIC CITY \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "PASSAIC CITY \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfdb\ufe0f",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -850,8 +850,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 210885,
       "zipCodesDisplay": "07055",
       "controversyHighlight": "High-density urban community; State Aid covers 82.5% of school operations. Effective tax r...",
-      "title": "Passaic Taxpayer Watchdog",
-      "pageTitle": "Passaic City NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Passaic City NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Passaic City property taxes (4.258% rate), $382.0M school budget, $128.5M municipal budget, and Passaic County tax levies.",
       "basePath": "data/passaic-city",
       "sliderLabelsHtml": "<span>$70k</span><span>$210.9k (Avg)</span><span>$330k</span><span>$590k+</span>",
@@ -863,7 +863,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.west-milford.org",
       "officialDocsUrl": "https://www.west-milford.org/finance",
       "fullName": "West Milford Township",
-      "badgeText": "WEST MILFORD TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "WEST MILFORD TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf32",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -893,8 +893,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 259864,
       "zipCodesDisplay": "07480",
       "controversyHighlight": "Encompasses 80 square miles in the Highlands water protection zone. With 92.4% residential...",
-      "title": "West Milford Taxpayer Watchdog",
-      "pageTitle": "West Milford Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | West Milford Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of West Milford Township property taxes (4.214% rate), $82.5M school budget, $38.4M municipal budget, and Passaic County tax levies.",
       "basePath": "data/west-milford",
       "sliderLabelsHtml": "<span>$90k</span><span>$259.9k (Avg)</span><span>$410k</span><span>$730k+</span>",
@@ -906,7 +906,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.little-falls.org",
       "officialDocsUrl": "https://www.little-falls.org/finance",
       "fullName": "Little Falls Township",
-      "badgeText": "LITTLE FALLS TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "LITTLE FALLS TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf0a",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -936,8 +936,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 336096,
       "zipCodesDisplay": "07424",
       "controversyHighlight": "Passaic Valley Regional High School district member; Route 46 commercial corridor and Sing...",
-      "title": "Little Falls Taxpayer Watchdog",
-      "pageTitle": "Little Falls Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Little Falls Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Little Falls Township property taxes (3.496% rate), $42.1M school budget, $24.5M municipal budget, and Passaic County tax levies.",
       "basePath": "data/little-falls",
       "sliderLabelsHtml": "<span>$120k</span><span>$336.1k (Avg)</span><span>$530k</span><span>$940k+</span>",
@@ -949,7 +949,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.totowa.org",
       "officialDocsUrl": "https://www.totowa.org/finance",
       "fullName": "Totowa Borough",
-      "badgeText": "TOTOWA BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "TOTOWA BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83e\udd85",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -979,8 +979,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 290975,
       "zipCodesDisplay": "07512",
       "controversyHighlight": "Maintains the lowest effective tax rate in Passaic County (1.511%) due to massive corporat...",
-      "title": "Totowa Taxpayer Watchdog",
-      "pageTitle": "Totowa Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Totowa Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Totowa Borough property taxes (2.934% rate), $31.2M school budget, $22.8M municipal budget, and Passaic County tax levies.",
       "basePath": "data/totowa",
       "sliderLabelsHtml": "<span>$100k</span><span>$291.0k (Avg)</span><span>$455k</span><span>$810k+</span>",
@@ -992,7 +992,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.woodland-park.org",
       "officialDocsUrl": "https://www.woodland-park.org/finance",
       "fullName": "Woodland Park Borough",
-      "badgeText": "WOODLAND PARK BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "WOODLAND PARK BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf32",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -1022,8 +1022,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 337161,
       "zipCodesDisplay": "07424",
       "controversyHighlight": "Passaic Valley Regional HS member; stable tax profile supported by Route 46 and Garret Mou...",
-      "title": "Woodland Park Taxpayer Watchdog",
-      "pageTitle": "Woodland Park Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Woodland Park Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Woodland Park Borough property taxes (3.435% rate), $36.8M school budget, $23.4M municipal budget, and Passaic County tax levies.",
       "basePath": "data/woodland-park",
       "sliderLabelsHtml": "<span>$120k</span><span>$337.2k (Avg)</span><span>$530k</span><span>$940k+</span>",
@@ -1035,7 +1035,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.hawthorne.org",
       "officialDocsUrl": "https://www.hawthorne.org/finance",
       "fullName": "Hawthorne Borough",
-      "badgeText": "HAWTHORNE BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "HAWTHORNE BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf33",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -1065,8 +1065,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 380637,
       "zipCodesDisplay": "07506",
       "controversyHighlight": "Direct Bergen County border (Glen Rock / Ridgewood); independent K-12 public school system...",
-      "title": "Hawthorne Taxpayer Watchdog",
-      "pageTitle": "Hawthorne Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Hawthorne Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Hawthorne Borough property taxes (3.144% rate), $56.4M school budget, $29.8M municipal budget, and Passaic County tax levies.",
       "basePath": "data/hawthorne",
       "sliderLabelsHtml": "<span>$130k</span><span>$380.6k (Avg)</span><span>$600k</span><span>$1070k+</span>",
@@ -1078,7 +1078,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.pompton-lakes.org",
       "officialDocsUrl": "https://www.pompton-lakes.org/finance",
       "fullName": "Pompton Lakes Borough",
-      "badgeText": "POMPTON LAKES BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "POMPTON LAKES BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83d\udef6",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -1108,8 +1108,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 285138,
       "zipCodesDisplay": "07442",
       "controversyHighlight": "Downtown redevelopment district balancing flood mitigation infrastructure and independent ...",
-      "title": "Pompton Lakes Taxpayer Watchdog",
-      "pageTitle": "Pompton Lakes Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Pompton Lakes Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Pompton Lakes Borough property taxes (4.131% rate), $39.5M school budget, $18.2M municipal budget, and Passaic County tax levies.",
       "basePath": "data/pompton-lakes",
       "sliderLabelsHtml": "<span>$100k</span><span>$285.1k (Avg)</span><span>$450k</span><span>$800k+</span>",
@@ -1121,7 +1121,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.ringwood.org",
       "officialDocsUrl": "https://www.ringwood.org/finance",
       "fullName": "Ringwood Borough",
-      "badgeText": "RINGWOOD BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "RINGWOOD BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfde\ufe0f",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -1151,8 +1151,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 320736,
       "zipCodesDisplay": "07456",
       "controversyHighlight": "High school share (61.4%) for local elementary and Lakeland Regional High School; protecte...",
-      "title": "Ringwood Taxpayer Watchdog",
-      "pageTitle": "Ringwood Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Ringwood Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Ringwood Borough property taxes (4.259% rate), $48.2M school budget, $18.5M municipal budget, and Passaic County tax levies.",
       "basePath": "data/ringwood",
       "sliderLabelsHtml": "<span>$110k</span><span>$320.7k (Avg)</span><span>$505k</span><span>$900k+</span>",
@@ -1164,7 +1164,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.wanaque.org",
       "officialDocsUrl": "https://www.wanaque.org/finance",
       "fullName": "Wanaque Borough",
-      "badgeText": "WANAQUE BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "WANAQUE BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83d\udca7",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -1194,8 +1194,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 276355,
       "zipCodesDisplay": "07465",
       "controversyHighlight": "Home to Wanaque Reservoir; Lakeland Regional High School partner district; moderate tax ba...",
-      "title": "Wanaque Taxpayer Watchdog",
-      "pageTitle": "Wanaque Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Wanaque Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Wanaque Borough property taxes (4.541% rate), $41.2M school budget, $16.9M municipal budget, and Passaic County tax levies.",
       "basePath": "data/wanaque",
       "sliderLabelsHtml": "<span>$100k</span><span>$276.4k (Avg)</span><span>$435k</span><span>$770k+</span>",
@@ -1207,7 +1207,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.bloomingdale.org",
       "officialDocsUrl": "https://www.bloomingdale.org/finance",
       "fullName": "Bloomingdale Borough",
-      "badgeText": "BLOOMINGDALE BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "BLOOMINGDALE BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf32",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -1237,8 +1237,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 257738,
       "zipCodesDisplay": "07403",
       "controversyHighlight": "Butler border neighbor; K-8 local district sending to Butler High School; shared municipal...",
-      "title": "Bloomingdale Taxpayer Watchdog",
-      "pageTitle": "Bloomingdale Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Bloomingdale Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Bloomingdale Borough property taxes (4.718% rate), $27.8M school budget, $13.2M municipal budget, and Passaic County tax levies.",
       "basePath": "data/bloomingdale",
       "sliderLabelsHtml": "<span>$90k</span><span>$257.7k (Avg)</span><span>$405k</span><span>$720k+</span>",
@@ -1250,7 +1250,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.north-haledon.org",
       "officialDocsUrl": "https://www.north-haledon.org/finance",
       "fullName": "North Haledon Borough",
-      "badgeText": "NORTH HALEDON BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "NORTH HALEDON BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\u26f0\ufe0f",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -1280,8 +1280,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 400938,
       "zipCodesDisplay": "07508",
       "controversyHighlight": "Manchester Regional High School partner district; lowest effective tax rate in Northern Pa...",
-      "title": "North Haledon Taxpayer Watchdog",
-      "pageTitle": "North Haledon Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | North Haledon Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of North Haledon Borough property taxes (3.187% rate), $32.1M school budget, $16.4M municipal budget, and Passaic County tax levies.",
       "basePath": "data/north-haledon",
       "sliderLabelsHtml": "<span>$140k</span><span>$400.9k (Avg)</span><span>$630k</span><span>$1120k+</span>",
@@ -1293,7 +1293,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.haledon.org",
       "officialDocsUrl": "https://www.haledon.org/finance",
       "fullName": "Haledon Borough",
-      "badgeText": "HALEDON BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "HALEDON BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfdb\ufe0f",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -1323,8 +1323,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 209879,
       "zipCodesDisplay": "07508",
       "controversyHighlight": "Home to Manchester Regional High School; moderate tax base with Belmont Avenue retail dist...",
-      "title": "Haledon Taxpayer Watchdog",
-      "pageTitle": "Haledon Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Haledon Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Haledon Borough property taxes (5.428% rate), $24.8M school budget, $14.1M municipal budget, and Passaic County tax levies.",
       "basePath": "data/haledon",
       "sliderLabelsHtml": "<span>$70k</span><span>$209.9k (Avg)</span><span>$330k</span><span>$590k+</span>",
@@ -1336,7 +1336,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.prospect-park.org",
       "officialDocsUrl": "https://www.prospect-park.org/finance",
       "fullName": "Prospect Park Borough",
-      "badgeText": "PROSPECT PARK BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "PROSPECT PARK BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf33",
       "county": "Passaic County",
       "countyShort": "Passaic County",
@@ -1366,8 +1366,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 184663,
       "zipCodesDisplay": "07508",
       "controversyHighlight": "0.48 square mile compact borough; high nominal rate (6.231%) due to 46.75% equalization ra...",
-      "title": "Prospect Park Taxpayer Watchdog",
-      "pageTitle": "Prospect Park Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Prospect Park Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Prospect Park Borough property taxes (6.231% rate), $21.5M school budget, $11.8M municipal budget, and Passaic County tax levies.",
       "basePath": "data/prospect-park",
       "sliderLabelsHtml": "<span>$60k</span><span>$184.7k (Avg)</span><span>$290k</span><span>$520k+</span>",
@@ -1379,7 +1379,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.fair-lawn.org",
       "officialDocsUrl": "https://www.fair-lawn.org/finance",
       "fullName": "Fair Lawn Borough",
-      "badgeText": "FAIR LAWN BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "FAIR LAWN BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83d\ude82",
       "county": "Bergen County",
       "countyShort": "Bergen County",
@@ -1409,8 +1409,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 416020,
       "zipCodesDisplay": "07410",
       "controversyHighlight": "Historic Radburn planned community; major commercial ratables along Route 208 and Promenad...",
-      "title": "Fair Lawn Taxpayer Watchdog",
-      "pageTitle": "Fair Lawn Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Fair Lawn Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Fair Lawn Borough property taxes (3.512% rate), $124.5M school budget, $56.8M municipal budget, and Bergen County tax levies.",
       "basePath": "data/fair-lawn",
       "sliderLabelsHtml": "<span>$150k</span><span>$416.0k (Avg)</span><span>$655k</span><span>$1160k+</span>",
@@ -1422,7 +1422,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.elmwood-park.org",
       "officialDocsUrl": "https://www.elmwood-park.org/finance",
       "fullName": "Elmwood Park Borough",
-      "badgeText": "ELMWOOD PARK BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "ELMWOOD PARK BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfe1",
       "county": "Bergen County",
       "countyShort": "Bergen County",
@@ -1452,8 +1452,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 372860,
       "zipCodesDisplay": "07407",
       "controversyHighlight": "Route 4 and River Drive industrial and distribution facilities provide 21.6% commercial ra...",
-      "title": "Elmwood Park Taxpayer Watchdog",
-      "pageTitle": "Elmwood Park Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Elmwood Park Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Elmwood Park Borough property taxes (3.250% rate), $58.4M school budget, $29.8M municipal budget, and Bergen County tax levies.",
       "basePath": "data/elmwood-park",
       "sliderLabelsHtml": "<span>$130k</span><span>$372.9k (Avg)</span><span>$585k</span><span>$1040k+</span>",
@@ -1465,7 +1465,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.garfield.org",
       "officialDocsUrl": "https://www.garfield.org/finance",
       "fullName": "Garfield City",
-      "badgeText": "GARFIELD CITY \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "GARFIELD CITY \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfdb\ufe0f",
       "county": "Bergen County",
       "countyShort": "Bergen County",
@@ -1495,8 +1495,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 331550,
       "zipCodesDisplay": "07026",
       "controversyHighlight": "Former Abbott school district; high state aid share (68.4%) keeps effective school levy mo...",
-      "title": "Garfield Taxpayer Watchdog",
-      "pageTitle": "Garfield City NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Garfield City NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Garfield City property taxes (3.415% rate), $112.0M school budget, $54.2M municipal budget, and Bergen County tax levies.",
       "basePath": "data/garfield",
       "sliderLabelsHtml": "<span>$120k</span><span>$331.6k (Avg)</span><span>$525k</span><span>$930k+</span>",
@@ -1508,7 +1508,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.ridgewood.org",
       "officialDocsUrl": "https://www.ridgewood.org/finance",
       "fullName": "Ridgewood Village",
-      "badgeText": "RIDGEWOOD VILLAGE \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "RIDGEWOOD VILLAGE \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf32",
       "county": "Bergen County",
       "countyShort": "Bergen County",
@@ -1538,8 +1538,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 734400,
       "zipCodesDisplay": "07450",
       "controversyHighlight": "Historic village core with prestigious schools. Low effective tax rate (2.128%) driven by ...",
-      "title": "Ridgewood Taxpayer Watchdog",
-      "pageTitle": "Ridgewood Village NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Ridgewood Village NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Ridgewood Village property taxes (2.782% rate), $138.5M school budget, $59.4M municipal budget, and Bergen County tax levies.",
       "basePath": "data/ridgewood",
       "sliderLabelsHtml": "<span>$260k</span><span>$734.4k (Avg)</span><span>$1160k</span><span>$2060k+</span>",
@@ -1551,7 +1551,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.paramus.org",
       "officialDocsUrl": "https://www.paramus.org/finance",
       "fullName": "Paramus Borough",
-      "badgeText": "PARAMUS BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "PARAMUS BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfec",
       "county": "Bergen County",
       "countyShort": "Bergen County",
@@ -1581,8 +1581,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 623080,
       "zipCodesDisplay": "07652",
       "controversyHighlight": "New Jersey's premier retail mecca (Garden State Plaza, Paramus Park, Route 4 & 17 corridor...",
-      "title": "Paramus Taxpayer Watchdog",
-      "pageTitle": "Paramus Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Paramus Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Paramus Borough property taxes (1.954% rate), $108.4M school budget, $64.8M municipal budget, and Bergen County tax levies.",
       "basePath": "data/paramus",
       "sliderLabelsHtml": "<span>$220k</span><span>$623.1k (Avg)</span><span>$980k</span><span>$1740k+</span>",
@@ -1594,7 +1594,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.hackensack.org",
       "officialDocsUrl": "https://www.hackensack.org/finance",
       "fullName": "Hackensack City",
-      "badgeText": "HACKENSACK CITY \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "HACKENSACK CITY \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\u2696\ufe0f",
       "county": "Bergen County",
       "countyShort": "Bergen County",
@@ -1624,8 +1624,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 304110,
       "zipCodesDisplay": "07601",
       "controversyHighlight": "County administrative center and Hackensack University Medical Center; downtown transit-or...",
-      "title": "Hackensack Taxpayer Watchdog",
-      "pageTitle": "Hackensack City NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Hackensack City NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Hackensack City property taxes (3.785% rate), $134.5M school budget, $118.4M municipal budget, and Bergen County tax levies.",
       "basePath": "data/hackensack",
       "sliderLabelsHtml": "<span>$110k</span><span>$304.1k (Avg)</span><span>$480k</span><span>$850k+</span>",
@@ -1637,7 +1637,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.fort-lee.org",
       "officialDocsUrl": "https://www.fort-lee.org/finance",
       "fullName": "Fort Lee Borough",
-      "badgeText": "FORT LEE BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "FORT LEE BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf09",
       "county": "Bergen County",
       "countyShort": "Bergen County",
@@ -1667,8 +1667,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 430360,
       "zipCodesDisplay": "07024",
       "controversyHighlight": "High-rise luxury residential and commercial towers adjacent to Manhattan yield an effectiv...",
-      "title": "Fort Lee Taxpayer Watchdog",
-      "pageTitle": "Fort Lee Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Fort Lee Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Fort Lee Borough property taxes (2.480% rate), $92.4M school budget, $72.5M municipal budget, and Bergen County tax levies.",
       "basePath": "data/fort-lee",
       "sliderLabelsHtml": "<span>$150k</span><span>$430.4k (Avg)</span><span>$680k</span><span>$1210k+</span>",
@@ -1680,7 +1680,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.teaneck.org",
       "officialDocsUrl": "https://www.teaneck.org/finance",
       "fullName": "Teaneck Township",
-      "badgeText": "TEANECK TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "TEANECK TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfe1",
       "county": "Bergen County",
       "countyShort": "Bergen County",
@@ -1710,8 +1710,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 378000,
       "zipCodesDisplay": "07666",
       "controversyHighlight": "Holy Name Medical Center and Fairleigh Dickinson University community; high civic engageme...",
-      "title": "Teaneck Taxpayer Watchdog",
-      "pageTitle": "Teaneck Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Teaneck Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Teaneck Township property taxes (3.490% rate), $118.2M school budget, $64.2M municipal budget, and Bergen County tax levies.",
       "basePath": "data/teaneck",
       "sliderLabelsHtml": "<span>$130k</span><span>$378.0k (Avg)</span><span>$595k</span><span>$1060k+</span>",
@@ -1723,7 +1723,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.mahwah.org",
       "officialDocsUrl": "https://www.mahwah.org/finance",
       "fullName": "Mahwah Township",
-      "badgeText": "MAHWAH TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "MAHWAH TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\u26f0\ufe0f",
       "county": "Bergen County",
       "countyShort": "Bergen County",
@@ -1753,8 +1753,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 558280,
       "zipCodesDisplay": "07430",
       "controversyHighlight": "Corporate parks along Route 17 (UPS, Jaguar Land Rover, Mindray) shoulder 31.8% of tax bas...",
-      "title": "Mahwah Taxpayer Watchdog",
-      "pageTitle": "Mahwah Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Mahwah Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Mahwah Township property taxes (2.180% rate), $84.2M school budget, $48.2M municipal budget, and Bergen County tax levies.",
       "basePath": "data/mahwah",
       "sliderLabelsHtml": "<span>$200k</span><span>$558.3k (Avg)</span><span>$880k</span><span>$1560k+</span>",
@@ -1766,7 +1766,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.nutley.org",
       "officialDocsUrl": "https://www.nutley.org/finance",
       "fullName": "Nutley Township",
-      "badgeText": "NUTLEY TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "NUTLEY TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfe1",
       "county": "Essex County",
       "countyShort": "Essex County",
@@ -1796,8 +1796,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 439040,
       "zipCodesDisplay": "07110",
       "controversyHighlight": "Commission government system. ON3 biomedical redevelopment (former Hoffmann-La Roche campu...",
-      "title": "Nutley Taxpayer Watchdog",
-      "pageTitle": "Nutley Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Nutley Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Nutley Township property taxes (2.844% rate), $84.5M school budget, $61.2M municipal budget, and Essex County tax levies.",
       "basePath": "data/nutley",
       "sliderLabelsHtml": "<span>$150k</span><span>$439.0k (Avg)</span><span>$690k</span><span>$1230k+</span>",
@@ -1809,7 +1809,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.bloomfield.org",
       "officialDocsUrl": "https://www.bloomfield.org/finance",
       "fullName": "Bloomfield Township",
-      "badgeText": "BLOOMFIELD TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "BLOOMFIELD TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfdb\ufe0f",
       "county": "Essex County",
       "countyShort": "Essex County",
@@ -1839,8 +1839,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 322740,
       "zipCodesDisplay": "07003",
       "controversyHighlight": "Transit hub with direct Midtown Direct rail; significant downtown redevelopment PILOT proj...",
-      "title": "Bloomfield Taxpayer Watchdog",
-      "pageTitle": "Bloomfield Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Bloomfield Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Bloomfield Township property taxes (3.820% rate), $128.5M school budget, $92.4M municipal budget, and Essex County tax levies.",
       "basePath": "data/bloomfield",
       "sliderLabelsHtml": "<span>$110k</span><span>$322.7k (Avg)</span><span>$505k</span><span>$900k+</span>",
@@ -1852,7 +1852,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.belleville.org",
       "officialDocsUrl": "https://www.belleville.org/finance",
       "fullName": "Belleville Township",
-      "badgeText": "BELLEVILLE TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "BELLEVILLE TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf38",
       "county": "Essex County",
       "countyShort": "Essex County",
@@ -1882,8 +1882,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 310670,
       "zipCodesDisplay": "07109",
       "controversyHighlight": "Clara Maass Medical Center host; ongoing fiscal recovery and state school monitor oversigh...",
-      "title": "Belleville Taxpayer Watchdog",
-      "pageTitle": "Belleville Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Belleville Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Belleville Township property taxes (3.910% rate), $94.2M school budget, $74.5M municipal budget, and Essex County tax levies.",
       "basePath": "data/belleville",
       "sliderLabelsHtml": "<span>$110k</span><span>$310.7k (Avg)</span><span>$490k</span><span>$870k+</span>",
@@ -1895,7 +1895,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.livingston.org",
       "officialDocsUrl": "https://www.livingston.org/finance",
       "fullName": "Livingston Township",
-      "badgeText": "LIVINGSTON TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "LIVINGSTON TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf33",
       "county": "Essex County",
       "countyShort": "Essex County",
@@ -1925,8 +1925,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 722680,
       "zipCodesDisplay": "07039",
       "controversyHighlight": "St. Barnabas Medical Center hub; high median home values ($890k) keep effective rate low (...",
-      "title": "Livingston Taxpayer Watchdog",
-      "pageTitle": "Livingston Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Livingston Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Livingston Township property taxes (2.650% rate), $148.2M school budget, $64.5M municipal budget, and Essex County tax levies.",
       "basePath": "data/livingston",
       "sliderLabelsHtml": "<span>$250k</span><span>$722.7k (Avg)</span><span>$1135k</span><span>$2020k+</span>",
@@ -1938,7 +1938,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.west-orange.org",
       "officialDocsUrl": "https://www.west-orange.org/finance",
       "fullName": "West Orange Township",
-      "badgeText": "WEST ORANGE TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "WEST ORANGE TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83d\udca1",
       "county": "Essex County",
       "countyShort": "Essex County",
@@ -1968,8 +1968,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 388640,
       "zipCodesDisplay": "07052",
       "controversyHighlight": "High effective tax rate (2.922%) driven by topography, extensive library/park municipal se...",
-      "title": "West Orange Taxpayer Watchdog",
-      "pageTitle": "West Orange Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | West Orange Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of West Orange Township property taxes (4.210% rate), $182.4M school budget, $98.4M municipal budget, and Essex County tax levies.",
       "basePath": "data/west-orange",
       "sliderLabelsHtml": "<span>$140k</span><span>$388.6k (Avg)</span><span>$615k</span><span>$1090k+</span>",
@@ -1981,7 +1981,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.millburn.org",
       "officialDocsUrl": "https://www.millburn.org/finance",
       "fullName": "Millburn Township (Short Hills)",
-      "badgeText": "MILLBURN TOWNSHIP (SHORT HILLS) \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "MILLBURN TOWNSHIP (SHORT HILLS) \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfad",
       "county": "Essex County",
       "countyShort": "Essex County",
@@ -2011,8 +2011,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 1283250,
       "zipCodesDisplay": "07041",
       "controversyHighlight": "Lowest effective tax rate in Essex County (1.633%) driven by Mall at Short Hills luxury re...",
-      "title": "Millburn Taxpayer Watchdog",
-      "pageTitle": "Millburn Township (Short Hills) NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Millburn Township (Short Hills) NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Millburn Township (Short Hills) property taxes (1.845% rate), $124.5M school budget, $44.8M municipal budget, and Essex County tax levies.",
       "basePath": "data/millburn",
       "sliderLabelsHtml": "<span>$450k</span><span>$1283.2k (Avg)</span><span>$2020k</span><span>$3590k+</span>",
@@ -2024,7 +2024,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.verona.org",
       "officialDocsUrl": "https://www.verona.org/finance",
       "fullName": "Verona Township",
-      "badgeText": "VERONA TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "VERONA TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfde\ufe0f",
       "county": "Essex County",
       "countyShort": "Essex County",
@@ -2054,8 +2054,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 496875,
       "zipCodesDisplay": "07044",
       "controversyHighlight": "Compact suburban town around Verona Park; high residential share requires homeowners to ca...",
-      "title": "Verona Taxpayer Watchdog",
-      "pageTitle": "Verona Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Verona Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Verona Township property taxes (3.120% rate), $48.2M school budget, $26.4M municipal budget, and Essex County tax levies.",
       "basePath": "data/verona",
       "sliderLabelsHtml": "<span>$170k</span><span>$496.9k (Avg)</span><span>$780k</span><span>$1390k+</span>",
@@ -2067,7 +2067,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.cedar-grove.org",
       "officialDocsUrl": "https://www.cedar-grove.org/finance",
       "fullName": "Cedar Grove Township",
-      "badgeText": "CEDAR GROVE TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "CEDAR GROVE TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf32",
       "county": "Essex County",
       "countyShort": "Essex County",
@@ -2097,8 +2097,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 538240,
       "zipCodesDisplay": "07009",
       "controversyHighlight": "Route 23 corridor neighbor to Little Falls; low effective tax rate (2.069%) supported by m...",
-      "title": "Cedar Grove Taxpayer Watchdog",
-      "pageTitle": "Cedar Grove Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Cedar Grove Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Cedar Grove Township property taxes (2.460% rate), $44.8M school budget, $24.2M municipal budget, and Essex County tax levies.",
       "basePath": "data/cedar-grove",
       "sliderLabelsHtml": "<span>$190k</span><span>$538.2k (Avg)</span><span>$850k</span><span>$1510k+</span>",
@@ -2110,7 +2110,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.fairfield.org",
       "officialDocsUrl": "https://www.fairfield.org/finance",
       "fullName": "Fairfield Township",
-      "badgeText": "FAIRFIELD TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "FAIRFIELD TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\u2708\ufe0f",
       "county": "Essex County",
       "countyShort": "Essex County",
@@ -2140,8 +2140,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 549360,
       "zipCodesDisplay": "07004",
       "controversyHighlight": "Essex County's premier commercial hub (Route 46 industrial parks & Essex County Airport). ...",
-      "title": "Fairfield Taxpayer Watchdog",
-      "pageTitle": "Fairfield Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Fairfield Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Fairfield Township property taxes (1.890% rate), $18.4M school budget, $19.5M municipal budget, and Essex County tax levies.",
       "basePath": "data/fairfield",
       "sliderLabelsHtml": "<span>$190k</span><span>$549.4k (Avg)</span><span>$865k</span><span>$1540k+</span>",
@@ -2153,7 +2153,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.pequannock.org",
       "officialDocsUrl": "https://www.pequannock.org/finance",
       "fullName": "Pequannock Township",
-      "badgeText": "PEQUANNOCK TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "PEQUANNOCK TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf33",
       "county": "Morris County",
       "countyShort": "Morris County",
@@ -2183,8 +2183,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 476190,
       "zipCodesDisplay": "07440",
       "controversyHighlight": "Route 23 commercial corridor and Chilton Medical Center support low effective tax rate (2....",
-      "title": "Pequannock Taxpayer Watchdog",
-      "pageTitle": "Pequannock Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Pequannock Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Pequannock Township property taxes (2.580% rate), $51.2M school budget, $24.5M municipal budget, and Morris County tax levies.",
       "basePath": "data/pequannock",
       "sliderLabelsHtml": "<span>$170k</span><span>$476.2k (Avg)</span><span>$750k</span><span>$1330k+</span>",
@@ -2196,7 +2196,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.denville.org",
       "officialDocsUrl": "https://www.denville.org/finance",
       "fullName": "Denville Township",
-      "badgeText": "DENVILLE TOWNSHIP \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "DENVILLE TOWNSHIP \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83d\udef6",
       "county": "Morris County",
       "countyShort": "Morris County",
@@ -2226,8 +2226,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 557440,
       "zipCodesDisplay": "07834",
       "controversyHighlight": "Known as the 'Hub of Morris County'; Saint Clare's Hospital and Broadway downtown district...",
-      "title": "Denville Taxpayer Watchdog",
-      "pageTitle": "Denville Township NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Denville Township NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Denville Township property taxes (2.584% rate), $48.5M school budget, $28.4M municipal budget, and Morris County tax levies.",
       "basePath": "data/denville",
       "sliderLabelsHtml": "<span>$200k</span><span>$557.4k (Avg)</span><span>$880k</span><span>$1560k+</span>",
@@ -2239,7 +2239,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.hanover.org",
       "officialDocsUrl": "https://www.hanover.org/finance",
       "fullName": "Hanover Township (Whippany)",
-      "badgeText": "HANOVER TOWNSHIP (WHIPPANY) \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "HANOVER TOWNSHIP (WHIPPANY) \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfe2",
       "county": "Morris County",
       "countyShort": "Morris County",
@@ -2269,8 +2269,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 606040,
       "zipCodesDisplay": "07981",
       "controversyHighlight": "Second lowest tax rate in Morris County (1.495%). Whippany corporate parks (Bayer US Headq...",
-      "title": "Hanover Taxpayer Watchdog",
-      "pageTitle": "Hanover Township (Whippany) NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Hanover Township (Whippany) NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Hanover Township (Whippany) property taxes (1.714% rate), $56.4M school budget, $34.8M municipal budget, and Morris County tax levies.",
       "basePath": "data/hanover",
       "sliderLabelsHtml": "<span>$210k</span><span>$606.0k (Avg)</span><span>$955k</span><span>$1700k+</span>",
@@ -2282,7 +2282,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.mountain-lakes.org",
       "officialDocsUrl": "https://www.mountain-lakes.org/finance",
       "fullName": "Mountain Lakes Borough",
-      "badgeText": "MOUNTAIN LAKES BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "MOUNTAIN LAKES BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\u26f5",
       "county": "Morris County",
       "countyShort": "Morris County",
@@ -2312,8 +2312,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 877800,
       "zipCodesDisplay": "07046",
       "controversyHighlight": "Historic Craftsman estate community with $24,200+ average tax bill due to near-zero commer...",
-      "title": "Mountain Lakes Taxpayer Watchdog",
-      "pageTitle": "Mountain Lakes Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Mountain Lakes Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Mountain Lakes Borough property taxes (2.760% rate), $34.2M school budget, $12.8M municipal budget, and Morris County tax levies.",
       "basePath": "data/mountain-lakes",
       "sliderLabelsHtml": "<span>$310k</span><span>$877.8k (Avg)</span><span>$1385k</span><span>$2460k+</span>",
@@ -2325,7 +2325,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.florham-park.org",
       "officialDocsUrl": "https://www.florham-park.org/finance",
       "fullName": "Florham Park Borough",
-      "badgeText": "FLORHAM PARK BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "FLORHAM PARK BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf38",
       "county": "Morris County",
       "countyShort": "Morris County",
@@ -2355,8 +2355,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 656640,
       "zipCodesDisplay": "07932",
       "controversyHighlight": "Major corporate campuses (BASF North American HQ, New York Jets Training Center) shoulder ...",
-      "title": "Florham Park Taxpayer Watchdog",
-      "pageTitle": "Florham Park Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Florham Park Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Florham Park Borough property taxes (1.820% rate), $42.1M school budget, $29.4M municipal budget, and Morris County tax levies.",
       "basePath": "data/florham-park",
       "sliderLabelsHtml": "<span>$230k</span><span>$656.6k (Avg)</span><span>$1035k</span><span>$1840k+</span>",
@@ -2368,7 +2368,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.riverdale.org",
       "officialDocsUrl": "https://www.riverdale.org/finance",
       "fullName": "Riverdale Borough",
-      "badgeText": "RIVERDALE BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "RIVERDALE BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf32",
       "county": "Morris County",
       "countyShort": "Morris County",
@@ -2398,8 +2398,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 379500,
       "zipCodesDisplay": "07457",
       "controversyHighlight": "Route 23 retail corridor provides strong commercial ratables (30.6%) for this border borou...",
-      "title": "Riverdale Taxpayer Watchdog",
-      "pageTitle": "Riverdale Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Riverdale Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Riverdale Borough property taxes (2.640% rate), $14.2M school budget, $9.8M municipal budget, and Morris County tax levies.",
       "basePath": "data/riverdale",
       "sliderLabelsHtml": "<span>$130k</span><span>$379.5k (Avg)</span><span>$595k</span><span>$1060k+</span>",
@@ -2411,7 +2411,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.kinnelon.org",
       "officialDocsUrl": "https://www.kinnelon.org/finance",
       "fullName": "Kinnelon Borough",
-      "badgeText": "KINNELON BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "KINNELON BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf32",
       "county": "Morris County",
       "countyShort": "Morris County",
@@ -2441,8 +2441,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 561015,
       "zipCodesDisplay": "07405",
       "controversyHighlight": "Smoke Rise gated community; high school levy share (67.2%) funded by affluent residential ...",
-      "title": "Kinnelon Taxpayer Watchdog",
-      "pageTitle": "Kinnelon Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Kinnelon Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Kinnelon Borough property taxes (2.680% rate), $46.5M school budget, $18.2M municipal budget, and Morris County tax levies.",
       "basePath": "data/kinnelon",
       "sliderLabelsHtml": "<span>$200k</span><span>$561.0k (Avg)</span><span>$885k</span><span>$1570k+</span>",
@@ -2454,7 +2454,7 @@ const CITY_REGISTRY = {
       "officialTownPortal": "https://www.butler.org",
       "officialDocsUrl": "https://www.butler.org/finance",
       "fullName": "Butler Borough",
-      "badgeText": "BUTLER BOROUGH \u2022 CITIZEN FISCAL WATCHDOG",
+      "badgeText": "BUTLER BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfdb\ufe0f",
       "county": "Morris County",
       "countyShort": "Morris County",
@@ -2484,8 +2484,8 @@ const CITY_REGISTRY = {
       "sliderDefault": 309720,
       "zipCodesDisplay": "07405",
       "controversyHighlight": "Operates municipal electric utility serving Butler and neighboring Bloomingdale; Route 23 ...",
-      "title": "Butler Taxpayer Watchdog",
-      "pageTitle": "Butler Borough NJ Taxpayer Watchdog | Where Does Your Money Go?",
+      "title": "MyTownLens",
+      "pageTitle": "MyTownLens | Butler Borough NJ | Where Does Your Money Go?",
       "subtitle": "Citizen audit of Butler Borough property taxes (3.420% rate), $31.2M school budget, $15.4M municipal budget, and Morris County tax levies.",
       "basePath": "data/butler",
       "sliderLabelsHtml": "<span>$110k</span><span>$309.7k (Avg)</span><span>$490k</span><span>$870k+</span>",
@@ -3611,7 +3611,7 @@ function updateElectionStaticCopy(cityId, meta) {
   const cleanCount = councilCount - controvCount;
 
   // Title & Section Intro
-  document.title = `${meta.name} NJ Election 2026 Guide, Match Quiz & Candidates | Taxpayer Watchdog`;
+  document.title = `MyTownLens | ${meta.name} NJ Election 2026 Guide, Match Quiz & Candidates`;
   const badgeEl = document.querySelector('#tab-election .section-date-badge');
   if (badgeEl) badgeEl.textContent = `🗳️ Official ${meta.name} Voter Guide • Election Day: Nov 3, 2026`;
   const h2El = document.querySelector('#tab-election .section-intro h2');
@@ -3796,7 +3796,7 @@ function updateElectionStaticCopy(cityId, meta) {
 
   // Footer
   const footerBrandTitle = document.querySelector('.app-footer .footer-brand h4');
-  if (footerBrandTitle) footerBrandTitle.textContent = `MyTownLens — ${meta.name} Taxpayer Watchdog Project`;
+  if (footerBrandTitle) footerBrandTitle.textContent = 'MyTownLens';
   const footerBrandDesc = document.querySelector('.app-footer .footer-brand p');
   if (footerBrandDesc) {
     footerBrandDesc.textContent = `Independent civic transparency, property assessment, and public records analysis for ${meta.name}, New Jersey residents.`;
@@ -3814,7 +3814,7 @@ function applyCityStaticCopy(cityId) {
   // 1. Document Title & App Header
   const pageSuffix = document.body.getAttribute('data-page-title');
   if (pageSuffix) {
-    document.title = `${meta.name} NJ ${pageSuffix} | Taxpayer Watchdog`;
+    document.title = `MyTownLens | ${meta.name} NJ ${pageSuffix}`;
   } else {
     document.title = meta.pageTitle;
   }
@@ -3830,7 +3830,7 @@ function applyCityStaticCopy(cityId) {
 
   setElText('header-badge-icon', meta.icon);
   setElText('header-badge-text', meta.badgeText);
-  setElText('header-main-title', meta.title);
+  setElText('header-main-title', 'MyTownLens');
   setElText('header-main-subtitle', meta.subtitle);
 
   setElText('hdr-stat1-label', 'Certified Tax Rate (2026) ↗');
@@ -3853,7 +3853,7 @@ function applyCityStaticCopy(cityId) {
 
   // 2. Sticky Nav Brand & Dropdown Subtitles
   setElText('nav-brand-icon', meta.icon);
-  setElText('nav-brand-title', meta.name + ' Watchdog');
+  setElText('nav-brand-title', 'MyTownLens');
   setElText('nav-brand-subtitle', meta.auditBadge);
   setElText('nav-city-name-text', meta.icon + ' ' + meta.name + ', ' + (meta.state || 'NJ'));
 
@@ -3881,7 +3881,7 @@ function applyCityStaticCopy(cityId) {
 
   // 3. Top Status Bar
   setElHtml('.top-status-bar .status-text',
-    `<strong>Live Citizen Watchdog:</strong> Certified 2026 Tax Rates • ${meta.county} Board of Taxation & Official Audits`);
+    `<strong>Live MyTownLens Audit:</strong> Certified 2026 Tax Rates • ${meta.county} Board of Taxation & Official Audits`);
   setElHtml('.top-status-bar .status-quick-links',
     `<span class="status-item">Total Rate: <strong>${meta.certifiedTaxRate}</strong></span>
      <span class="status-sep">•</span>
@@ -4111,7 +4111,7 @@ function applyCityStaticCopy(cityId) {
     `<div class="section-badge-bar">
        <span class="section-date-badge alert-badge">Active Inquiries, Audits & Fiscal Records</span>
      </div>
-     <h2>${meta.name} Watchdog Alerts: Audits, PILOTs & Fiscal Controversies</h2>
+     <h2>${meta.name} Civic & Fiscal Alerts: Audits, PILOTs & Public Oversight</h2>
      <p>A transparent breakdown of public audits, state disclosure filings, tax abatement impacts, and municipal oversight records across ${meta.name}.</p>`);
 
   setElHtml('#tab-staff .section-intro',
@@ -4245,7 +4245,7 @@ function applyCityStaticCopy(cityId) {
 
   // 15. Page Footer
   setElHtml('.app-footer .footer-brand',
-    `<h4>MyTownLens — ${meta.name} Taxpayer Watchdog Project</h4>
+    `<h4>MyTownLens</h4>
      <p>Independent civic transparency, property assessment, and public records analysis for ${meta.name}, New Jersey residents.</p>`);
   setElHtml('.app-footer .footer-sources',
     `All figures, tax rates, salaries, and assessments verified against certified records from: ${meta.county} Board of Taxation, ${meta.fullName} Assessor & Collector, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), and ${meta.schoolDistrictShort} User-Friendly Budgets.`);
@@ -7961,7 +7961,7 @@ TOTAL CERTIFIED ANNUAL TAX: $${p.annualTax.toFixed(2)}
 • Schools (${meta.schoolsShare}): $${p.schoolTax.toFixed(2)}
 • Municipal (${meta.muniShare}): $${p.municipalTax.toFixed(2)}
 • County (${meta.countyShare}): $${p.countyTax.toFixed(2)}
-Verified via MyTownLens Public Records Watchdog: https://www.mytownlens.com/properties.html?pin=${encodeURIComponent(p.id)}`;
+Verified via MyTownLens Public Records: https://www.mytownlens.com/properties.html?pin=${encodeURIComponent(p.id)}`;
 
   navigator.clipboard.writeText(text).then(() => {
     showToast('✓ Receipt text copied to clipboard!');
@@ -8775,14 +8775,14 @@ function renderSurroundingTowns() {
           </div>
 
           <div class="surround-notes">
-            <strong>Watchdog Analysis:</strong> ${t.strengthsAndWatchdogNotes}
+            <strong>Key Analysis:</strong> ${t.strengthsAndWatchdogNotes}
           </div>
 
           <div class="card-action-bar-jumps" style="margin-top: 14px;">
             ${isFull ? `
               <button class="btn-jump-action" data-switch-city="${t.id}" style="${isCurrent ? 'background: #059669;' : ''}">
                 <span>${(CITY_REGISTRY[t.id] && CITY_REGISTRY[t.id].icon) || '🏛️'}</span>
-                ${isCurrent ? `Currently Exploring ${t.name} Watchdog` : `Switch Watchdog Platform to ${t.name} ➔`}
+                ${isCurrent ? `Currently Exploring ${t.name}` : `Switch to ${t.name} ➔`}
               </button>
             ` : `
               <button class="btn-jump-action secondary" data-jump-tab="tab-calculator">
@@ -8966,8 +8966,8 @@ function renderControversies() {
       <div class="controversy-card ${sevClass}">
         <div class="controversy-header">
           <div class="controversy-title-wrap">
-            <span class="sev-badge ${sevClass}">${escapeHtml(c.severity || 'Notice')} WATCHDOG ALERT • ${escapeHtml(c.category || 'Civic')}</span>
-            <h3 style="margin-top: 6px;">${escapeHtml(c.title || 'Watchdog Notice')}</h3>
+            <span class="sev-badge ${sevClass}">${escapeHtml(c.severity || 'Notice')} AUDIT ALERT • ${escapeHtml(c.category || 'Civic')}</span>
+            <h3 style="margin-top: 6px;">${escapeHtml(c.title || 'Civic Notice')}</h3>
             <div class="controversy-entity">Entity: ${escapeHtml(entity)} | Updated: ${escapeHtml(c.lastUpdated || '2026')}</div>
           </div>
         </div>
@@ -11635,7 +11635,7 @@ function renderFairTaxEngine() {
 
       const summaryText = `${cityLabelUpper} CITIZEN FAIR TAX REFORM SUMMARY
 Date: October 2026
-Source: MyTownLens Citizen Watchdog Project (https://www.mytownlens.com/?city=${currentCity})
+Source: MyTownLens (https://www.mytownlens.com/?city=${currentCity})
 
 HOUSEHOLD PROFILE:
 • Home Market Value: $${Number(marketVal).toLocaleString()}
@@ -14555,7 +14555,7 @@ function copyPocketBallotText() {
   txt += ` • Community Rec Center: 1232 Main Ave\n\n`;
   txt += `EARLY VOTING (Oct 24 - Nov 1): Clifton Main Library, 292 Piaget Ave\n`;
   txt += `Passaic County Board of Elections: (973) 881-4780\n`;
-  txt += `Generated via Clifton NJ Tax Watchdog (mytownlens.com/election.html)\n`;
+  txt += `Generated via MyTownLens (mytownlens.com/election.html)\n`;
 
   navigator.clipboard.writeText(txt).then(() => {
     const copyBtn = document.getElementById('btn-copy-pocket-ballot');
