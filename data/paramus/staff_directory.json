@@ -5,26 +5,26 @@
   },
   "staff": [
     {
-      "name": "Paramus Borough Executive Leadership",
-      "title": "Mayor / Municipal Executive",
+      "name": "Christopher DiPiazza",
+      "title": "Mayor of Paramus",
       "department": "Governing Body / Executive Office",
       "entity": "Paramus Borough Municipal Government",
       "salaryReported": 12500,
       "baseSalary": 12500,
       "salaryRange": "$10,000 \u2013 $15,000",
       "type": "Elected Official / Statutory Stipend",
-      "notes": "Leads Paramus Borough municipal governing body and presides over public policy meetings."
+      "notes": "Elected Mayor leading Paramus Borough Council policy and municipal proceedings."
     },
     {
-      "name": "Municipal Administrator",
-      "title": "Business Administrator / CAO",
+      "name": "Hector Olmo",
+      "title": "Borough Administrator",
       "department": "Administration & Executive Management",
       "entity": "Paramus Borough Municipal Government",
       "salaryReported": 178500,
       "baseSalary": 178500,
       "salaryRange": "$165,000 \u2013 $195,000",
       "type": "Full-Time Appointed Executive",
-      "notes": "Directs day-to-day municipal operations, department heads, and labor collective bargaining."
+      "notes": "Chief administrative officer directing daily municipal operations, capital projects, and labor relations."
     },
     {
       "name": "Chief Financial Officer (CFO)",
@@ -38,8 +38,8 @@
       "notes": "Oversees municipal debt service, annual operating budget preparation, and tax billing."
     },
     {
-      "name": "Chief of Police",
-      "title": "Police Chief & Public Safety Executive",
+      "name": "Robert M. Guidetti",
+      "title": "Chief of Police",
       "department": "Police Department",
       "entity": "Paramus Borough Municipal Government",
       "salaryReported": 194500,

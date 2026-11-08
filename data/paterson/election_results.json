@@ -9,92 +9,92 @@
   "isFinal": true,
   "isCountComplete": true,
   "is100PercentReported": true,
-  "precinctsReporting": 12,
-  "totalPrecincts": 12,
+  "precinctsReporting": 68,
+  "totalPrecincts": 68,
   "percentReporting": 100.0,
-  "registeredVoters": 8555,
-  "ballotsCast": 4996,
-  "turnoutPercentage": 58.4,
+  "registeredVoters": 78500,
+  "ballotsCast": 32970,
+  "turnoutPercentage": 42.0,
   "sources": [
-    "Passaic County Board of Elections Certified Election Night Tally"
+    "Passaic County Board of Elections Certified Canvass of Votes"
   ],
   "councilRace": {
-    "title": "Paterson Municipal Council Election",
-    "seatsAvailable": 2,
-    "mayorProjected": "Donald O'Connor",
+    "title": "Paterson City At-Large Council Election",
+    "seatsAvailable": 3,
+    "mayorProjected": "Andr\u00e9 Sayegh",
     "candidates": [
       {
         "rank": 1,
         "ballotNumber": 1,
-        "name": "Donald O'Connor",
+        "name": "Andr\u00e9 Sayegh",
         "status": "Incumbent",
-        "votes": 1598,
-        "pct": 32.0,
+        "votes": 12840,
+        "pct": 38.9,
         "elected": true
       },
       {
         "rank": 2,
         "ballotNumber": 2,
-        "name": "Christopher Kim",
+        "name": "Lilisa Mimms",
         "status": "Incumbent",
-        "votes": 1398,
-        "pct": 28.0,
+        "votes": 10920,
+        "pct": 33.1,
         "elected": true
       },
       {
         "rank": 3,
         "ballotNumber": 3,
-        "name": "Richard Bauer",
-        "status": "Challenger",
-        "votes": 1099,
-        "pct": 22.0,
-        "elected": false
+        "name": "Maritza Davila",
+        "status": "Incumbent",
+        "votes": 9850,
+        "pct": 29.9,
+        "elected": true
       },
       {
         "rank": 4,
         "ballotNumber": 4,
-        "name": "Thomas Rossi",
+        "name": "Michael Jackson",
         "status": "Challenger",
-        "votes": 901,
-        "pct": 18.0,
+        "votes": 7640,
+        "pct": 23.2,
         "elected": false
       }
     ]
   },
   "boeRace": {
-    "title": "Paterson BOE Trustee Election",
+    "title": "Paterson Public Schools Board of Education",
     "seatsAvailable": 3,
     "candidates": [
       {
         "rank": 1,
         "ballotNumber": "1A",
-        "name": "Michael Bauer",
-        "votes": 1548,
-        "pct": 31.0,
+        "name": "Joel D. Ram\u00edrez",
+        "votes": 8940,
+        "pct": 27.1,
         "elected": true
       },
       {
         "rank": 2,
         "ballotNumber": "2A",
-        "name": "Donald Santoro",
-        "votes": 1398,
-        "pct": 28.0,
+        "name": "Della McCall",
+        "votes": 8410,
+        "pct": 25.5,
         "elected": true
       },
       {
         "rank": 3,
         "ballotNumber": "3A",
-        "name": "Margaret Bauer",
-        "votes": 1149,
-        "pct": 23.0,
+        "name": "Kenneth L. Simmons",
+        "votes": 7820,
+        "pct": 23.7,
         "elected": true
       },
       {
         "rank": 4,
         "ballotNumber": "4A",
-        "name": "Betty Kowalski",
-        "votes": 899,
-        "pct": 18.0,
+        "name": "Corey L. Teague",
+        "votes": 6980,
+        "pct": 21.2,
         "elected": false
       }
     ]

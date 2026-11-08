@@ -16,6 +16,9 @@
 | **Town of Morristown** | Morris | `1424` | Faulkner Act Mayor-Council | Morris School District (Regional) | [Morris County Tax Board](https://www.morriscountynj.gov/Departments/Taxation) | [townofmorristown.org](https://www.townofmorristown.org) | [morrisschooldistrict.org](https://www.morrisschooldistrict.org) |
 | **Township of Montville** | Morris | `1421` | Township Committee (5 Committee Members) | Montville Township Public Schools | [Morris County Tax Board](https://www.morriscountynj.gov/Departments/Taxation) | [montvillenj.org](https://www.montvillenj.org) | [montville.net](https://www.montville.net) |
 | **Borough of Glen Rock** | Bergen | `0222` | Borough Form (Mayor & 6 Council) | Glen Rock Public Schools | [Bergen County Tax Board](https://www.co.bergen.nj.us/board-of-taxation) | [glenrocknj.net](https://www.glenrocknj.net) | [glenrocknj.org](https://www.glenrocknj.org) |
+| **City of Paterson** | Passaic | `1608` | Faulkner Act Mayor-Council (Plan D) | Paterson Public Schools (State-Monitored) | [Passaic County Tax Board](https://www.passaiccountynj.org/residents/board-of-taxation) | [patersonnj.gov](https://www.patersonnj.gov) | [paterson.k12.nj.us](https://www.paterson.k12.nj.us) |
+| **Village of Ridgewood** | Bergen | `0251` | 1923 Municipal Manager Act (Village Council) | Ridgewood Public Schools | [Bergen County Tax Board](https://www.co.bergen.nj.us/board-of-taxation) | [ridgewoodnj.net](https://www.ridgewoodnj.net) | [rpsnj.us](https://www.rpsnj.us) |
+| **Borough of Paramus** | Bergen | `0246` | Borough Form (Mayor & 6 Council) | Paramus Public Schools | [Bergen County Tax Board](https://www.co.bergen.nj.us/board-of-taxation) | [paramusborough.gov](https://www.paramusborough.gov) | [paramus.k12.nj.us](https://www.paramus.k12.nj.us) |
 
 ---
 

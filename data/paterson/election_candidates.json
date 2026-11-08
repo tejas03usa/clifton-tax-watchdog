@@ -3,35 +3,35 @@
   "county": "Passaic County",
   "state": "New Jersey",
   "electionDate": "Tuesday, November 3, 2026",
-  "electionType": "Paterson City Municipal Governing Body & Board of Education General Election",
+  "electionType": "Paterson City Municipal At-Large Council & Board of Education Election",
   "votingHours": "6:00 AM \u2013 8:00 PM EST",
-  "councilStructure": "Paterson City operates under New Jersey municipal statutory governance. Voters elect Council members at-large for staggered terms, alongside Paterson BOE trustees.",
+  "councilStructure": "Faulkner Act (Mayor-Council Plan D). Voters directly elect a Mayor and 9 City Council members (6 representing geographic wards and 3 elected at-large for 4-year staggered terms).",
   "totalCouncilCandidates": 4,
-  "totalCouncilSeats": 2,
-  "certifiedTaxRateContext": "5.335% Total Certified Tax Rate (2026). Equalization Ratio 45.38%.",
-  "unanimousHealthBenefitPledge": "All candidates commit to statutory ethics standards under N.J.S.A. 40A:9-145, declining unnecessary municipal healthcare perks and prioritizing local property tax relief.",
+  "totalCouncilSeats": 3,
+  "certifiedTaxRateContext": "5.335% Total Certified Tax Rate (2026). Equalization Ratio 46.12%. Passaic County Seat.",
+  "unanimousHealthBenefitPledge": "Elected officials are subject to New Jersey Chapter 78 healthcare contribution schedules and strict state-monitored fiscal compliance under DCA memorandum.",
   "votingResources": {
     "earlyVotingPeriod": "Saturday, Oct 24 \u2013 Sunday, Nov 1, 2026 (Mon\u2013Sat 10 AM\u20138 PM, Sun 10 AM\u20136 PM; closed Mon, Nov 2)",
-    "earlyVotingLocation": "Paterson Public Library / Early Voting Center, Paterson, NJ 07501",
+    "earlyVotingLocation": "Passaic County Community College (Hamilton Hall), 218 Memorial Dr, Paterson, NJ 07505 (Early Voting ONLY)",
     "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
     "mailInDropboxes": [
       {
-        "name": "Paterson Municipal Hall (Main Entrance)",
-        "address": "Municipal Plaza, Paterson, NJ 07501",
-        "notes": "Located at main civic entrance next to official drop box \u2022 Open 24/7 until 8:00 PM Election Night"
+        "name": "Paterson City Hall (Main Entrance)",
+        "address": "155 Market St, Paterson, NJ 07505",
+        "notes": "Secure county drop box located at front entrance on Market St \u2022 24/7 video monitoring"
       },
       {
-        "name": "Paterson Community Center / Public Library",
-        "address": "Civic Center Blvd, Paterson, NJ 07501",
-        "notes": "Secure county-monitored ballot receptacle \u2022 Accessible 24/7 with CCTV coverage"
+        "name": "Passaic County Administration Building",
+        "address": "401 Grand St, Paterson, NJ 07505",
+        "notes": "Located curbside in front of Passaic County Clerk's Office \u2022 Open 24/7 until 8:00 PM Election Night"
       }
     ],
     "municipalClerk": {
-      "name": "Office of the Municipal Clerk",
-      "title": "Municipal Clerk & Elections Administrator",
-      "office": "Paterson City Municipal Hall",
-      "phone": "(973) 555-0199",
-      "email": "clerk@paterson.gov"
+      "name": "Jacqueline Murray",
+      "title": "City Clerk",
+      "office": "Paterson City Hall, Room 102, 155 Market St",
+      "phone": "(973) 321-1600",
+      "email": "jmurray@patersonnj.gov"
     },
     "passaicCountyElections": {
       "superintendent": "Passaic County Clerk Elections Division: (973) 881-4127 \u2022 Board of Elections: (973) 881-4780",
@@ -43,66 +43,66 @@
   "categories": [
     {
       "id": "taxes",
-      "name": "Property Taxes & Spending",
+      "name": "Property Taxes & State Aid",
       "icon": "\ud83d\udcb0",
-      "shortDesc": "2% levy caps, debt management, and ratable preservation in Paterson"
-    },
-    {
-      "id": "infrastructure",
-      "name": "Roads, Flooding & Infrastructure",
-      "icon": "\ud83d\udee3\ufe0f",
-      "shortDesc": "Paving master plans, stormwater control, and lead service line replacements"
-    },
-    {
-      "id": "governance",
-      "name": "Ethics & Public Transparency",
-      "icon": "\u2696\ufe0f",
-      "shortDesc": "OPRA access, livestreamed meetings, and zero healthcare perks for part-time council"
-    },
-    {
-      "id": "housing",
-      "name": "Zoning & Commercial Ratables",
-      "icon": "\ud83c\udfd8\ufe0f",
-      "shortDesc": "Master plan enforcement, commercial tax base balance, and smart redevelopment"
+      "shortDesc": "Stabilizing 5.335% tax rate, School Funding Reform Act (SFRA), and commercial ratables"
     },
     {
       "id": "safety",
-      "name": "Public Safety & Emergency Services",
+      "name": "Public Safety & Police Reform",
       "icon": "\ud83d\ude94",
-      "shortDesc": "Police staffing, volunteer fire support, and emergency dispatch communications"
+      "shortDesc": "NJ Attorney General transitional police oversight, community policing, and 911 dispatch"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Roads, Flooding & Great Falls",
+      "icon": "\ud83d\udee3\ufe0f",
+      "shortDesc": "Passaic River flood mitigation, sewer separation, and road resurfacing"
+    },
+    {
+      "id": "governance",
+      "name": "Fiscal Audits & Transparency",
+      "icon": "\u2696\ufe0f",
+      "shortDesc": "City Council oversight of $348M municipal budget, overtime caps, and OPRA compliance"
+    },
+    {
+      "id": "housing",
+      "name": "Redevelopment & Housing",
+      "icon": "\ud83c\udfd8\ufe0f",
+      "shortDesc": "Hinchliffe Stadium corridor redevelopment, code enforcement, and affordable housing"
     },
     {
       "id": "education",
-      "name": "School Funding & District Co-Op",
+      "name": "School District & Facilities",
       "icon": "\ud83c\udfeb",
-      "shortDesc": "Collaboration with Paterson BOE on classroom funding and field maintenance"
+      "shortDesc": "Oversight of $724M school budget, classroom ventilation, and PreK expansion"
     }
   ],
   "councilCandidates": [
     {
       "ballotNumber": 1,
-      "id": "paterson-cand-1",
-      "name": "Donald O'Connor",
+      "id": "andre-sayegh",
+      "name": "Andr\u00e9 Sayegh",
       "status": "Incumbent",
-      "role": "Mayor / Council President",
-      "experience": "Incumbent civic executive with over 6 years of municipal leadership in Paterson; spearheaded balanced annual budgets within the certified 2% statutory cap.",
-      "initials": "DO",
-      "party": "Independent / Nonpartisan",
-      "tagline": "Prudent fiscal discipline, debt containment, and road paving across Paterson.",
+      "role": "Mayor of Paterson (3rd Term)",
+      "experience": "Serving third consecutive four-year term as Mayor; former 6th Ward City Councilman (2008\u20132018) and School Board Commissioner; led economic revival initiatives including Hinchliffe Stadium restoration.",
+      "initials": "AS",
+      "party": "Democratic / Nonpartisan",
+      "tagline": "Economic revitalization, commercial ratable expansion, and securing historic federal infrastructure grants.",
       "declinedBenefits": true,
       "categories": [
         "taxes",
-        "infrastructure",
-        "governance"
+        "housing",
+        "infrastructure"
       ],
       "keyPlatformPillars": [
-        "Protecting Paterson's residential tax base by strictly adhering to the 2% annual tax levy cap.",
-        "Expanding municipal paving and storm drainage capital improvements without long-term debt spikes."
+        "Leveraging Hinchliffe Stadium and Great Falls National Historical Park investments to attract private investment and expand non-residential tax ratables.",
+        "Aggressive pursuit of state and federal infrastructure grants to relieve local property taxpayers."
       ],
       "interviewStances": {
         "matchmakerScores": {
           "taxFreezeVsServices": "balanced",
-          "developmentStance": "smart_density",
+          "developmentStance": "commercial_first",
           "infrastructurePriority": "paving",
           "governanceStyle": "consensus",
           "housingEnforcement": "corridor_grants",
@@ -110,29 +110,99 @@
         }
       },
       "verifiedSources": [
-        "Certified Passaic County Board of Elections Nominating Petitions",
-        "Paterson City Official Reorganization Record"
+        "Passaic County Clerk Official Election Certification",
+        "City of Paterson Municipal Mayoral Inaugural Records"
       ]
     },
     {
       "ballotNumber": 2,
-      "id": "paterson-cand-2",
-      "name": "Christopher Kim",
+      "id": "lilisa-mimms",
+      "name": "Lilisa Mimms",
       "status": "Incumbent",
-      "role": "Council Member & Finance Liaison",
-      "experience": "Certified municipal finance advocate and active council liaison to public safety and DPW operations in Paterson.",
-      "initials": "CK",
-      "party": "Independent / Nonpartisan",
-      "tagline": "Zero-based budget audits and public safety modernization.",
+      "role": "Council President / At-Large Councilwoman",
+      "experience": "Incumbent At-Large Councilwoman and Council President; former Paterson School Board Commissioner; community clergy leader focused on youth development and fiscal accountability.",
+      "initials": "LM",
+      "party": "Democratic / Nonpartisan",
+      "tagline": "Community empowerment, youth recreation, and rigorous scrutiny of municipal department spending.",
       "declinedBenefits": true,
       "categories": [
         "taxes",
-        "safety",
+        "governance",
+        "safety"
+      ],
+      "keyPlatformPillars": [
+        "Conducting rigorous Council budget hearings to restrict unvetted overtime in public safety and public works.",
+        "Expanding youth vocational training, community recreation centers, and clean neighborhood initiatives."
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "smart_density",
+          "infrastructurePriority": "stormwater",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "aggressive",
+          "sharedServices": "classroom_focus"
+        }
+      },
+      "verifiedSources": [
+        "Passaic County Clerk Certified At-Large Council Tally",
+        "Paterson City Council Official Minutes & Roll Calls"
+      ]
+    },
+    {
+      "ballotNumber": 3,
+      "id": "maritza-davila",
+      "name": "Maritza Davila",
+      "status": "Incumbent",
+      "role": "At-Large Councilwoman & Finance Committee",
+      "experience": "Longstanding At-Large Councilwoman; veteran community leader and former Council President; focuses on constituent advocacy, municipal budget audits, and bilingual outreach.",
+      "initials": "MD",
+      "party": "Democratic / Nonpartisan",
+      "tagline": "Neighborhood constituent advocacy, small business assistance, and property tax stabilization.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "housing",
         "governance"
       ],
       "keyPlatformPillars": [
-        "Requiring department-by-department zero-based budgeting to eliminate vendor waste.",
-        "Equipping emergency first responders with upgraded communications and safety equipment."
+        "Requiring administration department heads to present monthly spending variance reports to the Council Finance Committee.",
+        "Protecting working families and senior homeowners through targeted property tax relief and tenant protections."
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "tenant_rights",
+          "sharedServices": "local_control"
+        }
+      },
+      "verifiedSources": [
+        "Passaic County Clerk Official Nominating Petitions",
+        "Paterson City Council Minutes"
+      ]
+    },
+    {
+      "ballotNumber": 4,
+      "id": "michael-jackson",
+      "name": "Michael Jackson",
+      "status": "Incumbent / Challenger",
+      "role": "1st Ward Councilman & Fiscal Critic",
+      "experience": "Veteran 1st Ward Council representative and outspoken fiscal critic of municipal administration spending; local entrepreneur and former restaurant operator in the historic Northside neighborhood.",
+      "initials": "MJ",
+      "party": "Independent / Nonpartisan",
+      "tagline": "Aggressive taxpayer watchdog scrutiny, municipal contract transparency, and Northside flood relief.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        "Challenging municipal legal settlements and outside vendor contracts to protect taxpayer dollars.",
+        "Demanding immediate state engineering intervention for recurring Passaic River flood damage in the 1st Ward."
       ],
       "interviewStances": {
         "matchmakerScores": {
@@ -145,146 +215,78 @@
         }
       },
       "verifiedSources": [
-        "Certified Passaic County Board of Elections Nominating Petitions",
-        "Paterson City Council Meeting Minutes"
-      ]
-    },
-    {
-      "ballotNumber": 3,
-      "id": "paterson-cand-3",
-      "name": "Richard Bauer",
-      "status": "Challenger",
-      "role": "Citizen Taxpayer Advocate & Small Business Owner",
-      "experience": "Local business owner and civic transparency campaigner; regularly audits municipal warrant lists and planning board dockets in Paterson.",
-      "initials": "RB",
-      "party": "Independent / Nonpartisan",
-      "tagline": "Total contract transparency, property tax relief, and revitalized commercial corridors.",
-      "declinedBenefits": true,
-      "categories": [
-        "taxes",
-        "housing",
-        "governance"
-      ],
-      "keyPlatformPillars": [
-        "Mandating full online publication of all municipal contracts, vendor checks, and legal settlements.",
-        "Attracting commercial ratables to reduce the property tax burden shouldered by single-family homeowners."
-      ],
-      "interviewStances": {
-        "matchmakerScores": {
-          "taxFreezeVsServices": "freeze",
-          "developmentStance": "commercial_first",
-          "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
-          "housingEnforcement": "corridor_grants",
-          "sharedServices": "county_dispatch"
-        }
-      },
-      "verifiedSources": [
-        "Certified Passaic County Board of Elections Nominating Petitions"
-      ]
-    },
-    {
-      "ballotNumber": 4,
-      "id": "paterson-cand-4",
-      "name": "Thomas Rossi",
-      "status": "Challenger",
-      "role": "Civic Leader & Environmental Engineer",
-      "experience": "Environmental project manager and neighborhood association president; specializes in flood mitigation, green infrastructure, and community recreation.",
-      "initials": "TR",
-      "party": "Independent / Nonpartisan",
-      "tagline": "Aggressive stormwater mitigation, pedestrian crosswalk safety, and transparent government.",
-      "declinedBenefits": true,
-      "categories": [
-        "infrastructure",
-        "safety",
-        "housing"
-      ],
-      "keyPlatformPillars": [
-        "Targeting state and federal infrastructure grants for local storm sewer upgrades and flood relief.",
-        "Traffic calming and sidewalk connectivity linking residential neighborhoods to schools and downtown."
-      ],
-      "interviewStances": {
-        "matchmakerScores": {
-          "taxFreezeVsServices": "services",
-          "developmentStance": "strict_ban",
-          "infrastructurePriority": "stormwater",
-          "governanceStyle": "decorum",
-          "housingEnforcement": "tenant_rights",
-          "sharedServices": "classroom_focus"
-        }
-      },
-      "verifiedSources": [
-        "Certified Passaic County Board of Elections Nominating Petitions"
+        "Passaic County Clerk Certified Candidate Filings",
+        "Paterson City Council Official Proceedings"
       ]
     }
   ],
   "boeCandidates": [
     {
-      "name": "Michael Bauer",
+      "name": "Joel D. Ram\u00edrez",
       "ballotNumber": 1,
       "seatType": "Full Term",
-      "status": "Incumbent Trustee",
-      "ballotSlogan": "Paterson Students First",
+      "status": "Board President",
+      "ballotSlogan": "Leadership, Equity & Achievement",
       "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
-      "experience": "Incumbent School Board Trustee with 3 years of service on curriculum and finance committees in Paterson Public Schools.",
-      "keyFocus": "Academic excellence, STEM curriculum integration, and student mental wellness support.",
-      "fiscalStance": "Prudent management of the $724.0M school operating budget; prioritizing direct classroom funding over administrative overhead.",
-      "infrastructureStance": "Upgrading classroom ventilation, science labs, and building security systems.",
+      "experience": "Elected Paterson School Board President in January 2026; focused on state aid advocacy, vocational curriculum partnerships, and bilingual learning.",
+      "keyFocus": "Expanding vocational academies, college dual-enrollment, and transparent budgeting for the $724M district.",
+      "fiscalStance": "Ensuring 84% State Aid allocation directly impacts classroom teachers and reduces overcrowding.",
+      "infrastructureStance": "Prioritizing school facility renovations, HVAC modernizations, and athletic field restorations.",
       "interviewStances": {
-        "keyInterviewQuote": "Our public schools are the foundation of Paterson's community and property values. Every dollar must be invested with accountability.",
-        "keyPriorities": "Classroom instruction, special education resources, and 2% tax levy cap discipline.",
-        "facilitiesAndBudget": "Transparent school budgets and energy-efficient building upgrades."
+        "keyInterviewQuote": "Paterson students possess limitless potential. Our board must ensure every single dollar of our budget directly enriches the student learning experience.",
+        "keyPriorities": "Classroom instruction, bilingual education, and student mental health.",
+        "facilitiesAndBudget": "State facility authority grants for ancient school building modernizations."
       }
     },
     {
-      "name": "Donald Santoro",
+      "name": "Della McCall",
       "ballotNumber": 2,
       "seatType": "Full Term",
-      "status": "Incumbent Trustee",
-      "ballotSlogan": "Experience & Educational Excellence",
+      "status": "Board Vice President",
+      "ballotSlogan": "Children First, Always",
       "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
-      "experience": "Educator and longtime PTA leader; focused on teacher retention, special education services, and transparent school board governance in Paterson.",
-      "keyFocus": "Supporting classroom teachers, early literacy benchmarks, and career/technical readiness.",
-      "fiscalStance": "Ensuring state school aid is maximized and shared services are leveraged with municipal DPW.",
-      "infrastructureStance": "Maintaining athletic fields, ADA accessibility, and safe school walking corridors.",
+      "experience": "Paterson School Board Vice President; career educator and child welfare advocate; dedicated to special education resources and community school partnerships.",
+      "keyFocus": "Special education inclusion, early childhood reading mastery, and parent advisory councils.",
+      "fiscalStance": "Zero-waste educational procurement and auditing third-party special education vendor billings.",
+      "infrastructureStance": "Safe school walking corridors, cafeteria nutrition upgrades, and modern digital library media centers.",
       "interviewStances": {
-        "keyInterviewQuote": "Supporting our classroom educators and students is the highest civic calling. We must ensure every child succeeds.",
-        "keyPriorities": "Early literacy, school security, and collaborative board governance.",
-        "facilitiesAndBudget": "Zero-waste educational procurement and community facility use."
+        "keyInterviewQuote": "Every child, regardless of zip code or background, deserves a world-class public education in a safe, modern classroom.",
+        "keyPriorities": "Early literacy benchmarks, special needs services, and parent engagement.",
+        "facilitiesAndBudget": "Transparent school board committee audits and community forum workshops."
       }
     },
     {
-      "name": "Margaret Bauer",
+      "name": "Kenneth L. Simmons",
       "ballotNumber": 3,
       "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Fiscal Integrity for Taxpayers & Schools",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Accountability & Proven Results",
       "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
-      "experience": "Certified public accountant and parent of two district students; advocates for transparent school audits and competitive vendor bidding in Paterson.",
-      "keyFocus": "Auditing school operational expenses, expanding advanced placement programs, and student safety.",
-      "fiscalStance": "Auditing out-of-district vendor contracts to redirect administrative savings directly into student desks.",
-      "infrastructureStance": "Comprehensive facility structural reviews and modernizing security vestibules.",
+      "experience": "Longtime School Board Trustee and former Board President; corporate operations manager with extensive governance experience overseeing district finance.",
+      "keyFocus": "Fiscal governance, collective bargaining compliance, and rigorous STEM curriculum standards.",
+      "fiscalStance": "Holding the district administration accountable for every line item in the $724M budget.",
+      "infrastructureStance": "Fast-tracking capital improvement repairs with NJ Schools Development Authority (SDA).",
       "interviewStances": {
-        "keyInterviewQuote": "Accountability to both school parents and fixed-income senior taxpayers is fully achievable with forensic budget oversight.",
-        "keyPriorities": "Competitive vendor bidding, STEM labs, and transparent public budget workshops.",
-        "facilitiesAndBudget": "Rigorous oversight of capital referendums and facility repairs."
+        "keyInterviewQuote": "Fiscal discipline and educational excellence go hand in hand. We must demand measurable outcomes for every taxpayer dollar spent.",
+        "keyPriorities": "STEM curricula, competitive teacher compensation, and fiscal transparency.",
+        "facilitiesAndBudget": "Independent external forensic audits and SDA capital project oversight."
       }
     },
     {
-      "name": "Betty Kowalski",
+      "name": "Corey L. Teague",
       "ballotNumber": 4,
       "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Community Voices for Education",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "The Community's Voice",
       "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
-      "experience": "Healthcare professional and community youth sports coach; campaigns for expanded arts, athletics, and mental health counseling in Paterson.",
-      "keyFocus": "Student wellness counseling, arts and music funding, and anti-bullying programs.",
-      "fiscalStance": "Seeking competitive educational grants to fund specialized learning labs.",
-      "infrastructureStance": "Safe drop-off traffic loops and modernizing school libraries into digital media centers.",
+      "experience": "Veteran School Board Commissioner and passionate civic activist; champions student rights, anti-bullying initiatives, and school safety.",
+      "keyFocus": "Restorative justice, community safety, and empowering grassroots parent organizations.",
+      "fiscalStance": "Ensuring district funds prioritize teacher classroom supplies over executive administration bonuses.",
+      "infrastructureStance": "Upgrading perimeter security cameras, visitor management, and clean drinking water filtration.",
       "interviewStances": {
-        "keyInterviewQuote": "A holistic education prepares our students for life. We must invest in both the mind and the well-being of every student.",
-        "keyPriorities": "Counseling staff ratios, performing arts, and inclusive extracurriculars.",
-        "facilitiesAndBudget": "State grant acquisition and sustainable community partnerships."
+        "keyInterviewQuote": "I speak directly for the parents and children of Paterson who feel unheard. Our schools must be sanctuaries of hope and learning.",
+        "keyPriorities": "Anti-bullying enforcement, clean water in schools, and direct teacher classroom stipends.",
+        "facilitiesAndBudget": "Eliminating no-bid consultant contracts and expanding afterschool programs."
       }
     }
   ],
@@ -305,15 +307,15 @@
       ]
     },
     "usHouse": {
-      "title": "U.S. House of Representatives (Passaic County)",
+      "title": "U.S. House of Representatives (NJ-09 Passaic)",
       "candidates": [
         {
-          "name": "Certified Congressional Nominee",
+          "name": "Nellie Pou",
           "party": "Democratic",
-          "status": "Incumbent / Nominee"
+          "status": "State Senator / Nominee"
         },
         {
-          "name": "Certified Congressional Challenger",
+          "name": "Billy Prempeh",
           "party": "Republican",
           "status": "Challenger"
         }
@@ -324,22 +326,22 @@
       "seats": 3,
       "candidates": [
         {
-          "name": "Certified County Commissioner 1",
-          "party": "Nominee",
-          "status": "Incumbent"
+          "name": "John Bartlett",
+          "party": "Democratic",
+          "status": "Incumbent Commissioner"
         },
         {
-          "name": "Certified County Commissioner 2",
-          "party": "Nominee",
-          "status": "Challenger"
+          "name": "Orlando Cruz",
+          "party": "Democratic",
+          "status": "Incumbent Commissioner"
         }
       ]
     }
   },
   "verifiedSources": [
-    "Passaic County Clerk Official Candidate Petitions",
-    "Paterson City Municipal Reorganization Minutes",
-    "New Jersey Election Law Enforcement Commission (ELEC) Campaign Reports"
+    "Passaic County Clerk Official Candidate Petitions & Canvass Report",
+    "City of Paterson Municipal Council Certified Proceedings",
+    "Paterson Public Schools Board of Education Reorganization Minutes"
   ],
-  "electionNotice": "Paterson City Council and School Board petitions are certified by the Passaic County Clerk following statutory filing deadlines."
+  "electionNotice": "Paterson municipal elections and Board of Education petitions are certified by the Passaic County Clerk following statutory filing deadlines."
 }

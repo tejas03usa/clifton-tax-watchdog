@@ -774,8 +774,8 @@ const CITY_REGISTRY = {
   'paterson': {
       "id": "paterson",
       "name": "Paterson",
-      "officialTownPortal": "https://www.paterson.org",
-      "officialDocsUrl": "https://www.paterson.org/finance",
+      "officialTownPortal": "https://www.patersonnj.gov",
+      "officialDocsUrl": "https://www.patersonnj.gov/department/index.php?structureid=13",
       "fullName": "Paterson City",
       "badgeText": "PATERSON CITY \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfed",
@@ -1505,8 +1505,8 @@ const CITY_REGISTRY = {
   'ridgewood': {
       "id": "ridgewood",
       "name": "Ridgewood",
-      "officialTownPortal": "https://www.ridgewood.org",
-      "officialDocsUrl": "https://www.ridgewood.org/finance",
+      "officialTownPortal": "https://www.ridgewoodnj.net",
+      "officialDocsUrl": "https://www.ridgewoodnj.net/departments/finance",
       "fullName": "Ridgewood Village",
       "badgeText": "RIDGEWOOD VILLAGE \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udf32",
@@ -1548,8 +1548,8 @@ const CITY_REGISTRY = {
   'paramus': {
       "id": "paramus",
       "name": "Paramus",
-      "officialTownPortal": "https://www.paramus.org",
-      "officialDocsUrl": "https://www.paramus.org/finance",
+      "officialTownPortal": "https://www.paramusborough.gov",
+      "officialDocsUrl": "https://www.paramusborough.gov/finance",
       "fullName": "Paramus Borough",
       "badgeText": "PARAMUS BOROUGH \u2022 CERTIFIED FISCAL AUDIT",
       "icon": "\ud83c\udfec",

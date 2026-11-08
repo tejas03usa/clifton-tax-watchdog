@@ -5,26 +5,26 @@
   },
   "staff": [
     {
-      "name": "Ridgewood Village Executive Leadership",
-      "title": "Mayor / Municipal Executive",
+      "name": "Paul Vagianos",
+      "title": "Mayor / Village Council President",
       "department": "Governing Body / Executive Office",
       "entity": "Ridgewood Village Municipal Government",
-      "salaryReported": 12500,
-      "baseSalary": 12500,
-      "salaryRange": "$10,000 \u2013 $15,000",
+      "salaryReported": 0,
+      "baseSalary": 0,
+      "salaryRange": "zsh (Non-Salaried Civic Service)",
       "type": "Elected Official / Statutory Stipend",
-      "notes": "Leads Ridgewood Village municipal governing body and presides over public policy meetings."
+      "notes": "Elected Mayor under 1923 Municipal Manager Act; serves without municipal salary or healthcare benefits."
     },
     {
-      "name": "Municipal Administrator",
-      "title": "Business Administrator / CAO",
+      "name": "Keith Kazmark",
+      "title": "Village Manager & Chief Executive",
       "department": "Administration & Executive Management",
       "entity": "Ridgewood Village Municipal Government",
       "salaryReported": 178500,
       "baseSalary": 178500,
       "salaryRange": "$165,000 \u2013 $195,000",
       "type": "Full-Time Appointed Executive",
-      "notes": "Directs day-to-day municipal operations, department heads, and labor collective bargaining."
+      "notes": "Full-time appointed Village Manager directing daily administration, DPW, and Ridgewood Water."
     },
     {
       "name": "Chief Financial Officer (CFO)",
@@ -38,8 +38,8 @@
       "notes": "Oversees municipal debt service, annual operating budget preparation, and tax billing."
     },
     {
-      "name": "Chief of Police",
-      "title": "Police Chief & Public Safety Executive",
+      "name": "Forest Lyons",
+      "title": "Chief of Police",
       "department": "Police Department",
       "entity": "Ridgewood Village Municipal Government",
       "salaryReported": 194500,

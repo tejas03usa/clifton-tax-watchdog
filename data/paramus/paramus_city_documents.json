@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "portalUrl": "https://www.paramus.org",
-    "docsUrl": "https://www.paramus.org/finance",
+    "portalUrl": "https://www.paramusborough.gov",
+    "docsUrl": "https://www.paramusborough.gov/finance",
     "portalTitle": "Paramus Borough Official Portal",
     "scrapedAt": "2026-10-31",
     "totalDocuments": 6,
@@ -18,7 +18,7 @@
           "id": 24601,
           "title": "CY 2026 Paramus Adopted Municipal Budget",
           "year": 2026,
-          "downloadUrl": "https://www.paramus.org/finance",
+          "downloadUrl": "https://www.paramusborough.gov/finance",
           "category": "Adopted Budgets",
           "description": "Certified $64.8M municipal operating budget adopted by the Paramus Borough Governing Body."
         },
@@ -26,7 +26,7 @@
           "id": 24602,
           "title": "CY 2025 Paramus Adopted Municipal Budget & Resolution",
           "year": 2025,
-          "downloadUrl": "https://www.paramus.org/finance",
+          "downloadUrl": "https://www.paramusborough.gov/finance",
           "category": "Adopted Budgets",
           "description": "Official CY 2025 municipal operating ledger and certified municipal tax levy."
         }
@@ -41,7 +41,7 @@
           "id": 24603,
           "title": "CY 2026 User-Friendly Municipal Budget (UFB)",
           "year": 2026,
-          "downloadUrl": "https://www.paramus.org/finance",
+          "downloadUrl": "https://www.paramusborough.gov/finance",
           "category": "Introduced & User-Friendly Budgets",
           "description": "Statutory DLGS User-Friendly Budget detailing municipal personnel counts, health benefit waivers, and outstanding debt."
         }
@@ -56,7 +56,7 @@
           "id": 24604,
           "title": "CY 2025 Independent Municipal Audit Report",
           "year": 2025,
-          "downloadUrl": "https://www.paramus.org/finance",
+          "downloadUrl": "https://www.paramusborough.gov/finance",
           "category": "Audit Reports & Forensics",
           "description": "Independent Registered Municipal Accountant (RMA) annual audit report on statutory regulatory accounting basis."
         }
@@ -71,7 +71,7 @@
           "id": 24605,
           "title": "CY 2025 Annual Financial Statement (AFS)",
           "year": 2025,
-          "downloadUrl": "https://www.paramus.org/finance",
+          "downloadUrl": "https://www.paramusborough.gov/finance",
           "category": "Financial Statements & Debt",
           "description": "State-certified Annual Financial Statement detailing revenues, delinquent tax collections, and reserve funds."
         },
@@ -79,7 +79,7 @@
           "id": 24606,
           "title": "CY 2025 Annual Debt Statement (ADS)",
           "year": 2025,
-          "downloadUrl": "https://www.paramus.org/finance",
+          "downloadUrl": "https://www.paramusborough.gov/finance",
           "category": "Financial Statements & Debt",
           "description": "Certified calculation of equalized valuations, net debt, and statutory debt percentage capacity for Paramus Borough."
         }

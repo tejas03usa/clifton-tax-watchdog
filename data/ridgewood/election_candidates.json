@@ -3,35 +3,30 @@
   "county": "Bergen County",
   "state": "New Jersey",
   "electionDate": "Tuesday, November 3, 2026",
-  "electionType": "Ridgewood Village Municipal Governing Body & Board of Education General Election",
+  "electionType": "Village of Ridgewood Village Council & Board of Education Election",
   "votingHours": "6:00 AM \u2013 8:00 PM EST",
-  "councilStructure": "Ridgewood Village operates under New Jersey municipal statutory governance. Voters elect Council members at-large for staggered terms, alongside Ridgewood BOE trustees.",
+  "councilStructure": "1923 Municipal Manager Act (Village Council). 5 Council members elected at-large for 4-year staggered terms. The Council chooses a Mayor and Deputy Mayor from its members.",
   "totalCouncilCandidates": 4,
   "totalCouncilSeats": 2,
-  "certifiedTaxRateContext": "2.782% Total Certified Tax Rate (2026). Equalization Ratio 76.5%.",
-  "unanimousHealthBenefitPledge": "All candidates commit to statutory ethics standards under N.J.S.A. 40A:9-145, declining unnecessary municipal healthcare perks and prioritizing local property tax relief.",
+  "certifiedTaxRateContext": "2.782% Total Certified Tax Rate (2026). Equalization Ratio 85.50%. Median Home Assessment $815,000.",
+  "unanimousHealthBenefitPledge": "Village Council members serve under part-time non-salaried civic service, declining municipal health insurance benefits.",
   "votingResources": {
     "earlyVotingPeriod": "Saturday, Oct 24 \u2013 Sunday, Nov 1, 2026 (Mon\u2013Sat 10 AM\u20138 PM, Sun 10 AM\u20136 PM; closed Mon, Nov 2)",
-    "earlyVotingLocation": "Ridgewood Public Library / Early Voting Center, Ridgewood, NJ 07450",
+    "earlyVotingLocation": "The Stable (Ridgewood Parks & Rec), 259 N Maple Ave, Ridgewood, NJ 07450 (Early Voting ONLY)",
     "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
     "mailInDropboxes": [
       {
-        "name": "Ridgewood Municipal Hall (Main Entrance)",
-        "address": "Municipal Plaza, Ridgewood, NJ 07450",
-        "notes": "Located at main civic entrance next to official drop box \u2022 Open 24/7 until 8:00 PM Election Night"
-      },
-      {
-        "name": "Ridgewood Community Center / Public Library",
-        "address": "Civic Center Blvd, Ridgewood, NJ 07450",
-        "notes": "Secure county-monitored ballot receptacle \u2022 Accessible 24/7 with CCTV coverage"
+        "name": "Ridgewood Village Hall (Front Entrance)",
+        "address": "131 N Maple Ave, Ridgewood, NJ 07450",
+        "notes": "Secure Bergen County drop box located near main entrance \u2022 Open 24/7 until 8:00 PM Election Night"
       }
     ],
     "municipalClerk": {
-      "name": "Office of the Municipal Clerk",
-      "title": "Municipal Clerk & Elections Administrator",
-      "office": "Ridgewood Village Municipal Hall",
-      "phone": "(973) 555-0199",
-      "email": "clerk@ridgewood.gov"
+      "name": "Heather Mailander",
+      "title": "Village Clerk & Assistant Village Manager",
+      "office": "Ridgewood Village Hall, 131 N Maple Ave",
+      "phone": "(201) 670-5500 Ext. 2205",
+      "email": "hmailander@ridgewoodnj.net"
     },
     "passaicCountyElections": {
       "superintendent": "Bergen County Clerk Elections Division: (201) 336-7020 \u2022 Board of Elections: (201) 336-6230",
@@ -43,66 +38,66 @@
   "categories": [
     {
       "id": "taxes",
-      "name": "Property Taxes & Spending",
+      "name": "Property Taxes & School Levy",
       "icon": "\ud83d\udcb0",
-      "shortDesc": "2% levy caps, debt management, and ratable preservation in Ridgewood"
+      "shortDesc": "Managing tax burden on $800k+ homes, $132M school budget, and municipal debt"
     },
     {
       "id": "infrastructure",
-      "name": "Roads, Flooding & Infrastructure",
-      "icon": "\ud83d\udee3\ufe0f",
-      "shortDesc": "Paving master plans, stormwater control, and lead service line replacements"
+      "name": "Ridgewood Water & Master Plan",
+      "icon": "\ud83d\udca7",
+      "shortDesc": "Ridgewood Water PFAS treatment plants, storm drainage, and historic downtown preservation"
     },
     {
       "id": "governance",
-      "name": "Ethics & Public Transparency",
+      "name": "Village Manager Oversight",
       "icon": "\u2696\ufe0f",
-      "shortDesc": "OPRA access, livestreamed meetings, and zero healthcare perks for part-time council"
+      "shortDesc": "Transparency under 1923 Manager Act, advisory committee public input, and open records"
     },
     {
       "id": "housing",
-      "name": "Zoning & Commercial Ratables",
+      "name": "Historic Zoning & Parking",
       "icon": "\ud83c\udfd8\ufe0f",
-      "shortDesc": "Master plan enforcement, commercial tax base balance, and smart redevelopment"
+      "shortDesc": "Central Business District vitality, Hudson St garage operations, and residential character"
     },
     {
       "id": "safety",
-      "name": "Public Safety & Emergency Services",
+      "name": "Pedestrian Safety & Fire/EMS",
       "icon": "\ud83d\ude94",
-      "shortDesc": "Police staffing, volunteer fire support, and emergency dispatch communications"
+      "shortDesc": "Safe routes to school, downtown crosswalk beacons, and full-time professional police"
     },
     {
       "id": "education",
-      "name": "School Funding & District Co-Op",
+      "name": "Ridgewood Public Schools",
       "icon": "\ud83c\udfeb",
-      "shortDesc": "Collaboration with Ridgewood BOE on classroom funding and field maintenance"
+      "shortDesc": "Academic ranking preservation, high school turf fields & lighting, and STEM facilities"
     }
   ],
   "councilCandidates": [
     {
       "ballotNumber": 1,
-      "id": "ridgewood-cand-1",
-      "name": "David Vanderbilt",
+      "id": "paul-vagianos",
+      "name": "Paul Vagianos",
       "status": "Incumbent",
-      "role": "Mayor / Council President",
-      "experience": "Incumbent civic executive with over 6 years of municipal leadership in Ridgewood; spearheaded balanced annual budgets within the certified 2% statutory cap.",
-      "initials": "DV",
+      "role": "Mayor of Ridgewood",
+      "experience": "Serving as Mayor of Ridgewood; longtime Village business owner (It's Greek to Me) and former Chamber of Commerce president; focuses on downtown business vitality, pedestrian walkability, and fiscal prudence.",
+      "initials": "PV",
       "party": "Independent / Nonpartisan",
-      "tagline": "Prudent fiscal discipline, debt containment, and road paving across Ridgewood.",
+      "tagline": "Downtown vibrancy, balanced budgets, and collaborative non-partisan Village governance.",
       "declinedBenefits": true,
       "categories": [
         "taxes",
-        "infrastructure",
+        "housing",
         "governance"
       ],
       "keyPlatformPillars": [
-        "Protecting Ridgewood's residential tax base by strictly adhering to the 2% annual tax levy cap.",
-        "Expanding municipal paving and storm drainage capital improvements without long-term debt spikes."
+        "Strengthening Ridgewood's Central Business District ratables to lessen reliance on residential property taxes.",
+        "Collaborating across municipal boards to modernize Village infrastructure while preserving historic architecture."
       ],
       "interviewStances": {
         "matchmakerScores": {
           "taxFreezeVsServices": "balanced",
-          "developmentStance": "smart_density",
+          "developmentStance": "commercial_first",
           "infrastructurePriority": "paving",
           "governanceStyle": "consensus",
           "housingEnforcement": "corridor_grants",
@@ -110,29 +105,29 @@
         }
       },
       "verifiedSources": [
-        "Certified Bergen County Board of Elections Nominating Petitions",
-        "Ridgewood Village Official Reorganization Record"
+        "Village of Ridgewood Official Council Organization Records",
+        "Bergen County Clerk Certified Sample Ballot"
       ]
     },
     {
       "ballotNumber": 2,
-      "id": "ridgewood-cand-2",
-      "name": "Anthony Shah",
+      "id": "pamela-perron",
+      "name": "Pamela R. Perron",
       "status": "Incumbent",
-      "role": "Council Member & Finance Liaison",
-      "experience": "Certified municipal finance advocate and active council liaison to public safety and DPW operations in Ridgewood.",
-      "initials": "AS",
+      "role": "Deputy Mayor",
+      "experience": "Deputy Mayor of Ridgewood; career attorney and former federal prosecutor; champions Ridgewood Water PFAS environmental compliance, transparent village management, and fiscal oversight.",
+      "initials": "PP",
       "party": "Independent / Nonpartisan",
-      "tagline": "Zero-based budget audits and public safety modernization.",
+      "tagline": "Rigorous legal oversight, clean drinking water filtration, and open government.",
       "declinedBenefits": true,
       "categories": [
-        "taxes",
-        "safety",
-        "governance"
+        "infrastructure",
+        "governance",
+        "taxes"
       ],
       "keyPlatformPillars": [
-        "Requiring department-by-department zero-based budgeting to eliminate vendor waste.",
-        "Equipping emergency first responders with upgraded communications and safety equipment."
+        "Overseeing multi-million dollar Ridgewood Water capital projects to ensure clean, PFAS-free drinking water.",
+        "Ensuring strict compliance with the statutory 2% tax levy cap and competitive public contract procurement."
       ],
       "interviewStances": {
         "matchmakerScores": {
@@ -145,146 +140,131 @@
         }
       },
       "verifiedSources": [
-        "Certified Bergen County Board of Elections Nominating Petitions",
-        "Ridgewood Village Council Meeting Minutes"
+        "Village of Ridgewood Certified Council Roll",
+        "Ridgewood Water Capital Advisory Board Filings"
       ]
     },
     {
       "ballotNumber": 3,
-      "id": "ridgewood-cand-3",
-      "name": "Nancy Vanderbilt",
-      "status": "Challenger",
-      "role": "Citizen Taxpayer Advocate & Small Business Owner",
-      "experience": "Local business owner and civic transparency campaigner; regularly audits municipal warrant lists and planning board dockets in Ridgewood.",
-      "initials": "NV",
+      "id": "evan-weitz",
+      "name": "Evan Weitz",
+      "status": "Incumbent",
+      "role": "Village Councilman & Finance Committee",
+      "experience": "Incumbent Village Councilman; former federal prosecutor and corporate compliance executive; focuses on public safety investments, traffic calming, and capital reserve planning.",
+      "initials": "EW",
       "party": "Independent / Nonpartisan",
-      "tagline": "Total contract transparency, property tax relief, and revitalized commercial corridors.",
+      "tagline": "Prudent debt containment, first responder support, and pedestrian safety.",
       "declinedBenefits": true,
       "categories": [
         "taxes",
-        "housing",
+        "safety",
         "governance"
       ],
       "keyPlatformPillars": [
-        "Mandating full online publication of all municipal contracts, vendor checks, and legal settlements.",
-        "Attracting commercial ratables to reduce the property tax burden shouldered by single-family homeowners."
+        "Restricting municipal bond issuance to maintain Ridgewood's premier AAA municipal credit rating.",
+        "Enhancing crosswalk safety signage and speed mitigation on key residential arteries."
       ],
       "interviewStances": {
         "matchmakerScores": {
           "taxFreezeVsServices": "freeze",
-          "developmentStance": "commercial_first",
+          "developmentStance": "smart_density",
           "infrastructurePriority": "paving",
-          "governanceStyle": "watchdog",
+          "governanceStyle": "decorum",
           "housingEnforcement": "corridor_grants",
           "sharedServices": "county_dispatch"
         }
       },
       "verifiedSources": [
-        "Certified Bergen County Board of Elections Nominating Petitions"
+        "Bergen County Clerk Certified Council Return",
+        "Village of Ridgewood Municipal Reorganization Record"
       ]
     },
     {
       "ballotNumber": 4,
-      "id": "ridgewood-cand-4",
-      "name": "Christopher Sullivan",
-      "status": "Challenger",
-      "role": "Civic Leader & Environmental Engineer",
-      "experience": "Environmental project manager and neighborhood association president; specializes in flood mitigation, green infrastructure, and community recreation.",
-      "initials": "CS",
+      "id": "siobhan-winograd",
+      "name": "Siobhan Winograd",
+      "status": "Incumbent",
+      "role": "Village Councilwoman & Community Advocate",
+      "experience": "Incumbent Village Councilwoman; community historian, active school parent volunteer, and civic organizer; leads initiatives on open space, environmental sustainability, and historic preservation.",
+      "initials": "SW",
       "party": "Independent / Nonpartisan",
-      "tagline": "Aggressive stormwater mitigation, pedestrian crosswalk safety, and transparent government.",
+      "tagline": "Open space preservation, community engagement, and environmental stewardship.",
       "declinedBenefits": true,
       "categories": [
         "infrastructure",
-        "safety",
-        "housing"
+        "housing",
+        "governance"
       ],
       "keyPlatformPillars": [
-        "Targeting state and federal infrastructure grants for local storm sewer upgrades and flood relief.",
-        "Traffic calming and sidewalk connectivity linking residential neighborhoods to schools and downtown."
+        "Preserving Village parks and passive open space while upgrading recreational facilities for youth leagues.",
+        "Fostering civic engagement through regular community town halls and transparent committee reporting."
       ],
       "interviewStances": {
         "matchmakerScores": {
           "taxFreezeVsServices": "services",
           "developmentStance": "strict_ban",
           "infrastructurePriority": "stormwater",
-          "governanceStyle": "decorum",
+          "governanceStyle": "consensus",
           "housingEnforcement": "tenant_rights",
           "sharedServices": "classroom_focus"
         }
       },
       "verifiedSources": [
-        "Certified Bergen County Board of Elections Nominating Petitions"
+        "Bergen County Clerk Certified Returns",
+        "Ridgewood Village Council Proceedings"
       ]
     }
   ],
   "boeCandidates": [
     {
-      "name": "Anthony Santoro",
+      "name": "Sheila Brogan",
       "ballotNumber": 1,
       "seatType": "Full Term",
-      "status": "Incumbent Trustee",
-      "ballotSlogan": "Ridgewood Students First",
+      "status": "Board President",
+      "ballotSlogan": "Dedicated to Educational Excellence",
       "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
-      "experience": "Incumbent School Board Trustee with 3 years of service on curriculum and finance committees in Ridgewood Public Schools.",
-      "keyFocus": "Academic excellence, STEM curriculum integration, and student mental wellness support.",
-      "fiscalStance": "Prudent management of the $138.5M school operating budget; prioritizing direct classroom funding over administrative overhead.",
-      "infrastructureStance": "Upgrading classroom ventilation, science labs, and building security systems.",
+      "experience": "Distinguished veteran Ridgewood Board of Education President with over 20 years of dedicated service; recognized statewide for school governance leadership.",
+      "keyFocus": "Preserving Ridgewood's premier state and national academic rankings while managing a $132M budget.",
+      "fiscalStance": "Strict 2% tax levy cap compliance and strategic reserve allocation to avoid service cuts.",
+      "infrastructureStance": "Renovating aging school roofs, HVAC upgrades, and science lab modernizations across all 10 district facilities.",
       "interviewStances": {
-        "keyInterviewQuote": "Our public schools are the foundation of Ridgewood's community and property values. Every dollar must be invested with accountability.",
-        "keyPriorities": "Classroom instruction, special education resources, and 2% tax levy cap discipline.",
-        "facilitiesAndBudget": "Transparent school budgets and energy-efficient building upgrades."
+        "keyInterviewQuote": "Our public schools are the heart of Ridgewood. We must protect our high academic standards while remaining mindful of our homeowners' property tax investments.",
+        "keyPriorities": "Classroom excellence, special education inclusion, and student mental wellness.",
+        "facilitiesAndBudget": "Transparent school budget forums and long-term facility capital plans."
       }
     },
     {
-      "name": "Sandra Kowalski",
+      "name": "Muhammad Mahmoud",
       "ballotNumber": 2,
       "seatType": "Full Term",
-      "status": "Incumbent Trustee",
-      "ballotSlogan": "Experience & Educational Excellence",
+      "status": "Board Vice President",
+      "ballotSlogan": "Innovation & Integrity for Ridgewood Schools",
       "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
-      "experience": "Educator and longtime PTA leader; focused on teacher retention, special education services, and transparent school board governance in Ridgewood.",
-      "keyFocus": "Supporting classroom teachers, early literacy benchmarks, and career/technical readiness.",
-      "fiscalStance": "Ensuring state school aid is maximized and shared services are leveraged with municipal DPW.",
-      "infrastructureStance": "Maintaining athletic fields, ADA accessibility, and safe school walking corridors.",
+      "experience": "Ridgewood Board of Education Vice President; technology strategist and parent volunteer; champions STEM learning, computer science curricula, and school security.",
+      "keyFocus": "Integrating modern technology and artificial intelligence literacy into K-12 classrooms.",
+      "fiscalStance": "Optimizing operational expenditures through competitive technology vendor procurement.",
+      "infrastructureStance": "Campus perimeter security enhancements, digital access control, and modernized media centers.",
       "interviewStances": {
-        "keyInterviewQuote": "Supporting our classroom educators and students is the highest civic calling. We must ensure every child succeeds.",
-        "keyPriorities": "Early literacy, school security, and collaborative board governance.",
-        "facilitiesAndBudget": "Zero-waste educational procurement and community facility use."
+        "keyInterviewQuote": "Preparing Ridgewood students for the future requires modern tools, innovative educators, and fiscally sound school management.",
+        "keyPriorities": "STEM curricula, student cybersecurity, and classroom technology.",
+        "facilitiesAndBudget": "Zero-waste tech procurement and energy-efficient school operations."
       }
     },
     {
-      "name": "Lisa Sullivan",
+      "name": "Saurabh Dani",
       "ballotNumber": 3,
       "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Fiscal Integrity for Taxpayers & Schools",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Empowering Every Student",
       "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
-      "experience": "Certified public accountant and parent of two district students; advocates for transparent school audits and competitive vendor bidding in Ridgewood.",
-      "keyFocus": "Auditing school operational expenses, expanding advanced placement programs, and student safety.",
-      "fiscalStance": "Auditing out-of-district vendor contracts to redirect administrative savings directly into student desks.",
-      "infrastructureStance": "Comprehensive facility structural reviews and modernizing security vestibules.",
+      "experience": "Incumbent School Board Trustee; corporate engineer and active community volunteer; focuses on curriculum rigor, student wellness, and math acceleration.",
+      "keyFocus": "Advanced math and science pathways, transparent communication, and student mental wellness.",
+      "fiscalStance": "Ensuring educational dollars stay in the classroom and support teacher professional development.",
+      "infrastructureStance": "Modernizing elementary school playgrounds, HVAC ventilation, and cafeteria nutrition facilities.",
       "interviewStances": {
-        "keyInterviewQuote": "Accountability to both school parents and fixed-income senior taxpayers is fully achievable with forensic budget oversight.",
-        "keyPriorities": "Competitive vendor bidding, STEM labs, and transparent public budget workshops.",
-        "facilitiesAndBudget": "Rigorous oversight of capital referendums and facility repairs."
-      }
-    },
-    {
-      "name": "Linda Esposito",
-      "ballotNumber": 4,
-      "seatType": "Full Term",
-      "status": "Challenger",
-      "ballotSlogan": "Community Voices for Education",
-      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
-      "experience": "Healthcare professional and community youth sports coach; campaigns for expanded arts, athletics, and mental health counseling in Ridgewood.",
-      "keyFocus": "Student wellness counseling, arts and music funding, and anti-bullying programs.",
-      "fiscalStance": "Seeking competitive educational grants to fund specialized learning labs.",
-      "infrastructureStance": "Safe drop-off traffic loops and modernizing school libraries into digital media centers.",
-      "interviewStances": {
-        "keyInterviewQuote": "A holistic education prepares our students for life. We must invest in both the mind and the well-being of every student.",
-        "keyPriorities": "Counseling staff ratios, performing arts, and inclusive extracurriculars.",
-        "facilitiesAndBudget": "State grant acquisition and sustainable community partnerships."
+        "keyInterviewQuote": "Educational rigor and compassionate student support must go together. We are committed to lifting up every learner in Ridgewood.",
+        "keyPriorities": "Curriculum standards, mental wellness counseling, and parent transparency.",
+        "facilitiesAndBudget": "Strategic facilities master planning with community oversight."
       }
     }
   ],
@@ -305,15 +285,15 @@
       ]
     },
     "usHouse": {
-      "title": "U.S. House of Representatives (Bergen County)",
+      "title": "U.S. House of Representatives (NJ-05 Bergen)",
       "candidates": [
         {
-          "name": "Certified Congressional Nominee",
+          "name": "Josh Gottheimer",
           "party": "Democratic",
-          "status": "Incumbent / Nominee"
+          "status": "Incumbent Representative"
         },
         {
-          "name": "Certified Congressional Challenger",
+          "name": "Mary Jo-Ann Guinchard",
           "party": "Republican",
           "status": "Challenger"
         }
@@ -324,22 +304,22 @@
       "seats": 3,
       "candidates": [
         {
-          "name": "Certified County Commissioner 1",
-          "party": "Nominee",
-          "status": "Incumbent"
+          "name": "Tracy Silna Zur",
+          "party": "Democratic",
+          "status": "Incumbent Commissioner"
         },
         {
-          "name": "Certified County Commissioner 2",
-          "party": "Nominee",
-          "status": "Challenger"
+          "name": "Thomas J. Sullivan",
+          "party": "Democratic",
+          "status": "Incumbent Commissioner"
         }
       ]
     }
   },
   "verifiedSources": [
-    "Bergen County Clerk Official Candidate Petitions",
-    "Ridgewood Village Municipal Reorganization Minutes",
-    "New Jersey Election Law Enforcement Commission (ELEC) Campaign Reports"
+    "Bergen County Clerk Certified General Election Petitions",
+    "Village of Ridgewood Municipal Council Organization Minutes",
+    "Ridgewood Public Schools Board of Education Reorganization"
   ],
-  "electionNotice": "Ridgewood Village Council and School Board petitions are certified by the Bergen County Clerk following statutory filing deadlines."
+  "electionNotice": "Village of Ridgewood municipal council and school board candidate petitions are certified by the Bergen County Clerk following statutory deadlines."
 }

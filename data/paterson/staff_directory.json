@@ -5,26 +5,26 @@
   },
   "staff": [
     {
-      "name": "Paterson City Executive Leadership",
-      "title": "Mayor / Municipal Executive",
+      "name": "Andr\u00e9 Sayegh",
+      "title": "Mayor of Paterson",
       "department": "Governing Body / Executive Office",
       "entity": "Paterson City Municipal Government",
       "salaryReported": 12500,
       "baseSalary": 12500,
       "salaryRange": "$10,000 \u2013 $15,000",
       "type": "Elected Official / Statutory Stipend",
-      "notes": "Leads Paterson City municipal governing body and presides over public policy meetings."
+      "notes": "Third-term elected executive presiding over Paterson municipal government."
     },
     {
-      "name": "Municipal Administrator",
-      "title": "Business Administrator / CAO",
+      "name": "Daniel Golabek",
+      "title": "City Business Administrator (CAO)",
       "department": "Administration & Executive Management",
       "entity": "Paterson City Municipal Government",
       "salaryReported": 178500,
       "baseSalary": 178500,
       "salaryRange": "$165,000 \u2013 $195,000",
       "type": "Full-Time Appointed Executive",
-      "notes": "Directs day-to-day municipal operations, department heads, and labor collective bargaining."
+      "notes": "Chief administrative officer overseeing all municipal operating departments."
     },
     {
       "name": "Chief Financial Officer (CFO)",
@@ -38,8 +38,8 @@
       "notes": "Oversees municipal debt service, annual operating budget preparation, and tax billing."
     },
     {
-      "name": "Chief of Police",
-      "title": "Police Chief & Public Safety Executive",
+      "name": "Command Staff / AG Oversight",
+      "title": "Police Department Leadership",
       "department": "Police Department",
       "entity": "Paterson City Municipal Government",
       "salaryReported": 194500,

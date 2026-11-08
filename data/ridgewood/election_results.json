@@ -9,93 +9,85 @@
   "isFinal": true,
   "isCountComplete": true,
   "is100PercentReported": true,
-  "precinctsReporting": 12,
-  "totalPrecincts": 12,
+  "precinctsReporting": 18,
+  "totalPrecincts": 18,
   "percentReporting": 100.0,
-  "registeredVoters": 21333,
-  "ballotsCast": 12458,
-  "turnoutPercentage": 58.4,
+  "registeredVoters": 19400,
+  "ballotsCast": 12840,
+  "turnoutPercentage": 66.2,
   "sources": [
     "Bergen County Board of Elections Certified Election Night Tally"
   ],
   "councilRace": {
-    "title": "Ridgewood Municipal Council Election",
+    "title": "Ridgewood Village Council Election",
     "seatsAvailable": 2,
-    "mayorProjected": "David Vanderbilt",
+    "mayorProjected": "Paul Vagianos",
     "candidates": [
       {
         "rank": 1,
         "ballotNumber": 1,
-        "name": "David Vanderbilt",
+        "name": "Evan Weitz",
         "status": "Incumbent",
-        "votes": 3986,
-        "pct": 32.0,
+        "votes": 5240,
+        "pct": 40.8,
         "elected": true
       },
       {
         "rank": 2,
         "ballotNumber": 2,
-        "name": "Anthony Shah",
+        "name": "Siobhan Winograd",
         "status": "Incumbent",
-        "votes": 3488,
-        "pct": 28.0,
+        "votes": 4980,
+        "pct": 38.8,
         "elected": true
       },
       {
         "rank": 3,
         "ballotNumber": 3,
-        "name": "Nancy Vanderbilt",
-        "status": "Challenger",
-        "votes": 2740,
-        "pct": 22.0,
+        "name": "Pamela R. Perron",
+        "status": "Incumbent",
+        "votes": 4410,
+        "pct": 34.3,
         "elected": false
       },
       {
         "rank": 4,
         "ballotNumber": 4,
-        "name": "Christopher Sullivan",
-        "status": "Challenger",
-        "votes": 2244,
-        "pct": 18.0,
+        "name": "Paul Vagianos",
+        "status": "Incumbent",
+        "votes": 4210,
+        "pct": 32.8,
         "elected": false
       }
     ]
   },
   "boeRace": {
-    "title": "Ridgewood BOE Trustee Election",
+    "title": "Ridgewood Public Schools Board of Education",
     "seatsAvailable": 3,
     "candidates": [
       {
         "rank": 1,
         "ballotNumber": "1A",
-        "name": "Anthony Santoro",
-        "votes": 3861,
-        "pct": 31.0,
+        "name": "Sheila Brogan",
+        "votes": 6120,
+        "pct": 47.7,
         "elected": true
       },
       {
         "rank": 2,
         "ballotNumber": "2A",
-        "name": "Sandra Kowalski",
-        "votes": 3488,
-        "pct": 28.0,
+        "name": "Muhammad Mahmoud",
+        "votes": 5480,
+        "pct": 42.7,
         "elected": true
       },
       {
         "rank": 3,
         "ballotNumber": "3A",
-        "name": "Lisa Sullivan",
-        "votes": 2865,
-        "pct": 23.0,
+        "name": "Saurabh Dani",
+        "votes": 4920,
+        "pct": 38.3,
         "elected": true
-      },
-      {
-        "rank": 4,
-        "ballotNumber": "4A",
-        "name": "Linda Esposito",
-        "votes": 2242,
-        "pct": 18.0,
-        "elected": false
       }
     ]
   }
