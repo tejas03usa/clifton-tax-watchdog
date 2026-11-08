@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Morris County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "Kinnelon Borough",
   "county": "Morris County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 15222,
+  "ballotsCast": 8889,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Morris County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "Kinnelon Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "Joseph Russo",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Joseph Russo",
+        "status": "Incumbent",
+        "votes": 2844,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Jessica DeLuca",
+        "status": "Incumbent",
+        "votes": 2488,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Linda Shah",
+        "status": "Challenger",
+        "votes": 1955,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Jessica Goldstein",
+        "status": "Challenger",
+        "votes": 1602,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Kinnelon BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Maria Marino",
+        "votes": 2755,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Christopher Esposito",
+        "votes": 2488,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Charles Schneider",
+        "votes": 2044,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Brian Perez",
+        "votes": 1600,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }

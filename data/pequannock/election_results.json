@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Morris County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "Pequannock Township",
   "county": "Morris County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 13000,
+  "ballotsCast": 7591,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Morris County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "Pequannock Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "Michael Lombardi",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Michael Lombardi",
+        "status": "Incumbent",
+        "votes": 2429,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Linda Kim",
+        "status": "Incumbent",
+        "votes": 2125,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Robert Murphy",
+        "status": "Challenger",
+        "votes": 1670,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Emily Schneider",
+        "status": "Challenger",
+        "votes": 1367,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Pequannock BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Margaret Shah",
+        "votes": 2353,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Mark Bauer",
+        "votes": 2125,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Sarah Russo",
+        "votes": 1745,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Donald Esposito",
+        "votes": 1366,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }

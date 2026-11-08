@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Essex County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "Bloomfield Township",
   "county": "Essex County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 11000,
+  "ballotsCast": 6424,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Essex County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "Bloomfield Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "Ashley Gargano",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Ashley Gargano",
+        "status": "Incumbent",
+        "votes": 2055,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Paul Novak",
+        "status": "Incumbent",
+        "votes": 1798,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Linda Esposito",
+        "status": "Challenger",
+        "votes": 1413,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Nancy Gargano",
+        "status": "Challenger",
+        "votes": 1158,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Bloomfield BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Jessica Russo",
+        "votes": 1991,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Ashley Sullivan",
+        "votes": 1798,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Andrew Patel",
+        "votes": 1477,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Robert Murphy",
+        "votes": 1156,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }

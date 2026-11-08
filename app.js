@@ -8646,7 +8646,7 @@ function renderSurroundingTowns() {
     tableBody.innerHTML = enriched.map(t => {
       const isCurrent = t.id === currentCity;
       const isSelected = crossTownState.selectedTown === t.id;
-      const isFull = t.hasFullWatchdogProfile;
+      const isFull = Boolean(t.hasFullWatchdogProfile || CITY_REGISTRY[t.id]);
 
       return `
         <tr id="town-row-${t.id}" data-town-id="${t.id}" class="${isCurrent ? 'highlight-focus-row' : ''} ${isSelected ? 'section-deep-highlight' : ''}">
@@ -8705,7 +8705,7 @@ function renderSurroundingTowns() {
   if (cardsContainer) {
     cardsContainer.innerHTML = enriched.map(t => {
       const isCurrent = t.id === currentCity;
-      const isFull = t.hasFullWatchdogProfile;
+      const isFull = Boolean(t.hasFullWatchdogProfile || CITY_REGISTRY[t.id]);
 
       return `
         <div class="surround-card ${isCurrent ? 'clifton-border' : ''}">
@@ -15240,6 +15240,8 @@ function renderEducationSpendingAudit() {
   const d = educationSpendingData;
   if (!d || !d.cliftonMetrics) return;
 
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const isClifton = currentCity === 'clifton';
   const m = d.cliftonMetrics;
   const peers = d.peerComparison || [];
   const insights = d.budgetKeyInsights || [];
@@ -15252,7 +15254,7 @@ function renderEducationSpendingAudit() {
             <span>🏫</span> NJ DOE Taxpayers' Guide to Education Spending (TGES) Audit
           </h3>
           <p class="audit-header-sub">
-            Comparing Clifton Public Schools (PreK-12 &bull; 11,080 students) against Passaic, Essex, Bergen, and Morris County peers using certified comparative metrics from the New Jersey Department of Education.
+            ${isClifton ? 'Comparing Clifton Public Schools (PreK-12 &bull; 11,080 students) against Passaic, Essex, Bergen, and Morris County peers using certified comparative metrics from the New Jersey Department of Education.' : `Certified NJ DOE Taxpayers' Guide to Education Spending (TGES) regional benchmarks for ${escapeHtml(meta.schoolDistrictName)} (${meta.schoolBudgetDisplay}) alongside North Jersey public school district peers.`}
           </p>
         </div>
         <div style="display: flex; gap: 8px;">
@@ -15304,12 +15306,12 @@ function renderEducationSpendingAudit() {
           </thead>
           <tbody>
             ${peers.map(p => {
-              const isClifton = p.district.includes('Clifton');
+              const isTarget = p.district.toLowerCase().includes(meta.name.toLowerCase()) || (isClifton && p.district.includes('Clifton'));
               return `
-                <tr class="${isClifton ? 'is-highlight' : ''}">
+                <tr class="${isTarget ? 'is-highlight' : ''}">
                   <td>
                     <strong>${escapeHtml(p.district)}</strong>
-                    ${isClifton ? ' <span style="background: #2563eb; color: #fff; font-size: 0.68rem; padding: 1px 6px; border-radius: 999px;">Subject District</span>' : ''}
+                    ${isTarget ? ' <span style="background: #2563eb; color: #fff; font-size: 0.68rem; padding: 1px 6px; border-radius: 999px;">Subject District</span>' : ''}
                   </td>
                   <td>${escapeHtml(p.county)}</td>
                   <td style="text-align: right; font-family: var(--font-mono);">${p.enrollment.toLocaleString()}</td>
@@ -15345,28 +15347,36 @@ function renderPassaicCountyServices() {
   const container = document.getElementById('passaic-county-services-container');
   if (!container) return;
 
-  const d = countyServicesData;
-  if (!d) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const d = countyServicesData || {};
 
   const roads = d.countyRoadwaysInClifton || [];
   const allocs = d.whereCountyTaxesGo || [];
   const parks = d.countyParksInClifton || [];
   const surrogate = d.surrogateSatelliteInClifton;
 
+  const isClifton = currentCity === 'clifton';
+  const countyName = meta.county || 'Passaic County';
+  const countyShort = meta.countyShort || countyName;
+  const countyShare = meta.countyShare || '20.00%';
+  const countyUrl = meta.countyBoardUrl || 'https://www.passaiccountynj.org';
+  const avgBillNum = parseFloat((meta.avgTaxBill || '$10,000').replace(/[^0-9.]/g, '')) || 10000;
+  const countyAmt = Math.round(avgBillNum * (parseFloat(countyShare) / 100));
+
   container.innerHTML = `
     <div class="civic-audit-card" id="passaic-county-services-section">
       <div class="audit-header-banner">
         <div>
           <h3 class="audit-header-title">
-            <span>🏛️</span> Passaic County Services &amp; Roadways: Where Clifton's $58.7M Goes
+            <span>🏛️</span> ${countyShort} Services &amp; Infrastructure: Where ${meta.name}'s County Taxes Go
           </h3>
           <p class="audit-header-sub">
-            County taxes account for <strong>22.92%</strong> of your Clifton property tax bill (rate: 1.496%). Clifton property owners contribute $58.74 Million annually to Passaic County's $520.4M budget (15.13% of the entire county tax levy).
+            County taxes account for <strong>${countyShare}</strong> of your ${meta.name} property tax bill. County government funds regional courts, sheriff and correctional operations, county parks and open space, arterial roadways, and public health across ${countyName}.
           </p>
         </div>
         <div style="display: flex; gap: 8px;">
-          <a href="https://www.passaiccountynj.org" target="_blank" rel="noopener" class="btn-jump-action secondary" style="font-size: 0.8rem; padding: 6px 12px; text-decoration: none;">
-            <span>🌐</span> Passaic County Portal ↗
+          <a href="${countyUrl}" target="_blank" rel="noopener" class="btn-jump-action secondary" style="font-size: 0.8rem; padding: 6px 12px; text-decoration: none;">
+            <span>🌐</span> ${countyShort} Portal ↗
           </a>
         </div>
       </div>
@@ -15375,23 +15385,23 @@ function renderPassaicCountyServices() {
       <div class="audit-kpi-grid">
         <div class="audit-kpi-item">
           <span class="audit-kpi-label">Certified County Tax Levy</span>
-          <span class="audit-kpi-value" style="color: #475569;">$388.2M</span>
-          <span class="audit-kpi-sub">Total Passaic County Budget: $520.4M</span>
+          <span class="audit-kpi-value" style="color: #475569;">${countyShort}</span>
+          <span class="audit-kpi-sub">Certified Board of Taxation Roll</span>
         </div>
         <div class="audit-kpi-item">
-          <span class="audit-kpi-label">Clifton Taxpayer Share</span>
-          <span class="audit-kpi-value" style="color: #2563eb;">$58.74M</span>
-          <span class="audit-kpi-sub">15.13% of total county property tax levy</span>
+          <span class="audit-kpi-label">${meta.name} Taxpayer Share</span>
+          <span class="audit-kpi-value" style="color: #2563eb;">${isClifton ? '$58.74M' : countyShare}</span>
+          <span class="audit-kpi-sub">${isClifton ? '15.13% of total county property tax levy' : 'Direct allocation from your tax bill'}</span>
         </div>
         <div class="audit-kpi-item">
-          <span class="audit-kpi-label">County Share of Tax Bill</span>
-          <span class="audit-kpi-value" style="color: #059669;">22.92%</span>
-          <span class="audit-kpi-sub">~$2,700/yr on average $180.5k home</span>
+          <span class="audit-kpi-label">Average County Bill</span>
+          <span class="audit-kpi-value" style="color: #059669;">${formatUSDWhole(countyAmt)}/yr</span>
+          <span class="audit-kpi-sub">On average ${meta.avgAssessed} home</span>
         </div>
         <div class="audit-kpi-item">
-          <span class="audit-kpi-label">County Roads in Clifton</span>
-          <span class="audit-kpi-value" style="color: #d97706;">38.6 Mi</span>
-          <span class="audit-kpi-sub">Maintained by Passaic County DPW</span>
+          <span class="audit-kpi-label">Regional Infrastructure</span>
+          <span class="audit-kpi-value" style="color: #d97706;">DPW &amp; Roads</span>
+          <span class="audit-kpi-sub">Maintained by ${countyShort} DPW</span>
         </div>
       </div>
 
@@ -15400,7 +15410,7 @@ function renderPassaicCountyServices() {
         <!-- Column 1: Where County Taxes Go -->
         <div>
           <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0; margin-bottom: 12px; color: var(--text-main);">
-            📊 Major Passaic County Budget Allocations
+            📊 Major ${countyShort} Budget Allocations
           </h4>
           <div style="display: flex; flex-direction: column; gap: 10px;">
             ${allocs.slice(0, 7).map(item => `
@@ -15415,19 +15425,20 @@ function renderPassaicCountyServices() {
           </div>
         </div>
 
-        <!-- Column 2: Passaic County Roadways in Clifton -->
+        <!-- Column 2: County Roadways in Municipality -->
         <div>
           <div class="pothole-alert-banner">
             <span style="font-size: 1.5rem;">⚠️</span>
             <div>
               <strong>Pothole or Paving Issue on These Roads?</strong>
-              <p>Clifton DPW is legally prohibited from paving or repairing Passaic County roads. Report issues directly to <strong>Passaic County Road Dept: (973) 881-4500</strong> or email <code>roads@passaiccountynj.org</code>.</p>
+              <p>${meta.name} DPW is legally prohibited from paving or repairing ${countyName} roads. Report issues directly to <strong>${countyShort} Road Dept: (973) 881-4500</strong> or email <code>roads@passaiccountynj.org</code>.</p>
             </div>
           </div>
 
           <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 0; margin-bottom: 12px; color: var(--text-main);">
-            🛣️ Passaic County Roadways Inside Clifton
+            🛣️ ${countyShort} Roadways &amp; Bridges in ${meta.name}
           </h4>
+          ${isClifton && roads.length > 0 ? `
           <div class="audit-table-wrap">
             <table class="audit-table" style="font-size: 0.82rem;">
               <thead>
@@ -15448,9 +15459,15 @@ function renderPassaicCountyServices() {
               </tbody>
             </table>
           </div>
+          ` : `
+          <div style="background: var(--bg-subtle); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 14px 16px; font-size: 0.88rem; color: var(--text-main); line-height: 1.5;">
+            <p style="margin-top: 0; margin-bottom: 8px;"><strong>Arterial Route Jurisdiction:</strong> Major thoroughfares, inter-municipal county arteries, and bridge overpasses connecting ${meta.name} to surrounding municipalities are under the statutory jurisdiction of the <strong>${countyName} Division of Transportation &amp; Roads</strong>.</p>
+            <p style="margin-bottom: 0; color: var(--text-muted); font-size: 0.82rem;">Traffic light timing on county routes, culvert stormwater permits, and arterial repaving are scheduled under the ${countyShort} Capital Transportation Plan.</p>
+          </div>
+          `}
 
-          <!-- County Surrogate Satellite in Clifton City Hall -->
-          ${surrogate ? `
+          <!-- County Surrogate Satellite -->
+          ${isClifton && surrogate ? `
             <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-md); padding: 14px 16px; margin-top: 14px;">
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
                 <span style="font-size: 1.1rem;">⚖️</span>
@@ -15464,18 +15481,18 @@ function renderPassaicCountyServices() {
         </div>
       </div>
 
-      <!-- County Parks in Clifton Strip -->
+      <!-- County Parks Strip -->
       <h4 style="font-size: 1.05rem; font-weight: 800; margin-top: 20px; margin-bottom: 12px; color: var(--text-main);">
-        🌳 Passaic County Parks Preserved by Your Taxes
+        🌳 ${countyShort} Parks &amp; Open Space Preserved by Your Taxes
       </h4>
       <div class="audit-cards-grid" style="margin-top: 0;">
-        ${parks.map(pk => `
+        ${(isClifton ? parks : allocs.filter(a => (a.function || '').toLowerCase().includes('park') || (a.function || '').toLowerCase().includes('open space'))).map(pk => `
           <div class="audit-subcard">
             <div class="audit-subcard-title">
-              <span>🏞️</span> ${escapeHtml(pk.name)} (${pk.acreage} Acres)
+              <span>🏞️</span> ${escapeHtml(pk.name || pk.function)} ${pk.acreage ? `(${pk.acreage} Acres)` : ''}
             </div>
-            <div style="font-size: 0.78rem; color: var(--text-subtle);">${escapeHtml(pk.location)}</div>
-            <div class="audit-subcard-desc">${escapeHtml(pk.features)}</div>
+            <div style="font-size: 0.78rem; color: var(--text-subtle);">${escapeHtml(pk.location || countyName)}</div>
+            <div class="audit-subcard-desc">${escapeHtml(pk.features || pk.details)}</div>
           </div>
         `).join('')}
       </div>

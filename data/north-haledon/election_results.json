@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Passaic County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "North Haledon Borough",
   "county": "Passaic County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 13888,
+  "ballotsCast": 8110,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Passaic County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "North Haledon Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "Nancy Marino",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Nancy Marino",
+        "status": "Incumbent",
+        "votes": 2595,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Margaret Santoro",
+        "status": "Incumbent",
+        "votes": 2270,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Ashley DeLuca",
+        "status": "Challenger",
+        "votes": 1784,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Christopher Perez",
+        "status": "Challenger",
+        "votes": 1461,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "North Haledon BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Jessica Rossi",
+        "votes": 2514,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Robert Cohen",
+        "votes": 2270,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Sarah Esposito",
+        "votes": 1865,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Margaret Perez",
+        "votes": 1459,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }

@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Essex County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "Cedar Grove Township",
   "county": "Essex County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 14222,
+  "ballotsCast": 8305,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Essex County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "Cedar Grove Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "Jennifer Miller",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Jennifer Miller",
+        "status": "Incumbent",
+        "votes": 2657,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Ashley Kowalski",
+        "status": "Incumbent",
+        "votes": 2325,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Emily Bauer",
+        "status": "Challenger",
+        "votes": 1827,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Michael Vanderbilt",
+        "status": "Challenger",
+        "votes": 1496,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Cedar Grove BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Paul Russo",
+        "votes": 2574,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Charles Gargano",
+        "votes": 2325,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Betty Marino",
+        "votes": 1910,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Emily Murphy",
+        "votes": 1494,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }

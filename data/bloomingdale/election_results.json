@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Passaic County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "Bloomingdale Borough",
   "county": "Passaic County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 9666,
+  "ballotsCast": 5644,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Passaic County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "Bloomingdale Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "Jessica Vanderbilt",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Jessica Vanderbilt",
+        "status": "Incumbent",
+        "votes": 1806,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Margaret Perez",
+        "status": "Incumbent",
+        "votes": 1580,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Betty Castillo",
+        "status": "Challenger",
+        "votes": 1241,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Matthew Murphy",
+        "status": "Challenger",
+        "votes": 1017,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Bloomingdale BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Linda Murphy",
+        "votes": 1749,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Patricia Russo",
+        "votes": 1580,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Betty Miller",
+        "votes": 1298,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Betty Murphy",
+        "votes": 1015,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }

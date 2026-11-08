@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Bergen County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "Ridgewood Village",
   "county": "Bergen County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 21333,
+  "ballotsCast": 12458,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Bergen County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "Ridgewood Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "David Vanderbilt",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "David Vanderbilt",
+        "status": "Incumbent",
+        "votes": 3986,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Anthony Shah",
+        "status": "Incumbent",
+        "votes": 3488,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Nancy Vanderbilt",
+        "status": "Challenger",
+        "votes": 2740,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Christopher Sullivan",
+        "status": "Challenger",
+        "votes": 2244,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Ridgewood BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Anthony Santoro",
+        "votes": 3861,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Sandra Kowalski",
+        "votes": 3488,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Lisa Sullivan",
+        "votes": 2865,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Linda Esposito",
+        "votes": 2242,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }

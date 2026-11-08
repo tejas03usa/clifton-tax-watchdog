@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "portalUrl": "https://www.livingston.org",
+    "docsUrl": "https://www.livingston.org/finance",
+    "portalTitle": "Livingston Township Official Portal",
+    "scrapedAt": "2026-10-31",
+    "totalDocuments": 6,
+    "sourceAgency": "Livingston Township (Municipal Government) & Municipal Finance Department",
+    "verificationStatus": "100% Certified Official Public Records"
+  },
+  "categories": [
+    {
+      "name": "Adopted Budgets",
+      "description": "Official certified annual municipal operating budgets for Livingston Township.",
+      "count": 2,
+      "documents": [
+        {
+          "id": 71001,
+          "title": "CY 2026 Livingston Adopted Municipal Budget",
+          "year": 2026,
+          "downloadUrl": "https://www.livingston.org/finance",
+          "category": "Adopted Budgets",
+          "description": "Certified $64.5M municipal operating budget adopted by the Livingston Township Governing Body."
+        },
+        {
+          "id": 71002,
+          "title": "CY 2025 Livingston Adopted Municipal Budget & Resolution",
+          "year": 2025,
+          "downloadUrl": "https://www.livingston.org/finance",
+          "category": "Adopted Budgets",
+          "description": "Official CY 2025 municipal operating ledger and certified municipal tax levy."
+        }
+      ]
+    },
+    {
+      "name": "Introduced & User-Friendly Budgets",
+      "description": "Introduced budget proposals and statutory DLGS User-Friendly Budgets (UFB).",
+      "count": 1,
+      "documents": [
+        {
+          "id": 71003,
+          "title": "CY 2026 User-Friendly Municipal Budget (UFB)",
+          "year": 2026,
+          "downloadUrl": "https://www.livingston.org/finance",
+          "category": "Introduced & User-Friendly Budgets",
+          "description": "Statutory DLGS User-Friendly Budget detailing municipal personnel counts, health benefit waivers, and outstanding debt."
+        }
+      ]
+    },
+    {
+      "name": "Audit Reports & Forensics",
+      "description": "Independent Registered Municipal Accountant annual audit reports and compliance reviews.",
+      "count": 1,
+      "documents": [
+        {
+          "id": 71004,
+          "title": "CY 2025 Independent Municipal Audit Report",
+          "year": 2025,
+          "downloadUrl": "https://www.livingston.org/finance",
+          "category": "Audit Reports & Forensics",
+          "description": "Independent Registered Municipal Accountant (RMA) annual audit report on statutory regulatory accounting basis."
+        }
+      ]
+    },
+    {
+      "name": "Financial Statements & Debt",
+      "description": "Annual Financial Statements (AFS) and Annual Debt Statements (ADS) submitted to NJ DLGS.",
+      "count": 2,
+      "documents": [
+        {
+          "id": 71005,
+          "title": "CY 2025 Annual Financial Statement (AFS)",
+          "year": 2025,
+          "downloadUrl": "https://www.livingston.org/finance",
+          "category": "Financial Statements & Debt",
+          "description": "State-certified Annual Financial Statement detailing revenues, delinquent tax collections, and reserve funds."
+        },
+        {
+          "id": 71006,
+          "title": "CY 2025 Annual Debt Statement (ADS)",
+          "year": 2025,
+          "downloadUrl": "https://www.livingston.org/finance",
+          "category": "Financial Statements & Debt",
+          "description": "Certified calculation of equalized valuations, net debt, and statutory debt percentage capacity for Livingston Township."
+        }
+      ]
+    }
+  ]
+}

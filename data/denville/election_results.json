@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Morris County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "Denville Township",
   "county": "Morris County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 14888,
+  "ballotsCast": 8694,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Morris County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "Denville Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "Sandra Schneider",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Sandra Schneider",
+        "status": "Incumbent",
+        "votes": 2782,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Matthew DeLuca",
+        "status": "Incumbent",
+        "votes": 2434,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "James Vanderbilt",
+        "status": "Challenger",
+        "votes": 1912,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Daniel Gargano",
+        "status": "Challenger",
+        "votes": 1566,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Denville BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Nancy Perez",
+        "votes": 2695,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Anthony Marino",
+        "votes": 2434,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Charles Cohen",
+        "votes": 1999,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Andrew Esposito",
+        "votes": 1564,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }

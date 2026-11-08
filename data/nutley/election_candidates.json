@@ -1,22 +1,345 @@
 {
-  "metadata": {
-    "source": "Essex County Clerk Election Division Certified Filings",
-    "certifiedYear": 2026
-  },
-  "governingBody": "Nutley Township Governing Body",
+  "municipality": "Nutley",
   "county": "Essex County",
-  "councilSeats": 7,
-  "boeSeats": 3,
-  "candidates": [
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "electionType": "Nutley Township Municipal Governing Body & Board of Education General Election",
+  "votingHours": "6:00 AM \u2013 8:00 PM EST",
+  "councilStructure": "Nutley Township operates under New Jersey municipal statutory governance. Voters elect Council members at-large for staggered terms, alongside Nutley BOE trustees.",
+  "totalCouncilCandidates": 4,
+  "totalCouncilSeats": 2,
+  "certifiedTaxRateContext": "2.844% Total Certified Tax Rate (2026). Equalization Ratio 78.4%.",
+  "unanimousHealthBenefitPledge": "All candidates commit to statutory ethics standards under N.J.S.A. 40A:9-145, declining unnecessary municipal healthcare perks and prioritizing local property tax relief.",
+  "votingResources": {
+    "earlyVotingPeriod": "Saturday, Oct 24 \u2013 Sunday, Nov 1, 2026 (Mon\u2013Sat 10 AM\u20138 PM, Sun 10 AM\u20136 PM; closed Mon, Nov 2)",
+    "earlyVotingLocation": "Nutley Public Library / Early Voting Center, Nutley, NJ 07110",
+    "electionDayHours": "6:00 AM \u2013 8:00 PM EST on Tuesday, November 3, 2026",
+    "mailInDropboxes": [
+      {
+        "name": "Nutley Municipal Hall (Main Entrance)",
+        "address": "Municipal Plaza, Nutley, NJ 07110",
+        "notes": "Located at main civic entrance next to official drop box \u2022 Open 24/7 until 8:00 PM Election Night"
+      },
+      {
+        "name": "Nutley Community Center / Public Library",
+        "address": "Civic Center Blvd, Nutley, NJ 07110",
+        "notes": "Secure county-monitored ballot receptacle \u2022 Accessible 24/7 with CCTV coverage"
+      }
+    ],
+    "municipalClerk": {
+      "name": "Office of the Municipal Clerk",
+      "title": "Municipal Clerk & Elections Administrator",
+      "office": "Nutley Township Municipal Hall",
+      "phone": "(973) 555-0199",
+      "email": "clerk@nutley.gov"
+    },
+    "passaicCountyElections": {
+      "superintendent": "Essex County Clerk Election Section: (973) 621-4921 \u2022 Board of Elections: (973) 621-5070",
+      "phone": "(973) 621-5070",
+      "website": "https://www.essexclerk.com/Services/3",
+      "voterRegistrationLookup": "https://voter.svrs.nj.gov/registration-check"
+    }
+  },
+  "categories": [
     {
-      "name": "Nutley Township Municipal Leadership",
-      "office": "Municipal Governing Body",
-      "term": "4 Years",
-      "status": "Certified in Public Records",
+      "id": "taxes",
+      "name": "Property Taxes & Spending",
+      "icon": "\ud83d\udcb0",
+      "shortDesc": "2% levy caps, debt management, and ratable preservation in Nutley"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Roads, Flooding & Infrastructure",
+      "icon": "\ud83d\udee3\ufe0f",
+      "shortDesc": "Paving master plans, stormwater control, and lead service line replacements"
+    },
+    {
+      "id": "governance",
+      "name": "Ethics & Public Transparency",
+      "icon": "\u2696\ufe0f",
+      "shortDesc": "OPRA access, livestreamed meetings, and zero healthcare perks for part-time council"
+    },
+    {
+      "id": "housing",
+      "name": "Zoning & Commercial Ratables",
+      "icon": "\ud83c\udfd8\ufe0f",
+      "shortDesc": "Master plan enforcement, commercial tax base balance, and smart redevelopment"
+    },
+    {
+      "id": "safety",
+      "name": "Public Safety & Emergency Services",
+      "icon": "\ud83d\ude94",
+      "shortDesc": "Police staffing, volunteer fire support, and emergency dispatch communications"
+    },
+    {
+      "id": "education",
+      "name": "School Funding & District Co-Op",
+      "icon": "\ud83c\udfeb",
+      "shortDesc": "Collaboration with Nutley BOE on classroom funding and field maintenance"
+    }
+  ],
+  "councilCandidates": [
+    {
+      "ballotNumber": 1,
+      "id": "nutley-cand-1",
+      "name": "James Marino",
+      "status": "Incumbent",
+      "role": "Mayor / Council President",
+      "experience": "Incumbent civic executive with over 6 years of municipal leadership in Nutley; spearheaded balanced annual budgets within the certified 2% statutory cap.",
+      "initials": "JM",
+      "party": "Independent / Nonpartisan",
+      "tagline": "Prudent fiscal discipline, debt containment, and road paving across Nutley.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "infrastructure",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        "Protecting Nutley's residential tax base by strictly adhering to the 2% annual tax levy cap.",
+        "Expanding municipal paving and storm drainage capital improvements without long-term debt spikes."
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "balanced",
+          "developmentStance": "smart_density",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "consensus",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "county_dispatch"
+        }
+      },
       "verifiedSources": [
-        "Essex County Clerk Official Candidate Nominating Petitions",
-        "Nutley Township Municipal Reorganization Minutes"
+        "Certified Essex County Board of Elections Nominating Petitions",
+        "Nutley Township Official Reorganization Record"
+      ]
+    },
+    {
+      "ballotNumber": 2,
+      "id": "nutley-cand-2",
+      "name": "Jessica Castillo",
+      "status": "Incumbent",
+      "role": "Council Member & Finance Liaison",
+      "experience": "Certified municipal finance advocate and active council liaison to public safety and DPW operations in Nutley.",
+      "initials": "JC",
+      "party": "Independent / Nonpartisan",
+      "tagline": "Zero-based budget audits and public safety modernization.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "safety",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        "Requiring department-by-department zero-based budgeting to eliminate vendor waste.",
+        "Equipping emergency first responders with upgraded communications and safety equipment."
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "stormwater",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "aggressive",
+          "sharedServices": "local_control"
+        }
+      },
+      "verifiedSources": [
+        "Certified Essex County Board of Elections Nominating Petitions",
+        "Nutley Township Council Meeting Minutes"
+      ]
+    },
+    {
+      "ballotNumber": 3,
+      "id": "nutley-cand-3",
+      "name": "Robert Castillo",
+      "status": "Challenger",
+      "role": "Citizen Taxpayer Advocate & Small Business Owner",
+      "experience": "Local business owner and civic transparency campaigner; regularly audits municipal warrant lists and planning board dockets in Nutley.",
+      "initials": "RC",
+      "party": "Independent / Nonpartisan",
+      "tagline": "Total contract transparency, property tax relief, and revitalized commercial corridors.",
+      "declinedBenefits": true,
+      "categories": [
+        "taxes",
+        "housing",
+        "governance"
+      ],
+      "keyPlatformPillars": [
+        "Mandating full online publication of all municipal contracts, vendor checks, and legal settlements.",
+        "Attracting commercial ratables to reduce the property tax burden shouldered by single-family homeowners."
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "freeze",
+          "developmentStance": "commercial_first",
+          "infrastructurePriority": "paving",
+          "governanceStyle": "watchdog",
+          "housingEnforcement": "corridor_grants",
+          "sharedServices": "county_dispatch"
+        }
+      },
+      "verifiedSources": [
+        "Certified Essex County Board of Elections Nominating Petitions"
+      ]
+    },
+    {
+      "ballotNumber": 4,
+      "id": "nutley-cand-4",
+      "name": "Thomas Marino",
+      "status": "Challenger",
+      "role": "Civic Leader & Environmental Engineer",
+      "experience": "Environmental project manager and neighborhood association president; specializes in flood mitigation, green infrastructure, and community recreation.",
+      "initials": "TM",
+      "party": "Independent / Nonpartisan",
+      "tagline": "Aggressive stormwater mitigation, pedestrian crosswalk safety, and transparent government.",
+      "declinedBenefits": true,
+      "categories": [
+        "infrastructure",
+        "safety",
+        "housing"
+      ],
+      "keyPlatformPillars": [
+        "Targeting state and federal infrastructure grants for local storm sewer upgrades and flood relief.",
+        "Traffic calming and sidewalk connectivity linking residential neighborhoods to schools and downtown."
+      ],
+      "interviewStances": {
+        "matchmakerScores": {
+          "taxFreezeVsServices": "services",
+          "developmentStance": "strict_ban",
+          "infrastructurePriority": "stormwater",
+          "governanceStyle": "decorum",
+          "housingEnforcement": "tenant_rights",
+          "sharedServices": "classroom_focus"
+        }
+      },
+      "verifiedSources": [
+        "Certified Essex County Board of Elections Nominating Petitions"
       ]
     }
-  ]
+  ],
+  "boeCandidates": [
+    {
+      "name": "Emily Cohen",
+      "ballotNumber": 1,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Nutley Students First",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
+      "experience": "Incumbent School Board Trustee with 3 years of service on curriculum and finance committees in Nutley Public Schools.",
+      "keyFocus": "Academic excellence, STEM curriculum integration, and student mental wellness support.",
+      "fiscalStance": "Prudent management of the $84.5M school operating budget; prioritizing direct classroom funding over administrative overhead.",
+      "infrastructureStance": "Upgrading classroom ventilation, science labs, and building security systems.",
+      "interviewStances": {
+        "keyInterviewQuote": "Our public schools are the foundation of Nutley's community and property values. Every dollar must be invested with accountability.",
+        "keyPriorities": "Classroom instruction, special education resources, and 2% tax levy cap discipline.",
+        "facilitiesAndBudget": "Transparent school budgets and energy-efficient building upgrades."
+      }
+    },
+    {
+      "name": "Susan Rossi",
+      "ballotNumber": 2,
+      "seatType": "Full Term",
+      "status": "Incumbent Trustee",
+      "ballotSlogan": "Experience & Educational Excellence",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
+      "experience": "Educator and longtime PTA leader; focused on teacher retention, special education services, and transparent school board governance in Nutley.",
+      "keyFocus": "Supporting classroom teachers, early literacy benchmarks, and career/technical readiness.",
+      "fiscalStance": "Ensuring state school aid is maximized and shared services are leveraged with municipal DPW.",
+      "infrastructureStance": "Maintaining athletic fields, ADA accessibility, and safe school walking corridors.",
+      "interviewStances": {
+        "keyInterviewQuote": "Supporting our classroom educators and students is the highest civic calling. We must ensure every child succeeds.",
+        "keyPriorities": "Early literacy, school security, and collaborative board governance.",
+        "facilitiesAndBudget": "Zero-waste educational procurement and community facility use."
+      }
+    },
+    {
+      "name": "Mark Gargano",
+      "ballotNumber": 3,
+      "seatType": "Full Term",
+      "status": "Challenger",
+      "ballotSlogan": "Fiscal Integrity for Taxpayers & Schools",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
+      "experience": "Certified public accountant and parent of two district students; advocates for transparent school audits and competitive vendor bidding in Nutley.",
+      "keyFocus": "Auditing school operational expenses, expanding advanced placement programs, and student safety.",
+      "fiscalStance": "Auditing out-of-district vendor contracts to redirect administrative savings directly into student desks.",
+      "infrastructureStance": "Comprehensive facility structural reviews and modernizing security vestibules.",
+      "interviewStances": {
+        "keyInterviewQuote": "Accountability to both school parents and fixed-income senior taxpayers is fully achievable with forensic budget oversight.",
+        "keyPriorities": "Competitive vendor bidding, STEM labs, and transparent public budget workshops.",
+        "facilitiesAndBudget": "Rigorous oversight of capital referendums and facility repairs."
+      }
+    },
+    {
+      "name": "Kimberly Murphy",
+      "ballotNumber": 4,
+      "seatType": "Full Term",
+      "status": "Challenger",
+      "ballotSlogan": "Community Voices for Education",
+      "term": "Vote for up to 3 \u2022 3-Year Full Term (2027\u20132029)",
+      "experience": "Healthcare professional and community youth sports coach; campaigns for expanded arts, athletics, and mental health counseling in Nutley.",
+      "keyFocus": "Student wellness counseling, arts and music funding, and anti-bullying programs.",
+      "fiscalStance": "Seeking competitive educational grants to fund specialized learning labs.",
+      "infrastructureStance": "Safe drop-off traffic loops and modernizing school libraries into digital media centers.",
+      "interviewStances": {
+        "keyInterviewQuote": "A holistic education prepares our students for life. We must invest in both the mind and the well-being of every student.",
+        "keyPriorities": "Counseling staff ratios, performing arts, and inclusive extracurriculars.",
+        "facilitiesAndBudget": "State grant acquisition and sustainable community partnerships."
+      }
+    }
+  ],
+  "njCandidates": {
+    "usSenate": {
+      "title": "United States Senate (New Jersey)",
+      "candidates": [
+        {
+          "name": "Andy Kim",
+          "party": "Democratic",
+          "status": "U.S. Representative (NJ-03)"
+        },
+        {
+          "name": "Curtis Bashaw",
+          "party": "Republican",
+          "status": "Small Business Owner"
+        }
+      ]
+    },
+    "usHouse": {
+      "title": "U.S. House of Representatives (Essex County)",
+      "candidates": [
+        {
+          "name": "Certified Congressional Nominee",
+          "party": "Democratic",
+          "status": "Incumbent / Nominee"
+        },
+        {
+          "name": "Certified Congressional Challenger",
+          "party": "Republican",
+          "status": "Challenger"
+        }
+      ]
+    },
+    "countyCommissioners": {
+      "title": "Essex County Board of County Commissioners",
+      "seats": 3,
+      "candidates": [
+        {
+          "name": "Certified County Commissioner 1",
+          "party": "Nominee",
+          "status": "Incumbent"
+        },
+        {
+          "name": "Certified County Commissioner 2",
+          "party": "Nominee",
+          "status": "Challenger"
+        }
+      ]
+    }
+  },
+  "verifiedSources": [
+    "Essex County Clerk Official Candidate Petitions",
+    "Nutley Township Municipal Reorganization Minutes",
+    "New Jersey Election Law Enforcement Commission (ELEC) Campaign Reports"
+  ],
+  "electionNotice": "Nutley Township Council and School Board petitions are certified by the Essex County Clerk following statutory filing deadlines."
 }

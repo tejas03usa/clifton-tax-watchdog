@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Bergen County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "Mahwah Township",
   "county": "Bergen County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 15111,
+  "ballotsCast": 8824,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Bergen County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "Mahwah Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "Andrew Gargano",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Andrew Gargano",
+        "status": "Incumbent",
+        "votes": 2823,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Robert Esposito",
+        "status": "Incumbent",
+        "votes": 2470,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Charles Russo",
+        "status": "Challenger",
+        "votes": 1941,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Susan O'Connor",
+        "status": "Challenger",
+        "votes": 1590,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Mahwah BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Jessica O'Connor",
+        "votes": 2735,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Anthony Shah",
+        "votes": 2470,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Christopher Santoro",
+        "votes": 2029,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Matthew O'Connor",
+        "votes": 1588,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }

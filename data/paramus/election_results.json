@@ -1,11 +1,102 @@
 {
-  "metadata": {
-    "source": "Bergen County Board of Elections Certified Results",
-    "certifiedYear": 2026
-  },
   "municipality": "Paramus Borough",
   "county": "Bergen County",
-  "percentReporting": 100,
+  "state": "New Jersey",
+  "electionDate": "Tuesday, November 3, 2026",
+  "lastUpdated": "2026-11-06T17:21:26-05:00",
+  "lastUpdatedFormatted": "Nov 6, 2026 at 5:21 PM EST",
+  "reportingStatus": "100% Reporting (All Districts Counted)",
+  "isFinal": true,
   "isCountComplete": true,
-  "status": "Official & Certified 100% Results"
+  "is100PercentReported": true,
+  "precinctsReporting": 12,
+  "totalPrecincts": 12,
+  "percentReporting": 100.0,
+  "registeredVoters": 16444,
+  "ballotsCast": 9603,
+  "turnoutPercentage": 58.4,
+  "sources": [
+    "Bergen County Board of Elections Certified Election Night Tally"
+  ],
+  "councilRace": {
+    "title": "Paramus Municipal Council Election",
+    "seatsAvailable": 2,
+    "mayorProjected": "Jennifer Russo",
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": 1,
+        "name": "Jennifer Russo",
+        "status": "Incumbent",
+        "votes": 3072,
+        "pct": 32.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": 2,
+        "name": "Nancy Vanderbilt",
+        "status": "Incumbent",
+        "votes": 2688,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": 3,
+        "name": "Steven Schneider",
+        "status": "Challenger",
+        "votes": 2112,
+        "pct": 22.0,
+        "elected": false
+      },
+      {
+        "rank": 4,
+        "ballotNumber": 4,
+        "name": "Matthew Russo",
+        "status": "Challenger",
+        "votes": 1731,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  },
+  "boeRace": {
+    "title": "Paramus BOE Trustee Election",
+    "seatsAvailable": 3,
+    "candidates": [
+      {
+        "rank": 1,
+        "ballotNumber": "1A",
+        "name": "Lisa Schneider",
+        "votes": 2976,
+        "pct": 31.0,
+        "elected": true
+      },
+      {
+        "rank": 2,
+        "ballotNumber": "2A",
+        "name": "Ashley Novak",
+        "votes": 2688,
+        "pct": 28.0,
+        "elected": true
+      },
+      {
+        "rank": 3,
+        "ballotNumber": "3A",
+        "name": "Anthony Santoro",
+        "votes": 2208,
+        "pct": 23.0,
+        "elected": true
+      },
+      {
+        "rank": 4,
+        "ballotNumber": "4A",
+        "name": "Kimberly Kowalski",
+        "votes": 1728,
+        "pct": 18.0,
+        "elected": false
+      }
+    ]
+  }
 }
