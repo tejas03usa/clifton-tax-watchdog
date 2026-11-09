@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-04 04:42:18 UTC",
-  "date": "2026-11-04",
+  "lastRun": "2026-11-09 14:37:44 UTC",
+  "date": "2026-11-09",
   "allDatasetsValid": true,
   "overallAccuracyScore": 100.0,
   "overallHallucinationRate": 0.0,
@@ -277,7 +277,8 @@
             "ratableShift",
             "pilotMechanism",
             "taxAppeals",
-            "taxpayerSolutions"
+            "taxpayerSolutions",
+            "certifiedPilotSummary"
           ]
         },
         "fair_tax_scenarios.json": {
@@ -418,7 +419,8 @@
             "ratableShift",
             "pilotMechanism",
             "taxAppeals",
-            "taxpayerSolutions"
+            "taxpayerSolutions",
+            "certifiedPilotSummary"
           ]
         },
         "fair_tax_scenarios.json": {
@@ -559,7 +561,8 @@
             "ratableShift",
             "pilotMechanism",
             "taxAppeals",
-            "taxpayerSolutions"
+            "taxpayerSolutions",
+            "certifiedPilotSummary"
           ]
         },
         "fair_tax_scenarios.json": {
@@ -700,7 +703,8 @@
             "ratableShift",
             "pilotMechanism",
             "taxAppeals",
-            "taxpayerSolutions"
+            "taxpayerSolutions",
+            "certifiedPilotSummary"
           ]
         },
         "fair_tax_scenarios.json": {
@@ -841,7 +845,8 @@
             "ratableShift",
             "pilotMechanism",
             "taxAppeals",
-            "taxpayerSolutions"
+            "taxpayerSolutions",
+            "certifiedPilotSummary"
           ]
         },
         "fair_tax_scenarios.json": {
@@ -982,7 +987,8 @@
             "ratableShift",
             "pilotMechanism",
             "taxAppeals",
-            "taxpayerSolutions"
+            "taxpayerSolutions",
+            "certifiedPilotSummary"
           ]
         },
         "fair_tax_scenarios.json": {
@@ -1003,14 +1009,14 @@
     {
       "name": "City of Clifton Official Portal",
       "url": "https://www.cliftonnj.org",
-      "status": "ONLINE",
-      "code": 200
+      "status": "OFFLINE_OR_TIMEOUT",
+      "code": null
     },
     {
       "name": "City of Clifton Official Documents Portal",
       "url": "https://www.cliftonnj.org/157/City-Documents",
-      "status": "ONLINE",
-      "code": 200
+      "status": "OFFLINE_OR_TIMEOUT",
+      "code": null
     },
     {
       "name": "Clifton Public Schools (BOE)",
@@ -1063,14 +1069,14 @@
     {
       "name": "Township of Montville Official Portal",
       "url": "https://www.montvillenj.org",
-      "status": "ONLINE",
-      "code": 200
+      "status": "OFFLINE_OR_TIMEOUT",
+      "code": null
     },
     {
       "name": "Township of Montville Finance Department",
       "url": "https://www.montvillenj.org/150/Finance",
-      "status": "ONLINE",
-      "code": 200
+      "status": "OFFLINE_OR_TIMEOUT",
+      "code": null
     },
     {
       "name": "Township of Montclair Official Portal",
