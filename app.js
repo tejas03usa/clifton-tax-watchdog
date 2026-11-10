@@ -8198,18 +8198,56 @@ function dispatchLeadWebhook(type, data) {
     const webhookUrl = localStorage.getItem('mytownlens_lead_webhook');
     if (!webhookUrl || !webhookUrl.trim().startsWith('http')) return;
 
+    const contact = data?.contact || {};
+    const prop = data?.property || {};
+    const merits = data?.caseMerits || {};
+    const dossier = data?.formattedDossier || buildFormattedLeadDossier(type === 'attorney_tax_appeal' ? 'appeals' : 'realtor', data);
+
+    const isAppeal = type === 'attorney_tax_appeal' || type === 'appeals';
+    const leadLabel = isAppeal ? 'Tax Appeal Legal Review' : 'Realtor Homeowner CMA';
+    const savingsOrVal = isAppeal
+      ? `Est. Savings: $${(Number(merits.potentialAnnualSavings) || 0).toLocaleString()}/yr`
+      : `Est. Market Value: $${(Number(prop.estimatedMarketValue) || 0).toLocaleString()}`;
+
+    const subject = `[MyTownLens Lead] ${leadLabel}: ${prop.address || ''} (${prop.municipality || ''}) — ${savingsOrVal}`;
+
     const payload = {
-      source: 'MyTownLens Platform',
+      // Universal Formspree / Web3Forms / Zapier / Email compatibility
+      name: contact.name || 'Anonymous Homeowner',
+      email: contact.email || '',
+      phone: contact.phone || '',
+      preferredContact: contact.preferredContact || 'phone',
+      subject: subject,
+      message: dossier,
+
+      // Structured Payload for Zapier / Make / CRM parsers
+      source: 'MyTownLens Platform (mytownlens.com)',
       leadType: type,
       timestamp: new Date().toISOString(),
       partnerRoutingEmail: localStorage.getItem('mytownlens_partner_email') || '',
-      formattedCaseDossier: data?.formattedDossier || buildFormattedLeadDossier(type === 'attorney_tax_appeal' ? 'appeals' : 'realtor', data),
-      leadData: data
+      propertyAddress: prop.address || '',
+      municipality: prop.municipality || '',
+      county: prop.county || '',
+      block: prop.block || '',
+      lot: prop.lot || '',
+      assessedTotal: prop.assessedTotal || 0,
+      annualTax: prop.annualTax || 0,
+      potentialAnnualSavings: merits.potentialAnnualSavings || 0,
+      estimatedMarketValue: prop.estimatedMarketValue || 0,
+      timeline: contact.timeline || '',
+      formattedCaseDossier: dossier,
+      leadData: data,
+
+      // Slack incoming webhook compatibility
+      text: `🚀 *New MyTownLens Lead Received!*\n*Type:* ${leadLabel}\n*Applicant:* ${contact.name || 'Homeowner'} (${contact.phone || 'No phone'} • ${contact.email || 'No email'})\n*Property:* ${prop.address || '—'} (${prop.municipality || '—'})\n*Financial:* ${savingsOrVal}\n\`\`\`${dossier.slice(0, 450)}...\`\`\``
     };
 
     fetch(webhookUrl.trim(), {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
       body: JSON.stringify(payload),
       mode: 'cors'
     }).catch(err => {
@@ -9048,10 +9086,14 @@ function testAdminWebhook() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      source: 'MyTownLens Platform',
+      name: 'MyTownLens Admin Test',
+      email: 'test@mytownlens.com',
+      subject: '[MyTownLens] 🧪 Test Webhook Ping Received Successfully',
+      message: 'Hello from MyTownLens (mytownlens.com)! Your delivery webhook is working and ready to receive real-time pre-qualified homeowner tax appeal dockets and Realtor CMA leads.',
+      source: 'MyTownLens Platform (mytownlens.com)',
       leadType: 'test_ping',
       timestamp: new Date().toISOString(),
-      message: 'Hello from MyTownLens! Your webhook is working and ready to receive pre-qualified homeowner tax appeal & Realtor CMA dossiers.'
+      text: '🚀 *MyTownLens Webhook Test!* Your delivery endpoint is operational and ready to receive pre-qualified homeowner leads.'
     }),
     mode: 'cors'
   }).then(resp => {
