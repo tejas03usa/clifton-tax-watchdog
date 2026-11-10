@@ -6602,6 +6602,9 @@ function renderProperties(propsToRender, page) {
               <button type="button" class="btn-table-action" onclick="openAppealAnalyzer('${escapeHtml(p.id)}')">
                 ⚖️ Appeal
               </button>
+              <button type="button" class="btn-table-action" style="color: #047857; font-weight: 700;" onclick="openRealtorValuationModal('${escapeHtml(p.address)}', '${escapeHtml(p.block)}', '${escapeHtml(p.lot)}', ${p.estimatedMarketValue})">
+                🏡 CMA Val
+              </button>
               <button type="button" class="btn-table-action" onclick="openTaxReceiptModal('${escapeHtml(p.id)}')">
                 🧾 Receipt
               </button>
