@@ -8699,12 +8699,22 @@ function switchAdminTab(tabName) {
   tabs.forEach(t => {
     const btn = document.getElementById(`admin-tab-${t}-btn`);
     const panel = document.getElementById(`admin-panel-${t}`);
+    const isSelected = (t === tabName);
     if (btn) {
-      if (t === tabName) btn.classList.add('active');
-      else btn.classList.remove('active');
+      btn.setAttribute('aria-selected', String(isSelected));
+      if (isSelected) {
+        btn.classList.add('active');
+        if (typeof btn.scrollIntoView === 'function') {
+          try {
+            btn.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+          } catch (e) {}
+        }
+      } else {
+        btn.classList.remove('active');
+      }
     }
     if (panel) {
-      panel.style.display = (t === tabName) ? 'block' : 'none';
+      panel.style.display = isSelected ? 'block' : 'none';
     }
   });
   if (tabName === 'sponsors') {

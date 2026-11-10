@@ -22,57 +22,85 @@
 </head>
 <body class="admin-page-body" data-page-title="Administrative & Monetization Command Center">
 
-  <!-- Top Administrative Bar -->
-  <header class="app-header admin-portal-header">
+  <!-- Modern App Header (Matching Public Pages) -->
+  <header class="app-header">
     <div class="container header-top-bar">
-      <div class="header-live-status">
+      <div class="header-live-status" id="header-brand-badge">
         <span class="live-dot-pulse"></span>
         <span class="header-live-text">🔒 <strong>MyTownLens Admin Command Center</strong> • 47 Municipalities • 150,016 Verified MOD-IV Parcels</span>
       </div>
-      <div class="header-location-picker-wrap" style="gap: 10px;">
+      <div class="header-location-picker-wrap">
         <span id="admin-session-badge" class="admin-session-status-pill" style="display: none;">🟢 Authenticated Session</span>
         <button type="button" id="btn-admin-header-logout" class="btn-admin-logout" style="display: none;" onclick="handleAdminLogout()">🔒 Lock &amp; Sign Out</button>
         <a href="index.html" class="city-switch-all-btn" title="Return to public MyTownLens portal">
-          <span>⬅ Back to Public Site</span>
+          <span>⬅ Public Site</span>
         </a>
       </div>
     </div>
 
-    <div class="container header-main-row" style="padding-top: 12px; padding-bottom: 12px;">
-      <div class="header-brand-group">
-        <a href="index.html" class="brand-logo-link" aria-label="MyTownLens Home">
-          <div class="brand-emblem">🏛️</div>
-          <div class="brand-titles">
-            <span class="brand-eyebrow">MyTownLens Administrative Suite</span>
-            <h1 class="brand-main-title">Owner Operations &amp; Lead Dispatch Portal</h1>
-          </div>
-        </a>
+    <div class="container header-container">
+      <div class="header-titles">
+        <h1 id="header-main-title">MyTownLens Admin</h1>
+        <p class="subtitle" id="header-main-subtitle">Owner Operations, Homeowner Golden Lead Dossiers, 47-Town Sponsorships, and Law Firm &amp; Brokerage Outreach CRMs.</p>
       </div>
 
-      <nav class="primary-top-nav" aria-label="Public Site Pages">
-        <a href="index.html" class="nav-link-item">
-          <span class="nav-icon">🧮</span>
-          <span>Tax Calculator</span>
-        </a>
-        <a href="budgets.html" class="nav-link-item">
-          <span class="nav-icon">📊</span>
-          <span>Budgets &amp; Audits</span>
-        </a>
-        <a href="properties.html" class="nav-link-item">
-          <span class="nav-icon">🏘️</span>
-          <span>Properties</span>
-        </a>
-        <a href="election.html" class="nav-link-item">
-          <span class="nav-icon">🗳️</span>
-          <span>2026 Election</span>
-        </a>
-        <a href="admin.html" class="nav-link-item active" aria-current="page">
-          <span class="nav-icon">🔒</span>
-          <span>Admin Portal</span>
-        </a>
-      </nav>
+      <div class="header-stat-cards">
+        <div class="stat-card">
+          <div class="stat-card-label">Monitored Coverage</div>
+          <div class="stat-card-num">47 Towns</div>
+          <div class="stat-card-sub">Passaic, Bergen, Essex &amp; Morris</div>
+        </div>
+        <div class="stat-card highlight-school">
+          <div class="stat-card-label">Verified MOD-IV Roll</div>
+          <div class="stat-card-num">150,016</div>
+          <div class="stat-card-sub">Class 2 Residential Parcels</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Target Partner Network</div>
+          <div class="stat-card-num">34 Firms</div>
+          <div class="stat-card-sub">18 Law Firms • 16 Brokerages</div>
+        </div>
+      </div>
     </div>
   </header>
+
+  <!-- Modern Streamlined Sticky Navigation Bar -->
+  <nav class="nav-bar sticky-nav" id="main-nav" role="navigation" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand-lockup" id="nav-brand-home" aria-label="MyTownLens - Back to Home">
+        <div class="nav-brand-icon-wrap">
+          <img src="favicon.svg" alt="MyTownLens Logo" class="nav-brand-img" width="22" height="22">
+        </div>
+        <div class="nav-brand-text">
+          <div class="nav-brand-title" id="nav-brand-title">MyTownLens</div>
+          <div class="nav-brand-subtitle" id="nav-brand-subtitle">OWNER ADMIN SUITE • 2026</div>
+        </div>
+      </a>
+
+      <div class="nav-menu" role="menubar">
+        <a href="index.html" class="nav-item-btn tab-btn" id="nav-link-calculator" role="menuitem">
+          <span class="tab-icon">💰</span>
+          <span class="tab-title">Tax Calculator</span>
+        </a>
+        <a href="election.html" class="nav-item-btn tab-btn" id="nav-link-election" role="menuitem">
+          <span class="tab-icon">🗳️</span>
+          <span class="tab-title">Election 2026</span>
+        </a>
+        <a href="budgets.html" class="nav-item-btn tab-btn" id="nav-link-budgets" role="menuitem">
+          <span class="tab-icon">📊</span>
+          <span class="tab-title">Budgets &amp; Taxes</span>
+        </a>
+        <a href="properties.html" class="nav-item-btn tab-btn" id="nav-link-properties" role="menuitem">
+          <span class="tab-icon">🔍</span>
+          <span class="tab-title">Properties &amp; Audits</span>
+        </a>
+        <a href="admin.html" class="nav-item-btn tab-btn active" id="nav-link-admin" role="menuitem" aria-current="page">
+          <span class="tab-icon">🔒</span>
+          <span class="tab-title">Admin Portal</span>
+        </a>
+      </div>
+    </div>
+  </nav>
 
   <main class="container admin-portal-main">
 
@@ -107,7 +135,7 @@
           </div>
 
           <div class="form-group" style="margin-top: 14px;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
               <label for="admin-login-password">Administrator Password <span aria-hidden="true">*</span></label>
               <button
                 type="button"
@@ -172,7 +200,7 @@
         </div>
         <div class="admin-workspace-controls">
           <div class="admin-town-context-box">
-            <label for="admin-active-town-select">Active Municipality Context:</label>
+            <label for="admin-active-town-select">Active Municipality:</label>
             <select id="admin-active-town-select" onchange="handleAdminTownSwitch(this.value)">
               <!-- Populated by JS with all 47 towns -->
             </select>
@@ -184,7 +212,7 @@
       </div>
 
       <!-- Executive KPI Strip -->
-      <div class="admin-kpi-grid" style="margin-bottom: 18px;">
+      <div class="admin-kpi-grid">
         <div class="admin-kpi-card">
           <span class="admin-kpi-lbl">Attorney Appeal Leads</span>
           <span class="admin-kpi-val" id="admin-kpi-appeal-count">0</span>
@@ -209,32 +237,32 @@
 
       <!-- Administrative Service Navigation Tabs (All 8 Services) -->
       <div class="admin-tab-bar" role="tablist" aria-label="Administrative Services">
-        <button type="button" class="admin-tab-btn active" onclick="switchAdminTab('appeals')" id="admin-tab-appeals-btn">⚖️ Attorney Leads (Golden Dockets)</button>
-        <button type="button" class="admin-tab-btn" onclick="switchAdminTab('realtor')" id="admin-tab-realtor-btn">🏡 Realtor CMA Leads</button>
-        <button type="button" class="admin-tab-btn" onclick="switchAdminTab('partners')" id="admin-tab-partners-btn">🤝 Sponsorship Inquiries</button>
-        <button type="button" class="admin-tab-btn" onclick="switchAdminTab('sponsors')" id="admin-tab-sponsors-btn">⭐ Town Sponsors (47 Towns)</button>
-        <button type="button" class="admin-tab-btn" onclick="switchAdminTab('outreach')" id="admin-tab-outreach-btn">🎯 Law Firm Outreach CRM</button>
-        <button type="button" class="admin-tab-btn" onclick="switchAdminTab('realtor_outreach')" id="admin-tab-realtor_outreach-btn">🏢 Brokerage Outreach CRM</button>
-        <button type="button" class="admin-tab-btn" onclick="switchAdminTab('settings')" id="admin-tab-settings-btn">⚡ Webhook &amp; Widgets</button>
-        <button type="button" class="admin-tab-btn" onclick="switchAdminTab('security')" id="admin-tab-security-btn">🔐 Security &amp; System</button>
+        <button type="button" role="tab" aria-selected="true" class="admin-tab-btn active" onclick="switchAdminTab('appeals')" id="admin-tab-appeals-btn">⚖️ Attorney Leads</button>
+        <button type="button" role="tab" aria-selected="false" class="admin-tab-btn" onclick="switchAdminTab('realtor')" id="admin-tab-realtor-btn">🏡 Realtor CMA Leads</button>
+        <button type="button" role="tab" aria-selected="false" class="admin-tab-btn" onclick="switchAdminTab('partners')" id="admin-tab-partners-btn">🤝 Sponsor Inquiries</button>
+        <button type="button" role="tab" aria-selected="false" class="admin-tab-btn" onclick="switchAdminTab('sponsors')" id="admin-tab-sponsors-btn">⭐ Town Sponsors (47)</button>
+        <button type="button" role="tab" aria-selected="false" class="admin-tab-btn" onclick="switchAdminTab('outreach')" id="admin-tab-outreach-btn">🎯 Law Firm CRM (18)</button>
+        <button type="button" role="tab" aria-selected="false" class="admin-tab-btn" onclick="switchAdminTab('realtor_outreach')" id="admin-tab-realtor_outreach-btn">🏢 Brokerage CRM (16)</button>
+        <button type="button" role="tab" aria-selected="false" class="admin-tab-btn" onclick="switchAdminTab('settings')" id="admin-tab-settings-btn">⚡ Webhook &amp; Widgets</button>
+        <button type="button" role="tab" aria-selected="false" class="admin-tab-btn" onclick="switchAdminTab('security')" id="admin-tab-security-btn">🔐 Security &amp; System</button>
       </div>
 
       <!-- Panel 1: Attorney Appeal Leads Table -->
-      <div id="admin-panel-appeals" class="admin-panel">
-        <div class="admin-panel-actions" style="flex-wrap: wrap; gap: 8px;">
+      <div id="admin-panel-appeals" class="admin-panel" role="tabpanel" aria-labelledby="admin-tab-appeals-btn">
+        <div class="admin-panel-actions">
           <div>
             <span style="font-weight: 800; font-size: 0.94rem; color: #0f172a;">Pre-Qualified Homeowner Tax Appeal Case Dockets</span>
             <div style="font-size: 0.78rem; color: #64748b;">Includes homeowner contact, Block/Lot/PAMS PIN, Ch. 123 variance, &amp; 3–5 verified MOD-IV street comparables</div>
           </div>
-          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <div class="admin-panel-btn-group">
             <button type="button" class="btn-admin-secondary" onclick="generateSampleQualifiedLead('appeals')" title="Pull a real over-assessed MOD-IV parcel &amp; comps to test or send to attorneys">⚡ Generate Sample Lead</button>
             <button type="button" class="btn-admin-secondary" onclick="copyBuyerPitchScript('attorney')" title="Copy outreach script to pitch local NJ tax appeal attorneys">📨 Copy Attorney Pitch</button>
             <button type="button" class="btn-admin-action" onclick="exportLeadsCSV('appeals')">📥 Export Full 27-Col CSV</button>
             <button type="button" class="btn-admin-danger" onclick="clearLeadsData('appeals')">Clear</button>
           </div>
         </div>
-        <div class="admin-table-wrap">
-          <table class="admin-table" id="admin-table-appeals">
+        <div class="admin-table-wrap" tabindex="0" role="region" aria-label="Pre-Qualified Homeowner Tax Appeal Case Dockets">
+          <table class="admin-table responsive-admin-table" id="admin-table-appeals">
             <thead>
               <tr>
                 <th>Timestamp</th>
@@ -254,21 +282,21 @@
       </div>
 
       <!-- Panel 2: Realtor Valuation Leads Table -->
-      <div id="admin-panel-realtor" class="admin-panel" style="display: none;">
-        <div class="admin-panel-actions" style="flex-wrap: wrap; gap: 8px;">
+      <div id="admin-panel-realtor" class="admin-panel" role="tabpanel" aria-labelledby="admin-tab-realtor-btn" style="display: none;">
+        <div class="admin-panel-actions">
           <div>
             <span style="font-weight: 800; font-size: 0.94rem; color: #0f172a;">Homeowner Valuation &amp; Listing CMA Requests</span>
             <div style="font-size: 0.78rem; color: #64748b;">High-intent seller &amp; refinance valuation leads with property specs and selling timeline</div>
           </div>
-          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <div class="admin-panel-btn-group">
             <button type="button" class="btn-admin-secondary" onclick="generateSampleQualifiedLead('realtor')">⚡ Generate Sample CMA Lead</button>
             <button type="button" class="btn-admin-secondary" onclick="copyBuyerPitchScript('realtor')">📨 Copy Realtor Pitch</button>
             <button type="button" class="btn-admin-action" onclick="exportLeadsCSV('realtor')">📥 Export CSV</button>
             <button type="button" class="btn-admin-danger" onclick="clearLeadsData('realtor')">Clear</button>
           </div>
         </div>
-        <div class="admin-table-wrap">
-          <table class="admin-table" id="admin-table-realtor">
+        <div class="admin-table-wrap" tabindex="0" role="region" aria-label="Homeowner Valuation and Listing CMA Requests">
+          <table class="admin-table responsive-admin-table" id="admin-table-realtor">
             <thead>
               <tr>
                 <th>Timestamp</th>
@@ -288,16 +316,16 @@
       </div>
 
       <!-- Panel 3: Professional Municipal Sponsorships Table -->
-      <div id="admin-panel-partners" class="admin-panel" style="display: none;">
+      <div id="admin-panel-partners" class="admin-panel" role="tabpanel" aria-labelledby="admin-tab-partners-btn" style="display: none;">
         <div class="admin-panel-actions">
           <span style="font-weight: 800; font-size: 0.94rem; color: #0f172a;">Professional Municipal Sponsorship Inquiries</span>
-          <div style="display: flex; gap: 8px;">
+          <div class="admin-panel-btn-group">
             <button type="button" class="btn-admin-action" onclick="exportLeadsCSV('partners')">📥 Export CSV</button>
             <button type="button" class="btn-admin-danger" onclick="clearLeadsData('partners')">Clear</button>
           </div>
         </div>
-        <div class="admin-table-wrap">
-          <table class="admin-table" id="admin-table-partners">
+        <div class="admin-table-wrap" tabindex="0" role="region" aria-label="Professional Municipal Sponsorship Inquiries">
+          <table class="admin-table responsive-admin-table" id="admin-table-partners">
             <thead>
               <tr>
                 <th>Timestamp</th>
@@ -317,21 +345,21 @@
       </div>
 
       <!-- Panel 4: Webhook Integration & Partner Routing Settings -->
-      <div id="admin-panel-settings" class="admin-panel" style="display: none;">
+      <div id="admin-panel-settings" class="admin-panel" role="tabpanel" aria-labelledby="admin-tab-settings-btn" style="display: none;">
         <div class="admin-settings-box">
           <h4 style="margin: 0 0 6px 0; font-size: 0.96rem; font-weight: 800; color: #0f172a;">⚡ Automated Lead Delivery &amp; Buyer Routing</h4>
           <p style="margin: 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Configure where leads are automatically delivered when a homeowner submits a request, plus set your default Partner Attorney / Realtor email for 1-click case dispatch.</p>
           <div class="form-grid-2col" style="margin-top: 12px;">
             <div class="form-group">
               <label for="admin-webhook-url">Webhook URL (Formspree / Web3Forms / Zapier / Make / Slack)</label>
-              <input type="url" id="admin-webhook-url" placeholder="https://formspree.io/f/... or https://hooks.zapier.com/..." style="width: 100%; padding: 10px 14px; font-family: var(--font-mono); font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+              <input type="url" id="admin-webhook-url" placeholder="https://formspree.io/f/... or https://hooks.zapier.com/..." class="admin-text-input">
             </div>
             <div class="form-group">
               <label for="admin-partner-email">Partner Buyer Intake Email (For 1-Click Case Dispatch)</label>
-              <input type="email" id="admin-partner-email" placeholder="intake@njtaxappeallaw.com" style="width: 100%; padding: 10px 14px; font-family: var(--font-mono); font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+              <input type="email" id="admin-partner-email" placeholder="intake@njtaxappeallaw.com" class="admin-text-input">
             </div>
           </div>
-          <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+          <div class="admin-panel-btn-group" style="margin-top: 14px;">
             <button type="button" class="btn-admin-action" onclick="saveAdminWebhook()">💾 Save Delivery Settings</button>
             <button type="button" class="btn-admin-secondary" onclick="testAdminWebhook()">📡 Send Test Lead Ping</button>
             <button type="button" class="btn-admin-secondary" onclick="copyBuyerPitchScript('attorney')">📨 Copy Attorney Cold-Pitch Email</button>
@@ -341,8 +369,8 @@
         <div class="admin-settings-box" style="margin-top: 14px;">
           <h4 style="margin: 0 0 6px 0; font-size: 0.96rem; font-weight: 800; color: #0f172a;">🔌 Embeddable Partner Widget Code</h4>
           <p style="margin: 0 0 10px 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Share this 1-line HTML snippet with partner law firms or real estate brokerages to embed the interactive civic tax tool on their website:</p>
-          <div style="background: #0f172a; color: #38bdf8; padding: 10px 14px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.8rem; overflow-x: auto; white-space: pre;" id="admin-widget-code">&lt;iframe src="https://mytownlens.com/index.html?embed=true" width="100%" height="520" frameborder="0" style="border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 4px 18px rgba(0,0,0,0.08);" title="MyTownLens Property Tax &amp; Assessment Tool"&gt;&lt;/iframe&gt;</div>
-          <div style="margin-top: 10px; display: flex; gap: 8px;">
+          <div class="admin-code-snippet-box" id="admin-widget-code">&lt;iframe src="https://mytownlens.com/index.html?embed=true" width="100%" height="520" frameborder="0" style="border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 4px 18px rgba(0,0,0,0.08);" title="MyTownLens Property Tax &amp; Assessment Tool"&gt;&lt;/iframe&gt;</div>
+          <div class="admin-panel-btn-group" style="margin-top: 10px;">
             <button type="button" class="btn-admin-action" onclick="copyWidgetSnippet()">📋 Copy Embed Code</button>
             <button type="button" class="btn-admin-secondary" onclick="previewWidgetInNewTab()">👁️ Preview Embed Mode</button>
           </div>
@@ -351,7 +379,7 @@
       </div>
 
       <!-- Panel 5: Town Sponsor Assignment & Directory -->
-      <div id="admin-panel-sponsors" class="admin-panel" style="display: none;">
+      <div id="admin-panel-sponsors" class="admin-panel" role="tabpanel" aria-labelledby="admin-tab-sponsors-btn" style="display: none;">
         <div class="admin-settings-box" style="margin-bottom: 16px;">
           <h4 style="margin: 0 0 6px 0; font-size: 0.96rem; font-weight: 800; color: #0f172a;">⭐ Assign Exclusive Municipal Sponsor</h4>
           <p style="margin: 0 0 12px 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Feature an exclusive verified attorney, real estate broker, or closing firm as the official partner for any of the 47 municipalities.</p>
@@ -360,13 +388,13 @@
             <div class="form-grid-2col">
               <div class="form-group">
                 <label for="sponsor-assign-town">Municipality (47 Towns)</label>
-                <select id="sponsor-assign-town" required style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                <select id="sponsor-assign-town" required class="admin-text-input">
                   <!-- Populated by JS with all 47 towns -->
                 </select>
               </div>
               <div class="form-group">
                 <label for="sponsor-assign-role">Sponsorship Role / Category</label>
-                <select id="sponsor-assign-role" required style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                <select id="sponsor-assign-role" required class="admin-text-input">
                   <option value="Exclusive Municipal Property Tax Attorney">Exclusive Municipal Property Tax Attorney</option>
                   <option value="Exclusive Local Real Estate Specialist">Exclusive Local Real Estate Specialist</option>
                   <option value="Official Municipal Title &amp; Closing Partner">Official Municipal Title &amp; Closing Partner</option>
@@ -378,26 +406,26 @@
             <div class="form-grid-2col" style="margin-top: 10px;">
               <div class="form-group">
                 <label for="sponsor-assign-name">Firm / Professional Name *</label>
-                <input type="text" id="sponsor-assign-name" required placeholder="e.g. Goldman &amp; Associates Property Tax Law" style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                <input type="text" id="sponsor-assign-name" required placeholder="e.g. Goldman &amp; Associates Property Tax Law" class="admin-text-input">
               </div>
               <div class="form-group">
                 <label for="sponsor-assign-phone">Contact Phone *</label>
-                <input type="tel" id="sponsor-assign-phone" required placeholder="e.g. (973) 555-0199" style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                <input type="tel" id="sponsor-assign-phone" required placeholder="e.g. (973) 555-0199" class="admin-text-input">
               </div>
             </div>
 
             <div class="form-grid-2col" style="margin-top: 10px;">
               <div class="form-group">
                 <label for="sponsor-assign-url">Website / Profile URL</label>
-                <input type="url" id="sponsor-assign-url" placeholder="https://..." style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                <input type="url" id="sponsor-assign-url" placeholder="https://..." class="admin-text-input">
               </div>
               <div class="form-group">
                 <label for="sponsor-assign-rate">Monthly Recurring Rate (MRR)</label>
-                <input type="text" id="sponsor-assign-rate" placeholder="e.g. $250 / mo" style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                <input type="text" id="sponsor-assign-rate" placeholder="e.g. $250 / mo" class="admin-text-input">
               </div>
             </div>
 
-            <div style="display: flex; gap: 10px; margin-top: 14px;">
+            <div class="admin-panel-btn-group" style="margin-top: 14px;">
               <button type="submit" class="btn-admin-action">💾 Save Sponsor Assignment</button>
               <button type="button" class="btn-admin-secondary" onclick="resetSponsorForm()">Clear Form</button>
             </div>
@@ -408,8 +436,8 @@
           <span style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">All 47 Municipalities Sponsorship Roster (<span id="admin-sponsor-count-active">0</span> Active / <span id="admin-sponsor-mrr-total">$0</span> MRR)</span>
           <button type="button" class="btn-admin-action" onclick="exportSponsorsCSV()">📥 Export Roster CSV</button>
         </div>
-        <div class="admin-table-wrap">
-          <table class="admin-table" id="admin-table-sponsors">
+        <div class="admin-table-wrap" tabindex="0" role="region" aria-label="All 47 Municipalities Sponsorship Roster">
+          <table class="admin-table responsive-admin-table" id="admin-table-sponsors">
             <thead>
               <tr>
                 <th>Municipality</th>
@@ -430,7 +458,7 @@
       </div>
 
       <!-- Panel 6: Attorney Outreach CRM & Law Firm Directory -->
-      <div id="admin-panel-outreach" class="admin-panel" style="display: none;">
+      <div id="admin-panel-outreach" class="admin-panel" role="tabpanel" aria-labelledby="admin-tab-outreach-btn" style="display: none;">
         <div class="outreach-stat-grid">
           <div class="outreach-stat-card">
             <span class="stat-label">Target Law Firms</span>
@@ -454,7 +482,7 @@
           </div>
         </div>
 
-        <div class="admin-panel-actions" style="flex-wrap: wrap; gap: 8px;">
+        <div class="admin-panel-actions">
           <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
             <label for="outreach-county-filter" style="font-size: 0.82rem; font-weight: 700; color: #475569;">County Hub:</label>
             <select id="outreach-county-filter" class="outreach-select" onchange="filterOutreachCounty(this.value)">
@@ -465,14 +493,14 @@
               <option value="Morris">Morris County Hub (Morristown / Denville)</option>
             </select>
           </div>
-          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <div class="admin-panel-btn-group">
             <button type="button" class="btn-admin-action" onclick="exportOutreachCSV()">📥 Export CRM CSV</button>
             <button type="button" class="btn-admin-secondary" onclick="resetOutreachCRM()">Reset Defaults</button>
           </div>
         </div>
 
-        <div class="outreach-table-wrap">
-          <table class="admin-table" id="admin-table-outreach">
+        <div class="outreach-table-wrap" tabindex="0" role="region" aria-label="North Jersey Tax Appeal Law Firm Outreach CRM">
+          <table class="admin-table responsive-admin-table" id="admin-table-outreach">
             <thead>
               <tr>
                 <th>Law Firm &amp; Managing Partner</th>
@@ -491,7 +519,7 @@
       </div>
 
       <!-- Panel 7: Realtor & Brokerage Outreach Directory -->
-      <div id="admin-panel-realtor_outreach" class="admin-panel" style="display: none;">
+      <div id="admin-panel-realtor_outreach" class="admin-panel" role="tabpanel" aria-labelledby="admin-tab-realtor_outreach-btn" style="display: none;">
         <div class="outreach-stat-grid">
           <div class="outreach-stat-card">
             <span class="stat-label">Target Brokerages</span>
@@ -515,7 +543,7 @@
           </div>
         </div>
 
-        <div class="admin-panel-actions" style="flex-wrap: wrap; gap: 8px;">
+        <div class="admin-panel-actions">
           <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
             <label for="realtor-county-filter" style="font-size: 0.82rem; font-weight: 700; color: #475569;">County Hub:</label>
             <select id="realtor-county-filter" class="outreach-select" onchange="filterRealtorCounty(this.value)">
@@ -526,14 +554,14 @@
               <option value="Morris">Morris County Hub (Morristown / Denville / Parsippany)</option>
             </select>
           </div>
-          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+          <div class="admin-panel-btn-group">
             <button type="button" class="btn-admin-action" onclick="exportRealtorOutreachCSV()">📥 Export Brokerages CSV</button>
             <button type="button" class="btn-admin-secondary" onclick="resetRealtorCRM()">Reset Defaults</button>
           </div>
         </div>
 
-        <div class="outreach-table-wrap">
-          <table class="admin-table" id="admin-table-realtor-outreach">
+        <div class="outreach-table-wrap" tabindex="0" role="region" aria-label="North Jersey Real Estate Brokerage Outreach CRM">
+          <table class="admin-table responsive-admin-table" id="admin-table-realtor-outreach">
             <thead>
               <tr>
                 <th>Brokerage &amp; Managing Broker</th>
@@ -552,12 +580,12 @@
       </div>
 
       <!-- Panel 8: Security, Password Management & System Data Backup -->
-      <div id="admin-panel-security" class="admin-panel" style="display: none;">
+      <div id="admin-panel-security" class="admin-panel" role="tabpanel" aria-labelledby="admin-tab-security-btn" style="display: none;">
         <div class="form-grid-2col" style="gap: 18px; align-items: start;">
           <!-- Change Password Box -->
           <div class="admin-settings-box">
             <h4 style="margin: 0 0 6px 0; font-size: 0.96rem; font-weight: 800; color: #0f172a;">🔐 Administrator Password &amp; Access Control</h4>
-            <p style="margin: 0 0 12px 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Update the password required to unlock <code>admin.html</code> and the administrative services suite. Stored locally as a SHA-256 cryptographic digest.</p>
+            <p style="margin: 0 0 12px 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Update the password required to unlock <code>admin.html</code> and the administrative services suite. Stored locally as a cryptographic digest.</p>
 
             <form id="admin-change-password-form" method="post" onsubmit="handleAdminPasswordChange(event)">
               <input type="hidden" name="username" value="admin@mytownlens.com" autocomplete="username">
@@ -573,7 +601,7 @@
                 >
               </div>
               <div class="form-group" style="margin-top: 10px;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
                   <label for="admin-new-pass">New Administrator Password <span aria-hidden="true">*</span></label>
                   <button
                     type="button"
@@ -594,7 +622,7 @@
                   placeholder="At least 8 characters"
                 >
               </div>
-              <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+              <div class="admin-panel-btn-group" style="margin-top: 14px;">
                 <button type="submit" class="btn-admin-action">🔑 Update Admin Password</button>
                 <button type="button" class="btn-admin-secondary" onclick="resetAdminPasswordToDefault()">Reset to Default</button>
               </div>
@@ -614,7 +642,7 @@
               <div class="health-row"><span>⏱️ <strong>Automated Refresh Schedule:</strong></span> <strong>Weekly Every Monday at 06:00 UTC</strong></div>
             </div>
 
-            <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+            <div class="admin-panel-btn-group" style="margin-top: 14px;">
               <button type="button" class="btn-admin-action" onclick="exportAllAdminBackupJSON()">📦 Download Full Backup (.json)</button>
               <label for="admin-restore-file-input" class="btn-admin-secondary" style="cursor: pointer; display: inline-flex; align-items: center;">
                 📂 Restore from Backup (.json)
@@ -633,7 +661,7 @@
             <strong id="admin-dossier-title" style="font-size: 0.92rem; color: #f8fafc;">📄 Pre-Qualified Lead Case Dossier</strong>
             <span id="admin-dossier-subtitle" style="display: block; font-size: 0.76rem; color: #94a3b8;">Ready to forward to partner tax appeal attorney or appraiser</span>
           </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <div class="admin-panel-btn-group">
             <button type="button" class="btn-admin-action" id="btn-dossier-copy" onclick="copyActiveInspectedDossier()">📋 Copy Full Dossier</button>
             <button type="button" class="btn-admin-secondary" id="btn-dossier-email" onclick="emailActiveInspectedDossier()">📧 Email to Partner</button>
             <button type="button" class="btn-dialog-close-btn" onclick="closeLeadDossierPreview()">Close Preview</button>
@@ -645,14 +673,24 @@
     </section>
   </main>
 
-  <footer class="app-footer" style="margin-top: 48px;">
+  <footer class="site-footer">
     <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>MyTownLens</h4>
+          <p>Independent civic transparency, property assessment, and public records analysis across 47 North Jersey municipalities.</p>
+        </div>
+        <div class="footer-meta">
+          <div class="footer-refresh-row">
+            <span class="footer-badge">🔄 <strong>Last Refreshed:</strong> October 31, 2026 &bull; <span style="color: #10b981;">● 100% Verified (0.00% Hallucination Rate)</span></span>
+            <span class="footer-badge refresh-schedule-badge">⏱️ <strong>Automated Refresh:</strong> Weekly Every Monday at 06:00 UTC</span>
+            <a href="index.html" class="footer-admin-link">⬅ Back to Public Portal</a>
+          </div>
+        </div>
+      </div>
       <div class="footer-bottom">
         <div class="footer-copyright">
           © 2026 MyTownLens Administrative Suite. Authorized Owner Access Only.
-        </div>
-        <div class="footer-legal-links">
-          <a href="index.html" style="color: #64748b;">Return to Public Portal</a>
         </div>
       </div>
     </div>
