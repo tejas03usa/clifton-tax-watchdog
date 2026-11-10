@@ -11800,6 +11800,208 @@ function renderSurroundingTowns() {
       </div>
     `).join('');
   }
+
+  // Render 2D Cross-Town Fiscal Efficiency Scatter Matrix
+  renderCrossTownScatterMatrix();
+}
+
+let activeScatterCounty = 'all';
+
+function filterScatterMatrixCounty(county) {
+  activeScatterCounty = county;
+  renderCrossTownScatterMatrix();
+}
+
+function renderCrossTownScatterMatrix() {
+  const container = document.getElementById('cross-town-scatter-matrix-container');
+  if (!container || !surroundingTownsData || !surroundingTownsData.towns) return;
+
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const towns = surroundingTownsData.towns;
+
+  const countyColors = {
+    'passaic': '#2563eb', // Blue
+    'bergen': '#059669',  // Emerald Green
+    'essex': '#d97706',   // Amber
+    'morris': '#7c3aed'   // Purple
+  };
+
+  const getCountyKey = (countyStr) => {
+    const s = (countyStr || '').toLowerCase();
+    if (s.includes('passaic')) return 'passaic';
+    if (s.includes('bergen')) return 'bergen';
+    if (s.includes('essex')) return 'essex';
+    if (s.includes('morris')) return 'morris';
+    return 'passaic';
+  };
+
+  const filteredTowns = activeScatterCounty === 'all'
+    ? towns
+    : towns.filter(t => getCountyKey(t.county) === activeScatterCounty.toLowerCase());
+
+  // Coordinates:
+  // X: Effective Tax Rate Market: 1.40% to 3.00%
+  // Y: Per-Pupil Cost: $20,000 to $26,000
+  const xMin = 1.40;
+  const xMax = 3.00;
+  const yMin = 20000;
+  const yMax = 26000;
+
+  const plotX = 85;
+  const plotY = 40;
+  const plotW = 800;
+  const plotH = 380;
+
+  const getX = (rate) => plotX + ((rate - xMin) / (xMax - xMin)) * plotW;
+  const getY = (cost) => (plotY + plotH) - ((cost - yMin) / (yMax - yMin)) * plotH;
+
+  const medianRate = 2.173;
+  const medianCost = 22450;
+  const medX = getX(medianRate);
+  const medY = getY(medianCost);
+
+  const keyTowns = ['clifton', 'wayne', 'paterson', 'montclair', 'paramus', 'morristown', 'millburn', 'totowa', 'ridgewood', 'fort-lee', 'passaic-city', 'hackensack', 'west-orange', 'mountain-lakes', 'livingston'];
+
+  // Generate SVG circles and labels
+  const pointsMarkup = filteredTowns.map(t => {
+    const isCurrent = t.id === currentCity;
+    const cKey = getCountyKey(t.county);
+    const color = countyColors[cKey] || '#2563eb';
+    const cx = getX(t.effectiveTaxRateMarket);
+    const cy = getY(t.perPupilCost);
+    const radius = isCurrent ? 10 : 7;
+    const showLabel = activeScatterCounty !== 'all' || isCurrent || keyTowns.includes(t.id);
+
+    return `
+      <g class="scatter-point-group" data-town-id="${t.id}" style="cursor: pointer;" onclick="if(typeof selectSpecificTownComparison === 'function') selectSpecificTownComparison('${t.id}', '${t.county}');">
+        ${isCurrent ? `
+          <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="16" class="scatter-pulse-halo" stroke="#f59e0b" stroke-width="2.5" fill="none" opacity="0.75" />
+        ` : ''}
+        <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${radius}" fill="${color}" stroke="${isCurrent ? '#ffffff' : '#ffffff'}" stroke-width="${isCurrent ? 2.5 : 1.5}" class="scatter-dot" opacity="${isCurrent ? '1' : '0.88'}">
+          <title>${escapeHtml(t.name)} (${escapeHtml(t.county)}): ${t.effectiveTaxRateMarket.toFixed(3)}% Effective Tax Rate | $${t.perPupilCost.toLocaleString()} Cost-Per-Pupil | Click to view comparison</title>
+        </circle>
+        ${showLabel ? `
+          <text x="${cx.toFixed(1)}" y="${(cy - (isCurrent ? 13 : 9)).toFixed(1)}" font-family="system-ui, -apple-system, sans-serif" font-size="${isCurrent ? '11px' : '9.5px'}" font-weight="${isCurrent ? '800' : '600'}" fill="${isCurrent ? '#0f172a' : '#334155'}" text-anchor="middle" paint-order="stroke" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            ${isCurrent ? `⭐ ${t.name}` : t.name}
+          </text>
+        ` : ''}
+      </g>
+    `;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="civic-audit-card" id="cross-town-scatter-matrix-card">
+      <div class="audit-header-banner">
+        <div>
+          <h3 class="audit-header-title">
+            <span>🎯</span> Cross-Town Fiscal Efficiency Matrix: Effective Tax Rate vs. Cost-Per-Pupil
+          </h3>
+          <p class="audit-header-sub">
+            Are local taxpayers getting what they pay for? This 2D scatter matrix plots <strong>all 47 North Jersey municipalities</strong> across Passaic, Bergen, Essex, and Morris Counties, evaluating equalized effective property tax rates against certified per-pupil education spending.
+          </p>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <span class="pill-tag active-pill">47 Municipalities Plotted</span>
+        </div>
+      </div>
+
+      <div class="scatter-matrix-wrapper">
+        <div class="scatter-matrix-controls">
+          <div class="scatter-county-pills">
+            <button type="button" class="scatter-county-pill ${activeScatterCounty === 'all' ? 'active' : ''}" onclick="filterScatterMatrixCounty('all')">All Counties (47 Towns)</button>
+            <button type="button" class="scatter-county-pill ${activeScatterCounty === 'passaic' ? 'active' : ''}" onclick="filterScatterMatrixCounty('passaic')">🔵 Passaic County (16)</button>
+            <button type="button" class="scatter-county-pill ${activeScatterCounty === 'bergen' ? 'active' : ''}" onclick="filterScatterMatrixCounty('bergen')">🟢 Bergen County (10)</button>
+            <button type="button" class="scatter-county-pill ${activeScatterCounty === 'essex' ? 'active' : ''}" onclick="filterScatterMatrixCounty('essex')">🟠 Essex County (10)</button>
+            <button type="button" class="scatter-county-pill ${activeScatterCounty === 'morris' ? 'active' : ''}" onclick="filterScatterMatrixCounty('morris')">🟣 Morris County (11)</button>
+          </div>
+          <span style="font-size: 0.78rem; color: #64748b; font-weight: 600;">💡 Click any dot to highlight that municipality below</span>
+        </div>
+
+        <div class="scatter-svg-wrap">
+          <svg viewBox="0 0 920 480" width="100%" height="auto" role="img" aria-label="Fiscal Efficiency Scatter Plot Matrix">
+            <defs>
+              <linearGradient id="q1-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ecfdf5" stop-opacity="0.6"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0.1"/></linearGradient>
+              <linearGradient id="q2-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fffbeb" stop-opacity="0.6"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0.1"/></linearGradient>
+              <linearGradient id="q3-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f8fafc" stop-opacity="0.6"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0.1"/></linearGradient>
+              <linearGradient id="q4-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fef2f2" stop-opacity="0.6"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0.1"/></linearGradient>
+            </defs>
+
+            <!-- Quadrant Background Tints -->
+            <!-- Top-Left: High Efficiency -->
+            <rect x="${plotX}" y="${plotY}" width="${medX - plotX}" height="${medY - plotY}" fill="url(#q1-grad)" rx="4" />
+            <!-- Top-Right: High Spending / High Tax -->
+            <rect x="${medX}" y="${plotY}" width="${(plotX + plotW) - medX}" height="${medY - plotY}" fill="url(#q2-grad)" rx="4" />
+            <!-- Bottom-Left: Lean & Economical -->
+            <rect x="${plotX}" y="${medY}" width="${medX - plotX}" height="${(plotY + plotH) - medY}" fill="url(#q3-grad)" rx="4" />
+            <!-- Bottom-Right: High Tax Pressure -->
+            <rect x="${medX}" y="${medY}" width="${(plotX + plotW) - medX}" height="${(plotY + plotH) - medY}" fill="url(#q4-grad)" rx="4" />
+
+            <!-- Quadrant Watermark Badges -->
+            <text x="${plotX + 16}" y="${plotY + 24}" font-size="11px" font-weight="800" fill="#059669" letter-spacing="0.04em">🟢 HIGH FISCAL EFFICIENCY</text>
+            <text x="${plotX + 16}" y="${plotY + 38}" font-size="9px" font-weight="600" fill="#64748b">High Per-Pupil Spend • Low Tax Rate</text>
+
+            <text x="${medX + 16}" y="${plotY + 24}" font-size="11px" font-weight="800" fill="#d97706" letter-spacing="0.04em">🟠 PREMIUM EDUCATION &amp; TAX PRESSURE</text>
+            <text x="${medX + 16}" y="${plotY + 38}" font-size="9px" font-weight="600" fill="#64748b">High Per-Pupil Spend • High Tax Rate</text>
+
+            <text x="${plotX + 16}" y="${medY + 24}" font-size="11px" font-weight="800" fill="#2563eb" letter-spacing="0.04em">🔵 LEAN &amp; ECONOMICAL</text>
+            <text x="${plotX + 16}" y="${medY + 38}" font-size="9px" font-weight="600" fill="#64748b">Lower Effective Tax Rate • Moderate Spend</text>
+
+            <text x="${medX + 16}" y="${medY + 24}" font-size="11px" font-weight="800" fill="#dc2626" letter-spacing="0.04em">🔴 HIGH TAX STRAIN</text>
+            <text x="${medX + 16}" y="${medY + 38}" font-size="9px" font-weight="600" fill="#64748b">High Property Tax Rate • Heavy Demand</text>
+
+            <!-- Grid Lines & Axis Ticks -->
+            <!-- Horizontal Ticks (Per-Pupil Cost) -->
+            ${[20000, 21000, 22000, 23000, 24000, 25000, 26000].map(c => {
+              const y = getY(c);
+              return `
+                <line x1="${plotX}" y1="${y}" x2="${plotX + plotW}" y2="${y}" stroke="#e2e8f0" stroke-width="1" />
+                <text x="${plotX - 10}" y="${y + 4}" font-size="10px" font-weight="600" fill="#64748b" text-anchor="end">$${(c / 1000).toFixed(0)}k</text>
+              `;
+            }).join('')}
+
+            <!-- Vertical Ticks (Effective Tax Rate) -->
+            ${[1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0].map(r => {
+              const x = getX(r);
+              return `
+                <line x1="${x}" y1="${plotY}" x2="${x}" y2="${plotY + plotH}" stroke="#e2e8f0" stroke-width="1" />
+                <text x="${x}" y="${plotY + plotH + 20}" font-size="10px" font-weight="600" fill="#64748b" text-anchor="middle">${r.toFixed(2)}%</text>
+              `;
+            }).join('')}
+
+            <!-- Regional Medians (Dashed Lines) -->
+            <line x1="${medX}" y1="${plotY}" x2="${medX}" y2="${plotY + plotH}" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.65" />
+            <line x1="${plotX}" y1="${medY}" x2="${plotX + plotW}" y2="${medY}" stroke="#0f172a" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.65" />
+
+            <text x="${medX + 6}" y="${plotY + plotH - 8}" font-size="9.5px" font-weight="700" fill="#0f172a" opacity="0.75">Regional Median: 2.17%</text>
+            <text x="${plotX + plotW - 6}" y="${medY - 6}" font-size="9.5px" font-weight="700" fill="#0f172a" text-anchor="end" opacity="0.75">Regional Median: $22,450 / pupil</text>
+
+            <!-- Main Axes Lines -->
+            <line x1="${plotX}" y1="${plotY}" x2="${plotX}" y2="${plotY + plotH}" stroke="#94a3b8" stroke-width="2" />
+            <line x1="${plotX}" y1="${plotY + plotH}" x2="${plotX + plotW}" y2="${plotY + plotH}" stroke="#94a3b8" stroke-width="2" />
+
+            <!-- Axis Labels -->
+            <text x="${plotX + (plotW / 2)}" y="${plotY + plotH + 42}" font-size="12px" font-weight="700" fill="#0f172a" text-anchor="middle">
+              Equalized Effective Property Tax Rate (Market Rate %) ➔
+            </text>
+            <text transform="rotate(-90)" x="${-(plotY + (plotH / 2))}" y="24" font-size="12px" font-weight="700" fill="#0f172a" text-anchor="middle">
+              Total Budgetary Cost Per Pupil ($ / Student) ➔
+            </text>
+
+            <!-- Plotted Dots -->
+            ${pointsMarkup}
+          </svg>
+        </div>
+
+        <div class="scatter-matrix-legend">
+          <span class="scatter-legend-item"><span class="scatter-legend-dot" style="background: #2563eb;"></span> Passaic County</span>
+          <span class="scatter-legend-item"><span class="scatter-legend-dot" style="background: #059669;"></span> Bergen County</span>
+          <span class="scatter-legend-item"><span class="scatter-legend-dot" style="background: #d97706;"></span> Essex County</span>
+          <span class="scatter-legend-item"><span class="scatter-legend-dot" style="background: #7c3aed;"></span> Morris County</span>
+          <span class="scatter-legend-item"><span style="color: #f59e0b; font-weight: 800;">⭐</span> Active Focus Town (${escapeHtml(meta.name)})</span>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 // TAB: HEALTHCARE & BENEFITS
@@ -19817,6 +20019,8 @@ window.shareToWhatsApp = shareToWhatsApp;
 window.shareToTwitter = shareToTwitter;
 window.getPropertyAppealSavingsEstimate = getPropertyAppealSavingsEstimate;
 window.toggleOverAssessedFilter = toggleOverAssessedFilter;
+window.renderCrossTownScatterMatrix = renderCrossTownScatterMatrix;
+window.filterScatterMatrixCounty = filterScatterMatrixCounty;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },

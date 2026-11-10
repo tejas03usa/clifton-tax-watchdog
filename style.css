@@ -19066,3 +19066,122 @@ dialog.omnibox-dialog::backdrop {
     justify-content: center;
   }
 }
+
+/* Cross-Town Budget Efficiency Scatter Matrix */
+.scatter-matrix-wrapper {
+  background: #ffffff;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  position: relative;
+  overflow-x: auto;
+}
+
+.scatter-matrix-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.scatter-county-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.scatter-county-pill {
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-mid);
+  background: #f8fafc;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.scatter-county-pill:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.scatter-county-pill.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.scatter-svg-wrap {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.scatter-matrix-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.scatter-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.scatter-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.scatter-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.4);
+  z-index: 100;
+  transform: translate(-50%, -100%);
+  margin-top: -10px;
+  display: none;
+}
+
+.scatter-dot {
+  cursor: pointer;
+  transition: r 0.15s ease, opacity 0.15s ease;
+}
+
+.scatter-dot:hover {
+  r: 10;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+@keyframes pulseHalo {
+  0% { r: 9; opacity: 0.9; }
+  50% { r: 16; opacity: 0.2; }
+  100% { r: 9; opacity: 0.9; }
+}
+
+.scatter-pulse-halo {
+  animation: pulseHalo 2s infinite ease-in-out;
+  pointer-events: none;
+}
