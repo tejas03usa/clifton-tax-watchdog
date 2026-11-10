@@ -8278,6 +8278,7 @@ function openAdminLeadsModal() {
   if (!modal) return;
   renderAdminLeadsData();
   renderAdminSponsorsData();
+  renderAdminOutreachData();
   if (typeof modal.showModal === 'function') {
     modal.showModal();
   } else {
@@ -8296,7 +8297,7 @@ function closeAdminLeadsModal() {
 }
 
 function switchAdminTab(tabName) {
-  const tabs = ['appeals', 'realtor', 'partners', 'settings', 'sponsors'];
+  const tabs = ['appeals', 'realtor', 'partners', 'settings', 'sponsors', 'outreach'];
   tabs.forEach(t => {
     const btn = document.getElementById(`admin-tab-${t}-btn`);
     const panel = document.getElementById(`admin-panel-${t}`);
@@ -8310,6 +8311,8 @@ function switchAdminTab(tabName) {
   });
   if (tabName === 'sponsors') {
     renderAdminSponsorsData();
+  } else if (tabName === 'outreach') {
+    renderAdminOutreachData();
   }
 }
 
@@ -9220,6 +9223,453 @@ function exportSponsorsCSV() {
   link.click();
   document.body.removeChild(link);
   showToast(`✓ Exported 47 municipalities roster to CSV`);
+}
+
+// ==========================================================================
+// NORTH JERSEY LAW FIRM PROSPECT CRM & 1-CLICK OUTREACH ENGINE
+// ==========================================================================
+
+const DEFAULT_LAW_FIRMS = [
+  {
+    id: 'zipp-tanebaum',
+    name: 'Zipp & Tanebaum, LLC',
+    city: 'Clifton',
+    county: 'Passaic',
+    phone: '(973) 859-0070',
+    email: 'info@zipplaw.com',
+    partner: 'Peter J. Zipp, Esq.',
+    focus: 'Passaic & Statewide Tax Appeal Litigation',
+    address: '280 Entin Rd, Clifton, NJ 07014'
+  },
+  {
+    id: 'spiotti-esposito',
+    name: 'Spiotti & Esposito, P.C.',
+    city: 'Totowa',
+    county: 'Passaic',
+    phone: '(973) 890-5050',
+    email: 'appeals@spiottilaw.com',
+    partner: 'Joseph G. Spiotti, Esq.',
+    focus: 'Passaic County Board of Taxation Appeals',
+    address: '271 Union Blvd, Totowa, NJ 07512'
+  },
+  {
+    id: 'scarinci-hollenbeck',
+    name: 'Scarinci Hollenbeck, LLC',
+    city: 'Little Falls',
+    county: 'Passaic',
+    phone: '(973) 898-3000',
+    email: 'taxappeals@sh-law.com',
+    partner: 'Donald Scarinci, Esq.',
+    focus: 'North Jersey Real Property Assessment Appeals',
+    address: '150 Clove Rd, Little Falls, NJ 07424'
+  },
+  {
+    id: 'huber-sanchez',
+    name: 'Huber Sanchez LLC',
+    city: 'Paterson',
+    county: 'Passaic',
+    phone: '(973) 523-8880',
+    email: 'intake@hubersanchez.com',
+    partner: 'Richard Huber, Esq.',
+    focus: 'Paterson & Passaic County Tax Appeals',
+    address: '100 Hamilton Plaza, Paterson, NJ 07505'
+  },
+  {
+    id: 'archer-greiner',
+    name: 'Archer & Greiner, P.C.',
+    city: 'Hackensack',
+    county: 'Bergen',
+    phone: '(201) 342-6000',
+    email: 'taxappeals@archerlaw.com',
+    partner: 'Robert J. Gilson, Esq.',
+    focus: 'Bergen County Board of Taxation & Tax Court',
+    address: 'Court Plaza South, 21 Main St, Hackensack, NJ 07601'
+  },
+  {
+    id: 'breslin-breslin',
+    name: 'Breslin and Breslin, P.A.',
+    city: 'Hackensack',
+    county: 'Bergen',
+    phone: '(201) 342-4014',
+    email: 'contact@breslinlaw.com',
+    partner: 'Donald A. Caminiti, Esq.',
+    focus: 'Bergen County Municipal Tax Appeals',
+    address: '41 Main St, Hackensack, NJ 07601'
+  },
+  {
+    id: 'cole-schotz',
+    name: 'Cole Schotz P.C.',
+    city: 'Hackensack',
+    county: 'Bergen',
+    phone: '(201) 489-3000',
+    email: 'taxappeal@coleschotz.com',
+    partner: 'Michael S. Meisel, Esq.',
+    focus: 'Bergen & North Jersey Real Estate Tax Law',
+    address: 'Court Plaza North, 25 Main St, Hackensack, NJ 07601'
+  },
+  {
+    id: 'diktas-gillen',
+    name: 'Diktas Gillen, PC',
+    city: 'Cliffside Park',
+    county: 'Bergen',
+    phone: '(201) 943-4313',
+    email: 'reception@diktaslaw.com',
+    partner: 'Christos J. Diktas, Esq.',
+    focus: 'Bergen & Hudson County Property Tax Grievances',
+    address: '730 Palisade Ave, Cliffside Park, NJ 07010'
+  },
+  {
+    id: 'schneck-law',
+    name: 'Schneck Law Group LLC',
+    city: 'Livingston',
+    county: 'Essex',
+    phone: '(973) 535-6444',
+    email: 'info@schnecklaw.com',
+    partner: 'Michael I. Schneck, Esq.',
+    focus: 'Dedicated Residential & Commercial Tax Appeals',
+    address: '301 S Livingston Ave, Livingston, NJ 07039'
+  },
+  {
+    id: 'connell-foley',
+    name: 'Connell Foley LLP',
+    city: 'Roseland',
+    county: 'Essex',
+    phone: '(973) 535-0500',
+    email: 'taxgroup@connellfoley.com',
+    partner: 'Kevin J. Coakley, Esq.',
+    focus: 'Essex, Morris & Statewide Real Property Tax Appeals',
+    address: '56 Livingston Ave, Roseland, NJ 07068'
+  },
+  {
+    id: 'brach-eichler',
+    name: 'Brach Eichler LLC',
+    city: 'Roseland',
+    county: 'Essex',
+    phone: '(973) 228-5700',
+    email: 'realestate@bracheichler.com',
+    partner: 'Alan R. Hammer, Esq.',
+    focus: 'Real Estate Tax Assessment Reduction',
+    address: '101 Eisenhower Pkwy, Roseland, NJ 07068'
+  },
+  {
+    id: 'csg-law',
+    name: 'Chiesa Shahinian & Giantomasi PC',
+    city: 'Roseland',
+    county: 'Essex',
+    phone: '(973) 325-1500',
+    email: 'propertytax@csglaw.com',
+    partner: 'Daniel A. Schwartz, Esq.',
+    focus: 'Property Tax Assessment Appeals Group',
+    address: '105 Eisenhower Pkwy, Roseland, NJ 07068'
+  },
+  {
+    id: 'irwin-law',
+    name: 'The Irwin Law Firm, P.A.',
+    city: 'West Orange',
+    county: 'Essex',
+    phone: '(973) 731-6450',
+    email: 'intake@irwinlaw.com',
+    partner: 'David A. Irwin, Esq.',
+    focus: 'Essex County Residential Tax Appeals',
+    address: '769 Northfield Ave, West Orange, NJ 07052'
+  },
+  {
+    id: 'garippa-lotz',
+    name: 'Garippa, Lotz & Giannuario, P.C.',
+    city: 'Montclair',
+    county: 'Essex',
+    phone: '(973) 744-1688',
+    email: 'taxappeals@glg-law.com',
+    partner: 'John E. Garippa, Esq.',
+    focus: 'Montclair & Essex County Tax Assessment Litigation',
+    address: '66 Park St, Montclair, NJ 07042'
+  },
+  {
+    id: 'gibbons-law',
+    name: 'Gibbons P.C.',
+    city: 'Newark',
+    county: 'Essex',
+    phone: '(973) 596-4500',
+    email: 'realpropertytax@gibbonslaw.com',
+    partner: 'Peter J. Ulrich, Esq.',
+    focus: 'Real Property Tax & Condemnation Department',
+    address: 'One Gateway Center, Newark, NJ 07102'
+  },
+  {
+    id: 'riker-danzig',
+    name: 'Riker Danzig LLP',
+    city: 'Morristown',
+    county: 'Morris',
+    phone: '(973) 538-0800',
+    email: 'taxappeals@riker.com',
+    partner: 'Scott G. Collins, Esq.',
+    focus: 'Morris County Board of Taxation & Tax Court',
+    address: 'Headquarters Plaza, 1 Speedwell Ave, Morristown, NJ 07962'
+  },
+  {
+    id: 'einhorn-barbarito',
+    name: 'Einhorn, Barbarito, Frost & Botwinick, PC',
+    city: 'Denville',
+    county: 'Morris',
+    phone: '(973) 627-7300',
+    email: 'taxteam@einhornlawyers.com',
+    partner: 'Jason R. Rittie, Esq.',
+    focus: 'Morris County Municipal Assessment Appeals',
+    address: '165 E Main St, Denville, NJ 07834'
+  },
+  {
+    id: 'meyner-landis',
+    name: 'Meyner and Landis LLP',
+    city: 'Newark',
+    county: 'Essex',
+    phone: '(973) 624-2700',
+    email: 'taxlaw@meyner.com',
+    partner: 'William J. Palatucci, Esq.',
+    focus: 'Tax Assessment Appeals & Litigation',
+    address: 'One Gateway Center, Suite 2500, Newark, NJ 07102'
+  }
+];
+
+let activeOutreachFilter = 'all';
+
+function getLawFirmsCRM() {
+  try {
+    const raw = localStorage.getItem('mytownlens_law_firm_crm');
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch (e) {}
+  const seeded = DEFAULT_LAW_FIRMS.map(f => ({
+    ...f,
+    status: 'not-contacted',
+    lastContactDate: null,
+    notes: ''
+  }));
+  try {
+    localStorage.setItem('mytownlens_law_firm_crm', JSON.stringify(seeded));
+  } catch (e) {}
+  return seeded;
+}
+
+function saveLawFirmsCRM(list) {
+  try {
+    localStorage.setItem('mytownlens_law_firm_crm', JSON.stringify(list));
+  } catch (e) {}
+}
+
+function filterOutreachCounty(county) {
+  activeOutreachFilter = county || 'all';
+  renderAdminOutreachData();
+}
+
+function renderAdminOutreachData() {
+  const tbody = document.getElementById('admin-tbody-outreach');
+  if (!tbody) return;
+
+  const firms = getLawFirmsCRM();
+  const filter = activeOutreachFilter || 'all';
+  const filtered = filter === 'all'
+    ? firms
+    : firms.filter(f => f.county.toLowerCase() === filter.toLowerCase());
+
+  // Update KPIs
+  const totalFirms = firms.length;
+  const sentCount = firms.filter(f => f.status === 'sent' || f.status === 'samples' || f.status === 'call' || f.status.startsWith('active')).length;
+  const samplesCount = firms.filter(f => f.status === 'samples' || f.status === 'call' || f.status.startsWith('active')).length;
+  const activeCount = firms.filter(f => f.status.startsWith('active')).length;
+  
+  // Calculate projected MRR ($350/mo retainer or $250/mo PPL baseline)
+  const mrrTotal = firms.reduce((acc, f) => {
+    if (f.status === 'active-retainer') return acc + 350;
+    if (f.status === 'active-ppl') return acc + 250;
+    return acc;
+  }, 0);
+
+  const totalEl = document.getElementById('outreach-kpi-total');
+  const sentEl = document.getElementById('outreach-kpi-sent');
+  const samplesEl = document.getElementById('outreach-kpi-samples');
+  const activeEl = document.getElementById('outreach-kpi-active');
+  const mrrEl = document.getElementById('outreach-kpi-mrr');
+
+  if (totalEl) totalEl.textContent = totalFirms;
+  if (sentEl) sentEl.textContent = sentCount;
+  if (samplesEl) samplesEl.textContent = samplesCount;
+  if (activeEl) activeEl.textContent = activeCount;
+  if (mrrEl) mrrEl.textContent = `$${mrrTotal.toLocaleString()} / mo`;
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 20px; color: #64748b;">No law firms found for the selected county hub filter.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(f => {
+    const statusClass = f.status.replace(/_/g, '-');
+    return `
+      <tr>
+        <td>
+          <strong style="color: #0f172a; font-size: 0.88rem;">${escapeHtml(f.name)}</strong>
+          <span class="outreach-firm-partner">👤 ${escapeHtml(f.partner)}</span>
+          <small style="color: #94a3b8; font-size: 0.72rem;">${escapeHtml(f.address)}</small>
+        </td>
+        <td>
+          <span style="font-weight: 700; color: #1e40af;">${escapeHtml(f.county)} County</span><br>
+          <small style="color: #64748b;">${escapeHtml(f.city)}, NJ</small>
+        </td>
+        <td>
+          <a href="tel:${escapeHtml(f.phone.replace(/[^0-9]/g, ''))}" style="color: #2563eb; font-weight: 700; text-decoration: none;">${escapeHtml(f.phone)}</a><br>
+          <a href="mailto:${escapeHtml(f.email)}" style="color: #64748b; font-size: 0.76rem; text-decoration: underline;">${escapeHtml(f.email)}</a>
+        </td>
+        <td>
+          <span style="font-size: 0.78rem; color: #334155;">${escapeHtml(f.focus)}</span>
+        </td>
+        <td>
+          <select class="outreach-status-select status-${statusClass}" onchange="updateLawFirmStatus('${escapeHtml(f.id)}', this.value)">
+            <option value="not-contacted" ${f.status === 'not-contacted' ? 'selected' : ''}>⚪ Not Contacted</option>
+            <option value="sent" ${f.status === 'sent' ? 'selected' : ''}>📨 Pitch Email Sent</option>
+            <option value="samples" ${f.status === 'samples' ? 'selected' : ''}>📁 Dockets Provided</option>
+            <option value="call" ${f.status === 'call' ? 'selected' : ''}>📞 Call Scheduled</option>
+            <option value="active-retainer" ${f.status === 'active-retainer' ? 'selected' : ''}>⭐ Active Retainer ($350/mo)</option>
+            <option value="active-ppl" ${f.status === 'active-ppl' ? 'selected' : ''}>⭐ Active PPL ($100/lead)</option>
+          </select>
+        </td>
+        <td>
+          <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+            <button type="button" class="btn-outreach-pitch" onclick="launchLawFirmPitchMailto('${escapeHtml(f.id)}')">
+              <span>🚀</span> Pitch Email
+            </button>
+            <button type="button" class="btn-outreach-copy" onclick="copyLawFirmPitchWithComps('${escapeHtml(f.id)}')">
+              <span>📋</span> Pitch &amp; Comps
+            </button>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function updateLawFirmStatus(firmId, newStatus) {
+  const firms = getLawFirmsCRM();
+  const firm = firms.find(f => f.id === firmId);
+  if (firm) {
+    firm.status = newStatus;
+    firm.lastContactDate = new Date().toISOString();
+    saveLawFirmsCRM(firms);
+    renderAdminOutreachData();
+    showToast(`✓ Updated status for ${firm.name} to "${newStatus}"`);
+  }
+}
+
+function buildLawFirmPitchData(firmId) {
+  const firms = getLawFirmsCRM();
+  const firm = firms.find(f => f.id === firmId) || firms[0];
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const totalParcels = propertyAssessmentsData?.summaryStats?.totalProperties || 21300;
+  const avgTax = propertyAssessmentsData?.summaryStats?.averageTax || 11782;
+
+  const subject = `3 Free Pre-Qualified ${meta.name} (${meta.countyShort}) Property Tax Appeal Case Dockets`;
+  const body = [
+    `Hi ${firm.partner || 'Managing Partner'},`,
+    '',
+    `I run MyTownLens (mytownlens.com), a public property tax and MOD-IV assessment intelligence platform covering all 47 municipalities across Passaic, Bergen, Essex, and Morris counties (150,016 certified Class 2 residential parcels, including ${totalParcels.toLocaleString()} homes in ${meta.name} where the average annual tax bill is $${Math.round(avgTax).toLocaleString()}).`,
+    '',
+    `Homeowners in ${meta.name} and surrounding ${meta.countyShort} towns are actively using our Chapter 123 Tax Appeal Analyzer to check if their property is over-assessed before the April 1 filing deadline.`,
+    '',
+    'When an over-assessed homeowner requests a professional review, our system compiles a complete "Golden Lead Case Dossier" containing:',
+    '  1. Verified Homeowner Contact Info & Representation Consent',
+    '  2. Subject Parcel Block, Lot, PAMS PIN, Land/Building Assessment & 2026 Tax Bill',
+    '  3. Chapter 123 Common Level Ratio Variance & Indicated Annual Tax Savings ($/yr)',
+    '  4. 3 to 5 Verified MOD-IV Street Comparable Sales with Deed Dates & Assessment Ratios',
+    '',
+    `I would like to forward your intake desk at ${firm.name} 3 pre-qualified ${meta.countyShort} homeowner case dockets free of charge this week so you can review the dossier quality firsthand. If they convert into filings for your firm, we can discuss a simple per-lead arrangement ($75–$125/lead) or an exclusive town sponsorship for ${meta.name}.`,
+    '',
+    'Where is the best email address to forward your 3 complimentary case dockets?',
+    '',
+    'Best regards,',
+    '[Your Name]',
+    'Founder, MyTownLens',
+    'mytownlens.com'
+  ].join('\n');
+
+  return { firm, meta, subject, body };
+}
+
+function launchLawFirmPitchMailto(firmId) {
+  const { firm, subject, body } = buildLawFirmPitchData(firmId);
+  const mailtoUrl = `mailto:${encodeURIComponent(firm.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  
+  // Auto-advance status to 'sent' if it was 'not-contacted'
+  if (firm.status === 'not-contacted') {
+    updateLawFirmStatus(firmId, 'sent');
+  }
+
+  showToast(`✓ Launching email pitch to ${firm.name}...`);
+  window.location.href = mailtoUrl;
+}
+
+function copyLawFirmPitchWithComps(firmId) {
+  const { firm, meta, subject, body } = buildLawFirmPitchData(firmId);
+  
+  // Generate sample lead for this town/county if possible
+  const sampleLead = generateSampleQualifiedLead('appeals');
+  const combined = [
+    `================================================================================`,
+    `EMAIL SUBJECT: ${subject}`,
+    `RECIPIENT: ${firm.name} <${firm.email}>`,
+    `ATTENTION: ${firm.partner}`,
+    `================================================================================`,
+    '',
+    body,
+    '',
+    '--------------------------------------------------------------------------------',
+    'ATTACHED SAMPLE GOLDEN LEAD DOSSIER (PULL FROM MOD-IV):',
+    '--------------------------------------------------------------------------------',
+    sampleLead.formattedDossier || 'Sample docket generated in Lead Inspector.'
+  ].join('\n');
+
+  navigator.clipboard.writeText(combined).then(() => {
+    showToast(`✓ Pitch email & sample docket copied to clipboard for ${firm.name}!`);
+  }).catch(() => {
+    showToast('Copied to clipboard');
+  });
+}
+
+function exportOutreachCSV() {
+  const firms = getLawFirmsCRM();
+  const headers = ['Firm ID', 'Firm Name', 'Managing Partner', 'City', 'County', 'Phone', 'Email', 'Focus Area', 'Pipeline Status', 'Last Contact Date'];
+  const rows = firms.map(f => [
+    `"${f.id}"`,
+    `"${(f.name || '').replace(/"/g, '""')}"`,
+    `"${(f.partner || '').replace(/"/g, '""')}"`,
+    `"${(f.city || '').replace(/"/g, '""')}"`,
+    `"${(f.county || '').replace(/"/g, '""')}"`,
+    `"${(f.phone || '').replace(/"/g, '""')}"`,
+    `"${(f.email || '').replace(/"/g, '""')}"`,
+    `"${(f.focus || '').replace(/"/g, '""')}"`,
+    `"${f.status}"`,
+    `"${f.lastContactDate || ''}"`
+  ]);
+
+  const csvContent = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `mytownlens_law_firm_outreach_${new Date().toISOString().split('T')[0]}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast(`✓ Exported ${firms.length} law firm CRM records to CSV!`);
+}
+
+function resetOutreachCRM() {
+  if (typeof confirm === 'function' && !confirm('Reset all law firm outreach statuses back to defaults?')) {
+    return;
+  }
+  localStorage.removeItem('mytownlens_law_firm_crm');
+  renderAdminOutreachData();
+  showToast('✓ Reset outreach CRM to default target list');
 }
 
 // --------------------------------------------------------------------------
@@ -18688,6 +19138,17 @@ window.editTownSponsor = editTownSponsor;
 window.removeTownSponsor = removeTownSponsor;
 window.resetSponsorForm = resetSponsorForm;
 window.exportSponsorsCSV = exportSponsorsCSV;
+window.DEFAULT_LAW_FIRMS = DEFAULT_LAW_FIRMS;
+window.getLawFirmsCRM = getLawFirmsCRM;
+window.saveLawFirmsCRM = saveLawFirmsCRM;
+window.filterOutreachCounty = filterOutreachCounty;
+window.renderAdminOutreachData = renderAdminOutreachData;
+window.updateLawFirmStatus = updateLawFirmStatus;
+window.buildLawFirmPitchData = buildLawFirmPitchData;
+window.launchLawFirmPitchMailto = launchLawFirmPitchMailto;
+window.copyLawFirmPitchWithComps = copyLawFirmPitchWithComps;
+window.exportOutreachCSV = exportOutreachCSV;
+window.resetOutreachCRM = resetOutreachCRM;
 window.updateMetaAndJsonLd = updateMetaAndJsonLd;
 window.quickPrintFormA1 = quickPrintFormA1;
 window.openShareModal = openShareModal;

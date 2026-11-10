@@ -18849,3 +18849,122 @@ dialog.omnibox-dialog::backdrop {
   border-color: #93c5fd;
   color: #1e40af;
 }
+
+/* ==========================================================================
+   ATTORNEY OUTREACH CRM & NORTH JERSEY LAW FIRM DIRECTORY
+   ========================================================================== */
+
+.outreach-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.outreach-stat-card {
+  background: #ffffff;
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.outreach-stat-card .stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.outreach-stat-card .stat-num {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.outreach-firm-partner {
+  font-size: 0.76rem;
+  color: #64748b;
+  display: block;
+}
+
+.outreach-status-select {
+  padding: 4px 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-mid);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.outreach-status-select.status-not-contacted {
+  color: #64748b;
+  background: #f8fafc;
+}
+
+.outreach-status-select.status-sent {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.outreach-status-select.status-samples {
+  color: #92400e;
+  background: #fef3c7;
+  border-color: #fde68a;
+}
+
+.outreach-status-select.status-call {
+  color: #6d28d9;
+  background: #ede9fe;
+  border-color: #ddd6fe;
+}
+
+.outreach-status-select.status-active-retainer,
+.outreach-status-select.status-active-ppl {
+  color: #15803d;
+  background: #dcfce7;
+  border-color: #86efac;
+}
+
+.btn-outreach-pitch {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-outreach-pitch:hover {
+  background: #1d4ed8;
+}
+
+.btn-outreach-copy {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.btn-outreach-copy:hover {
+  background: #dbeafe;
+}

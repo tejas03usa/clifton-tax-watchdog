@@ -1234,6 +1234,7 @@
           <button type="button" class="admin-tab-btn" onclick="switchAdminTab('realtor')" id="admin-tab-realtor-btn">🏡 Realtor CMA Leads</button>
           <button type="button" class="admin-tab-btn" onclick="switchAdminTab('partners')" id="admin-tab-partners-btn">🤝 Sponsorship Inquiries</button>
           <button type="button" class="admin-tab-btn" onclick="switchAdminTab('sponsors')" id="admin-tab-sponsors-btn">⭐ Town Sponsors Directory</button>
+          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('outreach')" id="admin-tab-outreach-btn">🎯 Attorney Outreach &amp; Pitch Outbox</button>
           <button type="button" class="admin-tab-btn" onclick="switchAdminTab('settings')" id="admin-tab-settings-btn">⚡ Webhook &amp; Buyer Setup</button>
         </div>
 
@@ -1431,6 +1432,67 @@
                 </tr>
               </thead>
               <tbody id="admin-tbody-sponsors">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Panel 6: Attorney Outreach CRM & Law Firm Directory -->
+        <div id="admin-panel-outreach" class="admin-panel" style="display: none;">
+          <div class="outreach-stat-grid">
+            <div class="outreach-stat-card">
+              <span class="stat-label">Target Law Firms</span>
+              <span class="stat-num" id="outreach-kpi-total">18</span>
+            </div>
+            <div class="outreach-stat-card">
+              <span class="stat-label">Pitches Sent</span>
+              <span class="stat-num" id="outreach-kpi-sent" style="color: #2563eb;">0</span>
+            </div>
+            <div class="outreach-stat-card">
+              <span class="stat-label">Dockets Provided</span>
+              <span class="stat-num" id="outreach-kpi-samples" style="color: #d97706;">0</span>
+            </div>
+            <div class="outreach-stat-card">
+              <span class="stat-label">Active Partners</span>
+              <span class="stat-num" id="outreach-kpi-active" style="color: #059669;">0</span>
+            </div>
+            <div class="outreach-stat-card">
+              <span class="stat-label">Projected Pipeline</span>
+              <span class="stat-num" id="outreach-kpi-mrr" style="color: #059669;">$0</span>
+            </div>
+          </div>
+
+          <div class="admin-panel-actions" style="flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+              <label for="outreach-county-filter" style="font-size: 0.82rem; font-weight: 700; color: #475569;">County Hub:</label>
+              <select id="outreach-county-filter" class="outreach-select" onchange="filterOutreachCounty(this.value)">
+                <option value="all">All North Jersey Hubs (18 Firms)</option>
+                <option value="Passaic">Passaic County Hub (Paterson / Clifton / Totowa)</option>
+                <option value="Bergen">Bergen County Hub (Hackensack / Paramus)</option>
+                <option value="Essex">Essex County Hub (Livingston / Roseland / Montclair)</option>
+                <option value="Morris">Morris County Hub (Morristown / Denville)</option>
+              </select>
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button type="button" class="btn-admin-action" onclick="exportOutreachCSV()">📥 Export CRM CSV</button>
+              <button type="button" class="btn-admin-secondary" onclick="resetOutreachCRM()">Reset Defaults</button>
+            </div>
+          </div>
+
+          <div class="outreach-table-wrap">
+            <table class="admin-table" id="admin-table-outreach">
+              <thead>
+                <tr>
+                  <th>Law Firm &amp; Managing Partner</th>
+                  <th>Hub / City</th>
+                  <th>Direct Contact</th>
+                  <th>Practice Focus</th>
+                  <th>Outreach Pipeline Status</th>
+                  <th>1-Click Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-tbody-outreach">
                 <!-- Rendered by JS -->
               </tbody>
             </table>
