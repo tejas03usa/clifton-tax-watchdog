@@ -5060,6 +5060,14 @@ function setupCalculator() {
     document.getElementById('calc-total-monthly').textContent = `${formatUSD(totalMonthly)} / mo`;
     document.getElementById('calc-total-quarterly').textContent = `${formatUSD(totalQuarterly)} / qtr`;
 
+    const pilotShiftEl = document.getElementById('calc-pilot-shift-val');
+    if (pilotShiftEl) {
+      const avgCost = commercialPilotData?.ratableShift?.averageHomeownerExtraCost || 1240.25;
+      const baseAssess = meta.typicalMarket ? (meta.typicalMarket * ((meta.equalizationRatio || 100) / 100)) : 182500;
+      const shiftEst = Math.round((val / (baseAssess || 182500)) * avgCost);
+      pilotShiftEl.textContent = `+$${shiftEst.toLocaleString()} / yr`;
+    }
+
     // Render Stacked Bar
     const stackedBar = document.getElementById('calc-stacked-bar');
     stackedBar.innerHTML = '';
