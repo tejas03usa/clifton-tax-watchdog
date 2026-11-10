@@ -4920,8 +4920,9 @@ function setupCalculator() {
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
 
   function updateCalc() {
+    if (!taxData || !Array.isArray(taxData.breakdown)) return;
     const val = parseFloat(input.value) || 0;
-    const rate = taxData.certifiedTotalRate;
+    const rate = taxData.certifiedTotalRate || 0;
     const totalAnnual = (val / 100.0) * rate;
     const totalMonthly = totalAnnual / 12.0;
     const totalQuarterly = totalAnnual / 4.0;
@@ -6544,6 +6545,9 @@ function renderProperties(propsToRender, page) {
               <span>🧮</span> Load in Tax Calculator &amp; Line Items
             </button>
             <div class="card-util-bar">
+              <button type="button" class="btn-card-util btn-realtor-val-trigger" onclick="openRealtorValuationModal('${escapeHtml(p.address)}', '${escapeHtml(p.block)}', '${escapeHtml(p.lot)}', ${p.estimatedMarketValue})">
+                <span>🏡</span> Realtor CMA
+              </button>
               <button type="button" class="btn-card-util" onclick="copyPropertyPermalink('${escapeHtml(p.id)}', '${escapeHtml(p.address)}')">
                 <span>🔗</span> Copy Link
               </button>
@@ -7699,6 +7703,9 @@ function handleAttorneyLeadSubmit(e) {
     console.warn('LocalStorage lead save error:', err);
   }
 
+  // Auto-forward to webhook if configured
+  dispatchLeadWebhook('attorney_tax_appeal', leadRecord);
+
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new CustomEvent('mytownlens:attorney_lead_submitted', { detail: leadRecord }));
   }
@@ -7784,6 +7791,9 @@ function handlePartnerInquirySubmit(e) {
     console.warn('LocalStorage partner inquiry save error:', err);
   }
 
+  // Auto-forward to webhook if configured
+  dispatchLeadWebhook('municipal_sponsorship', partnerRecord);
+
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new CustomEvent('mytownlens:partner_inquiry_submitted', { detail: partnerRecord }));
   }
@@ -7793,6 +7803,498 @@ function handlePartnerInquirySubmit(e) {
   if (form) form.style.display = 'none';
   if (success) success.style.display = 'block';
   showToast('✓ Sponsorship inquiry received!');
+}
+
+// --------------------------------------------------------------------------
+// Lead Webhook Forwarding Engine (Slack, Discord, Zapier, Formspree, etc.)
+// --------------------------------------------------------------------------
+function dispatchLeadWebhook(type, data) {
+  try {
+    const webhookUrl = localStorage.getItem('mytownlens_lead_webhook');
+    if (!webhookUrl || !webhookUrl.trim().startsWith('http')) return;
+
+    const payload = {
+      source: 'MyTownLens Platform',
+      leadType: type,
+      timestamp: new Date().toISOString(),
+      leadData: data
+    };
+
+    fetch(webhookUrl.trim(), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      mode: 'cors'
+    }).catch(err => {
+      console.warn('Lead webhook auto-forwarding error:', err);
+    });
+  } catch (err) {
+    console.warn('Lead webhook dispatch failed:', err);
+  }
+}
+
+// ==========================================================================
+// MONETIZATION FEATURE 3: 🏡 Free Local Realtor CMA Valuation (Lead Capture)
+// ==========================================================================
+let activeRealtorTarget = null;
+
+function openRealtorValuationModal(address, block, lot, estValue) {
+  const modal = document.getElementById('realtor-valuation-dialog');
+  if (!modal) return;
+
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  activeRealtorTarget = {
+    address: address || `${meta.name} Residential Property`,
+    block: block || '—',
+    lot: lot || '—',
+    estimatedMarketValue: estValue || 450000,
+    municipality: meta.name,
+    county: meta.county
+  };
+
+  const badgeEl = document.getElementById('realtor-lead-prop-badge');
+  if (badgeEl) {
+    badgeEl.innerHTML = `
+      <div class="lead-badge-header">
+        <span class="lead-badge-pin">📍 ${escapeHtml(activeRealtorTarget.address)}</span>
+        <span class="lead-badge-savings">Est. Market Value: <strong>$${(Number(activeRealtorTarget.estimatedMarketValue) || 450000).toLocaleString()}</strong></span>
+      </div>
+      <div class="lead-badge-sub">
+        Block ${escapeHtml(activeRealtorTarget.block)}, Lot ${escapeHtml(activeRealtorTarget.lot)} &bull; ${escapeHtml(meta.name)}, ${escapeHtml(meta.countyShort)} &bull; Free Off-Market CMA by Local Specialist
+      </div>
+    `;
+  }
+
+  const form = document.getElementById('realtor-lead-form');
+  const success = document.getElementById('realtor-lead-success');
+  if (form) {
+    form.reset();
+    form.style.display = 'block';
+  }
+  if (success) success.style.display = 'none';
+
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', '');
+  }
+}
+
+function closeRealtorValuationModal() {
+  const modal = document.getElementById('realtor-valuation-dialog');
+  if (!modal) return;
+  if (typeof modal.close === 'function') {
+    modal.close();
+  } else {
+    modal.removeAttribute('open');
+  }
+}
+
+function handleRealtorLeadSubmit(e) {
+  e.preventDefault();
+  const target = activeRealtorTarget || {};
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  const name = document.getElementById('realtor-lead-name')?.value || '';
+  const phone = document.getElementById('realtor-lead-phone')?.value || '';
+  const email = document.getElementById('realtor-lead-email')?.value || '';
+  const timeline = document.getElementById('realtor-lead-timeline')?.value || 'curious';
+  const notes = document.getElementById('realtor-lead-notes')?.value || '';
+
+  const leadRecord = {
+    id: 'realtor_' + Date.now(),
+    submittedAt: new Date().toISOString(),
+    property: {
+      address: target.address || '',
+      block: target.block || '',
+      lot: target.lot || '',
+      estimatedMarketValue: Number(target.estimatedMarketValue) || 0,
+      municipality: target.municipality || meta.name,
+      county: target.county || meta.county
+    },
+    contact: { name, phone, email, timeline, notes }
+  };
+
+  try {
+    const existing = JSON.parse(localStorage.getItem('mytownlens_realtor_leads') || '[]');
+    existing.push(leadRecord);
+    localStorage.setItem('mytownlens_realtor_leads', JSON.stringify(existing));
+  } catch (err) {
+    console.warn('LocalStorage realtor lead save error:', err);
+  }
+
+  // Webhook forwarding
+  dispatchLeadWebhook('realtor_cma_valuation', leadRecord);
+
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('mytownlens:realtor_lead_submitted', { detail: leadRecord }));
+  }
+
+  const form = document.getElementById('realtor-lead-form');
+  const success = document.getElementById('realtor-lead-success');
+  const addrEl = document.getElementById('realtor-success-addr');
+  const summaryEl = document.getElementById('realtor-success-summary');
+
+  if (form) form.style.display = 'none';
+  if (addrEl && target.address) addrEl.textContent = target.address;
+  if (summaryEl) {
+    summaryEl.innerHTML = `
+      <div style="font-size: 0.85rem; color: #475569; display: grid; gap: 4px;">
+        <span><strong>Homeowner:</strong> ${escapeHtml(name)} (${escapeHtml(phone)} &bull; ${escapeHtml(email)})</span>
+        <span><strong>Property:</strong> ${escapeHtml(target.address || '')} (Block ${escapeHtml(target.block)}, Lot ${escapeHtml(target.lot)})</span>
+        <span><strong>Timeline:</strong> ${escapeHtml(timeline.replace('_', ' '))}</span>
+      </div>
+    `;
+  }
+  if (success) success.style.display = 'block';
+  showToast('✓ Free Realtor valuation request received!');
+}
+
+// ==========================================================================
+// MONETIZATION FEATURE 4: 📊 Owner Lead Management Console & CSV Export
+// ==========================================================================
+function openAdminLeadsModal() {
+  const modal = document.getElementById('admin-leads-dialog');
+  if (!modal) return;
+  renderAdminLeadsData();
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', '');
+  }
+}
+
+function closeAdminLeadsModal() {
+  const modal = document.getElementById('admin-leads-dialog');
+  if (!modal) return;
+  if (typeof modal.close === 'function') {
+    modal.close();
+  } else {
+    modal.removeAttribute('open');
+  }
+}
+
+function switchAdminTab(tabName) {
+  const tabs = ['appeals', 'realtor', 'partners', 'settings'];
+  tabs.forEach(t => {
+    const btn = document.getElementById(`admin-tab-${t}-btn`);
+    const panel = document.getElementById(`admin-panel-${t}`);
+    if (btn) {
+      if (t === tabName) btn.classList.add('active');
+      else btn.classList.remove('active');
+    }
+    if (panel) {
+      panel.style.display = (t === tabName) ? 'block' : 'none';
+    }
+  });
+}
+
+function renderAdminLeadsData() {
+  let appeals = [];
+  let realtor = [];
+  let partners = [];
+  try {
+    appeals = JSON.parse(localStorage.getItem('mytownlens_attorney_leads') || '[]');
+    realtor = JSON.parse(localStorage.getItem('mytownlens_realtor_leads') || '[]');
+    partners = JSON.parse(localStorage.getItem('mytownlens_partner_inquiries') || '[]');
+  } catch (e) {
+    console.warn('Error reading leads from localStorage:', e);
+  }
+
+  // Update KPIs
+  const appealCountEl = document.getElementById('admin-kpi-appeal-count');
+  const appealSavingsEl = document.getElementById('admin-kpi-appeal-savings');
+  const realtorCountEl = document.getElementById('admin-kpi-realtor-count');
+  const realtorValEl = document.getElementById('admin-kpi-realtor-val');
+  const partnerCountEl = document.getElementById('admin-kpi-partner-count');
+  const webhookStatusEl = document.getElementById('admin-kpi-webhook-status');
+  const webhookSubEl = document.getElementById('admin-kpi-webhook-sub');
+
+  if (appealCountEl) appealCountEl.textContent = appeals.length;
+  if (appealSavingsEl) {
+    const totalSavings = appeals.reduce((sum, item) => {
+      const tax = Number(item.property?.annualTax) || 0;
+      return sum + Math.round(tax * 0.15); // est 15% reduction
+    }, 0);
+    appealSavingsEl.textContent = `$${totalSavings.toLocaleString()} Est. Potential Savings`;
+  }
+
+  if (realtorCountEl) realtorCountEl.textContent = realtor.length;
+  if (realtorValEl) {
+    const totalVal = realtor.reduce((sum, item) => sum + (Number(item.property?.estimatedMarketValue) || 450000), 0);
+    realtorValEl.textContent = `$${(totalVal / 1000000).toFixed(2)}M Property Volume`;
+  }
+
+  if (partnerCountEl) partnerCountEl.textContent = partners.length;
+
+  const currentWebhook = localStorage.getItem('mytownlens_lead_webhook') || '';
+  if (webhookStatusEl && webhookSubEl) {
+    if (currentWebhook) {
+      try {
+        const urlObj = new URL(currentWebhook);
+        webhookStatusEl.textContent = 'Active ⚡';
+        webhookStatusEl.style.color = '#10b981';
+        webhookSubEl.textContent = urlObj.hostname;
+      } catch (err) {
+        webhookStatusEl.textContent = 'Configured';
+        webhookSubEl.textContent = 'Webhook saved';
+      }
+    } else {
+      webhookStatusEl.textContent = 'Local Only';
+      webhookStatusEl.style.color = '#64748b';
+      webhookSubEl.textContent = 'Push alerts offline';
+    }
+  }
+
+  const webhookInput = document.getElementById('admin-webhook-url');
+  if (webhookInput && !webhookInput.value) {
+    webhookInput.value = currentWebhook;
+  }
+
+  // Render Table 1: Appeals
+  const tbodyAppeals = document.getElementById('admin-tbody-appeals');
+  if (tbodyAppeals) {
+    if (appeals.length === 0) {
+      tbodyAppeals.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 20px; color: #94a3b8;">No homeowner tax appeal leads yet. Submissions from the Am I Over-Assessed tool will appear here.</td></tr>`;
+    } else {
+      tbodyAppeals.innerHTML = appeals.map(a => {
+        const dateStr = a.submittedAt ? new Date(a.submittedAt).toLocaleDateString() + ' ' + new Date(a.submittedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '—';
+        const contact = a.contact || {};
+        const prop = a.property || {};
+        return `
+          <tr>
+            <td style="font-size: 0.76rem; color: #64748b; white-space: nowrap;">${dateStr}</td>
+            <td><strong>${escapeHtml(contact.name || '—')}</strong></td>
+            <td><div>${escapeHtml(contact.phone || '—')}</div><div style="font-size: 0.75rem; color: #64748b;">${escapeHtml(contact.email || '—')}</div></td>
+            <td><div>${escapeHtml(prop.address || '—')}</div><div style="font-size: 0.72rem; color: #94a3b8;">B: ${escapeHtml(prop.block)} / L: ${escapeHtml(prop.lot)}</div></td>
+            <td>${escapeHtml(prop.municipality || '—')}</td>
+            <td style="color: #059669; font-weight: 700;">$${Math.round((Number(prop.annualTax) || 0) * 0.15).toLocaleString()}</td>
+            <td style="font-size: 0.76rem; color: #475569;"><div>Pref: ${escapeHtml(contact.preferredContact || 'phone')}</div><div style="font-style: italic;">${escapeHtml(contact.notes || '')}</div></td>
+          </tr>
+        `;
+      }).join('');
+    }
+  }
+
+  // Render Table 2: Realtor
+  const tbodyRealtor = document.getElementById('admin-tbody-realtor');
+  if (tbodyRealtor) {
+    if (realtor.length === 0) {
+      tbodyRealtor.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 20px; color: #94a3b8;">No homeowner CMA valuation leads yet. Requests from the Free Realtor Valuation button will appear here.</td></tr>`;
+    } else {
+      tbodyRealtor.innerHTML = realtor.map(r => {
+        const dateStr = r.submittedAt ? new Date(r.submittedAt).toLocaleDateString() + ' ' + new Date(r.submittedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '—';
+        const contact = r.contact || {};
+        const prop = r.property || {};
+        return `
+          <tr>
+            <td style="font-size: 0.76rem; color: #64748b; white-space: nowrap;">${dateStr}</td>
+            <td><strong>${escapeHtml(contact.name || '—')}</strong></td>
+            <td><div>${escapeHtml(contact.phone || '—')}</div><div style="font-size: 0.75rem; color: #64748b;">${escapeHtml(contact.email || '—')}</div></td>
+            <td><div>${escapeHtml(prop.address || '—')}</div><div style="font-size: 0.72rem; color: #94a3b8;">B: ${escapeHtml(prop.block)} / L: ${escapeHtml(prop.lot)}</div></td>
+            <td>${escapeHtml(prop.municipality || '—')}</td>
+            <td style="font-weight: 700; color: #0284c7;">$${(Number(prop.estimatedMarketValue) || 0).toLocaleString()}</td>
+            <td style="font-size: 0.76rem; color: #475569;"><div>Timeline: ${escapeHtml(contact.timeline || 'curious')}</div><div style="font-style: italic;">${escapeHtml(contact.notes || '')}</div></td>
+          </tr>
+        `;
+      }).join('');
+    }
+  }
+
+  // Render Table 3: Partners
+  const tbodyPartners = document.getElementById('admin-tbody-partners');
+  if (tbodyPartners) {
+    if (partners.length === 0) {
+      tbodyPartners.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 20px; color: #94a3b8;">No municipal sponsorship inquiries yet. Submissions from the Partner with MyTownLens banner will appear here.</td></tr>`;
+    } else {
+      tbodyPartners.innerHTML = partners.map(p => {
+        const dateStr = p.submittedAt ? new Date(p.submittedAt).toLocaleDateString() + ' ' + new Date(p.submittedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '—';
+        return `
+          <tr>
+            <td style="font-size: 0.76rem; color: #64748b; white-space: nowrap;">${dateStr}</td>
+            <td><strong>${escapeHtml(p.name || '—')}</strong></td>
+            <td>${escapeHtml(p.firm || '—')}</td>
+            <td><span style="display: inline-block; padding: 2px 6px; font-size: 0.72rem; border-radius: 4px; background: #e0f2fe; color: #0369a1; font-weight: 700;">${escapeHtml(p.role || '—')}</span></td>
+            <td>${escapeHtml(p.towns || '—')}</td>
+            <td><div>${escapeHtml(p.phone || '—')}</div><div style="font-size: 0.75rem; color: #64748b;">${escapeHtml(p.email || '—')}</div></td>
+            <td style="font-size: 0.76rem; color: #475569; max-width: 200px;">${escapeHtml(p.message || '')}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+  }
+}
+
+function exportLeadsCSV(type) {
+  let rows = [];
+  let filename = '';
+
+  const escapeCSV = (val) => {
+    if (val === null || val === undefined) return '""';
+    const s = String(val).replace(/"/g, '""');
+    return `"${s}"`;
+  };
+
+  if (type === 'appeals') {
+    filename = `mytownlens_attorney_leads_${Date.now()}.csv`;
+    const data = JSON.parse(localStorage.getItem('mytownlens_attorney_leads') || '[]');
+    if (data.length === 0) {
+      showToast('⚠️ No attorney leads to export');
+      return;
+    }
+    rows.push(['Timestamp', 'Applicant Name', 'Phone', 'Email', 'Preferred Contact', 'Address', 'Block', 'Lot', 'Municipality', 'County', 'Current Assessment', 'Annual Tax', 'Est Potential Reduction', 'Notes'].map(escapeCSV).join(','));
+    data.forEach(item => {
+      const p = item.property || {};
+      const c = item.contact || {};
+      const diff = Math.round((Number(p.annualTax) || 0) * 0.15);
+      rows.push([
+        item.submittedAt || '',
+        c.name || '',
+        c.phone || '',
+        c.email || '',
+        c.preferredContact || '',
+        p.address || '',
+        p.block || '',
+        p.lot || '',
+        p.municipality || '',
+        p.county || '',
+        p.assessedTotal || 0,
+        p.annualTax || 0,
+        diff,
+        c.notes || ''
+      ].map(escapeCSV).join(','));
+    });
+  } else if (type === 'realtor') {
+    filename = `mytownlens_realtor_cma_leads_${Date.now()}.csv`;
+    const data = JSON.parse(localStorage.getItem('mytownlens_realtor_leads') || '[]');
+    if (data.length === 0) {
+      showToast('⚠️ No Realtor valuation leads to export');
+      return;
+    }
+    rows.push(['Timestamp', 'Homeowner Name', 'Phone', 'Email', 'Timeline', 'Address', 'Block', 'Lot', 'Municipality', 'County', 'Estimated Market Value', 'Notes'].map(escapeCSV).join(','));
+    data.forEach(item => {
+      const p = item.property || {};
+      const c = item.contact || {};
+      rows.push([
+        item.submittedAt || '',
+        c.name || '',
+        c.phone || '',
+        c.email || '',
+        c.timeline || '',
+        p.address || '',
+        p.block || '',
+        p.lot || '',
+        p.municipality || '',
+        p.county || '',
+        p.estimatedMarketValue || 0,
+        c.notes || ''
+      ].map(escapeCSV).join(','));
+    });
+  } else if (type === 'partners') {
+    filename = `mytownlens_sponsorship_inquiries_${Date.now()}.csv`;
+    const data = JSON.parse(localStorage.getItem('mytownlens_partner_inquiries') || '[]');
+    if (data.length === 0) {
+      showToast('⚠️ No sponsorship inquiries to export');
+      return;
+    }
+    rows.push(['Timestamp', 'Professional Name', 'Firm / Agency', 'Role', 'Target Municipalities', 'Email', 'Phone', 'Message'].map(escapeCSV).join(','));
+    data.forEach(p => {
+      rows.push([
+        p.submittedAt || '',
+        p.name || '',
+        p.firm || '',
+        p.role || '',
+        p.towns || '',
+        p.email || '',
+        p.phone || '',
+        p.message || ''
+      ].map(escapeCSV).join(','));
+    });
+  }
+
+  const csvContent = 'data:text/csv;charset=utf-8,' + encodeURIComponent(rows.join('\n'));
+  const link = document.createElement('a');
+  link.setAttribute('href', csvContent);
+  link.setAttribute('download', filename);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  showToast(`✓ Exported ${rows.length - 1} records to ${filename}`);
+}
+
+function clearLeadsData(type) {
+  const label = type === 'appeals' ? 'Attorney tax appeal leads' : type === 'realtor' ? 'Realtor valuation leads' : 'Sponsorship inquiries';
+  if (!confirm(`Are you sure you want to permanently clear all ${label}? This cannot be undone.`)) return;
+
+  if (type === 'appeals') localStorage.removeItem('mytownlens_attorney_leads');
+  else if (type === 'realtor') localStorage.removeItem('mytownlens_realtor_leads');
+  else if (type === 'partners') localStorage.removeItem('mytownlens_partner_inquiries');
+
+  renderAdminLeadsData();
+  showToast(`Cleared ${label}`);
+}
+
+function saveAdminWebhook() {
+  const input = document.getElementById('admin-webhook-url');
+  const msgEl = document.getElementById('admin-webhook-status-msg');
+  if (!input) return;
+  const val = input.value.trim();
+
+  if (val && !val.startsWith('http')) {
+    if (msgEl) {
+      msgEl.innerHTML = `<span style="color: #ef4444;">⚠️ Please enter a valid URL beginning with https://</span>`;
+    }
+    return;
+  }
+
+  if (val) {
+    localStorage.setItem('mytownlens_lead_webhook', val);
+    if (msgEl) {
+      msgEl.innerHTML = `<span style="color: #10b981;">✓ Webhook saved successfully! All future leads will automatically POST to this URL.</span>`;
+    }
+    showToast('✓ Lead Webhook Saved');
+  } else {
+    localStorage.removeItem('mytownlens_lead_webhook');
+    if (msgEl) {
+      msgEl.innerHTML = `<span style="color: #64748b;">Webhook removed. Leads will be stored in local browser storage only.</span>`;
+    }
+    showToast('Webhook cleared');
+  }
+  renderAdminLeadsData();
+}
+
+function testAdminWebhook() {
+  const input = document.getElementById('admin-webhook-url');
+  const msgEl = document.getElementById('admin-webhook-status-msg');
+  const val = input ? input.value.trim() : localStorage.getItem('mytownlens_lead_webhook');
+
+  if (!val || !val.startsWith('http')) {
+    if (msgEl) msgEl.innerHTML = `<span style="color: #ef4444;">⚠️ Save a valid webhook URL first to send a test ping.</span>`;
+    return;
+  }
+
+  if (msgEl) msgEl.innerHTML = `<span style="color: #3b82f6;">Sending test ping to ${escapeHtml(val)}...</span>`;
+
+  fetch(val, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      source: 'MyTownLens Platform',
+      leadType: 'test_ping',
+      timestamp: new Date().toISOString(),
+      message: 'Hello from MyTownLens! Your webhook is working and ready to receive real homeowner leads.'
+    }),
+    mode: 'cors'
+  }).then(resp => {
+    if (msgEl) {
+      msgEl.innerHTML = `<span style="color: #10b981;">✓ Test ping sent! HTTP Status: ${resp.status}</span>`;
+    }
+    showToast('✓ Test ping dispatched');
+  }).catch(err => {
+    if (msgEl) {
+      msgEl.innerHTML = `<span style="color: #f59e0b;">⚠️ Ping sent (Note: Browser CORS may restrict reading response, but server likely received payload). Detail: ${escapeHtml(err.message)}</span>`;
+    }
+  });
 }
 
 // --------------------------------------------------------------------------
@@ -16333,6 +16835,26 @@ const STATIC_CIVIC_TOOLS = [
     actionTarget: 'flood',
     keywords: ['flood', 'river', 'third river', 'weasel brook', 'dundee', 'fema', 'zone ae', 'flood insurance', 'stigma', 'tax appeal', 'glen wall']
   },
+  {
+    id: 'tool-lead-admin',
+    category: 'tools',
+    icon: '📊',
+    title: 'MyTownLens Owner Lead & Sponsorship Console',
+    subtitle: 'Confidential management dashboard for homeowner tax appeal, realtor CMA leads, & CSV export',
+    actionType: 'modal',
+    actionTarget: 'admin-leads',
+    keywords: ['admin', 'leads', 'owner', 'console', 'csv', 'export', 'realtor', 'attorney', 'monetization', 'webhook']
+  },
+  {
+    id: 'tool-partner-sponsor',
+    category: 'tools',
+    icon: '🤝',
+    title: 'Partner with MyTownLens: Municipal Sponsorships',
+    subtitle: 'Exclusive monthly sponsorships for local attorneys, Realtors, and home service leaders',
+    actionType: 'modal',
+    actionTarget: 'partner-inquire',
+    keywords: ['partner', 'sponsor', 'sponsorship', 'advertise', 'realtor', 'attorney', 'vendor', 'business']
+  },
 
   // Budgets & Fiscal Ledgers
   {
@@ -16814,6 +17336,12 @@ async function executeOmniboxItem(index) {
       case 'flood':
         openFloodReliefModal();
         break;
+      case 'admin-leads':
+        openAdminLeadsModal();
+        break;
+      case 'partner-inquire':
+        openPartnerInquiryModal();
+        break;
       default:
         console.warn('Unknown modal target', item.actionTarget);
     }
@@ -16914,6 +17442,24 @@ function setupOmnibox() {
     }
   });
 
+  // Global Shortcut: Ctrl+Shift+L or Cmd+Shift+L opens owner lead console
+  window.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === 'L' || e.key === 'l')) {
+      e.preventDefault();
+      openAdminLeadsModal();
+    }
+  });
+
+  // URL query parameter check ?admin=leads
+  try {
+    if (typeof window !== 'undefined' && window.location) {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('admin') === 'leads' || urlParams.has('admin')) {
+        setTimeout(openAdminLeadsModal, 300);
+      }
+    }
+  } catch (err) {}
+
   const input = document.getElementById('omnibox-search-input');
   if (input) {
     input.addEventListener('input', (e) => {
@@ -17008,6 +17554,18 @@ window.renderLocationPickerGrid = renderLocationPickerGrid;
 window.navigateToTownComparison = navigateToTownComparison;
 window.selectSpecificTownComparison = selectSpecificTownComparison;
 window.crossTownState = crossTownState;
+window.openRealtorValuationModal = openRealtorValuationModal;
+window.closeRealtorValuationModal = closeRealtorValuationModal;
+window.handleRealtorLeadSubmit = handleRealtorLeadSubmit;
+window.openAdminLeadsModal = openAdminLeadsModal;
+window.closeAdminLeadsModal = closeAdminLeadsModal;
+window.switchAdminTab = switchAdminTab;
+window.renderAdminLeadsData = renderAdminLeadsData;
+window.exportLeadsCSV = exportLeadsCSV;
+window.clearLeadsData = clearLeadsData;
+window.saveAdminWebhook = saveAdminWebhook;
+window.testAdminWebhook = testAdminWebhook;
+window.dispatchLeadWebhook = dispatchLeadWebhook;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },

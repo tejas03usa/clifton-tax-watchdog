@@ -1650,6 +1650,7 @@
           <div class="footer-refresh-row">
             <span class="footer-badge" id="footer-last-refreshed">🔄 <strong>Last Refreshed:</strong> October 31, 2026 &bull; <span style="color: #10b981;">● 100% Verified (0.00% Hallucination Rate)</span></span>
             <span class="footer-badge refresh-schedule-badge" id="footer-refresh-schedule">⏱️ <strong>Automated Refresh:</strong> Weekly Every Monday at 06:00 UTC</span>
+            <a href="javascript:void(0)" onclick="openAdminLeadsModal()" class="footer-admin-link" title="Open MyTownLens Lead Console (Ctrl+Shift+L)" style="color: #64748b; font-size: 0.76rem; text-decoration: underline; margin-left: 8px;">📊 Owner Console</a>
           </div>
           <span class="footer-sources">All figures, tax rates, salaries, and assessments verified against certified records from: County Boards of Taxation, Municipal Tax Assessors & Collectors, NJ Division of Taxation (MOD-IV), NJ State Comptroller (OSC), NJ DCA Local Government Services, and School District User-Friendly Budgets.</span>
         </div>
@@ -1841,6 +1842,238 @@
 
   <!-- Hidden Container for Legal-Grade Form A-1 Printable Brief -->
   <div id="printable-form-a1-packet" class="printable-form-a1-packet" style="display: none;" aria-hidden="true"></div>
+
+  <!-- Modal Dialog: 🏡 Free Local Realtor CMA Valuation (Lead Capture) -->
+  <dialog id="realtor-valuation-dialog" class="modern-modal-dialog realtor-valuation-dialog" closedby="any" aria-labelledby="realtor-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="realtor-dialog-title"><span>🏡</span> Request Free Local Realtor CMA Valuation</h3>
+          <div class="modern-dialog-subtitle">Professional off-market Comparative Market Analysis by a certified local real estate specialist</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="closeRealtorValuationModal()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="realtor-dialog-body">
+        <div class="attorney-lead-property-badge" id="realtor-lead-prop-badge">
+          <!-- Populated by JS: Address, Block/Lot, Town, Est. Value -->
+        </div>
+
+        <form id="realtor-lead-form" class="realtor-lead-form" onsubmit="handleRealtorLeadSubmit(event)">
+          <div class="attorney-contingency-notice" style="background: #f0fdf4; border-color: #bbf7d0; color: #166534;">
+            <span class="notice-icon">💎</span>
+            <div class="notice-text">
+              <strong>Accurate Local Appraisal:</strong> Automated tax algorithms only see exterior county data. A certified local Realtor in your municipality will evaluate recent hyper-local interior comps, condition, and market demand for an accurate valuation with zero sales pressure.
+            </div>
+          </div>
+
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="realtor-lead-name">Full Name *</label>
+              <input type="text" id="realtor-lead-name" required placeholder="e.g. Robert Johnson" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="realtor-lead-phone">Phone Number *</label>
+              <input type="tel" id="realtor-lead-phone" required placeholder="(973) 555-0144" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="realtor-lead-email">Email Address *</label>
+              <input type="email" id="realtor-lead-email" required placeholder="robert@example.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="realtor-lead-timeline">Homeowner Timeline</label>
+              <select id="realtor-lead-timeline">
+                <option value="curious">Just curious about market value</option>
+                <option value="1-3_months">Planning to sell in 1–3 months</option>
+                <option value="3-6_months">Planning to sell in 3–6 months</option>
+                <option value="refinance">Considering refinancing / HELOC</option>
+                <option value="estate">Estate planning / Inherited home</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="realtor-lead-notes">Interior Upgrades or Special Features (Kitchen, baths, finished basement, pool, additions)</label>
+            <textarea id="realtor-lead-notes" rows="2" placeholder="e.g. Renovated master bath in 2024, new central AC, finished basement..."></textarea>
+          </div>
+
+          <div class="lead-consent-row">
+            <input type="checkbox" id="realtor-lead-consent" required checked>
+            <label for="realtor-lead-consent">I authorize MyTownLens to connect me with a certified, top-rated local real estate specialist in my municipality for a free Comparative Market Analysis (CMA).</label>
+          </div>
+
+          <div class="modern-dialog-footer" style="padding: 16px 0 0 0; background: transparent; border: none; justify-content: flex-end;">
+            <button type="button" class="btn-dialog-close-btn" onclick="closeRealtorValuationModal()">Cancel</button>
+            <button type="submit" class="btn-submit-lead" style="background: #059669;"><span>🏡</span> Request Free Valuation</button>
+          </div>
+        </form>
+
+        <div id="realtor-lead-success" style="display: none;" class="attorney-lead-success-card">
+          <div class="success-icon" style="background: #ecfdf5; color: #047857;">✓</div>
+          <h4>Valuation Request Received!</h4>
+          <p>Your request for <strong id="realtor-success-addr"></strong> has been received. A top-rated neighborhood real estate specialist in your municipality will prepare your custom Comparative Market Analysis (CMA) and contact you within <strong>24 hours</strong>.</p>
+          <div class="success-stat-box" id="realtor-success-summary"></div>
+          <button type="button" class="btn-dialog-close-btn" onclick="closeRealtorValuationModal()">Done</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog: 📊 Owner Lead Management & CSV Export Console -->
+  <dialog id="admin-leads-dialog" class="modern-modal-dialog admin-leads-dialog" closedby="any" aria-labelledby="admin-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 960px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="admin-dialog-title"><span>📊</span> MyTownLens Owner Lead &amp; Sponsorship Console</h3>
+          <div class="modern-dialog-subtitle">Confidential management dashboard for homeowner tax appeal leads, realtor valuation inquiries, &amp; sponsorships</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="closeAdminLeadsModal()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="admin-dialog-body">
+        <!-- KPI Strip -->
+        <div class="admin-kpi-grid">
+          <div class="admin-kpi-card">
+            <span class="admin-kpi-lbl">Attorney Appeal Leads</span>
+            <span class="admin-kpi-val" id="admin-kpi-appeal-count">0</span>
+            <span class="admin-kpi-sub" id="admin-kpi-appeal-savings">$0 Potential Savings</span>
+          </div>
+          <div class="admin-kpi-card">
+            <span class="admin-kpi-lbl">Realtor Valuation Leads</span>
+            <span class="admin-kpi-val" id="admin-kpi-realtor-count">0</span>
+            <span class="admin-kpi-sub" id="admin-kpi-realtor-val">$0 Property Volume</span>
+          </div>
+          <div class="admin-kpi-card">
+            <span class="admin-kpi-lbl">Town Sponsorship Inquiries</span>
+            <span class="admin-kpi-val" id="admin-kpi-partner-count">0</span>
+            <span class="admin-kpi-sub">Active Municipal Applicants</span>
+          </div>
+          <div class="admin-kpi-card">
+            <span class="admin-kpi-lbl">Webhook Alerts</span>
+            <span class="admin-kpi-val" id="admin-kpi-webhook-status">Local</span>
+            <span class="admin-kpi-sub" id="admin-kpi-webhook-sub">Instant Forwarding Ready</span>
+          </div>
+        </div>
+
+        <!-- Navigation Filter Tabs -->
+        <div class="admin-tab-bar">
+          <button type="button" class="admin-tab-btn active" onclick="switchAdminTab('appeals')" id="admin-tab-appeals-btn">Attorney Leads</button>
+          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('realtor')" id="admin-tab-realtor-btn">Realtor Leads</button>
+          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('partners')" id="admin-tab-partners-btn">Sponsorships</button>
+          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('settings')" id="admin-tab-settings-btn">Webhook &amp; Alerts</button>
+        </div>
+
+        <!-- Panel 1: Attorney Appeal Leads Table -->
+        <div id="admin-panel-appeals" class="admin-panel">
+          <div class="admin-panel-actions">
+            <span style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">Homeowner Tax Appeal Inquiries</span>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn-admin-action" onclick="exportLeadsCSV('appeals')">📥 Export CSV</button>
+              <button type="button" class="btn-admin-danger" onclick="clearLeadsData('appeals')">Clear</button>
+            </div>
+          </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="admin-table-appeals">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Applicant</th>
+                  <th>Phone / Email</th>
+                  <th>Property Address</th>
+                  <th>Town</th>
+                  <th>Est. Savings</th>
+                  <th>Pref / Notes</th>
+                </tr>
+              </thead>
+              <tbody id="admin-tbody-appeals">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Panel 2: Realtor Valuation Leads Table -->
+        <div id="admin-panel-realtor" class="admin-panel" style="display: none;">
+          <div class="admin-panel-actions">
+            <span style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">Homeowner Valuation &amp; CMA Requests</span>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn-admin-action" onclick="exportLeadsCSV('realtor')">📥 Export CSV</button>
+              <button type="button" class="btn-admin-danger" onclick="clearLeadsData('realtor')">Clear</button>
+            </div>
+          </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="admin-table-realtor">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Homeowner</th>
+                  <th>Phone / Email</th>
+                  <th>Address</th>
+                  <th>Town</th>
+                  <th>Est. Value</th>
+                  <th>Timeline / Notes</th>
+                </tr>
+              </thead>
+              <tbody id="admin-tbody-realtor">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Panel 3: Professional Municipal Sponsorships Table -->
+        <div id="admin-panel-partners" class="admin-panel" style="display: none;">
+          <div class="admin-panel-actions">
+            <span style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">Professional Municipal Sponsorship Inquiries</span>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn-admin-action" onclick="exportLeadsCSV('partners')">📥 Export CSV</button>
+              <button type="button" class="btn-admin-danger" onclick="clearLeadsData('partners')">Clear</button>
+            </div>
+          </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="admin-table-partners">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Professional</th>
+                  <th>Firm</th>
+                  <th>Role</th>
+                  <th>Target Municipality</th>
+                  <th>Contact Info</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody id="admin-tbody-partners">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Panel 4: Webhook Integration Settings -->
+        <div id="admin-panel-settings" class="admin-panel" style="display: none;">
+          <div class="admin-settings-box">
+            <h4 style="margin: 0 0 6px 0; font-size: 0.96rem; font-weight: 800; color: #0f172a;">⚡ Real-Time Instant Lead Forwarding (Slack / Discord / Zapier / Formspree)</h4>
+            <p style="margin: 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Paste a webhook URL to receive instant push alerts on your phone or email whenever a new homeowner lead or sponsorship inquiry is submitted on MyTownLens.</p>
+            <div class="form-group" style="margin-top: 12px;">
+              <label for="admin-webhook-url">Webhook URL (POST JSON payload)</label>
+              <input type="url" id="admin-webhook-url" placeholder="https://hooks.slack.com/services/... or https://formspree.io/f/..." style="width: 100%; padding: 10px 14px; font-family: var(--font-mono); font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 14px;">
+              <button type="button" class="btn-admin-action" onclick="saveAdminWebhook()">Save Webhook</button>
+              <button type="button" class="btn-admin-secondary" onclick="testAdminWebhook()">Send Test Ping</button>
+            </div>
+            <div id="admin-webhook-status-msg" style="margin-top: 10px; font-size: 0.82rem;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modern-dialog-footer">
+        <span style="font-size: 0.78rem; color: #64748b;">Shortcut: Press <strong>Ctrl+Shift+L</strong> anywhere to open this console</span>
+        <button type="button" class="btn-dialog-close-btn" onclick="closeAdminLeadsModal()">Close</button>
+      </div>
+    </div>
+  </dialog>
 
   <!-- Modal Dialog 2: 🧓 State Property Tax Relief Calculator (ANCHOR + StayNJ + Senior Freeze) -->
   <dialog id="relief-calc-dialog" class="modern-modal-dialog" aria-labelledby="relief-dialog-title">
