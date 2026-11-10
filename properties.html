@@ -1616,6 +1616,17 @@
   </main>
 
   <footer class="app-footer">
+    <!-- Local Professional Sponsorship Banner -->
+    <div class="partner-showcase-strip">
+      <div class="partner-showcase-inner">
+        <div class="partner-showcase-text">
+          <span class="partner-showcase-icon">🤝</span>
+          <span><strong>Are you a licensed NJ Realtor, Property Tax Appeal Attorney, or Home Services Specialist?</strong> Sponsoring your municipality on MyTownLens puts your practice directly in front of thousands of active local homeowners.</span>
+        </div>
+        <button type="button" class="btn-partner-strip-action" onclick="openPartnerInquiryModal()">Claim Municipality Sponsorship ➔</button>
+      </div>
+    </div>
+
     <div class="container footer-container">
       <div class="footer-top">
         <div class="footer-brand">
@@ -1675,6 +1686,161 @@
       </div>
     </div>
   </dialog>
+
+  <!-- Modal Dialog: ⚖️ Free Attorney Review Request (Lead Capture) -->
+  <dialog id="attorney-consult-dialog" class="modern-modal-dialog attorney-consult-dialog" closedby="any" aria-labelledby="attorney-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="attorney-dialog-title"><span>⚖️</span> Request Free Tax Appeal Case Review</h3>
+          <div class="modern-dialog-subtitle">Confidential evaluation by a licensed New Jersey property tax appeal attorney</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="closeAttorneyConsultModal()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="attorney-dialog-body">
+        <div class="attorney-lead-property-badge" id="attorney-lead-prop-badge">
+          <!-- Populated by JS -->
+        </div>
+
+        <form id="attorney-lead-form" class="attorney-lead-form" onsubmit="handleAttorneyLeadSubmit(event)">
+          <div class="attorney-contingency-notice">
+            <span class="notice-icon">🛡️</span>
+            <div class="notice-text">
+              <strong>Zero-Risk Contingency Representation:</strong> Licensed New Jersey property tax appeal attorneys work on a pure contingency basis—you pay zero upfront out-of-pocket legal fees. Attorneys only earn a percentage of the actual property tax reduction won for you.
+            </div>
+          </div>
+
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="lead-full-name">Full Name *</label>
+              <input type="text" id="lead-full-name" required placeholder="e.g. Jane Doe" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="lead-phone">Phone Number *</label>
+              <input type="tel" id="lead-phone" required placeholder="(973) 555-0199" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="lead-email">Email Address *</label>
+              <input type="email" id="lead-email" required placeholder="jane.doe@example.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="lead-pref-contact">Preferred Contact Method</label>
+              <select id="lead-pref-contact">
+                <option value="phone">Phone Call</option>
+                <option value="text">Text Message</option>
+                <option value="email">Email</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lead-notes">Optional Property Details (Known defects, deferred maintenance, recent purchase or refi appraisal)</label>
+            <textarea id="lead-notes" rows="2" placeholder="e.g. Unfinished basement, original 1970s kitchen, recent appraisal was $420k..."></textarea>
+          </div>
+
+          <div class="lead-consent-row">
+            <input type="checkbox" id="lead-consent" required checked>
+            <label for="lead-consent">I authorize MyTownLens to share my property assessment records with a certified New Jersey property tax appeal attorney for a confidential case evaluation before the statutory April 1 county filing deadline.</label>
+          </div>
+
+          <div class="modern-dialog-footer" style="padding: 16px 0 0 0; background: transparent; border: none; justify-content: flex-end;">
+            <button type="button" class="btn-dialog-close-btn" onclick="closeAttorneyConsultModal()">Cancel</button>
+            <button type="submit" class="btn-submit-lead"><span>⚖️</span> Submit for Free Attorney Review</button>
+          </div>
+        </form>
+
+        <div id="attorney-lead-success" style="display: none;" class="attorney-lead-success-card">
+          <div class="success-icon">✓</div>
+          <h4>Case Review Request Received!</h4>
+          <p>Your property assessment file for <strong id="lead-success-addr"></strong> has been submitted. A licensed New Jersey property tax attorney will review your certified MOD-IV records and comparable sales, and reach out to you within <strong>1–2 business days</strong> before the County Tax Board deadline.</p>
+          <div class="success-stat-box" id="lead-success-summary"></div>
+          <button type="button" class="btn-dialog-close-btn" onclick="closeAttorneyConsultModal()">Done</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Dialog: 🤝 Partner with MyTownLens (Sponsorship Inquiries) -->
+  <dialog id="partner-inquire-dialog" class="modern-modal-dialog partner-inquire-dialog" closedby="any" aria-labelledby="partner-dialog-title">
+    <div class="modern-dialog-wrapper">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="partner-dialog-title"><span>🤝</span> Partner with MyTownLens</h3>
+          <div class="modern-dialog-subtitle">Exclusive municipal sponsorships for licensed Realtors, Tax Appeal Attorneys &amp; Home Specialists</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="closePartnerInquiryModal()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="partner-dialog-body">
+        <form id="partner-inquire-form" class="partner-inquire-form" onsubmit="handlePartnerInquirySubmit(event)">
+          <div class="partner-intro-box">
+            <h4>Reach High-Intent North Jersey Homeowners &amp; Taxpayers</h4>
+            <p>MyTownLens monitors 150,016 verified properties across 47 North Jersey municipalities. Claim exclusive sponsorship of your target town to receive direct client inquiries and showcase your practice.</p>
+          </div>
+
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="partner-name">Full Name *</label>
+              <input type="text" id="partner-name" required placeholder="e.g. Michael Smith">
+            </div>
+            <div class="form-group">
+              <label for="partner-firm">Firm / Brokerage / Agency *</label>
+              <input type="text" id="partner-firm" required placeholder="e.g. Smith &amp; Associates LLC">
+            </div>
+          </div>
+
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="partner-role">Professional Role *</label>
+              <select id="partner-role" required>
+                <option value="tax_attorney">Property Tax Appeal Attorney</option>
+                <option value="realtor">Licensed Real Estate Agent / Broker</option>
+                <option value="appraiser">Licensed Real Estate Appraiser</option>
+                <option value="home_services">Home Services (Plumbing, Flood, Roofing, Solar)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="partner-towns">Target Municipality / County *</label>
+              <input type="text" id="partner-towns" required placeholder="e.g. Wayne, Montclair, Clifton, or Passaic County">
+            </div>
+          </div>
+
+          <div class="form-grid-2col">
+            <div class="form-group">
+              <label for="partner-email">Email Address *</label>
+              <input type="email" id="partner-email" required placeholder="msmith@firm.com">
+            </div>
+            <div class="form-group">
+              <label for="partner-phone">Phone Number *</label>
+              <input type="tel" id="partner-phone" required placeholder="(973) 555-0123">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="partner-message">Notes or Sponsorship Inquiries</label>
+            <textarea id="partner-message" rows="2" placeholder="Tell us about your practice or desired sponsorship coverage..."></textarea>
+          </div>
+
+          <div class="modern-dialog-footer" style="padding: 16px 0 0 0; background: transparent; border: none; justify-content: flex-end;">
+            <button type="button" class="btn-dialog-close-btn" onclick="closePartnerInquiryModal()">Cancel</button>
+            <button type="submit" class="btn-submit-lead"><span>🤝</span> Inquire About Sponsorship</button>
+          </div>
+        </form>
+
+        <div id="partner-inquire-success" style="display: none;" class="attorney-lead-success-card">
+          <div class="success-icon">✓</div>
+          <h4>Partnership Inquiry Received!</h4>
+          <p>Thank you for your interest in sponsoring MyTownLens. Our municipal partnerships coordinator will contact you within <strong>1 business day</strong> with availability and exclusive town sponsorship rates.</p>
+          <button type="button" class="btn-dialog-close-btn" onclick="closePartnerInquiryModal()">Done</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Hidden Container for Legal-Grade Form A-1 Printable Brief -->
+  <div id="printable-form-a1-packet" class="printable-form-a1-packet" style="display: none;" aria-hidden="true"></div>
 
   <!-- Modal Dialog 2: 🧓 State Property Tax Relief Calculator (ANCHOR + StayNJ + Senior Freeze) -->
   <dialog id="relief-calc-dialog" class="modern-modal-dialog" aria-labelledby="relief-dialog-title">

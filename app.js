@@ -7291,6 +7291,30 @@ async function openAppealAnalyzer(propId) {
         </div>
       </div>
 
+      <!-- Attorney Consultation Monetization Callout -->
+      <div class="appeal-attorney-cta-card">
+        <div class="attorney-cta-header">
+          <span class="attorney-cta-badge">⭐ Recommended Next Step</span>
+          <span class="attorney-cta-deadline">April 1 County Deadline</span>
+        </div>
+        <div class="attorney-cta-body">
+          <h4 class="attorney-cta-title">Request Free Contingency Review from a Licensed NJ Property Tax Appeal Attorney</h4>
+          <p class="attorney-cta-desc">
+            In New Jersey, property tax appeal attorneys work on a <strong>pure contingency basis</strong>: you pay zero upfront out-of-pocket legal fees, and the attorney is only paid a percentage of the actual property tax reduction won for you. Have a certified NJ tax attorney review your Block ${escapeHtml(target.block)}, Lot ${escapeHtml(target.lot)} assessment and street comparables.
+          </p>
+          <div class="attorney-cta-perks">
+            <span>✓ 100% Free &amp; Confidential Case Evaluation</span>
+            <span>✓ Licensed before ${escapeHtml(meta.countyShort)} Board of Taxation &amp; NJ Tax Court</span>
+            <span>✓ No Reduction = Zero Legal Fees</span>
+          </div>
+        </div>
+        <div class="attorney-cta-action">
+          <button type="button" class="btn-attorney-review-trigger" onclick="openAttorneyConsultModal()">
+            <span>⚖️</span> Request Free Attorney Review ➔
+          </button>
+        </div>
+      </div>
+
       <!-- Home Details & Interior Specs (Form A-1 Refinement) -->
       <div class="appeal-refine-box">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap;">
@@ -7418,15 +7442,15 @@ async function openAppealAnalyzer(propId) {
       <!-- Filing Guidance & Deadlines -->
       <div style="background: #f1f5f9; border-radius: 8px; padding: 14px 18px; font-size: 0.84rem; color: #334155; line-height: 1.55;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
-          <strong style="color: #0f172a; font-size: 0.92rem;">📅 Passaic County Board of Taxation Form A-1 Appeal Checklist:</strong>
+          <strong style="color: #0f172a; font-size: 0.92rem;">📅 ${escapeHtml(meta.countyBoardName || meta.county + ' Board of Taxation')} Form A-1 Appeal Checklist:</strong>
           <a href="https://www.state.nj.us/treasury/taxation/pdf/other_forms/lpt/ptappeal.pdf" target="_blank" rel="noopener" class="btn-jump-action" style="padding: 4px 10px; font-size: 0.78rem; background: #2563eb; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 700;">
             <span>📥</span> Download Official Form A-1 (PDF) ↗
           </a>
         </div>
-        • <strong>Filing Office:</strong> Passaic County Board of Taxation, 401 Grand St, Room 113, Paterson, NJ 07505 (Phone: 973-720-7399).<br>
+        • <strong>Filing Office:</strong> ${escapeHtml(meta.countyBoardName || meta.county + ' Board of Taxation')}.<br>
         • <strong>Statutory Deadlines:</strong> Annually on or before <strong>April 1</strong> (extended to <strong>May 1</strong> in citywide revaluation years under N.J.S.A. 54:3-21).<br>
-        • <strong>Filing Fees:</strong> $5.00 (&lt;$150k assessment), $25.00 ($150k–$500k), $100.00 ($500k–$1M), $150.00 (&gt;$1M), payable to Passaic County Tax Administrator.<br>
-        • <strong>Service Requirement:</strong> 1 copy must be served on County Tax Board, 1 copy on Clifton Tax Assessor (900 Clifton Ave), and 1 copy on Clifton City Clerk.<br>
+        • <strong>Filing Fees:</strong> $5.00 (&lt;$150k assessment), $25.00 ($150k–$500k), $100.00 ($500k–$1M), $150.00 (&gt;$1M), payable to County Tax Administrator.<br>
+        • <strong>Service Requirement:</strong> 1 copy served on County Tax Board, 1 copy on ${escapeHtml(meta.name)} Municipal Tax Assessor, and 1 copy on ${escapeHtml(meta.name)} Municipal Clerk.<br>
         • <strong>Current Taxes Paid:</strong> Under N.J.S.A. 54:3-27, all municipal taxes and sewer charges must be paid current to have an appeal heard.<br>
         • <strong>Direct County Verification:</strong> <a href="javascript:void(0)" onclick="openMod4VerificationModal('${escapeHtml(target.id)}')" style="font-weight: 700; color: #2563eb; text-decoration: underline;">Inspect Certified MOD-IV Duplicate Record &amp; County Portals ➔</a>
       </div>
@@ -7450,7 +7474,325 @@ function copyAppealEvidence() {
 }
 
 function printAppealEvidence() {
+  const printContainer = document.getElementById('printable-form-a1-packet');
+  if (!printContainer || !activeAppealProperty) {
+    window.print();
+    return;
+  }
+
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const target = activeAppealProperty;
+  const comps = activeAppealComps || [];
+  const eqRatio = meta.equalizationRatio ? parseFloat(meta.equalizationRatio) : 100.0;
+  const corridorLower = (eqRatio * 0.85).toFixed(2);
+  const corridorUpper = (eqRatio * 1.15).toFixed(2);
+  const rate = parseFloat(meta.certifiedTaxRate) || 2.5;
+
+  const targetDiff = (activeAppealMedian && target.assessedTotal > activeAppealMedian)
+    ? (target.assessedTotal - activeAppealMedian)
+    : 0;
+  const estSavings = Math.round((targetDiff / 100) * rate);
+
+  printContainer.innerHTML = `
+    <div class="print-form-a1-sheet">
+      <div class="print-a1-header-block">
+        <div class="print-a1-state-seal">STATE OF NEW JERSEY • COUNTY BOARD OF TAXATION</div>
+        <h2 class="print-a1-title">PETITION OF APPEAL (FORM A-1) — COMPARABLE SALES EVIDENCE SCHEDULE</h2>
+        <div class="print-a1-statute">Statutory Standard: N.J.S.A. 54:3-21 et seq., N.J.A.C. 18:12A-1.6 &amp; N.J.S.A. 54:51A-6 (Chapter 123)</div>
+        <div class="print-a1-source-strip">
+          <span>Prepared via <strong>MyTownLens</strong> (mytownlens.com)</span>
+          <span>Date Generated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        </div>
+      </div>
+
+      <div class="print-a1-sec-header">SECTION I: SUBJECT PROPERTY &amp; TAXING DISTRICT PARTICULARS</div>
+      <table class="print-a1-grid-table">
+        <tr>
+          <th>County Board:</th>
+          <td>${escapeHtml(meta.countyBoardName || meta.county + ' Board of Taxation')}</td>
+          <th>Taxing District:</th>
+          <td>${escapeHtml(meta.name)} (District Code ${meta.districtCode})</td>
+        </tr>
+        <tr>
+          <th>Subject Address:</th>
+          <td><strong>${escapeHtml(target.address)}</strong></td>
+          <th>Block &amp; Lot:</th>
+          <td><strong>Block ${escapeHtml(target.block)}, Lot ${escapeHtml(target.lot)}</strong></td>
+        </tr>
+        <tr>
+          <th>Property Class:</th>
+          <td>Class 2 (Residential 1-4 Family)</td>
+          <th>Building Style / Year:</th>
+          <td>${escapeHtml(target.bldgDesc || target.propertyType || 'Class 2')} (Built: ${target.yearBuilt > 0 ? target.yearBuilt : '—'})</td>
+        </tr>
+        <tr>
+          <th>Current Assessment:</th>
+          <td>Land: $${(target.assessedLand || 0).toLocaleString()} • Bldg: $${(target.assessedBuilding || 0).toLocaleString()} • <strong>Total: $${target.assessedTotal.toLocaleString()}</strong></td>
+          <th>Annual Property Tax:</th>
+          <td><strong>$${target.annualTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong> (Rate: ${meta.certifiedTaxRate})</td>
+        </tr>
+      </table>
+
+      <div class="print-a1-sec-header">SECTION II: CHAPTER 123 STATUTORY RATIO CORRIDOR ANALYSIS</div>
+      <table class="print-a1-grid-table">
+        <tr>
+          <th>Director's Common Level Ratio:</th>
+          <td><strong>${eqRatio.toFixed(2)}%</strong></td>
+          <th>Statutory Ratio Corridor (±15%):</th>
+          <td><strong>${corridorLower}% to ${corridorUpper}%</strong></td>
+        </tr>
+        <tr>
+          <th>Street Median Comparable Assessment:</th>
+          <td><strong>$${(activeAppealMedian || target.assessedTotal).toLocaleString()}</strong></td>
+          <th>Indicated Over-Assessment:</th>
+          <td><strong>${activeAppealDiffPct ? activeAppealDiffPct.toFixed(1) + '%' : '0.0%'}</strong> ($${Math.max(0, activeAppealDiff || 0).toLocaleString()})</td>
+        </tr>
+      </table>
+
+      <div class="print-a1-sec-header">SECTION III: VERIFIED MOD-IV COMPARABLE ARMS-LENGTH SALES SCHEDULE</div>
+      <table class="print-a1-comps-sheet">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Comparable Property Address</th>
+            <th>Block / Lot</th>
+            <th>Deed Date</th>
+            <th>Deed Book / Page</th>
+            <th>Sale Price ($)</th>
+            <th>Assessed Value ($)</th>
+            <th>Ratio (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${comps.map((c, i) => `
+            <tr>
+              <td><strong>${i + 1}</strong></td>
+              <td><strong>${escapeHtml(c.address)}</strong></td>
+              <td>B:${escapeHtml(c.block)} L:${escapeHtml(c.lot)}</td>
+              <td>${escapeHtml(c.deedDate || 'MOD-IV Record')}</td>
+              <td>${escapeHtml(c.deedBookPage || 'Recorded Deed')}</td>
+              <td><strong>$${(c.salePrice || 0).toLocaleString()}</strong></td>
+              <td>$${(c.assessedTotal || 0).toLocaleString()}</td>
+              <td>${c.salePrice > 50000 ? ((c.assessedTotal / c.salePrice) * 100).toFixed(1) + '%' : '—'}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+
+      <div class="print-a1-sec-header">SECTION IV: REQUESTED VALUATION &amp; RELIEF SUMMARY</div>
+      <div class="print-a1-summary-box">
+        <p>Pursuant to N.J.S.A. 54:51A-6 (Chapter 123), when the ratio of assessed value to true value exceeds the upper corridor limit (${corridorUpper}%), the County Board of Taxation shall revise the assessment by applying the common level ratio (${eqRatio.toFixed(2)}%) to the equalized true market value.</p>
+        <div class="print-a1-relief-row">
+          <span>Petitioner Requested Total Assessment:</span>
+          <strong>$${(activeAppealMedian || target.assessedTotal).toLocaleString()}</strong>
+        </div>
+        <div class="print-a1-relief-row">
+          <span>Projected Annual Property Tax Reduction:</span>
+          <strong style="color: #059669;">$${estSavings.toLocaleString()} / year</strong>
+        </div>
+      </div>
+
+      <div class="print-a1-footer-sign-strip">
+        <div class="print-sign-cell">
+          <div class="print-sign-rule"></div>
+          <div>Signature of Petitioner / Taxpayer / Attorney of Record</div>
+        </div>
+        <div class="print-sign-cell">
+          <div class="print-sign-rule"></div>
+          <div>Date Filed with County Board of Taxation</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.classList.add('printing-a1-packet');
   window.print();
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('printing-a1-packet');
+  }, { once: true });
+}
+
+// ==========================================================================
+// MONETIZATION FEATURE 1: ⚖️ Free Attorney Review Request (Lead Capture)
+// ==========================================================================
+function openAttorneyConsultModal() {
+  const modal = document.getElementById('attorney-consult-dialog');
+  if (!modal) return;
+
+  const target = activeAppealProperty;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const badgeEl = document.getElementById('attorney-lead-prop-badge');
+  const rate = parseFloat(meta.certifiedTaxRate) || 2.5;
+  const diff = (activeAppealMedian && target && target.assessedTotal > activeAppealMedian)
+    ? (target.assessedTotal - activeAppealMedian)
+    : (activeAppealDiff > 0 ? activeAppealDiff : 0);
+  const potentialSavings = Math.round((diff / 100) * rate);
+
+  if (badgeEl && target) {
+    badgeEl.innerHTML = `
+      <div class="lead-badge-header">
+        <span class="lead-badge-pin">📍 ${escapeHtml(target.address)}</span>
+        <span class="lead-badge-savings">Est. Potential Reduction: <strong>$${potentialSavings.toLocaleString()} / yr</strong></span>
+      </div>
+      <div class="lead-badge-sub">
+        Block ${escapeHtml(target.block)}, Lot ${escapeHtml(target.lot)} • ${escapeHtml(meta.name)}, ${escapeHtml(meta.countyShort)} • Current Assessment: $${target.assessedTotal.toLocaleString()}
+      </div>
+    `;
+  }
+
+  const form = document.getElementById('attorney-lead-form');
+  const success = document.getElementById('attorney-lead-success');
+  if (form) {
+    form.reset();
+    form.style.display = 'block';
+  }
+  if (success) success.style.display = 'none';
+
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', '');
+  }
+}
+
+function closeAttorneyConsultModal() {
+  const modal = document.getElementById('attorney-consult-dialog');
+  if (!modal) return;
+  if (typeof modal.close === 'function') {
+    modal.close();
+  } else {
+    modal.removeAttribute('open');
+  }
+}
+
+function handleAttorneyLeadSubmit(e) {
+  e.preventDefault();
+  const target = activeAppealProperty;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  const name = document.getElementById('lead-full-name')?.value || '';
+  const phone = document.getElementById('lead-phone')?.value || '';
+  const email = document.getElementById('lead-email')?.value || '';
+  const pref = document.getElementById('lead-pref-contact')?.value || 'phone';
+  const notes = document.getElementById('lead-notes')?.value || '';
+
+  const leadRecord = {
+    id: 'lead_' + Date.now(),
+    submittedAt: new Date().toISOString(),
+    property: {
+      address: target?.address || '',
+      block: target?.block || '',
+      lot: target?.lot || '',
+      assessedTotal: target?.assessedTotal || 0,
+      annualTax: target?.annualTax || 0,
+      municipality: meta.name,
+      county: meta.county
+    },
+    contact: { name, phone, email, preferredContact: pref, notes }
+  };
+
+  try {
+    const existing = JSON.parse(localStorage.getItem('mytownlens_attorney_leads') || '[]');
+    existing.push(leadRecord);
+    localStorage.setItem('mytownlens_attorney_leads', JSON.stringify(existing));
+  } catch (err) {
+    console.warn('LocalStorage lead save error:', err);
+  }
+
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('mytownlens:attorney_lead_submitted', { detail: leadRecord }));
+  }
+
+  const form = document.getElementById('attorney-lead-form');
+  const success = document.getElementById('attorney-lead-success');
+  const addrEl = document.getElementById('lead-success-addr');
+  const summaryEl = document.getElementById('lead-success-summary');
+
+  if (form) form.style.display = 'none';
+  if (addrEl && target) addrEl.textContent = target.address;
+  if (summaryEl) {
+    summaryEl.innerHTML = `
+      <div style="font-size: 0.85rem; color: #475569; display: grid; gap: 4px;">
+        <span><strong>Applicant:</strong> ${escapeHtml(name)} (${escapeHtml(phone)} • ${escapeHtml(email)})</span>
+        <span><strong>Property:</strong> ${escapeHtml(target?.address || '')} (Block ${target?.block}, Lot ${target?.lot})</span>
+        <span><strong>Filing Jurisdiction:</strong> ${escapeHtml(meta.countyBoardName || meta.county)}</span>
+      </div>
+    `;
+  }
+  if (success) success.style.display = 'block';
+  showToast('✓ Free attorney case review request received!');
+}
+
+// ==========================================================================
+// MONETIZATION FEATURE 2: 🤝 Partner with MyTownLens (Municipal Sponsorship)
+// ==========================================================================
+function openPartnerInquiryModal() {
+  const modal = document.getElementById('partner-inquire-dialog');
+  if (!modal) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  const townsInput = document.getElementById('partner-towns');
+  if (townsInput) townsInput.value = `${meta.name}, ${meta.countyShort}`;
+
+  const form = document.getElementById('partner-inquire-form');
+  const success = document.getElementById('partner-inquire-success');
+  if (form) {
+    form.reset();
+    if (townsInput) townsInput.value = `${meta.name}, ${meta.countyShort}`;
+    form.style.display = 'block';
+  }
+  if (success) success.style.display = 'none';
+
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', '');
+  }
+}
+
+function closePartnerInquiryModal() {
+  const modal = document.getElementById('partner-inquire-dialog');
+  if (!modal) return;
+  if (typeof modal.close === 'function') {
+    modal.close();
+  } else {
+    modal.removeAttribute('open');
+  }
+}
+
+function handlePartnerInquirySubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('partner-name')?.value || '';
+  const firm = document.getElementById('partner-firm')?.value || '';
+  const role = document.getElementById('partner-role')?.value || '';
+  const towns = document.getElementById('partner-towns')?.value || '';
+  const email = document.getElementById('partner-email')?.value || '';
+  const phone = document.getElementById('partner-phone')?.value || '';
+  const message = document.getElementById('partner-message')?.value || '';
+
+  const partnerRecord = {
+    id: 'partner_' + Date.now(),
+    submittedAt: new Date().toISOString(),
+    name, firm, role, towns, email, phone, message
+  };
+
+  try {
+    const existing = JSON.parse(localStorage.getItem('mytownlens_partner_inquiries') || '[]');
+    existing.push(partnerRecord);
+    localStorage.setItem('mytownlens_partner_inquiries', JSON.stringify(existing));
+  } catch (err) {
+    console.warn('LocalStorage partner inquiry save error:', err);
+  }
+
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('mytownlens:partner_inquiry_submitted', { detail: partnerRecord }));
+  }
+
+  const form = document.getElementById('partner-inquire-form');
+  const success = document.getElementById('partner-inquire-success');
+  if (form) form.style.display = 'none';
+  if (success) success.style.display = 'block';
+  showToast('✓ Sponsorship inquiry received!');
 }
 
 // --------------------------------------------------------------------------

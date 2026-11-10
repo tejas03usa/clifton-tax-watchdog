@@ -17840,3 +17840,413 @@ dialog.omnibox-dialog::backdrop {
   font-weight: 700;
   margin-left: auto;
 }
+
+/* ==========================================================================
+   MONETIZATION COMPONENTS: ATTORNEY LEADS, PARTNER SPONSORSHIPS & FORM A-1
+   ========================================================================== */
+
+/* Tax Appeal Analyzer: Attorney Consultation Callout */
+.appeal-attorney-cta-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #f8faff 100%);
+  border: 1.5px solid #3b82f6;
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  margin: 12px 0 16px 0;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.attorney-cta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.attorney-cta-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.attorney-cta-deadline {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.attorney-cta-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.attorney-cta-desc {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.attorney-cta-perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.btn-attorney-review-trigger {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  align-self: flex-start;
+}
+
+.btn-attorney-review-trigger:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+/* Footer Local Professional Sponsorship Strip */
+.partner-showcase-strip {
+  background: linear-gradient(90deg, #090d16 0%, #172554 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 20px;
+  color: #ffffff;
+}
+
+.partner-showcase-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.partner-showcase-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #e2e8f0;
+}
+
+.partner-showcase-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.btn-partner-strip-action {
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.btn-partner-strip-action:hover {
+  background: #60a5fa;
+  transform: translateY(-1px);
+}
+
+/* Modal Lead Badge & Forms */
+.attorney-lead-property-badge {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+
+.lead-badge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.lead-badge-savings strong {
+  color: #dc2626;
+}
+
+.lead-badge-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.attorney-contingency-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  font-size: 0.82rem;
+  color: #166534;
+  line-height: 1.45;
+}
+
+.partner-intro-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.partner-intro-box h4 {
+  margin: 0 0 6px 0;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.partner-intro-box p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.45;
+}
+
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 640px) {
+  .form-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lead-consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 14px 0;
+  font-size: 0.78rem;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.btn-submit-lead {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 20px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+.btn-submit-lead:hover {
+  background: #1d4ed8;
+}
+
+.attorney-lead-success-card {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.attorney-lead-success-card .success-icon {
+  width: 52px;
+  height: 52px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 1.6rem;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+}
+
+.attorney-lead-success-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.attorney-lead-success-card p {
+  margin: 0 0 16px 0;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.success-stat-box {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Legal-Grade Printable Form A-1 Addendum */
+@media print {
+  body.printing-a1-packet * {
+    visibility: hidden;
+  }
+  body.printing-a1-packet #printable-form-a1-packet,
+  body.printing-a1-packet #printable-form-a1-packet * {
+    visibility: visible;
+  }
+  body.printing-a1-packet #printable-form-a1-packet {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: block !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 11pt !important;
+    line-height: 1.35 !important;
+    padding: 0.4in !important;
+  }
+  .print-form-a1-sheet {
+    page-break-after: avoid;
+  }
+  .print-a1-header-block {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .print-a1-state-seal {
+    font-size: 10pt;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .print-a1-title {
+    font-size: 13pt;
+    font-weight: 800;
+    margin: 4px 0;
+  }
+  .print-a1-statute {
+    font-size: 8.5pt;
+    font-style: italic;
+  }
+  .print-a1-source-strip {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    margin-top: 6px;
+    color: #444;
+  }
+  .print-a1-sec-header {
+    background: #e5e7eb !important;
+    font-size: 9pt;
+    font-weight: bold;
+    padding: 4px 8px;
+    margin: 10px 0 6px 0;
+    border-left: 4px solid #000;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print-a1-grid-table,
+  .print-a1-comps-sheet {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    font-size: 8.5pt;
+  }
+  .print-a1-grid-table th,
+  .print-a1-grid-table td,
+  .print-a1-comps-sheet th,
+  .print-a1-comps-sheet td {
+    border: 1px solid #999;
+    padding: 4px 6px;
+    text-align: left;
+  }
+  .print-a1-grid-table th,
+  .print-a1-comps-sheet th {
+    background: #f3f4f6 !important;
+    font-weight: bold;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print-a1-summary-box {
+    border: 1px solid #999;
+    padding: 8px;
+    font-size: 8.5pt;
+    margin-bottom: 14px;
+    background: #fafafa !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print-a1-summary-box p {
+    margin: 0 0 6px 0;
+  }
+  .print-a1-relief-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9.5pt;
+    padding: 2px 0;
+  }
+  .print-a1-footer-sign-strip {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 10px;
+  }
+  .print-sign-cell {
+    width: 45%;
+    text-align: center;
+    font-size: 8.5pt;
+  }
+  .print-sign-rule {
+    border-top: 1px solid #000;
+    margin-bottom: 6px;
+  }
+}
