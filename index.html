@@ -69,6 +69,9 @@
         <a href="budgets.html#tab-surrounding" class="city-switch-all-btn" title="Compare all 47 municipalities across Passaic, Bergen, Essex &amp; Morris Counties">
           <span>🗺️ All 47 Towns ➔</span>
         </a>
+        <div class="header-sponsor-container" id="header-sponsor-container">
+          <!-- Populated by JS: Claimed Partner or Inquire Button -->
+        </div>
       </div>
     </div>
 
@@ -834,6 +837,7 @@
         <!-- Rendered by JS -->
       </div>
       <div class="modern-dialog-footer">
+        <button type="button" class="btn-street-action" style="background: #059669; color: #fff;" onclick="openAttorneyConsultModal()"><span>⚖️</span> Request Free Attorney Review</button>
         <button type="button" class="btn-street-action" onclick="printAppealEvidence()"><span>🖨️</span> Print Form A-1 Packet</button>
         <button type="button" class="btn-street-action" onclick="copyAppealEvidence()"><span>📋</span> Copy Evidence Table</button>
         <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Close</button>
@@ -856,7 +860,7 @@
           <!-- Populated by JS -->
         </div>
 
-        <form id="attorney-lead-form" class="attorney-lead-form" onsubmit="handleAttorneyLeadSubmit(event)">
+        <form id="attorney-lead-form" class="attorney-lead-form" method="post" aria-labelledby="attorney-dialog-title" onsubmit="handleAttorneyLeadSubmit(event)">
           <div class="attorney-contingency-notice">
             <span class="notice-icon">🛡️</span>
             <div class="notice-text">
@@ -866,23 +870,28 @@
 
           <div class="form-grid-2col">
             <div class="form-group">
-              <label for="lead-full-name">Full Name *</label>
-              <input type="text" id="lead-full-name" required placeholder="e.g. Jane Doe" autocomplete="name">
+              <label for="lead-full-name">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="lead-full-name" name="full_name" required placeholder="e.g. Jane Doe" autocomplete="name" enterkeyhint="next" aria-invalid="false" data-error="lead-name-error">
+              <div id="lead-name-error" class="error-msg"><span role="img" aria-label="Error">❌</span> Please enter your full name.</div>
             </div>
             <div class="form-group">
-              <label for="lead-phone">Phone Number *</label>
-              <input type="tel" id="lead-phone" required placeholder="(973) 555-0199" autocomplete="tel">
+              <label for="lead-phone">Phone Number <span aria-hidden="true">*</span></label>
+              <input type="tel" id="lead-phone" name="phone" required placeholder="(973) 555-0199" autocomplete="tel" inputmode="tel" enterkeyhint="next" aria-invalid="false" data-error="lead-phone-error">
+              <div id="lead-phone-error" class="error-msg"><span role="img" aria-label="Error">❌</span> Enter a valid phone number so the specialist can reach you.</div>
             </div>
           </div>
 
           <div class="form-grid-2col">
             <div class="form-group">
-              <label for="lead-email">Email Address *</label>
-              <input type="email" id="lead-email" required placeholder="jane.doe@example.com" autocomplete="email">
+              <label for="lead-email">Email Address <span aria-hidden="true">*</span></label>
+              <span id="lead-email-hint" class="field-hint">Format: you@example.com</span>
+              <input type="email" id="lead-email" name="email" required placeholder="jane.doe@example.com" autocomplete="email" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="next" aria-describedby="lead-email-hint" aria-invalid="false" data-error="lead-email-error">
+              <div id="lead-email-error" class="error-msg"><span role="img" aria-label="Error">❌</span> Enter an email address in the format you@example.com.</div>
             </div>
             <div class="form-group">
               <label for="lead-pref-contact">Preferred Contact Method</label>
-              <select id="lead-pref-contact">
+              <span class="field-hint">How would you like to receive your review?</span>
+              <select id="lead-pref-contact" name="preferred_contact">
                 <option value="phone">Phone Call</option>
                 <option value="text">Text Message</option>
                 <option value="email">Email</option>
@@ -892,12 +901,17 @@
 
           <div class="form-group">
             <label for="lead-notes">Optional Property Details (Known defects, deferred maintenance, recent purchase or refi appraisal)</label>
-            <textarea id="lead-notes" rows="2" placeholder="e.g. Unfinished basement, original 1970s kitchen, recent appraisal was $420k..."></textarea>
+            <textarea id="lead-notes" name="notes" rows="2" placeholder="e.g. Unfinished basement, original 1970s kitchen, recent appraisal was $420k..."></textarea>
           </div>
 
           <div class="lead-consent-row">
-            <input type="checkbox" id="lead-consent" required checked>
-            <label for="lead-consent">I authorize MyTownLens to share my property assessment records with a certified New Jersey property tax appeal attorney for a confidential case evaluation before the statutory April 1 county filing deadline.</label>
+            <input type="checkbox" id="lead-is-owner" name="is_owner" required checked>
+            <label for="lead-is-owner"><strong>I am the legal owner or authorized taxpayer</strong> for this property and wish to receive a free Chapter 123 tax appeal feasibility review.</label>
+          </div>
+
+          <div class="lead-consent-row">
+            <input type="checkbox" id="lead-consent" name="consent" required checked>
+            <label for="lead-consent">I authorize MyTownLens to share my property assessment dossier and MOD-IV comparable sales with a certified New Jersey property tax appeal attorney or licensed appraiser for a confidential case evaluation before the statutory April 1 county filing deadline.</label>
           </div>
 
           <div class="modern-dialog-footer" style="padding: 16px 0 0 0; background: transparent; border: none; justify-content: flex-end;">
@@ -906,12 +920,15 @@
           </div>
         </form>
 
-        <div id="attorney-lead-success" style="display: none;" class="attorney-lead-success-card">
+        <div id="attorney-lead-success" style="display: none;" class="attorney-lead-success-card" role="status" aria-live="polite">
           <div class="success-icon">✓</div>
-          <h4>Case Review Request Received!</h4>
-          <p>Your property assessment file for <strong id="lead-success-addr"></strong> has been submitted. A licensed New Jersey property tax attorney will review your certified MOD-IV records and comparable sales, and reach out to you within <strong>1–2 business days</strong> before the County Tax Board deadline.</p>
+          <h4>Case Review Request &amp; Dossier Prepared!</h4>
+          <p>Your property assessment docket for <strong id="lead-success-addr"></strong> has been packaged with your certified MOD-IV records and street comparables. A licensed New Jersey property tax attorney will review your file and reach out within <strong>1–2 business days</strong> before the County Tax Board deadline.</p>
           <div class="success-stat-box" id="lead-success-summary"></div>
-          <button type="button" class="btn-dialog-close-btn" onclick="closeAttorneyConsultModal()">Done</button>
+          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <button type="button" class="btn-admin-action" onclick="copyLatestSubmittedDossier('appeals')"><span>📋</span> Copy My Case Dossier Receipt</button>
+            <button type="button" class="btn-dialog-close-btn" onclick="closeAttorneyConsultModal()">Done</button>
+          </div>
         </div>
       </div>
     </div>
@@ -928,27 +945,27 @@
         <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="closePartnerInquiryModal()">✕</button>
       </div>
       <div class="modern-dialog-body" id="partner-dialog-body">
-        <form id="partner-inquire-form" class="partner-inquire-form" onsubmit="handlePartnerInquirySubmit(event)">
+        <form id="partner-inquire-form" class="partner-inquire-form" method="post" aria-labelledby="partner-dialog-title" onsubmit="handlePartnerInquirySubmit(event)">
           <div class="partner-intro-box">
             <h4>Reach High-Intent North Jersey Homeowners &amp; Taxpayers</h4>
-            <p>MyTownLens monitors 150,016 verified properties across 47 North Jersey municipalities. Claim exclusive sponsorship of your target town to receive direct client inquiries and showcase your practice.</p>
+            <p>MyTownLens monitors 150,016 verified properties across 47 North Jersey municipalities. Claim exclusive sponsorship of your target town to receive direct pre-qualified homeowner case dockets and showcase your practice.</p>
           </div>
 
           <div class="form-grid-2col">
             <div class="form-group">
-              <label for="partner-name">Full Name *</label>
-              <input type="text" id="partner-name" required placeholder="e.g. Michael Smith">
+              <label for="partner-name">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="partner-name" name="partner_name" required placeholder="e.g. Michael Smith" autocomplete="name" aria-invalid="false">
             </div>
             <div class="form-group">
-              <label for="partner-firm">Firm / Brokerage / Agency *</label>
-              <input type="text" id="partner-firm" required placeholder="e.g. Smith &amp; Associates LLC">
+              <label for="partner-firm">Firm / Brokerage / Agency <span aria-hidden="true">*</span></label>
+              <input type="text" id="partner-firm" name="partner_firm" required placeholder="e.g. Smith &amp; Associates LLC" autocomplete="organization" aria-invalid="false">
             </div>
           </div>
 
           <div class="form-grid-2col">
             <div class="form-group">
-              <label for="partner-role">Professional Role *</label>
-              <select id="partner-role" required>
+              <label for="partner-role">Professional Role <span aria-hidden="true">*</span></label>
+              <select id="partner-role" name="partner_role" required>
                 <option value="tax_attorney">Property Tax Appeal Attorney</option>
                 <option value="realtor">Licensed Real Estate Agent / Broker</option>
                 <option value="appraiser">Licensed Real Estate Appraiser</option>
@@ -956,25 +973,25 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="partner-towns">Target Municipality / County *</label>
-              <input type="text" id="partner-towns" required placeholder="e.g. Wayne, Montclair, Clifton, or Passaic County">
+              <label for="partner-towns">Target Municipality / County <span aria-hidden="true">*</span></label>
+              <input type="text" id="partner-towns" name="partner_towns" required placeholder="e.g. Wayne, Montclair, Clifton, or Passaic County" aria-invalid="false">
             </div>
           </div>
 
           <div class="form-grid-2col">
             <div class="form-group">
-              <label for="partner-email">Email Address *</label>
-              <input type="email" id="partner-email" required placeholder="msmith@firm.com">
+              <label for="partner-email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="partner-email" name="partner_email" required placeholder="msmith@firm.com" autocomplete="email" autocorrect="off" autocapitalize="none" spellcheck="false" aria-invalid="false">
             </div>
             <div class="form-group">
-              <label for="partner-phone">Phone Number *</label>
-              <input type="tel" id="partner-phone" required placeholder="(973) 555-0123">
+              <label for="partner-phone">Phone Number <span aria-hidden="true">*</span></label>
+              <input type="tel" id="partner-phone" name="partner_phone" required placeholder="(973) 555-0123" autocomplete="tel" inputmode="tel" aria-invalid="false">
             </div>
           </div>
 
           <div class="form-group">
             <label for="partner-message">Notes or Sponsorship Inquiries</label>
-            <textarea id="partner-message" rows="2" placeholder="Tell us about your practice or desired sponsorship coverage..."></textarea>
+            <textarea id="partner-message" name="partner_message" rows="2" placeholder="Tell us about your practice or desired sponsorship coverage..."></textarea>
           </div>
 
           <div class="modern-dialog-footer" style="padding: 16px 0 0 0; background: transparent; border: none; justify-content: flex-end;">
@@ -983,7 +1000,7 @@
           </div>
         </form>
 
-        <div id="partner-inquire-success" style="display: none;" class="attorney-lead-success-card">
+        <div id="partner-inquire-success" style="display: none;" class="attorney-lead-success-card" role="status" aria-live="polite">
           <div class="success-icon">✓</div>
           <h4>Partnership Inquiry Received!</h4>
           <p>Thank you for your interest in sponsoring MyTownLens. Our municipal partnerships coordinator will contact you within <strong>1 business day</strong> with availability and exclusive town sponsorship rates.</p>
@@ -1011,7 +1028,7 @@
           <!-- Populated by JS: Address, Block/Lot, Town, Est. Value -->
         </div>
 
-        <form id="realtor-lead-form" class="realtor-lead-form" onsubmit="handleRealtorLeadSubmit(event)">
+        <form id="realtor-lead-form" class="realtor-lead-form" method="post" aria-labelledby="realtor-dialog-title" onsubmit="handleRealtorLeadSubmit(event)">
           <div class="attorney-contingency-notice" style="background: #f0fdf4; border-color: #bbf7d0; color: #166534;">
             <span class="notice-icon">💎</span>
             <div class="notice-text">
@@ -1021,23 +1038,23 @@
 
           <div class="form-grid-2col">
             <div class="form-group">
-              <label for="realtor-lead-name">Full Name *</label>
-              <input type="text" id="realtor-lead-name" required placeholder="e.g. Robert Johnson" autocomplete="name">
+              <label for="realtor-lead-name">Full Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="realtor-lead-name" name="full_name" required placeholder="e.g. Robert Johnson" autocomplete="name" aria-invalid="false">
             </div>
             <div class="form-group">
-              <label for="realtor-lead-phone">Phone Number *</label>
-              <input type="tel" id="realtor-lead-phone" required placeholder="(973) 555-0144" autocomplete="tel">
+              <label for="realtor-lead-phone">Phone Number <span aria-hidden="true">*</span></label>
+              <input type="tel" id="realtor-lead-phone" name="phone" required placeholder="(973) 555-0144" autocomplete="tel" inputmode="tel" aria-invalid="false">
             </div>
           </div>
 
           <div class="form-grid-2col">
             <div class="form-group">
-              <label for="realtor-lead-email">Email Address *</label>
-              <input type="email" id="realtor-lead-email" required placeholder="robert@example.com" autocomplete="email">
+              <label for="realtor-lead-email">Email Address <span aria-hidden="true">*</span></label>
+              <input type="email" id="realtor-lead-email" name="email" required placeholder="robert@example.com" autocomplete="email" autocorrect="off" autocapitalize="none" spellcheck="false" aria-invalid="false">
             </div>
             <div class="form-group">
               <label for="realtor-lead-timeline">Homeowner Timeline</label>
-              <select id="realtor-lead-timeline">
+              <select id="realtor-lead-timeline" name="timeline">
                 <option value="curious">Just curious about market value</option>
                 <option value="1-3_months">Planning to sell in 1–3 months</option>
                 <option value="3-6_months">Planning to sell in 3–6 months</option>
@@ -1049,11 +1066,11 @@
 
           <div class="form-group">
             <label for="realtor-lead-notes">Interior Upgrades or Special Features (Kitchen, baths, finished basement, pool, additions)</label>
-            <textarea id="realtor-lead-notes" rows="2" placeholder="e.g. Renovated master bath in 2024, new central AC, finished basement..."></textarea>
+            <textarea id="realtor-lead-notes" name="notes" rows="2" placeholder="e.g. Renovated master bath in 2024, new central AC, finished basement..."></textarea>
           </div>
 
           <div class="lead-consent-row">
-            <input type="checkbox" id="realtor-lead-consent" required checked>
+            <input type="checkbox" id="realtor-lead-consent" name="consent" required checked>
             <label for="realtor-lead-consent">I authorize MyTownLens to connect me with a certified, top-rated local real estate specialist in my municipality for a free Comparative Market Analysis (CMA).</label>
           </div>
 
@@ -1063,12 +1080,15 @@
           </div>
         </form>
 
-        <div id="realtor-lead-success" style="display: none;" class="attorney-lead-success-card">
+        <div id="realtor-lead-success" style="display: none;" class="attorney-lead-success-card" role="status" aria-live="polite">
           <div class="success-icon" style="background: #ecfdf5; color: #047857;">✓</div>
           <h4>Valuation Request Received!</h4>
           <p>Your request for <strong id="realtor-success-addr"></strong> has been received. A top-rated neighborhood real estate specialist in your municipality will prepare your custom Comparative Market Analysis (CMA) and contact you within <strong>24 hours</strong>.</p>
           <div class="success-stat-box" id="realtor-success-summary"></div>
-          <button type="button" class="btn-dialog-close-btn" onclick="closeRealtorValuationModal()">Done</button>
+          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <button type="button" class="btn-admin-action" onclick="copyLatestSubmittedDossier('realtor')"><span>📋</span> Copy My CMA Request Receipt</button>
+            <button type="button" class="btn-dialog-close-btn" onclick="closeRealtorValuationModal()">Done</button>
+          </div>
         </div>
       </div>
     </div>
@@ -1076,11 +1096,11 @@
 
   <!-- Modal Dialog: 📊 Owner Lead Management & CSV Export Console -->
   <dialog id="admin-leads-dialog" class="modern-modal-dialog admin-leads-dialog" closedby="any" aria-labelledby="admin-dialog-title">
-    <div class="modern-dialog-wrapper" style="max-width: 960px;">
+    <div class="modern-dialog-wrapper" style="max-width: 1040px;">
       <div class="modern-dialog-header">
         <div class="modern-dialog-title-block">
-          <h3 id="admin-dialog-title"><span>📊</span> MyTownLens Owner Lead &amp; Sponsorship Console</h3>
-          <div class="modern-dialog-subtitle">Confidential management dashboard for homeowner tax appeal leads, realtor valuation inquiries, &amp; sponsorships</div>
+          <h3 id="admin-dialog-title"><span>📊</span> MyTownLens Owner Lead &amp; Buyer Dispatch Console</h3>
+          <div class="modern-dialog-subtitle">Manage homeowner tax appeal dockets, Realtor CMA inquiries, buyer dispatch packets, &amp; town sponsorships</div>
         </div>
         <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="closeAdminLeadsModal()">✕</button>
       </div>
@@ -1103,7 +1123,7 @@
             <span class="admin-kpi-sub">Active Municipal Applicants</span>
           </div>
           <div class="admin-kpi-card">
-            <span class="admin-kpi-lbl">Webhook Alerts</span>
+            <span class="admin-kpi-lbl">Webhook &amp; Buyer Routing</span>
             <span class="admin-kpi-val" id="admin-kpi-webhook-status">Local</span>
             <span class="admin-kpi-sub" id="admin-kpi-webhook-sub">Instant Forwarding Ready</span>
           </div>
@@ -1111,18 +1131,24 @@
 
         <!-- Navigation Filter Tabs -->
         <div class="admin-tab-bar">
-          <button type="button" class="admin-tab-btn active" onclick="switchAdminTab('appeals')" id="admin-tab-appeals-btn">Attorney Leads</button>
-          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('realtor')" id="admin-tab-realtor-btn">Realtor Leads</button>
-          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('partners')" id="admin-tab-partners-btn">Sponsorships</button>
-          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('settings')" id="admin-tab-settings-btn">Webhook &amp; Alerts</button>
+          <button type="button" class="admin-tab-btn active" onclick="switchAdminTab('appeals')" id="admin-tab-appeals-btn">⚖️ Attorney Leads (Golden Dockets)</button>
+          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('realtor')" id="admin-tab-realtor-btn">🏡 Realtor CMA Leads</button>
+          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('partners')" id="admin-tab-partners-btn">🤝 Sponsorship Inquiries</button>
+          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('sponsors')" id="admin-tab-sponsors-btn">⭐ Town Sponsors Directory</button>
+          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('settings')" id="admin-tab-settings-btn">⚡ Webhook &amp; Buyer Setup</button>
         </div>
 
         <!-- Panel 1: Attorney Appeal Leads Table -->
         <div id="admin-panel-appeals" class="admin-panel">
-          <div class="admin-panel-actions">
-            <span style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">Homeowner Tax Appeal Inquiries</span>
-            <div style="display: flex; gap: 8px;">
-              <button type="button" class="btn-admin-action" onclick="exportLeadsCSV('appeals')">📥 Export CSV</button>
+          <div class="admin-panel-actions" style="flex-wrap: wrap; gap: 8px;">
+            <div>
+              <span style="font-weight: 800; font-size: 0.9rem; color: #0f172a;">Pre-Qualified Homeowner Tax Appeal Case Dockets</span>
+              <div style="font-size: 0.76rem; color: #64748b;">Includes homeowner contact, Block/Lot/PIN, Ch. 123 variance, &amp; verified MOD-IV street comps</div>
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button type="button" class="btn-admin-secondary" onclick="generateSampleQualifiedLead('appeals')" title="Pull a real over-assessed MOD-IV parcel &amp; comps to test or send to attorneys">⚡ Generate Sample Lead</button>
+              <button type="button" class="btn-admin-secondary" onclick="copyBuyerPitchScript('attorney')" title="Copy outreach script to pitch local NJ tax appeal attorneys">📨 Copy Attorney Pitch</button>
+              <button type="button" class="btn-admin-action" onclick="exportLeadsCSV('appeals')">📥 Export Full CSV</button>
               <button type="button" class="btn-admin-danger" onclick="clearLeadsData('appeals')">Clear</button>
             </div>
           </div>
@@ -1131,12 +1157,12 @@
               <thead>
                 <tr>
                   <th>Timestamp</th>
-                  <th>Applicant</th>
+                  <th>Homeowner</th>
                   <th>Phone / Email</th>
-                  <th>Property Address</th>
+                  <th>Parcel &amp; MOD-IV Record</th>
                   <th>Town</th>
-                  <th>Est. Savings</th>
-                  <th>Pref / Notes</th>
+                  <th>Case Merits &amp; Comps</th>
+                  <th>Buyer Dispatch</th>
                 </tr>
               </thead>
               <tbody id="admin-tbody-appeals">
@@ -1148,9 +1174,14 @@
 
         <!-- Panel 2: Realtor Valuation Leads Table -->
         <div id="admin-panel-realtor" class="admin-panel" style="display: none;">
-          <div class="admin-panel-actions">
-            <span style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">Homeowner Valuation &amp; CMA Requests</span>
-            <div style="display: flex; gap: 8px;">
+          <div class="admin-panel-actions" style="flex-wrap: wrap; gap: 8px;">
+            <div>
+              <span style="font-weight: 800; font-size: 0.9rem; color: #0f172a;">Homeowner Valuation &amp; Listing CMA Requests</span>
+              <div style="font-size: 0.76rem; color: #64748b;">High-intent seller &amp; refinance valuation leads with property specs and timeline</div>
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button type="button" class="btn-admin-secondary" onclick="generateSampleQualifiedLead('realtor')">⚡ Generate Sample CMA Lead</button>
+              <button type="button" class="btn-admin-secondary" onclick="copyBuyerPitchScript('realtor')">📨 Copy Realtor Pitch</button>
               <button type="button" class="btn-admin-action" onclick="exportLeadsCSV('realtor')">📥 Export CSV</button>
               <button type="button" class="btn-admin-danger" onclick="clearLeadsData('realtor')">Clear</button>
             </div>
@@ -1162,10 +1193,10 @@
                   <th>Timestamp</th>
                   <th>Homeowner</th>
                   <th>Phone / Email</th>
-                  <th>Address</th>
+                  <th>Property Address</th>
                   <th>Town</th>
-                  <th>Est. Value</th>
-                  <th>Timeline / Notes</th>
+                  <th>Est. Market Value</th>
+                  <th>Buyer Dispatch</th>
                 </tr>
               </thead>
               <tbody id="admin-tbody-realtor">
@@ -1204,21 +1235,123 @@
           </div>
         </div>
 
-        <!-- Panel 4: Webhook Integration Settings -->
+        <!-- Panel 4: Webhook Integration & Partner Routing Settings -->
         <div id="admin-panel-settings" class="admin-panel" style="display: none;">
           <div class="admin-settings-box">
-            <h4 style="margin: 0 0 6px 0; font-size: 0.96rem; font-weight: 800; color: #0f172a;">⚡ Real-Time Instant Lead Forwarding (Slack / Discord / Zapier / Formspree)</h4>
-            <p style="margin: 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Paste a webhook URL to receive instant push alerts on your phone or email whenever a new homeowner lead or sponsorship inquiry is submitted on MyTownLens.</p>
-            <div class="form-group" style="margin-top: 12px;">
-              <label for="admin-webhook-url">Webhook URL (POST JSON payload)</label>
-              <input type="url" id="admin-webhook-url" placeholder="https://hooks.slack.com/services/... or https://formspree.io/f/..." style="width: 100%; padding: 10px 14px; font-family: var(--font-mono); font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+            <h4 style="margin: 0 0 6px 0; font-size: 0.96rem; font-weight: 800; color: #0f172a;">⚡ Automated Lead Delivery &amp; Buyer Routing</h4>
+            <p style="margin: 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Configure where leads are automatically delivered when a homeowner submits a request, plus set your default Partner Attorney / Realtor email for 1-click case dispatch.</p>
+            <div class="form-grid-2col" style="margin-top: 12px;">
+              <div class="form-group">
+                <label for="admin-webhook-url">Webhook URL (Formspree / Web3Forms / Zapier / Make / Slack)</label>
+                <input type="url" id="admin-webhook-url" placeholder="https://formspree.io/f/... or https://hooks.zapier.com/..." style="width: 100%; padding: 10px 14px; font-family: var(--font-mono); font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+              </div>
+              <div class="form-group">
+                <label for="admin-partner-email">Partner Buyer Intake Email (For 1-Click Case Dispatch)</label>
+                <input type="email" id="admin-partner-email" placeholder="intake@njtaxappeallaw.com" style="width: 100%; padding: 10px 14px; font-family: var(--font-mono); font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+              </div>
             </div>
-            <div style="display: flex; gap: 10px; margin-top: 14px;">
-              <button type="button" class="btn-admin-action" onclick="saveAdminWebhook()">Save Webhook</button>
-              <button type="button" class="btn-admin-secondary" onclick="testAdminWebhook()">Send Test Ping</button>
+            <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+              <button type="button" class="btn-admin-action" onclick="saveAdminWebhook()">💾 Save Delivery Settings</button>
+              <button type="button" class="btn-admin-secondary" onclick="testAdminWebhook()">📡 Send Test Lead Ping</button>
+              <button type="button" class="btn-admin-secondary" onclick="copyBuyerPitchScript('attorney')">📨 Copy Attorney Cold-Pitch Email</button>
             </div>
             <div id="admin-webhook-status-msg" style="margin-top: 10px; font-size: 0.82rem;"></div>
           </div>
+        </div>
+
+        <!-- Panel 5: Town Sponsor Assignment & Directory -->
+        <div id="admin-panel-sponsors" class="admin-panel" style="display: none;">
+          <div class="admin-settings-box" style="margin-bottom: 16px;">
+            <h4 style="margin: 0 0 6px 0; font-size: 0.96rem; font-weight: 800; color: #0f172a;">⭐ Assign Exclusive Municipal Sponsor</h4>
+            <p style="margin: 0 0 12px 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Feature an exclusive verified attorney, real estate broker, or closing firm as the official partner for any of the 47 municipalities.</p>
+            
+            <form id="admin-sponsor-form" onsubmit="handleSaveTownSponsor(event)">
+              <div class="form-grid-2col">
+                <div class="form-group">
+                  <label for="sponsor-assign-town">Municipality (47 Towns)</label>
+                  <select id="sponsor-assign-town" required style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                    <!-- Populated by JS with all 47 towns -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="sponsor-assign-role">Sponsorship Role / Category</label>
+                  <select id="sponsor-assign-role" required style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                    <option value="Exclusive Municipal Property Tax Attorney">Exclusive Municipal Property Tax Attorney</option>
+                    <option value="Exclusive Local Real Estate Specialist">Exclusive Local Real Estate Specialist</option>
+                    <option value="Official Municipal Title &amp; Closing Partner">Official Municipal Title &amp; Closing Partner</option>
+                    <option value="Certified Home Services &amp; Appraisal Partner">Certified Home Services &amp; Appraisal Partner</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid-2col" style="margin-top: 10px;">
+                <div class="form-group">
+                  <label for="sponsor-assign-name">Firm / Professional Name *</label>
+                  <input type="text" id="sponsor-assign-name" required placeholder="e.g. Goldman &amp; Associates Property Tax Law" style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                </div>
+                <div class="form-group">
+                  <label for="sponsor-assign-phone">Contact Phone *</label>
+                  <input type="tel" id="sponsor-assign-phone" required placeholder="e.g. (973) 555-0199" style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                </div>
+              </div>
+
+              <div class="form-grid-2col" style="margin-top: 10px;">
+                <div class="form-group">
+                  <label for="sponsor-assign-url">Website / Profile URL</label>
+                  <input type="url" id="sponsor-assign-url" placeholder="https://..." style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                </div>
+                <div class="form-group">
+                  <label for="sponsor-assign-rate">Monthly Recurring Rate (MRR)</label>
+                  <input type="text" id="sponsor-assign-rate" placeholder="e.g. $250 / mo" style="width: 100%; padding: 8px 12px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px;">
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 10px; margin-top: 14px;">
+                <button type="submit" class="btn-admin-action">💾 Save Sponsor Assignment</button>
+                <button type="button" class="btn-admin-secondary" onclick="resetSponsorForm()">Clear Form</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="admin-panel-actions">
+            <span style="font-weight: 700; font-size: 0.88rem; color: #0f172a;">All 47 Municipalities Sponsorship Roster (<span id="admin-sponsor-count-active">0</span> Active / <span id="admin-sponsor-mrr-total">$0</span> MRR)</span>
+            <button type="button" class="btn-admin-action" onclick="exportSponsorsCSV()">📥 Export Roster CSV</button>
+          </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="admin-table-sponsors">
+              <thead>
+                <tr>
+                  <th>Municipality</th>
+                  <th>County</th>
+                  <th>Status</th>
+                  <th>Sponsoring Firm</th>
+                  <th>Role</th>
+                  <th>Contact</th>
+                  <th>Rate</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-tbody-sponsors">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Live Lead Dossier Inspector Drawer -->
+        <div id="admin-dossier-inspector" class="admin-dossier-inspector" style="display: none;">
+          <div class="dossier-inspector-header">
+            <div>
+              <strong id="admin-dossier-title" style="font-size: 0.92rem; color: #0f172a;">📄 Pre-Qualified Lead Case Dossier</strong>
+              <span id="admin-dossier-subtitle" style="display: block; font-size: 0.76rem; color: #64748b;">Ready to forward to partner tax appeal attorney or appraiser</span>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="btn-admin-action" id="btn-dossier-copy" onclick="copyActiveInspectedDossier()">📋 Copy Full Dossier</button>
+              <button type="button" class="btn-admin-secondary" id="btn-dossier-email" onclick="emailActiveInspectedDossier()">📧 Email to Partner</button>
+              <button type="button" class="btn-dialog-close-btn" onclick="closeLeadDossierPreview()">Close Preview</button>
+            </div>
+          </div>
+          <pre id="admin-dossier-pre" class="admin-dossier-pre"></pre>
         </div>
       </div>
       <div class="modern-dialog-footer">

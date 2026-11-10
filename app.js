@@ -3809,6 +3809,46 @@ function updateElectionStaticCopy(cityId, meta) {
   }
 }
 
+// Dynamic Municipality Sponsor Header Pill & Callout
+function renderHeaderSponsorBadge(cityId) {
+  const container = document.getElementById('header-sponsor-container');
+  if (!container) return;
+
+  const targetId = cityId || currentCity;
+  const meta = CITY_REGISTRY[targetId] || CITY_REGISTRY.clifton;
+
+  let sponsors = {};
+  try {
+    sponsors = JSON.parse(localStorage.getItem('mytownlens_sponsors') || '{}');
+  } catch (e) {
+    sponsors = {};
+  }
+
+  const sp = sponsors[targetId];
+  if (sp && sp.name) {
+    const roleText = sp.role || 'Official Municipal Partner';
+    const linkTarget = sp.url ? sp.url : (sp.phone ? `tel:${sp.phone}` : '#');
+    container.innerHTML = `
+      <div class="header-sponsor-pill sponsor-claimed">
+        <span class="sponsor-star">⭐</span>
+        <span class="sponsor-role">${escapeHtml(roleText)}:</span>
+        <a href="${escapeHtml(linkTarget)}" target="_blank" rel="noopener" class="sponsor-firm-name">
+          ${escapeHtml(sp.name)}
+        </a>
+        ${sp.phone ? `<a href="tel:${escapeHtml(sp.phone)}" class="sponsor-tel-btn">📞 ${escapeHtml(sp.phone)}</a>` : ''}
+      </div>
+    `;
+  } else {
+    container.innerHTML = `
+      <button type="button" class="header-sponsor-pill sponsor-available" onclick="openPartnerInquiryModal('${escapeHtml(targetId)}')" title="Claim exclusive verified professional sponsorship for ${escapeHtml(meta.name)}">
+        <span class="sponsor-star">⭐</span>
+        <span class="sponsor-avail-text">Sponsor ${escapeHtml(meta.name)}:</span>
+        <strong class="sponsor-avail-cta">Available — Claim Municipality ➔</strong>
+      </button>
+    `;
+  }
+}
+
 // Dynamically update all static copy, headers, dropdowns, presets, and links for the active city
 function applyCityStaticCopy(cityId) {
   const meta = CITY_REGISTRY[cityId] || CITY_REGISTRY.clifton;
@@ -3834,6 +3874,22 @@ function applyCityStaticCopy(cityId) {
   setElText('header-badge-text', meta.badgeText);
   setElText('header-main-title', 'MyTownLens');
   setElText('header-main-subtitle', meta.subtitle);
+
+  // Render dynamic municipal sponsor header badge
+  renderHeaderSponsorBadge(cityId);
+
+  // Dynamic footer partner showcase strip text
+  const partnerStripText = document.querySelector('.partner-showcase-text span');
+  if (partnerStripText) {
+    let sponsors = {};
+    try { sponsors = JSON.parse(localStorage.getItem('mytownlens_sponsors') || '{}'); } catch (e) {}
+    const sp = sponsors[cityId];
+    if (sp && sp.name) {
+      partnerStripText.innerHTML = `<strong>Official ${escapeHtml(meta.name)} Partner:</strong> ${escapeHtml(sp.name)} (${escapeHtml(sp.role || 'Exclusive Municipal Partner')}) &bull; Professional inquiries for adjacent towns are welcome.`;
+    } else {
+      partnerStripText.innerHTML = `<strong>Are you a licensed NJ Realtor, Property Tax Appeal Attorney, or Home Services Specialist in ${escapeHtml(meta.name)}?</strong> Sponsoring ${escapeHtml(meta.name)} puts your practice directly in front of thousands of active local homeowners.`;
+    }
+  }
 
   setElText('hdr-stat1-label', 'Certified Tax Rate (2026) ↗');
   setElText('hdr-stat1-num', meta.certifiedTaxRate);
@@ -7736,10 +7792,11 @@ function handleAttorneyLeadSubmit(e) {
 // ==========================================================================
 // MONETIZATION FEATURE 2: 🤝 Partner with MyTownLens (Municipal Sponsorship)
 // ==========================================================================
-function openPartnerInquiryModal() {
+function openPartnerInquiryModal(targetCityId) {
   const modal = document.getElementById('partner-inquire-dialog');
   if (!modal) return;
-  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const cityKey = (typeof targetCityId === 'string' && CITY_REGISTRY[targetCityId]) ? targetCityId : currentCity;
+  const meta = CITY_REGISTRY[cityKey] || CITY_REGISTRY.clifton;
 
   const townsInput = document.getElementById('partner-towns');
   if (townsInput) townsInput.value = `${meta.name}, ${meta.countyShort}`;
@@ -7960,6 +8017,7 @@ function openAdminLeadsModal() {
   const modal = document.getElementById('admin-leads-dialog');
   if (!modal) return;
   renderAdminLeadsData();
+  renderAdminSponsorsData();
   if (typeof modal.showModal === 'function') {
     modal.showModal();
   } else {
@@ -7978,7 +8036,7 @@ function closeAdminLeadsModal() {
 }
 
 function switchAdminTab(tabName) {
-  const tabs = ['appeals', 'realtor', 'partners', 'settings'];
+  const tabs = ['appeals', 'realtor', 'partners', 'settings', 'sponsors'];
   tabs.forEach(t => {
     const btn = document.getElementById(`admin-tab-${t}-btn`);
     const panel = document.getElementById(`admin-panel-${t}`);
@@ -7990,6 +8048,9 @@ function switchAdminTab(tabName) {
       panel.style.display = (t === tabName) ? 'block' : 'none';
     }
   });
+  if (tabName === 'sponsors') {
+    renderAdminSponsorsData();
+  }
 }
 
 function renderAdminLeadsData() {
@@ -8298,6 +8359,237 @@ function testAdminWebhook() {
       msgEl.innerHTML = `<span style="color: #f59e0b;">⚠️ Ping sent (Note: Browser CORS may restrict reading response, but server likely received payload). Detail: ${escapeHtml(err.message)}</span>`;
     }
   });
+}
+
+// ==========================================================================
+// MONETIZATION FEATURE 5: ⭐ Municipal Sponsor Management & Roster Engine
+// ==========================================================================
+function populateSponsorTownDropdown() {
+  const select = document.getElementById('sponsor-assign-town');
+  if (!select || select.children.length > 0) return;
+
+  const towns = Object.values(CITY_REGISTRY).sort((a, b) => a.name.localeCompare(b.name));
+  select.innerHTML = towns.map(t => `
+    <option value="${escapeHtml(t.id)}">${escapeHtml(t.name)} (${escapeHtml(t.countyShort || t.county)})</option>
+  `).join('');
+}
+
+function renderAdminSponsorsData() {
+  populateSponsorTownDropdown();
+
+  let sponsors = {};
+  try {
+    sponsors = JSON.parse(localStorage.getItem('mytownlens_sponsors') || '{}');
+  } catch (e) {
+    sponsors = {};
+  }
+
+  const towns = Object.values(CITY_REGISTRY).sort((a, b) => a.name.localeCompare(b.name));
+  const tbody = document.getElementById('admin-tbody-sponsors');
+
+  let activeCount = 0;
+  let totalMRR = 0;
+
+  if (tbody) {
+    tbody.innerHTML = towns.map(t => {
+      const sp = sponsors[t.id];
+      const isClaimed = Boolean(sp && sp.name);
+      if (isClaimed) {
+        activeCount++;
+        const numRate = parseFloat(String(sp.rate || '').replace(/[^0-9.]/g, '')) || 0;
+        totalMRR += numRate;
+      }
+
+      const statusBadge = isClaimed
+        ? `<span style="display: inline-block; padding: 2px 7px; font-size: 0.72rem; border-radius: 999px; background: #dcfce7; color: #15803d; font-weight: 700;">● Active</span>`
+        : `<span style="display: inline-block; padding: 2px 7px; font-size: 0.72rem; border-radius: 999px; background: #f1f5f9; color: #64748b; font-weight: 700;">Available</span>`;
+
+      const firmDisplay = isClaimed
+        ? `<strong>${escapeHtml(sp.name)}</strong>`
+        : `<span style="color: #94a3b8; font-style: italic;">— Unclaimed —</span>`;
+
+      const roleDisplay = isClaimed ? escapeHtml(sp.role || 'Partner') : '—';
+      const contactDisplay = isClaimed
+        ? `<div>${escapeHtml(sp.phone || '—')}</div>${sp.url ? `<a href="${escapeHtml(sp.url)}" target="_blank" rel="noopener" style="font-size: 0.74rem; color: #2563eb;">Link ↗</a>` : ''}`
+        : '—';
+
+      const rateDisplay = isClaimed ? (sp.rate || '$250 / mo') : '—';
+
+      const actions = isClaimed
+        ? `<div style="display: flex; gap: 4px;">
+            <button type="button" class="btn-sponsor-table-edit" onclick="editTownSponsor('${escapeHtml(t.id)}')">Edit</button>
+            <button type="button" class="btn-sponsor-table-clear" onclick="removeTownSponsor('${escapeHtml(t.id)}')">Clear</button>
+           </div>`
+        : `<button type="button" class="btn-sponsor-table-edit" onclick="editTownSponsor('${escapeHtml(t.id)}')">Assign</button>`;
+
+      return `
+        <tr>
+          <td><strong>${escapeHtml(t.name)}</strong></td>
+          <td style="font-size: 0.78rem; color: #64748b;">${escapeHtml(t.countyShort || t.county)}</td>
+          <td>${statusBadge}</td>
+          <td>${firmDisplay}</td>
+          <td style="font-size: 0.78rem; color: #334155;">${roleDisplay}</td>
+          <td style="font-size: 0.78rem;">${contactDisplay}</td>
+          <td style="font-size: 0.78rem; font-weight: 700; color: #0f172a;">${escapeHtml(rateDisplay)}</td>
+          <td>${actions}</td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  // Update Counters
+  const countEl = document.getElementById('admin-sponsor-count-active');
+  const mrrEl = document.getElementById('admin-sponsor-mrr-total');
+  if (countEl) countEl.textContent = activeCount;
+  if (mrrEl) mrrEl.textContent = `$${totalMRR.toLocaleString()}`;
+
+  // Update Partner KPI sub text
+  const partnerSubEl = document.getElementById('admin-kpi-partner-sub');
+  if (partnerSubEl) {
+    partnerSubEl.textContent = `${activeCount} / 47 Active • $${totalMRR.toLocaleString()} MRR`;
+  }
+}
+
+function handleSaveTownSponsor(e) {
+  e.preventDefault();
+  const townId = document.getElementById('sponsor-assign-town')?.value;
+  const name = document.getElementById('sponsor-assign-name')?.value?.trim();
+  const role = document.getElementById('sponsor-assign-role')?.value;
+  const phone = document.getElementById('sponsor-assign-phone')?.value?.trim();
+  const url = document.getElementById('sponsor-assign-url')?.value?.trim();
+  const rate = document.getElementById('sponsor-assign-rate')?.value?.trim() || '$250 / mo';
+
+  if (!townId || !name || !phone) {
+    showToast('⚠️ Please fill in all required fields (Town, Name, Phone)');
+    return;
+  }
+
+  let sponsors = {};
+  try {
+    sponsors = JSON.parse(localStorage.getItem('mytownlens_sponsors') || '{}');
+  } catch (err) {
+    sponsors = {};
+  }
+
+  sponsors[townId] = {
+    townId,
+    name,
+    role,
+    phone,
+    url,
+    rate,
+    assignedAt: new Date().toISOString()
+  };
+
+  try {
+    localStorage.setItem('mytownlens_sponsors', JSON.stringify(sponsors));
+  } catch (err) {
+    console.warn('LocalStorage sponsor save error:', err);
+  }
+
+  const meta = CITY_REGISTRY[townId] || CITY_REGISTRY.clifton;
+  renderAdminSponsorsData();
+  renderHeaderSponsorBadge(currentCity);
+  resetSponsorForm();
+  showToast(`✓ Assigned exclusive sponsor for ${meta.name}`);
+}
+
+function editTownSponsor(townId) {
+  const select = document.getElementById('sponsor-assign-town');
+  const nameInput = document.getElementById('sponsor-assign-name');
+  const roleSelect = document.getElementById('sponsor-assign-role');
+  const phoneInput = document.getElementById('sponsor-assign-phone');
+  const urlInput = document.getElementById('sponsor-assign-url');
+  const rateInput = document.getElementById('sponsor-assign-rate');
+
+  populateSponsorTownDropdown();
+  if (select) select.value = townId;
+
+  let sponsors = {};
+  try {
+    sponsors = JSON.parse(localStorage.getItem('mytownlens_sponsors') || '{}');
+  } catch (e) {}
+
+  const sp = sponsors[townId];
+  if (sp) {
+    if (nameInput) nameInput.value = sp.name || '';
+    if (roleSelect && sp.role) roleSelect.value = sp.role;
+    if (phoneInput) phoneInput.value = sp.phone || '';
+    if (urlInput) urlInput.value = sp.url || '';
+    if (rateInput) rateInput.value = sp.rate || '$250 / mo';
+  } else {
+    resetSponsorForm();
+    if (select) select.value = townId;
+  }
+
+  if (nameInput) {
+    nameInput.focus();
+    nameInput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+function removeTownSponsor(townId) {
+  const meta = CITY_REGISTRY[townId] || CITY_REGISTRY.clifton;
+  if (!confirm(`Are you sure you want to remove the exclusive sponsor for ${meta.name}?`)) return;
+
+  let sponsors = {};
+  try {
+    sponsors = JSON.parse(localStorage.getItem('mytownlens_sponsors') || '{}');
+  } catch (e) {}
+
+  delete sponsors[townId];
+  localStorage.setItem('mytownlens_sponsors', JSON.stringify(sponsors));
+
+  renderAdminSponsorsData();
+  renderHeaderSponsorBadge(currentCity);
+  showToast(`Removed sponsor for ${meta.name}`);
+}
+
+function resetSponsorForm() {
+  const form = document.getElementById('admin-sponsor-form');
+  if (form) form.reset();
+}
+
+function exportSponsorsCSV() {
+  let sponsors = {};
+  try {
+    sponsors = JSON.parse(localStorage.getItem('mytownlens_sponsors') || '{}');
+  } catch (e) {}
+
+  const towns = Object.values(CITY_REGISTRY).sort((a, b) => a.name.localeCompare(b.name));
+  const rows = [];
+
+  const escapeCSV = (val) => {
+    if (val === null || val === undefined) return '""';
+    const s = String(val).replace(/"/g, '""');
+    return `"${s}"`;
+  };
+
+  rows.push(['Municipality', 'County', 'Status', 'Sponsoring Firm', 'Role', 'Contact Phone', 'Website URL', 'Monthly Recurring Rate', 'Assigned At'].map(escapeCSV).join(','));
+
+  towns.forEach(t => {
+    const sp = sponsors[t.id];
+    rows.push([
+      t.name,
+      t.countyShort || t.county,
+      sp ? 'Active' : 'Available',
+      sp?.name || '',
+      sp?.role || '',
+      sp?.phone || '',
+      sp?.url || '',
+      sp?.rate || '',
+      sp?.assignedAt || ''
+    ].map(escapeCSV).join(','));
+  });
+
+  const csvContent = 'data:text/csv;charset=utf-8,' + encodeURIComponent(rows.join('\n'));
+  const link = document.createElement('a');
+  link.setAttribute('href', csvContent);
+  link.setAttribute('download', `mytownlens_sponsorship_roster_${Date.now()}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  showToast(`✓ Exported 47 municipalities roster to CSV`);
 }
 
 // --------------------------------------------------------------------------
@@ -17569,6 +17861,13 @@ window.clearLeadsData = clearLeadsData;
 window.saveAdminWebhook = saveAdminWebhook;
 window.testAdminWebhook = testAdminWebhook;
 window.dispatchLeadWebhook = dispatchLeadWebhook;
+window.renderHeaderSponsorBadge = renderHeaderSponsorBadge;
+window.renderAdminSponsorsData = renderAdminSponsorsData;
+window.handleSaveTownSponsor = handleSaveTownSponsor;
+window.editTownSponsor = editTownSponsor;
+window.removeTownSponsor = removeTownSponsor;
+window.resetSponsorForm = resetSponsorForm;
+window.exportSponsorsCSV = exportSponsorsCSV;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },

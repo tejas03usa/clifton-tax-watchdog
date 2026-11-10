@@ -18467,3 +18467,126 @@ dialog.omnibox-dialog::backdrop {
 .footer-admin-link:hover {
   color: #2563eb;
 }
+
+/* ==========================================================================
+   DYNAMIC MUNICIPAL SPONSOR PLACEMENTS & ROSTER STYLING
+   ========================================================================== */
+
+.header-sponsor-container {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.header-sponsor-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  line-height: 1.25;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.header-sponsor-pill.sponsor-available {
+  background: #f8fafc;
+  border: 1px dashed #94a3b8;
+  color: #475569;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header-sponsor-pill.sponsor-available:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1e40af;
+  border-style: solid;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12);
+}
+
+.sponsor-avail-cta {
+  color: #2563eb;
+  text-decoration: underline;
+  margin-left: 2px;
+}
+
+.header-sponsor-pill.sponsor-claimed {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  color: #065f46;
+  box-shadow: 0 1px 4px rgba(16, 185, 129, 0.12);
+}
+
+.header-sponsor-pill.sponsor-claimed .sponsor-firm-name {
+  color: #047857;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.header-sponsor-pill.sponsor-claimed .sponsor-firm-name:hover {
+  text-decoration: underline;
+}
+
+.header-sponsor-pill.sponsor-claimed .sponsor-tel-btn {
+  background: #10b981;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-decoration: none;
+  margin-left: 4px;
+  transition: background 0.15s ease;
+}
+
+.header-sponsor-pill.sponsor-claimed .sponsor-tel-btn:hover {
+  background: #059669;
+}
+
+.btn-sponsor-table-edit {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-sponsor-table-edit:hover {
+  background: #dbeafe;
+}
+
+.btn-sponsor-table-clear {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-sponsor-table-clear:hover {
+  background: #fecaca;
+}
+
+@media (max-width: 900px) {
+  .header-location-picker-wrap {
+    flex-wrap: wrap;
+  }
+  .header-sponsor-container {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 6px;
+  }
+  .header-sponsor-pill {
+    width: 100%;
+    justify-content: center;
+  }
+}
