@@ -523,6 +523,34 @@
             <!-- Rendered by JS from data/commercial_pilot_shift.json -->
           </div>
 
+          <!-- Interactive Property Tier Tax Shift Impact Calculator -->
+          <div class="tier-shift-calculator-card" id="tier-shift-calculator" style="margin: 24px 0; padding: 22px; background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-lg); box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border-light);">
+              <div>
+                <span class="badge-alert" style="background: #fef3c7; color: #92400e; font-weight: 700; font-size: 0.76rem; padding: 3px 8px; border-radius: 4px;">Audited Shift By Housing Tier</span>
+                <h4 style="margin: 6px 0 2px 0; font-size: 1.18rem; font-weight: 800; color: var(--text-main);">How Much Does the Commercial &amp; PILOT Shift Cost Your Home?</h4>
+                <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">Select your property tier to see your certified annual tax penalty from the commercial ratable collapse and tax abatements:</p>
+              </div>
+              <div style="font-size: 0.8rem; background: #eff6ff; padding: 6px 12px; border-radius: var(--radius-pill); border: 1px solid #bfdbfe; color: #1e40af; font-weight: 700;">
+                Certified 2025 Audit Note 17
+              </div>
+            </div>
+
+            <!-- Tier Selector Pills -->
+            <div class="tier-selector-pills" id="tier-selector-pills" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;">
+              <button type="button" class="tier-pill-btn active" data-tier="median" onclick="selectPropertyShiftTier('median')">🏡 Typical Median ($550k Market)</button>
+              <button type="button" class="tier-pill-btn" data-tier="starter" onclick="selectPropertyShiftTier('starter')">🚪 Starter / Condo ($325k Market)</button>
+              <button type="button" class="tier-pill-btn" data-tier="luxury" onclick="selectPropertyShiftTier('luxury')">🏰 High-Value ($850k Market)</button>
+              <button type="button" class="tier-pill-btn" data-tier="multifamily" onclick="selectPropertyShiftTier('multifamily')">🏢 Two-Family ($750k Market)</button>
+              <button type="button" class="tier-pill-btn" data-tier="smallbiz" onclick="selectPropertyShiftTier('smallbiz')">🏪 Main St. Merchant ($1.2M)</button>
+            </div>
+
+            <!-- Dynamic Tier Impact Display Grid -->
+            <div class="tier-impact-grid" id="tier-impact-display">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
           <div class="shift-callout-grid">
             <div class="sc-item">
               <span class="sc-icon">📉</span>

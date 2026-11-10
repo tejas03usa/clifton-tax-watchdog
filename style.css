@@ -19185,3 +19185,91 @@ dialog.omnibox-dialog::backdrop {
   animation: pulseHalo 2s infinite ease-in-out;
   pointer-events: none;
 }
+
+/* Property Tier Shift Calculator Styles */
+.tier-selector-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tier-pill-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 7px 15px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.2;
+}
+
+.tier-pill-btn:hover {
+  background: #e2e8f0;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.tier-pill-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.28);
+}
+
+.tier-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.tier-stat-box {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.tier-stat-box.highlight-red {
+  border-color: #fecaca;
+  background: #fff5f5;
+}
+
+.tier-stat-box.highlight-amber {
+  border-color: #fde68a;
+  background: #fffbeb;
+}
+
+.tier-stat-box.highlight-blue {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.tier-stat-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 4px;
+  letter-spacing: 0.03em;
+}
+
+.tier-stat-num {
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.2;
+  font-family: var(--font-mono, monospace);
+  color: #0f172a;
+}
+
+.tier-stat-sub {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 4px;
+}

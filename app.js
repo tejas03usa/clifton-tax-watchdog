@@ -13299,6 +13299,112 @@ function renderIntelligenceReports() {
   renderVintageAnalysis();
 }
 
+const PROPERTY_SHIFT_TIERS = {
+  median: {
+    label: 'Typical Family Home (Median)',
+    icon: '🏡',
+    marketValue: 550000,
+    assessedRatio: 0.333,
+    assessedValue: 182500,
+    description: 'Median single-family home (Allwood, Dutch Hill, Maple Valley).',
+    annualShiftCost: 1240.25,
+    corporateAppealPenalty: 730.80,
+    pilotSchoolDeficit: 509.45,
+    decadeAccumulatedPenalty: 12402.50
+  },
+  starter: {
+    label: 'Starter Single-Family / Condo',
+    icon: '🚪',
+    marketValue: 325000,
+    assessedRatio: 0.333,
+    assessedValue: 108225,
+    description: 'Entry-level starter condo or cottage home (East Clifton, Main Ave).',
+    annualShiftCost: 735.50,
+    corporateAppealPenalty: 433.20,
+    pilotSchoolDeficit: 302.30,
+    decadeAccumulatedPenalty: 7355.00
+  },
+  luxury: {
+    label: 'Move-Up / High-Value Single-Family',
+    icon: '🏰',
+    marketValue: 850000,
+    assessedRatio: 0.333,
+    assessedValue: 283050,
+    description: 'Executive single-family residence (Montclair Heights, Albion, Valley Rd).',
+    annualShiftCost: 1920.80,
+    corporateAppealPenalty: 1131.35,
+    pilotSchoolDeficit: 789.45,
+    decadeAccumulatedPenalty: 19208.00
+  },
+  multifamily: {
+    label: 'Two-Family / Multi-Family Infill',
+    icon: '🏢',
+    marketValue: 750000,
+    assessedRatio: 0.333,
+    assessedValue: 249750,
+    description: 'Two-family owner-occupied or rental property (Botany Village, Lakeview).',
+    annualShiftCost: 1695.50,
+    corporateAppealPenalty: 998.65,
+    pilotSchoolDeficit: 696.85,
+    decadeAccumulatedPenalty: 16955.00
+  },
+  smallbiz: {
+    label: 'Main Street Local Merchant (Non-PILOT)',
+    icon: '🏪',
+    marketValue: 1200000,
+    assessedRatio: 0.333,
+    assessedValue: 399600,
+    description: 'Storefront or auto shop paying 100% full tax rate with ZERO abatement.',
+    annualShiftCost: 2715.00,
+    corporateAppealPenalty: 1599.10,
+    pilotSchoolDeficit: 1115.90,
+    decadeAccumulatedPenalty: 27150.00
+  }
+};
+
+let activePropertyShiftTier = 'median';
+
+function selectPropertyShiftTier(tierKey) {
+  activePropertyShiftTier = tierKey;
+  document.querySelectorAll('.tier-pill-btn').forEach(btn => {
+    if (btn.dataset.tier === tierKey) btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+  renderPropertyShiftTier(tierKey);
+}
+
+function renderPropertyShiftTier(tierKey) {
+  const container = document.getElementById('tier-impact-display');
+  if (!container) return;
+  const tier = PROPERTY_SHIFT_TIERS[tierKey] || PROPERTY_SHIFT_TIERS.median;
+
+  container.innerHTML = `
+    <div class="tier-stat-box highlight-amber">
+      <span class="tier-stat-label">Annual Extra Tax Penalty</span>
+      <span class="tier-stat-num" style="color: #b45309;">+${formatUSDWhole(tier.annualShiftCost)} <small style="font-size: 0.75rem;">/ yr</small></span>
+      <span class="tier-stat-sub">Shifted directly onto this ${tier.label.toLowerCase()} due to commercial ratable loss.</span>
+    </div>
+
+    <div class="tier-stat-box highlight-red">
+      <span class="tier-stat-label">10-Year Cumulative Cost</span>
+      <span class="tier-stat-num" style="color: #b91c1c;">+${formatUSDWhole(tier.decadeAccumulatedPenalty)}</span>
+      <span class="tier-stat-sub">Total extra taxes absorbed by this property tier since the 2016 ratable erosion.</span>
+    </div>
+
+    <div class="tier-stat-box">
+      <span class="tier-stat-label">Corporate Appeal Clawbacks</span>
+      <span class="tier-stat-num font-mono">${formatUSDWhole(tier.corporateAppealPenalty)} <small style="font-size: 0.75rem;">/ yr</small></span>
+      <span class="tier-stat-sub">Covers $22.5M in tax court cash refunds to Route 3 &amp; 46 corporate centers.</span>
+    </div>
+
+    <div class="tier-stat-box highlight-blue">
+      <span class="tier-stat-label">PILOT School Deficit Share</span>
+      <span class="tier-stat-num font-mono" style="color: #1d4ed8;">${formatUSDWhole(tier.pilotSchoolDeficit)} <small style="font-size: 0.75rem;">/ yr</small></span>
+      <span class="tier-stat-sub">Covers public school classroom costs while City Hall collects 95% and BOE receives $0.</span>
+    </div>
+  `;
+}
+
 // TAB 6: COMMERCIAL RATABLES & PILOT TAX SHIFT
 function renderCommercialPilot() {
   if (!commercialPilotData) return;
@@ -13341,6 +13447,9 @@ function renderCommercialPilot() {
       `;
     }).join('');
   }
+
+  // 1B. Interactive Property Tier Shift Calculator
+  renderPropertyShiftTier(activePropertyShiftTier);
 
   // 2. Interactive PILOT Simulator
   const projectSelect = document.getElementById('pilot-project-select');
@@ -20075,6 +20184,9 @@ window.getPropertyAppealSavingsEstimate = getPropertyAppealSavingsEstimate;
 window.toggleOverAssessedFilter = toggleOverAssessedFilter;
 window.renderCrossTownScatterMatrix = renderCrossTownScatterMatrix;
 window.filterScatterMatrixCounty = filterScatterMatrixCounty;
+window.PROPERTY_SHIFT_TIERS = PROPERTY_SHIFT_TIERS;
+window.selectPropertyShiftTier = selectPropertyShiftTier;
+window.renderPropertyShiftTier = renderPropertyShiftTier;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },
