@@ -2860,7 +2860,7 @@ function renderLocationPickerGrid(countyFilter = null, searchTerm = '') {
           <span class="loc-card-icon" aria-hidden="true">${t.icon || '🏘️'}</span>
           <span class="loc-card-name">${t.name}</span>
           ${t.isHub ? '<span class="loc-card-hub-badge">⭐ Full Hub</span>' : ''}
-          ${isCurrent ? '<span style="font-size: 0.65rem; background: #059669; color: #fff; padding: 1px 6px; border-radius: 999px; margin-left: 4px;">Active</span>' : ''}
+          ${isCurrent ? '<span class="loc-card-active-badge">Active</span>' : ''}
         </div>
         <div class="loc-card-body">
           <span class="loc-card-county">${t.county}</span>
@@ -2932,8 +2932,10 @@ function setupLocationPickerEvents() {
   });
 
   const modal = document.getElementById('location-picker-dialog');
-  if (modal) {
+  if (modal && !('closedBy' in HTMLDialogElement.prototype)) {
     modal.addEventListener('click', (e) => {
+      // Light-dismiss fallback: only trigger when clicking the backdrop itself
+      if (e.target !== modal) return;
       const rect = modal.getBoundingClientRect();
       const isInDialog = (
         rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
