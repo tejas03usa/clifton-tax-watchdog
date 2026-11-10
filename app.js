@@ -2655,6 +2655,12 @@ async function initApp() {
     setTimeout(() => {
       openReliefCalculator();
     }, 250);
+  } else if (urlParams.has('overassessed') || urlParams.has('savings') || urlParams.has('appeals') || urlParams.has('appeal-roll')) {
+    setTimeout(() => {
+      if (typeof toggleOverAssessedFilter === 'function' && !appealFilterActive) {
+        toggleOverAssessedFilter();
+      }
+    }, 250);
   }
 
   // Load live election results & start 3-minute recurring refresh
