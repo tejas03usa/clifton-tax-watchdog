@@ -8367,7 +8367,7 @@ function closeAdminLeadsModal() {
 }
 
 function switchAdminTab(tabName) {
-  const tabs = ['appeals', 'realtor', 'partners', 'settings', 'sponsors', 'outreach'];
+  const tabs = ['appeals', 'realtor', 'partners', 'settings', 'sponsors', 'outreach', 'realtor_outreach'];
   tabs.forEach(t => {
     const btn = document.getElementById(`admin-tab-${t}-btn`);
     const panel = document.getElementById(`admin-panel-${t}`);
@@ -8383,6 +8383,8 @@ function switchAdminTab(tabName) {
     renderAdminSponsorsData();
   } else if (tabName === 'outreach') {
     renderAdminOutreachData();
+  } else if (tabName === 'realtor_outreach') {
+    renderAdminRealtorOutreachData();
   }
 }
 
@@ -9740,6 +9742,424 @@ function resetOutreachCRM() {
   localStorage.removeItem('mytownlens_law_firm_crm');
   renderAdminOutreachData();
   showToast('✓ Reset outreach CRM to default target list');
+}
+
+// --------------------------------------------------------------------------
+// MONETIZATION PHASE 2B: 🏡 Residential Realtor & Brokerage Outreach Directory
+// --------------------------------------------------------------------------
+const DEFAULT_REALTOR_BROKERAGES = [
+  {
+    id: 'christies-ridgewood',
+    name: "Christie's International Real Estate Northern NJ",
+    city: 'Ridgewood',
+    county: 'Bergen',
+    phone: '(201) 934-0607',
+    email: 'intake@christiesrennj.com',
+    partner: 'Sonja Cullaro, EVP',
+    focus: 'Bergen, Passaic & Morris Premier Residential & Luxury',
+    address: '40 W Ridgewood Ave, Ridgewood, NJ 07450'
+  },
+  {
+    id: 'sothebys-montclair',
+    name: "Prominent Properties Sotheby's International Realty",
+    city: 'Montclair',
+    county: 'Essex',
+    phone: '(973) 783-6900',
+    email: 'montclair@prominentproperties.com',
+    partner: 'Randy Brosseau, Managing Broker',
+    focus: 'Montclair, Short Hills, Essex & Morris Residential',
+    address: '32 Valley Rd, Montclair, NJ 07042'
+  },
+  {
+    id: 'coldwell-clifton-wayne',
+    name: 'Coldwell Banker Realty - Clifton / Wayne Regional Hub',
+    city: 'Clifton',
+    county: 'Passaic',
+    phone: '(973) 594-4300',
+    email: 'clifton.sales@coldwellbankermoves.com',
+    partner: 'Lou Nimmo, Regional VP',
+    focus: 'High-Volume Passaic County Seller Listings & CMAs',
+    address: '789 Clifton Ave, Clifton, NJ 07013'
+  },
+  {
+    id: 'compass-shorthills',
+    name: 'Compass Real Estate New Jersey',
+    city: 'Short Hills',
+    county: 'Essex',
+    phone: '(973) 310-6816',
+    email: 'nj.leads@compass.com',
+    partner: 'Peter Frattarelli, Regional Director',
+    focus: 'Essex, Morris & North Jersey High-Equity Homes',
+    address: '513 Millburn Ave, Short Hills, NJ 07078'
+  },
+  {
+    id: 'keller-williams-wayne',
+    name: 'Keller Williams Prosperity & NJ Metro Group',
+    city: 'Wayne',
+    county: 'Passaic',
+    phone: '(973) 696-0077',
+    email: 'frontdesk788@kw.com',
+    partner: "Matthew O'Connor, Team Leader",
+    focus: 'Passaic, Essex & Morris Residential Listings',
+    address: '1499 Route 23 North, Wayne, NJ 07470'
+  },
+  {
+    id: 'weichert-wayne',
+    name: 'Weichert, Realtors - Wayne Regional Office',
+    city: 'Wayne',
+    county: 'Passaic',
+    phone: '(973) 839-4646',
+    email: 'wayne.sales@weichert.com',
+    partner: 'Joe McDonald, Managing Broker',
+    focus: 'Passaic, Morris & Bergen Subdivisions & Relocations',
+    address: '991 Hamburg Turnpike, Wayne, NJ 07470'
+  },
+  {
+    id: 'remax-totowa',
+    name: 'RE/MAX Neighborhood Properties / Excellence',
+    city: 'Totowa',
+    county: 'Passaic',
+    phone: '(973) 956-8333',
+    email: 'remaxexcellence@remax.net',
+    partner: 'Robert Van Der Wende, Broker-Owner',
+    focus: 'Totowa, Little Falls, Woodland Park & Clifton',
+    address: '384 Totowa Rd, Totowa, NJ 07512'
+  },
+  {
+    id: 'gubb-team-ridgewood',
+    name: 'The Gubb Team (Coldwell Banker Ridgewood)',
+    city: 'Ridgewood',
+    county: 'Bergen',
+    phone: '(201) 445-4554',
+    email: 'chrisgubb@gmail.com',
+    partner: 'Chris Gubb & David Gubb, Team Leads',
+    focus: '#1 Bergen County Team, Northwest Bergen County Listings',
+    address: '44 Franklin Ave, Ridgewood, NJ 07450'
+  },
+  {
+    id: 'terrie-oconnor',
+    name: "Terrie O'Connor Realtors",
+    city: 'Ramsey',
+    county: 'Bergen',
+    phone: '(201) 825-0500',
+    email: 'info@tocr.com',
+    partner: "Terrie O'Connor, Broker-Owner",
+    focus: 'Saddle River, Ramsey, Wyckoff & Upper Bergen Estates',
+    address: '75 W Main St, Ramsey, NJ 07446'
+  },
+  {
+    id: 'bhs-montclair',
+    name: 'Brown Harris Stevens New Jersey',
+    city: 'Montclair',
+    county: 'Essex',
+    phone: '(973) 744-6033',
+    email: 'montclair@bhsusa.com',
+    partner: 'Michael Pennisi, Managing Executive Director',
+    focus: 'Montclair, Glen Ridge & Essex Historic Properties',
+    address: '635 Valley Rd, Montclair, NJ 07043'
+  },
+  {
+    id: 'century21-gemini',
+    name: 'Century 21 Gemini LLC',
+    city: 'Wayne',
+    county: 'Passaic',
+    phone: '(973) 696-1111',
+    email: 'c21gemini@century21.com',
+    partner: 'Patrick "Pat" Iannelli, Broker of Record',
+    focus: 'Wayne, Little Falls & North Jersey Residential',
+    address: '191 Berdan Ave, Wayne, NJ 07470'
+  },
+  {
+    id: 'bhhsnj-verona',
+    name: 'Berkshire Hathaway HomeServices New Jersey Properties',
+    city: 'Verona',
+    county: 'Essex',
+    phone: '(973) 857-2200',
+    email: 'verona@bhhsnj.com',
+    partner: 'Chris Brown, Managing Broker',
+    focus: 'Verona, Caldwell, Montclair & West Essex',
+    address: '543 Bloomfield Ave, Verona, NJ 07044'
+  },
+  {
+    id: 'stanton-company',
+    name: 'Stanton Company Realtors',
+    city: 'Montclair',
+    county: 'Essex',
+    phone: '(973) 746-1313',
+    email: 'rich@stantonrealtors.com',
+    partner: 'Rich Stanton, Broker-Owner',
+    focus: 'Independent Montclair Specialist Since 1922',
+    address: '25 N Fullerton Ave, Montclair, NJ 07042'
+  },
+  {
+    id: 'rand-realty-morris',
+    name: 'Howard Hanna Rand Realty',
+    city: 'Morristown',
+    county: 'Morris',
+    phone: '(973) 694-6500',
+    email: 'contactus@randrealty.com',
+    partner: 'Matthew Rand, Managing Partner',
+    focus: 'Morristown, Parsippany & Morris County Suburbs',
+    address: '18 Bank St, Morristown, NJ 07960'
+  },
+  {
+    id: 'striker-realty',
+    name: 'Striker Realty',
+    city: 'Clifton',
+    county: 'Passaic',
+    phone: '(973) 779-7979',
+    email: 'info@strikerrealty.com',
+    partner: 'Sam Striker, Broker of Record',
+    focus: 'Clifton, Passaic, Garfield & Paterson Metro',
+    address: '1255 Main Ave, Clifton, NJ 07011'
+  },
+  {
+    id: 'corcoran-sawyer',
+    name: 'Corcoran Sawyer Smith',
+    city: 'Hoboken',
+    county: 'Essex',
+    phone: '(201) 659-8600',
+    email: 'info@corcoranss.com',
+    partner: 'Paul Sawyer, Managing Partner',
+    focus: 'Essex & Bergen Luxury Modern Urban-Suburban Homes',
+    address: '108 Washington St, Hoboken, NJ 07030'
+  }
+];
+
+let activeRealtorOutreachFilter = 'all';
+
+function getRealtorCRM() {
+  try {
+    const raw = localStorage.getItem('mytownlens_realtor_brokerage_crm');
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch (e) {}
+  const seeded = DEFAULT_REALTOR_BROKERAGES.map(b => ({
+    ...b,
+    status: 'not-contacted',
+    lastContactDate: null,
+    notes: ''
+  }));
+  try {
+    localStorage.setItem('mytownlens_realtor_brokerage_crm', JSON.stringify(seeded));
+  } catch (e) {}
+  return seeded;
+}
+
+function saveRealtorCRM(list) {
+  try {
+    localStorage.setItem('mytownlens_realtor_brokerage_crm', JSON.stringify(list));
+  } catch (e) {}
+}
+
+function filterRealtorCounty(county) {
+  activeRealtorOutreachFilter = county;
+  renderAdminRealtorOutreachData();
+}
+
+function renderAdminRealtorOutreachData() {
+  const tbody = document.getElementById('admin-tbody-realtor-outreach');
+  if (!tbody) return;
+
+  const brokerages = getRealtorCRM();
+  const filtered = activeRealtorOutreachFilter === 'all'
+    ? brokerages
+    : brokerages.filter(b => b.county.toLowerCase() === activeRealtorOutreachFilter.toLowerCase());
+
+  const totalBrokerages = brokerages.length;
+  const sentCount = brokerages.filter(b => b.status === 'sent' || b.status === 'samples' || b.status === 'call' || b.status.startsWith('active')).length;
+  const samplesCount = brokerages.filter(b => b.status === 'samples' || b.status === 'call' || b.status.startsWith('active')).length;
+  const activeCount = brokerages.filter(b => b.status.startsWith('active')).length;
+
+  // Calculate projected MRR ($300/mo retainer baseline)
+  const mrrTotal = brokerages.reduce((acc, b) => {
+    if (b.status === 'active-retainer') return acc + 300;
+    if (b.status === 'active-ppl') return acc + 200;
+    return acc;
+  }, 0);
+
+  const totalEl = document.getElementById('realtor-kpi-total');
+  const sentEl = document.getElementById('realtor-kpi-sent');
+  const samplesEl = document.getElementById('realtor-kpi-samples');
+  const activeEl = document.getElementById('realtor-kpi-active');
+  const mrrEl = document.getElementById('realtor-kpi-mrr');
+
+  if (totalEl) totalEl.textContent = totalBrokerages;
+  if (sentEl) sentEl.textContent = sentCount;
+  if (samplesEl) samplesEl.textContent = samplesCount;
+  if (activeEl) activeEl.textContent = activeCount;
+  if (mrrEl) mrrEl.textContent = `$${mrrTotal.toLocaleString()} / mo`;
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 20px; color: #64748b;">No real estate brokerages found for the selected county hub filter.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(b => {
+    const statusClass = b.status.replace(/_/g, '-');
+    return `
+      <tr>
+        <td>
+          <strong style="color: #0f172a; font-size: 0.88rem;">${escapeHtml(b.name)}</strong>
+          <span class="outreach-firm-partner">👤 ${escapeHtml(b.partner)}</span>
+          <small style="color: #94a3b8; font-size: 0.72rem;">${escapeHtml(b.address)}</small>
+        </td>
+        <td>
+          <span style="font-weight: 700; color: #1e40af;">${escapeHtml(b.county)} County</span><br>
+          <small style="color: #64748b;">${escapeHtml(b.city)}, NJ</small>
+        </td>
+        <td>
+          <a href="tel:${escapeHtml(b.phone.replace(/[^0-9]/g, ''))}" style="color: #2563eb; font-weight: 700; text-decoration: none;">${escapeHtml(b.phone)}</a><br>
+          <a href="mailto:${escapeHtml(b.email)}" style="color: #64748b; font-size: 0.76rem; text-decoration: underline;">${escapeHtml(b.email)}</a>
+        </td>
+        <td>
+          <span style="font-size: 0.78rem; color: #334155;">${escapeHtml(b.focus)}</span>
+        </td>
+        <td>
+          <select class="outreach-status-select status-${statusClass}" onchange="updateRealtorStatus('${escapeHtml(b.id)}', this.value)">
+            <option value="not-contacted" ${b.status === 'not-contacted' ? 'selected' : ''}>⚪ Not Contacted</option>
+            <option value="sent" ${b.status === 'sent' ? 'selected' : ''}>📨 Pitch Email Sent</option>
+            <option value="samples" ${b.status === 'samples' ? 'selected' : ''}>📁 3 Trial Leads Sent</option>
+            <option value="call" ${b.status === 'call' ? 'selected' : ''}>📞 Call Scheduled</option>
+            <option value="active-retainer" ${b.status === 'active-retainer' ? 'selected' : ''}>⭐ Active Retainer ($300/mo)</option>
+            <option value="active-ppl" ${b.status === 'active-ppl' ? 'selected' : ''}>⭐ Active PPL ($75/lead)</option>
+            <option value="declined" ${b.status === 'declined' ? 'selected' : ''}>❌ Not Interested</option>
+          </select>
+        </td>
+        <td>
+          <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+            <button type="button" class="btn-outreach-pitch" onclick="launchRealtorPitchMailto('${escapeHtml(b.id)}')">
+              <span>🚀</span> Pitch Email
+            </button>
+            <button type="button" class="btn-outreach-copy" onclick="copyRealtorPitchWithSample('${escapeHtml(b.id)}')">
+              <span>📋</span> Pitch &amp; Sample
+            </button>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function updateRealtorStatus(brokerageId, newStatus) {
+  const brokerages = getRealtorCRM();
+  const broker = brokerages.find(b => b.id === brokerageId);
+  if (broker) {
+    broker.status = newStatus;
+    broker.lastContactDate = new Date().toISOString();
+    saveRealtorCRM(brokerages);
+    renderAdminRealtorOutreachData();
+    showToast(`✓ Updated status for ${broker.name} to "${newStatus}"`);
+  }
+}
+
+function buildRealtorPitchData(brokerageId) {
+  const brokerages = getRealtorCRM();
+  const broker = brokerages.find(b => b.id === brokerageId) || brokerages[0];
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const totalParcels = propertyAssessmentsData?.summaryStats?.totalProperties || 21300;
+
+  const subject = `Exclusive ${meta.name} (${meta.countyShort}) Homeowner CMA & Seller Listing Inquiries (MyTownLens)`;
+  const body = [
+    `Dear ${broker.partner || broker.name},`,
+    '',
+    `I am reaching out from MyTownLens (mytownlens.com), North Jersey's civic property tax watchdog and MOD-IV assessment roll explorer monitoring ${totalParcels.toLocaleString()} residential properties in ${meta.name} and 150,016 verified parcels across Passaic, Bergen, Essex, and Morris Counties.`,
+    '',
+    `Homeowners reviewing their property assessments, Chapter 123 ratios, and upcoming citywide revaluations on our platform frequently request a certified Comparative Market Analysis (CMA) to determine their property's true current market value before deciding whether to appeal or list.`,
+    '',
+    `We are partnering with one premier local brokerage in ${meta.name} to receive exclusive routing of these verified homeowner CMA inquiries. Each lead includes:`,
+    '  • Verified MOD-IV Parcel Data (Block, Lot, Year Built, Certified Assessed Value, Current Taxes)',
+    '  • Homeowner Contact Information & Preferred Phone/Email',
+    '  • Homeowner Selling Timeline (Immediate, 1-3 Months, 6-12 Months, or Valuation-Only)',
+    '  • Recent Neighborhood Street Sales & Comparable Baselines',
+    '',
+    `I would love to send your team our next 3 ${meta.name} homeowner CMA inquiries on a complimentary basis so you can evaluate the quality and responsiveness of our homeowners.`,
+    '',
+    `Would you or your team lead be open to receiving 3 sample ${meta.name} seller valuation dockets this week?`,
+    '',
+    'Best regards,',
+    '[Your Name / Founder]',
+    'MyTownLens Civic Intelligence',
+    'mytownlens.com | info@mytownlens.com'
+  ].join('\n');
+
+  return { broker, subject, body };
+}
+
+function launchRealtorPitchMailto(brokerageId) {
+  const { broker, subject, body } = buildRealtorPitchData(brokerageId);
+  const mailto = `mailto:${broker.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  updateRealtorStatus(brokerageId, 'sent');
+  window.location.href = mailto;
+  showToast(`✓ Opened draft email to ${broker.partner || broker.name} (${broker.name})`);
+}
+
+function copyRealtorPitchWithSample(brokerageId) {
+  const { broker, subject, body } = buildRealtorPitchData(brokerageId);
+  const text = `SUBJECT: ${subject}\n\n${body}`;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      updateRealtorStatus(brokerageId, 'samples');
+      showToast(`✓ Copied customized pitch letter for ${broker.name}!`);
+    }).catch(() => {
+      showToast('✓ Copied pitch letter to clipboard');
+    });
+  } else {
+    updateRealtorStatus(brokerageId, 'samples');
+    showToast(`✓ Prepared pitch letter for ${broker.name}`);
+  }
+}
+
+function exportRealtorOutreachCSV() {
+  const brokerages = getRealtorCRM();
+  const escapeCSV = (val) => {
+    if (val === null || val === undefined) return '""';
+    const s = String(val).replace(/"/g, '""');
+    return `"${s}"`;
+  };
+
+  const rows = [
+    ['Brokerage ID', 'Brokerage Name', 'Managing Broker / Partner', 'Hub City', 'County Hub', 'Phone', 'Email', 'Address', 'Market Focus', 'Pipeline Status', 'Last Contact Date', 'Notes'].map(escapeCSV).join(',')
+  ];
+
+  brokerages.forEach(b => {
+    rows.push([
+      b.id,
+      b.name,
+      b.partner,
+      b.city,
+      b.county,
+      b.phone,
+      b.email,
+      b.address,
+      b.focus,
+      b.status,
+      b.lastContactDate || '',
+      b.notes || ''
+    ].map(escapeCSV).join(','));
+  });
+
+  const blob = new Blob([rows.join('\r\n')], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `mytownlens_realtor_brokerage_crm_${Date.now()}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast(`✓ Exported ${brokerages.length} real estate brokerage CRM records to CSV!`);
+}
+
+function resetRealtorCRM() {
+  if (typeof confirm === 'function' && !confirm('Reset all real estate brokerage outreach statuses back to defaults?')) {
+    return;
+  }
+  localStorage.removeItem('mytownlens_realtor_brokerage_crm');
+  renderAdminRealtorOutreachData();
+  showToast('✓ Reset Realtor outreach CRM to default target list');
 }
 
 // --------------------------------------------------------------------------
@@ -19374,6 +19794,17 @@ window.launchLawFirmPitchMailto = launchLawFirmPitchMailto;
 window.copyLawFirmPitchWithComps = copyLawFirmPitchWithComps;
 window.exportOutreachCSV = exportOutreachCSV;
 window.resetOutreachCRM = resetOutreachCRM;
+window.DEFAULT_REALTOR_BROKERAGES = DEFAULT_REALTOR_BROKERAGES;
+window.getRealtorCRM = getRealtorCRM;
+window.saveRealtorCRM = saveRealtorCRM;
+window.filterRealtorCounty = filterRealtorCounty;
+window.renderAdminRealtorOutreachData = renderAdminRealtorOutreachData;
+window.updateRealtorStatus = updateRealtorStatus;
+window.buildRealtorPitchData = buildRealtorPitchData;
+window.launchRealtorPitchMailto = launchRealtorPitchMailto;
+window.copyRealtorPitchWithSample = copyRealtorPitchWithSample;
+window.exportRealtorOutreachCSV = exportRealtorOutreachCSV;
+window.resetRealtorCRM = resetRealtorCRM;
 window.updateMetaAndJsonLd = updateMetaAndJsonLd;
 window.quickPrintFormA1 = quickPrintFormA1;
 window.printReliefPacket = printReliefPacket;

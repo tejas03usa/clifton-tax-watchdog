@@ -2071,6 +2071,7 @@
           <button type="button" class="admin-tab-btn" onclick="switchAdminTab('partners')" id="admin-tab-partners-btn">🤝 Sponsorship Inquiries</button>
           <button type="button" class="admin-tab-btn" onclick="switchAdminTab('sponsors')" id="admin-tab-sponsors-btn">⭐ Town Sponsors Directory</button>
           <button type="button" class="admin-tab-btn" onclick="switchAdminTab('outreach')" id="admin-tab-outreach-btn">🎯 Attorney Outreach &amp; Pitch Outbox</button>
+          <button type="button" class="admin-tab-btn" onclick="switchAdminTab('realtor_outreach')" id="admin-tab-realtor_outreach-btn">🏡 Realtor Outreach CRM</button>
           <button type="button" class="admin-tab-btn" onclick="switchAdminTab('settings')" id="admin-tab-settings-btn">⚡ Webhook &amp; Buyer Setup</button>
         </div>
 
@@ -2329,6 +2330,67 @@
                 </tr>
               </thead>
               <tbody id="admin-tbody-outreach">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Panel 7: Realtor & Brokerage Outreach Directory -->
+        <div id="admin-panel-realtor_outreach" class="admin-panel" style="display: none;">
+          <div class="outreach-stat-grid">
+            <div class="outreach-stat-card">
+              <span class="stat-label">Target Brokerages</span>
+              <span class="stat-num" id="realtor-kpi-total">16</span>
+            </div>
+            <div class="outreach-stat-card">
+              <span class="stat-label">Pitches Sent</span>
+              <span class="stat-num" id="realtor-kpi-sent" style="color: #2563eb;">0</span>
+            </div>
+            <div class="outreach-stat-card">
+              <span class="stat-label">Trial Dockets Sent</span>
+              <span class="stat-num" id="realtor-kpi-samples" style="color: #d97706;">0</span>
+            </div>
+            <div class="outreach-stat-card">
+              <span class="stat-label">Active Partners</span>
+              <span class="stat-num" id="realtor-kpi-active" style="color: #059669;">0</span>
+            </div>
+            <div class="outreach-stat-card">
+              <span class="stat-label">Projected Pipeline</span>
+              <span class="stat-num" id="realtor-kpi-mrr" style="color: #059669;">$0</span>
+            </div>
+          </div>
+
+          <div class="admin-panel-actions" style="flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+              <label for="realtor-county-filter" style="font-size: 0.82rem; font-weight: 700; color: #475569;">County Hub:</label>
+              <select id="realtor-county-filter" class="outreach-select" onchange="filterRealtorCounty(this.value)">
+                <option value="all">All North Jersey Hubs (16 Brokerages)</option>
+                <option value="Passaic">Passaic County Hub (Clifton / Wayne / Totowa)</option>
+                <option value="Bergen">Bergen County Hub (Ridgewood / Mahwah / Franklin Lakes)</option>
+                <option value="Essex">Essex County Hub (Montclair / Short Hills / Livingston)</option>
+                <option value="Morris">Morris County Hub (Morristown / Denville / Parsippany)</option>
+              </select>
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button type="button" class="btn-admin-action" onclick="exportRealtorOutreachCSV()">📥 Export Brokerages CSV</button>
+              <button type="button" class="btn-admin-secondary" onclick="resetRealtorCRM()">Reset Defaults</button>
+            </div>
+          </div>
+
+          <div class="outreach-table-wrap">
+            <table class="admin-table" id="admin-table-realtor-outreach">
+              <thead>
+                <tr>
+                  <th>Brokerage &amp; Managing Broker</th>
+                  <th>Market Hub / Territory</th>
+                  <th>Direct Contact</th>
+                  <th>Market Focus</th>
+                  <th>Outreach Pipeline Status</th>
+                  <th>1-Click Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-tbody-realtor-outreach">
                 <!-- Rendered by JS -->
               </tbody>
             </table>
