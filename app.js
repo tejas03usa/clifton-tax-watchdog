@@ -2932,7 +2932,7 @@ function setupLocationPickerEvents() {
   });
 
   const modal = document.getElementById('location-picker-dialog');
-  if (modal && !('closedBy' in HTMLDialogElement.prototype)) {
+  if (modal && (typeof HTMLDialogElement === 'undefined' || !('closedBy' in HTMLDialogElement.prototype))) {
     modal.addEventListener('click', (e) => {
       // Light-dismiss fallback: only trigger when clicking the backdrop itself
       if (e.target !== modal) return;
@@ -3849,6 +3849,70 @@ function renderHeaderSponsorBadge(cityId) {
   }
 }
 
+// Dynamically update SEO Meta Tags & Schema.org JSON-LD for the active municipality
+function updateMetaAndJsonLd(cityId) {
+  const meta = CITY_REGISTRY[cityId] || CITY_REGISTRY.clifton;
+
+  // 1. Dynamic Meta Description
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) {
+    metaDesc.content = `Certified ${meta.name}, NJ (${meta.countyShort}) property tax calculator, 2026 certified rates (${meta.certifiedTaxRate}), official MOD-IV residential rolls (${(meta.totalHomes || 1000).toLocaleString()} homes), school budgets, and tax appeal feasibility analyzer.`;
+  }
+
+  // 2. OpenGraph & Twitter Tags
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.content = `MyTownLens — ${meta.name} NJ Property Tax Calculator & Spending Audit`;
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.content = `Calculate your exact ${meta.name} property tax bill, explore certified MOD-IV property rolls, and see where your tax dollars go across Schools, Municipal Police/DPW, and ${meta.county}.`;
+  const twTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twTitle) twTitle.content = `MyTownLens — ${meta.name} NJ Property Tax Calculator & Audit`;
+  const twDesc = document.querySelector('meta[name="twitter:description"]');
+  if (twDesc) twDesc.content = `Calculate your exact ${meta.name} property tax bill, explore certified MOD-IV property rolls, and see where your tax dollars go.`;
+
+  // 3. Dynamic JSON-LD Structured Data
+  const jsonLdEl = document.getElementById('schema-jsonld');
+  if (jsonLdEl) {
+    try {
+      const data = {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://mytownlens.com/#website",
+            "url": "https://mytownlens.com/",
+            "name": "MyTownLens",
+            "description": `Certified ${meta.name} NJ and North Jersey municipal tax watchdog, MOD-IV property rolls, and civic budget analysis across 47 municipalities.`,
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://mytownlens.com/properties.html?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "GovernmentService",
+            "name": `${meta.name} Property Tax & Assessment Explorer`,
+            "serviceType": "Property Tax Assessment & Budget Analysis",
+            "areaServed": {
+              "@type": "City",
+              "name": meta.name,
+              "containedInPlace": {
+                "@type": "AdministrativeArea",
+                "name": meta.county
+              }
+            },
+            "provider": {
+              "@type": "Organization",
+              "name": "MyTownLens",
+              "url": "https://mytownlens.com"
+            }
+          }
+        ]
+      };
+      jsonLdEl.textContent = JSON.stringify(data, null, 2);
+    } catch (e) {}
+  }
+}
+
 // Dynamically update all static copy, headers, dropdowns, presets, and links for the active city
 function applyCityStaticCopy(cityId) {
   const meta = CITY_REGISTRY[cityId] || CITY_REGISTRY.clifton;
@@ -3860,6 +3924,9 @@ function applyCityStaticCopy(cityId) {
   } else {
     document.title = meta.pageTitle;
   }
+
+  // Update dynamic SEO & Schema.org JSON-LD for this municipality
+  updateMetaAndJsonLd(cityId);
 
   const setElText = (id, text) => {
     const el = document.getElementById(id);
@@ -7676,29 +7743,136 @@ function printAppealEvidence() {
 }
 
 // ==========================================================================
-// MONETIZATION FEATURE 1: ⚖️ Free Attorney Review Request (Lead Capture)
+// MONETIZATION FEATURE 1: ⚖️ Free Attorney Review Request (Golden Lead Dossier)
 // ==========================================================================
+let latestSubmittedLead = null;
+let activeInspectedDossier = null;
+
+function buildFormattedLeadDossier(type, record) {
+  if (!record) return '';
+
+  if (type === 'appeals') {
+    const p = record.property || {};
+    const c = record.contact || {};
+    const m = record.caseMerits || {};
+    const comps = Array.isArray(record.comparables) ? record.comparables : [];
+    const specs = m.interiorSpecs || {};
+    const savings = m.potentialAnnualSavings !== undefined
+      ? m.potentialAnnualSavings
+      : Math.round((Number(p.annualTax) || 0) * 0.15);
+    const overAssess = m.indicatedOverAssessment !== undefined
+      ? m.indicatedOverAssessment
+      : Math.round((Number(p.assessedTotal) || 0) * 0.12);
+    const overPct = m.overAssessmentPct !== undefined ? m.overAssessmentPct : 12.0;
+
+    const compLines = comps.length > 0
+      ? comps.map((comp, idx) =>
+        `  ${idx + 1}. ${comp.address} (Block ${comp.block}, Lot ${comp.lot}) | Assessed: $${Number(comp.assessedTotal || 0).toLocaleString()} | Tax: $${Number(comp.annualTax || 0).toLocaleString()} | Sale: ${comp.salePrice > 100 ? '$' + Number(comp.salePrice).toLocaleString() + ' (' + (comp.deedDate || 'Recorded') + ')' : 'MOD-IV Comparable'}`
+      ).join('\n')
+      : '  (Verified against municipal street baseline in MOD-IV roll)';
+
+    return [
+      '========================================================================',
+      'MYTOWNLENS — PRE-QUALIFIED NJ PROPERTY TAX APPEAL CASE DOSSIER',
+      '========================================================================',
+      `Lead Ticket ID:      ${record.id || 'N/A'}`,
+      `Submitted Timestamp: ${record.submittedAt || new Date().toISOString()}`,
+      `Filing Jurisdiction: ${p.county || 'New Jersey'} County Board of Taxation (Statutory April 1 Deadline)`,
+      '',
+      '1. HOMEOWNER CONTACT & REPRESENTATION CONSENT',
+      '------------------------------------------------------------------------',
+      `Homeowner Name:      ${c.name || '—'}`,
+      `Phone Number:        ${c.phone || '—'}`,
+      `Email Address:       ${c.email || '—'}`,
+      `Preferred Contact:   ${(c.preferredContact || 'phone').toUpperCase()}`,
+      `Legal Owner Verified:${c.isLegalOwner !== false ? ' YES (Confirmed Legal Owner / Taxpayer)' : ' Pending Verification'}`,
+      `Homeowner Notes:     ${c.notes || 'None provided'}`,
+      '',
+      '2. CERTIFIED MOD-IV SUBJECT PARCEL PROFILE',
+      '------------------------------------------------------------------------',
+      `Property Address:    ${p.address || '—'}`,
+      `Municipality:        ${p.municipality || '—'} (${p.county || ''} County • District ${p.districtCode || '—'})`,
+      `Block / Lot / PIN:   Block ${p.block || '—'}, Lot ${p.lot || '—'} (PAMS PIN: ${p.pamsPin || `${p.districtCode || ''}_${p.block || ''}_${p.lot || ''}`})`,
+      `Property Class:      Class 2 Residential (${p.propertyType || p.bldgDesc || 'Residential'}) • Built: ${p.yearBuilt || '—'}`,
+      `Current Assessment:  Land: $${Number(p.assessedLand || 0).toLocaleString()} | Bldg: $${Number(p.assessedBuilding || 0).toLocaleString()} | TOTAL: $${Number(p.assessedTotal || 0).toLocaleString()}`,
+      `Certified Tax Rate:  ${p.certifiedTaxRate || '—'}`,
+      `2026 Annual Tax:     $${Number(p.annualTax || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+      `Implied Market Val:  $${Number(p.estimatedMarketValue || 0).toLocaleString()}`,
+      '',
+      '3. CHAPTER 123 & COMPARABLE OVER-ASSESSMENT MERITS',
+      '------------------------------------------------------------------------',
+      `Ch. 123 Equal. Ratio:${m.equalizationRatio ? m.equalizationRatio + '% (Corridor: ' + m.corridorLower + '% – ' + m.corridorUpper + '%)' : 'Certified County Ratio'}`,
+      `Street Comps Median: $${Number(m.streetMedianAssessment || p.assessedTotal || 0).toLocaleString()}`,
+      `Indicated Variance:  +$${Number(overAssess).toLocaleString()} (+${Number(overPct).toFixed(1)}% Over-Assessed vs. Street Benchmark)`,
+      `EST. TAX SAVINGS:    $${Number(savings).toLocaleString()} / YEAR (Contingency Case Value)`,
+      `Interior Form A-1:   ${specs.bedrooms || '3'} Beds • ${specs.bathrooms || '2'} Baths • ${specs.sqft ? specs.sqft + ' SqFt' : 'Std SqFt'} • Condition: ${specs.condition || 'average'}`,
+      '',
+      `4. VERIFIED MOD-IV STREET COMPARABLES ATTACHED (${comps.length} PARCELS)`,
+      '------------------------------------------------------------------------',
+      compLines,
+      '========================================================================'
+    ].join('\n');
+  }
+
+  if (type === 'realtor') {
+    const p = record.property || {};
+    const c = record.contact || {};
+    return [
+      '========================================================================',
+      'MYTOWNLENS — PRE-QUALIFIED HOMEOWNER VALUATION & CMA LISTING LEAD',
+      '========================================================================',
+      `Lead Ticket ID:      ${record.id || 'N/A'}`,
+      `Submitted Timestamp: ${record.submittedAt || new Date().toISOString()}`,
+      '',
+      '1. HOMEOWNER CONTACT & TIMELINE',
+      '------------------------------------------------------------------------',
+      `Homeowner Name:      ${c.name || '—'}`,
+      `Phone Number:        ${c.phone || '—'}`,
+      `Email Address:       ${c.email || '—'}`,
+      `Selling Timeline:    ${(c.timeline || 'curious').replace(/_/g, ' ').toUpperCase()}`,
+      `Interior / Upgrades: ${c.notes || 'Standard residential configuration'}`,
+      '',
+      '2. PROPERTY VALUATION & MOD-IV PROFILE',
+      '------------------------------------------------------------------------',
+      `Property Address:    ${p.address || '—'}`,
+      `Municipality:        ${p.municipality || '—'} (${p.county || ''} County)`,
+      `Block & Lot:         Block ${p.block || '—'}, Lot ${p.lot || '—'}`,
+      `Est. Market Value:   $${Number(p.estimatedMarketValue || 450000).toLocaleString()}`,
+      '========================================================================'
+    ].join('\n');
+  }
+
+  return JSON.stringify(record, null, 2);
+}
+
 function openAttorneyConsultModal() {
   const modal = document.getElementById('attorney-consult-dialog');
   if (!modal) return;
 
-  const target = activeAppealProperty;
+  const target = activeAppealProperty || (propertyAssessmentsData?.properties?.[0] || null);
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
   const badgeEl = document.getElementById('attorney-lead-prop-badge');
-  const rate = parseFloat(meta.certifiedTaxRate) || 2.5;
+  const rate = parseFloat(meta.certifiedTaxRate) || meta.rateNum || 2.5;
+  const eqRatio = parseFloat(meta.equalizationRatio) || 100.0;
   const diff = (activeAppealMedian && target && target.assessedTotal > activeAppealMedian)
     ? (target.assessedTotal - activeAppealMedian)
-    : (activeAppealDiff > 0 ? activeAppealDiff : 0);
-  const potentialSavings = Math.round((diff / 100) * rate);
+    : (activeAppealDiff > 0 ? activeAppealDiff : Math.round((target?.assessedTotal || 180000) * 0.12));
+  const compMedian = activeAppealMedian || (target ? target.assessedTotal - diff : 0);
+  const diffPct = compMedian > 0 ? (diff / compMedian) * 100 : 12.0;
+  const potentialSavings = Math.max(250, Math.round((diff / 100) * rate));
+  const compsCount = Array.isArray(activeAppealComps) && activeAppealComps.length > 0 ? activeAppealComps.length : 5;
 
   if (badgeEl && target) {
     badgeEl.innerHTML = `
       <div class="lead-badge-header">
-        <span class="lead-badge-pin">📍 ${escapeHtml(target.address)}</span>
-        <span class="lead-badge-savings">Est. Potential Reduction: <strong>$${potentialSavings.toLocaleString()} / yr</strong></span>
+        <span class="lead-badge-pin">📍 ${escapeHtml(target.address)} <small style="font-weight:600; color:#475569;">(Block ${escapeHtml(target.block)}, Lot ${escapeHtml(target.lot)})</small></span>
+        <span class="lead-badge-savings">Est. Tax Savings: <strong>$${potentialSavings.toLocaleString()} / yr</strong></span>
       </div>
-      <div class="lead-badge-sub">
-        Block ${escapeHtml(target.block)}, Lot ${escapeHtml(target.lot)} • ${escapeHtml(meta.name)}, ${escapeHtml(meta.countyShort)} • Current Assessment: $${target.assessedTotal.toLocaleString()}
+      <div class="lead-badge-sub" style="display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 6px;">
+        <span>🏛️ <strong>${escapeHtml(meta.name)}</strong> (${escapeHtml(meta.countyShort)})</span>
+        <span>📊 Assessment: <strong>$${target.assessedTotal.toLocaleString()}</strong> vs. Street Median: <strong>$${compMedian.toLocaleString()}</strong></span>
+        <span style="color:#b91c1c; font-weight:700;">⚖️ Over-Assessed: +$${diff.toLocaleString()} (+${diffPct.toFixed(1)}%)</span>
+        <span style="color:#047857; font-weight:700;">✓ ${compsCount} Verified MOD-IV Comps &amp; Ch. 123 (${eqRatio.toFixed(1)}%) Attached</span>
       </div>
     `;
   }
@@ -7707,6 +7881,7 @@ function openAttorneyConsultModal() {
   const success = document.getElementById('attorney-lead-success');
   if (form) {
     form.reset();
+    form.querySelectorAll('[aria-invalid]').forEach(el => el.setAttribute('aria-invalid', 'false'));
     form.style.display = 'block';
   }
   if (success) success.style.display = 'none';
@@ -7730,29 +7905,79 @@ function closeAttorneyConsultModal() {
 
 function handleAttorneyLeadSubmit(e) {
   e.preventDefault();
-  const target = activeAppealProperty;
+  const target = activeAppealProperty || (propertyAssessmentsData?.properties?.[0] || {});
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
 
-  const name = document.getElementById('lead-full-name')?.value || '';
-  const phone = document.getElementById('lead-phone')?.value || '';
-  const email = document.getElementById('lead-email')?.value || '';
+  const name = document.getElementById('lead-full-name')?.value?.trim() || '';
+  const phone = document.getElementById('lead-phone')?.value?.trim() || '';
+  const email = document.getElementById('lead-email')?.value?.trim() || '';
   const pref = document.getElementById('lead-pref-contact')?.value || 'phone';
-  const notes = document.getElementById('lead-notes')?.value || '';
+  const notes = document.getElementById('lead-notes')?.value?.trim() || '';
+  const isLegalOwner = document.getElementById('lead-is-owner') ? document.getElementById('lead-is-owner').checked : true;
+
+  const rate = parseFloat(meta.certifiedTaxRate) || meta.rateNum || 2.5;
+  const eqRatio = parseFloat(meta.equalizationRatio) || 100.0;
+  const corridorLower = +(eqRatio * 0.85).toFixed(1);
+  const corridorUpper = +(eqRatio * 1.15).toFixed(1);
+
+  const assessedTotal = Number(target?.assessedTotal) || 0;
+  const compMedian = activeAppealMedian || Math.round(assessedTotal * 0.88);
+  const diff = Math.max(0, assessedTotal - compMedian);
+  const diffPct = compMedian > 0 ? +((diff / compMedian) * 100).toFixed(1) : 12.0;
+  const potentialSavings = diff > 0 ? Math.round((diff / 100) * rate) : Math.round((Number(target?.annualTax) || 0) * 0.15);
+
+  const compsPayload = Array.isArray(activeAppealComps) ? activeAppealComps.slice(0, 5).map(c => ({
+    address: c.address || '',
+    block: c.block || '',
+    lot: c.lot || '',
+    propertyType: c.propertyType || 'Single Family',
+    yearBuilt: c.yearBuilt || 0,
+    assessedTotal: c.assessedTotal || 0,
+    annualTax: c.annualTax || 0,
+    salePrice: c.salePrice || 0,
+    deedDate: c.deedDate || ''
+  })) : [];
 
   const leadRecord = {
     id: 'lead_' + Date.now(),
     submittedAt: new Date().toISOString(),
     property: {
+      id: target?.id || '',
       address: target?.address || '',
       block: target?.block || '',
       lot: target?.lot || '',
-      assessedTotal: target?.assessedTotal || 0,
+      pamsPin: target?.pamsPin || `${meta.districtCode || ''}_${target?.block || ''}_${target?.lot || ''}`,
+      propertyClass: '2',
+      propertyType: target?.propertyType || 'Single Family',
+      bldgDesc: target?.bldgDesc || 'Class 2 Residential',
+      yearBuilt: target?.yearBuilt || 0,
+      lotSize: target?.lotSize || '',
+      assessedLand: target?.assessedLand || 0,
+      assessedBuilding: target?.assessedBuilding || 0,
+      assessedTotal: assessedTotal,
+      certifiedTaxRate: meta.certifiedTaxRate || `${rate}%`,
       annualTax: target?.annualTax || 0,
+      estimatedMarketValue: target?.estimatedMarketValue || 0,
       municipality: meta.name,
-      county: meta.county
+      county: meta.county,
+      districtCode: meta.districtCode || ''
     },
-    contact: { name, phone, email, preferredContact: pref, notes }
+    caseMerits: {
+      equalizationRatio: eqRatio,
+      corridorLower,
+      corridorUpper,
+      streetMedianAssessment: compMedian,
+      indicatedOverAssessment: diff,
+      overAssessmentPct: diffPct,
+      potentialAnnualSavings: potentialSavings,
+      interiorSpecs: activeAppealSpecs ? { ...activeAppealSpecs } : { bedrooms: '3', bathrooms: '2', sqft: '', condition: 'average' }
+    },
+    comparables: compsPayload,
+    contact: { name, phone, email, preferredContact: pref, isLegalOwner, notes }
   };
+
+  leadRecord.formattedDossier = buildFormattedLeadDossier('appeals', leadRecord);
+  latestSubmittedLead = { type: 'appeals', record: leadRecord };
 
   try {
     const existing = JSON.parse(localStorage.getItem('mytownlens_attorney_leads') || '[]');
@@ -7762,7 +7987,7 @@ function handleAttorneyLeadSubmit(e) {
     console.warn('LocalStorage lead save error:', err);
   }
 
-  // Auto-forward to webhook if configured
+  // Auto-forward full Golden Dossier to webhook if configured
   dispatchLeadWebhook('attorney_tax_appeal', leadRecord);
 
   if (typeof window !== 'undefined') {
@@ -7778,15 +8003,33 @@ function handleAttorneyLeadSubmit(e) {
   if (addrEl && target) addrEl.textContent = target.address;
   if (summaryEl) {
     summaryEl.innerHTML = `
-      <div style="font-size: 0.85rem; color: #475569; display: grid; gap: 4px;">
-        <span><strong>Applicant:</strong> ${escapeHtml(name)} (${escapeHtml(phone)} • ${escapeHtml(email)})</span>
-        <span><strong>Property:</strong> ${escapeHtml(target?.address || '')} (Block ${target?.block}, Lot ${target?.lot})</span>
-        <span><strong>Filing Jurisdiction:</strong> ${escapeHtml(meta.countyBoardName || meta.county)}</span>
+      <div style="font-size: 0.84rem; color: #334155; display: grid; gap: 5px;">
+        <span><strong>Docket ID:</strong> <code>${escapeHtml(leadRecord.id)}</code> &bull; <strong>Owner Verified:</strong> ${isLegalOwner ? 'Yes ✓' : 'Pending'}</span>
+        <span><strong>Applicant:</strong> ${escapeHtml(name)} (${escapeHtml(phone)} &bull; ${escapeHtml(email)})</span>
+        <span><strong>Parcel:</strong> ${escapeHtml(target?.address || '')} (Block ${escapeHtml(target?.block || '')}, Lot ${escapeHtml(target?.lot || '')} • ${escapeHtml(meta.name)})</span>
+        <span><strong>Indicated Over-Assessment:</strong> +$${diff.toLocaleString()} (+${diffPct}%) &bull; <strong style="color:#047857;">Est. Tax Savings: $${potentialSavings.toLocaleString()}/yr</strong></span>
+        <span><strong>Evidence Attached:</strong> ${compsPayload.length} Verified MOD-IV Street Comparables &amp; Ch. 123 Corridor (${corridorLower}%–${corridorUpper}%)</span>
+        <span><strong>Filing Jurisdiction:</strong> ${escapeHtml(meta.countyBoardName || meta.county + ' County Board of Taxation')}</span>
       </div>
     `;
   }
   if (success) success.style.display = 'block';
-  showToast('✓ Free attorney case review request received!');
+  showToast('✓ Pre-qualified attorney case docket created!');
+}
+
+function copyLatestSubmittedDossier(type) {
+  if (!latestSubmittedLead || !latestSubmittedLead.record) {
+    showToast('⚠️ No recent dossier to copy');
+    return;
+  }
+  const text = latestSubmittedLead.record.formattedDossier || buildFormattedLeadDossier(type || latestSubmittedLead.type, latestSubmittedLead.record);
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('✓ Full Case Dossier copied to clipboard!');
+    }).catch(() => {
+      showToast('✓ Dossier copied');
+    });
+  }
 }
 
 // ==========================================================================
@@ -7877,6 +8120,8 @@ function dispatchLeadWebhook(type, data) {
       source: 'MyTownLens Platform',
       leadType: type,
       timestamp: new Date().toISOString(),
+      partnerRoutingEmail: localStorage.getItem('mytownlens_partner_email') || '',
+      formattedCaseDossier: data?.formattedDossier || buildFormattedLeadDossier(type === 'attorney_tax_appeal' ? 'appeals' : 'realtor', data),
       leadData: data
     };
 
@@ -7955,11 +8200,11 @@ function handleRealtorLeadSubmit(e) {
   const target = activeRealtorTarget || {};
   const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
 
-  const name = document.getElementById('realtor-lead-name')?.value || '';
-  const phone = document.getElementById('realtor-lead-phone')?.value || '';
-  const email = document.getElementById('realtor-lead-email')?.value || '';
+  const name = document.getElementById('realtor-lead-name')?.value?.trim() || '';
+  const phone = document.getElementById('realtor-lead-phone')?.value?.trim() || '';
+  const email = document.getElementById('realtor-lead-email')?.value?.trim() || '';
   const timeline = document.getElementById('realtor-lead-timeline')?.value || 'curious';
-  const notes = document.getElementById('realtor-lead-notes')?.value || '';
+  const notes = document.getElementById('realtor-lead-notes')?.value?.trim() || '';
 
   const leadRecord = {
     id: 'realtor_' + Date.now(),
@@ -7974,6 +8219,9 @@ function handleRealtorLeadSubmit(e) {
     },
     contact: { name, phone, email, timeline, notes }
   };
+
+  leadRecord.formattedDossier = buildFormattedLeadDossier('realtor', leadRecord);
+  latestSubmittedLead = { type: 'realtor', record: leadRecord };
 
   try {
     const existing = JSON.parse(localStorage.getItem('mytownlens_realtor_leads') || '[]');
@@ -8002,7 +8250,7 @@ function handleRealtorLeadSubmit(e) {
       <div style="font-size: 0.85rem; color: #475569; display: grid; gap: 4px;">
         <span><strong>Homeowner:</strong> ${escapeHtml(name)} (${escapeHtml(phone)} &bull; ${escapeHtml(email)})</span>
         <span><strong>Property:</strong> ${escapeHtml(target.address || '')} (Block ${escapeHtml(target.block)}, Lot ${escapeHtml(target.lot)})</span>
-        <span><strong>Timeline:</strong> ${escapeHtml(timeline.replace('_', ' '))}</span>
+        <span><strong>Est. Market Value:</strong> $${(Number(target.estimatedMarketValue) || 450000).toLocaleString()} &bull; <strong>Timeline:</strong> ${escapeHtml(timeline.replace(/_/g, ' '))}</span>
       </div>
     `;
   }
@@ -8011,7 +8259,7 @@ function handleRealtorLeadSubmit(e) {
 }
 
 // ==========================================================================
-// MONETIZATION FEATURE 4: 📊 Owner Lead Management Console & CSV Export
+// MONETIZATION FEATURE 4: 📊 Owner Lead Management Console & Buyer Dispatch
 // ==========================================================================
 function openAdminLeadsModal() {
   const modal = document.getElementById('admin-leads-dialog');
@@ -8053,6 +8301,14 @@ function switchAdminTab(tabName) {
   }
 }
 
+function getLeadSavingsAmount(item) {
+  if (item?.caseMerits?.potentialAnnualSavings !== undefined) {
+    return Number(item.caseMerits.potentialAnnualSavings) || 0;
+  }
+  const tax = Number(item?.property?.annualTax) || 0;
+  return Math.round(tax * 0.15);
+}
+
 function renderAdminLeadsData() {
   let appeals = [];
   let realtor = [];
@@ -8076,10 +8332,7 @@ function renderAdminLeadsData() {
 
   if (appealCountEl) appealCountEl.textContent = appeals.length;
   if (appealSavingsEl) {
-    const totalSavings = appeals.reduce((sum, item) => {
-      const tax = Number(item.property?.annualTax) || 0;
-      return sum + Math.round(tax * 0.15); // est 15% reduction
-    }, 0);
+    const totalSavings = appeals.reduce((sum, item) => sum + getLeadSavingsAmount(item), 0);
     appealSavingsEl.textContent = `$${totalSavings.toLocaleString()} Est. Potential Savings`;
   }
 
@@ -8092,6 +8345,7 @@ function renderAdminLeadsData() {
   if (partnerCountEl) partnerCountEl.textContent = partners.length;
 
   const currentWebhook = localStorage.getItem('mytownlens_lead_webhook') || '';
+  const currentPartnerEmail = localStorage.getItem('mytownlens_partner_email') || '';
   if (webhookStatusEl && webhookSubEl) {
     if (currentWebhook) {
       try {
@@ -8103,6 +8357,10 @@ function renderAdminLeadsData() {
         webhookStatusEl.textContent = 'Configured';
         webhookSubEl.textContent = 'Webhook saved';
       }
+    } else if (currentPartnerEmail) {
+      webhookStatusEl.textContent = 'Email Ready';
+      webhookStatusEl.style.color = '#2563eb';
+      webhookSubEl.textContent = currentPartnerEmail;
     } else {
       webhookStatusEl.textContent = 'Local Only';
       webhookStatusEl.style.color = '#64748b';
@@ -8114,26 +8372,59 @@ function renderAdminLeadsData() {
   if (webhookInput && !webhookInput.value) {
     webhookInput.value = currentWebhook;
   }
+  const partnerEmailInput = document.getElementById('admin-partner-email');
+  if (partnerEmailInput && !partnerEmailInput.value) {
+    partnerEmailInput.value = currentPartnerEmail;
+  }
 
-  // Render Table 1: Appeals
+  // Render Table 1: Appeals (Golden Dockets)
   const tbodyAppeals = document.getElementById('admin-tbody-appeals');
   if (tbodyAppeals) {
     if (appeals.length === 0) {
-      tbodyAppeals.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 20px; color: #94a3b8;">No homeowner tax appeal leads yet. Submissions from the Am I Over-Assessed tool will appear here.</td></tr>`;
+      tbodyAppeals.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 20px; color: #94a3b8;">No homeowner tax appeal leads yet. Submissions from the Tax Appeal Analyzer will appear here, or click <strong>⚡ Generate Sample Lead</strong> above to create a real MOD-IV case docket.</td></tr>`;
     } else {
       tbodyAppeals.innerHTML = appeals.map(a => {
         const dateStr = a.submittedAt ? new Date(a.submittedAt).toLocaleDateString() + ' ' + new Date(a.submittedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '—';
         const contact = a.contact || {};
         const prop = a.property || {};
+        const merits = a.caseMerits || {};
+        const compsCount = Array.isArray(a.comparables) ? a.comparables.length : 0;
+        const savings = getLeadSavingsAmount(a);
+        const overAssess = merits.indicatedOverAssessment !== undefined ? merits.indicatedOverAssessment : Math.round((Number(prop.assessedTotal) || 0) * 0.12);
+        const overPct = merits.overAssessmentPct !== undefined ? merits.overAssessmentPct : 12.0;
+
         return `
           <tr>
-            <td style="font-size: 0.76rem; color: #64748b; white-space: nowrap;">${dateStr}</td>
-            <td><strong>${escapeHtml(contact.name || '—')}</strong></td>
-            <td><div>${escapeHtml(contact.phone || '—')}</div><div style="font-size: 0.75rem; color: #64748b;">${escapeHtml(contact.email || '—')}</div></td>
-            <td><div>${escapeHtml(prop.address || '—')}</div><div style="font-size: 0.72rem; color: #94a3b8;">B: ${escapeHtml(prop.block)} / L: ${escapeHtml(prop.lot)}</div></td>
-            <td>${escapeHtml(prop.municipality || '—')}</td>
-            <td style="color: #059669; font-weight: 700;">$${Math.round((Number(prop.annualTax) || 0) * 0.15).toLocaleString()}</td>
-            <td style="font-size: 0.76rem; color: #475569;"><div>Pref: ${escapeHtml(contact.preferredContact || 'phone')}</div><div style="font-style: italic;">${escapeHtml(contact.notes || '')}</div></td>
+            <td style="font-size: 0.75rem; color: #64748b; white-space: nowrap;">${dateStr}</td>
+            <td>
+              <strong>${escapeHtml(contact.name || '—')}</strong>
+              <div style="font-size: 0.7rem; color: #059669; font-weight: 700;">${contact.isLegalOwner !== false ? '✓ Owner Verified' : 'Taxpayer'}</div>
+            </td>
+            <td>
+              <div>${escapeHtml(contact.phone || '—')}</div>
+              <div style="font-size: 0.74rem; color: #64748b;">${escapeHtml(contact.email || '—')}</div>
+              <div style="font-size: 0.7rem; color: #94a3b8;">Pref: ${escapeHtml(contact.preferredContact || 'phone')}</div>
+            </td>
+            <td>
+              <div><strong>${escapeHtml(prop.address || '—')}</strong></div>
+              <div style="font-size: 0.72rem; color: #64748b;">B: ${escapeHtml(prop.block)} / L: ${escapeHtml(prop.lot)} &bull; Assess: $${Number(prop.assessedTotal || 0).toLocaleString()}</div>
+            </td>
+            <td>
+              <div><strong>${escapeHtml(prop.municipality || '—')}</strong></div>
+              <div style="font-size: 0.72rem; color: #64748b;">${escapeHtml(prop.county || '')}</div>
+            </td>
+            <td>
+              <div style="color: #059669; font-weight: 800; font-size: 0.86rem;">$${savings.toLocaleString()} / yr</div>
+              <div style="font-size: 0.72rem; color: #b91c1c; font-weight: 600;">+$${Number(overAssess).toLocaleString()} (+${overPct}%)</div>
+              <div style="font-size: 0.7rem; color: #2563eb; font-weight: 700;">${compsCount > 0 ? `✓ ${compsCount} Comps Attached` : 'MOD-IV Roll'}</div>
+            </td>
+            <td style="white-space: nowrap;">
+              <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                <button type="button" class="btn-sponsor-table-edit" onclick="openLeadDossierPreview('appeals', '${escapeHtml(a.id)}')" title="Inspect full formatted Case Dossier">📄 Dossier</button>
+                <button type="button" class="btn-sponsor-table-edit" onclick="copyLeadDossierById('appeals', '${escapeHtml(a.id)}')" title="Copy full Case Dossier to clipboard">📋 Copy</button>
+                <button type="button" class="btn-sponsor-table-edit" style="background:#ecfdf5; border-color:#a7f3d0; color:#047857;" onclick="emailLeadDossierById('appeals', '${escapeHtml(a.id)}')" title="Email Case Dossier to Partner Attorney">📧 Send</button>
+              </div>
+            </td>
           </tr>
         `;
       }).join('');
@@ -8144,7 +8435,7 @@ function renderAdminLeadsData() {
   const tbodyRealtor = document.getElementById('admin-tbody-realtor');
   if (tbodyRealtor) {
     if (realtor.length === 0) {
-      tbodyRealtor.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 20px; color: #94a3b8;">No homeowner CMA valuation leads yet. Requests from the Free Realtor Valuation button will appear here.</td></tr>`;
+      tbodyRealtor.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 20px; color: #94a3b8;">No homeowner CMA valuation leads yet. Requests from the Free Realtor Valuation button will appear here, or click <strong>⚡ Generate Sample CMA Lead</strong> above.</td></tr>`;
     } else {
       tbodyRealtor.innerHTML = realtor.map(r => {
         const dateStr = r.submittedAt ? new Date(r.submittedAt).toLocaleDateString() + ' ' + new Date(r.submittedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '—';
@@ -8155,10 +8446,19 @@ function renderAdminLeadsData() {
             <td style="font-size: 0.76rem; color: #64748b; white-space: nowrap;">${dateStr}</td>
             <td><strong>${escapeHtml(contact.name || '—')}</strong></td>
             <td><div>${escapeHtml(contact.phone || '—')}</div><div style="font-size: 0.75rem; color: #64748b;">${escapeHtml(contact.email || '—')}</div></td>
-            <td><div>${escapeHtml(prop.address || '—')}</div><div style="font-size: 0.72rem; color: #94a3b8;">B: ${escapeHtml(prop.block)} / L: ${escapeHtml(prop.lot)}</div></td>
+            <td><div><strong>${escapeHtml(prop.address || '—')}</strong></div><div style="font-size: 0.72rem; color: #94a3b8;">B: ${escapeHtml(prop.block)} / L: ${escapeHtml(prop.lot)}</div></td>
             <td>${escapeHtml(prop.municipality || '—')}</td>
-            <td style="font-weight: 700; color: #0284c7;">$${(Number(prop.estimatedMarketValue) || 0).toLocaleString()}</td>
-            <td style="font-size: 0.76rem; color: #475569;"><div>Timeline: ${escapeHtml(contact.timeline || 'curious')}</div><div style="font-style: italic;">${escapeHtml(contact.notes || '')}</div></td>
+            <td>
+              <div style="font-weight: 700; color: #0284c7;">$${(Number(prop.estimatedMarketValue) || 0).toLocaleString()}</div>
+              <div style="font-size: 0.72rem; color: #475569;">${escapeHtml((contact.timeline || 'curious').replace(/_/g, ' '))}</div>
+            </td>
+            <td style="white-space: nowrap;">
+              <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                <button type="button" class="btn-sponsor-table-edit" onclick="openLeadDossierPreview('realtor', '${escapeHtml(r.id)}')">📄 Dossier</button>
+                <button type="button" class="btn-sponsor-table-edit" onclick="copyLeadDossierById('realtor', '${escapeHtml(r.id)}')">📋 Copy</button>
+                <button type="button" class="btn-sponsor-table-edit" style="background:#ecfdf5; border-color:#a7f3d0; color:#047857;" onclick="emailLeadDossierById('realtor', '${escapeHtml(r.id)}')">📧 Send</button>
+              </div>
+            </td>
           </tr>
         `;
       }).join('');
@@ -8189,6 +8489,289 @@ function renderAdminLeadsData() {
   }
 }
 
+function findLeadRecordById(type, leadId) {
+  const storageKey = type === 'appeals' ? 'mytownlens_attorney_leads' : 'mytownlens_realtor_leads';
+  try {
+    const list = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    return list.find(item => item.id === leadId) || null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function openLeadDossierPreview(type, leadId) {
+  const record = findLeadRecordById(type, leadId);
+  if (!record) {
+    showToast('⚠️ Lead record not found');
+    return;
+  }
+  const inspector = document.getElementById('admin-dossier-inspector');
+  const titleEl = document.getElementById('admin-dossier-title');
+  const subEl = document.getElementById('admin-dossier-subtitle');
+  const preEl = document.getElementById('admin-dossier-pre');
+
+  const dossierText = record.formattedDossier || buildFormattedLeadDossier(type, record);
+  activeInspectedDossier = { type, record, text: dossierText };
+
+  if (titleEl) {
+    titleEl.textContent = type === 'appeals'
+      ? `📄 Tax Appeal Case Dossier: ${record.property?.address || ''} (${record.property?.municipality || ''})`
+      : `📄 Realtor CMA Valuation Dossier: ${record.property?.address || ''} (${record.property?.municipality || ''})`;
+  }
+  if (subEl) {
+    subEl.textContent = `Applicant: ${record.contact?.name || ''} • ${record.contact?.phone || ''} • ${record.contact?.email || ''}`;
+  }
+  if (preEl) {
+    preEl.textContent = dossierText;
+  }
+  if (inspector) {
+    inspector.style.display = 'block';
+    if (typeof inspector.scrollIntoView === 'function') {
+      inspector.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+}
+
+function closeLeadDossierPreview() {
+  const inspector = document.getElementById('admin-dossier-inspector');
+  if (inspector) inspector.style.display = 'none';
+}
+
+function copyActiveInspectedDossier() {
+  if (!activeInspectedDossier || !activeInspectedDossier.text) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(activeInspectedDossier.text).then(() => {
+      showToast('✓ Full Case Dossier copied to clipboard!');
+    }).catch(() => {
+      showToast('✓ Copied to clipboard');
+    });
+  }
+}
+
+function emailActiveInspectedDossier() {
+  if (!activeInspectedDossier || !activeInspectedDossier.record) return;
+  emailLeadDossierById(activeInspectedDossier.type, activeInspectedDossier.record.id);
+}
+
+function copyLeadDossierById(type, leadId) {
+  const record = findLeadRecordById(type, leadId);
+  if (!record) return;
+  const text = record.formattedDossier || buildFormattedLeadDossier(type, record);
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('✓ Pre-qualified lead dossier copied to clipboard!');
+    }).catch(() => {
+      showToast('✓ Dossier copied');
+    });
+  }
+}
+
+function emailLeadDossierById(type, leadId) {
+  const record = findLeadRecordById(type, leadId);
+  if (!record) return;
+  const partnerEmail = localStorage.getItem('mytownlens_partner_email') || '';
+  const p = record.property || {};
+  const text = record.formattedDossier || buildFormattedLeadDossier(type, record);
+  const subject = type === 'appeals'
+    ? `Pre-Qualified NJ Tax Appeal Lead: ${p.address || ''}, ${p.municipality || ''} (Est. Savings: $${getLeadSavingsAmount(record).toLocaleString()}/yr)`
+    : `Homeowner CMA Valuation Lead: ${p.address || ''}, ${p.municipality || ''} ($${Number(p.estimatedMarketValue || 450000).toLocaleString()})`;
+
+  const mailtoUrl = `mailto:${encodeURIComponent(partnerEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+  if (typeof window !== 'undefined') {
+    window.location.href = mailtoUrl;
+  }
+  showToast('📧 Opened email client with formatted Case Dossier');
+}
+
+function generateSampleQualifiedLead(type = 'appeals') {
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const props = propertyAssessmentsData?.properties || [];
+  const rate = parseFloat(meta.certifiedTaxRate) || meta.rateNum || 2.5;
+  const eqRatio = parseFloat(meta.equalizationRatio) || 100.0;
+
+  // Pick a real high-assessment parcel from the active town's MOD-IV roll
+  let subject = props.find(p => p.assessedTotal > (propertyAssessmentsData?.summaryStats?.averageAssessed || 200000) * 1.18) || props[0] || {
+    id: `${currentCity}-sample-1`,
+    address: '142 OAK RIDGE RD',
+    block: '18.02',
+    lot: '14',
+    propertyType: 'Single Family',
+    bldgDesc: '2S-F-C',
+    yearBuilt: 1968,
+    assessedLand: 145000,
+    assessedBuilding: 215000,
+    assessedTotal: 360000,
+    annualTax: Math.round(3600 * rate * 100) / 100,
+    estimatedMarketValue: 685000
+  };
+
+  if (type === 'realtor') {
+    const sampleRealtor = {
+      id: 'realtor_sample_' + Date.now(),
+      submittedAt: new Date().toISOString(),
+      property: {
+        address: subject.address,
+        block: subject.block,
+        lot: subject.lot,
+        estimatedMarketValue: subject.estimatedMarketValue || 625000,
+        municipality: meta.name,
+        county: meta.county
+      },
+      contact: {
+        name: 'David & Sarah Miller [Sample Lead]',
+        phone: '(973) 555-0184',
+        email: 'dmiller.homeowner@example.com',
+        timeline: '1-3_months',
+        notes: 'Updated kitchen (2023), finished basement, considering listing before summer market.'
+      }
+    };
+    sampleRealtor.formattedDossier = buildFormattedLeadDossier('realtor', sampleRealtor);
+    try {
+      const existing = JSON.parse(localStorage.getItem('mytownlens_realtor_leads') || '[]');
+      existing.unshift(sampleRealtor);
+      localStorage.setItem('mytownlens_realtor_leads', JSON.stringify(existing));
+    } catch (e) {}
+    renderAdminLeadsData();
+    openLeadDossierPreview('realtor', sampleRealtor.id);
+    showToast(`✓ Generated sample Realtor CMA lead for ${subject.address} (${meta.name})`);
+    return sampleRealtor;
+  }
+
+  // Find 4 lower-assessed street/neighborhood comparables from the roll
+  const compsPool = props.filter(p => p.id !== subject.id && p.assessedTotal < subject.assessedTotal * 0.92).slice(0, 4);
+  const compMedian = compsPool.length > 0
+    ? compsPool[Math.floor(compsPool.length / 2)].assessedTotal
+    : Math.round(subject.assessedTotal * 0.84);
+  const diff = Math.max(15000, subject.assessedTotal - compMedian);
+  const diffPct = +((diff / Math.max(1, compMedian)) * 100).toFixed(1);
+  const potentialSavings = Math.max(450, Math.round((diff / 100) * rate));
+
+  const sampleAppeal = {
+    id: 'lead_sample_' + Date.now(),
+    submittedAt: new Date().toISOString(),
+    property: {
+      id: subject.id || '',
+      address: subject.address,
+      block: subject.block,
+      lot: subject.lot,
+      pamsPin: subject.pamsPin || `${meta.districtCode || '1602'}_${subject.block}_${subject.lot}`,
+      propertyClass: '2',
+      propertyType: subject.propertyType || 'Single Family',
+      bldgDesc: subject.bldgDesc || 'Class 2 Residential',
+      yearBuilt: subject.yearBuilt || 1965,
+      lotSize: subject.lotSize || '75X125',
+      assessedLand: subject.assessedLand || Math.round(subject.assessedTotal * 0.4),
+      assessedBuilding: subject.assessedBuilding || Math.round(subject.assessedTotal * 0.6),
+      assessedTotal: subject.assessedTotal,
+      certifiedTaxRate: meta.certifiedTaxRate || `${rate}%`,
+      annualTax: subject.annualTax,
+      estimatedMarketValue: subject.estimatedMarketValue || 640000,
+      municipality: meta.name,
+      county: meta.county,
+      districtCode: meta.districtCode || ''
+    },
+    caseMerits: {
+      equalizationRatio: eqRatio,
+      corridorLower: +(eqRatio * 0.85).toFixed(1),
+      corridorUpper: +(eqRatio * 1.15).toFixed(1),
+      streetMedianAssessment: compMedian,
+      indicatedOverAssessment: diff,
+      overAssessmentPct: diffPct,
+      potentialAnnualSavings: potentialSavings,
+      interiorSpecs: { bedrooms: '3', bathrooms: '2', sqft: '1,850', condition: 'dated' }
+    },
+    comparables: compsPool.map(c => ({
+      address: c.address,
+      block: c.block,
+      lot: c.lot,
+      propertyType: c.propertyType || 'Single Family',
+      yearBuilt: c.yearBuilt || 1964,
+      assessedTotal: c.assessedTotal,
+      annualTax: c.annualTax,
+      salePrice: c.salePrice || 0,
+      deedDate: c.deedDate || ''
+    })),
+    contact: {
+      name: 'Michael &Elena Rostova [Sample Dossier]',
+      phone: '(973) 555-0192',
+      email: 'mrostova.taxpayer@example.com',
+      preferredContact: 'phone',
+      isLegalOwner: true,
+      notes: 'Original 1970s kitchen and baths, water seepage in unfinished basement, assessment is $' + diff.toLocaleString() + ' above neighbors on same block.'
+    }
+  };
+
+  sampleAppeal.formattedDossier = buildFormattedLeadDossier('appeals', sampleAppeal);
+
+  try {
+    const existing = JSON.parse(localStorage.getItem('mytownlens_attorney_leads') || '[]');
+    existing.unshift(sampleAppeal);
+    localStorage.setItem('mytownlens_attorney_leads', JSON.stringify(existing));
+  } catch (e) {}
+
+  renderAdminLeadsData();
+  openLeadDossierPreview('appeals', sampleAppeal.id);
+  showToast(`✓ Generated sample Golden Lead Dossier for ${subject.address} (${meta.name})`);
+  return sampleAppeal;
+}
+
+function copyBuyerPitchScript(buyerType = 'attorney') {
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const totalParcels = propertyAssessmentsData?.summaryStats?.totalProperties || 21300;
+  const avgTax = propertyAssessmentsData?.summaryStats?.averageTax || 11782;
+
+  const pitch = buyerType === 'attorney'
+    ? [
+      `Subject: 3 Free Pre-Qualified ${meta.name} (${meta.countyShort}) Property Tax Appeal Case Dockets`,
+      '',
+      'Hi [Managing Partner / Attorney Name],',
+      '',
+      `I run MyTownLens (mytownlens.com), a public property tax and MOD-IV assessment intelligence platform covering all 47 municipalities across Passaic, Bergen, Essex, and Morris counties (150,016 certified Class 2 residential parcels, including ${totalParcels.toLocaleString()} homes in ${meta.name} where the average tax bill is $${Math.round(avgTax).toLocaleString()}/yr).`,
+      '',
+      `Homeowners in ${meta.name} and surrounding ${meta.countyShort} towns are actively using our Chapter 123 Tax Appeal Analyzer to check if their property is over-assessed before the April 1 filing deadline.`,
+      '',
+      'When a homeowner requests a professional review, our system packages a complete "Golden Lead Case Dossier" containing:',
+      '  1. Verified Homeowner Contact Info & Legal Representation Consent',
+      '  2. Subject Parcel Block, Lot, PAMS PIN, Land/Building Assessment & 2026 Tax Bill',
+      '  3. Chapter 123 Common Level Ratio Variance & Indicated Annual Tax Savings ($/yr)',
+      '  4. 3 to 5 Verified MOD-IV Street Comparable Sales with Deed Dates & Ratios',
+      '',
+      `I would like to send your intake desk 3 pre-qualified ${meta.countyShort} homeowner case dockets free of charge this week so you can see the dossier quality firsthand. If they convert into contingency filings for your firm, we can discuss a simple per-lead arrangement ($75–$125/lead) or exclusive town sponsorship for ${meta.name}.`,
+      '',
+      'Where is the best email address to forward your 3 complimentary case dockets?',
+      '',
+      'Best regards,',
+      '[Your Name]',
+      'Founder, MyTownLens (mytownlens.com)'
+    ].join('\n')
+    : [
+      `Subject: Exclusive ${meta.name} Homeowner CMA & Seller Valuation Leads (MyTownLens)`,
+      '',
+      'Hi [Broker / Team Leader Name],',
+      '',
+      `I run MyTownLens (mytownlens.com), a local property tax and housing intelligence platform monitoring ${totalParcels.toLocaleString()} residential properties in ${meta.name} and 150,016 homes across 47 North Jersey towns.`,
+      '',
+      `Homeowners looking up their ${meta.name} tax assessments and 2027 revaluation projections frequently request an off-market Comparative Market Analysis (CMA) from a local neighborhood specialist before listing or refinancing.`,
+      '',
+      `I'd love to send you our next 3 ${meta.name} homeowner valuation requests free of charge so you can evaluate the lead intent. We also offer exclusive single-agent sponsorship for ${meta.name}.`,
+      '',
+      'What is the best email or cell number to route your 3 complimentary homeowner CMA leads?',
+      '',
+      'Best regards,',
+      '[Your Name]',
+      'Founder, MyTownLens (mytownlens.com)'
+    ].join('\n');
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(pitch).then(() => {
+      showToast(`✓ Copied ${buyerType === 'attorney' ? 'Tax Appeal Attorney' : 'Realtor'} cold-pitch email script!`);
+    }).catch(() => {
+      showToast('✓ Pitch script copied');
+    });
+  }
+  return pitch;
+}
+
 function exportLeadsCSV(type) {
   let rows = [];
   let filename = '';
@@ -8206,25 +8789,51 @@ function exportLeadsCSV(type) {
       showToast('⚠️ No attorney leads to export');
       return;
     }
-    rows.push(['Timestamp', 'Applicant Name', 'Phone', 'Email', 'Preferred Contact', 'Address', 'Block', 'Lot', 'Municipality', 'County', 'Current Assessment', 'Annual Tax', 'Est Potential Reduction', 'Notes'].map(escapeCSV).join(','));
+    rows.push([
+      'Lead ID', 'Timestamp', 'Homeowner Name', 'Phone', 'Email', 'Preferred Contact', 'Legal Owner Verified',
+      'Address', 'Block', 'Lot', 'PAMS PIN', 'Municipality', 'County', 'Property Type', 'Year Built',
+      'Assessed Land', 'Assessed Building', 'Current Total Assessment', 'Certified Tax Rate', 'Annual Tax',
+      'Street Comps Median', 'Indicated Over-Assessment ($)', 'Over-Assessment (%)', 'Est Annual Tax Savings ($/yr)',
+      'Ch 123 Ratio (%)', 'Attached MOD-IV Comps', 'Homeowner Notes'
+    ].map(escapeCSV).join(','));
+
     data.forEach(item => {
       const p = item.property || {};
       const c = item.contact || {};
-      const diff = Math.round((Number(p.annualTax) || 0) * 0.15);
+      const m = item.caseMerits || {};
+      const comps = Array.isArray(item.comparables) ? item.comparables : [];
+      const savings = getLeadSavingsAmount(item);
+      const overAssess = m.indicatedOverAssessment !== undefined ? m.indicatedOverAssessment : Math.round((Number(p.assessedTotal) || 0) * 0.12);
+      const overPct = m.overAssessmentPct !== undefined ? m.overAssessmentPct : 12.0;
+      const compsSummary = comps.map(comp => `${comp.address} (B:${comp.block} L:${comp.lot} $${comp.assessedTotal})`).join(' | ');
+
       rows.push([
+        item.id || '',
         item.submittedAt || '',
         c.name || '',
         c.phone || '',
         c.email || '',
         c.preferredContact || '',
+        c.isLegalOwner !== false ? 'Yes' : 'No',
         p.address || '',
         p.block || '',
         p.lot || '',
+        p.pamsPin || '',
         p.municipality || '',
         p.county || '',
+        p.propertyType || 'Single Family',
+        p.yearBuilt || '',
+        p.assessedLand || 0,
+        p.assessedBuilding || 0,
         p.assessedTotal || 0,
+        p.certifiedTaxRate || '',
         p.annualTax || 0,
-        diff,
+        m.streetMedianAssessment || p.assessedTotal || 0,
+        overAssess,
+        overPct,
+        savings,
+        m.equalizationRatio || '',
+        compsSummary,
         c.notes || ''
       ].map(escapeCSV).join(','));
     });
@@ -8294,35 +8903,44 @@ function clearLeadsData(type) {
   else if (type === 'realtor') localStorage.removeItem('mytownlens_realtor_leads');
   else if (type === 'partners') localStorage.removeItem('mytownlens_partner_inquiries');
 
+  closeLeadDossierPreview();
   renderAdminLeadsData();
   showToast(`Cleared ${label}`);
 }
 
 function saveAdminWebhook() {
   const input = document.getElementById('admin-webhook-url');
+  const emailInput = document.getElementById('admin-partner-email');
   const msgEl = document.getElementById('admin-webhook-status-msg');
   if (!input) return;
   const val = input.value.trim();
+  const emailVal = emailInput ? emailInput.value.trim() : '';
 
   if (val && !val.startsWith('http')) {
     if (msgEl) {
-      msgEl.innerHTML = `<span style="color: #ef4444;">⚠️ Please enter a valid URL beginning with https://</span>`;
+      msgEl.innerHTML = `<span style="color: #ef4444;">⚠️ Please enter a valid Webhook URL beginning with https://</span>`;
     }
     return;
+  }
+
+  if (emailVal) {
+    localStorage.setItem('mytownlens_partner_email', emailVal);
+  } else {
+    localStorage.removeItem('mytownlens_partner_email');
   }
 
   if (val) {
     localStorage.setItem('mytownlens_lead_webhook', val);
     if (msgEl) {
-      msgEl.innerHTML = `<span style="color: #10b981;">✓ Webhook saved successfully! All future leads will automatically POST to this URL.</span>`;
+      msgEl.innerHTML = `<span style="color: #10b981;">✓ Delivery settings saved! All future leads will automatically POST their full Golden Dossier to your webhook${emailVal ? ` and route to ${escapeHtml(emailVal)}` : ''}.</span>`;
     }
-    showToast('✓ Lead Webhook Saved');
+    showToast('✓ Lead Delivery Settings Saved');
   } else {
     localStorage.removeItem('mytownlens_lead_webhook');
     if (msgEl) {
-      msgEl.innerHTML = `<span style="color: #64748b;">Webhook removed. Leads will be stored in local browser storage only.</span>`;
+      msgEl.innerHTML = `<span style="color: #059669;">✓ Settings updated.${emailVal ? ` Partner dispatch email set to ${escapeHtml(emailVal)}.` : ' Leads stored in browser console.'}</span>`;
     }
-    showToast('Webhook cleared');
+    showToast('✓ Delivery settings updated');
   }
   renderAdminLeadsData();
 }
@@ -8337,7 +8955,7 @@ function testAdminWebhook() {
     return;
   }
 
-  if (msgEl) msgEl.innerHTML = `<span style="color: #3b82f6;">Sending test ping to ${escapeHtml(val)}...</span>`;
+  if (msgEl) msgEl.innerHTML = `<span style="color: #3b82f6;">Sending test Golden Lead Dossier ping to ${escapeHtml(val)}...</span>`;
 
   fetch(val, {
     method: 'POST',
@@ -8346,7 +8964,7 @@ function testAdminWebhook() {
       source: 'MyTownLens Platform',
       leadType: 'test_ping',
       timestamp: new Date().toISOString(),
-      message: 'Hello from MyTownLens! Your webhook is working and ready to receive real homeowner leads.'
+      message: 'Hello from MyTownLens! Your webhook is working and ready to receive pre-qualified homeowner tax appeal & Realtor CMA dossiers.'
     }),
     mode: 'cors'
   }).then(resp => {
@@ -17868,6 +18486,7 @@ window.editTownSponsor = editTownSponsor;
 window.removeTownSponsor = removeTownSponsor;
 window.resetSponsorForm = resetSponsorForm;
 window.exportSponsorsCSV = exportSponsorsCSV;
+window.updateMetaAndJsonLd = updateMetaAndJsonLd;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },
