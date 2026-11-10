@@ -6507,6 +6507,52 @@ function renderPaginationControls(totalProps, currentPage, totalPages) {
   if (bottomContainer) bottomContainer.innerHTML = paginationHtml;
 }
 
+// --------------------------------------------------------------------------
+// Chapter 123 & MOD-IV Over-Assessment Appeal Savings Estimator
+// --------------------------------------------------------------------------
+function getPropertyAppealSavingsEstimate(p) {
+  if (!p || !p.assessedTotal) return 0;
+  if (p._cachedSavings !== undefined) return p._cachedSavings;
+
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const eqRatio = meta.equalizationRatio ? parseFloat(meta.equalizationRatio) : 33.3;
+  const rate = meta.rateNum ? parseFloat(meta.rateNum) : (parseFloat(meta.certifiedTaxRate) || 2.5);
+  const corridorUpper = eqRatio * 1.15;
+
+  let savings = 0;
+  if (p.salePrice && p.salePrice > 50000) {
+    const saleRatio = (p.assessedTotal / p.salePrice) * 100;
+    if (saleRatio > corridorUpper) {
+      const fairAssess = p.salePrice * (eqRatio / 100);
+      savings = Math.max(0, Math.round(((p.assessedTotal - fairAssess) / 100) * rate));
+    }
+  }
+
+  if (!savings && propertyAssessmentsData?.summaryStats?.averageAssessed) {
+    const avgAssess = propertyAssessmentsData.summaryStats.averageAssessed;
+    if (p.assessedTotal > avgAssess * 1.30) {
+      const excess = p.assessedTotal - avgAssess * 1.15;
+      savings = Math.max(0, Math.round(((excess * 0.4) / 100) * rate));
+    }
+  }
+
+  p._cachedSavings = savings;
+  return savings;
+}
+
+let appealFilterActive = false;
+
+function toggleOverAssessedFilter() {
+  appealFilterActive = !appealFilterActive;
+  const btn = document.getElementById('btn-toggle-appeal-filter');
+  if (btn) {
+    btn.classList.toggle('active', appealFilterActive);
+  }
+  if (typeof applyPropertyFilters === 'function') {
+    applyPropertyFilters();
+  }
+}
+
 // TAB: PROPERTY VALUES & ASSESSMENTS
 function renderProperties(propsToRender, page) {
   if (!propertyAssessmentsData || !propertyAssessmentsData.properties) return;
@@ -6587,6 +6633,11 @@ function renderProperties(propsToRender, page) {
           ? `${formatUSDWhole(p.salePrice)}${p.deedDate ? ` (${escapeHtml(p.deedDate)})` : ''}${p.deedBook ? ` • Book ${escapeHtml(p.deedBook)}/${escapeHtml(p.deedPage)}` : ''}`
           : (p.deedBook ? `Book ${escapeHtml(p.deedBook)}, Page ${escapeHtml(p.deedPage)}${p.deedDate ? ` (${escapeHtml(p.deedDate)})` : ''}` : 'Prior to Digital Roll / N/A');
 
+        const estSavings = getPropertyAppealSavingsEstimate(p);
+        const savingsBadge = estSavings > 250
+          ? `<span class="prop-savings-badge" title="Indicated potential annual appeal savings based on Chapter 123 ratio & street comparables">🔥 Est. Savings: ~${formatUSDWhole(estSavings)}/yr</span>`
+          : '';
+
         return `
         <div class="property-card" data-id="${escapeHtml(p.id)}">
           <div class="prop-card-header">
@@ -6594,7 +6645,10 @@ function renderProperties(propsToRender, page) {
               <div class="prop-address">${escapeHtml(p.address)}</div>
               <div class="prop-neighborhood">📍 ${escapeHtml(p.neighborhood)} • ZIP ${escapeHtml(p.zip)}</div>
             </div>
-            <span class="prop-tier-badge ${p.tierClass}">${escapeHtml(p.taxTier)}</span>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+              <span class="prop-tier-badge ${p.tierClass}">${escapeHtml(p.taxTier)}</span>
+              ${savingsBadge}
+            </div>
           </div>
 
           <div class="prop-main-tax-banner">
@@ -6878,10 +6932,17 @@ function setupPropertyFilters() {
       filtered = filtered.filter(p => p.tierClass === tierSelect.value);
     }
 
+    // Quick-filter: Over-assessed / High Appeal Savings Only
+    if (appealFilterActive) {
+      filtered = filtered.filter(p => getPropertyAppealSavingsEstimate(p) > 250);
+    }
+
     // Sort order
     if (sortSelect) {
       const sortVal = sortSelect.value;
-      if (sortVal === 'tax-desc') {
+      if (sortVal === 'appeal-desc') {
+        filtered.sort((a, b) => getPropertyAppealSavingsEstimate(b) - getPropertyAppealSavingsEstimate(a));
+      } else if (sortVal === 'tax-desc') {
         filtered.sort((a, b) => (b.annualTax || 0) - (a.annualTax || 0));
       } else if (sortVal === 'tax-asc') {
         filtered.sort((a, b) => (a.annualTax || 0) - (b.annualTax || 0));
@@ -6928,6 +6989,9 @@ function setupPropertyFilters() {
   // Reset Filters
   if (resetBtn) {
     resetBtn.onclick = () => {
+      appealFilterActive = false;
+      const toggleBtn = document.getElementById('btn-toggle-appeal-filter');
+      if (toggleBtn) toggleBtn.classList.remove('active');
       if (searchInput) searchInput.value = '';
       if (neighSelect) neighSelect.value = 'ALL';
       if (zipSelect) zipSelect.value = 'ALL';
@@ -19158,6 +19222,8 @@ window.shareToNextdoor = shareToNextdoor;
 window.shareToFacebook = shareToFacebook;
 window.shareToWhatsApp = shareToWhatsApp;
 window.shareToTwitter = shareToTwitter;
+window.getPropertyAppealSavingsEstimate = getPropertyAppealSavingsEstimate;
+window.toggleOverAssessedFilter = toggleOverAssessedFilter;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },

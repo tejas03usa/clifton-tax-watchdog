@@ -350,7 +350,10 @@
             <strong>Search Your Home &amp; Filter Official MOD-IV Records</strong>
             <span class="filter-results-badge" id="prop-filter-count">Showing 1–36 of 21,300 Properties</span>
           </div>
-          <button class="btn-reset-filters" id="btn-reset-prop-filters">Reset All Filters</button>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <button type="button" class="btn-filter-appeal-toggle" id="btn-toggle-appeal-filter" onclick="toggleOverAssessedFilter()"><span>🔥</span> Over-Assessed Homes Only</button>
+            <button class="btn-reset-filters" id="btn-reset-prop-filters">Reset All Filters</button>
+          </div>
         </div>
 
         <div class="filter-controls-grid">
@@ -418,6 +421,7 @@
           <div class="filter-group">
             <label for="prop-sort-by">Sort By:</label>
             <select id="prop-sort-by">
+              <option value="appeal-desc">🔥 Potential Tax Savings ($/yr): High to Low</option>
               <option value="tax-desc">Annual Tax: Highest First ⬇</option>
               <option value="tax-asc">Annual Tax: Lowest First ⬆</option>
               <option value="assess-desc">Total Assessed Value: High to Low</option>
