@@ -19273,3 +19273,23 @@ dialog.omnibox-dialog::backdrop {
   color: #64748b;
   margin-top: 4px;
 }
+
+/* Embed Mode for Partner Law Firms & Real Estate Brokerage Iframes */
+body.embed-mode .app-header,
+body.embed-mode .nav-bar,
+body.embed-mode .election-live-alert-ribbon,
+body.embed-mode .site-footer,
+body.embed-mode .footer-toolkit-strip,
+body.embed-mode .hub-subnav-bar {
+  display: none !important;
+}
+
+body.embed-mode {
+  padding-top: 0 !important;
+  background: transparent !important;
+}
+
+body.embed-mode main.container {
+  max-width: 100% !important;
+  padding: 10px !important;
+}

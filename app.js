@@ -2626,6 +2626,9 @@ async function initApp() {
 
   // Check for URL parameters to preload calculator or deep-link to properties, appeals, or relief calculator
   const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('embed') && document.body) {
+    document.body.classList.add('embed-mode');
+  }
   if (urlParams.has('calc')) {
     const val = parseInt(urlParams.get('calc'), 10);
     const input = document.getElementById('calc-assessment-input');
@@ -9115,6 +9118,26 @@ function testAdminWebhook() {
       msgEl.innerHTML = `<span style="color: #f59e0b;">⚠️ Ping sent (Note: Browser CORS may restrict reading response, but server likely received payload). Detail: ${escapeHtml(err.message)}</span>`;
     }
   });
+}
+
+function copyWidgetSnippet() {
+  const codeEl = document.getElementById('admin-widget-code');
+  const msgEl = document.getElementById('admin-widget-status-msg');
+  if (!codeEl) return;
+  const snippet = codeEl.textContent.trim();
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(snippet);
+  }
+  if (msgEl) {
+    msgEl.innerHTML = `<span style="color: #10b981; font-weight: 700;">✓ 1-Line Embed Snippet copied to clipboard! Ready to paste into WordPress, Webflow, Squarespace, or partner site.</span>`;
+  }
+  showToast('✓ Embed snippet copied to clipboard');
+}
+
+function previewWidgetInNewTab() {
+  if (typeof window !== 'undefined' && window.open) {
+    window.open('index.html?embed=true', '_blank');
+  }
 }
 
 // ==========================================================================
@@ -20187,6 +20210,8 @@ window.filterScatterMatrixCounty = filterScatterMatrixCounty;
 window.PROPERTY_SHIFT_TIERS = PROPERTY_SHIFT_TIERS;
 window.selectPropertyShiftTier = selectPropertyShiftTier;
 window.renderPropertyShiftTier = renderPropertyShiftTier;
+window.copyWidgetSnippet = copyWidgetSnippet;
+window.previewWidgetInNewTab = previewWidgetInNewTab;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },
