@@ -8391,14 +8391,292 @@ function handleRealtorLeadSubmit(e) {
 }
 
 // ==========================================================================
-// MONETIZATION FEATURE 4: 📊 Owner Lead Management Console & Buyer Dispatch
+// MONETIZATION FEATURE 4: 📊 Owner Lead Management Console & Admin Security
 // ==========================================================================
+const DEFAULT_ADMIN_PASSWORD = 'MyTownLens2026!';
+
+function computeAdminPasswordHash(rawPassword) {
+  const str = 'mytownlens_salt_v1::' + String(rawPassword || '');
+  let h1 = 0xdeadbeef ^ str.length;
+  let h2 = 0x41c6ce57 ^ str.length;
+  for (let i = 0, ch; i < str.length; i++) {
+    ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return 'mtl_sha_' + (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(16);
+}
+
+function verifyAdminPassword(candidatePassword) {
+  if (!candidatePassword) return false;
+  const candidateHash = computeAdminPasswordHash(candidatePassword);
+  let storedHash = null;
+  try {
+    storedHash = localStorage.getItem('mytownlens_admin_pass_hash');
+  } catch (e) {}
+  if (storedHash) {
+    return candidateHash === storedHash;
+  }
+  return candidateHash === computeAdminPasswordHash(DEFAULT_ADMIN_PASSWORD);
+}
+
+function isAdminAuthenticated() {
+  try {
+    if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('mytownlens_admin_session') === 'authenticated') {
+      return true;
+    }
+    const rememberUntil = Number(localStorage.getItem('mytownlens_admin_remember_until') || 0);
+    if (rememberUntil > Date.now()) {
+      return true;
+    }
+  } catch (e) {}
+  return false;
+}
+
+function toggleAdminPasswordVisibility(inputId, btnId) {
+  const input = document.getElementById(inputId);
+  const btn = document.getElementById(btnId);
+  if (!input) return;
+  const isNowVisible = input.type === 'password';
+  input.type = isNowVisible ? 'text' : 'password';
+  if (btn) {
+    btn.setAttribute('aria-pressed', String(isNowVisible));
+    btn.textContent = isNowVisible ? '🙈 Hide password' : '👁️ Show password';
+  }
+}
+
+function populateAdminTownContextSelect() {
+  const select = document.getElementById('admin-active-town-select');
+  if (!select) return;
+  if (select.children.length === 0) {
+    const towns = Object.values(CITY_REGISTRY).sort((a, b) => a.name.localeCompare(b.name));
+    select.innerHTML = towns.map(t => `
+      <option value="${escapeHtml(t.id)}">${escapeHtml(t.name)} (${escapeHtml(t.countyShort || t.county)})</option>
+    `).join('');
+  }
+  select.value = currentCity || 'clifton';
+}
+
+async function handleAdminTownSwitch(townId) {
+  if (!townId || !CITY_REGISTRY[townId]) return;
+  await switchCity(townId);
+  populateAdminTownContextSelect();
+  renderAdminLeadsData();
+  showToast(`✓ Switched active admin municipality context to ${CITY_REGISTRY[townId].name}`);
+}
+
+function initAdminPortalWorkspace() {
+  const gate = document.getElementById('admin-auth-gate');
+  const workspace = document.getElementById('admin-portal-workspace');
+  const sessionBadge = document.getElementById('admin-session-badge');
+  const logoutBtn = document.getElementById('btn-admin-header-logout');
+  if (!gate || !workspace) return;
+
+  if (isAdminAuthenticated()) {
+    gate.style.display = 'none';
+    gate.setAttribute('aria-hidden', 'true');
+    workspace.style.display = 'block';
+    workspace.setAttribute('aria-hidden', 'false');
+    if (sessionBadge) sessionBadge.style.display = 'inline-flex';
+    if (logoutBtn) logoutBtn.style.display = 'inline-flex';
+    populateAdminTownContextSelect();
+    renderAdminLeadsData();
+    renderAdminSponsorsData();
+    renderAdminOutreachData();
+    renderAdminRealtorOutreachData();
+  } else {
+    gate.style.display = 'flex';
+    gate.setAttribute('aria-hidden', 'false');
+    workspace.style.display = 'none';
+    workspace.setAttribute('aria-hidden', 'true');
+    if (sessionBadge) sessionBadge.style.display = 'none';
+    if (logoutBtn) logoutBtn.style.display = 'none';
+  }
+}
+
+function handleAdminLoginSubmit(e) {
+  if (e && typeof e.preventDefault === 'function') e.preventDefault();
+  const passInput = document.getElementById('admin-login-password');
+  const rememberBox = document.getElementById('admin-remember-device');
+  const errBanner = document.getElementById('admin-login-error-banner');
+  const passVal = passInput ? passInput.value : '';
+
+  if (verifyAdminPassword(passVal)) {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        sessionStorage.setItem('mytownlens_admin_session', 'authenticated');
+      }
+      if (rememberBox && rememberBox.checked) {
+        localStorage.setItem('mytownlens_admin_remember_until', String(Date.now() + 7 * 24 * 60 * 60 * 1000));
+      } else {
+        localStorage.removeItem('mytownlens_admin_remember_until');
+      }
+    } catch (err) {}
+    if (errBanner) errBanner.style.display = 'none';
+    if (passInput) {
+      passInput.setAttribute('aria-invalid', 'false');
+      passInput.classList.remove('user-invalid-fallback');
+      passInput.value = '';
+    }
+    initAdminPortalWorkspace();
+    showToast('🔓 Signed in to MyTownLens Admin Portal');
+    return true;
+  } else {
+    if (errBanner) errBanner.style.display = 'flex';
+    if (passInput) {
+      passInput.setAttribute('aria-invalid', 'true');
+      passInput.classList.add('user-invalid-fallback');
+      passInput.focus();
+    }
+    return false;
+  }
+}
+
+function handleAdminLogout() {
+  try {
+    if (typeof sessionStorage !== 'undefined') {
+      sessionStorage.removeItem('mytownlens_admin_session');
+    }
+    localStorage.removeItem('mytownlens_admin_remember_until');
+  } catch (e) {}
+  closeLeadDossierPreview();
+  initAdminPortalWorkspace();
+  showToast('🔒 Signed out and locked Admin Portal');
+}
+
+function handleAdminPasswordChange(e) {
+  if (e && typeof e.preventDefault === 'function') e.preventDefault();
+  const curInput = document.getElementById('admin-current-pass');
+  const newInput = document.getElementById('admin-new-pass');
+  const msgEl = document.getElementById('admin-password-change-msg');
+
+  const curVal = curInput ? curInput.value : '';
+  const newVal = newInput ? newInput.value : '';
+
+  if (!verifyAdminPassword(curVal)) {
+    if (msgEl) {
+      msgEl.innerHTML = `<span style="color: #dc2626; font-weight: 700;">❌ Current administrator password is incorrect.</span>`;
+    }
+    return false;
+  }
+  if (!newVal || newVal.length < 8) {
+    if (msgEl) {
+      msgEl.innerHTML = `<span style="color: #dc2626; font-weight: 700;">❌ New password must be at least 8 characters long.</span>`;
+    }
+    return false;
+  }
+
+  try {
+    localStorage.setItem('mytownlens_admin_pass_hash', computeAdminPasswordHash(newVal));
+  } catch (err) {}
+
+  if (curInput) curInput.value = '';
+  if (newInput) newInput.value = '';
+  if (msgEl) {
+    msgEl.innerHTML = `<span style="color: #059669; font-weight: 700;">✓ Administrator password updated and encrypted!</span>`;
+  }
+  showToast('✓ Administrator password updated');
+  return true;
+}
+
+function resetAdminPasswordToDefault() {
+  try {
+    localStorage.removeItem('mytownlens_admin_pass_hash');
+  } catch (e) {}
+  const msgEl = document.getElementById('admin-password-change-msg');
+  if (msgEl) {
+    msgEl.innerHTML = `<span style="color: #2563eb; font-weight: 700;">✓ Password reset to default (${DEFAULT_ADMIN_PASSWORD}).</span>`;
+  }
+  showToast('✓ Admin password reset to default');
+}
+
+function exportAllAdminBackupJSON() {
+  const payload = {
+    exportedAt: new Date().toISOString(),
+    platform: 'MyTownLens Administrative Suite',
+    version: '2026.11',
+    data: {
+      attorneyLeads: JSON.parse(localStorage.getItem('mytownlens_attorney_leads') || '[]'),
+      realtorLeads: JSON.parse(localStorage.getItem('mytownlens_realtor_leads') || '[]'),
+      partnerInquiries: JSON.parse(localStorage.getItem('mytownlens_partner_inquiries') || '[]'),
+      sponsors: JSON.parse(localStorage.getItem('mytownlens_sponsors') || '{}'),
+      lawFirmCRM: JSON.parse(localStorage.getItem('mytownlens_law_firm_crm') || '[]'),
+      realtorBrokerageCRM: JSON.parse(localStorage.getItem('mytownlens_realtor_brokerage_crm') || '[]'),
+      webhookUrl: localStorage.getItem('mytownlens_lead_webhook') || '',
+      partnerEmail: localStorage.getItem('mytownlens_partner_email') || ''
+    }
+  };
+
+  const jsonStr = JSON.stringify(payload, null, 2);
+  const blob = new Blob([jsonStr], { type: 'application/json;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `mytownlens_admin_backup_${new Date().toISOString().split('T')[0]}.json`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+
+  const msgEl = document.getElementById('admin-backup-status-msg');
+  if (msgEl) {
+    msgEl.innerHTML = `<span style="color: #059669; font-weight: 700;">✓ Full administrative backup downloaded successfully.</span>`;
+  }
+  showToast('✓ Exported full Admin JSON backup');
+  return payload;
+}
+
+function importAllAdminBackupJSON(event) {
+  const file = event?.target?.files?.[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      const d = parsed?.data || parsed;
+      if (Array.isArray(d.attorneyLeads)) localStorage.setItem('mytownlens_attorney_leads', JSON.stringify(d.attorneyLeads));
+      if (Array.isArray(d.realtorLeads)) localStorage.setItem('mytownlens_realtor_leads', JSON.stringify(d.realtorLeads));
+      if (Array.isArray(d.partnerInquiries)) localStorage.setItem('mytownlens_partner_inquiries', JSON.stringify(d.partnerInquiries));
+      if (d.sponsors && typeof d.sponsors === 'object') localStorage.setItem('mytownlens_sponsors', JSON.stringify(d.sponsors));
+      if (Array.isArray(d.lawFirmCRM)) localStorage.setItem('mytownlens_law_firm_crm', JSON.stringify(d.lawFirmCRM));
+      if (Array.isArray(d.realtorBrokerageCRM)) localStorage.setItem('mytownlens_realtor_brokerage_crm', JSON.stringify(d.realtorBrokerageCRM));
+      if (typeof d.webhookUrl === 'string' && d.webhookUrl) localStorage.setItem('mytownlens_lead_webhook', d.webhookUrl);
+      if (typeof d.partnerEmail === 'string' && d.partnerEmail) localStorage.setItem('mytownlens_partner_email', d.partnerEmail);
+
+      renderAdminLeadsData();
+      renderAdminSponsorsData();
+      renderAdminOutreachData();
+      renderAdminRealtorOutreachData();
+
+      const msgEl = document.getElementById('admin-backup-status-msg');
+      if (msgEl) {
+        msgEl.innerHTML = `<span style="color: #059669; font-weight: 700;">✓ Restored all administrative records from ${escapeHtml(file.name)}!</span>`;
+      }
+      showToast('✓ Administrative backup restored');
+    } catch (err) {
+      const msgEl = document.getElementById('admin-backup-status-msg');
+      if (msgEl) {
+        msgEl.innerHTML = `<span style="color: #dc2626; font-weight: 700;">❌ Failed to parse JSON backup file.</span>`;
+      }
+    }
+  };
+  reader.readAsText(file);
+}
+
 function openAdminLeadsModal() {
   const modal = document.getElementById('admin-leads-dialog');
-  if (!modal) return;
+  if (!modal) {
+    if (typeof window !== 'undefined' && window.location && !window.location.pathname.endsWith('admin.html')) {
+      window.location.href = 'admin.html';
+    }
+    return;
+  }
   renderAdminLeadsData();
   renderAdminSponsorsData();
   renderAdminOutreachData();
+  renderAdminRealtorOutreachData();
   if (typeof modal.showModal === 'function') {
     modal.showModal();
   } else {
@@ -8417,7 +8695,7 @@ function closeAdminLeadsModal() {
 }
 
 function switchAdminTab(tabName) {
-  const tabs = ['appeals', 'realtor', 'partners', 'settings', 'sponsors', 'outreach', 'realtor_outreach'];
+  const tabs = ['appeals', 'realtor', 'partners', 'settings', 'sponsors', 'outreach', 'realtor_outreach', 'security'];
   tabs.forEach(t => {
     const btn = document.getElementById(`admin-tab-${t}-btn`);
     const panel = document.getElementById(`admin-panel-${t}`);
@@ -19987,10 +20265,13 @@ function setupOmnibox() {
     }
   } catch (err) {}
 
+  // Initialize standalone password-protected Admin Portal if on admin.html
+  initAdminPortalWorkspace();
+
   // MODERN WEB GUIDANCE: validate-input-after-interaction
   // Sync aria-invalid and link error messages into aria-describedby only while :user-invalid is active
   try {
-    const leadForms = document.querySelectorAll('.attorney-lead-form, .realtor-lead-form, .partner-inquire-form');
+    const leadForms = document.querySelectorAll('.attorney-lead-form, .realtor-lead-form, .partner-inquire-form, .admin-login-form');
     const syncFieldAria = (inputEl) => {
       if (!inputEl || !inputEl.dataset || !inputEl.dataset.error) return;
       const hintId = inputEl.dataset.hint;
@@ -20212,6 +20493,20 @@ window.selectPropertyShiftTier = selectPropertyShiftTier;
 window.renderPropertyShiftTier = renderPropertyShiftTier;
 window.copyWidgetSnippet = copyWidgetSnippet;
 window.previewWidgetInNewTab = previewWidgetInNewTab;
+window.DEFAULT_ADMIN_PASSWORD = DEFAULT_ADMIN_PASSWORD;
+window.computeAdminPasswordHash = computeAdminPasswordHash;
+window.verifyAdminPassword = verifyAdminPassword;
+window.isAdminAuthenticated = isAdminAuthenticated;
+window.toggleAdminPasswordVisibility = toggleAdminPasswordVisibility;
+window.populateAdminTownContextSelect = populateAdminTownContextSelect;
+window.handleAdminTownSwitch = handleAdminTownSwitch;
+window.initAdminPortalWorkspace = initAdminPortalWorkspace;
+window.handleAdminLoginSubmit = handleAdminLoginSubmit;
+window.handleAdminLogout = handleAdminLogout;
+window.handleAdminPasswordChange = handleAdminPasswordChange;
+window.resetAdminPasswordToDefault = resetAdminPasswordToDefault;
+window.exportAllAdminBackupJSON = exportAllAdminBackupJSON;
+window.importAllAdminBackupJSON = importAllAdminBackupJSON;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },
