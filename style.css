@@ -18590,3 +18590,262 @@ dialog.omnibox-dialog::backdrop {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   GOLDEN LEAD DOSSIER INSPECTOR & MODERN FORM VALIDATION (:user-invalid)
+   ========================================================================== */
+
+.attorney-lead-form input:not([type="checkbox"]),
+.attorney-lead-form select,
+.attorney-lead-form textarea,
+.realtor-lead-form input:not([type="checkbox"]),
+.realtor-lead-form select,
+.realtor-lead-form textarea,
+.partner-inquire-form input:not([type="checkbox"]),
+.partner-inquire-form select,
+.partner-inquire-form textarea {
+  font: inherit;
+  font-size: max(1rem, 1em);
+  min-height: 48px;
+}
+
+.field-hint {
+  display: block;
+  font-size: 0.76rem;
+  color: #64748b;
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+.error-msg {
+  display: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #dc2626;
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+.attorney-lead-form input:is(:user-invalid, .user-invalid-fallback),
+.realtor-lead-form input:is(:user-invalid, .user-invalid-fallback),
+.partner-inquire-form input:is(:user-invalid, .user-invalid-fallback) {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.attorney-lead-form input:user-valid,
+.realtor-lead-form input:user-valid,
+.partner-inquire-form input:user-valid {
+  border-color: #10b981;
+}
+
+.attorney-lead-form :is(:user-invalid, .user-invalid-fallback) + .error-msg,
+.realtor-lead-form :is(:user-invalid, .user-invalid-fallback) + .error-msg,
+.partner-inquire-form :is(:user-invalid, .user-invalid-fallback) + .error-msg {
+  display: block;
+}
+
+.admin-dossier-inspector {
+  margin-top: 16px;
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1.5px solid #334155;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+}
+
+.dossier-inspector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #334155;
+}
+
+.dossier-inspector-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-dossier-pre {
+  margin: 0;
+  padding: 14px;
+  background: #020617;
+  color: #e2e8f0;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.admin-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.btn-admin-action-xs {
+  padding: 4px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-admin-action-xs:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+.btn-admin-sample {
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-admin-sample:hover {
+  background: #d1fae5;
+}
+
+.btn-admin-pitch {
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1e40af;
+  background: #eff6ff;
+  border: 1px solid #93c5fd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-admin-pitch:hover {
+  background: #dbeafe;
+}
+
+/* ==========================================================================
+   COMMUNITY SHARE DIALOG & NEIGHBORHOOD SOCIAL PLATFORMS
+   ========================================================================== */
+
+.community-share-dialog {
+  max-width: 580px;
+  width: 95%;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.25);
+  padding: 0;
+  overflow: hidden;
+}
+
+.share-platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 12px 0;
+}
+
+@media (max-width: 600px) {
+  .share-platforms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn-share-platform {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  transition: all 0.15s ease;
+  color: #0f172a;
+}
+
+.btn-share-platform strong {
+  display: block;
+  font-size: 0.84rem;
+  line-height: 1.2;
+}
+
+.btn-share-platform small {
+  display: block;
+  font-size: 0.72rem;
+  color: #64748b;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.share-btn-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.nextdoor-share-btn:hover {
+  background: #f0fdf4;
+  border-color: #00b050;
+  color: #007a37;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 176, 80, 0.15);
+}
+
+.fb-share-btn:hover {
+  background: #eff6ff;
+  border-color: #1877f2;
+  color: #1877f2;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.15);
+}
+
+.whatsapp-share-btn:hover {
+  background: #f0fdf4;
+  border-color: #25d366;
+  color: #128c7e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.15);
+}
+
+.x-share-btn:hover {
+  background: #f8fafc;
+  border-color: #0f172a;
+  color: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.btn-a1-packet-trigger {
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  font-weight: 700;
+}
+
+.btn-a1-packet-trigger:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  color: #1e40af;
+}

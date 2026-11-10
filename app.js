@@ -6671,6 +6671,12 @@ function renderProperties(propsToRender, page) {
               <button type="button" class="btn-card-util btn-realtor-val-trigger" onclick="openRealtorValuationModal('${escapeHtml(p.address)}', '${escapeHtml(p.block)}', '${escapeHtml(p.lot)}', ${p.estimatedMarketValue})">
                 <span>🏡</span> Realtor CMA
               </button>
+              <button type="button" class="btn-card-util btn-a1-packet-trigger" onclick="quickPrintFormA1('${escapeHtml(p.id)}')">
+                <span>📄</span> Form A-1 Packet
+              </button>
+              <button type="button" class="btn-card-util" onclick="openShareModal('property', '${escapeHtml(p.address)}', '${escapeHtml(p.id)}')">
+                <span>📢</span> Share
+              </button>
               <button type="button" class="btn-card-util" onclick="copyPropertyPermalink('${escapeHtml(p.id)}', '${escapeHtml(p.address)}')">
                 <span>🔗</span> Copy Link
               </button>
@@ -6725,8 +6731,14 @@ function renderProperties(propsToRender, page) {
               <button type="button" class="btn-table-action" onclick="openAppealAnalyzer('${escapeHtml(p.id)}')">
                 ⚖️ Appeal
               </button>
+              <button type="button" class="btn-table-action" style="color: #2563eb; font-weight: 700;" onclick="quickPrintFormA1('${escapeHtml(p.id)}')">
+                📄 A-1 Packet
+              </button>
               <button type="button" class="btn-table-action" style="color: #047857; font-weight: 700;" onclick="openRealtorValuationModal('${escapeHtml(p.address)}', '${escapeHtml(p.block)}', '${escapeHtml(p.lot)}', ${p.estimatedMarketValue})">
                 🏡 CMA Val
+              </button>
+              <button type="button" class="btn-table-action" onclick="openShareModal('property', '${escapeHtml(p.address)}', '${escapeHtml(p.id)}')">
+                📢 Share
               </button>
               <button type="button" class="btn-table-action" onclick="openTaxReceiptModal('${escapeHtml(p.id)}')">
                 🧾 Receipt
@@ -9742,6 +9754,125 @@ function copyActivePropertyPermalink() {
   if (activeReceiptProperty) {
     copyPropertyPermalink(activeReceiptProperty.id, activeReceiptProperty.address);
   }
+}
+
+// --------------------------------------------------------------------------
+// 1-Click Form A-1 Legal Packet Generation & Community Social Share Engine
+// --------------------------------------------------------------------------
+async function quickPrintFormA1(propId) {
+  if (!propId) return;
+  showToast('Preparing 1-Page Form A-1 Evidentiary Schedule...');
+  await openAppealAnalyzer(propId);
+  setTimeout(() => {
+    printAppealEvidence();
+  }, 250);
+}
+
+let activeShareContext = {
+  type: 'general',
+  title: 'MyTownLens',
+  url: 'https://mytownlens.com',
+  text: ''
+};
+
+function openShareModal(type = 'general', detail = '', propId = '') {
+  const modal = document.getElementById('community-share-dialog');
+  if (!modal) return;
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+
+  let url = (typeof window !== 'undefined' && window.location) ? (window.location.origin + window.location.pathname) : 'https://mytownlens.com';
+  let text = '';
+  let previewHtml = '';
+
+  if (type === 'property' && propId) {
+    url = `${window.location.origin}/properties.html?pin=${encodeURIComponent(propId)}`;
+    text = `Neighbors in ${meta.name} — check the property tax assessment records for ${detail} on MyTownLens. You can see recent comps, check if you're over-assessed, and verify where tax dollars go: ${url}`;
+    previewHtml = `
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 10px 14px; font-size: 0.82rem; color: #1e40af; margin-bottom: 12px;">
+        📍 <strong>Sharing Property:</strong> ${escapeHtml(detail)} (${escapeHtml(meta.name)}, ${escapeHtml(meta.countyShort)})
+      </div>
+    `;
+  } else if (type === 'appeal') {
+    url = `${window.location.origin}/properties.html`;
+    text = `Check whether your home is over-assessed in ${meta.name}. MyTownLens has verified MOD-IV assessments across ${meta.county} and generates a free County Form A-1 evidence schedule with 5 comps: ${url}`;
+    previewHtml = `
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 10px 14px; font-size: 0.82rem; color: #1e40af; margin-bottom: 12px;">
+        ⚖️ <strong>Sharing Tax Appeal Analyzer:</strong> Chapter 123 Ratio Corridor &amp; Comps for ${escapeHtml(meta.name)}
+      </div>
+    `;
+  } else if (type === 'budgets') {
+    url = `${window.location.origin}/budgets.html`;
+    text = `See where your property tax dollars actually go in ${meta.name} (${meta.schoolDistrictShort}: ${meta.schoolsShare}, Muni: ${meta.muniShare}, County: ${meta.countyShare}). Compare all 47 North Jersey towns: ${url}`;
+    previewHtml = `
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 10px 14px; font-size: 0.82rem; color: #1e40af; margin-bottom: 12px;">
+        📊 <strong>Sharing Municipal Budget Audit:</strong> ${escapeHtml(meta.name)} vs 47 North Jersey Towns
+      </div>
+    `;
+  } else {
+    url = `${window.location.origin}/?city=${encodeURIComponent(currentCity)}`;
+    text = `Neighbors in ${meta.name} — check out MyTownLens. It's a free, 100% verified tax watchdog and property assessment roll explorer covering all 47 North Jersey municipalities: ${url}`;
+    previewHtml = `
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 10px 14px; font-size: 0.82rem; color: #1e40af; margin-bottom: 12px;">
+        🏛️ <strong>Sharing MyTownLens:</strong> Civic Transparency &amp; Tax Watchdog for ${escapeHtml(meta.name)}
+      </div>
+    `;
+  }
+
+  activeShareContext = { type, title: meta.name, url, text };
+
+  const previewEl = document.getElementById('share-topic-preview');
+  if (previewEl) previewEl.innerHTML = previewHtml;
+
+  const textarea = document.getElementById('share-post-textarea');
+  if (textarea) textarea.value = text;
+
+  if (typeof modal.showModal === 'function') {
+    modal.showModal();
+  } else {
+    modal.setAttribute('open', '');
+  }
+}
+
+function closeShareModal() {
+  const modal = document.getElementById('community-share-dialog');
+  if (!modal) return;
+  if (typeof modal.close === 'function') {
+    modal.close();
+  } else {
+    modal.removeAttribute('open');
+  }
+}
+
+function copyShareText() {
+  const textarea = document.getElementById('share-post-textarea');
+  if (!textarea) return;
+  navigator.clipboard.writeText(textarea.value).then(() => {
+    showToast('✓ Post text copied! Paste it into Nextdoor or Facebook.');
+  }).catch(() => {
+    textarea.select();
+    showToast('Text selected — press Ctrl+C / Cmd+C to copy');
+  });
+}
+
+function shareToNextdoor() {
+  copyShareText();
+  window.open('https://nextdoor.com', '_blank');
+}
+
+function shareToFacebook() {
+  const url = encodeURIComponent(activeShareContext.url || window.location.href);
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+}
+
+function shareToWhatsApp() {
+  const text = encodeURIComponent(activeShareContext.text || 'Check out MyTownLens: https://mytownlens.com');
+  window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+}
+
+function shareToTwitter() {
+  const text = encodeURIComponent(activeShareContext.text || 'Check out MyTownLens:');
+  const url = encodeURIComponent(activeShareContext.url || 'https://mytownlens.com');
+  window.open(`https://twitter.com/intent/tweet?text=${text}`, '_blank', 'width=600,height=400');
 }
 
 // --------------------------------------------------------------------------
@@ -18373,6 +18504,61 @@ function setupOmnibox() {
     }
   } catch (err) {}
 
+  // MODERN WEB GUIDANCE: validate-input-after-interaction
+  // Sync aria-invalid and link error messages into aria-describedby only while :user-invalid is active
+  try {
+    const leadForms = document.querySelectorAll('.attorney-lead-form, .realtor-lead-form, .partner-inquire-form');
+    const syncFieldAria = (inputEl) => {
+      if (!inputEl || !inputEl.dataset || !inputEl.dataset.error) return;
+      const hintId = inputEl.dataset.hint;
+      const errId = inputEl.dataset.error;
+      let isUserInvalid = false;
+      try {
+        isUserInvalid = inputEl.matches(':user-invalid') || inputEl.classList.contains('user-invalid-fallback');
+      } catch (e) {
+        isUserInvalid = inputEl.classList.contains('user-invalid-fallback');
+      }
+      inputEl.setAttribute('aria-invalid', String(isUserInvalid));
+      const ids = [hintId, isUserInvalid ? errId : null].filter(Boolean).join(' ');
+      if (ids) {
+        inputEl.setAttribute('aria-describedby', ids);
+      } else {
+        inputEl.removeAttribute('aria-describedby');
+      }
+    };
+    leadForms.forEach((form) => {
+      form.addEventListener('blur', (e) => {
+        const el = e.target;
+        if (el && el.validity && !el.validity.valid && el.value) {
+          el.classList.add('user-invalid-fallback');
+        }
+        syncFieldAria(el);
+      }, true);
+      form.addEventListener('input', (e) => {
+        const el = e.target;
+        if (el && el.validity && el.validity.valid) {
+          el.classList.remove('user-invalid-fallback');
+        }
+        syncFieldAria(el);
+      });
+      form.addEventListener('change', (e) => syncFieldAria(e.target));
+      form.addEventListener('invalid', (e) => {
+        if (e.target && e.target.classList) {
+          e.target.classList.add('user-invalid-fallback');
+        }
+        syncFieldAria(e.target);
+      }, true);
+      form.addEventListener('reset', () => {
+        requestAnimationFrame(() => {
+          form.querySelectorAll('[data-error]').forEach((el) => {
+            el.classList.remove('user-invalid-fallback');
+            syncFieldAria(el);
+          });
+        });
+      });
+    });
+  } catch (err) {}
+
   const input = document.getElementById('omnibox-search-input');
   if (input) {
     input.addEventListener('input', (e) => {
@@ -18467,6 +18653,22 @@ window.renderLocationPickerGrid = renderLocationPickerGrid;
 window.navigateToTownComparison = navigateToTownComparison;
 window.selectSpecificTownComparison = selectSpecificTownComparison;
 window.crossTownState = crossTownState;
+window.openAttorneyConsultModal = openAttorneyConsultModal;
+window.closeAttorneyConsultModal = closeAttorneyConsultModal;
+window.handleAttorneyLeadSubmit = handleAttorneyLeadSubmit;
+window.openPartnerInquiryModal = openPartnerInquiryModal;
+window.closePartnerInquiryModal = closePartnerInquiryModal;
+window.handlePartnerInquirySubmit = handlePartnerInquirySubmit;
+window.buildFormattedLeadDossier = buildFormattedLeadDossier;
+window.copyLatestSubmittedDossier = copyLatestSubmittedDossier;
+window.openLeadDossierPreview = openLeadDossierPreview;
+window.closeLeadDossierPreview = closeLeadDossierPreview;
+window.copyActiveInspectedDossier = copyActiveInspectedDossier;
+window.emailActiveInspectedDossier = emailActiveInspectedDossier;
+window.copyLeadDossierById = copyLeadDossierById;
+window.emailLeadDossierById = emailLeadDossierById;
+window.generateSampleQualifiedLead = generateSampleQualifiedLead;
+window.copyBuyerPitchScript = copyBuyerPitchScript;
 window.openRealtorValuationModal = openRealtorValuationModal;
 window.closeRealtorValuationModal = closeRealtorValuationModal;
 window.handleRealtorLeadSubmit = handleRealtorLeadSubmit;
@@ -18487,6 +18689,14 @@ window.removeTownSponsor = removeTownSponsor;
 window.resetSponsorForm = resetSponsorForm;
 window.exportSponsorsCSV = exportSponsorsCSV;
 window.updateMetaAndJsonLd = updateMetaAndJsonLd;
+window.quickPrintFormA1 = quickPrintFormA1;
+window.openShareModal = openShareModal;
+window.closeShareModal = closeShareModal;
+window.copyShareText = copyShareText;
+window.shareToNextdoor = shareToNextdoor;
+window.shareToFacebook = shareToFacebook;
+window.shareToWhatsApp = shareToWhatsApp;
+window.shareToTwitter = shareToTwitter;
 Object.defineProperty(window, 'electionResultsData', {
   get: () => electionResultsData,
   set: (val) => { electionResultsData = val; },

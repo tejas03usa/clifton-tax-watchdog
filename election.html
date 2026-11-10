@@ -1108,6 +1108,66 @@
   <!-- Hidden Container for Legal-Grade Form A-1 Printable Brief -->
   <div id="printable-form-a1-packet" class="printable-form-a1-packet" style="display: none;" aria-hidden="true"></div>
 
+  <!-- Modal Dialog: 📢 Share with Neighbors & Local Community Groups -->
+  <dialog id="community-share-dialog" class="modern-modal-dialog community-share-dialog" closedby="any" aria-labelledby="share-dialog-title">
+    <div class="modern-dialog-wrapper" style="max-width: 580px;">
+      <div class="modern-dialog-header">
+        <div class="modern-dialog-title-block">
+          <h3 id="share-dialog-title"><span>📢</span> Share with Neighbors &amp; Community</h3>
+          <div class="modern-dialog-subtitle">Spread civic transparency in your neighborhood, Nextdoor group, or local Facebook forum</div>
+        </div>
+        <button type="button" class="btn-dialog-close" aria-label="Close dialog" onclick="closeShareModal()">✕</button>
+      </div>
+      <div class="modern-dialog-body" id="share-dialog-body">
+        <div class="share-topic-preview" id="share-topic-preview">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="share-platforms-grid">
+          <a href="javascript:void(0)" onclick="shareToNextdoor()" class="btn-share-platform nextdoor-share-btn">
+            <span class="share-btn-icon">🏡</span>
+            <div>
+              <strong>Nextdoor Community</strong>
+              <small>Copy formatted post for your neighborhood feed</small>
+            </div>
+          </a>
+          <a href="javascript:void(0)" onclick="shareToFacebook()" class="btn-share-platform fb-share-btn">
+            <span class="share-btn-icon">👥</span>
+            <div>
+              <strong>Facebook Local Group</strong>
+              <small>Share to town resident &amp; community groups</small>
+            </div>
+          </a>
+          <a href="javascript:void(0)" onclick="shareToWhatsApp()" class="btn-share-platform whatsapp-share-btn">
+            <span class="share-btn-icon">💬</span>
+            <div>
+              <strong>WhatsApp / Text Message</strong>
+              <small>Send direct link to friends &amp; family</small>
+            </div>
+          </a>
+          <a href="javascript:void(0)" onclick="shareToTwitter()" class="btn-share-platform x-share-btn">
+            <span class="share-btn-icon">𝕏</span>
+            <div>
+              <strong>X (Twitter) Post</strong>
+              <small>Tag local elected officials &amp; journalists</small>
+            </div>
+          </a>
+        </div>
+
+        <div class="share-copy-box" style="margin-top: 14px;">
+          <label for="share-post-textarea" style="display: block; font-weight: 700; font-size: 0.8rem; color: #0f172a; margin-bottom: 6px;">Pre-Written Neighborhood Post (Click to Copy):</label>
+          <textarea id="share-post-textarea" rows="3" readonly style="width: 100%; padding: 10px 12px; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; font-family: inherit; line-height: 1.45;"></textarea>
+          <div style="display: flex; gap: 8px; margin-top: 8px; justify-content: flex-end;">
+            <button type="button" class="btn-admin-action" onclick="copyShareText()">📋 Copy Post to Clipboard</button>
+          </div>
+        </div>
+      </div>
+      <div class="modern-dialog-footer">
+        <button type="button" class="btn-dialog-close-btn" onclick="closeShareModal()">Done</button>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Modal Dialog: 🏡 Free Local Realtor CMA Valuation (Lead Capture) -->
   <dialog id="realtor-valuation-dialog" class="modern-modal-dialog realtor-valuation-dialog" closedby="any" aria-labelledby="realtor-dialog-title">
     <div class="modern-dialog-wrapper">
