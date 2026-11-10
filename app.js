@@ -6884,7 +6884,7 @@ function setupPropertyFilters() {
     if (rawQuery) {
       const tokens = rawQuery.split(/\s+/).filter(Boolean);
       filtered = filtered.filter(p => {
-        const hay = `${p.address} ${p.neighborhood} ${p.zip} ${p.id} block ${p.block} lot ${p.lot} ${p.block}/${p.lot} ${p.bldgDesc || ''} ${p.propertyType || ''}`.toLowerCase();
+        const hay = `${p.address} ${p.neighborhood} ${p.zip} ${p.id} ${p.pamsPin || ''} block ${p.block} lot ${p.lot} ${p.block}/${p.lot} ${p.block}-${p.lot} ${p.bldgDesc || ''} ${p.propertyType || ''}`.toLowerCase();
         for (let i = 0; i < tokens.length; i++) {
           if (!hay.includes(tokens[i])) return false;
         }
@@ -6976,6 +6976,7 @@ function setupPropertyFilters() {
   }
 
   applyPropertyFilters = applyFilters;
+  window.applyPropertyFilters = applyFilters;
 
   // Debounce search input slightly (150ms) for smooth typing across 21,300 records
   let searchDebounceTimer = null;
@@ -19556,8 +19557,11 @@ function getOmniboxMatches(query, category = 'all') {
       const addr = (p.address || '').toLowerCase();
       const blk = String(p.block || '').toLowerCase();
       const lot = String(p.lot || '').toLowerCase();
+      const pin = String(p.id || p.pamsPin || '').toLowerCase();
+      const blkLot = `${blk}/${lot}`;
+      const blkLotHyphen = `${blk}-${lot}`;
       const neigh = (p.neighborhood || '').toLowerCase();
-      if (addr.includes(q) || (blk && blk === q) || (lot && lot === q) || neigh.includes(q)) {
+      if (addr.includes(q) || pin.includes(q) || blkLot.includes(q) || blkLotHyphen.includes(q) || (blk && blk === q) || (lot && lot === q) || neigh.includes(q)) {
         propMatches++;
         const assessed = p.assessedTotal || p.assessedValue || 0;
         matches.push({
