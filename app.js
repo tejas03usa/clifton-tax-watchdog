@@ -9996,6 +9996,161 @@ function updateReliefTax(val) {
   }
 }
 
+function printReliefPacket() {
+  const container = document.getElementById('printable-relief-packet');
+  if (!container) return;
+
+  const meta = CITY_REGISTRY[currentCity] || CITY_REGISTRY.clifton;
+  const { taxBill, isHomeowner, age65Plus, incomeBracket, meetsFreezeTenure, veteranStatus = 'none', address } = activeReliefState;
+
+  // Compute Relief
+  let anchor = 0;
+  let stayNJ = 0;
+  let seniorFreeze = 0;
+  let veteranRelief = 0;
+  let isFullExempt = false;
+
+  if (isHomeowner) {
+    if (incomeBracket === 'under_150k') {
+      anchor = age65Plus ? 1750 : 1500;
+    } else if (incomeBracket === '150k_250k') {
+      anchor = age65Plus ? 1250 : 1000;
+    }
+  } else {
+    if (incomeBracket === 'under_150k') {
+      anchor = age65Plus ? 700 : 450;
+    }
+  }
+
+  if (isHomeowner && age65Plus) {
+    let maxStayCap = 0;
+    if (incomeBracket === 'under_150k' || incomeBracket === 'under_100k') maxStayCap = 6500.0;
+    else if (incomeBracket === '100k_150k') maxStayCap = 5000.0;
+    else if (incomeBracket === '150k_200k' || incomeBracket === '150k_250k') maxStayCap = 4000.0;
+
+    if (maxStayCap > 0) {
+      const stayGross = Math.min(taxBill * 0.50, maxStayCap);
+      stayNJ = Math.max(0, stayGross - anchor);
+    }
+  }
+
+  if (isHomeowner && age65Plus && incomeBracket === 'under_150k' && meetsFreezeTenure) {
+    seniorFreeze = Math.round(taxBill * 0.08);
+  }
+
+  if (isHomeowner) {
+    if (veteranStatus === 'disabled_exempt') {
+      veteranRelief = taxBill;
+      isFullExempt = true;
+    } else if (veteranStatus === 'veteran_250') {
+      veteranRelief = 250;
+    }
+  }
+
+  const totalRelief = isFullExempt ? taxBill : Math.min(taxBill, anchor + stayNJ + seniorFreeze + veteranRelief);
+  const netTax = Math.max(0, taxBill - totalRelief);
+  const savedPct = taxBill > 0 ? (totalRelief / taxBill) * 100 : 0;
+
+  container.innerHTML = `
+    <div class="print-form-a1-sheet">
+      <div class="print-a1-header-block">
+        <div class="print-a1-state-seal">STATE OF NEW JERSEY • DIVISION OF TAXATION</div>
+        <h2 class="print-a1-title">STATE PROPERTY TAX RELIEF SUMMARY &amp; FILING VOUCHER</h2>
+        <div class="print-a1-statute">Statutory Authorities: P.L. 2023, c.75 (StayNJ), N.J.S.A. 54:4-8.57 (ANCHOR / PAS-1) &amp; N.J.S.A. 54:4-8.67 (Senior Freeze)</div>
+        <div class="print-a1-source-strip">
+          <span>Prepared via <strong>MyTownLens</strong> (mytownlens.com)</span>
+          <span>Generated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        </div>
+      </div>
+
+      <div style="margin: 12px 0; border: 1px solid #000; padding: 10px 14px; background: #fdfdfd;">
+        <h3 style="margin: 0 0 6px 0; font-size: 11pt; text-transform: uppercase;">1. Taxpayer &amp; Property Information</h3>
+        <table style="width: 100%; font-size: 10pt; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 3px 0; width: 50%;"><strong>Municipality:</strong> ${escapeHtml(meta.name)} (${escapeHtml(meta.countyShort)})</td>
+            <td style="padding: 3px 0; width: 50%;"><strong>Property / Residence:</strong> ${escapeHtml(address)}</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 0;"><strong>Housing Status:</strong> ${isHomeowner ? 'Homeowner (Primary Residence)' : 'Tenant / Renter'}</td>
+            <td style="padding: 3px 0;"><strong>Senior Status:</strong> ${age65Plus ? 'Age 65 or Older / Disabled' : 'Under Age 65'}</td>
+          </tr>
+          <tr>
+            <td style="padding: 3px 0;"><strong>Income Bracket:</strong> ${escapeHtml(incomeBracket.replace(/_/g, ' ').replace('under', 'Under $').replace('k', ',000'))}</td>
+            <td style="padding: 3px 0;"><strong>2026 Certified Tax Bill:</strong> $${taxBill.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="margin: 12px 0; border: 1px solid #000; padding: 10px 14px; background: #fdfdfd;">
+        <h3 style="margin: 0 0 6px 0; font-size: 11pt; text-transform: uppercase;">2. Calculated State Property Tax Relief Entitlements</h3>
+        <table style="width: 100%; font-size: 10pt; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 1px solid #000; background: #eee;">
+              <th style="padding: 6px; text-align: left;">Program</th>
+              <th style="padding: 6px; text-align: left;">Statutory Description</th>
+              <th style="padding: 6px; text-align: right;">Indicated Relief</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #ccc;">
+              <td style="padding: 6px;"><strong>ANCHOR (Form PAS-1)</strong></td>
+              <td style="padding: 6px;">Direct state payment deposited to bank account</td>
+              <td style="padding: 6px; text-align: right; font-weight: 700;">$${anchor.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ccc;">
+              <td style="padding: 6px;"><strong>StayNJ Senior Tax Cut</strong></td>
+              <td style="padding: 6px;">50% property tax cut up to $6,500/yr (P.L. 2023, c.75)</td>
+              <td style="padding: 6px; text-align: right; font-weight: 700;">$${stayNJ.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ccc;">
+              <td style="padding: 6px;"><strong>Senior Freeze (PTR-1/2)</strong></td>
+              <td style="padding: 6px;">State property tax reimbursement at base year level</td>
+              <td style="padding: 6px; text-align: right; font-weight: 700;">$${seniorFreeze.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #ccc;">
+              <td style="padding: 6px;"><strong>Veteran Relief</strong></td>
+              <td style="padding: 6px;">${isFullExempt ? '100% Full Local Tax Exemption for service-connected wartime disability' : (veteranRelief > 0 ? '$250 Annual property tax deduction (N.J.S.A. 54:4-8.10)' : 'N/A')}</td>
+              <td style="padding: 6px; text-align: right; font-weight: 700;">$${veteranRelief.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+            </tr>
+            <tr style="border-top: 2px solid #000; font-size: 11pt; background: #fafafa;">
+              <td colspan="2" style="padding: 8px; font-weight: 800;">TOTAL ESTIMATED NJ STATE PROPERTY TAX RELIEF:</td>
+              <td style="padding: 8px; text-align: right; font-weight: 800; color: #000;">-$${totalRelief.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+            </tr>
+            <tr style="font-size: 11pt; background: #f0f0f0;">
+              <td colspan="2" style="padding: 8px; font-weight: 800;">YOUR NET OUT-OF-POCKET 2026 PROPERTY TAX (After State Relief):</td>
+              <td style="padding: 8px; text-align: right; font-weight: 800; color: #000;">$${netTax.toLocaleString(undefined, { minimumFractionDigits: 2 })} (${savedPct.toFixed(1)}% Saved)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin: 12px 0; border: 1px solid #000; padding: 10px 14px;">
+        <h3 style="margin: 0 0 6px 0; font-size: 11pt; text-transform: uppercase;">3. Official State Filing Instructions &amp; Deadlines</h3>
+        <ul style="margin: 0; padding-left: 18px; font-size: 9.5pt; line-height: 1.45;">
+          <li><strong>Official Online Portal:</strong> File electronically at <strong>propertytaxrelief.nj.gov</strong> or via the NJ Division of Taxation.</li>
+          <li><strong>Filing Deadlines:</strong> ANCHOR application deadline is annually on or before <strong>December 29</strong>. Senior Freeze (Form PTR-1/PTR-2) is due on or before <strong>October 31</strong>.</li>
+          <li><strong>State Division of Taxation Assistance Hotlines:</strong>
+            <br>&bull; ANCHOR Filing Hotline: <strong>1-888-238-1233</strong> (Automated) / <strong>1-877-658-2972</strong> (Live Agent)
+            <br>&bull; Senior Freeze Reimbursement Hotline: <strong>1-800-882-6597</strong>
+          </li>
+          <li><strong>Required Documentation:</strong> Retain a copy of your 2025/2026 Property Tax Bill, NJ-1040 Income Tax Return, and Proof of Age/Residency.</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 14px; font-size: 8pt; color: #555; text-align: center; border-top: 1px solid #999; padding-top: 6px;">
+        This document is prepared as a public civic service by MyTownLens (mytownlens.com). Figures reflect certified NJ Division of Taxation statutory relief guidelines.
+      </div>
+    </div>
+  `;
+
+  document.body.classList.add('printing-relief-packet');
+  showToast('✓ Preparing printable State Relief Voucher & Checklist...');
+  window.print();
+  setTimeout(() => {
+    document.body.classList.remove('printing-relief-packet');
+  }, 1000);
+}
+
 // --------------------------------------------------------------------------
 // FEATURE 2B: 🏢 Renter Property Tax Impact Calculator
 // --------------------------------------------------------------------------
@@ -19221,6 +19376,7 @@ window.exportOutreachCSV = exportOutreachCSV;
 window.resetOutreachCRM = resetOutreachCRM;
 window.updateMetaAndJsonLd = updateMetaAndJsonLd;
 window.quickPrintFormA1 = quickPrintFormA1;
+window.printReliefPacket = printReliefPacket;
 window.openShareModal = openShareModal;
 window.closeShareModal = closeShareModal;
 window.copyShareText = copyShareText;

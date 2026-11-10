@@ -18134,14 +18134,18 @@ dialog.omnibox-dialog::backdrop {
 
 /* Legal-Grade Printable Form A-1 Addendum */
 @media print {
-  body.printing-a1-packet * {
+  body.printing-a1-packet *,
+  body.printing-relief-packet * {
     visibility: hidden;
   }
   body.printing-a1-packet #printable-form-a1-packet,
-  body.printing-a1-packet #printable-form-a1-packet * {
+  body.printing-a1-packet #printable-form-a1-packet *,
+  body.printing-relief-packet #printable-relief-packet,
+  body.printing-relief-packet #printable-relief-packet * {
     visibility: visible;
   }
-  body.printing-a1-packet #printable-form-a1-packet {
+  body.printing-a1-packet #printable-form-a1-packet,
+  body.printing-relief-packet #printable-relief-packet {
     position: absolute;
     left: 0;
     top: 0;

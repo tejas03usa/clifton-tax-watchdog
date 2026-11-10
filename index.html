@@ -1054,6 +1054,8 @@
 
   <!-- Hidden Container for Legal-Grade Form A-1 Printable Brief -->
   <div id="printable-form-a1-packet" class="printable-form-a1-packet" style="display: none;" aria-hidden="true"></div>
+  <!-- Hidden Container for State Property Tax Relief Printable Voucher -->
+  <div id="printable-relief-packet" class="printable-form-a1-packet" style="display: none;" aria-hidden="true"></div>
 
   <!-- Modal Dialog: 📢 Share with Neighbors & Local Community Groups -->
   <dialog id="community-share-dialog" class="modern-modal-dialog community-share-dialog" closedby="any" aria-labelledby="share-dialog-title">
@@ -1539,6 +1541,7 @@
         <!-- Rendered by JS -->
       </div>
       <div class="modern-dialog-footer">
+        <button type="button" class="btn-admin-action" onclick="printReliefPacket()" style="background: #2563eb;"><span>🖨️</span> Print Relief Summary &amp; Checklist</button>
         <a href="https://propertytaxrelief.nj.gov" target="_blank" rel="noopener" class="btn-street-action" style="text-decoration: none; background: #16a34a; color: #fff;"><span>🏛️</span> File on Official NJ PAS-1 Portal ↗</a>
         <button type="button" class="btn-dialog-close-btn" style="padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; font-weight: 600;" onclick="this.closest('dialog').close()">Done</button>
       </div>
