@@ -1,0 +1,12 @@
+{
+  "name": "mytownlens",
+  "version": "1.0.0",
+  "description": "Civic transparency, municipal budget oversight, and official MOD-IV property assessment analysis for New Jersey taxpayers.",
+  "scripts": {
+    "test": "node tests/run_all_scenarios.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  },
+  "license": "MIT"
+}
