@@ -19014,3 +19014,32 @@ dialog.omnibox-dialog::backdrop {
   border-color: #b45309;
   box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
 }
+
+@media (max-width: 640px) {
+  .admin-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .admin-kpi-card {
+    padding: 10px 12px;
+  }
+  .admin-kpi-val {
+    font-size: 1.15rem;
+  }
+  .outreach-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .outreach-stat-card {
+    padding: 8px 12px;
+  }
+  .outreach-stat-card .stat-num {
+    font-size: 1.1rem;
+  }
+  .btn-filter-appeal-toggle {
+    font-size: 0.76rem;
+    padding: 5px 10px;
+    width: 100%;
+    justify-content: center;
+  }
+}
