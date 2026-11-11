@@ -1,5 +1,6 @@
 # Robots.txt for MyTownLens
 User-agent: *
+Disallow: /admin.html
 Allow: /
 
 Sitemap: https://mytownlens.com/sitemap.xml
