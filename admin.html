@@ -347,6 +347,21 @@
       <!-- Panel 4: Webhook Integration & Partner Routing Settings -->
       <div id="admin-panel-settings" class="admin-panel" role="tabpanel" aria-labelledby="admin-tab-settings-btn" style="display: none;">
         <div class="admin-settings-box">
+          <!-- Lead Capture Status Banner -->
+          <div id="admin-lead-routing-status-banner" style="margin-bottom: 16px; padding: 14px 16px; border-radius: 8px; border: 1px solid #fed7aa; background: #fff7ed; font-size: 0.85rem; line-height: 1.5; color: #9a3412;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <div>
+                <strong id="admin-lead-routing-status-title" style="font-size: 0.92rem;">🔴 Public Lead Capture: Paused (Self-Service Mode Active)</strong>
+                <p id="admin-lead-routing-status-desc" style="margin: 4px 0 0 0; font-size: 0.82rem; color: #7c2d12;">All non-functional external lead capture triggers (attorney review CTAs, Realtor CMA buttons, and sponsorship inquiry forms) are gracefully disabled and hidden on public pages until a live webhook endpoint is saved. Taxpayers are guided directly to the fully functional, 100% client-side <strong>🖨️ Print Form A-1 Packet</strong> self-filing tool.</p>
+              </div>
+              <span id="admin-lead-routing-status-pill" style="padding: 4px 10px; border-radius: 9999px; font-weight: 700; font-size: 0.75rem; background: #fee2e2; color: #991b1b; white-space: nowrap;">Forms Hidden</span>
+            </div>
+            <label style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; margin-top: 10px; padding-top: 8px; border-top: 1px dashed #fed7aa; color: #475569;">
+              <input type="checkbox" id="admin-toggle-lead-capture" onchange="handleAdminLeadCaptureToggle(this.checked)">
+              <span>Force-enable public lead forms (saves leads to visitor's browser localStorage without external webhook)</span>
+            </label>
+          </div>
+
           <h4 style="margin: 0 0 6px 0; font-size: 0.96rem; font-weight: 800; color: #0f172a;">⚡ Automated Lead Delivery &amp; Buyer Routing</h4>
           <p style="margin: 0; font-size: 0.82rem; color: #475569; line-height: 1.45;">Configure where leads are automatically delivered when a homeowner submits a request, plus set your default Partner Attorney / Realtor email for 1-click case dispatch.</p>
           <div class="form-grid-2col" style="margin-top: 12px;">

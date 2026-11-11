@@ -45,6 +45,80 @@ let propCurrentPage = 1;
 const propPageSize = 36;
 let applyPropertyFilters = null;
 
+// Public Lead Capture Master Gate (Disabled by default until external Webhook is configured)
+const PUBLIC_LEAD_CAPTURE_ENABLED = false;
+
+function isPublicLeadCaptureEnabled() {
+  try {
+    const override = localStorage.getItem('mytownlens_lead_capture_override');
+    if (override === 'true') return true;
+    if (override === 'false') return false;
+    const webhook = localStorage.getItem('mytownlens_lead_webhook');
+    if (webhook && typeof webhook === 'string' && webhook.trim().startsWith('http')) {
+      return true;
+    }
+    return PUBLIC_LEAD_CAPTURE_ENABLED;
+  } catch (e) {
+    return false;
+  }
+}
+
+function applyPublicLeadCaptureVisibility() {
+  const isEnabled = isPublicLeadCaptureEnabled();
+  if (typeof document === 'undefined') return;
+
+  if (document.body) {
+    if (isEnabled) {
+      document.body.classList.remove('lead-capture-disabled');
+      document.body.classList.add('lead-capture-enabled');
+    } else {
+      document.body.classList.remove('lead-capture-enabled');
+      document.body.classList.add('lead-capture-disabled');
+    }
+  }
+
+  // 1. Partner showcase strips in footer
+  document.querySelectorAll('.partner-showcase-strip').forEach(el => {
+    el.style.display = isEnabled ? 'block' : 'none';
+  });
+
+  // 2. Bento pill for Realtor CMA on index.html
+  const bentoRealtor = document.getElementById('bento-pill-realtor-cma') ||
+    document.querySelector('.bento-pill-btn[onclick*="openRealtorValuationModal"]');
+  if (bentoRealtor) {
+    bentoRealtor.style.display = isEnabled ? 'inline-flex' : 'none';
+  }
+
+  // 3. Footer attorney review buttons in dialogs
+  document.querySelectorAll('.btn-attorney-lead-trigger, .modern-dialog-footer button[onclick*="openAttorneyConsultModal"]').forEach(el => {
+    el.style.display = isEnabled ? 'inline-flex' : 'none';
+  });
+
+  // 4. Header sponsor pills when not claimed
+  const sponsorPills = document.querySelectorAll('.header-sponsor-pill.sponsor-available');
+  sponsorPills.forEach(pill => {
+    pill.style.display = isEnabled ? 'inline-flex' : 'none';
+  });
+}
+
+function handleAdminLeadCaptureToggle(checked) {
+  try {
+    if (checked) {
+      localStorage.setItem('mytownlens_lead_capture_override', 'true');
+      showToast('✓ Public lead capture forms enabled');
+    } else {
+      localStorage.removeItem('mytownlens_lead_capture_override');
+      showToast('✓ Public lead capture set to auto/webhook mode');
+    }
+  } catch (e) {
+    console.warn('Error saving lead capture override:', e);
+  }
+  applyPublicLeadCaptureVisibility();
+  if (typeof renderAdminLeadsData === 'function') {
+    renderAdminLeadsData();
+  }
+}
+
 // Cross-Hub Page & Tab Routing Map
 const TAB_PAGE_MAP = {
   'tab-calculator': 'index.html',
@@ -2605,6 +2679,7 @@ async function initApp() {
   setupCollapsibleSections();
   setupCitySwitcher();
   loadAuditLog();
+  applyPublicLeadCaptureVisibility();
 
   // Ensure the current page has an active tab pane
   if (!document.querySelector('.tab-pane.active')) {
@@ -3847,7 +3922,8 @@ function renderHeaderSponsorBadge(cityId) {
         ${sp.phone ? `<a href="tel:${escapeHtml(sp.phone)}" class="sponsor-tel-btn">📞 ${escapeHtml(sp.phone)}</a>` : ''}
       </div>
     `;
-  } else {
+    container.style.display = 'inline-flex';
+  } else if (isPublicLeadCaptureEnabled()) {
     container.innerHTML = `
       <button type="button" class="header-sponsor-pill sponsor-available" onclick="openPartnerInquiryModal('${escapeHtml(targetId)}')" title="Claim exclusive verified professional sponsorship for ${escapeHtml(meta.name)}">
         <span class="sponsor-star">⭐</span>
@@ -3855,6 +3931,10 @@ function renderHeaderSponsorBadge(cityId) {
         <strong class="sponsor-avail-cta">Available — Claim Municipality ➔</strong>
       </button>
     `;
+    container.style.display = 'inline-flex';
+  } else {
+    container.innerHTML = '';
+    container.style.display = 'none';
   }
 }
 
@@ -6739,9 +6819,10 @@ function renderProperties(propsToRender, page) {
               <span>🧮</span> Load in Tax Calculator &amp; Line Items
             </button>
             <div class="card-util-bar">
+              ${isPublicLeadCaptureEnabled() ? `
               <button type="button" class="btn-card-util btn-realtor-val-trigger" onclick="openRealtorValuationModal('${escapeHtml(p.address)}', '${escapeHtml(p.block)}', '${escapeHtml(p.lot)}', ${p.estimatedMarketValue})">
                 <span>🏡</span> Realtor CMA
-              </button>
+              </button>` : ''}
               <button type="button" class="btn-card-util btn-a1-packet-trigger" onclick="quickPrintFormA1('${escapeHtml(p.id)}')">
                 <span>📄</span> Form A-1 Packet
               </button>
@@ -6805,9 +6886,10 @@ function renderProperties(propsToRender, page) {
               <button type="button" class="btn-table-action" style="color: #2563eb; font-weight: 700;" onclick="quickPrintFormA1('${escapeHtml(p.id)}')">
                 📄 A-1 Packet
               </button>
+              ${isPublicLeadCaptureEnabled() ? `
               <button type="button" class="btn-table-action" style="color: #047857; font-weight: 700;" onclick="openRealtorValuationModal('${escapeHtml(p.address)}', '${escapeHtml(p.block)}', '${escapeHtml(p.lot)}', ${p.estimatedMarketValue})">
                 🏡 CMA Val
-              </button>
+              </button>` : ''}
               <button type="button" class="btn-table-action" onclick="openShareModal('property', '${escapeHtml(p.address)}', '${escapeHtml(p.id)}')">
                 📢 Share
               </button>
@@ -7515,6 +7597,7 @@ async function openAppealAnalyzer(propId) {
         </div>
       </div>
 
+      ${isPublicLeadCaptureEnabled() ? `
       <!-- Attorney Consultation Monetization Callout -->
       <div class="appeal-attorney-cta-card">
         <div class="attorney-cta-header">
@@ -7538,6 +7621,31 @@ async function openAppealAnalyzer(propId) {
           </button>
         </div>
       </div>
+      ` : `
+      <!-- Official Self-Filing Mode Callout (100% Client-Side Ready) -->
+      <div class="appeal-attorney-cta-card self-filing-mode-card">
+        <div class="attorney-cta-header">
+          <span class="attorney-cta-badge">🖨️ Official Self-Filing Mode</span>
+          <span class="attorney-cta-deadline">Statutory April 1 County Deadline</span>
+        </div>
+        <div class="attorney-cta-body">
+          <h4 class="attorney-cta-title">Print Certified Form A-1 Packet with Verified MOD-IV Comps</h4>
+          <p class="attorney-cta-desc">
+            Your property assessment and ${streetComps.length} verified MOD-IV street comparables have been computed using statutory NJ Chapter 123 guidelines. Direct representation routing is paused, but all evidence needed to file an appeal yourself is 100% ready. You can print the official, fully formatted Form A-1 petition docket immediately to file with the <strong>${escapeHtml(meta.countyShort)} Board of Taxation</strong>.
+          </p>
+          <div class="attorney-cta-perks">
+            <span>✓ Complete MOD-IV Comps Evidence Table</span>
+            <span>✓ NJ Chapter 123 Ratio &amp; Corridor Analysis Included</span>
+            <span>✓ Step-by-Step Instructions for County Board Filing</span>
+          </div>
+        </div>
+        <div class="attorney-cta-action">
+          <button type="button" class="btn-appeal-action-primary" onclick="printAppealEvidence()">
+            <span>🖨️</span> Print Form A-1 Packet Now ➔
+          </button>
+        </div>
+      </div>
+      `}
 
       <!-- Home Details & Interior Specs (Form A-1 Refinement) -->
       <div class="appeal-refine-box">
@@ -7681,8 +7789,16 @@ async function openAppealAnalyzer(propId) {
     `;
   }
 
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -7973,6 +8089,22 @@ function openAttorneyConsultModal() {
 
   const form = document.getElementById('attorney-lead-form');
   const success = document.getElementById('attorney-lead-success');
+  const noticeEl = document.getElementById('attorney-lead-paused-notice');
+  if (!isPublicLeadCaptureEnabled()) {
+    if (!noticeEl) {
+      const notice = document.createElement('div');
+      notice.id = 'attorney-lead-paused-notice';
+      notice.style.cssText = 'background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; padding: 10px 14px; border-radius: 8px; font-size: 0.82rem; margin-bottom: 12px; line-height: 1.4;';
+      notice.innerHTML = '<strong>ℹ️ Direct Attorney Routing Paused:</strong> Online legal matching is temporarily paused while partner networks onboard. You may still save your dossier locally, or click <strong>Print Form A-1 Packet</strong> in the Appeal Analyzer to file your own petition directly.';
+      const bodyEl = document.getElementById('attorney-dialog-body') || modal.querySelector('.modern-dialog-body');
+      if (bodyEl && form) bodyEl.insertBefore(notice, form);
+    } else {
+      noticeEl.style.display = 'block';
+    }
+  } else if (noticeEl) {
+    noticeEl.style.display = 'none';
+  }
+
   if (form) {
     form.reset();
     form.querySelectorAll('[aria-invalid]').forEach(el => el.setAttribute('aria-invalid', 'false'));
@@ -8140,6 +8272,22 @@ function openPartnerInquiryModal(targetCityId) {
 
   const form = document.getElementById('partner-inquire-form');
   const success = document.getElementById('partner-inquire-success');
+  const noticeEl = document.getElementById('partner-lead-paused-notice');
+  if (!isPublicLeadCaptureEnabled()) {
+    if (!noticeEl) {
+      const notice = document.createElement('div');
+      notice.id = 'partner-lead-paused-notice';
+      notice.style.cssText = 'background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; padding: 10px 14px; border-radius: 8px; font-size: 0.82rem; margin-bottom: 12px; line-height: 1.4;';
+      notice.innerHTML = '<strong>ℹ️ Sponsorship Inquiries Paused:</strong> Municipal sponsorship requests are currently reviewed by invitation only. Submissions will be saved to your local device.';
+      const bodyEl = modal.querySelector('.modern-dialog-body');
+      if (bodyEl && form) bodyEl.insertBefore(notice, form);
+    } else {
+      noticeEl.style.display = 'block';
+    }
+  } else if (noticeEl) {
+    noticeEl.style.display = 'none';
+  }
+
   if (form) {
     form.reset();
     if (townsInput) townsInput.value = `${meta.name}, ${meta.countyShort}`;
@@ -8304,6 +8452,22 @@ function openRealtorValuationModal(address, block, lot, estValue) {
 
   const form = document.getElementById('realtor-lead-form');
   const success = document.getElementById('realtor-lead-success');
+  const noticeEl = document.getElementById('realtor-lead-paused-notice');
+  if (!isPublicLeadCaptureEnabled()) {
+    if (!noticeEl) {
+      const notice = document.createElement('div');
+      notice.id = 'realtor-lead-paused-notice';
+      notice.style.cssText = 'background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; padding: 10px 14px; border-radius: 8px; font-size: 0.82rem; margin-bottom: 12px; line-height: 1.4;';
+      notice.innerHTML = '<strong>ℹ️ Realtor Matching Paused:</strong> CMA matching is currently paused. You can explore certified property rolls and street comps across North Jersey municipalities.';
+      const bodyEl = modal.querySelector('.modern-dialog-body');
+      if (bodyEl && form) bodyEl.insertBefore(notice, form);
+    } else {
+      noticeEl.style.display = 'block';
+    }
+  } else if (noticeEl) {
+    noticeEl.style.display = 'none';
+  }
+
   if (form) {
     form.reset();
     form.style.display = 'block';
@@ -8771,25 +8935,66 @@ function renderAdminLeadsData() {
 
   const currentWebhook = localStorage.getItem('mytownlens_lead_webhook') || '';
   const currentPartnerEmail = localStorage.getItem('mytownlens_partner_email') || '';
+  const isLeadEnabled = isPublicLeadCaptureEnabled();
   if (webhookStatusEl && webhookSubEl) {
-    if (currentWebhook) {
-      try {
-        const urlObj = new URL(currentWebhook);
-        webhookStatusEl.textContent = 'Active ⚡';
+    if (isLeadEnabled) {
+      if (currentWebhook) {
+        try {
+          const urlObj = new URL(currentWebhook);
+          webhookStatusEl.textContent = 'Active ⚡';
+          webhookStatusEl.style.color = '#10b981';
+          webhookSubEl.textContent = urlObj.hostname;
+        } catch (err) {
+          webhookStatusEl.textContent = 'Active ⚡';
+          webhookStatusEl.style.color = '#10b981';
+          webhookSubEl.textContent = 'Webhook active';
+        }
+      } else {
+        webhookStatusEl.textContent = 'Active (Forced)';
         webhookStatusEl.style.color = '#10b981';
-        webhookSubEl.textContent = urlObj.hostname;
-      } catch (err) {
-        webhookStatusEl.textContent = 'Configured';
-        webhookSubEl.textContent = 'Webhook saved';
+        webhookSubEl.textContent = 'Manual override active';
       }
-    } else if (currentPartnerEmail) {
-      webhookStatusEl.textContent = 'Email Ready';
-      webhookStatusEl.style.color = '#2563eb';
-      webhookSubEl.textContent = currentPartnerEmail;
     } else {
-      webhookStatusEl.textContent = 'Local Only';
-      webhookStatusEl.style.color = '#64748b';
-      webhookSubEl.textContent = 'Push alerts offline';
+      webhookStatusEl.textContent = 'Paused ⏸️';
+      webhookStatusEl.style.color = '#f59e0b';
+      webhookSubEl.textContent = 'Self-Service Active';
+    }
+  }
+
+  // Update Settings Status Banner & Checkbox in admin.html
+  const routingBanner = document.getElementById('admin-lead-routing-status-banner');
+  const routingTitle = document.getElementById('admin-lead-routing-status-title');
+  const routingDesc = document.getElementById('admin-lead-routing-status-desc');
+  const routingPill = document.getElementById('admin-lead-routing-status-pill');
+  const toggleCapture = document.getElementById('admin-toggle-lead-capture');
+
+  if (toggleCapture) {
+    toggleCapture.checked = localStorage.getItem('mytownlens_lead_capture_override') === 'true';
+  }
+
+  if (routingBanner && routingTitle && routingDesc && routingPill) {
+    if (isLeadEnabled) {
+      routingBanner.style.background = '#ecfdf5';
+      routingBanner.style.borderColor = '#a7f3d0';
+      routingBanner.style.color = '#065f46';
+      routingTitle.textContent = '🟢 Public Lead Capture: Active & Forwarding';
+      routingTitle.style.color = '#065f46';
+      routingDesc.innerHTML = 'Homeowner appeal reviews, Realtor CMA leads, and sponsorship inquiries are visible on public pages and automatically dispatched to your webhook in real time.';
+      routingDesc.style.color = '#047857';
+      routingPill.textContent = 'Live Public Routing';
+      routingPill.style.background = '#d1fae5';
+      routingPill.style.color = '#065f46';
+    } else {
+      routingBanner.style.background = '#fff7ed';
+      routingBanner.style.borderColor = '#fed7aa';
+      routingBanner.style.color = '#9a3412';
+      routingTitle.textContent = '🔴 Public Lead Capture: Paused (Self-Service Mode Active)';
+      routingTitle.style.color = '#9a3412';
+      routingDesc.innerHTML = 'All non-functional external lead capture triggers (attorney review CTAs, Realtor CMA buttons, and sponsorship inquiry forms) are gracefully disabled and hidden on public pages until a live webhook endpoint is saved. Taxpayers are guided directly to the fully functional, 100% client-side <strong>🖨️ Print Form A-1 Packet</strong> self-filing tool.';
+      routingDesc.style.color = '#7c2d12';
+      routingPill.textContent = 'Forms Hidden';
+      routingPill.style.background = '#fee2e2';
+      routingPill.style.color = '#991b1b';
     }
   }
 
@@ -9368,6 +9573,7 @@ function saveAdminWebhook() {
     showToast('✓ Delivery settings updated');
   }
   renderAdminLeadsData();
+  applyPublicLeadCaptureVisibility();
 }
 
 function testAdminWebhook() {
@@ -10544,8 +10750,16 @@ function openReliefCalculator(taxAmount, assessedValue, address) {
   renderReliefCalculatorContent();
 
   const dialog = document.getElementById('relief-calc-dialog');
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -10948,8 +11162,16 @@ function openRenterCalculator(rent) {
   }
   renderRenterCalculatorContent();
   const dialog = document.getElementById('renter-tax-dialog');
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -11173,8 +11395,16 @@ function openTaxReceiptModal(propId) {
     `;
   }
 
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -11354,8 +11584,16 @@ function openMod4VerificationModal(propId) {
   renderMod4VerificationContent(target);
 
   const dialog = document.getElementById('mod4-verify-dialog');
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -17959,8 +18197,16 @@ async function openPocketBallot() {
   renderPocketBallotModal();
 
   const dialog = document.getElementById('pocket-ballot-dialog');
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -18264,8 +18510,16 @@ function openOpraModal(topicKey, customDetails) {
   renderOpraModal();
 
   const dialog = document.getElementById('opra-request-dialog');
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -18478,8 +18732,16 @@ function openRevalForecaster(assessed, market, address) {
   renderRevalForecasterModal();
 
   const dialog = document.getElementById('reval-forecaster-dialog');
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -18732,8 +18994,16 @@ function openSpeechBuilder(initialTopic) {
   renderSpeechBuilderModal();
 
   const dialog = document.getElementById('speech-builder-dialog');
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -19164,8 +19434,16 @@ function openWaterTracker(neighborhood) {
   }
   renderWaterTrackerModal();
   const dialog = document.getElementById('pvwc-water-dialog');
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -19381,8 +19659,16 @@ function openFloodReliefModal(assessedVal, condition) {
   }
   renderFloodReliefModal();
   const dialog = document.getElementById('flood-relief-dialog');
-  if (dialog && typeof dialog.showModal === 'function') {
-    dialog.showModal();
+  if (dialog) {
+    const footerReviewBtn = dialog.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+    if (footerReviewBtn) {
+      footerReviewBtn.style.display = isPublicLeadCaptureEnabled() ? 'inline-flex' : 'none';
+    }
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+    } else {
+      dialog.setAttribute('open', '');
+    }
   }
 }
 
@@ -20454,6 +20740,9 @@ window.exportLeadsCSV = exportLeadsCSV;
 window.clearLeadsData = clearLeadsData;
 window.saveAdminWebhook = saveAdminWebhook;
 window.testAdminWebhook = testAdminWebhook;
+window.isPublicLeadCaptureEnabled = isPublicLeadCaptureEnabled;
+window.applyPublicLeadCaptureVisibility = applyPublicLeadCaptureVisibility;
+window.handleAdminLeadCaptureToggle = handleAdminLeadCaptureToggle;
 window.dispatchLeadWebhook = dispatchLeadWebhook;
 window.renderHeaderSponsorBadge = renderHeaderSponsorBadge;
 window.renderAdminSponsorsData = renderAdminSponsorsData;

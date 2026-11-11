@@ -1116,6 +1116,78 @@ async function run() {
   const realtorMrrKpi = envProps.document.getElementById('realtor-kpi-mrr');
   assert(realtorMrrKpi && realtorMrrKpi.textContent.includes('300'), 'Projected Realtor MRR pipeline updates to reflect $300/mo active retainer');
 
+  // --------------------------------------------------------------------------
+  // SCENARIO 14: Testing Graceful Disabling of Unrouted Lead Capture & Self-Service Mode
+  // --------------------------------------------------------------------------
+  console.log("\n--------------------------------------------------------------------------------");
+  console.log("SCENARIO 14: Testing Graceful Disabling of Unrouted Lead Capture & Self-Service Mode");
+  console.log("--------------------------------------------------------------------------------");
+
+  // Create fresh environment to simulate a brand-new visitor (no webhook configured)
+  const envFreshHome = createPageEnvironment('index.html');
+  envFreshHome.window.eval(appJsCode);
+  if (typeof envFreshHome.window.initApp === 'function') {
+    await envFreshHome.window.initApp();
+  }
+
+  assert(!envFreshHome.window.isPublicLeadCaptureEnabled(), 'Public lead capture is disabled by default for fresh visitors');
+  assert(envFreshHome.document.body.classList.contains('lead-capture-disabled'), 'Body receives .lead-capture-disabled class');
+
+  const bentoCmaFresh = envFreshHome.document.getElementById('bento-pill-realtor-cma');
+  assert(bentoCmaFresh && bentoCmaFresh.style.display === 'none', 'Realtor CMA bento pill is hidden on index.html when lead capture is paused');
+
+  const partnerStripFresh = envFreshHome.document.querySelector('.partner-showcase-strip');
+  assert(partnerStripFresh && partnerStripFresh.style.display === 'none', 'Partner sponsorship footer banner is hidden when lead capture is paused');
+
+  // Open Appeal Analyzer in fresh environment
+  await envFreshHome.window.openAppealAnalyzer();
+  const appealDialogFresh = envFreshHome.document.getElementById('appeal-analyzer-dialog');
+  const appealContentFresh = envFreshHome.document.getElementById('appeal-dialog-content');
+  assert(appealContentFresh && appealContentFresh.textContent.includes('Official Self-Filing Mode'), 'Appeal Analyzer displays Official Self-Filing Mode card');
+  assert(appealContentFresh && appealContentFresh.textContent.includes('Print Form A-1 Packet Now'), 'Official Self-Filing card provides instant Print Form A-1 button');
+
+  const footerReviewBtnFresh = appealDialogFresh.querySelector('.modern-dialog-footer button[onclick*="openAttorneyConsultModal"]');
+  assert(footerReviewBtnFresh && footerReviewBtnFresh.style.display === 'none', 'Appeal Analyzer footer hides Request Free Attorney Review button when paused');
+
+  // Verify properties.html card omitting Realtor CMA button
+  const envFreshProps = createPageEnvironment('properties.html');
+  envFreshProps.window.eval(appJsCode);
+  if (typeof envFreshProps.window.initApp === 'function') {
+    await envFreshProps.window.initApp();
+  }
+  const cmaCardBtnsFresh = envFreshProps.document.querySelectorAll('.btn-realtor-val-trigger');
+  assert(cmaCardBtnsFresh.length === 0, 'Property cards omit unrouted Realtor CMA valuation buttons when disabled');
+
+  // Verify Admin Portal status and reactivation
+  const envFreshAdmin = createPageEnvironment('admin.html');
+  envFreshAdmin.window.sessionStorage.setItem('mytownlens_admin_session', 'authenticated');
+  envFreshAdmin.window.eval(appJsCode);
+  if (typeof envFreshAdmin.window.initApp === 'function') {
+    await envFreshAdmin.window.initApp();
+  }
+  envFreshAdmin.window.initAdminPortalWorkspace();
+
+  const adminKpiWebhook = envFreshAdmin.document.getElementById('admin-kpi-webhook-status');
+  assert(adminKpiWebhook && adminKpiWebhook.textContent.includes('Paused'), 'Admin KPI reflects Paused status when no webhook configured');
+
+  const routingTitleFresh = envFreshAdmin.document.getElementById('admin-lead-routing-status-title');
+  assert(routingTitleFresh && routingTitleFresh.textContent.includes('Paused (Self-Service Mode Active)'), 'Admin Settings banner displays Paused / Self-Service status');
+
+  // Simulate admin entering valid webhook URL
+  const adminWebhookInput = envFreshAdmin.document.getElementById('admin-webhook-url');
+  adminWebhookInput.value = 'https://formspree.io/f/testendpoint';
+  envFreshAdmin.window.saveAdminWebhook();
+
+  assert(envFreshAdmin.window.isPublicLeadCaptureEnabled(), 'Saving valid webhook URL immediately activates isPublicLeadCaptureEnabled()');
+  assert(adminKpiWebhook && adminKpiWebhook.textContent.includes('Active'), 'Admin KPI updates to Active status upon webhook save');
+  assert(routingTitleFresh && routingTitleFresh.textContent.includes('Active & Forwarding'), 'Admin Settings banner updates to Active & Forwarding');
+
+  // Simulate admin clearing webhook URL
+  adminWebhookInput.value = '';
+  envFreshAdmin.window.saveAdminWebhook();
+  assert(!envFreshAdmin.window.isPublicLeadCaptureEnabled(), 'Clearing webhook URL automatically pauses public lead capture');
+  assert(adminKpiWebhook && adminKpiWebhook.textContent.includes('Paused'), 'Admin KPI reverts to Paused status');
+
   console.log("\n================================================================================");
   console.log(`TEST SUITE COMPLETED: ${passedTests} passed out of ${totalTests} tests`);
   if (failedTests.length > 0) {

@@ -17943,6 +17943,49 @@ dialog.omnibox-dialog::backdrop {
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
 }
 
+/* Public Lead Routing Control */
+body.lead-capture-disabled .public-lead-element {
+  display: none !important;
+}
+
+/* Self-Filing Mode Card (When public lead capture is paused) */
+.appeal-attorney-cta-card.self-filing-mode-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
+  border: 1.5px solid #059669;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.08);
+}
+
+.appeal-attorney-cta-card.self-filing-mode-card .attorney-cta-badge {
+  background: #059669;
+}
+
+.appeal-attorney-cta-card.self-filing-mode-card .attorney-cta-perks {
+  color: #065f46;
+}
+
+.btn-appeal-action-primary {
+  background: #059669;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+  align-self: flex-start;
+}
+
+.btn-appeal-action-primary:hover {
+  background: #047857;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+}
+
 /* Footer Local Professional Sponsorship Strip */
 .partner-showcase-strip {
   background: linear-gradient(90deg, #090d16 0%, #172554 100%);
