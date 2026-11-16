@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-11-09 14:37:44 UTC",
-  "date": "2026-11-09",
+  "lastRun": "2026-11-16 14:13:28 UTC",
+  "date": "2026-11-16",
   "allDatasetsValid": true,
   "overallAccuracyScore": 100.0,
   "overallHallucinationRate": 0.0,
@@ -1009,14 +1009,14 @@
     {
       "name": "City of Clifton Official Portal",
       "url": "https://www.cliftonnj.org",
-      "status": "OFFLINE_OR_TIMEOUT",
-      "code": null
+      "status": "ONLINE",
+      "code": 200
     },
     {
       "name": "City of Clifton Official Documents Portal",
       "url": "https://www.cliftonnj.org/157/City-Documents",
-      "status": "OFFLINE_OR_TIMEOUT",
-      "code": null
+      "status": "ONLINE",
+      "code": 200
     },
     {
       "name": "Clifton Public Schools (BOE)",
@@ -1069,14 +1069,14 @@
     {
       "name": "Township of Montville Official Portal",
       "url": "https://www.montvillenj.org",
-      "status": "OFFLINE_OR_TIMEOUT",
-      "code": null
+      "status": "ONLINE",
+      "code": 200
     },
     {
       "name": "Township of Montville Finance Department",
       "url": "https://www.montvillenj.org/150/Finance",
-      "status": "OFFLINE_OR_TIMEOUT",
-      "code": null
+      "status": "ONLINE",
+      "code": 200
     },
     {
       "name": "Township of Montclair Official Portal",
